@@ -1,0 +1,36 @@
+namespace Uuma
+
+Chunk(文本块): EntityType
+    properties:
+        content(内容): Text
+            index: TextAndVector
+    relations:
+        linkedTo(语义关联): KnowledgeObject
+            properties:
+                predicate(语义谓词): Text
+                    index: Text
+                recordJson(关联记录快照): Text
+
+Others(开放域对象): EntityType
+    properties:
+        desc(描述): Text
+            index: TextAndVector
+        semanticType(语义类型): Text
+            index: Text
+
+KnowledgeObject(知识对象): EntityType
+    properties:
+        kind(对象类型): Text
+            index: Text
+        content(内容): Text
+            index: TextAndVector
+        canonicalStatus(权威状态): Text
+            index: Text
+        canonicalRevision(权威修订): Text
+        recordJson(权威记录快照): Text
+    relations:
+        linkedTo(语义关联): KnowledgeObject
+            properties:
+                predicate(语义谓词): Text
+                    index: Text
+                recordJson(关联记录快照): Text

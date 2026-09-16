@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uuma"
+version = "0.1.0"
+description = "Local-first control plane for a Hermes multi-agent system"
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+  "beautifulsoup4>=4.12,<5",
+  "fastapi>=0.104,<1",
+  "mcp==1.26.0",
+  "pydantic>=2.12,<3",
+  "pypdf>=5,<7",
+  "python-docx>=1.1,<2",
+  "uvicorn>=0.24,<1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8,<10",
+  "pytest-asyncio>=0.24,<2",
+  "ruff>=0.11,<1",
+]
+observability = [
+  "arize-phoenix-otel>=0.17,<1",
+]
+
+[project.scripts]
+uuma = "uuma.cli:main"
+uuma-api = "uuma.api:main"
+uuma-control-mcp = "uuma.mcp_control:main"
+uuma-worker-mcp = "uuma.mcp_worker:main"
+uuma-gemini-mcp = "uuma.mcp_gemini:main"
+uuma-knowledge-mcp = "uuma.mcp_knowledge:main"
+uuma-kag-bridge = "uuma.kag_bridge:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-ra"
+
+[tool.ruff]
+target-version = "py311"
+line-length = 100

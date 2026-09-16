@@ -1,0 +1,32 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+dist/
+build/
+*.egg-info/
+
+# Runtime state and secrets
+.env
+data/
+runtime/
+*.db
+*.db-shm
+*.db-wal
+*.sqlite
+*.sqlite3
+credentials.json
+tokens.json
+
+# Local deployment material
+.uuma-local/
+.tmp-data/
+.tmp/
+hermes-backups/
+
+# Local conversation scratch exports
+/scratch_conv.json
+/scratch_turns.json

@@ -1,0 +1,16 @@
+services:
+  phoenix:
+    image: arizephoenix/phoenix:version-20.8.0
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:6006:6006"
+      - "127.0.0.1:4317:4317"
+    environment:
+      PHOENIX_WORKING_DIR: /mnt/data
+      PHOENIX_ALLOW_EXTERNAL_RESOURCES: "false"
+    volumes:
+      - uuma_phoenix_data:/mnt/data
+
+volumes:
+  uuma_phoenix_data:
+    name: uuma_phoenix_data

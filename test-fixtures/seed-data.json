@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "purpose": "Deterministic non-production records for isolated evaluator runs",
+  "records": [
+    {"id": "fixture-001", "kind": "source", "title": "Alpha manual", "revision": 1},
+    {"id": "fixture-002", "kind": "evidence", "source_id": "fixture-001", "confidence": 0.9},
+    {"id": "fixture-003", "kind": "claim", "status": "candidate", "condition": "bench only"},
+    {"id": "fixture-004", "kind": "question", "status": "open", "topic": "connector rating"},
+    {"id": "fixture-005", "kind": "gap", "status": "open", "topic": "temperature range"}
+  ]
+}
