@@ -11,6 +11,7 @@ from typing import Any, ClassVar, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
+from .kag_lifecycle import runtime_lock
 from .knowledge_models import (
     AnswerCitation,
     ClaimStatus,
@@ -79,6 +80,7 @@ class KagRuntimeManager:
     compose_file: Path | None = None
     bridge_python: Path | None = None
     kag_config: Path | None = None
+    secrets_file: Path | None = None
     auto_recover: bool = True
     recovery_timeout_seconds: int = 120
 
@@ -96,10 +98,15 @@ class KagRuntimeManager:
             )
         except OSError as exc:
             raise KagUnavailableError(f"Docker CLI is unavailable: {exc}") from exc
-        if result.returncode == 0:
+        except subprocess.TimeoutExpired:
+            result = None
+        if result is not None and result.returncode == 0:
             return
         if os.name != "nt":
-            raise KagUnavailableError((result.stderr or result.stdout).strip())
+            detail = "Docker engine probe timed out." if result is None else (
+                result.stderr or result.stdout
+            ).strip()
+            raise KagUnavailableError(detail)
         program_files = Path(os.environ.get("ProgramFiles", "C:/Program Files"))
         desktop = program_files / "Docker" / "Docker" / "Docker Desktop.exe"
         if not desktop.is_file():
@@ -118,14 +125,18 @@ class KagRuntimeManager:
             raise KagUnavailableError(f"Docker Desktop could not be started: {exc}") from exc
         deadline = time.monotonic() + min(60, self.recovery_timeout_seconds)
         while time.monotonic() < deadline:
-            result = subprocess.run(
-                probe,
-                capture_output=True,
-                text=True,
-                timeout=10,
-                check=False,
-                creationflags=creation_flags,
-            )
+            try:
+                result = subprocess.run(
+                    probe,
+                    capture_output=True,
+                    text=True,
+                    timeout=10,
+                    check=False,
+                    creationflags=creation_flags,
+                )
+            except (OSError, subprocess.TimeoutExpired):
+                time.sleep(2)
+                continue
             if result.returncode == 0:
                 return
             time.sleep(2)
@@ -139,6 +150,19 @@ class KagRuntimeManager:
         compose_file = self.compose_file.expanduser().resolve()
         if not compose_file.is_file():
             raise KagUnavailableError(f"KAG compose file does not exist: {compose_file}")
+        try:
+            with runtime_lock(compose_file):
+                try:
+                    health = JsonHttpClient(self.bridge_url, timeout_seconds=3).request("/health")
+                    if health.get("ready") is True:
+                        return health
+                except KagUnavailableError:
+                    pass
+                return self._recover_locked(compose_file)
+        except TimeoutError as exc:
+            raise KagUnavailableError(str(exc)) from exc
+
+    def _recover_locked(self, compose_file: Path) -> dict[str, Any]:
         command = [
             "docker",
             "compose",
@@ -195,10 +219,7 @@ class KagRuntimeManager:
         python = (self.bridge_python or Path(sys.executable)).expanduser().resolve()
         if not python.is_file():
             raise KagUnavailableError(f"UUMA_KAG_PYTHON does not exist: {python}")
-        environment = dict(os.environ)
-        environment["UUMA_KAG_CONFIG"] = str(config)
-        if not environment.get("OPENAI_API_KEY") and environment.get("OPENROUTER_API_KEY"):
-            environment["OPENAI_API_KEY"] = environment["OPENROUTER_API_KEY"]
+        environment = self._bridge_environment(config)
         creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
         creation_flags |= getattr(subprocess, "DETACHED_PROCESS", 0)
         creation_flags |= getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
@@ -214,6 +235,35 @@ class KagRuntimeManager:
             )
         except OSError as exc:
             raise KagUnavailableError(f"KAG bridge could not be started: {exc}") from exc
+
+    def _bridge_environment(self, config: Path) -> dict[str, str]:
+        environment = dict(os.environ)
+        environment["UUMA_KAG_CONFIG"] = str(config)
+        if environment.get("OPENAI_API_KEY"):
+            return environment
+        if environment.get("OPENROUTER_API_KEY"):
+            environment["OPENAI_API_KEY"] = environment["OPENROUTER_API_KEY"]
+            return environment
+        if self.secrets_file is None:
+            return environment
+        secrets_file = self.secrets_file.expanduser().resolve()
+        try:
+            lines = secrets_file.read_text(encoding="utf-8-sig").splitlines()
+        except OSError as exc:
+            raise KagUnavailableError(f"KAG secrets file is unavailable: {secrets_file}") from exc
+        values: dict[str, str] = {}
+        for line in lines:
+            name, separator, value = line.strip().partition("=")
+            if separator and name in {"OPENAI_API_KEY", "OPENROUTER_API_KEY"}:
+                value = value.strip()
+                if len(value) >= 2 and value[0] == value[-1] and value[0] in {"'", '"'}:
+                    value = value[1:-1]
+                values[name] = value
+        key = values.get("OPENAI_API_KEY") or values.get("OPENROUTER_API_KEY")
+        if not key:
+            raise KagUnavailableError(f"KAG API key is missing from: {secrets_file}")
+        environment["OPENAI_API_KEY"] = key
+        return environment
 
 
 class OpenSpgKagBackend:
@@ -234,6 +284,7 @@ class OpenSpgKagBackend:
         compose_value = os.environ.get("UUMA_KAG_COMPOSE_FILE")
         bridge_python = os.environ.get("UUMA_KAG_PYTHON")
         kag_config = os.environ.get("UUMA_KAG_CONFIG")
+        secrets_file = os.environ.get("UUMA_KAG_SECRETS_FILE")
         auto_recover = os.environ.get("UUMA_KAG_AUTO_RECOVER", "true").lower() in {
             "1",
             "true",
@@ -244,6 +295,7 @@ class OpenSpgKagBackend:
             compose_file=Path(compose_value) if compose_value else None,
             bridge_python=Path(bridge_python) if bridge_python else None,
             kag_config=Path(kag_config) if kag_config else None,
+            secrets_file=Path(secrets_file) if secrets_file else None,
             auto_recover=auto_recover,
         )
         return cls(bridge_url, runtime=runtime)
@@ -264,7 +316,7 @@ class OpenSpgKagBackend:
             "/retrieve",
             method="POST",
             payload={"query": query, "mode": mode.value},
-            timeout_seconds=600,
+            timeout_seconds=90 if mode == ReasoningMode.SIMPLE else 600,
         )
 
     def extract(self, chunks: list[dict[str, Any]]) -> dict[str, Any]:
@@ -354,6 +406,7 @@ class KnowledgeReasoner:
             backend_health = self.backend.health()
             if backend_health.get("ready") is not True:
                 raise KagUnavailableError(str(backend_health))
+            health = self._sync_projection(health)
             response = self.backend.retrieve(question, selected)
             answer = self._normalize_kag_answer(response, question, selected, health)
             steps = self._normalize_steps(response, question)
@@ -361,6 +414,7 @@ class KnowledgeReasoner:
             if recover:
                 try:
                     self.backend.recover()
+                    health = self._sync_projection(self.service.projection_health())
                     response = self.backend.retrieve(question, selected)
                     answer = self._normalize_kag_answer(response, question, selected, health)
                     steps = self._normalize_steps(response, question)
@@ -381,6 +435,19 @@ class KnowledgeReasoner:
         self.service.record_reasoning_trace(trace, actor_id=actor_id)
         answer = answer.model_copy(update={"reasoning_trace_id": trace.reasoning_trace_id})
         return answer.model_dump(mode="json")
+
+    def _sync_projection(self, health: dict[str, Any]) -> dict[str, Any]:
+        if not health["lag"]:
+            return health
+        worker = KagProjectionWorker(self.service, self.backend)
+        while health["lag"]:
+            result = worker.sync(limit=1000, recover=False)
+            health = self.service.projection_health()
+            if result["processed"] == 0 or result["failed"]:
+                break
+        if health["lag"]:
+            raise KagUnavailableError("KAG projection is behind the canonical knowledge store.")
+        return health
 
     def _select_mode(self, question: str, requested: ReasoningMode) -> ReasoningMode:
         if requested != ReasoningMode.AUTO:

@@ -33,7 +33,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--kag-compose-file", default="")
     parser.add_argument("--kag-python", default="")
     parser.add_argument("--kag-config", default="")
+    parser.add_argument("--kag-secrets-file", default="")
     parser.add_argument("--kag-auto-recover", default="true")
+    parser.add_argument("--kag-idle-seconds", type=int, default=1800)
     parser.add_argument("--kag-base-url", default="")
     parser.add_argument("--kag-model", default="")
     parser.add_argument("--kag-project-id", default="")
@@ -81,6 +83,7 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
             {
                 "UUMA_KAG_BRIDGE_URL": args.kag_bridge_url,
                 "UUMA_KAG_AUTO_RECOVER": args.kag_auto_recover,
+                "UUMA_KAG_IDLE_SECONDS": str(args.kag_idle_seconds),
             }
         )
         if args.kag_compose_file:
@@ -89,6 +92,8 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
             environment["UUMA_KAG_PYTHON"] = args.kag_python
         if args.kag_config:
             environment["UUMA_KAG_CONFIG"] = args.kag_config
+        if args.kag_secrets_file:
+            environment["UUMA_KAG_SECRETS_FILE"] = args.kag_secrets_file
         if args.kag_base_url:
             environment["OPENAI_BASE_URL"] = args.kag_base_url
         if args.kag_model:
@@ -102,7 +107,7 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
             "command": args.python_exe,
             "args": CommentedSeq(["-m", module]),
             "env": environment,
-            "timeout": 180,
+            "timeout": 480 if module == "uuma.mcp_knowledge" else 180,
             "connect_timeout": 30,
             "idle_timeout_seconds": 0,
         }
@@ -178,6 +183,15 @@ def main() -> None:
         mcp_servers.pop("rstv4-worker", None)
         mcp_servers["uuma-control"] = server(args, "uuma.mcp_control")
         mcp_servers["wisdom-knowledge"] = server(args, "uuma.mcp_knowledge")
+        platform_toolsets = map_at(config, "platform_toolsets")
+        for platform in ("cli", "telegram"):
+            toolsets = sequence_at(platform_toolsets, platform)
+            if "kanban" not in toolsets:
+                toolsets.append("kanban")
+        compression = map_at(config, "compression")
+        compression["threshold_tokens"] = 48_000
+        compression["proactive_prune_tokens"] = 36_000
+        compression["idle_compact_after_seconds"] = 1_800
     else:
         mcp_servers.pop("xhs", None)
         mcp_servers.pop("uuma-control", None)
@@ -201,9 +215,32 @@ def main() -> None:
                 toolset[:] = [name for name in toolset if name not in SPECIALIST_DISABLED_TOOLSETS]
 
     plugins = map_at(config, "plugins")
+    if args.agent_id == "wisdom-oldman":
+        # A cold Docker/KAG start exceeds Hermes' default 30-second hook callback cap.
+        plugins["hook_callback_timeout"] = 450
     enabled = sequence_at(plugins, "enabled")
     if "uuma_audit" not in enabled:
         enabled.append("uuma_audit")
+    entries = map_at(plugins, "entries")
+    if args.role == "control":
+        if "uuma_control_guard" not in enabled:
+            enabled.append("uuma_control_guard")
+        guard = map_at(entries, "uuma_control_guard")
+        guard["mcp_allowlist"] = CommentedSeq(["uuma-control"])
+    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot"}:
+        if "uuma_control_guard" not in enabled:
+            enabled.append("uuma_control_guard")
+        guard = map_at(entries, "uuma_control_guard")
+        guard["mcp_allowlist"] = CommentedSeq(
+            ["uuma-worker", "wisdom-knowledge"]
+            if args.agent_id == "wisdom-oldman"
+            else ["uuma-worker", "rstv4-worker"]
+            if args.agent_id == "scholar"
+            else ["uuma-worker"]
+        )
+    else:
+        enabled[:] = [name for name in enabled if name != "uuma_control_guard"]
+        entries.pop("uuma_control_guard", None)
 
     with args.config.open("w", encoding="utf-8", newline="") as handle:
         yaml.dump(config, handle)

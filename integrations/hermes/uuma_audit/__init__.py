@@ -52,7 +52,23 @@ _STARTED = False
 
 
 def _profile() -> str:
-    value = os.environ.get("HERMES_PROFILE") or os.environ.get("HERMES_PROFILE_NAME") or "default"
+    # Multiplexed gateway turns use a context-local Hermes home, not process env.
+    try:
+        from hermes_constants import get_hermes_home_override
+
+        home = get_hermes_home_override()
+        if home:
+            path = Path(home)
+            if path.parent.name.lower() == "profiles":
+                return path.name.lower()
+            return "orchestrator"
+    except ImportError:
+        pass
+    value = os.environ.get("HERMES_PROFILE") or os.environ.get("HERMES_PROFILE_NAME")
+    if not value:
+        home = os.environ.get("HERMES_HOME", "")
+        path = Path(home) if home else None
+        value = path.name if path and path.parent.name.lower() == "profiles" else "default"
     return "orchestrator" if value == "default" else value
 
 

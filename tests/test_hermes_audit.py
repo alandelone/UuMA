@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import importlib.util
+import sys
+import types
 from pathlib import Path
 from unittest.mock import Mock
 
@@ -9,6 +11,18 @@ SPEC = importlib.util.spec_from_file_location("uuma_audit_test_plugin", PLUGIN_P
 assert SPEC and SPEC.loader
 PLUGIN = importlib.util.module_from_spec(SPEC)
 SPEC.loader.exec_module(PLUGIN)
+
+
+def test_multiplexed_home_identifies_specialist(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "default")
+    monkeypatch.setitem(
+        sys.modules,
+        "hermes_constants",
+        types.SimpleNamespace(
+            get_hermes_home_override=lambda: "C:/Users/user/hermes/profiles/brainstormer"
+        ),
+    )
+    assert PLUGIN._profile() == "brainstormer"
 
 
 def test_trusted_profile_forwards_exact_research_approval(monkeypatch) -> None:

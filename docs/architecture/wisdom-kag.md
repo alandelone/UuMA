@@ -49,9 +49,32 @@ questions. The answer contract contains citations, applicable conditions, confli
 operator/retrieval trace, projection watermark, satisfaction level, and worthwhile remaining gaps.
 Structured traces are execution evidence, not hidden chain-of-thought.
 
-If KAG is unavailable, the runtime manager may start Docker Desktop and recover only the named
-`uuma-wisdom-kag` compose project. It waits at most 120 seconds, replays the outbox, and retries once.
-Failure returns `DEGRADED_KAG` and uses canonical FTS/evidence retrieval without dropping writes.
+Hermes direct-chat preflight uses `SIMPLE` KAG retrieval and may cold-start the runtime. The
+Wisdom-Oldman profile raises only its plugin-hook callback cap to 450 seconds; Hermes' default
+30-second cap would abandon a cold-start preflight before its Knowledge MCP call finished. More
+complex questions can still request `AUTO`/`DEEP` in a normal Knowledge MCP tool call.
+
+If KAG is unavailable on a Wisdom-Oldman answer, the runtime manager starts Docker Desktop if needed
+and recovers only the named `uuma-wisdom-kag` compose project. Start/stop operations are serialized
+across profiles. Pending canonical projection jobs are replayed before retrieval; a lagging projection
+is not presented as current KAG knowledge. Cold starts can take several minutes. Recovery failure
+returns `DEGRADED_KAG` and uses canonical FTS/evidence retrieval without dropping writes.
+
+The local bridge counts `/project`, `/retrieve`, and `/extract` as activity. After 30 minutes with no
+active KAG work (configurable with `UUMA_KAG_IDLE_SECONDS`; `0` disables auto-stop), it closes its
+listener and runs `docker compose stop` for only `uuma-wisdom-kag`. Containers, volumes, downloaded
+models, and `wisdom.db` remain on disk; this policy saves runtime memory/CPU rather than disk space.
+It never quits Docker Desktop because other projects may depend on it. Health probes do not keep KAG
+awake. Idle-stop failures are recorded in `.uuma-local/kag/bridge-lifecycle.log`; the next demand
+can still recover the bridge. A stopped Windows `com.docker.service` alone does not prove the Docker
+engine is unavailable; the runtime probes the engine directly. If the engine is unavailable and
+Desktop cannot be started under the Hermes account, an administrator must restore it.
+
+The Wisdom-Oldman Knowledge MCP config points `UUMA_KAG_SECRETS_FILE` at that profile's existing
+`.env`. When the bridge is cold-started, the runtime reads an OpenAI/OpenRouter API key from that
+file only if no key is already in its environment. The key is passed to the bridge process without
+being copied into Hermes YAML, the compose file, logs, or `wisdom.db`. A missing key causes an
+explicit KAG fallback rather than a misleading successful retrieval.
 
 ## Runtime bootstrap
 
@@ -80,8 +103,12 @@ or dependency-resolved against the other.
 
 The upstream compose file is intentionally kept in `.uuma-local/kag` rather than copied into source
 control. Runtime recovery targets only the compose project name `uuma-wisdom-kag`, starts the bridge
-with its isolated Python/config, replaces only the bridge process listening on port 8891, and never
-mutates canonical knowledge to repair projection state.
+with its isolated Python/config, and never mutates canonical knowledge to repair projection state.
+Bootstrap bounds the OpenSPG JVM at 4 GB and the Neo4j heap/page cache at 2 GB/512 MB so their cold
+start fits under a typical 8 GB Docker Desktop WSL limit. It also seeds Neo4j's configuration into a
+host-mounted directory: an abrupt WSL termination cannot leave the container's writable config
+layer with sparse NUL bytes. Compose uses `unless-stopped`, so an idle stop remains stopped across a
+later Docker Desktop restart while an explicit on-demand `compose up` still recovers all services.
 
 ## Research and freshness
 

@@ -1,25 +1,85 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import socket
+import subprocess
 import threading
 from hashlib import sha256
+from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from typing import Any
 
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
+from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict
+
+from .kag_lifecycle import KagIdleTracker, runtime_lock
 
 app = FastAPI(title="UuMA OpenSPG KAG bridge", version="0.1.0")
 _init_lock = threading.Lock()
 _initialized = False
+_idle_tracker: KagIdleTracker | None = None
 _bge_runtime: dict[str, Any] = {
     "backend": "unconfigured",
     "device": "unconfigured",
     "precision": "unknown",
 }
+
+
+@app.middleware("http")
+async def track_kag_activity(request: Request, call_next: Any) -> Any:
+    tracker = _idle_tracker
+    if tracker is None or request.url.path not in {"/project", "/retrieve", "/extract"}:
+        return await call_next(request)
+    if not tracker.begin():
+        return JSONResponse({"detail": "KAG is stopping after its idle timeout."}, status_code=503)
+    try:
+        return await call_next(request)
+    finally:
+        tracker.end()
+
+
+def _stop_when_idle(
+    tracker: KagIdleTracker,
+    compose_file: Path,
+    server: Any,
+    stopped: threading.Event,
+    *,
+    poll_seconds: float = 5,
+) -> None:
+    while not stopped.wait(poll_seconds):
+        if not tracker.idle_due():
+            continue
+        try:
+            with runtime_lock(compose_file):
+                if not tracker.claim_idle_shutdown():
+                    continue
+                server.should_exit = True
+                stopped.wait()
+                command = [
+                    "docker", "compose", "-p", "uuma-wisdom-kag", "-f", str(compose_file),
+                    "stop",
+                ]
+                for attempt in range(2):
+                    try:
+                        result = subprocess.run(
+                            command, capture_output=True, text=True, timeout=90, check=False,
+                            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+                        )
+                        if result.returncode == 0:
+                            return
+                        detail = (result.stderr or result.stdout).strip()[-500:]
+                    except (OSError, subprocess.TimeoutExpired) as exc:
+                        detail = str(exc)
+                    logging.getLogger(__name__).error(
+                        "KAG idle stop attempt %s failed: %s", attempt + 1, detail
+                    )
+                return
+        except TimeoutError:
+            logging.getLogger(__name__).warning("KAG idle stop deferred: runtime lock is busy")
 
 
 class _OnnxBGEM3Encoder:
@@ -392,6 +452,8 @@ def _component_data(output: Any) -> Any:
 
 @app.get("/health")
 def health() -> dict[str, Any]:
+    if _idle_tracker is not None and _idle_tracker.closing:
+        return {"ready": False, "runtime": "OpenSPG/KAG", "error": "Idle shutdown in progress"}
     try:
         _init_kag()
         from kag.common.conf import KAG_PROJECT_CONF
@@ -569,7 +631,39 @@ async def extract(request: ExtractRequest) -> dict[str, Any]:
 def main() -> None:
     import uvicorn
 
-    uvicorn.run(app, host="127.0.0.1", port=int(os.environ.get("UUMA_KAG_BRIDGE_PORT", "8891")))
+    global _idle_tracker
+    server = uvicorn.Server(
+        uvicorn.Config(app, host="127.0.0.1", port=int(os.environ.get("UUMA_KAG_BRIDGE_PORT", "8891")))
+    )
+    compose_value = os.environ.get("UUMA_KAG_COMPOSE_FILE")
+    idle_seconds = float(os.environ.get("UUMA_KAG_IDLE_SECONDS", "1800"))
+    stopped = threading.Event()
+    monitor: threading.Thread | None = None
+    if compose_value and idle_seconds > 0:
+        compose_file = Path(compose_value).expanduser().resolve()
+        if compose_file.is_file():
+            lifecycle_log = RotatingFileHandler(
+                compose_file.parent / "bridge-lifecycle.log",
+                maxBytes=1_000_000,
+                backupCount=2,
+                encoding="utf-8",
+            )
+            lifecycle_log.setFormatter(logging.Formatter("%(asctime)s %(levelname)s %(message)s"))
+            logging.getLogger(__name__).addHandler(lifecycle_log)
+            _idle_tracker = KagIdleTracker(idle_seconds)
+            monitor = threading.Thread(
+                target=_stop_when_idle,
+                args=(_idle_tracker, compose_file, server, stopped),
+                name="uuma-kag-idle",
+                daemon=True,
+            )
+            monitor.start()
+    try:
+        server.run()
+    finally:
+        stopped.set()
+        if monitor is not None:
+            monitor.join(timeout=200)
 
 
 if __name__ == "__main__":

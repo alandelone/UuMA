@@ -1,5 +1,18 @@
 # Findings
 
+## 2026-09-17 - Studio focusout replaced an imminent click target
+
+- **Symptom:** after undo restored focus to a manuscript textarea, clicking delete on a reviewer
+  comment had no effect. The earlier delete from a non-editor focus state succeeded.
+- **Diagnostic:** the V6 browser test twice timed out awaiting restore-comment for R1-03;
+  inspection found the comment still active and the archive empty. Textarea focusout synchronously
+  redrew the target table between pointer down and click.
+- **Classification:** missing-context (browser focus/click ordering) and code-defect in the
+  standalone Studio preview, not an incorrect deletion/recovery assertion.
+- **Resolution:** do not redraw a review panel on editor blur when focus is entering that panel.
+  Keep deletion assertions intact; rerun focused and full relevant UI regression tests.
+- **Prevented by:** rules/ui-interaction-testing.md and V6 delete/undo/restore browser coverage.
+
 ## 2026-09-08 — Session snapshot diagnostic
 
 Initial session tests encountered Git exit 128 in one temporary repository. Immediate rerun and

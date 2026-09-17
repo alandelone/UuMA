@@ -103,11 +103,39 @@ if (-not (Test-Path -LiteralPath $composeFile)) {
 $dockerLogRoot = (Join-Path $resolvedRuntime "dozerdb\logs")
 New-Item -ItemType Directory -Path $dockerLogRoot -Force | Out-Null
 $dockerLogMount = $dockerLogRoot.Replace('\', '/')
+$neo4jConfigRoot = Join-Path $resolvedRuntime "neo4j-conf"
+$neo4jConfigMount = $neo4jConfigRoot.Replace('\', '/')
 $composeContent = Get-Content -LiteralPath $composeFile -Raw
 $composeContent = $composeContent.Replace(
     '- $HOME/dozerdb/logs:/logs',
     "- `"${dockerLogMount}:/logs`""
 )
+if ($composeContent -notmatch '/var/lib/neo4j/conf') {
+    $composeContent = $composeContent.Replace(
+        "- `"${dockerLogMount}:/logs`"",
+        "- `"${dockerLogMount}:/logs`"`r`n      - `"${neo4jConfigMount}:/var/lib/neo4j/conf`""
+    )
+}
+# The upstream defaults can reserve more than 12 GB across the two JVMs. UuMA's
+# local KAG project is small, and Docker Desktop commonly runs inside an 8 GB
+# WSL limit, so keep cold-start memory below that boundary.
+$composeContent = $composeContent.Replace('"-Xms2048m"', '"-Xms1024m"')
+$composeContent = $composeContent.Replace('"-Xmx8192m"', '"-Xmx4096m"')
+$composeContent = $composeContent.Replace(
+    'NEO4J_server_memory_heap_initial__size=1G',
+    'NEO4J_server_memory_heap_initial__size=512M'
+)
+$composeContent = $composeContent.Replace(
+    'NEO4J_server_memory_heap_max__size=4G',
+    'NEO4J_server_memory_heap_max__size=2G'
+)
+$composeContent = $composeContent.Replace(
+    'NEO4J_server_memory_pagecache_size=1G',
+    'NEO4J_server_memory_pagecache_size=512M'
+)
+# An idle `docker compose stop` must survive a later Docker Desktop restart.
+# `unless-stopped` preserves that state while still recovering unexpected exits.
+$composeContent = $composeContent.Replace('restart: always', 'restart: unless-stopped')
 Set-Content -LiteralPath $composeFile -Value $composeContent -Encoding utf8
 
 $kagSource = Join-Path $resolvedRuntime "KAG"
@@ -236,6 +264,24 @@ if (-not $SkipStart) {
             $dockerReady = $LASTEXITCODE -eq 0
         } until ($dockerReady -or [DateTime]::UtcNow -ge $dockerDeadline)
         if (-not $dockerReady) { throw "Docker Desktop did not become ready within two minutes." }
+    }
+    $neo4jConfigFile = Join-Path $neo4jConfigRoot "neo4j.conf"
+    if (-not (Test-Path -LiteralPath $neo4jConfigFile)) {
+        New-Item -ItemType Directory -Path $neo4jConfigRoot -Force | Out-Null
+        $seedContainer = (& docker create `
+            --entrypoint /bin/true `
+            spg-registry.us-west-1.cr.aliyuncs.com/spg/openspg-neo4j:latest
+        ).Trim()
+        if ($LASTEXITCODE -ne 0 -or -not $seedContainer) {
+            throw "Could not create the temporary Neo4j configuration seed container."
+        }
+        try {
+            & docker cp "${seedContainer}:/var/lib/neo4j/conf/." $neo4jConfigRoot
+            if ($LASTEXITCODE -ne 0) { throw "Could not seed the durable Neo4j configuration." }
+        }
+        finally {
+            & docker rm $seedContainer | Out-Null
+        }
     }
     & docker compose -p uuma-wisdom-kag -f $composeFile up -d
     if ($LASTEXITCODE -ne 0) { throw "The OpenSPG Docker runtime could not be started." }

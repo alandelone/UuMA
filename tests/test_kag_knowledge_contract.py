@@ -227,6 +227,41 @@ class KagKnowledgeContractTest(unittest.TestCase):
         self.assertTrue(trace["degraded"])
         self.assertEqual(trace["steps"][0]["operator"], "TEXT")
 
+    def test_answer_replays_pending_projection_before_kag_retrieval(self) -> None:
+        self.service.add_source(
+            SourceRecord(locator="urn:test:on-demand", title="On-demand KAG source"),
+            actor_id="wisdom-oldman",
+        )
+        backend = FakeKagBackend()
+
+        answer = KnowledgeReasoner(self.service, backend).answer("What is on-demand KAG?")
+
+        self.assertEqual(answer["runtime_status"], "KAG")
+        self.assertEqual(len(backend.jobs), 1)
+        self.assertEqual(self.service.projection_health()["lag"], 0)
+        trace = self.service.get(answer["reasoning_trace_id"])["record"]
+        self.assertFalse(trace["degraded"])
+
+    def test_recovered_runtime_replays_projection_before_retrieval(self) -> None:
+        self.service.add_source(
+            SourceRecord(locator="urn:test:cold", title="Cold KAG source"),
+            actor_id="wisdom-oldman",
+        )
+
+        class RecoverableBackend(FakeKagBackend):
+            def recover(self) -> dict[str, Any]:
+                self.available = True
+                self.recoveries += 1
+                return {"ready": True}
+
+        backend = RecoverableBackend(available=False)
+        answer = KnowledgeReasoner(self.service, backend).answer("What is cold KAG?")
+
+        self.assertEqual(answer["runtime_status"], "KAG")
+        self.assertEqual(backend.recoveries, 1)
+        self.assertEqual(len(backend.jobs), 1)
+        self.assertEqual(self.service.projection_health()["lag"], 0)
+
     def test_degraded_reasoning_can_cite_canonical_chunks_before_claim_review(self) -> None:
         ingestor = KnowledgeIngestor(self.service, self.root / "content")
         ingested = ingestor.ingest_text(

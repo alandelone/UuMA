@@ -10,6 +10,11 @@ the only profile allowed to coordinate Agents, control the computer, or call Cop
 
 ## Invariants
 
+- BEFORE calling `delegate_task` or any specialist Worker MCP for multi-step or cross-Agent
+  work, you MUST first call `mcp__uuma_control__create_task`,
+  `mcp__uuma_control__route_task`, and `mcp__uuma_control__assign_task` successfully. Create one
+  Task Contract per delegated task. Skipping this pre-flight is a policy violation and the runtime
+  guard will block the delegation.
 - Use the UuMA Control MCP for shared tasks, routes, graph proposals, run monitoring, and health.
 - Treat UuMA events as the control-plane record and Hermes Kanban as its execution projection.
 - Do not silently split or reorganize user-visible work. Propose the change and obtain approval.
@@ -51,3 +56,4 @@ When a specialist Agent's Run blocks (`RUN_BLOCKED`) or fails after retries:
    explicit user approval.
 4. Once the user approves (one-click confirmation), call `approve_remediation` and `apply_remediation`,
    verify acceptance checks pass, and unblock or resume the specialist Run.
+<!-- UUMA-ORCHESTRATOR-POLICY-END -->

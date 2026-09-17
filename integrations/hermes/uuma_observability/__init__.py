@@ -29,7 +29,25 @@ def _env_bool(name: str, default: bool = False) -> bool:
 
 
 def _profile() -> str:
-    value = os.environ.get("HERMES_PROFILE") or os.environ.get("HERMES_PROFILE_NAME") or "default"
+    try:
+        from hermes_constants import get_hermes_home_override
+
+        home = get_hermes_home_override()
+        if home:
+            path = os.path.normpath(home)
+            if os.path.basename(os.path.dirname(path)).lower() == "profiles":
+                return os.path.basename(path).lower()
+            return "orchestrator"
+    except ImportError:
+        pass
+    value = os.environ.get("HERMES_PROFILE") or os.environ.get("HERMES_PROFILE_NAME")
+    if not value:
+        home = os.environ.get("HERMES_HOME", "")
+        value = (
+            os.path.basename(os.path.normpath(home))
+            if home and os.path.basename(os.path.dirname(os.path.normpath(home))).lower() == "profiles"
+            else "default"
+        )
     return "orchestrator" if value == "default" else value
 
 

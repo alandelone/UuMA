@@ -1,0 +1,12 @@
+name: uuma_control_guard
+version: "0.1.0"
+description: Enforce UuMA control-plane delegation and specialist Direct Run preflight.
+author: UuMA
+hooks:
+  - pre_llm_call
+  - pre_tool_call
+  - post_tool_call
+  - transform_llm_output
+  - post_llm_call
+  - on_session_finalize
+  - on_session_reset

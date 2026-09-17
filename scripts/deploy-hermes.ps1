@@ -10,6 +10,7 @@ param(
     [string]$KagBridgeUrl = "http://127.0.0.1:8891",
     [string]$KagRuntimeRoot = (Join-Path $ProjectRoot ".uuma-local\kag"),
     [bool]$KagAutoRecover = $true,
+    [int]$KagIdleSeconds = 1800,
     [bool]$EnablePhoenixTelemetry = $true,
     [string]$PhoenixEndpoint = "http://127.0.0.1:6006/v1/traces",
     [string]$PhoenixProject = "hermes",
@@ -19,10 +20,13 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$HermesExe = (Resolve-Path -LiteralPath $HermesExe).Path
+$PythonExe = (Resolve-Path -LiteralPath $PythonExe).Path
 $sourcePath = Join-Path $ProjectRoot "src"
 $profilesRoot = Join-Path $env:LOCALAPPDATA "hermes\profiles"
 $defaultHome = Join-Path $env:LOCALAPPDATA "hermes"
 $pluginSource = Join-Path $ProjectRoot "integrations\hermes\uuma_audit"
+$controlGuardPluginSource = Join-Path $ProjectRoot "integrations\hermes\uuma_control_guard"
 $observabilityPluginSource = Join-Path $ProjectRoot "integrations\hermes\uuma_observability"
 $hermesPython = Join-Path (Split-Path -Parent $HermesExe) "python.exe"
 $forgeSkillsSource = Join-Path $ProjectRoot "profiles\forge-lab-bot\skills"
@@ -89,6 +93,13 @@ function Install-AuditPlugin {
     New-Item -ItemType Directory -Path $target -Force | Out-Null
     Copy-Item -LiteralPath (Join-Path $pluginSource "plugin.yaml") -Destination $target -Force
     Copy-Item -LiteralPath (Join-Path $pluginSource "__init__.py") -Destination $target -Force
+}
+
+function Install-ControlGuardPlugin {
+    param([string]$ProfileHome)
+    $target = Join-Path $ProfileHome "plugins\uuma_control_guard"
+    New-Item -ItemType Directory -Path $target -Force | Out-Null
+    Copy-Item -Path (Join-Path $controlGuardPluginSource "*") -Destination $target -Recurse -Force
 }
 
 function Install-ObservabilityPlugin {
@@ -252,7 +263,8 @@ function Set-HermesProfileConfig {
         "--eschematic-root", $ESchematicRoot,
         "--eschematic-python", $ESchematicPython,
         "--kag-bridge-url", $KagBridgeUrl,
-        "--kag-auto-recover", $KagAutoRecover.ToString().ToLowerInvariant()
+        "--kag-auto-recover", $KagAutoRecover.ToString().ToLowerInvariant(),
+        "--kag-idle-seconds", $KagIdleSeconds
     )
     $kagComposeFile = Join-Path $KagRuntimeRoot "docker-compose-west.yml"
     $kagPython = Join-Path $KagRuntimeRoot ".venv\Scripts\python.exe"
@@ -266,6 +278,9 @@ function Set-HermesProfileConfig {
     }
     if (Test-Path -LiteralPath $kagConfig) {
         $arguments += @("--kag-config", $kagConfig)
+    }
+    if ($AgentId -eq "wisdom-oldman") {
+        $arguments += @("--kag-secrets-file", (Join-Path $ProfileHome ".env"))
     }
     if (Test-Path -LiteralPath $kagRuntimeConfig) {
         $runtimeSettings = Get-Content -LiteralPath $kagRuntimeConfig -Raw | ConvertFrom-Json
@@ -305,14 +320,33 @@ if (-not (Test-Path -LiteralPath $rstv4Python)) {
 & $PythonExe -m uuma init
 if ($LASTEXITCODE -ne 0) { throw "UuMA initialization failed." }
 
-$orchestratorAddendum = Get-Content -LiteralPath (
-    Join-Path $ProjectRoot "profiles\orchestrator\SOUL.addendum.md"
-) -Raw
-$defaultSoul = Join-Path $defaultHome "SOUL.md"
-if ((Get-Content -LiteralPath $defaultSoul -Raw) -notmatch "UUMA-ORCHESTRATOR-POLICY-V1") {
-    Copy-Item -LiteralPath $defaultSoul -Destination "$defaultSoul.uuma-backup" -Force
-    Add-Content -LiteralPath $defaultSoul -Value $orchestratorAddendum -Encoding utf8
+function Sync-OrchestratorSoul {
+    $source = Get-Content -LiteralPath (
+        Join-Path $ProjectRoot "profiles\orchestrator\SOUL.addendum.md"
+    ) -Raw
+    $targetPath = Join-Path $defaultHome "SOUL.md"
+    $current = Get-Content -LiteralPath $targetPath -Raw
+    $begin = "<!-- UUMA-ORCHESTRATOR-POLICY-V1 -->"
+    $end = "<!-- UUMA-ORCHESTRATOR-POLICY-END -->"
+    if ($current.Contains($begin) -and $current.Contains($end)) {
+        $pattern = "(?s)$([regex]::Escape($begin)).*?$([regex]::Escape($end))"
+        $updated = [regex]::Replace($current, $pattern, $source.Trim())
+    }
+    elseif ($current.Contains($begin)) {
+        # Older deployments appended the managed block at EOF without an end marker.
+        $updated = $current.Substring(0, $current.IndexOf($begin)) + $source.Trim() + "`r`n"
+    }
+    else {
+        $updated = $current.TrimEnd() + "`r`n`r`n" + $source.Trim() + "`r`n"
+    }
+    if ($current -ne $updated) {
+        Copy-Item -LiteralPath $targetPath -Destination "$targetPath.uuma-backup" -Force
+        Set-Content -LiteralPath $targetPath -Value $updated -Encoding utf8
+    }
 }
+
+Sync-OrchestratorSoul
+Install-ControlGuardPlugin -ProfileHome $defaultHome
 
 Set-HermesProfileConfig -ProfileHome $defaultHome -Role "control" -AgentId "orchestrator"
 Set-DotEnvValue -Path (Join-Path $defaultHome ".env") -Key "UUMA_DATA_DIR" -Value $DataDir
@@ -360,6 +394,7 @@ foreach ($profile in $profiles) {
         "NOTION_API_KEY"
     )
     Install-AuditPlugin -Profile $id -ProfileHome $profileHome
+    Install-ControlGuardPlugin -ProfileHome $profileHome
     Install-ObservabilityPlugin -ProfileHome $profileHome
     if ($isScholar) {
         Install-ScholarResearchSkill -ProfileHome $profileHome

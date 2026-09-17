@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import importlib.util
 import sys
+import types
 from pathlib import Path
 from typing import Any
 
@@ -17,6 +18,18 @@ assert SPEC is not None and SPEC.loader is not None
 PLUGIN = importlib.util.module_from_spec(SPEC)
 sys.modules[SPEC.name] = PLUGIN
 SPEC.loader.exec_module(PLUGIN)
+
+
+def test_multiplexed_home_identifies_specialist(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "default")
+    monkeypatch.setitem(
+        sys.modules,
+        "hermes_constants",
+        types.SimpleNamespace(
+            get_hermes_home_override=lambda: "C:/Users/user/hermes/profiles/wisdom-oldman"
+        ),
+    )
+    assert PLUGIN._profile() == "wisdom-oldman"
 
 
 class FakeSpan:
