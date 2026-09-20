@@ -15,7 +15,7 @@ from .diagnostics import (
     IncidentContext,
     RemediationStatus,
 )
-from .models import GraphOperation, TaskContract
+from .models import GraphOperation, RunRegistration, TaskContract, VerificationDecision
 from .service import ControlPlane
 
 mcp = FastMCP("uuma-control")
@@ -66,7 +66,7 @@ def propose_graph_operation(operation_json: str) -> dict[str, str]:
     """Propose a version-checked graph mutation; structural changes await user approval."""
     _assert_orchestrator()
     operation = GraphOperation.model_validate_json(operation_json)
-    _control_plane().propose_operation(operation)
+    _control_plane().propose_operation(operation, actor_id="orchestrator")
     return {"operation_id": operation.operation_id, "status": "PROPOSED"}
 
 
@@ -74,8 +74,37 @@ def propose_graph_operation(operation_json: str) -> dict[str, str]:
 def approve_graph_operation(operation_id: str) -> dict[str, str]:
     """Record explicit user approval and apply a proposed graph operation."""
     _assert_orchestrator()
-    _control_plane().approve_operation(operation_id)
+    _control_plane().approve_operation(operation_id, actor_id="orchestrator")
     return {"operation_id": operation_id, "status": "APPROVED"}
+
+
+@mcp.tool()
+def register_run(registration_json: str, takeover: bool = False) -> dict[str, Any]:
+    """Register a new execution attempt; takeover explicitly supersedes an active Run."""
+    _assert_orchestrator()
+    registration = RunRegistration.model_validate_json(registration_json)
+    return (
+        _control_plane()
+        .register_run(registration, actor_id="orchestrator", takeover=takeover)
+        .model_dump(mode="json")
+    )
+
+
+@mcp.tool()
+def get_verification_context(run_id: str) -> dict[str, Any]:
+    """Read the frozen acceptance and result digests required for independent review."""
+    _assert_orchestrator()
+    return _control_plane().verification_context(run_id)
+
+
+@mcp.tool()
+def verify_result(decision_json: str) -> dict[str, Any]:
+    """Record independent acceptance evidence and complete only an approved current Run."""
+    _assert_orchestrator()
+    decision = VerificationDecision.model_validate_json(decision_json)
+    return _control_plane().verify_result(decision, actor_id="orchestrator").model_dump(
+        mode="json"
+    )
 
 
 @mcp.tool()
@@ -236,4 +265,3 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
-

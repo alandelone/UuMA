@@ -84,6 +84,7 @@ def test_wisdom_profile_enables_direct_run_guard(tmp_path) -> None:
     knowledge = config["mcp_servers"]["wisdom-knowledge"]
     assert knowledge["env"]["UUMA_KAG_AUTO_RECOVER"] == "true"
     assert knowledge["env"]["UUMA_KAG_IDLE_SECONDS"] == "1800"
+    assert knowledge["env"]["UUMA_QUESTION_ORBIT_ENABLED"] == "false"
     assert knowledge["env"]["UUMA_KAG_SECRETS_FILE"] == str(tmp_path / ".env")
     assert knowledge["timeout"] == 480
     assert config["plugins"]["hook_callback_timeout"] == 450

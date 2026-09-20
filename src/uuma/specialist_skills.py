@@ -24,6 +24,7 @@ SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
             "wisdom-investigate",
             "wisdom-knowledge-formation",
             "wisdom-maintain-kag",
+            "wisdom-question-orbit",
         }
     ),
     "forge-lab-bot": frozenset(

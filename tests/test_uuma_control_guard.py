@@ -238,10 +238,12 @@ def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -
     )
     assert context.call_mcp.call_args_list[1].args[:2] == (
         "wisdom-knowledge",
-        "knowledge_answer",
+        "knowledge_question_preflight",
     )
     assert context.call_mcp.call_args_list[1].args[2]["recover_runtime"] is True
     assert context.call_mcp.call_args_list[1].args[2]["mode"] == "SIMPLE"
+    assert context.call_mcp.call_args_list[1].args[2]["uuma_task_id"] == "task-auto"
+    assert context.call_mcp.call_args_list[1].args[2]["uuma_run_id"] == "run-auto"
     assert context.call_mcp.call_args_list[1].kwargs["timeout"] == 420
     assert PLUGIN._guard_specialist_output(
         "grounded", session_id="wisdom-auto", turn_id="turn-auto"

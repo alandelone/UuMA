@@ -7,7 +7,7 @@ from pathlib import Path
 from typing import Any
 
 from .artifacts import ArtifactStore
-from .event_store import EventStore
+from .event_store import EventStore, task_idempotency_scope, task_request_digest
 from .models import (
     AgentDefinition,
     ArtifactRecord,
@@ -15,11 +15,14 @@ from .models import (
     OperationKind,
     ResultContract,
     ResultOutcome,
+    RiskLevel,
     RouteDecision,
     RunProgress,
     RunRegistration,
     RunStatus,
     TaskContract,
+    VerificationDecision,
+    VerificationRecord,
 )
 from .policy import PolicyEngine, default_agents
 from .projections import Projector
@@ -45,6 +48,16 @@ class ConflictError(ControlPlaneError):
 
 class ContractValidationError(ControlPlaneError):
     pass
+
+
+def _canonical_digest(value: Any) -> str:
+    encoded = json.dumps(
+        value,
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    ).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()
 
 
 class ControlPlane:
@@ -78,36 +91,61 @@ class ControlPlane:
         )
 
     def create_task(self, contract: TaskContract, *, actor_id: str) -> TaskContract:
-        if contract.idempotency_key:
-            existing = self._task_by_idempotency_key(contract.idempotency_key)
-            if existing is not None:
-                return existing
-        if self.get_task(contract.task_id) is not None:
-            raise ConflictError(f"Task already exists: {contract.task_id}")
-        self.events.append(
-            event_type="TASK_CREATED",
-            aggregate_type="task",
-            aggregate_id=contract.task_id,
-            actor_type="agent" if actor_id != "user" else "user",
-            actor_id=actor_id,
-            payload={"contract": contract.model_dump(mode="json")},
-            correlation_id=contract.task_id,
-        )
+        contract_payload = contract.model_dump(mode="json")
+        scope = task_idempotency_scope(contract_payload, actor_id)
+        digest = task_request_digest(contract_payload)
+        with self.events.transaction() as conn:
+            if contract.idempotency_key:
+                row = conn.execute(
+                    """
+                    SELECT contract_json, request_digest FROM tasks
+                    WHERE idempotency_scope=? AND idempotency_key=?
+                    """,
+                    (scope, contract.idempotency_key),
+                ).fetchone()
+                if row is not None:
+                    if row["request_digest"] != digest:
+                        raise ConflictError(
+                            "Idempotency key was already used for a different task request."
+                        )
+                    return TaskContract.model_validate_json(row["contract_json"])
+            if conn.execute(
+                "SELECT 1 FROM tasks WHERE task_id=?", (contract.task_id,)
+            ).fetchone():
+                raise ConflictError(f"Task already exists: {contract.task_id}")
+            self.events.append(
+                event_type="TASK_CREATED",
+                aggregate_type="task",
+                aggregate_id=contract.task_id,
+                actor_type="agent" if actor_id != "user" else "user",
+                actor_id=actor_id,
+                payload={
+                    "contract": contract_payload,
+                    "idempotency_scope": scope if contract.idempotency_key else None,
+                    "request_digest": digest,
+                },
+                correlation_id=contract.task_id,
+                conn=conn,
+            )
         return contract
 
     def approve_task(self, task_id: str, *, actor_id: str = "user") -> None:
-        task = self.require_task(task_id)
-        if task["status"] != "PROPOSED":
-            raise ConflictError(f"Task {task_id} is not awaiting structural approval.")
-        self.events.append(
-            event_type="TASK_APPROVED",
-            aggregate_type="task",
-            aggregate_id=task_id,
-            actor_type="user",
-            actor_id=actor_id,
-            payload={},
-            correlation_id=task_id,
-        )
+        with self.events.transaction() as conn:
+            task = conn.execute("SELECT status FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+            if task is None:
+                raise NotFoundError(f"Unknown Task: {task_id}")
+            if task["status"] != "PROPOSED":
+                raise ConflictError(f"Task {task_id} is not awaiting approval.")
+            self.events.append(
+                event_type="TASK_APPROVED",
+                aggregate_type="task",
+                aggregate_id=task_id,
+                actor_type="user" if actor_id == "user" else "agent",
+                actor_id=actor_id,
+                payload={},
+                correlation_id=task_id,
+                conn=conn,
+            )
 
     def route_task(self, task_id: str, *, actor_id: str = "orchestrator") -> RouteDecision:
         task = TaskContract.model_validate(self.require_task(task_id)["contract"])
@@ -131,41 +169,109 @@ class ControlPlane:
         actor_id: str = "orchestrator",
         user_approved: bool = False,
     ) -> None:
-        task_row = self.require_task(task_id)
-        if task_row["status"] == "PROPOSED":
-            raise PolicyDeniedError("User-visible task structure must be approved before assignment.")
-        task = TaskContract.model_validate(task_row["contract"])
+        del user_approved  # Client booleans are not an approval authority.
         agent = self.require_agent(agent_id)
-        decision = self.policy.authorize_task(agent, task, user_approved=user_approved)
-        if not decision.allowed:
-            raise PolicyDeniedError(decision.reason)
-        self.events.append(
-            event_type="TASK_ASSIGNED",
-            aggregate_type="task",
-            aggregate_id=task_id,
-            actor_type="agent",
-            actor_id=actor_id,
-            payload={"agent_id": agent_id, "user_approved": user_approved},
-            correlation_id=task_id,
-        )
+        with self.events.transaction() as conn:
+            task_row = conn.execute("SELECT * FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+            if task_row is None:
+                raise NotFoundError(f"Unknown Task: {task_id}")
+            if task_row["status"] == "PROPOSED":
+                raise PolicyDeniedError("Task must be approved before assignment.")
+            if task_row["status"] == "READY" and task_row["assignee"] == agent_id:
+                return
+            if task_row["status"] != "TODO":
+                raise ConflictError(
+                    f"Task {task_id} cannot be assigned from status {task_row['status']}."
+                )
+            task = TaskContract.model_validate_json(task_row["contract_json"])
+            approved_by_state = task.risk_level is not RiskLevel.COMMITTING or task_row[
+                "status"
+            ] != "PROPOSED"
+            decision = self.policy.authorize_task(
+                agent,
+                task,
+                user_approved=approved_by_state,
+            )
+            if not decision.allowed:
+                raise PolicyDeniedError(decision.reason)
+            self.events.append(
+                event_type="TASK_ASSIGNED",
+                aggregate_type="task",
+                aggregate_id=task_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={
+                    "agent_id": agent_id,
+                    "approval_recorded": task.risk_level is RiskLevel.COMMITTING,
+                },
+                correlation_id=task_id,
+                conn=conn,
+            )
 
-    def register_run(self, registration: RunRegistration, *, actor_id: str) -> RunRegistration:
-        task_row = self.require_task(registration.task_id)
-        if self.get_run(registration.run_id) is not None:
-            raise ConflictError(f"Run already exists: {registration.run_id}")
-        if task_row["assignee"] not in {None, registration.agent_id}:
-            raise ConflictError("Run Agent does not match the task assignee.")
+    def register_run(
+        self,
+        registration: RunRegistration,
+        *,
+        actor_id: str,
+        takeover: bool = False,
+    ) -> RunRegistration:
         self.require_agent(registration.agent_id)
-        self.events.append(
-            event_type="RUN_REGISTERED",
-            aggregate_type="run",
-            aggregate_id=registration.run_id,
-            actor_type="agent",
-            actor_id=actor_id,
-            payload={"registration": registration.model_dump(mode="json")},
-            correlation_id=registration.task_id,
-        )
-        return registration
+        with self.events.transaction() as conn:
+            task_row = conn.execute(
+                "SELECT * FROM tasks WHERE task_id=?", (registration.task_id,)
+            ).fetchone()
+            if task_row is None:
+                raise NotFoundError(f"Unknown Task: {registration.task_id}")
+            if conn.execute(
+                "SELECT 1 FROM runs WHERE run_id=?", (registration.run_id,)
+            ).fetchone():
+                raise ConflictError(f"Run already exists: {registration.run_id}")
+            control_takeover = takeover and actor_id == "orchestrator"
+            if task_row["assignee"] != registration.agent_id and not control_takeover:
+                raise ConflictError("Run Agent does not match the task assignee.")
+            if task_row["status"] in {"COMPLETED", "CANCELLED"}:
+                raise ConflictError("A completed or cancelled Task cannot start another Run.")
+
+            current_run_id = task_row["current_run_id"]
+            if current_run_id:
+                current = conn.execute(
+                    "SELECT status FROM runs WHERE run_id=?", (current_run_id,)
+                ).fetchone()
+                if current and current["status"] not in {
+                    "COMPLETED",
+                    "FAILED",
+                    "CANCELLED",
+                    "SUPERSEDED",
+                }:
+                    if not takeover or actor_id != "orchestrator":
+                        raise ConflictError(
+                            "Task already has an active Run; an Orchestrator takeover is required."
+                        )
+                    self.events.append(
+                        event_type="RUN_SUPERSEDED",
+                        aggregate_type="run",
+                        aggregate_id=current_run_id,
+                        actor_type="agent",
+                        actor_id=actor_id,
+                        payload={"replacement_run_id": registration.run_id},
+                        correlation_id=registration.task_id,
+                        conn=conn,
+                    )
+
+            registered = registration.model_copy(
+                update={"execution_epoch": int(task_row["execution_epoch"]) + 1}
+            )
+            self.events.append(
+                event_type="RUN_REGISTERED",
+                aggregate_type="run",
+                aggregate_id=registered.run_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={"registration": registered.model_dump(mode="json")},
+                correlation_id=registered.task_id,
+                conn=conn,
+            )
+            return registered
 
     def register_direct_run(
         self,
@@ -178,7 +284,7 @@ class ControlPlane:
         decision = self.policy.authorize_direct_run(agent, contract)
         if not decision.allowed:
             raise PolicyDeniedError(decision.reason)
-        self.create_task(contract, actor_id=agent_id)
+        contract = self.create_task(contract, actor_id=agent_id)
         self.assign_task(contract.task_id, agent_id, actor_id=agent_id)
         registration = RunRegistration(
             task_id=contract.task_id,
@@ -190,40 +296,54 @@ class ControlPlane:
         return self.register_run(registration, actor_id=agent_id)
 
     def report_progress(self, progress: RunProgress, *, actor_id: str) -> None:
-        run = self.require_run(progress.run_id)
-        if run["task_id"] != progress.task_id or run["agent_id"] != progress.agent_id:
-            raise PolicyDeniedError("Progress identity does not match the registered Run.")
-        if actor_id != progress.agent_id and actor_id != "orchestrator":
-            raise PolicyDeniedError("An Agent may only update its own Run.")
-        if run["status"] in {"COMPLETED", "FAILED", "CANCELLED"}:
-            raise ConflictError("A terminal Run cannot report new progress.")
+        if progress.status not in {RunStatus.PENDING, RunStatus.RUNNING, RunStatus.PAUSED}:
+            raise ContractValidationError(
+                "Heartbeat progress cannot write blocked, review, cancellation, or terminal status."
+            )
         event_type = "RUN_HEARTBEAT" if progress.current_step is None else "RUN_PROGRESSED"
-        self.events.append(
-            event_type=event_type,
-            aggregate_type="run",
-            aggregate_id=progress.run_id,
-            actor_type="agent",
-            actor_id=actor_id,
-            payload={"progress": progress.model_dump(mode="json")},
-            correlation_id=progress.task_id,
-        )
+        with self.events.transaction() as conn:
+            self._assert_current_run(
+                conn,
+                progress.run_id,
+                progress.task_id,
+                progress.agent_id,
+                actor_id,
+            )
+            self.events.append(
+                event_type=event_type,
+                aggregate_type="run",
+                aggregate_id=progress.run_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={"progress": progress.model_dump(mode="json")},
+                correlation_id=progress.task_id,
+                conn=conn,
+            )
 
     def block_run(self, progress: RunProgress, *, actor_id: str) -> None:
         if not progress.blocker:
             raise ContractValidationError("A blocked Run must state its blocker.")
-        self._assert_run_identity(progress.run_id, progress.task_id, progress.agent_id, actor_id)
         blocked = progress.model_copy(update={"status": RunStatus.BLOCKED})
-        self._append_run_state("RUN_BLOCKED", blocked, actor_id=actor_id)
+        with self.events.transaction() as conn:
+            self._assert_current_run(
+                conn,
+                progress.run_id,
+                progress.task_id,
+                progress.agent_id,
+                actor_id,
+            )
+            self.events.append(
+                event_type="RUN_BLOCKED",
+                aggregate_type="run",
+                aggregate_id=progress.run_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={"progress": blocked.model_dump(mode="json")},
+                correlation_id=progress.task_id,
+                conn=conn,
+            )
 
     def submit_result(self, result: ResultContract, *, actor_id: str) -> str:
-        run = self.require_run(result.run_id)
-        if run["task_id"] != result.task_id or run["agent_id"] != result.agent_id:
-            raise PolicyDeniedError("Result identity does not match the registered Run.")
-        if actor_id != result.agent_id and actor_id != "orchestrator":
-            raise PolicyDeniedError("An Agent may only submit its own Result.")
-        if run["status"] in {"COMPLETED", "FAILED", "CANCELLED"}:
-            raise ConflictError("A terminal Run cannot submit another Result.")
-
         task = TaskContract.model_validate(self.require_task(result.task_id)["contract"])
         declared_checks = {check.name: check for check in result.checks}
         missing = [name for name in task.acceptance_checks if name not in declared_checks]
@@ -234,91 +354,230 @@ class ControlPlane:
                 f"Completed result is missing or failing acceptance checks: missing={missing}, failed={failed}"
             )
 
-        if result.outcome is ResultOutcome.COMPLETED:
-            event_type = "RUN_COMPLETED"
-        elif result.outcome in {ResultOutcome.NEEDS_REVIEW, ResultOutcome.PARTIAL}:
-            event_type = "RUN_REVIEW_REQUIRED"
+        if result.outcome in {
+            ResultOutcome.COMPLETED,
+            ResultOutcome.NEEDS_REVIEW,
+            ResultOutcome.PARTIAL,
+        }:
+            event_type = "RUN_RESULT_SUBMITTED"
         elif result.outcome is ResultOutcome.CANCELLED:
             event_type = "RUN_CANCELLED"
         else:
             event_type = "RUN_FAILED"
-        self.events.append(
-            event_type=event_type,
-            aggregate_type="run",
-            aggregate_id=result.run_id,
-            actor_type="agent",
-            actor_id=actor_id,
-            payload={"result": result.model_dump(mode="json")},
-            correlation_id=result.task_id,
-        )
+        result_payload = result.model_dump(mode="json")
+        result_digest = _canonical_digest(result_payload)
+        with self.events.transaction() as conn:
+            self._assert_current_run(
+                conn,
+                result.run_id,
+                result.task_id,
+                result.agent_id,
+                actor_id,
+            )
+            self.events.append(
+                event_type=event_type,
+                aggregate_type="run",
+                aggregate_id=result.run_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={"result": result_payload, "result_digest": result_digest},
+                correlation_id=result.task_id,
+                conn=conn,
+            )
         return event_type
 
-    def request_cancel(self, run_id: str, *, actor_id: str = "orchestrator") -> None:
+    def verification_context(self, run_id: str) -> dict[str, Any]:
         run = self.require_run(run_id)
-        if run["status"] in {"COMPLETED", "FAILED", "CANCELLED"}:
-            raise ConflictError("A terminal Run cannot be cancelled.")
-        self.events.append(
-            event_type="RUN_CANCEL_REQUESTED",
-            aggregate_type="run",
-            aggregate_id=run_id,
-            actor_type="agent",
-            actor_id=actor_id,
-            payload={},
-            correlation_id=run["task_id"],
-        )
+        if run["result"] is None or run["result_digest"] is None:
+            raise ConflictError("Run has no submitted result to verify.")
+        task = TaskContract.model_validate(self.require_task(run["task_id"])["contract"])
+        with self.events.connect() as conn:
+            verification_rows = conn.execute(
+                """
+                SELECT record_json FROM verifications
+                WHERE run_id=? ORDER BY updated_sequence
+                """,
+                (run_id,),
+            ).fetchall()
+        return {
+            "run_id": run_id,
+            "task_id": run["task_id"],
+            "acceptance_checks": task.acceptance_checks,
+            "acceptance_digest": _canonical_digest(task.acceptance_checks),
+            "result_digest": run["result_digest"],
+            "result_version": run["result_version"],
+            "artifact_refs": list(run["result"].get("artifact_refs", [])),
+            "verifications": [json.loads(row["record_json"]) for row in verification_rows],
+        }
 
-    def propose_operation(self, operation: GraphOperation) -> None:
-        self._assert_expected_revision(operation)
-        self.events.append(
-            event_type="GRAPH_OPERATION_PROPOSED",
-            aggregate_type="operation",
-            aggregate_id=operation.operation_id,
-            actor_type="agent",
-            actor_id=operation.requested_by,
-            payload={"operation": operation.model_dump(mode="json")},
-            correlation_id=operation.target_id,
-        )
-        if not operation.requires_user_approval:
-            approved = self.events.append(
-                event_type="GRAPH_OPERATION_AUTO_APPROVED",
-                aggregate_type="operation",
-                aggregate_id=operation.operation_id,
-                actor_type="system",
-                actor_id="graph-policy",
-                payload={"reason": "Operation does not change user-visible structure."},
-                correlation_id=operation.target_id,
+    def verify_result(
+        self,
+        decision: VerificationDecision,
+        *,
+        actor_id: str,
+    ) -> VerificationRecord:
+        with self.events.transaction() as conn:
+            run = conn.execute(
+                "SELECT * FROM runs WHERE run_id=?", (decision.run_id,)
+            ).fetchone()
+            if run is None:
+                raise NotFoundError(f"Unknown Run: {decision.run_id}")
+            if run["task_id"] != decision.task_id:
+                raise ContractValidationError("Verification Task does not match the Run.")
+            if actor_id == run["agent_id"]:
+                raise PolicyDeniedError("A Worker cannot independently verify its own result.")
+            self._assert_current_run(
+                conn,
+                decision.run_id,
+                decision.task_id,
+                run["agent_id"],
+                actor_id,
+                allow_control=True,
             )
-            self._apply_operation(operation, approved_event_id=approved.event_id)
+            if run["status"] != "REVIEW" or not run["result_json"]:
+                raise ConflictError("Run is not awaiting independent result verification.")
+
+            task_row = conn.execute(
+                "SELECT contract_json FROM tasks WHERE task_id=?", (decision.task_id,)
+            ).fetchone()
+            task = TaskContract.model_validate_json(task_row["contract_json"])
+            acceptance_digest = _canonical_digest(task.acceptance_checks)
+            if decision.acceptance_digest != acceptance_digest:
+                raise ConflictError("Acceptance conditions changed before verification.")
+            if decision.result_digest != run["result_digest"]:
+                raise ConflictError("Result changed before verification.")
+
+            checked = {check.name: check for check in decision.checks}
+            missing = [name for name in task.acceptance_checks if name not in checked]
+            failed = [
+                name
+                for name in task.acceptance_checks
+                if name in checked and not checked[name].passed
+            ]
+            if decision.approved and (missing or failed):
+                raise ContractValidationError(
+                    "Approved verification is missing or failing acceptance checks: "
+                    f"missing={missing}, failed={failed}"
+                )
+
+            result_payload = json.loads(run["result_json"])
+            record = VerificationRecord(
+                run_id=decision.run_id,
+                task_id=decision.task_id,
+                acceptance_digest=acceptance_digest,
+                result_digest=run["result_digest"],
+                approved=decision.approved,
+                checks=decision.checks,
+                artifact_refs=list(result_payload.get("artifact_refs", [])),
+                verifier_id=actor_id,
+                note=decision.note,
+            )
+            event_type = (
+                "RUN_VERIFIED_COMPLETED" if decision.approved else "RUN_VERIFICATION_REJECTED"
+            )
+            self.events.append(
+                event_type=event_type,
+                aggregate_type="run",
+                aggregate_id=decision.run_id,
+                actor_type="user" if actor_id == "user" else "agent",
+                actor_id=actor_id,
+                payload={"verification": record.model_dump(mode="json")},
+                correlation_id=decision.task_id,
+                conn=conn,
+            )
+            return record
+
+    def request_cancel(self, run_id: str, *, actor_id: str = "orchestrator") -> None:
+        with self.events.transaction() as conn:
+            run = conn.execute("SELECT * FROM runs WHERE run_id=?", (run_id,)).fetchone()
+            if run is None:
+                raise NotFoundError(f"Unknown Run: {run_id}")
+            self._assert_current_run(
+                conn,
+                run_id,
+                run["task_id"],
+                run["agent_id"],
+                actor_id,
+                allow_control=True,
+            )
+            self.events.append(
+                event_type="RUN_CANCEL_REQUESTED",
+                aggregate_type="run",
+                aggregate_id=run_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={},
+                correlation_id=run["task_id"],
+                conn=conn,
+            )
+
+    def propose_operation(self, operation: GraphOperation, *, actor_id: str | None = None) -> None:
+        actor_id = actor_id or operation.requested_by
+        if operation.kind in {
+            OperationKind.UPSERT_NODE,
+            OperationKind.UPSERT_EDGE,
+            OperationKind.LINK_DEPENDENCY,
+        } and operation.expected_revision is None:
+            raise ContractValidationError("Graph writes require an expected_revision.")
+        proposed = operation.model_copy(update={"requires_user_approval": True})
+        with self.events.transaction() as conn:
+            if conn.execute(
+                "SELECT 1 FROM operations WHERE operation_id=?", (proposed.operation_id,)
+            ).fetchone():
+                raise ConflictError(f"Operation already exists: {proposed.operation_id}")
+            self._assert_expected_revision(proposed, conn=conn)
+            self.events.append(
+                event_type="GRAPH_OPERATION_PROPOSED",
+                aggregate_type="operation",
+                aggregate_id=proposed.operation_id,
+                actor_type="agent",
+                actor_id=actor_id,
+                payload={"operation": proposed.model_dump(mode="json")},
+                correlation_id=proposed.target_id,
+                conn=conn,
+            )
 
     def approve_operation(self, operation_id: str, *, actor_id: str = "user") -> None:
-        operation_row = self.require_operation(operation_id)
-        if operation_row["status"] != "PENDING_APPROVAL":
-            raise ConflictError(f"Operation {operation_id} is not awaiting approval.")
-        operation = GraphOperation.model_validate(operation_row["operation"])
-        self._assert_expected_revision(operation)
-        approved = self.events.append(
-            event_type="GRAPH_OPERATION_APPROVED",
-            aggregate_type="operation",
-            aggregate_id=operation_id,
-            actor_type="user",
-            actor_id=actor_id,
-            payload={},
-            correlation_id=operation.target_id,
-        )
-        self._apply_operation(operation, approved_event_id=approved.event_id)
+        with self.events.transaction() as conn:
+            operation_row = conn.execute(
+                "SELECT * FROM operations WHERE operation_id=?", (operation_id,)
+            ).fetchone()
+            if operation_row is None:
+                raise NotFoundError(f"Unknown operation: {operation_id}")
+            if operation_row["status"] != "PENDING_APPROVAL":
+                raise ConflictError(f"Operation {operation_id} is not awaiting approval.")
+            operation = GraphOperation.model_validate_json(operation_row["operation_json"])
+            self._assert_expected_revision(operation, conn=conn)
+            approved = self.events.append(
+                event_type="GRAPH_OPERATION_APPROVED",
+                aggregate_type="operation",
+                aggregate_id=operation_id,
+                actor_type="user" if actor_id == "user" else "agent",
+                actor_id=actor_id,
+                payload={},
+                correlation_id=operation.target_id,
+                conn=conn,
+            )
+            self._apply_operation(operation, approved_event_id=approved.event_id, conn=conn)
 
     def reject_operation(self, operation_id: str, *, reason: str, actor_id: str = "user") -> None:
-        operation = self.require_operation(operation_id)
-        if operation["status"] != "PENDING_APPROVAL":
-            raise ConflictError(f"Operation {operation_id} is not awaiting approval.")
-        self.events.append(
-            event_type="GRAPH_OPERATION_REJECTED",
-            aggregate_type="operation",
-            aggregate_id=operation_id,
-            actor_type="user",
-            actor_id=actor_id,
-            payload={"reason": reason},
-        )
+        with self.events.transaction() as conn:
+            operation = conn.execute(
+                "SELECT status FROM operations WHERE operation_id=?", (operation_id,)
+            ).fetchone()
+            if operation is None:
+                raise NotFoundError(f"Unknown operation: {operation_id}")
+            if operation["status"] != "PENDING_APPROVAL":
+                raise ConflictError(f"Operation {operation_id} is not awaiting approval.")
+            self.events.append(
+                event_type="GRAPH_OPERATION_REJECTED",
+                aggregate_type="operation",
+                aggregate_id=operation_id,
+                actor_type="user" if actor_id == "user" else "agent",
+                actor_id=actor_id,
+                payload={"reason": reason},
+                conn=conn,
+            )
 
     def register_artifact(
         self,
@@ -479,7 +738,15 @@ class ControlPlane:
         with self.events.connect() as conn:
             counts = {
                 table: conn.execute(f"SELECT COUNT(*) AS n FROM {table}").fetchone()["n"]
-                for table in ("events", "agents", "tasks", "runs", "operations", "artifacts")
+                for table in (
+                    "events",
+                    "agents",
+                    "tasks",
+                    "runs",
+                    "operations",
+                    "artifacts",
+                    "verifications",
+                )
             }
         return {
             "status": "ok" if valid else "degraded",
@@ -489,13 +756,20 @@ class ControlPlane:
             "counts": counts,
         }
 
-    def _apply_operation(self, operation: GraphOperation, approved_event_id: str | None) -> None:
+    def _apply_operation(
+        self,
+        operation: GraphOperation,
+        approved_event_id: str | None,
+        *,
+        conn: sqlite3.Connection,
+    ) -> None:
         if operation.kind is OperationKind.UPSERT_NODE:
             event_type = "GRAPH_NODE_UPSERTED"
             payload = {
                 "node_id": operation.target_id,
                 "node_type": operation.target_type,
                 "data": operation.changes,
+                "expected_revision": operation.expected_revision,
             }
         elif operation.kind in {OperationKind.UPSERT_EDGE, OperationKind.LINK_DEPENDENCY}:
             required = {"source_id", "target_id", "edge_type"}
@@ -508,6 +782,7 @@ class ControlPlane:
                 "target_id": operation.changes["target_id"],
                 "edge_type": operation.changes["edge_type"],
                 "data": operation.changes.get("data", {}),
+                "expected_revision": operation.expected_revision,
             }
         else:
             event_type = "GRAPH_CHANGE_RECORDED"
@@ -521,9 +796,15 @@ class ControlPlane:
             payload=payload,
             correlation_id=operation.target_id,
             causation_id=approved_event_id,
+            conn=conn,
         )
 
-    def _assert_expected_revision(self, operation: GraphOperation) -> None:
+    def _assert_expected_revision(
+        self,
+        operation: GraphOperation,
+        *,
+        conn: sqlite3.Connection,
+    ) -> None:
         if operation.expected_revision is None:
             return
         if operation.kind is OperationKind.UPSERT_NODE:
@@ -534,10 +815,9 @@ class ControlPlane:
             id_column = "edge_id"
         else:
             return
-        with self.events.connect() as conn:
-            row = conn.execute(
-                f"SELECT revision FROM {table} WHERE {id_column}=?", (operation.target_id,)
-            ).fetchone()
+        row = conn.execute(
+            f"SELECT revision FROM {table} WHERE {id_column}=?", (operation.target_id,)
+        ).fetchone()
         actual = int(row["revision"]) if row else 0
         if operation.expected_revision != actual:
             raise ConflictError(
@@ -545,31 +825,34 @@ class ControlPlane:
                 f"expected {operation.expected_revision}, current {actual}."
             )
 
-    def _append_run_state(self, event_type: str, progress: RunProgress, *, actor_id: str) -> None:
-        self.require_run(progress.run_id)
-        self.events.append(
-            event_type=event_type,
-            aggregate_type="run",
-            aggregate_id=progress.run_id,
-            actor_type="agent",
-            actor_id=actor_id,
-            payload={"progress": progress.model_dump(mode="json")},
-            correlation_id=progress.task_id,
-        )
-
-    def _assert_run_identity(
+    def _assert_current_run(
         self,
+        conn: sqlite3.Connection,
         run_id: str,
         task_id: str,
         agent_id: str,
         actor_id: str,
+        *,
+        allow_control: bool = False,
     ) -> None:
-        run = self.require_run(run_id)
+        run = conn.execute("SELECT * FROM runs WHERE run_id=?", (run_id,)).fetchone()
+        if run is None:
+            raise NotFoundError(f"Unknown Run: {run_id}")
         if run["task_id"] != task_id or run["agent_id"] != agent_id:
             raise PolicyDeniedError("Run update identity does not match the registered Run.")
-        if actor_id not in {agent_id, "orchestrator"}:
+        allowed_actors = {agent_id, "orchestrator"}
+        if allow_control:
+            allowed_actors.add(actor_id)
+        if actor_id not in allowed_actors:
             raise PolicyDeniedError("An Agent may only update its own Run.")
-        if run["status"] in {"COMPLETED", "FAILED", "CANCELLED"}:
+        task = conn.execute("SELECT * FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+        if task is None:
+            raise NotFoundError(f"Unknown Task: {task_id}")
+        if task["current_run_id"] != run_id or int(task["execution_epoch"]) != int(
+            run["execution_epoch"]
+        ):
+            raise ConflictError("A superseded Run cannot change authoritative Task state.")
+        if run["status"] in {"COMPLETED", "FAILED", "CANCELLED", "SUPERSEDED"}:
             raise ConflictError("A terminal Run cannot be updated.")
 
     def _workload(self) -> dict[str, int]:
@@ -582,15 +865,6 @@ class ControlPlane:
                 """
             ).fetchall()
         return {row["agent_id"]: row["n"] for row in rows}
-
-    def _task_by_idempotency_key(self, key: str) -> TaskContract | None:
-        with self.events.connect() as conn:
-            rows = conn.execute("SELECT contract_json FROM tasks").fetchall()
-        for row in rows:
-            contract = TaskContract.model_validate_json(row["contract_json"])
-            if contract.idempotency_key == key:
-                return contract
-        return None
 
     def _external_snapshot(self, source: str, external_id: str) -> dict[str, Any] | None:
         with self.events.connect() as conn:

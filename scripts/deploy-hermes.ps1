@@ -11,6 +11,7 @@ param(
     [string]$KagRuntimeRoot = (Join-Path $ProjectRoot ".uuma-local\kag"),
     [bool]$KagAutoRecover = $true,
     [int]$KagIdleSeconds = 1800,
+    [bool]$QuestionOrbitEnabled = $false,
     [bool]$EnablePhoenixTelemetry = $true,
     [string]$PhoenixEndpoint = "http://127.0.0.1:6006/v1/traces",
     [string]$PhoenixProject = "hermes",
@@ -210,7 +211,8 @@ function Install-WisdomSkills {
         "wisdom-evidence-research",
         "wisdom-knowledge-formation",
         "wisdom-answer",
-        "wisdom-maintain-kag"
+        "wisdom-maintain-kag",
+        "wisdom-question-orbit"
     )) {
         $source = Join-Path $wisdomSkillsSource $skillName
         $target = Join-Path (Join-Path $ProfileHome "skills") $skillName
@@ -264,7 +266,8 @@ function Set-HermesProfileConfig {
         "--eschematic-python", $ESchematicPython,
         "--kag-bridge-url", $KagBridgeUrl,
         "--kag-auto-recover", $KagAutoRecover.ToString().ToLowerInvariant(),
-        "--kag-idle-seconds", $KagIdleSeconds
+        "--kag-idle-seconds", $KagIdleSeconds,
+        "--question-orbit-enabled", $QuestionOrbitEnabled.ToString().ToLowerInvariant()
     )
     $kagComposeFile = Join-Path $KagRuntimeRoot "docker-compose-west.yml"
     $kagPython = Join-Path $KagRuntimeRoot ".venv\Scripts\python.exe"

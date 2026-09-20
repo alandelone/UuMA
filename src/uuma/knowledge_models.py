@@ -97,6 +97,23 @@ class BudgetTier(str, Enum):
     DEEP = "DEEP"
 
 
+class OrbitStatus(str, Enum):
+    QUEUED = "QUEUED"
+    ACTIVE = "ACTIVE"
+    PAUSED = "PAUSED"
+    COMPLETED = "COMPLETED"
+    STOPPED = "STOPPED"
+    BUDGET_EXHAUSTED = "BUDGET_EXHAUSTED"
+    BLOCKED = "BLOCKED"
+    FAILED = "FAILED"
+
+
+class FrontierPriority(str, Enum):
+    HIGH = "HIGH"
+    MEDIUM = "MEDIUM"
+    LOW = "LOW"
+
+
 class FreshnessStatus(str, Enum):
     CURRENT = "CURRENT"
     DUE = "DUE"
@@ -277,6 +294,7 @@ class QuestionRecord(StrictModel):
     text: str = Field(min_length=1, max_length=8000)
     why_worth_knowing: str = Field(min_length=1, max_length=8000)
     parent_question_id: str | None = None
+    orbit_id: str | None = None
     status: WorkStatus = WorkStatus.OPEN
     created_at: datetime = Field(default_factory=utc_now)
 
@@ -287,6 +305,7 @@ class GapRecord(StrictModel):
     reason: str = Field(min_length=1, max_length=8000)
     why_worthwhile: str = Field(min_length=1, max_length=8000)
     question_id: str | None = None
+    orbit_id: str | None = None
     related_claim_ids: list[str] = Field(default_factory=list)
     current_knowledge: str | None = Field(default=None, max_length=16000)
     status: WorkStatus = WorkStatus.OPEN
@@ -337,6 +356,45 @@ class ResearchRun(StrictModel):
     sources_used: int = Field(default=0, ge=0)
     model_tokens_used: int = Field(default=0, ge=0)
     stop_reason: str | None = Field(default=None, max_length=8000)
+    orbit_id: str | None = None
+    current_question_id: str | None = None
+    cycle_count: int = Field(default=0, ge=0)
+    search_queries_used: int = Field(default=0, ge=0)
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
+class QuestionOrbitRecord(StrictModel):
+    orbit_id: str = Field(default_factory=lambda: new_id("orbit"))
+    normalized_root_key: str = Field(pattern=r"^[a-f0-9]{64}$")
+    root_question_id: str
+    research_run_id: str
+    objective: str = Field(min_length=1, max_length=16000)
+    uuma_task_id: str | None = None
+    uuma_run_id: str | None = None
+    budget_tier: BudgetTier = BudgetTier.QUICK
+    status: OrbitStatus = OrbitStatus.QUEUED
+    satisfaction_level: SatisfactionLevel = SatisfactionLevel.INSUFFICIENT
+    satisfaction_rationale: str = Field(min_length=1, max_length=8000)
+    stop_reason: str | None = Field(default=None, max_length=8000)
+    notification_route: dict[str, str] = Field(default_factory=dict)
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
+class FrontierItemRecord(StrictModel):
+    frontier_item_id: str = Field(default_factory=lambda: new_id("frontier"))
+    orbit_id: str
+    question_id: str
+    gap_id: str | None = None
+    priority: FrontierPriority = FrontierPriority.MEDIUM
+    relevance: FrontierPriority = FrontierPriority.MEDIUM
+    impact: FrontierPriority = FrontierPriority.MEDIUM
+    uncertainty: FrontierPriority = FrontierPriority.MEDIUM
+    novelty: FrontierPriority = FrontierPriority.MEDIUM
+    estimated_cost: FrontierPriority = FrontierPriority.MEDIUM
+    rationale: str = Field(min_length=1, max_length=8000)
+    status: WorkStatus = WorkStatus.OPEN
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
 

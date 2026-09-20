@@ -17,6 +17,7 @@ from .kag_adapter import (
 from .knowledge_construction import KnowledgeConstructor
 from .knowledge_ingest import KnowledgeIngestor
 from .knowledge_models import (
+    BudgetTier,
     ChunkKnowledgeLink,
     ClaimEvidenceLink,
     ClaimRecord,
@@ -26,15 +27,18 @@ from .knowledge_models import (
     FreshnessPolicyRecord,
     GapRecord,
     KnowledgePatch,
+    OrbitStatus,
     QuestionRecord,
     ReasoningMode,
     RelationRecord,
     ResearchRun,
+    SatisfactionLevel,
     SchemaModuleRecord,
     SourceRecord,
     SourceType,
 )
 from .knowledge_service import KnowledgeService
+from .question_orbit import QuestionOrbitService
 from .settings import Settings
 
 mcp = FastMCP("wisdom-knowledge")
@@ -79,6 +83,11 @@ def _ingestor() -> KnowledgeIngestor:
 @lru_cache(maxsize=1)
 def _constructor() -> KnowledgeConstructor:
     return KnowledgeConstructor(_service(), _backend())
+
+
+@lru_cache(maxsize=1)
+def _orbits() -> QuestionOrbitService:
+    return QuestionOrbitService(_service())
 
 
 def _model(model_type: type[ModelT], payload_json: str) -> ModelT:
@@ -248,6 +257,115 @@ def knowledge_answer(
         actor_id=actor_id,
         recover=recover_runtime,
     )
+
+
+@mcp.tool()
+def knowledge_question_preflight(
+    question: str,
+    mode: str = "SIMPLE",
+    recover_runtime: bool = True,
+    uuma_task_id: str = "",
+    uuma_run_id: str = "",
+    notification_route_json: str = "{}",
+) -> dict[str, Any]:
+    """Answer first, then atomically start/reuse a QUICK Orbit for worthwhile unresolved research."""
+    actor_id = _actor()
+    route = json.loads(notification_route_json)
+    if not isinstance(route, dict) or any(not isinstance(value, str) for value in route.values()):
+        raise ValueError("notification_route_json must contain a string-to-string object.")
+    answer = _reasoner().answer(
+        question,
+        requested_mode=ReasoningMode(mode.upper()),
+        actor_id=actor_id,
+        recover=recover_runtime,
+    )
+    enabled = os.environ.get("UUMA_QUESTION_ORBIT_ENABLED", "false").lower() in {
+        "1", "true", "yes", "on"
+    }
+    if not enabled:
+        return {"answer": answer, "orbit_started": False, "orbit_enabled": False}
+    result = _orbits().preflight(
+        question,
+        answer,
+        actor_id=actor_id,
+        uuma_task_id=uuma_task_id or None,
+        uuma_run_id=uuma_run_id or None,
+        notification_route=route,
+    )
+    result["orbit_enabled"] = True
+    return result
+
+
+@mcp.tool()
+def knowledge_orbit_start(
+    question: str,
+    objective: str,
+    satisfaction_level: str,
+    satisfaction_rationale: str,
+    gap_ids_json: str = "[]",
+    budget_tier: str = "QUICK",
+    uuma_task_id: str = "",
+    uuma_run_id: str = "",
+    notification_route_json: str = "{}",
+) -> dict[str, Any]:
+    """Start or reuse a governed Orbit; automatic callers must use QUICK budget."""
+    gap_ids = json.loads(gap_ids_json)
+    route = json.loads(notification_route_json)
+    if not isinstance(gap_ids, list) or any(not isinstance(value, str) for value in gap_ids):
+        raise ValueError("gap_ids_json must contain a list of IDs.")
+    if not isinstance(route, dict) or any(not isinstance(value, str) for value in route.values()):
+        raise ValueError("notification_route_json must contain a string-to-string object.")
+    return _orbits().start(
+        question,
+        objective,
+        SatisfactionLevel(satisfaction_level.upper()),
+        satisfaction_rationale,
+        actor_id=_actor(),
+        gap_ids=gap_ids,
+        budget_tier=BudgetTier(budget_tier.upper()),
+        uuma_task_id=uuma_task_id or None,
+        uuma_run_id=uuma_run_id or None,
+        notification_route=route,
+    )
+
+
+@mcp.tool()
+def knowledge_orbit_status(orbit_id: str) -> dict[str, Any]:
+    """Return an Orbit, its research budget/state, and its ordered question frontier."""
+    _actor()
+    return _orbits().get(orbit_id)
+
+
+@mcp.tool()
+def knowledge_orbit_list(status: str = "", limit: int = 100) -> dict[str, Any]:
+    """List durable Orbits, optionally filtered by lifecycle status."""
+    _actor()
+    return _orbits().list(status=status.upper() or None, limit=limit)
+
+
+@mcp.tool()
+def knowledge_orbit_frontier(orbit_id: str) -> dict[str, Any]:
+    """Return the deterministic, explainable frontier order for one Orbit."""
+    _actor()
+    return _orbits().frontier(orbit_id)
+
+
+@mcp.tool()
+def knowledge_orbit_pause(orbit_id: str, reason: str = "Paused by user.") -> dict[str, Any]:
+    """Pause an active or queued Orbit without deleting its state."""
+    return _orbits().transition(orbit_id, OrbitStatus.PAUSED, actor_id=_actor(), reason=reason)
+
+
+@mcp.tool()
+def knowledge_orbit_resume(orbit_id: str) -> dict[str, Any]:
+    """Return a paused or blocked Orbit to the durable runner queue."""
+    return _orbits().transition(orbit_id, OrbitStatus.QUEUED, actor_id=_actor())
+
+
+@mcp.tool()
+def knowledge_orbit_stop(orbit_id: str, reason: str) -> dict[str, Any]:
+    """Stop an Orbit explicitly while preserving all state and event history."""
+    return _orbits().transition(orbit_id, OrbitStatus.STOPPED, actor_id=_actor(), reason=reason)
 
 
 @mcp.tool()

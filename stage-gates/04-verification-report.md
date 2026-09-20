@@ -1,5 +1,48 @@
 # Verification Report
 
+## 2026-09-20 control-plane remediation implementation
+
+- Closed all six findings from `docs/reviews/2026-09-18-agent-engineering-review.md` without
+  changing the `uuma.db` / `wisdom.db` / Hermes `state.db` ownership boundaries.
+- SQLite `BEGIN IMMEDIATE` now encloses state preconditions, event append, and projection updates.
+  Graph compare-and-swap, scoped task idempotency, active-Run epochs, and terminal transitions no
+  longer rely on checks performed through separate connections or process-local locks.
+- Worker graph flags and assignment booleans are no longer approval authorities. Graph writes and
+  committing tasks require durable approval events, and heartbeats cannot write blocked, review,
+  cancellation, or terminal status.
+- Worker completion now produces a digest-bound REVIEW result. A different verifier must bind its
+  evidence to the frozen acceptance digest, current result digest, artifacts, and identity before
+  the current Run and Task can become COMPLETED. Revised results invalidate earlier evidence.
+- The additive migration backfills request identities and Run epochs, preserves event history,
+  rebuilds all projections including verification records, and fails closed on duplicate
+  idempotency keys or ambiguous active Runs instead of deleting or overwriting records.
+- Control API and MCP contracts now expose explicit Run registration/takeover, verification context,
+  and result verification. Existing Hermes guard, diagnostics, and configuration contract tests
+  passed; no deployment or live Hermes mutation was performed in this work.
+- Focused remediation and integration regression: 53 passed with 5 subtests and one existing
+  third-party Pydantic warning. Full UuMA regression: 149 passed with 5 subtests and the same
+  warning. Full `src`/`tests` Ruff and scoped diff checks passed.
+
+Status: six local remediation findings verified; live Hermes acceptance and user gate review remain
+pending, and `mission_status.json` remains at verification / pending_review
+
+## 2026-09-20 Question Orbit governed core
+
+- Added additive `wisdom.db` projections for durable Question Orbits and explainably ordered
+  frontier items. Question, gap, and research-run records gained backward-compatible Orbit fields.
+- Added semantic Knowledge MCP operations for answer-first preflight, start/reuse, status, list,
+  frontier, pause, resume, and stop. Active duplicate questions reuse one normalized Orbit.
+- Wisdom Direct Run preflight now binds the UuMA task/run and conversation route outside the model.
+  Wisdom cannot self-escalate beyond QUICK, and all lifecycle transitions remain hash-chain audited.
+- Added and allowlisted the `wisdom-question-orbit` skill and refined the Wisdom SOUL contract.
+- The production switch defaults off until the independent runner, discovery providers, usage
+  ledger, safe ingestion, and notification outbox are implemented; this prevents orphaned queues.
+- Focused Orbit/control/configuration tests: 30 passed. Full UuMA regression: 141 passed with one
+  existing third-party Pydantic warning. Changed-source Ruff, PowerShell syntax, and diff checks
+  passed.
+
+Status: governed core verified; unattended Orbit execution and production enablement remain pending
+
 ## 2026-09-16 UuMA control-pipeline activation
 
 - Added a fail-closed Hermes delegation guard requiring successful Control MCP task creation,

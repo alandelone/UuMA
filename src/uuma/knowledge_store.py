@@ -33,6 +33,8 @@ TABLE_IDS = {
     "schema_modules": "schema_module_id",
     "freshness_policies": "freshness_policy_id",
     "reasoning_traces": "reasoning_trace_id",
+    "question_orbits": "orbit_id",
+    "orbit_frontier": "frontier_item_id",
 }
 
 
@@ -270,6 +272,27 @@ class KnowledgeStore:
                     updated_sequence INTEGER NOT NULL
                 );
 
+                CREATE TABLE IF NOT EXISTS question_orbits (
+                    orbit_id TEXT PRIMARY KEY,
+                    normalized_root_key TEXT NOT NULL,
+                    status TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_question_orbits_root_status
+                    ON question_orbits(normalized_root_key, status, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS orbit_frontier (
+                    frontier_item_id TEXT PRIMARY KEY,
+                    orbit_id TEXT NOT NULL REFERENCES question_orbits(orbit_id),
+                    priority TEXT NOT NULL,
+                    status TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_orbit_frontier_order
+                    ON orbit_frontier(orbit_id, status, priority, updated_sequence);
+
                 CREATE TABLE IF NOT EXISTS projection_outbox (
                     projection_job_id TEXT PRIMARY KEY,
                     event_sequence INTEGER NOT NULL,
@@ -425,6 +448,17 @@ class KnowledgeStore:
                 "target_id": record["target_id"],
                 "status": record["status"],
             }
+        elif table == "question_orbits":
+            columns |= {
+                "normalized_root_key": record["normalized_root_key"],
+                "status": record["status"],
+            }
+        elif table == "orbit_frontier":
+            columns |= {
+                "orbit_id": record["orbit_id"],
+                "priority": record["priority"],
+                "status": record["status"],
+            }
         elif table in {"questions", "conflicts", "patches", "research_runs"}:
             columns["status"] = record["status"]
         elif table == "gaps":
@@ -454,7 +488,7 @@ class KnowledgeStore:
             assignments |= {"status": record["status"], "revision": record["revision"]}
         elif table in {
             "questions", "gaps", "conflicts", "patches", "research_runs",
-            "freshness_policies",
+            "freshness_policies", "question_orbits", "orbit_frontier",
         }:
             assignments["status"] = record["status"]
         clause = ", ".join(f"{name} = ?" for name in assignments)
@@ -490,7 +524,8 @@ class KnowledgeStore:
         limit = max(1, min(limit, 500))
         where = " WHERE status = ?" if status and table in {
             "claims", "questions", "gaps", "conflicts", "patches", "research_runs",
-            "entities", "relations", "schema_modules", "freshness_policies"
+            "entities", "relations", "schema_modules", "freshness_policies",
+            "question_orbits", "orbit_frontier"
         } else ""
         params: tuple[Any, ...] = (status, limit) if where else (limit,)
         with self.connect() as conn:

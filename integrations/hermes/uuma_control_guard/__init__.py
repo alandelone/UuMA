@@ -45,7 +45,7 @@ _CONTEXT: Any = None
 _DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot"}
 _DOMAIN_PREFLIGHT = {
     "brainstormer": ("uuma-worker", "brainstormer_search_topics"),
-    "wisdom-oldman": ("wisdom-knowledge", "knowledge_answer"),
+    "wisdom-oldman": ("wisdom-knowledge", "knowledge_question_preflight"),
     "scholar": ("rstv4-worker", "list_catalog_papers"),
     "forge-lab-bot": ("uuma-worker", "inventory_status"),
 }
@@ -304,7 +304,21 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
             server, tool = _DOMAIN_PREFLIGHT[profile]
             arguments = {
                 "brainstormer": {"query": message, "limit": 5},
-                "wisdom-oldman": {"question": message, "mode": "SIMPLE", "recover_runtime": True},
+                "wisdom-oldman": {
+                    "question": message,
+                    "mode": "SIMPLE",
+                    "recover_runtime": True,
+                    "uuma_task_id": state.direct_task_id or "",
+                    "uuma_run_id": state.direct_run_id or "",
+                    "notification_route_json": json.dumps(
+                        {
+                            key: str(kwargs[key])
+                            for key in ("platform", "chat_id", "thread_id", "session_id")
+                            if kwargs.get(key)
+                        },
+                        ensure_ascii=False,
+                    ),
+                },
                 "scholar": {"limit": 5},
                 "forge-lab-bot": {},
             }[profile]
@@ -444,11 +458,14 @@ def _post_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> Non
         elif (
             name.endswith(_DOMAIN_PREFLIGHT[_profile()][1])
             or (_profile() == "brainstormer" and name.endswith("brainstormer_get_context"))
+            or (_profile() == "wisdom-oldman" and name.endswith("knowledge_answer"))
         ):
             with _LOCK:
                 state = _state(key)
                 state.domain_checked = True
-                if _profile() == "wisdom-oldman" and name.endswith("knowledge_answer"):
+                if _profile() == "wisdom-oldman" and name.endswith(
+                    ("knowledge_answer", "knowledge_question_preflight")
+                ):
                     state.kag_degraded = _runtime_status(kwargs.get("result")) == "DEGRADED_KAG"
         elif "uuma_worker" in name and name.endswith("submit_result"):
             with _LOCK:

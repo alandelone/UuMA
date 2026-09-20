@@ -1,5 +1,17 @@
 # Question Orbit Engine 部署到 Wisdom Oldman 的计划
 
+## 实施状态（2026-09-20）
+
+第一阶段的受治理核心已实现：`wisdom.db` 持久化 Orbit 和可解释前沿；Knowledge MCP
+提供问题预检、启动／复用、状态、列表、前沿、暂停、恢复和停止；Wisdom 的 Direct Run
+预检在模型之外绑定 UuMA task/run 与原会话路由；新 Skill、SOUL 和部署白名单已同步到
+仓库配置。所有变化进入现有 hash-chain `knowledge_events`，Wisdom 仍只能生成候选知识，
+不能自行批准 Patch 或提高 Orbit 预算。
+
+`UUMA_QUESTION_ORBIT_ENABLED` 当前部署默认值为 `false`。在启用总开关前，仍需完成独立
+Runner、租约／心跳／Cycle 恢复、受控发现提供商、摄取安全、用量账本和通知 outbox。
+因此当前代码会返回 KAG 最佳现有答案，但不会在生产环境自动创建无法消费的后台队列。
+
 ## 概要
 
 把 Question Orbit Engine 实现为 Wisdom-Oldman 的持久化后台研究子系统。

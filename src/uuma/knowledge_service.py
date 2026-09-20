@@ -82,6 +82,8 @@ class KnowledgeService:
         "patches": "patch",
         "research_runs": "research_run",
         "reasoning_traces": "reasoning_trace",
+        "question_orbits": "question_orbit",
+        "orbit_frontier": "frontier_item",
     }
 
     def __init__(self, database_path: str | Path) -> None:
@@ -502,6 +504,9 @@ class KnowledgeService:
             "active_seconds",
             "sources_used",
             "model_tokens_used",
+            "current_question_id",
+            "cycle_count",
+            "search_queries_used",
             "stop_reason",
         }
         unexpected = set(changes) - allowed
@@ -797,6 +802,8 @@ class KnowledgeService:
             "conflict": "conflicts",
             "patch": "patches",
             "research_run": "research_runs",
+            "question_orbit": "question_orbits",
+            "frontier_item": "orbit_frontier",
         }
         table = kind_to_table.get(kind)
         if table is None:

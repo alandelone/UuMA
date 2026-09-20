@@ -149,7 +149,7 @@ def propose_graph_operation(operation_json: str) -> dict[str, str]:
     operation = GraphOperation.model_validate_json(operation_json)
     if operation.requested_by != _agent_id():
         raise PermissionError("Operation requester must match the Worker identity.")
-    _control_plane().propose_operation(operation)
+    _control_plane().propose_operation(operation, actor_id=_agent_id())
     return {"operation_id": operation.operation_id, "status": "PROPOSED"}
 
 

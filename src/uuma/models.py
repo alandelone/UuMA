@@ -65,6 +65,7 @@ class RunStatus(str, Enum):
     FAILED = "FAILED"
     CANCEL_REQUESTED = "CANCEL_REQUESTED"
     CANCELLED = "CANCELLED"
+    SUPERSEDED = "SUPERSEDED"
 
 
 class ResultOutcome(str, Enum):
@@ -147,6 +148,7 @@ class RunRegistration(StrictModel):
     execution_class: ExecutionClass
     source: Literal["orchestrator", "direct", "kanban", "scheduled"]
     external_run_ref: str | None = None
+    execution_epoch: int = Field(default=0, ge=0)
     started_at: datetime = Field(default_factory=utc_now)
 
 
@@ -176,6 +178,30 @@ class CheckResult(StrictModel):
     name: str
     passed: bool
     detail: str | None = None
+
+
+class VerificationDecision(StrictModel):
+    run_id: str
+    task_id: str
+    acceptance_digest: str = Field(pattern=r"^[a-f0-9]{64}$")
+    result_digest: str = Field(pattern=r"^[a-f0-9]{64}$")
+    approved: bool
+    checks: list[CheckResult] = Field(default_factory=list)
+    note: str | None = Field(default=None, max_length=8000)
+
+
+class VerificationRecord(StrictModel):
+    verification_id: str = Field(default_factory=lambda: new_id("verification"))
+    run_id: str
+    task_id: str
+    acceptance_digest: str = Field(pattern=r"^[a-f0-9]{64}$")
+    result_digest: str = Field(pattern=r"^[a-f0-9]{64}$")
+    approved: bool
+    checks: list[CheckResult] = Field(default_factory=list)
+    artifact_refs: list[str] = Field(default_factory=list)
+    verifier_id: str
+    note: str | None = Field(default=None, max_length=8000)
+    verified_at: datetime = Field(default_factory=utc_now)
 
 
 class ResultContract(StrictModel):
@@ -221,4 +247,3 @@ class EventEnvelope(StrictModel):
     metadata: dict[str, Any]
     previous_hash: str
     event_hash: str
-

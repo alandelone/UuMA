@@ -2,12 +2,12 @@
 
 ## Current position
 
-Resumed the unfinished session and reviewed the pending UuMA implementation changes: KAG lifecycle and control guard additions, Hermes route/config updates, documentation, rules, and focused regression tests. Existing Writing Studio V6 handoff retained. Preparing one commit for all current tracked and untracked project changes.
+Prepared the current working tree for publication. It includes the verified control-plane remediation work and Wisdom Question Orbit capability: transactional control state, durable approvals, graph CAS, run epochs, scoped idempotency, independent result verification, corresponding API/MCP/deployment/guard updates, Question Orbit skill and implementation, documentation, and regression coverage. Existing verification recorded in the handoff: 149 tests plus 5 subtests passed, with one third-party Pydantic warning; full src/tests Ruff and scoped diff checks passed. Mission gate remains verification pending review.
 
 ## Known dead ends
 
-None observed. Existing handoff reports focused and full relevant UI/KAG regressions passed; no new tests run in this continuation.
+None unresolved. Earlier Windows SQLite test helper handle leak was fixed and verified. No deployment or mission-gate transition performed.
 
 ## Next action
 
-Stage all current changes, create a Conventional Commit, push master to origin, and verify the remote commit hash.
+Commit and push the complete pending working tree to origin/master. Afterwards, review and deploy the revised Control/Worker MCP contracts before live Hermes acceptance.

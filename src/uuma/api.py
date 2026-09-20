@@ -9,7 +9,14 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field
 
 from .auth import TokenRegistry
-from .models import GraphOperation, ResultContract, RunProgress, TaskContract
+from .models import (
+    GraphOperation,
+    ResultContract,
+    RunProgress,
+    RunRegistration,
+    TaskContract,
+    VerificationDecision,
+)
 from .service import (
     ConflictError,
     ContractValidationError,
@@ -33,6 +40,11 @@ class DirectRunRequest(BaseModel):
 
 class RejectRequest(BaseModel):
     reason: str = Field(min_length=1, max_length=4000)
+
+
+class RegisterRunRequest(BaseModel):
+    registration: RunRegistration
+    takeover: bool = False
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -85,8 +97,8 @@ def create_app(settings: Settings | None = None) -> FastAPI:
         return control_plane.create_task(task, actor_id=identity).model_dump(mode="json")
 
     @app.post("/control/tasks/{task_id}/approve")
-    def approve_task(task_id: str, _identity: str = Depends(control_auth)) -> dict[str, str]:
-        control_plane.approve_task(task_id)
+    def approve_task(task_id: str, identity: str = Depends(control_auth)) -> dict[str, str]:
+        control_plane.approve_task(task_id, actor_id=identity)
         return {"task_id": task_id, "status": "TODO"}
 
     @app.post("/control/tasks/{task_id}/route")
@@ -119,6 +131,34 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     def get_run(run_id: str, _identity: str = Depends(control_auth)) -> dict[str, Any]:
         return control_plane.require_run(run_id)
 
+    @app.post("/control/runs")
+    def register_run(
+        body: RegisterRunRequest,
+        identity: str = Depends(control_auth),
+    ) -> dict[str, Any]:
+        return control_plane.register_run(
+            body.registration,
+            actor_id=identity,
+            takeover=body.takeover,
+        ).model_dump(mode="json")
+
+    @app.get("/control/runs/{run_id}/verification")
+    def verification_context(
+        run_id: str,
+        _identity: str = Depends(control_auth),
+    ) -> dict[str, Any]:
+        return control_plane.verification_context(run_id)
+
+    @app.post("/control/runs/{run_id}/verification")
+    def verify_result(
+        run_id: str,
+        decision: VerificationDecision,
+        identity: str = Depends(control_auth),
+    ) -> dict[str, Any]:
+        if run_id != decision.run_id:
+            raise HTTPException(status_code=400, detail="Run ID mismatch")
+        return control_plane.verify_result(decision, actor_id=identity).model_dump(mode="json")
+
     @app.post("/control/runs/{run_id}/cancel")
     def cancel_run(run_id: str, identity: str = Depends(control_auth)) -> dict[str, str]:
         control_plane.request_cancel(run_id, actor_id=identity)
@@ -127,26 +167,26 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     @app.post("/control/operations")
     def propose_operation(
         operation: GraphOperation,
-        _identity: str = Depends(control_auth),
+        identity: str = Depends(control_auth),
     ) -> dict[str, str]:
-        control_plane.propose_operation(operation)
+        control_plane.propose_operation(operation, actor_id=identity)
         return {"operation_id": operation.operation_id, "status": "PROPOSED"}
 
     @app.post("/control/operations/{operation_id}/approve")
     def approve_operation(
         operation_id: str,
-        _identity: str = Depends(control_auth),
+        identity: str = Depends(control_auth),
     ) -> dict[str, str]:
-        control_plane.approve_operation(operation_id)
+        control_plane.approve_operation(operation_id, actor_id=identity)
         return {"operation_id": operation_id, "status": "APPROVED"}
 
     @app.post("/control/operations/{operation_id}/reject")
     def reject_operation(
         operation_id: str,
         body: RejectRequest,
-        _identity: str = Depends(control_auth),
+        identity: str = Depends(control_auth),
     ) -> dict[str, str]:
-        control_plane.reject_operation(operation_id, reason=body.reason)
+        control_plane.reject_operation(operation_id, reason=body.reason, actor_id=identity)
         return {"operation_id": operation_id, "status": "REJECTED"}
 
     @app.post("/worker/runs/direct")

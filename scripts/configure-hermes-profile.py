@@ -36,6 +36,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--kag-secrets-file", default="")
     parser.add_argument("--kag-auto-recover", default="true")
     parser.add_argument("--kag-idle-seconds", type=int, default=1800)
+    parser.add_argument("--question-orbit-enabled", default="false")
     parser.add_argument("--kag-base-url", default="")
     parser.add_argument("--kag-model", default="")
     parser.add_argument("--kag-project-id", default="")
@@ -84,6 +85,7 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
                 "UUMA_KAG_BRIDGE_URL": args.kag_bridge_url,
                 "UUMA_KAG_AUTO_RECOVER": args.kag_auto_recover,
                 "UUMA_KAG_IDLE_SECONDS": str(args.kag_idle_seconds),
+                "UUMA_QUESTION_ORBIT_ENABLED": args.question_orbit_enabled,
             }
         )
         if args.kag_compose_file:
