@@ -41,6 +41,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--kag-model", default="")
     parser.add_argument("--kag-project-id", default="")
     parser.add_argument("--bge-m3-path", default="")
+    parser.add_argument("--yonc-root", default="")
+    parser.add_argument("--yonc-python", default="")
+    parser.add_argument("--yonc-api-url", default="http://127.0.0.1:8765")
     return parser.parse_args()
 
 
@@ -157,6 +160,26 @@ def gemini_server(args: argparse.Namespace) -> CommentedMap:
     )
 
 
+def yonc_server(args: argparse.Namespace) -> CommentedMap:
+    if not args.yonc_root or not args.yonc_python:
+        raise ValueError("Yonc profile requires --yonc-root and --yonc-python")
+    return CommentedMap(
+        {
+            "command": args.yonc_python,
+            "args": CommentedSeq(["-m", "graph_app.mcp_project"]),
+            "env": CommentedMap(
+                {
+                    "PYTHONPATH": args.yonc_root,
+                    "YONC_API_URL": args.yonc_api_url,
+                }
+            ),
+            "timeout": 60,
+            "connect_timeout": 20,
+            "idle_timeout_seconds": 0,
+        }
+    )
+
+
 def main() -> None:
     args = parse_args()
     yaml = YAML()
@@ -183,6 +206,7 @@ def main() -> None:
         map_at(config, "gateway")["multiplex_profiles"] = True
         mcp_servers.pop("uuma-worker", None)
         mcp_servers.pop("rstv4-worker", None)
+        mcp_servers.pop("yonc-project", None)
         mcp_servers["uuma-control"] = server(args, "uuma.mcp_control")
         mcp_servers["wisdom-knowledge"] = server(args, "uuma.mcp_knowledge")
         platform_toolsets = map_at(config, "platform_toolsets")
@@ -198,6 +222,11 @@ def main() -> None:
         mcp_servers.pop("xhs", None)
         mcp_servers.pop("uuma-control", None)
         mcp_servers["uuma-worker"] = server(args, "uuma.mcp_worker")
+        if args.agent_id == "yonc":
+            mcp_servers.pop("gemini-worker", None)
+            mcp_servers["yonc-project"] = yonc_server(args)
+        else:
+            mcp_servers.pop("yonc-project", None)
         if args.agent_id == "scholar":
             # Scholar experiments must pass through RSTV4's approved-plan
             # executor. A general coding worker would be an unenforced path.
@@ -229,7 +258,7 @@ def main() -> None:
             enabled.append("uuma_control_guard")
         guard = map_at(entries, "uuma_control_guard")
         guard["mcp_allowlist"] = CommentedSeq(["uuma-control"])
-    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot"}:
+    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc"}:
         if "uuma_control_guard" not in enabled:
             enabled.append("uuma_control_guard")
         guard = map_at(entries, "uuma_control_guard")
@@ -238,6 +267,8 @@ def main() -> None:
             if args.agent_id == "wisdom-oldman"
             else ["uuma-worker", "rstv4-worker"]
             if args.agent_id == "scholar"
+            else ["uuma-worker", "yonc-project"]
+            if args.agent_id == "yonc"
             else ["uuma-worker"]
         )
     else:

@@ -50,7 +50,7 @@ def _control_plane() -> ControlPlane:
 
 def _agent_id() -> str:
     agent_id = os.environ.get("UUMA_AGENT_ID", "").strip()
-    if agent_id not in {"brainstormer", "scholar", "wisdom-oldman", "forge-lab-bot"}:
+    if agent_id not in {"brainstormer", "scholar", "wisdom-oldman", "forge-lab-bot", "yonc"}:
         raise PermissionError("Worker MCP requires an authorized specialized profile identity.")
     return agent_id
 

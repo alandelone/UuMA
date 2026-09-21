@@ -9,6 +9,7 @@ from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 
 SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
+    "yonc": frozenset({"yonc-project-management"}),
     "brainstormer": frozenset(
         {
             "artifact-readiness",

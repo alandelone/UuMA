@@ -333,3 +333,21 @@ def test_forge_auto_registers_and_reads_inventory(monkeypatch) -> None:
     assert PLUGIN._pre_tool_call(
         tool_name="mcp__uuma_worker__procurement_confirm_order", session_id="forge-session"
     )["action"] == "block"
+
+
+def test_yonc_auto_registers_and_checks_project_identity(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "yonc")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-yonc", "task_id": "task-yonc"}},
+        {"ok": True, "result": {"database_identity": "db-1", "graph_version": 7}},
+    ]
+    PLUGIN._CONTEXT = context
+    reminder = PLUGIN._health_context(
+        session_id="yonc-session", turn_id="turn-1", user_message="Review my projects"
+    )
+    assert "run-yonc" in reminder["context"]
+    assert context.call_mcp.call_args_list[1].args[:3] == (
+        "yonc-project", "yonc_status", {}
+    )
+    assert PLUGIN._guard_specialist_output("review", session_id="yonc-session") is None

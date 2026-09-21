@@ -11,6 +11,7 @@ TOKEN_ROLES = {
     "scholar": "worker",
     "wisdom-oldman": "worker",
     "forge-lab-bot": "worker",
+    "yonc": "worker",
     "audit": "ingest",
 }
 
@@ -21,7 +22,13 @@ class TokenRegistry:
 
     def initialize(self, *, overwrite: bool = False) -> dict[str, str]:
         if self.path.exists() and not overwrite:
-            return self.load()
+            tokens = self.load()
+            missing = [identity for identity in TOKEN_ROLES if identity not in tokens]
+            if not missing:
+                return tokens
+            tokens.update({identity: secrets.token_urlsafe(32) for identity in missing})
+            self.path.write_text(json.dumps(tokens, indent=2), encoding="utf-8")
+            return tokens
         self.path.parent.mkdir(parents=True, exist_ok=True)
         tokens = {identity: secrets.token_urlsafe(32) for identity in TOKEN_ROLES}
         self.path.write_text(json.dumps(tokens, indent=2), encoding="utf-8")

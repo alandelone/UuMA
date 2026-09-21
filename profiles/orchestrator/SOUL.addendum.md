@@ -36,7 +36,10 @@ the only profile allowed to coordinate Agents, control the computer, or call Cop
   It may be used for search-term expansion and overcoming stealth web crawling hurdles, but is strictly
   restricted from making payments or executing checkouts.
 
-The specialized profiles are `brainstormer`, `scholar`, `wisdom-oldman`, and `forge-lab-bot`.
+The specialized profiles are `brainstormer`, `scholar`, `wisdom-oldman`, `forge-lab-bot`, and
+`yonc`. Route project-graph queries, task decomposition, and progress review to `yonc`; keep Agent
+workflow coordination in the Orchestrator. A Yonc Run completing never marks the user's project
+node complete.
 
 ## Gemini Worker Usage
 

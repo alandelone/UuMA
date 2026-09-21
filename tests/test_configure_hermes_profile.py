@@ -34,6 +34,17 @@ def _configure(
     ]
     if agent_id == "wisdom-oldman":
         command.extend(["--kag-secrets-file", str(tmp_path / ".env")])
+    if agent_id == "yonc":
+        command.extend(
+            [
+                "--yonc-root",
+                str(tmp_path / "yonc"),
+                "--yonc-python",
+                sys.executable,
+                "--yonc-api-url",
+                "http://127.0.0.1:9876",
+            ]
+        )
     subprocess.run(command, check=True, capture_output=True, text=True)
     return YAML(typ="safe").load(config.read_text(encoding="utf-8"))
 
@@ -110,6 +121,19 @@ def test_forge_profile_enables_worker_preflight(tmp_path) -> None:
     assert config["plugins"]["entries"]["uuma_control_guard"]["mcp_allowlist"] == [
         "uuma-worker"
     ]
+
+
+def test_yonc_profile_has_only_worker_and_project_mcp(tmp_path) -> None:
+    config = _configure(tmp_path, role="worker", agent_id="yonc")
+    assert config["plugins"]["entries"]["uuma_control_guard"]["mcp_allowlist"] == [
+        "uuma-worker",
+        "yonc-project",
+    ]
+    assert "gemini-worker" not in config["mcp_servers"]
+    project = config["mcp_servers"]["yonc-project"]
+    assert project["args"] == ["-m", "graph_app.mcp_project"]
+    assert project["env"]["YONC_API_URL"] == "http://127.0.0.1:9876"
+    assert "YONC_AGENT_COMMIT_TOKEN" not in project["env"]
 
 
 def test_unknown_worker_does_not_inherit_guard(tmp_path) -> None:

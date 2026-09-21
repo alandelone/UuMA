@@ -154,6 +154,18 @@ def default_agents() -> list[AgentDefinition]:
             tools={"worker_mcp", "workspace_read", "workspace_write", "web_research"},
         ),
         AgentDefinition(
+            agent_id="yonc",
+            display_name="Yonc",
+            description="Reads and proposes governed changes to the user's Yonc project graph.",
+            capabilities={
+                "project_management",
+                "project_graph",
+                "task_decomposition",
+                "progress_review",
+            },
+            tools={"worker_mcp", "yonc_project"},
+        ),
+        AgentDefinition(
             agent_id="forge-lab-bot",
             display_name="锻造Lab_Bot",
             description="Handles hardware-lab analysis, inventory, BOM, build traceability, and procurement advice.",

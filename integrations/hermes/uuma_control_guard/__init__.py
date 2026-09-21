@@ -42,12 +42,13 @@ class _SessionState:
 
 _SESSIONS: OrderedDict[str, _SessionState] = OrderedDict()
 _CONTEXT: Any = None
-_DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot"}
+_DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc"}
 _DOMAIN_PREFLIGHT = {
     "brainstormer": ("uuma-worker", "brainstormer_search_topics"),
     "wisdom-oldman": ("wisdom-knowledge", "knowledge_question_preflight"),
     "scholar": ("rstv4-worker", "list_catalog_papers"),
     "forge-lab-bot": ("uuma-worker", "inventory_status"),
+    "yonc": ("yonc-project", "yonc_status"),
 }
 _SPECIALIST_FORBIDDEN_TOOLS = {
     "delegate_task",
@@ -321,6 +322,7 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 },
                 "scholar": {"limit": 5},
                 "forge-lab-bot": {},
+                "yonc": {},
             }[profile]
             try:
                 timeout = 420 if profile == "wisdom-oldman" else 20
