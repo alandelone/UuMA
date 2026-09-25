@@ -25,6 +25,7 @@ Hermes default profile (Orchestrator)
       +-- 锻造Lab_Bot -- Worker MCP
       |
       +-- CopyCat MCP (external, optional)
+      +-- ChatGPT Bridge MCP -- loopback account manager -- visible ChatGPT Web sessions
       +-- computer control
 ```
 
@@ -98,6 +99,12 @@ Specialists receive Worker MCP and safe domain tools. Wisdom-Oldman and the Orch
 receive Knowledge MCP, but only the Orchestrator can decide canonical patches. Direct specialist chats may perform safe
 read-only or reversible in-domain work after Direct Run registration. Cross-Agent work, shared
 structure, CopyCat, and computer UI work return to the Orchestrator.
+
+The ChatGPT Bridge is a separate local service and tool boundary. Orchestrator, Brainstormer, and
+Wisdom-Oldman may use chat, search, and deep research; Forge-Lab-Bot may use lab-related search.
+Scholar and Yonc are excluded. The bridge owns browser interaction and account verification, while
+agents see only request, continuation, status, result, cancellation, and thread-list operations.
+Returned text remains external advice and cannot approve UuMA or Wisdom knowledge changes.
 
 Risk classes:
 

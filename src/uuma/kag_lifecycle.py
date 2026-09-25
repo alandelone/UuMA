@@ -2,12 +2,53 @@
 
 from __future__ import annotations
 
+import json
 import os
+import subprocess
 import threading
 import time
 from collections.abc import Callable, Iterator
 from contextlib import contextmanager
 from pathlib import Path
+
+
+def launch_runtime_process(command: list[str], *, cwd: Path, environment: dict[str, str]) -> None:
+    """Start an owned service outside the short-lived MCP client's process tree."""
+    if os.name != "nt":
+        subprocess.Popen(command, cwd=cwd, env=environment, start_new_session=True,
+                         stdin=subprocess.DEVNULL, stdout=subprocess.DEVNULL,
+                         stderr=subprocess.DEVNULL)
+        return
+    executable = Path(command[0])
+    if executable.name.lower() == "pythonw.exe":
+        console_python = executable.with_name("python.exe")
+        if not console_python.is_file():
+            raise OSError("The hidden bridge launcher requires the matching python.exe")
+        # WMI hides the window; python.exe still supplies streams required by uvicorn logging.
+        command = [str(console_python), *command[1:]]
+    # WMI owns the child, so closing the MCP client's Windows Job Object cannot kill it.
+    # Pass environment on stdin, never in command arguments, files or diagnostic output.
+    script = """
+$ErrorActionPreference = 'Stop'
+$spec = [Console]::In.ReadToEnd() | ConvertFrom-Json
+$vars = @($spec.environment.PSObject.Properties | ForEach-Object { $_.Name + '=' + $_.Value })
+$startup = New-CimInstance -CimClass (Get-CimClass Win32_ProcessStartup) -ClientOnly -Property @{
+    ShowWindow = [uint16]0; EnvironmentVariables = [string[]]$vars
+}
+$result = Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{
+    CommandLine = $spec.command; CurrentDirectory = $spec.cwd; ProcessStartupInformation = $startup
+}
+if ($result.ReturnValue -ne 0) { exit ([int]$result.ReturnValue) }
+"""
+    result = subprocess.run(
+        ["powershell", "-NoProfile", "-NonInteractive", "-Command", script],
+        input=json.dumps({"command": subprocess.list2cmdline(command),
+                          "cwd": str(cwd), "environment": environment}),
+        capture_output=True, text=True, timeout=20, check=False,
+        creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+    )
+    if result.returncode != 0:
+        raise OSError(f"Independent knowledge service launch failed (code {result.returncode})")
 
 
 @contextmanager

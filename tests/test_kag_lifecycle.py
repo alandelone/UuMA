@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import json
 import os
 import subprocess
 import threading
@@ -13,9 +14,53 @@ import pytest
 from fastapi import Request
 from fastapi.responses import Response
 
-from uuma import kag_bridge
+from uuma import kag_bridge, kag_lifecycle
 from uuma.kag_adapter import KagRuntimeManager, KagUnavailableError
 from uuma.kag_lifecycle import KagIdleTracker, runtime_lock
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows MCP job lifecycle")
+def test_runtime_launch_escapes_mcp_job_without_secrets_in_arguments(tmp_path, monkeypatch):
+    run = Mock(return_value=subprocess.CompletedProcess([], 0, "", ""))
+    monkeypatch.setattr(kag_lifecycle.subprocess, "run", run)
+    command = ["C:/Program Files/runtime/python.exe", "-m", "uuma.kag_bridge"]
+    kag_lifecycle.launch_runtime_process(
+        command, cwd=tmp_path, environment={"OPENAI_API_KEY": "test-secret"},
+    )
+    assert "test-secret" not in str(run.call_args.args)
+    assert "Win32_Process" in run.call_args.args[0][-1]
+    assert "ShowWindow = [uint16]0" in run.call_args.args[0][-1]
+    spec = json.loads(run.call_args.kwargs["input"])
+    assert spec["environment"]["OPENAI_API_KEY"] == "test-secret"
+    assert spec["command"] == subprocess.list2cmdline(command)
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows MCP job lifecycle")
+def test_runtime_launch_failure_does_not_expose_environment(tmp_path, monkeypatch):
+    monkeypatch.setattr(kag_lifecycle.subprocess, "run", Mock(
+        return_value=subprocess.CompletedProcess([], 5, "", "private diagnostic test-secret")
+    ))
+    with pytest.raises(OSError, match="code 5") as error:
+        kag_lifecycle.launch_runtime_process(
+            ["python", "-m", "uuma.kag_bridge"], cwd=tmp_path,
+            environment={"OPENAI_API_KEY": "test-secret"},
+        )
+    assert "test-secret" not in str(error.value)
+
+
+@pytest.mark.skipif(os.name != "nt", reason="Windows hidden process startup")
+def test_hidden_bridge_uses_python_with_logging_streams(tmp_path, monkeypatch):
+    python = tmp_path / "python.exe"
+    python.touch()
+    run = Mock(return_value=subprocess.CompletedProcess([], 0, "", ""))
+    monkeypatch.setattr(kag_lifecycle.subprocess, "run", run)
+    kag_lifecycle.launch_runtime_process(
+        [str(tmp_path / "pythonw.exe"), "-m", "uuma.kag_bridge"],
+        cwd=tmp_path, environment={},
+    )
+    assert json.loads(run.call_args.kwargs["input"])["command"] == subprocess.list2cmdline(
+        [str(python), "-m", "uuma.kag_bridge"]
+    )
 
 
 def test_active_request_prevents_idle_shutdown_and_resets_clock() -> None:
@@ -46,6 +91,7 @@ def test_idle_monitor_stops_only_dedicated_compose_project(
     stopped = threading.Event()
     run = Mock(return_value=subprocess.CompletedProcess([], 0, "", ""))
     monkeypatch.setattr(kag_bridge.subprocess, "run", run)
+    monkeypatch.setattr(kag_bridge, "_scholar_bridge_present", lambda: False)
     monitor = threading.Thread(
         target=kag_bridge._stop_when_idle,
         args=(tracker, compose, server, stopped),
@@ -65,6 +111,29 @@ def test_idle_monitor_stops_only_dedicated_compose_project(
         "docker", "compose", "-p", "uuma-wisdom-kag", "-f", str(compose), "stop",
     ]
     assert "down" not in command
+
+
+def test_wisdom_idle_shutdown_preserves_services_owned_by_scholar(tmp_path, monkeypatch):
+    compose = tmp_path / "compose.yml"
+    compose.touch()
+    tracker = KagIdleTracker(0.001)
+    server = SimpleNamespace(should_exit=False)
+    stopped = threading.Event()
+    run = Mock()
+    monkeypatch.setattr(kag_bridge.subprocess, "run", run)
+    monkeypatch.setattr(kag_bridge, "_scholar_bridge_present", lambda: True)
+    monitor = threading.Thread(target=kag_bridge._stop_when_idle,
+                               args=(tracker, compose, server, stopped),
+                               kwargs={"poll_seconds": 0.005})
+    monitor.start()
+    deadline = time.monotonic() + 2
+    while not server.should_exit and time.monotonic() < deadline:
+        time.sleep(0.005)
+    assert server.should_exit
+    stopped.set()
+    monitor.join(timeout=2)
+    assert not monitor.is_alive()
+    run.assert_not_called()
 
 
 def test_runtime_lock_can_be_reused_without_removing_project_data(tmp_path: Path) -> None:
@@ -142,8 +211,9 @@ def test_bridge_tracks_work_but_not_health_probes(monkeypatch: pytest.MonkeyPatc
 
 
 @pytest.mark.skipif(os.name != "nt", reason="Docker Desktop recovery is Windows-only")
+@pytest.mark.parametrize("empty_success", [False, True])
 def test_hung_docker_probe_retries_after_desktop_start(
-    tmp_path: Path, monkeypatch: pytest.MonkeyPatch,
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch, empty_success: bool,
 ) -> None:
     desktop = tmp_path / "Docker" / "Docker" / "Docker Desktop.exe"
     desktop.parent.mkdir(parents=True)
@@ -154,12 +224,14 @@ def test_hung_docker_probe_retries_after_desktop_start(
     def probe(*args: object, **kwargs: object) -> subprocess.CompletedProcess[str]:
         calls[0] += 1
         if calls[0] == 1:
+            if empty_success:
+                return subprocess.CompletedProcess([], 0, "", "engine unavailable")
             raise subprocess.TimeoutExpired(cmd="docker info", timeout=10)
         return subprocess.CompletedProcess([], 0, "ready", "")
 
     monkeypatch.setattr("uuma.kag_adapter.subprocess.run", probe)
     launched = Mock()
-    monkeypatch.setattr("uuma.kag_adapter.subprocess.Popen", launched)
+    monkeypatch.setattr("uuma.kag_adapter.launch_runtime_process", launched)
     runtime = KagRuntimeManager(bridge_url="http://127.0.0.1:8891")
     runtime._ensure_docker_engine()
     assert calls[0] == 2

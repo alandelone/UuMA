@@ -124,12 +124,23 @@ def test_forge_profile_enables_worker_preflight(tmp_path) -> None:
 
 
 def test_yonc_profile_has_only_worker_and_project_mcp(tmp_path) -> None:
-    config = _configure(tmp_path, role="worker", agent_id="yonc")
+    config = _configure(
+        tmp_path,
+        role="worker",
+        agent_id="yonc",
+        initial=(
+            "mcp_servers:\n"
+            "  notion:\n"
+            "    command: npx\n"
+            "  inherited-custom:\n"
+            "    command: custom\n"
+        ),
+    )
     assert config["plugins"]["entries"]["uuma_control_guard"]["mcp_allowlist"] == [
         "uuma-worker",
         "yonc-project",
     ]
-    assert "gemini-worker" not in config["mcp_servers"]
+    assert set(config["mcp_servers"]) == {"uuma-worker", "yonc-project"}
     project = config["mcp_servers"]["yonc-project"]
     assert project["args"] == ["-m", "graph_app.mcp_project"]
     assert project["env"]["YONC_API_URL"] == "http://127.0.0.1:9876"

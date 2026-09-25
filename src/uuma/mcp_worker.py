@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
 from functools import lru_cache
+from hashlib import sha256
 from pathlib import Path
 from typing import Any
 
@@ -26,6 +28,8 @@ except ImportError:
 
 from .brainstormer_state import BrainstormerStore, StateTransaction
 from .eschematic_bridge import ESchematicBridge
+from .forge_journal import ForgeJournalStore
+from .knowledge_runtime import ensure_knowledge_graph
 from .lab_crawler import CrawlerConfig, SourcingCrawlerEngine
 from .lab_inventory import InventoryStore
 from .lab_procurement import ProcurementStore
@@ -91,12 +95,79 @@ def _procurement() -> ProcurementStore:
 
 
 @lru_cache(maxsize=1)
+def _journal() -> ForgeJournalStore:
+    local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
+    data_dir = Path(os.environ.get("UUMA_DATA_DIR", local_app_data / "UuMA"))
+    path = Path(os.environ.get("LAB_DATABASE_PATH", data_dir / "forge-lab-bot" / "lab.db"))
+    return ForgeJournalStore(path)
+
+
+def _wake_forge_journal_runner() -> dict[str, Any]:
+    """Request one dormant Windows task run without overriding an explicit operator stop."""
+    task_name = os.environ.get("FORGE_JOURNAL_TASK_NAME", "UuMA Forge Journal Runner").strip()
+    if os.name != "nt":
+        return {"status": "UNSUPPORTED", "requested": False, "task_name": task_name}
+    try:
+        completed = subprocess.run(
+            ["schtasks.exe", "/Run", "/TN", task_name],
+            capture_output=True,
+            text=True,
+            timeout=10,
+            check=False,
+            creationflags=getattr(subprocess, "CREATE_NO_WINDOW", 0),
+        )
+    except (OSError, subprocess.SubprocessError):
+        return {"status": "UNAVAILABLE", "requested": False, "task_name": task_name}
+    message = f"{completed.stdout}\n{completed.stderr}".lower()
+    if completed.returncode == 0:
+        return {"status": "REQUESTED", "requested": True, "task_name": task_name}
+    if "disabled" in message:
+        status = "PAUSED"
+    elif "cannot find" in message or "not exist" in message:
+        status = "MISSING"
+    else:
+        status = "UNAVAILABLE"
+    return {"status": status, "requested": False, "task_name": task_name}
+
+
+def _queue_journal_write(payload: dict[str, Any]) -> dict[str, Any]:
+    job = _journal().queue_write(
+        payload["operation"],
+        payload.get("payload", {}),
+        payload["idempotency_key"],
+        journal_id=payload.get("journal_id", ""),
+        notion_page_id=payload.get("notion_page_id", ""),
+        notion_url=payload.get("notion_url", ""),
+        journal_kind=payload.get("journal_kind", "LOG"),
+        title=payload.get("title", ""),
+        project_system=payload.get("project_system", ""),
+        entry_type=payload.get("entry_type", ""),
+        max_attempts=int(payload.get("max_attempts", 3)),
+        offline=bool(payload.get("offline", False)),
+        actor_id=payload.get("actor_id", "forge-lab-bot"),
+    )
+    result = dict(job)
+    result["delivery_trigger"] = (
+        _wake_forge_journal_runner()
+        if str(job.get("status")) == "QUEUED"
+        else {"status": "NOT_NEEDED", "requested": False}
+    )
+    return result
+
+
+@lru_cache(maxsize=1)
 def _crawler_engine() -> SourcingCrawlerEngine:
     local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
     data_dir = Path(os.environ.get("UUMA_DATA_DIR", local_app_data / "UuMA"))
     profile_dir = data_dir / "chrome_profiles" / "procurement"
     config = CrawlerConfig(user_data_dir=profile_dir)
     return SourcingCrawlerEngine(config)
+
+
+@mcp.tool()
+def knowledge_runtime_preflight(recover: bool = True) -> dict[str, Any]:
+    """Ensure this specialist's own knowledge graph is available before domain work."""
+    return ensure_knowledge_graph(_agent_id(), recover=recover)
 
 
 @mcp.tool()
@@ -139,6 +210,10 @@ def block_run(progress_json: str) -> dict[str, str]:
 def submit_result(result_json: str) -> dict[str, str]:
     """Submit a contract-validated result for the current Worker's Run."""
     result = ResultContract.model_validate_json(result_json)
+    if _agent_id() in {"scholar", "wisdom-oldman"} and result.outcome.value == "COMPLETED":
+        readiness = ensure_knowledge_graph(_agent_id(), recover=False)
+        if readiness.get("ready") is not True:
+            raise RuntimeError("Knowledge graph unavailable; report BLOCKED or FAILED, not COMPLETED")
     event_type = _control_plane().submit_result(result, actor_id=_agent_id())
     return {"run_id": result.run_id, "event_type": event_type}
 
@@ -546,6 +621,189 @@ def lab_list_worklogs(
 
 
 @mcp.tool()
+def lab_journal_register_snapshot(snapshot_json: str) -> dict[str, Any]:
+    """Reconcile one fetched Notion Forge Journal page into the durable lab.db sync ledger."""
+    _require_forge_lab_bot()
+    payload = json.loads(snapshot_json)
+    return _journal().register_snapshot(
+        payload["notion_page_id"],
+        payload["notion_url"],
+        payload.get("title", ""),
+        payload["remote_content_hash"],
+        remote_edited_at=payload.get("remote_edited_at", ""),
+        journal_kind=payload.get("journal_kind", "LOG"),
+        project_system=payload.get("project_system", ""),
+        entry_type=payload.get("entry_type", ""),
+        snapshot=payload.get("snapshot"),
+        actor_id=payload.get("actor_id", "openclaw"),
+    )
+
+
+@mcp.tool()
+def lab_journal_queue_write(write_json: str) -> dict[str, Any]:
+    """Stage an idempotent Notion write; a PATCH_LOG must include its visible change notice."""
+    _require_forge_lab_bot()
+    payload = json.loads(write_json)
+    return _queue_journal_write(payload)
+
+
+@mcp.tool()
+def lab_journal_capture_chat(capture_json: str) -> dict[str, Any]:
+    """Capture reported real lab work locally, queue its Notion log, and wake one sync run."""
+    _require_forge_lab_bot()
+    payload = json.loads(capture_json)
+    required = ("title", "project_system", "entry_type", "raw_note", "action", "observation")
+    missing = [name for name in required if not str(payload.get(name) or "").strip()]
+    if missing:
+        raise ValueError(f"Chat journal capture requires: {', '.join(missing)}.")
+    entry_type = str(payload["entry_type"]).strip().title()
+    if entry_type not in {"Problem", "Experiment", "Repair", "Build"}:
+        raise ValueError("entry_type must be Problem, Experiment, Repair, or Build.")
+    identity_seed = json.dumps(
+        {
+            name: payload.get(name, "")
+            for name in (
+                "title", "project_system", "entry_type", "raw_note", "action", "observation",
+                "occurred_at",
+            )
+        },
+        ensure_ascii=False,
+        sort_keys=True,
+        separators=(",", ":"),
+    )
+    content_digest = sha256(identity_seed.encode("utf-8")).hexdigest()
+    key = str(payload.get("idempotency_key") or f"forge-chat:{content_digest}").strip()
+    source_ref = str(
+        payload.get("source_ref") or f"hermes-chat://content/{content_digest[:24]}"
+    ).strip()
+    worklog = _inventory().record_worklog(
+        str(payload["project_system"]),
+        str(payload["action"]),
+        str(payload["observation"]),
+        build_id=payload.get("build_id"),
+        source_ref=source_ref,
+        hypothesis=str(payload.get("hypothesis") or ""),
+        confirmed_cause=str(payload.get("confirmed_cause") or ""),
+        result=str(payload.get("result") or ""),
+        parts=payload.get("parts"),
+        next_action=str(payload.get("next_step") or ""),
+        worklog_id=f"log_chat_{sha256(key.encode('utf-8')).hexdigest()[:24]}",
+        occurred_at=payload.get("occurred_at"),
+    )
+    journal_payload = {
+        "title": str(payload["title"]),
+        "project_system": str(payload["project_system"]),
+        "type": entry_type,
+        "raw_note": str(payload["raw_note"]),
+        "process": str(payload.get("process") or payload["action"]),
+        "result": str(payload.get("result") or ""),
+        "verification": str(payload.get("verification") or ""),
+        "next_step": str(payload.get("next_step") or ""),
+        "candidate_lesson": str(payload.get("candidate_lesson") or ""),
+        "change_reason": "Captured from a relevant LAB_BOT conversation with source provenance.",
+        "source_ref": source_ref,
+        "worklog_id": worklog["worklog_id"],
+    }
+    job = _queue_journal_write({
+        "operation": "CREATE_LOG",
+        "payload": journal_payload,
+        "idempotency_key": key,
+        "title": str(payload["title"]),
+        "project_system": str(payload["project_system"]),
+        "entry_type": entry_type,
+        "actor_id": "forge-lab-bot-chat",
+    })
+    return {"worklog": worklog, "journal_job": job}
+
+
+@mcp.tool()
+def lab_journal_claim_write(worker_id: str, lease_seconds: int = 120) -> dict[str, Any]:
+    """Lease the next durable OpenClaw/Notion sync operation for bounded delivery."""
+    _require_forge_lab_bot()
+    job = _journal().claim_write(worker_id, lease_seconds=lease_seconds)
+    return {"claimed": job is not None, "job": job}
+
+
+@mcp.tool()
+def lab_journal_finish_write(result_json: str) -> dict[str, Any]:
+    """Record verified Notion delivery, retryable failure, or a visible conflict."""
+    _require_forge_lab_bot()
+    payload = json.loads(result_json)
+    return _journal().finish_write(
+        payload["sync_job_id"],
+        succeeded=bool(payload.get("succeeded", False)),
+        worker_id=payload["worker_id"],
+        remote_page_id=payload.get("remote_page_id", ""),
+        remote_url=payload.get("remote_url", ""),
+        remote_edited_at=payload.get("remote_edited_at", ""),
+        remote_content_hash=payload.get("remote_content_hash", ""),
+        error=payload.get("error", ""),
+        conflict=bool(payload.get("conflict", False)),
+    )
+
+
+@mcp.tool()
+def lab_journal_request_resync(
+    notion_page_id: str, reason: str, idempotency_key: str
+) -> dict[str, Any]:
+    """Queue an explicit pull/reconciliation without overwriting an unresolved conflict."""
+    actor_id = _require_forge_lab_bot()
+    return _journal().request_resync(
+        notion_page_id, reason, idempotency_key, actor_id=actor_id
+    )
+
+
+@mcp.tool()
+def lab_journal_sync_status(
+    notion_page_id: str = "", sync_status: str = "", limit: int = 100
+) -> dict[str, Any]:
+    """Read Forge Journal sync state and pending notification count."""
+    _require_forge_lab_bot()
+    return _journal().status(
+        notion_page_id=notion_page_id or None,
+        sync_status=sync_status or None,
+        limit=limit,
+    )
+
+
+@mcp.tool()
+def lab_journal_list_events(journal_id: str, limit: int = 100) -> dict[str, Any]:
+    """Read append-only synchronization evidence for one journal record."""
+    _require_forge_lab_bot()
+    events = _journal().list_events(journal_id, limit=limit)
+    return {"count": len(events), "events": events}
+
+
+@mcp.tool()
+def lab_journal_list_notifications(status: str = "", limit: int = 100) -> dict[str, Any]:
+    """Read durable queued, failed, conflict, and recovered user notices."""
+    _require_forge_lab_bot()
+    notices = _journal().list_notifications(status=status or None, limit=limit)
+    return {"count": len(notices), "notifications": notices}
+
+
+@mcp.tool()
+def lab_journal_claim_notification(worker_id: str, lease_seconds: int = 120) -> dict[str, Any]:
+    """Lease the next user notice for delivery through the originating Hermes route."""
+    _require_forge_lab_bot()
+    notice = _journal().claim_notification(worker_id, lease_seconds=lease_seconds)
+    return {"claimed": notice is not None, "notification": notice}
+
+
+@mcp.tool()
+def lab_journal_finish_notification(result_json: str) -> dict[str, Any]:
+    """Record notification delivery or schedule its bounded retry."""
+    _require_forge_lab_bot()
+    payload = json.loads(result_json)
+    return _journal().finish_notification(
+        payload["notification_id"],
+        sent=bool(payload.get("sent", False)),
+        worker_id=payload["worker_id"],
+        error=payload.get("error", ""),
+    )
+
+
+@mcp.tool()
 def lab_record_failure(failure_json: str) -> dict[str, Any]:
     """Record a hardware fault/failure incident with symptoms and root-cause status."""
     _require_forge_lab_bot()
@@ -610,8 +868,12 @@ def lab_list_lessons(target_system: str = "", status: str = "", limit: int = 100
 
 @mcp.tool()
 def lab_update_lesson_status(lesson_id: str, status: str, exceptions: str = "") -> dict[str, Any]:
-    """Update an engineering lesson's status (CANDIDATE, SUPPORTED, ACCEPTED, DEPRECATED, REJECTED)."""
+    """Refine a candidate lesson without crossing the human/reviewer approval boundary."""
     _require_forge_lab_bot()
+    if status.strip().upper() != "CANDIDATE":
+        raise PermissionError(
+            "LAB_BOT may only keep lessons as CANDIDATE; reviewer lifecycle decisions are external."
+        )
     return _inventory().update_lesson_status(
         lesson_id, status, exceptions=exceptions if exceptions else None
     )

@@ -35,6 +35,15 @@ TABLE_IDS = {
     "reasoning_traces": "reasoning_trace_id",
     "question_orbits": "orbit_id",
     "orbit_frontier": "frontier_item_id",
+    "orbit_cycles": "orbit_cycle_id",
+    "discovery_usage": "discovery_usage_id",
+    "orbit_notifications": "orbit_notification_id",
+    "knowledge_topics": "topic_id",
+    "topic_question_links": "topic_question_link_id",
+    "topic_knowledge_links": "topic_knowledge_link_id",
+    "topic_documents": "topic_document_id",
+    "topic_document_versions": "topic_document_version_id",
+    "topic_routes": "topic_route_id",
 }
 
 
@@ -293,6 +302,110 @@ class KnowledgeStore:
                 CREATE INDEX IF NOT EXISTS idx_orbit_frontier_order
                     ON orbit_frontier(orbit_id, status, priority, updated_sequence);
 
+                CREATE TABLE IF NOT EXISTS orbit_cycles (
+                    orbit_cycle_id TEXT PRIMARY KEY,
+                    orbit_id TEXT NOT NULL REFERENCES question_orbits(orbit_id),
+                    cycle_key TEXT NOT NULL UNIQUE,
+                    status TEXT NOT NULL,
+                    attempt INTEGER NOT NULL,
+                    lease_expires_at TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_orbit_cycles_lease
+                    ON orbit_cycles(status, lease_expires_at, updated_sequence);
+                CREATE INDEX IF NOT EXISTS idx_orbit_cycles_orbit
+                    ON orbit_cycles(orbit_id, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS discovery_usage (
+                    discovery_usage_id TEXT PRIMARY KEY,
+                    orbit_id TEXT NOT NULL REFERENCES question_orbits(orbit_id),
+                    provider TEXT NOT NULL,
+                    month TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_discovery_usage_month
+                    ON discovery_usage(provider, month, orbit_id, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS orbit_notifications (
+                    orbit_notification_id TEXT PRIMARY KEY,
+                    orbit_id TEXT NOT NULL REFERENCES question_orbits(orbit_id),
+                    dedupe_key TEXT NOT NULL UNIQUE,
+                    status TEXT NOT NULL,
+                    available_at TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_orbit_notifications_delivery
+                    ON orbit_notifications(status, available_at, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS knowledge_topics (
+                    topic_id TEXT PRIMARY KEY,
+                    normalized_key TEXT NOT NULL,
+                    status TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_knowledge_topics_key
+                    ON knowledge_topics(normalized_key, status, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS topic_question_links (
+                    topic_question_link_id TEXT PRIMARY KEY,
+                    topic_id TEXT NOT NULL REFERENCES knowledge_topics(topic_id),
+                    question_id TEXT NOT NULL REFERENCES questions(question_id),
+                    relationship TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL,
+                    UNIQUE(topic_id, question_id)
+                );
+                CREATE INDEX IF NOT EXISTS idx_topic_question_links_topic
+                    ON topic_question_links(topic_id, relationship, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS topic_knowledge_links (
+                    topic_knowledge_link_id TEXT PRIMARY KEY,
+                    topic_id TEXT NOT NULL REFERENCES knowledge_topics(topic_id),
+                    target_kind TEXT NOT NULL,
+                    target_id TEXT NOT NULL,
+                    relationship TEXT NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL,
+                    UNIQUE(topic_id, target_kind, target_id, relationship)
+                );
+                CREATE INDEX IF NOT EXISTS idx_topic_knowledge_links_topic
+                    ON topic_knowledge_links(topic_id, target_kind, updated_sequence);
+
+                CREATE TABLE IF NOT EXISTS topic_documents (
+                    topic_document_id TEXT PRIMARY KEY,
+                    topic_id TEXT NOT NULL UNIQUE REFERENCES knowledge_topics(topic_id),
+                    current_version INTEGER NOT NULL,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+
+                CREATE TABLE IF NOT EXISTS topic_document_versions (
+                    topic_document_version_id TEXT PRIMARY KEY,
+                    topic_document_id TEXT NOT NULL REFERENCES topic_documents(topic_document_id),
+                    topic_id TEXT NOT NULL REFERENCES knowledge_topics(topic_id),
+                    version INTEGER NOT NULL,
+                    orbit_cycle_id TEXT,
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL,
+                    UNIQUE(topic_document_id, version),
+                    UNIQUE(orbit_cycle_id)
+                );
+                CREATE INDEX IF NOT EXISTS idx_topic_document_versions_topic
+                    ON topic_document_versions(topic_id, version DESC);
+
+                CREATE TABLE IF NOT EXISTS topic_routes (
+                    topic_route_id TEXT PRIMARY KEY,
+                    route_key TEXT NOT NULL UNIQUE,
+                    topic_id TEXT NOT NULL REFERENCES knowledge_topics(topic_id),
+                    question_id TEXT NOT NULL REFERENCES questions(question_id),
+                    record_json TEXT NOT NULL,
+                    updated_sequence INTEGER NOT NULL
+                );
+
                 CREATE TABLE IF NOT EXISTS projection_outbox (
                     projection_job_id TEXT PRIMARY KEY,
                     event_sequence INTEGER NOT NULL,
@@ -459,6 +572,63 @@ class KnowledgeStore:
                 "priority": record["priority"],
                 "status": record["status"],
             }
+        elif table == "orbit_cycles":
+            columns |= {
+                "orbit_id": record["orbit_id"],
+                "cycle_key": record["cycle_key"],
+                "status": record["status"],
+                "attempt": record["attempt"],
+                "lease_expires_at": record["lease_expires_at"],
+            }
+        elif table == "discovery_usage":
+            columns |= {
+                "orbit_id": record["orbit_id"],
+                "provider": record["provider"],
+                "month": record["month"],
+            }
+        elif table == "orbit_notifications":
+            columns |= {
+                "orbit_id": record["orbit_id"],
+                "dedupe_key": record["dedupe_key"],
+                "status": record["status"],
+                "available_at": record["available_at"],
+            }
+        elif table == "knowledge_topics":
+            columns |= {
+                "normalized_key": record["normalized_key"],
+                "status": record["status"],
+            }
+        elif table == "topic_question_links":
+            columns |= {
+                "topic_id": record["topic_id"],
+                "question_id": record["question_id"],
+                "relationship": record["relationship"],
+            }
+        elif table == "topic_knowledge_links":
+            columns |= {
+                "topic_id": record["topic_id"],
+                "target_kind": record["target_kind"],
+                "target_id": record["target_id"],
+                "relationship": record["relationship"],
+            }
+        elif table == "topic_documents":
+            columns |= {
+                "topic_id": record["topic_id"],
+                "current_version": record["current_version"],
+            }
+        elif table == "topic_document_versions":
+            columns |= {
+                "topic_document_id": record["topic_document_id"],
+                "topic_id": record["topic_id"],
+                "version": record["version"],
+                "orbit_cycle_id": record.get("orbit_cycle_id"),
+            }
+        elif table == "topic_routes":
+            columns |= {
+                "route_key": record["route_key"],
+                "topic_id": record["topic_id"],
+                "question_id": record["question_id"],
+            }
         elif table in {"questions", "conflicts", "patches", "research_runs"}:
             columns["status"] = record["status"]
         elif table == "gaps":
@@ -489,8 +659,19 @@ class KnowledgeStore:
         elif table in {
             "questions", "gaps", "conflicts", "patches", "research_runs",
             "freshness_policies", "question_orbits", "orbit_frontier",
+            "orbit_cycles", "orbit_notifications",
+            "knowledge_topics",
         }:
             assignments["status"] = record["status"]
+        if table == "orbit_cycles":
+            assignments |= {
+                "attempt": record["attempt"],
+                "lease_expires_at": record["lease_expires_at"],
+            }
+        elif table == "orbit_notifications":
+            assignments["available_at"] = record["available_at"]
+        elif table == "topic_documents":
+            assignments["current_version"] = record["current_version"]
         clause = ", ".join(f"{name} = ?" for name in assignments)
         cursor = conn.execute(
             f"UPDATE {table} SET {clause} WHERE {TABLE_IDS[table]} = ?",
@@ -525,7 +706,8 @@ class KnowledgeStore:
         where = " WHERE status = ?" if status and table in {
             "claims", "questions", "gaps", "conflicts", "patches", "research_runs",
             "entities", "relations", "schema_modules", "freshness_policies",
-            "question_orbits", "orbit_frontier"
+            "question_orbits", "orbit_frontier", "orbit_cycles", "orbit_notifications"
+            , "knowledge_topics"
         } else ""
         params: tuple[Any, ...] = (status, limit) if where else (limit,)
         with self.connect() as conn:

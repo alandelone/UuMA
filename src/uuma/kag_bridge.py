@@ -6,11 +6,14 @@ import os
 import re
 import socket
 import subprocess
+import sys
 import threading
 from hashlib import sha256
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from typing import Any
+from urllib.error import HTTPError, URLError
+from urllib.request import urlopen
 
 from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import JSONResponse
@@ -42,6 +45,19 @@ async def track_kag_activity(request: Request, call_next: Any) -> Any:
         tracker.end()
 
 
+def _scholar_bridge_present() -> bool:
+    """An independent Scholar bridge owns the same Docker services while it is running."""
+    try:
+        with urlopen("http://127.0.0.1:8892/health", timeout=2):
+            return True
+    except HTTPError:
+        return True  # A live but unhealthy bridge may be recovering its dependencies.
+    except URLError as exc:
+        return not isinstance(exc.reason, ConnectionRefusedError)
+    except (OSError, TimeoutError):
+        return True  # Uncertain liveness is not permission to stop another graph's storage.
+
+
 def _stop_when_idle(
     tracker: KagIdleTracker,
     compose_file: Path,
@@ -59,6 +75,11 @@ def _stop_when_idle(
                     continue
                 server.should_exit = True
                 stopped.wait()
+                if _scholar_bridge_present():
+                    logging.getLogger(__name__).info(
+                        "Wisdom bridge stopped; shared Docker services retained for Scholar"
+                    )
+                    return
                 command = [
                     "docker", "compose", "-p", "uuma-wisdom-kag", "-f", str(compose_file),
                     "stop",
@@ -629,6 +650,11 @@ async def extract(request: ExtractRequest) -> dict[str, Any]:
 
 
 def main() -> None:
+    if os.environ.get("UUMA_KAG_BACKGROUND") == "true":
+        # Windows service creation may leave invalid inherited console handles. Uvicorn's
+        # logging setup requires usable streams even though this service has no console UI.
+        sys.stdout = open(os.devnull, "w", encoding="utf-8")  # noqa: SIM115 - process lifetime stream
+        sys.stderr = open(os.devnull, "w", encoding="utf-8")  # noqa: SIM115 - process lifetime stream
     import uvicorn
 
     global _idle_tracker

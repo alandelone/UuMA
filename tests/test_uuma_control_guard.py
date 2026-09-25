@@ -25,6 +25,103 @@ def setup_function() -> None:
     PLUGIN._CONTEXT = None
 
 
+def _healthy_graph(monkeypatch) -> None:
+    def check(**kwargs):
+        PLUGIN._state(PLUGIN._session_key(kwargs)).graph_ready = True
+        return True
+    monkeypatch.setattr(PLUGIN, "_check_graph", check)
+
+
+def test_new_wisdom_topic_requires_later_user_consent_and_cannot_change_scope(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    _healthy_graph(monkeypatch)
+    state = PLUGIN._state("consent")
+    state.direct_run_id = "one"
+    state.direct_turn_id = "one"
+    state.direct_attempted = True
+    tool = "mcp__wisdom_knowledge__knowledge_question_preflight"
+    args = {"question": "scallion cultivation", "intent": "research",
+            "topic_creation_approved": True}
+    PLUGIN._post_tool_call(tool_name=tool, session_id="consent", result={
+        "requires_topic_approval": True,
+        "proposed_topic": {"question": "scallion cultivation"},
+    })
+    prompt = PLUGIN._guard_specialist_output("already researching", session_id="consent")
+    assert "scallion cultivation" in prompt
+    assert "是否同意" in prompt
+    assert "already researching" not in prompt
+    assert PLUGIN._pre_tool_call(tool_name=tool, args=args, session_id="consent")[
+        "action"
+    ] == "block"
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "two", "task_id": "task-two"}},
+        {"ok": True, "result": {"needs_intent_resolution": True}},
+    ]
+    PLUGIN._CONTEXT = context
+    PLUGIN._health_context(session_id="consent", turn_id="two", user_message="同意")
+    assert PLUGIN._pre_tool_call(tool_name=tool, args=args, session_id="consent") is None
+    assert PLUGIN._pre_tool_call(
+        tool_name=tool, args=args | {"question": "unrelated topic"}, session_id="consent"
+    )["action"] == "block"
+    assert PLUGIN._pre_tool_call(tool_name=tool, args=args, session_id="other")["action"] == "block"
+    PLUGIN._post_tool_call(tool_name=tool, args=args, session_id="consent", result={"topic_id": "t"})
+    assert PLUGIN._pre_tool_call(tool_name=tool, args=args, session_id="consent")["action"] == "block"
+
+
+def test_topic_consent_denial_or_unrelated_message_clears_pending_proposal():
+    for reply in ("no", "不要", "how is your progress?", "change the scope"):
+        state = PLUGIN._SessionState(pending_topic_question="scallions")
+        PLUGIN._capture_topic_consent(state, reply)
+        assert state.approved_topic_question is None
+        assert state.pending_topic_question is None
+
+
+def test_scholar_missing_graph_blocks_catalog_output_and_completion(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "scholar")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-g", "task_id": "task-g"}},
+        {"ok": True, "result": {"ready": False, "status": "BLOCKED"}},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "graph-failure", "turn_id": "one"}
+    reminder = PLUGIN._health_context(user_message="Research this", **kwargs)
+    assert "BLOCKED" in reminder["context"]
+    assert [c.args[1] for c in context.call_mcp.call_args_list] == [
+        "register_direct_run", "knowledge_runtime_preflight",
+    ]
+    context.call_mcp.side_effect = None
+    context.call_mcp.return_value = {"ok": True, "result": {"ready": False}}
+    assert PLUGIN._pre_tool_call(tool_name="mcp__rstv4_worker__list_catalog_papers", **kwargs)[
+        "action"
+    ] == "block"
+    assert PLUGIN._pre_tool_call(tool_name="mcp__uuma_worker__block_run", **kwargs) is None
+    assert "知识图谱当前不可用" in PLUGIN._guard_specialist_output("made up answer", **kwargs)
+    PLUGIN._finalize_specialist(assistant_response="made up answer", **kwargs)
+    assert json.loads(context.call_mcp.call_args.args[2]["result_json"])["outcome"] == "FAILED"
+
+
+def test_graph_is_rechecked_before_tools_and_output(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    state = PLUGIN._state("graph-loss")
+    state.direct_run_id = "run-g"
+    state.domain_checked = True
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"ready": True}},
+        {"ok": True, "result": {"ready": False}},
+    ]
+    PLUGIN._CONTEXT = context
+    assert PLUGIN._pre_tool_call(
+        tool_name="mcp__wisdom_knowledge__knowledge_answer", session_id="graph-loss"
+    ) is None
+    assert "知识图谱当前不可用" in PLUGIN._guard_specialist_output(
+        "answer", session_id="graph-loss"
+    )
+    assert not state.graph_ready
+
+
 def _record(tool_name: str, args: dict, result: object, session_id: str = "session-1") -> None:
     PLUGIN._post_tool_call(
         tool_name=tool_name,
@@ -71,6 +168,36 @@ def test_batch_delegation_requires_one_ready_task_per_child(monkeypatch) -> None
     _record("mcp__uuma-control__assign_task", {"task_id": "task-2"}, {})
     assert PLUGIN._pre_tool_call(**call) is None
 
+
+def test_chatgpt_bridge_is_excluded_from_scholar_and_yonc(monkeypatch) -> None:
+    for profile in ("scholar", "yonc"):
+        monkeypatch.setenv("HERMES_PROFILE", profile)
+        decision = PLUGIN._pre_tool_call(
+            tool_name="mcp__chatgpt_bridge__chatgpt_request",
+            args={"mode": "search"},
+            session_id="bridge-exclusion",
+        )
+        assert decision == {
+            "action": "block",
+            "message": "ChatGPT bridge capability denied for this profile.",
+        }
+
+
+def test_forge_chatgpt_bridge_is_search_only(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    PLUGIN._state("bridge-lab").direct_run_id = "run-lab"
+    chat = PLUGIN._pre_tool_call(
+        tool_name="mcp__chatgpt_bridge__chatgpt_request",
+        args={"mode": "chat"},
+        session_id="bridge-lab",
+    )
+    search = PLUGIN._pre_tool_call(
+        tool_name="mcp__chatgpt_bridge__chatgpt_request",
+        args={"mode": "search"},
+        session_id="bridge-lab",
+    )
+    assert chat and chat["action"] == "block"
+    assert search is None
 
 def test_orchestrator_live_stop_remains_available_but_scholar_spawn_is_blocked(monkeypatch) -> None:
     monkeypatch.setenv("HERMES_PROFILE", "default")
@@ -144,6 +271,7 @@ def test_error_text_without_explicit_status_does_not_authorize(monkeypatch) -> N
 
 
 def test_specialist_requires_direct_run_each_turn(monkeypatch) -> None:
+    _healthy_graph(monkeypatch)
     monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
     kwargs = {"session_id": "wisdom-1", "turn_id": "turn-1"}
     reminder = PLUGIN._health_context(**kwargs)
@@ -217,6 +345,7 @@ def test_multiplexed_profile_home_takes_priority_over_process_env(monkeypatch) -
 
 
 def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -> None:
+    _healthy_graph(monkeypatch)
     monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
     context = Mock()
     context.call_mcp.side_effect = [
@@ -240,7 +369,8 @@ def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -
         "wisdom-knowledge",
         "knowledge_question_preflight",
     )
-    assert context.call_mcp.call_args_list[1].args[2]["recover_runtime"] is True
+    # Recovery now belongs to the mandatory graph gate, before domain reasoning.
+    assert context.call_mcp.call_args_list[1].args[2]["recover_runtime"] is False
     assert context.call_mcp.call_args_list[1].args[2]["mode"] == "SIMPLE"
     assert context.call_mcp.call_args_list[1].args[2]["uuma_task_id"] == "task-auto"
     assert context.call_mcp.call_args_list[1].args[2]["uuma_run_id"] == "run-auto"
@@ -262,7 +392,8 @@ def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -
     assert context.call_mcp.call_count == 3
 
 
-def test_wisdom_degraded_preflight_is_disclosed_in_output(monkeypatch) -> None:
+def test_wisdom_degraded_preflight_is_blocked_in_output(monkeypatch) -> None:
+    _healthy_graph(monkeypatch)
     monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
     context = Mock()
     context.call_mcp.side_effect = [
@@ -276,8 +407,8 @@ def test_wisdom_degraded_preflight_is_disclosed_in_output(monkeypatch) -> None:
     answer = PLUGIN._guard_specialist_output(
         "A claim is reviewed before acceptance.", session_id="wisdom-degraded", turn_id="turn-1"
     )
-    assert "KAG 未就绪" in answer
-    assert "没有使用图谱或向量推理" in answer
+    assert "已阻止降级回答" in answer
+    assert "A claim" not in answer
 
 
 def test_generic_model_failure_is_not_recorded_as_completed(monkeypatch) -> None:
@@ -298,6 +429,7 @@ def test_generic_model_failure_is_not_recorded_as_completed(monkeypatch) -> None
 
 
 def test_scholar_auto_registers_and_reads_rst_v4_catalog(monkeypatch) -> None:
+    _healthy_graph(monkeypatch)
     monkeypatch.setenv("HERMES_PROFILE", "scholar")
     context = Mock()
     context.call_mcp.side_effect = [
@@ -309,10 +441,32 @@ def test_scholar_auto_registers_and_reads_rst_v4_catalog(monkeypatch) -> None:
         session_id="scholar-session", turn_id="turn-1", user_message="Review literature"
     )
     assert "run-scholar" in reminder["context"]
+    assert '"task_id": "task-scholar"' in reminder["context"]
+    assert '"agent_id": "scholar"' in reminder["context"]
+    assert "progress_json and result_json" in reminder["context"]
     assert context.call_mcp.call_args_list[1].args[:3] == (
         "rstv4-worker", "list_catalog_papers", {"limit": 5}
     )
     assert PLUGIN._guard_specialist_output("review", session_id="scholar-session") is None
+
+
+def test_scholar_reporting_identity_survives_failed_preflight_and_later_calls(monkeypatch) -> None:
+    _healthy_graph(monkeypatch)
+    monkeypatch.setenv("HERMES_PROFILE", "scholar")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-scholar", "task_id": "task-scholar"}},
+        {"ok": False, "error": "Domain unavailable"},
+    ]
+    PLUGIN._CONTEXT = context
+    for _ in range(2):
+        reminder = PLUGIN._health_context(
+            session_id="scholar-unavailable", turn_id="turn-1", user_message="Review literature"
+        )
+        assert '"run_id": "run-scholar"' in reminder["context"]
+        assert '"task_id": "task-scholar"' in reminder["context"]
+        assert '"agent_id": "scholar"' in reminder["context"]
+    assert context.call_mcp.call_count == 2
 
 
 def test_forge_auto_registers_and_reads_inventory(monkeypatch) -> None:
@@ -330,8 +484,24 @@ def test_forge_auto_registers_and_reads_inventory(monkeypatch) -> None:
     assert context.call_mcp.call_args_list[1].args[:3] == (
         "uuma-worker", "inventory_status", {}
     )
+    contract = json.loads(context.call_mcp.call_args_list[0].args[2]["contract_json"])
+    assert contract["risk_level"] == "REVERSIBLE"
+    assert "lab-worklog conversational intake" in reminder["context"]
+    assert PLUGIN._pre_tool_call(
+        tool_name="mcp__uuma_worker__lab_journal_capture_chat", session_id="forge-session"
+    ) is None
+    assert PLUGIN._pre_tool_call(
+        tool_name="mcp__uuma_worker__lab_journal_queue_write", session_id="forge-session"
+    )["action"] == "block"
     assert PLUGIN._pre_tool_call(
         tool_name="mcp__uuma_worker__procurement_confirm_order", session_id="forge-session"
+    )["action"] == "block"
+
+
+def test_forge_chat_capture_still_requires_registered_direct_run(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    assert PLUGIN._pre_tool_call(
+        tool_name="mcp__uuma_worker__lab_journal_capture_chat", session_id="unregistered"
     )["action"] == "block"
 
 

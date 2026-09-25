@@ -37,6 +37,12 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--kag-auto-recover", default="true")
     parser.add_argument("--kag-idle-seconds", type=int, default=1800)
     parser.add_argument("--question-orbit-enabled", default="false")
+    parser.add_argument(
+        "--question-orbit-default-budget",
+        choices=("QUICK", "STANDARD", "DEEP"),
+        default="DEEP",
+    )
+    parser.add_argument("--chatgpt-bridge-enabled", choices=("", "true", "false"), default="")
     parser.add_argument("--kag-base-url", default="")
     parser.add_argument("--kag-model", default="")
     parser.add_argument("--kag-project-id", default="")
@@ -80,15 +86,18 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
                 "ESCHEMATIC_PYTHON": args.eschematic_python,
                 "ESCHEMATIC_DATA_DIR": str(lab_root / "eschematic" / "data"),
                 "ESCHEMATIC_OUTPUT_DIR": str(lab_root / "eschematic" / "output"),
+                "FORGE_JOURNAL_TASK_NAME": "UuMA Forge Journal Runner",
             }
         )
-    if module == "uuma.mcp_knowledge":
+    if module == "uuma.mcp_knowledge" or args.agent_id == "wisdom-oldman":
         environment.update(
             {
                 "UUMA_KAG_BRIDGE_URL": args.kag_bridge_url,
                 "UUMA_KAG_AUTO_RECOVER": args.kag_auto_recover,
                 "UUMA_KAG_IDLE_SECONDS": str(args.kag_idle_seconds),
                 "UUMA_QUESTION_ORBIT_ENABLED": args.question_orbit_enabled,
+                "UUMA_QUESTION_ORBIT_DEFAULT_BUDGET": args.question_orbit_default_budget,
+                "UUMA_WISDOM_VIEW_BASE_URL": "http://127.0.0.1:8767",
             }
         )
         if args.kag_compose_file:
@@ -107,12 +116,16 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
             environment["UUMA_KAG_PROJECT_ID"] = args.kag_project_id
         if args.bge_m3_path:
             environment["UUMA_BGE_M3_PATH"] = args.bge_m3_path
+    if args.agent_id == "scholar":
+        environment["RSTV4_ROOT"] = args.rstv4_root
+        if args.kag_compose_file:
+            environment["UUMA_KAG_COMPOSE_FILE"] = args.kag_compose_file
     return CommentedMap(
         {
             "command": args.python_exe,
             "args": CommentedSeq(["-m", module]),
             "env": environment,
-            "timeout": 480 if module == "uuma.mcp_knowledge" else 180,
+            "timeout": 480 if args.agent_id in {"scholar", "wisdom-oldman"} else 180,
             "connect_timeout": 30,
             "idle_timeout_seconds": 0,
         }
@@ -223,8 +236,10 @@ def main() -> None:
         mcp_servers.pop("uuma-control", None)
         mcp_servers["uuma-worker"] = server(args, "uuma.mcp_worker")
         if args.agent_id == "yonc":
-            mcp_servers.pop("gemini-worker", None)
             mcp_servers["yonc-project"] = yonc_server(args)
+            for name in list(mcp_servers):
+                if name not in {"uuma-worker", "yonc-project"}:
+                    mcp_servers.pop(name, None)
         else:
             mcp_servers.pop("yonc-project", None)
         if args.agent_id == "scholar":
@@ -246,7 +261,7 @@ def main() -> None:
                 toolset[:] = [name for name in toolset if name not in SPECIALIST_DISABLED_TOOLSETS]
 
     plugins = map_at(config, "plugins")
-    if args.agent_id == "wisdom-oldman":
+    if args.agent_id in {"wisdom-oldman", "scholar"}:
         # A cold Docker/KAG start exceeds Hermes' default 30-second hook callback cap.
         plugins["hook_callback_timeout"] = 450
     enabled = sequence_at(plugins, "enabled")
@@ -274,6 +289,12 @@ def main() -> None:
     else:
         enabled[:] = [name for name in enabled if name != "uuma_control_guard"]
         entries.pop("uuma_control_guard", None)
+
+    if args.chatgpt_bridge_enabled or args.agent_id in {"scholar", "yonc"}:
+        from uuma.chatgpt_deploy import configure
+
+        configure(config, args.agent_id, args.python_exe, args.source_path, args.data_dir,
+                  enabled=args.chatgpt_bridge_enabled == "true")
 
     with args.config.open("w", encoding="utf-8", newline="") as handle:
         yaml.dump(config, handle)

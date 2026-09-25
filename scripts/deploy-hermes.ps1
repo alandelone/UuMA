@@ -12,6 +12,13 @@ param(
     [bool]$KagAutoRecover = $true,
     [int]$KagIdleSeconds = 1800,
     [bool]$QuestionOrbitEnabled = $false,
+    [ValidateSet("QUICK", "STANDARD", "DEEP")]
+    [string]$QuestionOrbitDefaultBudget = "DEEP",
+    [bool]$ForgeJournalEnabled = $false,
+    [bool]$ChatGPTBridgeEnabled = $true,
+    [int]$ForgeJournalReconcileSeconds = 900,
+    [string]$ForgeLogsDataSource = "06d7c1c5-a614-4577-ab62-a238ce376675",
+    [string]$ForgeCandidatesDataSource = "b68cd096-9176-4571-83f7-ddfa7c082bc7",
     [bool]$EnablePhoenixTelemetry = $true,
     [string]$PhoenixEndpoint = "http://127.0.0.1:6006/v1/traces",
     [string]$PhoenixProject = "hermes",
@@ -33,6 +40,7 @@ $hermesPython = Join-Path (Split-Path -Parent $HermesExe) "python.exe"
 $forgeSkillsSource = Join-Path $ProjectRoot "profiles\forge-lab-bot\skills"
 $brainstormerSkillsSource = Join-Path $ProjectRoot "profiles\brainstormer\skills"
 $wisdomSkillsSource = Join-Path $ProjectRoot "profiles\wisdom-oldman\skills"
+$chatgptSkillSource = Join-Path $ProjectRoot "profiles\shared\chatgpt-consultation"
 $rstv4Python = Join-Path $RSTV4Root ".venv\Scripts\python.exe"
 $rstv4SkillSource = Join-Path $RSTV4Root "skills\rstv4-research"
 $resolvedSkillQuarantineRoot = if ($SkillQuarantineRoot) {
@@ -146,6 +154,7 @@ function Install-ForgeLabSkills {
 function Install-BrainstormerSkills {
     param([string]$ProfileHome)
     foreach ($skillName in @(
+        "brainstorming-method",
         "discussion-state",
         "discussion-reentry",
         "discussion-checkpoint",
@@ -156,6 +165,17 @@ function Install-BrainstormerSkills {
         New-Item -ItemType Directory -Path $target -Force | Out-Null
         Copy-Item -Path (Join-Path $source "*") -Destination $target -Recurse -Force
     }
+}
+
+function Install-ChatGPTConsultationSkill {
+    param([string]$ProfileHome)
+    if (-not $ChatGPTBridgeEnabled) { return }
+    if (-not (Test-Path -LiteralPath (Join-Path $chatgptSkillSource "SKILL.md"))) {
+        throw "ChatGPT consultation skill is missing at '$chatgptSkillSource'."
+    }
+    $target = Join-Path $ProfileHome "skills\chatgpt-consultation"
+    New-Item -ItemType Directory -Path $target -Force | Out-Null
+    Copy-Item -LiteralPath (Join-Path $chatgptSkillSource "SKILL.md") -Destination $target -Force
 }
 
 function Sync-ProfileSoul {
@@ -267,7 +287,9 @@ function Set-HermesProfileConfig {
         "--kag-bridge-url", $KagBridgeUrl,
         "--kag-auto-recover", $KagAutoRecover.ToString().ToLowerInvariant(),
         "--kag-idle-seconds", $KagIdleSeconds,
-        "--question-orbit-enabled", $QuestionOrbitEnabled.ToString().ToLowerInvariant()
+        "--question-orbit-enabled", $QuestionOrbitEnabled.ToString().ToLowerInvariant(),
+        "--question-orbit-default-budget", $QuestionOrbitDefaultBudget,
+        "--chatgpt-bridge-enabled", $ChatGPTBridgeEnabled.ToString().ToLowerInvariant()
     )
     $kagComposeFile = Join-Path $KagRuntimeRoot "docker-compose-west.yml"
     $kagPython = Join-Path $KagRuntimeRoot ".venv\Scripts\python.exe"
@@ -352,6 +374,9 @@ Sync-OrchestratorSoul
 Install-ControlGuardPlugin -ProfileHome $defaultHome
 
 Set-HermesProfileConfig -ProfileHome $defaultHome -Role "control" -AgentId "orchestrator"
+if ($ChatGPTBridgeEnabled) {
+    Install-ChatGPTConsultationSkill -ProfileHome $defaultHome
+}
 Set-DotEnvValue -Path (Join-Path $defaultHome ".env") -Key "UUMA_DATA_DIR" -Value $DataDir
 Set-DotEnvValue -Path (Join-Path $defaultHome ".env") -Key "UUMA_INGEST_URL" -Value "http://127.0.0.1:8766/ingest/hermes"
 Set-DotEnvValue -Path (Join-Path $defaultHome ".env") -Key "UUMA_TOKEN_FILE" -Value (Join-Path $DataDir "tokens.json")
@@ -409,7 +434,64 @@ foreach ($profile in $profiles) {
     if ($id -eq "forge-lab-bot") {
         Install-ForgeLabSkills -ProfileHome $profileHome
     }
+    if ($id -in @("brainstormer", "wisdom-oldman", "forge-lab-bot")) {
+        Install-ChatGPTConsultationSkill -ProfileHome $profileHome
+    }
     Prune-SpecialistProfileSkills -ProfileHome $profileHome -AgentId $id
+}
+
+if ($QuestionOrbitEnabled) {
+    $orbitProfileHome = Join-Path $profilesRoot "wisdom-oldman"
+    try {
+        & (Join-Path $ProjectRoot "scripts\install-orbit-runner.ps1") `
+            -PythonExe $PythonExe `
+            -ProjectRoot $ProjectRoot `
+            -DataDir $DataDir `
+            -ProfileHome $orbitProfileHome `
+            -StartNow
+        if ($LASTEXITCODE -ne 0) { throw "Question Orbit runner deployment failed." }
+    }
+    catch {
+        $task = Get-ScheduledTask -TaskName "UuMA Question Orbit Runner" `
+            -ErrorAction SilentlyContinue
+        if ($task) {
+            Stop-ScheduledTask -TaskName "UuMA Question Orbit Runner" `
+                -ErrorAction SilentlyContinue
+            Unregister-ScheduledTask -TaskName "UuMA Question Orbit Runner" -Confirm:$false
+        }
+        $QuestionOrbitEnabled = $false
+        Set-HermesProfileConfig `
+            -ProfileHome $orbitProfileHome `
+            -Role "worker" `
+            -AgentId "wisdom-oldman"
+        throw
+    }
+}
+
+if ($ForgeJournalEnabled) {
+    $forgeProfileHome = Join-Path $profilesRoot "forge-lab-bot"
+    try {
+        & (Join-Path $ProjectRoot "scripts\install-forge-journal-runner.ps1") `
+            -PythonExe $PythonExe `
+            -ProjectRoot $ProjectRoot `
+            -DataDir $DataDir `
+            -ProfileHome $forgeProfileHome `
+            -DefaultHermesHome $defaultHome `
+            -LogsDataSource $ForgeLogsDataSource `
+            -CandidatesDataSource $ForgeCandidatesDataSource `
+            -ReconcileSeconds $ForgeJournalReconcileSeconds
+        if ($LASTEXITCODE -ne 0) { throw "Forge Journal runner deployment failed." }
+    }
+    catch {
+        foreach ($taskName in @("UuMA Forge Journal Watchdog", "UuMA Forge Journal Runner")) {
+            $task = Get-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue
+            if ($task) {
+                Stop-ScheduledTask -TaskName $taskName -ErrorAction SilentlyContinue
+                Unregister-ScheduledTask -TaskName $taskName -Confirm:$false
+            }
+        }
+        throw
+    }
 }
 
 Write-Host "UuMA Hermes profiles, MCP boundaries, audit/observability plugins, and Kanban board are configured."

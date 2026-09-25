@@ -51,3 +51,39 @@ pass. No application code, production database, or Hermes state is modified.
 On repeated failure, do not keep patching code. Read `repomemory/findings.md`, determine whether a
 dependency/context is missing or the approved assertion is wrong, update the relevant rule or this
 brief, preserve the diff, and rerun from this gate. Never reset an uncommitted repository.
+# 2026-09-23 User-authorized Forge Journal lifecycle update
+
+Forge Journal Runner uses explicit on-demand start/stop. The later chat-triggered contract below
+refines installation to an inert, armed one-shot with zero time/logon triggers and zero automatic
+failure retries; explicit Stop disables delivery. Migration backs up existing task XML and removes
+the legacy watchdog. Explicit Start re-arms and drains once; run-once remains a foreground action.
+No live synchronization or outbound notification is required to verify migration.
+The mission remains at verification/pending_review; this does not approve a gate transition.
+
+# 2026-09-23 User-authorized chat-triggered Forge Journal capture
+
+Relevant Forge-Lab-Bot chat may capture a reversible journal entry when the user reports actual
+lab work or explicitly asks to record it. Generic advice, hypothetical planning, sourcing
+discussion, and meta-discussion do not qualify. One semantic tool must preserve the chat source,
+create an idempotent local worklog, queue a `CREATE_LOG`, and request one runner execution.
+
+The runner remains dormant with no time or logon triggers, watchdog, or automatic retry policy.
+Its scheduled task is armed but consumes no resources between requests; explicit Stop disables it,
+and Start re-arms it and drains the current queue once. A stopped task leaves new captures queued.
+Direct chat registers a `REVERSIBLE` run for this bounded capture path. Raw queue/transport tools,
+canonical approvals, purchases, inventory movement, and hardware actions remain blocked.
+
+Acceptance: idempotent capture and wakeup tests, direct-chat guard tests, PowerShell lifecycle
+contract, focused Forge regressions, deployed profile verification, and a live no-op-safe task
+state check. Do not create a real journal entry or send a notification merely for acceptance.
+# 2026-09-24 user-directed graph availability requirement
+
+Scholar and Wisdom-Oldman must verify their own graph before knowledge work. Verify the
+bridge, expected project/namespace, required schema and a read against graph storage; an
+empty graph is distinct from an unavailable graph. Attempt bounded recovery of existing
+services only; do not create missing projects, schemas or knowledge to satisfy the check.
+On failure, block domain tools, unsupported answer delivery and completed-result submission,
+while retaining progress/blocker reporting. This supersedes the prior permission for Wisdom
+to deliver text-only degraded answers. New research Orbits must not start from failed KAG
+preflight. Preserve the lower-level diagnostic fallback and traces for explicit inspection.
+Mission remains at the current verification review gate.

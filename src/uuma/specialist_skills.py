@@ -12,7 +12,9 @@ SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
     "yonc": frozenset({"yonc-project-management"}),
     "brainstormer": frozenset(
         {
+            "chatgpt-consultation",
             "artifact-readiness",
+            "brainstorming-method",
             "discussion-checkpoint",
             "discussion-reentry",
             "discussion-state",
@@ -20,6 +22,7 @@ SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
     ),
     "wisdom-oldman": frozenset(
         {
+            "chatgpt-consultation",
             "wisdom-answer",
             "wisdom-evidence-research",
             "wisdom-investigate",
@@ -30,6 +33,7 @@ SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
     ),
     "forge-lab-bot": frozenset(
         {
+            "chatgpt-consultation",
             "hardware-lab/eschematic",
             "hardware-lab/eschematic-bridge",
             "hardware-lab/lab-as-built",

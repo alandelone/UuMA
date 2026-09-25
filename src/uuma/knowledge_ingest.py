@@ -1,18 +1,16 @@
 from __future__ import annotations
 
 import hashlib
-import ipaddress
+import json
 import re
-import socket
 from dataclasses import dataclass
 from io import BytesIO
 from pathlib import Path
 from typing import Any
-from urllib.parse import urlparse
-from urllib.request import Request, urlopen
 
 from .knowledge_models import ChunkRecord, DocumentVersionRecord, SourceRecord, SourceType
 from .knowledge_service import KnowledgeService
+from .safe_web import SafeWebFetcher
 
 MAX_DOWNLOAD_BYTES = 20 * 1024 * 1024
 
@@ -26,10 +24,17 @@ class ExtractedContent:
 
 
 class KnowledgeIngestor:
-    def __init__(self, service: KnowledgeService, content_dir: Path) -> None:
+    def __init__(
+        self,
+        service: KnowledgeService,
+        content_dir: Path,
+        *,
+        fetcher: SafeWebFetcher | None = None,
+    ) -> None:
         self.service = service
         self.content_dir = content_dir.resolve()
         self.content_dir.mkdir(parents=True, exist_ok=True)
+        self.fetcher = fetcher or SafeWebFetcher(maximum_bytes=MAX_DOWNLOAD_BYTES)
 
     def ingest_file(self, path: str | Path, *, actor_id: str) -> dict[str, Any]:
         resolved = Path(path).expanduser().resolve()
@@ -47,20 +52,34 @@ class KnowledgeIngestor:
         )
 
     def ingest_web(self, url: str, *, actor_id: str) -> dict[str, Any]:
-        self._validate_public_url(url)
-        request = Request(
+        fetched = self.fetcher.fetch(
             url,
-            headers={
-                "User-Agent": "UuMA-Wisdom-Oldman/0.1 (+local knowledge ingestion)",
-                "Accept": "text/html,application/pdf,text/plain,application/xhtml+xml",
+            allowed_content_types={
+                "application/pdf",
+                "application/xhtml+xml",
+                "text/html",
+                "text/markdown",
+                "text/plain",
             },
         )
-        with urlopen(request, timeout=30) as response:
-            raw = response.read(MAX_DOWNLOAD_BYTES + 1)
-            if len(raw) > MAX_DOWNLOAD_BYTES:
-                raise ValueError("Web source exceeds the 20 MiB ingestion limit.")
-            content_type = response.headers.get_content_type()
-            final_url = response.geturl()
+        raw = fetched.body
+        content_type = fetched.content_type
+        final_url = fetched.final_url
+        if content_type in {"text/html", "application/xhtml+xml"}:
+            probe = raw[:500_000].decode("utf-8", errors="ignore").casefold()
+            blocked_markers = (
+                "verify you are human",
+                "captcha",
+                "sign in to continue",
+                "log in to continue",
+                "subscribe to continue",
+                "enable javascript and cookies to continue",
+                "access denied",
+            )
+            if any(marker in probe for marker in blocked_markers):
+                raise PermissionError(
+                    "The source requires login, CAPTCHA, subscription, or interactive access."
+                )
         suffix = {
             "application/pdf": ".pdf",
             "text/html": ".html",
@@ -123,8 +142,6 @@ class KnowledgeIngestor:
                 (locator,),
             ).fetchone()
             if row:
-                import json
-
                 source = json.loads(row["record_json"])
                 doc_row = conn.execute(
                     "SELECT record_json FROM documents WHERE source_id = ? "
@@ -133,6 +150,25 @@ class KnowledgeIngestor:
                 ).fetchone()
                 if doc_row:
                     previous_document = json.loads(doc_row["record_json"])
+            else:
+                duplicate = conn.execute(
+                    "SELECT record_json FROM documents WHERE content_digest = ? "
+                    "ORDER BY updated_sequence DESC LIMIT 1",
+                    (digest,),
+                ).fetchone()
+                if duplicate:
+                    duplicate_document = json.loads(duplicate["record_json"])
+                    duplicate_source = self.service._require(
+                        "sources", duplicate_document["source_id"], conn
+                    )
+                    return {
+                        "source": duplicate_source,
+                        "document": duplicate_document,
+                        "chunks": self._chunks_for_document(duplicate_document["document_id"]),
+                        "unchanged": True,
+                        "duplicate_content": True,
+                        "duplicate_locator": locator,
+                    }
         if previous_document and previous_document["content_digest"] == digest:
             chunks = self._chunks_for_document(previous_document["document_id"])
             return {
@@ -191,8 +227,6 @@ class KnowledgeIngestor:
                 "SELECT record_json FROM chunks WHERE document_id = ? ORDER BY ordinal",
                 (document_id,),
             ).fetchall()
-        import json
-
         return [json.loads(row["record_json"]) for row in rows]
 
     @staticmethod
@@ -268,14 +302,4 @@ class KnowledgeIngestor:
 
     @staticmethod
     def _validate_public_url(url: str) -> None:
-        parsed = urlparse(url)
-        if parsed.scheme not in {"http", "https"} or not parsed.hostname:
-            raise ValueError("Only public http/https URLs can be ingested.")
-        try:
-            addresses = {item[4][0] for item in socket.getaddrinfo(parsed.hostname, None)}
-        except socket.gaierror as exc:
-            raise ValueError(f"Cannot resolve web source host: {parsed.hostname}") from exc
-        for address in addresses:
-            ip = ipaddress.ip_address(address)
-            if not ip.is_global:
-                raise ValueError("Private, loopback, link-local, and reserved URLs are blocked.")
+        SafeWebFetcher().validate_public_url(url)

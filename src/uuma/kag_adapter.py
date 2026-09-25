@@ -11,7 +11,7 @@ from typing import Any, ClassVar, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
-from .kag_lifecycle import runtime_lock
+from .kag_lifecycle import launch_runtime_process, runtime_lock
 from .knowledge_models import (
     AnswerCitation,
     ClaimStatus,
@@ -100,7 +100,7 @@ class KagRuntimeManager:
             raise KagUnavailableError(f"Docker CLI is unavailable: {exc}") from exc
         except subprocess.TimeoutExpired:
             result = None
-        if result is not None and result.returncode == 0:
+        if result is not None and result.returncode == 0 and result.stdout.strip():
             return
         if os.name != "nt":
             detail = "Docker engine probe timed out." if result is None else (
@@ -111,15 +111,11 @@ class KagRuntimeManager:
         desktop = program_files / "Docker" / "Docker" / "Docker Desktop.exe"
         if not desktop.is_file():
             raise KagUnavailableError("Docker Desktop is not installed at its standard path.")
-        detached = getattr(subprocess, "DETACHED_PROCESS", 0)
-        new_group = getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
         try:
-            subprocess.Popen(
+            launch_runtime_process(
                 [str(desktop)],
-                stdin=subprocess.DEVNULL,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-                creationflags=creation_flags | detached | new_group,
+                cwd=desktop.parent,
+                environment=dict(os.environ),
             )
         except OSError as exc:
             raise KagUnavailableError(f"Docker Desktop could not be started: {exc}") from exc
@@ -137,7 +133,7 @@ class KagRuntimeManager:
             except (OSError, subprocess.TimeoutExpired):
                 time.sleep(2)
                 continue
-            if result.returncode == 0:
+            if result.returncode == 0 and result.stdout.strip():
                 return
             time.sleep(2)
         raise KagUnavailableError("Docker Desktop did not become ready within 60 seconds.")
@@ -220,18 +216,11 @@ class KagRuntimeManager:
         if not python.is_file():
             raise KagUnavailableError(f"UUMA_KAG_PYTHON does not exist: {python}")
         environment = self._bridge_environment(config)
-        creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
-        creation_flags |= getattr(subprocess, "DETACHED_PROCESS", 0)
-        creation_flags |= getattr(subprocess, "CREATE_NEW_PROCESS_GROUP", 0)
         try:
-            subprocess.Popen(
+            launch_runtime_process(
                 [str(python), "-m", "uuma.kag_bridge"],
-                cwd=str(config.parent),
-                env=environment,
-                stdin=subprocess.DEVNULL,
-                stdout=subprocess.DEVNULL,
-                stderr=subprocess.DEVNULL,
-                creationflags=creation_flags,
+                cwd=config.parent,
+                environment=environment,
             )
         except OSError as exc:
             raise KagUnavailableError(f"KAG bridge could not be started: {exc}") from exc
@@ -239,6 +228,7 @@ class KagRuntimeManager:
     def _bridge_environment(self, config: Path) -> dict[str, str]:
         environment = dict(os.environ)
         environment["UUMA_KAG_CONFIG"] = str(config)
+        environment["UUMA_KAG_BACKGROUND"] = "true"
         if environment.get("OPENAI_API_KEY"):
             return environment
         if environment.get("OPENROUTER_API_KEY"):

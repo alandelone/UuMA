@@ -431,8 +431,9 @@ Hermes chooses when to call Wisdom-Oldman and coordinates its outputs with other
   logic-form solving.
 - KAG failure triggers scoped runtime recovery and, if recovery fails, an explicitly labeled
   `DEGRADED_KAG` canonical text/evidence answer with an audited trace.
-- The Knowledge Map UI, scheduler-driven continuous research/freshness runs, domain-specific schema
-  compiler, and additional app connectors remain later phases.
+- The Question Orbit scheduler is deployed for bounded background gap research. The Knowledge Map
+  UI, general scheduler-driven freshness runs, domain-specific schema compiler, and additional app
+  connectors remain later phases.
 
 ## 17. Locked KAG completion decisions
 
@@ -453,3 +454,38 @@ Hermes chooses when to call Wisdom-Oldman and coordinates its outputs with other
 - UuMA may recover only its named KAG runtime. Failed recovery falls back to explicitly degraded
   FTS/evidence retrieval while projection work remains queued.
 - The Knowledge Map UI follows the stable KAG API and is not part of the first core slice.
+
+## 18. Durable topic documents
+
+Wisdom's primary human-readable research product is now a versioned topic document. The knowledge
+graph remains the organizing substrate: a topic links durable questions, worthwhile gaps, sources,
+located evidence, claims, entities, and relations. A chat session is only an entry point and does
+not own the knowledge.
+
+For every substantive question, direct-chat preflight first resolves one of four outcomes: the same
+question, a related question under an existing topic, a new focus under the current routed topic,
+or a new topic. Exact question identity is never inferred from semantic similarity alone. Related
+questions keep their distinct conditions and are linked to the shared topic. The latest Telegram
+route is used only to understand short follow-ups such as `make it more detail`; cross-session reuse
+comes from the persistent topic/question graph.
+
+A broad new topic receives a first-principles research frontier covering scope and terminology,
+mechanisms and dependencies, practical methods and condition-sensitive parameters, alternatives
+and failure modes, and evidence quality/freshness. These are research questions rather than empty
+document headings. Only sections with synthesized answers are published.
+
+Each initial answer and completed Orbit cycle publishes an append-only document version. A version
+contains synthesized prose, applicability conditions, conflicts, located citations, research state,
+and a change summary. Updating one question replaces that stable section in the latest projection
+without erasing prior versions. Topic/source and topic/evidence links make the same evidence visible
+in the read-only graph projection.
+
+The local UuMA service exposes a text-first topic page and a secondary graph view on loopback only.
+It requires a separate read-only token stored beside UuMA runtime data. Telegram messages continue
+to answer the question directly and include the stable topic or section link. Orbit notifications
+contain readable findings and source URLs instead of internal event JSON.
+
+The user-approved automatic default is DEEP: six active hours, 100 sources, one million model
+tokens, and the existing search-query ceiling. An ordinary follow-up reuses the active Orbit and
+does not reset usage. Reaching any limit pauses the durable work with remaining questions visible;
+only explicit reviewed action may add a later budget.

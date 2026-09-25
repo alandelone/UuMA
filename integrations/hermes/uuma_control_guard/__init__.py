@@ -38,6 +38,9 @@ class _SessionState:
     domain_checked: bool = False
     kag_degraded: bool = False
     result_submitted: bool = False
+    graph_ready: bool = False
+    pending_topic_question: str | None = None
+    approved_topic_question: str | None = None
 
 
 _SESSIONS: OrderedDict[str, _SessionState] = OrderedDict()
@@ -71,6 +74,13 @@ _FORGE_DIRECT_FORBIDDEN = {
     "lab_record_commissioning",
     "lab_record_worklog",
     "lab_record_failure",
+    "lab_journal_register_snapshot",
+    "lab_journal_queue_write",
+    "lab_journal_claim_write",
+    "lab_journal_finish_write",
+    "lab_journal_request_resync",
+    "lab_journal_claim_notification",
+    "lab_journal_finish_notification",
 }
 _LOGGER = logging.getLogger(__name__)
 
@@ -150,6 +160,36 @@ def _decoded(value: Any) -> Any:
         except (TypeError, ValueError):
             return current
     return current
+
+
+def _topic_proposal(value: Any) -> str | None:
+    value = _decoded(value)
+    if isinstance(value, dict):
+        if value.get("requires_topic_approval") is True:
+            proposal = value.get("proposed_topic", {})
+            if isinstance(proposal, dict) and isinstance(proposal.get("question"), str):
+                return proposal["question"]
+        for key in ("result", "structuredContent", "structured_content", "content", "text"):
+            if key in value:
+                found = _topic_proposal(value[key])
+                if found:
+                    return found
+    if isinstance(value, list):
+        for item in value:
+            found = _topic_proposal(item)
+            if found:
+                return found
+    return None
+
+
+def _capture_topic_consent(state: _SessionState, message: str) -> None:
+    reply = message.casefold().strip().rstrip(".!。！")
+    affirmative = reply in {
+        "yes", "yes please", "yes, please", "approve", "approved", "go ahead",
+        "同意", "可以", "确认", "同意建立", "同意建主题", "同意建立主题",
+    }
+    state.approved_topic_question = state.pending_topic_question if affirmative else None
+    state.pending_topic_question = None
 
 
 def _find_task_id(value: Any) -> str | None:
@@ -235,13 +275,50 @@ def _runtime_status(value: Any) -> str | None:
     return None
 
 
+def _check_graph(*, recover: bool = True, **kwargs: Any) -> bool:
+    if _profile() not in {"scholar", "wisdom-oldman"}:
+        return True
+    ready = False
+    try:
+        if _CONTEXT is not None:
+            receipt = _CONTEXT.call_mcp(
+                "uuma-worker", "knowledge_runtime_preflight", {"recover": recover},
+                timeout=420 if recover else 45,
+            )
+            ready = (
+                bool(receipt.get("ok")) and not _contains_error(receipt)
+                and _graph_ready(receipt.get("result"))
+            )
+    except Exception:  # noqa: BLE001 - runtime failures must block knowledge work
+        _LOGGER.warning("Knowledge graph preflight failed for %s", _profile())
+    with _LOCK:
+        _state(_session_key(kwargs)).graph_ready = ready
+    return ready
+
+
+def _graph_ready(value: Any) -> bool:
+    if isinstance(value, str):
+        try:
+            return _graph_ready(json.loads(value))
+        except ValueError:
+            return False
+    if isinstance(value, dict):
+        if "ready" in value:
+            return value["ready"] is True
+        return any(_graph_ready(value.get(k)) for k in ("result", "structuredContent", "content", "text"))
+    if isinstance(value, list):
+        return any(_graph_ready(item) for item in value)
+    return False
+
+
 def _health_context(**kwargs: Any) -> dict[str, str] | None:
     if _profile() in _DIRECT_SPECIALISTS:
         profile = _profile()
         with _LOCK:
             state = _state(_session_key(kwargs))
             turn_id = str(kwargs.get("turn_id") or "")
-            if turn_id and state.direct_turn_id != turn_id:
+            new_turn = bool(turn_id and state.direct_turn_id != turn_id)
+            if new_turn:
                 state.direct_turn_id = turn_id
                 state.direct_run_id = None
                 state.direct_task_id = None
@@ -249,19 +326,25 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 state.domain_checked = False
                 state.kag_degraded = False
                 state.result_submitted = False
+                state.graph_ready = False
+            if profile == "wisdom-oldman" and (new_turn or not state.direct_attempted):
+                _capture_topic_consent(state, str(kwargs.get("user_message") or ""))
             attempted = state.direct_attempted
             state.direct_attempted = True
             registered = state.direct_run_id
         if not attempted and not registered and not kwargs.get("parent_session_id"):
             message = str(kwargs.get("user_message") or "").strip()[:8000]
             if message and _CONTEXT is not None:
+                reversible_forge = profile == "forge-lab-bot"
                 contract = {
                     "title": message[:240],
                     "objective": (
-                        "Respond within read-only or proposal-only specialist boundaries: " + message
+                        "Respond within safe reversible specialist boundaries: " + message
+                        if reversible_forge
+                        else "Respond within read-only or proposal-only specialist boundaries: " + message
                     )[:8000],
                     "source": "direct",
-                    "risk_level": "READ_ONLY",
+                    "risk_level": "REVERSIBLE" if reversible_forge else "READ_ONLY",
                     "requested_by": "user",
                 }
                 try:
@@ -299,7 +382,23 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     "Report progress and submit a result through Worker MCP before completing work."
                 )
             }
+        with _LOCK:
+            task_id = _state(_session_key(kwargs)).direct_task_id
+        identity_context = (
+            "Worker MCP reporting identity: "
+            + json.dumps(
+                {"run_id": registered, "task_id": task_id, "agent_id": profile},
+                ensure_ascii=False,
+            )
+            + ". Include these exact identifiers in progress_json and result_json. "
+        )
         domain_result: Any = None
+        if not attempted and not _check_graph(**kwargs):
+            return {"context": identity_context + (
+                "Knowledge graph unavailable after recovery. Domain work is BLOCKED. "
+                "Do not use model-only or text-only fallback, start research, or claim completion. "
+                "Report the blocker through Worker MCP."
+            )}
         if not attempted and _CONTEXT is not None:
             message = str(kwargs.get("user_message") or "").strip()
             server, tool = _DOMAIN_PREFLIGHT[profile]
@@ -308,7 +407,7 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 "wisdom-oldman": {
                     "question": message,
                     "mode": "SIMPLE",
-                    "recover_runtime": True,
+                    "recover_runtime": False,
                     "uuma_task_id": state.direct_task_id or "",
                     "uuma_run_id": state.direct_run_id or "",
                     "notification_route_json": json.dumps(
@@ -348,20 +447,42 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     type(exc).__name__,
                 )
         if domain_result is not None and domain_result.get("ok"):
+            forge_capture = (
+                " If the user wants to record actual lab work, use the lab-worklog conversational "
+                "intake: infer Problem/Experiment/Repair/Build, ask only for missing facts, then "
+                "call lab_journal_capture_chat once the record is complete. Do not capture generic "
+                "advice, hypothetical planning, sourcing discussion, or a user opt-out."
+                if profile == "forge-lab-bot"
+                else ""
+            )
             return {
                 "context": (
-                    f"UuMA Direct Run {registered} is registered. {tool} returned: "
+                    f"UuMA Direct Run {registered} is registered. {identity_context}"
+                    f"{tool} returned: "
                     f"{json.dumps(domain_result.get('result'), ensure_ascii=False, default=str)[:6000]}. "
                     "This is preflight context, not proof of the user's requested claim. "
                     "Use further semantic domain MCP tools as needed, preserve provenance, "
                     "and disclose degraded or incomplete coverage. "
-                    "Report progress and submit the result through Worker MCP."
+                    "For Wisdom-Oldman, intake is read-only. If needs_intent_resolution is true, "
+                    "interpret the message using conversation context: progress reads current_status; "
+                    "feedback/errors/conversation must not create topics. Only genuine research "
+                    "requests call knowledge_question_preflight again with intent=research and "
+                    "the resolved question, preserving returned route/task/run arguments. "
+                    "Answer directly and include a document link only when relevant. "
+                    "A new topic requires separate user permission: show proposed title and scope, "
+                    "ask to create it, and wait. Never set topic_creation_approved on the proposal "
+                    "turn. On a later explicit yes to the pending proposal, repeat its exact "
+                    "question with intent=research and topic_creation_approved=true. "
+                    "Promise continued research only when an orbit_id and "
+                    "persisted status were returned. "
+                    f"Report progress and submit the result through Worker MCP.{forge_capture}"
                 )
             }
         return {
             "context": (
                 f"UuMA Direct Run {registered} is registered, but the domain lookup did not "
-                "succeed. Call the appropriate semantic MCP tool and report a blocker if it fails."
+                f"succeed. {identity_context}"
+                "Call the appropriate semantic MCP tool and report a blocker if it fails."
             )
         }
     if _profile() != "orchestrator":
@@ -391,8 +512,28 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
 
 
 def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict[str, str] | None:
+    bridge_tool = "chatgpt_bridge" in _normalized_tool_name(tool_name)
+    if bridge_tool and (
+        _profile() in {"scholar", "yonc"}
+        or (_profile() == "forge-lab-bot"
+            and _normalized_tool_name(tool_name).endswith("chatgpt_request")
+            and (args or {}).get("mode", "chat") != "search")
+    ):
+        return {"action": "block", "message": "ChatGPT bridge capability denied for this profile."}
     if _profile() in _DIRECT_SPECIALISTS:
         name = _normalized_tool_name(tool_name)
+        if (
+            _profile() == "wisdom-oldman"
+            and name.endswith("knowledge_question_preflight")
+            and (args or {}).get("topic_creation_approved")
+        ):
+            with _LOCK:
+                approved = _state(_session_key(kwargs)).approved_topic_question
+            if not approved or str((args or {}).get("question") or "").strip() != approved:
+                return {"action": "block", "message": (
+                    "Creating a topic requires the user's explicit approval of the pending "
+                    "proposal in a later turn. Do not claim or infer that approval."
+                )}
         if (
             name in _SPECIALIST_FORBIDDEN_TOOLS
             or name.startswith("mcp__uuma_control__")
@@ -419,6 +560,23 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
                     "via mcp__uuma_worker__get_assignment, before using other tools."
                 ),
             }
+        if _profile() in {"scholar", "wisdom-oldman"}:
+            if "uuma_worker" in name and name.endswith(
+                ("knowledge_runtime_preflight", "report_progress", "block_run")
+            ):
+                return None
+            if "uuma_worker" in name and name.endswith("submit_result"):
+                try:
+                    outcome = json.loads((args or {}).get("result_json", "{}" )).get("outcome")
+                except (ValueError, TypeError):
+                    outcome = None
+                if outcome in {"FAILED", "BLOCKED", "CANCELLED"}:
+                    return None
+            if not _check_graph(**kwargs):
+                return {"action": "block", "message": (
+                    "Knowledge graph unavailable. Recovery failed; report BLOCKED. "
+                    "Knowledge work and completed results require the specialist's own graph."
+                )}
         return None
     if _profile() != "orchestrator" or not _is_delegation_spawn(tool_name, args):
         return None
@@ -445,6 +603,18 @@ def _post_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> Non
     key = _session_key(kwargs)
     if _profile() in _DIRECT_SPECIALISTS:
         name = _normalized_tool_name(tool_name)
+        if _profile() == "wisdom-oldman" and name.endswith("knowledge_question_preflight"):
+            proposal = _topic_proposal(kwargs.get("result"))
+            with _LOCK:
+                state = _state(key)
+                if proposal:
+                    state.pending_topic_question = proposal
+                if (args or {}).get("topic_creation_approved"):
+                    state.approved_topic_question = None
+        if "uuma_worker" in name and name.endswith("knowledge_runtime_preflight"):
+            with _LOCK:
+                _state(key).graph_ready = _graph_ready(kwargs.get("result"))
+            return
         if "uuma_worker" in name and name.endswith("register_direct_run"):
             run_id = _find_run_id(kwargs.get("result"))
             if run_id:
@@ -509,17 +679,24 @@ def _clear_session(**kwargs: Any) -> None:
 def _guard_specialist_output(response_text: str = "", **kwargs: Any) -> str | None:
     if _profile() not in _DIRECT_SPECIALISTS or not response_text:
         return None
+    if _profile() in {"scholar", "wisdom-oldman"} and not _check_graph(recover=False, **kwargs):
+        return "知识图谱当前不可用，本轮知识工作已阻止。请恢复图谱后重试；本轮没有完成知识回答。"
     with _LOCK:
         state = _state(_session_key(kwargs))
         registered = bool(state.direct_run_id)
         domain_checked = state.domain_checked
         kag_degraded = state.kag_degraded
+        pending_topic = state.pending_topic_question
     if registered and domain_checked:
-        if _profile() == "wisdom-oldman" and kag_degraded:
-            return response_text.rstrip() + (
-                "\n\n（本轮 KAG 未就绪：仅用了 wisdom.db 的文本／证据检索，"
-                "没有使用图谱或向量推理。）"
+        if _profile() == "wisdom-oldman" and pending_topic:
+            return (
+                f"建议建立新主题：{pending_topic}\n\n"
+                f"研究范围：{pending_topic}\n\n"
+                "目前尚未创建主题或启动这项新研究。是否同意建立并开始研究？"
+                "请回复“同意”，或告诉我你要修改的范围。"
             )
+        if _profile() == "wisdom-oldman" and kag_degraded:
+            return "本轮 KAG 图谱推理失败，已阻止降级回答；请恢复服务后重试。"
         return None
     return (
         "我目前无法完成 UuMA Direct Run 登记或领域知识／状态检索，所以不能把未经架构追踪"
@@ -540,7 +717,10 @@ def _finalize_specialist(**kwargs: Any) -> None:
         state.result_submitted = True  # at-most-once callback attempt
         run_id = state.direct_run_id
         task_id = state.direct_task_id
-        domain_checked = state.domain_checked
+        domain_checked = state.domain_checked and (
+            profile not in {"scholar", "wisdom-oldman"}
+            or (state.graph_ready and not state.kag_degraded)
+        )
     response = str(kwargs.get("assistant_response") or "")[:8000]
     generic_failure = response.strip().lower().startswith("sorry, something went wrong")
     outcome = "COMPLETED" if domain_checked and response and not generic_failure else "FAILED"

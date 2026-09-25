@@ -47,6 +47,7 @@ class KnowledgeConstructor:
             }
             for chunk in chunks
         ]
+        degraded = False
         try:
             health = self.backend.health()
             if health.get("ready") is not True:
@@ -55,8 +56,18 @@ class KnowledgeConstructor:
         except KagUnavailableError:
             if not recover:
                 raise
-            self.backend.recover()
-            extracted = self.backend.extract(request_chunks)
+            try:
+                self.backend.recover()
+                extracted = self.backend.extract(request_chunks)
+            except KagUnavailableError:
+                degraded = True
+                extracted = {
+                    "extractor": "DEGRADED_CHUNK_EVIDENCE",
+                    "chunks": [
+                        {"chunk_id": item["chunk_id"], "entities": [], "relations": []}
+                        for item in request_chunks
+                    ],
+                }
         extracted_chunks = extracted.get("chunks")
         if not isinstance(extracted_chunks, list):
             # Validate external payload values without changing the caller's exception contract.
@@ -69,16 +80,21 @@ class KnowledgeConstructor:
         source = details["source"]
         for result in extracted_chunks:
             chunk = by_chunk[result["chunk_id"]]
-            if not result["entities"] and not result["relations"]:
+            if not degraded and not result["entities"] and not result["relations"]:
                 continue
             evidence, was_created = self._evidence_for_chunk(
-                source["source_id"], chunk, actor_id
+                source["source_id"],
+                chunk,
+                actor_id,
+                extraction_method=str(extracted.get("extractor") or "unknown"),
             )
             (created if was_created else reused)["evidence"].append(evidence["evidence_id"])
             self._ensure_chunk_link(
                 chunk["chunk_id"], "evidence", evidence["evidence_id"], "EXTRACTED_FROM",
                 actor_id, created, reused,
             )
+            if degraded:
+                continue
             ref_entities: dict[str, dict[str, Any]] = {}
             for raw_entity in result["entities"]:
                 entity, entity_created = self._entity_for_raw(raw_entity, actor_id)
@@ -157,10 +173,11 @@ class KnowledgeConstructor:
             "document_complete": offset + len(chunks) >= len(all_chunks),
             "total_chunks": len(all_chunks),
             "extractor": extracted.get("extractor"),
+            "degraded": degraded,
             "created": created,
             "reused": reused,
             "canonical_status": "CANDIDATE",
-            "requires_review": True,
+            "requires_review": not degraded,
         }
 
     @staticmethod
@@ -183,7 +200,12 @@ class KnowledgeConstructor:
                     raise ValueError("KAG extraction returned an invalid relation.")
 
     def _evidence_for_chunk(
-        self, source_id: str, chunk: dict[str, Any], actor_id: str
+        self,
+        source_id: str,
+        chunk: dict[str, Any],
+        actor_id: str,
+        *,
+        extraction_method: str,
     ) -> tuple[dict[str, Any], bool]:
         excerpt = chunk["text"][:16000]
         location = chunk.get("location") or f"chunk {chunk['ordinal']}"
@@ -202,7 +224,7 @@ class KnowledgeConstructor:
                     excerpt=excerpt,
                     location=location,
                     surrounding_context=chunk["text"][:16000],
-                    extraction_method="OpenSPG/KAG v0.8 construction",
+                    extraction_method=extraction_method,
                 ),
                 actor_id=actor_id,
             ),

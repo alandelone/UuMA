@@ -994,6 +994,18 @@ class InventoryStore:
             raise InventoryError("project_name, action, and observation are required for a worklog.")
         assigned_id = worklog_id or _id("log")
         occurred = occurred_at or _now()
+        normalized = {
+            "build_id": build_id.strip() if build_id else None,
+            "project_name": project_name.strip(),
+            "source_ref": source_ref.strip() or None,
+            "action": action.strip(),
+            "observation": observation.strip(),
+            "hypothesis": hypothesis.strip(),
+            "confirmed_cause": confirmed_cause.strip(),
+            "result": result.strip(),
+            "parts_json": json.dumps(parts or [], sort_keys=True),
+            "next_action": next_action.strip(),
+        }
         with self.connect() as connection:
             if build_id:
                 build = connection.execute(
@@ -1001,6 +1013,20 @@ class InventoryStore:
                 ).fetchone()
                 if build is None:
                     raise InventoryError("Unknown build_id.")
+            existing = connection.execute(
+                "SELECT * FROM worklog_records WHERE worklog_id = ?", (assigned_id,)
+            ).fetchone()
+            if existing is not None:
+                if any(existing[key] != value for key, value in normalized.items()):
+                    raise InventoryError(
+                        "The worklog_id already exists with different journal content."
+                    )
+                return {
+                    "worklog_id": assigned_id,
+                    "project_name": normalized["project_name"],
+                    "build_id": normalized["build_id"],
+                    "occurred_at": existing["occurred_at"],
+                }
             connection.execute(
                 """
                 INSERT INTO worklog_records(
@@ -1011,24 +1037,24 @@ class InventoryStore:
                 """,
                 (
                     assigned_id,
-                    build_id.strip() if build_id else None,
-                    project_name.strip(),
-                    source_ref.strip() or None,
-                    action.strip(),
-                    observation.strip(),
-                    hypothesis.strip(),
-                    confirmed_cause.strip(),
-                    result.strip(),
-                    json.dumps(parts or [], sort_keys=True),
-                    next_action.strip(),
+                    normalized["build_id"],
+                    normalized["project_name"],
+                    normalized["source_ref"],
+                    normalized["action"],
+                    normalized["observation"],
+                    normalized["hypothesis"],
+                    normalized["confirmed_cause"],
+                    normalized["result"],
+                    normalized["parts_json"],
+                    normalized["next_action"],
                     occurred,
                     _now(),
                 ),
             )
         return {
             "worklog_id": assigned_id,
-            "project_name": project_name.strip(),
-            "build_id": build_id.strip() if build_id else None,
+            "project_name": normalized["project_name"],
+            "build_id": normalized["build_id"],
             "occurred_at": occurred,
         }
 
@@ -1400,4 +1426,3 @@ class InventoryStore:
             if cursor.rowcount != 1:
                 raise InventoryError("Unknown proposal_id.")
         return {"proposal_id": proposal_id.strip(), "status": norm_status}
-

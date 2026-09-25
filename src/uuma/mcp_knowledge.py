@@ -37,9 +37,17 @@ from .knowledge_models import (
     SourceRecord,
     SourceType,
 )
+from .knowledge_runtime import ensure_knowledge_graph
 from .knowledge_service import KnowledgeService
 from .question_orbit import QuestionOrbitService
 from .settings import Settings
+from .wisdom_topics import (
+    TopicKnowledgeService,
+    ensure_view_token,
+    grounded_answer,
+    is_machine_error_payload,
+    is_progress_request,
+)
 
 mcp = FastMCP("wisdom-knowledge")
 ModelT = TypeVar("ModelT", bound=BaseModel)
@@ -87,7 +95,21 @@ def _constructor() -> KnowledgeConstructor:
 
 @lru_cache(maxsize=1)
 def _orbits() -> QuestionOrbitService:
-    return QuestionOrbitService(_service())
+    tier = BudgetTier(os.environ.get("UUMA_QUESTION_ORBIT_DEFAULT_BUDGET", "QUICK").upper())
+    return QuestionOrbitService(
+        _service(), topics=_topics(), automatic_budget_tier=tier
+    )
+
+
+@lru_cache(maxsize=1)
+def _topics() -> TopicKnowledgeService:
+    settings = Settings.from_env()
+    token = ensure_view_token(settings.data_dir)
+    return TopicKnowledgeService(
+        _service(),
+        view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767"),
+        view_token=token,
+    )
 
 
 def _model(model_type: type[ModelT], payload_json: str) -> ModelT:
@@ -251,49 +273,182 @@ def knowledge_answer(
 ) -> dict[str, Any]:
     """Answer through OpenSPG KAG hybrid reasoning, with explicit canonical fallback and trace."""
     actor_id = _actor()
-    return _reasoner().answer(
-        question,
-        requested_mode=ReasoningMode(mode.upper()),
-        actor_id=actor_id,
-        recover=recover_runtime,
-    )
-
-
-@mcp.tool()
-def knowledge_question_preflight(
-    question: str,
-    mode: str = "SIMPLE",
-    recover_runtime: bool = True,
-    uuma_task_id: str = "",
-    uuma_run_id: str = "",
-    notification_route_json: str = "{}",
-) -> dict[str, Any]:
-    """Answer first, then atomically start/reuse a QUICK Orbit for worthwhile unresolved research."""
-    actor_id = _actor()
-    route = json.loads(notification_route_json)
-    if not isinstance(route, dict) or any(not isinstance(value, str) for value in route.values()):
-        raise ValueError("notification_route_json must contain a string-to-string object.")
+    if not ensure_knowledge_graph("wisdom-oldman", recover=recover_runtime)["ready"]:
+        raise KagUnavailableError("Knowledge graph unavailable; knowledge work is BLOCKED")
     answer = _reasoner().answer(
         question,
         requested_mode=ReasoningMode(mode.upper()),
         actor_id=actor_id,
         recover=recover_runtime,
     )
+    if answer.get("runtime_status") != "KAG":
+        raise KagUnavailableError("Graph reasoning failed; text-only fallback is blocked")
+    return answer
+
+
+@mcp.tool()
+def knowledge_question_preflight(
+    question: str,
+    mode: str = "SIMPLE",
+    recover_runtime: bool = False,
+    uuma_task_id: str = "",
+    uuma_run_id: str = "",
+    notification_route_json: str = "{}",
+    intent: str = "auto",
+    topic_creation_approved: bool = False,
+) -> dict[str, Any]:
+    """Read-only intake by default. Use intent=research only after interpreting conversation intent.
+
+    Progress/status and feedback are operational, not research topics. Auto never writes knowledge.
+    Research intent proposes new topics for user approval before creating them. Set
+    topic_creation_approved only after a later user confirmation of the exact pending proposal.
+    Existing topics are reused without a new creation permission.
+    """
+    actor_id = _actor()
+    route = json.loads(notification_route_json)
+    if not isinstance(route, dict) or any(not isinstance(value, str) for value in route.values()):
+        raise ValueError("notification_route_json must contain a string-to-string object.")
+    if intent not in {"auto", "research", "status", "feedback", "conversation"}:
+        raise ValueError("Unsupported message intent.")
+    if is_progress_request(question):
+        intent = "status"
+    if is_machine_error_payload(question):
+        intent = "feedback"
+    if intent != "research":
+        current_status = _topics().conversation_status(route)
+        return {
+            "message_intent": intent,
+            "needs_intent_resolution": intent == "auto",
+            "knowledge_mutated": False,
+            "orbit_started": False,
+            "research_continues": any(
+                task["status"] in {"QUEUED", "ACTIVE"}
+                for task in current_status["tasks"]
+            ),
+            "current_status": current_status,
+            "instruction": (
+                "Interpret the user's message in its conversation context. For progress, report "
+                "only current_status. Feedback, errors and conversation must not create research. "
+                "Only for a genuine topic/question/focus request, call this tool again with "
+                "intent=research and the resolved research question, preserving the supplied "
+                "notification route, task and run IDs. Do not treat citations as proof of relevance."
+            ),
+            "notification_route_json": notification_route_json,
+            "uuma_task_id": uuma_task_id,
+            "uuma_run_id": uuma_run_id,
+        }
+    resolved = _topics().resolve_question(
+        question,
+        actor_id=actor_id,
+        route=route,
+        allow_new_topic=topic_creation_approved,
+    )
+    if resolved.get("requires_topic_approval"):
+        return resolved | {
+            "orbit_started": False,
+            "research_continues": False,
+            "knowledge_mutated": False,
+            "notification_route_json": notification_route_json,
+            "uuma_task_id": uuma_task_id,
+            "uuma_run_id": uuma_run_id,
+        }
+    if not ensure_knowledge_graph("wisdom-oldman", recover=recover_runtime)["ready"]:
+        raise KagUnavailableError("Knowledge graph unavailable; knowledge work is BLOCKED")
+    answer = _reasoner().answer(
+        question,
+        requested_mode=ReasoningMode(mode.upper()),
+        actor_id=actor_id,
+        recover=recover_runtime,
+    )
+    if answer.get("runtime_status") != "KAG":
+        raise KagUnavailableError("Graph reasoning failed; no fallback answer or Orbit was started")
+    answer = grounded_answer(answer)
+    if (
+        resolved["match_kind"] == "new_topic"
+        and _topics().is_broad_topic_request(question)
+    ):
+        framework_gap_ids = _topics().ensure_research_framework(
+            resolved["topic"]["topic_id"],
+            resolved["question"]["question_id"],
+            actor_id=actor_id,
+        )
+        answer = answer | {
+            "remaining_gap_ids": list(
+                dict.fromkeys([*answer.get("remaining_gap_ids", []), *framework_gap_ids])
+            )
+        }
     enabled = os.environ.get("UUMA_QUESTION_ORBIT_ENABLED", "false").lower() in {
         "1", "true", "yes", "on"
     }
     if not enabled:
-        return {"answer": answer, "orbit_started": False, "orbit_enabled": False}
-    result = _orbits().preflight(
-        question,
+        result = {"answer": answer, "orbit_started": False, "orbit_enabled": False}
+    else:
+        result = _orbits().preflight(
+            question,
+            answer,
+            actor_id=actor_id,
+            uuma_task_id=uuma_task_id or None,
+            uuma_run_id=uuma_run_id or None,
+            notification_route=route,
+            topic_id=resolved["topic"]["topic_id"],
+            question_id=resolved["question"]["question_id"],
+        )
+        result["orbit_enabled"] = True
+    research_status = str(result.get("orbit_status") or "ANSWERED")
+    version = _topics().publish_answer(
+        resolved["topic"]["topic_id"],
+        resolved["question"]["question_id"],
         answer,
         actor_id=actor_id,
-        uuma_task_id=uuma_task_id or None,
-        uuma_run_id=uuma_run_id or None,
-        notification_route=route,
+        research_status=research_status,
+        orbit_id=result.get("orbit_id"),
+        source_ids=[
+            str(item["source_id"])
+            for item in answer.get("citations", [])
+            if isinstance(item, dict) and item.get("source_id")
+        ],
+        evidence_ids=[
+            str(item["evidence_id"])
+            for item in answer.get("citations", [])
+            if isinstance(item, dict) and item.get("evidence_id")
+        ],
     )
-    result["orbit_enabled"] = True
-    return result
+    return {
+        "document_url": version["document_url"],
+        "topic_id": resolved["topic"]["topic_id"],
+        "topic_title": resolved["topic"]["title"],
+        "question_id": resolved["question"]["question_id"],
+        "research_continues": result.get("orbit_status") in {"QUEUED", "ACTIVE"},
+        "topic_match": {
+            "kind": resolved["match_kind"],
+            "score": resolved["match_score"],
+        },
+        "document_version": version["version"],
+        **result,
+        "topic": resolved["topic"],
+        "question": resolved["question"],
+    }
+
+
+@mcp.tool()
+def knowledge_topic_get(topic_id: str) -> dict[str, Any]:
+    """Return one durable topic, its latest readable document, questions, and research state."""
+    _actor()
+    return _topics().get_topic(topic_id)
+
+
+@mcp.tool()
+def knowledge_topic_list(limit: int = 100) -> dict[str, Any]:
+    """List durable research topics shared across chat sessions."""
+    _actor()
+    return _topics().list_topics(limit=limit)
+
+
+@mcp.tool()
+def knowledge_topic_graph(topic_id: str) -> dict[str, Any]:
+    """Return the read-only question, gap, source, and evidence neighborhood for a topic."""
+    _actor()
+    return _topics().graph(topic_id)
 
 
 @mcp.tool()
@@ -366,6 +521,14 @@ def knowledge_orbit_resume(orbit_id: str) -> dict[str, Any]:
 def knowledge_orbit_stop(orbit_id: str, reason: str) -> dict[str, Any]:
     """Stop an Orbit explicitly while preserving all state and event history."""
     return _orbits().transition(orbit_id, OrbitStatus.STOPPED, actor_id=_actor(), reason=reason)
+
+
+@mcp.tool()
+def knowledge_orbit_set_budget(orbit_id: str, budget_tier: str) -> dict[str, Any]:
+    """Apply an explicit Orchestrator/user-review budget tier and resume an exhausted Orbit."""
+    return _orbits().set_budget(
+        orbit_id, BudgetTier(budget_tier.upper()), actor_id=_actor()
+    )
 
 
 @mcp.tool()

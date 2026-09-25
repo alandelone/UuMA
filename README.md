@@ -75,7 +75,7 @@ The default eSchematic location is the sibling folder
 `..\eSchematic_skillset`; override `-ESchematicRoot` or `-ESchematicPython` when needed. Lab runtime
 data remains outside both repositories under `%LOCALAPPDATA%\UuMA\forge-lab-bot`.
 
-For `wisdom-oldman`, deployment installs five focused knowledge-lifecycle skills and the semantic
+For `wisdom-oldman`, deployment installs six focused knowledge-lifecycle skills and the semantic
 Knowledge MCP. Durable sources, documents/chunks, evidence, claims, entities, relations, schema
 modules, questions, gaps, conflicts, proposals, and their hash-chained history live in
 `%LOCALAPPDATA%\UuMA\wisdom.db`. OpenSPG/KAG v0.8.0 is a rebuildable graph/vector/reasoning
@@ -83,14 +83,39 @@ projection; text retrieval is explicitly marked degraded when that runtime is un
 Orchestrator can review/apply, reject, or reverse proposed canonical changes; Wisdom-Oldman cannot
 self-approve them.
 
+Question Orbit background research is opt-in. Enabling it installs a hidden per-user Scheduled Task,
+backs up `wisdom.db`, and activates the governed runner, safe public-source discovery, usage ledger,
+cycle recovery, and Hermes notification outbox. Removing the task preserves all Orbit history.
+
 Prepare the real OpenSPG/KAG runtime, inject its recovered project/model settings into Hermes, and
 reload the gateway with:
 
 ```powershell
 .\deploy\kag\bootstrap.ps1
-.\scripts\deploy-hermes.ps1
+.\scripts\deploy-hermes.ps1 -QuestionOrbitEnabled $true
 & "$env:LOCALAPPDATA\hermes\hermes-agent\venv\Scripts\hermes.exe" gateway restart
 ```
+
+To stop and remove only the background runner while preserving knowledge and research state:
+
+```powershell
+.\scripts\install-orbit-runner.ps1 -Uninstall
+```
+
+## ChatGPT Web consultations
+
+The local ChatGPT Web Bridge exposes chat, search, and deep-research consultations to the
+Orchestrator, Brainstormer, and Wisdom-Oldman. Forge-Lab-Bot receives lab-related search only.
+Scholar and Yonc are excluded at profile, guard, MCP, and service boundaries. Accounts and browser
+login remain human-controlled through a loopback dashboard; consultation requests are durable,
+idempotent, run-bound, and isolated by agent and project conversation.
+
+```powershell
+.\scripts\install-chatgpt-bridge.ps1 -StartNow
+```
+
+See [`docs/agents/chatgpt-web-bridge.md`](docs/agents/chatgpt-web-bridge.md) for onboarding,
+permissions, recovery, and rollback.
 
 The default embedding path is the official local BGE-M3 ONNX export (1024 dimensions, CPU), leaving
 an already occupied GPU undisturbed. KAG construction outputs remain candidates until Orchestrator

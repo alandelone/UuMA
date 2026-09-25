@@ -109,3 +109,13 @@ resolution, and the rule/gate that now prevents recurrence.
 - **Resolution:** use the native exit code for the quiet readiness probe, resolve the default runtime
   after parameter binding, restore/commit the OpenSPG project, and restart the bridge and gateway.
 - **Prevented by:** the bootstrap implementation and live `runtime.ready=true`, `lag=0` verification.
+# 2026-09-24 - Windows MCP process scope also reaps directly spawned KAG services
+
+- **Diagnostic:** installed MCP SDK creates a Windows Job Object with KILL_ON_JOB_CLOSE.
+  A bridge reached ready=true during MCP verification but disappeared when that connection
+  closed. DETACHED_PROCESS and CREATE_NEW_PROCESS_GROUP do not leave that job.
+- **Classification:** missing lifecycle context.
+- **Resolution:** start the owned bridge through hidden Win32_Process creation, pass the
+  environment over stdin, and verify readiness after the MCP connection has closed. Do not
+  change the MCP client's job safety policy or serialize credentials into launcher files.
+- **Prevented by:** shared runtime launcher contracts and rules/knowledge-runtime.md.

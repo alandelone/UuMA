@@ -1,14 +1,16 @@
 from __future__ import annotations
 
+import hmac
 import os
 from typing import Annotated, Any
 
 import uvicorn
 from fastapi import Depends, FastAPI, Header, HTTPException, Request
-from fastapi.responses import JSONResponse
+from fastapi.responses import HTMLResponse, JSONResponse
 from pydantic import BaseModel, Field
 
 from .auth import TokenRegistry
+from .knowledge_service import KnowledgeService
 from .models import (
     GraphOperation,
     ResultContract,
@@ -26,6 +28,8 @@ from .service import (
     PolicyDeniedError,
 )
 from .settings import Settings
+from .wisdom_topics import TopicKnowledgeService, ensure_view_token
+from .wisdom_web import render_topic_index, render_topic_page
 
 
 class AssignRequest(BaseModel):
@@ -56,6 +60,13 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app = FastAPI(title="UuMA Control Plane", version="0.1.0")
     app.state.control_plane = control_plane
     app.state.tokens = tokens
+    wisdom_view_token = ensure_view_token(settings.data_dir)
+    wisdom_topics = TopicKnowledgeService(
+        KnowledgeService(settings.knowledge_database_path()),
+        view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767"),
+        view_token=wisdom_view_token,
+    )
+    app.state.wisdom_topics = wisdom_topics
 
     @app.exception_handler(ControlPlaneError)
     async def control_plane_error(_request: Request, exc: ControlPlaneError) -> JSONResponse:
@@ -88,9 +99,53 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     worker_auth = require("worker")
     ingest_auth = require("ingest")
 
+    def require_wisdom_view(request: Request) -> None:
+        supplied = request.query_params.get("token", "")
+        authorization = request.headers.get("authorization", "")
+        if authorization.startswith("Bearer "):
+            supplied = authorization.removeprefix("Bearer ").strip()
+        if not supplied or not hmac.compare_digest(supplied, wisdom_view_token):
+            raise HTTPException(status_code=403, detail="Invalid Wisdom read-only token")
+
     @app.get("/health")
     def health() -> dict[str, Any]:
         return control_plane.health()
+
+    @app.get("/wisdom/topics", response_class=HTMLResponse)
+    def wisdom_topic_index(request: Request) -> HTMLResponse:
+        require_wisdom_view(request)
+        records = wisdom_topics.list_topics(limit=500)["records"]
+        return HTMLResponse(render_topic_index(records, wisdom_view_token))
+
+    @app.get("/wisdom/topics/{topic_id}", response_class=HTMLResponse)
+    def wisdom_topic_page(topic_id: str, request: Request) -> HTMLResponse:
+        require_wisdom_view(request)
+        try:
+            data = wisdom_topics.get_topic(topic_id)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="Wisdom topic not found") from exc
+        return HTMLResponse(render_topic_page(data, wisdom_view_token))
+
+    @app.get("/wisdom/api/topics")
+    def wisdom_topic_list(request: Request, limit: int = 100) -> dict[str, Any]:
+        require_wisdom_view(request)
+        return wisdom_topics.list_topics(limit=limit)
+
+    @app.get("/wisdom/api/topics/{topic_id}")
+    def wisdom_topic_data(topic_id: str, request: Request) -> dict[str, Any]:
+        require_wisdom_view(request)
+        try:
+            return wisdom_topics.get_topic(topic_id)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="Wisdom topic not found") from exc
+
+    @app.get("/wisdom/api/topics/{topic_id}/graph")
+    def wisdom_topic_graph(topic_id: str, request: Request) -> dict[str, Any]:
+        require_wisdom_view(request)
+        try:
+            return wisdom_topics.graph(topic_id)
+        except KeyError as exc:
+            raise HTTPException(status_code=404, detail="Wisdom topic not found") from exc
 
     @app.post("/control/tasks")
     def create_task(task: TaskContract, identity: str = Depends(control_auth)) -> dict[str, Any]:

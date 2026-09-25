@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width">
+<title>UuMA · ChatGPT Bridge</title>
+<style>
+body{font:16px system-ui;background:#f3f5f8;color:#182433;margin:0}main{max-width:1100px;margin:40px auto;padding:20px}
+h1{font-size:32px}h2{font-size:21px}section{background:white;border:1px solid #d9e0e7;border-radius:14px;padding:24px;margin:20px 0}
+button,input,select{font:inherit;padding:9px 12px;border-radius:7px;border:1px solid #a9b7c5;margin:4px}
+button{background:#134e61;color:white;cursor:pointer}label{display:inline-block}small{color:#596674}
+table{width:100%;border-collapse:collapse}td,th{text-align:left;padding:10px;border-bottom:1px solid #e1e7ed}
+pre{white-space:pre-wrap;overflow-wrap:anywhere}#notice,.form-notice{color:#9c351b;white-space:pre-wrap}.row{margin:12px 0}
+button[disabled],input[disabled],select[disabled]{opacity:.55;cursor:not-allowed}
+.extension-guide{background:#eef5f8;border:1px solid #bad2dc;border-radius:10px;padding:16px;margin:12px 0}
+.extension-guide ol{margin:8px 0;padding-left:22px;line-height:1.6}
+.extension-guide code{background:#dbe9ee;padding:2px 6px;border-radius:4px;font-size:14px}
+.btn-sm{padding:4px 10px;font-size:13px}
+.badge-connected{display:inline-block;background:#e6f4ea;color:#137333;font-weight:600;padding:4px 10px;border-radius:6px;border:1px solid #ceead6;margin:4px}
+</style><script src="/dashboard.js" defer></script></head>
+<body><main><small>UuMA / LOCAL SERVICES</small><h1>ChatGPT Bridge</h1>
+<p>Manage accounts, agent conversations, and consultations.</p><p id="notice" role="status">Connecting…</p>
+<section><h2>Accounts</h2><div id="accounts"></div><details><summary>Add account</summary>
+<p>Register an account, then open the visible dedicated Chrome window for human sign-in.
+UuMA does not type, read, or store passwords, email codes, OTPs, or MFA. After you finish
+authentication yourself, return here and select Verify completed sign-in.</p>
+<form id="add-account"><label>Alias <input name="alias" value="main" required pattern="[a-z][a-z0-9-]{0,39}"></label>
+<label>Account email <input name="identity" type="email" required></label>
+<label>Workspace label <input name="workspace" value="Personal" required></label><button id="add-account-submit">Add account</button>
+<p id="add-account-notice" class="form-notice" role="alert"></p></form>
+</details></section>
+<section><h2>Agent routing</h2><p>Scholar and Yonc are excluded. Lab-bot has search access only.</p><div id="routes"></div></section>
+<section><h2>Conversations</h2><p>New conversations are created automatically per agent and project. Bind an existing conversation below.</p>
+<div id="threads"></div><details><summary>Bind existing conversation</summary><form id="bind-thread">
+<input name="account" placeholder="Account alias" required><select name="agent"><option>brainstormer</option><option>wisdom-oldman</option><option>orchestrator</option><option>forge-lab-bot</option></select>
+<input name="project" placeholder="Project" value="general" required><input name="thread" value="main" required>
+<input name="url" type="url" placeholder="https://chatgpt.com/c/…" required><button>Bind conversation</button></form></details></section>
+<section><h2>Recent requests</h2><div id="requests"></div></section>
+</main></body></html>

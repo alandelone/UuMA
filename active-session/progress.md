@@ -4005,3 +4005,5416 @@
 - 2026-09-20T23:47:42.748029+00:00 #4003 command_finished: {"exit_code": 0, "changed": []}
 - 2026-09-20T23:48:03.105743+00:00 #4004 handoff: {"digest": "61d2ab738c68e0ad116a9b64cd955203a1edaedb3173dd650690db7f829c773d", "files_observed": 145}
 - 2026-09-20T23:48:03.616749+00:00 #4005 command_started: {"executable": "git"}
+- 2026-09-20T23:48:03.773601+00:00 #4006 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-20T23:48:04.051876+00:00 #4007 command_started: {"executable": "git"}
+- 2026-09-20T23:48:04.148286+00:00 #4008 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-20T23:48:04.436325+00:00 #4009 command_started: {"executable": "git"}
+- 2026-09-20T23:48:04.624938+00:00 #4010 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-20T23:48:04.900196+00:00 #4011 command_started: {"executable": "git"}
+- 2026-09-20T23:48:07.417105+00:00 #4012 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-20T23:48:07.696632+00:00 #4013 command_started: {"executable": "git"}
+- 2026-09-20T23:48:07.774752+00:00 #4014 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-20T23:48:08.042066+00:00 #4015 command_started: {"executable": "git"}
+- 2026-09-20T23:48:08.881467+00:00 #4016 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-20T23:48:20.770450+00:00 #4017 handoff: {"digest": "acb7be88697cd572f9da228e47322330658fdbf5e195cab1d14e160a343084e3", "files_observed": 145}
+- 2026-09-20T23:48:21.069341+00:00 #4018 closed: {}
+- 2026-09-21T02:05:58.070865+00:00 #4019 started: {"files_observed": 145}
+- 2026-09-21T02:05:58.396287+00:00 #4020 command_started: {"executable": "git"}
+- 2026-09-21T02:05:58.490028+00:00 #4021 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:05:58.784517+00:00 #4022 command_started: {"executable": "git"}
+- 2026-09-21T02:05:59.858120+00:00 #4023 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:06:00.158271+00:00 #4024 command_started: {"executable": "git"}
+- 2026-09-21T02:06:00.248030+00:00 #4025 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:06:00.550709+00:00 #4026 command_started: {"executable": "git"}
+- 2026-09-21T02:06:00.637991+00:00 #4027 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:06:08.882976+00:00 #4028 handoff: {"digest": "e9b1925ddc9e5f79a44130f8281edad9369af9e6899a2be07cb7209e25268991", "files_observed": 145}
+- 2026-09-21T02:06:09.173079+00:00 #4029 closed: {}
+- 2026-09-21T02:07:53.816458+00:00 #4030 started: {"files_observed": 145}
+- 2026-09-21T02:07:59.726337+00:00 #4031 command_started: {"executable": "rg"}
+- 2026-09-21T02:07:59.962627+00:00 #4032 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:06.684018+00:00 #4033 command_started: {"executable": "rg"}
+- 2026-09-21T02:08:06.767723+00:00 #4034 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:14.414841+00:00 #4035 command_started: {"executable": "rg"}
+- 2026-09-21T02:08:14.571836+00:00 #4036 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:22.962267+00:00 #4037 command_started: {"executable": "rg"}
+- 2026-09-21T02:08:23.071708+00:00 #4038 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:27.864934+00:00 #4039 command_started: {"executable": "rg"}
+- 2026-09-21T02:08:27.942583+00:00 #4040 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:35.211162+00:00 #4041 command_started: {"executable": "rg"}
+- 2026-09-21T02:08:35.289993+00:00 #4042 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:43.373829+00:00 #4043 command_started: {"executable": "rg"}
+- 2026-09-21T02:08:43.456245+00:00 #4044 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:08:52.208600+00:00 #4045 handoff: {"digest": "b9e1e353a674102b93f1f01aa5322aabd8cc1068e1242a556db8cdb669debd74", "files_observed": 145}
+- 2026-09-21T02:08:55.415995+00:00 #4046 closed: {}
+- 2026-09-21T02:09:31.685264+00:00 #4047 started: {"files_observed": 145}
+- 2026-09-21T02:09:38.728061+00:00 #4048 command_started: {"executable": "git"}
+- 2026-09-21T02:09:38.871328+00:00 #4049 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:09:46.159559+00:00 #4050 command_started: {"executable": "git"}
+- 2026-09-21T02:09:46.275440+00:00 #4051 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:09:53.180863+00:00 #4052 command_started: {"executable": "git"}
+- 2026-09-21T02:09:53.337921+00:00 #4053 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:09:58.735434+00:00 #4054 command_started: {"executable": "git"}
+- 2026-09-21T02:09:58.838435+00:00 #4055 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:10:08.015008+00:00 #4056 handoff: {"digest": "84b181a06372df0563c1d09bd8ed12af2ae74cd512a76de2bd01c857e13976dc", "files_observed": 145}
+- 2026-09-21T02:10:11.956771+00:00 #4057 closed: {}
+- 2026-09-21T02:11:50.165104+00:00 #4058 started: {"files_observed": 145}
+- 2026-09-21T02:11:53.985625+00:00 #4059 command_started: {"executable": "git"}
+- 2026-09-21T02:11:54.073850+00:00 #4060 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:11:58.439035+00:00 #4061 command_started: {"executable": "rg"}
+- 2026-09-21T02:11:58.515831+00:00 #4062 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:07.648154+00:00 #4063 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:07.730606+00:00 #4064 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:12.037045+00:00 #4065 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:12.114455+00:00 #4066 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:17.572042+00:00 #4067 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:17.660230+00:00 #4068 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:22.820029+00:00 #4069 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:22.905971+00:00 #4070 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:26.849371+00:00 #4071 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:26.926879+00:00 #4072 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:31.360373+00:00 #4073 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:31.507533+00:00 #4074 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:35.693354+00:00 #4075 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:35.800927+00:00 #4076 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:12:40.166206+00:00 #4077 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:40.240053+00:00 #4078 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:44.956455+00:00 #4079 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:45.030195+00:00 #4080 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:49.513762+00:00 #4081 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:49.589737+00:00 #4082 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:54.922967+00:00 #4083 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:55.004012+00:00 #4084 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:12:58.687685+00:00 #4085 command_started: {"executable": "rg"}
+- 2026-09-21T02:12:58.816687+00:00 #4086 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:04.761191+00:00 #4087 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:04.840808+00:00 #4088 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:08.926644+00:00 #4089 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:08.998501+00:00 #4090 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:14.166504+00:00 #4091 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:14.322915+00:00 #4092 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:26.049173+00:00 #4093 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:26.127253+00:00 #4094 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:45.137541+00:00 #4095 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:45.244402+00:00 #4096 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:50.168897+00:00 #4097 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:50.245847+00:00 #4098 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:13:54.506333+00:00 #4099 command_started: {"executable": "rg"}
+- 2026-09-21T02:13:54.582753+00:00 #4100 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:14:06.285604+00:00 #4101 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T02:14:07.505154+00:00 #4102 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:14:13.648819+00:00 #4103 command_started: {"executable": "rg"}
+- 2026-09-21T02:14:13.732529+00:00 #4104 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:14:18.775951+00:00 #4105 command_started: {"executable": "rg"}
+- 2026-09-21T02:14:18.856573+00:00 #4106 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:14:22.777368+00:00 #4107 command_started: {"executable": "rg"}
+- 2026-09-21T02:14:22.848714+00:00 #4108 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:14:29.166553+00:00 #4109 command_started: {"executable": "rg"}
+- 2026-09-21T02:14:29.245226+00:00 #4110 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:15:30.719412+00:00 #4111 command_started: {"executable": "rg"}
+- 2026-09-21T02:15:30.797048+00:00 #4112 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:21:11.736375+00:00 #4113 command_started: {"executable": "rg"}
+- 2026-09-21T02:21:11.820274+00:00 #4114 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:21:39.331229+00:00 #4115 command_started: {"executable": "rg"}
+- 2026-09-21T02:21:39.412654+00:00 #4116 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:21:44.572680+00:00 #4117 command_started: {"executable": "rg"}
+- 2026-09-21T02:21:44.653559+00:00 #4118 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:24:18.819370+00:00 #4119 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:24:20.815688+00:00 #4120 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:24:25.878426+00:00 #4121 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:24:26.655566+00:00 #4122 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:25:42.857572+00:00 #4123 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:25:45.098121+00:00 #4124 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:25:51.657023+00:00 #4125 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:25:51.817607+00:00 #4126 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:26:08.906701+00:00 #4127 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:26:09.106535+00:00 #4128 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:26:17.859609+00:00 #4129 command_started: {"executable": "powershell"}
+- 2026-09-21T02:26:18.118092+00:00 #4130 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:26:24.414887+00:00 #4131 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:26:41.596874+00:00 #4132 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:26:45.778023+00:00 #4133 command_started: {"executable": "git"}
+- 2026-09-21T02:26:45.881164+00:00 #4134 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:26:50.175945+00:00 #4135 command_started: {"executable": "git"}
+- 2026-09-21T02:26:50.270946+00:00 #4136 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:27:34.856227+00:00 #4137 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:27:36.165328+00:00 #4138 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:27:53.159181+00:00 #4139 command_started: {"executable": "powershell"}
+- 2026-09-21T02:27:54.955189+00:00 #4140 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:28:01.032245+00:00 #4141 command_started: {"executable": "rg"}
+- 2026-09-21T02:28:01.107595+00:00 #4142 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:28:06.346195+00:00 #4143 command_started: {"executable": "rg"}
+- 2026-09-21T02:28:06.425106+00:00 #4144 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:28:14.129780+00:00 #4145 handoff: {"digest": "8993f38512796bfa90e30441ec8bd3d7b0134179664897e19151208e908ebf69", "files_observed": 151}
+- 2026-09-21T02:28:29.302193+00:00 #4146 command_started: {"executable": "powershell"}
+- 2026-09-21T02:28:45.116799+00:00 #4147 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:28:50.084080+00:00 #4148 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T02:29:16.770596+00:00 #4149 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:29:23.364247+00:00 #4150 command_started: {"executable": "powershell"}
+- 2026-09-21T02:29:24.484326+00:00 #4151 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:29:30.517533+00:00 #4152 command_started: {"executable": "rg"}
+- 2026-09-21T02:29:30.608022+00:00 #4153 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:29:37.308398+00:00 #4154 command_started: {"executable": "powershell"}
+- 2026-09-21T02:29:37.587721+00:00 #4155 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:29:47.328181+00:00 #4156 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:29:47.729238+00:00 #4157 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:29:53.439555+00:00 #4158 command_started: {"executable": "powershell"}
+- 2026-09-21T02:29:53.749927+00:00 #4159 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:29:58.570446+00:00 #4160 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T02:30:03.166426+00:00 #4161 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:30:08.308613+00:00 #4162 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T02:30:09.055454+00:00 #4163 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:30:15.402491+00:00 #4164 command_started: {"executable": "powershell"}
+- 2026-09-21T02:30:17.870575+00:00 #4165 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:30:24.693575+00:00 #4166 command_started: {"executable": "powershell"}
+- 2026-09-21T02:30:25.645242+00:00 #4167 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:30:32.667537+00:00 #4168 command_started: {"executable": "powershell"}
+- 2026-09-21T02:30:32.963482+00:00 #4169 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:30:38.922490+00:00 #4170 command_started: {"executable": "powershell"}
+- 2026-09-21T02:30:39.747592+00:00 #4171 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:31:18.374723+00:00 #4172 command_started: {"executable": "rg"}
+- 2026-09-21T02:31:18.502819+00:00 #4173 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:31:36.454141+00:00 #4174 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:31:52.477089+00:00 #4175 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:31:57.514629+00:00 #4176 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:31:57.666811+00:00 #4177 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:32:04.160545+00:00 #4178 command_started: {"executable": "powershell"}
+- 2026-09-21T02:32:04.360451+00:00 #4179 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:32:08.755886+00:00 #4180 command_started: {"executable": "git"}
+- 2026-09-21T02:32:08.856723+00:00 #4181 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:32:32.950173+00:00 #4182 command_started: {"executable": "powershell"}
+- 2026-09-21T02:32:34.048730+00:00 #4183 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:32:39.068862+00:00 #4184 command_started: {"executable": "git"}
+- 2026-09-21T02:32:39.176632+00:00 #4185 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:32:44.642718+00:00 #4186 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:32:45.037055+00:00 #4187 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:32:53.224072+00:00 #4188 command_started: {"executable": "git"}
+- 2026-09-21T02:32:53.327314+00:00 #4189 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:33:01.126078+00:00 #4190 command_started: {"executable": "git"}
+- 2026-09-21T02:33:01.219650+00:00 #4191 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:33:12.190348+00:00 #4192 handoff: {"digest": "9a92395df8614fc308244dbea70868e0bfbd6d509844f7f4c6a2cb79b255658e", "files_observed": 151}
+- 2026-09-21T02:33:21.780492+00:00 #4193 closed: {}
+- 2026-09-21T02:33:59.541880+00:00 #4194 started: {"files_observed": 151}
+- 2026-09-21T02:34:04.088301+00:00 #4195 command_started: {"executable": "git"}
+- 2026-09-21T02:34:04.179769+00:00 #4196 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:34:10.241559+00:00 #4197 command_started: {"executable": "powershell"}
+- 2026-09-21T02:34:11.364043+00:00 #4198 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:34:16.964120+00:00 #4199 command_started: {"executable": "rg"}
+- 2026-09-21T02:34:17.037532+00:00 #4200 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:34:33.226023+00:00 #4201 command_started: {"executable": "rg"}
+- 2026-09-21T02:34:33.305826+00:00 #4202 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:34:49.220048+00:00 #4203 command_started: {"executable": "rg"}
+- 2026-09-21T02:34:49.320615+00:00 #4204 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:34:56.366411+00:00 #4205 command_started: {"executable": "rg"}
+- 2026-09-21T02:34:56.440357+00:00 #4206 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:37:43.286930+00:00 #4207 command_started: {"executable": "rg"}
+- 2026-09-21T02:37:43.365724+00:00 #4208 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:38:13.030664+00:00 #4209 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:38:13.173635+00:00 #4210 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:41:01.242244+00:00 #4211 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:41:04.825236+00:00 #4212 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:41:10.732565+00:00 #4213 command_started: {"executable": "rg"}
+- 2026-09-21T02:41:10.812117+00:00 #4214 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:41:25.502607+00:00 #4215 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:41:28.998357+00:00 #4216 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:41:34.068789+00:00 #4217 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:41:34.213342+00:00 #4218 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:41:53.844901+00:00 #4219 command_started: {"executable": "rg"}
+- 2026-09-21T02:41:53.924700+00:00 #4220 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:42:16.797305+00:00 #4221 command_started: {"executable": "rg"}
+- 2026-09-21T02:42:16.877006+00:00 #4222 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:43:14.739715+00:00 #4223 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:43:14.896787+00:00 #4224 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:43:19.507608+00:00 #4225 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:43:23.245807+00:00 #4226 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:43:31.782730+00:00 #4227 command_started: {"executable": "powershell"}
+- 2026-09-21T02:43:32.042698+00:00 #4228 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:43:39.269611+00:00 #4229 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:43:39.409907+00:00 #4230 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:43:51.343055+00:00 #4231 command_started: {"executable": "powershell"}
+- 2026-09-21T02:43:51.607724+00:00 #4232 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:43:58.301304+00:00 #4233 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:43:58.450010+00:00 #4234 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:44:22.453708+00:00 #4235 command_started: {"executable": "rg"}
+- 2026-09-21T02:44:22.543080+00:00 #4236 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:44:32.520879+00:00 #4237 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:44:36.444707+00:00 #4238 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:45:01.778349+00:00 #4239 command_started: {"executable": "rg"}
+- 2026-09-21T02:45:01.859184+00:00 #4240 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:47:07.161756+00:00 #4241 command_started: {"executable": "powershell"}
+- 2026-09-21T02:47:07.383759+00:00 #4242 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:47:15.003577+00:00 #4243 command_started: {"executable": "powershell"}
+- 2026-09-21T02:47:15.279255+00:00 #4244 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:47:28.291427+00:00 #4245 command_started: {"executable": "powershell"}
+- 2026-09-21T02:47:28.575412+00:00 #4246 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:47:33.724564+00:00 #4247 command_started: {"executable": "powershell"}
+- 2026-09-21T02:47:33.986658+00:00 #4248 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:47:45.141414+00:00 #4249 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:47:45.147643+00:00 #4250 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:47:45.299946+00:00 #4251 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:47:47.700344+00:00 #4252 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:47:55.858829+00:00 #4253 command_started: {"executable": "powershell"}
+- 2026-09-21T02:47:56.110137+00:00 #4254 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:48:07.502881+00:00 #4255 command_started: {"executable": "powershell"}
+- 2026-09-21T02:48:07.728805+00:00 #4256 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:48:16.266617+00:00 #4257 command_started: {"executable": "powershell"}
+- 2026-09-21T02:48:16.542934+00:00 #4258 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:48:28.030798+00:00 #4259 command_started: {"executable": "powershell"}
+- 2026-09-21T02:48:28.331023+00:00 #4260 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:49:24.083126+00:00 #4261 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:49:24.094709+00:00 #4262 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:49:24.242843+00:00 #4263 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:49:26.881967+00:00 #4264 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:49:46.538185+00:00 #4265 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:49:49.629977+00:00 #4266 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:50:24.343693+00:00 #4267 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:50:24.346709+00:00 #4268 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:50:24.346203+00:00 #4269 command_started: {"executable": "powershell"}
+- 2026-09-21T02:50:24.348289+00:00 #4270 command_started: {"executable": "git"}
+- 2026-09-21T02:50:24.490469+00:00 #4271 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:50:24.497986+00:00 #4272 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:50:24.605808+00:00 #4273 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:50:42.034491+00:00 #4274 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:50:51.298833+00:00 #4275 command_started: {"executable": "powershell"}
+- 2026-09-21T02:50:51.570053+00:00 #4276 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:50:56.618957+00:00 #4277 command_started: {"executable": "powershell"}
+- 2026-09-21T02:50:56.893215+00:00 #4278 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:51:05.642373+00:00 #4279 command_started: {"executable": "powershell"}
+- 2026-09-21T02:51:05.907489+00:00 #4280 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:51:12.078286+00:00 #4281 command_started: {"executable": "powershell"}
+- 2026-09-21T02:51:24.721365+00:00 #4282 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:51:30.166132+00:00 #4283 command_started: {"executable": "powershell"}
+- 2026-09-21T02:51:30.383870+00:00 #4284 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:51:37.191897+00:00 #4285 command_started: {"executable": "powershell"}
+- 2026-09-21T02:52:02.371070+00:00 #4286 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:52:28.289791+00:00 #4287 command_started: {"executable": "powershell"}
+- 2026-09-21T02:52:28.315317+00:00 #4288 command_started: {"executable": "powershell"}
+- 2026-09-21T02:52:28.318487+00:00 #4289 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:52:28.634414+00:00 #4290 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:52:29.243493+00:00 #4291 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:52:29.540330+00:00 #4292 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:52:40.881996+00:00 #4293 command_started: {"executable": "powershell"}
+- 2026-09-21T02:52:41.852615+00:00 #4294 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:52:49.989558+00:00 #4295 command_started: {"executable": "powershell"}
+- 2026-09-21T02:52:50.917428+00:00 #4296 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:52:57.192470+00:00 #4297 command_started: {"executable": "powershell"}
+- 2026-09-21T02:52:59.689189+00:00 #4298 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:53:32.484946+00:00 #4299 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:53:32.628689+00:00 #4300 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T02:53:39.966519+00:00 #4301 command_started: {"executable": "python.exe"}
+- 2026-09-21T02:53:40.098904+00:00 #4302 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T02:53:46.452849+00:00 #4303 command_started: {"executable": "powershell"}
+- 2026-09-21T02:53:46.684856+00:00 #4304 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:15:34.018244+00:00 #4305 command_started: {"executable": "powershell"}
+- 2026-09-21T03:15:34.298787+00:00 #4306 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:15:52.386229+00:00 #4307 command_started: {"executable": "powershell"}
+- 2026-09-21T03:15:55.520957+00:00 #4308 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:16:09.836557+00:00 #4309 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:16:10.158822+00:00 #4310 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:16:17.187779+00:00 #4311 command_started: {"executable": "powershell"}
+- 2026-09-21T03:16:18.361877+00:00 #4312 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:16:29.066443+00:00 #4313 command_started: {"executable": "powershell"}
+- 2026-09-21T03:16:49.346926+00:00 #4314 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:16:59.781024+00:00 #4315 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:17:00.093150+00:00 #4316 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:17:06.279228+00:00 #4317 command_started: {"executable": "powershell"}
+- 2026-09-21T03:17:26.527725+00:00 #4318 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:17:35.000291+00:00 #4319 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:17:35.328730+00:00 #4320 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:17:43.508162+00:00 #4321 command_started: {"executable": "powershell"}
+- 2026-09-21T03:18:00.056334+00:00 #4322 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:18:04.496613+00:00 #4323 command_started: {"executable": "powershell"}
+- 2026-09-21T03:18:06.280361+00:00 #4324 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:18:11.531303+00:00 #4325 command_started: {"executable": "powershell"}
+- 2026-09-21T03:18:11.752659+00:00 #4326 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:18:16.928315+00:00 #4327 command_started: {"executable": "powershell"}
+- 2026-09-21T03:18:24.003637+00:00 #4328 command_started: {"executable": "cmd"}
+- 2026-09-21T03:18:24.078829+00:00 #4329 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:18:30.909227+00:00 #4330 command_started: {"executable": "powershell"}
+- 2026-09-21T03:18:31.099722+00:00 #4331 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:18:37.133359+00:00 #4332 command_started: {"executable": "cmd.exe"}
+- 2026-09-21T03:18:37.215068+00:00 #4333 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:18:42.021689+00:00 #4334 command_started: {"executable": "cmd.exe"}
+- 2026-09-21T03:18:42.860692+00:00 #4335 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:18:52.031991+00:00 #4336 command_started: {"executable": "powershell"}
+- 2026-09-21T03:18:52.274285+00:00 #4337 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:19:01.150437+00:00 #4338 command_started: {"executable": "powershell"}
+- 2026-09-21T03:19:05.161326+00:00 #4339 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:19:13.621456+00:00 #4340 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:19:13.934752+00:00 #4341 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:19:18.718057+00:00 #4342 command_started: {"executable": "powershell"}
+- 2026-09-21T03:19:38.986712+00:00 #4343 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:19:48.676848+00:00 #4344 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:19:48.991599+00:00 #4345 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:19:56.262243+00:00 #4346 command_started: {"executable": "powershell"}
+- 2026-09-21T03:19:57.221529+00:00 #4347 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:22:56.041844+00:00 #4348 command_started: {"executable": "powershell"}
+- 2026-09-21T03:22:56.042843+00:00 #4349 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:22:56.358072+00:00 #4350 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:22:57.201260+00:00 #4351 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:11.373135+00:00 #4352 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:11.384135+00:00 #4353 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:11.374135+00:00 #4354 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:11.606343+00:00 #4355 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:11.858692+00:00 #4356 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:11.866693+00:00 #4357 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:24.254474+00:00 #4358 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:23:24.261983+00:00 #4359 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:24.549709+00:00 #4360 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:24.675340+00:00 #4361 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:32.076367+00:00 #4362 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:32.252347+00:00 #4363 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:39.937264+00:00 #4364 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:40.125294+00:00 #4365 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:23:49.714878+00:00 #4366 command_started: {"executable": "powershell"}
+- 2026-09-21T03:23:49.959808+00:00 #4367 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:24:08.215014+00:00 #4368 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:24:08.506785+00:00 #4369 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:24:17.859199+00:00 #4370 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:24:18.232888+00:00 #4371 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:24:29.512204+00:00 #4372 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:24:29.634313+00:00 #4373 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:24:48.765744+00:00 #4374 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:24:48.880492+00:00 #4375 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:24:59.040806+00:00 #4376 command_started: {"executable": "powershell"}
+- 2026-09-21T03:25:00.328973+00:00 #4377 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:25:28.748129+00:00 #4378 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:25:28.753142+00:00 #4379 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:25:29.348981+00:00 #4380 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:25:31.588666+00:00 #4381 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:25:37.000879+00:00 #4382 command_started: {"executable": "powershell"}
+- 2026-09-21T03:25:38.052663+00:00 #4383 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:25:42.912309+00:00 #4384 command_started: {"executable": "powershell"}
+- 2026-09-21T03:25:51.098604+00:00 #4385 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:26:03.202746+00:00 #4386 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:26:03.208255+00:00 #4387 command_started: {"executable": "powershell"}
+- 2026-09-21T03:26:03.506284+00:00 #4388 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:26:04.072174+00:00 #4389 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:26:08.566044+00:00 #4390 command_started: {"executable": "powershell"}
+- 2026-09-21T03:26:26.742058+00:00 #4391 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:26:37.391739+00:00 #4392 command_started: {"executable": "powershell"}
+- 2026-09-21T03:26:37.397743+00:00 #4393 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:26:37.593004+00:00 #4394 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:26:37.719101+00:00 #4395 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:26:45.256175+00:00 #4396 command_started: {"executable": "powershell"}
+- 2026-09-21T03:26:45.433721+00:00 #4397 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:27:11.381581+00:00 #4398 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:27:11.398959+00:00 #4399 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:27:11.522067+00:00 #4400 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:27:14.122260+00:00 #4401 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:27:18.534479+00:00 #4402 command_started: {"executable": "powershell"}
+- 2026-09-21T03:27:19.516645+00:00 #4403 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:27:23.762874+00:00 #4404 command_started: {"executable": "powershell"}
+- 2026-09-21T03:27:31.939570+00:00 #4405 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:27:36.454280+00:00 #4406 command_started: {"executable": "powershell"}
+- 2026-09-21T03:27:36.640810+00:00 #4407 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:28:03.434848+00:00 #4408 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:28:03.721223+00:00 #4409 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:28:14.919494+00:00 #4410 command_started: {"executable": "powershell"}
+- 2026-09-21T03:28:15.339074+00:00 #4411 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:29:45.858002+00:00 #4412 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:29:45.860006+00:00 #4413 command_started: {"executable": "powershell"}
+- 2026-09-21T03:29:45.860006+00:00 #4414 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:29:46.006872+00:00 #4415 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:29:46.059897+00:00 #4416 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:29:48.880072+00:00 #4417 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:30:04.888116+00:00 #4418 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:30:04.900625+00:00 #4419 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:30:05.023831+00:00 #4420 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:30:07.579961+00:00 #4421 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:30:22.006337+00:00 #4422 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:30:22.034849+00:00 #4423 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:30:22.142585+00:00 #4424 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:30:24.820101+00:00 #4425 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:30:31.237701+00:00 #4426 command_started: {"executable": "powershell"}
+- 2026-09-21T03:30:33.212763+00:00 #4427 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:30:38.679147+00:00 #4428 command_started: {"executable": "powershell"}
+- 2026-09-21T03:30:46.878455+00:00 #4429 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:01.161263+00:00 #4430 command_started: {"executable": "powershell"}
+- 2026-09-21T03:31:01.176363+00:00 #4431 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:31:01.494273+00:00 #4432 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:01.559797+00:00 #4433 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:11.122916+00:00 #4434 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:31:11.423871+00:00 #4435 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:33.654010+00:00 #4436 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:31:33.669519+00:00 #4437 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:31:34.275509+00:00 #4438 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:36.377595+00:00 #4439 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:41.459993+00:00 #4440 command_started: {"executable": "powershell"}
+- 2026-09-21T03:31:43.460138+00:00 #4441 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:31:48.601575+00:00 #4442 command_started: {"executable": "powershell"}
+- 2026-09-21T03:31:56.787707+00:00 #4443 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:32:03.830669+00:00 #4444 command_started: {"executable": "powershell"}
+- 2026-09-21T03:32:04.024534+00:00 #4445 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:32:20.909381+00:00 #4446 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:32:21.024772+00:00 #4447 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:32:43.693286+00:00 #4448 command_started: {"executable": "cmd.exe"}
+- 2026-09-21T03:32:43.778770+00:00 #4449 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:32:43.843299+00:00 #4450 command_started: {"executable": "powershell"}
+- 2026-09-21T03:32:43.852299+00:00 #4451 command_started: {"executable": "powershell"}
+- 2026-09-21T03:32:44.063784+00:00 #4452 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:32:44.068850+00:00 #4453 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:33:23.525255+00:00 #4454 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:33:23.530254+00:00 #4455 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:33:23.674722+00:00 #4456 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:33:27.084560+00:00 #4457 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:33:31.480173+00:00 #4458 command_started: {"executable": "powershell"}
+- 2026-09-21T03:33:33.039449+00:00 #4459 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:33:37.586246+00:00 #4460 command_started: {"executable": "powershell"}
+- 2026-09-21T03:33:43.775134+00:00 #4461 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:33:50.868769+00:00 #4462 command_started: {"executable": "powershell"}
+- 2026-09-21T03:33:51.064813+00:00 #4463 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:34:27.439966+00:00 #4464 command_started: {"executable": "powershell"}
+- 2026-09-21T03:34:27.776877+00:00 #4465 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:35:28.952243+00:00 #4466 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:35:28.961746+00:00 #4467 command_started: {"executable": "git"}
+- 2026-09-21T03:35:28.956239+00:00 #4468 command_started: {"executable": "powershell"}
+- 2026-09-21T03:35:29.053825+00:00 #4469 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:35:29.093994+00:00 #4470 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:35:29.171042+00:00 #4471 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:35:34.290819+00:00 #4472 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:35:34.424073+00:00 #4473 command_finished: {"exit_code": 0, "changed": ["scripts/verify-orbit-deployment.py"]}
+- 2026-09-21T03:35:55.250812+00:00 #4474 command_started: {"executable": "powershell"}
+- 2026-09-21T03:35:57.025156+00:00 #4475 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:36:15.436531+00:00 #4476 command_started: {"executable": "powershell"}
+- 2026-09-21T03:36:17.464275+00:00 #4477 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:36:22.139798+00:00 #4478 command_started: {"executable": "powershell"}
+- 2026-09-21T03:36:22.318269+00:00 #4479 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:37:02.122842+00:00 #4480 command_started: {"executable": "powershell"}
+- 2026-09-21T03:37:02.368350+00:00 #4481 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:37:15.021636+00:00 #4482 command_started: {"executable": "powershell"}
+- 2026-09-21T03:37:15.259133+00:00 #4483 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:37:22.908090+00:00 #4484 command_started: {"executable": "powershell"}
+- 2026-09-21T03:37:23.137225+00:00 #4485 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:37:55.917269+00:00 #4486 command_started: {"executable": "powershell"}
+- 2026-09-21T03:37:56.109656+00:00 #4487 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:38:02.798785+00:00 #4488 command_started: {"executable": "powershell"}
+- 2026-09-21T03:38:04.037829+00:00 #4489 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:38:43.477178+00:00 #4490 command_started: {"executable": "powershell"}
+- 2026-09-21T03:38:43.729531+00:00 #4491 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:38:52.879924+00:00 #4492 command_started: {"executable": "powershell"}
+- 2026-09-21T03:38:53.121686+00:00 #4493 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:39:01.675603+00:00 #4494 command_started: {"executable": "powershell"}
+- 2026-09-21T03:39:01.923570+00:00 #4495 command_finished: {"exit_code": 0, "changed": ["orbit-runner.lock", "orbit-runner.log"]}
+- 2026-09-21T03:39:07.122413+00:00 #4496 command_started: {"executable": "powershell"}
+- 2026-09-21T03:39:08.299880+00:00 #4497 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:39:16.097154+00:00 #4498 command_started: {"executable": "powershell"}
+- 2026-09-21T03:39:24.967078+00:00 #4499 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:39:37.096411+00:00 #4500 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:39:37.110926+00:00 #4501 command_started: {"executable": "powershell"}
+- 2026-09-21T03:39:37.400111+00:00 #4502 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:39:37.474643+00:00 #4503 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:39:47.817193+00:00 #4504 command_started: {"executable": "powershell"}
+- 2026-09-21T03:39:48.085992+00:00 #4505 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:40:12.422020+00:00 #4506 command_started: {"executable": "powershell"}
+- 2026-09-21T03:40:12.698449+00:00 #4507 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:40:23.856625+00:00 #4508 command_started: {"executable": "powershell"}
+- 2026-09-21T03:40:24.058801+00:00 #4509 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:40:32.428115+00:00 #4510 command_started: {"executable": "powershell"}
+- 2026-09-21T03:40:32.622670+00:00 #4511 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:41:08.601524+00:00 #4512 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:41:08.607525+00:00 #4513 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:41:08.741193+00:00 #4514 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:41:13.058541+00:00 #4515 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:41:22.002081+00:00 #4516 command_started: {"executable": "powershell"}
+- 2026-09-21T03:41:23.667783+00:00 #4517 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:41:30.766536+00:00 #4518 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:41:31.172542+00:00 #4519 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:41:36.707800+00:00 #4520 command_started: {"executable": "powershell"}
+- 2026-09-21T03:41:37.494480+00:00 #4521 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:41:44.187137+00:00 #4522 command_started: {"executable": "powershell"}
+- 2026-09-21T03:42:04.375940+00:00 #4523 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:42:11.786245+00:00 #4524 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:42:11.787249+00:00 #4525 command_started: {"executable": "powershell"}
+- 2026-09-21T03:42:11.999398+00:00 #4526 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:42:12.226611+00:00 #4527 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:42:18.954979+00:00 #4528 command_started: {"executable": "powershell"}
+- 2026-09-21T03:42:49.153769+00:00 #4529 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:43:06.742181+00:00 #4530 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:43:06.760215+00:00 #4531 command_started: {"executable": "powershell"}
+- 2026-09-21T03:43:07.166495+00:00 #4532 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:43:07.516525+00:00 #4533 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:43:14.972954+00:00 #4534 command_started: {"executable": "powershell"}
+- 2026-09-21T03:43:15.169006+00:00 #4535 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:43:32.884168+00:00 #4536 command_started: {"executable": "docker"}
+- 2026-09-21T03:43:33.112091+00:00 #4537 command_finished: {"exit_code": 125, "changed": []}
+- 2026-09-21T03:43:38.256447+00:00 #4538 command_started: {"executable": "docker"}
+- 2026-09-21T03:43:38.538753+00:00 #4539 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:43:44.398530+00:00 #4540 command_started: {"executable": "powershell"}
+- 2026-09-21T03:43:44.680784+00:00 #4541 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:43:50.820292+00:00 #4542 command_started: {"executable": "powershell"}
+- 2026-09-21T03:44:11.010954+00:00 #4543 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:44:15.570380+00:00 #4544 command_started: {"executable": "docker"}
+- 2026-09-21T03:44:15.861855+00:00 #4545 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:44:23.933754+00:00 #4546 command_started: {"executable": "powershell"}
+- 2026-09-21T03:44:24.438899+00:00 #4547 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:44:30.656969+00:00 #4548 command_started: {"executable": "powershell"}
+- 2026-09-21T03:45:00.858574+00:00 #4549 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:45:04.614168+00:00 #4550 command_started: {"executable": "docker"}
+- 2026-09-21T03:45:04.900498+00:00 #4551 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:45:10.444081+00:00 #4552 command_started: {"executable": "powershell"}
+- 2026-09-21T03:45:10.724041+00:00 #4553 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:45:19.067641+00:00 #4554 command_started: {"executable": "powershell"}
+- 2026-09-21T03:45:19.307993+00:00 #4555 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:45:25.141971+00:00 #4556 command_started: {"executable": "powershell"}
+- 2026-09-21T03:45:25.386805+00:00 #4557 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:45:37.151326+00:00 #4558 command_started: {"executable": "powershell"}
+- 2026-09-21T03:45:37.390348+00:00 #4559 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:45:48.977975+00:00 #4560 command_started: {"executable": "powershell"}
+- 2026-09-21T03:45:51.282493+00:00 #4561 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:45:57.931800+00:00 #4562 command_started: {"executable": "wsl.exe"}
+- 2026-09-21T03:45:58.025530+00:00 #4563 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:46:03.576152+00:00 #4564 command_started: {"executable": "wsl.exe"}
+- 2026-09-21T03:46:03.667693+00:00 #4565 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:46:13.760784+00:00 #4566 command_started: {"executable": "powershell"}
+- 2026-09-21T03:46:14.015913+00:00 #4567 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T03:46:25.224735+00:00 #4568 command_started: {"executable": "cmd.exe"}
+- 2026-09-21T03:46:25.295768+00:00 #4569 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:46:33.333781+00:00 #4570 command_started: {"executable": "wsl.exe"}
+- 2026-09-21T03:46:34.438122+00:00 #4571 command_finished: {"exit_code": 4294967295, "changed": []}
+- 2026-09-21T03:46:39.305828+00:00 #4572 command_started: {"executable": "wsl.exe"}
+- 2026-09-21T03:46:40.138502+00:00 #4573 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:46:46.827051+00:00 #4574 command_started: {"executable": "wsl.exe"}
+- 2026-09-21T03:46:47.111270+00:00 #4575 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:46:54.569716+00:00 #4576 command_started: {"executable": "wsl.exe"}
+- 2026-09-21T03:46:54.679800+00:00 #4577 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:46:59.771472+00:00 #4578 command_started: {"executable": "powershell"}
+- 2026-09-21T03:47:00.055076+00:00 #4579 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:47:06.952253+00:00 #4580 command_started: {"executable": "powershell"}
+- 2026-09-21T03:47:37.132653+00:00 #4581 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:47:41.011089+00:00 #4582 command_started: {"executable": "docker"}
+- 2026-09-21T03:47:41.299145+00:00 #4583 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:47:57.384715+00:00 #4584 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:51:31.875322+00:00 #4585 command_started: {"executable": "docker"}
+- 2026-09-21T03:51:31.875322+00:00 #4586 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:51:32.106468+00:00 #4587 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:51:32.201205+00:00 #4588 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:52:27.311191+00:00 #4589 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:52:27.602098+00:00 #4590 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:53:11.561459+00:00 #4591 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:53:11.848757+00:00 #4592 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:54:51.152370+00:00 #4593 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:54:51.448967+00:00 #4594 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:55:34.071760+00:00 #4595 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:55:34.374756+00:00 #4596 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:56:14.818909+00:00 #4597 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:56:15.131846+00:00 #4598 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:56:54.140879+00:00 #4599 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:56:54.461568+00:00 #4600 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:57:38.583237+00:00 #4601 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:57:38.915650+00:00 #4602 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:58:24.289737+00:00 #4603 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:58:24.632029+00:00 #4604 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:58:48.727350+00:00 #4605 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:58:54.234379+00:00 #4606 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:58:54.657050+00:00 #4607 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:58:59.541713+00:00 #4608 command_started: {"executable": "powershell"}
+- 2026-09-21T03:58:59.737405+00:00 #4609 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:59:28.538486+00:00 #4610 command_started: {"executable": "python.exe"}
+- 2026-09-21T03:59:28.704326+00:00 #4611 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:59:44.574226+00:00 #4612 command_started: {"executable": "powershell"}
+- 2026-09-21T03:59:46.715104+00:00 #4613 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T03:59:54.640723+00:00 #4614 command_started: {"executable": "powershell"}
+- 2026-09-21T03:59:56.729974+00:00 #4615 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:00:20.903364+00:00 #4616 command_started: {"executable": "python.exe"}
+- 2026-09-21T04:00:20.916368+00:00 #4617 command_started: {"executable": "powershell"}
+- 2026-09-21T04:00:20.904368+00:00 #4618 command_started: {"executable": "git"}
+- 2026-09-21T04:00:20.905368+00:00 #4619 command_started: {"executable": "python.exe"}
+- 2026-09-21T04:00:21.021811+00:00 #4620 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:00:21.083290+00:00 #4621 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:00:21.134817+00:00 #4622 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:00:38.672934+00:00 #4623 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:00:49.977818+00:00 #4624 command_started: {"executable": "python.exe"}
+- 2026-09-21T04:00:50.089524+00:00 #4625 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:01:00.452028+00:00 #4626 command_started: {"executable": "python.exe"}
+- 2026-09-21T04:01:00.561277+00:00 #4627 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T04:01:08.480685+00:00 #4628 command_started: {"executable": "python.exe"}
+- 2026-09-21T04:01:08.607551+00:00 #4629 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T04:01:23.572928+00:00 #4630 command_started: {"executable": "powershell"}
+- 2026-09-21T04:01:23.818585+00:00 #4631 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:21:49.262590+00:00 #4632 command_started: {"executable": "rg"}
+- 2026-09-21T05:21:49.497831+00:00 #4633 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:22:06.871912+00:00 #4634 command_started: {"executable": "rg"}
+- 2026-09-21T05:22:06.959638+00:00 #4635 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:22:25.533783+00:00 #4636 command_started: {"executable": "python.exe"}
+- 2026-09-21T05:22:25.912120+00:00 #4637 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:22:31.484589+00:00 #4638 command_started: {"executable": "powershell"}
+- 2026-09-21T05:22:31.731606+00:00 #4639 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:09.474921+00:00 #4640 command_started: {"executable": "python.exe"}
+- 2026-09-21T05:23:09.482935+00:00 #4641 command_started: {"executable": "docker"}
+- 2026-09-21T05:23:09.493451+00:00 #4642 command_started: {"executable": "git"}
+- 2026-09-21T05:23:09.483939+00:00 #4643 command_started: {"executable": "powershell"}
+- 2026-09-21T05:23:09.503963+00:00 #4644 command_started: {"executable": "powershell"}
+- 2026-09-21T05:23:09.494452+00:00 #4645 command_started: {"executable": "powershell"}
+- 2026-09-21T05:23:09.596322+00:00 #4646 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:09.721865+00:00 #4647 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:09.730932+00:00 #4648 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T05:23:09.882206+00:00 #4649 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:11.558685+00:00 #4650 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:18.470786+00:00 #4651 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:38.369132+00:00 #4652 command_started: {"executable": "python.exe"}
+- 2026-09-21T05:23:38.380685+00:00 #4653 command_started: {"executable": "powershell"}
+- 2026-09-21T05:23:38.380685+00:00 #4654 command_started: {"executable": "powershell"}
+- 2026-09-21T05:23:38.382190+00:00 #4655 command_started: {"executable": "docker"}
+- 2026-09-21T05:23:38.554536+00:00 #4656 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:38.651473+00:00 #4657 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:38.651986+00:00 #4658 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:23:39.534364+00:00 #4659 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:11.465221+00:00 #4660 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:11.477924+00:00 #4661 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:11.468808+00:00 #4662 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:11.469833+00:00 #4663 command_started: {"executable": "docker"}
+- 2026-09-21T05:25:11.700991+00:00 #4664 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T05:25:11.798560+00:00 #4665 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:11.810164+00:00 #4666 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T05:25:11.820179+00:00 #4667 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T05:25:25.621902+00:00 #4668 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:25.633436+00:00 #4669 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:25.633436+00:00 #4670 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:25.825243+00:00 #4671 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:25.848431+00:00 #4672 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:25.854435+00:00 #4673 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:36.342699+00:00 #4674 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:36.552116+00:00 #4675 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:41.587272+00:00 #4676 command_started: {"executable": "rg"}
+- 2026-09-21T05:25:42.093666+00:00 #4677 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:48.260264+00:00 #4678 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:49.167519+00:00 #4679 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:25:54.800731+00:00 #4680 command_started: {"executable": "powershell"}
+- 2026-09-21T05:25:55.037195+00:00 #4681 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:01.140859+00:00 #4682 command_started: {"executable": "rg"}
+- 2026-09-21T05:26:01.330186+00:00 #4683 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:18.134747+00:00 #4684 command_started: {"executable": "python.exe"}
+- 2026-09-21T05:26:18.140254+00:00 #4685 command_started: {"executable": "powershell"}
+- 2026-09-21T05:26:18.152372+00:00 #4686 command_started: {"executable": "git"}
+- 2026-09-21T05:26:18.141254+00:00 #4687 command_started: {"executable": "git"}
+- 2026-09-21T05:26:18.140254+00:00 #4688 command_started: {"executable": "git"}
+- 2026-09-21T05:26:18.255691+00:00 #4689 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:18.260235+00:00 #4690 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:18.256695+00:00 #4691 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:18.299667+00:00 #4692 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:18.348046+00:00 #4693 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T05:26:46.025780+00:00 #4694 command_started: {"executable": "powershell"}
+- 2026-09-21T05:26:46.030828+00:00 #4695 command_started: {"executable": "powershell"}
+- 2026-09-21T05:26:46.038367+00:00 #4696 command_started: {"executable": "powershell"}
+- 2026-09-21T05:26:46.030828+00:00 #4697 command_started: {"executable": "powershell"}
+- 2026-09-21T05:26:46.228392+00:00 #4698 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:46.229399+00:00 #4699 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:46.246475+00:00 #4700 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:26:46.589484+00:00 #4701 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:27:05.644677+00:00 #4702 command_started: {"executable": "powershell"}
+- 2026-09-21T05:27:05.648760+00:00 #4703 command_started: {"executable": "powershell"}
+- 2026-09-21T05:27:05.654804+00:00 #4704 command_started: {"executable": "powershell"}
+- 2026-09-21T05:27:05.849849+00:00 #4705 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:27:06.681380+00:00 #4706 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:27:06.915317+00:00 #4707 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:27:17.718016+00:00 #4708 command_started: {"executable": "powershell"}
+- 2026-09-21T05:27:18.059194+00:00 #4709 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T05:27:47.180829+00:00 #4710 handoff: {"digest": "e6cbe09fc4ebd94ca18b026a56c8c8423b507a16b13e1afa04a77b187d169b44", "files_observed": 153}
+- 2026-09-21T05:27:55.880217+00:00 #4711 closed: {}
+- 2026-09-21T13:15:51.006796+00:00 #4712 started: {"files_observed": 153}
+- 2026-09-21T13:16:05.205968+00:00 #4713 command_started: {"executable": "powershell"}
+- 2026-09-21T13:16:06.560249+00:00 #4714 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:16:23.186323+00:00 #4715 command_started: {"executable": "powershell"}
+- 2026-09-21T13:16:23.622085+00:00 #4716 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:16:36.613023+00:00 #4717 command_started: {"executable": "powershell"}
+- 2026-09-21T13:16:36.855440+00:00 #4718 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T13:16:50.611511+00:00 #4719 command_started: {"executable": "powershell"}
+- 2026-09-21T13:16:51.869713+00:00 #4720 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:17:14.001590+00:00 #4721 command_started: {"executable": "git"}
+- 2026-09-21T13:17:41.669038+00:00 #4722 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:17:57.600397+00:00 #4723 command_started: {"executable": "powershell"}
+- 2026-09-21T13:18:05.430489+00:00 #4724 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:18:15.372123+00:00 #4725 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T13:18:16.473433+00:00 #4726 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:18:35.529857+00:00 #4727 command_started: {"executable": "git"}
+- 2026-09-21T13:18:35.622980+00:00 #4728 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:18:45.306571+00:00 #4729 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T13:19:36.189964+00:00 #4730 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:19:52.413472+00:00 #4731 command_started: {"executable": "powershell"}
+- 2026-09-21T13:19:57.085683+00:00 #4732 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:20:17.798221+00:00 #4733 command_started: {"executable": "powershell"}
+- 2026-09-21T13:20:17.997980+00:00 #4734 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:20:31.811215+00:00 #4735 command_started: {"executable": "powershell"}
+- 2026-09-21T13:20:42.043749+00:00 #4736 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:21:01.173457+00:00 #4737 command_started: {"executable": "powershell"}
+- 2026-09-21T13:21:14.242743+00:00 #4738 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:21:25.012736+00:00 #4739 command_started: {"executable": "powershell"}
+- 2026-09-21T13:21:29.701461+00:00 #4740 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:21:41.004721+00:00 #4741 command_started: {"executable": "powershell"}
+- 2026-09-21T13:21:41.243499+00:00 #4742 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T13:21:50.894678+00:00 #4743 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T13:21:51.606678+00:00 #4744 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:22:01.418111+00:00 #4745 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T13:22:02.116829+00:00 #4746 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:22:18.204664+00:00 #4747 command_started: {"executable": "powershell"}
+- 2026-09-21T13:22:47.369836+00:00 #4748 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:23:04.926525+00:00 #4749 command_started: {"executable": "powershell"}
+- 2026-09-21T13:23:05.161071+00:00 #4750 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:23:13.447465+00:00 #4751 command_started: {"executable": "powershell"}
+- 2026-09-21T13:23:13.668557+00:00 #4752 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:23:25.510626+00:00 #4753 command_started: {"executable": "powershell"}
+- 2026-09-21T13:23:25.761224+00:00 #4754 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:23:38.030692+00:00 #4755 command_started: {"executable": "powershell"}
+- 2026-09-21T13:23:38.221852+00:00 #4756 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:23:45.259522+00:00 #4757 command_started: {"executable": "powershell"}
+- 2026-09-21T13:23:45.471821+00:00 #4758 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T13:23:55.442283+00:00 #4759 command_started: {"executable": "powershell"}
+- 2026-09-21T13:23:56.987048+00:00 #4760 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:24:12.958804+00:00 #4761 command_started: {"executable": "python.exe"}
+- 2026-09-21T13:24:30.419436+00:00 #4762 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:24:40.828683+00:00 #4763 command_started: {"executable": "powershell"}
+- 2026-09-21T13:24:41.710890+00:00 #4764 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:24:47.635186+00:00 #4765 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T13:24:48.389692+00:00 #4766 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:25:02.560769+00:00 #4767 command_started: {"executable": "powershell"}
+- 2026-09-21T13:25:19.906283+00:00 #4768 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:25:48.011539+00:00 #4769 command_started: {"executable": "powershell"}
+- 2026-09-21T13:26:00.943845+00:00 #4770 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:26:13.458692+00:00 #4771 command_started: {"executable": "powershell"}
+- 2026-09-21T13:26:18.059405+00:00 #4772 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:26:33.241172+00:00 #4773 command_started: {"executable": "powershell"}
+- 2026-09-21T13:26:33.660396+00:00 #4774 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:27:08.878663+00:00 #4775 command_started: {"executable": "powershell"}
+- 2026-09-21T13:27:11.146518+00:00 #4776 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:27:30.242697+00:00 #4777 command_started: {"executable": "powershell"}
+- 2026-09-21T13:27:30.522076+00:00 #4778 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:27:41.176035+00:00 #4779 command_started: {"executable": "powershell"}
+- 2026-09-21T13:27:45.892222+00:00 #4780 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:28:17.614443+00:00 #4781 command_started: {"executable": "powershell"}
+- 2026-09-21T13:28:22.895212+00:00 #4782 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:28:31.845573+00:00 #4783 command_started: {"executable": "powershell"}
+- 2026-09-21T13:28:33.793450+00:00 #4784 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:28:53.770844+00:00 #4785 command_started: {"executable": "powershell"}
+- 2026-09-21T13:28:54.098530+00:00 #4786 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:29:01.183480+00:00 #4787 command_started: {"executable": "powershell"}
+- 2026-09-21T13:29:01.399627+00:00 #4788 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:29:23.391810+00:00 #4789 command_started: {"executable": "powershell"}
+- 2026-09-21T13:29:23.587766+00:00 #4790 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T13:29:29.753223+00:00 #4791 command_started: {"executable": "rg"}
+- 2026-09-21T13:29:29.830545+00:00 #4792 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:29:35.936362+00:00 #4793 command_started: {"executable": "powershell"}
+- 2026-09-21T13:29:36.145533+00:00 #4794 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:29:44.429917+00:00 #4795 command_started: {"executable": "powershell"}
+- 2026-09-21T13:29:44.649139+00:00 #4796 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:29:50.140411+00:00 #4797 command_started: {"executable": "powershell"}
+- 2026-09-21T13:29:50.348336+00:00 #4798 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:29:56.599404+00:00 #4799 command_started: {"executable": "powershell"}
+- 2026-09-21T13:29:56.808337+00:00 #4800 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:30:25.737828+00:00 #4801 command_started: {"executable": "rg"}
+- 2026-09-21T13:30:25.813490+00:00 #4802 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T13:30:48.332017+00:00 #4803 command_started: {"executable": "python.exe"}
+- 2026-09-21T13:30:48.641789+00:00 #4804 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:30:57.498572+00:00 #4805 command_started: {"executable": "powershell"}
+- 2026-09-21T13:30:58.175793+00:00 #4806 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:31:10.495796+00:00 #4807 command_started: {"executable": "powershell"}
+- 2026-09-21T13:31:18.684941+00:00 #4808 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T13:32:02.224741+00:00 #4809 command_started: {"executable": "powershell"}
+- 2026-09-21T13:32:06.973248+00:00 #4810 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T13:32:37.812912+00:00 #4811 handoff: {"digest": "d4419deb79474f91f59d1416ddcc7001bfa33304c841e07a1c97406d3741fda5", "files_observed": 153}
+- 2026-09-21T13:32:44.172246+00:00 #4812 closed: {}
+- 2026-09-21T15:01:06.878242+00:00 #4813 started: {"files_observed": 153}
+- 2026-09-21T15:01:13.710372+00:00 #4814 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:01:14.282399+00:00 #4815 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:01:18.367687+00:00 #4816 command_started: {"executable": "git"}
+- 2026-09-21T15:01:18.454596+00:00 #4817 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:01:24.810558+00:00 #4818 command_started: {"executable": "git"}
+- 2026-09-21T15:01:26.298798+00:00 #4819 command_finished: {"exit_code": 0, "changed": ["integrations/hermes/uuma_control_guard/__init__.py", "profiles/orchestrator/SOUL.addendum.md", "profiles/yonc/SOUL.md", "profiles/yonc/skills/yonc-project-management/SKILL.md", "scripts/configure-hermes-profile.py", "src/uuma/auth.py", "src/uuma/mcp_worker.py", "src/uuma/policy.py", "src/uuma/specialist_skills.py", "tests/test_configure_hermes_profile.py", "tests/test_control_plane.py", "tests/test_uuma_control_guard.py"]}
+- 2026-09-21T15:01:31.377558+00:00 #4820 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:01:31.588829+00:00 #4821 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:01:36.182789+00:00 #4822 command_started: {"executable": "git"}
+- 2026-09-21T15:01:36.287271+00:00 #4823 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:01:41.178555+00:00 #4824 command_started: {"executable": "git"}
+- 2026-09-21T15:01:49.173655+00:00 #4825 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:02:01.592053+00:00 #4826 command_started: {"executable": "git"}
+- 2026-09-21T15:02:01.970587+00:00 #4827 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:02:02.251440+00:00 #4828 command_started: {"executable": "git"}
+- 2026-09-21T15:02:02.345127+00:00 #4829 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:02:09.679012+00:00 #4830 command_started: {"executable": "git"}
+- 2026-09-21T15:02:10.126962+00:00 #4831 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:02:13.934506+00:00 #4832 command_started: {"executable": "git"}
+- 2026-09-21T15:02:14.336258+00:00 #4833 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:02:18.722083+00:00 #4834 command_started: {"executable": "git"}
+- 2026-09-21T15:02:18.812265+00:00 #4835 command_finished: {"exit_code": 129, "changed": []}
+- 2026-09-21T15:02:24.626093+00:00 #4836 command_started: {"executable": "git"}
+- 2026-09-21T15:02:25.122737+00:00 #4837 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:02:40.533455+00:00 #4838 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:02:40.746403+00:00 #4839 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:02:55.529591+00:00 #4840 command_started: {"executable": "git"}
+- 2026-09-21T15:02:55.625729+00:00 #4841 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:02:59.585101+00:00 #4842 command_started: {"executable": "git"}
+- 2026-09-21T15:02:59.695786+00:00 #4843 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:03:05.950370+00:00 #4844 command_started: {"executable": "git"}
+- 2026-09-21T15:03:06.037479+00:00 #4845 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:03:09.933477+00:00 #4846 command_started: {"executable": "git"}
+- 2026-09-21T15:03:10.108406+00:00 #4847 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:03:19.799455+00:00 #4848 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:03:20.018776+00:00 #4849 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:03:26.315397+00:00 #4850 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:03:26.562963+00:00 #4851 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:03:33.559801+00:00 #4852 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:03:33.868404+00:00 #4853 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:03:43.218396+00:00 #4854 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:03:43.459841+00:00 #4855 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:03:53.651135+00:00 #4856 command_started: {"executable": "rg"}
+- 2026-09-21T15:03:54.668583+00:00 #4857 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:04:03.839935+00:00 #4858 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:04:04.758575+00:00 #4859 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:04:10.924758+00:00 #4860 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:04:11.151996+00:00 #4861 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:04:19.083590+00:00 #4862 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:04:23.381134+00:00 #4863 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:04:37.650585+00:00 #4864 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:04:37.771216+00:00 #4865 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:04:44.265927+00:00 #4866 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:04:45.267776+00:00 #4867 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-21T15:04:51.578628+00:00 #4868 command_started: {"executable": "git"}
+- 2026-09-21T15:04:51.675562+00:00 #4869 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:04:56.963465+00:00 #4870 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:04:57.154020+00:00 #4871 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:05:03.621610+00:00 #4872 command_started: {"executable": "rg"}
+- 2026-09-21T15:05:03.702020+00:00 #4873 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:05:09.598868+00:00 #4874 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:05:09.820615+00:00 #4875 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:05:23.642511+00:00 #4876 command_started: {"executable": "rg"}
+- 2026-09-21T15:05:23.729995+00:00 #4877 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:05:30.939477+00:00 #4878 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:05:31.180202+00:00 #4879 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:05:42.360339+00:00 #4880 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:05:43.067127+00:00 #4881 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:05:52.388528+00:00 #4882 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:05:54.712708+00:00 #4883 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:06:01.579810+00:00 #4884 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:06:01.703986+00:00 #4885 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:06:12.479631+00:00 #4886 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:06:12.681861+00:00 #4887 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:06:18.837770+00:00 #4888 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:06:19.098674+00:00 #4889 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:06:28.199516+00:00 #4890 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:06:49.919328+00:00 #4891 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:06:59.270339+00:00 #4892 command_started: {"executable": "rg"}
+- 2026-09-21T15:06:59.352985+00:00 #4893 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:07:22.657941+00:00 #4894 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:07:22.876862+00:00 #4895 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:07:30.474966+00:00 #4896 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:07:30.752244+00:00 #4897 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:07:48.861530+00:00 #4898 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:08:01.919850+00:00 #4899 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:08:28.453774+00:00 #4900 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:08:31.948745+00:00 #4901 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:08:48.580819+00:00 #4902 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:09:13.757623+00:00 #4903 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:09:20.225736+00:00 #4904 command_started: {"executable": "rg"}
+- 2026-09-21T15:09:20.305345+00:00 #4905 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:09:29.181119+00:00 #4906 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:09:29.395222+00:00 #4907 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:09:35.846838+00:00 #4908 command_started: {"executable": "rg"}
+- 2026-09-21T15:09:35.930325+00:00 #4909 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:09:41.131554+00:00 #4910 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:09:41.355520+00:00 #4911 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:10:04.320245+00:00 #4912 command_started: {"executable": "rg"}
+- 2026-09-21T15:10:04.394465+00:00 #4913 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:10:09.737962+00:00 #4914 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:10:09.950057+00:00 #4915 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:10:48.192227+00:00 #4916 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:10:52.491555+00:00 #4917 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:10:58.776830+00:00 #4918 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:11:18.811015+00:00 #4919 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:11:29.336877+00:00 #4920 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:11:32.273653+00:00 #4921 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:11:38.805678+00:00 #4922 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:11:41.647560+00:00 #4923 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:11:49.477088+00:00 #4924 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:11:49.749550+00:00 #4925 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:11:55.676414+00:00 #4926 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:11:55.927201+00:00 #4927 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:12:02.438904+00:00 #4928 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:12:02.706991+00:00 #4929 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:12:09.318501+00:00 #4930 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:12:17.243999+00:00 #4931 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:12:22.505802+00:00 #4932 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:12:22.691137+00:00 #4933 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:12:26.854315+00:00 #4934 command_started: {"executable": "pnpm"}
+- 2026-09-21T15:12:26.892828+00:00 #4935 command_interrupted: {"error": "FileNotFoundError"}
+- 2026-09-21T15:12:32.179222+00:00 #4936 command_started: {"executable": "cmd.exe"}
+- 2026-09-21T15:12:33.244970+00:00 #4937 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:12:40.404915+00:00 #4938 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:12:41.102124+00:00 #4939 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:12:48.690850+00:00 #4940 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:14:18.207932+00:00 #4941 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:14:24.966069+00:00 #4942 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:14:25.724373+00:00 #4943 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:14:39.263472+00:00 #4944 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:14:39.498261+00:00 #4945 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:14:47.079192+00:00 #4946 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:14:49.339024+00:00 #4947 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:14:55.075331+00:00 #4948 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:14:55.288487+00:00 #4949 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:15:05.166610+00:00 #4950 command_started: {"executable": "rg"}
+- 2026-09-21T15:15:05.274162+00:00 #4951 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:15:12.696611+00:00 #4952 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:15:12.867832+00:00 #4953 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:15:13.150637+00:00 #4954 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:15:13.322312+00:00 #4955 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:15:29.016429+00:00 #4956 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:15:33.040038+00:00 #4957 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:15:37.901499+00:00 #4958 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:15:38.817909+00:00 #4959 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:15:45.206154+00:00 #4960 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:16:05.053344+00:00 #4961 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:16:10.054518+00:00 #4962 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:16:10.749634+00:00 #4963 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:16:16.015202+00:00 #4964 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:16:16.774600+00:00 #4965 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:16:24.036163+00:00 #4966 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:16:26.185252+00:00 #4967 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:16:26.686489+00:00 #4968 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:16:29.372670+00:00 #4969 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:16:35.336168+00:00 #4970 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:21:05.724933+00:00 #4971 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:21:12.683260+00:00 #4972 command_started: {"executable": "rg"}
+- 2026-09-21T15:21:12.766413+00:00 #4973 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:21:20.124181+00:00 #4974 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:21:20.228100+00:00 #4975 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-21T15:21:29.670363+00:00 #4976 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:21:29.778801+00:00 #4977 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:21:37.377040+00:00 #4978 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:21:37.494729+00:00 #4979 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:21:48.810364+00:00 #4980 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:22:06.588285+00:00 #4981 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:22:11.804368+00:00 #4982 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:22:31.151294+00:00 #4983 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:22:45.653778+00:00 #4984 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:22:46.350524+00:00 #4985 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:22:46.857946+00:00 #4986 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:22:47.087560+00:00 #4987 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:22:52.915013+00:00 #4988 command_started: {"executable": "git"}
+- 2026-09-21T15:22:53.021558+00:00 #4989 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:22:53.516719+00:00 #4990 command_started: {"executable": "git"}
+- 2026-09-21T15:22:53.988363+00:00 #4991 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-21T15:23:12.205575+00:00 #4992 command_started: {"executable": "git"}
+- 2026-09-21T15:23:12.389421+00:00 #4993 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:23:23.660753+00:00 #4994 command_started: {"executable": "git"}
+- 2026-09-21T15:23:23.772028+00:00 #4995 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:23:29.723949+00:00 #4996 command_started: {"executable": "git"}
+- 2026-09-21T15:23:29.816522+00:00 #4997 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:24:36.300990+00:00 #4998 command_started: {"executable": "python.exe"}
+- 2026-09-21T15:24:36.416103+00:00 #4999 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:24:36.937069+00:00 #5000 command_started: {"executable": "powershell.exe"}
+- 2026-09-21T15:24:37.285331+00:00 #5001 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:24:43.416820+00:00 #5002 command_started: {"executable": "hermes.exe"}
+- 2026-09-21T15:24:46.038146+00:00 #5003 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:24:46.535593+00:00 #5004 command_started: {"executable": "git"}
+- 2026-09-21T15:24:46.636392+00:00 #5005 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:24:53.129382+00:00 #5006 command_started: {"executable": "git"}
+- 2026-09-21T15:24:53.212570+00:00 #5007 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:24:53.700772+00:00 #5008 command_started: {"executable": "git"}
+- 2026-09-21T15:24:53.803863+00:00 #5009 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:25:01.653819+00:00 #5010 command_started: {"executable": "git"}
+- 2026-09-21T15:25:01.753373+00:00 #5011 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:25:02.233841+00:00 #5012 command_started: {"executable": "git"}
+- 2026-09-21T15:25:02.446234+00:00 #5013 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-21T15:25:23.068569+00:00 #5014 handoff: {"digest": "c9caf0aa5f6ba081fbae059ec0edf8548db1c957adaf19c47c54f6cf242f4e5f", "files_observed": 155}
+- 2026-09-21T15:25:30.768035+00:00 #5015 closed: {}
+- 2026-09-22T03:55:20.416606+00:00 #5016 started: {"files_observed": 155}
+- 2026-09-22T03:55:39.356442+00:00 #5017 command_started: {"executable": "powershell"}
+- 2026-09-22T03:55:40.811087+00:00 #5018 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:55:41.332846+00:00 #5019 command_started: {"executable": "git"}
+- 2026-09-22T03:55:41.423211+00:00 #5020 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:55:41.942010+00:00 #5021 command_started: {"executable": "git"}
+- 2026-09-22T03:55:42.047110+00:00 #5022 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:55:42.574083+00:00 #5023 command_started: {"executable": "git"}
+- 2026-09-22T03:55:42.659138+00:00 #5024 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:55:43.177225+00:00 #5025 command_started: {"executable": "git"}
+- 2026-09-22T03:55:43.266167+00:00 #5026 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:55:43.774429+00:00 #5027 command_started: {"executable": "git"}
+- 2026-09-22T03:55:43.882485+00:00 #5028 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:55:44.420402+00:00 #5029 command_started: {"executable": "git"}
+- 2026-09-22T03:55:44.510479+00:00 #5030 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:06.015446+00:00 #5031 command_started: {"executable": "git"}
+- 2026-09-22T03:56:06.230242+00:00 #5032 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:06.741864+00:00 #5033 command_started: {"executable": "git"}
+- 2026-09-22T03:56:06.837632+00:00 #5034 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:07.369337+00:00 #5035 command_started: {"executable": "git"}
+- 2026-09-22T03:56:07.458177+00:00 #5036 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:07.999522+00:00 #5037 command_started: {"executable": "git"}
+- 2026-09-22T03:56:08.109867+00:00 #5038 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:08.659616+00:00 #5039 command_started: {"executable": "git"}
+- 2026-09-22T03:56:08.992696+00:00 #5040 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:09.522047+00:00 #5041 command_started: {"executable": "git"}
+- 2026-09-22T03:56:09.609350+00:00 #5042 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:10.122107+00:00 #5043 command_started: {"executable": "git"}
+- 2026-09-22T03:56:10.215063+00:00 #5044 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:10.736984+00:00 #5045 command_started: {"executable": "git"}
+- 2026-09-22T03:56:10.830046+00:00 #5046 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:56:25.139887+00:00 #5047 command_started: {"executable": "git"}
+- 2026-09-22T03:56:25.232685+00:00 #5048 command_finished: {"exit_code": 128, "changed": []}
+- 2026-09-22T03:56:25.759858+00:00 #5049 command_started: {"executable": "git"}
+- 2026-09-22T03:56:25.848439+00:00 #5050 command_finished: {"exit_code": 128, "changed": []}
+- 2026-09-22T03:56:26.382030+00:00 #5051 command_started: {"executable": "git"}
+- 2026-09-22T03:56:26.483135+00:00 #5052 command_finished: {"exit_code": 128, "changed": []}
+- 2026-09-22T03:56:27.075082+00:00 #5053 command_started: {"executable": "git"}
+- 2026-09-22T03:56:27.184181+00:00 #5054 command_finished: {"exit_code": 128, "changed": []}
+- 2026-09-22T03:56:27.823237+00:00 #5055 command_started: {"executable": "git"}
+- 2026-09-22T03:56:27.938004+00:00 #5056 command_finished: {"exit_code": 128, "changed": []}
+- 2026-09-22T03:57:01.603813+00:00 #5057 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:57:02.795383+00:00 #5058 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:12.425324+00:00 #5059 command_started: {"executable": "git"}
+- 2026-09-22T03:57:12.519696+00:00 #5060 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:13.107449+00:00 #5061 command_started: {"executable": "git"}
+- 2026-09-22T03:57:13.194993+00:00 #5062 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:13.712448+00:00 #5063 command_started: {"executable": "git"}
+- 2026-09-22T03:57:13.805173+00:00 #5064 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:14.315591+00:00 #5065 command_started: {"executable": "git"}
+- 2026-09-22T03:57:14.403865+00:00 #5066 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:14.769812+00:00 #5067 command_started: {"executable": "rg"}
+- 2026-09-22T03:57:14.868474+00:00 #5068 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:14.917503+00:00 #5069 command_started: {"executable": "git"}
+- 2026-09-22T03:57:15.055317+00:00 #5070 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:15.553688+00:00 #5071 command_started: {"executable": "git"}
+- 2026-09-22T03:57:15.639783+00:00 #5072 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:16.143491+00:00 #5073 command_started: {"executable": "git"}
+- 2026-09-22T03:57:16.293681+00:00 #5074 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:16.792838+00:00 #5075 command_started: {"executable": "git"}
+- 2026-09-22T03:57:16.883156+00:00 #5076 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:17.374518+00:00 #5077 command_started: {"executable": "git"}
+- 2026-09-22T03:57:17.464697+00:00 #5078 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T03:57:17.971980+00:00 #5079 command_started: {"executable": "powershell"}
+- 2026-09-22T03:57:18.178482+00:00 #5080 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T03:57:30.742418+00:00 #5081 command_started: {"executable": "rg"}
+- 2026-09-22T03:57:30.833412+00:00 #5082 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:42.320569+00:00 #5083 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:57:42.548095+00:00 #5084 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T03:57:43.806149+00:00 #5085 command_started: {"executable": "git"}
+- 2026-09-22T03:57:43.893438+00:00 #5086 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:44.485497+00:00 #5087 command_started: {"executable": "git"}
+- 2026-09-22T03:57:44.707035+00:00 #5088 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:45.209966+00:00 #5089 command_started: {"executable": "git"}
+- 2026-09-22T03:57:45.302168+00:00 #5090 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:45.818445+00:00 #5091 command_started: {"executable": "powershell"}
+- 2026-09-22T03:57:46.014173+00:00 #5092 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:46.608773+00:00 #5093 command_started: {"executable": "powershell"}
+- 2026-09-22T03:57:46.815353+00:00 #5094 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:47.423212+00:00 #5095 command_started: {"executable": "powershell"}
+- 2026-09-22T03:57:47.630837+00:00 #5096 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T03:57:48.232094+00:00 #5097 command_started: {"executable": "git"}
+- 2026-09-22T03:57:48.337652+00:00 #5098 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:57:48.845675+00:00 #5099 command_started: {"executable": "git"}
+- 2026-09-22T03:57:49.166945+00:00 #5100 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T03:57:51.148458+00:00 #5101 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T03:57:59.035898+00:00 #5102 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:13.938378+00:00 #5103 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:58:14.290886+00:00 #5104 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T03:58:28.156018+00:00 #5105 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:58:28.419630+00:00 #5106 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:38.536103+00:00 #5107 command_started: {"executable": "git"}
+- 2026-09-22T03:58:39.374662+00:00 #5108 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:39.895214+00:00 #5109 command_started: {"executable": "git"}
+- 2026-09-22T03:58:40.845272+00:00 #5110 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:41.369192+00:00 #5111 command_started: {"executable": "git"}
+- 2026-09-22T03:58:41.460159+00:00 #5112 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:41.970440+00:00 #5113 command_started: {"executable": "git"}
+- 2026-09-22T03:58:42.150348+00:00 #5114 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:42.706085+00:00 #5115 command_started: {"executable": "git"}
+- 2026-09-22T03:58:42.799101+00:00 #5116 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:52.805053+00:00 #5117 command_started: {"executable": "rg"}
+- 2026-09-22T03:58:52.816057+00:00 #5118 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:58:52.819057+00:00 #5119 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:58:52.887647+00:00 #5120 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:53.034467+00:00 #5121 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:53.044535+00:00 #5122 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:58:53.711537+00:00 #5123 command_started: {"executable": "rg"}
+- 2026-09-22T03:59:04.851242+00:00 #5124 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:59:05.134528+00:00 #5125 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T03:59:06.462012+00:00 #5126 handoff: {"digest": "1d5ab550a7448d9f7941c507f7191ca6b58cf311be8a3819ba0f7e1e5a8e6258", "files_observed": 155}
+- 2026-09-22T03:59:10.659755+00:00 #5127 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T03:59:13.904797+00:00 #5128 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:59:14.113154+00:00 #5129 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:24.892608+00:00 #5130 command_started: {"executable": "powershell"}
+- 2026-09-22T03:59:25.089140+00:00 #5131 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:30.297417+00:00 #5132 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:59:30.529937+00:00 #5133 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:36.126085+00:00 #5134 handoff: {"digest": "1d5ab550a7448d9f7941c507f7191ca6b58cf311be8a3819ba0f7e1e5a8e6258", "files_observed": 155}
+- 2026-09-22T03:59:36.821527+00:00 #5135 command_started: {"executable": "rg"}
+- 2026-09-22T03:59:36.904506+00:00 #5136 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:40.548670+00:00 #5137 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T03:59:41.769379+00:00 #5138 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:45.842542+00:00 #5139 command_started: {"executable": "powershell"}
+- 2026-09-22T03:59:46.061247+00:00 #5140 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:53.882411+00:00 #5141 command_started: {"executable": "rg"}
+- 2026-09-22T03:59:53.969724+00:00 #5142 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:54.319328+00:00 #5143 command_started: {"executable": "rg"}
+- 2026-09-22T03:59:54.581919+00:00 #5144 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T03:59:59.195584+00:00 #5145 command_started: {"executable": "hermes"}
+- 2026-09-22T03:59:59.677765+00:00 #5146 command_started: {"executable": "powershell"}
+- 2026-09-22T03:59:59.906074+00:00 #5147 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:00.059658+00:00 #5148 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:02.407857+00:00 #5149 command_started: {"executable": "rg"}
+- 2026-09-22T04:00:02.510060+00:00 #5150 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:11.421488+00:00 #5151 command_started: {"executable": "hermes"}
+- 2026-09-22T04:00:12.493077+00:00 #5152 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:13.138733+00:00 #5153 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:00:13.399155+00:00 #5154 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:15.486563+00:00 #5155 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:00:15.614754+00:00 #5156 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:41.901481+00:00 #5157 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:00:42.080717+00:00 #5158 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:00:49.224069+00:00 #5159 command_started: {"executable": "powershell"}
+- 2026-09-22T04:00:49.465866+00:00 #5160 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:56.328161+00:00 #5161 command_started: {"executable": "hermes"}
+- 2026-09-22T04:00:57.138202+00:00 #5162 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:00:58.931541+00:00 #5163 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:00:59.075217+00:00 #5164 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:01:13.428127+00:00 #5165 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:01:13.561495+00:00 #5166 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:01:16.405036+00:00 #5167 handoff: {"digest": "e3908f42f4ce3d134708de6058592392c0556a134b43ccb86d984b5ecf75b661", "files_observed": 155}
+- 2026-09-22T04:01:21.468947+00:00 #5168 closed: {}
+- 2026-09-22T04:01:31.998774+00:00 #5169 started: {"files_observed": 155}
+- 2026-09-22T04:01:50.950489+00:00 #5170 handoff: {"digest": "46361176e9f8eff07ae3cb5a682c2360dd65e1866b43ba99c0134bee8139dc60", "files_observed": 155}
+- 2026-09-22T04:01:53.229777+00:00 #5171 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:01:53.367972+00:00 #5172 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:24.615744+00:00 #5173 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:02:24.617744+00:00 #5174 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:02:24.627254+00:00 #5175 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:02:24.755321+00:00 #5176 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:24.858400+00:00 #5177 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:25.393902+00:00 #5178 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:34.780294+00:00 #5179 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:02:35.522841+00:00 #5180 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:47.799471+00:00 #5181 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:02:47.817976+00:00 #5182 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:02:50.481098+00:00 #5183 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:50.549618+00:00 #5184 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:02:51.421872+00:00 #5185 handoff: {"digest": "afe40340ac5694012b5e105476e020be9b63f3701929d33fe0e8a945a3a13832", "files_observed": 155}
+- 2026-09-22T04:02:57.014409+00:00 #5186 closed: {}
+- 2026-09-22T04:03:30.103704+00:00 #5187 started: {"files_observed": 155}
+- 2026-09-22T04:03:37.657867+00:00 #5188 command_started: {"executable": "rg"}
+- 2026-09-22T04:03:37.746497+00:00 #5189 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:03:47.506754+00:00 #5190 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:03:47.727582+00:00 #5191 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:03:56.185048+00:00 #5192 command_started: {"executable": "rg"}
+- 2026-09-22T04:03:56.274381+00:00 #5193 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:04:28.253430+00:00 #5194 handoff: {"digest": "334bd7d4c8a642f11b73a183b2a9894c9f1be55ca740e2dde20815386ebc20ff", "files_observed": 155}
+- 2026-09-22T04:04:35.490004+00:00 #5195 closed: {}
+- 2026-09-22T04:04:47.179601+00:00 #5196 started: {"files_observed": 155}
+- 2026-09-22T04:05:00.008250+00:00 #5197 command_started: {"executable": "rg"}
+- 2026-09-22T04:05:00.090963+00:00 #5198 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T04:05:08.198275+00:00 #5199 command_started: {"executable": "powershell"}
+- 2026-09-22T04:05:08.415584+00:00 #5200 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:05:17.811229+00:00 #5201 command_started: {"executable": "rg"}
+- 2026-09-22T04:05:17.891793+00:00 #5202 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:05:25.133745+00:00 #5203 command_started: {"executable": "codex"}
+- 2026-09-22T04:05:25.266417+00:00 #5204 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:06:33.860344+00:00 #5205 handoff: {"digest": "ef3319c0dab80c6a72f8a1d71ae414fa82f7aab4613fd7d0000754e5382fd1df", "files_observed": 155}
+- 2026-09-22T04:06:34.290867+00:00 #5206 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:06:34.812026+00:00 #5207 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:06:45.172233+00:00 #5208 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:06:45.387304+00:00 #5209 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:06:55.281689+00:00 #5210 handoff: {"digest": "1ddd00136fe6c8a8a69b14531f331ba65846657d521e1f290363c93a6050aba3", "files_observed": 155}
+- 2026-09-22T04:06:59.588631+00:00 #5211 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:07:10.417041+00:00 #5212 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:07:12.584782+00:00 #5213 handoff: {"digest": "b5e25cd9dd967c437ed15ae68763284606ca196bd4456a9f68146915c0e5a496", "files_observed": 155}
+- 2026-09-22T04:07:18.516177+00:00 #5214 closed: {}
+- 2026-09-22T04:07:30.434747+00:00 #5215 started: {"files_observed": 155}
+- 2026-09-22T04:07:37.096192+00:00 #5216 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:07:37.333441+00:00 #5217 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:08:12.422669+00:00 #5218 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:08:13.377354+00:00 #5219 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:08:30.300807+00:00 #5220 command_started: {"executable": "gh"}
+- 2026-09-22T04:08:30.349391+00:00 #5221 command_interrupted: {"error": "FileNotFoundError"}
+- 2026-09-22T04:09:13.412136+00:00 #5222 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:09:17.446317+00:00 #5223 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:09:50.848616+00:00 #5224 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:09:51.098648+00:00 #5225 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:09:58.320697+00:00 #5226 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:09:59.081208+00:00 #5227 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:05.678673+00:00 #5228 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:10:06.305937+00:00 #5229 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:07.117711+00:00 #5230 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:10:07.850025+00:00 #5231 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:14.283361+00:00 #5232 command_started: {"executable": "rg"}
+- 2026-09-22T04:10:15.204426+00:00 #5233 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:17.169128+00:00 #5234 command_started: {"executable": "rg"}
+- 2026-09-22T04:10:17.725543+00:00 #5235 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:24.322385+00:00 #5236 command_started: {"executable": "rg"}
+- 2026-09-22T04:10:24.414964+00:00 #5237 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:10:30.642157+00:00 #5238 command_started: {"executable": "rg"}
+- 2026-09-22T04:10:30.729675+00:00 #5239 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:32.135468+00:00 #5240 command_started: {"executable": "rg"}
+- 2026-09-22T04:10:32.229637+00:00 #5241 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:10:38.514163+00:00 #5242 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:10:38.721109+00:00 #5243 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:43.771636+00:00 #5244 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:10:44.003189+00:00 #5245 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:10:54.588130+00:00 #5246 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:10:54.852610+00:00 #5247 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:11:08.985509+00:00 #5248 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:11:09.233504+00:00 #5249 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:11:09.815952+00:00 #5250 command_started: {"executable": "rg"}
+- 2026-09-22T04:11:09.938569+00:00 #5251 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:11:18.111803+00:00 #5252 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:11:18.330488+00:00 #5253 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:11:29.894729+00:00 #5254 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:11:30.127637+00:00 #5255 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:11:41.861543+00:00 #5256 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:11:42.085260+00:00 #5257 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:11:43.122772+00:00 #5258 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:11:43.296719+00:00 #5259 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:11:53.891737+00:00 #5260 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:11:54.059939+00:00 #5261 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:11:56.891958+00:00 #5262 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:11:57.100240+00:00 #5263 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:10.058730+00:00 #5264 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:12:11.152244+00:00 #5265 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:18.100809+00:00 #5266 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:12:18.827976+00:00 #5267 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:27.959701+00:00 #5268 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:12:28.194253+00:00 #5269 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:28.679344+00:00 #5270 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:12:28.906989+00:00 #5271 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:37.028857+00:00 #5272 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:12:37.156596+00:00 #5273 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:47.228485+00:00 #5274 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:12:47.340189+00:00 #5275 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:48.011395+00:00 #5276 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:12:48.972877+00:00 #5277 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:12:56.450089+00:00 #5278 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:12:57.178474+00:00 #5279 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T04:13:00.948125+00:00 #5280 command_started: {"executable": "codex"}
+- 2026-09-22T04:13:01.060204+00:00 #5281 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:13:05.120787+00:00 #5282 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:13:05.918398+00:00 #5283 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:13:09.237835+00:00 #5284 command_started: {"executable": "codex"}
+- 2026-09-22T04:13:09.334823+00:00 #5285 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:13:12.978362+00:00 #5286 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:13:13.755427+00:00 #5287 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:13:22.781800+00:00 #5288 command_started: {"executable": "codex"}
+- 2026-09-22T04:13:22.879631+00:00 #5289 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:13:33.282857+00:00 #5290 handoff: {"digest": "60bc408a506d54e750d8fa599d37978d15bc1794ba3442389fdc522d0faf7403", "files_observed": 155}
+- 2026-09-22T04:13:39.204840+00:00 #5291 closed: {}
+- 2026-09-22T04:14:09.790782+00:00 #5292 started: {"files_observed": 155}
+- 2026-09-22T04:14:20.478325+00:00 #5293 handoff: {"digest": "05061a7e2baa2101e060e47d8946e2c5471270134e4d12efbdb7cc3aaf155507", "files_observed": 155}
+- 2026-09-22T04:14:24.219274+00:00 #5294 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:14:24.733032+00:00 #5295 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:14:43.967878+00:00 #5296 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:14:44.236286+00:00 #5297 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:14:48.451120+00:00 #5298 handoff: {"digest": "b841cb2ab1103310f3e5309fac199ff7e2c5a8a16cf6061d4d306caee7bac127", "files_observed": 155}
+- 2026-09-22T04:14:54.647182+00:00 #5299 closed: {}
+- 2026-09-22T04:15:42.622951+00:00 #5300 started: {"files_observed": 155}
+- 2026-09-22T04:15:59.903204+00:00 #5301 handoff: {"digest": "d5946fc616e2703a0f62e37fa89fa3ea385d8898f9a05496c49645ff3512b011", "files_observed": 155}
+- 2026-09-22T04:16:07.684492+00:00 #5302 closed: {}
+- 2026-09-22T04:19:36.364813+00:00 #5303 started: {"files_observed": 155}
+- 2026-09-22T04:19:59.287869+00:00 #5304 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:20:00.023740+00:00 #5305 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:20:08.129272+00:00 #5306 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:20:08.834641+00:00 #5307 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:20:20.262829+00:00 #5308 command_started: {"executable": "rg"}
+- 2026-09-22T04:20:20.344565+00:00 #5309 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:20:31.840381+00:00 #5310 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:20:32.061590+00:00 #5311 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:20:39.436132+00:00 #5312 command_started: {"executable": "rg"}
+- 2026-09-22T04:20:39.556433+00:00 #5313 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:20:47.408275+00:00 #5314 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:20:47.664516+00:00 #5315 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:21:30.200483+00:00 #5316 command_started: {"executable": "rg"}
+- 2026-09-22T04:21:30.286118+00:00 #5317 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:21:35.376134+00:00 #5318 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:21:35.816975+00:00 #5319 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:21:39.205841+00:00 #5320 command_started: {"executable": "powershell"}
+- 2026-09-22T04:21:39.407784+00:00 #5321 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:21:47.577008+00:00 #5322 command_started: {"executable": "hermes"}
+- 2026-09-22T04:21:48.521737+00:00 #5323 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:21:54.884366+00:00 #5324 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:21:55.166815+00:00 #5325 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:22:03.867048+00:00 #5326 handoff: {"digest": "64f2d2a03790e52edecf982bec6c4966bdd01dadf33c555b2a8dc3ce8cf46714", "files_observed": 155}
+- 2026-09-22T04:22:09.671369+00:00 #5327 closed: {}
+- 2026-09-22T04:22:19.969306+00:00 #5328 started: {"files_observed": 155}
+- 2026-09-22T04:22:36.043775+00:00 #5329 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:22:36.292638+00:00 #5330 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:22:46.993567+00:00 #5331 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:22:47.743847+00:00 #5332 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:22:55.206552+00:00 #5333 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:22:56.105977+00:00 #5334 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:23:04.953526+00:00 #5335 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:23:05.762577+00:00 #5336 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:23:12.794289+00:00 #5337 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:23:13.547179+00:00 #5338 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:23:21.942091+00:00 #5339 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:23:22.729475+00:00 #5340 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:23:31.440074+00:00 #5341 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:23:32.200774+00:00 #5342 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:23:40.172587+00:00 #5343 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:23:40.956430+00:00 #5344 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:23:51.401553+00:00 #5345 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:23:52.176014+00:00 #5346 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:24:02.639964+00:00 #5347 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:24:03.436662+00:00 #5348 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:24:12.040026+00:00 #5349 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:24:12.855729+00:00 #5350 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:24:22.052717+00:00 #5351 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:24:22.814484+00:00 #5352 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:24:31.738313+00:00 #5353 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:24:37.114058+00:00 #5354 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:24:52.584282+00:00 #5355 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:24:53.346049+00:00 #5356 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:25:04.060472+00:00 #5357 command_started: {"executable": "rg"}
+- 2026-09-22T04:25:04.141686+00:00 #5358 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:25:18.050782+00:00 #5359 command_started: {"executable": "rg"}
+- 2026-09-22T04:25:18.149059+00:00 #5360 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:25:32.287420+00:00 #5361 command_started: {"executable": "rg"}
+- 2026-09-22T04:25:32.380211+00:00 #5362 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:25:42.833722+00:00 #5363 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:25:43.063278+00:00 #5364 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:25:54.807084+00:00 #5365 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:25:55.009975+00:00 #5366 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:26:05.423204+00:00 #5367 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T04:26:05.628463+00:00 #5368 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:27:04.650957+00:00 #5369 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:27:05.153741+00:00 #5370 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:28:05.662650+00:00 #5371 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:28:08.370287+00:00 #5372 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:28:15.760591+00:00 #5373 command_started: {"executable": "rg"}
+- 2026-09-22T04:28:15.866071+00:00 #5374 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:28:38.173743+00:00 #5375 command_started: {"executable": "rg"}
+- 2026-09-22T04:28:38.260668+00:00 #5376 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:28:39.150930+00:00 #5377 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:28:39.894616+00:00 #5378 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:28:47.230071+00:00 #5379 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:28:47.952750+00:00 #5380 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:03.739890+00:00 #5381 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:29:07.022269+00:00 #5382 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:31.508715+00:00 #5383 command_started: {"executable": "git"}
+- 2026-09-22T04:29:31.604930+00:00 #5384 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:40.304286+00:00 #5385 command_started: {"executable": "powershell"}
+- 2026-09-22T04:29:40.341068+00:00 #5386 command_started: {"executable": "powershell"}
+- 2026-09-22T04:29:40.342738+00:00 #5387 command_started: {"executable": "powershell"}
+- 2026-09-22T04:29:40.342738+00:00 #5388 command_started: {"executable": "powershell"}
+- 2026-09-22T04:29:40.527447+00:00 #5389 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:40.575594+00:00 #5390 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:40.590103+00:00 #5391 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:41.654163+00:00 #5392 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:29:47.156669+00:00 #5393 handoff: {"digest": "cea8a25b50e4c38d7f48baa0fef7f6b05045725f83446a1ec31fefbb7c54167c", "files_observed": 155}
+- 2026-09-22T04:29:51.871431+00:00 #5394 closed: {}
+- 2026-09-22T04:32:23.707846+00:00 #5395 started: {"files_observed": 155}
+- 2026-09-22T04:32:29.759235+00:00 #5396 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:32:30.124161+00:00 #5397 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:32:45.195450+00:00 #5398 command_started: {"executable": "powershell"}
+- 2026-09-22T04:32:45.407283+00:00 #5399 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:32:59.780804+00:00 #5400 command_started: {"executable": "hermes.exe"}
+- 2026-09-22T04:33:00.668432+00:00 #5401 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:33:04.319083+00:00 #5402 command_started: {"executable": "powershell"}
+- 2026-09-22T04:33:05.867737+00:00 #5403 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:33:25.176397+00:00 #5404 command_started: {"executable": "powershell"}
+- 2026-09-22T04:33:25.401292+00:00 #5405 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:33:35.703200+00:00 #5406 command_started: {"executable": "powershell"}
+- 2026-09-22T04:33:35.949247+00:00 #5407 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:33:47.378179+00:00 #5408 command_started: {"executable": "powershell"}
+- 2026-09-22T04:33:48.236945+00:00 #5409 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:34:05.476111+00:00 #5410 command_started: {"executable": "powershell"}
+- 2026-09-22T04:34:06.046992+00:00 #5411 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:34:40.167374+00:00 #5412 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:34:40.547339+00:00 #5413 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:35:07.647728+00:00 #5414 command_started: {"executable": "where.exe"}
+- 2026-09-22T04:35:07.771775+00:00 #5415 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:35:11.899056+00:00 #5416 handoff: {"digest": "a61c831d1e2eea123060e61d914a709ca355c8503c67e5ad422bec14f8339a5a", "files_observed": 155}
+- 2026-09-22T04:35:15.815908+00:00 #5417 command_started: {"executable": "rg"}
+- 2026-09-22T04:35:16.246885+00:00 #5418 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:35:26.282123+00:00 #5419 command_started: {"executable": "powershell"}
+- 2026-09-22T04:35:26.553276+00:00 #5420 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:35:38.542126+00:00 #5421 command_started: {"executable": "powershell"}
+- 2026-09-22T04:35:38.585168+00:00 #5422 handoff: {"digest": "18da6b1118132301c1a7d77d981a752a263b7929dea813838a9d08a45f546d50", "files_observed": 155}
+- 2026-09-22T04:35:38.781444+00:00 #5423 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:35:47.077313+00:00 #5424 command_started: {"executable": "hermes"}
+- 2026-09-22T04:35:47.779024+00:00 #5425 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:35:56.943556+00:00 #5426 command_started: {"executable": "rg"}
+- 2026-09-22T04:35:57.026229+00:00 #5427 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:35:59.586422+00:00 #5428 command_started: {"executable": "rg"}
+- 2026-09-22T04:35:59.672035+00:00 #5429 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:36:06.562471+00:00 #5430 command_started: {"executable": "powershell"}
+- 2026-09-22T04:36:06.788065+00:00 #5431 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:36:06.955787+00:00 #5432 command_started: {"executable": "powershell"}
+- 2026-09-22T04:36:07.170787+00:00 #5433 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:36:23.258682+00:00 #5434 command_started: {"executable": "powershell"}
+- 2026-09-22T04:36:23.470356+00:00 #5435 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:36:29.942337+00:00 #5436 handoff: {"digest": "7482c42069aadadb51f58730afa565392976357e1139398ed5a8807d96b22072", "files_observed": 155}
+- 2026-09-22T04:36:35.069719+00:00 #5437 closed: {}
+- 2026-09-22T04:36:56.543825+00:00 #5438 started: {"files_observed": 155}
+- 2026-09-22T04:37:09.711409+00:00 #5439 command_started: {"executable": "powershell"}
+- 2026-09-22T04:37:09.973478+00:00 #5440 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:37:18.975332+00:00 #5441 command_started: {"executable": "powershell"}
+- 2026-09-22T04:37:19.186023+00:00 #5442 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:37:35.306973+00:00 #5443 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:37:35.803753+00:00 #5444 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:37:43.322437+00:00 #5445 command_started: {"executable": "hermes"}
+- 2026-09-22T04:37:44.019110+00:00 #5446 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:38:05.538251+00:00 #5447 command_started: {"executable": "hermes"}
+- 2026-09-22T04:39:18.251436+00:00 #5448 command_started: {"executable": "hermes"}
+- 2026-09-22T04:39:18.251436+00:00 #5449 command_started: {"executable": "powershell"}
+- 2026-09-22T04:39:18.251436+00:00 #5450 command_started: {"executable": "hermes"}
+- 2026-09-22T04:39:18.463100+00:00 #5451 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:18.965821+00:00 #5452 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:19.259204+00:00 #5453 command_started: {"executable": "hermes"}
+- 2026-09-22T04:39:19.980585+00:00 #5454 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:20.269975+00:00 #5455 command_started: {"executable": "hermes"}
+- 2026-09-22T04:39:20.813991+00:00 #5456 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:20.976097+00:00 #5457 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:21.261792+00:00 #5458 command_started: {"executable": "hermes"}
+- 2026-09-22T04:39:22.009785+00:00 #5459 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:35.216643+00:00 #5460 command_started: {"executable": "rg"}
+- 2026-09-22T04:39:35.337236+00:00 #5461 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:45.912521+00:00 #5462 command_started: {"executable": "rg"}
+- 2026-09-22T04:39:45.999591+00:00 #5463 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:39:53.290713+00:00 #5464 command_started: {"executable": "rg"}
+- 2026-09-22T04:39:53.373018+00:00 #5465 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:40:01.669108+00:00 #5466 command_started: {"executable": "powershell"}
+- 2026-09-22T04:40:01.887074+00:00 #5467 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:40:27.771779+00:00 #5468 command_started: {"executable": "hermes"}
+- 2026-09-22T04:40:27.772778+00:00 #5469 command_started: {"executable": "hermes"}
+- 2026-09-22T04:40:27.771779+00:00 #5470 command_started: {"executable": "hermes"}
+- 2026-09-22T04:40:28.537731+00:00 #5471 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:40:28.539731+00:00 #5472 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:40:28.554936+00:00 #5473 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:40:46.776749+00:00 #5474 command_started: {"executable": "rg"}
+- 2026-09-22T04:40:46.857180+00:00 #5475 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:40:58.224788+00:00 #5476 command_started: {"executable": "rg"}
+- 2026-09-22T04:40:58.349722+00:00 #5477 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:06.851126+00:00 #5478 command_started: {"executable": "powershell"}
+- 2026-09-22T04:41:07.046975+00:00 #5479 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:07.471309+00:00 #5480 command_started: {"executable": "powershell"}
+- 2026-09-22T04:41:07.712382+00:00 #5481 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:18.165744+00:00 #5482 command_started: {"executable": "rg"}
+- 2026-09-22T04:41:18.253372+00:00 #5483 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:19.428934+00:00 #5484 command_started: {"executable": "rg"}
+- 2026-09-22T04:41:19.516562+00:00 #5485 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:30.810765+00:00 #5486 command_started: {"executable": "powershell"}
+- 2026-09-22T04:41:31.043233+00:00 #5487 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:31.540744+00:00 #5488 command_started: {"executable": "powershell"}
+- 2026-09-22T04:41:31.788762+00:00 #5489 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:41:47.628246+00:00 #5490 command_started: {"executable": "cmd"}
+- 2026-09-22T04:41:47.726599+00:00 #5491 command_finished: {"exit_code": 87, "changed": []}
+- 2026-09-22T04:41:51.103803+00:00 #5492 command_started: {"executable": "rg"}
+- 2026-09-22T04:41:51.187928+00:00 #5493 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T04:41:59.669901+00:00 #5494 command_started: {"executable": "rg"}
+- 2026-09-22T04:41:59.743295+00:00 #5495 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T04:42:05.362364+00:00 #5496 command_started: {"executable": "rg"}
+- 2026-09-22T04:42:05.459530+00:00 #5497 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:42:08.899780+00:00 #5498 command_started: {"executable": "rg"}
+- 2026-09-22T04:42:08.983276+00:00 #5499 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:42:14.274217+00:00 #5500 command_started: {"executable": "rg"}
+- 2026-09-22T04:42:14.361867+00:00 #5501 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:42:16.459492+00:00 #5502 command_started: {"executable": "powershell"}
+- 2026-09-22T04:42:16.694285+00:00 #5503 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:42:28.402569+00:00 #5504 command_started: {"executable": "rg"}
+- 2026-09-22T04:42:28.732437+00:00 #5505 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:42:40.300633+00:00 #5506 command_started: {"executable": "hermes"}
+- 2026-09-22T04:42:40.301633+00:00 #5507 command_started: {"executable": "hermes"}
+- 2026-09-22T04:42:41.037213+00:00 #5508 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:42:41.037213+00:00 #5509 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:42:54.736209+00:00 #5510 command_started: {"executable": "hermes"}
+- 2026-09-22T04:42:55.428701+00:00 #5511 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:42:58.571717+00:00 #5512 handoff: {"digest": "633ce1e740eeb016fd8f90479f8d4efed6a45ba58442d1bcd28e373290be83a8", "files_observed": 155}
+- 2026-09-22T04:43:00.892942+00:00 #5513 command_started: {"executable": "hermes"}
+- 2026-09-22T04:43:01.612100+00:00 #5514 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:09.504965+00:00 #5515 command_started: {"executable": "rg"}
+- 2026-09-22T04:43:09.586937+00:00 #5516 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T04:43:10.753176+00:00 #5517 command_started: {"executable": "hermes"}
+- 2026-09-22T04:43:11.443921+00:00 #5518 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:11.800213+00:00 #5519 command_started: {"executable": "wevtutil"}
+- 2026-09-22T04:43:11.959925+00:00 #5520 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:16.680875+00:00 #5521 command_started: {"executable": "hermes"}
+- 2026-09-22T04:43:16.868047+00:00 #5522 command_started: {"executable": "rg"}
+- 2026-09-22T04:43:17.211388+00:00 #5523 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:18.004003+00:00 #5524 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:19.800822+00:00 #5525 handoff: {"digest": "633ce1e740eeb016fd8f90479f8d4efed6a45ba58442d1bcd28e373290be83a8", "files_observed": 155}
+- 2026-09-22T04:43:24.478532+00:00 #5526 command_started: {"executable": "wevtutil"}
+- 2026-09-22T04:43:24.641175+00:00 #5527 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:27.005931+00:00 #5528 command_started: {"executable": "rg"}
+- 2026-09-22T04:43:27.080591+00:00 #5529 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:38.444063+00:00 #5530 command_started: {"executable": "powershell"}
+- 2026-09-22T04:43:38.650546+00:00 #5531 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:38.890210+00:00 #5532 command_started: {"executable": "rg"}
+- 2026-09-22T04:43:39.432729+00:00 #5533 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:46.422563+00:00 #5534 command_started: {"executable": "hermes"}
+- 2026-09-22T04:43:47.111045+00:00 #5535 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:48.828739+00:00 #5536 command_started: {"executable": "powershell"}
+- 2026-09-22T04:43:49.042825+00:00 #5537 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:55.354183+00:00 #5538 command_started: {"executable": "hermes"}
+- 2026-09-22T04:43:56.041424+00:00 #5539 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:43:58.689434+00:00 #5540 command_started: {"executable": "powershell"}
+- 2026-09-22T04:43:58.912678+00:00 #5541 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:44:04.558980+00:00 #5542 handoff: {"digest": "630c25a6a7bf1fbaa1ba512d7e842b8982ce58573d3608ddd90c9331c43d7b3e", "files_observed": 155}
+- 2026-09-22T04:44:04.842775+00:00 #5543 closed: {}
+- 2026-09-22T04:44:33.452526+00:00 #5544 started: {"files_observed": 155}
+- 2026-09-22T04:44:39.525419+00:00 #5545 command_interrupted: {"error": "KeyboardInterrupt"}
+- 2026-09-22T04:44:47.540605+00:00 #5546 handoff: {"digest": "36a7a4d9de8c2f7dd3292115086388c37b154dcf57d152f3c8a454f680d9a328", "files_observed": 155}
+- 2026-09-22T04:44:50.442295+00:00 #5547 handoff: {"digest": "39412e348db1b845fac85cc6846fcf676560727881f3f6f13c0576a53bc30372", "files_observed": 155}
+- 2026-09-22T04:44:53.401454+00:00 #5548 closed: {}
+- 2026-09-22T04:45:31.523353+00:00 #5549 started: {"files_observed": 155}
+- 2026-09-22T04:45:37.894958+00:00 #5550 command_started: {"executable": "hermes"}
+- 2026-09-22T04:45:46.953354+00:00 #5551 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:46:16.338247+00:00 #5552 command_started: {"executable": "powershell"}
+- 2026-09-22T04:46:16.541709+00:00 #5553 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:46:23.957576+00:00 #5554 command_started: {"executable": "hermes"}
+- 2026-09-22T04:46:24.696055+00:00 #5555 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:46:59.870652+00:00 #5556 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:00.571069+00:00 #5557 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:01.061767+00:00 #5558 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:01.760093+00:00 #5559 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:02.252267+00:00 #5560 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:02.934719+00:00 #5561 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:03.426993+00:00 #5562 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:04.115294+00:00 #5563 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:04.602435+00:00 #5564 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:05.291905+00:00 #5565 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:05.785291+00:00 #5566 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:06.468581+00:00 #5567 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:06.960200+00:00 #5568 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:07.642710+00:00 #5569 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:08.132926+00:00 #5570 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:08.845253+00:00 #5571 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:09.332451+00:00 #5572 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:10.018220+00:00 #5573 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:10.511166+00:00 #5574 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:11.189819+00:00 #5575 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:11.679336+00:00 #5576 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:12.358186+00:00 #5577 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:12.849411+00:00 #5578 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:13.548770+00:00 #5579 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:14.032941+00:00 #5580 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:14.724387+00:00 #5581 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:15.221978+00:00 #5582 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:15.939493+00:00 #5583 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:16.461104+00:00 #5584 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:17.157124+00:00 #5585 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:17.645130+00:00 #5586 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:18.334869+00:00 #5587 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:18.827780+00:00 #5588 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:19.525410+00:00 #5589 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:20.026325+00:00 #5590 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:20.748951+00:00 #5591 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:21.263952+00:00 #5592 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:22.003398+00:00 #5593 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:22.531083+00:00 #5594 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:23.279120+00:00 #5595 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:23.799800+00:00 #5596 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:24.514040+00:00 #5597 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:25.022654+00:00 #5598 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:25.749846+00:00 #5599 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:26.274104+00:00 #5600 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:26.996260+00:00 #5601 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:27.518705+00:00 #5602 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:28.234595+00:00 #5603 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:28.741664+00:00 #5604 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:29.477489+00:00 #5605 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:29.972665+00:00 #5606 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:30.689219+00:00 #5607 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:31.194275+00:00 #5608 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:31.981948+00:00 #5609 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:32.507456+00:00 #5610 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:33.285968+00:00 #5611 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:33.807240+00:00 #5612 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:34.604471+00:00 #5613 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:35.122526+00:00 #5614 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:35.874423+00:00 #5615 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:47:42.971191+00:00 #5616 command_started: {"executable": "hermes"}
+- 2026-09-22T04:47:43.713351+00:00 #5617 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:48:07.847009+00:00 #5618 command_started: {"executable": "hermes"}
+- 2026-09-22T04:48:08.580188+00:00 #5619 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:48:09.065097+00:00 #5620 command_started: {"executable": "hermes"}
+- 2026-09-22T04:48:09.776559+00:00 #5621 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:48:24.094542+00:00 #5622 command_started: {"executable": "hermes"}
+- 2026-09-22T04:48:40.179984+00:00 #5623 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:49:00.694227+00:00 #5624 command_started: {"executable": "powershell"}
+- 2026-09-22T04:49:00.698226+00:00 #5625 command_started: {"executable": "hermes"}
+- 2026-09-22T04:49:00.699729+00:00 #5626 command_started: {"executable": "hermes"}
+- 2026-09-22T04:49:00.714739+00:00 #5627 command_started: {"executable": "hermes"}
+- 2026-09-22T04:49:00.911145+00:00 #5628 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:49:01.535093+00:00 #5629 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:49:01.598005+00:00 #5630 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:49:03.133277+00:00 #5631 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:49:48.742803+00:00 #5632 command_started: {"executable": "hermes"}
+- 2026-09-22T04:49:49.477092+00:00 #5633 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:49:56.620421+00:00 #5634 command_started: {"executable": "hermes"}
+- 2026-09-22T04:49:57.344773+00:00 #5635 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:50:06.025365+00:00 #5636 command_started: {"executable": "hermes"}
+- 2026-09-22T04:50:14.734561+00:00 #5637 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:50:22.968541+00:00 #5638 command_started: {"executable": "powershell"}
+- 2026-09-22T04:50:23.169547+00:00 #5639 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:50:32.930676+00:00 #5640 command_started: {"executable": "hermes"}
+- 2026-09-22T04:50:35.700499+00:00 #5641 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:50:57.811746+00:00 #5642 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:50:57.961311+00:00 #5643 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:51:25.655755+00:00 #5644 command_started: {"executable": "python.exe"}
+- 2026-09-22T04:51:26.133013+00:00 #5645 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:51:55.210574+00:00 #5646 command_started: {"executable": "powershell"}
+- 2026-09-22T04:51:55.403658+00:00 #5647 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:52:03.471191+00:00 #5648 command_started: {"executable": "rg"}
+- 2026-09-22T04:52:03.564222+00:00 #5649 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T04:52:25.657233+00:00 #5650 handoff: {"digest": "2ed349fd4278985ec048e811e5a77fa5d2fbabec52e5a17b2ed30cbb38e546de", "files_observed": 155}
+- 2026-09-22T04:52:34.409754+00:00 #5651 closed: {}
+- 2026-09-22T05:03:30.326128+00:00 #5652 started: {"files_observed": 155}
+- 2026-09-22T05:03:39.520464+00:00 #5653 command_started: {"executable": "powershell"}
+- 2026-09-22T05:03:39.761388+00:00 #5654 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:03:49.156040+00:00 #5655 command_started: {"executable": "rg"}
+- 2026-09-22T05:03:49.242563+00:00 #5656 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:03:56.702257+00:00 #5657 command_started: {"executable": "rg"}
+- 2026-09-22T05:03:56.779872+00:00 #5658 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:04:18.809971+00:00 #5659 command_started: {"executable": "powershell"}
+- 2026-09-22T05:04:19.170987+00:00 #5660 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:04:50.049432+00:00 #5661 command_started: {"executable": "wevtutil"}
+- 2026-09-22T05:04:50.131341+00:00 #5662 command_finished: {"exit_code": 5, "changed": []}
+- 2026-09-22T05:05:17.641371+00:00 #5663 command_started: {"executable": "powershell"}
+- 2026-09-22T05:05:17.844860+00:00 #5664 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:07:51.808043+00:00 #5665 command_started: {"executable": "powershell"}
+- 2026-09-22T05:07:52.068986+00:00 #5666 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:08:06.698318+00:00 #5667 command_started: {"executable": "powershell"}
+- 2026-09-22T05:08:06.947678+00:00 #5668 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:08:34.543871+00:00 #5669 command_started: {"executable": "rg"}
+- 2026-09-22T05:08:34.625656+00:00 #5670 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:08:39.475345+00:00 #5671 command_started: {"executable": "powershell"}
+- 2026-09-22T05:08:39.680580+00:00 #5672 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:09:03.258440+00:00 #5673 command_started: {"executable": "powershell"}
+- 2026-09-22T05:09:03.451554+00:00 #5674 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:09:42.358809+00:00 #5675 command_started: {"executable": "git"}
+- 2026-09-22T05:09:42.460367+00:00 #5676 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:09:47.811979+00:00 #5677 command_started: {"executable": "powershell"}
+- 2026-09-22T05:09:48.089381+00:00 #5678 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:09:52.142056+00:00 #5679 command_started: {"executable": "rg"}
+- 2026-09-22T05:09:52.236841+00:00 #5680 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:09:59.012276+00:00 #5681 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:09:59.154319+00:00 #5682 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:10:11.473468+00:00 #5683 command_started: {"executable": "powershell"}
+- 2026-09-22T05:10:11.701279+00:00 #5684 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:10:15.118932+00:00 #5685 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:10:18.047758+00:00 #5686 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:10:18.541466+00:00 #5687 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:10:19.235259+00:00 #5688 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:10:19.730523+00:00 #5689 command_started: {"executable": "powershell"}
+- 2026-09-22T05:10:19.952101+00:00 #5690 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:10:35.152350+00:00 #5691 command_started: {"executable": "powershell"}
+- 2026-09-22T05:10:36.699840+00:00 #5692 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:10:58.810029+00:00 #5693 command_started: {"executable": "powershell"}
+- 2026-09-22T05:11:02.954446+00:00 #5694 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:11:29.908708+00:00 #5695 command_started: {"executable": "powershell"}
+- 2026-09-22T05:11:34.055689+00:00 #5696 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:11:51.319929+00:00 #5697 command_started: {"executable": "rg"}
+- 2026-09-22T05:11:51.397982+00:00 #5698 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:12:02.570588+00:00 #5699 command_started: {"executable": "powershell"}
+- 2026-09-22T05:12:02.790391+00:00 #5700 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:12:12.951587+00:00 #5701 command_started: {"executable": "hermes"}
+- 2026-09-22T05:12:13.056281+00:00 #5702 command_started: {"executable": "powershell"}
+- 2026-09-22T05:12:13.709237+00:00 #5703 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:12:16.918532+00:00 #5704 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:12:31.156754+00:00 #5705 command_started: {"executable": "hermes"}
+- 2026-09-22T05:12:31.898277+00:00 #5706 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:12:36.021473+00:00 #5707 command_started: {"executable": "powershell"}
+- 2026-09-22T05:12:38.338371+00:00 #5708 command_started: {"executable": "hermes"}
+- 2026-09-22T05:12:39.079041+00:00 #5709 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:12:46.207164+00:00 #5710 command_started: {"executable": "powershell"}
+- 2026-09-22T05:12:47.090883+00:00 #5711 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:12:49.156339+00:00 #5712 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:04.346255+00:00 #5713 command_started: {"executable": "hermes"}
+- 2026-09-22T05:13:04.360254+00:00 #5714 command_started: {"executable": "hermes"}
+- 2026-09-22T05:13:04.360254+00:00 #5715 command_started: {"executable": "rg"}
+- 2026-09-22T05:13:04.364255+00:00 #5716 command_started: {"executable": "hermes"}
+- 2026-09-22T05:13:04.433278+00:00 #5717 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:13:05.185136+00:00 #5718 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:05.185136+00:00 #5719 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:05.207720+00:00 #5720 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:30.774156+00:00 #5721 command_started: {"executable": "hermes"}
+- 2026-09-22T05:13:30.779156+00:00 #5722 command_started: {"executable": "powershell"}
+- 2026-09-22T05:13:30.778156+00:00 #5723 command_started: {"executable": "hermes"}
+- 2026-09-22T05:13:31.585120+00:00 #5724 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:31.680192+00:00 #5725 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:38.118048+00:00 #5726 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:47.784507+00:00 #5727 command_started: {"executable": "hermes"}
+- 2026-09-22T05:13:48.483194+00:00 #5728 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:13:59.244415+00:00 #5729 command_started: {"executable": "hermes"}
+- 2026-09-22T05:14:00.071821+00:00 #5730 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:03.624009+00:00 #5731 command_started: {"executable": "powershell"}
+- 2026-09-22T05:14:04.221188+00:00 #5732 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:12.039999+00:00 #5733 command_started: {"executable": "rg"}
+- 2026-09-22T05:14:12.121903+00:00 #5734 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T05:14:22.151648+00:00 #5735 command_started: {"executable": "powershell"}
+- 2026-09-22T05:14:22.362280+00:00 #5736 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:29.612020+00:00 #5737 command_started: {"executable": "hermes"}
+- 2026-09-22T05:14:29.617020+00:00 #5738 command_started: {"executable": "hermes"}
+- 2026-09-22T05:14:29.621076+00:00 #5739 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:14:29.625075+00:00 #5740 command_started: {"executable": "hermes"}
+- 2026-09-22T05:14:29.617020+00:00 #5741 command_started: {"executable": "hermes"}
+- 2026-09-22T05:14:29.753939+00:00 #5742 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:30.488330+00:00 #5743 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:30.522022+00:00 #5744 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:30.546159+00:00 #5745 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:30.616968+00:00 #5746 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:32.857326+00:00 #5747 command_started: {"executable": "powershell"}
+- 2026-09-22T05:14:33.069112+00:00 #5748 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:39.205734+00:00 #5749 command_started: {"executable": "git"}
+- 2026-09-22T05:14:39.302890+00:00 #5750 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:14:47.794308+00:00 #5751 handoff: {"digest": "f7359af053a1a5b26f8366124eafd3547a267a5e95110b4afee83d5fdb064e1f", "files_observed": 155}
+- 2026-09-22T05:14:48.106243+00:00 #5752 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:14:48.230839+00:00 #5753 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:14:55.928325+00:00 #5754 command_started: {"executable": "py"}
+- 2026-09-22T05:14:56.101526+00:00 #5755 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:15:03.103746+00:00 #5756 command_started: {"executable": "py"}
+- 2026-09-22T05:15:03.260215+00:00 #5757 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:15:12.185680+00:00 #5758 command_started: {"executable": "py"}
+- 2026-09-22T05:15:12.323261+00:00 #5759 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:15:19.097303+00:00 #5760 handoff: {"digest": "6bbf722ae683a5bd8c709803550272eb3587d9da313463e806fc4e9cc78b51cb", "files_observed": 155}
+- 2026-09-22T05:15:19.385748+00:00 #5761 closed: {}
+- 2026-09-22T05:15:27.864854+00:00 #5762 started: {"files_observed": 155}
+- 2026-09-22T05:15:33.695734+00:00 #5763 command_started: {"executable": "codex"}
+- 2026-09-22T05:15:33.792511+00:00 #5764 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:15:40.610404+00:00 #5765 command_started: {"executable": "codex"}
+- 2026-09-22T05:15:40.709049+00:00 #5766 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:15:46.844833+00:00 #5767 command_started: {"executable": "powershell"}
+- 2026-09-22T05:15:47.038646+00:00 #5768 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:15:48.394727+00:00 #5769 command_started: {"executable": "codex"}
+- 2026-09-22T05:15:48.512278+00:00 #5770 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:15:57.572925+00:00 #5771 command_started: {"executable": "rg"}
+- 2026-09-22T05:15:57.653714+00:00 #5772 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:16:05.418521+00:00 #5773 command_started: {"executable": "powershell"}
+- 2026-09-22T05:16:06.537062+00:00 #5774 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:16:08.673304+00:00 #5775 command_started: {"executable": "powershell"}
+- 2026-09-22T05:16:08.896170+00:00 #5776 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:16:24.650195+00:00 #5777 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:16:28.802180+00:00 #5778 command_started: {"executable": "codex"}
+- 2026-09-22T05:16:28.921379+00:00 #5779 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:16:41.506264+00:00 #5780 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:16:49.029607+00:00 #5781 command_started: {"executable": "hermes"}
+- 2026-09-22T05:16:49.777408+00:00 #5782 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:16:49.789540+00:00 #5783 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:16:49.927237+00:00 #5784 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:17:01.302903+00:00 #5785 command_started: {"executable": "powershell"}
+- 2026-09-22T05:17:01.519310+00:00 #5786 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:17:08.894469+00:00 #5787 command_started: {"executable": "git"}
+- 2026-09-22T05:17:09.004040+00:00 #5788 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:17:19.776798+00:00 #5789 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:17:20.199088+00:00 #5790 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:17:35.411460+00:00 #5791 command_started: {"executable": "codex"}
+- 2026-09-22T05:17:35.503756+00:00 #5792 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:17:43.406195+00:00 #5793 command_started: {"executable": "codex"}
+- 2026-09-22T05:17:44.417196+00:00 #5794 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:17:50.603831+00:00 #5795 command_started: {"executable": "powershell"}
+- 2026-09-22T05:17:51.821118+00:00 #5796 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:18:25.939069+00:00 #5797 command_started: {"executable": "powershell"}
+- 2026-09-22T05:18:26.134603+00:00 #5798 command_started: {"executable": "codex"}
+- 2026-09-22T05:18:26.161243+00:00 #5799 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:18:45.643408+00:00 #5800 command_finished: {"exit_code": 0, "changed": ["docs/plans/question-orbit-engine-wisdom-oldman-deployment.md", "stage-gates/04-verification-report.md"]}
+- 2026-09-22T05:18:54.416560+00:00 #5801 command_started: {"executable": "git"}
+- 2026-09-22T05:18:54.527102+00:00 #5802 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:19:05.088849+00:00 #5803 command_started: {"executable": "hermes"}
+- 2026-09-22T05:19:06.165176+00:00 #5804 command_started: {"executable": "powershell"}
+- 2026-09-22T05:19:06.415910+00:00 #5805 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:19:24.325843+00:00 #5806 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:19:32.181986+00:00 #5807 command_started: {"executable": "powershell"}
+- 2026-09-22T05:19:33.321533+00:00 #5808 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:19:42.181169+00:00 #5809 command_started: {"executable": "hermes"}
+- 2026-09-22T05:19:58.952845+00:00 #5810 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:26.926306+00:00 #5811 command_started: {"executable": "py"}
+- 2026-09-22T05:20:27.075942+00:00 #5812 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:39.320680+00:00 #5813 command_started: {"executable": "git"}
+- 2026-09-22T05:20:39.425298+00:00 #5814 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:41.879457+00:00 #5815 command_started: {"executable": "hermes"}
+- 2026-09-22T05:20:41.888965+00:00 #5816 command_started: {"executable": "hermes"}
+- 2026-09-22T05:20:41.888965+00:00 #5817 command_started: {"executable": "hermes"}
+- 2026-09-22T05:20:42.734203+00:00 #5818 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:42.734203+00:00 #5819 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:42.734203+00:00 #5820 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:53.068506+00:00 #5821 command_started: {"executable": "rg"}
+- 2026-09-22T05:20:53.152595+00:00 #5822 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:20:55.827739+00:00 #5823 command_started: {"executable": "powershell"}
+- 2026-09-22T05:20:56.070058+00:00 #5824 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:01.433824+00:00 #5825 command_started: {"executable": "powershell"}
+- 2026-09-22T05:21:01.651975+00:00 #5826 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:06.684641+00:00 #5827 command_started: {"executable": "powershell"}
+- 2026-09-22T05:21:06.911539+00:00 #5828 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:13.811223+00:00 #5829 command_started: {"executable": "hermes"}
+- 2026-09-22T05:21:14.531331+00:00 #5830 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:22.617667+00:00 #5831 command_started: {"executable": "git"}
+- 2026-09-22T05:21:22.732985+00:00 #5832 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:29.281714+00:00 #5833 command_started: {"executable": "git"}
+- 2026-09-22T05:21:29.373874+00:00 #5834 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:35.393628+00:00 #5835 command_started: {"executable": "git"}
+- 2026-09-22T05:21:35.503746+00:00 #5836 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:42.160792+00:00 #5837 command_started: {"executable": "git"}
+- 2026-09-22T05:21:42.297430+00:00 #5838 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:50.993758+00:00 #5839 command_started: {"executable": "hermes"}
+- 2026-09-22T05:21:51.001267+00:00 #5840 command_started: {"executable": "hermes"}
+- 2026-09-22T05:21:51.001267+00:00 #5841 command_started: {"executable": "hermes"}
+- 2026-09-22T05:21:51.829640+00:00 #5842 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:21:51.843864+00:00 #5843 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:21:51.934110+00:00 #5844 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:02.218115+00:00 #5845 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:22:05.570205+00:00 #5846 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:10.782105+00:00 #5847 command_started: {"executable": "git"}
+- 2026-09-22T05:22:10.792615+00:00 #5848 command_started: {"executable": "hermes"}
+- 2026-09-22T05:22:10.882935+00:00 #5849 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:11.553045+00:00 #5850 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:16.707165+00:00 #5851 command_started: {"executable": "powershell"}
+- 2026-09-22T05:22:16.940601+00:00 #5852 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:21.316202+00:00 #5853 command_started: {"executable": "py"}
+- 2026-09-22T05:22:21.459267+00:00 #5854 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:24.979846+00:00 #5855 command_started: {"executable": "powershell"}
+- 2026-09-22T05:22:26.006692+00:00 #5856 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:27.582812+00:00 #5857 command_started: {"executable": "powershell"}
+- 2026-09-22T05:22:30.274942+00:00 #5858 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:34.490917+00:00 #5859 command_started: {"executable": "hermes"}
+- 2026-09-22T05:22:35.230786+00:00 #5860 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:42.334811+00:00 #5861 command_started: {"executable": "hermes"}
+- 2026-09-22T05:22:43.188386+00:00 #5862 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:45.300225+00:00 #5863 command_started: {"executable": "powershell"}
+- 2026-09-22T05:22:50.016646+00:00 #5864 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:22:57.109755+00:00 #5865 command_started: {"executable": "rg"}
+- 2026-09-22T05:22:57.189960+00:00 #5866 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:23:01.721765+00:00 #5867 handoff: {"digest": "5e6766047430a980d1bfaf079722f7292b3fe31a63586df08d50f34634ebf22b", "files_observed": 156}
+- 2026-09-22T05:23:06.560068+00:00 #5868 command_started: {"executable": "powershell"}
+- 2026-09-22T05:23:06.797377+00:00 #5869 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:23:15.771207+00:00 #5870 command_started: {"executable": "powershell"}
+- 2026-09-22T05:23:16.065096+00:00 #5871 command_started: {"executable": "hermes"}
+- 2026-09-22T05:23:16.828829+00:00 #5872 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:23:20.681356+00:00 #5873 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:23:23.848314+00:00 #5874 handoff: {"digest": "c6529dc5ccc6ef35db387e88d29f747ba8b287adeec9035fd25546155271c6fa", "files_observed": 156}
+- 2026-09-22T05:23:29.238555+00:00 #5875 closed: {}
+- 2026-09-22T05:23:42.345473+00:00 #5876 started: {"files_observed": 156}
+- 2026-09-22T05:23:49.854304+00:00 #5877 command_started: {"executable": "hermes"}
+- 2026-09-22T05:24:01.326085+00:00 #5878 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T05:24:09.693893+00:00 #5879 command_started: {"executable": "powershell"}
+- 2026-09-22T05:24:11.391190+00:00 #5880 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:21.536571+00:00 #5881 command_started: {"executable": "rg"}
+- 2026-09-22T05:24:21.621539+00:00 #5882 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:21.930095+00:00 #5883 command_started: {"executable": "powershell"}
+- 2026-09-22T05:24:22.211413+00:00 #5884 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:24.155751+00:00 #5885 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:24:31.590388+00:00 #5886 command_started: {"executable": "powershell"}
+- 2026-09-22T05:24:31.822218+00:00 #5887 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:41.163678+00:00 #5888 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:45.294039+00:00 #5889 command_started: {"executable": "hermes"}
+- 2026-09-22T05:24:46.075468+00:00 #5890 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:49.784856+00:00 #5891 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:24:49.928295+00:00 #5892 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:24:52.900510+00:00 #5893 command_started: {"executable": "hermes"}
+- 2026-09-22T05:24:53.712057+00:00 #5894 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:01.172319+00:00 #5895 command_started: {"executable": "hermes"}
+- 2026-09-22T05:25:02.385480+00:00 #5896 command_started: {"executable": "powershell"}
+- 2026-09-22T05:25:02.607244+00:00 #5897 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:08.768556+00:00 #5898 command_started: {"executable": "git"}
+- 2026-09-22T05:25:08.878657+00:00 #5899 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:12.634006+00:00 #5900 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:31.452040+00:00 #5901 command_started: {"executable": "hermes"}
+- 2026-09-22T05:25:31.463549+00:00 #5902 command_started: {"executable": "hermes"}
+- 2026-09-22T05:25:31.465550+00:00 #5903 command_started: {"executable": "hermes"}
+- 2026-09-22T05:25:31.463549+00:00 #5904 command_started: {"executable": "powershell"}
+- 2026-09-22T05:25:31.703329+00:00 #5905 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:32.350788+00:00 #5906 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:32.350788+00:00 #5907 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:32.425841+00:00 #5908 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:32.646149+00:00 #5909 command_started: {"executable": "hermes"}
+- 2026-09-22T05:25:33.350071+00:00 #5910 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:33.953366+00:00 #5911 command_started: {"executable": "powershell"}
+- 2026-09-22T05:25:35.604872+00:00 #5912 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:48.626123+00:00 #5913 command_started: {"executable": "hermes"}
+- 2026-09-22T05:25:49.378735+00:00 #5914 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:49.693968+00:00 #5915 command_started: {"executable": "git"}
+- 2026-09-22T05:25:49.787930+00:00 #5916 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:25:50.078847+00:00 #5917 command_started: {"executable": "powershell"}
+- 2026-09-22T05:25:50.265942+00:00 #5918 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:26:06.031393+00:00 #5919 handoff: {"digest": "abe767c746fa28e2adc97c899f9aabea21eda2d2f93973e87c72a035b7ea86f3", "files_observed": 156}
+- 2026-09-22T05:26:06.323548+00:00 #5920 closed: {}
+- 2026-09-22T05:26:23.213509+00:00 #5921 started: {"files_observed": 156}
+- 2026-09-22T05:26:44.920866+00:00 #5922 handoff: {"digest": "b98b9f80df80be82961de61660f89f236398183edbb96a003d1a873ed6cfcbd0", "files_observed": 156}
+- 2026-09-22T05:26:50.972034+00:00 #5923 closed: {}
+- 2026-09-22T05:27:14.685670+00:00 #5924 started: {"files_observed": 157}
+- 2026-09-22T05:27:23.384042+00:00 #5925 command_started: {"executable": "powershell"}
+- 2026-09-22T05:27:23.599217+00:00 #5926 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:27:23.952229+00:00 #5927 command_started: {"executable": "git"}
+- 2026-09-22T05:27:24.049123+00:00 #5928 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:27:32.968650+00:00 #5929 command_started: {"executable": "powershell"}
+- 2026-09-22T05:27:33.198801+00:00 #5930 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:28:05.663557+00:00 #5931 command_started: {"executable": "git"}
+- 2026-09-22T05:28:05.755024+00:00 #5932 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:28:06.035610+00:00 #5933 command_started: {"executable": "rg"}
+- 2026-09-22T05:28:06.121646+00:00 #5934 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:28:28.183785+00:00 #5935 handoff: {"digest": "e67480562012bf17d4087de7b04d8fce4c41f8ff18ec0861bba5cec02974388b", "files_observed": 157}
+- 2026-09-22T05:28:28.475703+00:00 #5936 closed: {}
+- 2026-09-22T05:34:00.819743+00:00 #5937 started: {"files_observed": 157}
+- 2026-09-22T05:34:10.042215+00:00 #5938 command_started: {"executable": "hermes"}
+- 2026-09-22T05:34:10.766893+00:00 #5939 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:34:19.296561+00:00 #5940 command_started: {"executable": "hermes"}
+- 2026-09-22T05:34:30.641733+00:00 #5941 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:34:43.969041+00:00 #5942 command_started: {"executable": "hermes"}
+- 2026-09-22T05:34:43.979553+00:00 #5943 command_started: {"executable": "hermes"}
+- 2026-09-22T05:34:43.971041+00:00 #5944 command_started: {"executable": "powershell"}
+- 2026-09-22T05:34:44.187140+00:00 #5945 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:34:44.737399+00:00 #5946 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:34:44.737399+00:00 #5947 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:35:05.102477+00:00 #5948 handoff: {"digest": "fbb8fd7cd6cd9a6238c412a8dab8bc8923c86d62f36c0492178745f788a5e2ab", "files_observed": 157}
+- 2026-09-22T05:35:05.385606+00:00 #5949 closed: {}
+- 2026-09-22T05:43:23.025606+00:00 #5950 started: {"files_observed": 157}
+- 2026-09-22T05:43:36.349003+00:00 #5951 command_started: {"executable": "rg"}
+- 2026-09-22T05:43:45.994234+00:00 #5952 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:44:25.231424+00:00 #5953 command_started: {"executable": "powershell"}
+- 2026-09-22T05:44:25.454688+00:00 #5954 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:47:11.552226+00:00 #5955 command_started: {"executable": "rg"}
+- 2026-09-22T05:47:11.634399+00:00 #5956 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:47:22.831412+00:00 #5957 command_started: {"executable": "rg"}
+- 2026-09-22T05:47:22.917941+00:00 #5958 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:47:34.509459+00:00 #5959 command_started: {"executable": "rg"}
+- 2026-09-22T05:47:34.592093+00:00 #5960 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:47:50.244235+00:00 #5961 command_started: {"executable": "powershell"}
+- 2026-09-22T05:47:50.448604+00:00 #5962 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:48:08.966977+00:00 #5963 command_started: {"executable": "rg"}
+- 2026-09-22T05:48:08.979981+00:00 #5964 command_started: {"executable": "powershell"}
+- 2026-09-22T05:48:09.191661+00:00 #5965 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:48:09.431215+00:00 #5966 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:05.082484+00:00 #5967 command_started: {"executable": "rg"}
+- 2026-09-22T05:49:05.183933+00:00 #5968 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:14.074067+00:00 #5969 command_started: {"executable": "rg"}
+- 2026-09-22T05:49:14.161415+00:00 #5970 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:20.521984+00:00 #5971 command_started: {"executable": "powershell"}
+- 2026-09-22T05:49:20.719764+00:00 #5972 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:22.778510+00:00 #5973 command_started: {"executable": "powershell"}
+- 2026-09-22T05:49:22.989502+00:00 #5974 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:31.340945+00:00 #5975 command_started: {"executable": "rg"}
+- 2026-09-22T05:49:31.436659+00:00 #5976 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:41.855369+00:00 #5977 command_started: {"executable": "rg"}
+- 2026-09-22T05:49:43.258892+00:00 #5978 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:49:52.386460+00:00 #5979 command_started: {"executable": "powershell"}
+- 2026-09-22T05:49:52.614562+00:00 #5980 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:50:11.466821+00:00 #5981 handoff: {"digest": "7670dd98674da32fd79cf0062e84e79b62f8d57349c4fb6e4931c112c5e23ee6", "files_observed": 157}
+- 2026-09-22T05:50:16.697951+00:00 #5982 closed: {}
+- 2026-09-22T05:53:27.873419+00:00 #5983 started: {"files_observed": 157}
+- 2026-09-22T05:53:33.765027+00:00 #5984 command_started: {"executable": "git"}
+- 2026-09-22T05:53:33.857246+00:00 #5985 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:53:39.961469+00:00 #5986 command_started: {"executable": "git"}
+- 2026-09-22T05:53:40.070043+00:00 #5987 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:53:47.224374+00:00 #5988 command_started: {"executable": "powershell"}
+- 2026-09-22T05:53:47.470185+00:00 #5989 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:54:13.206592+00:00 #5990 handoff: {"digest": "24551afde7f4816fabcd92b1e15dbd1c34ea84322f8496492551da70f76bc87b", "files_observed": 157}
+- 2026-09-22T05:54:19.686411+00:00 #5991 closed: {}
+- 2026-09-22T05:55:27.022813+00:00 #5992 started: {"files_observed": 157}
+- 2026-09-22T05:55:33.723068+00:00 #5993 command_started: {"executable": "hermes"}
+- 2026-09-22T05:55:33.734072+00:00 #5994 command_started: {"executable": "hermes"}
+- 2026-09-22T05:55:33.734072+00:00 #5995 command_started: {"executable": "hermes"}
+- 2026-09-22T05:55:33.734072+00:00 #5996 command_started: {"executable": "hermes"}
+- 2026-09-22T05:55:34.682766+00:00 #5997 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:55:34.689767+00:00 #5998 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:55:34.862711+00:00 #5999 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:55:35.221996+00:00 #6000 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:55:49.717095+00:00 #6001 command_started: {"executable": "hermes"}
+- 2026-09-22T05:55:49.721096+00:00 #6002 command_started: {"executable": "hermes"}
+- 2026-09-22T05:55:49.721096+00:00 #6003 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:55:49.837153+00:00 #6004 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:55:50.488019+00:00 #6005 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:55:50.489019+00:00 #6006 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:56:03.430863+00:00 #6007 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:56:03.447373+00:00 #6008 command_started: {"executable": "hermes"}
+- 2026-09-22T05:56:03.555452+00:00 #6009 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:56:05.724287+00:00 #6010 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:56:20.156872+00:00 #6011 command_started: {"executable": "powershell"}
+- 2026-09-22T05:56:20.360144+00:00 #6012 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:56:36.374172+00:00 #6013 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:56:36.494861+00:00 #6014 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T05:56:44.261615+00:00 #6015 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:56:44.383406+00:00 #6016 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:57:05.820593+00:00 #6017 command_started: {"executable": "hermes"}
+- 2026-09-22T05:57:05.837104+00:00 #6018 command_started: {"executable": "curl.exe"}
+- 2026-09-22T05:57:07.950157+00:00 #6019 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T05:57:48.100751+00:00 #6020 command_started: {"executable": "python.exe"}
+- 2026-09-22T05:57:48.257546+00:00 #6021 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:39:08.482342+00:00 #6022 command_started: {"executable": "powershell"}
+- 2026-09-22T06:39:08.891347+00:00 #6023 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T06:39:11.942095+00:00 #6024 command_started: {"executable": "powershell"}
+- 2026-09-22T06:39:12.772317+00:00 #6025 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:39:26.627290+00:00 #6026 command_started: {"executable": "powershell"}
+- 2026-09-22T06:39:27.423215+00:00 #6027 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:39:46.893480+00:00 #6028 command_started: {"executable": "powershell"}
+- 2026-09-22T06:39:47.329441+00:00 #6029 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:43:55.749381+00:00 #6030 command_started: {"executable": "powershell"}
+- 2026-09-22T06:43:57.254075+00:00 #6031 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T06:44:05.346158+00:00 #6032 command_started: {"executable": "python.exe"}
+- 2026-09-22T06:44:08.030456+00:00 #6033 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:44:11.770683+00:00 #6034 command_started: {"executable": "python.exe"}
+- 2026-09-22T06:44:28.168896+00:00 #6035 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:44:32.047113+00:00 #6036 command_started: {"executable": "powershell"}
+- 2026-09-22T06:44:33.188944+00:00 #6037 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:44:55.969238+00:00 #6038 command_started: {"executable": "powershell"}
+- 2026-09-22T06:44:56.418191+00:00 #6039 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:45:03.092585+00:00 #6040 command_started: {"executable": "powershell"}
+- 2026-09-22T06:45:03.963169+00:00 #6041 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:46:04.172798+00:00 #6042 command_started: {"executable": "powershell"}
+- 2026-09-22T06:46:04.421435+00:00 #6043 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T06:46:40.096422+00:00 #6044 command_started: {"executable": "powershell"}
+- 2026-09-22T06:46:41.857283+00:00 #6045 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:46:56.631114+00:00 #6046 command_started: {"executable": "powershell"}
+- 2026-09-22T06:46:58.399581+00:00 #6047 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:47:14.929942+00:00 #6048 command_started: {"executable": "powershell"}
+- 2026-09-22T06:47:16.551073+00:00 #6049 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:47:29.940364+00:00 #6050 command_started: {"executable": "powershell"}
+- 2026-09-22T06:47:31.866637+00:00 #6051 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:47:38.725559+00:00 #6052 command_started: {"executable": "powershell"}
+- 2026-09-22T06:47:39.516908+00:00 #6053 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:12.667800+00:00 #6054 command_started: {"executable": "python.exe"}
+- 2026-09-22T06:57:15.374415+00:00 #6055 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:20.046140+00:00 #6056 command_started: {"executable": "powershell"}
+- 2026-09-22T06:57:21.969128+00:00 #6057 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:26.193369+00:00 #6058 command_started: {"executable": "powershell"}
+- 2026-09-22T06:57:28.023973+00:00 #6059 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:31.231615+00:00 #6060 command_started: {"executable": "powershell"}
+- 2026-09-22T06:57:33.612133+00:00 #6061 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:40.431028+00:00 #6062 command_started: {"executable": "powershell"}
+- 2026-09-22T06:57:42.212127+00:00 #6063 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:47.146405+00:00 #6064 command_started: {"executable": "powershell"}
+- 2026-09-22T06:57:49.223082+00:00 #6065 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:52.074208+00:00 #6066 command_started: {"executable": "powershell"}
+- 2026-09-22T06:57:53.914901+00:00 #6067 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:57:59.645337+00:00 #6068 command_started: {"executable": "python.exe"}
+- 2026-09-22T06:58:00.230128+00:00 #6069 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:58:06.380248+00:00 #6070 command_started: {"executable": "python.exe"}
+- 2026-09-22T06:58:22.536348+00:00 #6071 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:58:26.298047+00:00 #6072 command_started: {"executable": "git"}
+- 2026-09-22T06:58:26.392633+00:00 #6073 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:58:30.927269+00:00 #6074 command_started: {"executable": "git"}
+- 2026-09-22T06:58:31.020817+00:00 #6075 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T06:58:41.603975+00:00 #6076 handoff: {"digest": "afde2d1d0b9812ccfffc054447e4339032fde23d7c04b7d82287cc169c634c8c", "files_observed": 158}
+- 2026-09-22T06:58:49.574789+00:00 #6077 closed: {}
+- 2026-09-22T09:22:07.886229+00:00 #6078 started: {"files_observed": 158}
+- 2026-09-22T09:22:15.817595+00:00 #6079 command_started: {"executable": "git"}
+- 2026-09-22T09:22:15.831910+00:00 #6080 command_started: {"executable": "python.exe"}
+- 2026-09-22T09:22:15.924099+00:00 #6081 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:22:15.965777+00:00 #6082 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:22:22.327359+00:00 #6083 handoff: {"digest": "e38abddc0fb29cbc3f1639932b36203d5b651fa8fa787b17e7614ca124c6d6b7", "files_observed": 158}
+- 2026-09-22T09:22:25.837294+00:00 #6084 closed: {}
+- 2026-09-22T09:32:59.897212+00:00 #6085 started: {"files_observed": 158}
+- 2026-09-22T09:33:09.267474+00:00 #6086 command_started: {"executable": "powershell"}
+- 2026-09-22T09:33:09.529489+00:00 #6087 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:33:25.665087+00:00 #6088 handoff: {"digest": "46ee3e17de4a801cec8e2ebf5b6ace075809fb9ecfa7166d35dc517947575802", "files_observed": 158}
+- 2026-09-22T09:33:26.179718+00:00 #6089 closed: {}
+- 2026-09-22T09:56:41.705770+00:00 #6090 started: {"files_observed": 158}
+- 2026-09-22T09:56:50.584524+00:00 #6091 command_started: {"executable": "rg"}
+- 2026-09-22T09:56:50.841767+00:00 #6092 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:56:58.088601+00:00 #6093 command_started: {"executable": "python.exe"}
+- 2026-09-22T09:56:58.417860+00:00 #6094 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:57:07.934587+00:00 #6095 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T09:57:21.019776+00:00 #6096 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:57:45.260923+00:00 #6097 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T09:57:45.774355+00:00 #6098 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:57:53.190815+00:00 #6099 command_started: {"executable": "rg"}
+- 2026-09-22T09:57:53.279188+00:00 #6100 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:58:09.007252+00:00 #6101 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T09:58:09.263612+00:00 #6102 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:58:14.647925+00:00 #6103 command_started: {"executable": "hermes"}
+- 2026-09-22T09:58:15.940473+00:00 #6104 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:58:26.818545+00:00 #6105 command_started: {"executable": "hermes"}
+- 2026-09-22T09:58:26.833065+00:00 #6106 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T09:58:26.834066+00:00 #6107 command_started: {"executable": "hermes"}
+- 2026-09-22T09:58:27.058204+00:00 #6108 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T09:58:29.934808+00:00 #6109 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:58:30.713155+00:00 #6110 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:58:42.793740+00:00 #6111 handoff: {"digest": "b030650000564b3f1c28d5f0b1c7929287c5dfa50b08c6714370028d53e39e5a", "files_observed": 158}
+- 2026-09-22T09:58:48.011650+00:00 #6112 closed: {}
+- 2026-09-22T09:59:27.530809+00:00 #6113 started: {"files_observed": 158}
+- 2026-09-22T09:59:37.196130+00:00 #6114 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:37.203412+00:00 #6115 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:37.209935+00:00 #6116 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:37.203412+00:00 #6117 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:37.221951+00:00 #6118 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:37.203412+00:00 #6119 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:41.975487+00:00 #6120 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:42.044567+00:00 #6121 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:42.045569+00:00 #6122 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:42.983876+00:00 #6123 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:43.017182+00:00 #6124 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:43.664846+00:00 #6125 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:57.741418+00:00 #6126 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:57.752426+00:00 #6127 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:57.741418+00:00 #6128 command_started: {"executable": "hermes"}
+- 2026-09-22T09:59:58.616971+00:00 #6129 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:58.618476+00:00 #6130 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T09:59:58.635506+00:00 #6131 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:06.544389+00:00 #6132 command_started: {"executable": "rg"}
+- 2026-09-22T10:00:06.632793+00:00 #6133 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:15.178734+00:00 #6134 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T10:00:15.446804+00:00 #6135 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:29.358818+00:00 #6136 command_started: {"executable": "rg"}
+- 2026-09-22T10:00:29.456072+00:00 #6137 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:37.833300+00:00 #6138 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T10:00:39.124611+00:00 #6139 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:45.066859+00:00 #6140 command_started: {"executable": "powershell"}
+- 2026-09-22T10:00:45.373961+00:00 #6141 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:53.505382+00:00 #6142 command_started: {"executable": "rg"}
+- 2026-09-22T10:00:53.594702+00:00 #6143 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:00:58.065010+00:00 #6144 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T10:00:58.452804+00:00 #6145 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:01:02.788715+00:00 #6146 command_started: {"executable": "powershell"}
+- 2026-09-22T10:01:03.040722+00:00 #6147 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:01:10.792085+00:00 #6148 command_started: {"executable": "rg"}
+- 2026-09-22T10:01:10.884594+00:00 #6149 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:01:17.818931+00:00 #6150 command_started: {"executable": "rg"}
+- 2026-09-22T10:01:17.916038+00:00 #6151 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T10:01:30.411807+00:00 #6152 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T10:01:31.258546+00:00 #6153 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T10:01:33.233162+00:00 #6154 handoff: {"digest": "02adba4a33071c0167f899ec336b5683504947b1d3f30588689a57f13671a20e", "files_observed": 158}
+- 2026-09-22T10:01:38.079127+00:00 #6155 closed: {}
+- 2026-09-22T10:01:50.031187+00:00 #6156 started: {"files_observed": 158}
+- 2026-09-22T10:02:17.129676+00:00 #6157 command_started: {"executable": "hermes"}
+- 2026-09-22T10:02:33.693249+00:00 #6158 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T10:02:46.455662+00:00 #6159 handoff: {"digest": "b08b64cb022267f7e6ccb476ef86dd66b098d1e7f95b0bd58dea06f13f5e0c2c", "files_observed": 158}
+- 2026-09-22T10:02:54.366675+00:00 #6160 closed: {}
+- 2026-09-22T13:16:52.854979+00:00 #6161 started: {"files_observed": 158}
+- 2026-09-22T13:16:59.129763+00:00 #6162 command_started: {"executable": "powershell"}
+- 2026-09-22T13:16:59.779949+00:00 #6163 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:15.572573+00:00 #6164 command_started: {"executable": "git"}
+- 2026-09-22T13:17:15.580084+00:00 #6165 command_started: {"executable": "rg"}
+- 2026-09-22T13:17:15.576572+00:00 #6166 command_started: {"executable": "rg"}
+- 2026-09-22T13:17:15.667283+00:00 #6167 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:15.669789+00:00 #6168 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:15.674789+00:00 #6169 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:33.441008+00:00 #6170 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:33.632355+00:00 #6171 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:34.127505+00:00 #6172 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:34.326180+00:00 #6173 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:34.830331+00:00 #6174 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:35.026120+00:00 #6175 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:35.521172+00:00 #6176 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:35.712399+00:00 #6177 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:36.226999+00:00 #6178 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:36.421866+00:00 #6179 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:36.922954+00:00 #6180 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:37.115694+00:00 #6181 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:37.622903+00:00 #6182 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:37.821685+00:00 #6183 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:38.319128+00:00 #6184 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:38.510642+00:00 #6185 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:39.013403+00:00 #6186 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:39.204254+00:00 #6187 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:39.704408+00:00 #6188 command_started: {"executable": "powershell"}
+- 2026-09-22T13:17:39.912320+00:00 #6189 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:51.095743+00:00 #6190 command_started: {"executable": "rg"}
+- 2026-09-22T13:17:51.185306+00:00 #6191 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:17:51.681842+00:00 #6192 command_started: {"executable": "rg"}
+- 2026-09-22T13:17:51.767886+00:00 #6193 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:02.243467+00:00 #6194 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:02.484042+00:00 #6195 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:02.984889+00:00 #6196 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:03.200475+00:00 #6197 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:03.707446+00:00 #6198 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:03.931406+00:00 #6199 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:04.431378+00:00 #6200 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:04.655255+00:00 #6201 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:05.165139+00:00 #6202 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:05.381618+00:00 #6203 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:22.446113+00:00 #6204 command_started: {"executable": "rg"}
+- 2026-09-22T13:18:22.531693+00:00 #6205 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:23.046138+00:00 #6206 command_started: {"executable": "rg"}
+- 2026-09-22T13:18:23.130016+00:00 #6207 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:23.639078+00:00 #6208 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:23.862132+00:00 #6209 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:35.722881+00:00 #6210 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:35.951445+00:00 #6211 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:36.455527+00:00 #6212 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:36.672898+00:00 #6213 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:37.184170+00:00 #6214 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:37.399473+00:00 #6215 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:37.923291+00:00 #6216 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:38.160026+00:00 #6217 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:45.419900+00:00 #6218 command_started: {"executable": "powershell"}
+- 2026-09-22T13:18:45.644658+00:00 #6219 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:18:52.836072+00:00 #6220 command_started: {"executable": "rg"}
+- 2026-09-22T13:18:52.916656+00:00 #6221 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:19:43.043760+00:00 #6222 command_started: {"executable": "powershell"}
+- 2026-09-22T13:19:43.269936+00:00 #6223 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:19:43.762824+00:00 #6224 command_started: {"executable": "rg"}
+- 2026-09-22T13:19:43.847213+00:00 #6225 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:19:44.350840+00:00 #6226 command_started: {"executable": "rg"}
+- 2026-09-22T13:19:44.435762+00:00 #6227 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:21:51.648834+00:00 #6228 command_started: {"executable": "powershell"}
+- 2026-09-22T13:21:51.881996+00:00 #6229 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:27:53.535831+00:00 #6230 command_started: {"executable": "powershell"}
+- 2026-09-22T13:27:53.751660+00:00 #6231 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:30:56.413632+00:00 #6232 command_started: {"executable": "git"}
+- 2026-09-22T13:30:56.504984+00:00 #6233 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:30:57.008986+00:00 #6234 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:30:59.613555+00:00 #6235 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:31:00.118353+00:00 #6236 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:31:00.821930+00:00 #6237 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T13:33:16.981701+00:00 #6238 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:33:19.285528+00:00 #6239 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:33:19.783953+00:00 #6240 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:33:19.933824+00:00 #6241 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:33:37.113884+00:00 #6242 command_started: {"executable": "powershell"}
+- 2026-09-22T13:33:37.339206+00:00 #6243 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:34:42.077880+00:00 #6244 command_started: {"executable": "powershell"}
+- 2026-09-22T13:34:42.277527+00:00 #6245 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:34:51.007088+00:00 #6246 command_started: {"executable": "powershell"}
+- 2026-09-22T13:34:51.203831+00:00 #6247 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:36:05.386036+00:00 #6248 command_started: {"executable": "powershell"}
+- 2026-09-22T13:36:05.597165+00:00 #6249 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:37:12.584813+00:00 #6250 command_started: {"executable": "powershell"}
+- 2026-09-22T13:37:12.807466+00:00 #6251 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:37:57.775997+00:00 #6252 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:38:15.357985+00:00 #6253 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:38:15.852815+00:00 #6254 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:38:15.997936+00:00 #6255 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:38:30.360784+00:00 #6256 command_started: {"executable": "git"}
+- 2026-09-22T13:38:30.469802+00:00 #6257 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:38:30.971835+00:00 #6258 command_started: {"executable": "git"}
+- 2026-09-22T13:38:31.065404+00:00 #6259 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:39:09.289477+00:00 #6260 command_started: {"executable": "powershell"}
+- 2026-09-22T13:39:09.651420+00:00 #6261 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T13:39:18.721937+00:00 #6262 command_started: {"executable": "powershell"}
+- 2026-09-22T13:39:18.942753+00:00 #6263 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:39:27.560860+00:00 #6264 command_started: {"executable": "powershell"}
+- 2026-09-22T13:39:27.779178+00:00 #6265 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:39:35.429360+00:00 #6266 command_started: {"executable": "powershell"}
+- 2026-09-22T13:39:39.020383+00:00 #6267 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:39:53.638643+00:00 #6268 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:39:53.797938+00:00 #6269 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:40:20.553365+00:00 #6270 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:40:20.721251+00:00 #6271 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:40:30.499704+00:00 #6272 command_started: {"executable": "powershell"}
+- 2026-09-22T13:40:30.721658+00:00 #6273 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:41:15.240068+00:00 #6274 command_started: {"executable": "powershell"}
+- 2026-09-22T13:41:15.461653+00:00 #6275 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:42:40.171955+00:00 #6276 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:42:41.205730+00:00 #6277 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:42:41.708092+00:00 #6278 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:42:41.851969+00:00 #6279 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:43:54.289787+00:00 #6280 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:44:04.119010+00:00 #6281 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T13:45:01.301381+00:00 #6282 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:45:01.565346+00:00 #6283 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T13:46:20.349005+00:00 #6284 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:46:21.411471+00:00 #6285 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:46:21.901713+00:00 #6286 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:46:22.051786+00:00 #6287 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:48:19.703596+00:00 #6288 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:48:29.551492+00:00 #6289 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T13:49:58.915008+00:00 #6290 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:50:08.752782+00:00 #6291 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:50:54.904927+00:00 #6292 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:51:05.332830+00:00 #6293 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T13:51:26.085792+00:00 #6294 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:51:26.356836+00:00 #6295 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T13:51:47.815938+00:00 #6296 command_started: {"executable": "python.exe"}
+- 2026-09-22T13:51:48.095830+00:00 #6297 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:34:58.843071+00:00 #6298 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:35:09.209914+00:00 #6299 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:36:02.325316+00:00 #6300 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:36:02.590139+00:00 #6301 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:37:30.820478+00:00 #6302 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:37:48.480740+00:00 #6303 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:37:48.965441+00:00 #6304 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:37:49.117007+00:00 #6305 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:37:49.621360+00:00 #6306 command_started: {"executable": "git"}
+- 2026-09-22T14:37:49.734344+00:00 #6307 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:38:32.771793+00:00 #6308 command_started: {"executable": "git"}
+- 2026-09-22T14:38:32.886555+00:00 #6309 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:38:33.383827+00:00 #6310 command_started: {"executable": "git"}
+- 2026-09-22T14:38:33.482054+00:00 #6311 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:39:50.726733+00:00 #6312 handoff: {"digest": "2838d81a793084861f97b46799dc3befc5a917134308a6121e1bec1390eba711", "files_observed": 160}
+- 2026-09-22T14:39:55.207818+00:00 #6313 closed: {}
+- 2026-09-22T14:42:36.828401+00:00 #6314 started: {"files_observed": 160}
+- 2026-09-22T14:42:52.625992+00:00 #6315 command_started: {"executable": "powershell"}
+- 2026-09-22T14:42:52.642502+00:00 #6316 command_started: {"executable": "powershell"}
+- 2026-09-22T14:42:52.653574+00:00 #6317 command_started: {"executable": "powershell"}
+- 2026-09-22T14:42:52.845517+00:00 #6318 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:42:52.846517+00:00 #6319 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:42:52.846517+00:00 #6320 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:20.432462+00:00 #6321 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.438484+00:00 #6322 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.447994+00:00 #6323 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.439484+00:00 #6324 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.462617+00:00 #6325 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.462617+00:00 #6326 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.494495+00:00 #6327 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:20.674546+00:00 #6328 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:20.674598+00:00 #6329 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:20.701777+00:00 #6330 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:20.675114+00:00 #6331 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:20.701777+00:00 #6332 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:20.722316+00:00 #6333 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:21.001260+00:00 #6334 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:35.595270+00:00 #6335 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:35.598403+00:00 #6336 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:35.809512+00:00 #6337 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:35.825551+00:00 #6338 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:47.085380+00:00 #6339 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:47.100888+00:00 #6340 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:47.101887+00:00 #6341 command_started: {"executable": "powershell"}
+- 2026-09-22T14:43:47.407361+00:00 #6342 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:47.407361+00:00 #6343 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:43:47.407361+00:00 #6344 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:04.024907+00:00 #6345 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:04.032428+00:00 #6346 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:04.038940+00:00 #6347 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:04.046451+00:00 #6348 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:04.060469+00:00 #6349 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:04.060469+00:00 #6350 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:04.259651+00:00 #6351 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:04.260649+00:00 #6352 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:04.300953+00:00 #6353 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:04.311971+00:00 #6354 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:04.317479+00:00 #6355 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:04.324981+00:00 #6356 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.151734+00:00 #6357 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.155242+00:00 #6358 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.159761+00:00 #6359 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.155242+00:00 #6360 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.172371+00:00 #6361 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.155242+00:00 #6362 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.185397+00:00 #6363 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.193399+00:00 #6364 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:19.433142+00:00 #6365 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.437652+00:00 #6366 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.450908+00:00 #6367 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.459591+00:00 #6368 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.463590+00:00 #6369 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.459591+00:00 #6370 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.493262+00:00 #6371 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:19.517095+00:00 #6372 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:37.171041+00:00 #6373 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:37.174547+00:00 #6374 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:37.174547+00:00 #6375 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:37.195070+00:00 #6376 command_started: {"executable": "powershell"}
+- 2026-09-22T14:44:37.396969+00:00 #6377 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T14:44:37.423147+00:00 #6378 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:37.424651+00:00 #6379 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:44:37.423147+00:00 #6380 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:45:00.093395+00:00 #6381 command_started: {"executable": "powershell"}
+- 2026-09-22T14:45:00.322453+00:00 #6382 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:45:20.479980+00:00 #6383 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:45:20.485493+00:00 #6384 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:45:20.650772+00:00 #6385 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:45:28.539120+00:00 #6386 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:45:46.085221+00:00 #6387 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:45:46.088226+00:00 #6388 command_started: {"executable": "powershell"}
+- 2026-09-22T14:45:46.088226+00:00 #6389 command_started: {"executable": "powershell"}
+- 2026-09-22T14:45:46.280357+00:00 #6390 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:45:46.296382+00:00 #6391 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:45:46.307831+00:00 #6392 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:46:21.467960+00:00 #6393 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:46:21.469961+00:00 #6394 command_started: {"executable": "powershell"}
+- 2026-09-22T14:46:21.584988+00:00 #6395 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T14:46:21.668886+00:00 #6396 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T14:46:35.239234+00:00 #6397 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:46:35.369981+00:00 #6398 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T14:46:47.027061+00:00 #6399 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:46:47.161801+00:00 #6400 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:46:59.066823+00:00 #6401 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:46:59.213807+00:00 #6402 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:47:09.458886+00:00 #6403 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:47:09.591200+00:00 #6404 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:47:21.710950+00:00 #6405 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:47:21.844961+00:00 #6406 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:48:37.315362+00:00 #6407 command_started: {"executable": "powershell"}
+- 2026-09-22T14:48:37.512140+00:00 #6408 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:48:46.584425+00:00 #6409 command_started: {"executable": "powershell"}
+- 2026-09-22T14:48:46.873631+00:00 #6410 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:48:53.316475+00:00 #6411 command_started: {"executable": "powershell"}
+- 2026-09-22T14:48:53.537748+00:00 #6412 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:15.049736+00:00 #6413 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:49:15.218719+00:00 #6414 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:27.093524+00:00 #6415 command_started: {"executable": "python.exe"}
+- 2026-09-22T14:49:27.225610+00:00 #6416 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:34.028564+00:00 #6417 command_started: {"executable": "powershell"}
+- 2026-09-22T14:49:34.247245+00:00 #6418 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:46.143684+00:00 #6419 command_started: {"executable": "powershell"}
+- 2026-09-22T14:49:46.150709+00:00 #6420 command_started: {"executable": "powershell"}
+- 2026-09-22T14:49:46.158220+00:00 #6421 command_started: {"executable": "powershell"}
+- 2026-09-22T14:49:46.170237+00:00 #6422 command_started: {"executable": "powershell"}
+- 2026-09-22T14:49:46.173237+00:00 #6423 command_started: {"executable": "powershell"}
+- 2026-09-22T14:49:46.377833+00:00 #6424 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:46.394409+00:00 #6425 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:46.400038+00:00 #6426 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:46.410053+00:00 #6427 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T14:49:46.402044+00:00 #6428 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:01:38.713273+00:00 #6429 command_started: {"executable": "powershell"}
+- 2026-09-22T15:01:38.722781+00:00 #6430 command_started: {"executable": "powershell"}
+- 2026-09-22T15:01:38.716273+00:00 #6431 command_started: {"executable": "powershell"}
+- 2026-09-22T15:01:38.737879+00:00 #6432 command_started: {"executable": "powershell"}
+- 2026-09-22T15:01:38.927556+00:00 #6433 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:01:38.957739+00:00 #6434 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:01:38.988391+00:00 #6435 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:01:39.005902+00:00 #6436 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:05:03.587540+00:00 #6437 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:03.598141+00:00 #6438 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:03.608144+00:00 #6439 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:03.849141+00:00 #6440 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:05:03.850141+00:00 #6441 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:05:06.349074+00:00 #6442 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:05:19.404841+00:00 #6443 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:19.417548+00:00 #6444 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:19.418065+00:00 #6445 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:19.425241+00:00 #6446 command_started: {"executable": "powershell"}
+- 2026-09-22T15:05:19.641368+00:00 #6447 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:05:19.651640+00:00 #6448 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:05:19.655643+00:00 #6449 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:05:19.669088+00:00 #6450 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:06:09.923361+00:00 #6451 command_started: {"executable": "powershell"}
+- 2026-09-22T15:06:10.129612+00:00 #6452 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:06:26.900797+00:00 #6453 command_started: {"executable": "powershell"}
+- 2026-09-22T15:06:27.121619+00:00 #6454 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:06:36.858472+00:00 #6455 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:07:43.941229+00:00 #6456 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:08:00.493393+00:00 #6457 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:09:00.042662+00:00 #6458 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:09:13.351035+00:00 #6459 command_started: {"executable": "powershell"}
+- 2026-09-22T15:09:15.259096+00:00 #6460 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:09:33.572248+00:00 #6461 command_started: {"executable": "powershell"}
+- 2026-09-22T15:09:33.576249+00:00 #6462 command_started: {"executable": "powershell"}
+- 2026-09-22T15:09:33.576249+00:00 #6463 command_started: {"executable": "powershell"}
+- 2026-09-22T15:09:33.790332+00:00 #6464 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:09:33.794626+00:00 #6465 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:09:35.364322+00:00 #6466 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:09:49.873314+00:00 #6467 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:09:50.000539+00:00 #6468 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:10:22.807238+00:00 #6469 command_started: {"executable": "powershell"}
+- 2026-09-22T15:10:24.459165+00:00 #6470 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:11:19.052796+00:00 #6471 command_started: {"executable": "powershell"}
+- 2026-09-22T15:11:19.062324+00:00 #6472 command_started: {"executable": "powershell"}
+- 2026-09-22T15:11:19.244942+00:00 #6473 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:11:19.280006+00:00 #6474 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:13:03.697646+00:00 #6475 command_started: {"executable": "powershell"}
+- 2026-09-22T15:13:03.704154+00:00 #6476 command_started: {"executable": "powershell"}
+- 2026-09-22T15:13:03.958216+00:00 #6477 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:13:06.548361+00:00 #6478 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:13:31.218320+00:00 #6479 command_started: {"executable": "powershell"}
+- 2026-09-22T15:13:34.120851+00:00 #6480 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:13:44.034298+00:00 #6481 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:13:44.325357+00:00 #6482 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:13:57.343410+00:00 #6483 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:13:57.469932+00:00 #6484 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:14:05.470998+00:00 #6485 command_started: {"executable": "powershell"}
+- 2026-09-22T15:14:06.864787+00:00 #6486 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:14:32.610627+00:00 #6487 command_started: {"executable": "powershell"}
+- 2026-09-22T15:14:34.388252+00:00 #6488 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:14:34.899864+00:00 #6489 command_started: {"executable": "powershell"}
+- 2026-09-22T15:14:35.094698+00:00 #6490 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:14:52.140135+00:00 #6491 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:14:52.266795+00:00 #6492 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:15:18.577969+00:00 #6493 command_started: {"executable": "powershell"}
+- 2026-09-22T15:15:20.230867+00:00 #6494 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:15:28.017021+00:00 #6495 command_started: {"executable": "powershell"}
+- 2026-09-22T15:15:29.618963+00:00 #6496 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:15:39.860474+00:00 #6497 command_started: {"executable": "powershell"}
+- 2026-09-22T15:16:25.113410+00:00 #6498 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:16:31.040611+00:00 #6499 command_started: {"executable": "powershell"}
+- 2026-09-22T15:16:32.686631+00:00 #6500 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:16:44.816499+00:00 #6501 command_started: {"executable": "powershell"}
+- 2026-09-22T15:16:44.829007+00:00 #6502 command_started: {"executable": "powershell"}
+- 2026-09-22T15:16:44.829007+00:00 #6503 command_started: {"executable": "powershell"}
+- 2026-09-22T15:16:44.829007+00:00 #6504 command_started: {"executable": "powershell"}
+- 2026-09-22T15:16:45.054219+00:00 #6505 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:16:45.054219+00:00 #6506 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:16:45.068759+00:00 #6507 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:16:45.085784+00:00 #6508 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.277469+00:00 #6509 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.279873+00:00 #6510 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.296457+00:00 #6511 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.283946+00:00 #6512 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.323460+00:00 #6513 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.297457+00:00 #6514 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.323460+00:00 #6515 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.281380+00:00 #6516 command_started: {"executable": "powershell"}
+- 2026-09-22T15:17:45.591527+00:00 #6517 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.600175+00:00 #6518 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.606938+00:00 #6519 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.621763+00:00 #6520 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.637128+00:00 #6521 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.639129+00:00 #6522 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:17:45.667679+00:00 #6523 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:18:03.579713+00:00 #6524 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:19:48.786126+00:00 #6525 command_started: {"executable": "powershell"}
+- 2026-09-22T15:19:49.719240+00:00 #6526 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:19:50.231495+00:00 #6527 command_started: {"executable": "powershell"}
+- 2026-09-22T15:19:51.115270+00:00 #6528 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:19:51.613342+00:00 #6529 command_started: {"executable": "powershell"}
+- 2026-09-22T15:19:51.806270+00:00 #6530 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:19:52.321830+00:00 #6531 command_started: {"executable": "powershell"}
+- 2026-09-22T15:19:52.525436+00:00 #6532 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:19:53.039751+00:00 #6533 command_started: {"executable": "powershell"}
+- 2026-09-22T15:19:53.238969+00:00 #6534 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:19:53.752206+00:00 #6535 command_started: {"executable": "powershell"}
+- 2026-09-22T15:19:53.975948+00:00 #6536 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:20:04.317255+00:00 #6537 command_started: {"executable": "powershell"}
+- 2026-09-22T15:20:04.504483+00:00 #6538 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:20:12.033259+00:00 #6539 command_started: {"executable": "powershell"}
+- 2026-09-22T15:20:12.244998+00:00 #6540 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:20:27.555579+00:00 #6541 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:20:27.682427+00:00 #6542 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:20:37.788155+00:00 #6543 command_started: {"executable": "powershell"}
+- 2026-09-22T15:20:38.065450+00:00 #6544 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:20:48.746300+00:00 #6545 command_started: {"executable": "powershell"}
+- 2026-09-22T15:20:49.208084+00:00 #6546 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:21:33.369249+00:00 #6547 command_started: {"executable": "powershell"}
+- 2026-09-22T15:21:33.385344+00:00 #6548 command_started: {"executable": "powershell"}
+- 2026-09-22T15:21:33.626371+00:00 #6549 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:21:35.002547+00:00 #6550 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:21:42.693235+00:00 #6551 command_started: {"executable": "powershell"}
+- 2026-09-22T15:21:44.395405+00:00 #6552 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:21:52.894384+00:00 #6553 command_started: {"executable": "powershell"}
+- 2026-09-22T15:22:23.109465+00:00 #6554 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:22:36.869670+00:00 #6555 command_started: {"executable": "powershell"}
+- 2026-09-22T15:23:12.099150+00:00 #6556 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:23:22.417513+00:00 #6557 command_started: {"executable": "powershell"}
+- 2026-09-22T15:23:52.631876+00:00 #6558 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:24:04.235474+00:00 #6559 command_started: {"executable": "powershell"}
+- 2026-09-22T15:24:44.449964+00:00 #6560 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:24:57.492842+00:00 #6561 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:24:57.628406+00:00 #6562 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:25:16.737941+00:00 #6563 command_started: {"executable": "powershell"}
+- 2026-09-22T15:25:18.598384+00:00 #6564 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:25:56.752126+00:00 #6565 command_started: {"executable": "powershell"}
+- 2026-09-22T15:25:56.756129+00:00 #6566 command_started: {"executable": "powershell"}
+- 2026-09-22T15:25:57.015223+00:00 #6567 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:25:58.440556+00:00 #6568 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:26:04.981695+00:00 #6569 command_started: {"executable": "powershell"}
+- 2026-09-22T15:26:06.363840+00:00 #6570 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:26:13.214404+00:00 #6571 command_started: {"executable": "powershell"}
+- 2026-09-22T15:26:25.428800+00:00 #6572 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:28:33.778741+00:00 #6573 command_started: {"executable": "powershell"}
+- 2026-09-22T15:29:29.008641+00:00 #6574 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:30:41.295083+00:00 #6575 command_started: {"executable": "powershell"}
+- 2026-09-22T15:30:42.987306+00:00 #6576 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:30:49.820051+00:00 #6577 command_started: {"executable": "rg"}
+- 2026-09-22T15:30:49.911407+00:00 #6578 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:30:56.015092+00:00 #6579 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:30:56.304195+00:00 #6580 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T15:31:03.080491+00:00 #6581 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:31:03.382907+00:00 #6582 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:31:10.070094+00:00 #6583 command_started: {"executable": "powershell"}
+- 2026-09-22T15:31:11.799184+00:00 #6584 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:31:21.403186+00:00 #6585 command_started: {"executable": "powershell"}
+- 2026-09-22T15:31:21.602305+00:00 #6586 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:31:27.581328+00:00 #6587 command_started: {"executable": "powershell"}
+- 2026-09-22T15:31:30.647501+00:00 #6588 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:31:37.602205+00:00 #6589 command_started: {"executable": "powershell"}
+- 2026-09-22T15:31:37.960871+00:00 #6590 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:31:46.076287+00:00 #6591 command_started: {"executable": "powershell"}
+- 2026-09-22T15:31:46.285519+00:00 #6592 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:31:52.889191+00:00 #6593 command_started: {"executable": "powershell"}
+- 2026-09-22T15:31:53.113803+00:00 #6594 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:32:02.766279+00:00 #6595 command_started: {"executable": "powershell"}
+- 2026-09-22T15:32:11.667769+00:00 #6596 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:32:19.507255+00:00 #6597 command_started: {"executable": "powershell"}
+- 2026-09-22T15:32:20.435155+00:00 #6598 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:32:35.991726+00:00 #6599 command_started: {"executable": "powershell"}
+- 2026-09-22T15:33:06.213146+00:00 #6600 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:33:17.146551+00:00 #6601 command_started: {"executable": "powershell"}
+- 2026-09-22T15:33:17.365538+00:00 #6602 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:33:23.617326+00:00 #6603 command_started: {"executable": "powershell"}
+- 2026-09-22T15:33:23.848244+00:00 #6604 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:33:42.209895+00:00 #6605 command_started: {"executable": "rg"}
+- 2026-09-22T15:33:42.295540+00:00 #6606 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:33:47.935600+00:00 #6607 command_started: {"executable": "powershell"}
+- 2026-09-22T15:33:51.250808+00:00 #6608 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:33:58.742829+00:00 #6609 command_started: {"executable": "powershell"}
+- 2026-09-22T15:34:04.976361+00:00 #6610 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:34:10.879276+00:00 #6611 command_started: {"executable": "powershell"}
+- 2026-09-22T15:34:12.484492+00:00 #6612 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:34:19.797140+00:00 #6613 command_started: {"executable": "powershell"}
+- 2026-09-22T15:34:20.027393+00:00 #6614 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:34:36.197153+00:00 #6615 command_started: {"executable": "powershell"}
+- 2026-09-22T15:34:36.650664+00:00 #6616 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:34:59.183649+00:00 #6617 command_started: {"executable": "powershell"}
+- 2026-09-22T15:35:00.881633+00:00 #6618 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:35:10.972088+00:00 #6619 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:35:27.784018+00:00 #6620 command_started: {"executable": "powershell"}
+- 2026-09-22T15:35:27.999775+00:00 #6621 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:35:41.749840+00:00 #6622 command_started: {"executable": "powershell"}
+- 2026-09-22T15:35:43.125745+00:00 #6623 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:35:51.976073+00:00 #6624 command_started: {"executable": "powershell"}
+- 2026-09-22T15:35:57.462347+00:00 #6625 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:36:10.020824+00:00 #6626 command_started: {"executable": "powershell"}
+- 2026-09-22T15:36:10.222795+00:00 #6627 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:36:28.434795+00:00 #6628 command_started: {"executable": "powershell"}
+- 2026-09-22T15:36:28.723178+00:00 #6629 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:37:06.395718+00:00 #6630 command_started: {"executable": "powershell"}
+- 2026-09-22T15:37:08.098482+00:00 #6631 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:37:15.685910+00:00 #6632 command_started: {"executable": "powershell"}
+- 2026-09-22T15:37:21.911980+00:00 #6633 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:37:34.201182+00:00 #6634 command_started: {"executable": "powershell"}
+- 2026-09-22T15:37:35.157628+00:00 #6635 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:37:55.546963+00:00 #6636 command_started: {"executable": "rg"}
+- 2026-09-22T15:37:55.635731+00:00 #6637 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:38:17.184510+00:00 #6638 command_started: {"executable": "powershell"}
+- 2026-09-22T15:38:18.927108+00:00 #6639 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:38:26.568857+00:00 #6640 command_started: {"executable": "powershell"}
+- 2026-09-22T15:38:33.794152+00:00 #6641 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:38:49.924901+00:00 #6642 command_started: {"executable": "powershell"}
+- 2026-09-22T15:38:50.146254+00:00 #6643 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:39:02.639500+00:00 #6644 command_started: {"executable": "powershell"}
+- 2026-09-22T15:39:04.289861+00:00 #6645 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:39:15.743444+00:00 #6646 command_started: {"executable": "powershell"}
+- 2026-09-22T15:39:31.875563+00:00 #6647 command_started: {"executable": "powershell"}
+- 2026-09-22T15:39:32.071249+00:00 #6648 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:39:54.682364+00:00 #6649 command_started: {"executable": "rg"}
+- 2026-09-22T15:39:54.766870+00:00 #6650 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:40:12.558124+00:00 #6651 command_started: {"executable": "powershell"}
+- 2026-09-22T15:40:15.121478+00:00 #6652 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:40:23.585446+00:00 #6653 command_started: {"executable": "powershell"}
+- 2026-09-22T15:40:31.071382+00:00 #6654 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:40:53.691709+00:00 #6655 command_started: {"executable": "powershell"}
+- 2026-09-22T15:40:54.075091+00:00 #6656 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:41:08.178291+00:00 #6657 command_started: {"executable": "powershell"}
+- 2026-09-22T15:41:08.376513+00:00 #6658 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:41:48.547467+00:00 #6659 command_started: {"executable": "powershell"}
+- 2026-09-22T15:41:48.765953+00:00 #6660 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:42:00.216646+00:00 #6661 command_started: {"executable": "powershell"}
+- 2026-09-22T15:42:02.826041+00:00 #6662 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:42:10.253534+00:00 #6663 command_started: {"executable": "powershell"}
+- 2026-09-22T15:42:17.127514+00:00 #6664 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:42:23.937513+00:00 #6665 command_started: {"executable": "powershell"}
+- 2026-09-22T15:42:25.586550+00:00 #6666 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:42:45.127495+00:00 #6667 command_started: {"executable": "powershell"}
+- 2026-09-22T15:42:46.819435+00:00 #6668 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:42:47.101537+00:00 #6669 command_started: {"executable": "powershell"}
+- 2026-09-22T15:42:48.690176+00:00 #6670 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:42:54.384946+00:00 #6671 command_started: {"executable": "powershell"}
+- 2026-09-22T15:42:55.748518+00:00 #6672 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:43:02.988258+00:00 #6673 command_started: {"executable": "powershell"}
+- 2026-09-22T15:43:10.291169+00:00 #6674 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:43:16.215189+00:00 #6675 command_started: {"executable": "powershell"}
+- 2026-09-22T15:43:17.837239+00:00 #6676 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:43:26.917190+00:00 #6677 command_started: {"executable": "powershell"}
+- 2026-09-22T15:43:27.178456+00:00 #6678 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:43:44.579021+00:00 #6679 command_started: {"executable": "rg"}
+- 2026-09-22T15:43:44.665223+00:00 #6680 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:43:49.003060+00:00 #6681 command_started: {"executable": "powershell"}
+- 2026-09-22T15:43:49.247559+00:00 #6682 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:43:52.737066+00:00 #6683 command_started: {"executable": "powershell"}
+- 2026-09-22T15:43:52.983699+00:00 #6684 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:44:02.531510+00:00 #6685 command_started: {"executable": "powershell"}
+- 2026-09-22T15:44:02.893398+00:00 #6686 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:44:02.933643+00:00 #6687 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:44:03.168237+00:00 #6688 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:44:11.358054+00:00 #6689 command_started: {"executable": "powershell"}
+- 2026-09-22T15:44:11.637616+00:00 #6690 command_started: {"executable": "powershell"}
+- 2026-09-22T15:44:11.965947+00:00 #6691 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:44:30.621241+00:00 #6692 command_started: {"executable": "powershell"}
+- 2026-09-22T15:44:30.891170+00:00 #6693 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:44:31.565788+00:00 #6694 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:44:39.448822+00:00 #6695 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:44:39.550973+00:00 #6696 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:44:50.814032+00:00 #6697 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:44:50.930301+00:00 #6698 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:45:19.357944+00:00 #6699 command_started: {"executable": "powershell"}
+- 2026-09-22T15:45:19.568582+00:00 #6700 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:45:55.677902+00:00 #6701 command_started: {"executable": "powershell"}
+- 2026-09-22T15:46:25.881089+00:00 #6702 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:46:37.429102+00:00 #6703 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:46:37.538268+00:00 #6704 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:47:07.565067+00:00 #6705 command_started: {"executable": "powershell"}
+- 2026-09-22T15:47:09.275670+00:00 #6706 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:47:09.547232+00:00 #6707 command_started: {"executable": "powershell"}
+- 2026-09-22T15:47:12.174552+00:00 #6708 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:47:19.940213+00:00 #6709 command_started: {"executable": "powershell"}
+- 2026-09-22T15:47:28.398118+00:00 #6710 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:47:44.193212+00:00 #6711 command_started: {"executable": "powershell"}
+- 2026-09-22T15:47:44.694210+00:00 #6712 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:47:53.214807+00:00 #6713 command_started: {"executable": "powershell"}
+- 2026-09-22T15:47:53.439465+00:00 #6714 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:48:08.664104+00:00 #6715 command_started: {"executable": "where.exe"}
+- 2026-09-22T15:48:08.819336+00:00 #6716 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:48:36.499163+00:00 #6717 command_started: {"executable": "powershell"}
+- 2026-09-22T15:48:38.180047+00:00 #6718 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:48:45.987241+00:00 #6719 command_started: {"executable": "powershell"}
+- 2026-09-22T15:48:51.220208+00:00 #6720 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:49:01.397924+00:00 #6721 command_started: {"executable": "powershell"}
+- 2026-09-22T15:49:16.618159+00:00 #6722 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:49:24.276991+00:00 #6723 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:49:24.388629+00:00 #6724 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:49:56.673667+00:00 #6725 command_started: {"executable": "powershell"}
+- 2026-09-22T15:49:58.388489+00:00 #6726 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:50:05.262604+00:00 #6727 command_started: {"executable": "powershell"}
+- 2026-09-22T15:50:17.471266+00:00 #6728 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:50:26.195240+00:00 #6729 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:50:26.321218+00:00 #6730 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:50:34.328526+00:00 #6731 command_started: {"executable": "powershell"}
+- 2026-09-22T15:50:34.541324+00:00 #6732 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:50:45.119005+00:00 #6733 command_started: {"executable": "powershell"}
+- 2026-09-22T15:50:45.662233+00:00 #6734 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:50:53.344207+00:00 #6735 command_started: {"executable": "powershell"}
+- 2026-09-22T15:50:53.578603+00:00 #6736 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:51:00.692288+00:00 #6737 command_started: {"executable": "rg"}
+- 2026-09-22T15:51:00.782670+00:00 #6738 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:51:10.900362+00:00 #6739 command_started: {"executable": "powershell"}
+- 2026-09-22T15:51:11.142643+00:00 #6740 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:51:38.042861+00:00 #6741 command_started: {"executable": "powershell"}
+- 2026-09-22T15:51:39.753251+00:00 #6742 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:51:46.083234+00:00 #6743 command_started: {"executable": "powershell"}
+- 2026-09-22T15:51:54.308986+00:00 #6744 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:52:06.465300+00:00 #6745 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:52:06.575038+00:00 #6746 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:52:30.432335+00:00 #6747 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:52:30.544991+00:00 #6748 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:52:45.274187+00:00 #6749 command_started: {"executable": "rg"}
+- 2026-09-22T15:52:45.359435+00:00 #6750 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:52:50.939959+00:00 #6751 command_started: {"executable": "powershell"}
+- 2026-09-22T15:52:51.154661+00:00 #6752 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:53:06.977338+00:00 #6753 command_started: {"executable": "powershell"}
+- 2026-09-22T15:53:08.708004+00:00 #6754 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:53:17.365727+00:00 #6755 command_started: {"executable": "powershell"}
+- 2026-09-22T15:53:22.584906+00:00 #6756 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:53:31.668746+00:00 #6757 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:53:31.782546+00:00 #6758 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:53:55.044268+00:00 #6759 command_started: {"executable": "powershell"}
+- 2026-09-22T15:53:55.293726+00:00 #6760 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:54:19.967675+00:00 #6761 command_started: {"executable": "rg"}
+- 2026-09-22T15:54:20.055515+00:00 #6762 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:54:33.375558+00:00 #6763 command_started: {"executable": "powershell"}
+- 2026-09-22T15:54:33.607452+00:00 #6764 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:54:37.569652+00:00 #6765 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:54:37.736503+00:00 #6766 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:54:44.302013+00:00 #6767 command_started: {"executable": "powershell"}
+- 2026-09-22T15:54:44.511634+00:00 #6768 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:54:46.819256+00:00 #6769 command_started: {"executable": "powershell"}
+- 2026-09-22T15:54:47.091252+00:00 #6770 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:55:04.365472+00:00 #6771 command_started: {"executable": "powershell"}
+- 2026-09-22T15:55:04.622284+00:00 #6772 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:55:16.064583+00:00 #6773 command_started: {"executable": "powershell"}
+- 2026-09-22T15:55:16.439198+00:00 #6774 command_started: {"executable": "powershell"}
+- 2026-09-22T15:55:16.678962+00:00 #6775 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:55:17.877237+00:00 #6776 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:55:18.183999+00:00 #6777 command_started: {"executable": "powershell"}
+- 2026-09-22T15:55:22.423765+00:00 #6778 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:55:22.785061+00:00 #6779 command_started: {"executable": "rg"}
+- 2026-09-22T15:55:22.877482+00:00 #6780 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-22T15:55:29.706438+00:00 #6781 command_started: {"executable": "powershell"}
+- 2026-09-22T15:55:29.986463+00:00 #6782 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T15:55:37.510623+00:00 #6783 command_started: {"executable": "powershell"}
+- 2026-09-22T15:55:37.731474+00:00 #6784 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:56:00.792928+00:00 #6785 command_started: {"executable": "powershell"}
+- 2026-09-22T15:56:01.008302+00:00 #6786 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:56:38.866017+00:00 #6787 command_started: {"executable": "powershell"}
+- 2026-09-22T15:56:57.408936+00:00 #6788 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:57:04.659587+00:00 #6789 command_started: {"executable": "powershell"}
+- 2026-09-22T15:57:12.887616+00:00 #6790 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T15:57:21.953922+00:00 #6791 command_started: {"executable": "python.exe"}
+- 2026-09-22T15:57:22.071619+00:00 #6792 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:02.107460+00:00 #6793 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:42:02.109762+00:00 #6794 command_started: {"executable": "git"}
+- 2026-09-22T20:42:02.109762+00:00 #6795 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:42:02.235573+00:00 #6796 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:02.823879+00:00 #6797 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:42:23.303144+00:00 #6798 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:42:23.476075+00:00 #6799 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:42:23.632767+00:00 #6800 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:42:33.756057+00:00 #6801 command_started: {"executable": "powershell"}
+- 2026-09-22T20:42:34.067829+00:00 #6802 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:54.057679+00:00 #6803 command_started: {"executable": "powershell"}
+- 2026-09-22T20:42:54.064685+00:00 #6804 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:42:54.065686+00:00 #6805 command_started: {"executable": "powershell"}
+- 2026-09-22T20:42:54.078013+00:00 #6806 command_started: {"executable": "powershell"}
+- 2026-09-22T20:42:54.088019+00:00 #6807 command_started: {"executable": "powershell"}
+- 2026-09-22T20:42:54.057679+00:00 #6808 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:42:54.099537+00:00 #6809 command_started: {"executable": "powershell"}
+- 2026-09-22T20:42:54.261371+00:00 #6810 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:54.306133+00:00 #6811 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:54.313644+00:00 #6812 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:54.318151+00:00 #6813 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:54.322156+00:00 #6814 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:54.345672+00:00 #6815 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:42:55.640098+00:00 #6816 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:43:02.159183+00:00 #6817 command_started: {"executable": "rg"}
+- 2026-09-22T20:43:02.393610+00:00 #6818 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:43:08.353800+00:00 #6819 command_started: {"executable": "powershell"}
+- 2026-09-22T20:43:08.778953+00:00 #6820 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:43:30.701193+00:00 #6821 command_started: {"executable": "powershell"}
+- 2026-09-22T20:43:30.924325+00:00 #6822 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:43:53.081104+00:00 #6823 command_started: {"executable": "powershell"}
+- 2026-09-22T20:43:54.791796+00:00 #6824 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:43:55.100289+00:00 #6825 command_started: {"executable": "powershell"}
+- 2026-09-22T20:43:56.657819+00:00 #6826 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:43:57.235976+00:00 #6827 command_started: {"executable": "powershell"}
+- 2026-09-22T20:43:57.461400+00:00 #6828 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:44:02.311742+00:00 #6829 command_started: {"executable": "powershell"}
+- 2026-09-22T20:44:35.231122+00:00 #6830 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:44:35.386738+00:00 #6831 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:44:37.516130+00:00 #6832 command_finished: {"exit_code": 0, "changed": ["src/uuma/chatgpt_deploy.py", "src/uuma/chatgpt_server.py", "tests/test_chatgpt_bridge.py"]}
+- 2026-09-22T20:44:40.964030+00:00 #6833 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:44:43.789981+00:00 #6834 command_started: {"executable": "powershell"}
+- 2026-09-22T20:44:44.751412+00:00 #6835 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:44:45.371390+00:00 #6836 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:44:52.070009+00:00 #6837 command_started: {"executable": "powershell"}
+- 2026-09-22T20:44:56.301770+00:00 #6838 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:45:14.184302+00:00 #6839 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:45:16.966533+00:00 #6840 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:45:51.947402+00:00 #6841 command_started: {"executable": "powershell"}
+- 2026-09-22T20:45:52.196316+00:00 #6842 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:45:57.916711+00:00 #6843 command_started: {"executable": "rg"}
+- 2026-09-22T20:45:58.004844+00:00 #6844 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:46:04.211576+00:00 #6845 command_started: {"executable": "powershell"}
+- 2026-09-22T20:46:04.434221+00:00 #6846 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:46:10.113476+00:00 #6847 command_started: {"executable": "git"}
+- 2026-09-22T20:46:10.127015+00:00 #6848 command_started: {"executable": "powershell"}
+- 2026-09-22T20:46:10.127015+00:00 #6849 command_started: {"executable": "git"}
+- 2026-09-22T20:46:10.236750+00:00 #6850 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:46:10.242261+00:00 #6851 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:46:11.678824+00:00 #6852 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:46:30.861317+00:00 #6853 handoff: {"digest": "3e3191a2f5c2d3cc69cf851169e93e39f28f4a090158ca590d32185e5eb1a282", "files_observed": 176}
+- 2026-09-22T20:46:35.534229+00:00 #6854 closed: {}
+- 2026-09-22T20:46:57.366951+00:00 #6855 started: {"files_observed": 176}
+- 2026-09-22T20:47:05.513216+00:00 #6856 command_started: {"executable": "powershell"}
+- 2026-09-22T20:47:05.754873+00:00 #6857 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:47:13.634675+00:00 #6858 command_started: {"executable": "powershell"}
+- 2026-09-22T20:47:13.893403+00:00 #6859 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:50:20.115520+00:00 #6860 command_started: {"executable": "powershell"}
+- 2026-09-22T20:50:20.121026+00:00 #6861 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:50:20.372308+00:00 #6862 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:50:23.995057+00:00 #6863 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:50:53.182892+00:00 #6864 command_started: {"executable": "powershell"}
+- 2026-09-22T20:50:53.188502+00:00 #6865 command_started: {"executable": "powershell"}
+- 2026-09-22T20:50:53.197801+00:00 #6866 command_started: {"executable": "powershell"}
+- 2026-09-22T20:50:53.197801+00:00 #6867 command_started: {"executable": "powershell"}
+- 2026-09-22T20:50:53.407267+00:00 #6868 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:50:53.421296+00:00 #6869 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:50:54.171200+00:00 #6870 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:50:54.837408+00:00 #6871 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:51:20.451294+00:00 #6872 command_started: {"executable": "powershell"}
+- 2026-09-22T20:51:20.469314+00:00 #6873 command_started: {"executable": "powershell"}
+- 2026-09-22T20:51:20.830555+00:00 #6874 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:51:21.341490+00:00 #6875 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:51:25.744371+00:00 #6876 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:51:25.750480+00:00 #6877 command_started: {"executable": "powershell"}
+- 2026-09-22T20:51:25.747968+00:00 #6878 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:51:25.915928+00:00 #6879 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:51:25.962414+00:00 #6880 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:51:28.700835+00:00 #6881 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:51:52.350335+00:00 #6882 handoff: {"digest": "6e04eee787e0b2463ae2ff9c9fda24d2d1f1e10272b2507d2d00a4dfb50ac311", "files_observed": 180}
+- 2026-09-22T20:51:56.565431+00:00 #6883 closed: {}
+- 2026-09-22T20:52:12.748540+00:00 #6884 started: {"files_observed": 180}
+- 2026-09-22T20:52:22.823279+00:00 #6885 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:52:23.059436+00:00 #6886 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:52:33.662107+00:00 #6887 command_started: {"executable": "powershell"}
+- 2026-09-22T20:52:33.913032+00:00 #6888 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:54:41.968920+00:00 #6889 command_started: {"executable": "powershell"}
+- 2026-09-22T20:54:42.236074+00:00 #6890 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:55:24.884121+00:00 #6891 command_started: {"executable": "powershell"}
+- 2026-09-22T20:55:24.886120+00:00 #6892 command_started: {"executable": "powershell"}
+- 2026-09-22T20:55:24.885121+00:00 #6893 command_started: {"executable": "rg"}
+- 2026-09-22T20:55:25.022025+00:00 #6894 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:55:25.149127+00:00 #6895 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:55:25.168128+00:00 #6896 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:55:31.010032+00:00 #6897 command_started: {"executable": "powershell"}
+- 2026-09-22T20:55:31.235057+00:00 #6898 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:56:17.971588+00:00 #6899 command_started: {"executable": "powershell"}
+- 2026-09-22T20:56:18.241244+00:00 #6900 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:56:40.237071+00:00 #6901 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:56:40.395948+00:00 #6902 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T20:56:46.113305+00:00 #6903 command_started: {"executable": "powershell"}
+- 2026-09-22T20:56:46.388337+00:00 #6904 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:57:06.896747+00:00 #6905 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:57:07.127338+00:00 #6906 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:57:19.728140+00:00 #6907 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:57:40.267204+00:00 #6908 command_finished: {"exit_code": 0, "changed": ["scripts/install-forge-journal-runner.ps1", "scripts/manage-forge-journal-runner.ps1", "scripts/start-forge-journal-runner.ps1", "scripts/watch-forge-journal-runner.ps1", "src/uuma/forge_journal_runner.py", "tests/test_forge_journal_runner.py"]}
+- 2026-09-22T20:57:55.317567+00:00 #6909 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:57:57.591882+00:00 #6910 command_finished: {"exit_code": 0, "changed": ["scripts/deploy-hermes.ps1", "scripts/install-forge-journal-runner.ps1"]}
+- 2026-09-22T20:58:03.604862+00:00 #6911 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:58:07.539422+00:00 #6912 command_started: {"executable": "rg"}
+- 2026-09-22T20:58:07.635343+00:00 #6913 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:58:15.369012+00:00 #6914 command_started: {"executable": "powershell"}
+- 2026-09-22T20:58:16.071970+00:00 #6915 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:58:33.682741+00:00 #6916 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:58:53.035106+00:00 #6917 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:58:54.096304+00:00 #6918 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:08.321582+00:00 #6919 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:59:08.567748+00:00 #6920 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:16.605745+00:00 #6921 command_started: {"executable": "rg"}
+- 2026-09-22T20:59:16.705954+00:00 #6922 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:20.259027+00:00 #6923 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:59:20.260027+00:00 #6924 command_started: {"executable": "powershell"}
+- 2026-09-22T20:59:20.276870+00:00 #6925 command_started: {"executable": "powershell"}
+- 2026-09-22T20:59:20.261027+00:00 #6926 command_started: {"executable": "powershell"}
+- 2026-09-22T20:59:20.260027+00:00 #6927 command_started: {"executable": "python.exe"}
+- 2026-09-22T20:59:20.446172+00:00 #6928 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:20.499084+00:00 #6929 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:20.501587+00:00 #6930 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:20.503594+00:00 #6931 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:21.869247+00:00 #6932 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:22.127659+00:00 #6933 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:59:22.997369+00:00 #6934 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:28.273428+00:00 #6935 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:59:29.069889+00:00 #6936 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:36.268198+00:00 #6937 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:59:37.085855+00:00 #6938 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:44.935335+00:00 #6939 command_started: {"executable": "powershell"}
+- 2026-09-22T20:59:47.169723+00:00 #6940 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T20:59:47.844260+00:00 #6941 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T20:59:55.825109+00:00 #6942 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:03.735552+00:00 #6943 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:03.741057+00:00 #6944 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:03.742065+00:00 #6945 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:04.589047+00:00 #6946 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:00:04.622916+00:00 #6947 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T21:00:05.447743+00:00 #6948 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:06.052237+00:00 #6949 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:13.660911+00:00 #6950 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:23.205020+00:00 #6951 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:24.063402+00:00 #6952 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:33.915862+00:00 #6953 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:35.619826+00:00 #6954 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:35.916983+00:00 #6955 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:37.533226+00:00 #6956 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:00:42.899834+00:00 #6957 command_started: {"executable": "powershell"}
+- 2026-09-22T21:00:43.237060+00:00 #6958 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:00:43.749929+00:00 #6959 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T21:00:55.657021+00:00 #6960 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:00:56.122547+00:00 #6961 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:01:18.115343+00:00 #6962 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:01:18.739465+00:00 #6963 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:01:19.337332+00:00 #6964 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-22T21:01:23.833078+00:00 #6965 command_started: {"executable": "powershell"}
+- 2026-09-22T21:01:30.161435+00:00 #6966 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:01:30.720173+00:00 #6967 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:01:40.186062+00:00 #6968 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:01:40.575318+00:00 #6969 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:01:59.052450+00:00 #6970 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:02:04.425557+00:00 #6971 command_started: {"executable": "powershell"}
+- 2026-09-22T21:02:06.009904+00:00 #6972 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:02:11.773676+00:00 #6973 command_started: {"executable": "powershell"}
+- 2026-09-22T21:02:13.108747+00:00 #6974 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:02:18.792729+00:00 #6975 command_started: {"executable": "powershell"}
+- 2026-09-22T21:02:27.005138+00:00 #6976 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:02:37.658977+00:00 #6977 command_started: {"executable": "powershell"}
+- 2026-09-22T21:02:37.669990+00:00 #6978 command_started: {"executable": "powershell"}
+- 2026-09-22T21:02:38.044816+00:00 #6979 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:02:39.277677+00:00 #6980 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:02:42.201516+00:00 #6981 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:02:42.718341+00:00 #6982 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:11.042827+00:00 #6983 command_started: {"executable": "python.exe"}
+- 2026-09-22T21:03:31.508072+00:00 #6984 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:38.763694+00:00 #6985 command_started: {"executable": "python.exe"}
+- 2026-09-22T21:03:38.917716+00:00 #6986 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:41.564134+00:00 #6987 command_started: {"executable": "rg"}
+- 2026-09-22T21:03:41.655384+00:00 #6988 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:43.087011+00:00 #6989 command_started: {"executable": "node"}
+- 2026-09-22T21:03:43.212572+00:00 #6990 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:51.678703+00:00 #6991 command_started: {"executable": "python.exe"}
+- 2026-09-22T21:03:51.689773+00:00 #6992 command_started: {"executable": "git"}
+- 2026-09-22T21:03:51.805012+00:00 #6993 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:52.228003+00:00 #6994 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:03:52.464890+00:00 #6995 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:03:56.905147+00:00 #6996 command_started: {"executable": "git"}
+- 2026-09-22T21:03:57.025019+00:00 #6997 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:04:09.530795+00:00 #6998 command_started: {"executable": "powershell.exe"}
+- 2026-09-22T21:04:10.500002+00:00 #6999 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:04:12.366830+00:00 #7000 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:04:17.999353+00:00 #7001 command_started: {"executable": "python.exe"}
+- 2026-09-22T21:04:18.138146+00:00 #7002 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:04:20.349689+00:00 #7003 command_started: {"executable": "rg"}
+- 2026-09-22T21:04:20.441061+00:00 #7004 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:04:22.520882+00:00 #7005 command_started: {"executable": "git"}
+- 2026-09-22T21:04:22.622069+00:00 #7006 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:04:50.787411+00:00 #7007 handoff: {"digest": "75d9ca6f4f88f10ad003d7c31b129dc216a45bacec50433541b6aad31f118d7b", "files_observed": 179}
+- 2026-09-22T21:04:54.768498+00:00 #7008 closed: {}
+- 2026-09-22T21:05:22.168005+00:00 #7009 started: {"files_observed": 179}
+- 2026-09-22T21:05:33.761059+00:00 #7010 command_started: {"executable": "python.exe"}
+- 2026-09-22T21:05:33.778775+00:00 #7011 command_started: {"executable": "git"}
+- 2026-09-22T21:05:33.790066+00:00 #7012 command_started: {"executable": "powershell"}
+- 2026-09-22T21:05:33.894770+00:00 #7013 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:05:33.922222+00:00 #7014 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:05:35.387746+00:00 #7015 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:06:13.054048+00:00 #7016 command_started: {"executable": "git"}
+- 2026-09-22T21:06:13.063074+00:00 #7017 command_started: {"executable": "git"}
+- 2026-09-22T21:06:13.154362+00:00 #7018 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:06:13.173883+00:00 #7019 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-22T21:06:30.862337+00:00 #7020 handoff: {"digest": "684665644aa9d665aa5abe5241ef4405e4727d68fe6e2f126a447d1633973c10", "files_observed": 179}
+- 2026-09-22T21:06:35.144212+00:00 #7021 closed: {}
+- 2026-09-23T05:35:49.270298+00:00 #7022 started: {"files_observed": 179}
+- 2026-09-23T05:35:49.828238+00:00 #7023 command_started: {"executable": "powershell"}
+- 2026-09-23T05:35:50.253641+00:00 #7024 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:35:57.726038+00:00 #7025 command_started: {"executable": "powershell"}
+- 2026-09-23T05:35:58.642220+00:00 #7026 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:36:06.464330+00:00 #7027 command_started: {"executable": "powershell"}
+- 2026-09-23T05:36:07.413388+00:00 #7028 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:36:18.444814+00:00 #7029 command_started: {"executable": "powershell"}
+- 2026-09-23T05:36:19.324154+00:00 #7030 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:38:21.113647+00:00 #7031 command_started: {"executable": "powershell"}
+- 2026-09-23T05:38:21.409257+00:00 #7032 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:38:31.817598+00:00 #7033 command_started: {"executable": "powershell"}
+- 2026-09-23T05:38:33.609881+00:00 #7034 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:38:34.122095+00:00 #7035 command_started: {"executable": "python.exe"}
+- 2026-09-23T05:38:34.261502+00:00 #7036 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:38:53.918452+00:00 #7037 command_started: {"executable": "powershell"}
+- 2026-09-23T05:38:57.454856+00:00 #7038 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:38:58.002255+00:00 #7039 command_started: {"executable": "powershell"}
+- 2026-09-23T05:38:59.336814+00:00 #7040 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:39:13.971274+00:00 #7041 command_started: {"executable": "powershell"}
+- 2026-09-23T05:39:18.149294+00:00 #7042 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:39:18.722637+00:00 #7043 command_started: {"executable": "powershell"}
+- 2026-09-23T05:39:32.061749+00:00 #7044 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:39:34.723494+00:00 #7045 command_started: {"executable": "python.exe"}
+- 2026-09-23T05:39:37.699349+00:00 #7046 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:40:06.379719+00:00 #7047 command_started: {"executable": "powershell"}
+- 2026-09-23T05:40:06.695710+00:00 #7048 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:40:15.727202+00:00 #7049 command_started: {"executable": "powershell"}
+- 2026-09-23T05:40:21.898698+00:00 #7050 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:40:32.724909+00:00 #7051 command_started: {"executable": "powershell"}
+- 2026-09-23T05:40:39.170947+00:00 #7052 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:41:17.657431+00:00 #7053 command_started: {"executable": "powershell"}
+- 2026-09-23T05:41:22.256419+00:00 #7054 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:41:22.801743+00:00 #7055 handoff: {"digest": "dedf0ae83a2714d36bbfc092b3eba3dfbc64ccf3e63f597dba9c89a58351bd61", "files_observed": 180}
+- 2026-09-23T05:41:23.313316+00:00 #7056 closed: {}
+- 2026-09-23T05:43:58.755891+00:00 #7057 started: {"files_observed": 180}
+- 2026-09-23T05:44:06.080565+00:00 #7058 command_started: {"executable": "powershell"}
+- 2026-09-23T05:44:06.316862+00:00 #7059 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:44:12.703918+00:00 #7060 command_started: {"executable": "powershell"}
+- 2026-09-23T05:44:12.947353+00:00 #7061 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:45:38.063142+00:00 #7062 command_started: {"executable": "python.exe"}
+- 2026-09-23T05:45:38.068142+00:00 #7063 command_started: {"executable": "python.exe"}
+- 2026-09-23T05:45:38.084377+00:00 #7064 command_started: {"executable": "powershell"}
+- 2026-09-23T05:45:38.299748+00:00 #7065 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:45:38.708224+00:00 #7066 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T05:45:41.559579+00:00 #7067 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:45:56.078993+00:00 #7068 command_started: {"executable": "python.exe"}
+- 2026-09-23T05:45:56.094008+00:00 #7069 command_started: {"executable": "powershell"}
+- 2026-09-23T05:45:56.249533+00:00 #7070 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:45:56.357202+00:00 #7071 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:46:07.833745+00:00 #7072 command_started: {"executable": "powershell"}
+- 2026-09-23T05:46:14.259930+00:00 #7073 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:46:25.847268+00:00 #7074 command_started: {"executable": "powershell"}
+- 2026-09-23T05:46:32.320320+00:00 #7075 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:46:44.104103+00:00 #7076 command_started: {"executable": "powershell"}
+- 2026-09-23T05:46:50.524083+00:00 #7077 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:46:59.432525+00:00 #7078 command_started: {"executable": "powershell"}
+- 2026-09-23T05:46:59.679641+00:00 #7079 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:47:09.450933+00:00 #7080 command_started: {"executable": "powershell"}
+- 2026-09-23T05:47:15.874171+00:00 #7081 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:47:23.660782+00:00 #7082 command_started: {"executable": "python.exe"}
+- 2026-09-23T05:47:28.015347+00:00 #7083 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:47:34.414655+00:00 #7084 command_started: {"executable": "powershell"}
+- 2026-09-23T05:47:37.140006+00:00 #7085 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:49:06.927675+00:00 #7086 command_started: {"executable": "powershell"}
+- 2026-09-23T05:49:08.706910+00:00 #7087 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:50:14.151005+00:00 #7088 command_started: {"executable": "powershell"}
+- 2026-09-23T05:50:19.812124+00:00 #7089 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:50:33.875038+00:00 #7090 handoff: {"digest": "30a6fd6cbd35f34e3939476b5cad72bc41e4ec0c00fd44469f44a367b8c808c6", "files_observed": 180}
+- 2026-09-23T05:50:37.933637+00:00 #7091 closed: {}
+- 2026-09-23T05:52:17.721320+00:00 #7092 started: {"files_observed": 180}
+- 2026-09-23T05:52:18.035447+00:00 #7093 command_started: {"executable": "powershell"}
+- 2026-09-23T05:52:22.355342+00:00 #7094 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:52:27.215411+00:00 #7095 command_started: {"executable": "powershell"}
+- 2026-09-23T05:52:28.867143+00:00 #7096 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:52:36.342104+00:00 #7097 handoff: {"digest": "045d11570ba1e2747ac7a759f5b397e249822dc1814d26fb6b0c4dc72f70a19b", "files_observed": 180}
+- 2026-09-23T05:52:36.631938+00:00 #7098 closed: {}
+- 2026-09-23T05:54:11.797563+00:00 #7099 started: {"files_observed": 180}
+- 2026-09-23T05:54:12.103903+00:00 #7100 command_started: {"executable": "powershell"}
+- 2026-09-23T05:54:12.331774+00:00 #7101 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T05:54:45.464885+00:00 #7102 command_started: {"executable": "powershell"}
+- 2026-09-23T05:54:47.300694+00:00 #7103 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:01:30.931392+00:00 #7104 command_started: {"executable": "powershell"}
+- 2026-09-23T06:01:31.220191+00:00 #7105 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:02:16.850464+00:00 #7106 command_started: {"executable": "powershell"}
+- 2026-09-23T06:02:17.521346+00:00 #7107 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:03:32.903089+00:00 #7108 command_started: {"executable": "powershell"}
+- 2026-09-23T06:03:33.474702+00:00 #7109 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:03:43.683639+00:00 #7110 command_started: {"executable": "powershell"}
+- 2026-09-23T06:03:44.793310+00:00 #7111 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:05:15.517708+00:00 #7112 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:05:15.979332+00:00 #7113 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:05:38.213354+00:00 #7114 command_started: {"executable": "powershell"}
+- 2026-09-23T06:05:43.548524+00:00 #7115 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:06:41.858828+00:00 #7116 handoff: {"digest": "f63b8e6026b56cdb117650a745d32d445005fa3d04b0b9e7734232329f725405", "files_observed": 180}
+- 2026-09-23T06:06:42.163060+00:00 #7117 closed: {}
+- 2026-09-23T06:07:52.225822+00:00 #7118 started: {"files_observed": 180}
+- 2026-09-23T06:07:52.531233+00:00 #7119 command_started: {"executable": "powershell"}
+- 2026-09-23T06:07:53.057309+00:00 #7120 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:08:04.313279+00:00 #7121 command_started: {"executable": "powershell"}
+- 2026-09-23T06:08:08.180846+00:00 #7122 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:08:39.557144+00:00 #7123 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:08:39.563652+00:00 #7124 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:08:39.721513+00:00 #7125 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:08:42.882787+00:00 #7126 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:08:52.658143+00:00 #7127 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:08:52.826636+00:00 #7128 command_finished: {"exit_code": 0, "changed": ["src/uuma/chatgpt_browser.py"]}
+- 2026-09-23T06:08:53.137154+00:00 #7129 command_started: {"executable": "powershell"}
+- 2026-09-23T06:08:58.024811+00:00 #7130 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:09:13.244711+00:00 #7131 command_started: {"executable": "powershell"}
+- 2026-09-23T06:09:13.479630+00:00 #7132 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:11:16.403957+00:00 #7133 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:11:16.409973+00:00 #7134 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:11:16.562970+00:00 #7135 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:11:19.697965+00:00 #7136 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:11:27.523465+00:00 #7137 command_started: {"executable": "powershell"}
+- 2026-09-23T06:11:34.442676+00:00 #7138 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:11:57.659266+00:00 #7139 command_started: {"executable": "powershell"}
+- 2026-09-23T06:11:57.963740+00:00 #7140 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:12:25.946013+00:00 #7141 command_started: {"executable": "powershell"}
+- 2026-09-23T06:12:26.939803+00:00 #7142 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:12:27.261893+00:00 #7143 handoff: {"digest": "c8c42dd339417bd0e2442bbe2efc3c950d2d514b459ad3cb44c8b131c3027fde", "files_observed": 180}
+- 2026-09-23T06:12:27.562263+00:00 #7144 closed: {}
+- 2026-09-23T06:15:04.128896+00:00 #7145 started: {"files_observed": 180}
+- 2026-09-23T06:15:12.338292+00:00 #7146 command_started: {"executable": "powershell"}
+- 2026-09-23T06:15:12.542848+00:00 #7147 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:17:16.324950+00:00 #7148 handoff: {"digest": "4cfddd6786be4ca6443e9bbf1cb1731ceb83237f014831a7264eb480cafd0e00", "files_observed": 180}
+- 2026-09-23T06:17:21.092837+00:00 #7149 closed: {}
+- 2026-09-23T06:18:19.994105+00:00 #7150 started: {"files_observed": 180}
+- 2026-09-23T06:18:20.302331+00:00 #7151 command_started: {"executable": "powershell"}
+- 2026-09-23T06:18:20.572130+00:00 #7152 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:18:33.303142+00:00 #7153 command_started: {"executable": "powershell"}
+- 2026-09-23T06:18:33.594681+00:00 #7154 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:18:44.335989+00:00 #7155 handoff: {"digest": "1c86feb8661538331fd188792870d87f77be88b5236744a49a577fd563ea8e52", "files_observed": 180}
+- 2026-09-23T06:18:44.648021+00:00 #7156 closed: {}
+- 2026-09-23T06:20:44.969562+00:00 #7157 started: {"files_observed": 180}
+- 2026-09-23T06:20:45.270391+00:00 #7158 command_started: {"executable": "powershell"}
+- 2026-09-23T06:20:45.494572+00:00 #7159 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:21:27.853537+00:00 #7160 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:21:27.859696+00:00 #7161 command_started: {"executable": "node"}
+- 2026-09-23T06:21:27.861701+00:00 #7162 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:21:27.979004+00:00 #7163 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:21:28.017643+00:00 #7164 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:21:31.073135+00:00 #7165 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:21:43.605942+00:00 #7166 command_started: {"executable": "powershell"}
+- 2026-09-23T06:21:50.333260+00:00 #7167 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:22:05.345629+00:00 #7168 handoff: {"digest": "cc4e44563a0104722bba011f99560264e74b49111791876f3fe25528d696a117", "files_observed": 180}
+- 2026-09-23T06:22:05.670935+00:00 #7169 closed: {}
+- 2026-09-23T06:30:15.564172+00:00 #7170 started: {"files_observed": 180}
+- 2026-09-23T06:30:15.872331+00:00 #7171 command_started: {"executable": "powershell"}
+- 2026-09-23T06:30:23.667440+00:00 #7172 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:30:32.992245+00:00 #7173 command_started: {"executable": "powershell"}
+- 2026-09-23T06:30:33.383460+00:00 #7174 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:01.065611+00:00 #7175 command_started: {"executable": "powershell"}
+- 2026-09-23T06:32:01.291854+00:00 #7176 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:32:04.832876+00:00 #7177 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:32:04.837876+00:00 #7178 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:32:05.003851+00:00 #7179 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:05.821980+00:00 #7180 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-23T06:32:12.472133+00:00 #7181 command_started: {"executable": "powershell"}
+- 2026-09-23T06:32:13.418456+00:00 #7182 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:20.047665+00:00 #7183 command_started: {"executable": "powershell"}
+- 2026-09-23T06:32:20.362791+00:00 #7184 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:26.975731+00:00 #7185 command_started: {"executable": "powershell"}
+- 2026-09-23T06:32:27.268534+00:00 #7186 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:32:34.179324+00:00 #7187 command_started: {"executable": "powershell"}
+- 2026-09-23T06:32:34.454802+00:00 #7188 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:34.474024+00:00 #7189 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:32:34.476024+00:00 #7190 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:32:34.629239+00:00 #7191 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:37.833620+00:00 #7192 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:32:46.825441+00:00 #7193 command_started: {"executable": "powershell"}
+- 2026-09-23T06:32:51.832525+00:00 #7194 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:33:07.724073+00:00 #7195 handoff: {"digest": "6ff45c59081f290d2df64e35c73d42c1f3c449020b8d978561a0e1554c22978d", "files_observed": 180}
+- 2026-09-23T06:33:08.047186+00:00 #7196 closed: {}
+- 2026-09-23T06:33:46.260226+00:00 #7197 started: {"files_observed": 180}
+- 2026-09-23T06:33:57.562095+00:00 #7198 command_started: {"executable": "powershell"}
+- 2026-09-23T06:33:57.803313+00:00 #7199 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:33:58.346468+00:00 #7200 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:34:00.122708+00:00 #7201 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:34:18.607591+00:00 #7202 command_started: {"executable": "powershell"}
+- 2026-09-23T06:34:18.843272+00:00 #7203 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:34:25.751872+00:00 #7204 command_started: {"executable": "powershell"}
+- 2026-09-23T06:34:29.087219+00:00 #7205 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:34:46.774563+00:00 #7206 command_started: {"executable": "powershell"}
+- 2026-09-23T06:34:48.479037+00:00 #7207 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:34:49.080543+00:00 #7208 command_started: {"executable": "powershell"}
+- 2026-09-23T06:34:49.990749+00:00 #7209 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:35:09.961261+00:00 #7210 handoff: {"digest": "45c8bdf80383aa5c2abae2334ee861370c0c9682b1f904a13cad527b0f3ad3a2", "files_observed": 180}
+- 2026-09-23T06:35:10.495099+00:00 #7211 closed: {}
+- 2026-09-23T06:36:11.919779+00:00 #7212 started: {"files_observed": 180}
+- 2026-09-23T06:36:19.572158+00:00 #7213 command_started: {"executable": "powershell"}
+- 2026-09-23T06:36:19.802867+00:00 #7214 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:36:57.654984+00:00 #7215 command_started: {"executable": "powershell"}
+- 2026-09-23T06:36:57.883719+00:00 #7216 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:37:09.411818+00:00 #7217 command_started: {"executable": "powershell"}
+- 2026-09-23T06:37:09.718704+00:00 #7218 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:37:23.812815+00:00 #7219 command_started: {"executable": "powershell"}
+- 2026-09-23T06:37:24.133842+00:00 #7220 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:37:40.176011+00:00 #7221 command_started: {"executable": "powershell"}
+- 2026-09-23T06:37:41.180924+00:00 #7222 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:37:43.072058+00:00 #7223 command_started: {"executable": "powershell"}
+- 2026-09-23T06:37:44.817994+00:00 #7224 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:38:00.383899+00:00 #7225 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:38:00.529628+00:00 #7226 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:38:13.918631+00:00 #7227 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:38:14.040953+00:00 #7228 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:38:25.513755+00:00 #7229 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:38:25.645339+00:00 #7230 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:38:43.272032+00:00 #7231 command_started: {"executable": "powershell"}
+- 2026-09-23T06:38:43.560716+00:00 #7232 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:39:05.043767+00:00 #7233 command_started: {"executable": "powershell"}
+- 2026-09-23T06:39:05.329599+00:00 #7234 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:39:37.374502+00:00 #7235 command_started: {"executable": "powershell"}
+- 2026-09-23T06:39:38.650693+00:00 #7236 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:39:53.858388+00:00 #7237 handoff: {"digest": "96cfd30ee0a58698384b6eb356186278c68d4db1dd2bc3093c0137a1821d69b6", "files_observed": 180}
+- 2026-09-23T06:39:54.186457+00:00 #7238 closed: {}
+- 2026-09-23T06:40:16.631320+00:00 #7239 started: {"files_observed": 180}
+- 2026-09-23T06:40:17.326061+00:00 #7240 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:40:17.632305+00:00 #7241 handoff: {"digest": "50deb75d2879603a79ae53529e0a2127b4024162c76d6dd4c8839a46369731ec", "files_observed": 180}
+- 2026-09-23T06:40:17.729017+00:00 #7242 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:40:24.160031+00:00 #7243 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:40:24.486215+00:00 #7244 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-23T06:40:31.040401+00:00 #7245 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:40:31.044911+00:00 #7246 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:40:31.044911+00:00 #7247 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:40:31.325138+00:00 #7248 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:40:31.326139+00:00 #7249 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:40:31.326139+00:00 #7250 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:40:37.187480+00:00 #7251 handoff: {"digest": "50deb75d2879603a79ae53529e0a2127b4024162c76d6dd4c8839a46369731ec", "files_observed": 180}
+- 2026-09-23T06:41:33.922211+00:00 #7252 closed: {}
+- 2026-09-23T06:41:54.991915+00:00 #7253 started: {"files_observed": 180}
+- 2026-09-23T06:42:20.391125+00:00 #7254 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:42:20.394126+00:00 #7255 command_started: {"executable": "rg"}
+- 2026-09-23T06:42:20.395124+00:00 #7256 command_started: {"executable": "rg"}
+- 2026-09-23T06:42:20.505807+00:00 #7257 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:20.530755+00:00 #7258 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:20.626994+00:00 #7259 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:31.757543+00:00 #7260 command_started: {"executable": "powershell"}
+- 2026-09-23T06:42:31.762093+00:00 #7261 command_started: {"executable": "powershell"}
+- 2026-09-23T06:42:31.766092+00:00 #7262 command_started: {"executable": "powershell"}
+- 2026-09-23T06:42:32.023799+00:00 #7263 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:32.053854+00:00 #7264 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:32.063439+00:00 #7265 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:34.286637+00:00 #7266 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:42:34.290955+00:00 #7267 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:42:34.289951+00:00 #7268 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:42:34.517502+00:00 #7269 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:34.522586+00:00 #7270 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:34.519007+00:00 #7271 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:42.974735+00:00 #7272 command_started: {"executable": "powershell"}
+- 2026-09-23T06:42:43.256786+00:00 #7273 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:42:54.927258+00:00 #7274 command_started: {"executable": "powershell"}
+- 2026-09-23T06:42:55.233903+00:00 #7275 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:43:04.132832+00:00 #7276 command_started: {"executable": "powershell"}
+- 2026-09-23T06:43:04.392896+00:00 #7277 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:43:45.759224+00:00 #7278 command_started: {"executable": "powershell"}
+- 2026-09-23T06:43:46.036190+00:00 #7279 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:43:54.400034+00:00 #7280 command_started: {"executable": "powershell"}
+- 2026-09-23T06:43:54.659200+00:00 #7281 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:44:03.288169+00:00 #7282 command_started: {"executable": "powershell"}
+- 2026-09-23T06:44:03.565199+00:00 #7283 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:44:09.419101+00:00 #7284 command_started: {"executable": "powershell"}
+- 2026-09-23T06:44:09.684459+00:00 #7285 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:44:15.474350+00:00 #7286 command_started: {"executable": "powershell"}
+- 2026-09-23T06:44:15.736991+00:00 #7287 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:44:25.891967+00:00 #7288 command_started: {"executable": "powershell"}
+- 2026-09-23T06:44:26.143284+00:00 #7289 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:44:47.052439+00:00 #7290 command_started: {"executable": "powershell"}
+- 2026-09-23T06:44:47.301408+00:00 #7291 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:44:48.110743+00:00 #7292 command_started: {"executable": "git"}
+- 2026-09-23T06:44:48.215086+00:00 #7293 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:46:27.639359+00:00 #7294 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:46:27.903880+00:00 #7295 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:46:46.515594+00:00 #7296 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:46:46.533122+00:00 #7297 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:46:46.534122+00:00 #7298 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:46:46.755314+00:00 #7299 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:46:46.761331+00:00 #7300 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:46:46.783365+00:00 #7301 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:47:28.795929+00:00 #7302 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:47:28.807437+00:00 #7303 command_started: {"executable": "node"}
+- 2026-09-23T06:47:28.808437+00:00 #7304 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:47:28.808437+00:00 #7305 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:47:28.932658+00:00 #7306 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:47:28.998555+00:00 #7307 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:47:29.085538+00:00 #7308 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:47:32.314053+00:00 #7309 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:47:49.345298+00:00 #7310 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:47:49.348298+00:00 #7311 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:47:50.362815+00:00 #7312 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:47:51.629865+00:00 #7313 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:48:01.160501+00:00 #7314 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:48:12.535633+00:00 #7315 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:48:21.447338+00:00 #7316 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:48:25.558942+00:00 #7317 command_finished: {"exit_code": 0, "changed": ["integrations/hermes/uuma_control_guard/__init__.py", "profiles/forge-lab-bot/SOUL.md", "profiles/forge-lab-bot/skills/lab-worklog/SKILL.md", "scripts/install-forge-journal-runner.ps1", "scripts/manage-forge-journal-runner.ps1"]}
+- 2026-09-23T06:49:06.402628+00:00 #7318 command_started: {"executable": "powershell"}
+- 2026-09-23T06:49:06.641784+00:00 #7319 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:49:14.460984+00:00 #7320 command_started: {"executable": "powershell"}
+- 2026-09-23T06:49:14.717450+00:00 #7321 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:49:45.753887+00:00 #7322 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:49:45.756887+00:00 #7323 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:49:45.757887+00:00 #7324 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:49:46.036138+00:00 #7325 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:49:46.066420+00:00 #7326 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:49:47.194715+00:00 #7327 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:49:57.609204+00:00 #7328 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:50:01.766174+00:00 #7329 command_finished: {"exit_code": 0, "changed": ["tests/test_forge_journal_runner.py", "tests/test_forge_lab_tools.py", "tests/test_uuma_control_guard.py"]}
+- 2026-09-23T06:50:15.889530+00:00 #7330 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:50:16.298246+00:00 #7331 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:50:42.465880+00:00 #7332 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:50:43.996736+00:00 #7333 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:50:57.362790+00:00 #7334 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:50:57.367789+00:00 #7335 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:50:57.374311+00:00 #7336 command_started: {"executable": "powershell"}
+- 2026-09-23T06:50:57.563712+00:00 #7337 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:50:57.621705+00:00 #7338 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:51:01.678452+00:00 #7339 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:51:04.096578+00:00 #7340 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:51:10.072143+00:00 #7341 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:51:10.807264+00:00 #7342 command_started: {"executable": "powershell"}
+- 2026-09-23T06:51:11.042481+00:00 #7343 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:51:19.748402+00:00 #7344 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:51:28.722217+00:00 #7345 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:51:43.995755+00:00 #7346 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:51:47.459167+00:00 #7347 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:51:50.670642+00:00 #7348 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:51:50.680659+00:00 #7349 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:51:50.850363+00:00 #7350 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:51:54.820808+00:00 #7351 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:52:15.458883+00:00 #7352 command_started: {"executable": "powershell"}
+- 2026-09-23T06:52:15.803499+00:00 #7353 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:52:24.306892+00:00 #7354 command_started: {"executable": "powershell"}
+- 2026-09-23T06:52:24.552367+00:00 #7355 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:52:43.107465+00:00 #7356 command_started: {"executable": "powershell"}
+- 2026-09-23T06:52:43.369473+00:00 #7357 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:52:49.610960+00:00 #7358 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:52:49.618985+00:00 #7359 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:52:49.627423+00:00 #7360 command_started: {"executable": "node"}
+- 2026-09-23T06:52:49.739811+00:00 #7361 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:52:49.792115+00:00 #7362 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:52:54.606537+00:00 #7363 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:53:05.235853+00:00 #7364 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:53:09.202294+00:00 #7365 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:53:23.345676+00:00 #7366 command_started: {"executable": "powershell"}
+- 2026-09-23T06:53:23.956064+00:00 #7367 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:53:46.908701+00:00 #7368 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:53:48.881587+00:00 #7369 command_started: {"executable": "powershell"}
+- 2026-09-23T06:53:49.107072+00:00 #7370 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:53:50.861516+00:00 #7371 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:54:31.493969+00:00 #7372 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:54:31.701608+00:00 #7373 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:55:04.170089+00:00 #7374 command_started: {"executable": "powershell"}
+- 2026-09-23T06:55:04.415059+00:00 #7375 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T06:55:35.657970+00:00 #7376 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:55:35.670696+00:00 #7377 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:55:35.681376+00:00 #7378 command_started: {"executable": "node"}
+- 2026-09-23T06:55:35.791841+00:00 #7379 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:55:35.826412+00:00 #7380 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:55:38.969645+00:00 #7381 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:55:55.577211+00:00 #7382 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:56:04.836209+00:00 #7383 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:56:06.334969+00:00 #7384 command_started: {"executable": "powershell"}
+- 2026-09-23T06:56:09.641410+00:00 #7385 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:56:21.516721+00:00 #7386 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:56:21.626820+00:00 #7387 command_started: {"executable": "powershell"}
+- 2026-09-23T06:56:22.282148+00:00 #7388 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:56:28.795410+00:00 #7389 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:56:35.049482+00:00 #7390 command_started: {"executable": "powershell"}
+- 2026-09-23T06:56:41.344370+00:00 #7391 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:56:44.735079+00:00 #7392 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:00.269322+00:00 #7393 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:03.357400+00:00 #7394 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:57:03.624728+00:00 #7395 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:11.519990+00:00 #7396 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:57:12.026007+00:00 #7397 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:27.333645+00:00 #7398 command_started: {"executable": "powershell"}
+- 2026-09-23T06:57:27.347659+00:00 #7399 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:57:27.354686+00:00 #7400 command_started: {"executable": "powershell"}
+- 2026-09-23T06:57:29.068080+00:00 #7401 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:31.398494+00:00 #7402 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:31.588654+00:00 #7403 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:57:44.011137+00:00 #7404 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:57:44.026436+00:00 #7405 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:57:44.186992+00:00 #7406 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:58:05.167483+00:00 #7407 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:58:10.063821+00:00 #7408 command_started: {"executable": "rg"}
+- 2026-09-23T06:58:10.070581+00:00 #7409 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T06:58:10.168262+00:00 #7410 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:58:11.996308+00:00 #7411 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:58:33.563397+00:00 #7412 handoff: {"digest": "56f105c3d2289c00dbb03d961e1584f00e15dd301896797c192b0dd29cb814e7", "files_observed": 181}
+- 2026-09-23T06:58:33.860041+00:00 #7413 closed: {}
+- 2026-09-23T06:59:44.051585+00:00 #7414 started: {"files_observed": 181}
+- 2026-09-23T06:59:53.599545+00:00 #7415 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:59:53.601545+00:00 #7416 command_started: {"executable": "python.exe"}
+- 2026-09-23T06:59:53.770806+00:00 #7417 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T06:59:56.696157+00:00 #7418 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:00:04.842726+00:00 #7419 command_started: {"executable": "powershell"}
+- 2026-09-23T07:00:29.554657+00:00 #7420 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:00:40.614110+00:00 #7421 command_started: {"executable": "powershell"}
+- 2026-09-23T07:00:40.999582+00:00 #7422 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:01:08.841230+00:00 #7423 command_started: {"executable": "python.exe"}
+- 2026-09-23T07:01:29.682439+00:00 #7424 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:01:52.853169+00:00 #7425 command_started: {"executable": "powershell"}
+- 2026-09-23T07:01:56.977499+00:00 #7426 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:02:10.331679+00:00 #7427 command_started: {"executable": "python.exe"}
+- 2026-09-23T07:02:10.461146+00:00 #7428 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:02:27.223390+00:00 #7429 handoff: {"digest": "c60a6cab933095be3287e3dc8f6e9106be1a7f12faed9c8318f6859220337d6a", "files_observed": 181}
+- 2026-09-23T07:02:27.546031+00:00 #7430 closed: {}
+- 2026-09-23T07:24:29.557819+00:00 #7431 started: {"files_observed": 181}
+- 2026-09-23T07:25:12.305751+00:00 #7432 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:25:12.306751+00:00 #7433 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:25:12.316537+00:00 #7434 command_started: {"executable": "rg"}
+- 2026-09-23T07:25:12.310031+00:00 #7435 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:25:12.422392+00:00 #7436 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:25:12.540298+00:00 #7437 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:25:12.541297+00:00 #7438 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:25:12.548811+00:00 #7439 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:26:22.705224+00:00 #7440 command_started: {"executable": "rg"}
+- 2026-09-23T07:26:24.036127+00:00 #7441 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:26:31.000787+00:00 #7442 command_started: {"executable": "rg"}
+- 2026-09-23T07:26:31.727302+00:00 #7443 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:26:38.569812+00:00 #7444 command_started: {"executable": "powershell"}
+- 2026-09-23T07:26:38.822616+00:00 #7445 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:26:51.625446+00:00 #7446 command_started: {"executable": "powershell"}
+- 2026-09-23T07:27:05.175024+00:00 #7447 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:27:05.438323+00:00 #7448 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:27:36.795635+00:00 #7449 command_started: {"executable": "powershell"}
+- 2026-09-23T07:27:40.882625+00:00 #7450 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:27:51.922183+00:00 #7451 command_started: {"executable": "rg"}
+- 2026-09-23T07:27:52.060822+00:00 #7452 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:28:03.625455+00:00 #7453 command_started: {"executable": "powershell"}
+- 2026-09-23T07:28:05.139347+00:00 #7454 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:28:14.219422+00:00 #7455 handoff: {"digest": "1c3a3a1d81bf585a480b6d401b26a7faf786d2890e8d22a90c77c6cf9aef5c7f", "files_observed": 181}
+- 2026-09-23T07:28:14.550765+00:00 #7456 closed: {}
+- 2026-09-23T07:28:26.694231+00:00 #7457 started: {"files_observed": 181}
+- 2026-09-23T07:28:40.899367+00:00 #7458 command_started: {"executable": "powershell"}
+- 2026-09-23T07:28:41.807307+00:00 #7459 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:29:02.192911+00:00 #7460 command_started: {"executable": "powershell"}
+- 2026-09-23T07:29:02.469864+00:00 #7461 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:29:17.585920+00:00 #7462 handoff: {"digest": "26a4eb76d652c52ec8c72f0654e823bc7ed60ad6ed8744820c933f66bdf3119b", "files_observed": 181}
+- 2026-09-23T07:29:17.882313+00:00 #7463 closed: {}
+- 2026-09-23T07:45:20.018632+00:00 #7464 started: {"files_observed": 181}
+- 2026-09-23T07:45:43.858041+00:00 #7465 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:45:44.134133+00:00 #7466 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:46:10.164898+00:00 #7467 handoff: {"digest": "b74315aea77af3669dc200c25e969895dc25ce85208ea442906914169df9023e", "files_observed": 181}
+- 2026-09-23T07:46:10.479446+00:00 #7468 closed: {}
+- 2026-09-23T07:47:12.407693+00:00 #7469 started: {"files_observed": 181}
+- 2026-09-23T07:50:02.474231+00:00 #7470 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:50:02.742958+00:00 #7471 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:51:18.959152+00:00 #7472 command_started: {"executable": "python.exe"}
+- 2026-09-23T07:51:19.089697+00:00 #7473 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:52:30.261762+00:00 #7474 command_started: {"executable": "node"}
+- 2026-09-23T07:52:30.267121+00:00 #7475 command_started: {"executable": "python.exe"}
+- 2026-09-23T07:52:30.273126+00:00 #7476 command_started: {"executable": "python.exe"}
+- 2026-09-23T07:52:30.385338+00:00 #7477 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:52:30.995000+00:00 #7478 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T07:52:33.966106+00:00 #7479 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:52:57.152962+00:00 #7480 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:53:06.498751+00:00 #7481 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:53:43.474352+00:00 #7482 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:53:46.770233+00:00 #7483 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:54:27.077134+00:00 #7484 command_started: {"executable": "python.exe"}
+- 2026-09-23T07:54:27.092668+00:00 #7485 command_started: {"executable": "rg"}
+- 2026-09-23T07:54:27.113686+00:00 #7486 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T07:54:27.197189+00:00 #7487 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:54:27.245380+00:00 #7488 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:54:28.503154+00:00 #7489 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T07:54:48.415529+00:00 #7490 handoff: {"digest": "d10cfb6bf2f6f689f3eb5886363558be3f76749397f9cdcdf5cda4d194ef9fce", "files_observed": 182}
+- 2026-09-23T07:54:48.724223+00:00 #7491 closed: {}
+- 2026-09-23T08:12:29.742797+00:00 #7492 started: {"files_observed": 182}
+- 2026-09-23T08:12:43.989659+00:00 #7493 command_started: {"executable": "rg"}
+- 2026-09-23T08:12:43.991662+00:00 #7494 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T08:12:43.991662+00:00 #7495 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T08:12:44.095035+00:00 #7496 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:12:44.224573+00:00 #7497 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:12:44.249130+00:00 #7498 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:20:23.840964+00:00 #7499 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:20:23.845906+00:00 #7500 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:20:23.853951+00:00 #7501 command_started: {"executable": "node"}
+- 2026-09-23T08:20:23.847409+00:00 #7502 command_started: {"executable": "node"}
+- 2026-09-23T08:20:23.868798+00:00 #7503 command_started: {"executable": "node"}
+- 2026-09-23T08:20:23.869476+00:00 #7504 command_started: {"executable": "node"}
+- 2026-09-23T08:20:23.986240+00:00 #7505 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:20:23.988269+00:00 #7506 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:20:23.988269+00:00 #7507 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:20:23.988269+00:00 #7508 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:20:24.038372+00:00 #7509 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T08:20:27.465371+00:00 #7510 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T08:20:49.812633+00:00 #7511 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:20:49.819642+00:00 #7512 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:20:49.978841+00:00 #7513 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:20:53.393911+00:00 #7514 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:41:13.813202+00:00 #7515 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:41:13.820851+00:00 #7516 command_started: {"executable": "node"}
+- 2026-09-23T08:41:13.821846+00:00 #7517 command_started: {"executable": "node"}
+- 2026-09-23T08:41:13.816847+00:00 #7518 command_started: {"executable": "node"}
+- 2026-09-23T08:41:13.968897+00:00 #7519 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:41:13.970897+00:00 #7520 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:41:13.979164+00:00 #7521 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:41:14.030286+00:00 #7522 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:41:32.605413+00:00 #7523 handoff: {"digest": "31c36cb835c35d113c3e3f9a60f8f2ccbf4237a403c2648d0ab86820db13479b", "files_observed": 188}
+- 2026-09-23T08:41:32.908609+00:00 #7524 closed: {}
+- 2026-09-23T08:44:47.137468+00:00 #7525 started: {"files_observed": 188}
+- 2026-09-23T08:45:02.639028+00:00 #7526 command_started: {"executable": "powershell"}
+- 2026-09-23T08:45:02.915745+00:00 #7527 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:45:07.554381+00:00 #7528 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:45:07.834902+00:00 #7529 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:45:15.472574+00:00 #7530 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:45:15.727094+00:00 #7531 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:45:22.930749+00:00 #7532 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:45:26.197526+00:00 #7533 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:45:34.341104+00:00 #7534 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:45:34.488473+00:00 #7535 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:45:39.167878+00:00 #7536 command_started: {"executable": "powershell"}
+- 2026-09-23T08:45:39.497858+00:00 #7537 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:46:22.262746+00:00 #7538 command_started: {"executable": "powershell"}
+- 2026-09-23T08:46:31.565858+00:00 #7539 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:46:35.424856+00:00 #7540 command_started: {"executable": "powershell"}
+- 2026-09-23T08:46:36.768703+00:00 #7541 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:46:43.514826+00:00 #7542 command_started: {"executable": "powershell"}
+- 2026-09-23T08:46:43.792909+00:00 #7543 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:46:48.561521+00:00 #7544 command_started: {"executable": "powershell"}
+- 2026-09-23T08:46:49.078705+00:00 #7545 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:46:59.045970+00:00 #7546 command_started: {"executable": "powershell"}
+- 2026-09-23T08:47:01.266566+00:00 #7547 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:47:15.052740+00:00 #7548 command_started: {"executable": "powershell"}
+- 2026-09-23T08:47:15.308186+00:00 #7549 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:49:02.801930+00:00 #7550 command_started: {"executable": "powershell"}
+- 2026-09-23T08:49:03.098667+00:00 #7551 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:49:06.512109+00:00 #7552 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:49:06.663909+00:00 #7553 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:49:20.477988+00:00 #7554 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:49:23.797962+00:00 #7555 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:49:28.965707+00:00 #7556 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:49:29.122507+00:00 #7557 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:49:32.795317+00:00 #7558 command_started: {"executable": "python.exe"}
+- 2026-09-23T08:49:53.227344+00:00 #7559 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:50:43.244821+00:00 #7560 command_started: {"executable": "powershell"}
+- 2026-09-23T08:50:45.480332+00:00 #7561 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T08:50:56.917514+00:00 #7562 handoff: {"digest": "205b56f2815b8804bd61fd1b86af019fed2816aa5a3eedbfaf47636b564f05d1", "files_observed": 188}
+- 2026-09-23T08:51:07.021757+00:00 #7563 closed: {}
+- 2026-09-23T09:01:43.609771+00:00 #7564 started: {"files_observed": 188}
+- 2026-09-23T09:01:49.883381+00:00 #7565 command_started: {"executable": "powershell"}
+- 2026-09-23T09:01:50.284060+00:00 #7566 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T09:01:56.680375+00:00 #7567 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:01:56.860475+00:00 #7568 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:02:07.355788+00:00 #7569 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:02:07.529205+00:00 #7570 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:02:36.836885+00:00 #7571 command_started: {"executable": "powershell"}
+- 2026-09-23T09:02:37.108206+00:00 #7572 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:02:46.954454+00:00 #7573 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:02:47.373416+00:00 #7574 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:02:54.611854+00:00 #7575 command_started: {"executable": "powershell"}
+- 2026-09-23T09:02:55.447310+00:00 #7576 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:03:00.289763+00:00 #7577 command_started: {"executable": "powershell"}
+- 2026-09-23T09:03:02.871056+00:00 #7578 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:03:17.294011+00:00 #7579 command_started: {"executable": "powershell"}
+- 2026-09-23T09:03:21.035825+00:00 #7580 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:03:27.654623+00:00 #7581 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:03:28.085771+00:00 #7582 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:03:36.189182+00:00 #7583 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:03:36.587169+00:00 #7584 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:04:47.509748+00:00 #7585 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:04:50.934422+00:00 #7586 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:05:02.357636+00:00 #7587 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:05:02.509756+00:00 #7588 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:05:13.740866+00:00 #7589 command_started: {"executable": "powershell"}
+- 2026-09-23T09:05:13.989719+00:00 #7590 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:05:18.278758+00:00 #7591 command_started: {"executable": "powershell"}
+- 2026-09-23T09:05:20.874636+00:00 #7592 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:05:25.616416+00:00 #7593 command_started: {"executable": "powershell"}
+- 2026-09-23T09:05:29.344611+00:00 #7594 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:05:35.055416+00:00 #7595 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:05:35.455190+00:00 #7596 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:05:57.925330+00:00 #7597 handoff: {"digest": "fbb37cb7e15d51745b50f86ea0bc6f8d7158543156d89a0d86f877d08da7bd08", "files_observed": 188}
+- 2026-09-23T09:06:08.760683+00:00 #7598 closed: {}
+- 2026-09-23T09:16:03.384781+00:00 #7599 started: {"files_observed": 188}
+- 2026-09-23T09:17:13.657350+00:00 #7600 command_started: {"executable": "powershell"}
+- 2026-09-23T09:17:13.903375+00:00 #7601 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:17:19.992167+00:00 #7602 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:17:23.297827+00:00 #7603 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:17:27.397277+00:00 #7604 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:17:27.547001+00:00 #7605 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:17:33.916989+00:00 #7606 handoff: {"digest": "8fc16f4bbd441bbf0a168f6abdb7201d1b8097dbb2171c845d1e6b560983a0b7", "files_observed": 188}
+- 2026-09-23T09:17:52.017149+00:00 #7607 closed: {}
+- 2026-09-23T09:22:23.744636+00:00 #7608 started: {"files_observed": 188}
+- 2026-09-23T09:23:10.551569+00:00 #7609 command_started: {"executable": "powershell"}
+- 2026-09-23T09:23:10.796378+00:00 #7610 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:23:17.573334+00:00 #7611 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:23:21.095084+00:00 #7612 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:23:26.749947+00:00 #7613 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:23:26.908478+00:00 #7614 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:23:31.655157+00:00 #7615 handoff: {"digest": "6aab5cc7010dd4e8893b634f988a619801f0360190a30fc066ec0e8f9242233a", "files_observed": 188}
+- 2026-09-23T09:23:40.474253+00:00 #7616 closed: {}
+- 2026-09-23T09:28:59.087728+00:00 #7617 started: {"files_observed": 188}
+- 2026-09-23T09:29:40.667232+00:00 #7618 command_started: {"executable": "powershell"}
+- 2026-09-23T09:29:40.912003+00:00 #7619 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:29:49.471984+00:00 #7620 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:29:52.807854+00:00 #7621 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:30:00.947779+00:00 #7622 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:30:01.098193+00:00 #7623 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:30:06.551335+00:00 #7624 handoff: {"digest": "d893e77a48bc3944b5d3563341ecaf3e538866ee80668f9d5f4b21fb0800a9a9", "files_observed": 188}
+- 2026-09-23T09:30:25.501704+00:00 #7625 closed: {}
+- 2026-09-23T09:36:51.634972+00:00 #7626 started: {"files_observed": 188}
+- 2026-09-23T09:36:55.135182+00:00 #7627 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:36:55.377716+00:00 #7628 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:37:02.644727+00:00 #7629 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:37:02.910775+00:00 #7630 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:37:09.897318+00:00 #7631 handoff: {"digest": "9339b1c6ee130c946d7a788e22d0f7adb0e5820d61ae15c8f421d556852295af", "files_observed": 188}
+- 2026-09-23T09:37:23.560796+00:00 #7632 closed: {}
+- 2026-09-23T09:37:55.487331+00:00 #7633 started: {"files_observed": 188}
+- 2026-09-23T09:38:04.066101+00:00 #7634 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:38:04.343843+00:00 #7635 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:38:13.896149+00:00 #7636 command_started: {"executable": "powershell"}
+- 2026-09-23T09:38:14.106607+00:00 #7637 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:38:20.363021+00:00 #7638 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:38:20.547935+00:00 #7639 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:38:36.220810+00:00 #7640 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:38:36.463244+00:00 #7641 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:38:47.934951+00:00 #7642 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:38:48.366114+00:00 #7643 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:39:09.124995+00:00 #7644 command_started: {"executable": "powershell"}
+- 2026-09-23T09:39:09.375700+00:00 #7645 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:41:26.409373+00:00 #7646 command_started: {"executable": "powershell"}
+- 2026-09-23T09:41:26.742776+00:00 #7647 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:41:35.914823+00:00 #7648 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:41:39.279587+00:00 #7649 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:41:45.297086+00:00 #7650 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:41:45.441149+00:00 #7651 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:41:50.436247+00:00 #7652 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:41:50.546030+00:00 #7653 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T09:42:04.442324+00:00 #7654 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:42:04.719521+00:00 #7655 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:42:08.607194+00:00 #7656 command_started: {"executable": "python.exe"}
+- 2026-09-23T09:42:08.847256+00:00 #7657 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T09:42:17.503888+00:00 #7658 handoff: {"digest": "26d1eeb585187bf885a86e72bb574b8a5b883110ac63d89e21fa4774b0e6e468", "files_observed": 188}
+- 2026-09-23T09:42:25.516287+00:00 #7659 closed: {}
+- 2026-09-23T10:20:01.047696+00:00 #7660 started: {"files_observed": 188}
+- 2026-09-23T10:20:04.581420+00:00 #7661 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:20:04.824427+00:00 #7662 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:21:03.957490+00:00 #7663 command_started: {"executable": "node"}
+- 2026-09-23T10:21:04.073346+00:00 #7664 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:21:20.110315+00:00 #7665 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:21:23.461911+00:00 #7666 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:21:27.977563+00:00 #7667 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:21:28.129923+00:00 #7668 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:21:34.409532+00:00 #7669 handoff: {"digest": "7c163fc6ffd59e266d208f332d4c1f6a50567b2c05e776ce0244142813b26799", "files_observed": 188}
+- 2026-09-23T10:21:41.468549+00:00 #7670 closed: {}
+- 2026-09-23T10:23:04.816224+00:00 #7671 started: {"files_observed": 188}
+- 2026-09-23T10:23:17.987930+00:00 #7672 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:23:18.240442+00:00 #7673 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:23:23.233977+00:00 #7674 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:23:23.523435+00:00 #7675 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:23:34.479222+00:00 #7676 handoff: {"digest": "79edebd9505cdb17cdc1444a9759a238722b74f9f1edd76813822bef66440236", "files_observed": 188}
+- 2026-09-23T10:23:54.562025+00:00 #7677 closed: {}
+- 2026-09-23T10:24:06.925168+00:00 #7678 started: {"files_observed": 188}
+- 2026-09-23T10:24:10.832150+00:00 #7679 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:24:11.222942+00:00 #7680 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:26:48.266684+00:00 #7681 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:26:48.509096+00:00 #7682 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:27:01.883736+00:00 #7683 handoff: {"digest": "2f6c470fe544ca3ce0488a29f4cbc5a1c93738806c326e7a255bc83109cf7690", "files_observed": 188}
+- 2026-09-23T10:27:09.725186+00:00 #7684 closed: {}
+- 2026-09-23T10:28:30.700823+00:00 #7685 started: {"files_observed": 188}
+- 2026-09-23T10:28:36.086912+00:00 #7686 handoff: {"digest": "f963365ac980b41a96f1128c52e5b25d24a1b662402b28dc5155fb556afc7b13", "files_observed": 188}
+- 2026-09-23T10:28:43.071356+00:00 #7687 closed: {}
+- 2026-09-23T10:30:05.823391+00:00 #7688 started: {"files_observed": 188}
+- 2026-09-23T10:30:26.131013+00:00 #7689 command_started: {"executable": "node"}
+- 2026-09-23T10:30:26.258051+00:00 #7690 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:30:33.337093+00:00 #7691 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:30:36.679604+00:00 #7692 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:30:44.830893+00:00 #7693 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:30:44.978735+00:00 #7694 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:30:49.854394+00:00 #7695 handoff: {"digest": "585e77b7ed5b6ab0b8914b161fc60615bd46fff1e3aa2e7d00642a47c30b8f89", "files_observed": 188}
+- 2026-09-23T10:31:02.309537+00:00 #7696 closed: {}
+- 2026-09-23T10:32:17.995702+00:00 #7697 started: {"files_observed": 188}
+- 2026-09-23T10:32:24.341810+00:00 #7698 command_started: {"executable": "powershell"}
+- 2026-09-23T10:32:28.631426+00:00 #7699 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:32:39.702908+00:00 #7700 command_started: {"executable": "powershell"}
+- 2026-09-23T10:32:43.442174+00:00 #7701 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:32:47.267005+00:00 #7702 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:32:47.436620+00:00 #7703 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:35:07.201346+00:00 #7704 command_started: {"executable": "node"}
+- 2026-09-23T10:35:07.327894+00:00 #7705 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:35:14.144184+00:00 #7706 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:35:14.400221+00:00 #7707 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:35:21.444869+00:00 #7708 handoff: {"digest": "8c2c44ed75aba18f64429b31111d9ee2431ebabe04ba4cd556ae383a439acadc", "files_observed": 188}
+- 2026-09-23T10:35:31.527706+00:00 #7709 closed: {}
+- 2026-09-23T10:38:08.285931+00:00 #7710 started: {"files_observed": 188}
+- 2026-09-23T10:38:15.742952+00:00 #7711 command_started: {"executable": "powershell"}
+- 2026-09-23T10:38:19.891217+00:00 #7712 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:38:24.804796+00:00 #7713 command_started: {"executable": "powershell"}
+- 2026-09-23T10:38:25.016050+00:00 #7714 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:38:34.122020+00:00 #7715 command_started: {"executable": "powershell"}
+- 2026-09-23T10:38:34.349770+00:00 #7716 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T10:38:38.630066+00:00 #7717 command_started: {"executable": "powershell"}
+- 2026-09-23T10:38:38.841096+00:00 #7718 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:38:53.303339+00:00 #7719 command_started: {"executable": "powershell"}
+- 2026-09-23T10:38:53.638131+00:00 #7720 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:39:02.806343+00:00 #7721 command_started: {"executable": "powershell"}
+- 2026-09-23T10:39:03.017268+00:00 #7722 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:39:08.989028+00:00 #7723 command_started: {"executable": "powershell"}
+- 2026-09-23T10:39:18.338246+00:00 #7724 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:39:27.053671+00:00 #7725 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:39:27.179594+00:00 #7726 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T10:39:31.065853+00:00 #7727 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:39:33.221672+00:00 #7728 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:39:39.672546+00:00 #7729 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:39:50.888242+00:00 #7730 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:39:51.014216+00:00 #7731 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:39:55.606792+00:00 #7732 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:39:55.791095+00:00 #7733 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:40:03.116771+00:00 #7734 command_started: {"executable": "powershell"}
+- 2026-09-23T10:40:03.419470+00:00 #7735 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T10:40:17.612177+00:00 #7736 command_started: {"executable": "powershell"}
+- 2026-09-23T10:40:18.495529+00:00 #7737 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:40:28.227761+00:00 #7738 command_started: {"executable": "powershell"}
+- 2026-09-23T10:40:28.446303+00:00 #7739 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T10:40:35.496308+00:00 #7740 command_started: {"executable": "powershell"}
+- 2026-09-23T10:40:35.830807+00:00 #7741 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:40:55.022845+00:00 #7742 command_started: {"executable": "powershell"}
+- 2026-09-23T10:40:57.380541+00:00 #7743 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:41:03.925506+00:00 #7744 command_started: {"executable": "powershell"}
+- 2026-09-23T10:41:07.003502+00:00 #7745 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:41:14.978918+00:00 #7746 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:41:15.098211+00:00 #7747 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:41:21.032760+00:00 #7748 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:41:24.204516+00:00 #7749 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:41:29.813689+00:00 #7750 command_started: {"executable": "python.exe"}
+- 2026-09-23T10:41:30.194165+00:00 #7751 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T10:41:35.581994+00:00 #7752 handoff: {"digest": "6aff7957ac4010570ea5473c3ad34d62b6898544ba6baebe1dcf35301d0902c8", "files_observed": 188}
+- 2026-09-23T10:41:43.823571+00:00 #7753 closed: {}
+- 2026-09-23T11:02:55.416808+00:00 #7754 started: {"files_observed": 188}
+- 2026-09-23T11:04:42.497952+00:00 #7755 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:04:42.498956+00:00 #7756 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:04:42.507209+00:00 #7757 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:04:42.744476+00:00 #7758 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:04:42.744476+00:00 #7759 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:04:42.761491+00:00 #7760 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:04:59.143411+00:00 #7761 command_started: {"executable": "rg"}
+- 2026-09-23T11:04:59.158282+00:00 #7762 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:04:59.183930+00:00 #7763 command_started: {"executable": "rg"}
+- 2026-09-23T11:04:59.408105+00:00 #7764 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:04:59.411105+00:00 #7765 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-23T11:05:01.525353+00:00 #7766 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:05:10.339898+00:00 #7767 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:05:13.975332+00:00 #7768 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:05:36.088597+00:00 #7769 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:05:36.094613+00:00 #7770 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:05:36.096127+00:00 #7771 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:05:36.321977+00:00 #7772 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:05:36.350112+00:00 #7773 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:05:37.484481+00:00 #7774 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:05:51.530778+00:00 #7775 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:05:51.538339+00:00 #7776 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:05:51.541339+00:00 #7777 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:05:51.774031+00:00 #7778 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:05:51.821565+00:00 #7779 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:05:51.994246+00:00 #7780 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:06:02.788911+00:00 #7781 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:06:03.073378+00:00 #7782 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:06:13.422319+00:00 #7783 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:06:14.906325+00:00 #7784 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:06:20.783421+00:00 #7785 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:06:21.313133+00:00 #7786 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:06:34.724221+00:00 #7787 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:06:34.845134+00:00 #7788 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:06:42.408322+00:00 #7789 command_started: {"executable": "wmic.exe"}
+- 2026-09-23T11:06:42.774858+00:00 #7790 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:06.103704+00:00 #7791 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:07:06.114317+00:00 #7792 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:07:06.115322+00:00 #7793 command_started: {"executable": "rg"}
+- 2026-09-23T11:07:06.218908+00:00 #7794 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:06.360862+00:00 #7795 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:06.360862+00:00 #7796 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:14.679027+00:00 #7797 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:07:14.930838+00:00 #7798 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:29.376748+00:00 #7799 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:07:29.653490+00:00 #7800 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:38.482426+00:00 #7801 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:07:38.710780+00:00 #7802 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:52.866298+00:00 #7803 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:07:53.311431+00:00 #7804 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:07:53.820358+00:00 #7805 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:07:54.140722+00:00 #7806 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:08:04.938325+00:00 #7807 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:08:05.390611+00:00 #7808 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:08:16.621122+00:00 #7809 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:08:16.864035+00:00 #7810 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:08:29.877378+00:00 #7811 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:08:30.345473+00:00 #7812 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:08:58.960261+00:00 #7813 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:08:59.077464+00:00 #7814 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:09:08.022405+00:00 #7815 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:09:08.171355+00:00 #7816 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:09:18.466012+00:00 #7817 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:09:18.620716+00:00 #7818 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:09:25.559928+00:00 #7819 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:09:25.808678+00:00 #7820 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:09:55.807813+00:00 #7821 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:09:56.085942+00:00 #7822 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:10:25.028780+00:00 #7823 command_started: {"executable": "node.exe"}
+- 2026-09-23T11:10:25.154204+00:00 #7824 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:10:25.658005+00:00 #7825 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:10:26.130340+00:00 #7826 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:10:37.077026+00:00 #7827 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:10:40.541260+00:00 #7828 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:10:50.153922+00:00 #7829 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:10:50.274263+00:00 #7830 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:10:59.905703+00:00 #7831 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:11:00.181294+00:00 #7832 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:11:09.465125+00:00 #7833 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:11:09.738266+00:00 #7834 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:11:23.150876+00:00 #7835 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:11:23.157382+00:00 #7836 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:11:23.181939+00:00 #7837 command_started: {"executable": "rg"}
+- 2026-09-23T11:11:23.278079+00:00 #7838 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:11:23.407308+00:00 #7839 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:11:23.407308+00:00 #7840 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:11:35.258229+00:00 #7841 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:11:35.515449+00:00 #7842 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:11:43.231991+00:00 #7843 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:11:43.483953+00:00 #7844 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:11:49.596478+00:00 #7845 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:11:49.835478+00:00 #7846 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:12:00.145428+00:00 #7847 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:12:00.423395+00:00 #7848 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:12:13.764395+00:00 #7849 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:12:14.067886+00:00 #7850 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:12:27.012899+00:00 #7851 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:12:57.940026+00:00 #7852 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:13:09.489466+00:00 #7853 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:13:09.757526+00:00 #7854 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:13:18.451070+00:00 #7855 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:13:18.703838+00:00 #7856 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:13:27.005870+00:00 #7857 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:13:27.239081+00:00 #7858 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:13:40.144003+00:00 #7859 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:13:40.148513+00:00 #7860 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:13:40.366201+00:00 #7861 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:13:40.406443+00:00 #7862 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:13:57.558589+00:00 #7863 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:14:28.506226+00:00 #7864 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:14:36.964603+00:00 #7865 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:14:37.207487+00:00 #7866 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:14:49.144023+00:00 #7867 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:14:49.340272+00:00 #7868 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:14:57.583941+00:00 #7869 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:14:57.878323+00:00 #7870 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:15:08.115550+00:00 #7871 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:15:08.421072+00:00 #7872 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:15:30.889825+00:00 #7873 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:15:30.892823+00:00 #7874 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:15:31.179435+00:00 #7875 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:15:31.808508+00:00 #7876 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:15:43.425474+00:00 #7877 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:15:43.672892+00:00 #7878 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:16:04.741820+00:00 #7879 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:16:07.222611+00:00 #7880 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:16:07.713773+00:00 #7881 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:16:10.955079+00:00 #7882 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:16:11.470011+00:00 #7883 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:16:11.920668+00:00 #7884 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:16:22.831504+00:00 #7885 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:16:25.162134+00:00 #7886 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:16:34.620245+00:00 #7887 command_started: {"executable": "rg"}
+- 2026-09-23T11:16:34.720635+00:00 #7888 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:16:42.066782+00:00 #7889 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:16:42.282395+00:00 #7890 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:16:51.929526+00:00 #7891 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:16:52.829767+00:00 #7892 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:17:16.877181+00:00 #7893 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:17:17.197791+00:00 #7894 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:17:28.323805+00:00 #7895 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:17:28.448359+00:00 #7896 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:17:42.256949+00:00 #7897 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:17:42.549123+00:00 #7898 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:17:55.307303+00:00 #7899 command_started: {"executable": "rg"}
+- 2026-09-23T11:18:01.411868+00:00 #7900 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-23T11:18:31.968161+00:00 #7901 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:18:32.233788+00:00 #7902 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:18:39.482723+00:00 #7903 command_started: {"executable": "certutil.exe"}
+- 2026-09-23T11:18:39.610743+00:00 #7904 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:18:46.438052+00:00 #7905 command_started: {"executable": "certutil.exe"}
+- 2026-09-23T11:18:46.559647+00:00 #7906 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:19:23.901925+00:00 #7907 command_started: {"executable": "rg"}
+- 2026-09-23T11:19:23.998558+00:00 #7908 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:19:30.872655+00:00 #7909 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:19:31.135452+00:00 #7910 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:19:54.288846+00:00 #7911 command_started: {"executable": "rg"}
+- 2026-09-23T11:19:54.390995+00:00 #7912 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:20:01.926044+00:00 #7913 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:20:02.169853+00:00 #7914 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:21:15.582769+00:00 #7915 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:21:16.137021+00:00 #7916 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:21:26.140458+00:00 #7917 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:21:37.093468+00:00 #7918 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:22:56.375315+00:00 #7919 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:22:56.918561+00:00 #7920 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:23:05.232412+00:00 #7921 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:23:16.145378+00:00 #7922 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:23:25.074848+00:00 #7923 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:23:46.060345+00:00 #7924 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:24:05.567480+00:00 #7925 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:24:05.573988+00:00 #7926 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:24:05.573988+00:00 #7927 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:24:05.835755+00:00 #7928 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:24:05.836755+00:00 #7929 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:24:05.866543+00:00 #7930 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:24:24.699169+00:00 #7931 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:24:24.952692+00:00 #7932 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:24:56.649859+00:00 #7933 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:24:59.144829+00:00 #7934 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:24:59.696740+00:00 #7935 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:25:00.180013+00:00 #7936 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:25:00.730140+00:00 #7937 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:25:04.194323+00:00 #7938 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:25:11.793584+00:00 #7939 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:25:32.052185+00:00 #7940 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:25:43.349260+00:00 #7941 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:26:04.193899+00:00 #7942 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:26:37.760582+00:00 #7943 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:26:38.185023+00:00 #7944 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:26:53.451600+00:00 #7945 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:27:19.421265+00:00 #7946 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:27:30.035894+00:00 #7947 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:27:45.947380+00:00 #7948 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:27:58.189927+00:00 #7949 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:28:24.162183+00:00 #7950 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:28:37.683714+00:00 #7951 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:28:38.165322+00:00 #7952 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:28:47.094599+00:00 #7953 command_started: {"executable": "rg"}
+- 2026-09-23T11:28:47.196871+00:00 #7954 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:28:53.709152+00:00 #7955 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:28:53.958896+00:00 #7956 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:29:10.017908+00:00 #7957 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:29:10.498259+00:00 #7958 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:29:19.796944+00:00 #7959 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:29:40.045911+00:00 #7960 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:29:52.860585+00:00 #7961 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:29:53.370594+00:00 #7962 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:31:55.541380+00:00 #7963 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:31:56.013706+00:00 #7964 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:31:56.509099+00:00 #7965 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:31:58.750139+00:00 #7966 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:31:59.239362+00:00 #7967 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:31:59.684155+00:00 #7968 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:32:00.217136+00:00 #7969 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:32:03.655522+00:00 #7970 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:32:12.721460+00:00 #7971 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:32:38.641458+00:00 #7972 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:32:48.625526+00:00 #7973 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:32:48.843927+00:00 #7974 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:32:58.449734+00:00 #7975 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:32:59.600431+00:00 #7976 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:33:06.273360+00:00 #7977 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:33:06.497390+00:00 #7978 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:33:29.370284+00:00 #7979 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:33:29.859167+00:00 #7980 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:33:30.353930+00:00 #7981 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:33:33.067310+00:00 #7982 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:33:33.591640+00:00 #7983 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:33:36.900100+00:00 #7984 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:33:50.679059+00:00 #7985 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:33:51.145902+00:00 #7986 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:33:51.684416+00:00 #7987 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:33:55.124358+00:00 #7988 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:34:05.337808+00:00 #7989 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:34:31.289766+00:00 #7990 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:34:41.117912+00:00 #7991 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:34:41.350941+00:00 #7992 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:34:52.227476+00:00 #7993 command_started: {"executable": "rg"}
+- 2026-09-23T11:34:52.334978+00:00 #7994 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:35:02.619482+00:00 #7995 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:35:02.859721+00:00 #7996 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:35:10.777761+00:00 #7997 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:35:11.022880+00:00 #7998 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:36:14.300739+00:00 #7999 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:36:14.779696+00:00 #8000 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:36:15.274043+00:00 #8001 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:36:17.812551+00:00 #8002 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:36:18.325811+00:00 #8003 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:36:50.591139+00:00 #8004 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:36:56.569272+00:00 #8005 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:36:58.769180+00:00 #8006 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:37:06.097453+00:00 #8007 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:37:06.311052+00:00 #8008 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:37:13.368782+00:00 #8009 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:37:13.606925+00:00 #8010 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:37:32.405741+00:00 #8011 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:37:34.971089+00:00 #8012 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:37:35.470178+00:00 #8013 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:37:38.717345+00:00 #8014 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:37:52.450510+00:00 #8015 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:37:52.939925+00:00 #8016 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:37:53.463527+00:00 #8017 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:37:56.911744+00:00 #8018 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:38:07.127418+00:00 #8019 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:38:38.007151+00:00 #8020 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:38:46.625941+00:00 #8021 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:38:47.481880+00:00 #8022 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:39:52.823769+00:00 #8023 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:39:53.296072+00:00 #8024 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:39:53.794567+00:00 #8025 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:39:56.275267+00:00 #8026 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:39:56.777165+00:00 #8027 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:39:59.937296+00:00 #8028 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:40:12.165189+00:00 #8029 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:40:12.591451+00:00 #8030 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:40:13.086469+00:00 #8031 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:40:16.465149+00:00 #8032 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:40:25.947729+00:00 #8033 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:40:51.853108+00:00 #8034 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:41:05.955135+00:00 #8035 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:41:06.416341+00:00 #8036 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:41:25.535448+00:00 #8037 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:41:26.004276+00:00 #8038 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:41:39.487662+00:00 #8039 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:41:42.931740+00:00 #8040 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:41:52.177285+00:00 #8041 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:41:52.394600+00:00 #8042 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:42:05.307678+00:00 #8043 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:42:05.483317+00:00 #8044 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:42:14.106097+00:00 #8045 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:42:14.322848+00:00 #8046 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:43:38.442859+00:00 #8047 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:43:38.914089+00:00 #8048 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:43:39.436743+00:00 #8049 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:43:41.946027+00:00 #8050 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:43:42.450027+00:00 #8051 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:43:45.704756+00:00 #8052 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:43:58.708530+00:00 #8053 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:43:59.252336+00:00 #8054 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:44:11.202837+00:00 #8055 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:44:14.644432+00:00 #8056 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:45:05.787271+00:00 #8057 command_started: {"executable": "node.exe"}
+- 2026-09-23T11:45:05.794271+00:00 #8058 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:45:05.805790+00:00 #8059 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:45:05.794774+00:00 #8060 command_started: {"executable": "node.exe"}
+- 2026-09-23T11:45:05.929515+00:00 #8061 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:45:05.938280+00:00 #8062 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:45:06.550525+00:00 #8063 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:45:09.535102+00:00 #8064 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:45:25.924107+00:00 #8065 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:45:26.067676+00:00 #8066 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:45:55.670495+00:00 #8067 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:45:55.831036+00:00 #8068 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:46:13.909655+00:00 #8069 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:46:14.438291+00:00 #8070 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:46:25.879566+00:00 #8071 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:46:26.433729+00:00 #8072 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:46:33.916654+00:00 #8073 command_started: {"executable": "schtasks.exe"}
+- 2026-09-23T11:46:34.026961+00:00 #8074 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:46:55.001254+00:00 #8075 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:46:57.596455+00:00 #8076 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:46:58.109002+00:00 #8077 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:46:58.327631+00:00 #8078 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:46:58.824454+00:00 #8079 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:47:02.116147+00:00 #8080 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:47:14.427848+00:00 #8081 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:47:14.954988+00:00 #8082 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:48:31.493118+00:00 #8083 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:48:31.973180+00:00 #8084 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:48:43.876076+00:00 #8085 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:48:48.330748+00:00 #8086 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:48:58.982695+00:00 #8087 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:48:59.130128+00:00 #8088 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:49:27.624957+00:00 #8089 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:49:27.749839+00:00 #8090 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:49:50.574619+00:00 #8091 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:49:50.946296+00:00 #8092 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:05.398030+00:00 #8093 command_started: {"executable": "node.exe"}
+- 2026-09-23T11:51:05.401034+00:00 #8094 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:51:05.400034+00:00 #8095 command_started: {"executable": "node.exe"}
+- 2026-09-23T11:51:05.402034+00:00 #8096 command_started: {"executable": "node.exe"}
+- 2026-09-23T11:51:05.401034+00:00 #8097 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:51:05.525675+00:00 #8098 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:05.550722+00:00 #8099 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:05.568977+00:00 #8100 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:05.619978+00:00 #8101 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:08.809978+00:00 #8102 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:35.837491+00:00 #8103 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:51:36.101714+00:00 #8104 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:52.482584+00:00 #8105 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:51:52.756437+00:00 #8106 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:51:53.246306+00:00 #8107 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T11:51:53.459758+00:00 #8108 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:52:16.590500+00:00 #8109 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:52:16.734971+00:00 #8110 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:52:31.234497+00:00 #8111 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:53:15.525124+00:00 #8112 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:53:15.962694+00:00 #8113 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:53:18.329410+00:00 #8114 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:53:46.621811+00:00 #8115 handoff: {"digest": "78a8c90e1c3e0cbbf5577742471af2681007e549fa8ed6be3a2b7ae4cdaf20c9", "files_observed": 188}
+- 2026-09-23T11:53:47.259476+00:00 #8116 closed: {}
+- 2026-09-23T11:57:08.645473+00:00 #8117 started: {"files_observed": 188}
+- 2026-09-23T11:57:20.436850+00:00 #8118 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:57:22.882291+00:00 #8119 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T11:57:35.922977+00:00 #8120 command_started: {"executable": "python.exe"}
+- 2026-09-23T11:57:36.227932+00:00 #8121 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T11:58:28.091562+00:00 #8122 command_started: {"executable": "rg"}
+- 2026-09-23T11:58:28.191499+00:00 #8123 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:00:01.102384+00:00 #8124 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:00:01.586032+00:00 #8125 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:00:12.608890+00:00 #8126 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:00:33.507739+00:00 #8127 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:00:46.881814+00:00 #8128 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:00:47.349862+00:00 #8129 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:01:29.715139+00:00 #8130 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:01:30.213057+00:00 #8131 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:01:43.058512+00:00 #8132 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:01:47.530184+00:00 #8133 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:01:56.816495+00:00 #8134 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:01:57.738875+00:00 #8135 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:02:06.588260+00:00 #8136 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:02:06.978452+00:00 #8137 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:02:16.714087+00:00 #8138 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:02:32.586999+00:00 #8139 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:02:44.116469+00:00 #8140 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:02:44.590900+00:00 #8141 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:02:59.566861+00:00 #8142 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:03:00.041634+00:00 #8143 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:03:07.998971+00:00 #8144 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:03:28.942723+00:00 #8145 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:03:38.271087+00:00 #8146 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:03:38.669492+00:00 #8147 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:04:03.048365+00:00 #8148 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:04:03.529332+00:00 #8149 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:04:59.807940+00:00 #8150 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:05:03.423352+00:00 #8151 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:06:27.111781+00:00 #8152 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:06:30.583484+00:00 #8153 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:06:42.921858+00:00 #8154 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:06:43.184838+00:00 #8155 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:06:52.370417+00:00 #8156 command_started: {"executable": "rg"}
+- 2026-09-23T12:06:52.480194+00:00 #8157 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:07:00.316525+00:00 #8158 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:07:00.574639+00:00 #8159 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:07:28.017408+00:00 #8160 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:07:31.450812+00:00 #8161 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:07:50.825687+00:00 #8162 command_started: {"executable": "schtasks.exe"}
+- 2026-09-23T12:07:50.830189+00:00 #8163 command_started: {"executable": "schtasks.exe"}
+- 2026-09-23T12:07:50.942533+00:00 #8164 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:07:50.943534+00:00 #8165 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:09.183718+00:00 #8166 command_started: {"executable": "node.exe"}
+- 2026-09-23T12:08:09.189718+00:00 #8167 command_started: {"executable": "node.exe"}
+- 2026-09-23T12:08:09.190733+00:00 #8168 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:08:09.192738+00:00 #8169 command_started: {"executable": "node.exe"}
+- 2026-09-23T12:08:09.190221+00:00 #8170 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:08:09.343548+00:00 #8171 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:09.346172+00:00 #8172 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:09.343548+00:00 #8173 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:09.398478+00:00 #8174 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:12.957647+00:00 #8175 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:36.118370+00:00 #8176 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:08:36.351819+00:00 #8177 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:36.870540+00:00 #8178 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:08:39.518185+00:00 #8179 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:40.065061+00:00 #8180 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:08:40.301744+00:00 #8181 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:40.816348+00:00 #8182 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:08:45.114901+00:00 #8183 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:08:51.174903+00:00 #8184 command_started: {"executable": "git"}
+- 2026-09-23T12:08:51.293377+00:00 #8185 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:09:01.145412+00:00 #8186 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:09:02.052090+00:00 #8187 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:11:04.771439+00:00 #8188 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:11:08.332571+00:00 #8189 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:11:08.855911+00:00 #8190 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:11:09.312670+00:00 #8191 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:11:23.838584+00:00 #8192 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:11:30.320128+00:00 #8193 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:12:52.521489+00:00 #8194 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:12:52.754260+00:00 #8195 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:16:26.463865+00:00 #8196 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:16:26.470375+00:00 #8197 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:16:26.466865+00:00 #8198 command_started: {"executable": "node"}
+- 2026-09-23T12:16:26.597434+00:00 #8199 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:16:26.649850+00:00 #8200 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:16:26.889836+00:00 #8201 command_started: {"executable": "node"}
+- 2026-09-23T12:16:27.014588+00:00 #8202 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:16:27.306336+00:00 #8203 command_started: {"executable": "node"}
+- 2026-09-23T12:16:27.437882+00:00 #8204 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:16:30.054019+00:00 #8205 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:17:05.784805+00:00 #8206 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:17:08.277195+00:00 #8207 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:17:08.799741+00:00 #8208 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:17:09.697531+00:00 #8209 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:17:21.780403+00:00 #8210 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:17:25.622252+00:00 #8211 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:17:33.586260+00:00 #8212 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:17:34.482352+00:00 #8213 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:17:50.811424+00:00 #8214 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:17:50.947753+00:00 #8215 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:18:37.729910+00:00 #8216 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:19:05.000558+00:00 #8217 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:19:07.196401+00:00 #8218 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:19:33.198408+00:00 #8219 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:19:33.838741+00:00 #8220 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:19:52.623038+00:00 #8221 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:19:53.784183+00:00 #8222 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:20:11.908032+00:00 #8223 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:20:13.252725+00:00 #8224 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:20:46.089963+00:00 #8225 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:20:46.830175+00:00 #8226 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:21:51.016807+00:00 #8227 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:21:53.551096+00:00 #8228 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:21:54.075344+00:00 #8229 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:21:58.139314+00:00 #8230 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:21:58.668607+00:00 #8231 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:21:58.889767+00:00 #8232 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:22:29.114424+00:00 #8233 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:22:31.793589+00:00 #8234 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:22:32.325160+00:00 #8235 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:22:36.212789+00:00 #8236 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:22:36.872604+00:00 #8237 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:22:37.131711+00:00 #8238 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:23:16.878043+00:00 #8239 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:23:19.504772+00:00 #8240 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:23:20.071487+00:00 #8241 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:23:24.071401+00:00 #8242 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T12:23:24.612605+00:00 #8243 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:23:24.844347+00:00 #8244 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:23:42.415775+00:00 #8245 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:25:02.595422+00:00 #8246 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:25:02.744129+00:00 #8247 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:26:30.766023+00:00 #8248 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:26:33.382267+00:00 #8249 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:26:33.917823+00:00 #8250 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:26:39.549070+00:00 #8251 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:27:22.122141+00:00 #8252 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:27:22.962001+00:00 #8253 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:27:47.593661+00:00 #8254 command_started: {"executable": "node"}
+- 2026-09-23T12:27:47.594664+00:00 #8255 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:27:47.594664+00:00 #8256 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:27:47.732285+00:00 #8257 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:27:47.781707+00:00 #8258 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:27:48.050970+00:00 #8259 command_started: {"executable": "node"}
+- 2026-09-23T12:27:48.175846+00:00 #8260 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:27:48.487231+00:00 #8261 command_started: {"executable": "node"}
+- 2026-09-23T12:27:48.616019+00:00 #8262 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:27:51.261930+00:00 #8263 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:28:07.385992+00:00 #8264 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:28:09.960954+00:00 #8265 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:28:10.493428+00:00 #8266 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:28:10.724751+00:00 #8267 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:28:11.233736+00:00 #8268 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:28:15.548895+00:00 #8269 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:29:47.730157+00:00 #8270 handoff: {"digest": "8d61d33afe050418673ab502246c2643eaa0706357cf150f73df1a0c429fb878", "files_observed": 188}
+- 2026-09-23T12:29:48.222571+00:00 #8271 closed: {}
+- 2026-09-23T12:38:38.908128+00:00 #8272 started: {"files_observed": 188}
+- 2026-09-23T12:38:39.443551+00:00 #8273 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:38:39.456086+00:00 #8274 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:38:39.456086+00:00 #8275 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:38:39.715071+00:00 #8276 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:38:39.722584+00:00 #8277 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:38:39.727615+00:00 #8278 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:38:54.919282+00:00 #8279 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:38:55.903271+00:00 #8280 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:40:12.679163+00:00 #8281 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:40:24.954729+00:00 #8282 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:44:01.826794+00:00 #8283 command_started: {"executable": "node"}
+- 2026-09-23T12:44:01.827973+00:00 #8284 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:44:01.845033+00:00 #8285 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:44:02.015124+00:00 #8286 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:44:02.636003+00:00 #8287 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:44:05.779388+00:00 #8288 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:44:24.363647+00:00 #8289 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:44:24.642879+00:00 #8290 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:45:03.555976+00:00 #8291 handoff: {"digest": "2f669b68d7e4b203239a7a695982d97282f10526fe92c2197961a06416f3961a", "files_observed": 188}
+- 2026-09-23T12:45:04.051989+00:00 #8292 closed: {}
+- 2026-09-23T12:45:19.946093+00:00 #8293 started: {"files_observed": 188}
+- 2026-09-23T12:45:20.451751+00:00 #8294 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:45:35.258443+00:00 #8295 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:47:20.532690+00:00 #8296 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:47:20.539197+00:00 #8297 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:47:20.539197+00:00 #8298 command_started: {"executable": "node"}
+- 2026-09-23T12:47:20.658908+00:00 #8299 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:47:20.726731+00:00 #8300 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:47:24.187539+00:00 #8301 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:47:32.887613+00:00 #8302 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:47:35.490734+00:00 #8303 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:47:36.017905+00:00 #8304 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:47:48.615436+00:00 #8305 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:48:15.760802+00:00 #8306 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:48:18.219010+00:00 #8307 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:48:18.734089+00:00 #8308 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:48:48.926126+00:00 #8309 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:48:49.159054+00:00 #8310 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:48:59.574426+00:00 #8311 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:49:40.169455+00:00 #8312 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:49:40.382560+00:00 #8313 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:50:41.351234+00:00 #8314 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:50:41.353234+00:00 #8315 command_started: {"executable": "node"}
+- 2026-09-23T12:50:41.475681+00:00 #8316 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:50:44.977827+00:00 #8317 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:50:53.338269+00:00 #8318 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:50:53.631512+00:00 #8319 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:51:14.155678+00:00 #8320 handoff: {"digest": "9b2242647490747ce80e766a1cd197e077ee7dcec108e66bf12511e7e35bb56b", "files_observed": 188}
+- 2026-09-23T12:51:14.664704+00:00 #8321 closed: {}
+- 2026-09-23T12:53:27.661129+00:00 #8322 started: {"files_observed": 188}
+- 2026-09-23T12:53:28.154655+00:00 #8323 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:53:30.662299+00:00 #8324 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:53:31.183282+00:00 #8325 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:54:11.104897+00:00 #8326 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:54:54.932138+00:00 #8327 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:55:37.489115+00:00 #8328 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:56:38.114608+00:00 #8329 command_started: {"executable": "node"}
+- 2026-09-23T12:56:38.253799+00:00 #8330 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:56:38.781044+00:00 #8331 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:57:22.481877+00:00 #8332 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:57:31.040339+00:00 #8333 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T12:57:31.264659+00:00 #8334 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:58:41.771800+00:00 #8335 command_started: {"executable": "node"}
+- 2026-09-23T12:58:41.777801+00:00 #8336 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:58:41.886785+00:00 #8337 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:58:45.554109+00:00 #8338 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:58:55.427328+00:00 #8339 command_started: {"executable": "python.exe"}
+- 2026-09-23T12:58:55.727136+00:00 #8340 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T12:59:14.865743+00:00 #8341 handoff: {"digest": "d64552ba44a53da29b687658c160c0e54381a4341df23c6913e7de7bb56f7e98", "files_observed": 188}
+- 2026-09-23T12:59:15.373618+00:00 #8342 closed: {}
+- 2026-09-23T13:02:24.926833+00:00 #8343 started: {"files_observed": 188}
+- 2026-09-23T13:02:25.445465+00:00 #8344 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:02:45.892392+00:00 #8345 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:08:30.449772+00:00 #8346 command_started: {"executable": "python.exe"}
+- 2026-09-23T13:08:30.461786+00:00 #8347 command_started: {"executable": "python.exe"}
+- 2026-09-23T13:08:30.462786+00:00 #8348 command_started: {"executable": "node"}
+- 2026-09-23T13:08:30.580770+00:00 #8349 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:08:30.626795+00:00 #8350 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:08:30.893575+00:00 #8351 command_started: {"executable": "node"}
+- 2026-09-23T13:08:31.018105+00:00 #8352 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:08:34.293197+00:00 #8353 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:08:45.267814+00:00 #8354 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:08:47.861607+00:00 #8355 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:08:48.367894+00:00 #8356 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:09:34.019158+00:00 #8357 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:10:06.769752+00:00 #8358 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:10:17.399768+00:00 #8359 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:11:02.119936+00:00 #8360 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:11:04.762892+00:00 #8361 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:11:05.295733+00:00 #8362 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:11:05.511220+00:00 #8363 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:11:06.015520+00:00 #8364 command_started: {"executable": "powershell.exe"}
+- 2026-09-23T13:11:10.210849+00:00 #8365 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T13:11:41.748471+00:00 #8366 handoff: {"digest": "accda0a2f440f86d2b0a8a4735a9f439d37a53ff76a1e5980b8986586ffb6687", "files_observed": 188}
+- 2026-09-23T13:11:42.250146+00:00 #8367 closed: {}
+- 2026-09-23T17:06:20.985757+00:00 #8368 started: {"files_observed": 188}
+- 2026-09-23T17:06:29.740642+00:00 #8369 command_started: {"executable": "rg"}
+- 2026-09-23T17:06:29.879242+00:00 #8370 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T17:06:49.700600+00:00 #8371 command_started: {"executable": "powershell"}
+- 2026-09-23T17:06:50.057552+00:00 #8372 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T17:07:22.182152+00:00 #8373 command_started: {"executable": "rg"}
+- 2026-09-23T17:07:22.303217+00:00 #8374 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T17:07:42.037577+00:00 #8375 command_started: {"executable": "powershell"}
+- 2026-09-23T17:07:42.335044+00:00 #8376 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-23T17:07:56.043686+00:00 #8377 command_started: {"executable": "powershell"}
+- 2026-09-23T17:07:57.922759+00:00 #8378 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T17:09:25.993830+00:00 #8379 command_started: {"executable": "powershell"}
+- 2026-09-23T17:09:26.304947+00:00 #8380 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T17:09:46.198644+00:00 #8381 command_started: {"executable": "rg"}
+- 2026-09-23T17:09:46.318960+00:00 #8382 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-23T17:14:03.762537+00:00 #8383 handoff: {"digest": "550bd59c1424afc04bad78633318d0dff8fae8670624c697f0d2d80e68883ac8", "files_observed": 188}
+- 2026-09-23T17:14:04.523893+00:00 #8384 closed: {}
+- 2026-09-24T03:31:02.597961+00:00 #8385 started: {"files_observed": 188}
+- 2026-09-24T03:31:06.458546+00:00 #8386 command_started: {"executable": "rg"}
+- 2026-09-24T03:31:07.596778+00:00 #8387 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:31:12.004830+00:00 #8388 command_started: {"executable": "rg"}
+- 2026-09-24T03:31:12.126222+00:00 #8389 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:31:16.803810+00:00 #8390 command_started: {"executable": "rg"}
+- 2026-09-24T03:31:33.213721+00:00 #8391 command_started: {"executable": "powershell"}
+- 2026-09-24T03:31:33.630818+00:00 #8392 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T03:31:34.182173+00:00 #8393 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:31:38.320472+00:00 #8394 command_started: {"executable": "powershell"}
+- 2026-09-24T03:31:38.571139+00:00 #8395 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:31:43.376118+00:00 #8396 command_started: {"executable": "rg"}
+- 2026-09-24T03:31:43.497886+00:00 #8397 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-24T03:31:47.909718+00:00 #8398 command_started: {"executable": "rg"}
+- 2026-09-24T03:31:48.179511+00:00 #8399 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:31:53.773402+00:00 #8400 command_started: {"executable": "powershell"}
+- 2026-09-24T03:31:55.377813+00:00 #8401 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:31:59.528255+00:00 #8402 command_started: {"executable": "rg"}
+- 2026-09-24T03:31:59.641960+00:00 #8403 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T03:32:04.647437+00:00 #8404 command_started: {"executable": "rg"}
+- 2026-09-24T03:32:04.889044+00:00 #8405 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:10.030143+00:00 #8406 command_started: {"executable": "rg"}
+- 2026-09-24T03:32:10.172190+00:00 #8407 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:16.397271+00:00 #8408 command_started: {"executable": "powershell"}
+- 2026-09-24T03:32:16.728381+00:00 #8409 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:21.062401+00:00 #8410 command_started: {"executable": "powershell"}
+- 2026-09-24T03:32:21.314238+00:00 #8411 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:27.578621+00:00 #8412 command_started: {"executable": "rg"}
+- 2026-09-24T03:32:27.737439+00:00 #8413 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:32.759307+00:00 #8414 command_started: {"executable": "powershell"}
+- 2026-09-24T03:32:33.018460+00:00 #8415 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:37.946437+00:00 #8416 command_started: {"executable": "rg"}
+- 2026-09-24T03:32:38.072055+00:00 #8417 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:44.339541+00:00 #8418 command_started: {"executable": "powershell"}
+- 2026-09-24T03:32:44.775314+00:00 #8419 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:50.244224+00:00 #8420 command_started: {"executable": "rg"}
+- 2026-09-24T03:32:50.356406+00:00 #8421 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:32:55.770996+00:00 #8422 command_started: {"executable": "rg"}
+- 2026-09-24T03:32:55.900134+00:00 #8423 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:33:01.684920+00:00 #8424 command_started: {"executable": "rg"}
+- 2026-09-24T03:33:01.794963+00:00 #8425 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:33:05.805337+00:00 #8426 command_started: {"executable": "rg"}
+- 2026-09-24T03:33:05.918673+00:00 #8427 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:33:11.162644+00:00 #8428 command_started: {"executable": "powershell"}
+- 2026-09-24T03:33:11.414844+00:00 #8429 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T03:33:18.245385+00:00 #8430 command_started: {"executable": "rg"}
+- 2026-09-24T03:33:18.362980+00:00 #8431 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T03:33:26.982870+00:00 #8432 handoff: {"digest": "4d159273998f36581ffc5fe232857c57f67961d05ab5b0568278b6728b34197a", "files_observed": 188}
+- 2026-09-24T03:33:30.436047+00:00 #8433 closed: {}
+- 2026-09-24T04:39:17.065982+00:00 #8434 started: {"files_observed": 188}
+- 2026-09-24T04:39:23.319442+00:00 #8435 command_started: {"executable": "rg"}
+- 2026-09-24T04:39:23.474190+00:00 #8436 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:39:28.272610+00:00 #8437 command_started: {"executable": "rg"}
+- 2026-09-24T04:39:28.417810+00:00 #8438 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:39:34.890988+00:00 #8439 command_started: {"executable": "powershell"}
+- 2026-09-24T04:39:35.170771+00:00 #8440 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:39:39.319886+00:00 #8441 command_started: {"executable": "powershell"}
+- 2026-09-24T04:39:39.558925+00:00 #8442 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:39:45.383703+00:00 #8443 command_started: {"executable": "rg"}
+- 2026-09-24T04:39:45.493259+00:00 #8444 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:39:49.476170+00:00 #8445 command_started: {"executable": "powershell"}
+- 2026-09-24T04:39:49.796319+00:00 #8446 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:04.226162+00:00 #8447 command_started: {"executable": "powershell"}
+- 2026-09-24T04:40:05.284961+00:00 #8448 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:10.447784+00:00 #8449 command_started: {"executable": "powershell"}
+- 2026-09-24T04:40:10.694820+00:00 #8450 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T04:40:16.138870+00:00 #8451 command_started: {"executable": "rg"}
+- 2026-09-24T04:40:17.752575+00:00 #8452 command_started: {"executable": "rg"}
+- 2026-09-24T04:40:17.829067+00:00 #8453 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T04:40:17.888789+00:00 #8454 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:23.376663+00:00 #8455 command_started: {"executable": "powershell"}
+- 2026-09-24T04:40:23.652195+00:00 #8456 command_started: {"executable": "rg"}
+- 2026-09-24T04:40:23.664205+00:00 #8457 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:23.801334+00:00 #8458 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:28.363820+00:00 #8459 command_started: {"executable": "powershell"}
+- 2026-09-24T04:40:28.632771+00:00 #8460 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:35.090216+00:00 #8461 command_started: {"executable": "rg"}
+- 2026-09-24T04:40:35.222759+00:00 #8462 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:38.844612+00:00 #8463 command_started: {"executable": "python.exe"}
+- 2026-09-24T04:40:39.001513+00:00 #8464 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T04:40:42.007275+00:00 #8465 command_started: {"executable": "powershell"}
+- 2026-09-24T04:40:42.446951+00:00 #8466 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:45.856981+00:00 #8467 command_started: {"executable": "py"}
+- 2026-09-24T04:40:46.120863+00:00 #8468 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:47.476978+00:00 #8469 command_started: {"executable": "powershell"}
+- 2026-09-24T04:40:47.750798+00:00 #8470 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:53.440285+00:00 #8471 command_started: {"executable": "python.exe"}
+- 2026-09-24T04:40:53.584090+00:00 #8472 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:53.632362+00:00 #8473 command_started: {"executable": "py"}
+- 2026-09-24T04:40:54.567172+00:00 #8474 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:40:58.248732+00:00 #8475 command_started: {"executable": "python.exe"}
+- 2026-09-24T04:40:58.394951+00:00 #8476 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:02.597141+00:00 #8477 command_started: {"executable": "py"}
+- 2026-09-24T04:41:05.293921+00:00 #8478 command_started: {"executable": "python.exe"}
+- 2026-09-24T04:41:05.438393+00:00 #8479 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:09.441157+00:00 #8480 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:13.953737+00:00 #8481 command_started: {"executable": "rg"}
+- 2026-09-24T04:41:14.061917+00:00 #8482 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:14.340059+00:00 #8483 command_started: {"executable": "powershell"}
+- 2026-09-24T04:41:14.614418+00:00 #8484 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:19.313668+00:00 #8485 command_started: {"executable": "powershell"}
+- 2026-09-24T04:41:19.558343+00:00 #8486 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:26.071534+00:00 #8487 command_started: {"executable": "rg"}
+- 2026-09-24T04:41:26.183133+00:00 #8488 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-24T04:41:27.175328+00:00 #8489 command_started: {"executable": "powershell"}
+- 2026-09-24T04:41:27.453690+00:00 #8490 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:31.820881+00:00 #8491 command_started: {"executable": "powershell"}
+- 2026-09-24T04:41:32.076411+00:00 #8492 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:37.238586+00:00 #8493 command_started: {"executable": "powershell"}
+- 2026-09-24T04:41:37.780347+00:00 #8494 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T04:41:45.297673+00:00 #8495 command_started: {"executable": "powershell"}
+- 2026-09-24T04:41:45.571249+00:00 #8496 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:41:47.177522+00:00 #8497 handoff: {"digest": "7a92811ea8b070e834eeeedb96c63a4f6ab85272f3d303a5cb01160ecfd759d9", "files_observed": 188}
+- 2026-09-24T04:41:50.088317+00:00 #8498 closed: {}
+- 2026-09-24T04:41:57.169794+00:00 #8499 started: {"files_observed": 188}
+- 2026-09-24T04:42:01.955074+00:00 #8500 command_started: {"executable": "rg"}
+- 2026-09-24T04:42:02.073809+00:00 #8501 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:42:12.423063+00:00 #8502 handoff: {"digest": "a01050b342600176f607c578a793b545c4c6c5e8f15e856577a220a9ba901570", "files_observed": 188}
+- 2026-09-24T04:42:15.742734+00:00 #8503 closed: {}
+- 2026-09-24T04:44:44.733813+00:00 #8504 started: {"files_observed": 188}
+- 2026-09-24T04:44:45.533183+00:00 #8505 command_started: {"executable": "curl.exe"}
+- 2026-09-24T04:44:45.926093+00:00 #8506 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:44:53.800814+00:00 #8507 handoff: {"digest": "486e6b3006e25d28a647d9ea288d43a8bdc2f92afc3854316396470eb2177ce0", "files_observed": 188}
+- 2026-09-24T04:44:54.358913+00:00 #8508 closed: {}
+- 2026-09-24T04:45:23.898815+00:00 #8509 started: {"files_observed": 188}
+- 2026-09-24T04:45:24.748117+00:00 #8510 command_started: {"executable": "powershell"}
+- 2026-09-24T04:45:24.999353+00:00 #8511 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T04:45:36.905380+00:00 #8512 command_started: {"executable": "powershell"}
+- 2026-09-24T04:45:37.152012+00:00 #8513 command_started: {"executable": "powershell"}
+- 2026-09-24T04:45:37.383938+00:00 #8514 command_started: {"executable": "curl.exe"}
+- 2026-09-24T04:45:37.544560+00:00 #8515 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:45:37.640056+00:00 #8516 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:45:38.651401+00:00 #8517 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:46:12.293409+00:00 #8518 handoff: {"digest": "cb692ac887fe1f7acfb9463479bab3157c2d08087bf05f3e666bb9dd7b008012", "files_observed": 188}
+- 2026-09-24T04:46:12.860087+00:00 #8519 closed: {}
+- 2026-09-24T04:54:09.651206+00:00 #8520 started: {"files_observed": 188}
+- 2026-09-24T04:54:10.518000+00:00 #8521 command_started: {"executable": "powershell"}
+- 2026-09-24T04:54:11.186028+00:00 #8522 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:54:17.542369+00:00 #8523 command_started: {"executable": "powershell"}
+- 2026-09-24T04:54:17.834939+00:00 #8524 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T04:54:29.036308+00:00 #8525 handoff: {"digest": "baddcb82bdb2d874d4c7b1de44e080eefb71eec3725d51dea3ba25bede0352a0", "files_observed": 188}
+- 2026-09-24T04:54:29.582021+00:00 #8526 closed: {}
+- 2026-09-24T05:01:59.273168+00:00 #8527 started: {"files_observed": 188}
+- 2026-09-24T05:02:00.127065+00:00 #8528 command_started: {"executable": "powershell"}
+- 2026-09-24T05:02:02.297728+00:00 #8529 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:02:09.746505+00:00 #8530 command_started: {"executable": "powershell"}
+- 2026-09-24T05:02:10.042448+00:00 #8531 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:02:17.731250+00:00 #8532 command_started: {"executable": "powershell"}
+- 2026-09-24T05:02:18.020010+00:00 #8533 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:02:30.184284+00:00 #8534 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:02:30.355876+00:00 #8535 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:02:42.984073+00:00 #8536 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:02:43.148014+00:00 #8537 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:02:53.915210+00:00 #8538 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:02:54.082235+00:00 #8539 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:03:04.714268+00:00 #8540 command_started: {"executable": "powershell"}
+- 2026-09-24T05:03:05.742001+00:00 #8541 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:03:16.944036+00:00 #8542 command_started: {"executable": "powershell"}
+- 2026-09-24T05:03:17.884028+00:00 #8543 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:03:18.678051+00:00 #8544 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:03:19.013608+00:00 #8545 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:03:35.402034+00:00 #8546 command_started: {"executable": "powershell"}
+- 2026-09-24T05:03:35.757755+00:00 #8547 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:03:44.258093+00:00 #8548 command_started: {"executable": "powershell"}
+- 2026-09-24T05:03:44.563043+00:00 #8549 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:03:47.821494+00:00 #8550 command_started: {"executable": "powershell"}
+- 2026-09-24T05:03:49.056734+00:00 #8551 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:03:53.979286+00:00 #8552 command_started: {"executable": "powershell"}
+- 2026-09-24T05:03:54.287314+00:00 #8553 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:04:03.751444+00:00 #8554 command_started: {"executable": "powershell"}
+- 2026-09-24T05:04:04.046020+00:00 #8555 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:04:14.662351+00:00 #8556 command_started: {"executable": "powershell"}
+- 2026-09-24T05:04:14.974474+00:00 #8557 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:04:26.559595+00:00 #8558 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:04:26.709327+00:00 #8559 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:04:31.282284+00:00 #8560 handoff: {"digest": "7ddfc8d607cafdbebf1ee78e9f7955bcdce61fb8f07596589974b6a4d6cdf744", "files_observed": 189}
+- 2026-09-24T05:04:31.816382+00:00 #8561 closed: {}
+- 2026-09-24T05:04:53.252923+00:00 #8562 started: {"files_observed": 189}
+- 2026-09-24T05:04:53.870553+00:00 #8563 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:04:54.023392+00:00 #8564 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:04:54.651454+00:00 #8565 command_started: {"executable": "powershell"}
+- 2026-09-24T05:04:54.917074+00:00 #8566 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:05:14.077174+00:00 #8567 command_started: {"executable": "powershell"}
+- 2026-09-24T05:05:14.541379+00:00 #8568 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:05:38.344235+00:00 #8569 command_started: {"executable": "powershell"}
+- 2026-09-24T05:05:38.602292+00:00 #8570 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:05:48.924889+00:00 #8571 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:05:49.173927+00:00 #8572 command_started: {"executable": "powershell"}
+- 2026-09-24T05:05:49.427398+00:00 #8573 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:05:49.621211+00:00 #8574 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:06:03.638821+00:00 #8575 command_started: {"executable": "powershell"}
+- 2026-09-24T05:06:06.006297+00:00 #8576 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:06:06.829093+00:00 #8577 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:06:07.602731+00:00 #8578 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:06:17.580558+00:00 #8579 command_started: {"executable": "powershell"}
+- 2026-09-24T05:06:17.903977+00:00 #8580 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:06:26.458543+00:00 #8581 command_started: {"executable": "powershell"}
+- 2026-09-24T05:06:26.793198+00:00 #8582 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:06:35.509607+00:00 #8583 command_started: {"executable": "powershell"}
+- 2026-09-24T05:06:35.756705+00:00 #8584 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:06:44.490899+00:00 #8585 command_started: {"executable": "powershell"}
+- 2026-09-24T05:06:46.851984+00:00 #8586 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:07:09.446407+00:00 #8587 command_started: {"executable": "powershell"}
+- 2026-09-24T05:07:09.843693+00:00 #8588 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:07:25.379571+00:00 #8589 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:07:25.536819+00:00 #8590 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:07:26.310845+00:00 #8591 handoff: {"digest": "074b4aa90d80e9fee0cfc9bca3860bd5f49b7682ef7669d20954ff7286c4d687", "files_observed": 189}
+- 2026-09-24T05:07:26.846768+00:00 #8592 closed: {}
+- 2026-09-24T05:10:16.716908+00:00 #8593 started: {"files_observed": 189}
+- 2026-09-24T05:10:17.502076+00:00 #8594 command_started: {"executable": "powershell"}
+- 2026-09-24T05:10:17.819152+00:00 #8595 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:10:25.458552+00:00 #8596 command_started: {"executable": "powershell"}
+- 2026-09-24T05:10:26.205950+00:00 #8597 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:10:33.713444+00:00 #8598 command_started: {"executable": "powershell"}
+- 2026-09-24T05:10:34.863403+00:00 #8599 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:10:44.507029+00:00 #8600 command_started: {"executable": "docker"}
+- 2026-09-24T05:10:46.144445+00:00 #8601 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:10:47.174301+00:00 #8602 command_started: {"executable": "powershell"}
+- 2026-09-24T05:10:47.557654+00:00 #8603 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:10:57.739087+00:00 #8604 command_started: {"executable": "powershell"}
+- 2026-09-24T05:10:59.773091+00:00 #8605 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:11:20.949876+00:00 #8606 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:11:21.118779+00:00 #8607 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:11:21.985497+00:00 #8608 command_started: {"executable": "powershell"}
+- 2026-09-24T05:11:22.333941+00:00 #8609 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:11:23.158871+00:00 #8610 command_started: {"executable": "hermes.exe"}
+- 2026-09-24T05:11:57.691388+00:00 #8611 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:12:09.046926+00:00 #8612 command_started: {"executable": "powershell"}
+- 2026-09-24T05:12:16.340295+00:00 #8613 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:12:48.200338+00:00 #8614 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:12:50.118364+00:00 #8615 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:13:01.057493+00:00 #8616 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:13:01.219214+00:00 #8617 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:13:01.933727+00:00 #8618 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:13:02.908554+00:00 #8619 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:13:17.024061+00:00 #8620 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:13:19.416199+00:00 #8621 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:13:34.012169+00:00 #8622 command_started: {"executable": "powershell"}
+- 2026-09-24T05:13:37.711055+00:00 #8623 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:14:09.283466+00:00 #8624 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:14:09.443508+00:00 #8625 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:14:10.225956+00:00 #8626 handoff: {"digest": "431809682a4e810345438ae0359436734170b7f390346191f37acff6a19c3e60", "files_observed": 189}
+- 2026-09-24T05:14:10.746268+00:00 #8627 closed: {}
+- 2026-09-24T05:22:05.999645+00:00 #8628 started: {"files_observed": 189}
+- 2026-09-24T05:22:15.953104+00:00 #8629 command_started: {"executable": "git"}
+- 2026-09-24T05:22:16.114696+00:00 #8630 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:16.240899+00:00 #8631 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:16.486024+00:00 #8632 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:16.521871+00:00 #8633 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:16.687088+00:00 #8634 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:16.835652+00:00 #8635 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:17.087111+00:00 #8636 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:34.631095+00:00 #8637 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:34.880631+00:00 #8638 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:34.924863+00:00 #8639 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:22:35.136498+00:00 #8640 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:35.172014+00:00 #8641 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:22:35.356783+00:00 #8642 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:35.403480+00:00 #8643 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:22:35.614980+00:00 #8644 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:22:47.038790+00:00 #8645 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:47.282751+00:00 #8646 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:47.338581+00:00 #8647 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:47.499664+00:00 #8648 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:47.567362+00:00 #8649 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:47.745035+00:00 #8650 command_started: {"executable": "powershell"}
+- 2026-09-24T05:22:47.789768+00:00 #8651 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:22:48.079802+00:00 #8652 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:09.071988+00:00 #8653 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:09.308661+00:00 #8654 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:09.362902+00:00 #8655 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:09.547886+00:00 #8656 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:09.606460+00:00 #8657 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:09.778783+00:00 #8658 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:09.833275+00:00 #8659 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:10.062648+00:00 #8660 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:23.103470+00:00 #8661 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:23.326158+00:00 #8662 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:23.405542+00:00 #8663 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:23.553051+00:00 #8664 command_started: {"executable": "powershell"}
+- 2026-09-24T05:23:23.615281+00:00 #8665 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:23:23.815918+00:00 #8666 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:24:42.799125+00:00 #8667 command_started: {"executable": "powershell"}
+- 2026-09-24T05:24:43.048322+00:00 #8668 command_started: {"executable": "powershell"}
+- 2026-09-24T05:24:43.098107+00:00 #8669 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:24:43.267500+00:00 #8670 command_started: {"executable": "powershell"}
+- 2026-09-24T05:24:43.338510+00:00 #8671 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:24:43.555738+00:00 #8672 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:25:37.368480+00:00 #8673 command_started: {"executable": "powershell"}
+- 2026-09-24T05:25:38.002434+00:00 #8674 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:25:47.867774+00:00 #8675 command_started: {"executable": "powershell"}
+- 2026-09-24T05:25:48.191869+00:00 #8676 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:25:59.572040+00:00 #8677 command_started: {"executable": "powershell"}
+- 2026-09-24T05:25:59.893408+00:00 #8678 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:26:10.861935+00:00 #8679 command_started: {"executable": "powershell"}
+- 2026-09-24T05:26:11.176220+00:00 #8680 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:26:24.083609+00:00 #8681 command_started: {"executable": "powershell"}
+- 2026-09-24T05:26:24.424834+00:00 #8682 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:26:32.247355+00:00 #8683 command_started: {"executable": "powershell"}
+- 2026-09-24T05:26:32.597269+00:00 #8684 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:26:41.834604+00:00 #8685 command_started: {"executable": "powershell"}
+- 2026-09-24T05:26:42.144788+00:00 #8686 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:26:57.520850+00:00 #8687 command_started: {"executable": "powershell"}
+- 2026-09-24T05:26:57.833506+00:00 #8688 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:27:08.491099+00:00 #8689 command_started: {"executable": "powershell"}
+- 2026-09-24T05:27:08.833510+00:00 #8690 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:27:19.330614+00:00 #8691 command_started: {"executable": "powershell"}
+- 2026-09-24T05:27:20.238905+00:00 #8692 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:27:30.224454+00:00 #8693 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:27:30.565945+00:00 #8694 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:27:37.953498+00:00 #8695 command_started: {"executable": "powershell"}
+- 2026-09-24T05:27:38.252551+00:00 #8696 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:27:53.213204+00:00 #8697 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:27:57.595939+00:00 #8698 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:28:25.880805+00:00 #8699 command_started: {"executable": "powershell"}
+- 2026-09-24T05:28:26.185346+00:00 #8700 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:28:32.344418+00:00 #8701 command_started: {"executable": "powershell"}
+- 2026-09-24T05:28:32.603997+00:00 #8702 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:30:15.274726+00:00 #8703 command_started: {"executable": "powershell"}
+- 2026-09-24T05:30:15.553820+00:00 #8704 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:30:35.038170+00:00 #8705 command_started: {"executable": "powershell"}
+- 2026-09-24T05:30:35.304750+00:00 #8706 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:31:13.468099+00:00 #8707 command_started: {"executable": "powershell"}
+- 2026-09-24T05:31:13.766221+00:00 #8708 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:32:02.204245+00:00 #8709 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:32:02.362228+00:00 #8710 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:32:58.672119+00:00 #8711 command_started: {"executable": "powershell"}
+- 2026-09-24T05:32:58.908686+00:00 #8712 command_started: {"executable": "powershell"}
+- 2026-09-24T05:32:58.912728+00:00 #8713 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:32:59.147779+00:00 #8714 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:33:26.673221+00:00 #8715 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:33:26.900351+00:00 #8716 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:33:26.901351+00:00 #8717 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:33:27.120472+00:00 #8718 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:33:27.120472+00:00 #8719 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:33:30.308317+00:00 #8720 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:33:36.013050+00:00 #8721 command_started: {"executable": "powershell"}
+- 2026-09-24T05:33:36.229772+00:00 #8722 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:33:36.283449+00:00 #8723 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:33:38.612728+00:00 #8724 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:33:47.607183+00:00 #8725 command_started: {"executable": "powershell"}
+- 2026-09-24T05:33:47.907730+00:00 #8726 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:33:51.677378+00:00 #8727 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:33:51.691024+00:00 #8728 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:33:51.867569+00:00 #8729 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:33:55.306345+00:00 #8730 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:34:00.432326+00:00 #8731 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:34:00.614193+00:00 #8732 command_finished: {"exit_code": 0, "changed": ["src/uuma/mcp_knowledge.py", "src/uuma/wisdom_topics.py"]}
+- 2026-09-24T05:34:13.456567+00:00 #8733 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:34:13.924337+00:00 #8734 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:34:22.665108+00:00 #8735 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:34:23.123703+00:00 #8736 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:34:37.470109+00:00 #8737 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:34:37.659415+00:00 #8738 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:34:57.772353+00:00 #8739 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:34:57.957728+00:00 #8740 command_finished: {"exit_code": 0, "changed": ["src/uuma/mcp_worker.py"]}
+- 2026-09-24T05:34:58.729145+00:00 #8741 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:35:03.222812+00:00 #8742 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:35:34.568309+00:00 #8743 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:35:34.789936+00:00 #8744 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:35:34.972799+00:00 #8745 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:35:36.150865+00:00 #8746 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:35:45.931518+00:00 #8747 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:35:46.119868+00:00 #8748 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:35:59.739687+00:00 #8749 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:35:59.967221+00:00 #8750 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:36:00.188831+00:00 #8751 command_started: {"executable": "powershell"}
+- 2026-09-24T05:36:00.539192+00:00 #8752 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:36:01.599900+00:00 #8753 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:36:02.472126+00:00 #8754 command_started: {"executable": "powershell"}
+- 2026-09-24T05:36:02.764141+00:00 #8755 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:36:07.382837+00:00 #8756 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:50:19.021910+00:00 #8757 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:50:23.828019+00:00 #8758 command_started: {"executable": "powershell"}
+- 2026-09-24T05:50:24.036632+00:00 #8759 command_started: {"executable": "powershell"}
+- 2026-09-24T05:50:24.076677+00:00 #8760 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:50:24.282336+00:00 #8761 command_started: {"executable": "git"}
+- 2026-09-24T05:50:24.333627+00:00 #8762 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:50:24.436650+00:00 #8763 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:50:24.756306+00:00 #8764 command_started: {"executable": "git"}
+- 2026-09-24T05:50:24.884350+00:00 #8765 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:50:42.417028+00:00 #8766 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:51:16.393661+00:00 #8767 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:51:16.682767+00:00 #8768 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:51:31.778789+00:00 #8769 command_started: {"executable": "powershell"}
+- 2026-09-24T05:51:32.048657+00:00 #8770 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:51:32.805631+00:00 #8771 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:51:33.160905+00:00 #8772 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:51:52.746784+00:00 #8773 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:52:22.629284+00:00 #8774 command_finished: {"exit_code": 0, "changed": ["docs/agents/wisdom-oldman.md", "docs/plans/question-orbit-engine-wisdom-oldman-deployment.md"]}
+- 2026-09-24T05:52:47.355532+00:00 #8775 command_started: {"executable": "powershell"}
+- 2026-09-24T05:52:48.984932+00:00 #8776 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:52:49.822699+00:00 #8777 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:52:59.405920+00:00 #8778 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:53:21.980658+00:00 #8779 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:53:25.866143+00:00 #8780 command_started: {"executable": "hermes.exe"}
+- 2026-09-24T05:53:26.694605+00:00 #8781 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:53:35.597800+00:00 #8782 command_started: {"executable": "powershell"}
+- 2026-09-24T05:53:35.890619+00:00 #8783 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:53:42.960039+00:00 #8784 command_started: {"executable": "powershell"}
+- 2026-09-24T05:53:43.225695+00:00 #8785 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:53:51.662834+00:00 #8786 command_started: {"executable": "powershell"}
+- 2026-09-24T05:53:51.810652+00:00 #8787 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:53:51.957482+00:00 #8788 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:01.368707+00:00 #8789 command_started: {"executable": "powershell"}
+- 2026-09-24T05:54:01.633056+00:00 #8790 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:19.579681+00:00 #8791 command_started: {"executable": "powershell"}
+- 2026-09-24T05:54:22.543610+00:00 #8792 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:54:24.167373+00:00 #8793 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:54:24.920965+00:00 #8794 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:54:25.107711+00:00 #8795 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:27.269112+00:00 #8796 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:48.819045+00:00 #8797 command_started: {"executable": "git"}
+- 2026-09-24T05:54:48.955525+00:00 #8798 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:49.007757+00:00 #8799 command_started: {"executable": "git"}
+- 2026-09-24T05:54:49.163773+00:00 #8800 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:49.228507+00:00 #8801 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:54:49.414132+00:00 #8802 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:54:52.558848+00:00 #8803 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:54:59.974188+00:00 #8804 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:00.305925+00:00 #8805 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:02.396135+00:00 #8806 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:11.199239+00:00 #8807 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:11.512417+00:00 #8808 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:12.550366+00:00 #8809 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:13.853554+00:00 #8810 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:24.045859+00:00 #8811 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:24.354347+00:00 #8812 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:26.403374+00:00 #8813 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:26.696243+00:00 #8814 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:34.725925+00:00 #8815 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:35.153109+00:00 #8816 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:55:43.437468+00:00 #8817 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:43.706224+00:00 #8818 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:55:54.912141+00:00 #8819 command_started: {"executable": "powershell"}
+- 2026-09-24T05:55:55.208394+00:00 #8820 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:56:02.336563+00:00 #8821 command_started: {"executable": "powershell"}
+- 2026-09-24T05:56:02.614935+00:00 #8822 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:56:08.431961+00:00 #8823 command_started: {"executable": "powershell"}
+- 2026-09-24T05:56:08.818602+00:00 #8824 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:56:23.628991+00:00 #8825 command_started: {"executable": "powershell"}
+- 2026-09-24T05:56:23.859839+00:00 #8826 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T05:56:59.274281+00:00 #8827 command_started: {"executable": "powershell"}
+- 2026-09-24T05:56:59.542021+00:00 #8828 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:57:05.839316+00:00 #8829 command_started: {"executable": "powershell"}
+- 2026-09-24T05:57:06.082693+00:00 #8830 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:57:06.102091+00:00 #8831 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:57:06.270524+00:00 #8832 command_finished: {"exit_code": 0, "changed": ["src/uuma/kag_lifecycle.py"]}
+- 2026-09-24T05:57:16.115153+00:00 #8833 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:57:53.264221+00:00 #8834 command_started: {"executable": "powershell"}
+- 2026-09-24T05:57:53.500178+00:00 #8835 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:58:14.551547+00:00 #8836 command_started: {"executable": "python.exe"}
+- 2026-09-24T05:58:19.801632+00:00 #8837 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:58:34.389284+00:00 #8838 command_started: {"executable": "powershell"}
+- 2026-09-24T05:58:34.585508+00:00 #8839 command_started: {"executable": "powershell"}
+- 2026-09-24T05:58:34.669772+00:00 #8840 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:58:34.805420+00:00 #8841 command_started: {"executable": "powershell"}
+- 2026-09-24T05:58:35.034916+00:00 #8842 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:58:36.346730+00:00 #8843 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:58:53.983783+00:00 #8844 command_started: {"executable": "powershell"}
+- 2026-09-24T05:58:56.390761+00:00 #8845 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:59:13.216858+00:00 #8846 command_started: {"executable": "powershell"}
+- 2026-09-24T05:59:21.272218+00:00 #8847 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:59:32.649425+00:00 #8848 command_finished: {"exit_code": 1, "changed": ["tests/test_kag_lifecycle.py", "tests/test_wisdom_topics.py"]}
+- 2026-09-24T05:59:46.514791+00:00 #8849 command_started: {"executable": "powershell"}
+- 2026-09-24T05:59:46.957768+00:00 #8850 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T05:59:48.200211+00:00 #8851 command_started: {"executable": "powershell"}
+- 2026-09-24T05:59:50.015178+00:00 #8852 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:00:01.206251+00:00 #8853 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:00:01.412882+00:00 #8854 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:00:13.961340+00:00 #8855 command_started: {"executable": "powershell"}
+- 2026-09-24T06:00:14.208052+00:00 #8856 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:00:17.621554+00:00 #8857 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:01:22.433443+00:00 #8858 command_started: {"executable": "powershell"}
+- 2026-09-24T06:01:22.706505+00:00 #8859 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:01:57.501137+00:00 #8860 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:01:57.749141+00:00 #8861 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:01:57.941366+00:00 #8862 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:01:58.004708+00:00 #8863 command_started: {"executable": "powershell"}
+- 2026-09-24T06:01:58.312091+00:00 #8864 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:02:02.830211+00:00 #8865 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:02:24.744744+00:00 #8866 command_finished: {"exit_code": 1, "changed": ["repomemory/findings.md", "rules/knowledge-runtime.md", "scripts/install-wisdom-view.ps1", "scripts/start-wisdom-view.ps1", "src/uuma/wisdom_view.py", "tests/test_kag_lifecycle.py", "tests/test_wisdom_topics.py"]}
+- 2026-09-24T06:02:27.909467+00:00 #8867 command_started: {"executable": "powershell"}
+- 2026-09-24T06:02:28.180407+00:00 #8868 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:02:57.066682+00:00 #8869 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:03:09.463481+00:00 #8870 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:03:54.087134+00:00 #8871 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:03:54.687290+00:00 #8872 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:03:55.432384+00:00 #8873 command_started: {"executable": "powershell"}
+- 2026-09-24T06:03:56.711940+00:00 #8874 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:04:26.265028+00:00 #8875 command_started: {"executable": "powershell"}
+- 2026-09-24T06:04:27.860105+00:00 #8876 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:04:28.472286+00:00 #8877 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:04:41.174570+00:00 #8878 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:05:01.724659+00:00 #8879 command_started: {"executable": "powershell"}
+- 2026-09-24T06:05:02.963436+00:00 #8880 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T06:05:19.466258+00:00 #8881 command_started: {"executable": "python.exe"}
+- 2026-09-24T06:05:42.163964+00:00 #8882 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:02:58.843651+00:00 #8883 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:02:59.050824+00:00 #8884 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:02:59.890212+00:00 #8885 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:03:00.667310+00:00 #8886 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:03:12.979653+00:00 #8887 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:03:13.166872+00:00 #8888 command_finished: {"exit_code": 0, "changed": ["tests/test_kag_lifecycle.py"]}
+- 2026-09-24T08:03:13.936464+00:00 #8889 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:03:16.073013+00:00 #8890 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:03:26.463324+00:00 #8891 command_started: {"executable": "powershell"}
+- 2026-09-24T08:03:27.196849+00:00 #8892 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:03:29.025761+00:00 #8893 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:03:35.390854+00:00 #8894 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:03:59.985951+00:00 #8895 command_finished: {"exit_code": 0, "changed": ["src/uuma/mcp_knowledge.py"]}
+- 2026-09-24T08:04:05.887524+00:00 #8896 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:04:15.174638+00:00 #8897 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:04:15.367540+00:00 #8898 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:04:15.909584+00:00 #8899 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:04:24.156695+00:00 #8900 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:04:32.134860+00:00 #8901 command_started: {"executable": "powershell"}
+- 2026-09-24T08:04:34.171617+00:00 #8902 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:04:45.757735+00:00 #8903 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:05:09.584939+00:00 #8904 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:05:10.519068+00:00 #8905 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:05:25.420325+00:00 #8906 command_finished: {"exit_code": 0, "changed": ["tests/test_kag_lifecycle.py"]}
+- 2026-09-24T08:06:03.325309+00:00 #8907 command_started: {"executable": "powershell"}
+- 2026-09-24T08:06:04.838213+00:00 #8908 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:06:05.842839+00:00 #8909 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:06:06.041808+00:00 #8910 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:06:06.823102+00:00 #8911 handoff: {"digest": "212457226e863b2bfae99c36466e725dfda14d4609ae7833d5ada68c83dfac85", "files_observed": 198}
+- 2026-09-24T08:06:07.602674+00:00 #8912 closed: {}
+- 2026-09-24T08:06:18.376553+00:00 #8913 started: {"files_observed": 198}
+- 2026-09-24T08:06:19.136385+00:00 #8914 command_started: {"executable": "powershell"}
+- 2026-09-24T08:06:19.429216+00:00 #8915 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:06:25.863664+00:00 #8916 command_started: {"executable": "powershell"}
+- 2026-09-24T08:06:26.457429+00:00 #8917 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:06:33.028163+00:00 #8918 command_started: {"executable": "powershell"}
+- 2026-09-24T08:06:33.301534+00:00 #8919 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:07:10.853451+00:00 #8920 command_started: {"executable": "powershell"}
+- 2026-09-24T08:07:11.125388+00:00 #8921 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:13:49.855104+00:00 #8922 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:13:55.382212+00:00 #8923 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:14:02.335393+00:00 #8924 command_started: {"executable": "powershell"}
+- 2026-09-24T08:14:02.590697+00:00 #8925 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:14:10.204297+00:00 #8926 command_started: {"executable": "powershell"}
+- 2026-09-24T08:14:10.561005+00:00 #8927 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:14:16.479294+00:00 #8928 command_started: {"executable": "powershell"}
+- 2026-09-24T08:14:19.247496+00:00 #8929 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:14:27.518791+00:00 #8930 command_started: {"executable": "powershell"}
+- 2026-09-24T08:14:30.772725+00:00 #8931 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:14:37.860865+00:00 #8932 command_started: {"executable": "powershell"}
+- 2026-09-24T08:14:39.622530+00:00 #8933 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:14:46.235231+00:00 #8934 command_started: {"executable": "powershell"}
+- 2026-09-24T08:15:11.875116+00:00 #8935 command_started: {"executable": "powershell"}
+- 2026-09-24T08:15:14.728412+00:00 #8936 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:15:33.885416+00:00 #8937 command_started: {"executable": "powershell"}
+- 2026-09-24T08:15:37.276961+00:00 #8938 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:15:45.339893+00:00 #8939 command_started: {"executable": "powershell"}
+- 2026-09-24T08:15:45.928827+00:00 #8940 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:15:52.982938+00:00 #8941 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:15:53.215038+00:00 #8942 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:16:01.788996+00:00 #8943 command_started: {"executable": "powershell"}
+- 2026-09-24T08:17:20.791480+00:00 #8944 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:17:21.112767+00:00 #8945 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:17:30.251751+00:00 #8946 command_started: {"executable": "powershell"}
+- 2026-09-24T08:17:30.562068+00:00 #8947 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:17:42.678780+00:00 #8948 command_started: {"executable": "powershell"}
+- 2026-09-24T08:17:43.007395+00:00 #8949 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:17:47.537919+00:00 #8950 command_started: {"executable": "powershell"}
+- 2026-09-24T08:17:50.582835+00:00 #8951 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:17:57.456918+00:00 #8952 command_started: {"executable": "powershell"}
+- 2026-09-24T08:17:59.849836+00:00 #8953 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:18:08.299985+00:00 #8954 command_started: {"executable": "powershell"}
+- 2026-09-24T08:18:08.549297+00:00 #8955 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:18:16.335555+00:00 #8956 command_started: {"executable": "powershell"}
+- 2026-09-24T08:18:24.210222+00:00 #8957 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:18:34.530889+00:00 #8958 command_started: {"executable": "powershell"}
+- 2026-09-24T08:18:37.650664+00:00 #8959 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:18:45.255159+00:00 #8960 command_started: {"executable": "powershell"}
+- 2026-09-24T08:18:47.695831+00:00 #8961 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:18:54.352747+00:00 #8962 command_started: {"executable": "powershell"}
+- 2026-09-24T08:18:55.850938+00:00 #8963 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:19:06.205718+00:00 #8964 command_started: {"executable": "powershell"}
+- 2026-09-24T08:19:09.164145+00:00 #8965 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:19:15.990035+00:00 #8966 command_started: {"executable": "powershell"}
+- 2026-09-24T08:19:16.300121+00:00 #8967 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:19:32.137760+00:00 #8968 command_started: {"executable": "powershell"}
+- 2026-09-24T08:19:32.424328+00:00 #8969 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:19:40.755498+00:00 #8970 command_started: {"executable": "powershell"}
+- 2026-09-24T08:19:41.016992+00:00 #8971 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:19:59.187899+00:00 #8972 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:02.246417+00:00 #8973 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:20:09.138300+00:00 #8974 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:11.504587+00:00 #8975 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:20:18.700242+00:00 #8976 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:18.999579+00:00 #8977 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:20:26.242271+00:00 #8978 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:26.522217+00:00 #8979 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:20:31.220062+00:00 #8980 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:31.477775+00:00 #8981 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:20:39.281271+00:00 #8982 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:39.535140+00:00 #8983 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:20:51.603605+00:00 #8984 command_started: {"executable": "powershell"}
+- 2026-09-24T08:20:51.855558+00:00 #8985 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:21:01.631332+00:00 #8986 command_started: {"executable": "powershell"}
+- 2026-09-24T08:21:01.901390+00:00 #8987 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:21:12.837183+00:00 #8988 command_started: {"executable": "hermes.exe"}
+- 2026-09-24T08:21:44.822648+00:00 #8989 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:22:05.518881+00:00 #8990 command_started: {"executable": "powershell"}
+- 2026-09-24T08:22:05.871386+00:00 #8991 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:22:12.271334+00:00 #8992 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:22:12.418386+00:00 #8993 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:22:19.482666+00:00 #8994 command_started: {"executable": "powershell"}
+- 2026-09-24T08:22:19.750393+00:00 #8995 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:22:31.815562+00:00 #8996 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:22:32.034693+00:00 #8997 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:22:32.228429+00:00 #8998 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T08:22:32.249058+00:00 #8999 command_started: {"executable": "powershell"}
+- 2026-09-24T08:22:32.515671+00:00 #9000 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:22:38.028283+00:00 #9001 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:22:46.281349+00:00 #9002 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:22:46.467392+00:00 #9003 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:22:52.906228+00:00 #9004 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:23:17.153011+00:00 #9005 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:23:39.150040+00:00 #9006 command_started: {"executable": "powershell"}
+- 2026-09-24T08:23:40.180754+00:00 #9007 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:23:45.778382+00:00 #9008 command_started: {"executable": "powershell"}
+- 2026-09-24T08:23:46.300889+00:00 #9009 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:24:11.336574+00:00 #9010 command_started: {"executable": "git"}
+- 2026-09-24T08:24:11.508098+00:00 #9011 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:24:11.573792+00:00 #9012 command_started: {"executable": "powershell"}
+- 2026-09-24T08:24:11.773873+00:00 #9013 command_started: {"executable": "python.exe"}
+- 2026-09-24T08:24:11.861516+00:00 #9014 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:24:11.974985+00:00 #9015 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T08:24:20.784525+00:00 #9016 handoff: {"digest": "3232f228f60331ee5a37b2cdd4d732b7a7185ccf18349123e12f22494c470ddb", "files_observed": 198}
+- 2026-09-24T08:24:27.064839+00:00 #9017 closed: {}
+- 2026-09-24T09:58:01.328393+00:00 #9018 started: {"files_observed": 198}
+- 2026-09-24T09:58:05.641152+00:00 #9019 command_started: {"executable": "rg"}
+- 2026-09-24T09:58:05.759831+00:00 #9020 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:58:11.231205+00:00 #9021 command_started: {"executable": "rg"}
+- 2026-09-24T09:58:11.365260+00:00 #9022 command_finished: {"exit_code": 2, "changed": []}
+- 2026-09-24T09:58:15.488620+00:00 #9023 command_started: {"executable": "Get-ChildItem"}
+- 2026-09-24T09:58:15.548495+00:00 #9024 command_interrupted: {"error": "FileNotFoundError"}
+- 2026-09-24T09:58:22.283539+00:00 #9025 command_started: {"executable": "powershell"}
+- 2026-09-24T09:58:22.544645+00:00 #9026 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:58:29.870119+00:00 #9027 command_started: {"executable": "powershell"}
+- 2026-09-24T09:58:30.143854+00:00 #9028 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:58:35.494866+00:00 #9029 command_started: {"executable": "rg"}
+- 2026-09-24T09:58:35.625878+00:00 #9030 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:58:41.083139+00:00 #9031 command_started: {"executable": "rg"}
+- 2026-09-24T09:58:41.230918+00:00 #9032 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:58:47.353508+00:00 #9033 command_started: {"executable": "powershell"}
+- 2026-09-24T09:58:47.655742+00:00 #9034 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:58:53.930919+00:00 #9035 command_started: {"executable": "rg"}
+- 2026-09-24T09:58:54.103300+00:00 #9036 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:02.106899+00:00 #9037 command_started: {"executable": "powershell"}
+- 2026-09-24T09:59:02.417139+00:00 #9038 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:08.449001+00:00 #9039 command_started: {"executable": "rg"}
+- 2026-09-24T09:59:08.572434+00:00 #9040 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:15.740591+00:00 #9041 command_started: {"executable": "powershell"}
+- 2026-09-24T09:59:16.075123+00:00 #9042 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:21.391712+00:00 #9043 command_started: {"executable": "rg"}
+- 2026-09-24T09:59:21.520837+00:00 #9044 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:32.278937+00:00 #9045 command_started: {"executable": "powershell"}
+- 2026-09-24T09:59:32.577912+00:00 #9046 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:41.046788+00:00 #9047 command_started: {"executable": "powershell"}
+- 2026-09-24T09:59:41.368580+00:00 #9048 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:51.026392+00:00 #9049 command_started: {"executable": "rg"}
+- 2026-09-24T09:59:51.218774+00:00 #9050 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T09:59:58.021861+00:00 #9051 command_started: {"executable": "powershell"}
+- 2026-09-24T09:59:58.293249+00:00 #9052 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T10:00:03.815716+00:00 #9053 command_started: {"executable": "powershell"}
+- 2026-09-24T10:00:04.133954+00:00 #9054 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-24T10:00:09.262795+00:00 #9055 command_started: {"executable": "curl.exe"}
+- 2026-09-24T10:00:11.442841+00:00 #9056 command_finished: {"exit_code": 7, "changed": []}
+- 2026-09-24T10:00:20.790027+00:00 #9057 command_started: {"executable": "rg"}
+- 2026-09-24T10:00:20.922980+00:00 #9058 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T10:00:26.453422+00:00 #9059 command_started: {"executable": "rg"}
+- 2026-09-24T10:00:26.576300+00:00 #9060 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-24T10:00:32.595873+00:00 #9061 handoff: {"digest": "1edd64bf5287bd87411d4a2c69565d18660c0101c318b88200f686cc0da15bcf", "files_observed": 198}
+- 2026-09-24T10:00:36.549320+00:00 #9062 closed: {}
+- 2026-09-25T08:04:56.306119+00:00 #9063 started: {"files_observed": 198}
+- 2026-09-25T08:04:57.225139+00:00 #9064 command_started: {"executable": "powershell"}
+- 2026-09-25T08:04:58.076782+00:00 #9065 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:05:08.718298+00:00 #9066 command_started: {"executable": "powershell"}
+- 2026-09-25T08:05:09.055195+00:00 #9067 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:05:19.757892+00:00 #9068 command_started: {"executable": "powershell"}
+- 2026-09-25T08:05:20.049897+00:00 #9069 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:05:24.896399+00:00 #9070 command_started: {"executable": "powershell"}
+- 2026-09-25T08:05:25.205627+00:00 #9071 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:05:35.657490+00:00 #9072 handoff: {"digest": "56e4d54fda8cce5659567909b85c4bbc14fc0ab14ac6344ae88f3fb314dd9ecf", "files_observed": 198}
+- 2026-09-25T08:05:36.424926+00:00 #9073 closed: {}
+- 2026-09-25T08:05:47.147113+00:00 #9074 started: {"files_observed": 198}
+- 2026-09-25T08:05:47.727474+00:00 #9075 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:05:48.034784+00:00 #9076 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:06:13.685695+00:00 #9077 command_started: {"executable": "powershell"}
+- 2026-09-25T08:06:17.984434+00:00 #9078 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:06:18.575713+00:00 #9079 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:06:19.882981+00:00 #9080 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:06:45.223751+00:00 #9081 command_started: {"executable": "powershell"}
+- 2026-09-25T08:06:45.473922+00:00 #9082 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:04.278082+00:00 #9083 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:07:04.498090+00:00 #9084 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:07:05.268816+00:00 #9085 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:06.766517+00:00 #9086 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:15.320869+00:00 #9087 command_started: {"executable": "powershell"}
+- 2026-09-25T08:07:18.642647+00:00 #9088 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:19.283158+00:00 #9089 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:07:20.077740+00:00 #9090 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:44.584391+00:00 #9091 command_started: {"executable": "powershell"}
+- 2026-09-25T08:07:44.918262+00:00 #9092 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:50.941561+00:00 #9093 command_started: {"executable": "powershell"}
+- 2026-09-25T08:07:51.222418+00:00 #9094 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:07:52.029045+00:00 #9095 handoff: {"digest": "8d150d623b4aa656eb15206a54c32c0fca26a271325895c1c293dd4b17218cca", "files_observed": 198}
+- 2026-09-25T08:07:52.741680+00:00 #9096 closed: {}
+- 2026-09-25T08:07:52.757412+00:00 #9097 command_started: {"executable": "powershell"}
+- 2026-09-25T08:07:53.026358+00:00 #9098 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:08:04.986712+00:00 #9099 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:08:05.151416+00:00 #9100 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:08:13.431614+00:00 #9101 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:08:13.598909+00:00 #9102 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:08:21.421103+00:00 #9103 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:08:21.589166+00:00 #9104 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:08:30.974484+00:00 #9105 handoff: {"digest": "fb8db49b90bb0dd7d9e494d827b3d12433947bd942098bedd7a9fd243747b109", "files_observed": 198}
+- 2026-09-25T08:08:31.530879+00:00 #9106 closed: {}
+- 2026-09-25T08:12:01.329865+00:00 #9107 started: {"files_observed": 198}
+- 2026-09-25T08:12:11.200999+00:00 #9108 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:12:11.341817+00:00 #9109 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:12:24.828449+00:00 #9110 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:12:24.988391+00:00 #9111 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:12:36.478577+00:00 #9112 command_started: {"executable": "powershell"}
+- 2026-09-25T08:12:36.774588+00:00 #9113 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:12:46.216968+00:00 #9114 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:12:46.374678+00:00 #9115 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:12:57.860715+00:00 #9116 command_started: {"executable": "powershell"}
+- 2026-09-25T08:12:58.144252+00:00 #9117 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:13:20.047746+00:00 #9118 command_started: {"executable": "powershell"}
+- 2026-09-25T08:13:21.297194+00:00 #9119 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:13:27.671349+00:00 #9120 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:13:27.838092+00:00 #9121 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:13:39.399137+00:00 #9122 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:13:39.573188+00:00 #9123 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:13:39.631024+00:00 #9124 command_started: {"executable": "powershell"}
+- 2026-09-25T08:13:39.838543+00:00 #9125 command_started: {"executable": "powershell"}
+- 2026-09-25T08:13:40.128241+00:00 #9126 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:13:41.634408+00:00 #9127 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:13:53.068977+00:00 #9128 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:13:53.213246+00:00 #9129 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:13:53.327570+00:00 #9130 command_started: {"executable": "powershell"}
+- 2026-09-25T08:13:53.501458+00:00 #9131 command_started: {"executable": "powershell"}
+- 2026-09-25T08:13:53.593432+00:00 #9132 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:13:53.770818+00:00 #9133 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:01.914835+00:00 #9134 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:14:02.093205+00:00 #9135 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:08.732390+00:00 #9136 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:14:08.899578+00:00 #9137 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:12.246837+00:00 #9138 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:12.472723+00:00 #9139 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:12.513765+00:00 #9140 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:12.725153+00:00 #9141 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:12.780236+00:00 #9142 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:12.998119+00:00 #9143 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:21.804018+00:00 #9144 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:21.996118+00:00 #9145 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:22.092193+00:00 #9146 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:22.254454+00:00 #9147 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:22.313013+00:00 #9148 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:22.479787+00:00 #9149 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:22.546812+00:00 #9150 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:22.744707+00:00 #9151 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:22.748210+00:00 #9152 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:22.927733+00:00 #9153 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:14:23.091459+00:00 #9154 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:23.095459+00:00 #9155 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:23.145073+00:00 #9156 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:23.432422+00:00 #9157 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:32.750791+00:00 #9158 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:32.985087+00:00 #9159 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:33.018182+00:00 #9160 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:33.212283+00:00 #9161 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:33.267874+00:00 #9162 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:33.421126+00:00 #9163 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:33.497269+00:00 #9164 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:33.688195+00:00 #9165 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:34.447205+00:00 #9166 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:34.691886+00:00 #9167 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:34.727033+00:00 #9168 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:34.920286+00:00 #9169 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:34.995372+00:00 #9170 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:35.177991+00:00 #9171 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:41.029762+00:00 #9172 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:41.314435+00:00 #9173 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:41.592493+00:00 #9174 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:41.869412+00:00 #9175 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:47.169824+00:00 #9176 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:47.489985+00:00 #9177 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:49.956093+00:00 #9178 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:50.230595+00:00 #9179 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:53.949600+00:00 #9180 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:14:54.343148+00:00 #9181 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:14:56.033183+00:00 #9182 command_started: {"executable": "powershell"}
+- 2026-09-25T08:14:56.428180+00:00 #9183 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:02.490549+00:00 #9184 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:02.737730+00:00 #9185 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:02.770016+00:00 #9186 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:15:03.011806+00:00 #9187 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:03.539505+00:00 #9188 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:03.844401+00:00 #9189 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:05.075360+00:00 #9190 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:05.266555+00:00 #9191 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:09.671641+00:00 #9192 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:09.991254+00:00 #9193 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:15.498871+00:00 #9194 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:15.722332+00:00 #9195 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:15.740695+00:00 #9196 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:15.937222+00:00 #9197 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:16.018338+00:00 #9198 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:16.214689+00:00 #9199 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:19.536492+00:00 #9200 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:19.809334+00:00 #9201 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:20.962825+00:00 #9202 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:21.128393+00:00 #9203 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:26.778246+00:00 #9204 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:27.029766+00:00 #9205 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:32.097503+00:00 #9206 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:32.369139+00:00 #9207 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:32.730326+00:00 #9208 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:32.965901+00:00 #9209 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:32.966902+00:00 #9210 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:33.188384+00:00 #9211 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:33.257192+00:00 #9212 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:33.480351+00:00 #9213 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:40.899970+00:00 #9214 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:41.130429+00:00 #9215 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:15:45.297184+00:00 #9216 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:45.563216+00:00 #9217 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:47.277541+00:00 #9218 command_started: {"executable": "powershell"}
+- 2026-09-25T08:15:50.939074+00:00 #9219 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:50.976707+00:00 #9220 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:52.722957+00:00 #9221 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:53.531242+00:00 #9222 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:53.734095+00:00 #9223 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:15:57.314038+00:00 #9224 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:15:58.201736+00:00 #9225 command_finished: {"exit_code": 0, "changed": ["src/uuma/wisdom_topics.py"]}
+- 2026-09-25T08:16:04.347342+00:00 #9226 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:04.632593+00:00 #9227 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:16:11.695126+00:00 #9228 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:12.006381+00:00 #9229 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:16:19.422432+00:00 #9230 handoff: {"digest": "de33ef69b9c7f3ce705d61506a9e5a8f93dc130f53259eae92fa1944d5dbf992", "files_observed": 199}
+- 2026-09-25T08:16:20.166026+00:00 #9231 closed: {}
+- 2026-09-25T08:16:27.852047+00:00 #9232 started: {"files_observed": 199}
+- 2026-09-25T08:16:34.118624+00:00 #9233 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:34.527518+00:00 #9234 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:16:35.583015+00:00 #9235 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:35.847532+00:00 #9236 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:16:46.943410+00:00 #9237 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:16:47.111682+00:00 #9238 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:16:47.781260+00:00 #9239 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:48.041538+00:00 #9240 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:16:53.726657+00:00 #9241 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:54.018386+00:00 #9242 command_finished: {"exit_code": 0, "changed": ["tests/test_wisdom_topics.py"]}
+- 2026-09-25T08:16:59.083016+00:00 #9243 command_started: {"executable": "powershell"}
+- 2026-09-25T08:16:59.341235+00:00 #9244 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:00.886605+00:00 #9245 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:17:00.900111+00:00 #9246 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:17:01.083180+00:00 #9247 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:17:03.743542+00:00 #9248 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:04.977648+00:00 #9249 command_started: {"executable": "hermes.exe"}
+- 2026-09-25T08:17:21.102263+00:00 #9250 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:17:21.574903+00:00 #9251 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:33.824161+00:00 #9252 command_started: {"executable": "powershell"}
+- 2026-09-25T08:17:33.826160+00:00 #9253 command_started: {"executable": "powershell"}
+- 2026-09-25T08:17:33.825160+00:00 #9254 command_started: {"executable": "powershell"}
+- 2026-09-25T08:17:33.847273+00:00 #9255 command_started: {"executable": "powershell"}
+- 2026-09-25T08:17:34.123162+00:00 #9256 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:34.129162+00:00 #9257 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:34.147672+00:00 #9258 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:34.382252+00:00 #9259 command_finished: {"exit_code": 0, "changed": ["tests/test_wisdom_topics.py"]}
+- 2026-09-25T08:17:39.349093+00:00 #9260 command_started: {"executable": "hermes.exe"}
+- 2026-09-25T08:17:42.905941+00:00 #9261 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:17:52.436614+00:00 #9262 handoff: {"digest": "358941733766024e9c173de8c238a1a5fb049ca2cb672603f3b4ab10b64b363e", "files_observed": 199}
+- 2026-09-25T08:17:53.003410+00:00 #9263 closed: {}
+- 2026-09-25T08:18:05.464117+00:00 #9264 started: {"files_observed": 199}
+- 2026-09-25T08:18:09.327370+00:00 #9265 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:18:09.566444+00:00 #9266 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:18:16.102843+00:00 #9267 command_started: {"executable": "powershell"}
+- 2026-09-25T08:18:16.114109+00:00 #9268 command_started: {"executable": "powershell"}
+- 2026-09-25T08:18:16.119700+00:00 #9269 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:18:16.299228+00:00 #9270 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:18:16.359026+00:00 #9271 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:18:16.363533+00:00 #9272 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:18:22.210376+00:00 #9273 command_started: {"executable": "powershell"}
+- 2026-09-25T08:18:25.659360+00:00 #9274 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:18:29.628784+00:00 #9275 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:18:29.888082+00:00 #9276 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:18:37.246174+00:00 #9277 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:18:37.262267+00:00 #9278 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:18:37.434458+00:00 #9279 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:19:02.264196+00:00 #9280 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:19:09.446904+00:00 #9281 command_started: {"executable": "powershell"}
+- 2026-09-25T08:19:09.706416+00:00 #9282 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:19:43.713984+00:00 #9283 command_started: {"executable": "powershell"}
+- 2026-09-25T08:19:43.962814+00:00 #9284 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:19:59.950640+00:00 #9285 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:19:59.976152+00:00 #9286 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:20:00.184811+00:00 #9287 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:20:02.877377+00:00 #9288 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:20:18.282383+00:00 #9289 command_started: {"executable": "powershell"}
+- 2026-09-25T08:20:18.877846+00:00 #9290 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:20:27.105634+00:00 #9291 command_started: {"executable": "powershell"}
+- 2026-09-25T08:20:27.684438+00:00 #9292 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:20:33.525185+00:00 #9293 command_started: {"executable": "powershell"}
+- 2026-09-25T08:20:33.776908+00:00 #9294 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:20:47.090998+00:00 #9295 command_started: {"executable": "powershell"}
+- 2026-09-25T08:20:47.987121+00:00 #9296 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:20:54.012446+00:00 #9297 command_started: {"executable": "powershell"}
+- 2026-09-25T08:20:54.259036+00:00 #9298 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:20:59.243398+00:00 #9299 command_started: {"executable": "powershell"}
+- 2026-09-25T08:20:59.827897+00:00 #9300 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:21:07.932265+00:00 #9301 command_started: {"executable": "powershell"}
+- 2026-09-25T08:21:09.427431+00:00 #9302 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:21:19.284018+00:00 #9303 command_started: {"executable": "powershell"}
+- 2026-09-25T08:21:21.062679+00:00 #9304 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:21:30.935601+00:00 #9305 command_started: {"executable": "powershell"}
+- 2026-09-25T08:21:32.995705+00:00 #9306 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:21:41.031223+00:00 #9307 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:21:41.846381+00:00 #9308 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:21:46.818858+00:00 #9309 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:21:49.644030+00:00 #9310 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:21:53.915968+00:00 #9311 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:22:12.611883+00:00 #9312 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:22:19.324519+00:00 #9313 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:22:19.339521+00:00 #9314 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:22:19.345521+00:00 #9315 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:22:19.576787+00:00 #9316 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:22:22.997195+00:00 #9317 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:22:45.551825+00:00 #9318 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:22:55.687191+00:00 #9319 command_started: {"executable": "powershell"}
+- 2026-09-25T08:22:55.707206+00:00 #9320 command_started: {"executable": "powershell"}
+- 2026-09-25T08:22:55.707206+00:00 #9321 command_started: {"executable": "powershell"}
+- 2026-09-25T08:22:55.950497+00:00 #9322 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:22:55.951501+00:00 #9323 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:22:56.602943+00:00 #9324 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:23:02.343438+00:00 #9325 command_started: {"executable": "powershell"}
+- 2026-09-25T08:23:02.613062+00:00 #9326 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:23:41.618233+00:00 #9327 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:23:41.631741+00:00 #9328 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:23:41.823522+00:00 #9329 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:24:07.611477+00:00 #9330 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:24:12.028161+00:00 #9331 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:24:37.117202+00:00 #9332 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:24:44.810948+00:00 #9333 handoff: {"digest": "4f9afdd1644c4406dbca545bb0ca463b5214257e6921a324851cfd9a43700d8c", "files_observed": 199}
+- 2026-09-25T08:24:50.424301+00:00 #9334 closed: {}
+- 2026-09-25T08:26:46.001063+00:00 #9335 started: {"files_observed": 199}
+- 2026-09-25T08:26:53.763960+00:00 #9336 command_started: {"executable": "powershell"}
+- 2026-09-25T08:26:53.779471+00:00 #9337 command_started: {"executable": "powershell"}
+- 2026-09-25T08:26:54.018981+00:00 #9338 command_finished: {"exit_code": 1, "changed": []}
+- 2026-09-25T08:26:54.052493+00:00 #9339 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:26:59.858126+00:00 #9340 command_started: {"executable": "powershell"}
+- 2026-09-25T08:27:00.167562+00:00 #9341 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:27:05.835307+00:00 #9342 command_started: {"executable": "powershell"}
+- 2026-09-25T08:27:06.159721+00:00 #9343 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:27:10.923281+00:00 #9344 command_started: {"executable": "powershell"}
+- 2026-09-25T08:27:11.219897+00:00 #9345 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:27:16.651359+00:00 #9346 command_started: {"executable": "powershell"}
+- 2026-09-25T08:27:16.956341+00:00 #9347 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:27:24.443985+00:00 #9348 handoff: {"digest": "23e9665196313c812050973a501f13bd04094649f25381a582f3c3fdb774981e", "files_observed": 199}
+- 2026-09-25T08:27:25.006986+00:00 #9349 closed: {}
+- 2026-09-25T08:31:02.443428+00:00 #9350 started: {"files_observed": 199}
+- 2026-09-25T08:31:08.605755+00:00 #9351 command_started: {"executable": "powershell"}
+- 2026-09-25T08:31:08.880347+00:00 #9352 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:31:19.010373+00:00 #9353 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:31:19.174193+00:00 #9354 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:31:29.778771+00:00 #9355 command_started: {"executable": "powershell"}
+- 2026-09-25T08:31:29.784772+00:00 #9356 command_started: {"executable": "powershell"}
+- 2026-09-25T08:31:30.054075+00:00 #9357 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:31:30.422005+00:00 #9358 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:31:46.901570+00:00 #9359 command_started: {"executable": "powershell"}
+- 2026-09-25T08:31:47.174886+00:00 #9360 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:33:32.102072+00:00 #9361 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:33:32.487832+00:00 #9362 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:34:10.066481+00:00 #9363 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:34:13.872694+00:00 #9364 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:34:24.740265+00:00 #9365 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:34:24.746266+00:00 #9366 command_started: {"executable": "powershell"}
+- 2026-09-25T08:34:24.941033+00:00 #9367 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:34:25.025422+00:00 #9368 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:34:45.710514+00:00 #9369 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:34:45.908864+00:00 #9370 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:35:01.454959+00:00 #9371 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:35:01.458958+00:00 #9372 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:35:01.688363+00:00 #9373 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:35:27.683893+00:00 #9374 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T08:35:41.542588+00:00 #9375 command_started: {"executable": "python.exe"}
+- 2026-09-25T08:35:43.599307+00:00 #9376 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:26:24.646559+00:00 #9377 command_started: {"executable": "powershell"}
+- 2026-09-25T13:26:25.180320+00:00 #9378 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:26:51.184670+00:00 #9379 command_started: {"executable": "powershell"}
+- 2026-09-25T13:26:51.416220+00:00 #9380 command_started: {"executable": "powershell"}
+- 2026-09-25T13:26:51.477746+00:00 #9381 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:26:51.711519+00:00 #9382 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:27:26.630843+00:00 #9383 command_started: {"executable": "powershell"}
+- 2026-09-25T13:27:26.962527+00:00 #9384 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:27:35.269396+00:00 #9385 command_started: {"executable": "powershell"}
+- 2026-09-25T13:27:35.604966+00:00 #9386 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:29:05.480476+00:00 #9387 command_started: {"executable": "powershell"}
+- 2026-09-25T13:29:05.688431+00:00 #9388 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:29:46.870642+00:00 #9389 command_started: {"executable": "powershell"}
+- 2026-09-25T13:29:47.279910+00:00 #9390 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:30:10.743780+00:00 #9391 command_started: {"executable": "powershell"}
+- 2026-09-25T13:30:11.246133+00:00 #9392 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:30:41.793609+00:00 #9393 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:30:41.938456+00:00 #9394 command_finished: {"exit_code": 0, "changed": ["tests/test_wisdom_topics.py"]}
+- 2026-09-25T13:30:54.845479+00:00 #9395 command_started: {"executable": "powershell"}
+- 2026-09-25T13:30:55.120326+00:00 #9396 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:31:56.220500+00:00 #9397 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:31:56.636090+00:00 #9398 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:31:56.837467+00:00 #9399 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:31:57.640108+00:00 #9400 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:32:02.291083+00:00 #9401 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:32:22.248908+00:00 #9402 command_started: {"executable": "powershell"}
+- 2026-09-25T13:32:22.671600+00:00 #9403 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:32:33.125482+00:00 #9404 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:32:48.257564+00:00 #9405 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:32:48.853738+00:00 #9406 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:33:07.994868+00:00 #9407 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:33:08.164722+00:00 #9408 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:33:13.167436+00:00 #9409 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:33:13.169436+00:00 #9410 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:33:13.326374+00:00 #9411 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:33:37.922224+00:00 #9412 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:33:42.507483+00:00 #9413 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:33:42.691646+00:00 #9414 command_finished: {"exit_code": 0, "changed": []}
+- 2026-09-25T13:33:50.623854+00:00 #9415 command_started: {"executable": "python.exe"}
+- 2026-09-25T13:34:05.324411+00:00 #9416 handoff: {"digest": "ab0fa7761959894111e2553b37098cf222ea0503db0c950d9d466dd58f6ea535", "files_observed": 199}
+- 2026-09-25T13:34:25.664194+00:00 #9417 closed: {}
+- 2026-09-25T13:34:36.257029+00:00 #9418 command_finished: {"exit_code": 0, "changed": []}

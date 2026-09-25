@@ -579,7 +579,7 @@ Exposes lab status, inventory shortages, approval requests, procurement options,
 
 ## 21. Open design work
 
-- Define the Notion bidirectional sync / webhook connector for real-time human journal sync.
+- Define the reviewed conflict-resolution action for the active Forge Journal transport.
 - Define substitute approval rules and equivalence scopes.
 - Define multi-vendor procurement offer normalization and trust rating algorithms.
 - Define safety-critical action and automated rule-approval policies with orchestrator escalation.
@@ -597,9 +597,9 @@ The following table records the canonical mapping between the nine `forge_lab_sk
 | **Build Traceability** | `lab-build-traceability` | `builds` | `lab_create_build`, `lab_list_builds`, `lab_update_build_status` |
 | **As-Built** | `lab-as-built` | `builds`, `inventory_events` | `lab_get_current_as_built`, `inventory_transition` |
 | **Commissioning** | `lab-commissioning` | `commissioning_records` | `lab_record_commissioning`, `lab_list_commissioning` |
-| **Worklog** | `lab-worklog` | `worklog_records` | `lab_record_worklog`, `lab_list_worklogs` |
+| **Worklog & Journal Sync** | `lab-worklog` | `worklog_records`, `forge_journal_pages`, `forge_journal_sync_jobs`, `forge_journal_sync_events`, `forge_journal_notifications` | `lab_record_worklog`, `lab_list_worklogs`, `lab_journal_register_snapshot`, `lab_journal_queue_write`, `lab_journal_claim_write`, `lab_journal_finish_write`, `lab_journal_request_resync`, `lab_journal_sync_status`, `lab_journal_list_events`, `lab_journal_list_notifications` |
 | **Failure Analysis** | `lab-failure-analysis` | `failure_records` | `lab_record_failure`, `lab_list_failures`, `inventory_transition` |
-| **Engineering Lessons** | `lab-engineering-lessons` | `engineering_lessons` | `lab_propose_lesson`, `lab_list_lessons`, `lab_update_lesson_status` |
+| **Engineering Lessons** | `lab-engineering-lessons` | `engineering_lessons` | `lab_propose_lesson`, `lab_list_lessons`, `lab_update_lesson_status` (candidate-only for LAB_BOT) |
 | **eSchematic Bridge** | `eschematic-bridge` | `design_feedback_proposals` + external eSchematic | `eschematic_get_component`, `eschematic_list_components`, `eschematic_find_components`, `eschematic_commit_candidate`, `eschematic_normalize_bom`, `eschematic_export_design_manifest`, `eschematic_validate_circuit`, `eschematic_check_electrical_rules`, `eschematic_submit_design_feedback`, `eschematic_list_design_feedback` |
 
 ## 23. Architecture Status and Roadmap Baseline (2026-09 Consolidation)
@@ -629,7 +629,7 @@ This section formally records the status review and user decisions from the cano
 | 外部感知与执行能力 | 战略定位 | 当前进度 | 实施决议 |
 |---|---|:---:|---|
 | **“眼”：元器件视觉辨识（Vision Part Resolver）** | 拍照看形状/丝印识别元器件 | 0% | **暂缓（Deferred）**：暂不进行多模态/OCR 丝印识别开发，依赖文本 MPN 与别名维护。 |
-| **“耳目”：Notion 实时双向同步（Live Notion Connector）** | 实时拉取与回写 Notion 实验日志 | 0% | **暂缓（Deferred）**：暂不进行 Notion API 与实时 Webhook 对接，当前以本地结构化 Worklog 为准。 |
+| **“耳目”：Notion 事件驱动同步（Notion Connector）** | 聊天捕获后回写并对账 Notion 实验日志 | 90% | **Phase 2 active**：LAB_BOT 通过对话判断 Problem / Experiment / Repair / Build，补问缺失事实，再建立本地 worklog 和 Notion queue；每次入队唤醒一次 OpenClaw transport，完成 queue、通知与对账后退出。定时轮询与 watchdog 已移除；剩余人工冲突解决动作。 |
 | **“手”：采购比价与寻源引擎（Procurement Engine）** | 缺料搜索、多平台比价、店铺打包优化 | 90% | **方案 C 核心就绪（Phase 1 + Chrome Crawler Delivered）**：数据模型、寻源需求、关键词规则、报价快照、多策略比价（最低到手价/单店打包/自制替代）、下单批次闭环以及基于本地真实 Chrome 持久会话的淘宝/1688 自动抓取与人机滑块兜底引擎已全部落地。 |
 
 ## 24. Procurement Engine Design Blueprint (手 - 采购引擎规划)
@@ -658,5 +658,3 @@ BOM Shortage / User Need
 5. Direct Link Comparison Matrix (Clickable URLs for Human Checkout)
    - Hard boundary: STRICTLY RESTRICTED FROM MAKING PAYMENT (human-only final payment)
 ```
-
-

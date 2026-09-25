@@ -84,6 +84,15 @@ class KnowledgeService:
         "reasoning_traces": "reasoning_trace",
         "question_orbits": "question_orbit",
         "orbit_frontier": "frontier_item",
+        "orbit_cycles": "orbit_cycle",
+        "discovery_usage": "discovery_usage",
+        "orbit_notifications": "orbit_notification",
+        "knowledge_topics": "knowledge_topic",
+        "topic_question_links": "topic_question_link",
+        "topic_knowledge_links": "topic_knowledge_link",
+        "topic_documents": "topic_document",
+        "topic_document_versions": "topic_document_version",
+        "topic_routes": "topic_route",
     }
 
     def __init__(self, database_path: str | Path) -> None:
@@ -719,6 +728,17 @@ class KnowledgeService:
             "conflict_": "conflicts",
             "patch_": "patches",
             "research_": "research_runs",
+            "orbit_": "question_orbits",
+            "frontier_": "orbit_frontier",
+            "cycle_": "orbit_cycles",
+            "usage_": "discovery_usage",
+            "notice_": "orbit_notifications",
+            "topic_": "knowledge_topics",
+            "tqlink_": "topic_question_links",
+            "tklink_": "topic_knowledge_links",
+            "topicdoc_": "topic_documents",
+            "topicver_": "topic_document_versions",
+            "topicroute_": "topic_routes",
         }
         table = next((value for prefix, value in prefix_to_table.items() if object_id.startswith(prefix)), None)
         if table is None:
@@ -804,6 +824,15 @@ class KnowledgeService:
             "research_run": "research_runs",
             "question_orbit": "question_orbits",
             "frontier_item": "orbit_frontier",
+            "orbit_cycle": "orbit_cycles",
+            "discovery_usage": "discovery_usage",
+            "orbit_notification": "orbit_notifications",
+            "knowledge_topic": "knowledge_topics",
+            "topic_question_link": "topic_question_links",
+            "topic_knowledge_link": "topic_knowledge_links",
+            "topic_document": "topic_documents",
+            "topic_document_version": "topic_document_versions",
+            "topic_route": "topic_routes",
         }
         table = kind_to_table.get(kind)
         if table is None:

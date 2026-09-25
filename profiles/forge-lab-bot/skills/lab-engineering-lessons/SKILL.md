@@ -1,6 +1,6 @@
 ---
 name: lab-engineering-lessons
-description: Formulate, review, and promote candidate engineering lessons derived from lab worklogs, tests, and failure investigations.
+description: Formulate candidate engineering lessons derived from lab worklogs, tests, and failure investigations without crossing the reviewer boundary.
 ---
 
 # Lab Engineering Lessons
@@ -14,6 +14,8 @@ The `lab-engineering-lessons` skill manages the lifecycle of reusable engineerin
   Worklog / Failure -> Extraction -> Candidate Lesson -> Review -> Accepted Lesson -> Operational Rule
   ```
 - **Lifecycle Statuses**: `CANDIDATE`, `SUPPORTED`, `ACCEPTED`, `DEPRECATED`, `REJECTED`.
+- **Reviewer Boundary**: LAB_BOT creates and refines `CANDIDATE` records only. A user or designated
+  reviewer performs acceptance, rejection, supersession, deprecation, or rule promotion.
 - **Target Systems & Strengths**:
   - Targets: `ESCHEMATIC`, `PROCUREMENT`, `BUILD_PROCESS`, `STOCKKEEPER`, `LAB_ONLY`.
   - Strengths: `BLOCK`, `WARN`, `RECOMMEND`, `PREFERENCE`, `KNOWLEDGE`.
@@ -23,4 +25,5 @@ The `lab-engineering-lessons` skill manages the lifecycle of reusable engineerin
 
 - **Propose Candidate Lesson**: `lab_propose_lesson`.
 - **Query Lessons**: `lab_list_lessons` (filter by `target_system` or `status`).
-- **Update Status / Review**: `lab_update_lesson_status` (promote to `ACCEPTED` or reject with reason/exceptions).
+- **Refine Candidate**: `lab_update_lesson_status` may only retain `CANDIDATE` while updating
+  exceptions. Reviewer lifecycle decisions occur outside the LAB_BOT tool boundary.

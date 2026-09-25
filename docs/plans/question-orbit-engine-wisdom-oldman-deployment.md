@@ -1,16 +1,75 @@
 # Question Orbit Engine 部署到 Wisdom Oldman 的计划
 
-## 实施状态（2026-09-20）
+## Topic document delivery extension (2026-09-24)
 
-第一阶段的受治理核心已实现：`wisdom.db` 持久化 Orbit 和可解释前沿；Knowledge MCP
-提供问题预检、启动／复用、状态、列表、前沿、暂停、恢复和停止；Wisdom 的 Direct Run
-预检在模型之外绑定 UuMA task/run 与原会话路由；新 Skill、SOUL 和部署白名单已同步到
-仓库配置。所有变化进入现有 hash-chain `knowledge_events`，Wisdom 仍只能生成候选知识，
-不能自行批准 Patch 或提高 Orbit 预算。
+The Orbit is now an execution attached to a durable topic/question graph rather than the owner of a
+standalone answer. Broad topics receive a bounded first-principles frontier, related questions reuse
+the topic across sessions, short follow-ups use the originating route, and user focus adds a HIGH
+frontier without resetting accumulated budget. The configured automatic default is user-authorized
+DEEP; explicit tool calls still cannot self-escalate a budget.
 
-`UUMA_QUESTION_ORBIT_ENABLED` 当前部署默认值为 `false`。在启用总开关前，仍需完成独立
-Runner、租约／心跳／Cycle 恢复、受控发现提供商、摄取安全、用量账本和通知 outbox。
-因此当前代码会返回 KAG 最佳现有答案，但不会在生产环境自动创建无法消费的后台队列。
+Every preflight answer and completed cycle advances an append-only human-readable topic document.
+The loopback UuMA service renders its latest text and history as the default page and offers a
+secondary read-only relationship view. Important notifications carry a digest, source URLs, and the
+stable local page link. Full Knowledge Map editing and remote access remain outside this extension.
+
+## Runtime reliability completion (2026-09-22)
+
+The deployed Windows runtime now has two complementary tasks: the Runner starts at user logon, and a
+one-minute repeating Watchdog starts it only when the exact profile-scoped process is absent.
+`MultipleInstances IgnoreNew` and the runner's cross-process lock preserve the single-runner
+invariant. Deployment starts the Runner by default, allows operation on battery power, does not stop
+it when power changes, starts missed runs when available, and retains failure restart settings.
+
+A production recovery drill terminated the exact two-process Python runner tree, observed zero
+remaining runner processes, and then observed automatic recovery at the next scheduled minute. The
+recovered state contained two Python shim/runtime processes in one runner tree. A separate
+`orbit-runner-lifecycle.log` records launcher starts, normal exits, and launcher errors without
+requiring administrator access. Windows rejected enabling its system-wide Task Scheduler Operational
+channel from the limited user context; enabling that optional OS channel still requires an elevated
+administrator command and is not required for runner self-healing.
+
+Final regression after hardening: 176 tests passed with the existing third-party Pydantic warning;
+Ruff, all four deployment PowerShell parsers, `git diff --check`, the live acceptance report, and the
+current singleton task state passed.
+
+## Deployment completion evidence (2026-09-21)
+
+The Phase 1 Question Orbit Engine is deployed and enabled for Wisdom-Oldman. The per-user hidden
+Scheduled Task now resolves packaged-app LocalAppData redirection to the same physical `wisdom.db`
+used by the Knowledge MCP, holds a cross-process singleton lock, removes only exact profile-scoped
+orphan runner processes during reinstall/uninstall, and preserves all knowledge and Orbit history.
+
+A controlled production acceptance Orbit recovered the same expired Cycle at attempt 2, ingested
+two public RFC sources, created 40 located evidence records, delivered FIRST_USEFUL_ANSWER and
+BUDGET_EXHAUSTED notifications to the originating Telegram route, and terminated at the QUICK token
+budget. The event chain remained valid, no claim was accepted and no Patch was applied automatically.
+After restoring Docker Desktop from one stale socket (moved to a timestamped backup), OpenSPG/KAG
+replayed all 440 pending jobs: projection watermark 596/596, lag 0, 456 jobs APPLIED.
+
+Verification: 172 tests plus 5 subtests pass; full source/test/script Ruff, PowerShell syntax, and
+`git diff --check` pass. Wisdom exposes 40 Knowledge MCP tools, the runner task is active with one
+runner tree, and `UUMA_QUESTION_ORBIT_ENABLED=true`. The repository mission gate intentionally
+remains `verification / pending_review` until the separate user/Orchestrator review boundary.
+
+## 实施状态（2026-09-21）
+
+第一阶段已在当前主机部署并启用。`wisdom.db` 持久化 Orbit、可解释前沿、Cycle 租约／
+心跳／三次恢复、发现用量和通知 outbox；独立 `uuma.orbit_runner` 由隐藏的用户级 Windows
+Scheduled Task 在登录时启动，全局只租用一个研究 Cycle。Knowledge MCP 提供问题预检、
+启动／复用、状态、列表、前沿、暂停、恢复和停止，Direct Run 预检继续在模型之外绑定
+UuMA task/run 与原会话路由。
+
+发现顺序已实现为用户 URL、OpenAlex、Crossref、配置的 RSS／Atom／站点地图，以及存在
+本机密钥时才启用的 Brave Search。抓取器逐跳验证 DNS 和重定向，阻止私网／保留地址、
+超限内容、错误 MIME、DOCTYPE／ENTITY XML、登录、付费墙和 CAPTCHA，并遵守 robots、
+主机限速与 Retry-After。Brave 保持每月 950 次硬上限。重要事件通过持久 outbox 调用
+Hermes `send` 返回原平台／chat／thread，失败最多尝试三次。
+
+当前 Wisdom profile 的 `UUMA_QUESTION_ORBIT_ENABLED` 为 `true`，Scheduled Task 正在运行；
+新环境的部署参数仍保持显式 opt-in，避免未安装 Runner 时误建队列。所有变化继续进入
+hash-chain `knowledge_events`，新知识只形成候选，Wisdom 不能自行批准 Patch 或提高预算。
+CopyCat Gemini Deep Research、XHS 只读采集和 Knowledge Map UI 仍属于后续阶段。
 
 ## 概要
 
@@ -48,6 +107,7 @@ Runner、租约／心跳／Cycle 恢复、受控发现提供商、摄取安全�
 - knowledge_orbit_pause
 - knowledge_orbit_resume
 - knowledge_orbit_stop
+- knowledge_orbit_set_budget (explicit user/Orchestrator review only)
 
 这些接口只暴露问题、证据、前沿和状态语义，不暴露 SQLite、Brave 或其他供应商原始 API。
 新增 wisdom-question-orbit skill；更新 Wisdom SOUL、技能白名单和 Hermes 部署脚本。uuma_control_guard 的 Wisdom 预检改用 knowledge_question_preflight，并在模型之外绑定原始会话、UuMA run 和通知路由。

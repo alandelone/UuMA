@@ -20,6 +20,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+chatgpt = ["playwright>=1.51,<2"]
 dev = [
   "pytest>=8,<10",
   "pytest-asyncio>=0.24,<2",
@@ -37,6 +38,12 @@ uuma-worker-mcp = "uuma.mcp_worker:main"
 uuma-gemini-mcp = "uuma.mcp_gemini:main"
 uuma-knowledge-mcp = "uuma.mcp_knowledge:main"
 uuma-kag-bridge = "uuma.kag_bridge:main"
+uuma-orbit-runner = "uuma.orbit_runner:main"
+uuma-chatgpt-bridge = "uuma.chatgpt_cli:main"
+uuma-chatgpt-mcp = "uuma.mcp_chatgpt:main"
+
+[tool.setuptools.package-data]
+uuma = ["chatgpt_dashboard.html", "chatgpt_dashboard.js"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

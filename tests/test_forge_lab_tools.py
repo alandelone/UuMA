@@ -12,8 +12,14 @@ def setup_lab_env(tmp_path, monkeypatch):
     lab_db = tmp_path / "test_lab.db"
     monkeypatch.setenv("LAB_DATABASE_PATH", str(lab_db))
     monkeypatch.setenv("UUMA_AGENT_ID", "forge-lab-bot")
+    monkeypatch.setattr(
+        mcp_worker,
+        "_wake_forge_journal_runner",
+        lambda: {"status": "REQUESTED", "requested": True, "task_name": "fixture"},
+    )
     mcp_worker._inventory.cache_clear()
     mcp_worker._procurement.cache_clear()
+    mcp_worker._journal.cache_clear()
     mcp_worker._crawler_engine.cache_clear()
     return lab_db
 
@@ -111,6 +117,112 @@ def test_worklog_and_failure_tools(setup_lab_env):
     assert fails["failures"][0]["component_id"] == "cmp-ic-555"
 
 
+def test_forge_journal_sync_tools(setup_lab_env):
+    snapshot = mcp_worker.lab_journal_register_snapshot(
+        json.dumps({
+            "notion_page_id": "notion-log-1",
+            "notion_url": "https://notion.so/notion-log-1",
+            "title": "Power rail fault",
+            "remote_content_hash": "hash-v1",
+            "project_system": "Bench PSU",
+            "entry_type": "Problem",
+            "snapshot": {"raw_note": "Rail collapsed under load."},
+        })
+    )
+    assert snapshot["sync_status"] == "SYNCED"
+
+    queued = mcp_worker.lab_journal_queue_write(
+        json.dumps({
+            "operation": "PATCH_LOG",
+            "journal_id": snapshot["journal_id"],
+            "idempotency_key": "patch-notion-log-1-v1",
+            "payload": {
+                "change_summary": "Added separated observation and hypothesis.",
+                "change_reason": "Keep the engineering trace explicit.",
+            },
+        })
+    )
+    assert queued["status"] == "QUEUED"
+    assert queued["delivery_trigger"]["status"] == "REQUESTED"
+
+    claimed = mcp_worker.lab_journal_claim_write("openclaw-sync")
+    assert claimed["claimed"] is True
+    finished = mcp_worker.lab_journal_finish_write(
+        json.dumps({
+            "sync_job_id": queued["sync_job_id"],
+            "worker_id": "openclaw-sync",
+            "succeeded": True,
+            "remote_page_id": "notion-log-1",
+            "remote_url": "https://notion.so/notion-log-1",
+            "remote_content_hash": "hash-v2",
+        })
+    )
+    assert finished["status"] == "SYNCED"
+    status = mcp_worker.lab_journal_sync_status(notion_page_id="notion-log-1")
+    assert status["counts"] == {"SYNCED": 1}
+
+
+def test_chat_capture_fills_worklog_queues_notion_and_is_idempotent(setup_lab_env):
+    capture = json.dumps({
+        "title": "VCore 3 hotend temperature oscillation",
+        "project_system": "VCore 3",
+        "entry_type": "problem",
+        "raw_note": "After the nozzle change, temperature oscillated by about 8 C.",
+        "action": "Changed the nozzle and ran a heat test.",
+        "observation": "Hotend temperature oscillated by about 8 C.",
+        "hypothesis": "The heater cartridge may have shifted.",
+    })
+
+    first = mcp_worker.lab_journal_capture_chat(capture)
+    second = mcp_worker.lab_journal_capture_chat(capture)
+
+    assert first["worklog"]["worklog_id"] == second["worklog"]["worklog_id"]
+    assert first["journal_job"]["sync_job_id"] == second["journal_job"]["sync_job_id"]
+    assert first["journal_job"]["delivery_trigger"]["requested"] is True
+    worklogs = mcp_worker.lab_list_worklogs(project_name="VCore 3")
+    assert worklogs["count"] == 1
+    assert worklogs["worklogs"][0]["source_ref"].startswith("hermes-chat://content/")
+    status = mcp_worker.lab_journal_sync_status(sync_status="QUEUED")
+    assert status["counts"] == {"QUEUED": 1}
+    assert status["pages"][0]["entry_type"] == "Problem"
+
+
+def test_chat_capture_rejects_incomplete_or_unknown_type(setup_lab_env):
+    with pytest.raises(ValueError, match="requires: observation"):
+        mcp_worker.lab_journal_capture_chat(json.dumps({
+            "title": "Incomplete",
+            "project_system": "Bench",
+            "entry_type": "Problem",
+            "raw_note": "Something happened.",
+            "action": "Powered it on.",
+        }))
+    with pytest.raises(ValueError, match="Problem, Experiment, Repair, or Build"):
+        mcp_worker.lab_journal_capture_chat(json.dumps({
+            "title": "Meeting note",
+            "project_system": "Bench",
+            "entry_type": "Discussion",
+            "raw_note": "Discussed the bench.",
+            "action": "Talked.",
+            "observation": "No physical work occurred.",
+        }))
+
+
+def test_windows_journal_wakeup_respects_paused_task(monkeypatch):
+    completed = mcp_worker.subprocess.CompletedProcess(
+        args=[], returncode=1, stdout="", stderr="ERROR: The task is disabled."
+    )
+    monkeypatch.setattr(mcp_worker.os, "name", "nt")
+    monkeypatch.setattr(mcp_worker.subprocess, "run", lambda *args, **kwargs: completed)
+
+    result = mcp_worker._wake_forge_journal_runner()
+
+    assert result == {
+        "status": "PAUSED",
+        "requested": False,
+        "task_name": "UuMA Forge Journal Runner",
+    }
+
+
 def test_lessons_and_design_feedback_tools(setup_lab_env):
     # Propose Lesson
     lesson = mcp_worker.lab_propose_lesson(
@@ -129,8 +241,8 @@ def test_lessons_and_design_feedback_tools(setup_lab_env):
     listed_lessons = mcp_worker.lab_list_lessons(status="CANDIDATE")
     assert listed_lessons["count"] == 1
 
-    updated = mcp_worker.lab_update_lesson_status(lesson["lesson_id"], "ACCEPTED")
-    assert updated["status"] == "ACCEPTED"
+    with pytest.raises(PermissionError, match="reviewer lifecycle decisions"):
+        mcp_worker.lab_update_lesson_status(lesson["lesson_id"], "ACCEPTED")
 
     # Propose Design Feedback
     mcp_worker.inventory_receive(
@@ -284,5 +396,3 @@ def test_procurement_tools(setup_lab_env):
         assert auto_res["query"] == "LM2596S"
         assert auto_res["harvested_offers_count"] == 1
         assert auto_res["evaluation"]["strategies"]["lowest_landed_cost"]["status"] == "FEASIBLE"
-
-

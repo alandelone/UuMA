@@ -347,6 +347,27 @@ class KagKnowledgeContractTest(unittest.TestCase):
         self.assertNotIn("claim", pending_types)
         self.assertNotIn("relation", pending_types)
 
+    def test_kag_construction_falls_back_to_located_evidence_when_offline(self) -> None:
+        ingestor = KnowledgeIngestor(self.service, self.root / "content")
+        ingested = ingestor.ingest_text(
+            locator="urn:test:degraded-construction",
+            title="Degraded construction source",
+            text="A bounded chunk remains useful evidence while the KAG projection is offline.",
+            actor_id="wisdom-oldman",
+        )
+
+        result = KnowledgeConstructor(
+            self.service, FakeKagBackend(available=False)
+        ).extract_document(ingested["document"]["document_id"], actor_id="wisdom-oldman")
+
+        self.assertTrue(result["degraded"])
+        self.assertEqual(result["extractor"], "DEGRADED_CHUNK_EVIDENCE")
+        self.assertEqual(len(result["created"]["evidence"]), 1)
+        self.assertEqual(result["created"]["claims"], [])
+        self.assertFalse(result["requires_review"])
+        evidence = self.service.get(result["created"]["evidence"][0])["record"]
+        self.assertEqual(evidence["extraction_method"], "DEGRADED_CHUNK_EVIDENCE")
+
 
 if __name__ == "__main__":
     unittest.main()

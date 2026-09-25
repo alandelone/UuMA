@@ -108,6 +108,21 @@ class OrbitStatus(str, Enum):
     FAILED = "FAILED"
 
 
+class OrbitCycleStatus(str, Enum):
+    RUNNING = "RUNNING"
+    RETRY = "RETRY"
+    COMPLETED = "COMPLETED"
+    BLOCKED = "BLOCKED"
+    FAILED = "FAILED"
+
+
+class OrbitNotificationStatus(str, Enum):
+    PENDING = "PENDING"
+    SENDING = "SENDING"
+    SENT = "SENT"
+    FAILED = "FAILED"
+
+
 class FrontierPriority(str, Enum):
     HIGH = "HIGH"
     MEDIUM = "MEDIUM"
@@ -299,6 +314,71 @@ class QuestionRecord(StrictModel):
     created_at: datetime = Field(default_factory=utc_now)
 
 
+class KnowledgeTopicRecord(StrictModel):
+    topic_id: str = Field(default_factory=lambda: new_id("topic"))
+    title: str = Field(min_length=1, max_length=1000)
+    normalized_key: str = Field(min_length=1, max_length=2000)
+    aliases: list[str] = Field(default_factory=list)
+    focus: list[str] = Field(default_factory=list)
+    summary: str | None = Field(default=None, max_length=16000)
+    status: Literal["ACTIVE", "ARCHIVED"] = "ACTIVE"
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
+class TopicQuestionLinkRecord(StrictModel):
+    topic_question_link_id: str = Field(default_factory=lambda: new_id("tqlink"))
+    topic_id: str
+    question_id: str
+    relationship: Literal["ROOT", "RELATED", "SUBQUESTION", "FOCUS"]
+    rationale: str = Field(min_length=1, max_length=8000)
+    created_at: datetime = Field(default_factory=utc_now)
+
+
+class TopicKnowledgeLinkRecord(StrictModel):
+    topic_knowledge_link_id: str = Field(default_factory=lambda: new_id("tklink"))
+    topic_id: str
+    target_kind: Literal["source", "evidence", "claim", "entity", "relation"]
+    target_id: str
+    relationship: Literal["USES", "SUPPORTS", "CONTRADICTS", "MENTIONS"] = "USES"
+    rationale: str = Field(min_length=1, max_length=8000)
+    created_at: datetime = Field(default_factory=utc_now)
+
+
+class TopicDocumentRecord(StrictModel):
+    topic_document_id: str = Field(default_factory=lambda: new_id("topicdoc"))
+    topic_id: str
+    title: str = Field(min_length=1, max_length=1000)
+    current_version: int = Field(default=0, ge=0)
+    latest_version_id: str | None = None
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
+class TopicDocumentVersionRecord(StrictModel):
+    topic_document_version_id: str = Field(default_factory=lambda: new_id("topicver"))
+    topic_document_id: str
+    topic_id: str
+    version: int = Field(ge=1)
+    body_markdown: str = Field(min_length=1, max_length=500000)
+    sections: list[dict[str, Any]] = Field(default_factory=list)
+    change_summary: str = Field(min_length=1, max_length=8000)
+    source_ids: list[str] = Field(default_factory=list)
+    evidence_ids: list[str] = Field(default_factory=list)
+    orbit_id: str | None = None
+    orbit_cycle_id: str | None = None
+    research_status: str = Field(min_length=1, max_length=200)
+    created_at: datetime = Field(default_factory=utc_now)
+
+
+class TopicRouteRecord(StrictModel):
+    topic_route_id: str = Field(default_factory=lambda: new_id("topicroute"))
+    route_key: str = Field(min_length=1, max_length=1000)
+    topic_id: str
+    question_id: str
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
 class GapRecord(StrictModel):
     gap_id: str = Field(default_factory=lambda: new_id("gap"))
     gap_type: GapType
@@ -369,6 +449,7 @@ class QuestionOrbitRecord(StrictModel):
     normalized_root_key: str = Field(pattern=r"^[a-f0-9]{64}$")
     root_question_id: str
     research_run_id: str
+    topic_id: str | None = None
     objective: str = Field(min_length=1, max_length=16000)
     uuma_task_id: str | None = None
     uuma_run_id: str | None = None
@@ -395,6 +476,58 @@ class FrontierItemRecord(StrictModel):
     estimated_cost: FrontierPriority = FrontierPriority.MEDIUM
     rationale: str = Field(min_length=1, max_length=8000)
     status: WorkStatus = WorkStatus.OPEN
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
+class OrbitCycleRecord(StrictModel):
+    orbit_cycle_id: str = Field(default_factory=lambda: new_id("cycle"))
+    orbit_id: str
+    cycle_key: str = Field(min_length=1, max_length=500)
+    frontier_item_id: str
+    question_id: str
+    status: OrbitCycleStatus = OrbitCycleStatus.RUNNING
+    attempt: int = Field(default=1, ge=1, le=3)
+    lease_owner: str = Field(min_length=1, max_length=500)
+    lease_expires_at: datetime
+    heartbeat_at: datetime = Field(default_factory=utc_now)
+    kag_watermark: int = Field(default=0, ge=0)
+    discovery_queries: list[str] = Field(default_factory=list)
+    source_ids: list[str] = Field(default_factory=list)
+    evidence_ids: list[str] = Field(default_factory=list)
+    generated_question_ids: list[str] = Field(default_factory=list)
+    decision: str | None = Field(default=None, max_length=200)
+    error: str | None = Field(default=None, max_length=8000)
+    started_at: datetime = Field(default_factory=utc_now)
+    completed_at: datetime | None = None
+    created_at: datetime = Field(default_factory=utc_now)
+    updated_at: datetime = Field(default_factory=utc_now)
+
+
+class DiscoveryUsageRecord(StrictModel):
+    discovery_usage_id: str = Field(default_factory=lambda: new_id("usage"))
+    orbit_id: str
+    provider: str = Field(min_length=1, max_length=200)
+    month: str = Field(pattern=r"^\d{4}-\d{2}$")
+    request_count: int = Field(default=1, ge=0)
+    query_count: int = Field(default=1, ge=0)
+    result_count: int = Field(default=0, ge=0)
+    provider_request_id: str | None = Field(default=None, max_length=1000)
+    created_at: datetime = Field(default_factory=utc_now)
+
+
+class OrbitNotificationRecord(StrictModel):
+    orbit_notification_id: str = Field(default_factory=lambda: new_id("notice"))
+    orbit_id: str
+    event_type: str = Field(min_length=1, max_length=200)
+    dedupe_key: str = Field(min_length=1, max_length=500)
+    route: dict[str, str] = Field(default_factory=dict)
+    payload: dict[str, Any] = Field(default_factory=dict)
+    status: OrbitNotificationStatus = OrbitNotificationStatus.PENDING
+    attempts: int = Field(default=0, ge=0, le=3)
+    available_at: datetime = Field(default_factory=utc_now)
+    sent_at: datetime | None = None
+    last_error: str | None = Field(default=None, max_length=8000)
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
 
