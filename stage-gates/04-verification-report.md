@@ -672,3 +672,26 @@ Telegram acceptance remain to be observed
 - Restarted the read-only Wisdom view and Hermes gateway. Local HTTP verification confirms the
   current correction and anchor. Full test suite: 262 passed, 5 subtests passed; Ruff passed.
   A fresh user-originated Telegram turn was not sent, so that delivery path remains unobserved.
+
+## 2026-09-25 Wisdom intent and new-topic permission boundary
+
+- A second incident treated `how is your progress?` as research, attached it to the generic
+  `What is known` topic, started an Orbit and cited unrelated HTTP sources. This demonstrates that
+  citation presence alone does not establish relevance. Backed up the live database, stopped that
+  Orbit, archived the polluted topic and appended a visible correction preserving the old anchor.
+- Default inbound preflight is now read-only. Progress reads persisted task state; feedback and
+  casual messages do not create knowledge. The agent must classify a genuine research request
+  explicitly before calling the research path. Cross-topic questions no longer inherit the
+  previous route's unrelated parent question.
+- The user's latest requirement supersedes automatic new-topic creation: research intent proposes
+  a title/scope and asks permission before creating anything. The service defaults to denying new
+  topic creation. Hermes enforces a later affirmative user reply to a pending proposal, exact
+  question scope, same conversation, and one-use approval. It forces a visible permission prompt
+  rather than allowing an unsupported started-work claim. Existing topics remain reusable.
+- Pending consent is intentionally fail-closed across gateway restarts: without the in-memory
+  proposal receipt the user must be asked again. No knowledge approval privileges were expanded.
+- Backed up and deployed Wisdom SOUL, Orbit skill and guard; restarted the gateway. Full regression:
+  273 passed, 5 subtests passed; Ruff passed. Live read-only checks returned STOPPED for the reported
+  session and a proposal for an unapproved new topic, with identical knowledge history before/after.
+  Reported local URL returns 200 with its original section anchor. A fresh Telegram permission
+  exchange has not been observed and is not marked passed. Mission remains verification/pending_review.
