@@ -38,6 +38,17 @@ $resolvedProject = (Resolve-Path -LiteralPath $ProjectRoot).Path
 $launcher = (Resolve-Path -LiteralPath (
     Join-Path $resolvedProject "scripts\start-wisdom-view.ps1"
 )).Path
+if (-not $PSBoundParameters.ContainsKey("DataDir")) {
+    $orbitTask = Get-ScheduledTask -TaskName "UuMA Question Orbit Runner" -ErrorAction SilentlyContinue
+    if ($orbitTask) {
+        foreach ($orbitAction in @($orbitTask.Actions)) {
+            if ($orbitAction.Arguments -match '(?i)-DataDir\s+"([^"]+)"') {
+                $DataDir = $Matches[1]
+                break
+            }
+        }
+    }
+}
 New-Item -ItemType Directory -Path $DataDir -Force | Out-Null
 $resolvedDataDir = (Resolve-Path -LiteralPath $DataDir).Path
 # Resolve packaged-app LocalAppData redirection before leaving this process context.
@@ -66,22 +77,11 @@ foreach ($process in Get-WisdomViewProcesses -ExpectedPort $Port) {
     Stop-Process -Id $process.ProcessId -Force -ErrorAction SilentlyContinue
 }
 
-function Quote-Argument([string]$Value) {
-    return '"' + $Value.Replace('"', '""') + '"'
-}
-
-$arguments = @(
-    "-NoProfile",
-    "-NonInteractive",
-    "-WindowStyle", "Hidden",
-    "-ExecutionPolicy", "Bypass",
-    "-File", (Quote-Argument $launcher),
-    "-PythonExe", (Quote-Argument $resolvedPython),
-    "-ProjectRoot", (Quote-Argument $resolvedProject),
-    "-DataDir", (Quote-Argument $resolvedDataDir),
-    "-Port", "$Port"
-) -join " "
-$action = New-ScheduledTaskAction -Execute "powershell.exe" -Argument $arguments
+$vbsLauncher = (Resolve-Path -LiteralPath (
+    Join-Path $resolvedProject "scripts\start-wisdom-view.vbs"
+)).Path
+$actionArguments = "//B //Nologo `"$vbsLauncher`" `"$resolvedDataDir`" `"$resolvedPython`" `"$resolvedProject`" `"$Port`""
+$action = New-ScheduledTaskAction -Execute "wscript.exe" -Argument $actionArguments
 $principal = New-ScheduledTaskPrincipal `
     -UserId "$env:USERDOMAIN\$env:USERNAME" `
     -LogonType Interactive `

@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import hashlib
 import json
 import sqlite3
 from datetime import UTC, datetime
@@ -34,6 +35,11 @@ def _now() -> str:
 
 def _id(prefix: str) -> str:
     return f"{prefix}_{uuid4().hex}"
+
+
+def _hash_receipt_payload(payload_data: dict[str, Any]) -> str:
+    serialized = json.dumps(payload_data, sort_keys=True, ensure_ascii=False)
+    return hashlib.sha256(serialized.encode()).hexdigest()
 
 
 class InventoryError(ValueError):
@@ -233,6 +239,21 @@ class InventoryStore:
                     ON engineering_lessons(target_system, status);
                 CREATE INDEX IF NOT EXISTS idx_design_feedback_rev
                     ON design_feedback_proposals(design_revision_id);
+
+                CREATE TABLE IF NOT EXISTS receipt_confirmations (
+                    confirmation_id TEXT PRIMARY KEY,
+                    approval_ref TEXT NOT NULL,
+                    line_id TEXT NOT NULL,
+                    component_id TEXT NOT NULL,
+                    quantity REAL NOT NULL CHECK(quantity > 0),
+                    location_id TEXT NOT NULL,
+                    lot_id TEXT,
+                    event_id TEXT NOT NULL REFERENCES inventory_events(event_id),
+                    payload_hash TEXT NOT NULL,
+                    confirmed_at TEXT NOT NULL
+                );
+                CREATE INDEX IF NOT EXISTS idx_receipt_confirmations_line
+                    ON receipt_confirmations(line_id);
                 """
             )
             connection.execute(
@@ -256,11 +277,19 @@ class InventoryStore:
             raise InventoryError(f"Unknown inventory bucket: {bucket}")
         return normalized
 
-    def register_component(self, component_id: str, display_name: str = "") -> dict[str, str]:
+    def register_component(
+        self,
+        component_id: str,
+        display_name: str = "",
+        *,
+        connection: sqlite3.Connection | None = None,
+    ) -> dict[str, str]:
         if not component_id.strip():
             raise InventoryError("component_id is required.")
-        with self.connect() as connection:
-            connection.execute(
+        owns_connection = connection is None
+        conn = connection or self.connect()
+        try:
+            conn.execute(
                 """
                 INSERT INTO component_refs(component_id, display_name_snapshot, updated_at)
                 VALUES (?, ?, ?)
@@ -270,6 +299,11 @@ class InventoryStore:
                 """,
                 (component_id.strip(), display_name.strip() or None, _now()),
             )
+            if owns_connection:
+                conn.commit()
+        finally:
+            if owns_connection:
+                conn.close()
         return {"component_id": component_id.strip(), "status": "registered"}
 
     def create_location(
@@ -451,18 +485,23 @@ class InventoryStore:
         actor_id: str = "forge-lab-bot",
         reason: str = "received and inspected",
         evidence_ref: str = "",
+        connection: sqlite3.Connection | None = None,
     ) -> dict[str, Any]:
-        self.register_component(component_id, display_name)
+        self.register_component(component_id, display_name, connection=connection)
         if lot_id:
-            with self.connect() as connection:
-                connection.execute(
-                    """
-                    INSERT OR IGNORE INTO purchase_lots(
-                        lot_id, component_id, supplier, offer_ref, received_at, created_at
-                    ) VALUES (?, ?, ?, ?, ?, ?)
-                    """,
-                    (lot_id, component_id, supplier or None, offer_ref or None, _now(), _now()),
-                )
+            owns_conn = connection is None
+            lot_conn = connection or self.connect()
+            lot_conn.execute(
+                """
+                INSERT OR IGNORE INTO purchase_lots(
+                    lot_id, component_id, supplier, offer_ref, received_at, created_at
+                ) VALUES (?, ?, ?, ?, ?, ?)
+                """,
+                (lot_id, component_id, supplier or None, offer_ref or None, _now(), _now()),
+            )
+            if owns_conn:
+                lot_conn.commit()
+                lot_conn.close()
         return self._record_event(
             event_type="RECEIVE",
             component_id=component_id,
@@ -474,7 +513,178 @@ class InventoryStore:
             actor_id=actor_id,
             reason=reason,
             evidence_ref=evidence_ref,
+            connection=connection,
         )
+
+    def preview_receipt(
+        self,
+        line_id: str,
+        component_id: str,
+        quantity: float,
+        *,
+        location_id: str = "UNLOCATED",
+        lot_id: str = "",
+    ) -> dict[str, Any]:
+        cid = component_id.strip()
+        lid = line_id.strip()
+        qty = self._validate_quantity(quantity)
+        if not cid or not lid:
+            raise InventoryError("Both line_id and component_id are required.")
+
+        with self.connect() as conn:
+            line = conn.execute(
+                "SELECT * FROM commerce_order_lines WHERE line_id = ?",
+                (lid,),
+            ).fetchone()
+            if not line:
+                raise InventoryError(f"Order line '{lid}' not found.")
+
+            if line["ownership"] != "self":
+                raise InventoryError(
+                    f"Line '{lid}' ownership is '{line['ownership']}'; only 'self' is eligible for inventory receipt."
+                )
+            if line["category"] != "electronics":
+                raise InventoryError(
+                    f"Line '{lid}' category is '{line['category']}'; non-electronics cannot be received into inventory."
+                )
+
+            row = conn.execute(
+                "SELECT COALESCE(SUM(quantity), 0.0) AS total_received FROM receipt_confirmations WHERE line_id = ?",
+                (lid,),
+            ).fetchone()
+            cum_received = float(row["total_received"]) if row else 0.0
+            order_qty = float(line["quantity"])
+
+            if cum_received + qty > order_qty + 1e-6:
+                raise InventoryError(
+                    f"Over-receipt prevented: cumulative received ({cum_received}) + requested ({qty}) "
+                    f"exceeds confirmed order quantity ({order_qty})."
+                )
+
+            approval_ref = f"appr_{uuid4().hex[:12]}"
+            payload_data = {
+                "approval_ref": approval_ref,
+                "line_id": lid,
+                "component_id": cid,
+                "quantity": qty,
+                "location_id": location_id,
+                "lot_id": lot_id,
+            }
+            payload_hash = _hash_receipt_payload(payload_data)
+
+            return {
+                "approval_ref": approval_ref,
+                "line_id": lid,
+                "component_id": cid,
+                "quantity": qty,
+                "order_quantity": order_qty,
+                "cumulative_received": cum_received,
+                "remaining_quantity": max(0.0, order_qty - cum_received - qty),
+                "location_id": location_id,
+                "lot_id": lot_id,
+                "payload_hash": payload_hash,
+            }
+
+    def governed_receive(
+        self,
+        confirmation_id: str,
+        approval_ref: str,
+        line_id: str,
+        component_id: str,
+        quantity: float,
+        *,
+        location_id: str = "UNLOCATED",
+        lot_id: str = "",
+        actor_id: str = "forge-lab-bot",
+        reason: str = "received and inspected",
+        evidence_ref: str = "",
+    ) -> dict[str, Any]:
+        conf_id = confirmation_id.strip()
+        if not conf_id:
+            raise InventoryError("confirmation_id is required.")
+        appr_ref = approval_ref.strip()
+        if not appr_ref:
+            raise InventoryError("approval_ref is required from user preview.")
+        cid = component_id.strip()
+        lid = line_id.strip()
+        qty = self._validate_quantity(quantity)
+
+        payload_data = {
+            "approval_ref": appr_ref,
+            "line_id": lid,
+            "component_id": cid,
+            "quantity": qty,
+            "location_id": location_id,
+            "lot_id": lot_id,
+        }
+        current_hash = _hash_receipt_payload(payload_data)
+
+        # Enforce self, electronics and non-over-receipt before mutation
+        self.preview_receipt(lid, cid, qty, location_id=location_id, lot_id=lot_id)
+
+        now = _now()
+        with self.connect() as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            existing = conn.execute(
+                "SELECT * FROM receipt_confirmations WHERE confirmation_id = ?",
+                (conf_id,),
+            ).fetchone()
+            if existing:
+                if existing["payload_hash"] == current_hash:
+                    return {
+                        "confirmation_id": conf_id,
+                        "event_id": existing["event_id"],
+                        "status": "ALREADY_CONFIRMED",
+                        "component_id": existing["component_id"],
+                        "quantity": existing["quantity"],
+                        "location_id": existing["location_id"],
+                        "confirmed_at": existing["confirmed_at"],
+                    }
+                raise InventoryError(
+                    f"Conflict: confirmation_id '{conf_id}' already exists with a different payload."
+                )
+
+            # Execute receive within this transaction
+            event = self.receive(
+                cid,
+                qty,
+                lot_id=lot_id,
+                location_id=location_id,
+                actor_id=actor_id,
+                reason=reason,
+                evidence_ref=evidence_ref or f"line:{lid}",
+                connection=conn,
+            )
+            event_id = event["event_id"]
+
+            conn.execute(
+                """
+                INSERT INTO receipt_confirmations(
+                    confirmation_id, approval_ref, line_id, component_id,
+                    quantity, location_id, lot_id, event_id, payload_hash, confirmed_at
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (conf_id, appr_ref, lid, cid, qty, location_id, lot_id, event_id, current_hash, now),
+            )
+            conn.commit()
+
+        return {
+            "confirmation_id": conf_id,
+            "event_id": event_id,
+            "status": "CONFIRMED",
+            "component_id": cid,
+            "quantity": qty,
+            "location_id": location_id,
+            "confirmed_at": now,
+        }
+
+    def get_receipt_confirmation(self, confirmation_id: str) -> dict[str, Any] | None:
+        with self.connect() as conn:
+            row = conn.execute(
+                "SELECT * FROM receipt_confirmations WHERE confirmation_id = ?",
+                (confirmation_id.strip(),),
+            ).fetchone()
+            return dict(row) if row else None
 
     def transition(
         self,

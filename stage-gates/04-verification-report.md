@@ -1,5 +1,34 @@
 # Verification Report
 
+## 2026-09-27 Brainstormer Telegram reasoning refinement
+
+- Reviewed the live 25–27 September Brainstormer Telegram exchange against the governing design.
+  It promoted an assistant-supplied half-acre estimate into a user requirement, mixed delivery and
+  harvest batches, made unsupported price/yield claims, and claimed Wisdom-Oldman work without a
+  tool receipt. The latest Telegram session had zero model tool calls and no canonical Brainstormer
+  project or proposal.
+- Updated the deployed Brainstormer SOUL and skills to prioritize user corrections, label factual
+  versus hypothetical inputs, reverse numerical targets, and state the Orchestrator boundary for
+  cross-agent work. Added a review-only initial Project/Topic proposal tool with duplicate-pending
+  reuse; no historical discussion was silently committed.
+- Added a deterministic capacity calculator with explicit required parameters. Its calculations
+  separate monthly sales, harvest batches, delivery cadence, simultaneous blocks, net planting
+  area, and gross land. Brainstormer now exposes only 11 relevant Worker tools directly, avoiding
+  the observed repeated empty `tool_search` calls. The output guard prevents an unverified precise
+  area/block claim and replaces a successful calculator response with the verified arithmetic;
+  it also blocks a false cross-agent call claim.
+- Local profile smoke with fully labelled hypothetical inputs (RM10,000 operating profit, RM11/kg
+  received price, RM2/kg variable cost, RM5,000 monthly fixed cost, 60+5 day cycle, 15-day harvest
+  interval, 20x12 cm spacing, 0.1 kg per planting position, 80% sellable, 75% planted area,
+  two deliveries/week) actually called the calculator and returned 1,666.67 kg sold/month,
+  833.33 kg sold/harvest batch, 194.44 kg/delivery, and a minimum of five blocks. Four blocks
+  were correctly rejected. These inputs are illustrative, not verified farming or market data.
+- Full UuMA regression: 314 passed, five subtests passed, two existing dependency warnings.
+  Targeted Ruff and diff check passed. Deployed Brainstormer files match the repository sources;
+  the Hermes gateway is running. No Telegram message was sent. A fresh inbound Telegram turn and
+  a real Project/Topic proposal-to-Orchestrator review cycle remain unobserved. Mission gate stays
+  verification/pending_review.
+
 ## 2026-09-25 Wisdom document link 404 repair
 
 - Reproduced the reported topic's 404 with a valid unescaped URL while the topic existed in the

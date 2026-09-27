@@ -158,7 +158,8 @@ function Install-BrainstormerSkills {
         "discussion-state",
         "discussion-reentry",
         "discussion-checkpoint",
-        "artifact-readiness"
+        "artifact-readiness",
+        "quantitative-decision-model"
     )) {
         $source = Join-Path $brainstormerSkillsSource $skillName
         $target = Join-Path (Join-Path $ProfileHome "skills") $skillName

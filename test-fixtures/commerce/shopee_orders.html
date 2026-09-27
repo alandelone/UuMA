@@ -1,0 +1,124 @@
+<div class="purchase-list-page">
+  <!-- Sample 1: One order with multiple lines (一单多行) -->
+  <div class="purchase-list-page__order-card">
+    <div class="order-header">
+      <span class="order-sn">Order SN: 260927MY891001</span>
+      <span class="order-status">Completed</span>
+    </div>
+    <div class="order-content">
+      <div class="order-item">
+        <a href="https://shopee.com.my/product/12345/678901">
+          <span class="product-name">STM32F401CCU6 BlackPill Development Board</span>
+        </a>
+        <div class="item-variation">Type: Type-C 25MHZ Soldered</div>
+        <div class="item-quantity">x 2</div>
+        <div class="item-price">RM 16.50</div>
+      </div>
+      <div class="order-item">
+        <a href="https://shopee.com.my/product/12345/678902">
+          <span class="product-name">ESP32-S3-WROOM-1 DevKit N16R8</span>
+        </a>
+        <div class="item-variation">Model: Dual Type-C With Header</div>
+        <div class="item-quantity">x 1</div>
+        <div class="item-price">RM 28.00</div>
+      </div>
+      <div class="order-item">
+        <a href="https://shopee.com.my/product/12345/678903">
+          <span class="product-name">0.96 inch I2C OLED Display Module 12864</span>
+        </a>
+        <div class="item-variation">Color: White Screen</div>
+        <div class="item-quantity">x 4</div>
+        <div class="item-price">RM 6.50</div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <span class="order-total">Order Total: RM 87.00</span>
+    </div>
+  </div>
+
+  <!-- Sample 2: SKU differences (规格与封装差异) -->
+  <div class="purchase-list-page__order-card">
+    <div class="order-header">
+      <span class="order-id">Order ID: 260927MY891002</span>
+      <span class="order-status">To Ship</span>
+    </div>
+    <div class="order-content">
+      <div class="order-item">
+        <span class="product-name">SMD Resistor Reel 0805 1% High Precision</span>
+        <div class="item-variation">Package: 0805, Resistance: 10K Ohm (5000pcs)</div>
+        <div class="item-quantity">x 1</div>
+        <div class="item-price">RM 35.00</div>
+      </div>
+      <div class="order-item">
+        <span class="product-name">SMD Ceramic Capacitor Reel 0805 50V</span>
+        <div class="item-variation">Package: 0805, Cap: 100nF (4000pcs)</div>
+        <div class="item-quantity">x 1</div>
+        <div class="item-price">RM 42.00</div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <span class="order-total">Order Total: RM 77.00</span>
+    </div>
+  </div>
+
+  <!-- Sample 3: Missing fields (缺少规格与店铺字段) -->
+  <div class="purchase-list-page__order-card">
+    <div class="order-header">
+      <span class="order-sn">Order SN: 260927MY891003</span>
+      <span class="order-status">Completed</span>
+    </div>
+    <div class="order-content">
+      <div class="order-item">
+        <span class="product-name">Precision Tweezers Anti-Static ESD-15</span>
+        <div class="item-quantity">x 3</div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <span class="order-total">Order Total: RM 15.00</span>
+    </div>
+  </div>
+
+  <!-- Sample 4: Order total != item subtotal (含运费 RM 5.50 与优惠券 -RM 10.00) -->
+  <div class="purchase-list-page__order-card">
+    <div class="order-header">
+      <span class="order-sn">Order SN: 260927MY891004</span>
+      <span class="order-status">Completed</span>
+    </div>
+    <div class="order-content">
+      <div class="order-item">
+        <span class="product-name">Logic Analyzer 24MHz 8Channel USB</span>
+        <div class="item-variation">Color: Black Aluminum</div>
+        <div class="item-quantity">x 1</div>
+        <div class="item-price">RM 25.00</div>
+      </div>
+      <div class="order-item">
+        <span class="product-name">Digital Multimeter Probe Gold-Plated Needle</span>
+        <div class="item-quantity">x 2</div>
+        <div class="item-price">RM 12.00</div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <!-- 25 + 2*12 = 49; plus 5.5 shipping minus 10 voucher = RM 44.50 -->
+      <span class="order-total">Order Total: RM 44.50</span>
+    </div>
+  </div>
+
+  <!-- Sample 5: Cancelled / Refunded Order (退款/关闭订单) -->
+  <div class="purchase-list-page__order-card">
+    <div class="order-header">
+      <span class="order-sn">Order SN: 260927MY891005</span>
+      <span class="order-status">Refund Completed</span>
+    </div>
+    <div class="order-content">
+      <div class="order-item">
+        <span class="product-name">CH341A USB Programmer SOP8 Clip Kit</span>
+        <div class="item-variation">Standard Set + 1.8V Adapter</div>
+        <div class="item-quantity">x 1</div>
+        <div class="item-price">RM 22.00</div>
+      </div>
+    </div>
+    <div class="order-footer">
+      <span class="order-total">Order Total: RM 0.00</span>
+    </div>
+  </div>
+</div>

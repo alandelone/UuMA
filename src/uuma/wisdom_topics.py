@@ -32,6 +32,20 @@ _CONTINUATION_MARKERS = (
     "更详细", "深入一点", "展开", "补充",
 )
 _FOCUS_MARKERS = ("重点", "focus", "着重", "主要研究", "方向是", "优先")
+_ANSWER_DIRECTIVE = re.compile(
+    r"^(?:请根据|请直接|请附|并附|附上|不要新建主题|别新建主题|"
+    r"please\b|answer\b|include\b|provide\b)",
+    flags=re.IGNORECASE,
+)
+
+
+def research_question_text(text: str) -> str:
+    """Keep answer-format instructions out of topic matching and durable questions."""
+    stripped = text.strip()
+    boundary = re.search(r"[？?]", stripped)
+    if boundary and _ANSWER_DIRECTIVE.match(stripped[boundary.end():].strip()):
+        return stripped[:boundary.end()].strip()
+    return stripped
 
 
 def normalize_topic_text(text: str) -> str:
@@ -62,17 +76,21 @@ def grounded_answer(answer: dict[str, Any]) -> dict[str, Any]:
     if answer.get("citations"):
         return answer
     return answer | {
-        "answer": "No relevant, traceable evidence is available yet. Research is needed before answering.",
+        "answer": "目前没有直接相关、可追溯的证据足以回答这个问题；相关缺口已保留，仍需研究。",
         "conditions": [],
         "conflicts": [],
         "satisfaction_level": "INSUFFICIENT",
-        "satisfaction_rationale": "The retrieved answer had no traceable citations and was withheld.",
+        "satisfaction_rationale": "检索结果缺少可追溯的直接证据，因此暂不形成事实结论。",
     }
 
 
 def is_progress_request(text: str) -> bool:
     """Recognize standalone operational questions; domain research is resolved separately."""
     value = re.sub(r"[\s?.!？！。]+", " ", text.casefold()).strip()
+    if ("topic" in value or "主题" in value) and any(
+        marker in value for marker in ("进行中", "正在研究", "进度", "进展", "active", "running")
+    ) and any(marker in value for marker in ("什么", "哪些", "有", "what", "which")):
+        return True
     return value in {
         "how is your progress", "what is your progress", "any progress", "progress",
         "status", "what is the status", "how is it going", "are you still researching",
@@ -248,7 +266,7 @@ class TopicKnowledgeService:
         allow_new_topic: bool = False,
     ) -> dict[str, Any]:
         self.knowledge.require_writer(actor_id)
-        text = text.strip()
+        text = research_question_text(text)
         if not text:
             raise ValueError("Question must not be empty.")
         if is_machine_error_payload(text):
@@ -545,6 +563,86 @@ class TopicKnowledgeService:
                 created.append(gap["gap_id"])
         return created
 
+    def ensure_topic_gap(
+        self,
+        topic_id: str,
+        root_question_id: str,
+        question_text: str,
+        rationale: str,
+        gap_type: GapType,
+        *,
+        actor_id: str,
+    ) -> str:
+        """Track a specific unresolved branch under an approved, existing topic."""
+        self.knowledge.require_writer(actor_id)
+        question_text = question_text.strip()
+        if not question_text or not rationale.strip():
+            raise ValueError("A research question and rationale are required.")
+        with self.store.transaction() as conn:
+            self.knowledge._require("knowledge_topics", topic_id, conn)
+            root_link = conn.execute(
+                "SELECT 1 FROM topic_question_links WHERE topic_id = ? AND question_id = ?",
+                (topic_id, root_question_id),
+            ).fetchone()
+            if not root_link:
+                raise ValueError("The parent question does not belong to this topic.")
+            rows = conn.execute(
+                "SELECT q.record_json FROM questions q JOIN topic_question_links l "
+                "ON q.question_id = l.question_id WHERE l.topic_id = ?",
+                (topic_id,),
+            ).fetchall()
+            question = None
+            for row in rows:
+                existing = json.loads(row["record_json"])
+                if normalize_topic_text(existing["text"]) == normalize_topic_text(question_text):
+                    question = existing
+                    break
+            if question is None:
+                question = self._insert(
+                    conn,
+                    "questions",
+                    QuestionRecord(
+                        text=question_text,
+                        why_worth_knowing=rationale,
+                        parent_question_id=root_question_id,
+                    ),
+                    "QUESTION_ADDED",
+                    actor_id,
+                )
+                self._insert(
+                    conn,
+                    "topic_question_links",
+                    TopicQuestionLinkRecord(
+                        topic_id=topic_id,
+                        question_id=question["question_id"],
+                        relationship="SUBQUESTION",
+                        rationale=rationale,
+                    ),
+                    "TOPIC_QUESTION_LINKED",
+                    actor_id,
+                )
+            row = conn.execute(
+                "SELECT record_json FROM gaps WHERE "
+                "json_extract(record_json, '$.question_id') = ? "
+                "ORDER BY updated_sequence DESC LIMIT 1",
+                (question["question_id"],),
+            ).fetchone()
+            if row:
+                return json.loads(row["record_json"])["gap_id"]
+            gap = self._insert(
+                conn,
+                "gaps",
+                GapRecord(
+                    gap_type=gap_type,
+                    reason=f"The topic document does not yet resolve: {question_text}",
+                    why_worthwhile=rationale,
+                    question_id=question["question_id"],
+                ),
+                "GAP_ADDED",
+                actor_id,
+            )
+            return gap["gap_id"]
+
     def _citation_records(
         self,
         conn,
@@ -594,6 +692,7 @@ class TopicKnowledgeService:
         status: str,
         rationale: str,
         updated_at: str,
+        open_questions: list[str] | None = None,
     ) -> str:
         lines = [f"# {topic['title']}", "", f"最后更新：{updated_at}", ""]
         if topic.get("focus"):
@@ -617,6 +716,15 @@ class TopicKnowledgeService:
                     location = f" — {citation['location']}" if citation.get("location") else ""
                     lines.append(f"- [{citation['title']}]({citation['locator']}){location}")
                 lines.append("")
+            if section.get("research_sources"):
+                lines.extend(["### 研究中资料（尚未支持上述回答）", ""])
+                for source in section["research_sources"]:
+                    lines.append(f"- [{source['title']}]({source['locator']})")
+                lines.append("")
+        if open_questions:
+            lines.extend(["## 未解决问题", ""])
+            lines.extend(f"- {item}" for item in open_questions)
+            lines.append("")
         lines.extend(["## 研究状态", "", f"- 状态：{status}", f"- 判断：{rationale}", ""])
         return "\n".join(lines).strip() + "\n"
 
@@ -632,6 +740,7 @@ class TopicKnowledgeService:
         orbit_cycle_id: str | None = None,
         source_ids: list[str] | None = None,
         evidence_ids: list[str] | None = None,
+        correction_reason: str | None = None,
         conn=None,
     ) -> dict[str, Any]:
         self.knowledge.require_writer(actor_id)
@@ -672,7 +781,13 @@ class TopicKnowledgeService:
             root = bool(links and links["relationship"] == "ROOT")
             anchor = "overview" if root else f"question-{question_id.removeprefix('question_')[:12]}"
             citations = self._citation_records(
-                active, answer, source_ids or [], evidence_ids or []
+                active, answer, [], evidence_ids or []
+            )
+            cited_ids = {item["source_id"] for item in citations}
+            research_sources = self._citation_records(
+                active, {"citations": []},
+                [source_id for source_id in source_ids or [] if source_id not in cited_ids],
+                [],
             )
             if not citations:
                 answer = grounded_answer(answer | {"citations": []})
@@ -684,6 +799,7 @@ class TopicKnowledgeService:
                 "conditions": list(answer.get("conditions") or []),
                 "conflicts": list(answer.get("conflicts") or []),
                 "citations": citations,
+                "research_sources": research_sources,
                 "updated_at": datetime.now(UTC).isoformat(),
             }
             replaced = False
@@ -695,14 +811,37 @@ class TopicKnowledgeService:
             if not replaced:
                 sections.append(section)
             now = datetime.now(UTC).isoformat()
+            open_questions: list[str] = []
+            if orbit_id:
+                rows = active.execute(
+                    "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? "
+                    "AND status IN ('OPEN', 'IN_PROGRESS') ORDER BY updated_sequence LIMIT 20",
+                    (orbit_id,),
+                ).fetchall()
+                for row in rows:
+                    item = json.loads(row["record_json"])
+                    pending = self.knowledge._require("questions", item["question_id"], active)
+                    label = pending["text"].split("：", 1)[-1].strip()
+                    if label and label not in open_questions:
+                        open_questions.append(label)
             body = self._render_markdown(
                 topic,
                 sections,
                 status=research_status,
                 rationale=str(answer.get("satisfaction_rationale") or "尚未评估。"),
                 updated_at=now,
+                open_questions=open_questions,
             )
             version_number = int(document.get("current_version", 0)) + 1
+            evidence_summary = (
+                f"引用 {len(citations)} 个支持回答的来源" if citations else "尚无可引用结论"
+            )
+            change_summary = (
+                f"更新“{section['title']}”章节；{evidence_summary}；"
+                f"另记录 {len(research_sources)} 个待核资料；研究状态为 {research_status}。"
+            )
+            if correction_reason:
+                change_summary = f"修正上一版：{correction_reason}；" + change_summary
             version = self._insert(
                 active,
                 "topic_document_versions",
@@ -712,10 +851,7 @@ class TopicKnowledgeService:
                     version=version_number,
                     body_markdown=body,
                     sections=sections,
-                    change_summary=(
-                        f"更新“{section['title']}”章节；纳入 {len(citations)} 个可追溯来源；"
-                        f"研究状态为 {research_status}。"
-                    ),
+                    change_summary=change_summary,
                     source_ids=list(dict.fromkeys(source_ids or [
                         item["source_id"] for item in citations
                     ])),

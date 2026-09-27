@@ -6,6 +6,8 @@ import sys
 from pathlib import Path
 from unittest.mock import Mock
 
+from uuma.brainstormer_planning import CapacityScenario, calculate_capacity
+
 PLUGIN_PATH = (
     Path(__file__).parents[1]
     / "integrations"
@@ -30,6 +32,115 @@ def _healthy_graph(monkeypatch) -> None:
         PLUGIN._state(PLUGIN._session_key(kwargs)).graph_ready = True
         return True
     monkeypatch.setattr(PLUGIN, "_check_graph", check)
+
+
+def test_brainstormer_preflight_emphasizes_corrections_and_numeric_provenance(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "brainstormer")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "brain-run", "task_id": "brain-task"}},
+        {"ok": True, "result": []},
+    ]
+    PLUGIN._CONTEXT = context
+    guidance = PLUGIN._health_context(
+        session_id="brain-chat", turn_id="one", user_message="Why 0.5 acre?"
+    )["context"]
+    assert "latest user correction supersedes" in guidance
+    assert "Do not infer producer price from retail price" in guidance
+    assert "brainstormer_calculate_capacity" in guidance
+    assert "no canonical topic was found" in guidance
+    assert "Never claim another Agent was called" in guidance
+
+
+def test_brainstormer_unperformed_wisdom_handoff_claim_is_blocked(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "brainstormer")
+    state = PLUGIN._state("brain-chat")
+    state.direct_run_id = "brain-run"
+    state.domain_checked = True
+    reply = PLUGIN._guard_specialist_output(
+        "调用智慧老头（Wisdom Oldman）来分析分株周期。", session_id="brain-chat"
+    )
+    assert "尚未实际调用" in reply
+    assert "Orchestrator" in reply
+    assert PLUGIN._guard_specialist_output(
+        "建议请 Orchestrator 委派 Wisdom-Oldman。", session_id="brain-chat"
+    ) is None
+
+
+def test_brainstormer_capacity_receipt_overrides_inconsistent_model_math(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "brainstormer")
+    state = PLUGIN._state("capacity")
+    state.direct_run_id = "run-capacity"
+    state.domain_checked = True
+    tool_name = "mcp__uuma_worker__brainstormer_calculate_capacity"
+    assert PLUGIN._pre_tool_call(tool_name=tool_name, session_id="capacity") is None
+    assert "没有成功" in PLUGIN._guard_specialist_output(
+        "四块地足够。", session_id="capacity"
+    )
+    scenario = CapacityScenario(
+        target_monthly_profit=10_000,
+        realized_price_per_kg=11,
+        variable_cost_per_sold_kg=2,
+        fixed_cost_per_month=5_000,
+        growth_days=60,
+        turnaround_days=5,
+        harvest_interval_days=15,
+        row_spacing_cm=20,
+        plant_spacing_cm=12,
+        harvested_kg_per_planting_position=0.1,
+        sellable_fraction=0.8,
+        planted_area_fraction=0.75,
+        deliveries_per_week=2,
+        planned_blocks=4,
+    )
+    PLUGIN._post_tool_call(
+        tool_name=tool_name, session_id="capacity", result=calculate_capacity(scenario)
+    )
+    reply = PLUGIN._guard_specialist_output("四块地足够。", session_id="capacity")
+    assert "至少需 5 块" in reply
+    assert "计划的 4 块不够" in reply
+    assert "250.00 m²" in reply
+    assert "四块地足够" not in reply
+
+
+def test_brainstormer_capacity_claim_without_receipt_is_withheld(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "brainstormer")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-area", "task_id": "task-area"}},
+        {"ok": True, "result": []},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "unverified-area", "turn_id": "one"}
+    PLUGIN._health_context(
+        user_message="每月要赚RM10000，我每块种植面积多大，四块够吗？", **kwargs
+    )
+    reply = PLUGIN._guard_specialist_output(
+        "四块足够，每块138平方米。", **kwargs
+    )
+    assert "还没有通过容量计算工具核对" in reply
+    assert "138" not in reply
+    assert PLUGIN._guard_specialist_output(
+        "还需要到手售价和单产才能倒推面积。", **kwargs
+    ) is None
+
+
+def test_brainstormer_pending_structure_cannot_be_described_as_saved(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "brainstormer")
+    state = PLUGIN._state("brain-structure")
+    state.direct_run_id = "run-structure"
+    state.domain_checked = True
+    assert "没有完成" in PLUGIN._guard_specialist_output(
+        "项目已经保存了。", session_id="brain-structure"
+    )
+    PLUGIN._post_tool_call(
+        tool_name="mcp__uuma_worker__brainstormer_propose_project_topic",
+        session_id="brain-structure",
+        result={"status": "PROPOSED", "review_required": True},
+    )
+    assert "等待 Orchestrator 审核" in PLUGIN._guard_specialist_output(
+        "项目已经保存了。", session_id="brain-structure"
+    )
 
 
 def test_new_wisdom_topic_requires_later_user_consent_and_cannot_change_scope(monkeypatch):
@@ -60,7 +171,11 @@ def test_new_wisdom_topic_requires_later_user_consent_and_cannot_change_scope(mo
     ]
     PLUGIN._CONTEXT = context
     PLUGIN._health_context(session_id="consent", turn_id="two", user_message="同意")
-    assert PLUGIN._pre_tool_call(tool_name=tool, args=args, session_id="consent") is None
+    assert context.call_mcp.call_args.args[2]["topic_creation_approved"] is True
+    assert context.call_mcp.call_args.args[2]["question"] == "scallion cultivation"
+    assert PLUGIN._pre_tool_call(tool_name=tool, args=args, session_id="consent")[
+        "action"
+    ] == "block"
     assert PLUGIN._pre_tool_call(
         tool_name=tool, args=args | {"question": "unrelated topic"}, session_id="consent"
     )["action"] == "block"
@@ -75,6 +190,98 @@ def test_topic_consent_denial_or_unrelated_message_clears_pending_proposal():
         PLUGIN._capture_topic_consent(state, reply)
         assert state.approved_topic_question is None
         assert state.pending_topic_question is None
+
+
+def test_wisdom_read_only_auto_intake_cannot_authorize_a_research_answer(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    _healthy_graph(monkeypatch)
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-auto", "task_id": "task-auto"}},
+        {"ok": True, "result": {"needs_intent_resolution": True}},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "auto-intake", "turn_id": "one"}
+    PLUGIN._health_context(user_message="Please help with this", **kwargs)
+    assert context.call_mcp.call_args.args[2]["intent"] == "auto"
+    assert PLUGIN._guard_specialist_output("Unsupported technical answer", **kwargs)
+    PLUGIN._finalize_specialist(assistant_response="Unsupported technical answer", **kwargs)
+    assert json.loads(context.call_mcp.call_args.args[2]["result_json"])["outcome"] == "FAILED"
+
+
+def test_wisdom_research_request_uses_graph_preflight_before_model_answer(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    _healthy_graph(monkeypatch)
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-research", "task_id": "task-research"}},
+        {"ok": True, "result": {
+            "requires_topic_approval": True,
+            "proposed_topic": {"question": "针对青葱的气雾栽培细节"},
+        }},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "research-intake", "turn_id": "one"}
+    PLUGIN._health_context(user_message="针对青葱的气雾栽培细节", **kwargs)
+    preflight_args = context.call_mcp.call_args.args[2]
+    assert preflight_args["intent"] == "research"
+    assert preflight_args["topic_creation_approved"] is False
+    assert "针对青葱" in PLUGIN._guard_specialist_output("Unverified answer", **kwargs)
+
+
+def test_wisdom_ok_approves_only_a_tracked_topic_proposal():
+    state = PLUGIN._SessionState(pending_topic_question="scallion aeroponics")
+    PLUGIN._capture_topic_consent(state, "ok")
+    assert state.approved_topic_question == "scallion aeroponics"
+    empty = PLUGIN._SessionState()
+    PLUGIN._capture_topic_consent(empty, "ok")
+    assert empty.approved_topic_question is None
+
+
+def test_wisdom_cannot_replace_grounded_preflight_with_unsourced_model_text(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    _healthy_graph(monkeypatch)
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-grounded", "task_id": "task-grounded"}},
+        {"ok": True, "result": {
+            "answer": {"answer": "No traceable evidence is available yet.", "citations": []},
+            "document_url": "http://127.0.0.1:8767/wisdom/topics/topic-1",
+            "orbit_status": "QUEUED", "runner_wake": {"requested": True},
+        }},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "grounded", "turn_id": "one"}
+    PLUGIN._health_context(user_message="针对青葱的气雾栽培细节", **kwargs)
+    reply = PLUGIN._guard_specialist_output("Use a 100 PSI pump without sources", **kwargs)
+    assert "100 PSI" not in reply
+    assert "No traceable evidence" in reply
+    assert "topic-1" in reply
+    assert "运行尚未确认" in reply
+
+
+def test_wisdom_progress_reply_uses_global_durable_status(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    _healthy_graph(monkeypatch)
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-status", "task_id": "task-status"}},
+        {"ok": True, "result": {
+            "message_intent": "status",
+            "current_status": {"status": "NO_CONTEXT", "tasks": []},
+            "global_status": {"active": [{
+                "topic_title": "青葱气雾栽培", "status": "ACTIVE",
+                "document_url": "http://127.0.0.1:8767/wisdom/topics/topic-1",
+            }], "paused": []},
+        }},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "status", "turn_id": "one"}
+    PLUGIN._health_context(user_message="现在有什么 topic 在进行中？", **kwargs)
+    reply = PLUGIN._guard_specialist_output("当前没有进行中的主题", **kwargs)
+    assert "青葱气雾栽培" in reply
+    assert "当前没有" not in reply
+    assert "topic-1" in reply
 
 
 def test_scholar_missing_graph_blocks_catalog_output_and_completion(monkeypatch):
@@ -291,7 +498,10 @@ def test_specialist_requires_direct_run_each_turn(monkeypatch) -> None:
     )
     assert PLUGIN._pre_tool_call(**tool) is None
     assert PLUGIN._guard_specialist_output("ungrounded answer", **kwargs) is not None
-    _record("mcp__wisdom_knowledge__knowledge_answer", {}, {"answer": "grounded"}, "wisdom-1")
+    _record(
+        "mcp__wisdom_knowledge__knowledge_question_preflight",
+        {"intent": "research"}, {"answer": "grounded"}, "wisdom-1",
+    )
     assert PLUGIN._guard_specialist_output("grounded answer", **kwargs) is None
 
     assert "register_direct_run" in PLUGIN._health_context(

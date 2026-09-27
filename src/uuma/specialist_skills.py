@@ -18,6 +18,7 @@ SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
             "discussion-checkpoint",
             "discussion-reentry",
             "discussion-state",
+            "quantitative-decision-model",
         }
     ),
     "wisdom-oldman": frozenset(

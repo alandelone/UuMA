@@ -31,6 +31,7 @@ class KnowledgeConstructor:
         max_chunks: int = 20,
         offset: int = 0,
         recover: bool = True,
+        located_evidence_only: bool = False,
     ) -> dict[str, Any]:
         details = self.service.get(document_id)
         if details["kind"] != "document":
@@ -47,27 +48,36 @@ class KnowledgeConstructor:
             }
             for chunk in chunks
         ]
-        degraded = False
-        try:
-            health = self.backend.health()
-            if health.get("ready") is not True:
-                raise KagUnavailableError(str(health))
-            extracted = self.backend.extract(request_chunks)
-        except KagUnavailableError:
-            if not recover:
-                raise
+        degraded = located_evidence_only
+        if located_evidence_only:
+            extracted = {
+                "extractor": "LOCATED_CHUNK_EVIDENCE",
+                "chunks": [
+                    {"chunk_id": item["chunk_id"], "entities": [], "relations": []}
+                    for item in request_chunks
+                ],
+            }
+        else:
             try:
-                self.backend.recover()
+                health = self.backend.health()
+                if health.get("ready") is not True:
+                    raise KagUnavailableError(str(health))
                 extracted = self.backend.extract(request_chunks)
             except KagUnavailableError:
-                degraded = True
-                extracted = {
-                    "extractor": "DEGRADED_CHUNK_EVIDENCE",
-                    "chunks": [
-                        {"chunk_id": item["chunk_id"], "entities": [], "relations": []}
-                        for item in request_chunks
-                    ],
-                }
+                if not recover:
+                    raise
+                try:
+                    self.backend.recover()
+                    extracted = self.backend.extract(request_chunks)
+                except KagUnavailableError:
+                    degraded = True
+                    extracted = {
+                        "extractor": "DEGRADED_CHUNK_EVIDENCE",
+                        "chunks": [
+                            {"chunk_id": item["chunk_id"], "entities": [], "relations": []}
+                            for item in request_chunks
+                        ],
+                    }
         extracted_chunks = extracted.get("chunks")
         if not isinstance(extracted_chunks, list):
             # Validate external payload values without changing the caller's exception contract.

@@ -15,6 +15,20 @@ SPECIALIST_DISABLED_TOOLSETS = {
     "terminal",
 }
 
+BRAINSTORMER_WORKER_TOOLS = (
+    "register_direct_run",
+    "get_assignment",
+    "report_progress",
+    "block_run",
+    "submit_result",
+    "brainstormer_search_topics",
+    "brainstormer_get_context",
+    "brainstormer_propose_transaction",
+    "brainstormer_commit_safe_transaction",
+    "brainstormer_calculate_capacity",
+    "brainstormer_propose_project_topic",
+)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -97,6 +111,9 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
                 "UUMA_KAG_IDLE_SECONDS": str(args.kag_idle_seconds),
                 "UUMA_QUESTION_ORBIT_ENABLED": args.question_orbit_enabled,
                 "UUMA_QUESTION_ORBIT_DEFAULT_BUDGET": args.question_orbit_default_budget,
+                "UUMA_QUESTION_ORBIT_WAKE_TASK": "UuMA Question Orbit Runner",
+                "UUMA_QUESTION_ORBIT_PROFILE_HOME": str(args.config.parent),
+                "UUMA_ORBIT_IDLE_TIMEOUT_SECONDS": "300",
                 "UUMA_WISDOM_VIEW_BASE_URL": "http://127.0.0.1:8767",
             }
         )
@@ -235,6 +252,12 @@ def main() -> None:
         mcp_servers.pop("xhs", None)
         mcp_servers.pop("uuma-control", None)
         mcp_servers["uuma-worker"] = server(args, "uuma.mcp_worker")
+        if args.agent_id == "brainstormer":
+            map_at(mcp_servers["uuma-worker"], "tools")["include"] = CommentedSeq(
+                BRAINSTORMER_WORKER_TOOLS
+            )
+            # A narrow direct schema is more reliable than repeated failed tool_search calls.
+            map_at(map_at(config, "tools"), "tool_search")["enabled"] = "off"
         if args.agent_id == "yonc":
             mcp_servers["yonc-project"] = yonc_server(args)
             for name in list(mcp_servers):

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import argparse
-import hashlib
 import json
 import logging
 import os
@@ -19,7 +18,6 @@ from ruamel.yaml import YAML
 
 from .kag_adapter import (
     KagProjectionWorker,
-    KagUnavailableError,
     KnowledgeReasoner,
     OpenSpgKagBackend,
 )
@@ -33,13 +31,18 @@ from .orbit_discovery import (
     DiscoveryArtifact,
     DiscoveryProvider,
     artifact_identity,
+    artifact_is_relevant,
+    artifact_priority,
+    citations_fit_question,
     configured_providers,
     urls_in_question,
 )
+from .orbit_discovery import discovery_queries as build_discovery_queries
+from .orbit_synthesis import OrbitCompactSynthesizer
 from .question_orbit import QuestionOrbitService
 from .safe_web import RetryAfterError, SafeWebFetcher
 from .settings import Settings
-from .wisdom_topics import TopicKnowledgeService, ensure_view_token
+from .wisdom_topics import TopicKnowledgeService, ensure_view_token, grounded_answer
 
 LOGGER = logging.getLogger(__name__)
 
@@ -181,7 +184,7 @@ class OrbitNotificationDispatcher:
         platform = route.get("platform", "").strip()
         chat_id = route.get("chat_id", "").strip()
         thread_id = route.get("thread_id", "").strip()
-        if not platform:
+        if not platform or (platform == "telegram" and not chat_id):
             return None
         parts = [platform]
         if chat_id:
@@ -264,7 +267,7 @@ class OrbitRunner:
         self,
         knowledge: KnowledgeService,
         orbits: QuestionOrbitService,
-        reasoner: KnowledgeReasoner,
+        reasoner: KnowledgeReasoner | OrbitCompactSynthesizer,
         providers: list[DiscoveryProvider],
         ingestor: KnowledgeIngestor,
         constructor: KnowledgeConstructor,
@@ -333,6 +336,7 @@ class OrbitRunner:
                 self.owner_id,
                 str(exc),
                 retry_after_seconds=exc.retry_after_seconds,
+                blocked=int(cycle["attempt"]) >= 3,
             )
         except PermissionError as exc:
             heartbeat.stop()
@@ -400,50 +404,83 @@ class OrbitRunner:
             requested_mode=ReasoningMode.SIMPLE,
             actor_id="wisdom-oldman",
             recover=True,
+            sync_projection=False,
         )
         if current.get("runtime_status") != "KAG":
-            raise PermissionError("Graph reasoning failed; background text-only fallback is blocked.")
+            raise RetryAfterError(
+                "Graph reasoning is temporarily unavailable; the research cycle will retry.",
+                300,
+            )
+        if not citations_fit_question(self.knowledge, question, current.get("citations") or []):
+            current = grounded_answer(current | {"citations": []})
+        self._publish_first_grounded_answer(cycle, current)
         current_level = SatisfactionLevel(current["satisfaction_level"])
         if current_level in {SatisfactionLevel.SUFFICIENT, SatisfactionLevel.STRONG}:
             self._complete(cycle, started, current, [], [], [], 0)
             return
 
         artifacts = urls_in_question(question)
-        discovery_queries: list[str] = []
-        brave_queries = 0
-        retry_delays: list[int] = []
-        for provider in self.providers:
-            if provider.name == "brave":
-                usage = self.orbits.discovery_usage(provider="brave")
-                if usage["requests"] >= self.BRAVE_MONTHLY_LIMIT:
-                    continue
-            try:
-                response = provider.discover(question, limit=5)
-            except RetryAfterError as exc:
-                retry_delays.append(exc.retry_after_seconds)
-                continue
-            except Exception as exc:  # noqa: BLE001 - One provider must not sink the Orbit.
-                LOGGER.warning("Discovery provider %s failed: %s", provider.name, exc)
-                continue
-            discovery_queries.append(question)
-            if provider.name == "brave":
-                brave_queries += 1
-            self.orbits.record_discovery_usage(
-                cycle["orbit_id"],
-                provider.name,
-                result_count=len(response.artifacts),
-                provider_request_id=response.request_id,
+        cached_locators: set[str] = set()
+        for source in self.knowledge.list_records("source", limit=500)["records"]:
+            artifact = DiscoveryArtifact(
+                locator=source["locator"], title=source["title"], provider="canonical-cache"
             )
-            artifacts.extend(response.artifacts)
+            if artifact_is_relevant(question, artifact):
+                artifacts.append(artifact)
+                cached_locators.add(source["locator"])
+        discovery_queries: list[str] = []
+        queries = build_discovery_queries(question)
+        search_queries_used = 0
+        retry_delays: list[int] = []
+        provider_limit_reached = False
+        for provider in self.providers:
+            for query in queries:
+                if provider.name == "brave":
+                    usage = self.orbits.discovery_usage(provider="brave")
+                    if usage["requests"] >= self.BRAVE_MONTHLY_LIMIT:
+                        provider_limit_reached = True
+                        break
+                try:
+                    response = provider.discover(
+                        query, limit=10 if provider.name == "ddgs" else 5
+                    )
+                except RetryAfterError as exc:
+                    retry_delays.append(exc.retry_after_seconds)
+                    continue
+                except Exception as exc:  # noqa: BLE001 - One provider must not sink the Orbit.
+                    LOGGER.warning("Discovery provider %s failed: %s", provider.name, exc)
+                    continue
+                discovery_queries.append(query)
+                if provider.name != "canonical-citations":
+                    search_queries_used += 1
+                self.orbits.record_discovery_usage(
+                    cycle["orbit_id"],
+                    provider.name,
+                    result_count=len(response.artifacts),
+                    provider_request_id=response.request_id,
+                )
+                artifacts.extend(response.artifacts)
 
         deduped: list[DiscoveryArtifact] = []
         seen: set[str] = set()
         for artifact in artifacts:
+            if not artifact_is_relevant(question, artifact):
+                LOGGER.info(
+                    "Skipped unrelated discovery artifact provider=%s locator=%s",
+                    artifact.provider, artifact.locator[:300],
+                )
+                continue
             identity = artifact_identity(artifact)
             if identity in seen:
                 continue
             seen.add(identity)
             deduped.append(artifact)
+        deduped.sort(
+            key=lambda artifact: (
+                int(artifact.locator in cached_locators), artifact_priority(question, artifact)
+            ),
+            reverse=True,
+        )
 
         budget = orbit_state["budget"]
         run = orbit_state["research_run"]
@@ -455,24 +492,27 @@ class OrbitRunner:
         for artifact in deduped:
             if len(source_ids) >= min(self.sources_per_cycle, source_capacity):
                 break
+            existing = getattr(self.ingestor, "existing_web", None)
+            cached = existing(artifact.locator) if callable(existing) else None
+            if cached:
+                if not artifact_is_relevant(
+                    question,
+                    DiscoveryArtifact(
+                        locator="", title=cached["source"]["title"], provider="canonical"
+                    ),
+                ):
+                    continue
+                if cached["source"]["source_id"] in used_source_ids:
+                    continue
             try:
-                ingested = self.ingestor.ingest_web(
-                    artifact.locator, actor_id="wisdom-oldman"
+                ingested = cached or self.ingestor.ingest_web(
+                    artifact.locator, actor_id="wisdom-oldman", topic_question=question
                 )
             except RetryAfterError as exc:
                 retry_delays.append(exc.retry_after_seconds)
                 continue
             except PermissionError as exc:
-                self.orbits.enqueue_notification(
-                    cycle["orbit_id"],
-                    "USER_ACTION_REQUIRED",
-                    {"reason": str(exc), "locator": artifact.locator},
-                    dedupe_suffix=(
-                        f"{cycle['cycle_key']}:"
-                        f"{hashlib.sha256(artifact_identity(artifact).encode()).hexdigest()[:16]}"
-                    ),
-                )
-                LOGGER.warning("Discovery artifact %s requires user action: %s", artifact.locator, exc)
+                LOGGER.warning("Discovery artifact %s was inaccessible: %s", artifact.locator, exc)
                 continue
             except (OSError, ValueError) as exc:
                 LOGGER.warning("Discovery artifact %s was skipped: %s", artifact.locator, exc)
@@ -490,29 +530,47 @@ class OrbitRunner:
                 actor_id="wisdom-oldman",
                 max_chunks=20,
                 recover=True,
+                located_evidence_only=True,
             )
             evidence_ids.extend(extraction["created"]["evidence"])
             evidence_ids.extend(extraction["reused"]["evidence"])
 
         if not source_ids and source_capacity > 0:
-            if retry_delays:
+            if retry_delays and not discovery_queries:
                 raise RetryAfterError(
                     "All available discovery providers requested retry later.", max(retry_delays)
                 )
-            raise PermissionError("No safe, publicly retrievable source was available for this cycle.")
+            if provider_limit_reached and not discovery_queries:
+                raise PermissionError("The available search provider has reached its monthly limit.")
+            reusable = self._assess_satisfaction(current, source_ids=[], evidence_ids=[])
+            self._complete(
+                cycle, started, reusable, [], [], discovery_queries,
+                int(current.get("projection_watermark") or 0),
+                search_queries_used=search_queries_used,
+                model_input_characters=model_input_characters,
+                no_new_source=True,
+            )
+            return
 
-        try:
-            sync = self.projection_worker.sync(limit=200, recover=True)
-        except KagUnavailableError as exc:
-            raise PermissionError("Graph projection unavailable; research is blocked.") from exc
+        # Canonical source excerpts are already durable. A full KAG rebuild may take minutes
+        # per job; it must not hold back the sourced document and first useful delivery.
+        sync = self.knowledge.projection_health()
         final_answer = self.reasoner.answer(
             question,
             requested_mode=ReasoningMode.AUTO,
             actor_id="wisdom-oldman",
             recover=True,
+            sync_projection=False,
         )
         if final_answer.get("runtime_status") != "KAG":
-            raise PermissionError("Graph reasoning failed; no topic document was published.")
+            raise RetryAfterError(
+                "Graph reasoning is temporarily unavailable; no topic document was published.",
+                300,
+            )
+        if not citations_fit_question(
+            self.knowledge, question, final_answer.get("citations") or []
+        ):
+            final_answer = grounded_answer(final_answer | {"citations": []})
         final_answer = self._assess_satisfaction(
             final_answer, source_ids=source_ids, evidence_ids=evidence_ids
         )
@@ -531,7 +589,7 @@ class OrbitRunner:
             evidence_ids,
             discovery_queries,
             int(sync.get("watermark", 0)),
-            brave_queries=brave_queries,
+            search_queries_used=search_queries_used,
             generated_question_ids=generated_question_ids,
             model_input_characters=model_input_characters,
         )
@@ -567,6 +625,49 @@ class OrbitRunner:
                 dedupe_suffix=cycle["cycle_key"],
             )
 
+    def _publish_first_grounded_answer(
+        self, cycle: dict[str, Any], answer: dict[str, Any]
+    ) -> None:
+        if not answer.get("citations"):
+            return
+        orbit = self.orbits.get(cycle["orbit_id"])["orbit"]
+        topic_id = orbit.get("topic_id")
+        if not topic_id:
+            return
+        topic = self.orbits.topics.get_topic(topic_id)
+        prior_section = next((
+            section for section in (topic.get("latest_version") or {}).get("sections", [])
+            if section.get("question_id") == cycle["question_id"]
+        ), None)
+        if prior_section and prior_section.get("citations"):
+            return
+        version = self.orbits.topics.publish_answer(
+            topic_id, cycle["question_id"], answer,
+            actor_id="wisdom-oldman", research_status="ACTIVE",
+            orbit_id=cycle["orbit_id"],
+            source_ids=list(dict.fromkeys(
+                str(item["source_id"]) for item in answer["citations"]
+                if isinstance(item, dict) and item.get("source_id")
+            )),
+        )
+        section = next((
+            item for item in version["sections"]
+            if item.get("question_id") == cycle["question_id"]
+        ), {})
+        self.orbits.enqueue_notification(
+            cycle["orbit_id"], "FIRST_USEFUL_ANSWER", {
+                "topic_title": version["topic_title"],
+                "summary": str(answer.get("answer") or "")[:700],
+                "change_summary": version["change_summary"],
+                "document_url": version["document_url"],
+                "sources": section.get("citations", [])[:4],
+                "research_status": "ACTIVE",
+                "grounded": True,
+            },
+            dedupe_suffix="first-grounded-answer",
+        )
+        self.dispatcher.dispatch_one()
+
     def _complete(
         self,
         cycle: dict[str, Any],
@@ -577,9 +678,10 @@ class OrbitRunner:
         discovery_queries: list[str],
         kag_watermark: int,
         *,
-        brave_queries: int = 0,
+        search_queries_used: int = 0,
         generated_question_ids: list[str] | None = None,
         model_input_characters: int = 0,
+        no_new_source: bool = False,
     ) -> dict[str, Any]:
         answer_text = str(answer.get("answer") or "")
         estimated_tokens = max(
@@ -601,7 +703,7 @@ class OrbitRunner:
             evidence_ids=evidence_ids,
             generated_question_ids=generated_question_ids,
             discovery_queries=discovery_queries,
-            search_queries_used=brave_queries,
+            search_queries_used=search_queries_used,
             model_tokens_used=estimated_tokens,
             kag_watermark=kag_watermark,
             decision=(
@@ -610,45 +712,41 @@ class OrbitRunner:
                 else "CONTINUE"
             ),
             answer=answer,
+            no_new_source=no_new_source,
         )
 
     @staticmethod
     def _materially_changed(before: dict[str, Any], after: dict[str, Any]) -> bool:
+        before_sources = {
+            str(item.get("source_id")) for item in before.get("citations", [])
+            if isinstance(item, dict) and item.get("source_id")
+        }
+        after_sources = {
+            str(item.get("source_id")) for item in after.get("citations", [])
+            if isinstance(item, dict) and item.get("source_id")
+        }
+        downgraded = before.get("satisfaction_level") in {"SUFFICIENT", "STRONG"} and (
+            after.get("satisfaction_level") in {"INSUFFICIENT", "PROVISIONAL"}
+        )
+        if before.get("conflicts") != after.get("conflicts") or downgraded:
+            return True
+        if before_sources == after_sources:
+            return False
         before_words = set(re.findall(r"\w+", str(before.get("answer") or "").casefold()))
         after_words = set(re.findall(r"\w+", str(after.get("answer") or "").casefold()))
         if not before_words or not after_words:
             return False
         overlap = len(before_words & after_words) / len(before_words | after_words)
-        satisfaction_changed = before.get("satisfaction_level") != after.get(
-            "satisfaction_level"
-        )
-        return overlap < 0.6 or (satisfaction_changed and overlap < 0.85)
+        return overlap < 0.75
 
     @staticmethod
     def _assess_satisfaction(
         answer: dict[str, Any], *, source_ids: list[str], evidence_ids: list[str]
     ) -> dict[str, Any]:
-        level = SatisfactionLevel(answer["satisfaction_level"])
-        if level in {SatisfactionLevel.SUFFICIENT, SatisfactionLevel.STRONG}:
-            return answer
-        cited_sources = {
-            str(citation.get("source_id"))
-            for citation in answer.get("citations", [])
-            if isinstance(citation, dict) and citation.get("source_id")
-        }
-        independently_cited = cited_sources.intersection(source_ids)
-        if (
-            len(independently_cited) >= 2
-            and len(set(evidence_ids)) >= 2
-            and not answer.get("conflicts")
-        ):
-            return answer | {
-                "satisfaction_level": SatisfactionLevel.SUFFICIENT.value,
-                "satisfaction_rationale": (
-                    "The current answer cites at least two independently acquired sources with "
-                    "located evidence and no unresolved conflict."
-                ),
-            }
+        # Two located citations establish traceability, not completeness. In particular,
+        # an answer can cite two studies while explicitly lacking the user's requested
+        # equipment settings. Only an explicit coverage assessment may close a gap.
+        _ = source_ids, evidence_ids
         return answer
 
 
@@ -663,7 +761,7 @@ def build_runner(profile_home: Path) -> OrbitRunner:
         view_token=ensure_view_token(settings.data_dir),
     )
     orbits = QuestionOrbitService(knowledge, topics=topics)
-    backend = OpenSpgKagBackend.from_env()
+    backend = OpenSpgKagBackend.from_env(simple_timeout_seconds=300)
     fetcher = SafeWebFetcher()
     dispatcher = OrbitNotificationDispatcher(
         orbits, settings.hermes_executable, profile_home
@@ -671,7 +769,7 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     return OrbitRunner(
         knowledge,
         orbits,
-        KnowledgeReasoner(knowledge, backend),
+        OrbitCompactSynthesizer(knowledge, backend),
         [CanonicalCitationProvider(knowledge), *configured_providers(fetcher)],
         KnowledgeIngestor(knowledge, settings.knowledge_content_path(), fetcher=fetcher),
         KnowledgeConstructor(knowledge, backend),

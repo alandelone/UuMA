@@ -2,7 +2,10 @@ from __future__ import annotations
 
 import json
 import os
+import subprocess
+import sys
 from functools import lru_cache
+from pathlib import Path
 from typing import Any, TypeVar
 
 from mcp.server.fastmcp import FastMCP
@@ -11,7 +14,6 @@ from pydantic import BaseModel
 from .kag_adapter import (
     KagProjectionWorker,
     KagUnavailableError,
-    KnowledgeReasoner,
     OpenSpgKagBackend,
 )
 from .knowledge_construction import KnowledgeConstructor
@@ -39,6 +41,8 @@ from .knowledge_models import (
 )
 from .knowledge_runtime import ensure_knowledge_graph
 from .knowledge_service import KnowledgeService
+from .orbit_discovery import citations_fit_question
+from .orbit_synthesis import OrbitCompactSynthesizer
 from .question_orbit import QuestionOrbitService
 from .settings import Settings
 from .wisdom_topics import (
@@ -47,10 +51,80 @@ from .wisdom_topics import (
     grounded_answer,
     is_machine_error_payload,
     is_progress_request,
+    research_question_text,
 )
 
 mcp = FastMCP("wisdom-knowledge")
 ModelT = TypeVar("ModelT", bound=BaseModel)
+
+
+def _wake_orbit_runner(status: str) -> dict[str, Any]:
+    """Wake the installed on-demand runner only after an Orbit is durable and queued."""
+    if status != "QUEUED":
+        return {"requested": False}
+    profile_home = os.environ.get("UUMA_QUESTION_ORBIT_PROFILE_HOME", "").strip()
+    if os.name == "nt" and profile_home:
+        profile_home = str(Path(profile_home).resolve())
+        python = Path(sys.executable).with_name("pythonw.exe")
+        try:
+            process = subprocess.Popen(
+                [str(python if python.is_file() else sys.executable),
+                 "-m", "uuma.orbit_runner", "--profile-home", profile_home],
+                env=os.environ.copy(),
+                stdin=subprocess.DEVNULL,
+                stdout=subprocess.DEVNULL,
+                stderr=subprocess.DEVNULL,
+                close_fds=True,
+                creationflags=(
+                    getattr(subprocess, "CREATE_NO_WINDOW", 0)
+                    | getattr(subprocess, "DETACHED_PROCESS", 0)
+                ),
+            )
+        except OSError:
+            pass  # The installed scheduled task can still wake the durable queue.
+        else:
+            return {"requested": True, "method": "detached_process", "pid": process.pid}
+    task_name = os.environ.get("UUMA_QUESTION_ORBIT_WAKE_TASK", "").strip()
+    if os.name != "nt" or not task_name:
+        return {"requested": False, "reason": "No on-demand runner wake task configured."}
+    try:
+        receipt = subprocess.run(
+            ["schtasks.exe", "/run", "/tn", task_name],
+            capture_output=True,
+            text=True,
+            timeout=15,
+            check=False,
+        )
+    except (OSError, subprocess.TimeoutExpired) as exc:
+        return {"requested": False, "reason": type(exc).__name__}
+    if receipt.returncode:
+        return {"requested": False, "reason": "Task Scheduler rejected the wake request."}
+    return {"requested": True}
+
+
+def _global_research_status() -> dict[str, Any]:
+    """Report durable research across chat sessions without changing topic routing."""
+    orbits = _orbits().list(limit=200)["records"]
+    topics = {
+        item["topic_id"]: item
+        for item in _topics().list_topics(limit=200)["records"]
+    }
+    active: list[dict[str, Any]] = []
+    paused: list[dict[str, Any]] = []
+    for orbit in orbits:
+        if orbit["status"] not in {"QUEUED", "ACTIVE", "PAUSED", "BLOCKED"}:
+            continue
+        topic_id = orbit.get("topic_id")
+        topic = topics.get(topic_id) if topic_id else None
+        item = {
+            "orbit_id": orbit["orbit_id"],
+            "status": orbit["status"],
+            "topic_id": topic_id,
+            "topic_title": topic["title"] if topic else orbit["objective"][:160],
+            "document_url": _topics().topic_url(topic_id) if topic else None,
+        }
+        (active if orbit["status"] in {"QUEUED", "ACTIVE"} else paused).append(item)
+    return {"active": active, "paused": paused}
 
 
 def _actor() -> str:
@@ -73,8 +147,8 @@ def _backend() -> OpenSpgKagBackend:
 
 
 @lru_cache(maxsize=1)
-def _reasoner() -> KnowledgeReasoner:
-    return KnowledgeReasoner(_service(), _backend())
+def _reasoner() -> OrbitCompactSynthesizer:
+    return OrbitCompactSynthesizer(_service(), _backend())
 
 
 @lru_cache(maxsize=1)
@@ -95,7 +169,7 @@ def _constructor() -> KnowledgeConstructor:
 
 @lru_cache(maxsize=1)
 def _orbits() -> QuestionOrbitService:
-    tier = BudgetTier(os.environ.get("UUMA_QUESTION_ORBIT_DEFAULT_BUDGET", "QUICK").upper())
+    tier = BudgetTier(os.environ.get("UUMA_QUESTION_ORBIT_DEFAULT_BUDGET", "DEEP").upper())
     return QuestionOrbitService(
         _service(), topics=_topics(), automatic_budget_tier=tier
     )
@@ -280,6 +354,7 @@ def knowledge_answer(
         requested_mode=ReasoningMode(mode.upper()),
         actor_id=actor_id,
         recover=recover_runtime,
+        sync_projection=False,
     )
     if answer.get("runtime_status") != "KAG":
         raise KagUnavailableError("Graph reasoning failed; text-only fallback is blocked")
@@ -316,6 +391,7 @@ def knowledge_question_preflight(
         intent = "feedback"
     if intent != "research":
         current_status = _topics().conversation_status(route)
+        global_status = _global_research_status() if intent == "status" else None
         return {
             "message_intent": intent,
             "needs_intent_resolution": intent == "auto",
@@ -324,8 +400,9 @@ def knowledge_question_preflight(
             "research_continues": any(
                 task["status"] in {"QUEUED", "ACTIVE"}
                 for task in current_status["tasks"]
-            ),
+            ) or bool(global_status and global_status["active"]),
             "current_status": current_status,
+            "global_status": global_status,
             "instruction": (
                 "Interpret the user's message in its conversation context. For progress, report "
                 "only current_status. Feedback, errors and conversation must not create research. "
@@ -337,6 +414,7 @@ def knowledge_question_preflight(
             "uuma_task_id": uuma_task_id,
             "uuma_run_id": uuma_run_id,
         }
+    question = research_question_text(question)
     resolved = _topics().resolve_question(
         question,
         actor_id=actor_id,
@@ -362,6 +440,9 @@ def knowledge_question_preflight(
     )
     if answer.get("runtime_status") != "KAG":
         raise KagUnavailableError("Graph reasoning failed; no fallback answer or Orbit was started")
+    citations = answer.get("citations") or []
+    if not citations or not citations_fit_question(_service(), question, citations):
+        answer = answer | {"citations": []}
     answer = grounded_answer(answer)
     if (
         resolved["match_kind"] == "new_topic"
@@ -413,6 +494,7 @@ def knowledge_question_preflight(
             if isinstance(item, dict) and item.get("evidence_id")
         ],
     )
+    runner_wake = _wake_orbit_runner(research_status)
     return {
         "document_url": version["document_url"],
         "topic_id": resolved["topic"]["topic_id"],
@@ -424,6 +506,7 @@ def knowledge_question_preflight(
             "score": resolved["match_score"],
         },
         "document_version": version["version"],
+        "runner_wake": runner_wake,
         **result,
         "topic": resolved["topic"],
         "question": resolved["question"],
@@ -470,7 +553,7 @@ def knowledge_orbit_start(
         raise ValueError("gap_ids_json must contain a list of IDs.")
     if not isinstance(route, dict) or any(not isinstance(value, str) for value in route.values()):
         raise ValueError("notification_route_json must contain a string-to-string object.")
-    return _orbits().start(
+    started = _orbits().start(
         question,
         objective,
         SatisfactionLevel(satisfaction_level.upper()),
@@ -482,6 +565,8 @@ def knowledge_orbit_start(
         uuma_run_id=uuma_run_id or None,
         notification_route=route,
     )
+    started["runner_wake"] = _wake_orbit_runner(started["orbit"]["status"])
+    return started
 
 
 @mcp.tool()
@@ -514,7 +599,9 @@ def knowledge_orbit_pause(orbit_id: str, reason: str = "Paused by user.") -> dic
 @mcp.tool()
 def knowledge_orbit_resume(orbit_id: str) -> dict[str, Any]:
     """Return a paused or blocked Orbit to the durable runner queue."""
-    return _orbits().transition(orbit_id, OrbitStatus.QUEUED, actor_id=_actor())
+    orbit = _orbits().transition(orbit_id, OrbitStatus.QUEUED, actor_id=_actor())
+    orbit["runner_wake"] = _wake_orbit_runner(orbit["status"])
+    return orbit
 
 
 @mcp.tool()
@@ -526,9 +613,11 @@ def knowledge_orbit_stop(orbit_id: str, reason: str) -> dict[str, Any]:
 @mcp.tool()
 def knowledge_orbit_set_budget(orbit_id: str, budget_tier: str) -> dict[str, Any]:
     """Apply an explicit Orchestrator/user-review budget tier and resume an exhausted Orbit."""
-    return _orbits().set_budget(
+    orbit = _orbits().set_budget(
         orbit_id, BudgetTier(budget_tier.upper()), actor_id=_actor()
     )
+    orbit["runner_wake"] = _wake_orbit_runner(orbit["status"])
+    return orbit
 
 
 @mcp.tool()

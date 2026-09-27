@@ -92,7 +92,7 @@ def test_wisdom_does_not_start_orbit_from_degraded_answer(monkeypatch):
         answer=Mock(return_value={"runtime_status": "DEGRADED_KAG"})
     ))
     orbits = Mock()
-    monkeypatch.setattr(mcp_knowledge, "_orbits", orbits)
+    monkeypatch.setattr(mcp_knowledge, "_orbits", lambda: orbits)
     with pytest.raises(KagUnavailableError, match="no fallback"):
         mcp_knowledge.knowledge_question_preflight("What is known?", intent="research")
     orbits.assert_not_called()
@@ -117,6 +117,7 @@ def test_wisdom_rejects_pasted_api_error_before_graph_or_topic_work(monkeypatch)
 @pytest.mark.parametrize("message,intent,expected", [
     ("how is your progress?", "auto", "status"),
     ("how is your progress?", "research", "status"),
+    ("现在目前有什么 topic 在进行中的吗？", "auto", "status"),
     ("研究进度？", "auto", "status"),
     ("This page is wrong, why?", "auto", "auto"),
     ("我想了解种青葱", "auto", "auto"),
@@ -132,9 +133,10 @@ def test_intake_has_no_knowledge_side_effects(monkeypatch, tmp_path, message, in
     monkeypatch.setenv("UUMA_AGENT_ID", "wisdom-oldman")
     monkeypatch.setattr(mcp_knowledge, "_topics", lambda: topics)
     graph, reasoner, orbits = Mock(), Mock(), Mock()
+    orbits.list.return_value = {"records": []}
     monkeypatch.setattr(mcp_knowledge, "ensure_knowledge_graph", graph)
     monkeypatch.setattr(mcp_knowledge, "_reasoner", reasoner)
-    monkeypatch.setattr(mcp_knowledge, "_orbits", orbits)
+    monkeypatch.setattr(mcp_knowledge, "_orbits", lambda: orbits)
     before = service.history()
     result = mcp_knowledge.knowledge_question_preflight(message, intent=intent)
     assert result["message_intent"] == expected
@@ -191,7 +193,47 @@ def test_research_intent_starts_work_but_progress_only_reads_it(monkeypatch, tmp
     status = mcp_knowledge.knowledge_question_preflight(
         "how is your progress?", notification_route_json=route
     )
+    assert status["global_status"]["active"][0]["orbit_id"] == research["orbit_id"]
     assert status["current_status"]["tasks"][0]["orbit_id"] == research["orbit_id"]
     assert status["current_status"]["tasks"][0]["status"] == "QUEUED"
     assert service.history() == before
     reasoner.answer.assert_called_once()
+
+
+def test_queued_orbit_wakes_installed_runner(monkeypatch):
+    from types import SimpleNamespace
+
+    from uuma import mcp_knowledge
+
+    calls = []
+    monkeypatch.setattr(mcp_knowledge, "os", SimpleNamespace(
+        name="nt", environ={"UUMA_QUESTION_ORBIT_WAKE_TASK": "UuMA Question Orbit Runner"}
+    ))
+    monkeypatch.setattr(mcp_knowledge.subprocess, "run", lambda command, **kwargs: (
+        calls.append((command, kwargs)) or SimpleNamespace(returncode=0)
+    ))
+    assert mcp_knowledge._wake_orbit_runner("ACTIVE") == {"requested": False}
+    assert not calls
+    assert mcp_knowledge._wake_orbit_runner("QUEUED") == {"requested": True}
+    assert calls[0][0] == ["schtasks.exe", "/run", "/tn", "UuMA Question Orbit Runner"]
+
+
+def test_queued_orbit_prefers_detached_runner_when_profile_is_configured(monkeypatch):
+    from types import SimpleNamespace
+
+    from uuma import mcp_knowledge
+
+    calls = []
+    monkeypatch.setattr(mcp_knowledge, "os", SimpleNamespace(
+        name="nt", environ={
+            "UUMA_QUESTION_ORBIT_PROFILE_HOME": "C:/hermes/profiles/wisdom-oldman",
+            "UUMA_QUESTION_ORBIT_WAKE_TASK": "UuMA Question Orbit Runner",
+        }
+    ))
+    monkeypatch.setattr(mcp_knowledge.subprocess, "Popen", lambda command, **kwargs: (
+        calls.append((command, kwargs)) or SimpleNamespace(pid=1234)
+    ))
+    result = mcp_knowledge._wake_orbit_runner("QUEUED")
+    assert result == {"requested": True, "method": "detached_process", "pid": 1234}
+    assert calls[0][0][1:4] == ["-m", "uuma.orbit_runner", "--profile-home"]
+    assert calls[0][1]["stdout"] == mcp_knowledge.subprocess.DEVNULL

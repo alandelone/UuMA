@@ -264,12 +264,14 @@ class OpenSpgKagBackend:
         bridge_url: str = "http://127.0.0.1:8891",
         *,
         runtime: KagRuntimeManager | None = None,
+        simple_timeout_seconds: int = 90,
     ) -> None:
         self.client = JsonHttpClient(bridge_url)
         self.runtime = runtime or KagRuntimeManager(bridge_url=bridge_url)
+        self.simple_timeout_seconds = simple_timeout_seconds
 
     @classmethod
-    def from_env(cls) -> OpenSpgKagBackend:
+    def from_env(cls, *, simple_timeout_seconds: int = 90) -> OpenSpgKagBackend:
         bridge_url = os.environ.get("UUMA_KAG_BRIDGE_URL", "http://127.0.0.1:8891")
         compose_value = os.environ.get("UUMA_KAG_COMPOSE_FILE")
         bridge_python = os.environ.get("UUMA_KAG_PYTHON")
@@ -288,7 +290,7 @@ class OpenSpgKagBackend:
             secrets_file=Path(secrets_file) if secrets_file else None,
             auto_recover=auto_recover,
         )
-        return cls(bridge_url, runtime=runtime)
+        return cls(bridge_url, runtime=runtime, simple_timeout_seconds=simple_timeout_seconds)
 
     def health(self) -> dict[str, Any]:
         return self.client.request("/health", timeout_seconds=5)
@@ -306,7 +308,16 @@ class OpenSpgKagBackend:
             "/retrieve",
             method="POST",
             payload={"query": query, "mode": mode.value},
-            timeout_seconds=90 if mode == ReasoningMode.SIMPLE else 600,
+            timeout_seconds=self.simple_timeout_seconds if mode == ReasoningMode.SIMPLE else 600,
+        )
+
+    def retrieve_context(self, query: str) -> dict[str, Any]:
+        """Run graph/vector retrieval without the optional model-generated summary."""
+        return self.client.request(
+            "/retrieve",
+            method="POST",
+            payload={"query": query, "mode": ReasoningMode.SIMPLE.value, "summarize": False},
+            timeout_seconds=90,
         )
 
     def extract(self, chunks: list[dict[str, Any]]) -> dict[str, Any]:
@@ -388,6 +399,7 @@ class KnowledgeReasoner:
         requested_mode: ReasoningMode = ReasoningMode.AUTO,
         actor_id: str = "wisdom-oldman",
         recover: bool = True,
+        sync_projection: bool = True,
     ) -> dict[str, Any]:
         selected = self._select_mode(question, requested_mode)
         health = self.service.projection_health()
@@ -396,7 +408,7 @@ class KnowledgeReasoner:
             backend_health = self.backend.health()
             if backend_health.get("ready") is not True:
                 raise KagUnavailableError(str(backend_health))
-            health = self._sync_projection(health)
+            health = self._sync_projection(health) if sync_projection else health
             response = self.backend.retrieve(question, selected)
             answer = self._normalize_kag_answer(response, question, selected, health)
             steps = self._normalize_steps(response, question)
@@ -404,7 +416,8 @@ class KnowledgeReasoner:
             if recover:
                 try:
                     self.backend.recover()
-                    health = self._sync_projection(self.service.projection_health())
+                    health = self.service.projection_health()
+                    health = self._sync_projection(health) if sync_projection else health
                     response = self.backend.retrieve(question, selected)
                     answer = self._normalize_kag_answer(response, question, selected, health)
                     steps = self._normalize_steps(response, question)
@@ -414,6 +427,16 @@ class KnowledgeReasoner:
             else:
                 degraded = True
                 answer, steps = self._degraded_answer(question, selected, health)
+        if health["lag"] and answer.satisfaction_level in {
+            SatisfactionLevel.SUFFICIENT, SatisfactionLevel.STRONG
+        }:
+            answer = answer.model_copy(update={
+                "satisfaction_level": SatisfactionLevel.PROVISIONAL,
+                "satisfaction_rationale": (
+                    f"The knowledge graph projection has {health['lag']} pending event(s); "
+                    "this answer is provisional until they are applied."
+                ),
+            })
         trace = ReasoningTraceRecord(
             question=question,
             requested_mode=requested_mode,

@@ -476,6 +476,7 @@ class FrontierItemRecord(StrictModel):
     estimated_cost: FrontierPriority = FrontierPriority.MEDIUM
     rationale: str = Field(min_length=1, max_length=8000)
     status: WorkStatus = WorkStatus.OPEN
+    no_source_attempts: int = Field(default=0, ge=0)
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
 

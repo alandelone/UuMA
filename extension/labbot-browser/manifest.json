@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "UuMA Lab Bot Commerce Assistant",
+  "version": "0.5.0",
+  "description": "Governed local-first commerce order extraction assistant for UuMA Lab Bot.",
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "tabs",
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.shopee.com.my/*",
+    "*://*.taobao.com/*",
+    "*://*.tmall.com/*",
+    "*://*.pinduoduo.com/*",
+    "*://*.yangkeduo.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.shopee.com.my/*"
+      ],
+      "js": [
+        "content/core.js",
+        "content/shopee.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.taobao.com/*",
+        "*://*.tmall.com/*"
+      ],
+      "js": [
+        "content/core.js",
+        "content/taobao.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    },
+    {
+      "matches": [
+        "*://*.pinduoduo.com/*",
+        "*://*.yangkeduo.com/*"
+      ],
+      "js": [
+        "content/core.js",
+        "content/pdd.js"
+      ],
+      "all_frames": true,
+      "run_at": "document_idle"
+    }
+  ]
+}

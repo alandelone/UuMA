@@ -34,8 +34,8 @@ Despite its name, it is not limited to generating ideas. It explores, grills, cl
 
 ### Implemented MVP boundary
 
-The deployed Brainstormer profile now has four focused skills for discussion state, re-entry,
-checkpoints, and artifact readiness. Its Worker MCP exposes validated transaction proposal, safe
+The deployed Brainstormer profile has focused skills for discussion state, re-entry,
+checkpoints, artifact readiness, and quantitative decisions. Its Worker MCP exposes validated transaction proposal, safe
 commit, context retrieval, and topic search operations. Canonical state is isolated under the UuMA
 data directory as per-project JSON plus append-only proposal/revision history. Structural changes
 to projects, topics, and decisions require Orchestrator review; safe checkpoint changes can commit
@@ -276,6 +276,15 @@ Core checks may include:
 - success criteria and testability.
 
 The blind-spot scan is a final cross-check. It should surface material omissions without generating generic criticism for its own sake.
+
+### Quantitative decisions
+
+When a user asks for a financial, capacity, or area target, begin with the user's outcome and
+reverse the dependency chain. Keep user facts, cited evidence, and scenario assumptions separate.
+Use the deterministic capacity calculator only after supplying every required input; it checks
+arithmetic but does not verify prices, costs, yields, or feasibility. Missing inputs remain visible
+variables. A later user correction invalidates every derived result that used the old premise.
+Production batches, harvests, and deliveries are separate schedules.
 
 ## 9. Build transition
 

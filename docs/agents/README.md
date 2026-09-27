@@ -1,9 +1,9 @@
 # UuMA Agent Design Archive
 
 Status: working design archive  
-Last consolidated: 2026-08-26
+Last updated: 2026-09-26 (Yonc project management design added)
 
-This directory converts four long ChatGPT design conversations into durable project documents. The files are consolidated design records, not verbatim transcripts: later decisions override earlier proposals, accepted boundaries are separated from open questions, and each document keeps a link to its source conversation.
+This directory consolidates agent design conversations and related project specifications into durable project documents. The files are design records, not verbatim transcripts: later decisions override earlier proposals, accepted boundaries are separated from open questions, and each document records its sources.
 
 ## Current system map
 
@@ -16,6 +16,7 @@ Hermes original profile (Orchestrator / Commander)
         +-- Brainstormer
         +-- Scholar
         +-- Wisdom-Oldman
+        +-- Yonc (Project Management / Graph Project System)
         +-- 锻造Lab_Bot (Physical Lab & Engineering Memory)
         |    +-- forge_lab_skillset
         |    +-- Procurement (sub-capability / sourcing)
@@ -48,6 +49,7 @@ The Live Interface at `C:\Users\Alandelone\CodeSpace_Local\livechat_agent` is an
 | [Scholar](./scholar.md) | User-directed scientific research lifecycle through RSTV4 | `chatgpt-conversation://6a8da0b9-3674-83ec-af3a-90b65e17ffcc` |
 | [锻造Lab_Bot](./forge-lab-bot.md) | Hardware lab operations, inventory, build traceability, procurement, and engineering lessons | `chatgpt-conversation://6a8d3f19-c4c4-83ec-8342-bbd5d823e0a3` |
 | [Brainstormer](./brainstormer.md) | Persistent reasoning partner that explores, challenges, converges, and turns discussion into build-ready artifacts | `chatgpt-conversation://6a87c452-df88-83ec-ad5d-661a9d73e337` |
+| [Yonc](./yonc.md) | Project management, proactive decomposition, capability-informed assignment proposals, and progress review | User clarification 2026-09-26 and linked Yonc design documents |
 | [Multi-Agent Logic Graphs](../logic-graphs.md) | Multi-Agent orchestration, decision trees, and profile workflows | Architecture & Implementation baseline |
 
 ## Naming decisions
@@ -59,12 +61,13 @@ The Live Interface at `C:\Users\Alandelone\CodeSpace_Local\livechat_agent` is an
 
 ## Cross-system ownership
 
-The four profiles must not become four copies of the same general assistant.
+The specialist profiles have distinct ownership and collaboration responsibilities.
 
 | Concern | Owner |
 |---|---|
 | Routing, monitoring, delegation, final coordination | Hermes Orchestrator |
 | Discussion state, assumptions, decisions, design convergence | Brainstormer |
+| User project graph management, decomposition, assignment proposals, and progress review | Yonc; accepted project state belongs to the Yonc backend |
 | Scientific questions, methods, experiments, claims, publication lifecycle | Scholar |
 | Reusable world/domain knowledge, evidence map, knowledge gaps | Wisdom-Oldman |
 | Component definitions, schematics, design BOMs, design revisions | eSchematic |

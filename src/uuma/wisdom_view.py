@@ -1,6 +1,5 @@
 from __future__ import annotations
 
-import hashlib
 import hmac
 import os
 from typing import Any
@@ -20,7 +19,7 @@ def create_wisdom_view_app(settings: Settings | None = None) -> FastAPI:
     """Create the loopback-only, read-only Wisdom topic document service."""
     settings = settings or Settings.from_env()
     settings.data_dir.mkdir(parents=True, exist_ok=True)
-    token = os.environ.get("UUMA_WISDOM_VIEW_TOKEN") or ensure_view_token(settings.data_dir)
+    token = ensure_view_token(settings.data_dir)
     base_url = os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767")
     topics = TopicKnowledgeService(
         KnowledgeService(settings.knowledge_database_path()),
@@ -69,7 +68,6 @@ def create_wisdom_view_app(settings: Settings | None = None) -> FastAPI:
             "status": "ok",
             "service": "wisdom-view",
             "loopback_only": True,
-            "token_fingerprint": hashlib.sha256(token.encode("utf-8")).hexdigest()[:12],
         }
 
     @app.get("/wisdom/topics", response_class=HTMLResponse)

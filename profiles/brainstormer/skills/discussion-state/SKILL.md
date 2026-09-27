@@ -10,5 +10,9 @@ through `brainstormer_propose_transaction`; never edit canonical JSON. Project, 
 supersession operations require Orchestrator review. Assumptions, questions, and checkpoints may use
 `brainstormer_commit_safe_transaction` after reviewing the returned proposal.
 
+For the first substantial discussion in a new project, `brainstormer_propose_project_topic` builds
+a reviewable Project and Topic proposal from explicit fields. Do not say it has been saved until
+Orchestrator approves it. Check existing topics first to avoid duplicate proposals.
+
 Preserve source references, expected revisions, rejected directions, uncertainty, and unresolved
 questions. Resolve, reopen, or supersede records instead of deleting history.

@@ -278,6 +278,7 @@ class RetrieveRequest(BaseModel):
 
     query: str
     mode: str = "SIMPLE"
+    summarize: bool = True
 
 
 class ExtractChunk(BaseModel):
@@ -574,7 +575,10 @@ async def retrieve(request: RetrieveRequest) -> dict[str, Any]:
         from kag.common.conf import KAG_CONFIG
         from kag.interface import Context, ExecutorABC, Task
 
-        executor = ExecutorABC.from_config(KAG_CONFIG.all_config["kag_hybrid_executor"])
+        executor_config = dict(KAG_CONFIG.all_config["kag_hybrid_executor"])
+        if not request.summarize:
+            executor_config["enable_summary"] = False
+        executor = ExecutorABC.from_config(executor_config)
         task = Task(executor=executor.schema()["name"], arguments={"query": request.query})
         context = Context()
         await executor.ainvoke(query=request.query, task=task, context=context)

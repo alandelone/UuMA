@@ -118,6 +118,29 @@ class BrainstormerStore:
                 raise BrainstormerError(f"Unknown proposal: {proposal_id}")
             return json.loads(path.read_text(encoding="utf-8"))
 
+    def find_pending_topic_proposal(
+        self, project_id: str, topic_id: str
+    ) -> dict[str, Any] | None:
+        """Reuse an unreviewed structural proposal instead of proposing a duplicate topic."""
+        with self._lock:
+            self._project_path(project_id)  # validate identifier
+            for path in self.proposals.glob("*.json"):
+                proposal = json.loads(path.read_text(encoding="utf-8"))
+                transaction = proposal.get("transaction") or {}
+                if (
+                    proposal.get("status") != "PROPOSED"
+                    or transaction.get("project_id") != project_id
+                ):
+                    continue
+                if any(
+                    operation.get("kind") == ObjectKind.TOPIC.value
+                    and operation.get("action") == TransactionAction.CREATE.value
+                    and operation.get("target_id") == topic_id
+                    for operation in transaction.get("operations") or []
+                ):
+                    return proposal
+        return None
+
     def review(
         self, proposal_id: str, *, actor_id: str, approve: bool, note: str
     ) -> dict[str, Any]:

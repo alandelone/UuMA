@@ -86,12 +86,12 @@ function Write-Lifecycle {
 function Get-RunnerProcesses {
     param([string]$ProfilePath)
 
-    $profilePattern = [regex]::Escape($ProfilePath)
+    $profilePattern = [regex]::Escape($ProfilePath.Replace('\', '/'))
     return @(
         Get-CimInstance Win32_Process | Where-Object {
             $_.Name -in @("python.exe", "pythonw.exe") -and
             $_.CommandLine -match '(?i)-m\s+uuma\.orbit_runner(?:\s|$)' -and
-            $_.CommandLine -match $profilePattern
+            $_.CommandLine.Replace('\', '/') -match $profilePattern
         }
     )
 }

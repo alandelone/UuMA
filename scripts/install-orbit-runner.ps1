@@ -17,12 +17,12 @@ $ErrorActionPreference = "Stop"
 function Stop-OrbitRunnerProcesses {
     param([string]$ResolvedProfileHome)
 
-    $profilePattern = [regex]::Escape($ResolvedProfileHome)
+    $profilePattern = [regex]::Escape($ResolvedProfileHome.Replace('\', '/'))
     $matches = @(
         Get-CimInstance Win32_Process | Where-Object {
             $_.Name -in @("python.exe", "pythonw.exe") -and
             $_.CommandLine -match '(?i)-m\s+uuma\.orbit_runner(?:\s|$)' -and
-            $_.CommandLine -match $profilePattern
+            $_.CommandLine.Replace('\', '/') -match $profilePattern
         }
     )
     foreach ($process in $matches | Sort-Object ParentProcessId -Descending) {
@@ -35,7 +35,7 @@ function Stop-OrbitRunnerProcesses {
         Get-CimInstance Win32_Process | Where-Object {
             $_.Name -in @("python.exe", "pythonw.exe") -and
             $_.CommandLine -match '(?i)-m\s+uuma\.orbit_runner(?:\s|$)' -and
-            $_.CommandLine -match $profilePattern
+            $_.CommandLine.Replace('\', '/') -match $profilePattern
         }
     )
     if ($remaining.Count -gt 0) {
@@ -168,14 +168,12 @@ $taskArgs = @{
     Settings = $settings
     Description = "Runs governed Wisdom-Oldman Question Orbit research on demand."
 }
-if ($AtLogon) {
-    $taskArgs["Trigger"] = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME"
-}
+$taskArgs["Trigger"] = New-ScheduledTaskTrigger -AtLogOn -User "$env:USERDOMAIN\$env:USERNAME"
 $task = New-ScheduledTask @taskArgs
 Register-ScheduledTask -TaskName $TaskName -InputObject $task -Force | Out-Null
 if ($StartNow -and -not $DoNotStart) {
     Start-ScheduledTask -TaskName $TaskName
     Write-Host "Question Orbit runner task started."
 }
-Write-Host "Question Orbit runner task installed on-demand (legacy watchdog uninstalled)."
+Write-Host "Question Orbit runner task installed for logon recovery and on-demand wake."
 Write-Host "Question Orbit data directory: $resolvedDataDir"

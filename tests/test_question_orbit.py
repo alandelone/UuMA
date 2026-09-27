@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import json
 import tempfile
 import unittest
 from pathlib import Path
@@ -110,11 +111,54 @@ class QuestionOrbitTestCase(unittest.TestCase):
         )
 
         self.assertEqual(paused["status"], "PAUSED")
+        self.assertEqual(paused["stop_reason"], "User paused.")
+        paused_event = next(
+            event for event in self.knowledge.history(orbit_id)["events"]
+            if event["event_type"] == "QUESTION_ORBIT_PAUSED"
+        )
+        self.assertEqual(paused_event["payload"]["after"]["stop_reason"], "User paused.")
         self.assertEqual(resumed["status"], "QUEUED")
+        self.assertIsNone(resumed["stop_reason"])
         self.assertEqual(stopped["stop_reason"], "User stopped.")
         events = self.knowledge.history(orbit_id)
         self.assertEqual(events["count"], 4)
         self.assertTrue(events["chain_valid"])
+
+    def test_missing_pause_reason_is_restored_from_audited_transition(self) -> None:
+        started = self.orbits.start(
+            "Which evidence is still missing?",
+            "Review the remaining evidence gap.",
+            SatisfactionLevel.PROVISIONAL,
+            "The gap remains open.",
+            actor_id="wisdom-oldman",
+            gap_ids=[self._gap()],
+        )
+        orbit_id = started["orbit"]["orbit_id"]
+        paused = self.orbits.transition(
+            orbit_id, OrbitStatus.PAUSED, actor_id="wisdom-oldman",
+            reason="No additional relevant public source was found.",
+        )
+        with self.knowledge.store.transaction() as conn:
+            conn.execute(
+                "UPDATE question_orbits SET record_json = ? WHERE orbit_id = ?",
+                (json.dumps(paused | {"stop_reason": None}), orbit_id),
+            )
+            run = self.knowledge._require("research_runs", paused["research_run_id"], conn)
+            conn.execute(
+                "UPDATE research_runs SET record_json = ? WHERE research_run_id = ?",
+                (json.dumps(run | {"stop_reason": None}), run["research_run_id"]),
+            )
+
+        repaired = self.orbits.repair_pause_reason(orbit_id, actor_id="orchestrator")
+        self.assertEqual(repaired["stop_reason"], "No additional relevant public source was found.")
+        self.assertEqual(
+            self.orbits.get(orbit_id)["research_run"]["stop_reason"],
+            repaired["stop_reason"],
+        )
+        before = self.knowledge.history(orbit_id)["count"]
+        self.orbits.repair_pause_reason(orbit_id, actor_id="orchestrator")
+        self.assertEqual(self.knowledge.history(orbit_id)["count"], before)
+        self.assertTrue(self.knowledge.history()["chain_valid"])
 
     def test_wisdom_cannot_self_escalate_orbit_budget(self) -> None:
         with self.assertRaises(PermissionError):

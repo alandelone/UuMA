@@ -242,6 +242,22 @@ class KagKnowledgeContractTest(unittest.TestCase):
         trace = self.service.get(answer["reasoning_trace_id"])["record"]
         self.assertFalse(trace["degraded"])
 
+    def test_fast_answer_uses_existing_graph_without_waiting_for_pending_projection(self) -> None:
+        self.service.add_source(
+            SourceRecord(locator="urn:test:queued", title="Queued KAG source"),
+            actor_id="wisdom-oldman",
+        )
+        backend = FakeKagBackend()
+
+        answer = KnowledgeReasoner(self.service, backend).answer(
+            "What is already known?", sync_projection=False
+        )
+
+        self.assertEqual(answer["runtime_status"], "KAG")
+        self.assertEqual(answer["satisfaction_level"], "PROVISIONAL")
+        self.assertEqual(len(backend.jobs), 0)
+        self.assertGreater(self.service.projection_health()["lag"], 0)
+
     def test_recovered_runtime_replays_projection_before_retrieval(self) -> None:
         self.service.add_source(
             SourceRecord(locator="urn:test:cold", title="Cold KAG source"),
@@ -367,6 +383,29 @@ class KagKnowledgeContractTest(unittest.TestCase):
         self.assertFalse(result["requires_review"])
         evidence = self.service.get(result["created"]["evidence"][0])["record"]
         self.assertEqual(evidence["extraction_method"], "DEGRADED_CHUNK_EVIDENCE")
+
+    def test_fast_located_evidence_preserves_provenance_without_model_extraction(self) -> None:
+        ingested = KnowledgeIngestor(self.service, self.root / "content").ingest_text(
+            locator="urn:test:fast-evidence", title="Fast evidence source",
+            text="A located source excerpt for first-answer delivery.",
+            actor_id="wisdom-oldman",
+        )
+
+        class MustNotCallBackend:
+            def health(self):
+                raise AssertionError("Fast evidence must not wait for KAG extraction")
+
+        result = KnowledgeConstructor(self.service, MustNotCallBackend()).extract_document(
+            ingested["document"]["document_id"],
+            actor_id="wisdom-oldman", located_evidence_only=True,
+        )
+
+        self.assertEqual(result["extractor"], "LOCATED_CHUNK_EVIDENCE")
+        self.assertEqual(len(result["created"]["evidence"]), 1)
+        self.assertEqual(result["created"]["claims"], [])
+        evidence = self.service.get(result["created"]["evidence"][0])["record"]
+        self.assertEqual(evidence["source_id"], ingested["source"]["source_id"])
+        self.assertEqual(evidence["location"], ingested["chunks"][0]["location"])
 
 
 if __name__ == "__main__":

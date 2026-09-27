@@ -82,6 +82,14 @@ def test_brainstormer_profile_replaces_inherited_orchestrator_guard_permissions(
         "uuma-worker"
     ]
     assert "uuma-control" not in config["mcp_servers"]
+    assert config["tools"]["tool_search"]["enabled"] == "off"
+    assert set(config["mcp_servers"]["uuma-worker"]["tools"]["include"]) == {
+        "register_direct_run", "get_assignment", "report_progress", "block_run",
+        "submit_result", "brainstormer_search_topics", "brainstormer_get_context",
+        "brainstormer_propose_transaction", "brainstormer_commit_safe_transaction",
+        "brainstormer_calculate_capacity",
+        "brainstormer_propose_project_topic",
+    }
 
 
 def test_wisdom_profile_enables_direct_run_guard(tmp_path) -> None:

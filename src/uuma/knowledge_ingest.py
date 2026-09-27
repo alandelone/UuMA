@@ -3,10 +3,14 @@ from __future__ import annotations
 import hashlib
 import json
 import re
+import shutil
+import subprocess
+from bisect import bisect_right
 from dataclasses import dataclass
 from io import BytesIO
 from pathlib import Path
 from typing import Any
+from urllib.parse import urlsplit
 
 from .knowledge_models import ChunkRecord, DocumentVersionRecord, SourceRecord, SourceType
 from .knowledge_service import KnowledgeService
@@ -51,7 +55,9 @@ class KnowledgeIngestor:
             metadata={"local_path": str(resolved)},
         )
 
-    def ingest_web(self, url: str, *, actor_id: str) -> dict[str, Any]:
+    def ingest_web(
+        self, url: str, *, actor_id: str, topic_question: str | None = None
+    ) -> dict[str, Any]:
         fetched = self.fetcher.fetch(
             url,
             allowed_content_types={
@@ -87,6 +93,34 @@ class KnowledgeIngestor:
             "text/markdown": ".md",
         }.get(content_type, ".txt")
         extracted = self._extract(raw, suffix, final_url)
+        if topic_question:
+            from .orbit_discovery import DiscoveryArtifact, artifact_is_relevant
+
+            title_matches = artifact_is_relevant(
+                topic_question,
+                DiscoveryArtifact(locator="", title=extracted.title, provider="extracted"),
+            )
+            # Some journal PDFs expose only a numeric download filename as their title.
+            # In that case, use a matching title line from the downloaded first page.
+            if not title_matches and content_type == "application/pdf":
+                opaque_title = extracted.title.casefold() == Path(
+                    urlsplit(final_url).path
+                ).stem.casefold()
+                if opaque_title:
+                    for line in extracted.text[:1500].splitlines():
+                        candidate = line.strip()
+                        if 12 <= len(candidate) <= 180 and artifact_is_relevant(
+                            topic_question,
+                            DiscoveryArtifact(locator="", title=candidate, provider="extracted"),
+                        ):
+                            extracted = ExtractedContent(
+                                extracted.text, extracted.media_type, candidate,
+                                extracted.metadata,
+                            )
+                            title_matches = True
+                            break
+            if not title_matches:
+                raise ValueError("Fetched source title does not match the research topic.")
         return self._persist(
             locator=final_url,
             raw=raw,
@@ -116,6 +150,29 @@ class KnowledgeIngestor:
             actor_id=actor_id,
             metadata=metadata or {},
         )
+
+    def existing_web(self, locator: str) -> dict[str, Any] | None:
+        """Reuse a canonical source without waiting for the same remote URL again."""
+        with self.service.store.connect() as conn:
+            row = conn.execute(
+                "SELECT record_json FROM sources WHERE locator = ? "
+                "ORDER BY updated_sequence DESC LIMIT 1", (locator,)
+            ).fetchone()
+            if not row:
+                return None
+            source = json.loads(row["record_json"])
+            document_row = conn.execute(
+                "SELECT record_json FROM documents WHERE source_id = ? "
+                "ORDER BY version DESC LIMIT 1", (source["source_id"],)
+            ).fetchone()
+            if not document_row:
+                return None
+            document = json.loads(document_row["record_json"])
+        return {
+            "source": source, "document": document,
+            "chunks": self._chunks_for_document(document["document_id"]),
+            "unchanged": True, "cached": True,
+        }
 
     def _persist(
         self,
@@ -205,13 +262,26 @@ class KnowledgeIngestor:
             actor_id=actor_id,
         )
         chunks = []
-        for ordinal, (start, end, text) in enumerate(self._chunk_text(extracted.text)):
+        normalized_text = extracted.text.replace("\r\n", "\n").replace("\r", "\n")
+        page_breaks = [
+            match.start() for match in re.finditer("\f", normalized_text)
+        ] if extracted.media_type == "application/pdf" else []
+        for ordinal, (start, end, text) in enumerate(self._chunk_text(normalized_text)):
+            location = f"characters {start}-{end}"
+            if extracted.media_type == "application/pdf":
+                first_page = bisect_right(page_breaks, start) + 1
+                last_page = bisect_right(page_breaks, max(start, end - 1)) + 1
+                pages = (
+                    f"page {first_page}" if first_page == last_page
+                    else f"pages {first_page}-{last_page}"
+                )
+                location = f"{pages}, {location}"
             chunk = self.service.add_chunk(
                 ChunkRecord(
                     document_id=document["document_id"],
                     ordinal=ordinal,
                     text=text,
-                    location=f"characters {start}-{end}",
+                    location=location,
                     start_char=start,
                     end_char=end,
                     content_digest=hashlib.sha256(text.encode("utf-8")).hexdigest(),
@@ -267,14 +337,31 @@ class KnowledgeIngestor:
     def _extract(raw: bytes, suffix: str, name: str) -> ExtractedContent:
         if suffix == ".pdf":
             from pypdf import PdfReader
+            from pypdf.errors import PdfReadError
 
-            reader = PdfReader(BytesIO(raw))
-            pages = [page.extract_text() or "" for page in reader.pages]
+            extractor = "pypdf"
+            try:
+                reader = PdfReader(BytesIO(raw))
+                pages = [page.extract_text() or "" for page in reader.pages]
+            except (PdfReadError, KeyError, ValueError):
+                executable = shutil.which("pdftotext")
+                if not executable:
+                    raise
+                result = subprocess.run(
+                    [executable, "-layout", "-", "-"], input=raw,
+                    capture_output=True, timeout=60, check=False,
+                )
+                if result.returncode != 0 or not result.stdout.strip():
+                    raise
+                pages = result.stdout.decode("utf-8", errors="replace").split("\f")
+                if pages and not pages[-1].strip():
+                    pages.pop()
+                extractor = "pdftotext"
             return ExtractedContent(
-                "\n\n".join(pages),
+                "\f".join(pages),
                 "application/pdf",
                 Path(name).stem,
-                {"page_count": len(pages)},
+                {"page_count": len(pages), "extractor": extractor},
             )
         if suffix == ".docx":
             from docx import Document

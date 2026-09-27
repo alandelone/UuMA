@@ -55,6 +55,20 @@ def markdown_to_html(markdown: str) -> str:
 def render_topic_page(data: dict[str, Any], token: str) -> str:
     topic = data["topic"]
     latest = data.get("latest_version")
+    current_orbit = next(iter(data.get("orbits") or []), None)
+    if current_orbit:
+        live_status = html.escape(str(current_orbit["status"]))
+        live_updated = html.escape(str(current_orbit.get("updated_at") or ""))
+        live_reason = current_orbit.get("stop_reason")
+        status_panel = (
+            '<section class="card" aria-label="当前研究状态">'
+            f'<strong>当前研究状态：{live_status}</strong>'
+            f'<p class="muted">状态更新时间：{live_updated}。正文记录的是发布时的状态。</p>'
+            + (f'<p>原因：{html.escape(str(live_reason))}</p>' if live_reason else "")
+            + '</section>'
+        )
+    else:
+        status_panel = ""
     body = latest["body_markdown"] if latest else (
         f"# {topic['title']}\n\n主题已经建立，研究成果尚未发布。"
     )
@@ -74,6 +88,7 @@ def render_topic_page(data: dict[str, Any], token: str) -> str:
     graph_url = (
         f"/wisdom/api/topics/{quote(topic['topic_id'])}/graph?token={quote(token)}"
     )
+    topic_index_url = f"/wisdom/topics?token={quote(token, safe='')}"
     safe_title = html.escape(topic["title"])
     return f"""<!doctype html>
 <html lang="zh-Hans">
@@ -99,10 +114,13 @@ border-radius:9px; cursor:pointer; margin-right:8px }} button.active {{ color:wh
 margin:8px 0; background:#f6faf7 }} .edge {{ color:var(--muted); font-size:.92rem }}
 ul {{ padding-left:1.25rem }} @media(max-width:800px) {{ .shell {{ grid-template-columns:1fr }}
 aside {{ position:static }} }}
+.back-link {{ display:inline-block; margin-bottom:16px; padding:8px 13px;
+border:1px solid var(--accent); border-radius:9px; text-decoration:none }}
 </style>
 </head>
 <body><div class="shell">
 <aside>
+  <a class="back-link" href="{html.escape(topic_index_url, quote=True)}">← 返回全部主题</a>
   <div class="card"><strong>{safe_title}</strong>
   <p class="muted">长期主题知识文档</p>
   <button id="show-doc" class="active">文档</button><button id="show-graph">关系图谱</button></div>
@@ -110,6 +128,7 @@ aside {{ position:static }} }}
   <div class="card"><strong>版本记录</strong><ul>{changes or '<li>尚无版本</li>'}</ul></div>
 </aside>
 <main>
+  {status_panel}
   <article id="document" class="card">{markdown_to_html(body)}</article>
   <section id="graph" class="card"><h1>相关知识</h1><p class="muted">正在读取……</p></section>
 </main></div>

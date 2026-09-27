@@ -26,7 +26,17 @@ except ImportError:
             pass
 
 
-from .brainstormer_state import BrainstormerStore, StateTransaction
+from .brainstormer_planning import CapacityScenario, calculate_capacity
+from .brainstormer_state import (
+    BrainstormerStore,
+    ObjectKind,
+    StateOperation,
+    StateTransaction,
+    TransactionAction,
+)
+from .commerce_control import CommerceControlStore
+from .commerce_review import commit_review, preview_review_workbook
+from .commerce_store import CommerceStore
 from .eschematic_bridge import ESchematicBridge
 from .forge_journal import ForgeJournalStore
 from .knowledge_runtime import ensure_knowledge_graph
@@ -59,7 +69,17 @@ def _agent_id() -> str:
     return agent_id
 
 
+def _worker_mode() -> str:
+    return os.environ.get("UUMA_WORKER_MODE", "standard").strip().lower()
+
+
+def _require_standard_worker() -> None:
+    if _worker_mode() == "native":
+        raise PermissionError("Tool not permitted in native worker mode.")
+
+
 def _require_brainstormer() -> str:
+    _require_standard_worker()
     agent_id = _agent_id()
     if agent_id != "brainstormer":
         raise PermissionError("This discussion-state tool is restricted to Brainstormer.")
@@ -67,10 +87,28 @@ def _require_brainstormer() -> str:
 
 
 def _require_forge_lab_bot() -> str:
+    _require_standard_worker()
     agent_id = _agent_id()
     if agent_id != "forge-lab-bot":
         raise PermissionError("This hardware-lab tool is restricted to forge-lab-bot.")
     return agent_id
+
+
+def _require_native_worker() -> str:
+    agent_id = _agent_id()
+    if agent_id != "forge-lab-bot":
+        raise PermissionError("Native tools require forge-lab-bot identity.")
+    return agent_id
+
+
+@lru_cache(maxsize=1)
+def _commerce_control() -> CommerceControlStore:
+    return CommerceControlStore()
+
+
+@lru_cache(maxsize=1)
+def _commerce_store() -> CommerceStore:
+    return CommerceStore()
 
 
 @lru_cache(maxsize=1)
@@ -257,6 +295,96 @@ def brainstormer_search_topics(query: str, limit: int = 20) -> list[dict[str, An
 
 
 @mcp.tool()
+def brainstormer_calculate_capacity(
+    target_monthly_profit: float,
+    realized_price_per_kg: float,
+    variable_cost_per_sold_kg: float,
+    fixed_cost_per_month: float,
+    growth_days: float,
+    turnaround_days: float,
+    harvest_interval_days: float,
+    row_spacing_cm: float,
+    plant_spacing_cm: float,
+    harvested_kg_per_planting_position: float,
+    sellable_fraction: float,
+    planted_area_fraction: float,
+    deliveries_per_week: float,
+    planned_blocks: int | None = None,
+) -> dict[str, Any]:
+    """Check a provisional profit/area scenario; every input must have a user or source basis."""
+    _require_brainstormer()
+    scenario = CapacityScenario.model_validate(locals())
+    return calculate_capacity(scenario)
+
+
+@mcp.tool()
+def brainstormer_propose_project_topic(
+    project_title: str,
+    project_objective: str,
+    topic_title: str,
+    topic_problem: str,
+    source_ref: str,
+) -> dict[str, Any]:
+    """Propose a first project/topic for Orchestrator review; no structure is committed."""
+    actor = _require_brainstormer()
+    fields = {
+        "project_title": project_title,
+        "project_objective": project_objective,
+        "topic_title": topic_title,
+        "topic_problem": topic_problem,
+        "source_ref": source_ref,
+    }
+    if any(not value.strip() for value in fields.values()):
+        raise ValueError("Project, topic, and source fields must be nonempty.")
+    if any(len(value) > 2000 for value in fields.values()):
+        raise ValueError("Project, topic, and source fields must be at most 2000 characters.")
+    project_id = "project-" + sha256(project_title.strip().casefold().encode()).hexdigest()[:12]
+    topic_id = "topic-" + sha256(
+        (project_id + ":" + topic_title.strip().casefold()).encode()
+    ).hexdigest()[:12]
+    store = _brainstormer_store()
+    existing = {item["id"] for item in store.get_context(project_id)["objects"]}
+    if topic_id in existing:
+        return {
+            "project_id": project_id,
+            "topic_id": topic_id,
+            "status": "ALREADY_EXISTS",
+            "review_required": False,
+        }
+    pending = store.find_pending_topic_proposal(project_id, topic_id)
+    if pending:
+        return {"project_id": project_id, "topic_id": topic_id, **pending}
+    operations = []
+    if project_id not in existing:
+        operations.append(
+            StateOperation(
+                action=TransactionAction.CREATE,
+                kind=ObjectKind.PROJECT,
+                target_id=project_id,
+                expected_revision=0,
+                values={"title": project_title.strip(), "objective": project_objective.strip()},
+            )
+        )
+    operations.append(
+        StateOperation(
+            action=TransactionAction.CREATE,
+            kind=ObjectKind.TOPIC,
+            target_id=topic_id,
+            expected_revision=0,
+            values={"title": topic_title.strip(), "problem": topic_problem.strip()},
+        )
+    )
+    transaction = StateTransaction(
+        project_id=project_id,
+        rationale="Preserve a substantial new Brainstormer discussion for review and re-entry.",
+        source_refs=[source_ref.strip()],
+        operations=operations,
+    )
+    proposal = store.propose(transaction, requested_by=actor)
+    return {"project_id": project_id, "topic_id": topic_id, **proposal}
+
+
+@mcp.tool()
 def eschematic_status() -> dict[str, Any]:
     """Check the eSchematic bridge and runtime paths available to forge-lab-bot."""
     _require_forge_lab_bot()
@@ -402,6 +530,19 @@ def inventory_receive(receipt_json: str) -> dict[str, Any]:
     """Receive inspected stock into lab.db; ordered items are not stock before this event."""
     actor_id = _require_forge_lab_bot()
     payload = json.loads(receipt_json)
+    if "confirmation_id" in payload:
+        return _inventory().governed_receive(
+            payload["confirmation_id"],
+            payload.get("approval_ref", ""),
+            payload.get("line_id", ""),
+            payload["component_id"],
+            payload["quantity"],
+            location_id=payload.get("location_id", "UNLOCATED"),
+            lot_id=payload.get("lot_id", ""),
+            actor_id=actor_id,
+            reason=payload.get("reason", "received and inspected"),
+            evidence_ref=payload.get("evidence_ref", ""),
+        )
     return _inventory().receive(
         payload["component_id"],
         payload["quantity"],
@@ -414,6 +555,30 @@ def inventory_receive(receipt_json: str) -> dict[str, Any]:
         reason=payload.get("reason", "received and inspected"),
         evidence_ref=payload.get("evidence_ref", ""),
     )
+
+
+@mcp.tool()
+def inventory_preview_receipt(preview_request_json: str) -> dict[str, Any]:
+    """Preview receiving an order line into inventory and generate an approval reference."""
+    _require_forge_lab_bot()
+    payload = json.loads(preview_request_json)
+    return _inventory().preview_receipt(
+        payload["line_id"],
+        payload["component_id"],
+        payload["quantity"],
+        location_id=payload.get("location_id", "UNLOCATED"),
+        lot_id=payload.get("lot_id", ""),
+    )
+
+
+@mcp.tool()
+def inventory_get_receipt(confirmation_id: str) -> dict[str, Any]:
+    """Query a receipt confirmation by confirmation ID."""
+    _require_forge_lab_bot()
+    res = _inventory().get_receipt_confirmation(confirmation_id)
+    if res is None:
+        return {"confirmation_id": confirmation_id, "found": False}
+    return {"confirmation_id": confirmation_id, "found": True, "receipt": res}
 
 
 @mcp.tool()
@@ -1031,6 +1196,118 @@ def procurement_auto_search_and_evaluate(
         platforms=platform_list,
         max_per_platform=max_results_per_platform,
         proc_store=_procurement(),
+    )
+
+
+@mcp.tool()
+def commerce_preview_review_workbook(workbook_path: str) -> dict[str, Any]:
+    """Parse and validate a 4-sheet commerce review Excel workbook, generating diff preview and conflict report."""
+    _require_forge_lab_bot()
+    return preview_review_workbook(workbook_path, _commerce_store())
+
+
+@mcp.tool()
+def commerce_commit_review(preview_json: str) -> dict[str, Any]:
+    """Commit verified review changes from a previously generated preview."""
+    _require_forge_lab_bot()
+    preview = json.loads(preview_json)
+    return commit_review(preview, _commerce_store())
+
+
+@mcp.tool()
+def browser_start_extraction(
+    platform: str,
+    account_id: str,
+    date_range_start: str = "",
+    date_range_end: str = "",
+    max_orders: int = 0,
+) -> dict[str, Any]:
+    """Queue a browser commerce extraction task in uuma.db for the specified platform and account."""
+    _require_forge_lab_bot()
+    return _commerce_control().create_task(
+        platform,
+        account_id,
+        date_range_start=date_range_start or None,
+        date_range_end=date_range_end or None,
+        max_orders=max_orders if max_orders > 0 else None,
+    )
+
+
+@mcp.tool()
+def browser_get_extraction_status(task_id: str) -> dict[str, Any]:
+    """Get current status, checkpoint progress, and errors of a browser extraction task."""
+    _require_forge_lab_bot()
+    return _commerce_control().get_task_status(task_id)
+
+
+@mcp.tool()
+def browser_pause_extraction(task_id: str, reason: str = "User requested pause") -> dict[str, Any]:
+    """Pause an ongoing extraction task."""
+    _require_forge_lab_bot()
+    return _commerce_control().pause_task(task_id, reason=reason)
+
+
+@mcp.tool()
+def browser_resume_extraction(task_id: str) -> dict[str, Any]:
+    """Resume a paused extraction task."""
+    _require_forge_lab_bot()
+    return _commerce_control().resume_task(task_id)
+
+
+@mcp.tool()
+def browser_cancel_extraction(task_id: str, reason: str = "User cancelled") -> dict[str, Any]:
+    """Cancel an extraction task and revoke its active lease."""
+    _require_forge_lab_bot()
+    return _commerce_control().cancel_task(task_id, reason=reason)
+
+
+@mcp.tool()
+def browser_claim_command(worker_id: str, ttl_seconds: int = 60) -> dict[str, Any]:
+    """Claim the next pending browser command, granting a lease with an incremented fencing token."""
+    _require_native_worker()
+    cmd = _commerce_control().claim_command(worker_id, ttl_seconds=ttl_seconds)
+    if cmd is None:
+        return {"claimed": False}
+    return {"claimed": True, "command": cmd}
+
+
+@mcp.tool()
+def browser_renew_lease(
+    task_id: str,
+    lease_token: str,
+    fencing_token: int,
+    ttl_seconds: int = 60,
+) -> dict[str, Any]:
+    """Renew lease for an active extraction task using its fencing token."""
+    _require_native_worker()
+    return _commerce_control().renew_lease(task_id, lease_token, fencing_token, ttl_seconds=ttl_seconds)
+
+
+@mcp.tool()
+def browser_extract_orders(batch_json: str) -> dict[str, Any]:
+    """Submit an extracted batch of orders: atomically writes immutable raw archive and stores evidence in lab.db."""
+    _require_native_worker()
+    payload = json.loads(batch_json)
+    return _commerce_store().ingest_batch(payload)
+
+
+@mcp.tool()
+def browser_report_checkpoint(
+    task_id: str,
+    lease_token: str,
+    fencing_token: int,
+    checkpoint_json: str,
+    status: str = "",
+) -> dict[str, Any]:
+    """Report persistent extraction checkpoint and optional task status update."""
+    _require_native_worker()
+    checkpoint = json.loads(checkpoint_json)
+    return _commerce_control().report_checkpoint(
+        task_id,
+        lease_token,
+        fencing_token,
+        checkpoint,
+        status=status or None,
     )
 
 

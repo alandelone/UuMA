@@ -12,6 +12,7 @@ from __future__ import annotations
 import json
 import logging
 import os
+import re
 import threading
 import time
 from collections import OrderedDict
@@ -41,6 +42,16 @@ class _SessionState:
     graph_ready: bool = False
     pending_topic_question: str | None = None
     approved_topic_question: str | None = None
+    wisdom_intent_resolved: bool = False
+    wisdom_answer: dict[str, Any] | None = None
+    wisdom_document_url: str | None = None
+    wisdom_orbit_status: str | None = None
+    wisdom_runner_wake: dict[str, Any] | None = None
+    wisdom_status: dict[str, Any] | None = None
+    brainstormer_capacity_attempted: bool = False
+    brainstormer_capacity_result: dict[str, Any] | None = None
+    brainstormer_capacity_required: bool = False
+    brainstormer_structure_status: str | None = None
 
 
 _SESSIONS: OrderedDict[str, _SessionState] = OrderedDict()
@@ -186,7 +197,8 @@ def _capture_topic_consent(state: _SessionState, message: str) -> None:
     reply = message.casefold().strip().rstrip(".!。！")
     affirmative = reply in {
         "yes", "yes please", "yes, please", "approve", "approved", "go ahead",
-        "同意", "可以", "确认", "同意建立", "同意建主题", "同意建立主题",
+        "ok", "okay", "好的", "好", "同意", "可以", "确认", "同意建立",
+        "同意建主题", "同意建立主题",
     }
     state.approved_topic_question = state.pending_topic_question if affirmative else None
     state.pending_topic_question = None
@@ -275,6 +287,197 @@ def _runtime_status(value: Any) -> str | None:
     return None
 
 
+def _result_field(value: Any, field_name: str) -> Any:
+    value = _decoded(value)
+    if isinstance(value, dict):
+        if field_name in value:
+            return value[field_name]
+        for key in ("result", "structuredContent", "structured_content", "content", "text"):
+            if key in value:
+                found = _result_field(value[key], field_name)
+                if found is not None:
+                    return found
+    if isinstance(value, list):
+        for item in value:
+            found = _result_field(item, field_name)
+            if found is not None:
+                return found
+    return None
+
+
+def _brainstormer_capacity_receipt(value: Any) -> dict[str, Any] | None:
+    scenario = _result_field(value, "scenario")
+    if not isinstance(scenario, dict):
+        return None
+    keys = (
+        "required_sold_kg_per_month", "required_harvested_kg_per_month",
+        "sold_kg_per_harvest_batch", "minimum_blocks", "planned_blocks_suffice",
+        "net_planting_square_metres_per_block", "net_planting_square_feet_per_block",
+        "net_planting_square_metres_total", "gross_land_square_metres",
+        "gross_land_square_feet", "gross_land_acres", "sold_kg_per_delivery",
+    )
+    receipt = {key: _result_field(value, key) for key in keys}
+    if any(receipt[key] is None for key in keys if key != "planned_blocks_suffice"):
+        return None
+    return {"scenario": scenario, **receipt}
+
+
+def _brainstormer_capacity_reply(receipt: dict[str, Any], response_text: str) -> str:
+    scenario = receipt["scenario"]
+    minimum = receipt["minimum_blocks"]
+    planned = scenario.get("planned_blocks")
+    if re.search(r"[\u4e00-\u9fff]", response_text):
+        planned_line = (
+            f"你计划的 {planned} 块{'够用' if receipt['planned_blocks_suffice'] else '不够'}；"
+            if planned is not None else ""
+        )
+        return (
+            "按你提供的假设计算（价格、成本和单产尚未独立验证）：\n"
+            f"- 月需售出 {receipt['required_sold_kg_per_month']:,.2f} kg；"
+            f"按 {scenario['sellable_fraction']:.0%} 可售率，月需收获 "
+            f"{receipt['required_harvested_kg_per_month']:,.2f} kg。\n"
+            f"- 每 {scenario['harvest_interval_days']:g} 天收一批，每批需可售 "
+            f"{receipt['sold_kg_per_harvest_batch']:,.2f} kg；每周送货 "
+            f"{scenario['deliveries_per_week']:g} 次，每次平均 "
+            f"{receipt['sold_kg_per_delivery']:,.2f} kg。送货次数不等于收获批次数。\n"
+            f"- 生长加整地共 {scenario['growth_days'] + scenario['turnaround_days']:g} 天，"
+            f"以 {scenario['harvest_interval_days']:g} 天为一批，至少需 {minimum} 块。"
+            f"{planned_line}\n"
+            f"- 每块净种植面积约 {receipt['net_planting_square_metres_per_block']:,.2f} m² "
+            f"（{receipt['net_planting_square_feet_per_block']:,.0f} 平方尺）；"
+            f"{minimum} 块合计净种植面积 "
+            f"{receipt['net_planting_square_metres_total']:,.2f} m²。"
+            f"按 {scenario['planted_area_fraction']:.0%} 净种植占比，总地约 "
+            f"{receipt['gross_land_square_metres']:,.2f} m² "
+            f"（{receipt['gross_land_square_feet']:,.0f} 平方尺，"
+            f"{receipt['gross_land_acres']:.3f} 英亩）。\n"
+            "这是营业利润情景算术；税、融资及设备回本须计入成本后才可称为净收益预测。"
+        )
+    planned_line = (
+        f"Your {planned} planned blocks are "
+        f"{'enough' if receipt['planned_blocks_suffice'] else 'insufficient'}. "
+        if planned is not None else ""
+    )
+    return (
+        "Scenario arithmetic using your unverified price, cost, and yield inputs:\n"
+        f"- Sell {receipt['required_sold_kg_per_month']:,.2f} kg/month and harvest "
+        f"{receipt['required_harvested_kg_per_month']:,.2f} kg/month.\n"
+        f"- Harvest {receipt['sold_kg_per_harvest_batch']:,.2f} sellable kg every "
+        f"{scenario['harvest_interval_days']:g} days; deliver "
+        f"{receipt['sold_kg_per_delivery']:,.2f} kg on each of "
+        f"{scenario['deliveries_per_week']:g} weekly deliveries. Delivery and harvest "
+        "cadences are separate.\n"
+        f"- Growth plus turnaround is "
+        f"{scenario['growth_days'] + scenario['turnaround_days']:g} days, so at least "
+        f"{minimum} blocks are needed. {planned_line}\n"
+        f"- Net planted area per block: "
+        f"{receipt['net_planting_square_metres_per_block']:,.2f} m² "
+        f"({receipt['net_planting_square_feet_per_block']:,.0f} sq ft). "
+        f"Gross land: {receipt['gross_land_square_metres']:,.2f} m² "
+        f"({receipt['gross_land_acres']:.3f} acres).\n"
+        "This is an operating-profit scenario; include tax, financing, and capital recovery "
+        "in costs before treating it as a net-income forecast."
+    )
+
+
+def _brainstormer_capacity_question(message: str) -> bool:
+    text = message.casefold()
+    area = any(term in text for term in (
+        "面积", "每块", "区块", "英亩", "平方尺", "多大的地", "亩", "area", "acre",
+        "plot", "blocks", "block",
+    ))
+    objective = any(term in text for term in (
+        "利润", "赚", "收入", "产量", "收获", "供货", "种植", "profit", "yield",
+        "harvest", "plant", "supply",
+    ))
+    return area and objective
+
+
+def _brainstormer_unchecked_capacity_claim(response_text: str) -> bool:
+    return bool(
+        re.search(
+            r"\d[\d,.]*\s*(?:平方米|平方尺|m²|亩|英亩|acres?|sq\.?\s*ft|"
+            r"平方公尺)|\d+\s*块.{0,25}(?:够|可行|足够|不足|不够)",
+            response_text,
+            flags=re.IGNORECASE,
+        )
+    )
+
+
+def _explicit_research_request(message: str) -> bool:
+    """Only route clear knowledge requests automatically; uncertain intent stays model-resolved."""
+    text = message.casefold().strip()
+    if len(text) < 5 or text in {"okay", "好的", "thank you", "谢谢"}:
+        return False
+    if any(word in text for word in (
+        "404", "error", "报错", "错误", "打不开", "无法访问", "进度", "研究中",
+        "topic 在进行", "topic进行", "状态", "暂停", "停止", "恢复",
+    )):
+        return False
+    return any(word in text for word in (
+        "我想了解", "我想知道", "请研究", "针对", "种植", "栽培", "如何", "怎么",
+        "怎样", "是什么", "要多少", "为什么", "细节", "研究", "how ", "what ",
+        "why ", "?", "？",
+    ))
+
+
+def _remember_wisdom_result(state: _SessionState, value: Any) -> None:
+    global_status = _result_field(value, "global_status")
+    if isinstance(global_status, dict):
+        state.wisdom_status = global_status
+    answer = _result_field(value, "answer")
+    if isinstance(answer, dict) and isinstance(answer.get("answer"), str):
+        state.wisdom_answer = answer
+        document_url = _result_field(value, "document_url")
+        state.wisdom_document_url = document_url if isinstance(document_url, str) else None
+        status = _result_field(value, "orbit_status")
+        state.wisdom_orbit_status = status if isinstance(status, str) else None
+        wake = _result_field(value, "runner_wake")
+        state.wisdom_runner_wake = wake if isinstance(wake, dict) else None
+
+
+def _wisdom_grounded_reply(state: _SessionState) -> str | None:
+    answer = state.wisdom_answer
+    if not answer:
+        return None
+    parts = [str(answer["answer"]).strip()]
+    for citation in list(answer.get("citations") or [])[:3]:
+        if isinstance(citation, dict):
+            locator = str(citation.get("locator") or "")
+            if locator.startswith(("https://", "http://")):
+                parts.append(f"来源：{locator}")
+    if state.wisdom_orbit_status == "QUEUED":
+        if state.wisdom_runner_wake and state.wisdom_runner_wake.get("requested"):
+            parts.append("后续研究已排队，已请求启动后台研究；运行尚未确认。")
+        else:
+            parts.append("后续研究已排队，但后台研究进程尚未确认启动。")
+    elif state.wisdom_orbit_status == "ACTIVE":
+        parts.append("后续研究正在进行。")
+    if state.wisdom_document_url:
+        parts.append(f"主题文档：{state.wisdom_document_url}")
+    return "\n\n".join(part for part in parts if part)
+
+
+def _wisdom_status_reply(state: _SessionState) -> str | None:
+    status = state.wisdom_status
+    if not status:
+        return None
+    active = status.get("active") or []
+    paused = status.get("paused") or []
+    lines = ["当前正在研究的主题：" if active else "当前没有正在研究的主题。"]
+    for item in active[:10]:
+        if isinstance(item, dict):
+            lines.append(f"- {item.get('topic_title') or '未命名主题'}（{item.get('status')}）")
+            if item.get("document_url"):
+                lines.append(f"  文档：{item['document_url']}")
+    if paused:
+        lines.append("\n已暂停或受阻：")
+        for item in paused[:10]:
+            if isinstance(item, dict):
+                lines.append(f"- {item.get('topic_title') or '未命名主题'}（{item.get('status')}）")
+    return "\n".join(lines)
+
+
 def _check_graph(*, recover: bool = True, **kwargs: Any) -> bool:
     if _profile() not in {"scholar", "wisdom-oldman"}:
         return True
@@ -327,6 +530,20 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 state.kag_degraded = False
                 state.result_submitted = False
                 state.graph_ready = False
+                state.wisdom_intent_resolved = False
+                state.wisdom_answer = None
+                state.wisdom_document_url = None
+                state.wisdom_orbit_status = None
+                state.wisdom_runner_wake = None
+                state.wisdom_status = None
+                state.brainstormer_capacity_attempted = False
+                state.brainstormer_capacity_result = None
+                state.brainstormer_capacity_required = False
+                state.brainstormer_structure_status = None
+            if profile == "brainstormer":
+                state.brainstormer_capacity_required = _brainstormer_capacity_question(
+                    str(kwargs.get("user_message") or "")
+                )
             if profile == "wisdom-oldman" and (new_turn or not state.direct_attempted):
                 _capture_topic_consent(state, str(kwargs.get("user_message") or ""))
             attempted = state.direct_attempted
@@ -402,12 +619,19 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
         if not attempted and _CONTEXT is not None:
             message = str(kwargs.get("user_message") or "").strip()
             server, tool = _DOMAIN_PREFLIGHT[profile]
+            with _LOCK:
+                approved_topic = _state(_session_key(kwargs)).approved_topic_question
             arguments = {
                 "brainstormer": {"query": message, "limit": 5},
                 "wisdom-oldman": {
-                    "question": message,
+                    "question": approved_topic or message,
                     "mode": "SIMPLE",
                     "recover_runtime": False,
+                    "intent": (
+                        "research" if approved_topic or _explicit_research_request(message)
+                        else "auto"
+                    ),
+                    "topic_creation_approved": bool(approved_topic),
                     "uuma_task_id": state.direct_task_id or "",
                     "uuma_run_id": state.direct_run_id or "",
                     "notification_route_json": json.dumps(
@@ -432,6 +656,17 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                         state.domain_checked = True
                         if profile == "wisdom-oldman":
                             state.kag_degraded = _runtime_status(domain_result) == "DEGRADED_KAG"
+                            state.wisdom_intent_resolved = (
+                                arguments["intent"] == "research"
+                                or _result_field(domain_result, "message_intent")
+                                in {"status", "feedback", "conversation"}
+                            )
+                            proposal = _topic_proposal(domain_result)
+                            if proposal:
+                                state.pending_topic_question = proposal
+                            _remember_wisdom_result(state, domain_result)
+                            if approved_topic:
+                                state.approved_topic_question = None
                 else:
                     _LOGGER.warning(
                         "Specialist domain preflight failed for %s/%s: %s",
@@ -455,6 +690,27 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 if profile == "forge-lab-bot"
                 else ""
             )
+            brainstormer_guidance = (
+                " Brainstormer: the latest user correction supersedes earlier assistant estimates. "
+                "Answer the current question first. For numerical plans, reverse from the user's "
+                "target; distinguish user facts, sourced evidence, and hypothetical inputs. "
+                "Do not infer producer price from retail price or net profit from gross margin. "
+                "Separate delivery cadence from harvest and planting cadence. Use "
+                "brainstormer_calculate_capacity only with complete inputs; otherwise show the "
+                "missing variables and a provisional equation. "
+                "If complete numeric inputs are present, you MUST call the directly available "
+                "mcp__uuma_worker__brainstormer_calculate_capacity before giving an area or "
+                "block-sufficiency conclusion; do not use tool_search. "
+                "An empty topic search means no "
+                "canonical topic was found, not that the conversation is forgotten. For a "
+                "substantial new project discussion, call the directly available "
+                "brainstormer_propose_project_topic; it remains pending Orchestrator review. "
+                "Propose other meaningful state changes through the State Manager. "
+                "Never claim another Agent "
+                "was called unless an actual tool receipt confirms it."
+                if profile == "brainstormer"
+                else ""
+            )
             return {
                 "context": (
                     f"UuMA Direct Run {registered} is registered. {identity_context}"
@@ -475,7 +731,8 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     "question with intent=research and topic_creation_approved=true. "
                     "Promise continued research only when an orbit_id and "
                     "persisted status were returned. "
-                    f"Report progress and submit the result through Worker MCP.{forge_capture}"
+                    f"Report progress and submit the result through Worker MCP."
+                    f"{forge_capture}{brainstormer_guidance}"
                 )
             }
         return {
@@ -522,6 +779,9 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
         return {"action": "block", "message": "ChatGPT bridge capability denied for this profile."}
     if _profile() in _DIRECT_SPECIALISTS:
         name = _normalized_tool_name(tool_name)
+        if _profile() == "brainstormer" and name.endswith("brainstormer_calculate_capacity"):
+            with _LOCK:
+                _state(_session_key(kwargs)).brainstormer_capacity_attempted = True
         if (
             _profile() == "wisdom-oldman"
             and name.endswith("knowledge_question_preflight")
@@ -603,12 +863,27 @@ def _post_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> Non
     key = _session_key(kwargs)
     if _profile() in _DIRECT_SPECIALISTS:
         name = _normalized_tool_name(tool_name)
+        if _profile() == "brainstormer" and name.endswith("brainstormer_calculate_capacity"):
+            receipt = _brainstormer_capacity_receipt(kwargs.get("result"))
+            if receipt:
+                with _LOCK:
+                    _state(key).brainstormer_capacity_result = receipt
+        if _profile() == "brainstormer" and name.endswith("brainstormer_propose_project_topic"):
+            status = _result_field(kwargs.get("result"), "status")
+            if isinstance(status, str):
+                with _LOCK:
+                    _state(key).brainstormer_structure_status = status
         if _profile() == "wisdom-oldman" and name.endswith("knowledge_question_preflight"):
             proposal = _topic_proposal(kwargs.get("result"))
             with _LOCK:
                 state = _state(key)
                 if proposal:
                     state.pending_topic_question = proposal
+                if (args or {}).get("intent") == "research" or _result_field(
+                    kwargs.get("result"), "message_intent"
+                ) in {"status", "feedback", "conversation"}:
+                    state.wisdom_intent_resolved = True
+                _remember_wisdom_result(state, kwargs.get("result"))
                 if (args or {}).get("topic_creation_approved"):
                     state.approved_topic_question = None
         if "uuma_worker" in name and name.endswith("knowledge_runtime_preflight"):
@@ -687,7 +962,54 @@ def _guard_specialist_output(response_text: str = "", **kwargs: Any) -> str | No
         domain_checked = state.domain_checked
         kag_degraded = state.kag_degraded
         pending_topic = state.pending_topic_question
+        wisdom_intent_resolved = state.wisdom_intent_resolved
+        grounded_reply = _wisdom_grounded_reply(state) if _profile() == "wisdom-oldman" else None
+        status_reply = _wisdom_status_reply(state) if _profile() == "wisdom-oldman" else None
+        capacity_attempted = state.brainstormer_capacity_attempted
+        capacity_result = state.brainstormer_capacity_result
+        capacity_required = state.brainstormer_capacity_required
+        structure_status = state.brainstormer_structure_status
     if registered and domain_checked:
+        if _profile() == "brainstormer" and re.search(
+            r"(?:已|已经).{0,4}(?:保存|记录|记住).{0,12}(?:项目|话题)|"
+            r"(?:项目|话题).{0,12}(?:已|已经).{0,4}(?:保存|记录)",
+            response_text,
+        ) and structure_status != "ALREADY_EXISTS":
+            if structure_status == "PROPOSED":
+                return (
+                    "项目和话题结构已提交提案，仍等待 Orchestrator 审核；"
+                    "目前不能称为已经保存的规范状态。"
+                )
+            return "本轮没有完成项目或话题的持久化，不能声称已经保存。"
+        if _profile() == "brainstormer" and capacity_attempted:
+            if capacity_result:
+                return _brainstormer_capacity_reply(capacity_result, response_text)
+            return (
+                "容量计算工具没有成功返回结果，因此本轮不能给出精确的利润或面积结论。"
+                "请检查输入后重试；先前未经核算的数字不能作为租地依据。"
+            )
+        if (
+            _profile() == "brainstormer" and capacity_required
+            and _brainstormer_unchecked_capacity_claim(response_text)
+        ):
+            return (
+                "这轮还没有通过容量计算工具核对，不能给出精确土地面积或区块是否足够的结论。"
+                "请先确认到手售价、每公斤变动成本、每月固定成本、单丛可售产量、"
+                "生长及整地天数、收获间隔和净种植比例；若这些数据已齐，需完成工具核算。"
+            )
+        if _profile() == "brainstormer" and re.search(
+            r"(?:^\s*调用\s*智慧老头\s*[（(]|"
+            r"(?:我)?(?:已经|已|刚才|刚刚|正在|现在|马上)\s*"
+            r"(?:调用|委派|咨询|交给)\s*(?:了)?\s*"
+            r"(?:智慧老头|Wisdom[- ]?Oldman|Scholar|Forge(?: Lab Bot)?))",
+            response_text,
+            flags=re.IGNORECASE,
+        ):
+            return (
+                "我尚未实际调用或委派其他 Agent，不能把自己的分析说成对方的结论。"
+                "这类跨 Agent 请求需要交给 Orchestrator；目前我只能继续整理问题、"
+                "列出所需证据，并明确哪些结论仍未经核实。"
+            )
         if _profile() == "wisdom-oldman" and pending_topic:
             return (
                 f"建议建立新主题：{pending_topic}\n\n"
@@ -697,6 +1019,15 @@ def _guard_specialist_output(response_text: str = "", **kwargs: Any) -> str | No
             )
         if _profile() == "wisdom-oldman" and kag_degraded:
             return "本轮 KAG 图谱推理失败，已阻止降级回答；请恢复服务后重试。"
+        if _profile() == "wisdom-oldman" and not wisdom_intent_resolved:
+            return (
+                "我还没有完成这轮问题的知识库检索，不能把直接生成的内容当作研究答案。"
+                "请重试，或明确告诉我这是研究问题还是查看研究进度。"
+            )
+        if _profile() == "wisdom-oldman" and grounded_reply:
+            return grounded_reply
+        if _profile() == "wisdom-oldman" and status_reply:
+            return status_reply
         return None
     return (
         "我目前无法完成 UuMA Direct Run 登记或领域知识／状态检索，所以不能把未经架构追踪"
@@ -721,6 +1052,8 @@ def _finalize_specialist(**kwargs: Any) -> None:
             profile not in {"scholar", "wisdom-oldman"}
             or (state.graph_ready and not state.kag_degraded)
         )
+        if profile == "wisdom-oldman":
+            domain_checked = domain_checked and state.wisdom_intent_resolved
     response = str(kwargs.get("assistant_response") or "")[:8000]
     generic_failure = response.strip().lower().startswith("sorry, something went wrong")
     outcome = "COMPLETED" if domain_checked and response and not generic_failure else "FAILED"

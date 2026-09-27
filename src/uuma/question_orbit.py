@@ -30,11 +30,9 @@ from .knowledge_service import KnowledgeService, json_record
 from .knowledge_store import TABLE_IDS
 from .wisdom_topics import TopicKnowledgeService
 
-ACTIVE_ORBIT_STATUSES = {
+RUNNING_ORBIT_STATUSES = {
     OrbitStatus.QUEUED.value,
     OrbitStatus.ACTIVE.value,
-    OrbitStatus.PAUSED.value,
-    OrbitStatus.BLOCKED.value,
 }
 
 
@@ -338,6 +336,7 @@ class QuestionOrbitService:
         return sorted(
             records,
             key=lambda item: (
+                int(item.get("no_source_attempts", 0)),
                 priority_order[item["priority"]],
                 priority_order[item["relevance"]],
                 priority_order[item["impact"]],
@@ -370,6 +369,73 @@ class QuestionOrbitService:
         ]
         records = self._ordered_frontier(records)
         return {"orbit_id": orbit_id, "count": len(records), "records": records}
+
+    def reopen_gap(
+        self, orbit_id: str, gap_id: str, *, reason: str, actor_id: str
+    ) -> dict[str, Any]:
+        """Correct a falsely closed gap without replacing its history or research budget."""
+        self.knowledge.require_writer(actor_id)
+        if not reason.strip():
+            raise ValueError("A correction reason is required.")
+        now = datetime.now(UTC).isoformat()
+        with self.store.transaction() as conn:
+            orbit_before = self.knowledge._require("question_orbits", orbit_id, conn)
+            row = conn.execute(
+                "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? "
+                "AND json_extract(record_json, '$.gap_id') = ?",
+                (orbit_id, gap_id),
+            ).fetchone()
+            if not row:
+                raise KeyError(f"No gap {gap_id} belongs to Orbit {orbit_id}.")
+            item_before = json.loads(row["record_json"])
+            if item_before["status"] != WorkStatus.FILLED.value:
+                return {"reopened": False, "orbit": orbit_before, "frontier": item_before}
+            item_after = item_before | {"status": WorkStatus.OPEN.value, "updated_at": now}
+            self._update(
+                conn, "orbit_frontier", item_before, item_after,
+                "ORBIT_FRONTIER_ITEM_CORRECTED", actor_id,
+            )
+            gap_before = self.knowledge._require("gaps", gap_id, conn)
+            if gap_before["status"] == WorkStatus.FILLED.value:
+                self._update(
+                    conn, "gaps", gap_before,
+                    gap_before | {"status": WorkStatus.OPEN.value, "updated_at": now},
+                    "GAP_REOPENED_AFTER_REVIEW", actor_id,
+                )
+            run_before = self.knowledge._require(
+                "research_runs", orbit_before["research_run_id"], conn
+            )
+            run_after = run_before | {
+                "active_gap_ids": list(dict.fromkeys([
+                    *run_before.get("active_gap_ids", []), gap_id,
+                ])),
+                "satisfaction_level": SatisfactionLevel.PROVISIONAL.value,
+                "satisfaction_rationale": reason,
+                "updated_at": now,
+            }
+            orbit_after = orbit_before | {
+                "satisfaction_level": SatisfactionLevel.PROVISIONAL.value,
+                "satisfaction_rationale": reason,
+                "updated_at": now,
+            }
+            if orbit_before["status"] in {
+                OrbitStatus.COMPLETED.value, OrbitStatus.BLOCKED.value, OrbitStatus.FAILED.value,
+            }:
+                orbit_after |= {"status": OrbitStatus.QUEUED.value, "stop_reason": None}
+                run_after |= {
+                    "status": ResearchRunStatus.ACTIVE.value,
+                    "current_question_id": item_before["question_id"],
+                    "stop_reason": None,
+                }
+            self._update(
+                conn, "research_runs", run_before, run_after,
+                "RESEARCH_RUN_COVERAGE_CORRECTED", actor_id,
+            )
+            self._update(
+                conn, "question_orbits", orbit_before, orbit_after,
+                "QUESTION_ORBIT_COVERAGE_CORRECTED", actor_id,
+            )
+            return {"reopened": True, "orbit": orbit_after, "frontier": item_after}
 
     def transition(
         self, orbit_id: str, status: OrbitStatus, *, actor_id: str, reason: str | None = None
@@ -428,7 +494,7 @@ class QuestionOrbitService:
             after = before | {
                 "status": status.value,
                 "updated_at": now.isoformat(),
-                "stop_reason": reason if status.value not in ACTIVE_ORBIT_STATUSES else None,
+                "stop_reason": None if status.value in RUNNING_ORBIT_STATUSES else reason,
             }
             event = self.store.append_event(
                 conn,
@@ -450,7 +516,9 @@ class QuestionOrbitService:
             if run_status is not None:
                 run_after = run_before | {
                     "status": run_status.value,
-                    "stop_reason": reason if status is OrbitStatus.STOPPED else None,
+                    "stop_reason": (
+                        reason if status in {OrbitStatus.PAUSED, OrbitStatus.STOPPED} else None
+                    ),
                     "updated_at": now.isoformat(),
                 }
                 self._update(
@@ -462,6 +530,67 @@ class QuestionOrbitService:
                     actor_id,
                 )
         return after
+
+    def repair_pause_reason(self, orbit_id: str, *, actor_id: str) -> dict[str, Any]:
+        """Restore a missing pause reason from its original append-only event."""
+        self.knowledge.require_writer(actor_id)
+        with self.store.transaction() as conn:
+            before = self.knowledge._require("question_orbits", orbit_id, conn)
+            if before["status"] != OrbitStatus.PAUSED.value:
+                raise ValueError("Only a paused Orbit can have its pause reason repaired.")
+            if before.get("stop_reason"):
+                return before
+            row = conn.execute(
+                "SELECT event_id, payload_json FROM knowledge_events "
+                "WHERE aggregate_id = ? AND event_type = 'QUESTION_ORBIT_PAUSED' "
+                "ORDER BY sequence DESC LIMIT 1",
+                (orbit_id,),
+            ).fetchone()
+            reason = json.loads(row["payload_json"]).get("reason") if row else None
+            if not isinstance(reason, str) or not reason.strip():
+                raise ValueError("No audited pause reason is available for this Orbit.")
+            now = datetime.now(UTC).isoformat()
+            after = before | {"stop_reason": reason, "updated_at": now}
+            self._update(
+                conn, "question_orbits", before, after,
+                "QUESTION_ORBIT_PAUSE_REASON_REPAIRED", actor_id,
+                extra={"source_event_id": row["event_id"]},
+            )
+            run_before = self.knowledge._require(
+                "research_runs", before["research_run_id"], conn
+            )
+            if run_before["status"] == ResearchRunStatus.PAUSED.value:
+                run_after = run_before | {"stop_reason": reason, "updated_at": now}
+                self._update(
+                    conn, "research_runs", run_before, run_after,
+                    "RESEARCH_RUN_PAUSE_REASON_REPAIRED", actor_id,
+                    extra={"source_event_id": row["event_id"]},
+                )
+            return after
+
+    def update_notification_route(
+        self, orbit_id: str, route: dict[str, str], *, actor_id: str = "orchestrator"
+    ) -> dict[str, Any]:
+        """Repair a durable Orbit's delivery address without changing its research state."""
+        self.knowledge.require_writer(actor_id)
+        allowed = {"platform", "chat_id", "thread_id", "session_id"}
+        if not route or set(route) - allowed or any(
+            not isinstance(value, str) or len(value) > 500 for value in route.values()
+        ):
+            raise ValueError("Notification route is invalid.")
+        if route.get("platform") == "telegram" and not route.get("chat_id"):
+            raise ValueError("Telegram notification route requires a chat ID.")
+        with self.store.transaction() as conn:
+            before = self.knowledge._require("question_orbits", orbit_id, conn)
+            after = before | {
+                "notification_route": route,
+                "updated_at": datetime.now(UTC).isoformat(),
+            }
+            self._update(
+                conn, "question_orbits", before, after,
+                "QUESTION_ORBIT_NOTIFICATION_ROUTE_UPDATED", actor_id,
+            )
+            return after
 
     def acquire_cycle(
         self,
@@ -910,6 +1039,7 @@ class QuestionOrbitService:
         kag_watermark: int = 0,
         decision: str = "CONTINUE",
         answer: dict[str, Any] | None = None,
+        no_new_source: bool = False,
         actor_id: str = "wisdom-oldman",
     ) -> dict[str, Any]:
         self.knowledge.require_writer(actor_id)
@@ -961,6 +1091,10 @@ class QuestionOrbitService:
             item_after = item_before | {
                 "status": (
                     WorkStatus.FILLED.value if resolved_current else WorkStatus.OPEN.value
+                ),
+                "no_source_attempts": (
+                    int(item_before.get("no_source_attempts", 0)) + 1
+                    if no_new_source else 0
                 ),
                 "updated_at": now.isoformat(),
             }
@@ -1029,6 +1163,16 @@ class QuestionOrbitService:
                 orbit_status = OrbitStatus.BUDGET_EXHAUSTED
                 run_status = ResearchRunStatus.BUDGET_EXHAUSTED
                 stop_reason = "The Orbit reached at least one configured research budget limit."
+            elif no_new_source and open_frontier and all(
+                int(item.get("no_source_attempts", 0)) > 0 for item in open_frontier
+            ):
+                orbit_status = OrbitStatus.PAUSED
+                run_status = ResearchRunStatus.PAUSED
+                stop_reason = (
+                    "本轮已检查所有未解决问题，在当前可用的公开来源中仍未找到新的、"
+                    "可核查且直接相关的资料；"
+                    "现有成果和缺口已保留，可在补充方向或新资料后继续。"
+                )
             elif not open_frontier:
                 orbit_status = OrbitStatus.BLOCKED
                 run_status = ResearchRunStatus.PAUSED
@@ -1096,23 +1240,30 @@ class QuestionOrbitService:
                 )
                 notification_payload |= {
                     "topic_title": document_version["topic_title"],
-                    "summary": str(section.get("body") or "")[:2000],
+                    "summary": str(section.get("body") or "")[:700],
                     "change_summary": document_version["change_summary"],
                     "document_url": document_version["document_url"],
                     "sources": section.get("citations", [])[:8],
+                    "grounded": bool(section.get("citations")),
                     "remaining_questions": [
                         self.knowledge._require("gaps", item["gap_id"], conn)["reason"]
                         for item in self._ordered_frontier(open_frontier)[:8]
                         if item.get("gap_id")
                     ],
                 }
-            if source_ids and int(run_before.get("cycle_count", 0)) == 0:
+            first_answer_sent = conn.execute(
+                "SELECT 1 FROM orbit_notifications WHERE orbit_id = ? "
+                "AND json_extract(record_json, '$.event_type') = 'FIRST_USEFUL_ANSWER' "
+                "AND status = 'SENT' LIMIT 1",
+                (orbit_before["orbit_id"],),
+            ).fetchone()
+            if notification_payload.get("grounded") and not first_answer_sent:
                 self._enqueue_notification_in_transaction(
                     conn,
                     orbit_after,
                     "FIRST_USEFUL_ANSWER",
                     notification_payload,
-                    dedupe_suffix="first-answer",
+                    dedupe_suffix="first-grounded-answer",
                     actor_id=actor_id,
                 )
             if orbit_status is not OrbitStatus.QUEUED:
@@ -1234,7 +1385,7 @@ class QuestionOrbitService:
         actor_id: str,
     ) -> dict[str, Any] | None:
         route = orbit.get("notification_route") or {}
-        if not route:
+        if not route or (route.get("platform") == "telegram" and not route.get("chat_id")):
             return None
         dedupe_key = f"{orbit['orbit_id']}:{event_type}:{dedupe_suffix}"
         existing = conn.execute(
@@ -1344,6 +1495,29 @@ class QuestionOrbitService:
                 after,
                 f"ORBIT_NOTIFICATION_{status.value}",
                 actor_id,
+            )
+            return after
+
+    def cancel_notification(
+        self, orbit_notification_id: str, *, reason: str, actor_id: str = "orchestrator"
+    ) -> dict[str, Any]:
+        """Retain an invalid unsent notification in history without retrying delivery."""
+        self.knowledge.require_writer(actor_id)
+        with self.store.transaction() as conn:
+            before = self.knowledge._require(
+                "orbit_notifications", orbit_notification_id, conn
+            )
+            if before["status"] == OrbitNotificationStatus.SENT.value:
+                raise ValueError("A sent notification cannot be cancelled.")
+            after = before | {
+                "status": OrbitNotificationStatus.FAILED.value,
+                "attempts": 3,
+                "last_error": reason[:8000],
+                "updated_at": datetime.now(UTC).isoformat(),
+            }
+            self._update(
+                conn, "orbit_notifications", before, after,
+                "ORBIT_NOTIFICATION_CANCELLED", actor_id,
             )
             return after
 

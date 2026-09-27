@@ -1,0 +1,9 @@
+﻿{
+    "path":  "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\scripts\\run-native-host.bat",
+    "description":  "UuMA Lab Bot Chrome Native Messaging Host",
+    "name":  "com.uuma.labbot",
+    "allowed_origins":  [
+                            "chrome-extension://mipahoghglfapomaagaobnfojpgacfog/"
+                        ],
+    "type":  "stdio"
+}

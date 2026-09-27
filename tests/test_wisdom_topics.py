@@ -9,6 +9,7 @@ from uuma.api import create_app
 from uuma.knowledge_models import (
     BudgetTier,
     EvidenceRecord,
+    GapType,
     OrbitStatus,
     SatisfactionLevel,
     SourceRecord,
@@ -16,13 +17,51 @@ from uuma.knowledge_models import (
 from uuma.knowledge_service import KnowledgeService
 from uuma.question_orbit import QuestionOrbitService
 from uuma.settings import Settings
-from uuma.wisdom_topics import TopicKnowledgeService, ensure_view_token, grounded_answer
+from uuma.wisdom_topics import (
+    TopicKnowledgeService,
+    ensure_view_token,
+    grounded_answer,
+    research_question_text,
+)
 from uuma.wisdom_view import create_wisdom_view_app
+from uuma.wisdom_web import render_topic_page
 
 
 def resolve_approved(topics: TopicKnowledgeService, *args, **kwargs):
     """Existing-topic test fixtures model a prior explicit user approval."""
     return topics.resolve_question(*args, allow_new_topic=True, **kwargs)
+
+
+def test_topic_page_shows_live_orbit_state_separately_from_published_version() -> None:
+    page = render_topic_page(
+        {
+            "topic": {"topic_id": "topic_1", "title": "青葱"},
+            "latest_version": {"body_markdown": "# 青葱\n\n状态：QUEUED", "sections": []},
+            "orbits": [{"status": "ACTIVE", "updated_at": "2026-09-26T08:00:00Z"}],
+            "versions": [],
+        },
+        "read-token",
+    )
+
+    assert "当前研究状态：ACTIVE" in page
+    assert "正文记录的是发布时的状态" in page
+    assert "状态：QUEUED" in page
+
+    paused_page = render_topic_page(
+        {
+            "topic": {"topic_id": "topic_1", "title": "青葱"},
+            "latest_version": {"body_markdown": "# 青葱", "sections": []},
+            "orbits": [{
+                "status": "PAUSED",
+                "updated_at": "2026-09-27T04:00:00Z",
+                "stop_reason": "No additional relevant public source was found.",
+            }],
+            "versions": [],
+        },
+        "read-token",
+    )
+    assert "当前研究状态：PAUSED" in paused_page
+    assert "原因：No additional relevant public source was found." in paused_page
 
 
 def test_new_topic_requires_permission_but_existing_topic_reuses_without_it(tmp_path: Path):
@@ -37,6 +76,41 @@ def test_new_topic_requires_permission_but_existing_topic_reuses_without_it(tmp_
     approved = resolve_approved(topics, "scallion cultivation", actor_id="wisdom-oldman")
     reused = topics.resolve_question("scallion cultivation", actor_id="wisdom-oldman")
     assert reused["topic"]["topic_id"] == approved["topic"]["topic_id"]
+    assert topics.list_topics()["count"] == 1
+
+
+def test_cross_chat_question_with_answer_instructions_reuses_existing_topic(tmp_path: Path):
+    service = KnowledgeService(tmp_path / "wisdom.db")
+    topics = TopicKnowledgeService(service)
+    first = resolve_approved(
+        topics,
+        "青葱 的 气雾栽培细节&核心构建要素 ，分株法",
+        actor_id="wisdom-oldman",
+        route={"platform": "telegram", "chat_id": "first"},
+    )
+    message = (
+        "青葱分株后缓苗要多久？请根据已有知识直接回答，"
+        "并附对应章节链接；不要新建主题。"
+    )
+    assert research_question_text(message) == "青葱分株后缓苗要多久？"
+
+    reused = topics.resolve_question(
+        message,
+        actor_id="wisdom-oldman",
+        route={"platform": "telegram", "chat_id": "later"},
+    )
+    assert reused["topic"]["topic_id"] == first["topic"]["topic_id"]
+    assert reused["question"]["text"] == "青葱分株后缓苗要多久？"
+    assert reused["match_kind"] == "related_question"
+    assert topics.list_topics()["count"] == 1
+    assert service.history()["chain_valid"]
+
+    unrelated = topics.resolve_question(
+        "量子物理如何研究？请根据已有知识直接回答。",
+        actor_id="wisdom-oldman",
+        route={"platform": "telegram", "chat_id": "later"},
+    )
+    assert unrelated["requires_topic_approval"]
     assert topics.list_topics()["count"] == 1
 
 
@@ -105,7 +179,7 @@ def test_retraction_keeps_old_version_but_changes_visible_overview(tmp_path: Pat
     assert record["topic"]["status"] == "ARCHIVED"
     assert record["document"]["current_version"] == 2
     assert "Unrelated old content" not in record["latest_version"]["body_markdown"]
-    assert "no traceable citations" in record["versions"][1]["body_markdown"]
+    assert "缺少可追溯的直接证据" in record["versions"][1]["body_markdown"]
     page = TestClient(create_wisdom_view_app(settings)).get(
         f"/wisdom/topics/{topic_id}", params={"token": ensure_view_token(tmp_path)}
     )
@@ -330,6 +404,38 @@ def test_broad_topic_framework_creates_distinct_research_branches(tmp_path: Path
     assert not topics.is_broad_topic_request("青葱分株后如何缓苗？")
 
 
+def test_existing_topic_gap_is_idempotent_and_keeps_topic_identity(tmp_path: Path) -> None:
+    service = KnowledgeService(tmp_path / "wisdom.db")
+    topics = TopicKnowledgeService(service)
+    root = resolve_approved(topics, "How should I grow scallions?", actor_id="wisdom-oldman")
+    topic_id = root["topic"]["topic_id"]
+    question_id = root["question"]["question_id"]
+
+    first = topics.ensure_topic_gap(
+        topic_id,
+        question_id,
+        "Which aeroponic misting interval has crop-specific evidence?",
+        "The user needs a traceable design parameter, not a generic citation.",
+        GapType.COVERAGE,
+        actor_id="wisdom-oldman",
+    )
+    repeated = topics.ensure_topic_gap(
+        topic_id,
+        question_id,
+        "Which aeroponic misting interval has crop-specific evidence?",
+        "The user needs a traceable design parameter, not a generic citation.",
+        GapType.COVERAGE,
+        actor_id="wisdom-oldman",
+    )
+
+    assert repeated == first
+    topic = topics.get_topic(topic_id)
+    assert len(topic["questions"]) == 2
+    assert topic["questions"][1]["link"]["relationship"] == "SUBQUESTION"
+    assert service._require("gaps", first)["status"] == "OPEN"
+    assert service.history()["chain_valid"]
+
+
 def test_cycle_publishes_traceable_version_and_digest_notification(tmp_path: Path) -> None:
     service = KnowledgeService(tmp_path / "wisdom.db")
     topics = TopicKnowledgeService(service, view_token="read-token")
@@ -406,7 +512,76 @@ def test_cycle_publishes_traceable_version_and_digest_notification(tmp_path: Pat
     assert started["orbit_id"] == completed["orbit"]["orbit_id"]
 
 
-def test_local_topic_page_requires_independent_read_token(tmp_path: Path) -> None:
+def test_cycle_keeps_unverified_sources_separate_and_sends_no_useful_digest(
+    tmp_path: Path,
+) -> None:
+    service = KnowledgeService(tmp_path / "wisdom.db")
+    topics = TopicKnowledgeService(service, view_token="read-token")
+    resolved = resolve_approved(
+        topics, "我想了解种青葱", actor_id="wisdom-oldman",
+        route={"platform": "telegram", "chat_id": "one"},
+    )
+    source = service.add_source(
+        SourceRecord(locator="https://example.test/potato", title="马铃薯气雾栽培研究"),
+        actor_id="wisdom-oldman",
+    )
+    orbits = QuestionOrbitService(service, topics=topics)
+    orbits.preflight(
+        resolved["question"]["text"],
+        {
+            "answer": "No relevant, traceable evidence is available yet.",
+            "citations": [],
+            "satisfaction_level": "INSUFFICIENT",
+            "satisfaction_rationale": "Crop-specific evidence is missing.",
+            "remaining_gap_ids": [],
+        },
+        actor_id="wisdom-oldman",
+        topic_id=resolved["topic"]["topic_id"],
+        question_id=resolved["question"]["question_id"],
+        notification_route={"platform": "telegram", "chat_id": "one"},
+    )
+    cycle = orbits.acquire_cycle("runner")
+    assert cycle is not None
+    result = orbits.complete_cycle(
+        cycle["orbit_cycle_id"], "runner",
+        satisfaction_level=SatisfactionLevel.INSUFFICIENT,
+        satisfaction_rationale="Crop-specific evidence is missing.",
+        active_seconds=1,
+        source_ids=[source["source_id"]],
+        answer={
+            "answer": "No relevant, traceable evidence is available yet.",
+            "citations": [],
+            "satisfaction_level": "INSUFFICIENT",
+            "satisfaction_rationale": "Crop-specific evidence is missing.",
+        },
+    )
+
+    section = result["document_version"]["sections"][0]
+    assert section["citations"] == []
+    assert section["research_sources"][0]["source_id"] == source["source_id"]
+    assert "尚未支持上述回答" in result["document_version"]["body_markdown"]
+    assert "尚无可引用结论" in result["document_version"]["change_summary"]
+    assert service.list_records("orbit_notification")["count"] == 0
+    corrected = topics.publish_answer(
+        resolved["topic"]["topic_id"], resolved["question"]["question_id"],
+        {
+            "answer": "No relevant, traceable evidence is available yet.",
+            "citations": [],
+            "satisfaction_rationale": "Crop-specific evidence is missing.",
+        },
+        actor_id="wisdom-oldman", research_status="QUEUED",
+        source_ids=[source["source_id"]],
+        correction_reason="Earlier draft mislabeled a research source as support.",
+    )
+    assert corrected["version"] == 2
+    assert "修正上一版" in corrected["change_summary"]
+    assert topics.get_topic(resolved["topic"]["topic_id"])["versions"][1]["version"] == 1
+
+
+def test_local_topic_page_requires_independent_read_token(
+    tmp_path: Path, monkeypatch
+) -> None:
+    monkeypatch.setenv("UUMA_WISDOM_VIEW_TOKEN", "stale-process-token")
     settings = _settings(tmp_path)
     settings.ensure_directories()
     service = KnowledgeService(settings.knowledge_database_path())
@@ -432,7 +607,7 @@ def test_local_topic_page_requires_independent_read_token(tmp_path: Path) -> Non
     assert client.get(path).status_code == 403
     page = client.get(path, params={"token": token})
     assert page.status_code == 200
-    assert "No relevant, traceable evidence" in page.text
+    assert "目前没有直接相关、可追溯的证据" in page.text
     graph = client.get(f"/wisdom/api/topics/{resolved['topic']['topic_id']}/graph",
                        params={"token": token})
     assert graph.status_code == 200
@@ -441,6 +616,7 @@ def test_local_topic_page_requires_independent_read_token(tmp_path: Path) -> Non
     read_only_client = TestClient(create_wisdom_view_app(settings))
     assert read_only_client.get("/health").json()["service"] == "wisdom-view"
     assert read_only_client.get(path).status_code == 403
+    assert read_only_client.get(path, params={"token": "stale-process-token"}).status_code == 403
     assert read_only_client.get(path, params={"token": token}).status_code == 200
     assert read_only_client.post(path, params={"token": token}).status_code == 405
     escaped_path = path.replace("_", "%5C_")
