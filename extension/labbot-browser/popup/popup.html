@@ -33,8 +33,11 @@
           <option value="pdd">Pinduoduo (拼多多)</option>
         </select>
       </div>
-      <button id="btnStart" class="btn btn-primary" style="margin-bottom: 8px;">Start DOM Extraction</button>
-      <button id="btnExportTaobao" class="btn btn-secondary" style="display: none; background: #ff5000; color: white;">点击淘宝【导出订单】</button>
+      <div style="display: flex; gap: 8px; margin-bottom: 8px;">
+        <button id="btnStart" class="btn btn-primary" style="flex: 1; margin-bottom: 0;">抓取本页</button>
+        <button id="btnAutoPaging" class="btn" style="flex: 1.2; background: #0284c7; color: white;">⏩ 自动连续翻页</button>
+      </div>
+      <button id="btnExportTaobao" class="btn btn-secondary" style="display: none; background: #ff5000; color: white; margin-bottom: 8px;">点击淘宝【导出订单】</button>
     </section>
 
     <footer class="footer">

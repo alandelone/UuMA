@@ -72,7 +72,7 @@ def test_multi_platform_commerce_lifecycle_e2e(multi_platform_env):
 
     pdd_html = (FIXTURES_DIR / "pdd_orders.html").read_text(encoding="utf-8")
     pdd_orders = PinduoduoOrderAdapter.parse_orders_html(pdd_html)
-    assert len(pdd_orders) == 3
+    assert len(pdd_orders) == 5
 
     # -------------------------------------------------------------------------
     # 3. Ingest batches into lab.db & verify immutable archives

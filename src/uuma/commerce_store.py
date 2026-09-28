@@ -108,6 +108,11 @@ class CommerceStore:
                     review_status TEXT NOT NULL DEFAULT 'unreviewed',
                     ai_category_suggestion TEXT,
                     ai_ownership_suggestion TEXT,
+                    shop_name TEXT DEFAULT '',
+                    item_url TEXT DEFAULT '',
+                    order_time TEXT DEFAULT '',
+                    shipping_fee REAL DEFAULT 0.0,
+                    order_status TEXT DEFAULT '',
                     evidence_version INTEGER NOT NULL DEFAULT 1,
                     review_version INTEGER NOT NULL DEFAULT 1,
                     created_at TEXT NOT NULL,
@@ -120,6 +125,18 @@ class CommerceStore:
                     ON commerce_order_lines(review_status, ownership);
                 """
             )
+            # Ensure enriched columns exist in existing databases
+            cols = {row["name"] for row in conn.execute("PRAGMA table_info(commerce_order_lines)").fetchall()}
+            for col_name, col_type in [
+                ("shop_name", "TEXT DEFAULT ''"),
+                ("item_url", "TEXT DEFAULT ''"),
+                ("order_time", "TEXT DEFAULT ''"),
+                ("shipping_fee", "REAL DEFAULT 0.0"),
+                ("order_status", "TEXT DEFAULT ''"),
+            ]:
+                if col_name not in cols:
+                    conn.execute(f"ALTER TABLE commerce_order_lines ADD COLUMN {col_name} {col_type}")
+
 
     def write_immutable_archive(self, task_id: str, batch_id: str, payload: dict[str, Any]) -> Path:
         target_dir = self.archive_dir / task_id
@@ -255,6 +272,14 @@ class CommerceStore:
 
                     review_status = "pending_identity_review" if is_collision else "unreviewed"
 
+                    shop_name = str(item.get("shop_name", "") or order.get("shop_name", "")).strip()
+                    item_url = str(item.get("item_url", "")).strip()
+                    if not item_url and platform == "taobao" and product_id and product_id.isdigit():
+                        item_url = f"https://item.taobao.com/item.htm?id={product_id}"
+                    order_time = str(item.get("order_time", "") or order.get("order_time", "")).strip()
+                    shipping_fee = float(order.get("shipping_fee", 0.0) or item.get("shipping_fee", 0.0) or 0.0)
+                    line_order_status = str(item.get("order_status", "") or order_status).strip()
+
                     # Check if line already exists
                     existing_line = conn.execute(
                         "SELECT * FROM commerce_order_lines WHERE line_id = ?",
@@ -268,13 +293,15 @@ class CommerceStore:
                                 line_id, platform, account_id, order_id, product_id, sku_id,
                                 product_name, variant_name, unit_price, quantity, line_total,
                                 currency, category, ownership, review_status, ai_category_suggestion,
-                                ai_ownership_suggestion, evidence_version, review_version, created_at, updated_at
-                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'electronics', NULL, ?, ?, ?, 1, 1, ?, ?)
+                                ai_ownership_suggestion, shop_name, item_url, order_time, shipping_fee,
+                                order_status, evidence_version, review_version, created_at, updated_at
+                            ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 'electronics', NULL, ?, ?, ?, ?, ?, ?, ?, ?, 1, 1, ?, ?)
                             """,
                             (
                                 line_id, platform, account_id, order_id, product_id, sku_id,
                                 product_name, variant_name, unit_price, quantity, line_total,
-                                currency, review_status, ai_cat, ai_owner, now, now,
+                                currency, review_status, ai_cat, ai_owner, shop_name, item_url,
+                                order_time, shipping_fee, line_order_status, now, now,
                             ),
                         )
                     else:
@@ -284,10 +311,17 @@ class CommerceStore:
                             """
                             UPDATE commerce_order_lines
                             SET product_name = ?, variant_name = ?, unit_price = ?,
-                                quantity = ?, line_total = ?, evidence_version = ?, updated_at = ?
+                                quantity = ?, line_total = ?, shop_name = COALESCE(NULLIF(?, ''), shop_name),
+                                item_url = COALESCE(NULLIF(?, ''), item_url), order_time = COALESCE(NULLIF(?, ''), order_time),
+                                shipping_fee = ?, order_status = COALESCE(NULLIF(?, ''), order_status),
+                                evidence_version = ?, updated_at = ?
                             WHERE line_id = ?
                             """,
-                            (product_name, variant_name, unit_price, quantity, line_total, ev_ver, now, line_id),
+                            (
+                                product_name, variant_name, unit_price, quantity, line_total,
+                                shop_name, item_url, order_time, shipping_fee, line_order_status,
+                                ev_ver, now, line_id,
+                            ),
                         )
 
             # Insert batch record

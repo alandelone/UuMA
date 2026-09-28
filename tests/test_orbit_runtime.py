@@ -7,6 +7,7 @@ from datetime import UTC, datetime, timedelta
 from email.message import Message
 from pathlib import Path
 from types import SimpleNamespace
+from typing import Any
 from urllib.error import HTTPError, URLError
 
 import pytest
@@ -24,6 +25,7 @@ from uuma.knowledge_models import (
 )
 from uuma.knowledge_service import KnowledgeAuthorizationError, KnowledgeService
 from uuma.orbit_discovery import (
+    ChatGPTDiscoveryProvider,
     CrossrefProvider,
     DdgsSearchProvider,
     DiscoveryArtifact,
@@ -34,6 +36,7 @@ from uuma.orbit_discovery import (
     artifact_is_relevant,
     artifact_priority,
     citations_fit_question,
+    configured_providers,
     discovery_queries,
     discovery_query,
 )
@@ -1532,3 +1535,120 @@ def test_runner_enforces_brave_monthly_hard_limit(tmp_path: Path, monkeypatch) -
     assert runner.run_once()
     assert brave.calls == 0
     assert orbits.get(orbit_id)["orbit"]["status"] == "BLOCKED"
+
+
+class _MockBridgeOpener:
+    def __init__(self, responses: list[dict[str, Any]] | None = None) -> None:
+        self.responses = list(responses or [])
+        self.calls: list[str] = []
+
+    def open(self, request, timeout: float = 15.0):
+        url = request.full_url if hasattr(request, "full_url") else str(request)
+        self.calls.append(url)
+        if not self.responses:
+            raise URLError("No mocked response configured")
+        payload = self.responses.pop(0)
+        body = json.dumps(payload).encode("utf-8")
+
+        class _MockRes:
+            def read(self):
+                return body
+
+        return _MockRes()
+
+
+def test_chatgpt_discovery_provider_parses_citations_into_artifacts() -> None:
+    opener = _MockBridgeOpener([
+        {"id": "cgpt_req_1", "status": "QUEUED"},
+        {
+            "id": "cgpt_req_1",
+            "status": "COMPLETED",
+            "result": {
+                "answer": "Allium fistulosum establishes well under aeroponic misting.",
+                "citations": [
+                    {"title": "Study 1", "url": "https://example.com/scallion-study-1"},
+                    {"title": "Study 2", "url": "https://example.com/scallion-study-2"},
+                    "https://example.com/scallion-study-3",
+                ],
+            },
+        },
+    ])
+    provider = ChatGPTDiscoveryProvider(
+        base_url="http://127.0.0.1:8787",
+        agent="wisdom-oldman",
+        token="test-token",
+        run_id="run_test_123",
+        mode="search",
+        poll_interval=0.01,
+        opener=opener,
+    )
+
+    response = provider.discover("scallion cultivation", limit=5)
+    assert response.request_id == "cgpt_req_1"
+    assert len(response.artifacts) == 3
+    assert response.artifacts[0].locator == "https://example.com/scallion-study-1"
+    assert response.artifacts[0].title == "Study 1"
+    assert response.artifacts[0].provider == "chatgpt-bridge"
+    assert response.artifacts[0].metadata["chatgpt_request_id"] == "cgpt_req_1"
+    assert response.artifacts[0].metadata["mode"] == "search"
+    assert response.artifacts[2].locator == "https://example.com/scallion-study-3"
+
+
+def test_chatgpt_discovery_provider_handles_empty_or_failing_bridge_gracefully() -> None:
+    class _FailingOpener:
+        def open(self, request, timeout: float = 15.0):
+            raise URLError("Connection refused")
+
+    provider = ChatGPTDiscoveryProvider(
+        token="test-token",
+        run_id="run_test",
+        poll_interval=0.01,
+        opener=_FailingOpener(),
+    )
+    res = provider.discover("query")
+    assert res.artifacts == []
+
+    no_token = ChatGPTDiscoveryProvider(token="", run_id="run_test", opener=_MockBridgeOpener([]))
+    assert no_token.discover("query").artifacts == []
+
+    no_run = ChatGPTDiscoveryProvider(token="tok", run_id="", opener=_MockBridgeOpener([]))
+    assert no_run.discover("query").artifacts == []
+
+    failed_opener = _MockBridgeOpener([
+        {"id": "req_err", "status": "QUEUED"},
+        {"id": "req_err", "status": "FAILED", "error": "browser crashed"},
+    ])
+    fail_provider = ChatGPTDiscoveryProvider(
+        token="tok", run_id="run_test", poll_interval=0.01, opener=failed_opener
+    )
+    assert fail_provider.discover("query").artifacts == []
+
+
+def test_chatgpt_discovery_provider_respects_limit() -> None:
+    citations = [{"title": f"Study {i}", "url": f"https://example.com/p{i}"} for i in range(10)]
+    opener = _MockBridgeOpener([
+        {"id": "cgpt_limit", "status": "QUEUED"},
+        {
+            "id": "cgpt_limit",
+            "status": "COMPLETED",
+            "result": {"answer": "report", "citations": citations},
+        },
+    ])
+    provider = ChatGPTDiscoveryProvider(
+        token="tok",
+        run_id="run_test",
+        poll_interval=0.01,
+        opener=opener,
+    )
+    res = provider.discover("query", limit=3)
+    assert len(res.artifacts) == 3
+    assert res.artifacts[-1].locator == "https://example.com/p2"
+
+
+def test_configured_providers_includes_chatgpt_first() -> None:
+    mock_chatgpt = ChatGPTDiscoveryProvider(token="tok", run_id="run_1")
+    providers = configured_providers(chatgpt_provider=mock_chatgpt)
+    assert providers[0] is mock_chatgpt
+    assert any(p.name == "openalex" for p in providers)
+    assert any(p.name == "ddgs" for p in providers)
+

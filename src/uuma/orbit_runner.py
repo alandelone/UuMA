@@ -28,6 +28,7 @@ from .knowledge_runtime import ensure_knowledge_graph
 from .knowledge_service import KnowledgeService
 from .orbit_discovery import (
     CanonicalCitationProvider,
+    ChatGPTDiscoveryProvider,
     DiscoveryArtifact,
     DiscoveryProvider,
     artifact_identity,
@@ -41,6 +42,7 @@ from .orbit_discovery import discovery_queries as build_discovery_queries
 from .orbit_synthesis import OrbitCompactSynthesizer
 from .question_orbit import QuestionOrbitService
 from .safe_web import RetryAfterError, SafeWebFetcher
+from .service import ControlPlane
 from .settings import Settings
 from .wisdom_topics import TopicKnowledgeService, ensure_view_token, grounded_answer
 
@@ -395,6 +397,9 @@ class OrbitRunner:
         }
 
     def _process_cycle(self, cycle: dict[str, Any], started: float) -> None:
+        if hasattr(self, "_cycle_hook") and callable(self._cycle_hook):
+            self._cycle_hook(cycle)
+        self._active_cycle = cycle
         if not ensure_knowledge_graph("wisdom-oldman", recover=True)["ready"]:
             raise PermissionError("Knowledge graph unavailable; background research is blocked.")
         question = self.knowledge._require("questions", cycle["question_id"])["text"]
@@ -750,6 +755,36 @@ class OrbitRunner:
         return answer
 
 
+def _ensure_runner_run(
+    control_plane: ControlPlane, orbit_id: str, question: str
+) -> str | None:
+    try:
+        with control_plane.connect() as db:
+            row = db.execute(
+                "SELECT run_id FROM runs WHERE agent_id='wisdom-oldman' "
+                "AND status IN ('PENDING', 'RUNNING') ORDER BY id DESC LIMIT 1"
+            ).fetchone()
+            if row:
+                return str(row["run_id"])
+        from .models import ExecutionClass, RiskLevel, TaskContract
+
+        contract = TaskContract(
+            title=f"Question Orbit: {question[:50]}",
+            description=f"Autonomous Question Orbit research for {orbit_id}",
+            task_type="research",
+            execution_class=ExecutionClass.SAFE,
+            risk_level=RiskLevel.LOW,
+            target_path=f"wisdom/orbits/{orbit_id}",
+        )
+        reg = control_plane.register_direct_run(
+            "wisdom-oldman", contract, external_run_ref=orbit_id
+        )
+        return reg.run_id
+    except Exception as exc:  # noqa: BLE001
+        LOGGER.warning("Could not ensure active run for ChatGPT discovery: %s", exc)
+        return None
+
+
 def build_runner(profile_home: Path) -> OrbitRunner:
     load_profile_environment(profile_home)
     settings = Settings.from_env()
@@ -757,7 +792,7 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     knowledge = KnowledgeService(settings.knowledge_database_path())
     topics = TopicKnowledgeService(
         knowledge,
-        view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767"),
+        view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8787"),
         view_token=ensure_view_token(settings.data_dir),
     )
     orbits = QuestionOrbitService(knowledge, topics=topics)
@@ -766,16 +801,61 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     dispatcher = OrbitNotificationDispatcher(
         orbits, settings.hermes_executable, profile_home
     )
-    return OrbitRunner(
+    control_plane = ControlPlane(settings.database_path)
+    control_plane.bootstrap()
+
+    runner_active_cycle: list[dict[str, Any] | None] = [None]
+
+    def _get_active_run_id() -> str | None:
+        cycle = runner_active_cycle[0]
+        if not cycle:
+            return None
+        orbit_id = cycle.get("orbit_id")
+        if not orbit_id:
+            return None
+        try:
+            orbit_data = orbits.get(orbit_id)
+            existing = orbit_data.get("orbit", {}).get("uuma_run_id")
+            if existing:
+                return str(existing)
+            question = knowledge._require("questions", cycle["question_id"])["text"]
+            return _ensure_runner_run(control_plane, orbit_id, question)
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.warning("Failed resolving run_id for ChatGPT discovery: %s", exc)
+            return None
+
+    chatgpt_enabled = os.environ.get("UUMA_ORBIT_CHATGPT_DISCOVERY", "true").lower() in {
+        "1", "true", "yes", "on"
+    }
+    chatgpt_provider = None
+    if chatgpt_enabled:
+        token = settings.load_tokens().get("wisdom-oldman")
+        chatgpt_provider = ChatGPTDiscoveryProvider(
+            base_url=os.environ.get("UUMA_CHATGPT_BRIDGE_URL", "http://127.0.0.1:8787"),
+            agent="wisdom-oldman",
+            token=token,
+            mode=os.environ.get("UUMA_ORBIT_CHATGPT_MODE", "search"),
+            run_id_getter=_get_active_run_id,
+        )
+
+    all_providers = [
+        CanonicalCitationProvider(knowledge),
+        *([chatgpt_provider] if chatgpt_provider else []),
+        *configured_providers(fetcher),
+    ]
+
+    runner = OrbitRunner(
         knowledge,
         orbits,
         OrbitCompactSynthesizer(knowledge, backend),
-        [CanonicalCitationProvider(knowledge), *configured_providers(fetcher)],
+        all_providers,
         KnowledgeIngestor(knowledge, settings.knowledge_content_path(), fetcher=fetcher),
         KnowledgeConstructor(knowledge, backend),
         KagProjectionWorker(knowledge, backend),
         dispatcher,
     )
+    runner._cycle_hook = lambda cycle: runner_active_cycle.__setitem__(0, cycle)
+    return runner
 
 
 def main() -> None:

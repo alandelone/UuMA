@@ -85,6 +85,11 @@ def generate_review_workbook(
         "ownership",
         "ai_category_suggestion",
         "ai_ownership_suggestion",
+        "order_status",
+        "order_time",
+        "shop_name",
+        "item_url",
+        "shipping_fee",
         "base_evidence_version",
         "base_review_version",
         "notes",
@@ -108,6 +113,11 @@ def generate_review_workbook(
             _sanitize_string(line.get("ownership") or ""),
             _sanitize_string(line.get("ai_category_suggestion", "")),
             _sanitize_string(line.get("ai_ownership_suggestion", "")),
+            _sanitize_string(line.get("order_status", "")),
+            _sanitize_string(line.get("order_time", "")),
+            _sanitize_string(line.get("shop_name", "")),
+            _sanitize_string(line.get("item_url", "")),
+            float(line.get("shipping_fee", 0.0)) if line.get("shipping_fee") is not None else 0.0,
             int(line.get("evidence_version", 1)),
             int(line.get("review_version", 1)),
             "",
@@ -118,13 +128,39 @@ def generate_review_workbook(
         ws_orders.cell(row=row_idx, column=1).data_type = "s"
         ws_orders.cell(row=row_idx, column=2).data_type = "s"
 
-    # 3. Sheet 3: Price comparison (Phase 2 marker)
+    # 3. Sheet 3: Price comparison (比价清单)
     ws_compare = wb.create_sheet(title=PRICE_COMPARE_SHEET)
-    ws_compare.append(["状态", "说明"])
-    ws_compare.append(["尚未启用", "Phase 2 采价与比价模块尚未交付，本工作簿不伪造报价。"])
+    ws_compare.views.sheetView[0].showGridLines = True
+    compare_headers = [
+        "line_id",
+        "order_id",
+        "shop_name",
+        "product_name",
+        "variant_name",
+        "unit_price",
+        "currency",
+        "item_url",
+        "order_time",
+    ]
+    ws_compare.append(compare_headers)
     for cell in ws_compare[1]:
         cell.font = Font(bold=True)
         cell.fill = PatternFill(start_color="FFF2CC", end_color="FFF2CC", fill_type="solid")
+
+    for line in lines:
+        ws_compare.append(
+            [
+                _sanitize_string(line.get("line_id", "")),
+                _sanitize_string(line.get("order_id", "")),
+                _sanitize_string(line.get("shop_name", "")),
+                _sanitize_string(line.get("product_name", "")),
+                _sanitize_string(line.get("variant_name", "")),
+                float(line.get("unit_price", 0.0)) if line.get("unit_price") is not None else "",
+                _sanitize_string(line.get("currency", "MYR")),
+                _sanitize_string(line.get("item_url", "")),
+                _sanitize_string(line.get("order_time", "")),
+            ]
+        )
 
     # 4. Sheet 4: Receipt confirmation
     ws_receipt = wb.create_sheet(title=RECEIPT_CONFIRM_SHEET)
@@ -376,3 +412,53 @@ def commit_review(
         "lines_updated": len(updates),
         "committed_at": now,
     }
+
+
+def review_lines_direct(
+    store: CommerceStore,
+    items: list[dict[str, Any]],
+    *,
+    default_ownership: str | None = None,
+    default_category: str | None = None,
+) -> dict[str, Any]:
+    """Applies whole-line ownership and category reviews directly without requiring an Excel file.
+
+    Enforces the whole-line rule (no purpose quantity splits) and optimistic concurrency.
+    """
+    updates = []
+    with store.connect() as conn:
+        for item in items:
+            line_id = str(item.get("line_id", "")).strip()
+            if not line_id:
+                continue
+            row = conn.execute(
+                "SELECT * FROM commerce_order_lines WHERE line_id = ?",
+                (line_id,),
+            ).fetchone()
+            if not row:
+                raise ValueError(f"Line '{line_id}' not found.")
+
+            raw_owner = str(item.get("ownership") or default_ownership or "").strip().lower()
+            if any(char in raw_owner for char in [":", "/", ",", ";"]) or any(char.isdigit() for char in raw_owner):
+                raise ValueError(
+                    f"Line {line_id}: Purpose quantity splits are strictly prohibited. "
+                    f"Ownership must be whole-line 'self' or 'others', got: '{raw_owner}'."
+                )
+            if raw_owner and raw_owner not in ALLOWED_OWNERSHIPS:
+                raise ValueError(f"Invalid ownership '{raw_owner}'. Must be 'self' or 'others'.")
+
+            cat_val = str(item.get("category") or default_category or row["category"] or "electronics").strip().lower()
+            if cat_val not in ALLOWED_CATEGORIES:
+                raise ValueError(f"Invalid category '{cat_val}'. Allowed: {sorted(ALLOWED_CATEGORIES)}")
+
+            updates.append(
+                {
+                    "line_id": line_id,
+                    "new_category": cat_val,
+                    "new_ownership": raw_owner or None,
+                    "base_review_version": row["review_version"],
+                }
+            )
+
+    return commit_review({"updates": updates, "conflicts": []}, store)
+

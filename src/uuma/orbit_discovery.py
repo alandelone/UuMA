@@ -1,15 +1,23 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
+import time
+import uuid
 import xml.etree.ElementTree as ET
+from collections.abc import Callable
 from dataclasses import dataclass, field
-from typing import Protocol
+from typing import Any, Protocol
+from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
+from urllib.request import Request, urlopen
 
 from .knowledge_service import KnowledgeService
 from .safe_web import SafeWebFetcher
+
+LOGGER = logging.getLogger(__name__)
 
 
 @dataclass(frozen=True)
@@ -512,8 +520,170 @@ class FeedSitemapProvider:
         return ""
 
 
-def configured_providers(fetcher: SafeWebFetcher | None = None) -> list[DiscoveryProvider]:
+class ChatGPTDiscoveryProvider:
+    name = "chatgpt-bridge"
+
+    def __init__(
+        self,
+        base_url: str = "http://127.0.0.1:8787",
+        *,
+        agent: str = "wisdom-oldman",
+        token: str | None = None,
+        mode: str = "search",
+        project: str = "orbit",
+        run_id: str | None = None,
+        run_id_getter: Callable[[], str | None] | None = None,
+        timeout: float = 60.0,
+        poll_interval: float = 2.0,
+        opener: Any | None = None,
+    ) -> None:
+        self.base_url = base_url.rstrip("/")
+        self.agent = agent
+        self.token = token
+        self.mode = mode
+        self.project = project
+        self.run_id = run_id
+        self.run_id_getter = run_id_getter
+        self.timeout = timeout
+        self.poll_interval = poll_interval
+        self._opener = opener
+
+    def _open(self, request: Request, timeout: float = 15.0) -> dict[str, Any]:
+        if self._opener is not None:
+            res = self._opener.open(request, timeout)
+            raw = res.read() if hasattr(res, "read") else res
+            return json.loads(raw.decode("utf-8") if isinstance(raw, bytes) else str(raw))
+        with urlopen(request, timeout=timeout) as response:
+            return json.loads(response.read().decode("utf-8"))
+
+    def discover(self, query: str, *, limit: int = 5) -> DiscoveryResponse:
+        token = self.token
+        if not token:
+            try:
+                from .settings import Settings
+
+                token = Settings.from_env().load_tokens().get(self.agent)
+            except Exception:  # noqa: BLE001
+                token = None
+        if not token:
+            LOGGER.info("ChatGPT discovery skipped: no token configured for %s", self.agent)
+            return DiscoveryResponse([])
+
+        run_id = self.run_id
+        if not run_id and self.run_id_getter:
+            try:
+                run_id = self.run_id_getter()
+            except Exception as exc:  # noqa: BLE001
+                LOGGER.warning("ChatGPT discovery skipped: run_id lookup failed: %s", exc)
+                return DiscoveryResponse([])
+        if not run_id:
+            LOGGER.info("ChatGPT discovery skipped: no active run_id available")
+            return DiscoveryResponse([])
+
+        idempotency_key = f"orbit-{uuid.uuid4().hex[:16]}"
+        clean_thread = re.sub(r"[^a-zA-Z0-9_-]", "_", query)[:30] or "orbit-main"
+        thread = f"orbit-{clean_thread}"
+        payload = {
+            "run_id": run_id,
+            "prompt": query,
+            "idempotency_key": idempotency_key,
+            "mode": self.mode,
+            "project": self.project,
+            "thread": thread,
+            "sites": [],
+        }
+
+        headers = {
+            "Authorization": f"Bearer {token}",
+            "X-UuMA-Identity": self.agent,
+            "Content-Type": "application/json",
+        }
+
+        submit_url = f"{self.base_url}/agent/requests"
+        req = Request(
+            submit_url,
+            data=json.dumps(payload).encode("utf-8"),
+            headers=headers,
+            method="POST",
+        )
+        try:
+            created = self._open(req, timeout=15.0)
+        except (URLError, HTTPError, TimeoutError, OSError) as exc:
+            LOGGER.warning("ChatGPT discovery unavailable at %s: %s", submit_url, exc)
+            return DiscoveryResponse([])
+
+        req_id = created.get("id")
+        if not req_id:
+            return DiscoveryResponse([])
+
+        status_url = f"{self.base_url}/agent/requests/{req_id}"
+        deadline = time.monotonic() + self.timeout
+        result_payload = None
+
+        while time.monotonic() < deadline:
+            time.sleep(self.poll_interval)
+            poll_req = Request(status_url, headers=headers, method="GET")
+            try:
+                state = self._open(poll_req, timeout=10.0)
+            except (URLError, HTTPError, TimeoutError, OSError) as exc:
+                LOGGER.warning("ChatGPT discovery poll failed for %s: %s", req_id, exc)
+                break
+
+            status = state.get("status")
+            if status == "COMPLETED":
+                result_payload = state.get("result")
+                break
+            if status in {"FAILED", "CANCELLED", "PAUSED", "NEEDS_REVIEW"}:
+                LOGGER.warning(
+                    "ChatGPT discovery request %s ended with status %s", req_id, status
+                )
+                break
+
+        if not result_payload or not isinstance(result_payload, dict):
+            return DiscoveryResponse([], request_id=req_id)
+
+        raw_citations = result_payload.get("citations") or []
+        artifacts: list[DiscoveryArtifact] = []
+        for item in raw_citations:
+            if isinstance(item, dict):
+                loc = str(item.get("url") or "").strip()
+                title = str(item.get("title") or loc).strip()
+            elif isinstance(item, str):
+                loc = item.strip()
+                title = loc
+            else:
+                continue
+
+            if not loc.startswith(("http://", "https://")):
+                continue
+
+            artifacts.append(
+                DiscoveryArtifact(
+                    locator=loc,
+                    title=title or loc,
+                    provider=self.name,
+                    snippet=str(result_payload.get("answer") or "")[:300],
+                    metadata={
+                        "chatgpt_request_id": req_id,
+                        "mode": self.mode,
+                        "thread": thread,
+                    },
+                )
+            )
+            if len(artifacts) >= limit:
+                break
+
+        return DiscoveryResponse(artifacts, request_id=req_id)
+
+
+def configured_providers(
+    fetcher: SafeWebFetcher | None = None,
+    *,
+    chatgpt_provider: DiscoveryProvider | None = None,
+) -> list[DiscoveryProvider]:
     providers: list[DiscoveryProvider] = []
+    if chatgpt_provider is not None:
+        providers.append(chatgpt_provider)
     seeds = [
         value.strip()
         for value in os.environ.get("UUMA_ORBIT_FEED_URLS", "").split(",")

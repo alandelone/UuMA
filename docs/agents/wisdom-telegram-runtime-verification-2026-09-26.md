@@ -283,3 +283,9 @@ attempt with no error. Recipient reading was not observed.
 Focused Wisdom tests: **66 passed**. Full repository regression: **343 tests and
 five subtests passed**. Full Ruff check passed. These checks do not establish that
 the Telegram recipient opened the corrected digest or chapter.
+
+On 2026-09-28, the scheduled document service was stopped and restarted through its
+installed task. The all-topics index and all three previously reported topic URLs
+returned HTTP 200 after restart. The original scallion page still exposed its back
+link, overview anchor, explicit pause reason, nine sections, and version 35. The
+correction notification remained `SENT` after one attempt with no recorded error.

@@ -9,6 +9,7 @@ from uuma.commerce_review import (
     commit_review,
     generate_review_workbook,
     preview_review_workbook,
+    review_lines_direct,
 )
 from uuma.commerce_store import CommerceStore
 
@@ -135,3 +136,36 @@ def test_review_version_conflict_detection(review_setup):
     assert preview2["total_conflicts"] > 0
     conflict = preview2["conflicts"][0]
     assert conflict["error_type"] == "STALE_REVIEW_VERSION"
+
+
+def test_review_lines_direct(review_setup):
+    store = review_setup
+    lines = store.list_order_lines()
+    assert len(lines) == 2
+
+    # Direct review without Excel round-trip
+    res = review_lines_direct(
+        store,
+        [
+            {"line_id": "line_review_001", "ownership": "self", "category": "electronics"},
+            {"line_id": "line_review_002", "ownership": "others", "category": "consumable"},
+        ],
+    )
+    assert res["status"] == "COMMITTED"
+    assert res["lines_updated"] == 2
+
+    # Verify updated DB state
+    updated = {l["line_id"]: l for l in store.list_order_lines()}
+    assert updated["line_review_001"]["ownership"] == "self"
+    assert updated["line_review_001"]["category"] == "electronics"
+    assert updated["line_review_001"]["review_status"] == "reviewed"
+    assert updated["line_review_002"]["ownership"] == "others"
+    assert updated["line_review_002"]["category"] == "consumable"
+
+    # Enforce split rejection in direct review as well
+    with pytest.raises(ValueError, match="Purpose quantity splits are strictly prohibited"):
+        review_lines_direct(
+            store,
+            [{"line_id": "line_review_001", "ownership": "self: 2, others: 3"}],
+        )
+

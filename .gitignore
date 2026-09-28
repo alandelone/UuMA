@@ -30,3 +30,8 @@ hermes-backups/
 # Local conversation scratch exports
 /scratch_conv.json
 /scratch_turns.json
+
+# Office temporary files & exports
+~$*
+*.xlsx
+
