@@ -114,6 +114,10 @@ class NativeHost:
                 )
             elif action in {"submit_batch", "extract_orders"}:
                 result = self.commerce_store.ingest_batch(payload)
+            elif action in {"get_stored_order_ids", "get_stored_orders"}:
+                platform = payload.get("platform", "shopee")
+                account_id = payload.get("account_id")
+                result = self.commerce_store.get_stored_order_ids(platform, account_id)
             elif action == "report_checkpoint":
                 task_id = payload["task_id"]
                 lease_token = payload["lease_token"]

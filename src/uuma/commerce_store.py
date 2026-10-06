@@ -5,6 +5,7 @@ from __future__ import annotations
 import hashlib
 import json
 import os
+import re
 import sqlite3
 import uuid
 from datetime import UTC, datetime
@@ -194,6 +195,10 @@ class CommerceStore:
 
         total_orders = len(orders)
         total_lines = 0
+        new_orders_count = 0
+        existing_orders_count = 0
+        new_order_ids: list[str] = []
+        existing_order_ids: list[str] = []
 
         # 2. Transactionally write to lab.db
         with self.connect() as conn:
@@ -217,6 +222,8 @@ class CommerceStore:
                 ).fetchone()
 
                 if header is None:
+                    new_orders_count += 1
+                    new_order_ids.append(order_id)
                     evidence_version = 1
                     first_seen = now
                     conn.execute(
@@ -230,6 +237,8 @@ class CommerceStore:
                         (platform, account_id, order_id, order_status, order_total, currency, first_seen, now, evidence_version, json.dumps(order, ensure_ascii=False)),
                     )
                 else:
+                    existing_orders_count += 1
+                    existing_order_ids.append(order_id)
                     first_seen = header["first_seen_at"]
                     # If status or total changed, bump evidence_version
                     has_changed = (header["order_status"] != order_status or header["order_total"] != order_total)
@@ -324,6 +333,13 @@ class CommerceStore:
                             ),
                         )
 
+            # Total stored orders in database for this platform
+            row_total = conn.execute(
+                "SELECT COUNT(*) FROM order_headers WHERE platform = ?",
+                (platform,),
+            ).fetchone()
+            total_stored_orders = row_total[0] if row_total else 0
+
             # Insert batch record
             conn.execute(
                 """
@@ -343,8 +359,33 @@ class CommerceStore:
             "archive_path": str(archive_path),
             "order_count": total_orders,
             "line_count": total_lines,
+            "new_orders_count": new_orders_count,
+            "existing_orders_count": existing_orders_count,
+            "new_order_ids": new_order_ids,
+            "existing_order_ids": existing_order_ids,
+            "total_stored_orders": total_stored_orders,
             "created_at": now,
         }
+
+    def get_stored_order_ids(self, platform: str, account_id: str | None = None) -> dict[str, Any]:
+        with self.connect() as conn:
+            platform_lower = platform.strip().lower()
+            if account_id and account_id.strip():
+                rows = conn.execute(
+                    "SELECT order_id FROM order_headers WHERE platform = ? AND account_id = ?",
+                    (platform_lower, account_id.strip()),
+                ).fetchall()
+            else:
+                rows = conn.execute(
+                    "SELECT order_id FROM order_headers WHERE platform = ?",
+                    (platform_lower,),
+                ).fetchall()
+            order_ids = [str(r["order_id"]) for r in rows]
+            return {
+                "platform": platform_lower,
+                "count": len(order_ids),
+                "order_ids": order_ids,
+            }
 
     def get_batch(self, batch_id: str) -> dict[str, Any] | None:
         with self.connect() as conn:
@@ -388,3 +429,152 @@ class CommerceStore:
         with self.connect() as conn:
             rows = conn.execute(query, params).fetchall()
             return [dict(r) for r in rows]
+
+    def search_order_lines(
+        self,
+        query: str = "",
+        *,
+        platform: str | None = None,
+        account_id: str | None = None,
+        order_id: str | None = None,
+        review_status: str | None = None,
+        ownership: str | None = None,
+        category: str | None = None,
+        limit: int = 50,
+        offset: int = 0,
+    ) -> dict[str, Any]:
+        """Search scraped commerce order lines by keywords and filters."""
+        safe_limit = max(1, min(int(limit), 500))
+        safe_offset = max(0, int(offset))
+        if len(query) > 200:
+            raise ValueError("Commerce search query is too long.")
+
+        filters: list[str] = []
+        base_params: list[Any] = []
+
+        if platform:
+            filters.append("platform = ?")
+            base_params.append(platform.strip().lower())
+        if account_id:
+            filters.append("account_id = ?")
+            base_params.append(account_id.strip())
+        if order_id:
+            filters.append("order_id = ?")
+            base_params.append(order_id.strip())
+        if review_status:
+            filters.append("review_status = ?")
+            base_params.append(review_status.strip().lower())
+        if ownership:
+            filters.append("ownership = ?")
+            base_params.append(ownership.strip().lower())
+        if category:
+            filters.append("category = ?")
+            base_params.append(category.strip().lower())
+
+        searchable = (
+            "lower(coalesce(product_name, '') || ' ' || coalesce(variant_name, '') || ' ' || "
+            "coalesce(shop_name, '') || ' ' || coalesce(order_id, '') || ' ' || "
+            "coalesce(product_id, '') || ' ' || coalesce(sku_id, '') || ' ' || "
+            "coalesce(item_url, ''))"
+        )
+
+        groups = [part.strip() for part in query.split("|") if part.strip()]
+        if len(groups) > 5:
+            raise ValueError("Commerce search supports at most five alternatives.")
+
+        all_terms: list[str] = []
+        query_clauses: list[str] = []
+        query_params: list[Any] = []
+
+        split_subwords = (
+            "电池", "保护板", "保护", "扩展板", "锂电池", "模块", "充电板", "充电",
+            "升压", "降压", "电源", "万用表", "太阳能", "控制板", "控制器", "储能", "电池座"
+        )
+
+        if groups:
+            alternatives: list[str] = []
+            for group in groups:
+                raw_tokens = re.findall(r"[A-Za-z]+|\d+(?:\.\d+)?|[\u4e00-\u9fff]+", group)
+                terms: list[str] = []
+                for tok in raw_tokens:
+                    tok_lower = tok.lower()
+                    if tok_lower in {"g", "kg", "mm"}:
+                        continue
+                    if re.search(r"[\u4e00-\u9fff]", tok) and len(tok) > 2:
+                        found_sub = [sw for sw in split_subwords if sw in tok]
+                        if found_sub:
+                            terms.extend(found_sub)
+                        else:
+                            terms.append(tok_lower)
+                    else:
+                        terms.append(tok_lower)
+                terms = list(dict.fromkeys(terms))
+                if not terms:
+                    continue
+                if len(terms) > 12:
+                    raise ValueError("Commerce search has too many terms.")
+                all_terms.extend(terms)
+                alternatives.append("(" + " AND ".join(
+                    f"instr({searchable}, ?) > 0" for _ in terms
+                ) + ")")
+                query_params.extend(terms)
+            if alternatives:
+                query_clauses.append("(" + " OR ".join(alternatives) + ")")
+
+        all_terms = list(dict.fromkeys(all_terms))
+        where_parts = list(filters)
+        if query_clauses:
+            where_parts.extend(query_clauses)
+        where = "WHERE " + " AND ".join(where_parts) if where_parts else ""
+
+        with self.connect() as conn:
+            total = conn.execute(
+                f"SELECT COUNT(*) FROM commerce_order_lines {where}",
+                [*base_params, *query_params],
+            ).fetchone()[0]
+
+            if total > 0 or not all_terms:
+                rows = conn.execute(
+                    f"""
+                    SELECT * FROM commerce_order_lines
+                    {where}
+                    ORDER BY created_at DESC
+                    LIMIT ? OFFSET ?
+                    """,
+                    [*base_params, *query_params, safe_limit, safe_offset],
+                ).fetchall()
+                match_mode = "exact"
+            else:
+                score_expr = " + ".join(f"(CASE WHEN instr({searchable}, ?) > 0 THEN 1 ELSE 0 END)" for _ in all_terms)
+                fallback_where_parts = list(filters)
+                fallback_where_parts.append("(" + " OR ".join(f"instr({searchable}, ?) > 0" for _ in all_terms) + ")")
+                fallback_where = "WHERE " + " AND ".join(fallback_where_parts)
+
+                fb_params = [*base_params, *all_terms]
+                total = conn.execute(
+                    f"SELECT COUNT(*) FROM commerce_order_lines {fallback_where}",
+                    fb_params,
+                ).fetchone()[0]
+
+                rows = conn.execute(
+                    f"""
+                    SELECT *, ({score_expr}) AS match_score
+                    FROM commerce_order_lines
+                    {fallback_where}
+                    ORDER BY match_score DESC, created_at DESC
+                    LIMIT ? OFFSET ?
+                    """,
+                    [*all_terms, *fb_params, safe_limit, safe_offset],
+                ).fetchall()
+                match_mode = "partial"
+
+            return {
+                "query": query,
+                "total_count": total,
+                "count": len(rows),
+                "offset": safe_offset,
+                "has_more": safe_offset + len(rows) < total,
+                "match_mode": match_mode,
+                "rows": [dict(r) for r in rows],
+            }
+

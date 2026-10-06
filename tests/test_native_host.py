@@ -103,3 +103,76 @@ def test_native_host_claim_and_renew_command(tmp_path):
     })
     assert renew_res["success"] is True
     assert renew_res["result"]["task_id"] == cmd["task_id"]
+
+
+def test_native_host_get_stored_order_ids_and_ingest_counts(tmp_path):
+    control_store = CommerceControlStore(tmp_path / "control.db")
+    commerce_store = CommerceStore(tmp_path / "lab.db", tmp_path / "archive")
+
+    host = NativeHost(
+        control_store=control_store,
+        commerce_store=commerce_store,
+    )
+
+    # 1. Initially empty
+    res_empty = host.handle_request({
+        "action": "get_stored_order_ids",
+        "request_id": "req_ids_1",
+        "payload": {"platform": "shopee"},
+    })
+    assert res_empty["success"] is True
+    assert res_empty["result"]["count"] == 0
+    assert res_empty["result"]["order_ids"] == []
+
+    # 2. Ingest first batch (2 orders)
+    batch_1 = {
+        "batch_id": "b_1",
+        "platform": "shopee",
+        "account_id": "user1",
+        "orders": [
+            {"order_id": "ord_101", "total_amount": 50.0, "status": "Completed", "items": [{"product_name": "Item A"}]},
+            {"order_id": "ord_102", "total_amount": 30.0, "status": "Completed", "items": [{"product_name": "Item B"}]},
+        ],
+    }
+    ingest_1 = host.handle_request({
+        "action": "submit_batch",
+        "request_id": "req_ingest_1",
+        "payload": batch_1,
+    })
+    assert ingest_1["success"] is True
+    assert ingest_1["result"]["new_orders_count"] == 2
+    assert ingest_1["result"]["existing_orders_count"] == 0
+    assert ingest_1["result"]["total_stored_orders"] == 2
+    assert set(ingest_1["result"]["new_order_ids"]) == {"ord_101", "ord_102"}
+
+    # 3. Query stored order IDs
+    res_ids = host.handle_request({
+        "action": "get_stored_order_ids",
+        "request_id": "req_ids_2",
+        "payload": {"platform": "shopee"},
+    })
+    assert res_ids["success"] is True
+    assert res_ids["result"]["count"] == 2
+    assert set(res_ids["result"]["order_ids"]) == {"ord_101", "ord_102"}
+
+    # 4. Ingest second batch with 1 existing and 1 new order
+    batch_2 = {
+        "batch_id": "b_2",
+        "platform": "shopee",
+        "account_id": "user1",
+        "orders": [
+            {"order_id": "ord_101", "total_amount": 50.0, "status": "Completed", "items": [{"product_name": "Item A"}]},
+            {"order_id": "ord_103", "total_amount": 90.0, "status": "Completed", "items": [{"product_name": "Item C"}]},
+        ],
+    }
+    ingest_2 = host.handle_request({
+        "action": "submit_batch",
+        "request_id": "req_ingest_2",
+        "payload": batch_2,
+    })
+    assert ingest_2["success"] is True
+    assert ingest_2["result"]["new_orders_count"] == 1
+    assert ingest_2["result"]["existing_orders_count"] == 1
+    assert ingest_2["result"]["total_stored_orders"] == 3
+    assert ingest_2["result"]["new_order_ids"] == ["ord_103"]
+
