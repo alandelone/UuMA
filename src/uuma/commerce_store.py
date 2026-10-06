@@ -254,6 +254,17 @@ class CommerceStore:
                     )
 
                 items = order.get("items", [])
+                if header is not None and len(items) > 0:
+                    conn.execute(
+                        """
+                        DELETE FROM commerce_order_lines
+                        WHERE platform = ? AND account_id = ? AND order_id = ?
+                          AND review_status = 'unreviewed'
+                          AND product_name IN ('Taobao Order Item', 'Pinduoduo Purchase Item')
+                        """,
+                        (platform, account_id, order_id),
+                    )
+
                 seen_line_keys: set[str] = set()
 
                 for item in items:
