@@ -1,0 +1,1383 @@
+{
+  "status": "DIRECT_PRIMARY_AND_EXACT_SELECTED_SPAN_PAIRED_REVIEW_BOUNDED_TO_DECLARED_BLOCK",
+  "review_scope": {
+    "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+    "primary_pdf_page": 18,
+    "block_id": "paper_6dc9f2bdd81d9dcf4a46:b98",
+    "baseline_propositions": 5,
+    "optimized_propositions": 3,
+    "whole_paper_regraded": false
+  },
+  "primary_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-stochastic-table-equation-figure-science-review-v12.json",
+  "primary_review_sha256": "64fc6986493b8e1a4c8f427892a9b0e4ecdd7844383f2547ddc4025fb0d617be",
+  "original_corpus_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.rstv4-local\\skeleton-optimization\\corpus-v2-fresh-test\\paper_6dc9f2bdd81d9dcf4a46.json",
+  "original_corpus_raw_sha256": "809e48599add07c1386ed6b1ca42a2d2ebae1380fc363336a3d3ca962dd2db75",
+  "original_corpus_canonical_digest": "274c0d0783cc70e5a8a95c6dc066ba110da2d05999bce3e9be83eb9aa9ea45d2",
+  "original_source_span_generator_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\skeleton_contract.py",
+  "original_source_span_generator_raw_sha256": "1cbfa826540576dbbd9a0d18a292aef094d15019312f27a03aac6ceb4cb59bc5",
+  "exact_original_block_with_source_spans": {
+    "sequence": 98,
+    "page_number": 18,
+    "section": "6. Results and discussion",
+    "block_type": "TEXT",
+    "text": "Fig. 4 also shows that the higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using the RHS. In the extreme case, using RHS the NPC decreases by 3%. This cost reduction is both related to the reduction of CAPEX and to the increased continuity of supply. In fact, RHS reduces load curtailment by $60{-}65\\%$ , on average. The NPC significantly depends on fuel price and on the cost of the non-served energy; the impact of the time required for fuel delivery is instead negligible.",
+    "location": {
+      "source": "mineru_content_list",
+      "content_index": 108,
+      "page_idx": 17
+    },
+    "block_id": "paper_6dc9f2bdd81d9dcf4a46:b98",
+    "source_spans": [
+      {
+        "span_id": "paper_6dc9f2bdd81d9dcf4a46:b98:s1",
+        "start": 0,
+        "end": 5,
+        "text": "Fig. "
+      },
+      {
+        "span_id": "paper_6dc9f2bdd81d9dcf4a46:b98:s2",
+        "start": 5,
+        "end": 135,
+        "text": "4 also shows that the higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using the RHS. "
+      },
+      {
+        "span_id": "paper_6dc9f2bdd81d9dcf4a46:b98:s3",
+        "start": 135,
+        "end": 191,
+        "text": "In the extreme case, using RHS the NPC decreases by 3%. "
+      },
+      {
+        "span_id": "paper_6dc9f2bdd81d9dcf4a46:b98:s4",
+        "start": 191,
+        "end": 296,
+        "text": "This cost reduction is both related to the reduction of CAPEX and to the increased continuity of supply. "
+      },
+      {
+        "span_id": "paper_6dc9f2bdd81d9dcf4a46:b98:s5",
+        "start": 296,
+        "end": 363,
+        "text": "In fact, RHS reduces load curtailment by $60{-}65\\%$ , on average. "
+      },
+      {
+        "span_id": "paper_6dc9f2bdd81d9dcf4a46:b98:s6",
+        "start": 363,
+        "end": 521,
+        "text": "The NPC significantly depends on fuel price and on the cost of the non-served energy; the impact of the time required for fuel delivery is instead negligible."
+      }
+    ]
+  },
+  "frozen_candidate_guards": [
+    {
+      "program": "baseline",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.rstv4-local\\skeleton-optimization\\experiment-v36-json-wire-full-frozen-student-extraction\\test\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\paper-candidate.json",
+      "raw_sha256": "b68205496f2b9888b75547cb19472e609d88d8ba544544574cdd32ebb0ea6d12",
+      "canonical_digest": "5213b92a1e9406c11fff9b78599b165d8193ef087d7a432d399aab6b5f53aabc",
+      "original_units": 90,
+      "missing_original_block_ids": [
+        "paper_6dc9f2bdd81d9dcf4a46:b0",
+        "paper_6dc9f2bdd81d9dcf4a46:b1",
+        "paper_6dc9f2bdd81d9dcf4a46:b2",
+        "paper_6dc9f2bdd81d9dcf4a46:b3",
+        "paper_6dc9f2bdd81d9dcf4a46:b4",
+        "paper_6dc9f2bdd81d9dcf4a46:b5",
+        "paper_6dc9f2bdd81d9dcf4a46:b6",
+        "paper_6dc9f2bdd81d9dcf4a46:b7",
+        "paper_6dc9f2bdd81d9dcf4a46:b8",
+        "paper_6dc9f2bdd81d9dcf4a46:b9",
+        "paper_6dc9f2bdd81d9dcf4a46:b10",
+        "paper_6dc9f2bdd81d9dcf4a46:b11",
+        "paper_6dc9f2bdd81d9dcf4a46:b12",
+        "paper_6dc9f2bdd81d9dcf4a46:b13",
+        "paper_6dc9f2bdd81d9dcf4a46:b14",
+        "paper_6dc9f2bdd81d9dcf4a46:b15",
+        "paper_6dc9f2bdd81d9dcf4a46:b16",
+        "paper_6dc9f2bdd81d9dcf4a46:b17",
+        "paper_6dc9f2bdd81d9dcf4a46:b18",
+        "paper_6dc9f2bdd81d9dcf4a46:b19",
+        "paper_6dc9f2bdd81d9dcf4a46:b20"
+      ],
+      "original_coverage_blocks": [
+        {
+          "block_id": "paper_6dc9f2bdd81d9dcf4a46:b89",
+          "page_number": 17,
+          "section": "5.4. Fuel cost and procurement",
+          "raw_text": "Table 1: Delivery time.\n<html><body><table><tr><td>Case</td><td>+d (days)</td><td>50th percentile (days)</td><td>yz06 percentile (days)</td></tr><tr><td>A</td><td>1</td><td>1.5</td><td>3</td></tr><tr><td>B</td><td>2</td><td>3</td><td>6</td></tr></table></body></html>",
+          "source_location": {
+            "artifact_image_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+            "content_index": 98,
+            "page_idx": 16,
+            "source": "mineru_content_list"
+          },
+          "parent_block_id": null,
+          "source_char_start": null,
+          "source_char_end": null,
+          "layer1": {
+            "propositions": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a1",
+                "statement": "Table 1 presents delivery time parameters including cases, +d in days, 50th percentile in days, and yz06 percentile in days.",
+                "quote": "Table 1: Delivery time.\n<html><body><table><tr><td>Case</td><td>+d (days)</td><td>50th percentile (days)</td><td>yz06 percentile (days)</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s1"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [],
+                "triplets": [
+                  {
+                    "subject": "Table 1",
+                    "predicate": "presents",
+                    "object": "delivery time parameters"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "1"
+                  }
+                ],
+                "source_span": [
+                  0,
+                  145
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a2",
+                "statement": "Table 1 specifies delivery time values for Case A (+d=1, 50th=1.5, yz06=3) and Case B (+d=2, 50th=3, yz06=6).",
+                "quote": "<tr><td>A</td><td>1</td><td>1.5</td><td>3</td></tr><tr><td>B</td><td>2</td><td>3</td><td>6</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s2",
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s3"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "Case A: +d = 1 day, 50th percentile = 1.5 days, yz06 percentile = 3 days",
+                  "Case B: +d = 2 days, 50th percentile = 3 days, yz06 percentile = 6 days"
+                ],
+                "triplets": [
+                  {
+                    "subject": "Table 1",
+                    "predicate": "are specified in",
+                    "object": "Case A and Case B delivery time metrics"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "1"
+                  }
+                ],
+                "source_span": [
+                  145,
+                  245
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              }
+            ],
+            "triplets": [
+              {
+                "subject": "Table 1",
+                "predicate": "presents",
+                "object": "delivery time parameters"
+              },
+              {
+                "subject": "Table 1",
+                "predicate": "are specified in",
+                "object": "Case A and Case B delivery time metrics"
+              }
+            ]
+          },
+          "layer2": {
+            "relations": [
+              {
+                "source_id": "paper_6dc9f2bdd81d9dcf4a46:b88:a1",
+                "target_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a1",
+                "relation": "Elaboration",
+                "rationale": "Atom b88:a1 mentions that the PDF is calibrated according to Table 1, and b89:a1 introduces Table 1 presenting the delivery time parameters."
+              }
+            ]
+          },
+          "layer3": {
+            "intents": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a1",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Introduces Table 1 presenting delivery time parameters."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a2",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Specifies numerical delivery time values for Case A and Case B in Table 1."
+              }
+            ]
+          },
+          "layer4": {
+            "block_id": "paper_6dc9f2bdd81d9dcf4a46:b89",
+            "role": "Empirical_Experiment",
+            "confidence": 1.0,
+            "rationale": "Table 1 presenting delivery time parameters for the case study simulation."
+          }
+        },
+        {
+          "block_id": "paper_6dc9f2bdd81d9dcf4a46:b96",
+          "page_number": 18,
+          "section": "6. Results and discussion",
+          "raw_text": "Table 2: Cost parameters of the main components, calibrated with [8, 15, 47–51].\n<html><body><table><tr><td>Asset</td><td>Po and UM*</td><td>& $/UM*)</td><td>β (-)</td><td>Maintenance ($/UM/y)</td></tr><tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr></table></body></html>\n\\*unit of measurement.",
+          "source_location": {
+            "artifact_image_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/694077100df207ce935182dbc195a4e1616b39eb10ac5186c61ef089ae58d763.jpg",
+            "content_index": 105,
+            "page_idx": 17,
+            "source": "mineru_content_list"
+          },
+          "parent_block_id": null,
+          "source_char_start": null,
+          "source_char_end": null,
+          "layer1": {
+            "propositions": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a1",
+                "statement": "Table 2 presents cost parameters of the main components calibrated with [8, 15, 47-51].",
+                "quote": "Table 2: Cost parameters of the main components, calibrated with [8, 15, 47–51].\n<html><body><table><tr><td>Asset</td><td>Po and UM*</td><td>& $/UM*)</td><td>β (-)</td><td>Maintenance ($/UM/y)</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b96:s1"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "calibrated with [8, 15, 47–51]"
+                ],
+                "triplets": [
+                  {
+                    "subject": "Table 2",
+                    "predicate": "reports",
+                    "object": "cost parameters of main components"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "2"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "8"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "15"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "47-51"
+                  }
+                ],
+                "source_span": [
+                  0,
+                  202
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a2",
+                "statement": "The cost parameters for PV in Table 2 include a reference size P0 of 1 kW, reference cost alpha of 800 $/kW, scaling exponent beta of 1, and maintenance cost of 16 $/kW/y.",
+                "quote": "<tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b96:s2"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "PV component"
+                ],
+                "triplets": [
+                  {
+                    "subject": "PV",
+                    "predicate": "has reference cost",
+                    "object": "800 $/kW"
+                  },
+                  {
+                    "subject": "PV",
+                    "predicate": "has scaling exponent beta",
+                    "object": "1"
+                  },
+                  {
+                    "subject": "PV",
+                    "predicate": "has maintenance cost",
+                    "object": "16 $/kW/y"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  202,
+                  317
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a3",
+                "statement": "The cost parameters for Battery in Table 2 include a reference size P0 of 1 kWh, reference cost alpha of 350 $/kWh, scaling exponent beta of 1, and maintenance cost of 3 $/kWh/y.",
+                "quote": "<tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b96:s2"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "Battery component"
+                ],
+                "triplets": [
+                  {
+                    "subject": "Battery",
+                    "predicate": "has reference cost",
+                    "object": "350 $/kWh"
+                  },
+                  {
+                    "subject": "Battery",
+                    "predicate": "has scaling exponent beta",
+                    "object": "1"
+                  },
+                  {
+                    "subject": "Battery",
+                    "predicate": "has maintenance cost",
+                    "object": "3 $/kWh/y"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  202,
+                  317
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a4",
+                "statement": "The cost parameters for Battery converter in Table 2 include a reference size P0 of 1 kW, reference cost alpha of 1258 $/kW, scaling exponent beta of 0.5, and maintenance cost of 2 $/kW/y.",
+                "quote": "<tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b96:s2"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "Battery converter component"
+                ],
+                "triplets": [
+                  {
+                    "subject": "Battery converter",
+                    "predicate": "has reference cost",
+                    "object": "1258 $/kW"
+                  },
+                  {
+                    "subject": "Battery converter",
+                    "predicate": "has scaling exponent beta",
+                    "object": "0.5"
+                  },
+                  {
+                    "subject": "Battery converter",
+                    "predicate": "has maintenance cost",
+                    "object": "2 $/kW/y"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  202,
+                  317
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              }
+            ],
+            "triplets": [
+              {
+                "subject": "Table 2",
+                "predicate": "reports",
+                "object": "cost parameters of main components"
+              },
+              {
+                "subject": "PV",
+                "predicate": "has reference cost",
+                "object": "800 $/kW"
+              },
+              {
+                "subject": "PV",
+                "predicate": "has scaling exponent beta",
+                "object": "1"
+              },
+              {
+                "subject": "PV",
+                "predicate": "has maintenance cost",
+                "object": "16 $/kW/y"
+              },
+              {
+                "subject": "Battery",
+                "predicate": "has reference cost",
+                "object": "350 $/kWh"
+              },
+              {
+                "subject": "Battery",
+                "predicate": "has scaling exponent beta",
+                "object": "1"
+              },
+              {
+                "subject": "Battery",
+                "predicate": "has maintenance cost",
+                "object": "3 $/kWh/y"
+              },
+              {
+                "subject": "Battery converter",
+                "predicate": "has reference cost",
+                "object": "1258 $/kW"
+              },
+              {
+                "subject": "Battery converter",
+                "predicate": "has scaling exponent beta",
+                "object": "0.5"
+              },
+              {
+                "subject": "Battery converter",
+                "predicate": "has maintenance cost",
+                "object": "2 $/kW/y"
+              }
+            ]
+          },
+          "layer2": {
+            "relations": []
+          },
+          "layer3": {
+            "intents": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a1",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Describes the contents of Table 2 regarding cost parameters."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a2",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Provides specific cost parameters for the PV component from Table 2."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a3",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Provides specific cost parameters for the Battery component from Table 2."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a4",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Provides specific cost parameters for the Battery converter component from Table 2."
+              }
+            ]
+          },
+          "layer4": {
+            "block_id": "paper_6dc9f2bdd81d9dcf4a46:b96",
+            "role": "Core_Methodology",
+            "confidence": 1.0,
+            "rationale": "Presents cost parameters of main components in Table 2, supporting the methodology/case study."
+          }
+        },
+        {
+          "block_id": "paper_6dc9f2bdd81d9dcf4a46:b105",
+          "page_number": 21,
+          "section": "6. Results and discussion",
+          "raw_text": "The optimal size of the fuel tank is reported in Table 4. First of all, these results confirm the findings of [15], where authors demonstrated that the optimal size of the tank increases with higher fuel price, cost of load curtailment and, obviously, the time required for fuel delivery. Present simulations also show what happens by changing the dispatching strategy of the mini-grid: with RHS the optimal size of the tank turns out to be higher than with LFS, even by 30%. This is because RHS dispatches more frequently the diesel generator, whose fuel requirements increase by 24-35%, depending on the analyzed scenario.",
+          "source_location": {
+            "content_index": 118,
+            "page_idx": 20,
+            "source": "mineru_content_list"
+          },
+          "parent_block_id": null,
+          "source_char_start": null,
+          "source_char_end": null,
+          "layer1": {
+            "propositions": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a1",
+                "statement": "The optimal size of the fuel tank is reported in Table 4.",
+                "quote": "The optimal size of the fuel tank is reported in Table 4. ",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s1"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [],
+                "triplets": [
+                  {
+                    "subject": "Table 4",
+                    "predicate": "reported in",
+                    "object": "optimal size of the fuel tank"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "Table 4"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "[15]"
+                  }
+                ],
+                "source_span": [
+                  0,
+                  57
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a2",
+                "statement": "The results confirm previous findings in [15] demonstrating that the optimal fuel tank size increases with higher fuel prices, load curtailment costs, and required fuel delivery times.",
+                "quote": "First of all, these results confirm the findings of [15], where authors demonstrated that the optimal size of the tank increases with higher fuel price, cost of load curtailment and, obviously, the time required for fuel delivery. ",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s2"
+                ],
+                "epistemic_status": "BACKGROUND",
+                "qualifications": [],
+                "triplets": [
+                  {
+                    "subject": "higher fuel price, cost of load curtailment, and time required for fuel delivery",
+                    "predicate": "increases with",
+                    "object": "optimal size of the tank"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Citation",
+                    "label": "[15]"
+                  }
+                ],
+                "source_span": [
+                  58,
+                  288
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a3",
+                "statement": "Simulations show that changing the dispatching strategy to RHS results in an optimal fuel tank size that is higher than with LFS by up to 30%.",
+                "quote": "Present simulations also show what happens by changing the dispatching strategy of the mini-grid: with RHS the optimal size of the tank turns out to be higher than with LFS, even by 30%. ",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s3"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "with RHS",
+                  "compared to LFS",
+                  "even by 30%"
+                ],
+                "triplets": [
+                  {
+                    "subject": "optimal size of the tank with RHS",
+                    "predicate": "is",
+                    "object": "higher than with LFS, even by 30%"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  289,
+                  475
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a4",
+                "statement": "The larger optimal tank size with RHS occurs because RHS dispatches the diesel generator more frequently, increasing its fuel requirements by 24-35% depending on the scenario.",
+                "quote": "This is because RHS dispatches more frequently the diesel generator, whose fuel requirements increase by 24-35%, depending on the analyzed scenario.",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s4"
+                ],
+                "epistemic_status": "AUTHOR_INTERPRETATION",
+                "qualifications": [
+                  "depending on the analyzed scenario",
+                  "by 24-35%"
+                ],
+                "triplets": [
+                  {
+                    "subject": "diesel generator",
+                    "predicate": "fuel requirements of",
+                    "object": "increase by 24-35%"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  476,
+                  624
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              }
+            ],
+            "triplets": [
+              {
+                "subject": "Table 4",
+                "predicate": "reported in",
+                "object": "optimal size of the fuel tank"
+              },
+              {
+                "subject": "higher fuel price, cost of load curtailment, and time required for fuel delivery",
+                "predicate": "increases with",
+                "object": "optimal size of the tank"
+              },
+              {
+                "subject": "optimal size of the tank with RHS",
+                "predicate": "is",
+                "object": "higher than with LFS, even by 30%"
+              },
+              {
+                "subject": "diesel generator",
+                "predicate": "fuel requirements of",
+                "object": "increase by 24-35%"
+              }
+            ]
+          },
+          "layer2": {
+            "relations": [
+              {
+                "source_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a4",
+                "target_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a3",
+                "relation": "Cause",
+                "rationale": "The text explains that the optimal size of the fuel tank turns out to be higher with RHS than with LFS because RHS dispatches the diesel generator more frequently, increasing its fuel requirements."
+              }
+            ]
+          },
+          "layer3": {
+            "intents": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a1",
+                "primary": "Figure_Intro",
+                "secondary": [],
+                "rationale": "The optimal size of the fuel tank is reported in Table 4."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a2",
+                "primary": "Fact_Background",
+                "secondary": [],
+                "rationale": "These results confirm the findings of [15], where authors demonstrated that the optimal size of the tank increases with higher fuel price..."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a3",
+                "primary": "Objective_Finding",
+                "secondary": [
+                  "Comparison"
+                ],
+                "rationale": "Present simulations also show what happens by changing the dispatching strategy: with RHS the optimal size of the tank turns out to be higher than with LFS."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a4",
+                "primary": "Explanation",
+                "secondary": [],
+                "rationale": "This is because RHS dispatches more frequently the diesel generator, whose fuel requirements increase by 24-35%."
+              }
+            ]
+          },
+          "layer4": {
+            "block_id": "paper_6dc9f2bdd81d9dcf4a46:b105",
+            "role": "Result_Performance",
+            "confidence": 1.0,
+            "rationale": "This text discusses and analyzes the results regarding the optimal size of the fuel tank."
+          }
+        }
+      ]
+    },
+    {
+      "program": "optimized",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.rstv4-local\\skeleton-optimization\\experiment-v36-json-wire-full-frozen-student-extraction\\test\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\paper-candidate.json",
+      "raw_sha256": "98d376a6763fb13ecf4b3806574e871793b3fdd6676bcbb3caad5801267aaa30",
+      "canonical_digest": "0826b1cec493a062edaac5fadbfcb3ef6cf81e1d49930d09af6e052bdf59f979",
+      "original_units": 111,
+      "missing_original_block_ids": [],
+      "original_coverage_blocks": [
+        {
+          "block_id": "paper_6dc9f2bdd81d9dcf4a46:b89",
+          "page_number": 17,
+          "section": "5.4. Fuel cost and procurement",
+          "raw_text": "Table 1: Delivery time.\n<html><body><table><tr><td>Case</td><td>+d (days)</td><td>50th percentile (days)</td><td>yz06 percentile (days)</td></tr><tr><td>A</td><td>1</td><td>1.5</td><td>3</td></tr><tr><td>B</td><td>2</td><td>3</td><td>6</td></tr></table></body></html>",
+          "source_location": {
+            "artifact_image_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+            "content_index": 98,
+            "page_idx": 16,
+            "source": "mineru_content_list"
+          },
+          "parent_block_id": null,
+          "source_char_start": null,
+          "source_char_end": null,
+          "layer1": {
+            "propositions": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a1",
+                "statement": "Table 1 presents delivery time parameters for Case A (+d = 1 day, 50th percentile = 1.5 days, yz06 percentile = 3 days) and Case B (+d = 2 days, 50th percentile = 3 days, yz06 percentile = 6 days).",
+                "quote": "Table 1: Delivery time.\n<html><body><table><tr><td>Case</td><td>+d (days)</td><td>50th percentile (days)</td><td>yz06 percentile (days)</td></tr><tr><td>A</td><td>1</td><td>1.5</td><td>3</td></tr><tr><td>B</td><td>2</td><td>3</td><td>6</td></tr></table></body></html>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s1",
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s2",
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s3",
+                  "paper_6dc9f2bdd81d9dcf4a46:b89:s4"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [],
+                "triplets": [
+                  {
+                    "subject": "Table 1",
+                    "predicate": "presents",
+                    "object": "delivery time"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "1"
+                  }
+                ],
+                "source_span": [
+                  0,
+                  267
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              }
+            ],
+            "triplets": [
+              {
+                "subject": "Table 1",
+                "predicate": "presents",
+                "object": "delivery time"
+              }
+            ]
+          },
+          "layer2": {
+            "relations": [
+              {
+                "source_id": "paper_6dc9f2bdd81d9dcf4a46:b88:a1",
+                "target_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a1",
+                "relation": "Elaboration",
+                "rationale": "Table 1 provides the specific delivery time parameters and values corresponding to the Weibull PDF calibration discussed in the text."
+              }
+            ]
+          },
+          "layer3": {
+            "intents": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b89:a1",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Presents delivery time parameters and values in a table."
+              }
+            ]
+          },
+          "layer4": {
+            "block_id": "paper_6dc9f2bdd81d9dcf4a46:b89",
+            "role": "Empirical_Experiment",
+            "confidence": 1.0,
+            "rationale": "Table 1 presents delivery time parameters for the case study scenarios."
+          }
+        },
+        {
+          "block_id": "paper_6dc9f2bdd81d9dcf4a46:b96",
+          "page_number": 18,
+          "section": "6. Results and discussion",
+          "raw_text": "Table 2: Cost parameters of the main components, calibrated with [8, 15, 47–51].\n<html><body><table><tr><td>Asset</td><td>Po and UM*</td><td>& $/UM*)</td><td>β (-)</td><td>Maintenance ($/UM/y)</td></tr><tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr></table></body></html>\n\\*unit of measurement.",
+          "source_location": {
+            "artifact_image_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/694077100df207ce935182dbc195a4e1616b39eb10ac5186c61ef089ae58d763.jpg",
+            "content_index": 105,
+            "page_idx": 17,
+            "source": "mineru_content_list"
+          },
+          "parent_block_id": null,
+          "source_char_start": null,
+          "source_char_end": null,
+          "layer1": {
+            "propositions": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a1",
+                "statement": "Table 2 presents cost parameters of the main components, calibrated with references [8, 15, 47–51].",
+                "quote": "Table 2: Cost parameters of the main components, calibrated with [8, 15, 47–51].\n<html><body><table><tr><td>Asset</td><td>Po and UM*</td><td>& $/UM*)</td><td>β (-)</td><td>Maintenance ($/UM/y)</td></tr>",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b96:s1"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "calibrated with [8, 15, 47–51]"
+                ],
+                "triplets": [
+                  {
+                    "subject": "Table 2",
+                    "predicate": "presents",
+                    "object": "cost parameters of the main components"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "2"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "8"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "15"
+                  },
+                  {
+                    "kind": "Citation",
+                    "label": "47–51"
+                  }
+                ],
+                "source_span": [
+                  0,
+                  202
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              }
+            ],
+            "triplets": [
+              {
+                "subject": "Table 2",
+                "predicate": "presents",
+                "object": "cost parameters of the main components"
+              }
+            ]
+          },
+          "layer2": {
+            "relations": []
+          },
+          "layer3": {
+            "intents": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b96:a1",
+                "primary": "Method_Detail",
+                "secondary": [],
+                "rationale": "Presents cost parameters for main components calibrated with literature references."
+              }
+            ]
+          },
+          "layer4": {
+            "block_id": "paper_6dc9f2bdd81d9dcf4a46:b96",
+            "role": "Core_Methodology",
+            "confidence": 1.0,
+            "rationale": "Table showing cost parameters of the main components used in the study."
+          }
+        },
+        {
+          "block_id": "paper_6dc9f2bdd81d9dcf4a46:b105",
+          "page_number": 21,
+          "section": "6. Results and discussion",
+          "raw_text": "The optimal size of the fuel tank is reported in Table 4. First of all, these results confirm the findings of [15], where authors demonstrated that the optimal size of the tank increases with higher fuel price, cost of load curtailment and, obviously, the time required for fuel delivery. Present simulations also show what happens by changing the dispatching strategy of the mini-grid: with RHS the optimal size of the tank turns out to be higher than with LFS, even by 30%. This is because RHS dispatches more frequently the diesel generator, whose fuel requirements increase by 24-35%, depending on the analyzed scenario.",
+          "source_location": {
+            "content_index": 118,
+            "page_idx": 20,
+            "source": "mineru_content_list"
+          },
+          "parent_block_id": null,
+          "source_char_start": null,
+          "source_char_end": null,
+          "layer1": {
+            "propositions": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a1",
+                "statement": "The optimal size of the fuel tank is reported in Table 4.",
+                "quote": "The optimal size of the fuel tank is reported in Table 4. ",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s1"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [],
+                "triplets": [
+                  {
+                    "subject": "optimal size of the fuel tank",
+                    "predicate": "is reported in",
+                    "object": "Table 4"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Table",
+                    "label": "4"
+                  }
+                ],
+                "source_span": [
+                  0,
+                  57
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a2",
+                "statement": "The results confirm the findings of [15], demonstrating that the optimal size of the tank increases with higher fuel price, cost of load curtailment, and the time required for fuel delivery.",
+                "quote": "First of all, these results confirm the findings of [15], where authors demonstrated that the optimal size of the tank increases with higher fuel price, cost of load curtailment and, obviously, the time required for fuel delivery. ",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s2"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "with higher fuel price, cost of load curtailment, and time required for fuel delivery"
+                ],
+                "triplets": [
+                  {
+                    "subject": "optimal size of the tank",
+                    "predicate": "increases with",
+                    "object": "higher fuel price, cost of load curtailment, and time required for fuel delivery"
+                  }
+                ],
+                "objects": [
+                  {
+                    "kind": "Citation",
+                    "label": "15"
+                  }
+                ],
+                "source_span": [
+                  58,
+                  288
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a3",
+                "statement": "Simulations show that changing the dispatching strategy to RHS results in an optimal fuel tank size that is higher than with LFS, by even 30%.",
+                "quote": "Present simulations also show what happens by changing the dispatching strategy of the mini-grid: with RHS the optimal size of the tank turns out to be higher than with LFS, even by 30%. ",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s3"
+                ],
+                "epistemic_status": "AUTHOR_REPORT",
+                "qualifications": [
+                  "with RHS compared to LFS",
+                  "even by 30%"
+                ],
+                "triplets": [
+                  {
+                    "subject": "optimal size of the tank with RHS",
+                    "predicate": "is higher than",
+                    "object": "with LFS"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  289,
+                  475
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a4",
+                "statement": "RHS dispatches the diesel generator more frequently, increasing its fuel requirements by 24 to 35 percent depending on the scenario.",
+                "quote": "This is because RHS dispatches more frequently the diesel generator, whose fuel requirements increase by 24-35%, depending on the analyzed scenario.",
+                "source_span_ids": [
+                  "paper_6dc9f2bdd81d9dcf4a46:b105:s4"
+                ],
+                "epistemic_status": "AUTHOR_INTERPRETATION",
+                "qualifications": [
+                  "by 24-35%",
+                  "depending on the analyzed scenario"
+                ],
+                "triplets": [
+                  {
+                    "subject": "fuel requirements of the diesel generator under RHS",
+                    "predicate": "increase by",
+                    "object": "24-35%"
+                  }
+                ],
+                "objects": [],
+                "source_span": [
+                  476,
+                  624
+                ],
+                "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+              }
+            ],
+            "triplets": [
+              {
+                "subject": "optimal size of the fuel tank",
+                "predicate": "is reported in",
+                "object": "Table 4"
+              },
+              {
+                "subject": "optimal size of the tank",
+                "predicate": "increases with",
+                "object": "higher fuel price, cost of load curtailment, and time required for fuel delivery"
+              },
+              {
+                "subject": "optimal size of the tank with RHS",
+                "predicate": "is higher than",
+                "object": "with LFS"
+              },
+              {
+                "subject": "fuel requirements of the diesel generator under RHS",
+                "predicate": "increase by",
+                "object": "24-35%"
+              }
+            ]
+          },
+          "layer2": {
+            "relations": [
+              {
+                "source_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a1",
+                "target_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a2",
+                "relation": "Elaboration",
+                "rationale": "Atom b105:a1 provides the table reference, and b105:a2 elaborates on the findings regarding the optimal fuel tank size."
+              },
+              {
+                "source_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a3",
+                "target_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a4",
+                "relation": "Cause",
+                "rationale": "Atom b105:a3 introduces the comparison of tank size using RHS vs LFS, and b105:a4 provides the causal explanation for this difference."
+              }
+            ]
+          },
+          "layer3": {
+            "intents": [
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a1",
+                "primary": "Figure_Intro",
+                "secondary": [],
+                "rationale": "Reports where the optimal size of the fuel tank can be found."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a2",
+                "primary": "Fact_Background",
+                "secondary": [],
+                "rationale": "Confirms previous findings of [15] regarding the fuel tank size increasing with higher fuel price, cost of load curtailment, and fuel delivery time."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a3",
+                "primary": "Objective_Finding",
+                "secondary": [
+                  "Comparison"
+                ],
+                "rationale": "Simulations show that changing the dispatching strategy to RHS results in an optimal fuel tank size higher than LFS."
+              },
+              {
+                "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b105:a4",
+                "primary": "Explanation",
+                "secondary": [],
+                "rationale": "Explains the causal reason why RHS increases fuel tank requirements due to more frequent diesel generator dispatch."
+              }
+            ]
+          },
+          "layer4": {
+            "block_id": "paper_6dc9f2bdd81d9dcf4a46:b105",
+            "role": "Result_Performance",
+            "confidence": 1.0,
+            "rationale": "Main text discussing findings and results related to the optimal size of the fuel tank."
+          }
+        }
+      ]
+    }
+  ],
+  "paired_proposition_reviews": [
+    {
+      "program": "baseline",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a1",
+        "statement": "The higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using RHS.",
+        "quote": "Fig. 4 also shows that the higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using the RHS. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s1",
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s2"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [
+          "higher cost of load curtailment or lower fuel price"
+        ],
+        "triplets": [
+          {
+            "subject": "benefits of using RHS",
+            "predicate": "increase with",
+            "object": "curtailment cost and lower fuel price"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          0,
+          134
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "Fig. 4 also shows that the higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using the RHS. ",
+      "root_direct_selected_evidence_status": "FULL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [],
+      "root_direct_reason": "All stated sensitivity qualifications appear in the selected sentence.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "baseline",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a2",
+        "statement": "In the extreme case, using RHS decreases the NPC by 3%.",
+        "quote": "In the extreme case, using RHS the NPC decreases by 3%. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s3"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [
+          "in the extreme case",
+          "decreases by 3%"
+        ],
+        "triplets": [
+          {
+            "subject": "NPC using RHS",
+            "predicate": "decreases by",
+            "object": "3%"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          135,
+          190
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "In the extreme case, using RHS the NPC decreases by 3%. ",
+      "root_direct_selected_evidence_status": "FULL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [],
+      "root_direct_reason": "Selected sentence explicitly reports the3% extreme case.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "baseline",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a3",
+        "statement": "The NPC cost reduction is related to both CAPEX reduction and increased continuity of supply.",
+        "quote": "This cost reduction is both related to the reduction of CAPEX and to the increased continuity of supply. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s4"
+        ],
+        "epistemic_status": "AUTHOR_INTERPRETATION",
+        "qualifications": [
+          "related to CAPEX reduction and increased continuity of supply"
+        ],
+        "triplets": [
+          {
+            "subject": "cost reduction",
+            "predicate": "is related to",
+            "object": "CAPEX reduction and increased continuity of supply"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          191,
+          295
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "This cost reduction is both related to the reduction of CAPEX and to the increased continuity of supply. ",
+      "root_direct_selected_evidence_status": "FULL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [],
+      "root_direct_reason": "Selected sentence explicitly statesCAPEX and supply continuity.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "baseline",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a4",
+        "statement": "RHS reduces load curtailment by 60-65% on average.",
+        "quote": "In fact, RHS reduces load curtailment by $60{-}65\\%$ , on average. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s5"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [
+          "on average",
+          "by 60-65%"
+        ],
+        "triplets": [
+          {
+            "subject": "RHS",
+            "predicate": "reduces",
+            "object": "load curtailment by 60-65%"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          296,
+          362
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "In fact, RHS reduces load curtailment by $60{-}65\\%$ , on average. ",
+      "root_direct_selected_evidence_status": "FULL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [],
+      "root_direct_reason": "Selected sentence states60–65% on average.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "baseline",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a5",
+        "statement": "The NPC significantly depends on fuel price and non-served energy cost, whereas the impact of fuel delivery time is negligible.",
+        "quote": "The NPC significantly depends on fuel price and on the cost of the non-served energy; the impact of the time required for fuel delivery is instead negligible.",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s6"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [
+          "impact of fuel delivery time is negligible"
+        ],
+        "triplets": [
+          {
+            "subject": "NPC",
+            "predicate": "depends on",
+            "object": "fuel price and non-served energy cost"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          363,
+          521
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "The NPC significantly depends on fuel price and on the cost of the non-served energy; the impact of the time required for fuel delivery is instead negligible.",
+      "root_direct_selected_evidence_status": "FULL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [],
+      "root_direct_reason": "Selected sentence statesNPC sensitivity and negligible delivery-time effect.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "optimized",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a1",
+        "statement": "Higher load curtailment cost or lower fuel price increases the benefits of using RHS, with NPC decreasing by up to 3% in the extreme case.",
+        "quote": "Fig. 4 also shows that the higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using the RHS. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s1",
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s2"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [
+          "higher cost of load curtailment or lower fuel price leads to higher benefits of using RHS"
+        ],
+        "triplets": [
+          {
+            "subject": "extreme case",
+            "predicate": "decreases NPC using RHS",
+            "object": "decreases by 3%"
+          }
+        ],
+        "objects": [
+          {
+            "kind": "Figure",
+            "label": "4"
+          }
+        ],
+        "source_span": [
+          0,
+          134
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "Fig. 4 also shows that the higher the cost of load curtailment, or the lower the fuel price, the higher the benefits of using the RHS. ",
+      "root_direct_selected_evidence_status": "PARTIAL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [
+        "NPC decreasing by up to3% in the extreme case"
+      ],
+      "root_direct_reason": "The selected IDss1/s2 are only the preceding sensitivity sentence. The3% assertion is in unselecteds3.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "optimized",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a2",
+        "statement": "The cost reduction is related to both CAPEX reduction and increased continuity of supply, as RHS reduces load curtailment by 60-65% on average.",
+        "quote": "In the extreme case, using RHS the NPC decreases by 3%. This cost reduction is both related to the reduction of CAPEX and to the increased continuity of supply. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s3",
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s4"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [],
+        "triplets": [
+          {
+            "subject": "cost reduction",
+            "predicate": "is related to",
+            "object": "CAPEX reduction and increased continuity of supply"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          135,
+          295
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "In the extreme case, using RHS the NPC decreases by 3%. This cost reduction is both related to the reduction of CAPEX and to the increased continuity of supply. ",
+      "root_direct_selected_evidence_status": "PARTIAL_SELECTED_TEXT_SUPPORT",
+      "material_statement_parts_not_established_by_selected_evidence": [
+        "RHS reduces load curtailment by60–65% on average"
+      ],
+      "root_direct_reason": "Selecteds3/s4 supportNPC decrease/CAPEX/continuity but not the60–65% assertion, which is unselecteds5.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    },
+    {
+      "program": "optimized",
+      "unchanged_original_atom": {
+        "atom_id": "paper_6dc9f2bdd81d9dcf4a46:b98:a3",
+        "statement": "NPC significantly depends on fuel price and non-served energy cost, while the impact of fuel delivery time is negligible.",
+        "quote": "In fact, RHS reduces load curtailment by $60{-}65\\%$ , on average. ",
+        "source_span_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b98:s5"
+        ],
+        "epistemic_status": "AUTHOR_REPORT",
+        "qualifications": [
+          "NPC significantly depends on fuel price and cost of non-served energy",
+          "impact of fuel delivery time is negligible"
+        ],
+        "triplets": [
+          {
+            "subject": "NPC",
+            "predicate": "depends on",
+            "object": "fuel price and cost of non-served energy"
+          }
+        ],
+        "objects": [],
+        "source_span": [
+          296,
+          362
+        ],
+        "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+      },
+      "selected_exact_source_quote": "In fact, RHS reduces load curtailment by $60{-}65\\%$ , on average. ",
+      "root_direct_selected_evidence_status": "NOT_ESTABLISHED_BY_SELECTED_TEXT",
+      "material_statement_parts_not_established_by_selected_evidence": [
+        "NPC depends on fuel price and non-served energy cost",
+        "fuel-delivery-time impact negligible"
+      ],
+      "root_direct_reason": "Selecteds5 states only60–65% curtailment reduction. The full sensitivity statement is unselecteds6.",
+      "complete_block_supports_statement_elsewhere": true,
+      "author_report_not_independent_scientific_validation": true,
+      "original_benchmark_grade_replaced": false
+    }
+  ],
+  "bounded_status_counts": {
+    "baseline": {
+      "FULL_SELECTED_TEXT_SUPPORT": 5
+    },
+    "optimized": {
+      "PARTIAL_SELECTED_TEXT_SUPPORT": 2,
+      "NOT_ESTABLISHED_BY_SELECTED_TEXT": 1
+    }
+  },
+  "additional_primary_and_student_coverage_qualifications": [
+    "Both candidates inherit the parserTable1 labels+d/yz06; six numeric values are present. This is an upstream label defect, not six fabricated numeric values.",
+    "BaselineTable2 propositions describe the availablePV/Battery/converter parameters; optimizedTable2 has a generic header/caption proposition. Neither receives the three asset rows absent upstream. Full111block reconstruction therefore cannot establish full primary-table scientific coverage.",
+    "Primary fuel-tank prose faithfully repeated by optimizedb105 can conflict with the complete originalTable4. Author-report fidelity and primary internal consistency require separate verdicts.",
+    "Baseline missing21blocks and optimized raw111/111 remain original extraction outcomes. Block reconstruction does not certify selected-quote support, complete equations/figures or scientific accuracy.",
+    "Whole-model assertions of complete source support are limited by these concrete selected-evidence counterexamples. Prior whole optimized target-assurance protocol failure is retained; no replacement whole scientific verdict is invented."
+  ],
+  "root_review_is_blind_or_expert_gold": false,
+  "new_model_calls": 0,
+  "original_model_judgments_and_scores_unchanged": true,
+  "reference_evidence_statuses_or_bounded_atom_counts_are_not_overall_student_accuracy": true,
+  "claim_globally_false_due_to_wrong_selected_evidence": false,
+  "optimization_gain_proven": false,
+  "full_scientific_evaluation_complete": false
+}

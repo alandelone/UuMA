@@ -1,0 +1,11 @@
+{
+  "pid": 15112,
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-gpu-healthy-serve-v1.py"
+  ],
+  "port": 8887,
+  "worker_started": false
+}

@@ -1,0 +1,3 @@
+PASS ordinary navigation isolates manuscript view while preserving Track/Catalog return
+PASS old generated anchors retain original version and author objects do not invent one
+PASS restored pointers reject foreign scopes, invalid indices and empty legacy IDs

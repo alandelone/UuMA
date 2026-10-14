@@ -1,0 +1,40 @@
+CHECK pytest exit=0
+........................................................................ [ 77%]
+.....................                                                    [100%]
+93 passed in 44.76s
+
+
+CHECK correspondence-unit exit=0
+PASS arbitrary nested same-label target retains canonical author data and fixed source
+PASS all-original context choices and distinct Intent references remain independent
+PASS leaving formula and asset placement pending does not invent a target
+PASS legacy flat fixed paragraph source is inherited without rewriting the slot
+PASS every reviewed source, target, parent, group and edge change invalidates confirmation
+PASS repeated/foreign/unplaced/self destinations fail without writes
+PASS explicitly cancelling and undo/redo preserve exact documents
+PASS deleting a target releases its mapping but never deletes original author content
+PASS template replacement releases references to canonical original bank
+9 author correspondence contracts passed; no browser or real model used.
+
+
+CHECK placement-unit exit=0
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.
+
+
+CHECK blocks-unit exit=0
+17 controlled movement/group/association cases passed; no browser used.
+
+
+CHECK tsc exit=0
+
+
+CHECK oxlint exit=0
+
+

@@ -1,0 +1,408 @@
+{
+  "abstract": "",
+  "argument_relations": [
+    {
+      "condition": "Software-only relation condition Ω",
+      "id": "argument_relation_e8b8434232e5450396afceba1b56eaf0",
+      "relation": "Author comparison Ω",
+      "source_id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+      "target_id": "thought_640bf2359f714dc789eaa9792328adf2"
+    }
+  ],
+  "author_source_sections": [
+    {
+      "block_order": [
+        "paragraph_group_d6e12e2942b045018c19de523b462c9a"
+      ],
+      "id": "section_e6c46cea1637456487cbf22f6d6d2ca5",
+      "paragraph_groups": [
+        {
+          "id": "paragraph_group_d6e12e2942b045018c19de523b462c9a",
+          "label": "Original author group Ω",
+          "paragraph_ids": [
+            "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+            "paragraph_356c9c06059e4d308dc1eda0e7c4c6db"
+          ]
+        }
+      ],
+      "paragraphs": [
+        {
+          "asset_ids": [
+            "asset_995ed7847a3546ff94c7abbd6a0ef352"
+          ],
+          "formulas": [
+            {
+              "caption": "Original author formula",
+              "id": "formula_d337c2e309f24eefbba3eb27454548ae",
+              "latex": "x=1"
+            }
+          ],
+          "id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+          "intents": [
+            {
+              "id": "intent_c27c009a52334af0834cd9978e18cd01",
+              "label": "Original author intent",
+              "thoughts": [
+                {
+                  "citation_mode": "SELECTED",
+                  "citations": [
+                    {
+                      "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                      "selected": true
+                    }
+                  ],
+                  "id": "thought_aa60ef502db549e1ac1b2a82fb19c6cf",
+                  "text": "AUTHOR original wording Ω with its selected software citation."
+                }
+              ]
+            }
+          ],
+          "logic": {
+            "discourse_relation": "Author comparison"
+          },
+          "logical_relation": "Author comparison",
+          "paradigm": "Original author organization",
+          "purpose": "Original author purpose Ω"
+        },
+        {
+          "asset_ids": [
+            "asset_995ed7847a3546ff94c7abbd6a0ef352"
+          ],
+          "formulas": [
+            {
+              "caption": "Original author formula",
+              "id": "formula_3eeb0c2412b74c0ba6228f215a8a525d",
+              "latex": "x=1"
+            }
+          ],
+          "id": "paragraph_356c9c06059e4d308dc1eda0e7c4c6db",
+          "intents": [
+            {
+              "id": "intent_56a5681618b24da2b65bfa184158e683",
+              "label": "Original author intent",
+              "thoughts": [
+                {
+                  "citation_mode": "SELECTED",
+                  "citations": [
+                    {
+                      "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                      "selected": true
+                    }
+                  ],
+                  "id": "thought_640bf2359f714dc789eaa9792328adf2",
+                  "text": "AUTHOR second original wording stays independent."
+                }
+              ]
+            }
+          ],
+          "logic": {
+            "discourse_relation": "Author comparison"
+          },
+          "logical_relation": "Author comparison",
+          "paradigm": "Original author organization",
+          "purpose": "Original author purpose Ω"
+        }
+      ],
+      "placement_status": "UNPLACED",
+      "role": "Motivation",
+      "title": "Original author root Ω"
+    }
+  ],
+  "citation_style": "numeric_first_use",
+  "input_revision": 19,
+  "references": [
+    {
+      "authors": [
+        "Software Fixture"
+      ],
+      "citation_index": 1,
+      "confidence": 0.8,
+      "content_digest": "c6dd9f70f42d50f234026fdb4f883c29865ac5678eb6e2d2e6b42bc846da9afc",
+      "created_at": "2026-10-09T00:23:43.220189+00:00",
+      "doi": null,
+      "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+      "excerpt": "Synthetic source only",
+      "experiment_run_id": null,
+      "extractor_model": "TEST_FIXTURE",
+      "field_id": "field_23912a3fcdd9448e843bc0bf7afc5a01",
+      "landing_url": null,
+      "location": {
+        "legacy": "software fixture page 1"
+      },
+      "paper_id": "paper_3fb59f0ecf884e5b89b55cb0bbcec2cf",
+      "paper_version_id": null,
+      "pdf_url": null,
+      "prompt_version": "TEST_FIXTURE",
+      "published_year": 2026,
+      "reference_snapshot_source": "generation_input",
+      "relation": "SUPPORTS",
+      "scope_kind": "TRACK",
+      "source_snapshot_available": true,
+      "statement": "Synthetic hierarchy software fixture",
+      "title": "Source hierarchy software fixture",
+      "track_id": "track_7cdee9055202411ba65208134bdf9159"
+    }
+  ],
+  "sections": [
+    {
+      "paragraphs": [],
+      "section_id": "section_007f294603da483e9ca82d385c54e5ea",
+      "title": "Source Alpha Ω"
+    },
+    {
+      "paragraphs": [
+        {
+          "asset_ids": [
+            "asset_995ed7847a3546ff94c7abbd6a0ef352"
+          ],
+          "author_contexts": [
+            {
+              "author_intent_id": "intent_56a5681618b24da2b65bfa184158e683",
+              "source_group": {
+                "id": "paragraph_group_d6e12e2942b045018c19de523b462c9a",
+                "label": "Original author group Ω",
+                "paragraph_ids": [
+                  "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+                  "paragraph_356c9c06059e4d308dc1eda0e7c4c6db"
+                ]
+              },
+              "source_paragraph": {
+                "asset_ids": [
+                  "asset_995ed7847a3546ff94c7abbd6a0ef352"
+                ],
+                "formulas": [
+                  {
+                    "caption": "Original author formula",
+                    "id": "formula_3eeb0c2412b74c0ba6228f215a8a525d",
+                    "latex": "x=1"
+                  }
+                ],
+                "id": "paragraph_356c9c06059e4d308dc1eda0e7c4c6db",
+                "intents": [
+                  {
+                    "id": "intent_56a5681618b24da2b65bfa184158e683",
+                    "label": "Original author intent",
+                    "thoughts": [
+                      {
+                        "citation_mode": "SELECTED",
+                        "citations": [
+                          {
+                            "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                            "selected": true
+                          }
+                        ],
+                        "id": "thought_640bf2359f714dc789eaa9792328adf2",
+                        "text": "AUTHOR second original wording stays independent."
+                      }
+                    ]
+                  }
+                ],
+                "logic": {
+                  "discourse_relation": "Author comparison"
+                },
+                "logical_relation": "Author comparison",
+                "paradigm": "Original author organization",
+                "purpose": "Original author purpose Ω"
+              },
+              "source_section": {
+                "id": "section_e6c46cea1637456487cbf22f6d6d2ca5",
+                "placement_status": "UNPLACED",
+                "role": "Motivation",
+                "title": "Original author root Ω"
+              },
+              "source_section_path": [
+                "Original author root Ω"
+              ],
+              "template_intent_id": "intent_70932ec2d56e48c393b3d2cab8fa6a01",
+              "template_source": {
+                "heading_location": {
+                  "bbox": [
+                    10,
+                    20,
+                    300,
+                    40
+                  ],
+                  "content_index": 2,
+                  "heading_level": 2,
+                  "page_idx": 1,
+                  "source": "mineru_content_list"
+                },
+                "page_number": 2,
+                "skeleton_id": "skeleton_e3437eb301788bdbc563ac3a0d5af2cf",
+                "source_path": [
+                  "Source Alpha Ω",
+                  "Repeated source heading"
+                ],
+                "source_section_id": "block_51ddc6218d99e0166cc7dfae3875ae6b",
+                "source_sha256": "ed8ddeda79bdf50275543b7475bb805ddfc75312d764dbb66641a29361792c65",
+                "unit_id": "unit_715f039f533de9a20249e52538ec7341"
+              }
+            }
+          ],
+          "evidence_ids": [
+            "evidence_8a63870ad2cb494083c17595a2b3341c"
+          ],
+          "formulas": [
+            {
+              "caption": "Original author formula",
+              "id": "formula_3eeb0c2412b74c0ba6228f215a8a525d",
+              "latex": "x=1"
+            }
+          ],
+          "model_call_id": "studio_model_call_f0c14b6d34e9460096a3b6d42ad4e81a",
+          "model_contract": {
+            "actual_model": "TEST_FIXTURE_AUTHOR_CORRESPONDENCE",
+            "task": "paragraph_realization"
+          },
+          "paragraph_id": "paragraph_6a190b1f81e140c59ed01faae29e0b39",
+          "sentence_mappings": [
+            {
+              "sentence": 0,
+              "thought_ids": [
+                "thought_640bf2359f714dc789eaa9792328adf2"
+              ]
+            }
+          ],
+          "sentence_positions_verified": false,
+          "sentences": [],
+          "text": "AUTHOR second original wording stays independent. [@evidence_8a63870ad2cb494083c17595a2b3341c]",
+          "thought_ids": [
+            "thought_640bf2359f714dc789eaa9792328adf2"
+          ]
+        }
+      ],
+      "parent_section_id": "section_007f294603da483e9ca82d385c54e5ea",
+      "section_depth": 1,
+      "section_id": "section_c467e427758e4ab19584fb2f1f6ba949",
+      "title": "Repeated source heading"
+    },
+    {
+      "paragraphs": [
+        {
+          "asset_ids": [
+            "asset_995ed7847a3546ff94c7abbd6a0ef352"
+          ],
+          "author_contexts": [
+            {
+              "author_intent_id": "intent_c27c009a52334af0834cd9978e18cd01",
+              "source_group": {
+                "id": "paragraph_group_d6e12e2942b045018c19de523b462c9a",
+                "label": "Original author group Ω",
+                "paragraph_ids": [
+                  "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+                  "paragraph_356c9c06059e4d308dc1eda0e7c4c6db"
+                ]
+              },
+              "source_paragraph": {
+                "asset_ids": [
+                  "asset_995ed7847a3546ff94c7abbd6a0ef352"
+                ],
+                "formulas": [
+                  {
+                    "caption": "Original author formula",
+                    "id": "formula_d337c2e309f24eefbba3eb27454548ae",
+                    "latex": "x=1"
+                  }
+                ],
+                "id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+                "intents": [
+                  {
+                    "id": "intent_c27c009a52334af0834cd9978e18cd01",
+                    "label": "Original author intent",
+                    "thoughts": [
+                      {
+                        "citation_mode": "SELECTED",
+                        "citations": [
+                          {
+                            "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                            "selected": true
+                          }
+                        ],
+                        "id": "thought_aa60ef502db549e1ac1b2a82fb19c6cf",
+                        "text": "AUTHOR original wording Ω with its selected software citation."
+                      }
+                    ]
+                  }
+                ],
+                "logic": {
+                  "discourse_relation": "Author comparison"
+                },
+                "logical_relation": "Author comparison",
+                "paradigm": "Original author organization",
+                "purpose": "Original author purpose Ω"
+              },
+              "source_section": {
+                "id": "section_e6c46cea1637456487cbf22f6d6d2ca5",
+                "placement_status": "UNPLACED",
+                "role": "Motivation",
+                "title": "Original author root Ω"
+              },
+              "source_section_path": [
+                "Original author root Ω"
+              ],
+              "template_intent_id": "intent_20a2122a4697456e9037d7ca357f7018",
+              "template_source": {
+                "heading_location": {
+                  "bbox": [
+                    10,
+                    20,
+                    300,
+                    40
+                  ],
+                  "content_index": 6,
+                  "heading_level": 2,
+                  "page_idx": 3,
+                  "source": "mineru_content_list"
+                },
+                "page_number": 4,
+                "skeleton_id": "skeleton_e3437eb301788bdbc563ac3a0d5af2cf",
+                "source_path": [
+                  "Source Alpha Ω",
+                  "Repeated source heading"
+                ],
+                "source_section_id": "block_1e4eb74abff2e1c1f51881d5648d6284",
+                "source_sha256": "ed8ddeda79bdf50275543b7475bb805ddfc75312d764dbb66641a29361792c65",
+                "unit_id": "unit_e72946e2ace77fbc410aa5f12330a875"
+              }
+            }
+          ],
+          "evidence_ids": [
+            "evidence_8a63870ad2cb494083c17595a2b3341c"
+          ],
+          "formulas": [
+            {
+              "caption": "Original author formula",
+              "id": "formula_d337c2e309f24eefbba3eb27454548ae",
+              "latex": "x=1"
+            }
+          ],
+          "model_call_id": "studio_model_call_96454e39f960456f8e86f55d8c252281",
+          "model_contract": {
+            "actual_model": "TEST_FIXTURE_AUTHOR_CORRESPONDENCE",
+            "task": "paragraph_realization"
+          },
+          "paragraph_id": "paragraph_40f8dc3b091e4fe18e77a8ee70bd6737",
+          "sentence_mappings": [
+            {
+              "sentence": 0,
+              "thought_ids": [
+                "thought_aa60ef502db549e1ac1b2a82fb19c6cf"
+              ]
+            }
+          ],
+          "sentence_positions_verified": false,
+          "sentences": [],
+          "text": "AUTHOR original wording Ω with its selected software citation. [@evidence_8a63870ad2cb494083c17595a2b3341c]",
+          "thought_ids": [
+            "thought_aa60ef502db549e1ac1b2a82fb19c6cf"
+          ]
+        }
+      ],
+      "parent_section_id": "section_007f294603da483e9ca82d385c54e5ea",
+      "section_depth": 1,
+      "section_id": "section_0e129475c53140d2a5996b159af6b592",
+      "title": "Repeated source heading"
+    }
+  ],
+  "title": "Source hierarchy native acceptance Ω — software fixture"
+}

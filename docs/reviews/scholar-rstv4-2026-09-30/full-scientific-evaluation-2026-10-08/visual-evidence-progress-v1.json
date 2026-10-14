@@ -1,0 +1,1388 @@
+{
+  "status": "PASS_EXACT_ORIGINAL_PIXELS_REQUESTS_AND_DURABLE_RESPONSE_REPLAY_ONLY",
+  "scope": {
+    "papers": 10,
+    "original_blocks": 1286,
+    "original_pdf_pages": 150
+  },
+  "declared_pages": 150,
+  "completed_actual_page_attempts": 150,
+  "page_status_counts": {
+    "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW": 147,
+    "AUXILIARY_OUTPUT_CONTRACT_FAILURE_RETAINED": 3
+  },
+  "page_attempts": [
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\001\\record.json",
+      "record_sha256": "09bdb4fa0898db772ddba6405270e83bfb3d77dc698112233cbb32b91608ae05",
+      "durable_handle": "run_09dbc9279f064462827054d39df04e57",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\002\\record.json",
+      "record_sha256": "18581051cdfec5b339121001bd865716e6eec203bf3b326c3113eec3d2594a94",
+      "durable_handle": "run_cef854529fea4f34ac99c71e0fd3c565",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\003\\record.json",
+      "record_sha256": "0ed04e6a8e3352385677218b8b966d2d5b3abce749ee4b15510dbe4ad3aa1bf9",
+      "durable_handle": "run_5f86e407159240bfa4d984eb39aecb8a",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\004\\record.json",
+      "record_sha256": "c660c73ca7f48da4d2e8c70cdca677a2de218a3e852fc83638297e666c04bcaf",
+      "durable_handle": "run_a03a59e800c141919cdcd15808d79059",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\005\\record.json",
+      "record_sha256": "71e9e5c4250658ec85c44f5f16eede3dacee8891254e59df80b2631a19fe76b0",
+      "durable_handle": "run_e74046dcdf9042919201f493df60c582",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+      "record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+      "durable_handle": "run_753a56c813b245fab110d7a43643a920",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+      "record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+      "durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\008\\record.json",
+      "record_sha256": "7e5d0cd8f95baf7fd386588de91a9e9f6a85bcfbef98cae6fbe3f973716f98b7",
+      "durable_handle": "run_68cb320b4acb43839616b1f421e49bf5",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_OUTPUT_CONTRACT_FAILURE_RETAINED",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+      "record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+      "durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\010\\record.json",
+      "record_sha256": "5a3a1a34060cbd2d7320713515dc708ccfbcdaa97d0bf48866cefb82acd87a20",
+      "durable_handle": "run_7d1470d262b64f8f842274d0e4dd4430",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\011\\record.json",
+      "record_sha256": "04f8f84f972c773ff80ec739e89b17b5ff328102d11cf40d84b3d004e1862ddf",
+      "durable_handle": "run_fb0d39b8b4b54cd2b88a73a5e4e02e5b",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+      "record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+      "durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\013\\record.json",
+      "record_sha256": "10c3efeb13e04f89acc688e6019de0af934fd11ea7fc23823736a478e3519dea",
+      "durable_handle": "run_c1fb98398b4a4961b6fd77c2aaf80214",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\014\\record.json",
+      "record_sha256": "bc5d8bb32be070a76b1d611e22e5ac28175a39e0437cd948519aa9949d147dfd",
+      "durable_handle": "run_83d9f4ed59de4c4987e936e1fe823c3d",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\015\\record.json",
+      "record_sha256": "fc4f6625c4b16fc2a06b1fe57081747c522eba8c592f3682de5b1531cca2a087",
+      "durable_handle": "run_0182eab9750c47f7b0b267414315583d",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 16,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\016\\record.json",
+      "record_sha256": "a9ed35a2a917a784027a3de9a356fe649bf5bd4bb1818f3a555c28b812a3f57b",
+      "durable_handle": "run_703ea68a078348d38c4d874bc57fe196",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 17,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\017\\record.json",
+      "record_sha256": "aa8257cec6a8f62afe737a81cbb926d0c719dfa6f70b74beb7eb6442e29174b3",
+      "durable_handle": "run_9aec9d85a1b44bb6a8bbdd67ece1bded",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\001\\record.json",
+      "record_sha256": "fff143d5442d2e3062d14f9bcd9e0f4a4437dd00db962fd1ae471512c64931e3",
+      "durable_handle": "run_951ff0cbaa924cb0a2d83a04615984cc",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\002\\record.json",
+      "record_sha256": "854fc79f1005d2c4db00fba0d71e678f4ee93e45b265a182fccd503c2e06a632",
+      "durable_handle": "run_c2f37ca884a745e2b3bd4146eb4d6546",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\003\\record.json",
+      "record_sha256": "29646285a11dcb11aa0f06d04a7a9bf771bef5990934e00d502fec3b4c725554",
+      "durable_handle": "run_77dbca2eebeb400583305f0f66a6377f",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\004\\record.json",
+      "record_sha256": "0a86285c3f3f635a157d39eddb1efa4525f7fa0a615abde38a2514d1a6e8a26f",
+      "durable_handle": "run_cf1b6da748284c6389c4b7881809ebde",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\005\\record.json",
+      "record_sha256": "1f8b5d6b63612767899bf94ac69dcc5b74c8b884e9afdc67aab85a8f3c9894ef",
+      "durable_handle": "run_98102e1c5b974a7bb862af0989af0c8f",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\006\\record.json",
+      "record_sha256": "0207a4bbd1d61fa980c920aa847171c5a17352ed527d2b3f90a9f858eb3426bc",
+      "durable_handle": "run_2788a5d820924e2fb544f0f8d52794e1",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\007\\record.json",
+      "record_sha256": "669b8f1f8f97257b3772d1b8d254462db725fec127819fed7a61744f841362d1",
+      "durable_handle": "run_8af1dc129bec482f81b487363286c75c",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\008\\record.json",
+      "record_sha256": "ce20b85556e6b9953bb032c79f295be03b63a1d89923504bc90bf1b65cf8b442",
+      "durable_handle": "run_b3a4b92a5f0e49698267f551f2416f56",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\009\\record.json",
+      "record_sha256": "a6cb03c7b06d9d463f6151c6fa9873b9fd81f51e4a8f6ec767eb32feb9d5f793",
+      "durable_handle": "run_4a736344093546838b325f4cb375edf8",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\010\\record.json",
+      "record_sha256": "9b3c374c4f7b88efc77bfa848cc3eed787a734103ce3c60fc868107d085b93ad",
+      "durable_handle": "run_dbffef81a5e849d9adf44be886205a69",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\011\\record.json",
+      "record_sha256": "f53b28507504efd8518627598ed86133ccf57153130f5adbf589a0e90b88e784",
+      "durable_handle": "run_facc7e18cacf4c12b3a3f009522d5df3",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\012\\record.json",
+      "record_sha256": "d4cb8a112c176a9085196c9df391194643e1c2a8f80a54e0ab676a59769dfa33",
+      "durable_handle": "run_b6f6637cbb5c4e0197eaa48c594cf596",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\013\\record.json",
+      "record_sha256": "b0977b939de43c700029480984d51afc94f8b855a9c16a70a7973727ebd86ea9",
+      "durable_handle": "run_3ff30ff9984140a488c758f633d9e33e",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\014\\record.json",
+      "record_sha256": "cbf97645450849428b4486466f96c313dbd3b775ae024e367857c2066cc06390",
+      "durable_handle": "run_c8f393aab80f47cbb30f1ba5fa171ccb",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_2f81cb801401904d4767\\015\\record.json",
+      "record_sha256": "984868ff774aafdb28da1bc05322b237458e5192e4520bd71fbb79b20d2165a6",
+      "durable_handle": "run_64ed3896669e4197b2279b41c3f21348",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\001\\record.json",
+      "record_sha256": "794cee5075d48dde9d60210065a3b88b955904cf7b5a73dc0cea88aa9799bfb8",
+      "durable_handle": "run_9a1fca481b964082a8153877b2ec203c",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\002\\record.json",
+      "record_sha256": "3fcca9119acffb4f93d46b69de1b48ac2e5b098fc59615176011ccfcb130d5c6",
+      "durable_handle": "run_47295278bb7b4b049ab0fe384658296b",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\003\\record.json",
+      "record_sha256": "0a53f83d1f435882e03057f6eb489cff6eae1ec3eebfeef2177e8953818469fc",
+      "durable_handle": "run_74a3a0b8fdf04be3ae3d869fa20d137f",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\004\\record.json",
+      "record_sha256": "9cccba28497204a809a0fe1e48fd9074d05aed801dd73458e640fcea986dbc98",
+      "durable_handle": "run_6d6359504bca4cdd8572a522354035ec",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\005\\record.json",
+      "record_sha256": "3bd16c1729d965816f8f5525a790bdb03bac87bae2f50f91114e43c7b2258a33",
+      "durable_handle": "run_1bfa26ee470948d8a2a9a567b4105034",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\006\\record.json",
+      "record_sha256": "53593ea74c2a5763e9f99ca12dcbd9b4e2410dfc38e8b51afa3bbe67a8424adf",
+      "durable_handle": "run_c8613e5839c34c129f4a6abc195ba937",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\007\\record.json",
+      "record_sha256": "6c6bc3efbd3b23187be024447f26bcf66263741e4661be677bebcf496f45b408",
+      "durable_handle": "run_8fa88ef0dcde485d874f4cf3871d55e1",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\008\\record.json",
+      "record_sha256": "9376744f97c551f92b8b37c378a74e0c946e6558075508f6d7a5add5e069fef7",
+      "durable_handle": "run_33d88b283de04b139443abc5c80a94a6",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\009\\record.json",
+      "record_sha256": "aa527c7db6efa54547b9e9e8e1519df0d253541532029dcf4463e3e1175351ea",
+      "durable_handle": "run_58a7dd1e2adb453488dec5b1bcace109",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\010\\record.json",
+      "record_sha256": "1f50740a7e4f6ebea3e9ca2cf7574646bab5aebae0239eed25df58b78633d60f",
+      "durable_handle": "run_4fdf1dee1fff4be8a217f1b8f5f1be17",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\011\\record.json",
+      "record_sha256": "7be425da0052c0c3b272c04b20d7b475f216b89c80fc8aa36d368c62aae94d04",
+      "durable_handle": "run_d88687f236ee46aa9fbae85cabdde473",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\012\\record.json",
+      "record_sha256": "df2bd296dc50bdde3014c10b6f8c79d37f947787af4b83587801112485b5269b",
+      "durable_handle": "run_7bef46b8534643089e9c8deea3a6f4e7",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\013\\record.json",
+      "record_sha256": "f91d0d1707d82ddf836655672d3951a953a50f2280eb2e6fc94182ec80a6febb",
+      "durable_handle": "run_cea166546e1e4b47aeb6fd6976476565",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\014\\record.json",
+      "record_sha256": "f22f99d7c63b5b359b534c83555b09a3fb80a370721e15fb0a1870fe6c1de0a4",
+      "durable_handle": "run_e64b5df1e1f34866b7066f32e053daa7",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\015\\record.json",
+      "record_sha256": "88e863e18d51bc9bcff14c852687c2b54032ea3e3a47ad87aff92d415bcbec67",
+      "durable_handle": "run_f337a494385f456496fa7c09b6b26a22",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 16,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\016\\record.json",
+      "record_sha256": "2da5e529bb4e9f0d25a42ff9848e47a606146a7732fca961718fdd7fd81bd0e5",
+      "durable_handle": "run_a94385aba8d444769c4126ecfb33b430",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 17,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\017\\record.json",
+      "record_sha256": "4b26977de21ee17bd1aacd73dc8292b65efec44cfc45b797fbce09681ef542f0",
+      "durable_handle": "run_75b7ac03e0aa400db751ef23a4068e55",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "actual_pdf_page": 18,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_603603415f45919cbdc8\\018\\record.json",
+      "record_sha256": "411915bb9a55306b79c178a41bbc6b47d73b9d883da9d09e13742b3054fcc8d2",
+      "durable_handle": "run_d79080bebae84384a3e4c9ebfa1fba15",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\001\\record.json",
+      "record_sha256": "7c7b6fa09b149731cf6aac39567d66e2830194fc2c3866b1bbba1c70aa4a4993",
+      "durable_handle": "run_cc37e4b63fbd4d78a05a575b5afb7e18",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\002\\record.json",
+      "record_sha256": "4efb87fdb89966c14db1651a7aef5e10f52dd35d13dabc9b2334d827823e9c2d",
+      "durable_handle": "run_7a138160393142df87b845709652a18e",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\003\\record.json",
+      "record_sha256": "35feb52c4b93cad1d542c9c9a6acd77fe46ec5b133836e19be8d14344ea462fb",
+      "durable_handle": "run_9c4afb72d50245ca856b3022afe5ff72",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\004\\record.json",
+      "record_sha256": "e217668317cd87ce05f23aa30405fa34a7a02f801ed9663085c35a6c9ba78b3d",
+      "durable_handle": "run_b9127ea4fe0c42a59e3650fae9de5356",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\005\\record.json",
+      "record_sha256": "94ebb8550fda6edc40c1655a634763cb5bec9869d006b386ef8c370b5afc5fc7",
+      "durable_handle": "run_c3b6119bdb9e4961858466ef509d03e3",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\006\\record.json",
+      "record_sha256": "26867a432220a436ccb2cad606693a9fd56ae5427bc257c963f28a1100333d16",
+      "durable_handle": "run_b265ce2026aa4159badbd59070bc2f15",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\007\\record.json",
+      "record_sha256": "1f7c477a32a01d6006322ff6bec2c80d779eed9e4b290a238d28899a959851b3",
+      "durable_handle": "run_1ad730d44a51495b8892fbc6921de90e",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\008\\record.json",
+      "record_sha256": "90d9f0dd19fb8db8c6854b9acf7152c852402a233fc6b6d1b6718cc09553eb40",
+      "durable_handle": "run_d013107b58f144e9a658fb734b9406f4",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\009\\record.json",
+      "record_sha256": "1529be677a5b30fdac34122f796cb3cb538d4e2b0d13a71d0494d76b5ae59927",
+      "durable_handle": "run_b86ecbedba084a6d8d0ee6829c1c1c38",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\010\\record.json",
+      "record_sha256": "4bb66af37ca691f273c5d4bc22404ecba14d96188b6cbd850ebc5ea38135a81e",
+      "durable_handle": "run_7518ffd403234dd6b81a911dd7095d86",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\011\\record.json",
+      "record_sha256": "027ffd5f66307d8a9aafcf324ee17abf98f15103811a3bbd6414699a2a0b78a3",
+      "durable_handle": "run_b9abbf1f76744db694601d1f04759d9d",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\012\\record.json",
+      "record_sha256": "ab3253015bb30c7c34b68a6020f4d57ae7f8887c114fece94427cd8328a4ea6c",
+      "durable_handle": "run_0e8df80d8e7b4503bc5d0c358fba78ce",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\013\\record.json",
+      "record_sha256": "534547e0bcb91de55a7c8a99cdc5947923c8b2eb9a5cec637309beea2db4b649",
+      "durable_handle": "run_a72971731ecc4f418180cdafeef28f6b",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\014\\record.json",
+      "record_sha256": "e7be3c8fcc71f3f912229a5d4172621643af2e833f1e038d1edf3a791ed5b5b9",
+      "durable_handle": "run_b1debb35c6be42a494da871fafc7ee81",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\015\\record.json",
+      "record_sha256": "0152d343f6d53a025b3d7f5c4808ff38244833dc5d394a9b89ba833aaae07241",
+      "durable_handle": "run_c697aa5247e24754a2caf4b8708486f1",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 16,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\016\\record.json",
+      "record_sha256": "59487f49e4a46aa59e84d9577496332668c17faf3b832042dc842fbb9f4f9a4d",
+      "durable_handle": "run_259315489f354056967490f2eb9971d5",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 17,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\017\\record.json",
+      "record_sha256": "4add6c1d8fcfd5f1cbe8a3758697da94a4426d2c4ee20cf4436017bc86fe65a7",
+      "durable_handle": "run_cea17b3bf9a148d393dea15f2966b89f",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 18,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\018\\record.json",
+      "record_sha256": "3f5d0bf41ca44f33848eff267ff4421fe01fa8ce3af833dadf2f531bc93c9e35",
+      "durable_handle": "run_084117f7e602480486ed832171117b2c",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 19,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\019\\record.json",
+      "record_sha256": "62f707af632c102959290aff41b3becb9f9916b698f74db429226f7f794c89b7",
+      "durable_handle": "run_364077ecbd5640a4a96eebd120f1db32",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 20,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\020\\record.json",
+      "record_sha256": "cf408213741172b5ef7360de79b2d597fbd804f9b5ccce3670e0440d51fb7f23",
+      "durable_handle": "run_20f196397bea4ee2934b4c9995e6fe0c",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 21,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\021\\record.json",
+      "record_sha256": "6a663132fc0cc8be238c21cd53384f16da00c19ed57cd559efc611a496f3b606",
+      "durable_handle": "run_582445781ebd4defaf7ed19d9b6b5dc6",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 22,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\022\\record.json",
+      "record_sha256": "f53df4cd788bfef13f3bb426e4c14438c2d461328da7005fe3d3454202e70ea2",
+      "durable_handle": "run_60b2efc75d454c9fa26277451f950c3a",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 23,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\023\\record.json",
+      "record_sha256": "6c1731e4836665be0c99ca00f9e61e5e4abdb379c43b838ec0bf2b6e7ca6d4d2",
+      "durable_handle": "run_2377d7f4db724065a4faaa36b0f23737",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 24,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\024\\record.json",
+      "record_sha256": "5c088414664736f762905b77b2acecf9455614018cc8929ae997d8212fb43920",
+      "durable_handle": "run_1f9618d9b600465595a579fcb3dd75a3",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 25,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\025\\record.json",
+      "record_sha256": "e833d332b2305281198a0c8d9db4f51fd3549c25a7268cfa935bf3c696f13cc6",
+      "durable_handle": "run_3f3a6d4590dc4e7fa8f01defc3ef20f0",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 26,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\026\\record.json",
+      "record_sha256": "2defa53361ba3397a8e033ac6674ac87eff03edb4705a09981b5e986555e805d",
+      "durable_handle": "run_ef96be528d5f4aa386d696458d1698c3",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 27,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\027\\record.json",
+      "record_sha256": "a88f9b29909b5af86b8002986087f18bf281099ae08fcccebff8a40c3e4dd062",
+      "durable_handle": "run_d9d45af5c25249999a2cb94f01e38f2c",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\001\\record.json",
+      "record_sha256": "ba018a5f1d7e6d1f603c95c7b9eb2a2bf7570ef3a946657f39f2ceb882d3e1bc",
+      "durable_handle": "run_93b2d268de9446898e66e0144a3a1577",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\002\\record.json",
+      "record_sha256": "bebe4cbd465dd824e4c6ba03e3ef36b442d92da87b9a402bfba18199dc3ac90f",
+      "durable_handle": "run_52a3e82abed94b3daf3a198cb7b36bc3",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\003\\record.json",
+      "record_sha256": "c76d0b78c09c6c84d60a4d32531fc16da56aa0645441df808f5ab2ffc0cceaf3",
+      "durable_handle": "run_b8a8f3cebaec4c87baf095ed7c5ccf09",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\004\\record.json",
+      "record_sha256": "465c58c31456d673f96535128934d2e83c6caff5afc814fd5694683633f6be80",
+      "durable_handle": "run_55e29a0bfa0f433a8ee69a7cb23e9b89",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\005\\record.json",
+      "record_sha256": "8b7a708d55710ac5b738bfdc3fa3a32785cb5c20442298c4764753d808ff11ae",
+      "durable_handle": "run_7ccbc0d8f3d9464785b2c96bde503579",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\006\\record.json",
+      "record_sha256": "f3bf4f66d3899f75951a5bb77828e4ec1f5d6f60b123935724d2a11162f12dcc",
+      "durable_handle": "run_33637c7c488440f9bb0d741cd8dd9b7e",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\007\\record.json",
+      "record_sha256": "69f02cb8ffec25098c09c38eedde2a994083afd347c5b3bb51f676a5e748f7c0",
+      "durable_handle": "run_4e119e46f9b7487d9f45dded9aff9622",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\008\\record.json",
+      "record_sha256": "62d4f04912aa35e399403b61c80f7f26621bf5c3775b0b3e17ad8fd862a4e8e3",
+      "durable_handle": "run_cabc41f005b94b36a99c3368de4072cc",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\009\\record.json",
+      "record_sha256": "a8e72584675e119d9b6c30a69cc94fd082b8291fcb7f1f337336e26a2885e31f",
+      "durable_handle": "run_12229c446c0844e1a7607433ff32f736",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\010\\record.json",
+      "record_sha256": "9afb798ab2559024eafccf35ebc9d10cd14ef9ae9b2e6e939c68b8f97a9f15f3",
+      "durable_handle": "run_6028c03d420a4b018a65f50a02a1ddd1",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\011\\record.json",
+      "record_sha256": "6001066ca615d0988a7997b0a3f6968fd46a771c86c548273d4f0d2bc98fc01a",
+      "durable_handle": "run_0c333f4455414487a3eb3d1c6c2565c2",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\012\\record.json",
+      "record_sha256": "5192d00b87eec38c02a56ff71538c58faad222c904b039890819b46c15e6f55d",
+      "durable_handle": "run_e51e4bfeafee468594fe1fb69b2b6d14",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\013\\record.json",
+      "record_sha256": "d81b40678b993ad4e6e254718c647fd3ab225eb41fd94d56c29bfea18fa23630",
+      "durable_handle": "run_01284f59089d462a9b8b92902b16c711",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\014\\record.json",
+      "record_sha256": "c34275af1c17275872053d3a17f0f35acb19d17fe1c00f63291ee442a38cc76a",
+      "durable_handle": "run_fa4922f19f134272a367877ffe63a60d",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\015\\record.json",
+      "record_sha256": "cf4d9296450a17cf7b4509913c00fb702ddf92e94988fbcbd08633a3d7dc7c02",
+      "durable_handle": "run_e1360b0fa715442ea453010eae36ab73",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 16,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\016\\record.json",
+      "record_sha256": "7ec88962c47781046312e6b9ee18c7302f75db95684d172978c51f92591dc366",
+      "durable_handle": "run_31c755fa67a8457888dedfdf4f470663",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 17,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\017\\record.json",
+      "record_sha256": "74760f683494193078fa7634ed1db6f5957ae00fe0a559f7c0bc9c7d0519cf06",
+      "durable_handle": "run_49a8ad4c504c45129f1368e685e98bad",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 18,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\018\\record.json",
+      "record_sha256": "40c519e26daf1aed85b3051b5de72f6950f90f557171ecefea28400e40791683",
+      "durable_handle": "run_4712c1471fad49bbb418b909355c4c43",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 19,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\019\\record.json",
+      "record_sha256": "11191e442420bc746cb76d77244f65fc9fb59dd426d97371bfb6e1ce2e457715",
+      "durable_handle": "run_6c9e0e674ab042a8afa26c4194cf9d31",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "actual_pdf_page": 20,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_75abf75ded7b6df0c2b5\\020\\record.json",
+      "record_sha256": "14a9ca88b9cafbfabbdac14f4cf85395afbbc5675924374f8855351785a58d9e",
+      "durable_handle": "run_992b91528b234dbb85450576eb0fee01",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\001\\record.json",
+      "record_sha256": "3b1a5fa0547505d33d53d524755415a7ccdb664d828a83eae2f069ab0c495206",
+      "durable_handle": "run_f4482af22a2040d0a7129c9fd719fe34",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\002\\record.json",
+      "record_sha256": "89960e442ade91c4bf126ca61422ad86a607c6397f23fba332476bbf8e6ccb98",
+      "durable_handle": "run_2d8bced20a42483ea2ad379fba9c30d9",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\003\\record.json",
+      "record_sha256": "01a0323f99b4ddeb0a8fda6ef6e409a96bb581338b90e2d761934bd88e9a33c1",
+      "durable_handle": "run_7e3345a659ad43849cdfa522f488e2d4",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\004\\record.json",
+      "record_sha256": "382a0910abc372a3efb83819917a3e6205a1a2cce4e728c6f6304831c70bd34c",
+      "durable_handle": "run_20a19ee366bc46de96053a8b93309276",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\005\\record.json",
+      "record_sha256": "e893cc39681aa4031b1d194813a675e648686557243de8079362fba35ca4b4bd",
+      "durable_handle": "run_9999e846d8f24058ad94e74833b09e44",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\006\\record.json",
+      "record_sha256": "6e42e143052a39aad7243b7faca9bf40a91a9da3f7e548c66d1553ac9fab6450",
+      "durable_handle": "run_2753ecc9dc984e24ba7192209912bf64",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\007\\record.json",
+      "record_sha256": "456c56af6658f29f62da6bd7101d82aabd7a1b365261bccb063b90e91d66957c",
+      "durable_handle": "run_cf50a6377e104785a06108f7c9fe9f79",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\008\\record.json",
+      "record_sha256": "38731610cd97d0e35843390a35e5f4aa695818598aea010e6580fba91b50bfba",
+      "durable_handle": "run_35b667e69c644e209406574bada91852",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\009\\record.json",
+      "record_sha256": "9cb0e7f491a8f10ede75977cf70e8dd15b747eceb32112f746ce813faab70c4c",
+      "durable_handle": "run_6e821b836c61453a9e37dedac106d42a",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\010\\record.json",
+      "record_sha256": "0224825b7620b3581d893c59859c0fc7807ebb1fda231cfe85918bf4fd24ca03",
+      "durable_handle": "run_4e1948454a494985a9bdad1c53c1181e",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\011\\record.json",
+      "record_sha256": "c69ddcc749cd8b6602d7983e1ac5f2ccda52e54f30b1de6daf27a4968ceaf958",
+      "durable_handle": "run_3826f8ed2d5e4deba7b5f96e83cb0708",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\012\\record.json",
+      "record_sha256": "c3f4057390fd283f58b4b62f9d59cf4756d61c79a73fd9f69b8ddc5e00b813d2",
+      "durable_handle": "run_4a9372d104534fbd8787788c8b8325bc",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\013\\record.json",
+      "record_sha256": "02012cf0a33576229bbe13a4c913632331861e6d9b163011fbca64326de5c716",
+      "durable_handle": "run_d9ec2cc64451475383c13e8bd2d3618d",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\014\\record.json",
+      "record_sha256": "79ef03b52f2cb4109d31c8ac12c54fb6d6f56f528e671104896fc5cedead49c8",
+      "durable_handle": "run_9a208ae7f1cc4405bb3617ce83107fa2",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_OUTPUT_CONTRACT_FAILURE_RETAINED",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\015\\record.json",
+      "record_sha256": "f5e8638badf27d8e33f1e50debd582ffcd496fc419ba6765b56a5a2e3a5fbf36",
+      "durable_handle": "run_aed468ab940141ac90b80ea912246c27",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 16,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\016\\record.json",
+      "record_sha256": "d4a11458771992da3d995765f503f63ae6dae2ae81cb5a6d571932e0ec7371c6",
+      "durable_handle": "run_668ce4c8e9aa47c29aba607d2d20d47a",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 17,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\017\\record.json",
+      "record_sha256": "e98f008520d54f2dad4293dcfb4d6671161d3ed7da3c56846f0640b8527f05de",
+      "durable_handle": "run_79fc2e1af73f429cb1b1c91d92d25028",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_OUTPUT_CONTRACT_FAILURE_RETAINED",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\001\\record.json",
+      "record_sha256": "ff68cfed5c846a166aa12ab4aef9b00c0ce1c3adb9414979c06045ac17cd7030",
+      "durable_handle": "run_f2911e1c19fd4dbba111fbdc6543c269",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\002\\record.json",
+      "record_sha256": "84fdbe5639fa9bb9161b17929d4a9188e1041ec657f219bb09615a5a48b01375",
+      "durable_handle": "run_8a1f9e852a304652aade59ae5175c65a",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\003\\record.json",
+      "record_sha256": "0dbc8c85f35191a9baa25c1f33298eea3bc96f2dc24bcd68dabbb92c3fac4267",
+      "durable_handle": "run_e9dbc39d28e74f15bf0b25cc23e7f5eb",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\004\\record.json",
+      "record_sha256": "b9c064594a8b541b0e6bc41afe51fad30902e4ace150fe80bcb7236d4f4ce838",
+      "durable_handle": "run_db249f6e244f4379b0ab79c20ab67546",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\005\\record.json",
+      "record_sha256": "cc8757a84e3db48cc8a5bd3edca6b33a6fa9ff780348f416c8db5cee7844134b",
+      "durable_handle": "run_3c50c4a21d984429984c6afcbcfe34ef",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\006\\record.json",
+      "record_sha256": "4affbd77c0268ccd08b340a93394b84ccdf42b93e3af1f848d30f7c1f0a30ff1",
+      "durable_handle": "run_c1c57bf40b8d42c687ec5f2fac9ca213",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\001\\record.json",
+      "record_sha256": "2efb8ab1e19d0e966732303b199ec0fc303184bbd98872306861304033ee295e",
+      "durable_handle": "run_571ac69efa42497bb6faeb7322b15cd8",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\002\\record.json",
+      "record_sha256": "fd74b6a9ecd16dbe40b5086f2b9f125e19ec01b546cefa3e58fa0ce51a9157d7",
+      "durable_handle": "run_23c5cb73ce5d40d08c03805b8cc7b6bd",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\003\\record.json",
+      "record_sha256": "3b54b49828b22feaf313f09901300ea22e7ad2eec15083d3021704196725fa3d",
+      "durable_handle": "run_db4f947bffc143fcbc2fccb724af1555",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\004\\record.json",
+      "record_sha256": "35756a5945ba0d9a06bdc35486cd0f8bc7cc599abd7f8a6ec8a4ec04481dea5b",
+      "durable_handle": "run_90ad8b24943443e288e59ba4512306ed",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\005\\record.json",
+      "record_sha256": "e626aa4bbc882756b1b23abc5e04dade2348adccdb70f3334ae2fb5fc1c5f465",
+      "durable_handle": "run_eb00fa8f703e43b49721b6a25dbd6312",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\006\\record.json",
+      "record_sha256": "4b490ef11e678ab85c2f0cf33b07b4236ca990ef58aa9e2b027ffe0b6347b0d8",
+      "durable_handle": "run_ad272d349cd74e54992533c1ab105e93",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\007\\record.json",
+      "record_sha256": "057f000357a580947e28f5061534e22ff76e3a423693aca598ab0853b4ba197d",
+      "durable_handle": "run_469bd7866e6842f090b1714e9243a59e",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\001\\record.json",
+      "record_sha256": "12d09b361b1a3d030658418a6d298ec57c660b55497d77251684e44d501a8c2c",
+      "durable_handle": "run_7021541227ba401d830d012e790ed2e9",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\002\\record.json",
+      "record_sha256": "ff94b27da8d4def87d3df50777b40d0ff12b8ad999428c5e9162d4779b43f21a",
+      "durable_handle": "run_f86b15caef824517b3a5064f91c63f52",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\003\\record.json",
+      "record_sha256": "c34fa8b7e47df7a02af9dbbc209500882137ac7781268c2f2d1e318feaecc0d9",
+      "durable_handle": "run_0f4d86984eeb4060be0e1997f71e99aa",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\004\\record.json",
+      "record_sha256": "dae21057925d479c0d159d2d63647f4d4e87fdb05ea7862af309e94a6f8f3974",
+      "durable_handle": "run_70d09cccd5d948eba3aea1ad4b40efce",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\005\\record.json",
+      "record_sha256": "0abbca623dfc78bebbf3078693e6678e02ff27ae312c51fc326191d49a66d0bc",
+      "durable_handle": "run_caa9fd5977b5457bab9ae93f65c918ff",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\006\\record.json",
+      "record_sha256": "57c9175ffbabcc1aa2e9afe82ad9a8fe04856ef7a5b039425148b61fed1941dd",
+      "durable_handle": "run_0fe69d52cb2744518f819b6ee1975ede",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\007\\record.json",
+      "record_sha256": "7cdb965538c06b30496d8e30470b03cbed8c41c329274ced77b3068dbc64f2e0",
+      "durable_handle": "run_bb6571a5c29c495f8de24ede9edfaece",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_b637a4adf835d6357900\\008\\record.json",
+      "record_sha256": "cf330ec8f4bb15b0265cd8b5a01eaf44257d4464a691e665f7a6669995ffb0ec",
+      "durable_handle": "run_91f9e133588f4aa08439a866928f52a5",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 1,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\001\\record.json",
+      "record_sha256": "d75cf6482ba176d3a066d0405e1c144c2fe5f388958d150f78f71ca6535ef42a",
+      "durable_handle": "run_04c73acc10864cc081e0adf98821be09",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 2,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\002\\record.json",
+      "record_sha256": "8d7b1240df3a3ff665c60d54828d2594f0f5921ebecd4f3dd180e478bfd8fe9a",
+      "durable_handle": "run_805be65213b342eab75c7be8da70bcee",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 3,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\003\\record.json",
+      "record_sha256": "c52d264fcde80954c0867af7fa4ebe53b4a8deb2246c201bfa0c5e4d071f013e",
+      "durable_handle": "run_772360fc3fe44e98aa963db996cfa093",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 4,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\004\\record.json",
+      "record_sha256": "5e7fa2aa2b6f17e9ee3e1621d077fa074f39efd424cf18da3ad0722dacbd3791",
+      "durable_handle": "run_936d1beedff7486483983f2bb445f508",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 5,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\005\\record.json",
+      "record_sha256": "eda7c791d87557f59d16036e15fedff715b8602ddad082afa45194d80277c2f0",
+      "durable_handle": "run_5207a38934f147bcbc1662742d29bd42",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 6,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\006\\record.json",
+      "record_sha256": "5da1253c4dda54ba6faa0d9fe481464186d8c5c0ce34a06f6269b481f545d2ba",
+      "durable_handle": "run_1ccfdde9eca643468a62665619968c50",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 7,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\007\\record.json",
+      "record_sha256": "5bfdc6b43522faf8a042377705e5ff3b34ab146b745b2dc73d4da75513065b08",
+      "durable_handle": "run_93c5b8f552d14f13916a825ceb4f0fec",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 8,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\008\\record.json",
+      "record_sha256": "e04f030dfe434a984a249f11d9863b4402fff663562c72912741bfec69310f8d",
+      "durable_handle": "run_23943cfcb03340679bceaa7b00a335d4",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 9,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\009\\record.json",
+      "record_sha256": "4fb115eb25fca91bfd16013547c5c880e4755106219002e7c7c91d4761e6d48f",
+      "durable_handle": "run_c92d27d2182d44e184b5f00fa34eebd2",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 10,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\010\\record.json",
+      "record_sha256": "ff15f27ebefed354bba8e45d53eacd80277faba50679577511e8aefb29dab5e6",
+      "durable_handle": "run_2e7306b31db741efab373f637376f5e8",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 11,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\011\\record.json",
+      "record_sha256": "46ede85a5dc4824578c424ed8a5ec538188019465228e4f9dec7a448717393e8",
+      "durable_handle": "run_8f9770e08e06415b9f3b87aa664a7676",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 12,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\012\\record.json",
+      "record_sha256": "cb165fcf57f41691d017a213affa1426b41bd1358bb9945c0b0db7696384cf47",
+      "durable_handle": "run_b63471bf386248fea635fe8e495f92e1",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 13,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\013\\record.json",
+      "record_sha256": "9bfc21760a3d56d9bc702b3be6264797607ae91728481ddba9c57bcf26687f9b",
+      "durable_handle": "run_e095c9a3a93d4d7490b8c86192ee2425",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 14,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\014\\record.json",
+      "record_sha256": "7e6b538b472351c15585ace4f77634e0d3f15136e95a9eab5a445561f8e8893d",
+      "durable_handle": "run_751f9009f48d46b2aed360fffd1f3cf8",
+      "full_pixel_science_verified": false
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "actual_pdf_page": 15,
+      "status": "AUXILIARY_VISUAL_OBSERVATION_PENDING_INDEPENDENT_SCIENTIFIC_REVIEW",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_fb88f52bf6ea0323e952\\015\\record.json",
+      "record_sha256": "88b530f6857fb5d6d06164ff8ba49fceff3cf91bf8982d855359e883f9d66c05",
+      "durable_handle": "run_9e1c8d3e72c64548b3dc40643a2d5db3",
+      "full_pixel_science_verified": false
+    }
+  ],
+  "all150_page_and165_crop_inputs_frozen": true,
+  "all262_original_visual_items_retained": true,
+  "auxiliary_model": "gemini-3.5-flash-lite",
+  "scientific_teacher_unchanged": "gemini-3.1-pro",
+  "visual_scientific_references_approved": 0,
+  "benchmark_grades_created_from_ocr": 0,
+  "model_calls_by_this_auditor": 0,
+  "scientific_content_or_completeness_proven_by_this_audit": false,
+  "qualified_source_windows": 79,
+  "atomic_case_status_counts": {
+    "AUDITED_AI_SCIENTIFIC_COMPARISON": 134,
+    "SOURCE_REFERENCE_UNACCEPTED": 93,
+    "AUDITED_UNRESOLVED_SCIENCE": 11,
+    "ORIGINAL_EXTRACTION_CONTRACT_FAILURE": 8,
+    "EVALUATION_CONTRACT_FAILURE": 6
+  },
+  "whole_candidate_target_counts": {
+    "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED": 11,
+    "ORIGINAL_TARGET_PROTOCOL_FAILURE_RETAINED": 4,
+    "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE": 5
+  },
+  "full_goal_complete": false
+}

@@ -1,0 +1,25 @@
+RUN scholar-review-owned-reload-v1.py
+Isolated Catalog identity and listener verified.
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":53464},{"LocalAddress":"0.0.0.0","LocalPort":3000,"OwningProcess":58324}]
+Verified roots: Studio 55348, frontend 58324
+Owned isolated services loaded: Catalog 64520, Studio 62872, frontend 27136.
+Verified original isolated runtime reloaded for v7 review ledger; exact pre-migration database preserved.
+RUN scholar-review-migration-proof-v1.py
+All 96 original tables/rows preserved, v7 ledger empty, 97 current tables verified.
+RUN scholar-review-original-final-v1.py
+Isolated Catalog identity and listener verified.
+{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":63188}
+Verified roots: Studio 62872, frontend 27136
+{"status": "PASS_CURRENT_REVIEW_RECOVERY_AND_ORIGINAL_RETRIES", "new_jobs": 0, "new_model_calls": 0, "browser_verified": false, "counts": {"research_discussion_jobs": 4, "research_discussion_messages": 8, "research_discussion_annotations": 2, "studio_model_calls": 6}, "database_sha256": "16fc9aa663707fb9f1bc70a769b769d8d3645f3244cb9137f996aa4e045c45a4", "legacy_retry_verified": true, "studio_origin_verified": true, "source_context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c", "historical_chain_messages": 4, "published_sha256": {"catalog_web.html": "6d92479f0ae790908109bc5d105bdb84fa6b466c14177ddd46d6cd2b3fd74018", "catalog_research_chat.js": "813cb3f4563eb5ba4554adec490c4577235ce8784892f5ada709188496434cbb", "catalog_research_workspaces.js": "58d4048e71c83367be91f9e1d974d2c6d46cd7f9078b8d3b285432e71d2367fc", "catalog_review_workflow.js": "4160dfea9817b27964b12b6ad678c376d751a3398c0af17441b669138c0178c2"}, "compiled_assets_sha256": {"/_next/static/chunks/index-D3sygzUv.js": "373662f8067857b672a8f399f6a1324b8ba2171f677198d409dd4bee9151068f", "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077", "/_next/static/chunks/vinext-DW3H6xYL.js": "a8361310a163c4bba91e9030cd8e2a41e3eec405d673d90ef74fd9be337b80b2", "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021", "/_next/static/chunks/layout-segment-context-ndsk2KXH.js": "9c83768b13944ed4fac74762e427f08ba4e58727763529626aa15b2dfbafa107", "/_next/static/css/index.CU_wJ0Vv.css": "18fc26ac9066562768451d5d0b0bd216210595dcbd8743f4dd2b96acbe7175d4", "/_next/static/chunks/page-BvZpQSFA.js": "574e9e66f0744a67f950f81ffef225cf062fe2bc53f6689a9c271e99d762807c"}, "original_database_bytes_unchanged_since_previous_batch": false, "earlier_pre_fix_startup_byte_equality_failure_retained": true, "fixed_startup_all_tables_and_bytes_unchanged": true, "all_tables_verified": 97, "exact_previous_discussion_receipts_unchanged": true}
+RUN scholar-review-packaging-v1.py
+Processing c:\users\alandelone\codespace_local\rstv4
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: rstv4
+  Building wheel for rstv4 (pyproject.toml): started
+  Building wheel for rstv4 (pyproject.toml): finished with status 'done'
+  Created wheel for rstv4: filename=rstv4-0.1.0-py3-none-any.whl size=739774 sha256=e749342625494c0514a1471f69b255d078c89849ee11f5e2ae3e65169398caba
+  Stored in directory: C:\Users\Alandelone\AppData\Local\Temp\pip-ephem-wheel-cache-3wwnu4gn\wheels\57\5b\b7\cdc8935af193549c01f6b49d5e722b77f2010cd2f1e0e0ba84
+Successfully built rstv4
+
+Actual distribution includes the exact Catalog HTML and all four shipped JavaScript files.

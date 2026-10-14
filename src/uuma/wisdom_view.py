@@ -19,7 +19,7 @@ def create_wisdom_view_app(settings: Settings | None = None) -> FastAPI:
     """Create the loopback-only, read-only Wisdom topic document service."""
     settings = settings or Settings.from_env()
     settings.data_dir.mkdir(parents=True, exist_ok=True)
-    token = ensure_view_token(settings.data_dir)
+    token = ensure_view_token(settings.knowledge_database_path().parent)
     base_url = os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767")
     topics = TopicKnowledgeService(
         KnowledgeService(settings.knowledge_database_path()),

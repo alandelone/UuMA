@@ -1,0 +1,33 @@
+CHECK ['tests/catalog_research_overview.cjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+10 controlled overview scenarios passed
+Exit: 0
+CHECK ['tests/unit/catalog-return.cjs']
+11 Catalog return origin/context cases passed
+Exit: 0
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/catalog_web.py', 'src/rstv4/research_workspace.py', 'src/rstv4/database.py', 'tests/test_research_workspace.py']
+All checks passed!
+Exit: 0
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\typescript\\bin\\tsc', '--noEmit']
+Exit: 0
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\oxlint\\bin\\oxlint', 'app/page.tsx', 'lib/catalog-return.ts', 'tests/unit/catalog-return.cjs', 'C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_research_overview.js', 'C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_research_overview.cjs']
+lib/catalog-return.ts:17:25: error unicorn(no-useless-spread): Using a spread operator here creates a new array unnecessarily. help: `for…of` can iterate over iterable, it's unnecessary to convert to an array.
+tests/unit/catalog-return.cjs:1:16: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+tests/unit/catalog-return.cjs:2:12: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+tests/unit/catalog-return.cjs:3:14: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+tests/unit/catalog-return.cjs:4:12: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+tests/unit/catalog-return.cjs:5:12: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+C:/Users/Alandelone/CodeSpace_Local/RSTV4/tests/catalog_research_overview.cjs:2:16: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+C:/Users/Alandelone/CodeSpace_Local/RSTV4/tests/catalog_research_overview.cjs:3:12: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+C:/Users/Alandelone/CodeSpace_Local/RSTV4/tests/catalog_research_overview.cjs:4:12: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+C:/Users/Alandelone/CodeSpace_Local/RSTV4/tests/catalog_research_overview.cjs:5:14: error typescript(no-require-imports): Expected "import" statement instead of "require" call help: Do not use CommonJS `require` calls
+Exit: 1

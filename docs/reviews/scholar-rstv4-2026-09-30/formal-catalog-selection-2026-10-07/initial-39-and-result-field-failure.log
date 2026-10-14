@@ -1,0 +1,40 @@
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-inline-v3.js']
+RUN ['node', 'tests/catalog_existing_papers.mjs']
+7 controlled existing-paper and actual section-handler checks passed
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['node', 'tests/catalog_collections.mjs']
+9 controlled Collection request checks passed
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/models.py', 'src/rstv4/database.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/collection_web.py', 'src/rstv4/collection_inputs.py', 'tests/test_catalog_paper_selection.py']
+All checks passed!
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_paper_selection.py', 'tests/test_collection_workspace.py', 'tests/test_manuscript_scientific_review.py', '-q']
+............F...........................                                 [100%]
+================================== FAILURES ===================================
+_ test_same_paper_different_collection_scope_keeps_independent_screening_records _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-896/test_same_paper_different_coll0')
+
+    def test_same_paper_different_collection_scope_keeps_independent_screening_records(tmp_path: Path):
+        db,_=library(tmp_path);service=AcquisitionService(tmp_path)
+        first=service.create_collection(CollectionCreateInput.model_validate(chosen(idempotency_key='scope-source-first',scope={'topic':'A'})))
+        second=service.create_collection(CollectionCreateInput.model_validate(chosen(idempotency_key='scope-source-second',scope={'topic':'B'})))
+        a=service.record_assessment(first['collection_id'],'existing','SCREEN',{'category':'CORE'},[],rule_version='same-rule',input_digest='same-raw-input')
+        b=service.record_assessment(second['collection_id'],'existing','SCREEN',{'category':'IRRELEVANT'},[],rule_version='same-rule',input_digest='same-raw-input')
+        assert a['assessment_id']!=b['assessment_id']
+        assert json.loads(a['result_json'])=={'category':'CORE'} and json.loads(b['result_json'])=={'category':'IRRELEVANT'}
+        candidates_a=service.get_core_candidates(first['collection_id'])
+        candidates_b=service.get_core_candidates(second['collection_id'])
+>       assert candidates_a[0]['relevance']=='CORE' and candidates_b[0]['relevance']=='IRRELEVANT'
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'relevance'
+
+tests\test_catalog_paper_selection.py:152: KeyError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_catalog_paper_selection.py::test_same_paper_different_collection_scope_keeps_independent_screening_records
+1 failed, 39 passed, 1 warning in 15.21s

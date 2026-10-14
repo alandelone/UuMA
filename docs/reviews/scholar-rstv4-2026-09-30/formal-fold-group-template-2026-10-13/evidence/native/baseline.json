@@ -1,0 +1,49 @@
+{
+  "status": "PASS_CURRENT_G08_BASELINE",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2",
+  "manuscript_a": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+  "author_revision": 18,
+  "all_old_protected_records_exact": true,
+  "new_model_calls": 0,
+  "verified_current_frontend": [
+    {
+      "ProcessId": 4508,
+      "ParentProcessId": 64400,
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g07-build-2aju2a31\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791792638745)/"
+    },
+    {
+      "ProcessId": 64400,
+      "ParentProcessId": 109408,
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791792638725)/"
+    },
+    {
+      "ProcessId": 109408,
+      "ParentProcessId": 109324,
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791792638593)/"
+    },
+    {
+      "ProcessId": 109324,
+      "ParentProcessId": 120976,
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791792638487)/"
+    }
+  ],
+  "verified_current_backend": [
+    {
+      "ProcessId": 76012,
+      "ParentProcessId": 115132,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g04-native-server-v2.py",
+      "CreationDate": "/Date(1791789186452)/"
+    },
+    {
+      "ProcessId": 115132,
+      "ParentProcessId": 18872,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g04-native-server-v2.py",
+      "CreationDate": "/Date(1791789186426)/"
+    }
+  ],
+  "read_only_database_bytes_preserved": true
+}

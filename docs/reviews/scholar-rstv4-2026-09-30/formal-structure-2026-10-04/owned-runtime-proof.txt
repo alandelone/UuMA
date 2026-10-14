@@ -1,0 +1,2 @@
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":94956},{"LocalAddress":"127.0.0.1","LocalPort":3000,"OwningProcess":78524}]
+Verified roots: Studio 10924, frontend 78524

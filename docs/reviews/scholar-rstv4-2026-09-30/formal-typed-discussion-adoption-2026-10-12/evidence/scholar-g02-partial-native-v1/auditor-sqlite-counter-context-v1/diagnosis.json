@@ -1,0 +1,17 @@
+{
+  "failure": "Original immutability auditor treated sqlite_sequence as an immutable application row.",
+  "observed_before": [
+    {
+      "name": "research_discussion_messages",
+      "seq": 9
+    }
+  ],
+  "observed_after": [
+    {
+      "name": "research_discussion_messages",
+      "seq": 11
+    }
+  ],
+  "execution_contract": "The native discussion legitimately appends exactly two messages. Require this sole counter to advance from 9 to 11, matching the exact 11 stored messages; keep all other old application row preservation assertions. No product assertion or source changed.",
+  "original_auditor_sha256": "31e8ce1d2dc103065746ed63f00b71ee648f7165cfd2b1f5d13b59bba29ac1d0"
+}

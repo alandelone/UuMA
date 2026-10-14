@@ -1,0 +1,12 @@
+RUN ['node', 'node_modules/typescript/bin/tsc', '--noEmit']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd', '--type-aware', '--deny-warnings', 'lib/studio-types.ts', 'lib/studio-downloads.ts', 'components/studio-source-context.tsx', 'components/studio-workspace.tsx']
+RUN ['node', 'tests/unit/studio-downloads.cjs']
+PASS ZIP bytes, length and fixed filename stream unchanged through same-origin delivery
+PASS package PDF and generated artifact use only fixed file routes
+PASS unavailable fixed files preserve 410 and backend explanation
+PASS arbitrary API, path traversal, URL and query requests never reach backend
+PASS foreign origins and writes do not reach file service
+PASS server destination is configured loopback API only
+PASS empty responses and redirects cannot become apparently successful downloads
+7 fixed-file delivery contracts passed; controlled requests, no browser used.
+RUN ['git', 'diff', '--check']

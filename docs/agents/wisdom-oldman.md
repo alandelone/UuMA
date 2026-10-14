@@ -7,6 +7,11 @@ Source: `https://chatgpt.com/share/6a9015ad-2ee8-83ec-a155-3d9844ffecb6`
 Source note: the shared page was not readable by the available automated readers on 2026-08-31;
 this document remains the consolidated requirements record until an export can be reconciled.
 
+Current architecture additions: section 18 establishes text-first, read-only topic documents;
+section 19 and [the research-tool contract](../architecture/agent-research-tools.md) establish
+tool ownership, continued research and explainable conversation. They supersede earlier canvas-first
+and source-exhaustion stopping descriptions. Implementation status is recorded separately.
+
 ## 1. Mission
 
 Wisdom-Oldman is the long-term knowledge agent in UuMA. It does not merely search and summarize. It converts raw information into evidence-backed, traceable, reusable, correctable knowledge and keeps discovering worthwhile gaps in that knowledge.
@@ -160,11 +165,17 @@ The system has two distinct stopping concepts:
 Answer stop
 = enough knowledge to answer now
 
-Research stop
-= no worthwhile gap remains, or the user stops research
+Research completion
+= no worthwhile gap remains within the agreed scope
+
+Execution suspension
+= user pause/stop, a configured budget limit, or a concrete execution blocker
 ```
 
 An answer may therefore be delivered while background research continues.
+One empty discovery cycle does not establish completion or justify automatically pausing research.
+Reassess strategy, available tools and other worthwhile branches; retain concrete blocker and
+budget reasons as specified in the research-tool contract.
 
 ## 7. Information In
 
@@ -350,13 +361,13 @@ This lets the backend change without rewriting the agent's identity or methods.
 
 The human interface is a projection of the same backend, not a separate knowledge database.
 
-The accepted direction is a Project Graph-like canvas with three views:
+The current delivery is a text-first, versioned topic document with stable section links, research
+state and a secondary read-only relationship view. It is loopback-only and uses a separate read-only
+access mechanism. Topic documents, cross-topic navigation and research progress share the same
+knowledge source; a graph canvas is not the home page.
 
-1. Concept or topic view for overall human-readable structure.
-2. Graph view for entities, relationships, claims, evidence, and local exploration.
-3. Research view for gaps, conflicts, satisfaction, and active research.
-
-The human can inspect, reorganize, and propose edits. AI changes follow a versioned workflow:
+The earlier editable Project Graph-like canvas is outside the current delivery. Canonical AI
+changes still follow the governed versioned workflow:
 
 ```text
 Canonical graph
@@ -374,7 +385,9 @@ Review and merge
 New canonical version
 ```
 
-Google Docs-style per-node comments were explicitly removed from the first design. The UI should remain focused on the visual canvas, nested subgraphs, human edits, versions, diffs, and AI proposals.
+Google Docs-style per-node comments were explicitly removed from the first design. Section 18
+defines the implemented document projection; any future graph editing needs a separately agreed
+scope and must retain the existing review and history boundaries.
 
 ## 13. Collaboration contracts
 
@@ -410,7 +423,7 @@ Hermes chooses when to call Wisdom-Oldman and coordinates its outputs with other
 
 ## 15. Open design work
 
-- Design the first Knowledge Map UI projection.
+- Review any future editable Knowledge Map projection separately from the read-only topic product.
 - Add application connectors after the files-and-public-web ingestion surface is stable.
 
 ## 16. Implemented governed KAG core
@@ -489,3 +502,25 @@ The user-approved automatic default is DEEP: six active hours, 100 sources, one 
 tokens, and the existing search-query ceiling. An ordinary follow-up reuses the active Orbit and
 does not reset usage. Reaching any limit pauses the durable work with remaining questions visible;
 only explicit reviewed action may add a later budget.
+
+## 19. Tool use, continued research and conversation (2026-10-02)
+
+ChatGPT is a callable tool/worker owned by Wisdom's research workflow. Wisdom chooses bounded work,
+uses chat to develop search leads or clarify a gap, search to find sources, and deep_research for
+worthwhile multi-source investigation. Wisdom collects the result, reads the underlying sources and
+forms candidate knowledge inside the existing topic. The DEEP budget tier does not select a tool
+mode. New sources extend the common capability and adapter contract.
+
+Persist actual tool attempts and distinguish pending work, no results, failures and unavailable
+capabilities. Do not pause because each open question has had one unsuccessful search. While the
+user has not paused/stopped and budget remains, choose a useful revised strategy or another branch.
+Every suspension must have a recorded cause, affected work, remaining budget and next action.
+
+Normal conversation, progress review and questions about pause reasons read persisted state without
+requiring graph recovery. They must answer about the existing topic, not propose a new research topic.
+Show what has been accomplished, what is happening or blocked, what routes were tried and what
+happens next; provide the existing document link.
+
+The complete normative design, persistence boundary, tool methods, extension requirements and
+acceptance cases are in [Agent research tools](../architecture/agent-research-tools.md).
+That document explicitly separates these requirements from remaining runtime implementation gaps.

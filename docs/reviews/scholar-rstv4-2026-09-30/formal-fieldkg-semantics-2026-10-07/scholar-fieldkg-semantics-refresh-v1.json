@@ -1,0 +1,107 @@
+{
+  "status": "PASS_OWNED_CATALOG_REFRESH_WITH_DECLARED_ADDITIVE_SCHEMA12",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+  "database_sha256": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+  "literature_counts": [
+    {
+      "kind": "field",
+      "field_id": "field_9273ae245b9b422bb8142ebf45ff8aca",
+      "object_id": "field_9273ae245b9b422bb8142ebf45ff8aca",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "field",
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "object_id": "field_43a75d0b476147fdb548488e221891da",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "field",
+      "field_id": "field_f00213c418114952befc154e013d485b",
+      "object_id": "field_f00213c418114952befc154e013d485b",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "field",
+      "field_id": "field_785167b274c54c2f921390317406d0a7",
+      "object_id": "field_785167b274c54c2f921390317406d0a7",
+      "paper_count": 1,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "topic",
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "object_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "topic",
+      "field_id": "field_785167b274c54c2f921390317406d0a7",
+      "object_id": "topic_1765f2032d6641fab6ea878183446512",
+      "paper_count": 1,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "topic",
+      "field_id": "field_9273ae245b9b422bb8142ebf45ff8aca",
+      "object_id": "topic_f94fd1049b634fbf85add7ebada5dbd0",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "topic",
+      "field_id": "field_f00213c418114952befc154e013d485b",
+      "object_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "track",
+      "field_id": "field_9273ae245b9b422bb8142ebf45ff8aca",
+      "object_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "track",
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "object_id": "track_d42b44fd0c344690a8e78ef18f186c04",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "track",
+      "field_id": "field_f00213c418114952befc154e013d485b",
+      "object_id": "track_7677a8ba3f054ce6b7e65d083847515c",
+      "paper_count": 0,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    },
+    {
+      "kind": "track",
+      "field_id": "field_785167b274c54c2f921390317406d0a7",
+      "object_id": "track_9a2b141f59c041d8b6621a750a66a40e",
+      "paper_count": 1,
+      "excluded_count": 0,
+      "unavailable_count": 0
+    }
+  ],
+  "studio_and_frontend_retained": true,
+  "new_model_calls": 0,
+  "scientific_approval": false,
+  "browser_verified": false
+}

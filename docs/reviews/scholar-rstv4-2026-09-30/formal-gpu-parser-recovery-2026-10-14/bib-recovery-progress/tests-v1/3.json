@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "node",
+    "tests/catalog_existing_papers.mjs"
+  ],
+  "exit_code": 0,
+  "seconds": 0.046000000002095476
+}

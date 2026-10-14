@@ -1,0 +1,41 @@
+CHECK ['tests/catalog_research_overview.cjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+9 controlled overview scenarios passed
+Exit: 0
+CHECK ['tests/unit/catalog-return.cjs']
+node:assert:152
+  throw new AssertionError(obj);
+  ^
+
+AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
++ actual - expected
+
++ 'http://127.0.0.1:8885/?track=owned&overview_state=%7B%22workspace%22%3A%22known%22%2C%22collapsed%22%3A%5B%22real-id%22%5D%2C%22scroll%22%3A123%7D'
+- 'http://127.0.0.1:8885/?overview_state=%7B%22workspace%22%3A%22known%22%2C%22collapsed%22%3A%5B%22real-id%22%5D%2C%22scroll%22%3A123%7D&track=owned'
+
+    at Object.<anonymous> (C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\catalog-return.cjs:15:8)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)
+    at Module.load (node:internal/modules/cjs/loader:1594:32)
+    at Module._load (node:internal/modules/cjs/loader:1396:12)
+    at wrapModuleLoad (node:internal/modules/cjs/loader:255:19)
+    at Module.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:154:5)
+    at node:internal/main/run_main_module:33:47 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: 'http://127.0.0.1:8885/?track=owned&overview_state=%7B%22workspace%22%3A%22known%22%2C%22collapsed%22%3A%5B%22real-id%22%5D%2C%22scroll%22%3A123%7D',
+  expected: 'http://127.0.0.1:8885/?overview_state=%7B%22workspace%22%3A%22known%22%2C%22collapsed%22%3A%5B%22real-id%22%5D%2C%22scroll%22%3A123%7D&track=owned',
+  operator: 'strictEqual',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+Exit: 1

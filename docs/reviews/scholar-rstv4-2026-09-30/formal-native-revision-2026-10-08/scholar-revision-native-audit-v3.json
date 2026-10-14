@@ -1,0 +1,867 @@
+{
+  "status": "PASS_NATIVE_WRITES_PROVENANCE_CONFLICT_AND_4_ACTUAL_FILE_PARSERS",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-revision-native-p48co4i6",
+  "scientific_approval": false,
+  "browser_upload_verified": false,
+  "browser_upload_blocker": "ChatGPT Chrome extension file URL access disabled",
+  "golden_database_sha256": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+  "golden_all_108_tables_preserved": true,
+  "clone_declared_changed_tables": [
+    "manuscripts",
+    "review_comments",
+    "studio_artifacts",
+    "studio_change_link_state",
+    "studio_changes",
+    "studio_comment_response_state",
+    "studio_documents",
+    "studio_operations"
+  ],
+  "clone_existing_history_preserved": true,
+  "new_comments": 101,
+  "active_comments": 205,
+  "single_raw_blank_lines_preserved": true,
+  "unselected_101st_original_preserved_in_saved_import_provenance": true,
+  "original_a01_restored_same_id_and_number": true,
+  "new_document_revision": 9,
+  "offline_operation_not_applied": true,
+  "offline_export_sha256": "ef9c5baa0247b8d0b52d92a77527541895700916f41b5e6317ac8931aa0a4c41",
+  "exported_local_copy": {
+    "manuscriptId": "manuscript_3a132decd09349b99b186a5c44dc191d",
+    "baseRevision": 8,
+    "operationId": "operation_7b3121d248a34c00ba5b26fa832e523b",
+    "operationKind": "EDIT",
+    "commentIds": [],
+    "document": {
+      "abstract": "",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "schema_version": 1,
+      "sections": [
+        {
+          "id": "section_820b0521e9874a4a8f6ffa5ee95c99f2",
+          "paragraphs": [
+            {
+              "asset_ids": [],
+              "formulas": [],
+              "id": "paragraph_321b0add21434829acff130b0931b921",
+              "intents": [
+                {
+                  "id": "intent_4480273268ac4f2d872b1f34bbc7a42f",
+                  "label": "Research Context",
+                  "thoughts": [
+                    {
+                      "citation_mode": "NONE",
+                      "citations": [],
+                      "id": "thought_revision",
+                      "text": "Native offline first-tab draft. This must survive failed sync and must not replace the second-tab author text."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "",
+              "purpose": ""
+            }
+          ],
+          "role": "Motivation",
+          "title": "Introduction"
+        }
+      ],
+      "title": "revision 界面验收（隔离数据）",
+      "venue": ""
+    },
+    "queuedAt": "2026-10-08T06:44:47.842Z"
+  },
+  "new_model_calls": 0,
+  "new_generation_jobs": 0,
+  "four_actual_file_previews": {
+    "opinions-101.txt": {
+      "comments": [
+        {
+          "text": "Native uploaded opinion 001. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 001. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 002. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 002. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 003. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 003. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 004. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 004. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 005. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 005. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 006. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 006. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 007. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 007. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 008. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 008. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 009. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 009. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 010. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 010. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 011. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 011. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 012. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 012. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 013. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 013. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 014. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 014. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 015. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 015. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 016. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 016. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 017. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 017. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 018. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 018. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 019. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 019. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 020. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 020. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 021. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 021. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 022. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 022. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 023. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 023. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 024. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 024. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 025. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 025. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 026. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 026. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 027. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 027. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 028. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 028. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 029. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 029. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 030. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 030. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 031. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 031. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 032. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 032. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 033. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 033. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 034. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 034. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 035. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 035. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 036. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 036. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 037. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 037. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 038. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 038. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 039. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 039. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 040. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 040. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 041. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 041. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 042. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 042. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 043. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 043. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 044. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 044. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 045. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 045. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 046. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 046. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 047. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 047. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 048. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 048. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 049. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 049. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 050. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 050. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 051. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 051. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 052. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 052. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 053. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 053. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 054. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 054. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 055. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 055. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 056. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 056. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 057. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 057. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 058. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 058. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 059. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 059. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 060. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 060. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 061. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 061. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 062. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 062. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 063. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 063. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 064. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 064. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 065. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 065. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 066. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 066. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 067. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 067. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 068. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 068. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 069. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 069. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 070. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 070. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 071. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 071. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 072. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 072. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 073. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 073. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 074. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 074. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 075. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 075. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 076. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 076. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 077. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 077. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 078. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 078. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 079. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 079. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 080. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 080. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 081. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 081. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 082. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 082. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 083. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 083. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 084. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 084. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 085. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 085. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 086. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 086. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 087. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 087. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 088. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 088. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 089. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 089. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 090. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 090. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 091. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 091. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 092. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 092. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 093. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 093. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 094. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 094. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 095. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 095. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 096. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 096. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 097. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 097. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 098. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 098. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 099. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 099. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 100. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 100. Preserve exact original text.",
+          "include": true
+        },
+        {
+          "text": "Native uploaded opinion 101. Preserve exact original text.",
+          "original_text": "Native uploaded opinion 101. Preserve exact original text.",
+          "include": true
+        }
+      ],
+      "metadata": {
+        "filename": "opinions-101.txt",
+        "content_type": "text/plain",
+        "size_bytes": 6258,
+        "original_text": "Native uploaded opinion 001. Preserve exact original text.\r\n\r\nNative uploaded opinion 002. Preserve exact original text.\r\n\r\nNative uploaded opinion 003. Preserve exact original text.\r\n\r\nNative uploaded opinion 004. Preserve exact original text.\r\n\r\nNative uploaded opinion 005. Preserve exact original text.\r\n\r\nNative uploaded opinion 006. Preserve exact original text.\r\n\r\nNative uploaded opinion 007. Preserve exact original text.\r\n\r\nNative uploaded opinion 008. Preserve exact original text.\r\n\r\nNative uploaded opinion 009. Preserve exact original text.\r\n\r\nNative uploaded opinion 010. Preserve exact original text.\r\n\r\nNative uploaded opinion 011. Preserve exact original text.\r\n\r\nNative uploaded opinion 012. Preserve exact original text.\r\n\r\nNative uploaded opinion 013. Preserve exact original text.\r\n\r\nNative uploaded opinion 014. Preserve exact original text.\r\n\r\nNative uploaded opinion 015. Preserve exact original text.\r\n\r\nNative uploaded opinion 016. Preserve exact original text.\r\n\r\nNative uploaded opinion 017. Preserve exact original text.\r\n\r\nNative uploaded opinion 018. Preserve exact original text.\r\n\r\nNative uploaded opinion 019. Preserve exact original text.\r\n\r\nNative uploaded opinion 020. Preserve exact original text.\r\n\r\nNative uploaded opinion 021. Preserve exact original text.\r\n\r\nNative uploaded opinion 022. Preserve exact original text.\r\n\r\nNative uploaded opinion 023. Preserve exact original text.\r\n\r\nNative uploaded opinion 024. Preserve exact original text.\r\n\r\nNative uploaded opinion 025. Preserve exact original text.\r\n\r\nNative uploaded opinion 026. Preserve exact original text.\r\n\r\nNative uploaded opinion 027. Preserve exact original text.\r\n\r\nNative uploaded opinion 028. Preserve exact original text.\r\n\r\nNative uploaded opinion 029. Preserve exact original text.\r\n\r\nNative uploaded opinion 030. Preserve exact original text.\r\n\r\nNative uploaded opinion 031. Preserve exact original text.\r\n\r\nNative uploaded opinion 032. Preserve exact original text.\r\n\r\nNative uploaded opinion 033. Preserve exact original text.\r\n\r\nNative uploaded opinion 034. Preserve exact original text.\r\n\r\nNative uploaded opinion 035. Preserve exact original text.\r\n\r\nNative uploaded opinion 036. Preserve exact original text.\r\n\r\nNative uploaded opinion 037. Preserve exact original text.\r\n\r\nNative uploaded opinion 038. Preserve exact original text.\r\n\r\nNative uploaded opinion 039. Preserve exact original text.\r\n\r\nNative uploaded opinion 040. Preserve exact original text.\r\n\r\nNative uploaded opinion 041. Preserve exact original text.\r\n\r\nNative uploaded opinion 042. Preserve exact original text.\r\n\r\nNative uploaded opinion 043. Preserve exact original text.\r\n\r\nNative uploaded opinion 044. Preserve exact original text.\r\n\r\nNative uploaded opinion 045. Preserve exact original text.\r\n\r\nNative uploaded opinion 046. Preserve exact original text.\r\n\r\nNative uploaded opinion 047. Preserve exact original text.\r\n\r\nNative uploaded opinion 048. Preserve exact original text.\r\n\r\nNative uploaded opinion 049. Preserve exact original text.\r\n\r\nNative uploaded opinion 050. Preserve exact original text.\r\n\r\nNative uploaded opinion 051. Preserve exact original text.\r\n\r\nNative uploaded opinion 052. Preserve exact original text.\r\n\r\nNative uploaded opinion 053. Preserve exact original text.\r\n\r\nNative uploaded opinion 054. Preserve exact original text.\r\n\r\nNative uploaded opinion 055. Preserve exact original text.\r\n\r\nNative uploaded opinion 056. Preserve exact original text.\r\n\r\nNative uploaded opinion 057. Preserve exact original text.\r\n\r\nNative uploaded opinion 058. Preserve exact original text.\r\n\r\nNative uploaded opinion 059. Preserve exact original text.\r\n\r\nNative uploaded opinion 060. Preserve exact original text.\r\n\r\nNative uploaded opinion 061. Preserve exact original text.\r\n\r\nNative uploaded opinion 062. Preserve exact original text.\r\n\r\nNative uploaded opinion 063. Preserve exact original text.\r\n\r\nNative uploaded opinion 064. Preserve exact original text.\r\n\r\nNative uploaded opinion 065. Preserve exact original text.\r\n\r\nNative uploaded opinion 066. Preserve exact original text.\r\n\r\nNative uploaded opinion 067. Preserve exact original text.\r\n\r\nNative uploaded opinion 068. Preserve exact original text.\r\n\r\nNative uploaded opinion 069. Preserve exact original text.\r\n\r\nNative uploaded opinion 070. Preserve exact original text.\r\n\r\nNative uploaded opinion 071. Preserve exact original text.\r\n\r\nNative uploaded opinion 072. Preserve exact original text.\r\n\r\nNative uploaded opinion 073. Preserve exact original text.\r\n\r\nNative uploaded opinion 074. Preserve exact original text.\r\n\r\nNative uploaded opinion 075. Preserve exact original text.\r\n\r\nNative uploaded opinion 076. Preserve exact original text.\r\n\r\nNative uploaded opinion 077. Preserve exact original text.\r\n\r\nNative uploaded opinion 078. Preserve exact original text.\r\n\r\nNative uploaded opinion 079. Preserve exact original text.\r\n\r\nNative uploaded opinion 080. Preserve exact original text.\r\n\r\nNative uploaded opinion 081. Preserve exact original text.\r\n\r\nNative uploaded opinion 082. Preserve exact original text.\r\n\r\nNative uploaded opinion 083. Preserve exact original text.\r\n\r\nNative uploaded opinion 084. Preserve exact original text.\r\n\r\nNative uploaded opinion 085. Preserve exact original text.\r\n\r\nNative uploaded opinion 086. Preserve exact original text.\r\n\r\nNative uploaded opinion 087. Preserve exact original text.\r\n\r\nNative uploaded opinion 088. Preserve exact original text.\r\n\r\nNative uploaded opinion 089. Preserve exact original text.\r\n\r\nNative uploaded opinion 090. Preserve exact original text.\r\n\r\nNative uploaded opinion 091. Preserve exact original text.\r\n\r\nNative uploaded opinion 092. Preserve exact original text.\r\n\r\nNative uploaded opinion 093. Preserve exact original text.\r\n\r\nNative uploaded opinion 094. Preserve exact original text.\r\n\r\nNative uploaded opinion 095. Preserve exact original text.\r\n\r\nNative uploaded opinion 096. Preserve exact original text.\r\n\r\nNative uploaded opinion 097. Preserve exact original text.\r\n\r\nNative uploaded opinion 098. Preserve exact original text.\r\n\r\nNative uploaded opinion 099. Preserve exact original text.\r\n\r\nNative uploaded opinion 100. Preserve exact original text.\r\n\r\nNative uploaded opinion 101. Preserve exact original text."
+      }
+    },
+    "opinion.md": {
+      "comments": [
+        {
+          "text": "Native Markdown review opinion.\nKeep the source filename and original text.",
+          "original_text": "Native Markdown review opinion.\nKeep the source filename and original text.",
+          "include": true
+        }
+      ],
+      "metadata": {
+        "filename": "opinion.md",
+        "content_type": "text/markdown",
+        "size_bytes": 76,
+        "original_text": "Native Markdown review opinion.\r\nKeep the source filename and original text."
+      }
+    },
+    "opinion.docx": {
+      "comments": [
+        {
+          "text": "Native DOCX review opinion. Preserve the original document source.",
+          "original_text": "Native DOCX review opinion. Preserve the original document source.",
+          "include": true
+        }
+      ],
+      "metadata": {
+        "filename": "opinion.docx",
+        "content_type": "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+        "size_bytes": 36623,
+        "original_text": "Native DOCX review opinion. Preserve the original document source."
+      }
+    },
+    "opinion.pdf": {
+      "comments": [
+        {
+          "text": "Native PDF review opinion. Preserve exact extracted source.",
+          "original_text": "Native PDF review opinion. Preserve exact extracted source.",
+          "include": true
+        }
+      ],
+      "metadata": {
+        "filename": "opinion.pdf",
+        "content_type": "application/pdf",
+        "size_bytes": 634,
+        "original_text": "Native PDF review opinion. Preserve exact extracted source."
+      }
+    }
+  },
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/workspace",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/comments",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/changes",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/review-comments/preview-file",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/review-comments/preview-file",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/review-comments/preview-file",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/review-comments/preview-file",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/review-rounds/review_round_287dd4f2ef084e2cb4fce71c3e1e3801/comments",
+      "status": 422
+    }
+  ],
+  "db_unchanged_during_audit": true,
+  "changes": [
+    {
+      "change_id": "change_390df02bbb4842828d8c65a440e25992",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "fixture_revision",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-02T18:44:40.564455+00:00",
+      "base_revision": 0,
+      "resulting_revision": 1,
+      "operation_kind": "EDIT",
+      "comment_ids": [],
+      "association_revision": 0,
+      "initial_comment_ids": [],
+      "association_origin": "legacy_current_links_unverified",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,3 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n+想法：Author-owned revision acceptance baseline.\n+引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_5c092117194745c0880fa46a936e714b",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_2434000ff38442bf845985183c2fe98b",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A01 edit one.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-02T23:19:22.044315+00:00",
+      "base_revision": 1,
+      "resulting_revision": 2,
+      "operation_kind": "EDIT",
+      "comment_ids": [
+        "comment_af961fc8ce894b4cb185308fb1ca52d4"
+      ],
+      "association_revision": 0,
+      "initial_comment_ids": [
+        "comment_af961fc8ce894b4cb185308fb1ca52d4"
+      ],
+      "association_origin": "legacy_current_links_unverified",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline.\n+想法：Author-owned revision acceptance baseline. A01 edit one.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_b6a1e84308f746dda0b880636a950610",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_346d62e2481243a98ec8314aeaec3052",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A01 edit one.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-02T23:19:50.657977+00:00",
+      "base_revision": 2,
+      "resulting_revision": 3,
+      "operation_kind": "EDIT",
+      "comment_ids": [
+        "comment_682fc9c10fe54c68814a152608cdfb0f",
+        "comment_af961fc8ce894b4cb185308fb1ca52d4"
+      ],
+      "association_revision": 0,
+      "initial_comment_ids": [
+        "comment_682fc9c10fe54c68814a152608cdfb0f",
+        "comment_af961fc8ce894b4cb185308fb1ca52d4"
+      ],
+      "association_origin": "legacy_current_links_unverified",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. A01 edit one.\n+想法：Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_b6293b009edc48239888b5b1ec8819e7",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_94ed19eeb2544325a4181516c651940b",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two. Ordinary edit three.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-02T23:20:46.527534+00:00",
+      "base_revision": 3,
+      "resulting_revision": 4,
+      "operation_kind": "EDIT",
+      "comment_ids": [],
+      "association_revision": 0,
+      "initial_comment_ids": [],
+      "association_origin": "legacy_current_links_unverified",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two.\n+想法：Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two. Ordinary edit three.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_bdab1fc74b7a4c5983107bac62161b58",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_e384ce806cc340ec8959cbb867f4efe0",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two. Ordinary edit three.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A02 linked edit after restore and refresh repair.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-02T23:35:14.106076+00:00",
+      "base_revision": 4,
+      "resulting_revision": 5,
+      "operation_kind": "EDIT",
+      "comment_ids": [
+        "comment_682fc9c10fe54c68814a152608cdfb0f"
+      ],
+      "association_revision": 0,
+      "initial_comment_ids": [
+        "comment_682fc9c10fe54c68814a152608cdfb0f"
+      ],
+      "association_origin": "legacy_current_links_unverified",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. A01 edit one. A01+A02 edit two. Ordinary edit three.\n+想法：Author-owned revision acceptance baseline. A02 linked edit after restore and refresh repair.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_569b2d232f494462982a364260158fe0",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_1b7dba4694424277a9c699ed20c075b6",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. A02 linked edit after restore and refresh repair.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-02T23:50:15.554981+00:00",
+      "base_revision": 5,
+      "resulting_revision": 6,
+      "operation_kind": "EDIT",
+      "comment_ids": [],
+      "association_revision": 0,
+      "initial_comment_ids": [],
+      "association_origin": "legacy_current_links_unverified",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. A02 linked edit after restore and refresh repair.\n+想法：Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_2d2f41ea38fb4cc6a705963b26ba679c",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_3dcbf129ec264d43bfe24a56510787f8",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. Ordinary edit after A01 was archived. Native edit after active A01 deletion.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-08T06:38:23.036936+00:00",
+      "base_revision": 6,
+      "resulting_revision": 7,
+      "operation_kind": "EDIT",
+      "comment_ids": [],
+      "association_revision": 0,
+      "initial_comment_ids": [],
+      "association_origin": "recorded_at_save",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\n+想法：Author-owned revision acceptance baseline. Ordinary edit after A01 was archived. Native edit after active A01 deletion.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_b9e33d8d4e7d436ca03b522bb1908dc1",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_f3e25eca7fb948f1a6fc99073183cb2d",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. Ordinary edit after A01 was archived. Native edit after active A01 deletion.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 1,
+      "created_at": "2026-10-08T06:39:34.278402+00:00",
+      "base_revision": 7,
+      "resulting_revision": 8,
+      "operation_kind": "UNDO",
+      "comment_ids": [],
+      "association_revision": 0,
+      "initial_comment_ids": [],
+      "association_origin": "recorded_at_save",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. Ordinary edit after A01 was archived. Native edit after active A01 deletion.\n+想法：Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\n 引用决定：NONE []",
+      "structure_changed": true
+    },
+    {
+      "change_id": "change_4cff107c46dc4a629d772fcffd95065a",
+      "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "operation_id": "operation_2aa61546fc7e431488c6fb809bd261fb",
+      "before_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "after_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_3a132decd09349b99b186a5c44dc191d\",\"schema_version\":1,\"sections\":[{\"id\":\"section_820b0521e9874a4a8f6ffa5ee95c99f2\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_321b0add21434829acff130b0931b921\",\"intents\":[{\"id\":\"intent_4480273268ac4f2d872b1f34bbc7a42f\",\"label\":\"Research Context\",\"thoughts\":[{\"citation_mode\":\"NONE\",\"citations\":[],\"id\":\"thought_revision\",\"text\":\"Native second-tab author text saved while the first tab is offline.\"}]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"revision 界面验收（隔离数据）\",\"venue\":\"\"}",
+      "is_compensating": 0,
+      "created_at": "2026-10-08T06:44:01.891355+00:00",
+      "base_revision": 8,
+      "resulting_revision": 9,
+      "operation_kind": "EDIT",
+      "comment_ids": [],
+      "association_revision": 0,
+      "initial_comment_ids": [],
+      "association_origin": "recorded_at_save",
+      "association_events": [],
+      "author_diff": "--- 修改前\n+++ 修改后\n@@ -3,5 +3,5 @@\n 章节 1：Introduction · Motivation\n 段落 1.1 · 目的： · 写法：\n 意图：Research Context\n-想法：Author-owned revision acceptance baseline. Ordinary edit after A01 was archived.\n+想法：Native second-tab author text saved while the first tab is offline.\n 引用决定：NONE []",
+      "structure_changed": true
+    }
+  ]
+}

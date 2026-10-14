@@ -17,6 +17,13 @@ $PythonExe = (Resolve-Path -LiteralPath $PythonExe).Path
 $ProjectRoot = (Resolve-Path -LiteralPath $ProjectRoot).Path
 $ProfileHome = (Resolve-Path -LiteralPath $ProfileHome).Path
 $DefaultHermesHome = (Resolve-Path -LiteralPath $DefaultHermesHome).Path
+# Pin the physical database before Task Scheduler leaves the packaged-app context.
+# The same logical LocalAppData path can otherwise open a different lab.db.
+$physicalDataDir = & $PythonExe -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve(strict=True).parent.parent)' (Join-Path $DataDir "forge-lab-bot\lab.db")
+if ($LASTEXITCODE -ne 0 -or -not $physicalDataDir) {
+    throw "Cannot resolve the existing authoritative LAB_BOT database."
+}
+$DataDir = ([string]$physicalDataDir).Trim()
 if ($ReconcileSeconds -lt 300) {
     throw "Forge Journal reconciliation must be at least 300 seconds."
 }

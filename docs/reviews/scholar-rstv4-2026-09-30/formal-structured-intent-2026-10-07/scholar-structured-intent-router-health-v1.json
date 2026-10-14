@@ -1,0 +1,21 @@
+{
+  "time": "2026-10-07T10:40:48.731Z",
+  "health": {
+    "/health": {
+      "status": 200,
+      "keys": [
+        "status",
+        "durable_runs"
+      ],
+      "health": "ok"
+    },
+    "/healthz": {
+      "status": 404,
+      "keys": [
+        "error"
+      ],
+      "health": null
+    }
+  },
+  "inferenceVerified": false
+}

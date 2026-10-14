@@ -1,0 +1,171 @@
+{
+  "status": "PASS_ACTUAL_FRONTIER_CREATE",
+  "calls": [
+    {
+      "path": "/api/catalog/collections/preview",
+      "body": {
+        "field_id": "f1",
+        "topic_id": "t1",
+        "track_id": null,
+        "name": "Actual budget and preserved reference software flow",
+        "scope": {
+          "topic": "Explicit software scope"
+        },
+        "paper_ids": [
+          "existing"
+        ],
+        "dois": [],
+        "bibtex": null,
+        "queries": [],
+        "budget": {
+          "max_papers": 1,
+          "max_registered_pdf_bytes": null,
+          "max_active_seconds": null,
+          "max_task_attempts": 1
+        },
+        "idempotency_key": "actual-frontier-create-v1"
+      },
+      "status": 200,
+      "data": {
+        "field_id": "f1",
+        "topic_id": "t1",
+        "track_id": null,
+        "counts": {
+          "unique_dois": 0,
+          "bibtex_entries": 0,
+          "unique_seeds": 0,
+          "queries": 0,
+          "duplicate_inputs": 0,
+          "catalog_selected": 1,
+          "catalog_papers": 1,
+          "reusable_pdfs": 1,
+          "needs_review": 0
+        },
+        "matched_papers": [
+          {
+            "paper_id": "existing",
+            "title": "Catalog selected source",
+            "doi": null,
+            "reusable_pdf": true,
+            "needs_review": false,
+            "quarantined": false
+          }
+        ],
+        "creates_jobs": false,
+        "note": "Title-only BibTeX and new papers still require identity resolution"
+      }
+    },
+    {
+      "path": "/api/catalog/collections",
+      "body": {
+        "field_id": "f1",
+        "topic_id": "t1",
+        "track_id": null,
+        "name": "Actual budget and preserved reference software flow",
+        "scope": {
+          "topic": "Explicit software scope"
+        },
+        "paper_ids": [
+          "existing"
+        ],
+        "dois": [],
+        "bibtex": null,
+        "queries": [],
+        "budget": {
+          "max_papers": 1,
+          "max_registered_pdf_bytes": null,
+          "max_active_seconds": null,
+          "max_task_attempts": 1
+        },
+        "idempotency_key": "actual-frontier-create-v1"
+      },
+      "status": 201,
+      "data": {
+        "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+        "field_id": "f1",
+        "track_id": null,
+        "name": "Actual budget and preserved reference software flow",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 1,
+        "created_at": "2026-10-07T04:35:41.378261+00:00",
+        "updated_at": "2026-10-07T04:35:41.378261+00:00",
+        "topic_id": "t1",
+        "creation_request_json": "{\"bibtex\": null, \"budget\": {\"max_active_seconds\": null, \"max_papers\": 1, \"max_registered_pdf_bytes\": null, \"max_task_attempts\": 1}, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual budget and preserved reference software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Explicit software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+        "scope": {
+          "topic": "Explicit software scope"
+        },
+        "seeds": [
+          {
+            "seed_id": "seed_ddcacec22de46c50313739d587c53fb3",
+            "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+            "seed_type": "CATALOG_PAPER",
+            "raw_value": "existing",
+            "normalized_value": "existing",
+            "paper_id": "existing",
+            "created_at": "2026-10-07T04:35:41.378261+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 1,
+          "jobs": 1
+        }
+      }
+    }
+  ],
+  "created": {
+    "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+    "field_id": "f1",
+    "track_id": null,
+    "name": "Actual budget and preserved reference software flow",
+    "scope_version": 1,
+    "status": "ACTIVE",
+    "revision": 1,
+    "created_at": "2026-10-07T04:35:41.378261+00:00",
+    "updated_at": "2026-10-07T04:35:41.378261+00:00",
+    "topic_id": "t1",
+    "creation_request_json": "{\"bibtex\": null, \"budget\": {\"max_active_seconds\": null, \"max_papers\": 1, \"max_registered_pdf_bytes\": null, \"max_task_attempts\": 1}, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual budget and preserved reference software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Explicit software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+    "scope": {
+      "topic": "Explicit software scope"
+    },
+    "seeds": [
+      {
+        "seed_id": "seed_ddcacec22de46c50313739d587c53fb3",
+        "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+        "seed_type": "CATALOG_PAPER",
+        "raw_value": "existing",
+        "normalized_value": "existing",
+        "paper_id": "existing",
+        "created_at": "2026-10-07T04:35:41.378261+00:00"
+      }
+    ],
+    "counts": {
+      "papers": 1,
+      "jobs": 1
+    }
+  },
+  "input": {
+    "field_id": "f1",
+    "topic_id": "t1",
+    "track_id": null,
+    "name": "Actual budget and preserved reference software flow",
+    "scope": {
+      "topic": "Explicit software scope"
+    },
+    "paper_ids": [
+      "existing"
+    ],
+    "dois": [],
+    "bibtex": null,
+    "queries": [],
+    "budget": {
+      "max_papers": 1,
+      "max_registered_pdf_bytes": null,
+      "max_active_seconds": null,
+      "max_task_attempts": 1
+    }
+  },
+  "browser_verified": false,
+  "real_model_calls": 0,
+  "scientific_approval": false
+}

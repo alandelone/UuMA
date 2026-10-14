@@ -1,0 +1,33 @@
+{
+  "results": [
+    {
+      "args": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src/rstv4/studio_discussions.py",
+        "tests/test_studio_discussion_fixed_references.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "args": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "-m",
+        "pytest",
+        "tests/test_studio_discussion_fixed_references.py",
+        "tests/test_studio_source_context.py",
+        "tests/test_studio_shared_discussions.py",
+        "tests/test_research_conversation.py",
+        "tests/test_studio_context.py",
+        "-q",
+        "--basetemp",
+        "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scdis-focused-b984fe75"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "basetemp": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scdis-focused-b984fe75",
+  "seconds": 45.08520007133484
+}

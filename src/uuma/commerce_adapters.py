@@ -509,3 +509,141 @@ class PinduoduoOrderAdapter:
             })
 
         return results
+
+
+class LazadaMYAdapter:
+    """Lazada MY order list and card parser supporting Southeast Asia procurement requirements."""
+
+    PLATFORM = "lazada"
+    CURRENCY = "MYR"
+
+    @classmethod
+    def parse_orders_html(cls, html: str) -> list[dict[str, Any]]:
+        soup = BeautifulSoup(html, "html.parser")
+        cards = soup.select(".card-order, .order-item, div[class*='order-item'], div[class*='card-order']")
+        if not cards:
+            cards = [
+                parent for parent in soup.find_all(lambda tag: tag.name in {"div", "section"} and tag.find(class_=re.compile(r"order-(id|number|info)")))
+            ]
+
+        results = []
+        for card in cards:
+            card_text = card.get_text()
+
+            # 1. Order ID
+            order_id = ""
+            id_el = card.find(class_=re.compile(r"order-(number|id|info)"))
+            if id_el:
+                m = re.search(r"([0-9A-Za-z]{10,35})", _clean_text(id_el))
+                if m:
+                    order_id = m.group(1)
+            if not order_id:
+                m = re.search(r"(?:Order\s*(?:#|SN|ID|No\.?)|No\.?\s*Pesanan)[：:\s#]*([0-9A-Za-z]{10,35})", card_text, re.IGNORECASE)
+                if m:
+                    order_id = m.group(1)
+            if not order_id:
+                continue
+
+            # 2. Status
+            status = "Delivered"
+            status_el = card.find(class_=re.compile(r"order-status|status-text|delivery-status|status"))
+            if status_el:
+                status = _clean_text(status_el)
+
+            # Shop name
+            shop_el = card.find(class_=re.compile(r"seller-name|shop-name|store-name|seller"))
+            shop_name = _clean_text(shop_el)
+
+            # Order time & shipping fee
+            time_match = re.search(r"(?:Placed\s*on|Dipesan\s*pada|下单时间)[：:\s]*(\d{1,2}\s+[A-Za-z]{3}\s+\d{4}|\d{4}[-/]\d{1,2}[-/]\d{1,2})", card_text, re.IGNORECASE)
+            order_time = time_match.group(1) if time_match else ""
+            ship_match = re.search(r"(?:Shipping\s*(?:Fee)?|Penghantaran|运费)[：:\s]*RM\s*([0-9]+\.?[0-9]*)", card_text, re.IGNORECASE)
+            shipping_fee = float(ship_match.group(1)) if ship_match else 0.0
+
+            # 3. Order Total
+            total_amount = 0.0
+            total_el = card.find(class_=re.compile(r"total-price|order-total|total-value|price-total"))
+            if total_el:
+                total_amount = _parse_price(_clean_text(total_el))
+            else:
+                tot_m = re.search(r"(?:Total(?:\s*Paid)?|Jumlah|实付|总额|合计)[：:\s]*RM\s*([0-9]+\.?[0-9]*)", card_text, re.IGNORECASE)
+                if tot_m:
+                    total_amount = float(tot_m.group(1))
+
+            # 4. Items
+            item_nodes = card.select(".package-item, .item-row, .order-item, div[class*='item-row'], div[class*='package-item']")
+            valid_items = [n for n in item_nodes if _clean_text(n) and ("RM" in _clean_text(n) or n.find("a"))]
+            nodes = valid_items if valid_items else [card]
+
+            items = []
+            for idx, node in enumerate(nodes):
+                name_el = node.find(class_=re.compile(r"item-title|product-name|title"))
+                sku_el = node.find(class_=re.compile(r"item-sku|sku|variation|model|variant"))
+                qty_el = node.find(class_=re.compile(r"item-quantity|quantity|qty"))
+                price_el = node.find(class_=re.compile(r"item-price|price"))
+                link_el = node.find("a", href=True)
+
+                p_name = _clean_text(name_el) if name_el else ""
+                if not p_name and link_el:
+                    p_name = _clean_text(link_el)
+                if not p_name:
+                    p_name = f"Lazada Item {idx + 1}"
+
+                v_name = _clean_text(sku_el)
+                v_name = re.sub(r"^(Variation|Model|Color Family|Spec|规格|型号)[：:\s]*", "", v_name, flags=re.IGNORECASE)
+
+                node_txt = _clean_text(node)
+                qty = 1.0
+                if qty_el:
+                    qm = re.search(r"\d+", _clean_text(qty_el))
+                    if qm:
+                        qty = float(qm.group(0))
+                else:
+                    qm = re.search(r"(?:Qty|Quantity|Kuantiti|数量)[：:\s]*(\d+)", node_txt, re.IGNORECASE)
+                    if qm:
+                        qty = float(qm.group(1))
+
+                unit_price = _parse_price(_clean_text(price_el)) if price_el else 0.0
+
+                ai_cat = "other"
+                combined_name = f"{p_name} {v_name}".lower()
+                if any(k in combined_name for k in ("iron", "station", "multimeter", "tweezer", "plier")):
+                    ai_cat = "tool"
+                elif any(k in combined_name for k in ("esp32", "stm32", "relay", "sensor", "oled", "capacitor", "resistor")):
+                    ai_cat = "electronics"
+                elif any(k in combined_name for k in ("solder", "wire", "flux", "tin", "cable")):
+                    ai_cat = "consumable"
+
+                item_url = link_el["href"] if link_el else ""
+
+                items.append({
+                    "item_id": f"{order_id}_item_{idx + 1}",
+                    "product_name": p_name,
+                    "variant_name": v_name,
+                    "quantity": qty,
+                    "unit_price": unit_price,
+                    "line_total": round(unit_price * qty, 2),
+                    "ai_category_suggestion": ai_cat,
+                    "ai_ownership_suggestion": "self",
+                    "shop_name": shop_name,
+                    "item_url": item_url,
+                    "order_time": order_time,
+                    "shipping_fee": shipping_fee,
+                    "order_status": status,
+                })
+
+            if total_amount <= 0 and items and "cancel" not in status.lower() and "refund" not in status.lower():
+                total_amount = round(sum(it["line_total"] for it in items) + shipping_fee, 2)
+
+            results.append({
+                "order_id": order_id,
+                "status": status,
+                "total_amount": total_amount,
+                "currency": cls.CURRENCY,
+                "shop_name": shop_name,
+                "order_time": order_time,
+                "shipping_fee": shipping_fee,
+                "items": items,
+            })
+
+        return results

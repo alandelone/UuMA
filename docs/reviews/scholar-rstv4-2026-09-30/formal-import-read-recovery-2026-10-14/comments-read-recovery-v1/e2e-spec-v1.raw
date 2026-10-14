@@ -1,0 +1,233 @@
+import { expect, test, type Page, type Route } from '@playwright/test';
+import type { ReviewComment, ReviewRound, Workspace } from '../../lib/studio-types';
+
+// Every API request is intercepted. No real catalogue, model or database is used.
+const manuscriptId = 'manuscript-review-read-recovery';
+const versionId = 'version-recovery-v5';
+const roundId = (n: number) => 'review-recovery-round-' + n;
+const at = '2026-10-14T00:00:00Z';
+const cors = { 'access-control-allow-origin': '*', 'access-control-allow-headers': '*', 'access-control-allow-methods': 'GET, POST, PUT, PATCH, OPTIONS' };
+const workspace: Workspace = {
+  manuscript: { manuscript_id: manuscriptId, track_id: 'track-recovery', title: 'Review read recovery fixture', workflow_stage: 'REVISION', writing_status: 'REVISION', revision: 1,
+    versions: [{ manuscript_version_id: versionId, version: 5, content: 'Software fixture only.', created_at: at }], submissions: [] },
+  workflow_stage: 'REVISION', document_revision: 62,
+  document: { schema_version: 1, manuscript_id: manuscriptId, title: 'Review read recovery fixture', abstract: '', venue: 'Recovery software fixture',
+    sections: [{ id: 'section-recovery', title: 'Introduction', role: 'Motivation', paragraphs: [{ id: 'paragraph-recovery', purpose: 'Preserve original context', paradigm: 'Funnel', asset_ids: [],
+      intents: [{ id: 'intent-recovery', label: 'Original context', thoughts: [{ id: 'thought-recovery', text: 'Original author software thought.', citation_mode: 'NONE', citations: [] }] }] }] }] },
+  active_generated_version_id: versionId, last_generated_revision: 62, generated_is_stale: false, assets: [], latest_job: null, artifacts: [], findings: [], template_instances: [],
+};
+function makeRound(n: number): ReviewRound {
+  return { review_round_id: roundId(n), manuscript_id: manuscriptId, round_number: n, venue: 'Recovery software fixture', status: 'ACTIVE', baseline_manuscript_version_id: versionId,
+    baseline_version: 5, baseline_document_revision: 62, baseline_available: true, baseline_origin: 'EXPLICIT' };
+}
+function makeComment(n: number, round = n <= 205 ? 1 : n === 206 ? 2 : 3, text = 'Original software opinion A' + n): ReviewComment {
+  return { comment_id: 'review-recovery-comment-' + n, display_label: 'A' + n, review_round_id: roundId(round), round_number: round, reviewer: 'Software fixture', original_text: text, edited_text: text,
+    content_sha256: 'software-content-' + n, response_state_sha256: 'software-response-' + n, response_verification: { status: 'NOT_REVIEWED' }, author_decision: '', response_text: '', status: 'PENDING', changes: [] };
+}
+type ReadKind = 'comments' | 'rounds';
+type DeferredMode = 'empty' | 'failure';
+interface Harness {
+  rounds: ReviewRound[]; comments: ReviewComment[]; failRead: ReadKind | null;
+  failAfterCreate: boolean; failAfterImport: boolean; holdReads: boolean;
+  reads: Record<ReadKind, number>; requests: Array<{ method: string; path: string }>;
+  unexpectedWrites: Array<{ method: string; path: string }>;
+  createPosts: number; importPosts: number;
+  held: Array<(mode: DeferredMode) => Promise<void>>;
+}
+async function installApi(page: Page): Promise<Harness> {
+  const state: Harness = { rounds: [1, 2, 3].map(makeRound), comments: Array.from({ length: 210 }, (_, i) => makeComment(i + 1)), failRead: null, failAfterCreate: false, failAfterImport: false,
+    holdReads: false, reads: { comments: 0, rounds: 0 }, requests: [], unexpectedWrites: [], createPosts: 0, importPosts: 0, held: [] };
+  const json = (route: Route, value: unknown, status = 200) => route.fulfill({ status, headers: cors, json: value });
+  await page.route('**/api/**', async (route) => {
+    const req = route.request(), path = new URL(req.url()).pathname, method = req.method();
+    state.requests.push({ method, path });
+    if (method === 'OPTIONS') { await route.fulfill({ status: 204, headers: cors }); return; }
+    const base = '/api/manuscripts/' + manuscriptId;
+    if (method === 'GET' && (path === base + '/comments' || path === base + '/review-rounds')) {
+      const kind: ReadKind = path.endsWith('/comments') ? 'comments' : 'rounds';
+      state.reads[kind]++;
+      if (state.holdReads) {
+        await new Promise<void>((resolve, reject) => {
+          state.held.push(async (mode) => {
+            try {
+              await json(route, mode === 'empty' ? [] : { detail: 'simulated old read failure' }, mode === 'empty' ? 200 : 503);
+            } catch (error) {
+              // Cancelling a superseded request also correctly rejects late data.
+              if (!/aborted|closed|already handled|cancel/i.test(String(error))) { reject(error); throw error; }
+            } finally { resolve(); }
+          });
+        });
+        return;
+      }
+      if (state.failRead === kind) { await json(route, { detail: 'simulated ' + kind + ' read failure' }, 503); return; }
+      await json(route, kind === 'comments' ? structuredClone(state.comments) : structuredClone(state.rounds)); return;
+    }
+    if (path === base + '/review-rounds' && method === 'POST') {
+      state.createPosts++;
+      const body = req.postDataJSON(), created = makeRound(body.round_number);
+      state.rounds.push(created);
+      if (state.failAfterCreate) state.failRead = 'comments';
+      await json(route, created, 201); return;
+    }
+    if (/^\/api\/review-rounds\/[^/]+\/comments$/.test(path) && method === 'POST') {
+      state.importPosts++;
+      const body = req.postDataJSON(), owner = decodeURIComponent(path.split('/')[3]);
+      const round = state.rounds.find((r) => r.review_round_id === owner)!;
+      const created = body.comments.filter((r: { include: boolean }) => r.include).map((row: { text: string; original_text?: string }, i: number) => ({ ...makeComment(state.comments.length + i + 1, round.round_number, row.text), original_text: row.original_text || row.text }));
+      state.comments.push(...created);
+      if (state.failAfterImport) state.failRead = 'rounds';
+      await json(route, created, 201); return;
+    }
+    if (method === 'GET' && path === '/api/tracks') { await json(route, [{ track_id: 'track-recovery', title: 'Recovery Track', manuscripts: [{ manuscript_id: manuscriptId, title: workspace.document.title, workflow_stage: 'REVISION', updated_at: at }] }]); return; }
+    if (method === 'GET' && path === base + '/workspace') { await json(route, workspace); return; }
+    if (method === 'GET' && path === base + '/generated-versions/' + versionId) {
+      await json(route, { manuscript_id: manuscriptId, generated_version_id: versionId, version: 5, input_revision: 62, structure_mapping_available: true, content: 'Software fixture only.', blocks: [], references: [], citation_style: 'numeric_first_use', artifacts: [] }); return;
+    }
+    if (method === 'GET' && ['/samples', '/sources', '/changes', '/packages', '/chat', '/model-calls'].some((suffix) => path === base + suffix)) { await json(route, []); return; }
+    if (method === 'POST' && path.endsWith('/research/discussion/context')) {
+      const target = req.postDataJSON();
+      await json(route, { target, scope_key: JSON.stringify(['STUDIO', manuscriptId]), label: 'Recovery source fixture', object_text: 'Original author software thought.', record: {}, versions: [], context_sha256: 'software-context' }); return;
+    }
+    if (method === 'POST' && path.endsWith('/research/discussion/history')) { await json(route, { messages: [], annotations: [], has_more: false, next_before: null, annotations_has_more: false, next_annotations_before: null }); return; }
+    if (method !== 'GET' && method !== 'HEAD') state.unexpectedWrites.push({ method, path });
+    await json(route, { detail: 'Unhandled isolated recovery test route: ' + method + ' ' + path }, 404);
+  });
+  return state;
+}
+const retry = (page: Page) => page.getByRole('button', { name: '重新读取意见与轮次', exact: true });
+const readStatus = (page: Page) => page.getByRole('region', { name: '意见与轮次读取状态', exact: true });
+const roundPicker = (page: Page) => page.getByRole('combobox', { name: '选择返修轮次', exact: true });
+const createRound = (page: Page) => page.getByRole('button', { name: /^建立第 \d+ 轮…$/ });
+const opinion = (page: Page, n = 210) => page.getByText('Original software opinion A' + n, { exact: true });
+async function openRevision(page: Page) {
+  await page.goto('/?manuscript=' + manuscriptId + '&view=revision&round=' + roundId(3) + '&chat=0&left=0&right=0');
+  await expect(page.getByRole('heading', { name: '意见 → 决定 → 修改 → 回复', exact: true })).toBeVisible();
+}
+async function ready(page: Page, round = 3) {
+  await expect(roundPicker(page)).toBeEnabled();
+  await expect(roundPicker(page)).toHaveValue(roundId(round));
+  await expect(createRound(page)).toBeEnabled();
+  await expect(readStatus(page).getByRole('alert')).toHaveCount(0);
+}
+async function expectFailed(page: Page) {
+  await expect(readStatus(page).getByRole('alert')).toContainText('意见与轮次读取失败');
+  await expect(retry(page)).toBeEnabled();
+  await expect(createRound(page)).toBeDisabled();
+  await expect(roundPicker(page)).toBeDisabled();
+  await expect(page.getByText('尚未导入审稿意见。', { exact: true })).toHaveCount(0);
+}
+async function expectReadOnlyRetry(page: Page, state: Harness, selectedRound = 3, withPreview = false) {
+  const before = state.requests.length, reads = { ...state.reads };
+  state.failRead = null;
+  await retry(page).click();
+  await expect(roundPicker(page)).toHaveValue(roundId(selectedRound));
+  // A retained import preview intentionally locks round switching and creation.
+  if (withPreview) {
+    await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toBeEnabled();
+    await expect(readStatus(page).getByRole('alert')).toHaveCount(0);
+  } else await ready(page, selectedRound);
+  expect(state.reads.comments).toBeGreaterThan(reads.comments);
+  expect(state.reads.rounds).toBeGreaterThan(reads.rounds);
+  const reviewTraffic = state.requests.slice(before).filter((r) => /\/review-rounds|\/comments/.test(r.path));
+  expect(reviewTraffic.length).toBeGreaterThanOrEqual(2);
+  expect(reviewTraffic.every((r) => r.method === 'GET')).toBe(true);
+  expect(state.unexpectedWrites).toEqual([]);
+}
+
+test.describe('Revision comments and rounds read recovery', () => {
+  test.setTimeout(60_000);
+  for (const failed of ['comments', 'rounds'] as const) {
+    test('cold ' + failed + ' failure cannot masquerade as empty or permit round creation; retry reads only', async ({ page }) => {
+      const state = await installApi(page); state.failRead = failed;
+      await openRevision(page); await expectFailed(page);
+      await page.getByRole('textbox', { name: '审稿意见输入', exact: true }).fill('Local original preview stays available.');
+      await page.getByRole('button', { name: '👀 准备预览', exact: true }).click();
+      await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');
+      await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toBeDisabled();
+      expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);
+      await expectReadOnlyRetry(page, state, 3, true);
+      await expect(opinion(page)).toBeVisible();
+      await expect(roundPicker(page).locator('option')).toHaveCount(4);
+      await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');
+      expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);
+    });
+  }
+  test('successful empty reads display a genuine empty state', async ({ page }) => {
+    const state = await installApi(page); state.comments = []; state.rounds = [];
+    await openRevision(page);
+    await expect(page.getByText('尚未导入审稿意见。', { exact: true })).toBeVisible();
+    await expect(createRound(page)).toHaveText('建立第 1 轮…');
+    await expect(createRound(page)).toBeEnabled();
+    await expect(readStatus(page).getByRole('alert')).toHaveCount(0);
+    expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);
+  });
+  test('warm failure retains opinions, current round, local input and preview; retry does not write', async ({ page }) => {
+    const state = await installApi(page); await openRevision(page); await ready(page);
+    await page.getByRole('textbox', { name: '审稿意见输入', exact: true }).fill('Unsaved original import draft.');
+    await page.getByRole('button', { name: '👀 准备预览', exact: true }).click();
+    await page.getByRole('textbox', { name: '编辑意见 1', exact: true }).fill('Edited local preview with source preserved.');
+    state.failRead = 'rounds'; await retry(page).click(); await expectFailed(page);
+    await expect(readStatus(page)).toContainText('当前显示上次读取的数据');
+    await expect(opinion(page)).toBeVisible();
+    await expect(roundPicker(page)).toHaveValue(roundId(3));
+    await expect(page.getByRole('textbox', { name: '审稿意见输入', exact: true })).toHaveValue('Unsaved original import draft.');
+    await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Edited local preview with source preserved.');
+    await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toBeDisabled();
+    await expectReadOnlyRetry(page, state, 3, true);
+    await expect(opinion(page)).toBeVisible();
+    await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Edited local preview with source preserved.');
+    expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);
+  });
+  test('acknowledged round creation followed by failed reload never repeats create POST', async ({ page }) => {
+    const state = await installApi(page); await openRevision(page); await ready(page);
+    state.failAfterCreate = true; await createRound(page).click();
+    const dialog = page.getByRole('dialog');
+    await dialog.getByRole('combobox').selectOption(versionId);
+    await dialog.getByRole('button', { name: '确认建立这一轮', exact: true }).click();
+    await expect(dialog).toHaveCount(0); await expectFailed(page);
+    await expect(readStatus(page)).toContainText('意见或轮次已保存；读取结果暂未确认。');
+    expect(state.createPosts).toBe(1); expect(state.rounds).toHaveLength(4);
+    await expectReadOnlyRetry(page, state, 4);
+    expect(state.createPosts).toBe(1); expect(state.importPosts).toBe(0);
+    await expect(createRound(page)).toHaveText('建立第 5 轮…');
+    expect(state.rounds.map((r) => r.round_number)).toEqual([1, 2, 3, 4]);
+  });
+  test('acknowledged import followed by failed reload retries GET without duplicate import', async ({ page }) => {
+    const state = await installApi(page); await openRevision(page); await ready(page);
+    await page.getByRole('textbox', { name: '审稿意见输入', exact: true }).fill('One acknowledged import, never replayed.');
+    await page.getByRole('button', { name: '👀 准备预览', exact: true }).click();
+    state.failAfterImport = true;
+    await page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true }).click(); await expectFailed(page);
+    await expect(readStatus(page)).toContainText('意见或轮次已保存；读取结果暂未确认。');
+    expect(state.importPosts).toBe(1); expect(state.comments).toHaveLength(211);
+    await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toHaveCount(0);
+    await expectReadOnlyRetry(page, state);
+    await expect(page.getByText('One acknowledged import, never replayed.', { exact: true })).toBeVisible();
+    expect(state.importPosts).toBe(1); expect(state.createPosts).toBe(0);
+    expect(state.comments.filter((r) => r.edited_text === 'One acknowledged import, never replayed.')).toHaveLength(1);
+  });
+  for (const stale of ['empty', 'failure'] as const) {
+    test('late older ' + stale + ' response cannot replace a newer successful read', async ({ page }) => {
+      const state = await installApi(page); await openRevision(page); await ready(page);
+      state.holdReads = true; await retry(page).click();
+      await expect.poll(() => state.held.length).toBe(2);
+      await expect(retry(page)).toBeDisabled();
+      // Actual mode controls trigger new reads while the older pair remains delayed.
+      state.holdReads = false;
+      await page.getByRole('button', { name: '🧩 结构', exact: true }).click();
+      await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();
+      await ready(page); await expect(opinion(page)).toBeVisible();
+      const held = state.held.splice(0);
+      await Promise.all(held.map((release) => release(stale)));
+      // Wait for response-triggered React work before asserting retained state.
+      await page.evaluate(() => new Promise<void>((resolve) => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+      await expect(opinion(page)).toBeVisible();
+      await expect(roundPicker(page)).toHaveValue(roundId(3));
+      await expect(readStatus(page).getByRole('alert')).toHaveCount(0);
+      await expect(createRound(page)).toHaveText('建立第 4 轮…');
+      await expect(page.getByText('尚未导入审稿意见。', { exact: true })).toHaveCount(0);
+      expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);
+      expect(state.unexpectedWrites).toEqual([]);
+    });
+  }
+});

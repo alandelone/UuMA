@@ -1,0 +1,34 @@
+{
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": {
+    "before_sha256": "269b2c21f163948af23839eb719ffcd3fa7beda7ed461dca7f08149b0ac967a0",
+    "after_sha256": "3e0ce280ef1e453c0d7c583c636757feaeaad534f9b96b25a532d7e039f1d14e"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_api.py": {
+    "before_sha256": "400c04076c19ae40034b8a17389e209beaf55d90f0ff5ec1c045bdbc3840a821",
+    "after_sha256": "b08869f9a95ef92f2c38df5d168bd40ce0a30f8a829199cdd017b2c291729c28"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx": {
+    "before_sha256": "31744130072434f530756cead2b6a71083ac6614aaf76fe234228674d984aeaf",
+    "after_sha256": "360bce717106f2c139dc4d15f1c0effbad6320a3feaceff77127a0a0aa051e6f"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts": {
+    "before_sha256": "26d9202828298b1091a044c81ce3ea66d19c7558d846654c62c9981a6bc06d61",
+    "after_sha256": "c69fcec0f1ed8feede359e7e6a258f7e54cf5d3940fcfa04596af7bd539a9d38"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-api.ts": {
+    "before_sha256": "bfc598971e3ee7b15c0ff47d4f26195fd6d5f2ca495675b53da84144b102969d",
+    "after_sha256": "fe7bc96a30b3f3a16d263bf04ce0ae46d2efa76e78b5b70c4553bd04e40e20e6"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_templates.py": {
+    "new_this_phase": true,
+    "after_sha256": "f0368a0b50fba395c91646af40f11c63b24e84d43e9797a86b3353519183f778"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_studio_templates.py": {
+    "new_this_phase": true,
+    "after_sha256": "3f4f2422d65091b70f38fb3d326b4d6c6cd1bd27036b298b26e3c75b0a1f84e1"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-template-adoption.tsx": {
+    "new_this_phase": true,
+    "after_sha256": "bd12b8573c885b294a9820a80903093cf4dae7c7f2f84581a3cad150861f5b8f"
+  }
+}

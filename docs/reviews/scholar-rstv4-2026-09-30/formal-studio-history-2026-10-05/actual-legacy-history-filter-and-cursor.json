@@ -1,0 +1,390 @@
+{
+  "status": "PASS_REAL_STUDIO_HISTORY_FILTER_CURSOR_AND_LEGACY_BINDING",
+  "browser_verified": false,
+  "new_model_calls": 0,
+  "manuscripts_checked": 6,
+  "messages_checked": 10,
+  "independent_legacy_messages_checked": 6,
+  "verified": [
+    {
+      "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+      "message_id": "message_b913651b8ed643ec9cdc54a354d4c7b9",
+      "shared": false,
+      "anchor_type": "paragraph",
+      "anchor_revision": 1,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+      "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+      "shared": false,
+      "anchor_type": "paragraph",
+      "anchor_revision": 1,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_cb7d936db4204d64a955b345d8eb8ce3",
+      "message_id": "message_9c9cd8758808408b95d7e7a4d541c9d8",
+      "shared": false,
+      "anchor_type": "paragraph_group",
+      "anchor_revision": 1,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_cb7d936db4204d64a955b345d8eb8ce3",
+      "message_id": "message_89f10f64ee4d46a8819877e5d84f39be",
+      "shared": false,
+      "anchor_type": "paragraph_group",
+      "anchor_revision": 1,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+      "message_id": "message_8b935375f4f04012a7c958e7ff368f2f",
+      "shared": false,
+      "anchor_type": "thought",
+      "anchor_revision": 3,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+      "message_id": "message_d0032c36bdf54853a1bce912caf146f7",
+      "shared": false,
+      "anchor_type": "thought",
+      "anchor_revision": 3,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+      "message_id": "research_message_816609b055c846f8b51753951c5f51db",
+      "shared": true,
+      "anchor_type": "paper",
+      "anchor_revision": 0,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+      "message_id": "research_message_59c4795ed7c74fc2b71aae2d2193e7f6",
+      "shared": true,
+      "anchor_type": "paper",
+      "anchor_revision": 0,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+      "message_id": "research_message_ef5279c32cfa49b5961f7d70f15079e1",
+      "shared": true,
+      "anchor_type": "paper",
+      "anchor_revision": 0,
+      "generated_version_id": null
+    },
+    {
+      "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+      "message_id": "research_message_dbe2066494aa4dfa8cbb069a4457bd41",
+      "shared": true,
+      "anchor_type": "paper",
+      "anchor_revision": 0,
+      "generated_version_id": null
+    }
+  ],
+  "responses": [
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/chat?limit=200"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/chat?limit=2"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_6d6a4ed3c59a40f08be2d7e68da63b11/chat?limit=200"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_6d6a4ed3c59a40f08be2d7e68da63b11/chat?limit=2"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat?limit=200"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat?limit=2"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat?limit=2&before=2026-10-03T12%3A23%3A25.868573%2B00%3A00&before_message_id=message_b913651b8ed643ec9cdc54a354d4c7b9"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_b913651b8ed643ec9cdc54a354d4c7b9/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat?limit=200&anchor_id=paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace&anchor_type=paragraph&anchor_revision=1"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat?limit=200&anchor_id=paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace&anchor_type=paragraph&anchor_revision=1"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat?limit=200"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat?limit=2"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat?limit=2&before=2026-10-03T16%3A16%3A59.250826%2B00%3A00&before_message_id=message_9c9cd8758808408b95d7e7a4d541c9d8"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat/message_9c9cd8758808408b95d7e7a4d541c9d8/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat?limit=200&anchor_id=group-live-original&anchor_type=paragraph_group&anchor_revision=1"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat/message_89f10f64ee4d46a8819877e5d84f39be/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_cb7d936db4204d64a955b345d8eb8ce3/chat?limit=200&anchor_id=group-live-original&anchor_type=paragraph_group&anchor_revision=1"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat?limit=200"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat?limit=2"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat?limit=2&before=2026-10-04T00%3A49%3A28.851733%2B00%3A00&before_message_id=message_8b935375f4f04012a7c958e7ff368f2f"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat/message_8b935375f4f04012a7c958e7ff368f2f/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat?limit=200&anchor_id=thought-rounds-live-version&anchor_type=thought&anchor_revision=3"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat/message_d0032c36bdf54853a1bce912caf146f7/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/chat?limit=200&anchor_id=thought-rounds-live-version&anchor_type=thought&anchor_revision=3"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=200"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=2"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=2&before=2026-10-05T10%3A13%3A07.350033%2B00%3A00&before_message_id=research_message_ef5279c32cfa49b5961f7d70f15079e1"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=2&before=2026-10-05T10%3A12%3A58.972968%2B00%3A00&before_message_id=research_message_816609b055c846f8b51753951c5f51db"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat/research_message_816609b055c846f8b51753951c5f51db/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=200&anchor_id=manuscript_0dd6fc921b534d44b01735629157f761&anchor_type=paper&anchor_revision=0"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat/research_message_59c4795ed7c74fc2b71aae2d2193e7f6/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=200&anchor_id=manuscript_0dd6fc921b534d44b01735629157f761&anchor_type=paper&anchor_revision=0"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat/research_message_ef5279c32cfa49b5961f7d70f15079e1/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=200&anchor_id=manuscript_0dd6fc921b534d44b01735629157f761&anchor_type=paper&anchor_revision=0"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat/research_message_dbe2066494aa4dfa8cbb069a4457bd41/context"
+    },
+    {
+      "method": "GET",
+      "endpoint": "/manuscripts/manuscript_0dd6fc921b534d44b01735629157f761/chat?limit=200&anchor_id=manuscript_0dd6fc921b534d44b01735629157f761&anchor_type=paper&anchor_revision=0"
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/context",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    },
+    {
+      "method": "POST",
+      "endpoint": "/api/research/discussion/history",
+      "actual_adapter": true
+    }
+  ]
+}

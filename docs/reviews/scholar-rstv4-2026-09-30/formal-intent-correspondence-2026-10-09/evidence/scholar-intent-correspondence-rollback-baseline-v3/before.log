@@ -1,0 +1,5 @@
+ACTUAL_STUDIO_SOURCE C:\Users\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-intent-correspondence-rollback-baseline-v3\old-src\rstv4\studio.py 89e638566abcc7c968a48de8d7e9b62898139ac8dba0faf0ad4869a4ee4009f9
+.                                                                        [100%]
+1 passed in 1.18s
+{"freelist_trunks_before": [], "freelist_leaves_before": [], "changed_pages": [], "only_before_free_leaf_pages_changed": false, "pytest_exit": 0, "variant": "before", "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-intent-correspondence-rollback-baseline-v3\\old-src\\rstv4\\studio.py", "bytes_equal": true, "rows_equal": true, "before": {"params": {"page_size": 4096, "page_count": 297, "freelist_count": 0, "schema_version": 132, "auto_vacuum": 0}, "page4": "DBSTAT_UNAVAILABLE_IN_OBSERVED_BUILD", "threads": ["MainThread"]}, "after": {"params": {"page_size": 4096, "page_count": 297, "freelist_count": 0, "schema_version": 132, "auto_vacuum": 0}, "page4": "DBSTAT_UNAVAILABLE_IN_OBSERVED_BUILD", "threads": ["MainThread"]}, "changed_tables": [], "byte_differences": 0, "first_differences": []}
+

@@ -1,0 +1,663 @@
+{
+  "scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "native_pdf_pages": 150,
+  "parser_associated_pdf_pages": 136,
+  "native_pages_not_associated_with_parser_windows": {
+    "paper_19f55daa7f17ede2858b": [
+      16
+    ],
+    "paper_2f81cb801401904d4767": [
+      15
+    ],
+    "paper_6dc9f2bdd81d9dcf4a46": [
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "paper_75abf75ded7b6df0c2b5": [
+      17,
+      20
+    ],
+    "paper_95eebae164cc42fd6005": [
+      16,
+      17
+    ],
+    "paper_b637a4adf835d6357900": [
+      8
+    ],
+    "paper_fb88f52bf6ea0323e952": [
+      14,
+      15
+    ]
+  },
+  "publication_status_by_paper": [
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "doi": "10.1016/j.esd.2022.08.020",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1016/j.esd.2022.08.020",
+      "checked_at_utc": "2026-10-09T05:13:52.067076+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_95eebae164cc42fd6005-crossref.json",
+      "raw_sha256": "9a91a57ed707d936741abc819bd88e0646754faf9c13fcbf3f768a244ae64ad6",
+      "title": [
+        "Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities"
+      ],
+      "publisher": "Elsevier BV",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Energy for Sustainable Development"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2022,
+            10
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://linkinghub.elsevier.com/retrieve/pii/S0973082622001466",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [
+        "https://www.sciencedirect.com/science/article/pii/S0973082622001466"
+      ],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+      "frozen_original_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "doi": "10.1115/1.4040756",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1115/1.4040756",
+      "checked_at_utc": "2026-10-09T05:13:52.067076+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_964b88669cfe422e7aef-crossref.json",
+      "raw_sha256": "bc3abdbd860725bcbc9a69de5593041d7f1da2b7f39f76b8acad47a32966cc89",
+      "title": [
+        "URB-Solar: An Open-Source Tool for Solar Power Prediction in Urban Areas"
+      ],
+      "publisher": "ASME International",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Journal of Solar Energy Engineering"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            7,
+            24
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://asmedigitalcollection.asme.org/solarenergyengineering/article/doi/10.1115/1.4040756/366274/URBSolar-An-OpenSource-Tool-for-Solar-Power",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas.pdf",
+      "frozen_original_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46"
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "doi": "10.18280/ijht.420513",
+      "registered_metadata_source": "https://api.crossref.org/works/10.18280/ijht.420513",
+      "checked_at_utc": "2026-10-09T05:13:52.073091+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_ad7ea2de394ae32d2ed2-crossref.json",
+      "raw_sha256": "dcbdc53a7d9cb3f5fa0d5f6ce6402b8b57e8e2a0cdf77ae565ab5fca10778add",
+      "title": [
+        "Sun-Powered Refrigerator: Design, Testing, and Limitations"
+      ],
+      "publisher": "International Information and Engineering Technology Association",
+      "publication_type": "journal-article",
+      "container_title": [
+        "International Journal of Heat and Technology"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2024,
+            10,
+            31
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://www.iieta.org/journals/ijht/paper/10.18280/ijht.420513",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [
+        "https://iieta.org/journals/ijht/paper/10.18280/ijht.420513"
+      ],
+      "publication_identity_verified": true,
+      "publisher_identity_evidence": {
+        "title": "Sun-Powered Refrigerator: Design, Testing, and Limitations",
+        "doi": "10.18280/ijht.420513",
+        "journal": "International Journal of Heat and Technology",
+        "volume": 42,
+        "issue": 5,
+        "pages": "1598-1604",
+        "online_date": "2024-10-31",
+        "source": "https://iieta.org/journals/ijht/paper/10.18280/ijht.420513",
+        "metadata_read_from_actual_publisher_page": true
+      },
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Sun-Powered Refrigerator_ Design, Testing, and Limitations.pdf",
+      "frozen_original_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "doi": "10.1016/j.seta.2021.100997",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1016/j.seta.2021.100997",
+      "checked_at_utc": "2026-10-09T05:13:52.917798+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_19f55daa7f17ede2858b-crossref.json",
+      "raw_sha256": "02dba50c55098cfaf492b8c9890e15747895d498e2752a38d2d04d9501c22150",
+      "title": [
+        "Optimal sizing of a grid-independent PV/diesel/pump-hydro hybrid system: A case study in Bangladesh"
+      ],
+      "publisher": "Elsevier BV",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Sustainable Energy Technologies and Assessments"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2021,
+            4
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://linkinghub.elsevier.com/retrieve/pii/S2213138821000072",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+      "frozen_original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "doi": "10.1109/IRSEC53969.2021.9741148",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1109/IRSEC53969.2021.9741148",
+      "checked_at_utc": "2026-10-09T05:13:52.917798+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_b637a4adf835d6357900-crossref.json",
+      "raw_sha256": "caf26025c17fc1f80125db4befc7a133c6da3a330e97dcd25c99500512036428",
+      "title": [
+        "PV Sizing of a Stand Alone Solar Carport System Linked to Charging Stations and its Economic Analysis (A Case Study)"
+      ],
+      "publisher": "IEEE",
+      "publication_type": "proceedings-article",
+      "container_title": [
+        "2021 9th International Renewable and Sustainable Energy Conference (IRSEC)"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2021,
+            11,
+            23
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://ieeexplore.ieee.org/document/9741148/",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [
+        "https://ieeexplore.ieee.org/document/9741148/"
+      ],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\PV Sizing of a Stand Alone Solar Carport System Linked to Charging Stations and its Economic Analysis (A Case Study).pdf",
+      "frozen_original_pdf_sha256": "58cfb9532af7a51bcf1e0c6ca2937bd43e59d6f8bd33822775f8e72a5756d5e9"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "doi": "10.1016/j.esd.2024.101631",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1016/j.esd.2024.101631",
+      "checked_at_utc": "2026-10-09T05:13:52.917798+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_2f81cb801401904d4767-crossref.json",
+      "raw_sha256": "4e427682e28c5e5a6f4e5d7c6f340e96a30fc5bb4bf113993a3d4deda6ee7fa3",
+      "title": [
+        "Assessing the effectiveness of energy policies in accelerating renewable energy-based mini-grid deployment: A case study"
+      ],
+      "publisher": "Elsevier BV",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Energy for Sustainable Development"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2025,
+            4
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://linkinghub.elsevier.com/retrieve/pii/S0973082624002576",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [
+        "https://researchportal.murdoch.edu.au/esploro/outputs/journalArticle/Assessing-the-effectiveness-of-energy-policies/991005726582407891"
+      ],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Assessing the effectiveness of energy policies in accelerating renewable energy-based mini-grid deployment_ A case study.pdf",
+      "frozen_original_pdf_sha256": "ec6436cddd43b4894935880ecc8f9741e871b08a854ac05fbd8cb0daa3a48efa"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "doi": "10.1016/j.epsr.2018.03.020",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1016/j.epsr.2018.03.020",
+      "checked_at_utc": "2026-10-09T05:13:52.917798+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_6dc9f2bdd81d9dcf4a46-crossref.json",
+      "raw_sha256": "4ba4c9af4399ec4a455fd708318af59b07d342e2653b3b6fcf9e331791f1b9e9",
+      "title": [
+        "Stochastic sizing of isolated rural mini-grids, including effects of fuel procurement and operational strategies"
+      ],
+      "publisher": "Elsevier BV",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Electric Power Systems Research"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2018,
+            7
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://linkinghub.elsevier.com/retrieve/pii/S0378779618300920",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [
+        "https://iris.uniroma1.it/handle/11573/1100393"
+      ],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+      "frozen_original_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "local_pdf_variant": "AUTHOR_PREPRINT_27_PAGES_MARCH_1_2018",
+      "published_version_pagination": "419-428",
+      "local_preprint_not_substituted_by_published_version": true
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "doi": "10.3390/su15097526",
+      "registered_metadata_source": "https://api.crossref.org/works/10.3390/su15097526",
+      "checked_at_utc": "2026-10-09T05:13:52.919317+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_603603415f45919cbdc8-crossref.json",
+      "raw_sha256": "a1401e3b7966dd437c2b80b77b5059c0371110ea4958fc58a54623b7aa5a53cb",
+      "title": [
+        "Integration of Advanced Metering Infrastructure for Mini-Grid Solar PV Systems in Off-Grid Rural Communities (SoAMIRural)"
+      ],
+      "publisher": "MDPI AG",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Sustainability"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2023,
+            5,
+            4
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://www.mdpi.com/2071-1050/15/9/7526",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Integration of Advanced Metering Infrastructure for Mini-Grid Solar PV_Systems in Off-Grid Rural Communities _SoAMIRural_.pdf",
+      "frozen_original_pdf_sha256": "8cdff7dc67519adc55639039453361873c86211749d1cdd425b1a4bd0b3a6a54"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "doi": "10.1016/j.esd.2020.12.002",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1016/j.esd.2020.12.002",
+      "checked_at_utc": "2026-10-09T05:13:52.919317+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_fb88f52bf6ea0323e952-crossref.json",
+      "raw_sha256": "d73e0137d1c93c52e22dfd53c0c3acac42dc0f4c91694c2d832bcb9fe00455aa",
+      "title": [
+        "Socio-economic and environmental impacts of rural electrification with Solar Photovoltaic systems: Evidence from southern Ethiopia"
+      ],
+      "publisher": "Elsevier BV",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Energy for Sustainable Development"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2021,
+            2
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://linkinghub.elsevier.com/retrieve/pii/S0973082620303380",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [],
+      "publication_identity_verified": true,
+      "publication_status": "CURRENT_STATUS_NOT_CONCLUSIVELY_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Socio-economic and environmental impacts of rural electrification with_Solar Photovoltaic systems_ Evidence from southern Ethiopia.pdf",
+      "frozen_original_pdf_sha256": "30a60d1c7af5543445a832e98b597ea40319641b710549e1aee1fdba6c9af1ab"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "doi": "10.1007/s00500-020-05372-y",
+      "registered_metadata_source": "https://api.crossref.org/works/10.1007/s00500-020-05372-y",
+      "checked_at_utc": "2026-10-09T05:13:52.919317+00:00",
+      "status": "PRIMARY_REGISTERED_IDENTITY_METADATA_RETRIEVED",
+      "raw_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-publication-evidence-20261009-v2\\paper_75abf75ded7b6df0c2b5-crossref.json",
+      "raw_sha256": "4444077a98aef5b85bfc8585e8a423ba74f39b23d5589129b2dfe0cac28c9b0e",
+      "title": [
+        "RETRACTED ARTICLE: Multi-objective evolutionary\n         optimization with genetic algorithm for the design of off-grid PV-wind-battery-diesel\n         system"
+      ],
+      "publisher": "Springer Science and Business Media LLC",
+      "publication_type": "journal-article",
+      "container_title": [
+        "Soft Computing"
+      ],
+      "published": {
+        "date-parts": [
+          [
+            2020,
+            10,
+            23
+          ]
+        ]
+      },
+      "registered_update_relations": [],
+      "registered_relation": {},
+      "registered_article_url": "https://link.springer.com/10.1007/s00500-020-05372-y",
+      "absence_of_registered_update_is_not_proof_of_no_retraction": true,
+      "scientific_validity_verified": false,
+      "other_primary_identity_sources": [
+        "https://link.springer.com/article/10.1007/s00500-020-05372-y",
+        "https://link.springer.com/article/10.1007/s00500-024-10235-x"
+      ],
+      "publication_identity_verified": true,
+      "publication_status": "RETRACTED_PUBLISHER_VERIFIED",
+      "frozen_test_case_retained": true,
+      "frozen_original_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Multi-objective evolutionary optimization with genetic algorithm for the_design of off-grid PV-wind-battery-diesel system.pdf",
+      "frozen_original_pdf_sha256": "21603741763dcb5cf878c5e2dbaef4cbf5e305a69712d01db41f742079aa9042",
+      "original_doi": "10.1007/s00500-020-05372-y",
+      "retraction_note_doi": "10.1007/s00500-024-10235-x",
+      "retraction_date": "2024-10-23",
+      "verified_date": "2026-10-09",
+      "primary_sources": [
+        "https://link.springer.com/article/10.1007/s00500-020-05372-y",
+        "https://link.springer.com/article/10.1007/s00500-024-10235-x"
+      ],
+      "original_pdf_watermark_visually_confirmed": true,
+      "reliable_real_world_scientific_gold": false
+    }
+  ],
+  "render_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\render-record.json",
+  "visual_observations": [
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "pdf_page": 16,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+      "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_19f55daa7f17ede2858b-page-16.png",
+      "image_sha256": "917ac75b7a4a57959b519f1769ded0e74cafc517de617f8adaa6dae69b84495f",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "pdf_page": 15,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Assessing the effectiveness of energy policies in accelerating renewable energy-based mini-grid deployment_ A case study.pdf",
+      "source_pdf_sha256": "ec6436cddd43b4894935880ecc8f9741e871b08a854ac05fbd8cb0daa3a48efa",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_2f81cb801401904d4767-page-15.png",
+      "image_sha256": "1a32a876ddf4a76af2e6403e3ff77bf9afe8cd827fea9a8159c2ed93cdf748ff",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "pdf_page": 23,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_6dc9f2bdd81d9dcf4a46-page-23.png",
+      "image_sha256": "4139a08e99321088486df172d04979bd4ba1eb04868703adbbeddd8af4bef193",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "pdf_page": 24,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_6dc9f2bdd81d9dcf4a46-page-24.png",
+      "image_sha256": "920005b3dce3578ea312d1876a3672c51747fb49924a6f40077f40de598db0eb",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "pdf_page": 25,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_6dc9f2bdd81d9dcf4a46-page-25.png",
+      "image_sha256": "62dd028eeb5f68099880f850ba060cb5b0170b553d15b142c05e0233b3fb67c4",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "pdf_page": 26,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_6dc9f2bdd81d9dcf4a46-page-26.png",
+      "image_sha256": "6017685c9fc2ce3ec71a873ca5903991f8dee5012c78b7b3e3e1aa0504c3bffd",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "pdf_page": 27,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_6dc9f2bdd81d9dcf4a46-page-27.png",
+      "image_sha256": "49ec853ec39fb2daf9452543fe605e08a3089b8c25510c958d0bc7ac5aeeea48",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "pdf_page": 17,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Multi-objective evolutionary optimization with genetic algorithm for the_design of off-grid PV-wind-battery-diesel system.pdf",
+      "source_pdf_sha256": "21603741763dcb5cf878c5e2dbaef4cbf5e305a69712d01db41f742079aa9042",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_75abf75ded7b6df0c2b5-page-17.png",
+      "image_sha256": "cad008f628d4985fb4f54416bd8ee9f16c9e19af5fe61c3b58a95ac828261fc0",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "SCIENTIFIC_FIGURES",
+      "figure_numbers": [
+        18,
+        19
+      ],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "pdf_page": 20,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Multi-objective evolutionary optimization with genetic algorithm for the_design of off-grid PV-wind-battery-diesel system.pdf",
+      "source_pdf_sha256": "21603741763dcb5cf878c5e2dbaef4cbf5e305a69712d01db41f742079aa9042",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_75abf75ded7b6df0c2b5-page-20.png",
+      "image_sha256": "3041a2f30992daa9699c55aaa600a5a6dc019bab484bb5f0df3bc32a5f6a207f",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "pdf_page": 16,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+      "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_95eebae164cc42fd6005-page-16.png",
+      "image_sha256": "26fcc898316784ce9f7212be04cb911fb40528ef885dd5f5fc2d8249e95a4712",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "pdf_page": 17,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+      "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_95eebae164cc42fd6005-page-17.png",
+      "image_sha256": "076b418b9d544a473c5e229f930ed57da19cfa0cb3cd8c68e9dc608b5392ec43",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "pdf_page": 8,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\PV Sizing of a Stand Alone Solar Carport System Linked to Charging Stations and its Economic Analysis (A Case Study).pdf",
+      "source_pdf_sha256": "58cfb9532af7a51bcf1e0c6ca2937bd43e59d6f8bd33822775f8e72a5756d5e9",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_b637a4adf835d6357900-page-08.png",
+      "image_sha256": "286b6ad63f27c5c839561eed84871c7a32a21a885e531e96ccf2a4dd051bc6ef",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "pdf_page": 14,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Socio-economic and environmental impacts of rural electrification with_Solar Photovoltaic systems_ Evidence from southern Ethiopia.pdf",
+      "source_pdf_sha256": "30a60d1c7af5543445a832e98b597ea40319641b710549e1aee1fdba6c9af1ab",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_fb88f52bf6ea0323e952-page-14.png",
+      "image_sha256": "66cae52a4fc7e5eb752fea9c04b5c433950135c02340a8c9a0e18ced7d2753ee",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "pdf_page": 15,
+      "source_pdf": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Socio-economic and environmental impacts of rural electrification with_Solar Photovoltaic systems_ Evidence from southern Ethiopia.pdf",
+      "source_pdf_sha256": "30a60d1c7af5543445a832e98b597ea40319641b710549e1aee1fdba6c9af1ab",
+      "image_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v2\\paper_fb88f52bf6ea0323e952-page-15.png",
+      "image_sha256": "13851daa669d4177b770df2e1495c27e8bf94c05ed72b7e58dfb077fe312807b",
+      "parser_window_association": false,
+      "scientific_claims_or_grades_created": 0,
+      "full_page_render_visually_inspected": true,
+      "visual_content_classification": "BIBLIOGRAPHY_OR_PUBLISHER_NOTE_ONLY",
+      "figure_numbers": [],
+      "classification_is_not_numeric_reference_adjudication": true
+    }
+  ],
+  "ten_paper_frozen_scope_preserved": true,
+  "source_fidelity_distinct_from_publication_credibility": true,
+  "legacy_overall_rationales_require_explicit_candidate_target_correction": true,
+  "pdf_visual_scientific_evaluation_complete": false,
+  "expert_gold": false,
+  "full_scientific_evaluation_complete": false,
+  "model_calls": 0,
+  "learner_outputs_rewritten": false,
+  "all_fourteen_unassociated_pages_visually_inspected": true,
+  "bibliography_or_publisher_note_only_pages": 13,
+  "unassociated_scientific_figure_pages": 1,
+  "publication_identity_distinct_from_current_retraction_status": true,
+  "all_ten_publication_identities_primary_source_verified": true,
+  "new_model_calls": 0,
+  "scientific_reference_claims_created": 0,
+  "source_quality_v1_preserved": true
+}

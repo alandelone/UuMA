@@ -1,0 +1,48 @@
+{
+  "status": "PASS_G02_READ_ONLY_STATE",
+  "phase": "after-reopen",
+  "document_revision": 12,
+  "original_source_version": 3,
+  "original_source_revision": 10,
+  "author_message_id": "research_message_774a0269a7224870830c3e96888c9c2c",
+  "agent_message_id": "research_message_6a2cdaab59ec4a93a9c648158b3437e1",
+  "model_call_id": "model_call_26d37650fca24af2b2723f48cb0b7b43",
+  "suggestion": {
+    "changes": [
+      {
+        "action": "SET_FIELD",
+        "before": "",
+        "change_id": "suggestion_change_481cb108250c42878d64f3e24bd2c282",
+        "field": "purpose",
+        "target_id": "paragraph_e197b886c810436a823c7171839afac2",
+        "target_label": "Introduction / 段落",
+        "target_type": "paragraph",
+        "value": "G02 adopted software boundary: preserve the original thought and sources."
+      },
+      {
+        "action": "INSERT_INTENT",
+        "before": [
+          "intent_7e9e321878984056975695ce719e3555"
+        ],
+        "change_id": "suggestion_change_29c338d12f844cc78367fa58a5882b37",
+        "target_id": "paragraph_e197b886c810436a823c7171839afac2",
+        "target_label": "Introduction / 段落",
+        "target_type": "paragraph",
+        "value": {
+          "id": "intent_0a650486c33f405fbc58eec8c68e25e5",
+          "label": "G02 omitted software Intent",
+          "thoughts": []
+        }
+      }
+    ],
+    "kind": "STRUCTURE",
+    "rationale": "Select only the paragraph purpose. Keep the proposed extra Intent unadopted, and retain the original author thought and sources.",
+    "suggestion_id": "suggestion_d174a4b9cc6b4ed0978953bc3d5c000f",
+    "title": "G02 software partial adoption"
+  },
+  "old_records_and_all20_artifact_bytes_exact": true,
+  "database_bytes_unchanged_by_audit": true,
+  "document_unchanged_until_author_decision": false,
+  "only_chosen_purpose_applied": true,
+  "omitted_intent_absent": true
+}

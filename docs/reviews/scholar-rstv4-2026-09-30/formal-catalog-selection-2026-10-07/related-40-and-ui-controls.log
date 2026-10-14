@@ -1,0 +1,18 @@
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-inline-v4.js']
+RUN ['node', 'tests/catalog_existing_papers.mjs']
+7 controlled existing-paper and actual section-handler checks passed
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['node', 'tests/catalog_collections.mjs']
+9 controlled Collection request checks passed
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/models.py', 'src/rstv4/database.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/collection_web.py', 'src/rstv4/collection_inputs.py', 'tests/test_catalog_paper_selection.py']
+All checks passed!
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_paper_selection.py', 'tests/test_collection_workspace.py', 'tests/test_manuscript_scientific_review.py', '-q']
+........................................                                 [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+40 passed, 1 warning in 15.29s

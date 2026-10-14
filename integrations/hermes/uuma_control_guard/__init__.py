@@ -13,6 +13,7 @@ import json
 import logging
 import os
 import re
+import sqlite3
 import threading
 import time
 from collections import OrderedDict
@@ -48,21 +49,27 @@ class _SessionState:
     wisdom_orbit_status: str | None = None
     wisdom_runner_wake: dict[str, Any] | None = None
     wisdom_status: dict[str, Any] | None = None
+    wisdom_message_intent: str | None = None
     brainstormer_capacity_attempted: bool = False
     brainstormer_capacity_result: dict[str, Any] | None = None
     brainstormer_capacity_required: bool = False
     brainstormer_structure_status: str | None = None
+    forge_purchase_attempted: bool = False
+    forge_purchase_result: dict[str, Any] | None = None
+    yonc_colleagues: dict[str, Any] | None = None
+    is_kanban: bool = False
 
 
 _SESSIONS: OrderedDict[str, _SessionState] = OrderedDict()
 _CONTEXT: Any = None
-_DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc"}
+_DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc", "honc"}
 _DOMAIN_PREFLIGHT = {
     "brainstormer": ("uuma-worker", "brainstormer_search_topics"),
     "wisdom-oldman": ("wisdom-knowledge", "knowledge_question_preflight"),
     "scholar": ("rstv4-worker", "list_catalog_papers"),
     "forge-lab-bot": ("uuma-worker", "inventory_status"),
     "yonc": ("yonc-project", "yonc_status"),
+    "honc": ("honc-execution", "honc_status"),
 }
 _SPECIALIST_FORBIDDEN_TOOLS = {
     "delegate_task",
@@ -73,6 +80,12 @@ _SPECIALIST_FORBIDDEN_TOOLS = {
     "edit_file",
     "apply_patch",
     "delete_file",
+}
+_FORGE_MUTATION_TOOLS = {
+    "write_file",
+    "edit_file",
+    "apply_patch",
+    "patch",
 }
 _FORGE_DIRECT_FORBIDDEN = {
     "procurement_confirm_order",
@@ -305,6 +318,47 @@ def _result_field(value: Any, field_name: str) -> Any:
     return None
 
 
+def _forge_purchase_search(message: str) -> dict[str, Any] | None:
+    lowered = message.casefold()
+    materials = list(dict.fromkeys(re.findall(
+        r"(?<![a-z])(?:tpu|tpe|pla|petg|abs|asa)(?![a-z])", lowered
+    )))
+    purchase_words = (
+        "买过", "买了", "买的", "购买", "购入", "下单", "订单", "商品链接",
+        "采购记录", "purchase", "bought", "order history",
+    )
+    if not any(word in lowered for word in purchase_words) and not (
+        materials and any(word in lowered for word in ("有没有", "记录", "链接", "找", "查"))
+    ):
+        return None
+    numbers = re.findall(r"(?<![\d.])\d+(?:\.\d+)?(?![\d.])", lowered)
+    numbers = [number for number in numbers if len(number) <= 6 and number != "3"]
+    details = numbers[:2] if materials and len(numbers) >= 2 else []
+    for color in ("白色", "红色", "黑色", "蓝色", "绿色"):
+        if color in message:
+            details.append(color)
+    query = " | ".join(" ".join([material.upper(), *details]) for material in materials)
+    category = "打印耗材" if "打印耗材" in message or "3d打印" in lowered else ""
+    return {"query": query, "category": category, "limit": 25, "offset": 0}
+
+
+def _forge_purchase_reply(result: dict[str, Any]) -> str:
+    rows = result.get("rows") or []
+    if not rows:
+        return "这轮已查询 lab.db 的购买历史，但没有匹配记录；可换商品名、规格或订单号再查。"
+    lines = [f"在 lab.db 的购买历史中查到 {result.get('total_count', len(rows))} 条匹配记录："]
+    for row in rows[:10]:
+        label = row.get("variant") or row.get("product_name") or "未命名商品"
+        lines.append(
+            f"- {label}；订单 {row.get('order_id') or '未知'}；"
+            f"日期 {row.get('ordered_at') or '未知'}；"
+            f"商品链接：{row.get('product_url') or '未记录'}"
+        )
+    if result.get("has_more") or len(rows) > 10:
+        lines.append("还有更多匹配记录，可继续分页查询。")
+    return "\n".join(lines)
+
+
 def _brainstormer_capacity_receipt(value: Any) -> dict[str, Any] | None:
     scenario = _result_field(value, "scenario")
     if not isinstance(scenario, dict):
@@ -417,11 +471,18 @@ def _explicit_research_request(message: str) -> bool:
     return any(word in text for word in (
         "我想了解", "我想知道", "请研究", "针对", "种植", "栽培", "如何", "怎么",
         "怎样", "是什么", "要多少", "为什么", "细节", "研究", "how ", "what ",
-        "why ", "?", "？",
+        "why ",
     ))
 
 
 def _remember_wisdom_result(state: _SessionState, value: Any) -> None:
+    intent = _result_field(value, "message_intent")
+    if isinstance(intent, str):
+        state.wisdom_message_intent = intent
+    if intent in {"status", "resume", "pause", "stop", "feedback", "conversation"}:
+        state.pending_topic_question = None
+        state.approved_topic_question = None
+        state.wisdom_answer = None
     global_status = _result_field(value, "global_status")
     if isinstance(global_status, dict):
         state.wisdom_status = global_status
@@ -464,17 +525,33 @@ def _wisdom_status_reply(state: _SessionState) -> str | None:
         return None
     active = status.get("active") or []
     paused = status.get("paused") or []
-    lines = ["当前正在研究的主题：" if active else "当前没有正在研究的主题。"]
-    for item in active[:10]:
-        if isinstance(item, dict):
-            lines.append(f"- {item.get('topic_title') or '未命名主题'}（{item.get('status')}）")
-            if item.get("document_url"):
-                lines.append(f"  文档：{item['document_url']}")
-    if paused:
-        lines.append("\n已暂停或受阻：")
-        for item in paused[:10]:
+    lines = ["当前研究任务：" if active else "当前没有正在运行的研究任务。"]
+    for heading, items in (("", active), ("已暂停或受阻：", paused),
+                           ("已结束：", status.get("finished") or [])):
+        if heading and items:
+            lines.append("\n" + heading)
+        for item in items[:10]:
             if isinstance(item, dict):
                 lines.append(f"- {item.get('topic_title') or '未命名主题'}（{item.get('status')}）")
+                if item.get("status") == "QUEUED":
+                    lines.append("  已排队；后台实际运行尚未确认。")
+                if item.get("cycle_status") == "RETRY":
+                    lines.append(f"  当前周期等待重试：{item.get('retry_reason') or '服务暂时不可用'}"
+                                 f"；下次尝试时间：{item.get('retry_at')}。")
+                if item.get("stop_reason"):
+                    lines.append(f"  原因：{item['stop_reason']}")
+                if item.get("document_version"):
+                    lines.append(f"  成果：版本 {item['document_version']}，"
+                                 f"{item.get('section_count', 0)} 个章节；"
+                                 f"更新时间：{item.get('document_updated_at') or item.get('updated_at')}")
+                if item.get("open_questions"):
+                    lines.append("  尚待研究：" + "；".join(item["open_questions"][:3]))
+                if item.get("document_url"):
+                    lines.append(f"  文档：{item['document_url']}")
+    if state.wisdom_message_intent in {"resume", "pause", "stop"}:
+        lines.append("\n" + str(status.get("control_message") or "已读取现有任务状态。"))
+    if status.get("topics_url"):
+        lines.append(f"\n全部主题：{status['topics_url']}")
     return "\n".join(lines)
 
 
@@ -514,11 +591,46 @@ def _graph_ready(value: Any) -> bool:
     return False
 
 
+def _is_kanban_worker(kwargs: dict[str, Any]) -> bool:
+    if os.environ.get("HERMES_KANBAN_TASK"):
+        return True
+    user_msg = str(kwargs.get("user_message") or "").strip().lower()
+    if user_msg.startswith(("work kanban task ", "work kanban task\t")):
+        return True
+    for key in ("platform", "session_source", "source"):
+        if str(kwargs.get(key) or "").strip().lower() == "kanban":
+            return True
+    for key in ("effective_task_id", "task_id"):
+        val = str(kwargs.get(key) or "").strip()
+        if re.match(r"^t_[0-9a-fA-F]{8}$", val):
+            return True
+    return False
+
+
+def _extract_kanban_task_id(kwargs: dict[str, Any]) -> str | None:
+    env_id = os.environ.get("HERMES_KANBAN_TASK")
+    if env_id:
+        return env_id.strip()
+    for key in ("effective_task_id", "task_id"):
+        val = str(kwargs.get(key) or "").strip()
+        if re.match(r"^t_[0-9a-fA-F]{8}$", val):
+            return val
+    text = str(kwargs.get("user_message") or "").strip()
+    match = re.search(r"\b(t_[0-9a-fA-F]{8})\b", text)
+    if match:
+        return match.group(1)
+    return None
+
+
 def _health_context(**kwargs: Any) -> dict[str, str] | None:
     if _profile() in _DIRECT_SPECIALISTS:
         profile = _profile()
+        is_kanban = _is_kanban_worker(kwargs)
+        kanban_task_id = _extract_kanban_task_id(kwargs) if is_kanban else None
         with _LOCK:
             state = _state(_session_key(kwargs))
+            if is_kanban:
+                state.is_kanban = True
             turn_id = str(kwargs.get("turn_id") or "")
             new_turn = bool(turn_id and state.direct_turn_id != turn_id)
             if new_turn:
@@ -536,10 +648,22 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 state.wisdom_orbit_status = None
                 state.wisdom_runner_wake = None
                 state.wisdom_status = None
+                state.wisdom_message_intent = None
                 state.brainstormer_capacity_attempted = False
                 state.brainstormer_capacity_result = None
                 state.brainstormer_capacity_required = False
                 state.brainstormer_structure_status = None
+                state.forge_purchase_attempted = False
+                state.forge_purchase_result = None
+                state.yonc_colleagues = None
+            if state.is_kanban:
+                tid = kanban_task_id or state.direct_task_id or "kanban"
+                state.direct_run_id = f"kanban:{tid}"
+                state.direct_task_id = tid
+                state.domain_checked = True
+                state.wisdom_intent_resolved = True
+                state.direct_attempted = True
+                return None
             if profile == "brainstormer":
                 state.brainstormer_capacity_required = _brainstormer_capacity_question(
                     str(kwargs.get("user_message") or "")
@@ -552,16 +676,19 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
         if not attempted and not registered and not kwargs.get("parent_session_id"):
             message = str(kwargs.get("user_message") or "").strip()[:8000]
             if message and _CONTEXT is not None:
-                reversible_forge = profile == "forge-lab-bot"
+                reversible_specialist = profile in {"forge-lab-bot", "honc"}
                 contract = {
                     "title": message[:240],
                     "objective": (
                         "Respond within safe reversible specialist boundaries: " + message
-                        if reversible_forge
-                        else "Respond within read-only or proposal-only specialist boundaries: " + message
+                        if reversible_specialist
+                        else (
+                            "Respond within read-only or proposal-only specialist boundaries: "
+                            + message
+                        )
                     )[:8000],
                     "source": "direct",
-                    "risk_level": "REVERSIBLE" if reversible_forge else "READ_ONLY",
+                    "risk_level": "REVERSIBLE" if reversible_specialist else "READ_ONLY",
                     "requested_by": "user",
                 }
                 try:
@@ -610,7 +737,55 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
             + ". Include these exact identifiers in progress_json and result_json. "
         )
         domain_result: Any = None
-        if not attempted and not _check_graph(**kwargs):
+        forge_purchase_context = ""
+        if not attempted and profile == "yonc" and _CONTEXT is not None:
+            try:
+                receipt = _CONTEXT.call_mcp(
+                    "uuma-worker", "yonc_get_colleague_capabilities", {}, timeout=20,
+                )
+                colleagues = _result_field(receipt, "agents")
+                if receipt.get("ok") and not _contains_error(receipt) and isinstance(colleagues, list):
+                    with _LOCK:
+                        _state(_session_key(kwargs)).yonc_colleagues = {
+                            "observed_at": _result_field(receipt, "observed_at"),
+                            "agents": colleagues,
+                            "unregistered_role_ids": _result_field(receipt, "unregistered_role_ids"),
+                            "supporting_systems": _result_field(receipt, "supporting_systems"),
+                            "has_more": _result_field(receipt, "has_more"),
+                        }
+                else:
+                    _LOGGER.warning("Yonc colleague capability lookup failed")
+            except Exception as exc:  # noqa: BLE001 - missing lookup is not missing colleagues
+                _LOGGER.warning("Yonc colleague capability lookup raised: %s", type(exc).__name__)
+        with _LOCK:
+            colleagues = _state(_session_key(kwargs)).yonc_colleagues
+        yonc_colleague_context = ""
+        if profile == "yonc":
+            yonc_colleague_context = (
+                " Yonc colleague capability snapshot: "
+                + json.dumps(colleagues, ensure_ascii=False, default=str)
+                + ". Use these sources to propose suitable workers, inputs, deliverables and "
+                "acceptance criteria. Enabled registry entries and workload counts do not prove "
+                "that services are online or every described workflow is deployed. Refresh with "
+                "yonc_get_colleague_capabilities before consequential assignment proposals. "
+                "Read the yonc-colleagues skill references for full role documents. Actual "
+                "dispatch belongs to Orchestrator; this lookup has not assigned any work."
+                if colleagues is not None else
+                " Yonc colleague capability lookup did not succeed. Use the yonc-colleagues "
+                "role guide for provisional recommendations and call yonc_get_colleague_capabilities "
+                "to refresh. Do not claim that colleagues are absent, disabled or available from "
+                "this lookup failure. Do not claim another Agent was dispatched."
+            )
+        honc_guidance = (
+            " Honc: manage daily execution facts, focus rounds, habits, and task "
+            "completion verification. Record actual execution facts using "
+            "honc_record_execution. Assess task done_when criteria before marking tasks "
+            "completed. Never alter project hierarchies, milestone structures, or project "
+            "priorities; those belong to Yonc."
+            if profile == "honc"
+            else ""
+        )
+        if not attempted and profile != "wisdom-oldman" and not _check_graph(**kwargs):
             return {"context": identity_context + (
                 "Knowledge graph unavailable after recovery. Domain work is BLOCKED. "
                 "Do not use model-only or text-only fallback, start research, or claim completion. "
@@ -627,11 +802,8 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     "question": approved_topic or message,
                     "mode": "SIMPLE",
                     "recover_runtime": False,
-                    "intent": (
-                        "research" if approved_topic or _explicit_research_request(message)
-                        else "auto"
-                    ),
-                    "topic_creation_approved": bool(approved_topic),
+                    "intent": "auto",
+                    "topic_creation_approved": False,
                     "uuma_task_id": state.direct_task_id or "",
                     "uuma_run_id": state.direct_run_id or "",
                     "notification_route_json": json.dumps(
@@ -646,10 +818,23 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 "scholar": {"limit": 5},
                 "forge-lab-bot": {},
                 "yonc": {},
+                "honc": {},
             }[profile]
             try:
                 timeout = 420 if profile == "wisdom-oldman" else 20
                 domain_result = _CONTEXT.call_mcp(server, tool, arguments, timeout=timeout)
+                if (
+                    profile == "wisdom-oldman" and domain_result.get("ok")
+                    and not _contains_error(domain_result)
+                    and _result_field(domain_result, "needs_intent_resolution") is True
+                    and (approved_topic or _explicit_research_request(message))
+                ):
+                    if not _check_graph(**kwargs):
+                        return {"context": identity_context + "Graph unavailable; research is BLOCKED. "
+                                "Operational progress and topic queries remain available."}
+                    arguments = arguments | {"intent": "research",
+                                             "topic_creation_approved": bool(approved_topic)}
+                    domain_result = _CONTEXT.call_mcp(server, tool, arguments, timeout=timeout)
                 if domain_result.get("ok") and not _contains_error(domain_result):
                     with _LOCK:
                         state = _state(_session_key(kwargs))
@@ -659,7 +844,7 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                             state.wisdom_intent_resolved = (
                                 arguments["intent"] == "research"
                                 or _result_field(domain_result, "message_intent")
-                                in {"status", "feedback", "conversation"}
+                                in {"status", "feedback", "conversation", "resume", "pause", "stop"}
                             )
                             proposal = _topic_proposal(domain_result)
                             if proposal:
@@ -681,12 +866,60 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     tool,
                     type(exc).__name__,
                 )
+        if (
+            not attempted and profile == "forge-lab-bot" and _CONTEXT is not None
+            and domain_result is not None and domain_result.get("ok")
+        ):
+            search = _forge_purchase_search(str(kwargs.get("user_message") or ""))
+            if search is not None:
+                with _LOCK:
+                    _state(_session_key(kwargs)).forge_purchase_attempted = True
+                try:
+                    purchase_receipt = _CONTEXT.call_mcp(
+                        "uuma-worker", "inventory_search_purchase_history", search, timeout=20
+                    )
+                    rows = _result_field(purchase_receipt, "rows")
+                    if purchase_receipt.get("ok") and not _contains_error(purchase_receipt) and isinstance(rows, list):
+                        purchase_result = {
+                            "rows": rows,
+                            "total_count": _result_field(purchase_receipt, "total_count"),
+                            "has_more": _result_field(purchase_receipt, "has_more"),
+                        }
+                        with _LOCK:
+                            _state(_session_key(kwargs)).forge_purchase_result = purchase_result
+                        _LOGGER.info(
+                            "Forge purchase lookup succeeded session=%s matches=%s returned=%s",
+                            _session_key(kwargs), purchase_result["total_count"], len(rows),
+                        )
+                        forge_purchase_context = (
+                            " Verified purchase-history lookup from lab.db: "
+                            + json.dumps(purchase_receipt.get("result"), ensure_ascii=False, default=str)[:12000]
+                            + ". Use these order records and product_url fields as evidence. "
+                            "If has_more is true, continue paging before claiming completeness."
+                        )
+                    else:
+                        _LOGGER.warning(
+                            "Forge purchase lookup failed session=%s", _session_key(kwargs)
+                        )
+                        forge_purchase_context = (
+                            " Purchase-history lookup failed. Do not claim the database is empty "
+                            "or that permissions are denied; report the tool failure."
+                        )
+                except Exception as exc:  # noqa: BLE001 - never turn a lookup failure into an absence claim
+                    _LOGGER.warning("Forge purchase lookup raised: %s", type(exc).__name__)
+                    forge_purchase_context = (
+                        " Purchase-history lookup failed. Do not claim the database is empty "
+                        "or that permissions are denied; report the tool failure."
+                    )
         if domain_result is not None and domain_result.get("ok"):
             forge_capture = (
                 " If the user wants to record actual lab work, use the lab-worklog conversational "
                 "intake: infer Problem/Experiment/Repair/Build, ask only for missing facts, then "
                 "call lab_journal_capture_chat once the record is complete. Do not capture generic "
-                "advice, hypothetical planning, sourcing discussion, or a user opt-out."
+                "advice, hypothetical planning, sourcing discussion, or a user opt-out. "
+                "You may create and write project files (e.g. Markdown documents, hardware designs, BOMs) "
+                "inside the project directory (Hardware-Lab-Workspace/projects or current task workspace). "
+                "File operations outside the project folder and file deletions remain forbidden."
                 if profile == "forge-lab-bot"
                 else ""
             )
@@ -732,7 +965,8 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     "Promise continued research only when an orbit_id and "
                     "persisted status were returned. "
                     f"Report progress and submit the result through Worker MCP."
-                    f"{forge_capture}{brainstormer_guidance}"
+                    f"{forge_capture}{brainstormer_guidance}{forge_purchase_context}"
+                    f"{yonc_colleague_context}{honc_guidance}"
                 )
             }
         return {
@@ -740,6 +974,7 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 f"UuMA Direct Run {registered} is registered, but the domain lookup did not "
                 f"succeed. {identity_context}"
                 "Call the appropriate semantic MCP tool and report a blocker if it fails."
+                f"{yonc_colleague_context}{honc_guidance}"
             )
         }
     if _profile() != "orchestrator":
@@ -768,6 +1003,94 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
     }
 
 
+def _extract_file_path(args: Any) -> str | None:
+    args = _decoded(args)
+    if isinstance(args, dict):
+        for key in ("path", "file_path", "filepath", "filename", "file", "target"):
+            val = args.get(key)
+            if isinstance(val, str) and val.strip():
+                return val.strip()
+    return None
+
+
+def _forge_allowed_project_roots(kwargs: dict[str, Any] | None = None) -> list[Path]:
+    roots: list[Path] = []
+    env_roots = os.environ.get("FORGE_LAB_PROJECT_ROOTS") or os.environ.get("UUMA_FORGE_PROJECT_ROOTS")
+    if env_roots:
+        for p in env_roots.split(os.pathsep):
+            if p.strip():
+                roots.append(Path(p.strip()).resolve(strict=False))
+
+    userprofile = os.environ.get("USERPROFILE") or os.environ.get("HOME") or "C:/Users/Alandelone"
+    hw_ws = Path(userprofile) / "CodeSpace_Local" / "Hardware-Lab-Workspace"
+    roots.append(hw_ws.resolve(strict=False))
+
+    localappdata = os.environ.get("LOCALAPPDATA") or str(Path(userprofile) / "AppData" / "Local")
+    projects_db_path = Path(localappdata) / "hermes" / "profiles" / "forge-lab-bot" / "projects.db"
+    if projects_db_path.is_file():
+        try:
+            with sqlite3.connect(f"file:{projects_db_path}?mode=ro", uri=True) as conn:
+                cur = conn.cursor()
+                for row in cur.execute("SELECT folder_path FROM project_folders").fetchall():
+                    if row[0]:
+                        roots.append(Path(row[0]).resolve(strict=False))
+                for row in cur.execute("SELECT path FROM projects WHERE path IS NOT NULL").fetchall():
+                    if row[0]:
+                        roots.append(Path(row[0]).resolve(strict=False))
+        except (sqlite3.Error, OSError) as exc:
+            _LOGGER.debug("Could not read projects.db for forge roots: %s", exc)
+
+    kanban_ws_base = Path(localappdata) / "hermes" / "kanban" / "workspaces"
+    roots.append(kanban_ws_base.resolve(strict=False))
+    return roots
+
+
+def _forge_default_cwd(kwargs: dict[str, Any] | None = None) -> Path:
+    userprofile = os.environ.get("USERPROFILE") or os.environ.get("HOME") or "C:/Users/Alandelone"
+    localappdata = os.environ.get("LOCALAPPDATA") or str(Path(userprofile) / "AppData" / "Local")
+    if kwargs:
+        task_id = _extract_kanban_task_id(kwargs)
+        if task_id:
+            return (Path(localappdata) / "hermes" / "kanban" / "workspaces" / task_id).resolve(strict=False)
+    return (Path(userprofile) / "CodeSpace_Local" / "Hardware-Lab-Workspace").resolve(strict=False)
+
+
+def _normalize_target_path(raw_path: str, default_cwd: Path | None = None) -> Path:
+    raw = raw_path.strip().strip("'\"")
+    m = re.match(r"^/([a-zA-Z])/(.*)", raw)
+    if m:
+        drive, rest = m.groups()
+        raw = f"{drive.upper()}:/{rest}"
+    elif raw.startswith("~"):
+        raw = os.path.expanduser(raw)
+    p = Path(raw)
+    if not p.is_absolute() and default_cwd:
+        p = default_cwd / p
+    try:
+        return p.resolve(strict=False)
+    except (OSError, RuntimeError, ValueError):
+        return Path(os.path.normpath(str(p)))
+
+
+def _is_allowed_forge_file_path(raw_path: str, kwargs: dict[str, Any] | None = None) -> bool:
+    if not raw_path or not str(raw_path).strip():
+        return False
+    cwd = _forge_default_cwd(kwargs)
+    target = _normalize_target_path(str(raw_path), default_cwd=cwd)
+    roots = _forge_allowed_project_roots(kwargs)
+    try:
+        target_str = str(target.resolve(strict=False)).lower()
+        target_parts = Path(target_str).parts
+        for root in roots:
+            root_str = str(root.resolve(strict=False)).lower()
+            root_parts = Path(root_str).parts
+            if len(target_parts) >= len(root_parts) and target_parts[:len(root_parts)] == root_parts:
+                return True
+    except (ValueError, TypeError):
+        return False
+    return False
+
+
 def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict[str, str] | None:
     bridge_tool = "chatgpt_bridge" in _normalized_tool_name(tool_name)
     if bridge_tool and (
@@ -779,6 +1102,8 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
         return {"action": "block", "message": "ChatGPT bridge capability denied for this profile."}
     if _profile() in _DIRECT_SPECIALISTS:
         name = _normalized_tool_name(tool_name)
+        if name.startswith("kanban_"):
+            return None
         if _profile() == "brainstormer" and name.endswith("brainstormer_calculate_capacity"):
             with _LOCK:
                 _state(_session_key(kwargs)).brainstormer_capacity_attempted = True
@@ -794,8 +1119,22 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
                     "Creating a topic requires the user's explicit approval of the pending "
                     "proposal in a later turn. Do not claim or infer that approval."
                 )}
+        is_forge_file_mutation = (
+            _profile() == "forge-lab-bot"
+            and name in _FORGE_MUTATION_TOOLS
+        )
+        if is_forge_file_mutation:
+            file_path = _extract_file_path(args)
+            if not file_path or not _is_allowed_forge_file_path(file_path, kwargs):
+                return {
+                    "action": "block",
+                    "message": (
+                        "Blocked by UuMA specialist policy: file mutation is restricted to the "
+                        "project folder (Hardware-Lab-Workspace / task workspace)."
+                    ),
+                }
         if (
-            name in _SPECIALIST_FORBIDDEN_TOOLS
+            (name in _SPECIALIST_FORBIDDEN_TOOLS and not is_forge_file_mutation)
             or name.startswith("mcp__uuma_control__")
             or name.endswith(("knowledge_apply_patch", "knowledge_reverse_patch"))
             or (_profile() == "forge-lab-bot" and any(name.endswith(tool) for tool in _FORGE_DIRECT_FORBIDDEN))
@@ -810,7 +1149,8 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
         if name.endswith(("register_direct_run", "get_assignment")) and "uuma_worker" in name:
             return None
         with _LOCK:
-            registered = bool(_state(_session_key(kwargs)).direct_run_id)
+            state = _state(_session_key(kwargs))
+            registered = bool(state.direct_run_id) or state.is_kanban or _is_kanban_worker(kwargs)
         if not registered:
             return {
                 "action": "block",
@@ -821,6 +1161,15 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
                 ),
             }
         if _profile() in {"scholar", "wisdom-oldman"}:
+            if (_profile() == "wisdom-oldman" and name.endswith("knowledge_question_preflight")
+                    and (args or {}).get("intent", "auto") != "research"):
+                return None
+            if _profile() == "wisdom-oldman" and name.endswith((
+                "knowledge_topic_list", "knowledge_topic_get", "knowledge_topic_versions",
+                "knowledge_orbit_status", "knowledge_orbit_list", "knowledge_orbit_frontier",
+                "knowledge_orbit_pause", "knowledge_orbit_resume", "knowledge_orbit_stop",
+            )):
+                return None
             if "uuma_worker" in name and name.endswith(
                 ("knowledge_runtime_preflight", "report_progress", "block_run")
             ):
@@ -830,7 +1179,7 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
                     outcome = json.loads((args or {}).get("result_json", "{}" )).get("outcome")
                 except (ValueError, TypeError):
                     outcome = None
-                if outcome in {"FAILED", "BLOCKED", "CANCELLED"}:
+                if outcome in {"FAILED", "BLOCKED", "CANCELLED", "PARTIAL"}:
                     return None
             if not _check_graph(**kwargs):
                 return {"action": "block", "message": (
@@ -881,7 +1230,7 @@ def _post_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> Non
                     state.pending_topic_question = proposal
                 if (args or {}).get("intent") == "research" or _result_field(
                     kwargs.get("result"), "message_intent"
-                ) in {"status", "feedback", "conversation"}:
+                ) in {"status", "feedback", "conversation", "resume", "pause", "stop"}:
                     state.wisdom_intent_resolved = True
                 _remember_wisdom_result(state, kwargs.get("result"))
                 if (args or {}).get("topic_creation_approved"):
@@ -906,6 +1255,7 @@ def _post_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> Non
             name.endswith(_DOMAIN_PREFLIGHT[_profile()][1])
             or (_profile() == "brainstormer" and name.endswith("brainstormer_get_context"))
             or (_profile() == "wisdom-oldman" and name.endswith("knowledge_answer"))
+            or (_profile() == "honc" and ("honc_execution" in name or name.startswith("honc_")))
         ):
             with _LOCK:
                 state = _state(key)
@@ -954,7 +1304,15 @@ def _clear_session(**kwargs: Any) -> None:
 def _guard_specialist_output(response_text: str = "", **kwargs: Any) -> str | None:
     if _profile() not in _DIRECT_SPECIALISTS or not response_text:
         return None
-    if _profile() in {"scholar", "wisdom-oldman"} and not _check_graph(recover=False, **kwargs):
+    with _LOCK:
+        state = _state(_session_key(kwargs))
+        if state.is_kanban or _is_kanban_worker(kwargs):
+            return None
+        operational = state.wisdom_message_intent in {
+            "status", "feedback", "conversation", "resume", "pause", "stop",
+        }
+    if (_profile() in {"scholar", "wisdom-oldman"} and not operational
+            and not _check_graph(recover=False, **kwargs)):
         return "知识图谱当前不可用，本轮知识工作已阻止。请恢复图谱后重试；本轮没有完成知识回答。"
     with _LOCK:
         state = _state(_session_key(kwargs))
@@ -969,7 +1327,21 @@ def _guard_specialist_output(response_text: str = "", **kwargs: Any) -> str | No
         capacity_result = state.brainstormer_capacity_result
         capacity_required = state.brainstormer_capacity_required
         structure_status = state.brainstormer_structure_status
+        forge_purchase_attempted = state.forge_purchase_attempted
+        forge_purchase_result = state.forge_purchase_result
     if registered and domain_checked:
+        if _profile() == "wisdom-oldman" and operational and status_reply:
+            return status_reply
+        if _profile() == "forge-lab-bot" and forge_purchase_attempted:
+            if forge_purchase_result is None:
+                return (
+                    "这轮购买记录查询工具未成功返回结果，因此不能确认有没有买过，"
+                    "也不能说是数据库权限问题。请检查工具调用后重试。"
+                )
+            if forge_purchase_result.get("rows") and re.search(
+                r"没有权限|无法访问|不能访问|读不到|查不到|找不到|无法查询", response_text
+            ):
+                return _forge_purchase_reply(forge_purchase_result)
         if _profile() == "brainstormer" and re.search(
             r"(?:已|已经).{0,4}(?:保存|记录|记住).{0,12}(?:项目|话题)|"
             r"(?:项目|话题).{0,12}(?:已|已经).{0,4}(?:保存|记录)",
@@ -1041,9 +1413,11 @@ def _finalize_specialist(**kwargs: Any) -> None:
         return
     with _LOCK:
         state = _state(_session_key(kwargs))
+        if state.is_kanban or _is_kanban_worker(kwargs):
+            return
         if state.result_submitted or not state.direct_run_id or not state.direct_task_id:
             return
-        if state.direct_run_id.startswith("assignment:"):
+        if state.direct_run_id.startswith(("assignment:", "kanban:")):
             return
         state.result_submitted = True  # at-most-once callback attempt
         run_id = state.direct_run_id
@@ -1051,12 +1425,18 @@ def _finalize_specialist(**kwargs: Any) -> None:
         domain_checked = state.domain_checked and (
             profile not in {"scholar", "wisdom-oldman"}
             or (state.graph_ready and not state.kag_degraded)
+            or (profile == "wisdom-oldman" and state.wisdom_message_intent in {
+                "status", "feedback", "conversation", "resume", "pause", "stop",
+            })
         )
         if profile == "wisdom-oldman":
             domain_checked = domain_checked and state.wisdom_intent_resolved
     response = str(kwargs.get("assistant_response") or "")[:8000]
     generic_failure = response.strip().lower().startswith("sorry, something went wrong")
     outcome = "COMPLETED" if domain_checked and response and not generic_failure else "FAILED"
+    if outcome == "COMPLETED" and profile == "wisdom-oldman" and not state.graph_ready:
+        # Operational reply succeeded; no graph research completion is asserted to Worker MCP.
+        outcome = "PARTIAL"
     result = {
         "run_id": run_id,
         "task_id": task_id,

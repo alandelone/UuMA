@@ -1,0 +1,15 @@
+{
+  "status": "PASS_NATIVE_BIB_LOCAL_READ_SIZE_LIMIT_PREVIEW_SUBSET",
+  "all_109_tables_schema_and_rows_exact": true,
+  "original_source_files_exact": true,
+  "real_file_chooser_used": true,
+  "bib_sha256": "122f86ce0bdd360dffd25da0791b2b1a5a5ece3f365ba5c47d63fdb5ec7a2e0f",
+  "oversize_bytes": 5000001,
+  "local_file_not_uploaded": true,
+  "input_retained_after_oversize": true,
+  "preview_json_post_only": true,
+  "new_collections_jobs_models": 0,
+  "slow_read_race_verified": false,
+  "ac03_complete": false,
+  "all11_complete": false
+}

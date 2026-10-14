@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:8885/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace?snapshot=fieldkg_snapshot_unknown_g10_read_only",
+  "method": "GET",
+  "at": "2026-10-13T05:32:24.571Z",
+  "status": 404,
+  "body": {
+    "detail": "Unknown snapshot"
+  }
+}

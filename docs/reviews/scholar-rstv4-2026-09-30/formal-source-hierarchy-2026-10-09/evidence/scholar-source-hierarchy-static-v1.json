@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "cmd.exe",
+      "/c",
+      "node_modules\\.bin\\tsc.cmd",
+      "--noEmit"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "cmd.exe",
+      "/c",
+      "node_modules\\.bin\\oxlint.cmd",
+      "--threads=1",
+      "components/studio-template-adoption.tsx",
+      "lib/studio-types.ts"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  }
+]

@@ -1,0 +1,80 @@
+...................FF......................                              [100%]
+================================== FAILURES ===================================
+_ test_actual_generation_preserves_mapping_context_citations_and_real_artifacts _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-978/test_actual_generation_preserv0')
+
+    def test_actual_generation_preserves_mapping_context_citations_and_real_artifacts(tmp_path):
+        from pathlib import Path
+        from test_writing_studio import wait_for_job
+    
+        service, manuscript_id, adopted, mapped, originals, slots = mapped_fixture(tmp_path)
+        service.save_document(manuscript_id, base_revision=3, operation_id="map-for-generation",
+                              operation_kind="MAP_AUTHOR_INTENT", document=mapped)
+        captured = []
+    
+        def realize(task, payload):
+            assert task == "paragraph_realization"
+            captured.append(deepcopy(payload))
+            thoughts = [t for intent in payload["intents"] for t in intent["thoughts"]]
+            evidence_ids = list(dict.fromkeys(c["evidence_id"] for t in thoughts
+                                             for c in t["citations"] if c["selected"]))
+            citation = "".join(f" [@{evidence}]" for evidence in evidence_ids)
+            return {"paragraph": " ".join(t["text"] for t in thoughts) + citation,
+                    "sentence_mappings": [{"sentence": 0, "thought_ids": [t["id"] for t in thoughts]}]}
+    
+        service.gateway.analyze = realize
+        try:
+            job = wait_for_job(service, service.create_job(manuscript_id, "GENERATE", input_revision=4))
+            assert job["status"] == "SUCCEEDED", job
+            assert len(captured) == len(slots)
+            expected_thoughts = [t for p in originals for i in p["intents"] for t in i["thoughts"]]
+            assert [t for call in captured for i in call["intents"] for t in i["thoughts"]] == expected_thoughts
+            contexts = [context for call in captured for context in call["author_contexts"]]
+            assert [context["source_paragraph"] for context in contexts] == originals
+            assert all(context["source_group"] == mapped["sections"][-1]["paragraph_groups"][0]
+                       for context in contexts[:2])
+            version = service.get_generated_version(manuscript_id, job["result"]["generated_version_id"])
+            assert {a["artifact_kind"] for a in version["artifacts"]} == {"MARKDOWN", "GENERATED_JSON", "TEX", "BIB", "PDF"}
+            with sqlite3.connect(service.db_path) as conn:
+                artifacts = conn.execute("SELECT artifact_kind,storage_path FROM studio_artifacts WHERE job_id=?", (job["job_id"],)).fetchall()
+>               recorded = [json.loads(row[0]) for row in conn.execute("SELECT input_json FROM studio_model_calls WHERE job_id=? ORDER BY created_at,rowid", (job["job_id"],))]
+                                                          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E               sqlite3.OperationalError: no such column: created_at
+
+tests\test_studio_correspondence.py:217: OperationalError
+_ test_correspondence_comments_keep_original_and_target_ids_through_compensation _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-978/test_correspondence_comments_k0')
+
+    def test_correspondence_comments_keep_original_and_target_ids_through_compensation(tmp_path):
+        service, manuscript_id, adopted, mapped, originals, slots = mapped_fixture(tmp_path)
+        round_row = service.create_review_round(manuscript_id, round_number=1, venue="Software fixture")
+        comment = service.import_comments(round_row["review_round_id"],
+            [{"text": "Keep the original and chosen slot linked.", "include": True}], source="PASTED")[0]
+        comment_id = comment["comment_id"]
+        for revision, kind, value in [(3, "MAP_AUTHOR_INTENT", mapped), (4, "UNDO", adopted), (5, "REDO", mapped)]:
+            service.save_document(manuscript_id, base_revision=revision, operation_id=f"comment-{kind}",
+                                  operation_kind=kind, document=value, comment_ids=[comment_id])
+        linked = service.list_comments(manuscript_id)[0]
+        assert linked["comment_id"] == comment_id
+        assert {change["operation_id"] for change in linked["changes"]} == {"comment-MAP_AUTHOR_INTENT", "comment-UNDO", "comment-REDO"}
+        expected = {i["id"] for p in originals + slots for i in p["intents"]} | {originals[0]["id"]}
+>       assert all(expected.issubset(service._changed_block_ids(change["before"], change["after"]))
+                   for change in linked["changes"])
+
+tests\test_studio_correspondence.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+.0 = <list_iterator object at 0x000001965C79B9A0>
+
+>   assert all(expected.issubset(service._changed_block_ids(change["before"], change["after"]))
+                                                            ^^^^^^^^^^^^^^^^
+               for change in linked["changes"])
+E   KeyError: 'before'
+
+tests\test_studio_correspondence.py:245: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_correspondence.py::test_actual_generation_preserves_mapping_context_citations_and_real_artifacts
+FAILED tests/test_studio_correspondence.py::test_correspondence_comments_keep_original_and_target_ids_through_compensation
+2 failed, 41 passed in 65.98s (0:01:05)

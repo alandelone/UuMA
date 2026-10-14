@@ -1,0 +1,56 @@
+{
+  "status": "PASS_EXACT_CASES",
+  "revisions": [
+    49,
+    61
+  ],
+  "operation_kinds": [
+    "ADOPT_TEMPLATE",
+    "UNDO",
+    "ADOPT_TEMPLATE",
+    "PLACE_ORIGINAL_TREE",
+    "UNDO",
+    "REDO",
+    "ADOPT_TEMPLATE",
+    "PLACE_ORIGINAL_TREE",
+    "UNDO",
+    "REDO",
+    "UNDO",
+    "UNDO"
+  ],
+  "exact_full_snapshot_pairs": [
+    [
+      51,
+      49
+    ],
+    [
+      54,
+      52
+    ],
+    [
+      55,
+      53
+    ],
+    [
+      58,
+      56
+    ],
+    [
+      59,
+      57
+    ],
+    [
+      60,
+      56
+    ],
+    [
+      61,
+      55
+    ]
+  ],
+  "original_tree_target_alpha_then_beta": true,
+  "final_original_objects_restored": true,
+  "cancel_created_no_operation": true,
+  "native_generation_and_model_calls": 0,
+  "overall_all11_complete": false
+}

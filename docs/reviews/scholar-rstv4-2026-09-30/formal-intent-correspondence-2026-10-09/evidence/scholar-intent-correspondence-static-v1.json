@@ -1,0 +1,19 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/rstv4/studio_correspondence.py",
+      "src/rstv4/studio.py",
+      "src/rstv4/studio_context.py",
+      "src/rstv4/studio_structure.py",
+      "src/rstv4/studio_templates.py",
+      "src/rstv4/studio_read_views.py",
+      "tests/test_studio_correspondence.py",
+      "tests/test_studio_templates.py"
+    ],
+    "exit_code": 1
+  }
+]

@@ -18,6 +18,7 @@ from ruamel.yaml import YAML
 
 from .kag_adapter import (
     KagProjectionWorker,
+    KagUnavailableError,
     KnowledgeReasoner,
     OpenSpgKagBackend,
 )
@@ -340,6 +341,15 @@ class OrbitRunner:
                 retry_after_seconds=exc.retry_after_seconds,
                 blocked=int(cycle["attempt"]) >= 3,
             )
+        except KagUnavailableError as exc:
+            heartbeat.stop()
+            LOGGER.warning("Graph retrieval unavailable for cycle=%s: %s",
+                           cycle["orbit_cycle_id"], str(exc)[:500])
+            self.orbits.fail_cycle(
+                cycle["orbit_cycle_id"], self.owner_id,
+                "图谱检索服务暂时不可用；当前研究成果已保留。",
+                retry_after_seconds=300, blocked=int(cycle["attempt"]) >= 3,
+            )
         except PermissionError as exc:
             heartbeat.stop()
             LOGGER.warning(
@@ -400,8 +410,14 @@ class OrbitRunner:
         if hasattr(self, "_cycle_hook") and callable(self._cycle_hook):
             self._cycle_hook(cycle)
         self._active_cycle = cycle
-        if not ensure_knowledge_graph("wisdom-oldman", recover=True)["ready"]:
-            raise PermissionError("Knowledge graph unavailable; background research is blocked.")
+        readiness = ensure_knowledge_graph("wisdom-oldman", recover=True)
+        if not readiness["ready"]:
+            reason = str(readiness.get("reason") or "Graph readiness could not be verified")
+            if reason in {"TimeoutError", "URLError", "ConnectionRefusedError", "OSError"}:
+                raise RetryAfterError(
+                    f"图谱底层服务暂时无法响应（{reason}）；保留成果，5 分钟后重试。", 300
+                )
+            raise PermissionError(f"Knowledge graph unavailable; research is blocked: {reason}")
         question = self.knowledge._require("questions", cycle["question_id"])["text"]
         orbit_state = self.orbits.get(cycle["orbit_id"])
         current = self.reasoner.answer(
@@ -792,8 +808,8 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     knowledge = KnowledgeService(settings.knowledge_database_path())
     topics = TopicKnowledgeService(
         knowledge,
-        view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8787"),
-        view_token=ensure_view_token(settings.data_dir),
+        view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767"),
+        view_token=ensure_view_token(settings.knowledge_database_path().parent),
     )
     orbits = QuestionOrbitService(knowledge, topics=topics)
     backend = OpenSpgKagBackend.from_env(simple_timeout_seconds=300)
@@ -801,7 +817,7 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     dispatcher = OrbitNotificationDispatcher(
         orbits, settings.hermes_executable, profile_home
     )
-    control_plane = ControlPlane(settings.database_path)
+    control_plane = ControlPlane(settings)
     control_plane.bootstrap()
 
     runner_active_cycle: list[dict[str, Any] | None] = [None]

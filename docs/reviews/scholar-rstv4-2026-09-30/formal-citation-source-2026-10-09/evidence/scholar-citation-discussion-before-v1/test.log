@@ -1,0 +1,92 @@
+FF..F                                                                    [100%]
+================================== FAILURES ===================================
+_ test_generated_discussion_receives_fixed_references_before_live_search[False] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/scdis-before-6af1c672/test_generated_discussion_rece0')
+refresh_live = False
+
+    @pytest.mark.parametrize("refresh_live", [False, True])
+    def test_generated_discussion_receives_fixed_references_before_live_search(tmp_path, refresh_live):
+        service, ms, evidence, _original, _pdf, document = source_studio(tmp_path)
+        first = generate(service, ms)
+        ids = [reference["evidence_id"] for reference in first["references"]]
+        gateway = FixedReferencesGateway(ids)
+        if refresh_live:
+            with transaction(service.db_path) as conn:
+                conn.execute("UPDATE papers SET title='Refreshed live title' WHERE paper_id='existing'")
+                conn.execute("UPDATE evidence SET statement='Refreshed live statement' WHERE evidence_id=?",
+                             (evidence[1]["evidence_id"],))
+        question = "Refreshed live title" if refresh_live else "zzzNoLiveMatch2026"
+        live = service.search_sources(ms, question, limit=8)
+        assert bool(live) == refresh_live
+        with TestClient(create_app(tmp_path)) as client:
+            client.app.state.discussions.gateway = gateway
+            source = bound(client, generated_target(ms, first))
+            _, receipt = send(client, source, content=question)
+>           assert receipt["job"]["status"] == "COMPLETE", receipt
+E           AssertionError: {'execution_observation': 'NOT_OBSERVED_IN_THIS_PROCESS', 'job': {'author_message_id': 'research_message_68ec4864b98b4...CUSSION'}, 'status': 'FAILED'}, 'content': 'zzzNoLiveMatch2026', ...}], 'request_id': 'shared-studio-request-001', ...}
+E           assert 'FAILED' == 'COMPLETE'
+E             
+E             - COMPLETE
+E             + FAILED
+
+tests\test_studio_discussion_fixed_references.py:54: AssertionError
+_ test_generated_discussion_receives_fixed_references_before_live_search[True] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/scdis-before-6af1c672/test_generated_discussion_rece1')
+refresh_live = True
+
+    @pytest.mark.parametrize("refresh_live", [False, True])
+    def test_generated_discussion_receives_fixed_references_before_live_search(tmp_path, refresh_live):
+        service, ms, evidence, _original, _pdf, document = source_studio(tmp_path)
+        first = generate(service, ms)
+        ids = [reference["evidence_id"] for reference in first["references"]]
+        gateway = FixedReferencesGateway(ids)
+        if refresh_live:
+            with transaction(service.db_path) as conn:
+                conn.execute("UPDATE papers SET title='Refreshed live title' WHERE paper_id='existing'")
+                conn.execute("UPDATE evidence SET statement='Refreshed live statement' WHERE evidence_id=?",
+                             (evidence[1]["evidence_id"],))
+        question = "Refreshed live title" if refresh_live else "zzzNoLiveMatch2026"
+        live = service.search_sources(ms, question, limit=8)
+        assert bool(live) == refresh_live
+        with TestClient(create_app(tmp_path)) as client:
+            client.app.state.discussions.gateway = gateway
+            source = bound(client, generated_target(ms, first))
+            _, receipt = send(client, source, content=question)
+            assert receipt["job"]["status"] == "COMPLETE", receipt
+            assert receipt["studio_messages"][-1]["quoted"]["evidence_ids"] == ids
+            supplied = gateway.calls[0]["retrieved_evidence"]
+            assert [item["evidence_id"] for item in supplied] == ids
+>           assert all(item["title"] == reference["title"]
+                       and item["statement"] == reference["statement"]
+                       and item["source_context"]["context_sha256"] == reference["source_context"]["context_sha256"]
+                       for item, reference in zip(supplied, first["references"], strict=True))
+E           assert False
+E            +  where False = all(<generator object test_generated_discussion_receives_fixed_references_before_live_search.<locals>.<genexpr> at 0x0000016F5B469FC0>)
+
+tests\test_studio_discussion_fixed_references.py:58: AssertionError
+______ test_old_discussion_keeps_original_references_after_regeneration _______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/scdis-before-6af1c672/test_old_discussion_keeps_orig0')
+
+    def test_old_discussion_keeps_original_references_after_regeneration(tmp_path):
+        service, ms, _evidence, _source, _pdf, document = source_studio(tmp_path)
+        first = generate(service, ms)
+        gateway = FixedReferencesGateway([item["evidence_id"] for item in first["references"]])
+        with TestClient(create_app(tmp_path)) as client:
+            client.app.state.discussions.gateway = gateway
+            source = bound(client, generated_target(ms, first))
+            _, original = send(client, source, content="zzzNoLiveMatch2026")
+>           assert original["job"]["status"] == "COMPLETE"
+E           AssertionError: assert 'FAILED' == 'COMPLETE'
+E             
+E             - COMPLETE
+E             + FAILED
+
+tests\test_studio_discussion_fixed_references.py:98: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_discussion_fixed_references.py::test_generated_discussion_receives_fixed_references_before_live_search[False]
+FAILED tests/test_studio_discussion_fixed_references.py::test_generated_discussion_receives_fixed_references_before_live_search[True]
+FAILED tests/test_studio_discussion_fixed_references.py::test_old_discussion_keeps_original_references_after_regeneration
+3 failed, 2 passed in 5.16s

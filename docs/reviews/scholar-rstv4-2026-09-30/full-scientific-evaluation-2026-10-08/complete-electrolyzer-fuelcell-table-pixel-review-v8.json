@@ -1,0 +1,1285 @@
+{
+  "status": "COMPLETE_TWO_ORIGINAL_ELECTROLYZER_AND_FUELCELL_PARAMETER_TABLE_PIXEL_REVIEW",
+  "full_original_benchmark_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_95eebae164cc42fd6005",
+    "complete_tables": 2,
+    "value_entries": 57,
+    "numeric_value_cells": 44,
+    "textual_value_cells": 11,
+    "original_slash_absence_marker_cells": 2
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+  "original_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities_content_list.json",
+  "original_parser_sha256": "5d6e54284a86c0ee2a50d13ccc8ceacf36e6d4665001641e9353cc6e6578e708",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "tables": [
+    {
+      "matrix_index": 1,
+      "page": 6,
+      "caption": "Table 2. Technical characteristics and selected parameter of AEL, AEMEL and PEMEL technology from recent literature.",
+      "columns": [
+        "Parameter",
+        "Unit",
+        "AEL",
+        "AEMEL",
+        "PEMEL"
+      ],
+      "rows": [
+        [
+          "CAPEXᵃ",
+          "USD/kW",
+          "850–1600 USD/kW (Buttler & Spliethoff, 2018)\n800 USD/kW (ESMAP & World Bank Group, 2020)\n825 USD/kW (Danish Energy Agency, 2022)",
+          "/",
+          "1.500–2.200 USD/kW (Buttler & Spliethoff, 2018)\n1100 USD/kW (ESMAP & World Bank Group, 2020)\n1000 USD/kW (Danish Energy Agency, 2022)"
+        ],
+        [
+          "OPEX",
+          "% of invest/y",
+          "2–3 (Buttler & Spliethoff, 2018)\n5 % (Danish Energy Agency, 2022)",
+          "/",
+          "3–5 (Buttler & Spliethoff, 2018)\n7 (Danish Energy Agency, 2022)"
+        ],
+        [
+          "Efficiencyᶜ (System, LHV)",
+          "%",
+          "51–60 (Buttler & Spliethoff, 2018)\n42–66 (IRENA, 2020a)",
+          "74.7 % cell efficiency (Li & Baek, 2021)",
+          "46–60 (Buttler & Spliethoff, 2018)\n40–66 (IRENA, 2020a)"
+        ],
+        [
+          "Lifetime stack",
+          "",
+          "8–15 y (Buttler & Spliethoff, 2018)\n55,000–96,000 h (Felgenhauer et al., 2015)",
+          "5000 h (ESMAP & World Bank Group, 2020)",
+          "60.000–100.000 h (Buttler & Spliethoff, 2018)\n80,000 h (ESMAP & World Bank Group, 2020)"
+        ],
+        [
+          "Lifetime system",
+          "",
+          "30–50 y (Pewinksi, 2015)",
+          "20 (Motealleha et al., 2021)",
+          "20 y (Buttler & Spliethoff, 2018)\n20 y (ESMAP & World Bank Group, 2020)"
+        ],
+        [
+          "Min. part-load",
+          "%",
+          "20 (Buttler & Spliethoff, 2018)",
+          "5 (ESMAP & World Bank Group, 2020)",
+          "0 (Buttler & Spliethoff, 2018)\n5 (Smolinka et al., 2011)"
+        ],
+        [
+          "Start-up time (coldᵇ/warm)",
+          "",
+          "1–2 h/1–5 min (Buttler & Spliethoff, 2018)",
+          "<20 min/<20 min (ESMAP & World Bank Group, 2020)",
+          "5–10 min/>10 s (Buttler & Spliethoff, 2018)"
+        ],
+        [
+          "Technical properties / Electrolyte",
+          "/",
+          "10–30 % KOH (Li & Baek, 2021)",
+          "Quaternary ammonia polysulfide or optional dilute caustic solution (Li & Baek, 2021)",
+          "Perfluoro sulfonic acid (Li & Baek, 2021)"
+        ],
+        [
+          "Operating temperature",
+          "°C",
+          "65–100 (Li & Baek, 2021)",
+          "50–70 (Li & Baek, 2021)",
+          "70–90 (Li & Baek, 2021)"
+        ],
+        [
+          "Operating pressure",
+          "Bar",
+          "1–200 (Grigoriev et al., 2020);\n<30 (ESMAP & World Bank Group, 2020)",
+          "<35 (ESMAP & World Bank Group, 2020)",
+          "1–350 (Grigoriev et al., 2020);\n<70 (ESMAP & World Bank Group, 2020)"
+        ],
+        [
+          "Catalyst material",
+          "/",
+          "Ni/Fe based species (Li & Baek, 2021)",
+          "Ni-based materials (Li & Baek, 2021)",
+          "Platinum groups (Li & Baek, 2021)"
+        ],
+        [
+          "Bipolar plate material",
+          "/",
+          "Ni plate (Li & Baek, 2021)",
+          "Ni plate (Li & Baek, 2021)",
+          "Titanium plate (Li & Baek, 2021)"
+        ],
+        [
+          "Current density",
+          "mA cm⁻²",
+          "200–500 (Li & Baek, 2021)",
+          "100–500 (Li & Baek, 2021)\n200–2000 (ESMAP & World Bank Group, 2020)",
+          "800–2.300 (Li & Baek, 2021)\n2.200 (Danish Energy Agency, 2022)"
+        ],
+        [
+          "Developing status",
+          "/",
+          "Mature technology (Li & Baek, 2021)",
+          "Under development (Li & Baek, 2021)",
+          "Mature technology for small scale (Li & Baek, 2021)"
+        ]
+      ],
+      "value_entries": 42,
+      "numeric_value_cells": 29,
+      "textual_value_cells": 11,
+      "original_slash_absence_marker_cells": 2,
+      "complete_original_footnotes": {
+        "a": "Notably, significant scale effects are expected for large scale systems (IRENA, 2020a).",
+        "b": "Defined below 50 °C temperature.",
+        "c": "Notably, system efficiency of PEMEL is known to be a non-linear function of the power input. Included values may refer to regarding the efficiency reference power depending on the source consulted."
+      },
+      "scientific_scope_findings": [
+        "All fourteen parameter rows across all three technologies, including each alternative literature value and its own citation, are directly checked. Ranges count as value cells, not endpoint counts; bibliographic years do not inflate numeric value counts.",
+        "The two AEMEL CAPEX/OPEX slash entries are original unspecified/absent parameter entries, not numerical zeros and not the conditional /b topology markers in Table 5.",
+        "The AEMEL 74.7% explicitly denotes cell efficiency, while row context is System/LHV. Do not silently interpret it as directly comparable system LHV efficiency or infer a performance ranking from the largest number.",
+        "Stack lives explicitly mix years and hours; AEMEL system lifetime 20 has no unit printed in that cell or its blank row-unit column. Preserve that lack rather than silently label it years or convert operating hours to calendar years.",
+        "Cold start footnote b defines below50°C; cold/warm order and each h/min/s unit and inequality remain material. Original >10s warm PEMEL value is not silently changed to <10s.",
+        "Scale footnote a and power-dependent PEMEL efficiency footnote c condition the cost/efficiency claims. Keep the technology/citation-specific alternative ranges, not one arbitrarily selected representative.",
+        "Structured auxiliary cells preserve correct AEL <30Bar and AEMEL <35Bar. The same auxiliary flat exact_visible_text incorrectly states AEL <35Bar. Preserve this intra-output inconsistency; numeric flat-string heuristics cannot approve the structured and flat records together.",
+        "Raw parser shifts CAPEX825 into OPEX, OPEX5 into efficiency, stack55000–96000h into system life, PEMEL20y into partload, AEL1–200Bar into temperature, and fragments current-density/development rows. All original raw mistakes remain saved.",
+        "Literal punctuation such as 1.500–2.200USD/kW and 60.000–100.000h is retained. Original alternatives provide context, but this record does not silently normalize thousands separators or approve extrapolation."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-006.png",
+            "sha256": "de90c4382c82eb29d1ea5432c55bcb185596dd9effd0acd606c5342a10c3a8d9"
+          },
+          {
+            "id": "crop-70",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\4e81147f92404dec01dc281db6e3129394e053e53998f0b3266f09ea03eb9a1d.jpg",
+            "sha256": "adbc11a1c2f541de3223ecd43534a88a8a888acafd8a530553557cbbe41f9633"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          70
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 70,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "6971c8e465785add46b5a7b76fbd6a91c0beab5704a99eac6fb6658586396f43",
+        "associated_frozen_original_block_ids": [
+          "paper_95eebae164cc42fd6005:b64"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\4e81147f92404dec01dc281db6e3129394e053e53998f0b3266f09ea03eb9a1d.jpg",
+        "actual_original_crop_sha256": "adbc11a1c2f541de3223ecd43534a88a8a888acafd8a530553557cbbe41f9633",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\006\\record.json",
+        "actual_page_record_sha256": "6e42e143052a39aad7243b7faca9bf40a91a9da3f7e548c66d1553ac9fab6450",
+        "original_durable_handle": "run_2753ecc9dc984e24ba7192209912bf64",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_95eebae164cc42fd6005",
+          "actual_pdf_page": 6,
+          "raw_parser_content_index": 70,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "6971c8e465785add46b5a7b76fbd6a91c0beab5704a99eac6fb6658586396f43",
+          "associated_frozen_original_block_ids": [
+            "paper_95eebae164cc42fd6005:b64"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\4e81147f92404dec01dc281db6e3129394e053e53998f0b3266f09ea03eb9a1d.jpg",
+          "actual_original_crop_sha256": "adbc11a1c2f541de3223ecd43534a88a8a888acafd8a530553557cbbe41f9633",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\006\\record.json",
+          "actual_page_record_sha256": "6e42e143052a39aad7243b7faca9bf40a91a9da3f7e548c66d1553ac9fab6450",
+          "original_durable_handle": "run_2753ecc9dc984e24ba7192209912bf64",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Parameter</td><td>Unit</td><td>AEL</td><td>AEMEL</td><td>PEMEL</td></tr><tr><td>CAPEXa</td><td>USD/kW</td><td>850-1600 USD/kW (Buttler &Spliethoff, 2018) 800USD/kW(ESMAP&WorldBank Group,2020)</td><td></td><td>1.500-2.200 USD/kW(Buttler &Spliethoff, 2018) 1100USD/kW(ESMAP&WorldBank</td></tr><tr><td>OPEX</td><td>%of</td><td>825 USD/kW (Danish Energy Agency, 2022) 2-3(Buttler &Spliethoff,2018)</td><td></td><td>Group,2020) 1000 USD/kW (Danish Energy Agency, 2022) 3-5(Buttler&Spliethoff,2018)</td></tr><tr><td>Efficiency (System,</td><td>invest/y</td><td>5 % (Danish Energy Agency, 2022)</td><td></td><td>7 (Danish Energy Agency, 2022) 46-60 (Buttler & Spliethoff, 2018)</td></tr><tr><td>LHV)</td><td>%</td><td>51-60(Buttler &Spliethoff,2018) 42-66 (IRENA,2020a)</td><td>74.7 % cell efficiency (Li & Baek, 2021)</td><td>40-66 (IRENA,2020a)</td></tr><tr><td>Lifetime stack</td><td></td><td>8-15 y(Buttler & Spliethoff, 2018)</td><td>5000 h(ESMAP & World Bank Group,2020)</td><td>60.000-100.000 h(Buttler &Spliethoff, 2018)</td></tr><tr><td>Lifetime system</td><td></td><td>55,000-96,000 h (Felgenhauer et al., 2015) 30-50 y(Pewinksi, 2015)</td><td>20 (Motealleha et al.,2021)</td><td>80,000 h(ESMAP&World BankGroup,2020) 20 y (Buttler & Spliethoff, 2018)</td></tr><tr><td>Min. part-load</td><td>%</td><td>20 (Buttler &Spliethoff, 2018)</td><td>5 (ESMAP & World Bank Group, 2020)</td><td>20 y (ESMAP & World Bank Group,2020) 0 (Buttler &Spliethoff, 2018)</td></tr><tr><td>Start-up time</td><td></td><td></td><td><20min/《20min(ESMAP&WorldBank</td><td>5 (Smolinka et al., 2011)</td></tr><tr><td>(coldb/warm)</td><td></td><td>1-2h/1-5min(Buttler&Spliethoff,2018)</td><td>Group,2020)</td><td>5-10min/>10s(Buttler&Spliethoff,2018)</td></tr><tr><td>Technical properties</td><td></td><td></td><td></td><td></td></tr><tr><td>Electrolyte</td><td>/</td><td>10-30 %KOH(Li&Baek,2021)</td><td>Quaternary ammoniapolysulfide or optional dilute caustic solution (Li & Baek, 2021)</td><td>Perfluoro sulfonic acid(Li&Baek,2021)</td></tr><tr><td>Operating temperature</td><td>°℃</td><td>65-100 (Li&Baek,2021) 1-200 (Grigoriev et al., 2020);</td><td>50-70 (Li& Baek,2021)</td><td>70-90 (Li& Baek,2021)</td></tr><tr><td>Operatingpressure</td><td>Bar</td><td><30 (ESMAP & World Bank Group, 2020)</td><td><35(ESMAP&World Bank Group,2020)</td><td>1-350 (Grigoriev et al.,2020) <70 (ESMAP & World Bank Group, 2020)</td></tr><tr><td>Catalyst material</td><td>/</td><td>Ni/Fe based species (Li & Baek, 2021)</td><td>Ni-based materials (Li & Baek, 2021)</td><td>Platinum groups (Li & Baek, 2021)</td></tr><tr><td>Bipolar plate material</td><td>/</td><td>Ni plate (Li & Baek, 2021)</td><td>Ni plate (Li & Baek, 2021)</td><td>Titanium plate (Li & Baek, 2021)</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>）2.200 (Danish Energy Agency,2022)</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Current density</td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>mA cm-2</td><td></td><td></td><td></td></tr><tr><td></td><td></td><td>200-500 (Li& Baek,2021)</td><td>100-500(Li&Baek,2021)</td><td>800-2.300 (Li &Baek,2021)</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td>200-2000(ESMAP& World Bank Group,2020)</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Developing status</td><td></td><td>Mature technology (Li & Baek, 2021)</td><td>Under development(Li&Baek,2021)</td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>Mature technology for small scale (Li & Baek,</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td>2021)</td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td><td></td></tr><tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Parameter",
+            "Unit",
+            "AEL",
+            "AEMEL",
+            "PEMEL"
+          ],
+          [
+            "CAPEXa",
+            "USD/kW",
+            "850-1600 USD/kW (Buttler &Spliethoff, 2018) 800USD/kW(ESMAP&WorldBank Group,2020)",
+            "",
+            "1.500-2.200 USD/kW(Buttler &Spliethoff, 2018) 1100USD/kW(ESMAP&WorldBank"
+          ],
+          [
+            "OPEX",
+            "%of",
+            "825 USD/kW (Danish Energy Agency, 2022) 2-3(Buttler &Spliethoff,2018)",
+            "",
+            "Group,2020) 1000 USD/kW (Danish Energy Agency, 2022) 3-5(Buttler&Spliethoff,2018)"
+          ],
+          [
+            "Efficiency (System,",
+            "invest/y",
+            "5 % (Danish Energy Agency, 2022)",
+            "",
+            "7 (Danish Energy Agency, 2022) 46-60 (Buttler & Spliethoff, 2018)"
+          ],
+          [
+            "LHV)",
+            "%",
+            "51-60(Buttler &Spliethoff,2018) 42-66 (IRENA,2020a)",
+            "74.7 % cell efficiency (Li & Baek, 2021)",
+            "40-66 (IRENA,2020a)"
+          ],
+          [
+            "Lifetime stack",
+            "",
+            "8-15 y(Buttler & Spliethoff, 2018)",
+            "5000 h(ESMAP & World Bank Group,2020)",
+            "60.000-100.000 h(Buttler &Spliethoff, 2018)"
+          ],
+          [
+            "Lifetime system",
+            "",
+            "55,000-96,000 h (Felgenhauer et al., 2015) 30-50 y(Pewinksi, 2015)",
+            "20 (Motealleha et al.,2021)",
+            "80,000 h(ESMAP&World BankGroup,2020) 20 y (Buttler & Spliethoff, 2018)"
+          ],
+          [
+            "Min. part-load",
+            "%",
+            "20 (Buttler &Spliethoff, 2018)",
+            "5 (ESMAP & World Bank Group, 2020)",
+            "20 y (ESMAP & World Bank Group,2020) 0 (Buttler &Spliethoff, 2018)"
+          ],
+          [
+            "Start-up time",
+            "",
+            "",
+            "<20min/《20min(ESMAP&WorldBank",
+            "5 (Smolinka et al., 2011)"
+          ],
+          [
+            "(coldb/warm)",
+            "",
+            "1-2h/1-5min(Buttler&Spliethoff,2018)",
+            "Group,2020)",
+            "5-10min/>10s(Buttler&Spliethoff,2018)"
+          ],
+          [
+            "Technical properties",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Electrolyte",
+            "/",
+            "10-30 %KOH(Li&Baek,2021)",
+            "Quaternary ammoniapolysulfide or optional dilute caustic solution (Li & Baek, 2021)",
+            "Perfluoro sulfonic acid(Li&Baek,2021)"
+          ],
+          [
+            "Operating temperature",
+            "°℃",
+            "65-100 (Li&Baek,2021) 1-200 (Grigoriev et al., 2020);",
+            "50-70 (Li& Baek,2021)",
+            "70-90 (Li& Baek,2021)"
+          ],
+          [
+            "Operatingpressure",
+            "Bar",
+            "<30 (ESMAP & World Bank Group, 2020)",
+            "<35(ESMAP&World Bank Group,2020)",
+            "1-350 (Grigoriev et al.,2020) <70 (ESMAP & World Bank Group, 2020)"
+          ],
+          [
+            "Catalyst material",
+            "/",
+            "Ni/Fe based species (Li & Baek, 2021)",
+            "Ni-based materials (Li & Baek, 2021)",
+            "Platinum groups (Li & Baek, 2021)"
+          ],
+          [
+            "Bipolar plate material",
+            "/",
+            "Ni plate (Li & Baek, 2021)",
+            "Ni plate (Li & Baek, 2021)",
+            "Titanium plate (Li & Baek, 2021)"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "）2.200 (Danish Energy Agency,2022)"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Current density",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "mA cm-2",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "200-500 (Li& Baek,2021)",
+            "100-500(Li&Baek,2021)",
+            "800-2.300 (Li &Baek,2021)"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "200-2000(ESMAP& World Bank Group,2020)",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Developing status",
+            "",
+            "Mature technology (Li & Baek, 2021)",
+            "Under development(Li&Baek,2021)",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "Mature technology for small scale (Li & Baek,"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "2021)"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 2 Technical characteristics and selected parameter of AEL, AEMEL and PEMEL technology from recent literature. "
+        ],
+        "original_parser_footnotes": [
+          "a Notably, significant scale effects are expected for large scale systems (IRENA, 2020a). b Defined below 50 °C temperature. c Notably, system efficiency of PEMEL is known to be a non-linear function of the power input. Included values may refer to regarding the efficiency reference power depending on the source consulted. "
+        ],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 2",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-70"
+              ],
+              "exact_visible_text": "Table 2\nTechnical characteristics and selected parameter of AEL, AEMEL and PEMEL technology from recent literature.\nParameter Unit AEL AEMEL PEMEL\nCAPEXᵃ USD/kW 850–1600 USD/kW (Buttler & Spliethoff, 2018) / 1.500–2.200 USD/kW (Buttler & Spliethoff, 2018)\n800 USD/kW (ESMAP & World Bank Group, 2020) 1100 USD/kW (ESMAP & World Bank Group, 2020)\n825 USD/kW (Danish Energy Agency, 2022) 1000 USD/kW (Danish Energy Agency, 2022)\nOPEX % of invest/y 2–3 (Buttler & Spliethoff, 2018) / 3–5 (Buttler & Spliethoff, 2018)\n5 % (Danish Energy Agency, 2022) 7 (Danish Energy Agency, 2022)\nEfficiencyᶜ (System, LHV) % 51–60 (Buttler & Spliethoff, 2018) 74.7 % cell efficiency (Li & Baek, 2021) 46–60 (Buttler & Spliethoff, 2018)\n42–66 (IRENA, 2020a) 40–66 (IRENA, 2020a)\nLifetime stack 8–15 y (Buttler & Spliethoff, 2018) 5000 h (ESMAP & World Bank Group, 2020) 60.000–100.000 h (Buttler & Spliethoff, 2018)\n55,000–96,000 h (Felgenhauer et al., 2015) 80,000 h (ESMAP & World Bank Group, 2020)\nLifetime system 30–50 y (Pewinksi, 2015) 20 (Motealleha et al., 2021) 20 y (Buttler & Spliethoff, 2018)\n20 y (ESMAP & World Bank Group, 2020)\nMin. part-load % 20 (Buttler & Spliethoff, 2018) 5 (ESMAP & World Bank Group, 2020) 0 (Buttler & Spliethoff, 2018)\n5 (Smolinka et al., 2011)\nStart-up time (coldᵇ/warm) 1–2 h/1–5 min (Buttler & Spliethoff, 2018) <20 min/<20 min (ESMAP & World Bank Group, 2020) 5–10 min/>10 s (Buttler & Spliethoff, 2018)\nTechnical properties\nElectrolyte / 10–30 % KOH (Li & Baek, 2021) Quaternary ammonia polysulfide or optional dilute caustic solution (Li & Baek, 2021) Perfluoro sulfonic acid (Li & Baek, 2021)\nOperating temperature °C 65–100 (Li & Baek, 2021) 50–70 (Li & Baek, 2021) 70–90 (Li & Baek, 2021)\nOperating pressure Bar 1–200 (Grigoriev et al., 2020); <35 (ESMAP & World Bank Group, 2020) <35 (ESMAP & World Bank Group, 2020) 1–350 (Grigoriev et al., 2020);\n<70 (ESMAP & World Bank Group, 2020)\nCatalyst material / Ni/Fe based species (Li & Baek, 2021) Ni-based materials (Li & Baek, 2021) Platinum groups (Li & Baek, 2021)\nBipolar plate material / Ni plate (Li & Baek, 2021) Ni plate (Li & Baek, 2021) Titanium plate (Li & Baek, 2021)\nCurrent density mA cm⁻² 200–500 (Li & Baek, 2021) 100–500 (Li & Baek, 2021) 800–2.300 (Li & Baek, 2021)\n200–2000 (ESMAP & World Bank Group, 2020) 2.200 (Danish Energy Agency, 2022)\nDeveloping status / Mature technology (Li & Baek, 2021) Under development (Li & Baek, 2021) Mature technology for small scale (Li & Baek, 2021)",
+              "table_rows": [
+                [
+                  "Parameter",
+                  "Unit",
+                  "AEL",
+                  "AEMEL",
+                  "PEMEL"
+                ],
+                [
+                  "CAPEXᵃ",
+                  "USD/kW",
+                  "850–1600 USD/kW (Buttler & Spliethoff, 2018)\n800 USD/kW (ESMAP & World Bank Group, 2020)\n825 USD/kW (Danish Energy Agency, 2022)",
+                  "/",
+                  "1.500–2.200 USD/kW (Buttler & Spliethoff, 2018)\n1100 USD/kW (ESMAP & World Bank Group, 2020)\n1000 USD/kW (Danish Energy Agency, 2022)"
+                ],
+                [
+                  "OPEX",
+                  "% of invest/y",
+                  "2–3 (Buttler & Spliethoff, 2018)\n5 % (Danish Energy Agency, 2022)",
+                  "/",
+                  "3–5 (Buttler & Spliethoff, 2018)\n7 (Danish Energy Agency, 2022)"
+                ],
+                [
+                  "Efficiencyᶜ (System,\nLHV)",
+                  "%",
+                  "51–60 (Buttler & Spliethoff, 2018)\n42–66 (IRENA, 2020a)",
+                  "74.7 % cell efficiency (Li & Baek, 2021)",
+                  "46–60 (Buttler & Spliethoff, 2018)\n40–66 (IRENA, 2020a)"
+                ],
+                [
+                  "Lifetime stack",
+                  "",
+                  "8–15 y (Buttler & Spliethoff, 2018)\n55,000–96,000 h (Felgenhauer et al., 2015)",
+                  "5000 h (ESMAP & World Bank Group, 2020)",
+                  "60.000–100.000 h (Buttler & Spliethoff, 2018)\n80,000 h (ESMAP & World Bank Group, 2020)"
+                ],
+                [
+                  "Lifetime system",
+                  "",
+                  "30–50 y (Pewinksi, 2015)",
+                  "20 (Motealleha et al., 2021)",
+                  "20 y (Buttler & Spliethoff, 2018)\n20 y (ESMAP & World Bank Group, 2020)"
+                ],
+                [
+                  "Min. part-load",
+                  "%",
+                  "20 (Buttler & Spliethoff, 2018)",
+                  "5 (ESMAP & World Bank Group, 2020)",
+                  "0 (Buttler & Spliethoff, 2018)\n5 (Smolinka et al., 2011)"
+                ],
+                [
+                  "Start-up time\n(coldᵇ/warm)",
+                  "",
+                  "1–2 h/1–5 min (Buttler & Spliethoff, 2018)",
+                  "<20 min/<20 min (ESMAP & World Bank Group, 2020)",
+                  "5–10 min/>10 s (Buttler & Spliethoff, 2018)"
+                ],
+                [
+                  "Technical properties\nElectrolyte",
+                  "/",
+                  "10–30 % KOH (Li & Baek, 2021)",
+                  "Quaternary ammonia polysulfide or optional\ndilute caustic solution (Li & Baek, 2021)",
+                  "Perfluoro sulfonic acid (Li & Baek, 2021)"
+                ],
+                [
+                  "Operating temperature",
+                  "°C",
+                  "65–100 (Li & Baek, 2021)",
+                  "50–70 (Li & Baek, 2021)",
+                  "70–90 (Li & Baek, 2021)"
+                ],
+                [
+                  "Operating pressure",
+                  "Bar",
+                  "1–200 (Grigoriev et al., 2020);\n<30 (ESMAP & World Bank Group, 2020)",
+                  "<35 (ESMAP & World Bank Group, 2020)",
+                  "1–350 (Grigoriev et al., 2020);\n<70 (ESMAP & World Bank Group, 2020)"
+                ],
+                [
+                  "Catalyst material",
+                  "/",
+                  "Ni/Fe based species (Li & Baek, 2021)",
+                  "Ni-based materials (Li & Baek, 2021)",
+                  "Platinum groups (Li & Baek, 2021)"
+                ],
+                [
+                  "Bipolar plate material",
+                  "/",
+                  "Ni plate (Li & Baek, 2021)",
+                  "Ni plate (Li & Baek, 2021)",
+                  "Titanium plate (Li & Baek, 2021)"
+                ],
+                [
+                  "Current density",
+                  "mA cm⁻²",
+                  "200–500 (Li & Baek, 2021)",
+                  "100–500 (Li & Baek, 2021)\n200–2000 (ESMAP & World Bank Group, 2020)",
+                  "800–2.300 (Li & Baek, 2021)\n2.200 (Danish Energy Agency, 2022)"
+                ],
+                [
+                  "Developing status",
+                  "/",
+                  "Mature technology (Li & Baek, 2021)",
+                  "Under development (Li & Baek, 2021)",
+                  "Mature technology for small scale (Li & Baek,\n2021)"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [
+                "ᵃ Notably, significant scale effects are expected for large scale systems (IRENA, 2020a).",
+                "ᵇ Defined below 50 °C temperature.",
+                "ᶜ Notably, system efficiency of PEMEL is known to be a non-linear function of the power input. Included values may refer to regarding the efficiency reference power depending on the source consulted."
+              ],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {
+              "2": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {
+              "30": 1
+            },
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "2": 1,
+              "35": 1
+            },
+            "parser_row_lengths": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "auxiliary_row_lengths": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "comparison_ignores_only_layout_whitespace_without_modifying_saved_originals": true,
+      "entire_primary_parameter_citations_and_conditions_directly_checked": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 2,
+      "page": 7,
+      "caption": "Table 3. Technical characteristics and selected parameter of stationary AFC, PEMFC and PAFC technology from recent literature.",
+      "columns": [
+        "Parameter",
+        "Unit",
+        "AFC",
+        "PEMFC",
+        "PAFC"
+      ],
+      "rows": [
+        [
+          "CAPEX",
+          "USD/kWel",
+          "700 (ESMAP & World Bank Group, 2020)\n1800 (Kirubakaran et al., 2009)",
+          "1400-4000 (ESMAP & World Bank Group, 2020)\n1430 USD/kW (Agency, 2022)\n<1500 (Kirubakaran et al., 2009)",
+          "4000-5000 (ESMAP & World Bank Group, 2020)\n2100 (Kirubakaran et al., 2009)"
+        ],
+        [
+          "OPEX",
+          "% of investment",
+          "13.4 USD/kW/y (any technology) (Mongrid et al., 2020)",
+          "5 or 100$/kW/y (Agency, 2022)\n13.4 USD/kW/y (any technology) (Mongrid et al., 2020)",
+          "13.4 USD/kW/y (any technology) (Mongrid et al., 2020)"
+        ],
+        [
+          "Electrical efficiency (System, LHV)",
+          "%",
+          "45-58 (ESMAP & World Bank Group, 2020)\n45-60 (Adamson, 2007)",
+          "55-65 (ESMAP & World Bank Group, 2020)\n50 (Agency, 2022)\n40 (Töpler & Lehmann, 2016)",
+          "45-55 (ESMAP & World Bank Group, 2020)\n40-45 (Töpler & Lehmann, 2016)\n37-42 (Giorgi, 2013)"
+        ],
+        [
+          "Lifetime stack",
+          "h",
+          "5000-6000 (ESMAP & World Bank Group, 2020)\n8000 (Fuelcell.co.uk)",
+          "20,000-40,000 (ESMAP & World Bank Group, 2020) or\n34,000 h according to the company Ballard (ESMAP & World Bank Group, 2020)\n10 y (Agency, 2022)\n5000-20,000 (Bae et al., 2012)",
+          "70,000-80,000 (ESMAP & World Bank Group, 2020)\nor\n70,000 h according to the company Doosan (ESMAP & World Bank Group, 2020)\n>50,000 (Giorgi, 2013)"
+        ],
+        [
+          "Lifetime system",
+          "y",
+          "20 (ESMAP & World Bank Group, 2020)",
+          "20 (ESMAP & World Bank Group, 2020)",
+          "2 (ESMAP & World Bank Group, 2020)"
+        ]
+      ],
+      "value_entries": 15,
+      "numeric_value_cells": 15,
+      "textual_value_cells": 0,
+      "original_slash_absence_marker_cells": 0,
+      "complete_original_footnotes": {},
+      "scientific_scope_findings": [
+        "All five parameters across all three stationary technologies, every alternative literature/company value and citation, explicitly checked against the full page and high-resolution crop.",
+        "The OPEX row header says percent of investment but cells also supply13.4USD/kW/year and100$/kW/year. Preserve both the literal header and each local unit. Do not transform13.4USD/kW/year into13.4% or compare absolute rates to an unlabeled percentage.",
+        "PEMFC stack row unit h coexists with an explicit10y literature entry; explicit cell-specific unit takes its own meaning. PAFC system lifetime is literally2y although its reported stack life is70000–80000h; preserve primary values without a fabricated20y correction or assuming full-time utilization.",
+        "Stack-life ranges, individual company estimates and OR relationships remain separate observations. The PEMFC34000h Ballard and PAFC70000h Doosan estimates do not replace the corresponding literature ranges.",
+        "Complete page6/7 prose selects PEMFC2700USD/kWel and electrical system efficiency50% for the model. Those are paper modeling assumptions, distinct from the table alternatives and not a laboratory validation claim.",
+        "Raw parser omits OPEX/electrical-efficiency/stack-life labels, detaches alternativeCAPEX values and system-life20/20/2 from their proper row, combines efficiency/stack figures, and corrupts company34000/70000 into letter-O tokens. Structured auxiliary rows preserve these full values and scopes."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-007.png",
+            "sha256": "fafb8d2bff6bc8fb8bef3503a51c76f6c34e7c8e8d0b6cee2cda7b2edc3c8172"
+          },
+          {
+            "id": "crop-76",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\64f109a2df594fc3bc99058bc876486192fa0857eba2324e40fed0357559afb6.jpg",
+            "sha256": "d48544ccb6760c7306bccfe82267010d40b5dfeec8684eb0eeb2049a76d6f513"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          76,
+          88,
+          90
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 76,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "7647fcf046e152a4071e343a86faf04dcdac2f90e184c16b891d822153f38272",
+        "associated_frozen_original_block_ids": [
+          "paper_95eebae164cc42fd6005:b68"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\64f109a2df594fc3bc99058bc876486192fa0857eba2324e40fed0357559afb6.jpg",
+        "actual_original_crop_sha256": "d48544ccb6760c7306bccfe82267010d40b5dfeec8684eb0eeb2049a76d6f513",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\007\\record.json",
+        "actual_page_record_sha256": "456c56af6658f29f62da6bd7101d82aabd7a1b365261bccb063b90e91d66957c",
+        "original_durable_handle": "run_cf50a6377e104785a06108f7c9fe9f79",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_95eebae164cc42fd6005",
+          "actual_pdf_page": 7,
+          "raw_parser_content_index": 76,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "7647fcf046e152a4071e343a86faf04dcdac2f90e184c16b891d822153f38272",
+          "associated_frozen_original_block_ids": [
+            "paper_95eebae164cc42fd6005:b68"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\64f109a2df594fc3bc99058bc876486192fa0857eba2324e40fed0357559afb6.jpg",
+          "actual_original_crop_sha256": "d48544ccb6760c7306bccfe82267010d40b5dfeec8684eb0eeb2049a76d6f513",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\007\\record.json",
+          "actual_page_record_sha256": "456c56af6658f29f62da6bd7101d82aabd7a1b365261bccb063b90e91d66957c",
+          "original_durable_handle": "run_cf50a6377e104785a06108f7c9fe9f79",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Parameter</td><td>Unit</td><td>AFC</td><td>PEMFC</td><td>PAFC</td></tr><tr><td rowspan=\"2\">CAPEX</td><td rowspan=\"2\">USD/kWel</td><td>700(ESMAP&World BankGroup, 2020)</td><td>1400-4000(ESMAP&WorldBankGroup,2020） 1430USD/kW(Agency,2022)</td><td>4000-5000(ESMAP&WorldBankGroup,2020) 2100(Kirubakaran et al.,2009)</td></tr><tr><td>1800(Kirubakaran et al.,2009)</td><td><1500(Kirubakaranet al.,2009)</td><td></td></tr><tr><td rowspan=\"2\"></td><td rowspan=\"2\">investment</td><td>13.4 USD/kW/y (any technology) (Mongrid et al.,2020)</td><td>5 or 100$/kW/y(Agency,2022) 13.4 USD/kW/y (any technology)</td><td>13.4 USD/kW/y(any technology)(Mongrid et al., 2020)</td></tr><tr><td></td><td>(Mongridetal.,2020)</td><td></td></tr><tr><td rowspan=\"2\">(System,LHV)</td><td rowspan=\"2\"></td><td>45-58（ESMAP&WorldBank Group,2020)</td><td>55-65(ESMAP&WorldBankGroup,2020) 50 (Agency,2022)</td><td>45-55(ESMAP&WorldBankGroup,2020) 40-45(Topler&Lehmann,2016）</td></tr><tr><td>45-60(Adamson,2007)</td><td>40(Topler&Lehmann,2016) 20,000-40,000(ESMAP&WorldBankGroup,</td><td>37-42(Giorgi,2013) 70,000-80,000(ESMAP&WorldBankGroup,2020）</td></tr><tr><td rowspan=\"2\"></td><td rowspan=\"2\"></td><td>5000-6000（ESMAP&WorldBank Group,2020)</td><td>2020)or</td><td>or</td></tr><tr><td>8000(Fuelcell.co.uk)</td><td>34,0oohaccordingtothecompanyBallard （ESMAP&WorldBankGroup,2020) 10 y(Agency,2022)</td><td>70.ooohaccordingtothecompanyDoosan (ESMAP&WorldBankGroup,2020)</td></tr><tr><td rowspan=\"2\">Lifetime system</td><td rowspan=\"2\">y</td><td></td><td>5000-20,000(Bae etal.,2012)</td><td>>50,000 (Giorgi,2013)</td></tr><tr><td>20(ESMAP&World BankGroup, 2020)</td><td>20(ESMAP&WorldBankGroup,2020)</td><td>2(ESMAP&World BankGroup,2020)</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Parameter",
+            "Unit",
+            "AFC",
+            "PEMFC",
+            "PAFC"
+          ],
+          [
+            "CAPEX",
+            "USD/kWel",
+            "700(ESMAP&World BankGroup, 2020)",
+            "1400-4000(ESMAP&WorldBankGroup,2020） 1430USD/kW(Agency,2022)",
+            "4000-5000(ESMAP&WorldBankGroup,2020) 2100(Kirubakaran et al.,2009)"
+          ],
+          [
+            "1800(Kirubakaran et al.,2009)",
+            "<1500(Kirubakaranet al.,2009)",
+            ""
+          ],
+          [
+            "",
+            "investment",
+            "13.4 USD/kW/y (any technology) (Mongrid et al.,2020)",
+            "5 or 100$/kW/y(Agency,2022) 13.4 USD/kW/y (any technology)",
+            "13.4 USD/kW/y(any technology)(Mongrid et al., 2020)"
+          ],
+          [
+            "",
+            "(Mongridetal.,2020)",
+            ""
+          ],
+          [
+            "(System,LHV)",
+            "",
+            "45-58（ESMAP&WorldBank Group,2020)",
+            "55-65(ESMAP&WorldBankGroup,2020) 50 (Agency,2022)",
+            "45-55(ESMAP&WorldBankGroup,2020) 40-45(Topler&Lehmann,2016）"
+          ],
+          [
+            "45-60(Adamson,2007)",
+            "40(Topler&Lehmann,2016) 20,000-40,000(ESMAP&WorldBankGroup,",
+            "37-42(Giorgi,2013) 70,000-80,000(ESMAP&WorldBankGroup,2020）"
+          ],
+          [
+            "",
+            "",
+            "5000-6000（ESMAP&WorldBank Group,2020)",
+            "2020)or",
+            "or"
+          ],
+          [
+            "8000(Fuelcell.co.uk)",
+            "34,0oohaccordingtothecompanyBallard （ESMAP&WorldBankGroup,2020) 10 y(Agency,2022)",
+            "70.ooohaccordingtothecompanyDoosan (ESMAP&WorldBankGroup,2020)"
+          ],
+          [
+            "Lifetime system",
+            "y",
+            "",
+            "5000-20,000(Bae etal.,2012)",
+            ">50,000 (Giorgi,2013)"
+          ],
+          [
+            "20(ESMAP&World BankGroup, 2020)",
+            "20(ESMAP&WorldBankGroup,2020)",
+            "2(ESMAP&World BankGroup,2020)"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 3 Technical characteristics and selected parameter of stationary AFC, PEMFC and PAFC technology from recent literature. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 3",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-76"
+              ],
+              "exact_visible_text": "Table 3\nTechnical characteristics and selected parameter of stationary AFC, PEMFC and PAFC technology from recent literature.\nParameter Unit AFC PEMFC PAFC\nCAPEX USD/kWel 700 (ESMAP & World Bank Group, 2020)\n1800 (Kirubakaran et al., 2009)\n1400-4000 (ESMAP & World Bank Group, 2020)\n1430 USD/kW (Agency, 2022)\n<1500 (Kirubakaran et al., 2009)\n4000-5000 (ESMAP & World Bank Group, 2020)\n2100 (Kirubakaran et al., 2009)\nOPEX % of\ninvestment\n13.4 USD/kW/y (any technology)\n(Mongrid et al., 2020)\n5 or 100$/kW/y (Agency, 2022)\n13.4 USD/kW/y (any technology)\n(Mongrid et al., 2020)\n13.4 USD/kW/y (any technology) (Mongrid et al.,\n2020)\nElectrical efficiency\n(System, LHV)\n%\n45-58 (ESMAP & World Bank\nGroup, 2020)\n45-60 (Adamson, 2007)\n55-65 (ESMAP & World Bank Group, 2020)\n50 (Agency, 2022)\n40 (Töpler & Lehmann, 2016)\n45-55 (ESMAP & World Bank Group, 2020)\n40-45 (Töpler & Lehmann, 2016)\n37-42 (Giorgi, 2013)\nLifetime stack h 5000-6000 (ESMAP & World Bank\nGroup, 2020)\n8000 (Fuelcell.co.uk)\n20,000-40,000 (ESMAP & World Bank Group,\n2020) or\n34,000 h according to the company Ballard\n(ESMAP & World Bank Group, 2020)\n10 y (Agency, 2022)\n5000-20,000 (Bae et al., 2012)\n70,000-80,000 (ESMAP & World Bank Group, 2020)\nor\n70,000 h according to the company Doosan\n(ESMAP & World Bank Group, 2020)\n>50,000 (Giorgi, 2013)\nLifetime system y 20 (ESMAP & World Bank Group,\n2020)\n20 (ESMAP & World Bank Group, 2020) 2 (ESMAP & World Bank Group, 2020)",
+              "table_rows": [
+                [
+                  "Parameter",
+                  "Unit",
+                  "AFC",
+                  "PEMFC",
+                  "PAFC"
+                ],
+                [
+                  "CAPEX",
+                  "USD/kWel",
+                  "700 (ESMAP & World Bank Group, 2020)\n1800 (Kirubakaran et al., 2009)",
+                  "1400-4000 (ESMAP & World Bank Group, 2020)\n1430 USD/kW (Agency, 2022)\n<1500 (Kirubakaran et al., 2009)",
+                  "4000-5000 (ESMAP & World Bank Group, 2020)\n2100 (Kirubakaran et al., 2009)"
+                ],
+                [
+                  "OPEX",
+                  "% of\ninvestment",
+                  "13.4 USD/kW/y (any technology)\n(Mongrid et al., 2020)",
+                  "5 or 100$/kW/y (Agency, 2022)\n13.4 USD/kW/y (any technology)\n(Mongrid et al., 2020)",
+                  "13.4 USD/kW/y (any technology) (Mongrid et al.,\n2020)"
+                ],
+                [
+                  "Electrical efficiency\n(System, LHV)",
+                  "%",
+                  "45-58 (ESMAP & World Bank\nGroup, 2020)\n45-60 (Adamson, 2007)",
+                  "55-65 (ESMAP & World Bank Group, 2020)\n50 (Agency, 2022)\n40 (Töpler & Lehmann, 2016)",
+                  "45-55 (ESMAP & World Bank Group, 2020)\n40-45 (Töpler & Lehmann, 2016)\n37-42 (Giorgi, 2013)"
+                ],
+                [
+                  "Lifetime stack",
+                  "h",
+                  "5000-6000 (ESMAP & World Bank\nGroup, 2020)\n8000 (Fuelcell.co.uk)",
+                  "20,000-40,000 (ESMAP & World Bank Group,\n2020) or\n34,000 h according to the company Ballard\n(ESMAP & World Bank Group, 2020)\n10 y (Agency, 2022)\n5000-20,000 (Bae et al., 2012)",
+                  "70,000-80,000 (ESMAP & World Bank Group, 2020)\nor\n70,000 h according to the company Doosan\n(ESMAP & World Bank Group, 2020)\n>50,000 (Giorgi, 2013)"
+                ],
+                [
+                  "Lifetime system",
+                  "y",
+                  "20 (ESMAP & World Bank Group,\n2020)",
+                  "20 (ESMAP & World Bank Group, 2020)",
+                  "2 (ESMAP & World Bank Group, 2020)"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {
+              "34,0": 1,
+              "70": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {
+              "34,000": 1,
+              "70,000": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "3": 1
+            },
+            "parser_row_lengths": [
+              5,
+              5,
+              3,
+              5,
+              3,
+              5,
+              3,
+              5,
+              3,
+              5,
+              3
+            ],
+            "auxiliary_row_lengths": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "comparison_ignores_only_layout_whitespace_without_modifying_saved_originals": true,
+      "entire_primary_parameter_citations_and_conditions_directly_checked": true,
+      "expert_gold_or_scientific_reference_approval": false
+    }
+  ],
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "expert_gold_or_scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false
+}

@@ -1,0 +1,100 @@
+{
+  "status": "COMPLETE_SINGLE_TABLE_PIXEL_TRANSCRIPTION_REVIEW_WITH_PARSER_ROW_ERRORS_RETAINED",
+  "scope": {
+    "paper_id": "paper_95eebae164cc42fd6005",
+    "actual_pdf_page": 5,
+    "raw_parser_content_index": 67,
+    "visible_label": "Table 1",
+    "parameter_rows": 7,
+    "technology_value_cells": 14
+  },
+  "source_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+  "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+  "actual_directly_viewed_full_page_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-005.png",
+  "full_page_sha256": "bd6cc717b123d51ae467603a80b686c6f24839faf356e8e4a346e87f0765bae3",
+  "actual_directly_viewed_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\e4cf8144abfd534f4ce15817b765cd99697e8f85dea9c683b0246fdebb262eb8.jpg",
+  "crop_sha256": "5c2fbb7d2d44bd3e567cee6269ebcb761649bfae2fa2c439b6775011b2f2d624",
+  "original_matrix_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-original-visual-review-matrix-v2.json",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "original_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\005\\record.json",
+  "original_page_record_sha256": "e893cc39681aa4031b1d194813a675e648686557243de8079362fba35ca4b4bd",
+  "original_durable_handle": "run_9999e846d8f24058ad94e74833b09e44",
+  "auxiliary_provider": "gemini",
+  "auxiliary_model": "gemini-3.5-flash-lite",
+  "direct_pixel_checked_rows": [
+    [
+      "Parameter",
+      "Lead-acid",
+      "Lithium-ion"
+    ],
+    [
+      "Costs [USD/kWh]",
+      "175 (Moner-Girona et al., 2018)\n150-500 (Spataru & Bouffaron, 2016)",
+      "500-1500 (Spataru & Bouffaron, 2016)"
+    ],
+    [
+      "O&M costs USD/kW/y",
+      "15 (Ghandi & Srinivasan, 2020)",
+      "5 (Ghandi & Srinivasan, 2020)"
+    ],
+    [
+      "C-rate [h⁻¹]",
+      "0.1 (Sen, 2018)",
+      "0.5 (Spataru & Bouffaron, 2016)\n1-2 (Huld et al., 2017)"
+    ],
+    [
+      "DoD [%]",
+      "60 (Moner-Girona et al., 2018)",
+      "80"
+    ],
+    [
+      "Roundtrip efficiency [%]",
+      "70-90 (Spataru & Bouffaron, 2016)",
+      "85-95 (Spataru & Bouffaron, 2016)"
+    ],
+    [
+      "Calendar lifetime [y]",
+      "5 (Agenbroad et al., 2018; Spataru & Bouffaron, 2016)",
+      "10-15 (Spataru & Bouffaron, 2016)"
+    ],
+    [
+      "Self-discharge rate %/months",
+      "2 (Spataru & Bouffaron, 2016)",
+      "5 (Spataru & Bouffaron, 2016)"
+    ]
+  ],
+  "caption_as_visible_on_complete_page": "Table 1. Assumptions on technical and economic parameters of the battery.",
+  "caption_scope": "Assumptions selected for the study; cited ranges are retained as ranges and attributed to their original in-table sources.",
+  "complete_table_row_column_unit_range_attribution_transcription_checked": true,
+  "auxiliary_structured_rows_agree_with_direct_pixels_for_this_table": true,
+  "parser_errors": [
+    {
+      "error": "ROW_ASSOCIATION",
+      "actual_pixel_row": "Costs [USD/kWh] / Lead-acid",
+      "actual_value_and_attribution": "150-500 (Spataru & Bouffaron, 2016)",
+      "original_parser_incorrect_row": "O&M costs USD/kW/y / Lead-acid",
+      "scientific_consequence": "A capital cost range is assigned to a maintenance-cost row with a different unit."
+    },
+    {
+      "error": "MERGED_PARAMETER_LABEL",
+      "original_parser_label": "Roundtripefficiency[%] Calendarlifetime[y]",
+      "scientific_consequence": "The following lifetime values are on an unlabeled parser row. The two parameter identities must remain distinct."
+    },
+    {
+      "error": "UNLABELED_CONTINUATION_ROW",
+      "actual_pixel_row": "C-rate [h⁻¹] / Lithium-ion",
+      "actual_value_and_attribution": "1-2 (Huld et al., 2017)",
+      "scientific_consequence": "The second C-rate range is a continuation of the C-rate parameter, not a separate untyped claim."
+    }
+  ],
+  "literal_numeric_token_equality_is_insufficient_for_scientific_row_alignment": true,
+  "table2_previous_auxiliary_numeric_error_not_overwritten": true,
+  "all_original_parser_and_model_bytes_preserved": true,
+  "scientific_reference_approved": false,
+  "expert_gold": false,
+  "benchmark_grades_created": 0,
+  "study_model_assumptions_or_scientific_results_independently_validated": false,
+  "other_tables_or_plots_or_equations_fidelity_inferred": false,
+  "full_scientific_evaluation_complete": false,
+  "model_calls": 0
+}

@@ -1,0 +1,70 @@
+{
+  "gpu_config_receipt": {
+    "original_path": "C:\\Users\\Alandelone\\magic-pdf.json",
+    "original_sha256": "c57626bf19a5d83404d6092c5de7ac858151e52ea7645ee6fbdad6299aa28af3",
+    "original_device": "cpu",
+    "owned_config": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-parallel-v1\\gpu-retry-config-v1\\magic-pdf.json",
+    "owned_device": "cuda",
+    "owned_sha256": "a7d698a0b8e2f2b9513d6d90119e30c3db9a535a8e1838c57dd9b34b1e46f1c1",
+    "global_config_changed": false,
+    "gpu": "NVIDIA GeForce RTX 4070 Ti",
+    "cpu_retry_executed": false
+  },
+  "device_mode": "cuda",
+  "memory_settings": {
+    "MINERU_TOOLS_CONFIG_JSON": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-parallel-v1\\gpu-retry-config-v1\\magic-pdf.json",
+    "CUDA_MODULE_LOADING": "LAZY",
+    "FLAGS_allocator_strategy": "auto_growth",
+    "VIRTUAL_VRAM_SIZE": "7",
+    "RSTV4_MINERU_MMAP_WEIGHTS": "1"
+  },
+  "fresh_gpu_health_receipt": "gpu-health-retry-context-v1/latest-health.json",
+  "immediate_commit": {
+    "CommittedBytes": 32965558272,
+    "CommitLimit": 40469790720
+  },
+  "status": "PASS_OWNED_SINGLE_EXECUTION_NOT_COMPLETE_G11",
+  "phase": "actual-mineru-once",
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "job_id": "job_76d39031d8cc329ec431e6a896a08f54",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d",
+  "models_executed": 0,
+  "scientific_approval": false,
+  "historical_real_trace_not_reexecuted": true,
+  "actual_parser_readiness": {
+    "available": true,
+    "python": "C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\python.exe",
+    "detail": "\u001b[93mimport tensorrt_llm failed, if do not use tensorrt, ignore this message\u001b[0m\n\u001b[93mimport lmdeploy failed, if do not use lmdeploy, ignore this message\u001b[0m\nok magic-pdf=1.2.2 transformers=4.42.4"
+  },
+  "actual_mineru_executed": true,
+  "execution": {
+    "job_id": "job_76d39031d8cc329ec431e6a896a08f54",
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "PARSE_PDF",
+    "queue_class": "PARSER",
+    "status": "SUCCEEDED",
+    "priority": 80,
+    "idempotency_key": "caddc6a8d2696e180c9e914b3efbca04a807228226707d03252f9dd3bd854264",
+    "input_json": "{\"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\"}",
+    "input_digest": "dc21525612f70da50616658f58cc661954992ebd1ded588c660b54512aacb74f",
+    "rule_version": "parser-v1",
+    "attempts": 6,
+    "available_at": "2026-10-14T03:37:23.361008+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 6,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": "{\"blocks\": 3, \"paper_version_id\": \"paper_version_ef45db917629e2f892e0c7e7aac31d1a\", \"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\", \"references\": 6}",
+    "created_at": "2026-10-13T06:36:30.717186+00:00",
+    "updated_at": "2026-10-14T03:39:08.828510+00:00"
+  },
+  "new_actual_publication": {
+    "blocks": 3,
+    "paper_version_id": "paper_version_ef45db917629e2f892e0c7e7aac31d1a",
+    "parse_run_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+    "references": 6
+  },
+  "original_files_and_model_scientific_rows_preserved": true
+}

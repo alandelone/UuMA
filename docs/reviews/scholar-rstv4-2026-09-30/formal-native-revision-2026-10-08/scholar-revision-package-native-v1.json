@@ -1,0 +1,32 @@
+{
+  "status": "PASS_NATIVE_TWO_FIXED_ROUNDS_AND_SAVED_REPLY_HISTORY_DOWNLOAD_FAILED",
+  "roundOneBaseline": "返修轮次\n请选择轮次…\n第 1 轮 · Software fixture venue\n第 2 轮 · Software fixture venue\n\n固定被审稿 v1 / 作者结构 r1；本轮生成不会移动基线。\n\n建立第 3 轮…",
+  "roundTwoBaseline": "固定被审稿 v2 / 作者结构 r2",
+  "latestFixedFiles": 16,
+  "originalPackages": 7,
+  "originalZipBrowserDownloadVerified": false,
+  "originalPdfBrowserDownloadVerified": false,
+  "downloadNetwork": [
+    {
+      "method": "Network.requestWillBeSent",
+      "url": "http://127.0.0.1:8874/api/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/packages/submission_package_d9568167d148448f949f1bd4e1d9169b/download"
+    },
+    {
+      "method": "Network.loadingFailed",
+      "error": "net::ERR_FAILED",
+      "corsError": {
+        "corsError": "MissingAllowOriginHeader",
+        "failedParameter": ""
+      }
+    }
+  ],
+  "browserDownloadActualResponseStatus": 204,
+  "directNavigationFailure": "net::ERR_BLOCKED_BY_CLIENT",
+  "serverSameOriginHeaderRequest": {
+    "status": 200,
+    "allowOrigin": "http://127.0.0.1:3000",
+    "zipSha256": "d9fb5b177e00790b19235eead1d5f6826ed01e01aa90e5ce6895fb14d7f36671"
+  },
+  "replyHistory": "A02 的核对历史\n\n保留作者当时核对的回复、理由、版本与实际改动。当前文件暂时不可用时，历史记录仍可查看。\n\nOct 4, 2026, 12:50 PM · 作者确认修改\n\n成文 v3\n\nAccept the toolbar and selector clarification; retain the no-research-claim disclaimer.\n\nWe revised the fixture to three toolbars and two reviewer round selectors. We retained the original no-research-claim disclaimer.\n\n已核对声明：We revised the fixture to three toolbars and two reviewer round selectors.\n\nThis software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. · 当时的最终 PDF 第 1 页，可见文本第 4 行\n\nOct 4, 2026, 12:50 PM · 作者确认修改\n\n成文 v3\n\nAccept the toolbar and selector clarification; retain the no-research-claim disclaimer.\n\nWe revised the fixture to three toolbars and two reviewer round selectors. We retained the original no-research-claim disclaimer. The exact final PDF was checked.\n\n已核对声明：We revised the fixture to three toolbars and two reviewer round selectors.\n\nThis software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. · 当时的最终 PDF 第 1 页，可见文本第 4 行\n\n返回\nClose",
+  "scientificApproval": false
+}

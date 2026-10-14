@@ -1,0 +1,24 @@
+{
+  "observed_at": "2026-10-14T03:29:59.301Z",
+  "job": {
+    "id": "3381ec71b9d2",
+    "name": "honc-life-semantic-tick-v1",
+    "enabled": true,
+    "last_run_at": "2026-10-14T11:29:20.216979+08:00",
+    "last_status": "ok",
+    "last_error": null,
+    "last_delivery_error": null,
+    "failure_streak": 0,
+    "repeat": {
+      "times": null,
+      "completed": 1
+    },
+    "last_dispatch": {
+      "scheduled_at": "2026-10-14T11:28:55.134378+08:00",
+      "dispatched_at": "2026-10-14T11:29:19.184771+08:00",
+      "lateness_seconds": 24.1,
+      "kind": "on_time"
+    }
+  },
+  "scope": "Read actual native profile jobs.json after automatic gateway scheduling; no forced test notification."
+}

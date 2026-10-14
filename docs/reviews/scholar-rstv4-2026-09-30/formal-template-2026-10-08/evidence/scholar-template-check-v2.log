@@ -1,0 +1,13 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio_templates.py', 'src/rstv4/studio.py', 'src/rstv4/studio_api.py', 'tests/test_studio_templates.py']
+All checks passed!
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', '-q', 'tests/test_studio_templates.py', 'tests/test_writing_studio.py', 'tests/test_studio_structure.py']
+.............................................                            [100%]
+45 passed in 36.78s
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\tsc.cmd', '--noEmit']
+RUN ['node', 'tests/unit/studio-structure.cjs']
+17 controlled movement/group/association cases passed; no browser used.
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\oxlint.cmd', 'components/studio-template-adoption.tsx', 'components/studio-workspace.tsx', 'lib/studio-api.ts', 'lib/studio-types.ts']
+components/studio-template-adoption.tsx:79:23: error jsx-a11y(prefer-tag-over-role): Prefer `output` over `role` attribute `status`. help: Replace HTML elements with `role` attribute `status` to corresponding semantic HTML tag `output`.
+components/studio-template-adoption.tsx:102:18: error jsx-a11y(prefer-tag-over-role): Prefer `output` over `role` attribute `status`. help: Replace HTML elements with `role` attribute `status` to corresponding semantic HTML tag `output`.
+components/studio-workspace.tsx:2272:83: error jsx-a11y(prefer-tag-over-role): Prefer `output` over `role` attribute `status`. help: Replace HTML elements with `role` attribute `status` to corresponding semantic HTML tag `output`.

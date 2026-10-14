@@ -43,12 +43,15 @@ class Session:
         original = path.read_text(encoding="utf-8") if path.exists() else "# Progress\n"
         marker = "\n<!-- automatic-session-journal -->\n"
         lines = []
-        for seq, time, kind, raw in self.events():
+        for seq, time, kind, raw, file_count in self.db.execute(
+            "SELECT id,time,kind,json_remove(payload,'$.content','$.snapshot'), "
+            "CASE WHEN json_type(payload,'$.snapshot') IS NOT NULL THEN "
+            "(SELECT COUNT(*) FROM json_each(payload,'$.snapshot')) ELSE NULL END "
+            "FROM repo_session_events ORDER BY id"
+        ):
             payload = json.loads(raw)
-            payload.pop("content", None)
-            snapshot = payload.pop("snapshot", None)
-            if snapshot is not None:
-                payload["files_observed"] = len(snapshot)
+            if file_count is not None:
+                payload["files_observed"] = file_count
             lines.append(f"- {time} #{seq} {kind}: {json.dumps(payload)}")
         path.write_text(
             original.split(marker)[0] + marker + "\n".join(lines) + "\n", encoding="utf-8"
@@ -76,17 +79,27 @@ class Session:
                 continue
             path = self.root / name
             if path.is_file() and not path.is_symlink():
-                files[name] = hashlib.sha256(path.read_bytes()).hexdigest()
+                with path.open("rb") as handle:
+                    files[name] = hashlib.file_digest(handle, "sha256").hexdigest()
         return files
 
-    def active(self):
-        events = self.events()
+    def active(self, *, latest_only: bool = False):
+        if latest_only:
+            row = self.db.execute(
+                "SELECT id,time,kind,payload FROM repo_session_events ORDER BY id DESC LIMIT 1"
+            ).fetchone()
+            events = [row] if row else []
+        else:
+            events = self.events()
         if not events or events[-1][2] == "closed":
             raise ValueError("No active session. Run start first.")
         return events
 
     def start(self):
-        if self.events() and self.events()[-1][2] != "closed":
+        latest = self.db.execute(
+            "SELECT kind FROM repo_session_events ORDER BY id DESC LIMIT 1"
+        ).fetchone()
+        if latest and latest[0] != "closed":
             raise ValueError(
                 "Unfinished session: resume it, then handoff and close; history retained."
             )
@@ -98,7 +111,7 @@ class Session:
         )
 
     def run(self, command):
-        self.active()
+        self.active(latest_only=True)
         before = self.snapshot()
         # Arguments/output may contain credentials: retain only executable and outcome.
         self.append("command_started", executable=Path(command[0]).name)
@@ -113,7 +126,7 @@ class Session:
         return code
 
     def handoff(self, summary, dead_ends, next_step):
-        self.active()
+        self.active(latest_only=True)
         if any(not value.strip() for value in (summary, dead_ends, next_step)):
             raise ValueError("Summary, dead ends (or explicit none), and next step are required.")
         content = (
@@ -131,7 +144,7 @@ class Session:
         )
 
     def check(self):
-        events = self.active()
+        events = self.active(latest_only=True)
         if events[-1][2] != "handoff":
             raise ValueError("Fresh handoff required after the last operation.")
         payload = json.loads(events[-1][3])
@@ -170,7 +183,7 @@ def main():
         if args.action == "handoff":
             session.handoff(args.summary, args.dead_ends, args.next_step)
         elif args.action == "resume":
-            session.active()
+            session.active(latest_only=True)
             session.progress()
             print("Resumed unfinished session. Review HANDOFF.md and progress.md.")
         else:

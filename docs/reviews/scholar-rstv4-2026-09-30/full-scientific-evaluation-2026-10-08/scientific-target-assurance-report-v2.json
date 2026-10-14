@@ -1,0 +1,570 @@
+{
+  "scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "optimizer": {
+    "all_four_components": true,
+    "name": "DSPy-3.4-GEPA-all-components",
+    "metric_budget": 80,
+    "selected_prompt_digest": "2af81831df8e045399a00b01c6ccda4260a7bde982fb5e280fd3ac8f04e1301d",
+    "instruction_digest": "3dccecc127b9a3bab467775c074f9400f36516b015a6260836443473a0505db5",
+    "compile_test_access": 0
+  },
+  "qualified_source_windows": 79,
+  "atomic_case_status_counts": {
+    "AUDITED_AI_SCIENTIFIC_COMPARISON": 132,
+    "SOURCE_REFERENCE_UNACCEPTED": 93,
+    "AUDITED_UNRESOLVED_SCIENCE": 11,
+    "ORIGINAL_EXTRACTION_CONTRACT_FAILURE": 8,
+    "EVALUATION_CONTRACT_FAILURE": 6,
+    "PENDING_ACTUAL_EVALUATION": 2
+  },
+  "whole_candidate_scientific_target_status_counts": {
+    "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED": 11,
+    "ORIGINAL_TARGET_PROTOCOL_FAILURE_RETAINED": 4,
+    "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE": 5
+  },
+  "whole_candidate_cases": [
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "source_record_digest": "0749a091286cc0118586bf1e8d460fa2f4b07ccafb565f483df87e12d04c0c65",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "UNRESOLVED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "v1_record_digest": "75932921464a4471e318764ec6ca6b07bbeff9b4c8696fbe219ff409e60046bc",
+      "target_assurance_error": "Durable inference run_ace35858f11945aabf70eca2077b12f0 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "v2_record_digest": "e560f8fc9ac32d97a6a329def390bbd26c032861159774cfae4be3c45c227425",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "v3_record_digest": "3f34f7864120262bb88b8a2ec947c2e47df11e4058a7297e1beea5db8895a1ba"
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_95eebae164cc42fd6005\\optimized\\record.json",
+      "source_record_digest": "5f2698ec1c223bc37e66e0928b1cb7394e3185d7691b3ad3830afb010fb9e53b",
+      "status": "ORIGINAL_TARGET_PROTOCOL_FAILURE_RETAINED",
+      "error": "Durable inference run_ec0deb64157f4d8d8733b026e4385901 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "source_record_digest": "270de8a228de9463cbea0ebf2890cb1d935424a648157ac732509d1c78cdc18b",
+      "status": "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "v1_record_digest": "d4b430fe023ae418ef55da51fd6ea73c0c7fc1806516d286b471d0f950ee3463",
+      "v1_target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c3",
+            "exact_candidate_statement_quote": "The authors develop an automated radiation forecasting tool for urban areas combining a NWP model (WRF model) and an OpenFOAM solar calculator to compute shading, reflection, and other losses in the urban canopy.",
+            "actual_original_source_span_id": "paper_964b88669cfe422e7aef:b5:s7",
+            "exact_original_source_quote": "In this study, we develop an automated radiation forecasting tool for urban areas.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate accurately captures the core objective and methodology presented in the source text regarding the development of the automated radiation forecasting tool combining WRF and OpenFOAM."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing scientific evaluation thoroughly and accurately analyzes all extracted candidate atoms against the source paper spans, ensuring full preservation of meaning and scientific integrity."
+      },
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "v2_record_digest": "010f9c2f80a74c8e7dc62e689612ba8249423739a780eec6c950a2c5a7330645",
+      "target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c0",
+            "exact_candidate_statement_quote": "Accurate prediction of direct and diffuse solar radiation is of foremost importance for the deployment of photovoltaic (PV) systems.",
+            "actual_original_source_span_id": "paper_964b88669cfe422e7aef:b5:s1",
+            "exact_original_source_quote": "The accurate prediction of the direct and diffuse solar radiation is of foremost importance for deployment of photovoltaic (PV) systems.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate statement accurately preserves the core meaning of the original source span regarding the importance of predicting solar radiation for photovoltaic systems without losing context or qualifications."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing scientific evaluation thoroughly and correctly assesses the frozen extracted candidate against the original source paper, confirming that all structural components, argument links, and source reconstruction facts are fully supported.",
+        "exact_existing_overall_rationale_quote": "The evaluated candidate accurately and comprehensively captures the research problem, objectives, methodology, data and conditions, quantitative results, comparison and uncertainty, limitations, and conclusions of the original source paper."
+      },
+      "target_assurance_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_964b88669cfe422e7aef\\baseline\\independent-audit-v1\\report.json",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "v3_record_digest": "e3d80fb23bfa3abcfe188c722d1696eb26208011831d49fe1f609e32cd2821ec",
+      "actual_previous_result_retained": true
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "source_record_digest": "7c2ce62956a9685657d10c42d26e8aedc8ceb82a9af7fddb55c4800db017a304",
+      "status": "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "v1_record_digest": "b0c2ef770964fbda59fed8f2e938c5eb3fc201bcc9acf178c9fba53dcf983a82",
+      "v1_target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c11",
+            "exact_candidate_statement_quote": "The authors developed an automated radiation forecasting tool for urban areas in this study.",
+            "actual_original_source_span_id": "paper_964b88669cfe422e7aef:b5:s7",
+            "exact_original_source_quote": "In this study, we develop an automated radiation forecasting tool for urban areas.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate accurately captures the study's primary development objective, maintaining full fidelity with the original source statement."
+          },
+          {
+            "actual_candidate_atom_id": "c170",
+            "exact_candidate_statement_quote": "The use of a fine mesh can better resolve shading effects, especially for trees.",
+            "actual_original_source_span_id": "paper_964b88669cfe422e7aef:b48:s2",
+            "exact_original_source_quote": "It can be clearly seen that the use of a fine mesh can better resolve the shading effects, especially for the trees.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate statement perfectly mirrors the qualitative findings regarding mesh resolution and tree shading effects presented in the resolution studies section."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing rationale and component judgments thoroughly evaluate the candidate against the source paper. All propositions, objectives, and findings align precisely with the native text without loss of scientific meaning or introduction of unwarranted assumptions."
+      },
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "v2_record_digest": "953ce5e40433d1e7c9c8de187317bc5efc298e4c70b075c5c77b6b48a2d21031",
+      "target_assurance_error": "Bounded partition output contract exhausted: Failed to parse field evaluation_target_assurance: 2 validation errors for ExactGroundedExistingRationaleTargetAdequacy\nexact_existing_overall_rationale_quote\n  Field required [type=missing, input_value={'rationale_evaluated_obj...g and tree extraction.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nexact_overall_rationale_quote\n  Extra inputs are not permitted [type=extra_forbidden, input_value='The study aims to develo...ng and tree extraction.', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden\n\nAdapter UniqueKeyJSONAdapter failed to parse the LM response. \n\nLM Response: ```json\n{\n  \"evaluation_target_assurance\": {\n    \"rationale_evaluated_object\": \"FROZEN_CANDIDATE\",\n    \"candidate_fidelity_comparisons\": [\n      {\n        \"actual_candidate_atom_id\": \"c11\",\n        \"exact_candidate_statement_quote\": \"The authors developed an automated radiation forecasting tool for urban areas in this study.\",\n        \"actual_original_source_span_id\": \"paper_964b88669cfe422e7aef:b5:s7\",\n        \"exact_original_source_quote\": \"In this study, we develop an automated radiation forecasting tool for urban areas.\",\n        \"fidelity_finding\": \"PRESERVED\",\n        \"scientific_comparison_rationale\": \"The candidate proposition accurately captures the authors' development of the automated radiation forecasting tool as stated in the source text without altering its scientific meaning.\"\n      }\n    ],\n    \"missing_original_blocks_addressed_in_rationale\": \"NOT_APPLICABLE\",\n    \"assessment_target_adequacy\": \"ADEQUATE\",\n    \"reason\": \"The existing rationale thoroughly evaluates the frozen extracted candidate against the original source text, demonstrating faithful preservation of the scientific statements, objectives, and methods without introducing unsupported claims or omissions.\",\n    \"exact_overall_rationale_quote\": \"The study aims to develop an automated radiation forecasting tool for urban areas called URB-Solar by coupling a numerical weather prediction model with a solar calculator in OpenFOAM, alongside an algorithm for building and tree extraction.\"\n  }\n}\n``` \n\nExpected to find output fields in the LM response: [evaluation_target_assurance] \n\nActual output fields parsed from the LM response: [evaluation_target_assurance] \n\n",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "v3_record_digest": "06cb292db8d83e21678872b1141cd40ea8975c2f2582d9345d32461965ee4e52",
+      "target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c0",
+            "exact_candidate_statement_quote": "URB-Solar is an open-source tool for solar power prediction in urban areas.",
+            "actual_original_source_span_id": "paper_964b88669cfe422e7aef:b0:s1",
+            "exact_original_source_quote": "URB-Solar: An Open-Source Tool for Solar Power Prediction in Urban Areas",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate accurately reflects the title and core definition of URB-Solar as an open-source tool for urban solar power prediction presented in the original source."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing rationale thoroughly evaluates the frozen extracted candidate against the original source text, accurately capturing the scope, design, and implementation aspects of the URB-Solar tool without missing key blocks or introducing unsupported claims.",
+        "exact_existing_overall_rationale_quote": "The frozen candidate thoroughly and accurately extracts all required source aspects, atoms, and logical argument links from the original paper describing the open-source tool URB-Solar. All independent component judgments and support preconditions are met without any contract failures or missing blocks."
+      },
+      "target_assurance_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_964b88669cfe422e7aef\\optimized\\independent-audit-v1\\report.json"
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "source_record_digest": "b5636aa141b31b7a8e887a6a12abeea349fbcadc118b09958b724a1e82757682",
+      "status": "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "v1_record_digest": "c5a875a63d36cfd80ecf29662712eb58170a9818bee83b2b97cdbf2b25f6960b",
+      "target_assurance_error": "Bounded partition output contract exhausted: Target assurance needs an exact quote from the actual original source span",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "v2_record_digest": "6092a5c674c524e0aa04749ffe1285fb101d33d191340ac92f2d7aea6c04cf2a",
+      "target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c35",
+            "exact_candidate_statement_quote": "The photovoltaic panel is mounted on the rooftop of a DC refrigerator, making it suitable for transportation and deployment in remote areas.",
+            "actual_original_source_span_id": "paper_ad7ea2de394ae32d2ed2:b13:s3",
+            "exact_original_source_quote": "The photovoltaic panel is mounted on the rooftop of a DC refrigerator, making it suitable for transportation and deployment in remote areas.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate statement accurately preserves the original source text concerning the rooftop mounting of the photovoltaic panel on a DC refrigerator and its suitability for remote deployment."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing rationale thoroughly and accurately evaluates the frozen candidate against the original source text across all key dimensions, including design specifics, experimental procedures, quantitative findings, and practical limitations, confirming full adequacy.",
+        "exact_existing_overall_rationale_quote": "The evaluated candidate accurately and faithfully extracts the study's research problem, objectives, prototype design (including the R290 VCR refrigerator, top-mounted foldable 160 W PV panel, and lead-acid battery), testing methodology (simulation of July conditions across four set-point temperatures from +4 °C to -20 °C), quantitative results (energy production, consumption, and minimum state of charge values), and practical limitations (such as battery weight, size, and vulnerability to consecutive low-solar radiation days). All eight scientific argument aspects are completely preserved, all argument links are correctly substantiated by the source text, and all reconstruction and support preconditions are fully satisfied."
+      },
+      "target_assurance_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_ad7ea2de394ae32d2ed2\\baseline\\independent-audit-v1\\report.json",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "v3_record_digest": "088e949ba645474510c15e3fc614b8d4edbe8bcc1f1d8b1ecdbcc6db7386a4cb",
+      "actual_previous_result_retained": true
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "source_record_digest": "3a0fdd670d87115e463c73d85c6458f2830b600d9e433d2bcefc855117cd19a3",
+      "status": "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "v1_record_digest": "9cf5c87e2e23e9d3ce570ab15b1bb3cec485f99c47bb7c96cbe2b287da8a3740",
+      "v1_target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c2",
+            "exact_candidate_statement_quote": "This paper explores a sun-powered refrigerator capable of maintaining temperatures between +2 °C and -20 °C, essential for preserving vaccines, medicines, and perishable products in remote areas.",
+            "actual_original_source_span_id": "paper_ad7ea2de394ae32d2ed2:b9:s3",
+            "exact_original_source_quote": "This paper comprehensively explores a sun-powered refrigerator capable of maintaining temperatures between $+2^{\\circ}\\mathrm{C}$ and $-20^{\\circ}\\mathrm{C}$ , essential for preserving vaccines, medicines and perishable products in remote areas.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate proposition accurately reflects the source statement regarding the paper's exploration of a sun-powered refrigerator maintaining temperatures between +2 °C and -20 °C, preserving exact meaning and qualifications."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing rationale thoroughly evaluates the frozen extracted candidate against the original source text without omissions, correctly preserving scientific meaning, qualifications, and limitations."
+      },
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "v2_record_digest": "7150d14d1bf4f20d54cb3d1c580f9d381390180adb6eb07227a8798da1392a05",
+      "target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c2",
+            "exact_candidate_statement_quote": "This paper explores a sun-powered refrigerator capable of maintaining temperatures between +2 °C and -20 °C, essential for preserving vaccines, medicines, and perishable products in remote areas.",
+            "actual_original_source_span_id": "paper_ad7ea2de394ae32d2ed2:b9:s3",
+            "exact_original_source_quote": "This paper comprehensively explores a sun-powered refrigerator capable of maintaining temperatures between $+2^{\\circ}\\mathrm{C}$ and $-20^{\\circ}\\mathrm{C}$ , essential for preserving vaccines, medicines and perishable products in remote areas.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate statement accurately captures the paper's core exploration of a sun-powered refrigerator with specific temperature limits and application scope without altering scientific meaning."
+          },
+          {
+            "actual_candidate_atom_id": "c115",
+            "exact_candidate_statement_quote": "The battery can power the system for one day at a maximum DOD of 50%, and two days at a maximum DOD of 100%.",
+            "actual_original_source_span_id": "paper_ad7ea2de394ae32d2ed2:b42:s7",
+            "exact_original_source_quote": "Anyway, the battery is able to power the system for only one day (considering a maximum DOD of $50\\%$ ), and two days (considering a maximum DOD of $100\\%$ ).",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate faithfully reflects the battery autonomy and depth of discharge limitations stated in the source text."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing scientific evaluation thoroughly and accurately audits the frozen candidate against the original source text, verifying all argument links, quantitative findings, and reported limitations with high fidelity.",
+        "exact_existing_overall_rationale_quote": "All eight scientific argument aspects and every reviewed argument link are fully supported by the original paper source evidence and reconstructed blocks. The experimental results, prototype construction, and performance analyses correctly validate the feasibility of the sun-powered refrigerator while accurately documenting its operational limitations and constraints."
+      },
+      "target_assurance_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_ad7ea2de394ae32d2ed2\\optimized\\independent-audit-v1\\report.json",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "v3_record_digest": "03b5856793f25ca178f734ea755c8ce424afd40d81a9fc2c0576b17452a7ba2d",
+      "actual_previous_result_retained": true
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "source_record_digest": "78105e252d608e8d6f36cc22c6b888974a63cc9edfd02b8ff5cba5bc0e454312",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "UNRESOLVED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "v1_record_digest": "98508221afa153474371608d155ca64113dd8e2c84ccaa13f208e568f555b82f",
+      "target_assurance_error": "Durable inference run_98baaba38683405da1a775cc3dc1fa9b failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "v2_record_digest": "558a1f2d9ea95d619c315605f075af6c8ab5f8a418954da22caa1e1c6d14c9dc",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "v3_record_digest": "a8173a4fc44103f63a23bed1cda4efdfea0e9bf50b16f95834a24bca79ba4851"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "source_record_digest": "f765dbed5be559ac683399b6f67279ad5ae6faa109112a4280e6d5df9968fd9a",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "v1_record_digest": "5842ab8d6d403a7770f4957c09f1a783c8519c06ec2f02db2f496084851933cb",
+      "target_assurance_error": "Durable inference run_b30c824bfa194b13b6c7ed8c9dab8c50 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "v2_record_digest": "cdef789fa616292d4e491675b71b788f3da2e8e58ceaa96924829cdc29c9bb50",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "v3_record_digest": "c53cb1d0d911c306102e7f32e34eb65012bac50276b2baaeb7fafdcfbdcde6e3"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "source_record_digest": "e3f695db8641d80d9c23b87d066b0fdd5582b79285e4ab8cc54f8157c5dcd372",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "UNRESOLVED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "v1_record_digest": "f199be17421362bf2af0aadfbbccf4de4cb91e4770c0f233c07a47edad78c69f",
+      "target_assurance_error": "Durable inference run_7702adedb8734435b8b9694c3191e2e1 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "v2_record_digest": "9eac004d55dd59be0b710b37d8d2664f9687c47bd204a9d382adb6ef6b6d0586",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "v3_record_digest": "cf197ca0bdc92670c2dbcb398460671c6e14d06062107e8177c744f767328f8e"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "source_record_digest": "e8bd7b4d34638f781e029d305376374cd2e6889ebdb1c8cf3f1e76ab32677855",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "CONTRADICTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "v1_record_digest": "d07541f5c2bb838f09810594ded17aa4ed1e9f831c60e692c54ad149835d7b02",
+      "target_assurance_error": "Durable inference run_6178c76c0d7d4e8ab520f7f7bb5b11d6 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "v2_record_digest": "2e5df180494d4a9e1cfbc77a008155d06218877f1a4fdd65fcc8274a7b0c5e0d",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "v3_record_digest": "345ead25414dc3955203a38fb4025a1eca2415c39f01b1e975f200569dc3e1a4"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "source_record_digest": "b738a8cb32f62b3d454b98bc85e0ae67f48eccb7550b44838eae9979fe227f00",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "v1_record_digest": "42adda44b9bdbcb45ced84f1e9e7c0896569e483438e6a612a9488d50116379b",
+      "target_assurance_error": "Durable inference run_1b2f8936e8af4f768a0bba56384654b9 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "v2_record_digest": "a3d8d3fbeedb508f0dd8be37d46d9b9dc72dbda6a8104f7e57905e5deb3a5e37",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "v3_record_digest": "000723aff4033625235ce372f5c300789eae6d371fac4da1e5d55d9d6e2f6881"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "source_record_digest": "68763c54d32d837b51436cd98ed1fbcfc25b2ec92fa417b3785c57bdd108f780",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "v1_record_digest": "1c7bd7fe79ef9d4ce5047b182b22895f33122b6f01394b0a02c09f72d84a30d0",
+      "v1_target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c0",
+            "exact_candidate_statement_quote": "The paper is a case study assessing the effectiveness of energy policies in accelerating renewable energy-based mini-grid deployment.",
+            "actual_original_source_span_id": "paper_2f81cb801401904d4767:b0:s1",
+            "exact_original_source_quote": "Assessing the effectiveness of energy policies in accelerating renewable energy-based mini-grid deployment: A case study",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate accurately reflects the core title and objective of the paper regarding the case study on energy policy effectiveness for mini-grid deployment."
+          },
+          {
+            "actual_candidate_atom_id": "c6",
+            "exact_candidate_statement_quote": "The research assessed the impact of energy policies on deploying renewable energy technologies, specifically focusing on renewable energy-based hybrid mini-grids, using Ghana as a case study.",
+            "actual_original_source_span_id": "paper_2f81cb801401904d4767:b6:s3",
+            "exact_original_source_quote": "Using Ghana as a case study, this research focused on assessing the impact of energy policies on deploying renewable energy technologies, specifically focusing on renewable energy-based hybrid mini-grids.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate captures the exact scope, methodology context, and geographical focus of the research as stated in the source text without distortion."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "YES",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing review and candidate evaluations properly align with the source text, correctly identifying the core problem, objectives, methods, and quantitative results of the study without introducing unwarranted modifications or losing essential qualifications."
+      },
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "v2_record_digest": "e5dcba38b218c1325c75a0b704111a76ec4bdb8c8af116c55990c05369cc2ec4",
+      "target_assurance_error": "Durable inference run_7efdfaaea84840faa2394735fef922d1 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "v3_record_digest": "2d21dab5f3d9a3dde5519569a3460c745bc30bc03477af37ea679e65b1d1b3e1"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "source_record_digest": "fcc4972dbe648c0f56f1423a5b6561cdd561f3f5744290249b571bd053f00637",
+      "status": "EXISTING_RATIONALE_EVIDENCE_TARGET_ADEQUATE",
+      "original_scientific_verdict": "UNRESOLVED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "v1_record_digest": "5943241fc696893bd5dd05805c6a2b6649266bc472c8e8ba8fdf3fb7d483ccc9",
+      "v1_target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c0",
+            "exact_candidate_statement_quote": "Traditional operational strategies of existing isolated mini-grids are non-predictive, such as load following and cycle charging.",
+            "actual_original_source_span_id": "paper_6dc9f2bdd81d9dcf4a46:b21:s1",
+            "exact_original_source_quote": "Due to their simplicity and robustness, traditional operational strategies of existing isolated mini-grids are non-predictive, such as load following and cycle charging.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate proposition accurately preserves the original source meaning and qualifications regarding traditional non-predictive operational strategies of isolated mini-grids."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "YES",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The evaluation target adequacy assessment confirms that the existing rationale correctly and thoroughly evaluates the frozen extracted candidate against the original source document."
+      },
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "v2_record_digest": "12b9522b7584cc4a77106d79d3e2603b10c794af0db4fb81e32f5c8af9673f75",
+      "target_assurance_error": "Bounded partition output contract exhausted: Actual missing original blocks cannot be marked inapplicable",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "v3_record_digest": "f2fe39e67b3ea481e6a438a237bb637a24eade1d102e4f1152a721fb9222435d",
+      "target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c60",
+            "exact_candidate_statement_quote": "Transportation costs depend on road quality and the route to reach the mini-grid, and less on the quantity of transported fuel.",
+            "actual_original_source_span_id": "paper_6dc9f2bdd81d9dcf4a46:b54:s2",
+            "exact_original_source_quote": "Transportation costs depend on the quality of roads and on the route taken to reach the mini-grid, and less on the quantity of the transported fuel. ",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate accurately reflects the original text's assertion regarding fuel transportation costs and route characteristics."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "YES",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing rationale accurately evaluates the frozen extracted candidate against the original source text without altering any scientific meaning, qualifications, or uncertainties.",
+        "exact_existing_overall_rationale_quote": "The evaluated candidate accurately extracts the research problem, methodology, modeling equations, simulation framework, and quantitative results of the study. However, because this is a bounded partition review assessing only specific argument links and aspects while acknowledging remaining computational and modeling limitations (such as the exclusion of long-term load growth simulation), the overall status is classified as UNRESOLVED in accordance with the strict evaluation preconditions."
+      },
+      "target_assurance_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\independent-audit-v1\\report.json"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "source_record_digest": "fa168f36f628a2d993dd940ccf3a11dc11c6c0a7d8e2b2e0603304a73208d868",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "v1_record_digest": "d6edc61086d8cfbe9ca1c53f9be746f1b44996c8688ce8c71c63c9f8be2135f8",
+      "target_assurance_error": "Durable inference run_45fd672d93ed4cf4bae5e6d22b59674d failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "v2_record_digest": "2ce2bcbce8d12cf288d9259c2faaa7af23e678298213ef5dfe71d2c4b4d3d9ee",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "v3_record_digest": "411a026ae302edde305a325c6e68c351b7073c1147c65814ef75bf3e5604ac95"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "source_record_digest": "84f27999213b464d75d878890e2b2f2fb468a8ef2e1bda9ce26c26ae85235053",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "UNRESOLVED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "v1_record_digest": "57bfd78ece6376b2bbc4b802bad5bfcbb54ae69d1c25c2246dbef58a3208d2b4",
+      "v1_target_assurance": {
+        "rationale_evaluated_object": "FROZEN_CANDIDATE",
+        "candidate_fidelity_comparisons": [
+          {
+            "actual_candidate_atom_id": "c13",
+            "exact_candidate_statement_quote": "The study proposes SoAMIRural, integrating solar PV mini-grids and advanced metering infrastructure for rural communities.",
+            "actual_original_source_span_id": "paper_603603415f45919cbdc8:b7:s3",
+            "exact_original_source_quote": "This study proposed SoAMIRural, which integrates solar PV minigrid and advanced metering infrastructure for rural communities.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate statement accurately captures the core objective of the study regarding the proposal of the SoAMIRural framework, retaining the original scientific meaning without distortion."
+          },
+          {
+            "actual_candidate_atom_id": "c17",
+            "exact_candidate_statement_quote": "SoAMIRural was evaluated with an error margin of 5%, resulting in 95% accuracy in energy consumption threshold management and monitoring.",
+            "actual_original_source_span_id": "paper_603603415f45919cbdc8:b7:s7",
+            "exact_original_source_quote": "SoAMIRural was evaluated with an error margin of $5\\%$ , resulting in $95\\%$ accuracy in energy consumption threshold management and monitoring to ensure energy conservation and sustainability of the mini-grid system.",
+            "fidelity_finding": "PRESERVED",
+            "scientific_comparison_rationale": "The candidate statement faithfully reflects the quantitative evaluation results of the SoAMIRural framework, including the precise error margin and accuracy metrics reported in the original text."
+          }
+        ],
+        "missing_original_blocks_addressed_in_rationale": "NOT_APPLICABLE",
+        "assessment_target_adequacy": "ADEQUATE",
+        "reason": "The existing rationale and candidate comparisons accurately represent the primary research problem, objectives, methodologies, and quantitative results presented in the original source paper without introducing unsupported scientific assertions or altering genuine negative findings."
+      },
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "v2_record_digest": "58bf717209e6c17a6e2422d6c079bb244f60f2aaf868b4fda0d77202b5847538",
+      "target_assurance_error": "Durable inference run_e4949ca694c6498c8652568d4822b88c failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "v3_record_digest": "52fa24bd88f92e33508f85782a7433c21efeede646ec15099447877b42b1899d"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_603603415f45919cbdc8\\optimized\\record.json",
+      "source_record_digest": "290dd4a0cd0fceee28d3bf60cff93a345386df2a9c1c8e5830f3ba09576c8b1e",
+      "status": "ORIGINAL_TARGET_PROTOCOL_FAILURE_RETAINED",
+      "error": "Bounded partition output contract exhausted: Failed to parse field actual_argument_link_verdicts: 1 validation error for ExactWholeArgumentGroup0\nq2.source_span_ids.6\n  Input should be 'paper_603603415f45919cbdc8:b28:s1', 'paper_603603415f45919cbdc8:b28:s2', 'paper_603603415f45919cbdc8:b28:s3', 'paper_603603415f45919cbdc8:b28:s4', 'paper_603603415f45919cbdc8:b28:s5', 'paper_603603415f45919cbdc8:b28:s6', 'paper_603603415f45919cbdc8:b28:s7', 'paper_603603415f45919cbdc8:b28:s8' or 'paper_603603415f45919cbdc8:b28:s9' [type=literal_error, input_value='paper_603603415f45919cbdc8:b8:s7', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.13/v/literal_error\n\nAdapter UniqueKeyJSONAdapter failed to parse the LM response. \n\nLM Response: ```json\n{\n  \"actual_argument_link_verdicts\": {\n    \"q0\": {\n      \"rationale\": \"The source b15:s1 explicitly outlines the first objective to map out a conceptual framework for a smart solar PV mini-grid system for rural communities, which directly addresses the assessment conducted to ascertain community needs described in target b23:s1.\",\n      \"relation\": \"addresses\",\n      \"source_id\": \"c36\",\n      \"source_span_ids\": [\n        \"paper_603603415f45919cbdc8:b15:s1\"\n      ],\n      \"target_id\": \"c56\",\n      \"target_span_ids\": [\n        \"paper_603603415f45919cbdc8:b23:s1\"\n      ],\n      \"verdict\": \"SUPPORTED\"\n    },\n    \"q1\": {\n      \"rationale\": \"The needs assessment conducted to ascertain community needs in target b23:s1 is evaluated and compiled into Table 1 (source b28:s1-s9), which presents the assessment table for needs priorities.\",\n      \"relation\": \"evaluates\",\n      \"source_id\": \"c56\",\n      \"source_span_ids\": [\n        \"paper_603603415f45919cbdc8:b23:s1\"\n      ],\n      \"target_id\": \"c65\",\n      \"target_span_ids\": [\n        \"paper_603603415f45919cbdc8:b28:s1\",\n        \"paper_603603415f45919cbdc8:b28:s2\",\n        \"paper_603603415f45919cbdc8:b28:s3\",\n        \"paper_603603415f45919cbdc8:b28:s4\",\n        \"paper_603603415f45919cbdc8:b28:s5\",\n        \"paper_603603415f45919cbdc8:b28:s6\",\n        \"paper_603603415f45919cbdc8:b28:s7\",\n        \"paper_603603415f45919cbdc8:b28:s8\",\n        \"paper_603603415f45919cbdc8:b28:s9\"\n      ],\n      \"verdict\": \"SUPPORTED\"\n    },\n    \"q2\": {\n      \"rationale\": \"Table 1 (source b28:s1-s9) reports the specific numbers and counts for each priority category, which are subsequently reported and discussed in target b81:s3 regarding health having the highest number of people.\",\n      \"relation\": \"reports\",\n      \"source_id\":"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_fb88f52bf6ea0323e952\\baseline\\record.json",
+      "source_record_digest": "426844af369eb2eaebffedb6ec9bc64523b2270ae0f8db7429138719b1eaea1d",
+      "status": "ORIGINAL_TARGET_PROTOCOL_FAILURE_RETAINED",
+      "error": "Durable inference run_5fd61ba5107e4991934972cffc2f5b84 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_fb88f52bf6ea0323e952\\optimized\\record.json",
+      "source_record_digest": "6e82d8b0ef2d149a4930b996681f5509c3032223f13f005b3791b025c0814e9f",
+      "status": "ORIGINAL_TARGET_PROTOCOL_FAILURE_RETAINED",
+      "error": "Durable inference run_0183c72990da4f3d8121781bb0b1f928 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "baseline",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "source_record_digest": "b1a8aa397a6521bb29e62fd6880d8a3a140696373fdbc46e8d0e21abf0f0984a",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "CONTRADICTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "v1_record_digest": "6cac7d4cba6ec77598ac5e8c36d1ebb3ee71da5ab69fdd251fae8afaab774d47",
+      "target_assurance_error": "Durable inference run_00ff6ee221bf4ba58cfc53967004d8c2 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "v2_record_digest": "7a80bedfeebd55fd6fcb18c6c2dadb3010202b68bd1116c97804b0caee65a96f",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "v3_record_digest": "23d0928eaee72abf5347f7b39bbe5ac1170f27079b0dfc088d5b74d68c5a7540"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "optimized",
+      "source_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-science-v8\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "source_record_digest": "7f2f1bf3b9d8f62d7f172abd326be5055873e6cefb6f3efe07f3171ba2995046",
+      "status": "TARGET_ASSURANCE_PROTOCOL_FAILURE_RETAINED",
+      "original_scientific_verdict": "SUPPORTED",
+      "original_scientific_verdict_replaced": false,
+      "v1_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v1\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "v1_record_digest": "345f6eb3c097c064dc96d6bcd2d1518820ab1098215be6d708bcf16ca72d0888",
+      "target_assurance_error": "Durable inference run_8baee138759843f7a91d04a8aca085b7 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call",
+      "v2_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-candidate-target-assurance-v2\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "v2_record_digest": "a3b9054fee931fa08bf6f5550b1eaa465b0a26547eb7e7bab1d234324d7ce42b",
+      "v3_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-typed-quote-target-assurance-v3\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "v3_record_digest": "af107b251e96f2ba2cfe5dd714664a6eb2ee7df1487e0eb1393016e229952437"
+    }
+  ],
+  "atomic_report_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\atomic-report-v5.json",
+  "conditional_available_case_paired_statistics": {
+    "paper_cluster_count": 10,
+    "paper_equal_weight_mean_delta": 0.013373812076512902,
+    "descriptive_cluster_bootstrap_95_interval": [
+      -0.05407634143291836,
+      0.07545028797744666
+    ],
+    "conditional_exact_sign_flip_two_sided_p": 0.689453125,
+    "permutation_count": 1024,
+    "assumptions": "Conditional available-case comparison only; missing source/evaluator cases are not random. No whole-benchmark significance or gain inference.",
+    "bootstrap_seed": 20261008,
+    "bootstrap_resamples": 10000
+  },
+  "all_ten_paper_equal_weight_delta_identification_bounds": [
+    -0.5007186380318466,
+    0.5212952957467931
+  ],
+  "source_quality_and_visual_coverage_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\source-quality-and-visual-coverage-v2.json",
+  "full_original_pdf_visual_inventory_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\full-original-pdf-visual-source-inventory-v3.json",
+  "unassociated_original_visual_payload_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\unassociated-original-visual-payload-review-v3.json",
+  "native_source_registry_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-current-native-reference-registry-20261009-v9\\report.json",
+  "missing_case_numeric_imputation_performed": false,
+  "new_comparisons_do_not_prove_existing_rationale_performed_them": true,
+  "full_scientific_evaluation_complete": false,
+  "optimization_gain_proven": false,
+  "expert_gold": false,
+  "original_scientific_negative_or_uncertain_verdicts_replaced": false,
+  "pdf_visual_scientific_evaluation_complete": false,
+  "model_calls": 0
+}

@@ -1,0 +1,34 @@
+{
+  "status": "PASS_G02_TYPED_SOFTWARE_GATEWAY_READY",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2",
+  "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+  "old_verified_backend_stops": [
+    {
+      "pid": 118440,
+      "state": "STOPPED_VERIFIED"
+    },
+    {
+      "pid": 120608,
+      "state": "ALREADY_EXITED"
+    }
+  ],
+  "new_backend_root_pid": 28156,
+  "new_verified_port8881_chain": [
+    {
+      "ProcessId": 114708,
+      "ParentProcessId": 28156,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g02-typed-native-server-v1.py",
+      "CreationDate": "/Date(1791774925159)/"
+    },
+    {
+      "ProcessId": 28156,
+      "ParentProcessId": 118212,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g02-typed-native-server-v1.py",
+      "CreationDate": "/Date(1791774925141)/"
+    }
+  ],
+  "frontend3008_exact_preserved": true,
+  "all109tables_and_database_bytes_exact_before_any_g02_action": true,
+  "no_remote_fallback": true,
+  "no_other_processes_stopped": true
+}

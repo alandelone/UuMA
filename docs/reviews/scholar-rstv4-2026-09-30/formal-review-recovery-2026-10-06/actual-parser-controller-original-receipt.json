@@ -1,0 +1,941 @@
+{
+  "status": "PASS_SHIPPED_EXPLICIT_REVIEW_CONTROLLER_WITH_REAL_HTTP",
+  "phase": "parser",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn",
+  "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+  "receipt": {
+    "action_id": "review_action_377782aa4546dafd80beff33918059df",
+    "request_id": "actual-review-parser-v1",
+    "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "action_kind": "RECHECK_PARSE",
+    "reviewer_label": "Alandelone",
+    "reason": "Explicit parser review of owned software fixture; no scientific approval",
+    "supersedes_action_id": null,
+    "created_at": "2026-10-06T00:57:21.687917+00:00",
+    "request": {
+      "action": "RECHECK_PARSE",
+      "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+      "expected_context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+      "reason": "Explicit parser review of owned software fixture; no scientific approval",
+      "reference_selections": [
+        {
+          "page_number": 2,
+          "word_end": 66,
+          "word_start": 56
+        }
+      ],
+      "request_id": "actual-review-parser-v1"
+    },
+    "context": {
+      "blocked_jobs": [
+        {
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "fencing_token": 1,
+          "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "job_type": "PARSE_PDF",
+          "review_kind": "PARSE_QUALITY",
+          "status": "NEEDS_HUMAN",
+          "updated_at": "2026-10-06T00:57:21.490794+00:00"
+        }
+      ],
+      "candidate": {
+        "available": true,
+        "body_blocks": 1,
+        "parser": "controlled-incomplete-parser",
+        "quality": {
+          "reference_page_alignment": {
+            "missing_source_numbered_references": [
+              6
+            ]
+          }
+        },
+        "reference_entries": 5,
+        "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c"
+      },
+      "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+      "collections": [
+        {
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "name": "审核恢复软件 Collection",
+          "revision": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+      "file": {
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "identity_status": "VERIFIED",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "size_bytes": 1827,
+        "validation": {
+          "doi_match": true,
+          "evidence_source": "pdf_text_and_raw_bytes",
+          "identity_status": "VERIFIED",
+          "technical_pdf_valid": true,
+          "title_token_ratio": 1
+        }
+      },
+      "findings": [],
+      "integrity_verified": true,
+      "job": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "fencing_token": 1,
+        "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+        "job_type": "PARSE_PDF",
+        "last_error_detail": "Parser omitted numbered references present in PDF: [6]",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": []}}",
+        "status": "NEEDS_HUMAN",
+        "updated_at": "2026-10-06T00:57:21.490794+00:00"
+      },
+      "kind": "PARSER",
+      "last_action_id": null,
+      "latest_annotations": {
+        "DOI": {
+          "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+          "canonical_key_after": "doi:10.1234/corrected",
+          "canonical_key_before": "doi:10.1234/original",
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "comment": "",
+          "created_at": "2026-10-06T00:57:19.481197+00:00",
+          "decision": "FOUND",
+          "field_name": "DOI",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "page_number": 1,
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "reviewer_label": "Alandelone",
+          "selected_text": "10.1234/corrected",
+          "submission_id": "native-source-DOI",
+          "supersedes_annotation_id": null,
+          "value_after": "10.1234/corrected",
+          "value_before": "10.1234/original",
+          "word_end": 5,
+          "word_start": 5
+        },
+        "TITLE": {
+          "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+          "canonical_key_after": null,
+          "canonical_key_before": null,
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "comment": "",
+          "created_at": "2026-10-06T00:57:19.437627+00:00",
+          "decision": "FOUND",
+          "field_name": "TITLE",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "page_number": 1,
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "reviewer_label": "Alandelone",
+          "selected_text": "Software review identity title",
+          "submission_id": "native-source-TITLE",
+          "supersedes_annotation_id": null,
+          "value_after": "Software review identity title",
+          "value_before": "Wrong catalogue identity",
+          "word_end": 3,
+          "word_start": 0
+        }
+      },
+      "paper": {
+        "canonical_key": "doi:10.1234/corrected",
+        "doi": "10.1234/corrected",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "title": "Software review identity title",
+        "updated_at": "2026-10-06T00:57:19.481197+00:00"
+      },
+      "quarantined": false,
+      "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+    },
+    "result": {
+      "correction_action_ids": [
+        "review_action_377782aa4546dafd80beff33918059df"
+      ],
+      "corrections": [
+        {
+          "location": {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "page_number": 2,
+            "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "review_action_id": "review_action_377782aa4546dafd80beff33918059df",
+            "source": "human_original_pdf_selection",
+            "word_end": 66,
+            "word_start": 56
+          },
+          "number": 6,
+          "page_number": 2,
+          "raw_text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026."
+        }
+      ],
+      "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+      "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+      "quality_approved": false,
+      "status": "PARSE_RECHECK_QUEUED"
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/catalog/review/cases/job_3e2ae537ca5bf4d9735deeb7cb972065/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+        "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1",
+        "kind": "PARSER",
+        "file": {
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "size_bytes": 1827,
+          "identity_status": "VERIFIED",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "canonical_key": "doi:10.1234/corrected",
+          "updated_at": "2026-10-06T00:57:19.481197+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {
+          "DOI": {
+            "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+            "submission_id": "native-source-DOI",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "DOI",
+            "decision": "FOUND",
+            "selected_text": "10.1234/corrected",
+            "page_number": 1,
+            "word_start": 5,
+            "word_end": 5,
+            "comment": "",
+            "value_before": "10.1234/original",
+            "value_after": "10.1234/corrected",
+            "canonical_key_before": "doi:10.1234/original",
+            "canonical_key_after": "doi:10.1234/corrected",
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "TITLE": {
+            "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+            "submission_id": "native-source-TITLE",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "TITLE",
+            "decision": "FOUND",
+            "selected_text": "Software review identity title",
+            "page_number": 1,
+            "word_start": 0,
+            "word_end": 3,
+            "comment": "",
+            "value_before": "Wrong catalogue identity",
+            "value_after": "Software review identity title",
+            "canonical_key_before": null,
+            "canonical_key_after": null,
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.437627+00:00"
+          }
+        },
+        "findings": [],
+        "blocked_jobs": [
+          {
+            "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "job_type": "PARSE_PDF",
+            "status": "NEEDS_HUMAN",
+            "fencing_token": 1,
+            "updated_at": "2026-10-06T00:57:21.490794+00:00",
+            "review_kind": "PARSE_QUALITY"
+          }
+        ],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "name": "审核恢复软件 Collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": {
+          "available": true,
+          "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c",
+          "quality": {
+            "reference_page_alignment": {
+              "missing_source_numbered_references": [
+                6
+              ]
+            }
+          },
+          "parser": "controlled-incomplete-parser",
+          "body_blocks": 1,
+          "reference_entries": 5
+        },
+        "job": {
+          "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "job_type": "PARSE_PDF",
+          "status": "NEEDS_HUMAN",
+          "fencing_token": 1,
+          "updated_at": "2026-10-06T00:57:21.490794+00:00",
+          "last_error_detail": "Parser omitted numbered references present in PDF: [6]",
+          "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": []}}"
+        },
+        "last_action_id": null,
+        "context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+        "history": [],
+        "allowed_actions": [
+          "RECHECK_PARSE"
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/job_3e2ae537ca5bf4d9735deeb7cb972065/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_377782aa4546dafd80beff33918059df",
+        "request_id": "actual-review-parser-v1",
+        "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "action_kind": "RECHECK_PARSE",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit parser review of owned software fixture; no scientific approval",
+        "supersedes_action_id": null,
+        "created_at": "2026-10-06T00:57:21.687917+00:00",
+        "request": {
+          "action": "RECHECK_PARSE",
+          "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "expected_context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+          "reason": "Explicit parser review of owned software fixture; no scientific approval",
+          "reference_selections": [
+            {
+              "page_number": 2,
+              "word_end": 66,
+              "word_start": 56
+            }
+          ],
+          "request_id": "actual-review-parser-v1"
+        },
+        "context": {
+          "blocked_jobs": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "fencing_token": 1,
+              "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+              "job_type": "PARSE_PDF",
+              "review_kind": "PARSE_QUALITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T00:57:21.490794+00:00"
+            }
+          ],
+          "candidate": {
+            "available": true,
+            "body_blocks": 1,
+            "parser": "controlled-incomplete-parser",
+            "quality": {
+              "reference_page_alignment": {
+                "missing_source_numbered_references": [
+                  6
+                ]
+              }
+            },
+            "reference_entries": 5,
+            "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c"
+          },
+          "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "collections": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "name": "审核恢复软件 Collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+          "file": {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "identity_status": "VERIFIED",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "size_bytes": 1827,
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "fencing_token": 1,
+            "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "job_type": "PARSE_PDF",
+            "last_error_detail": "Parser omitted numbered references present in PDF: [6]",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": []}}",
+            "status": "NEEDS_HUMAN",
+            "updated_at": "2026-10-06T00:57:21.490794+00:00"
+          },
+          "kind": "PARSER",
+          "last_action_id": null,
+          "latest_annotations": {
+            "DOI": {
+              "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+              "canonical_key_after": "doi:10.1234/corrected",
+              "canonical_key_before": "doi:10.1234/original",
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.481197+00:00",
+              "decision": "FOUND",
+              "field_name": "DOI",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "10.1234/corrected",
+              "submission_id": "native-source-DOI",
+              "supersedes_annotation_id": null,
+              "value_after": "10.1234/corrected",
+              "value_before": "10.1234/original",
+              "word_end": 5,
+              "word_start": 5
+            },
+            "TITLE": {
+              "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+              "canonical_key_after": null,
+              "canonical_key_before": null,
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.437627+00:00",
+              "decision": "FOUND",
+              "field_name": "TITLE",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "Software review identity title",
+              "submission_id": "native-source-TITLE",
+              "supersedes_annotation_id": null,
+              "value_after": "Software review identity title",
+              "value_before": "Wrong catalogue identity",
+              "word_end": 3,
+              "word_start": 0
+            }
+          },
+          "paper": {
+            "canonical_key": "doi:10.1234/corrected",
+            "doi": "10.1234/corrected",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "quarantined": false,
+          "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+        },
+        "result": {
+          "correction_action_ids": [
+            "review_action_377782aa4546dafd80beff33918059df"
+          ],
+          "corrections": [
+            {
+              "location": {
+                "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                "page_number": 2,
+                "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+                "review_action_id": "review_action_377782aa4546dafd80beff33918059df",
+                "source": "human_original_pdf_selection",
+                "word_end": 66,
+                "word_start": 56
+              },
+              "number": 6,
+              "page_number": 2,
+              "raw_text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026."
+            }
+          ],
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "quality_approved": false,
+          "status": "PARSE_RECHECK_QUEUED"
+        }
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/job_3e2ae537ca5bf4d9735deeb7cb972065/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+        "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1",
+        "kind": "PARSER",
+        "file": {
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "size_bytes": 1827,
+          "identity_status": "VERIFIED",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "canonical_key": "doi:10.1234/corrected",
+          "updated_at": "2026-10-06T00:57:19.481197+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {
+          "DOI": {
+            "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+            "submission_id": "native-source-DOI",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "DOI",
+            "decision": "FOUND",
+            "selected_text": "10.1234/corrected",
+            "page_number": 1,
+            "word_start": 5,
+            "word_end": 5,
+            "comment": "",
+            "value_before": "10.1234/original",
+            "value_after": "10.1234/corrected",
+            "canonical_key_before": "doi:10.1234/original",
+            "canonical_key_after": "doi:10.1234/corrected",
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "TITLE": {
+            "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+            "submission_id": "native-source-TITLE",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "TITLE",
+            "decision": "FOUND",
+            "selected_text": "Software review identity title",
+            "page_number": 1,
+            "word_start": 0,
+            "word_end": 3,
+            "comment": "",
+            "value_before": "Wrong catalogue identity",
+            "value_after": "Software review identity title",
+            "canonical_key_before": null,
+            "canonical_key_after": null,
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.437627+00:00"
+          }
+        },
+        "findings": [],
+        "blocked_jobs": [],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "name": "审核恢复软件 Collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": {
+          "available": true,
+          "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c",
+          "quality": {
+            "reference_page_alignment": {
+              "missing_source_numbered_references": [
+                6
+              ]
+            }
+          },
+          "parser": "controlled-incomplete-parser",
+          "body_blocks": 1,
+          "reference_entries": 5
+        },
+        "job": {
+          "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "job_type": "PARSE_PDF",
+          "status": "READY",
+          "fencing_token": 1,
+          "updated_at": "2026-10-06T00:57:21.687917+00:00",
+          "last_error_detail": null,
+          "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": [\"review_action_377782aa4546dafd80beff33918059df\"]}}"
+        },
+        "last_action_id": "review_action_377782aa4546dafd80beff33918059df",
+        "context_sha256": "cbe61b97e6778bd0b02e38fff188918f1949b3b91c009abd91a873261286a177",
+        "history": [
+          {
+            "action_id": "review_action_377782aa4546dafd80beff33918059df",
+            "request_id": "actual-review-parser-v1",
+            "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "action_kind": "RECHECK_PARSE",
+            "reviewer_label": "Alandelone",
+            "reason": "Explicit parser review of owned software fixture; no scientific approval",
+            "supersedes_action_id": null,
+            "created_at": "2026-10-06T00:57:21.687917+00:00",
+            "request": {
+              "action": "RECHECK_PARSE",
+              "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+              "expected_context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+              "reason": "Explicit parser review of owned software fixture; no scientific approval",
+              "reference_selections": [
+                {
+                  "page_number": 2,
+                  "word_end": 66,
+                  "word_start": 56
+                }
+              ],
+              "request_id": "actual-review-parser-v1"
+            },
+            "context": {
+              "blocked_jobs": [
+                {
+                  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                  "fencing_token": 1,
+                  "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+                  "job_type": "PARSE_PDF",
+                  "review_kind": "PARSE_QUALITY",
+                  "status": "NEEDS_HUMAN",
+                  "updated_at": "2026-10-06T00:57:21.490794+00:00"
+                }
+              ],
+              "candidate": {
+                "available": true,
+                "body_blocks": 1,
+                "parser": "controlled-incomplete-parser",
+                "quality": {
+                  "reference_page_alignment": {
+                    "missing_source_numbered_references": [
+                      6
+                    ]
+                  }
+                },
+                "reference_entries": 5,
+                "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c"
+              },
+              "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+              "collections": [
+                {
+                  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                  "name": "审核恢复软件 Collection",
+                  "revision": 1,
+                  "status": "ACTIVE"
+                }
+              ],
+              "context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+              "file": {
+                "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                "identity_status": "VERIFIED",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+                "size_bytes": 1827,
+                "validation": {
+                  "doi_match": true,
+                  "evidence_source": "pdf_text_and_raw_bytes",
+                  "identity_status": "VERIFIED",
+                  "technical_pdf_valid": true,
+                  "title_token_ratio": 1
+                }
+              },
+              "findings": [],
+              "integrity_verified": true,
+              "job": {
+                "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                "fencing_token": 1,
+                "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+                "job_type": "PARSE_PDF",
+                "last_error_detail": "Parser omitted numbered references present in PDF: [6]",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": []}}",
+                "status": "NEEDS_HUMAN",
+                "updated_at": "2026-10-06T00:57:21.490794+00:00"
+              },
+              "kind": "PARSER",
+              "last_action_id": null,
+              "latest_annotations": {
+                "DOI": {
+                  "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+                  "canonical_key_after": "doi:10.1234/corrected",
+                  "canonical_key_before": "doi:10.1234/original",
+                  "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "comment": "",
+                  "created_at": "2026-10-06T00:57:19.481197+00:00",
+                  "decision": "FOUND",
+                  "field_name": "DOI",
+                  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "page_number": 1,
+                  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                  "reviewer_label": "Alandelone",
+                  "selected_text": "10.1234/corrected",
+                  "submission_id": "native-source-DOI",
+                  "supersedes_annotation_id": null,
+                  "value_after": "10.1234/corrected",
+                  "value_before": "10.1234/original",
+                  "word_end": 5,
+                  "word_start": 5
+                },
+                "TITLE": {
+                  "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+                  "canonical_key_after": null,
+                  "canonical_key_before": null,
+                  "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "comment": "",
+                  "created_at": "2026-10-06T00:57:19.437627+00:00",
+                  "decision": "FOUND",
+                  "field_name": "TITLE",
+                  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "page_number": 1,
+                  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                  "reviewer_label": "Alandelone",
+                  "selected_text": "Software review identity title",
+                  "submission_id": "native-source-TITLE",
+                  "supersedes_annotation_id": null,
+                  "value_after": "Software review identity title",
+                  "value_before": "Wrong catalogue identity",
+                  "word_end": 3,
+                  "word_start": 0
+                }
+              },
+              "paper": {
+                "canonical_key": "doi:10.1234/corrected",
+                "doi": "10.1234/corrected",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "title": "Software review identity title",
+                "updated_at": "2026-10-06T00:57:19.481197+00:00"
+              },
+              "quarantined": false,
+              "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+            },
+            "result": {
+              "correction_action_ids": [
+                "review_action_377782aa4546dafd80beff33918059df"
+              ],
+              "corrections": [
+                {
+                  "location": {
+                    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                    "page_number": 2,
+                    "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+                    "review_action_id": "review_action_377782aa4546dafd80beff33918059df",
+                    "source": "human_original_pdf_selection",
+                    "word_end": 66,
+                    "word_start": 56
+                  },
+                  "number": 6,
+                  "page_number": 2,
+                  "raw_text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026."
+                }
+              ],
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+              "quality_approved": false,
+              "status": "PARSE_RECHECK_QUEUED"
+            }
+          }
+        ],
+        "allowed_actions": []
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/job_3e2ae537ca5bf4d9735deeb7cb972065/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_377782aa4546dafd80beff33918059df",
+        "request_id": "actual-review-parser-v1",
+        "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "action_kind": "RECHECK_PARSE",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit parser review of owned software fixture; no scientific approval",
+        "supersedes_action_id": null,
+        "created_at": "2026-10-06T00:57:21.687917+00:00",
+        "request": {
+          "action": "RECHECK_PARSE",
+          "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "expected_context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+          "reason": "Explicit parser review of owned software fixture; no scientific approval",
+          "reference_selections": [
+            {
+              "page_number": 2,
+              "word_end": 66,
+              "word_start": 56
+            }
+          ],
+          "request_id": "actual-review-parser-v1"
+        },
+        "context": {
+          "blocked_jobs": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "fencing_token": 1,
+              "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+              "job_type": "PARSE_PDF",
+              "review_kind": "PARSE_QUALITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T00:57:21.490794+00:00"
+            }
+          ],
+          "candidate": {
+            "available": true,
+            "body_blocks": 1,
+            "parser": "controlled-incomplete-parser",
+            "quality": {
+              "reference_page_alignment": {
+                "missing_source_numbered_references": [
+                  6
+                ]
+              }
+            },
+            "reference_entries": 5,
+            "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c"
+          },
+          "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "collections": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "name": "审核恢复软件 Collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+          "file": {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "identity_status": "VERIFIED",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "size_bytes": 1827,
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "fencing_token": 1,
+            "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "job_type": "PARSE_PDF",
+            "last_error_detail": "Parser omitted numbered references present in PDF: [6]",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": []}}",
+            "status": "NEEDS_HUMAN",
+            "updated_at": "2026-10-06T00:57:21.490794+00:00"
+          },
+          "kind": "PARSER",
+          "last_action_id": null,
+          "latest_annotations": {
+            "DOI": {
+              "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+              "canonical_key_after": "doi:10.1234/corrected",
+              "canonical_key_before": "doi:10.1234/original",
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.481197+00:00",
+              "decision": "FOUND",
+              "field_name": "DOI",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "10.1234/corrected",
+              "submission_id": "native-source-DOI",
+              "supersedes_annotation_id": null,
+              "value_after": "10.1234/corrected",
+              "value_before": "10.1234/original",
+              "word_end": 5,
+              "word_start": 5
+            },
+            "TITLE": {
+              "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+              "canonical_key_after": null,
+              "canonical_key_before": null,
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.437627+00:00",
+              "decision": "FOUND",
+              "field_name": "TITLE",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "Software review identity title",
+              "submission_id": "native-source-TITLE",
+              "supersedes_annotation_id": null,
+              "value_after": "Software review identity title",
+              "value_before": "Wrong catalogue identity",
+              "word_end": 3,
+              "word_start": 0
+            }
+          },
+          "paper": {
+            "canonical_key": "doi:10.1234/corrected",
+            "doi": "10.1234/corrected",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "quarantined": false,
+          "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+        },
+        "result": {
+          "correction_action_ids": [
+            "review_action_377782aa4546dafd80beff33918059df"
+          ],
+          "corrections": [
+            {
+              "location": {
+                "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                "page_number": 2,
+                "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+                "review_action_id": "review_action_377782aa4546dafd80beff33918059df",
+                "source": "human_original_pdf_selection",
+                "word_end": 66,
+                "word_start": 56
+              },
+              "number": 6,
+              "page_number": 2,
+              "raw_text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026."
+            }
+          ],
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "quality_approved": false,
+          "status": "PARSE_RECHECK_QUEUED"
+        }
+      }
+    }
+  ],
+  "browser_verified": false,
+  "scientific_approval": false
+}

@@ -1,0 +1,391 @@
+{
+  "scope": "Resolved, audited AI-source scientific windows with paired complete candidates and nonzero reference claims only",
+  "full_252_case_benchmark_acceptance": false,
+  "gain_proven": false,
+  "full_benchmark_failure_denominators": {
+    "AUDITED_AI_SCIENTIFIC_COMPARISON": 82,
+    "SOURCE_REFERENCE_UNACCEPTED": 142,
+    "AUDITED_UNRESOLVED_SCIENCE": 8,
+    "ORIGINAL_EXTRACTION_CONTRACT_FAILURE": 8,
+    "EVALUATION_CONTRACT_FAILURE": 4,
+    "PENDING_ACTUAL_EVALUATION": 8
+  },
+  "available_scientific_window_pairs": 31,
+  "available_paper_clusters": 9,
+  "administrative_zero_claim_windows_excluded_from_this_diagnostic_only": true,
+  "original_extraction_failures_and_uncertain_source_cases_retained_in_main_252_scope": true,
+  "endpoint_results": {
+    "layer1_coverage": {
+      "baseline_paper_mean": 0.9427559994942512,
+      "optimized_paper_mean": 0.9443538844422067,
+      "optimized_minus_baseline": 0.00159788494795564,
+      "conditional_exchangeability_sign_flip_p": 0.875,
+      "paper_clusters": 9,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "qualification_recall": {
+      "baseline_paper_mean": 0.9427559994942512,
+      "optimized_paper_mean": 0.9443538844422067,
+      "optimized_minus_baseline": 0.00159788494795564,
+      "conditional_exchangeability_sign_flip_p": 0.875,
+      "paper_clusters": 9,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "layer2_macro_f1": {
+      "baseline_paper_mean": 0.1933571284264193,
+      "optimized_paper_mean": 0.18231942047301525,
+      "optimized_minus_baseline": -0.011037707953404065,
+      "conditional_exchangeability_sign_flip_p": 0.6875,
+      "paper_clusters": 9,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "layer3_macro_f1": {
+      "baseline_paper_mean": 0.46107763143667135,
+      "optimized_paper_mean": 0.38735484810967574,
+      "optimized_minus_baseline": -0.07372278332699563,
+      "conditional_exchangeability_sign_flip_p": 0.10546875,
+      "paper_clusters": 9,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 0.73828125
+    },
+    "layer4_accuracy": {
+      "baseline_paper_mean": 0.7703930842819733,
+      "optimized_paper_mean": 0.8018184490406713,
+      "optimized_minus_baseline": 0.031425364758698095,
+      "conditional_exchangeability_sign_flip_p": 0.5,
+      "paper_clusters": 9,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "unsupported_claim_rate": {
+      "baseline_paper_mean": 0.004808771475438143,
+      "optimized_paper_mean": 0.0019336830777508746,
+      "optimized_minus_baseline": -0.002875088397687268,
+      "conditional_exchangeability_sign_flip_p": 0.5,
+      "paper_clusters": 9,
+      "higher_is_better": false,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "fixed_composite_window_mean": {
+      "baseline_paper_mean": 0.7009330976372284,
+      "optimized_paper_mean": 0.6912605357551318,
+      "optimized_minus_baseline": -0.009672561882096456,
+      "conditional_exchangeability_sign_flip_p": 0.5078125,
+      "paper_clusters": 9,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    }
+  },
+  "actual_window_keys": [
+    [
+      "paper_95eebae164cc42fd6005",
+      0
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      7
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      15
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      16
+    ],
+    [
+      "paper_ad7ea2de394ae32d2ed2",
+      0
+    ],
+    [
+      "paper_ad7ea2de394ae32d2ed2",
+      1
+    ],
+    [
+      "paper_ad7ea2de394ae32d2ed2",
+      5
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      1
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      2
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      4
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      7
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      8
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      15
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      3
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      4
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      5
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      7
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      9
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      10
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      12
+    ],
+    [
+      "paper_2f81cb801401904d4767",
+      1
+    ],
+    [
+      "paper_2f81cb801401904d4767",
+      5
+    ],
+    [
+      "paper_2f81cb801401904d4767",
+      11
+    ],
+    [
+      "paper_6dc9f2bdd81d9dcf4a46",
+      3
+    ],
+    [
+      "paper_6dc9f2bdd81d9dcf4a46",
+      7
+    ],
+    [
+      "paper_603603415f45919cbdc8",
+      1
+    ],
+    [
+      "paper_603603415f45919cbdc8",
+      6
+    ],
+    [
+      "paper_fb88f52bf6ea0323e952",
+      0
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      4
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      6
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      11
+    ]
+  ],
+  "per_paper_metrics": {
+    "paper_95eebae164cc42fd6005": {
+      "baseline": {
+        "layer1_coverage": 0.6097560975609756,
+        "qualification_recall": 0.6097560975609756,
+        "layer2_macro_f1": 0.08333333333333333,
+        "layer3_macro_f1": 0.405104007872174,
+        "layer4_accuracy": 0.8666666666666667,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.545452067669173
+      },
+      "optimized": {
+        "layer1_coverage": 0.6097560975609756,
+        "qualification_recall": 0.6097560975609756,
+        "layer2_macro_f1": 0.07142857142857142,
+        "layer3_macro_f1": 0.4632639196029289,
+        "layer4_accuracy": 0.8666666666666667,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.5457691459774793
+      }
+    },
+    "paper_ad7ea2de394ae32d2ed2": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.17436448263515933,
+        "layer3_macro_f1": 0.386387402012402,
+        "layer4_accuracy": 0.5925925925925926,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6776748578219166
+      },
+      "optimized": {
+        "layer1_coverage": 0.9607843137254902,
+        "qualification_recall": 0.9607843137254902,
+        "layer2_macro_f1": 0.01680672268907563,
+        "layer3_macro_f1": 0.1865546218487395,
+        "layer4_accuracy": 0.8148148148148148,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.5936125911125911
+      }
+    },
+    "paper_19f55daa7f17ede2858b": {
+      "baseline": {
+        "layer1_coverage": 0.9482758620689655,
+        "qualification_recall": 0.9482758620689655,
+        "layer2_macro_f1": 0.09640522875816994,
+        "layer3_macro_f1": 0.3333251101863095,
+        "layer4_accuracy": 0.9642857142857143,
+        "unsupported_claim_rate": 0.03418803418803419,
+        "fixed_composite_window_mean": 0.7337556556761199
+      },
+      "optimized": {
+        "layer1_coverage": 0.9827586206896551,
+        "qualification_recall": 0.9827586206896551,
+        "layer2_macro_f1": 0.014814814814814815,
+        "layer3_macro_f1": 0.36484888692319034,
+        "layer4_accuracy": 0.9642857142857143,
+        "unsupported_claim_rate": 0.00847457627118644,
+        "fixed_composite_window_mean": 0.7666810846560846
+      }
+    },
+    "paper_b637a4adf835d6357900": {
+      "baseline": {
+        "layer1_coverage": 0.967741935483871,
+        "qualification_recall": 0.967741935483871,
+        "layer2_macro_f1": 0.06666666666666667,
+        "layer3_macro_f1": 0.3952380952380952,
+        "layer4_accuracy": 0.7976190476190477,
+        "unsupported_claim_rate": 0.00909090909090909,
+        "fixed_composite_window_mean": 0.6878527937579662
+      },
+      "optimized": {
+        "layer1_coverage": 0.978494623655914,
+        "qualification_recall": 0.978494623655914,
+        "layer2_macro_f1": 0.13333333333333333,
+        "layer3_macro_f1": 0.35765410458661995,
+        "layer4_accuracy": 0.7976190476190477,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6988346009987396
+      }
+    },
+    "paper_2f81cb801401904d4767": {
+      "baseline": {
+        "layer1_coverage": 0.9782608695652174,
+        "qualification_recall": 0.9782608695652174,
+        "layer2_macro_f1": 0.24166666666666667,
+        "layer3_macro_f1": 0.5729582742187784,
+        "layer4_accuracy": 0.5151515151515151,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7076682982912431
+      },
+      "optimized": {
+        "layer1_coverage": 0.967391304347826,
+        "qualification_recall": 0.967391304347826,
+        "layer2_macro_f1": 0.19047619047619047,
+        "layer3_macro_f1": 0.33382848088730444,
+        "layer4_accuracy": 0.5757575757575758,
+        "unsupported_claim_rate": 0.008928571428571428,
+        "fixed_composite_window_mean": 0.6522361600215048
+      }
+    },
+    "paper_6dc9f2bdd81d9dcf4a46": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.03333333333333333,
+        "layer3_macro_f1": 0.5468684321143338,
+        "layer4_accuracy": 0.625,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6571942486672089
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.01818181818181818,
+        "layer3_macro_f1": 0.38095238095238093,
+        "layer4_accuracy": 0.625,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6455992260427745
+      }
+    },
+    "paper_603603415f45919cbdc8": {
+      "baseline": {
+        "layer1_coverage": 0.9807692307692307,
+        "qualification_recall": 0.9807692307692307,
+        "layer2_macro_f1": 0.044444444444444446,
+        "layer3_macro_f1": 0.3287037037037037,
+        "layer4_accuracy": 0.85,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6317336353733413
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.19583333333333333,
+        "layer3_macro_f1": 0.32375992063492065,
+        "layer4_accuracy": 0.85,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6768174603174604
+      }
+    },
+    "paper_fb88f52bf6ea0323e952": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 1.0,
+        "layer3_macro_f1": 0.8181818181818182,
+        "layer4_accuracy": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.9636363636363636
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 1.0,
+        "layer3_macro_f1": 0.6363636363636364,
+        "layer4_accuracy": 1.0,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.9272727272727272
+      }
+    },
+    "paper_75abf75ded7b6df0c2b5": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.3629318394024276,
+        "layer4_accuracy": 0.7222222222222222,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7034299578417226
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.43896768118736085,
+        "layer4_accuracy": 0.7222222222222222,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7145218253968254
+      }
+    }
+  },
+  "statistical_limitations": "Descriptive available-case diagnostic. Sources/grades are AI references, not expert gold. Missingness is not random. Sign-flip p values assume within-paper exchangeability and do not establish whole-benchmark or population superiority."
+}

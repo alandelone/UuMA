@@ -34,6 +34,42 @@ def _healthy_graph(monkeypatch) -> None:
     monkeypatch.setattr(PLUGIN, "_check_graph", check)
 
 
+def test_yonc_receives_colleague_capabilities_without_a_model_tool_call(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "yonc")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "yonc-run", "task_id": "yonc-task"}},
+        {"ok": True, "result": {"observed_at": "now", "agents": [
+            {"agent_id": "scholar", "role_guidance": {"suitable_work": ["literature"]},
+             "runtime_readiness": "NOT_CHECKED"},
+        ], "supporting_systems": [], "unregistered_role_ids": [], "has_more": False}},
+        {"ok": True, "result": {"ok": True, "graph_version": 18}},
+    ]
+    PLUGIN._CONTEXT = context
+    args = {"session_id": "yonc-chat", "turn_id": "one", "user_message": "誰能整理文獻？"}
+    guidance = PLUGIN._health_context(**args)["context"]
+    assert "scholar" in guidance and "literature" in guidance
+    assert "do not prove" in guidance and "has not assigned any work" in guidance
+    context.call_mcp.assert_any_call("uuma-worker", "yonc_get_colleague_capabilities", {}, timeout=20)
+    repeated = PLUGIN._health_context(**args)["context"]
+    assert "scholar" in repeated
+    assert context.call_mcp.call_count == 3
+
+
+def test_yonc_failed_lookup_is_not_treated_as_absent_colleagues(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "yonc")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "yonc-run", "task_id": "yonc-task"}},
+        {"ok": False, "error": "unavailable"},
+        {"ok": True, "result": {"ok": True}},
+    ]
+    PLUGIN._CONTEXT = context
+    guidance = PLUGIN._health_context(session_id="yonc-fail", user_message="分工建議")["context"]
+    assert "lookup did not succeed" in guidance
+    assert "Do not claim that colleagues are absent" in guidance
+
+
 def test_brainstormer_preflight_emphasizes_corrections_and_numeric_provenance(monkeypatch):
     monkeypatch.setenv("HERMES_PROFILE", "brainstormer")
     context = Mock()
@@ -168,6 +204,7 @@ def test_new_wisdom_topic_requires_later_user_consent_and_cannot_change_scope(mo
     context.call_mcp.side_effect = [
         {"ok": True, "result": {"run_id": "two", "task_id": "task-two"}},
         {"ok": True, "result": {"needs_intent_resolution": True}},
+        {"ok": True, "result": {"topic_id": "t"}},
     ]
     PLUGIN._CONTEXT = context
     PLUGIN._health_context(session_id="consent", turn_id="two", user_message="同意")
@@ -215,6 +252,7 @@ def test_wisdom_research_request_uses_graph_preflight_before_model_answer(monkey
     context = Mock()
     context.call_mcp.side_effect = [
         {"ok": True, "result": {"run_id": "run-research", "task_id": "task-research"}},
+        {"ok": True, "result": {"needs_intent_resolution": True}},
         {"ok": True, "result": {
             "requires_topic_approval": True,
             "proposed_topic": {"question": "针对青葱的气雾栽培细节"},
@@ -244,6 +282,7 @@ def test_wisdom_cannot_replace_grounded_preflight_with_unsourced_model_text(monk
     context = Mock()
     context.call_mcp.side_effect = [
         {"ok": True, "result": {"run_id": "run-grounded", "task_id": "task-grounded"}},
+        {"ok": True, "result": {"needs_intent_resolution": True}},
         {"ok": True, "result": {
             "answer": {"answer": "No traceable evidence is available yet.", "citations": []},
             "document_url": "http://127.0.0.1:8767/wisdom/topics/topic-1",
@@ -282,6 +321,40 @@ def test_wisdom_progress_reply_uses_global_durable_status(monkeypatch):
     assert "青葱气雾栽培" in reply
     assert "当前没有" not in reply
     assert "topic-1" in reply
+
+
+def test_reported_progress_question_clears_proposal_without_graph_or_research(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    graph = Mock(return_value=False)
+    monkeypatch.setattr(PLUGIN, "_check_graph", graph)
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "status-run", "task_id": "status-task"}},
+        {"ok": True, "result": {
+            "message_intent": "status", "needs_intent_resolution": False,
+            "global_status": {"active": [], "paused": [{
+                "topic_title": "青葱分株", "status": "PAUSED", "stop_reason": "资料缺口尚未解决",
+                "document_version": 35, "section_count": 9, "document_updated_at": "yesterday",
+                "document_url": "http://127.0.0.1:8767/wisdom/topics/original",
+            }], "topics_url": "http://127.0.0.1:8767/wisdom/topics"},
+        }},
+    ]
+    PLUGIN._CONTEXT = context
+    PLUGIN._state("reported").pending_topic_question = "how is the progress?"
+    args = {"session_id": "reported", "turn_id": "new", "user_message": "how is the progress?"}
+    PLUGIN._health_context(**args)
+    reply = PLUGIN._guard_specialist_output("Research is running steadily", **args)
+    assert "PAUSED" in reply and "资料缺口尚未解决" in reply
+    assert "35" in reply and "9 个章节" in reply and "全部主题" in reply
+    assert "是否同意" not in reply and "running steadily" not in reply
+    assert PLUGIN._state("reported").pending_topic_question is None
+    assert context.call_mcp.call_count == 2
+    assert context.call_mcp.call_args.args[2]["intent"] == "auto"
+    graph.assert_not_called()
+    assert PLUGIN._pre_tool_call(tool_name="mcp__wisdom_knowledge__knowledge_question_preflight",
+                                args={"intent": "status"}, **args) is None
+    assert PLUGIN._pre_tool_call(tool_name="mcp__wisdom_knowledge__knowledge_question_preflight",
+                                args={"intent": "research"}, **args)["action"] == "block"
 
 
 def test_scholar_missing_graph_blocks_catalog_output_and_completion(monkeypatch):
@@ -405,6 +478,51 @@ def test_forge_chatgpt_bridge_is_search_only(monkeypatch) -> None:
     )
     assert chat and chat["action"] == "block"
     assert search is None
+
+
+def test_forge_purchase_question_uses_search_tool_and_corrects_false_access_claim(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    row = {
+        "order_id": "2101620723153132851",
+        "ordered_at": "2024-03-29 08:32:43",
+        "variant": "TPU 白色200克1.75mm",
+        "product_url": "https://item.taobao.com/item.htm?id=41604517259",
+    }
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "forge-run", "task_id": "forge-task"}},
+        {"ok": True, "result": {"purchase_history_count": 1087}},
+        {"ok": True, "result": {"rows": [row], "total_count": 1, "has_more": False}},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "forge-purchase", "turn_id": "one"}
+    guidance = PLUGIN._health_context(
+        user_message="我买过 TPU 白色 200g 1.75mm 吗？给我商品链接。", **kwargs
+    )
+    calls = context.call_mcp.call_args_list
+    assert [call.args[1] for call in calls] == [
+        "register_direct_run", "inventory_status", "inventory_search_purchase_history"
+    ]
+    assert calls[2].args[2]["query"] == "TPU 200 1.75 白色"
+    assert row["product_url"] in guidance["context"]
+    reply = PLUGIN._guard_specialist_output("我没有权限访问 lab.db。", **kwargs)
+    assert row["product_url"] in reply
+    assert row["order_id"] in reply
+
+
+def test_forge_purchase_tool_failure_cannot_be_reported_as_absent(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "forge-run", "task_id": "forge-task"}},
+        {"ok": True, "result": {"purchase_history_count": 1087}},
+        {"ok": False, "error": "tool unavailable"},
+    ]
+    PLUGIN._CONTEXT = context
+    kwargs = {"session_id": "forge-failed", "turn_id": "one"}
+    PLUGIN._health_context(user_message="我购买的 TPU 订单在哪里？", **kwargs)
+    reply = PLUGIN._guard_specialist_output("数据库里没有 TPU。", **kwargs)
+    assert "查询工具未成功" in reply
 
 def test_orchestrator_live_stop_remains_available_but_scholar_spawn_is_blocked(monkeypatch) -> None:
     monkeypatch.setenv("HERMES_PROFILE", "default")
@@ -560,6 +678,7 @@ def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -
     context = Mock()
     context.call_mcp.side_effect = [
         {"ok": True, "result": {"run_id": "run-auto", "task_id": "task-auto"}},
+        {"ok": True, "result": {"needs_intent_resolution": True}},
         {"ok": True, "result": {"answer": "candidate is not canonical"}},
     ]
     PLUGIN._CONTEXT = context
@@ -570,7 +689,7 @@ def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -
     )
     assert "run-auto" in result["context"]
     assert "candidate is not canonical" in result["context"]
-    assert context.call_mcp.call_count == 2
+    assert context.call_mcp.call_count == 3
     assert context.call_mcp.call_args_list[0].args[:2] == (
         "uuma-worker",
         "register_direct_run",
@@ -599,7 +718,7 @@ def test_direct_wisdom_turn_auto_registers_and_uses_knowledge_mcp(monkeypatch) -
     assert result["task_id"] == "task-auto"
     assert result["outcome"] == "COMPLETED"
     PLUGIN._finalize_specialist(session_id="wisdom-auto", assistant_response="grounded answer")
-    assert context.call_mcp.call_count == 3
+    assert context.call_mcp.call_count == 4
 
 
 def test_wisdom_degraded_preflight_is_blocked_in_output(monkeypatch) -> None:
@@ -720,6 +839,7 @@ def test_yonc_auto_registers_and_checks_project_identity(monkeypatch) -> None:
     context = Mock()
     context.call_mcp.side_effect = [
         {"ok": True, "result": {"run_id": "run-yonc", "task_id": "task-yonc"}},
+        {"ok": True, "result": {"agents": [], "observed_at": "now"}},
         {"ok": True, "result": {"database_identity": "db-1", "graph_version": 7}},
     ]
     PLUGIN._CONTEXT = context
@@ -728,6 +848,254 @@ def test_yonc_auto_registers_and_checks_project_identity(monkeypatch) -> None:
     )
     assert "run-yonc" in reminder["context"]
     assert context.call_mcp.call_args_list[1].args[:3] == (
+        "uuma-worker", "yonc_get_colleague_capabilities", {}
+    )
+    assert context.call_mcp.call_args_list[2].args[:3] == (
         "yonc-project", "yonc_status", {}
     )
     assert PLUGIN._guard_specialist_output("review", session_id="yonc-session") is None
+
+
+def test_honc_auto_registers_and_checks_execution_identity(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "honc")
+    context = Mock()
+    context.call_mcp.side_effect = [
+        {"ok": True, "result": {"run_id": "run-honc", "task_id": "task-honc"}},
+        {"ok": True, "result": {"user_id": "default_user", "active_round": None}},
+    ]
+    PLUGIN._CONTEXT = context
+    reminder = PLUGIN._health_context(
+        session_id="honc-session", turn_id="turn-1", user_message="今日执行跟踪"
+    )
+    assert "run-honc" in reminder["context"]
+    assert "Honc: manage daily execution facts" in reminder["context"]
+    assert context.call_mcp.call_args_list[0].args[:2] == (
+        "uuma-worker", "register_direct_run"
+    )
+    contract = json.loads(context.call_mcp.call_args_list[0].args[2]["contract_json"])
+    assert contract["risk_level"] == "REVERSIBLE"
+    assert context.call_mcp.call_args_list[1].args[:3] == (
+        "honc-execution", "honc_status", {}
+    )
+    assert PLUGIN._guard_specialist_output(
+        "今日已完成 2 个番茄钟。", session_id="honc-session"
+    ) is None
+
+
+def test_wisdom_kanban_worker_env_bypasses_direct_chat_and_preserves_output(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    monkeypatch.setenv("HERMES_KANBAN_TASK", "t_263a9b20")
+    context = Mock()
+    PLUGIN._CONTEXT = context
+
+    reminder = PLUGIN._health_context(
+        session_id="kanban-sess-1", turn_id="turn-1", user_message="work kanban task t_263a9b20"
+    )
+    assert reminder is None
+    assert context.call_mcp.call_count == 0
+
+    state = PLUGIN._state("kanban-sess-1")
+    assert state.is_kanban is True
+    assert state.direct_run_id == "kanban:t_263a9b20"
+    assert state.wisdom_intent_resolved is True
+
+    # Kanban tools allowed without direct run error
+    assert PLUGIN._pre_tool_call(
+        tool_name="kanban_show", args={"task_id": "t_263a9b20"}, session_id="kanban-sess-1"
+    ) is None
+    assert PLUGIN._pre_tool_call(
+        tool_name="kanban_complete", args={"task_id": "t_263a9b20"}, session_id="kanban-sess-1"
+    ) is None
+
+    # Output not transformed
+    research_report = "青蒜气雾培项目研究报告 — Phase 6: 深入聚焦与量化实施方案\n..."
+    transformed = PLUGIN._guard_specialist_output(research_report, session_id="kanban-sess-1")
+    assert transformed is None
+
+    # Finalize does not submit a direct run result
+    PLUGIN._finalize_specialist(session_id="kanban-sess-1", assistant_response=research_report)
+    assert context.call_mcp.call_count == 0
+
+
+def test_wisdom_kanban_worker_message_prefix_bypasses_direct_chat(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    monkeypatch.delenv("HERMES_KANBAN_TASK", raising=False)
+    context = Mock()
+    PLUGIN._CONTEXT = context
+
+    reminder = PLUGIN._health_context(
+        session_id="kanban-sess-2", turn_id="turn-1", user_message="work kanban task t_6eb43810"
+    )
+    assert reminder is None
+    assert context.call_mcp.call_count == 0
+
+    state = PLUGIN._state("kanban-sess-2")
+    assert state.is_kanban is True
+    assert state.direct_run_id == "kanban:t_6eb43810"
+
+    transformed = PLUGIN._guard_specialist_output("Phase 5 report content", session_id="kanban-sess-2")
+    assert transformed is None
+
+
+def test_kanban_worker_multi_turn_persists_kanban_state(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    monkeypatch.setenv("HERMES_KANBAN_TASK", "t_263a9b20")
+    context = Mock()
+    PLUGIN._CONTEXT = context
+
+    # Turn 1
+    PLUGIN._health_context(session_id="kanban-sess-multi", turn_id="turn-1", user_message="work kanban task t_263a9b20")
+
+    # Turn 2 (e.g. nudge or follow-up)
+    reminder = PLUGIN._health_context(
+        session_id="kanban-sess-multi", turn_id="turn-2", user_message="Please remember to complete the card"
+    )
+    assert reminder is None
+    state = PLUGIN._state("kanban-sess-multi")
+    assert state.is_kanban is True
+    assert state.direct_run_id == "kanban:t_263a9b20"
+
+    transformed = PLUGIN._guard_specialist_output("Final synthesized text", session_id="kanban-sess-multi")
+    assert transformed is None
+
+
+def test_forge_file_mutation_allowed_in_hardware_workspace(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    PLUGIN._state("forge-sess").direct_run_id = "run-forge-1"
+
+    # write_file to Hardware-Lab-Workspace/projects
+    path1 = "C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace/projects/scallion/plan.md"
+    res1 = PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": path1, "content": "# Plan"},
+        session_id="forge-sess",
+    )
+    assert res1 is None
+
+    # edit_file in Hardware-Lab-Workspace/outputs
+    path2 = "C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace/outputs/bom.json"
+    res2 = PLUGIN._pre_tool_call(
+        tool_name="edit_file",
+        args={"file_path": path2, "content": "{}"},
+        session_id="forge-sess",
+    )
+    assert res2 is None
+
+    # apply_patch with relative path resolving in Hardware-Lab-Workspace
+    res3 = PLUGIN._pre_tool_call(
+        tool_name="apply_patch",
+        args={"path": "projects/scallion/plan.md", "diff": "--- +++"},
+        session_id="forge-sess",
+    )
+    assert res3 is None
+
+
+def test_forge_file_mutation_allowed_in_kanban_workspace(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    state = PLUGIN._state("kanban-forge")
+    state.is_kanban = True
+    state.direct_run_id = "kanban:t_29be449d"
+
+    # Absolute Windows path in kanban workspace
+    path_win = r"C:\Users\Alandelone\AppData\Local\hermes\kanban\workspaces\t_29be449d\系统设计文档.md"
+    assert PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": path_win, "content": "# Design"},
+        session_id="kanban-forge",
+        task_id="t_29be449d",
+    ) is None
+
+    # Git Bash posix path in kanban workspace
+    path_posix = "/c/Users/Alandelone/AppData/Local/hermes/kanban/workspaces/t_29be449d/硬件清单与预算.md"
+    assert PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": path_posix, "content": "# Budget"},
+        session_id="kanban-forge",
+        task_id="t_29be449d",
+    ) is None
+
+    # Relative path in kanban task
+    assert PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": "experiment.md", "content": "# Exp"},
+        session_id="kanban-forge",
+        task_id="t_29be449d",
+    ) is None
+
+
+def test_forge_file_mutation_blocked_outside_project_directory(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    PLUGIN._state("forge-sess").direct_run_id = "run-forge-1"
+
+    # System directory
+    res_sys = PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": "C:/Windows/System32/cmd.exe", "content": "bad"},
+        session_id="forge-sess",
+    )
+    assert res_sys is not None and res_sys["action"] == "block"
+    assert "file mutation is restricted to the project folder" in res_sys["message"]
+
+    # Top-level hermes config
+    res_cfg = PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": "C:/Users/Alandelone/AppData/Local/hermes/config.yaml", "content": "bad"},
+        session_id="forge-sess",
+    )
+    assert res_cfg is not None and res_cfg["action"] == "block"
+    assert "file mutation is restricted to the project folder" in res_cfg["message"]
+
+    # UuMA code directory
+    res_uuma = PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/src/bad.py", "content": "bad"},
+        session_id="forge-sess",
+    )
+    assert res_uuma is not None and res_uuma["action"] == "block"
+    assert "file mutation is restricted to the project folder" in res_uuma["message"]
+
+    # Empty or missing args
+    res_empty = PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={},
+        session_id="forge-sess",
+    )
+    assert res_empty is not None and res_empty["action"] == "block"
+    assert "file mutation is restricted to the project folder" in res_empty["message"]
+
+
+def test_forge_delete_file_and_terminal_remain_blocked(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "forge-lab-bot")
+    PLUGIN._state("forge-sess").direct_run_id = "run-forge-1"
+
+    # delete_file remains blocked even inside project
+    res_del = PLUGIN._pre_tool_call(
+        tool_name="delete_file",
+        args={"path": "C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace/projects/scallion/plan.md"},
+        session_id="forge-sess",
+    )
+    assert res_del is not None and res_del["action"] == "block"
+    assert "Blocked by UuMA specialist policy" in res_del["message"]
+
+    # terminal remains blocked
+    res_term = PLUGIN._pre_tool_call(
+        tool_name="terminal",
+        args={"command": "dir"},
+        session_id="forge-sess",
+    )
+    assert res_term is not None and res_term["action"] == "block"
+
+
+def test_other_specialists_cannot_mutate_files(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    PLUGIN._state("wisdom-sess").direct_run_id = "run-wisdom-1"
+
+    res = PLUGIN._pre_tool_call(
+        tool_name="write_file",
+        args={"path": "C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace/projects/plan.md"},
+        session_id="wisdom-sess",
+    )
+    assert res is not None and res["action"] == "block"
+    assert "Blocked by UuMA specialist policy: control, computer, file mutation" in res["message"]
+
+

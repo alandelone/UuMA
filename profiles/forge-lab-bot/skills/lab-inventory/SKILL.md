@@ -23,3 +23,8 @@ The `lab-inventory` skill manages the physical stock ledger and locations within
 - **Bucket Transitions**: `inventory_transition`.
 - **Physical Reconciliation**: `inventory_adjust`.
 - **Legacy Migration**: `inventory_preview_or_import_legacy_rows`.
+- **Purchase History**: `inventory_search_purchase_history` for all staged orders, including
+  resolved lines and `product_url`; use `|` for alternatives and page with `offset`.
+- **Commerce Orders**: `commerce_search_order_lines` to query and search newly scraped or
+  crawled e-commerce orders in `commerce_order_lines` by keywords, platform, or status.
+

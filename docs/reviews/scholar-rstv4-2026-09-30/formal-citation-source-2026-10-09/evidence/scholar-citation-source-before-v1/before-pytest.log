@@ -1,0 +1,274 @@
+FFFFFFFFFFF                                                              [100%]
+================================== FAILURES ===================================
+___ test_original_context_and_pdf_survive_metadata_refresh_and_regeneration ___
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_original_context_and_pdf_0')
+
+    def test_original_context_and_pdf_survive_metadata_refresh_and_regeneration(tmp_path):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        first = generate(service, ms)
+>       context = first["references"][0]["source_context"]
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'source_context'
+
+tests\test_studio_source_context.py:99: KeyError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[paper] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang0')
+defect = 'paper'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[skeleton] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang1')
+defect = 'skeleton'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[unit] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang2')
+defect = 'unit'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[excerpt] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang3')
+defect = 'excerpt'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[page] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang4')
+defect = 'page'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[unit_digest] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang5')
+defect = 'unit_digest'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+_ test_explicit_foreign_or_changed_source_rejects_before_model_execution[skeleton_digest] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_explicit_foreign_or_chang6')
+defect = 'skeleton_digest'
+
+    @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+    def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            if defect == "paper":
+                conn.execute("UPDATE evidence SET paper_id='other' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            elif defect == "excerpt":
+                conn.execute("UPDATE evidence SET excerpt='Invented original text' WHERE evidence_id=?", (evidence[0]["evidence_id"],))
+            else:
+                location = json.loads(evidence[0]["location_json"])
+                key = {"skeleton": "skeleton_id", "unit": "unit_id"}.get(defect, defect)
+                location[key] = 999 if defect == "page" else "foreign-or-changed"
+                conn.execute("UPDATE evidence SET location_json=? WHERE evidence_id=?", (json.dumps(location), evidence[0]["evidence_id"]))
+        calls = []
+        service.gateway.analyze = lambda *args: calls.append(args)
+        job = wait_for_job(service, service.create_job(ms, "GENERATE", input_revision=1))
+        assert job["status"] == "FAILED", job
+>       assert calls == []
+E       AssertionError: assert [('paragraph_...m': '', ...})] == []
+E         
+E         Left contains 3 more items, first extra item: ('paragraph_realization', {'constraint': 'Preserve every author thought; do not add scientific claims. Use only select... 'sentences': 'array of exact consecutive sentence strings covering paragraph; no omitted text'}, 'paradigm': '', ...})
+E         Use -v to get more diff
+
+tests\test_studio_source_context.py:137: AssertionError
+__ test_fixed_pdf_route_rejects_foreign_reference_and_changed_original_bytes __
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_fixed_pdf_route_rejects_f0')
+
+    def test_fixed_pdf_route_rejects_foreign_reference_and_changed_original_bytes(tmp_path):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        first = generate(service, ms)
+        route = f"/api/manuscripts/{ms}/generated-versions/{first['generated_version_id']}/sources/{evidence[1]['evidence_id']}/pdf"
+        with TestClient(create_app(tmp_path)) as client:
+            response = client.get(route)
+>           assert response.status_code == 200 and response.content == pdf.read_bytes()
+E           assert (404 == 200)
+E            +  where 404 = <Response [404 Not Found]>.status_code
+
+tests\test_studio_source_context.py:147: AssertionError
+_ test_generated_reference_cannot_override_original_validated_source_snapshot _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_generated_reference_canno0')
+
+    def test_generated_reference_cannot_override_original_validated_source_snapshot(tmp_path):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        first = generate(service, ms)
+        with transaction(service.db_path) as conn:
+            row = conn.execute("SELECT inputs_json FROM manuscript_versions WHERE manuscript_version_id=?", (first["generated_version_id"],)).fetchone()
+            inputs = json.loads(row[0])
+>           inputs["generated"]["references"][0]["source_context"]["unit"]["raw_text"] = "Invented historical source"
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           KeyError: 'source_context'
+
+tests\test_studio_source_context.py:161: KeyError
+_ test_unknown_source_provenance_remains_explicit_without_latest_source_guess _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-citation-source-before-v1/pytest/test_unknown_source_provenance0')
+
+    def test_unknown_source_provenance_remains_explicit_without_latest_source_guess(tmp_path):
+        service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+        with transaction(service.db_path) as conn:
+            conn.execute("UPDATE evidence SET location_json='{}' WHERE evidence_id=?", (evidence[1]["evidence_id"],))
+        first = generate(service, ms)
+>       assert first["references"][0]["source_context"]["available"] is False
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       KeyError: 'source_context'
+
+tests\test_studio_source_context.py:172: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_source_context.py::test_original_context_and_pdf_survive_metadata_refresh_and_regeneration
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[paper]
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[skeleton]
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[unit]
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[excerpt]
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[page]
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[unit_digest]
+FAILED tests/test_studio_source_context.py::test_explicit_foreign_or_changed_source_rejects_before_model_execution[skeleton_digest]
+FAILED tests/test_studio_source_context.py::test_fixed_pdf_route_rejects_foreign_reference_and_changed_original_bytes
+FAILED tests/test_studio_source_context.py::test_generated_reference_cannot_override_original_validated_source_snapshot
+FAILED tests/test_studio_source_context.py::test_unknown_source_provenance_remains_explicit_without_latest_source_guess
+11 failed in 7.85s

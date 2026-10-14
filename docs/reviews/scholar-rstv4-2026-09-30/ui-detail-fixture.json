@@ -1,0 +1,23 @@
+﻿{
+    "root":  "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-ui-detail-dwi5a2zf",
+    "track_id":  "track_e84eba90b2ed4521a37c7956be631431",
+    "manuscript_id":  "manuscript_b028a9c7565b45ca9a1feec98e833a63",
+    "owned_processes":  {
+                            "studio":  80980,
+                            "catalog":  66160,
+                            "frontend":  65556
+                        },
+    "stopped_process_ids":  [
+                                26016,
+                                28996,
+                                80980,
+                                82424,
+                                88372,
+                                66160,
+                                72072,
+                                85752,
+                                53884,
+                                76476,
+                                65556
+                            ]
+}

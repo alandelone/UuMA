@@ -1,0 +1,308 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Source hierarchy native acceptance Ω — software fixture · RSTV4
+  - status: 已自动保存
+  - button:
+  - button [disabled]:
+  - button:
+    - text: Generate
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+  - alert:
+    - generic: 已采用所选空结构；原内容保留在待安置区域，可移动或撤销。
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: Source hierarchy native acceptance Ω — software fixture
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - generic: 1 / 10
+    - generic: Software_Test
+    - blockquote: Source Omega Ω
+    - paragraph: Source hierarchy software fixture
+    - button: ←
+    - button: →
+    - button: ＋ 预览完整模板
+    - button:
+      - text: 拖入模板
+    - paragraph: 放到整篇入口，或章节、段落、Intent 后方；先预览，确认后再采用。
+  - generic "结构选择与移动":
+    - button: 多选／分组
+    - status
+  - textbox: Source hierarchy native acceptance Ω — software fixture
+  - textbox:
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+  - button: SECTION 1
+  - button:
+  - button [expanded]:
+  - textbox: Source Alpha Ω
+  - textbox:
+    - /placeholder: 章节作用
+  - generic: •••
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - generic: 放入 Source Alpha Ω 里面
+  - button: SUBSECTION 2
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Source Alpha Ω / Repeated source heading
+  - textbox: Repeated source heading
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Claim
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: 放入 Source Alpha Ω / Repeated source heading / 未定段落 / Software_Claim 里面
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 3
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Source Alpha Ω / Repeated source heading
+  - textbox: Repeated source heading
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Claim
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: 放入 Source Alpha Ω / Repeated source heading / 未定段落 / Software_Claim 里面
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SECTION 4
+  - status:
+    - strong: 待安置
+    - text: · 原内容、引用与编号完整保留。可将内容移入模板；未安置时不能生成成文。
+  - button: 预览安置原章节
+  - button: 对应到模板 Intent
+  - button: 将此章节标记为已安置
+  - button:
+  - button [expanded]:
+  - textbox: Original author root Ω
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Motivation
+  - generic: •••
+  - button: GROUP
+  - button:
+  - button [expanded]:
+  - textbox:
+    - /placeholder: 段落组用途可以暂时未定
+    - text: Original author group Ω
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+      - text: Original author purpose Ω
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original author organization
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Original author intent
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: AUTHOR original wording Ω with its selected software citation.
+    - button:
+      - generic: "1"
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: ∑
+    - textbox:
+      - /placeholder: LaTeX：E = mc^2
+      - text: x=1
+    - textbox:
+      - /placeholder: 公式说明（可选）
+      - text: Original author formula
+    - button:
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+    - figure:
+      - table:
+        - rowgroup:
+          - row:
+            - cell: x
+            - cell: "y"
+          - row:
+            - cell: "1"
+            - cell: "2"
+      - link:
+        - /url: http://127.0.0.1:8879/api/assets/asset_995ed7847a3546ff94c7abbd6a0ef352/content
+        - text: author-software-table.csv
+      - generic: READY
+  - article:
+    - button: P2
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+      - text: Original author purpose Ω
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original author organization
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Original author intent
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: AUTHOR second original wording stays independent.
+    - button:
+      - generic: "1"
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: ∑
+    - textbox:
+      - /placeholder: LaTeX：E = mc^2
+      - text: x=1
+    - textbox:
+      - /placeholder: 公式说明（可选）
+      - text: Original author formula
+    - button:
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+    - figure:
+      - table:
+        - rowgroup:
+          - row:
+            - cell: x
+            - cell: "y"
+          - row:
+            - cell: "1"
+            - cell: "2"
+      - link:
+        - /url: http://127.0.0.1:8879/api/assets/asset_995ed7847a3546ff94c7abbd6a0ef352/content
+        - text: author-software-table.csv
+      - generic: READY
+  - button:
+    - text: 组内段落
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button:
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox:
+      - /placeholder: 找资料、依据、反证…
+    - article:
+      - button:
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Synthetic hierarchy software fixture
+        - generic: Synthetic source only
+      - generic: Source hierarchy software fixture
+      - generic: 原文不可用
+  - status
+  - button:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Source hierarchy native acceptance Ω — software fixture
+- dialog "原作者内容对应到模板槽位":
+  - heading "原作者内容对应到模板槽位" [level=2]
+  - paragraph: 由你选择对应关系。原思想、引用与编号仍保存在原结构中，并呈现在指定槽位；原段落用途、组、公式、附件和 L2 关系保留，可撤销。
+  - text: 原作者 Intent
+  - combobox "对应的原作者 Intent":
+    - option "选择原 Intent"
+    - option "Original author root Ω / Original author purpose Ω / Original author intent · intent_c27c009a52334af0834cd9978e18cd01" [selected]
+    - option "Original author root Ω / Original author purpose Ω / Original author intent · intent_56a5681618b24da2b65bfa184158e683"
+  - text: 模板槽位
+  - combobox "对应的模板 Intent 槽位":
+    - option "选择目标槽位"
+    - option "Source Alpha Ω / Repeated source heading / 未定段落 / Software_Claim · intent_70932ec2d56e48c393b3d2cab8fa6a01"
+    - option "Source Alpha Ω / Repeated source heading / 未定段落 / Software_Claim · intent_20a2122a4697456e9037d7ca357f7018" [selected]
+  - region "作者 Intent 对应预览":
+    - paragraph: 原位置：Original author root Ω / Original author purpose Ω / Original author intent · intent_c27c009a52334af0834cd9978e18cd01
+    - paragraph: 目标：Source Alpha Ω / Repeated source heading / 未定段落 / Software_Claim · intent_20a2122a4697456e9037d7ca357f7018
+    - paragraph: 模板原文路径：Source Alpha Ω / Repeated source heading · 第 4 页
+    - paragraph: 目标已有 0 条直接思想、0 项对应。本次增加 1 条原思想，不替换已有内容。
+    - blockquote:
+      - text: AUTHOR original wording Ω with its selected software citation.
+      - text: 引用：SELECTED · 1 项已选
+    - paragraph: 原段落用途：Original author purpose Ω；范式：Original author organization；关系：Author comparison
+    - paragraph: 原段落组：Original author group Ω；1 个公式，1 个附件关联，全部 L2 端点与条件保留。
+    - paragraph: x=1 · Original author formula
+    - checkbox "同时将本原段落的公式、附件用于目标段落" [checked]:
+    - checkbox [checked]
+    - text: 同时将本原段落的公式、附件用于目标段落
+  - checkbox "我已核对原内容、目标和附加内容位置，确认此对应" [checked] [active]:
+  - checkbox [checked]
+  - text: 我已核对原内容、目标和附加内容位置，确认此对应
+  - button "取消"
+  - button "确认对应到槽位"
+  - button "Close":
+    - generic: Close

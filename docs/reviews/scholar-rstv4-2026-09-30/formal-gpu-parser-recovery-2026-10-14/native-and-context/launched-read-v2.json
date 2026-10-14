@@ -1,0 +1,12 @@
+{
+  "pid": 36900,
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-gpu-success-read-serve-v2.py"
+  ],
+  "port": 8887,
+  "retry_already_consumed": true,
+  "only_added_semantic_read": "POST /api/catalog/papers/query"
+}

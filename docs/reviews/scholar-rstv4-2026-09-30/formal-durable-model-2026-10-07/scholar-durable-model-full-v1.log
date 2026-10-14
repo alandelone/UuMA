@@ -1,0 +1,167 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/manuscript_scientific_review.py', 'src/rstv4/approval.py', 'src/rstv4/studio.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'src/rstv4/models.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/collection_web.py', 'src/rstv4/collection_inputs.py', 'src/rstv4/collection_runtime.py', 'src/rstv4/acquisition_model_calls.py', 'src/rstv4/skeleton_audit.py', 'src/rstv4/scope_literature.py', 'src/rstv4/track_first.py', 'src/rstv4/track_scientific_workspace.py', 'src/rstv4/skeleton_intent.py', 'src/rstv4/model_gateway.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/research_views.py', 'src/rstv4/durable_model_delivery.py', 'tests/test_manuscript_scientific_review.py', 'tests/test_catalog_paper_selection.py', 'tests/test_collection_runtime.py', 'tests/test_acquisition_deep_read.py', 'tests/test_scope_literature.py', 'tests/test_track_scientific_workspace.py', 'tests/test_skeleton_intent.py', 'tests/test_durable_model_delivery.py']
+All checks passed!
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-durable-model-full-inline-v1.js']
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_scientific_review.js']
+RUN ['node', 'tests/catalog_review_workflow.mjs']
+8 controlled explicit review workflow checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_review_workflow.js']
+RUN ['node', 'tests/catalog_collections.mjs']
+9 controlled Collection request checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_collections.js']
+RUN ['node', 'tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS unclassified source Intent is shown as incomplete rather than empty success
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+PASS historical unit location focuses the exact source and rejects a different owner
+PASS concept and relationship locations preserve the real case sensitive graph keys
+PASS a frozen source cannot be highlighted in a different Living or Snapshot view
+18 controlled workspace scenarios passed
+RUN ['node', '--check', 'src/rstv4/catalog_research_workspaces.js']
+RUN ['node', 'tests/catalog_research_overview.mjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed
+RUN ['node', '--check', 'src/rstv4/catalog_research_overview.js']
+RUN ['node', 'tests/catalog_existing_papers.mjs']
+7 controlled existing-paper and actual section-handler checks passed
+RUN ['node', 'tests/catalog_collection_progress.mjs']
+5 controlled budget draft/comparison/original-request checks passed
+RUN ['node', 'tests/catalog_deep_read.mjs']
+6 frozen deep-read draft/owner/exact-retry/source checks passed
+RUN ['node', 'tests/catalog_scope_literature.mjs']
+11 actual scope navigation, review-return, query-handler, late-response and invalid-link checks passed
+RUN ['node', 'tests/catalog_track_decisions.mjs']
+PASS all six independent scientific types and exact evidence are rendered
+PASS propose uses exact selected dependencies and never submits an approval grant
+PASS unknown submission survives reload and retries exact original body
+PASS known conflict preserves draft and requires deliberate version comparison
+PASS storage refusal stops before a mutation is sent
+PASS late Track context cannot overwrite a different selected Track
+PASS late successful mutation clears only its original Track receipt
+PASS drafts are isolated between tabs
+PASS replacement preserves original node and its explicit dependencies
+PASS apply requires read-back authentic grant and captured basis
+PASS unknown apply result retries original action after grant is consumed
+PASS HTML actually loads the new controller before workspace mount
+PASS actual mounted form and buttons invoke proposal and Chat node handlers
+PASS invalid selected dependencies remain removable instead of disappearing on edit
+14 controlled scientific UI checks passed; browser acceptance false
+RUN ['node', '--check', 'src/rstv4/catalog_track_decisions.js']
+RUN ['node', '--check', 'src/rstv4/catalog_collections.js']
+RUN ['git', 'diff', '--check']
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-current-ui.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-ui-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-workflow-view-v3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/research-overview-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pyproject.toml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/probe_chrome_acquisition_live.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition_worker.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/approval.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_annotations.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_review.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/database.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/model_gateway.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/paperpool_evaluation.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/parser_quality.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/track_first.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests', '-q', '--basetemp', 'C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-full-ed9dt6u_']
+........................................................................ [  7%]
+........................................................................ [ 15%]
+........................................................................ [ 23%]
+........................................................................ [ 31%]
+........................................................................ [ 39%]
+........................................................................ [ 47%]
+........................................................................ [ 54%]
+........................................................................ [ 62%]
+........................................................................ [ 70%]
+........................................................................ [ 78%]
+........................................................................ [ 86%]
+........................................................................ [ 94%]
+......................................................                   [100%]
+============================== warnings summary ===============================
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_context_reference.py:67: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**inputs, repair_feedback=feedback)
+
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\anaconda3\Lib\site-packages\pydantic\_internal\_generate_schema.py:1463: UserWarning: Item 'summary' on TypedDict class 'ChatCompletionReasoningItem' is using the `ReadOnly` qualifier. Pydantic will not protect items from any mutation on dictionary instances.
+    warnings.warn(
+
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_graph_reference.py:281: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_lossless_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph_v2.py:363: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:246: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:347: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_verified_reference.py:147: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+918 passed, 20 warnings in 368.68s (0:06:08)

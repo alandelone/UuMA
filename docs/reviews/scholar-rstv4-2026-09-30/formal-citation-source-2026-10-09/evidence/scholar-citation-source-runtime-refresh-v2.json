@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "verified_owned_processes": [
+    {
+      "ProcessId": 28468,
+      "ParentProcessId": 26816,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-v1.py serve",
+      "CreationDate": "/Date(1791541679488)/"
+    },
+    {
+      "ProcessId": 60576,
+      "ParentProcessId": 28468,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-v1.py serve",
+      "CreationDate": "/Date(1791541679505)/"
+    }
+  ],
+  "prior_jobs": 1,
+  "prior_model_calls": 1,
+  "all_database_rows_preserved": true,
+  "new_backend_pid": 93264,
+  "all_other_runtimes_untouched": true
+}

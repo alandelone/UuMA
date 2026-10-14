@@ -1,0 +1,497 @@
+{
+  "schema_version": 1,
+  "artifact_type": "EXECUTED_BACKEND_ACCEPTANCE_CASES",
+  "timezone": "Asia/Kuala_Lumpur",
+  "policy_file": "honc-reminder-policy-defaults-v1.json",
+  "acceptance_file": "../reviews/honc-architecture-2026-10-13/policy-acceptance.json",
+  "executed_against_product": true,
+  "cases": [
+    {
+      "id": "RP01",
+      "rules": [
+        "R1"
+      ],
+      "given": {
+        "instance": "morning_1",
+        "target_status": "met",
+        "delivery_status": "not_sent",
+        "now": "2026-10-13T08:00:00+08:00"
+      },
+      "expect": {
+        "action": "SUPPRESS",
+        "reason": "TARGET_MET",
+        "new_messages": 0,
+        "keep_original_records": true
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP01]"
+      }
+    },
+    {
+      "id": "RP02",
+      "rules": [
+        "R1"
+      ],
+      "given": {
+        "instance": "exercise_1",
+        "value": 10,
+        "target": 20,
+        "unit": "minute",
+        "target_status": "partial",
+        "within_window": true,
+        "delivery_status": "not_sent"
+      },
+      "expect": {
+        "action": "ELIGIBLE_TO_SEND",
+        "reason": "TARGET_NOT_MET",
+        "assume_completed": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP02]"
+      }
+    },
+    {
+      "id": "RP03",
+      "rules": [
+        "R1"
+      ],
+      "given": {
+        "breakfast_target_status": "met",
+        "lunch_target_status": "unknown",
+        "lunch_within_window": true,
+        "lunch_delivery_status": "not_sent"
+      },
+      "expect": {
+        "suppress_instances": [
+          "breakfast"
+        ],
+        "eligible_instances": [
+          "lunch"
+        ],
+        "cross_instance_completion": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP03]"
+      }
+    },
+    {
+      "id": "RP04",
+      "rules": [
+        "R1"
+      ],
+      "given": {
+        "instance": "habit_1",
+        "configured_count": 2,
+        "explicit_send_slots": [
+          "15:00",
+          "15:30"
+        ],
+        "first_delivery": "DELIVERED",
+        "second_delivery": "not_sent",
+        "target_status": "met"
+      },
+      "expect": {
+        "cancel_remaining_unsent": true,
+        "preserve_first_delivery_receipt": true,
+        "new_messages": 0
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP04]"
+      }
+    },
+    {
+      "id": "RP05",
+      "rules": [
+        "R2"
+      ],
+      "given": {
+        "window_start": "2026-10-13T15:00:00+08:00",
+        "window_end": "2026-10-13T16:00:00+08:00",
+        "now": "2026-10-13T15:20:00+08:00",
+        "delivery_status": "not_sent",
+        "target_status": "unknown"
+      },
+      "expect": {
+        "action": "ELIGIBLE_TO_SEND",
+        "keep_original_window": true
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP05]"
+      }
+    },
+    {
+      "id": "RP06",
+      "rules": [
+        "R2"
+      ],
+      "given": {
+        "window_start": "2026-10-13T15:00:00+08:00",
+        "window_end": "2026-10-13T16:00:00+08:00",
+        "now": "2026-10-13T16:00:00+08:00",
+        "delivery_status": "not_sent"
+      },
+      "expect": {
+        "action": "EXPIRE",
+        "new_messages": 0,
+        "nightly_backfill": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP06]"
+      }
+    },
+    {
+      "id": "RP07",
+      "rules": [
+        "R2"
+      ],
+      "given": {
+        "fixed_due_at": "2026-10-13T08:00:00+08:00",
+        "grace_minutes": 30,
+        "now": "2026-10-13T08:29:00+08:00",
+        "delivery_status": "not_sent",
+        "target_status": "unknown"
+      },
+      "expect": {
+        "action": "ELIGIBLE_TO_SEND",
+        "window_end": "2026-10-13T08:30:00+08:00"
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP07]"
+      }
+    },
+    {
+      "id": "RP08",
+      "rules": [
+        "R2"
+      ],
+      "given": {
+        "fixed_due_at": "2026-10-13T08:00:00+08:00",
+        "grace_minutes": 30,
+        "now": "2026-10-13T08:30:00+08:00",
+        "delivery_status": "not_sent"
+      },
+      "expect": {
+        "action": "EXPIRE",
+        "new_messages": 0
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP08]"
+      }
+    },
+    {
+      "id": "RP09",
+      "rules": [
+        "R2"
+      ],
+      "given": {
+        "fixed_due_at": "2026-10-13T21:30:00+08:00",
+        "grace_minutes": 30,
+        "now": "2026-10-13T22:00:00+08:00",
+        "delivery_status": "not_sent"
+      },
+      "expect": {
+        "action": "EXPIRE",
+        "new_messages": 0,
+        "body_followup": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP09]"
+      }
+    },
+    {
+      "id": "RP10",
+      "rules": [
+        "R2"
+      ],
+      "given": {
+        "fixed_due_at": "2026-10-13T23:50:00+08:00",
+        "grace_minutes": 30,
+        "now": "2026-10-14T00:10:00+08:00",
+        "delivery_status": "not_sent",
+        "target_status": "unknown"
+      },
+      "expect": {
+        "action": "ELIGIBLE_TO_SEND",
+        "occurrence_business_date": "2026-10-13",
+        "new_day_quota": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP10]"
+      }
+    },
+    {
+      "id": "RP11",
+      "rules": [
+        "R3"
+      ],
+      "given": {
+        "same_owner_and_target": true,
+        "same_due_at": true,
+        "eligible_items": [
+          {
+            "id": "diary",
+            "importance": "high"
+          },
+          {
+            "id": "care",
+            "importance": "normal"
+          }
+        ],
+        "delivery_status": "not_sent"
+      },
+      "expect": {
+        "new_messages": 1,
+        "ordered_items": [
+          "diary",
+          "care"
+        ],
+        "quota_consumption_per_item": 1,
+        "body_invitation_count": 1
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP11]"
+      }
+    },
+    {
+      "id": "RP12",
+      "rules": [
+        "R2",
+        "R3"
+      ],
+      "given": {
+        "same_owner_and_target": true,
+        "same_due_at": false,
+        "both_seen_on_same_recovery_tick": true,
+        "expired_items": [
+          "afternoon"
+        ],
+        "eligible_items": [
+          "bedtime"
+        ]
+      },
+      "expect": {
+        "merged_expired_items": [],
+        "new_messages": 1,
+        "included_items": [
+          "bedtime"
+        ],
+        "nightly_unchecked_habit_chase": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP12]"
+      }
+    },
+    {
+      "id": "RP13",
+      "rules": [
+        "R1",
+        "R3"
+      ],
+      "given": {
+        "same_owner_and_target": true,
+        "same_due_at": true,
+        "completed_items": [
+          "care"
+        ],
+        "eligible_items": [
+          "diary"
+        ]
+      },
+      "expect": {
+        "included_items": [
+          "diary"
+        ],
+        "suppressed_items": [
+          "care"
+        ],
+        "new_messages": 1,
+        "quota_consumption_for_care": 0
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP13]"
+      }
+    },
+    {
+      "id": "RP14",
+      "rules": [
+        "R3"
+      ],
+      "given": {
+        "same_due_at": true,
+        "same_owner_and_target": false,
+        "eligible_groups": 2
+      },
+      "expect": {
+        "merge_across_owner_or_target": false,
+        "isolated_group_operations": 2
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP14]"
+      }
+    },
+    {
+      "id": "RP15",
+      "rules": [
+        "R4"
+      ],
+      "given": {
+        "source_kind": "direct_user",
+        "text": "准备睡了",
+        "now": "2026-10-13T20:45:00+08:00",
+        "bedtime_fallback": "21:30",
+        "quota_used": 0
+      },
+      "expect": {
+        "record_anchor": true,
+        "advance_same_occurrence": true,
+        "new_messages_at_fallback_after_delivery": 0
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP15]"
+      }
+    },
+    {
+      "id": "RP16",
+      "rules": [
+        "R4"
+      ],
+      "given": {
+        "source_kind": "direct_user",
+        "text": "明天想早点睡",
+        "now": "2026-10-13T20:45:00+08:00"
+      },
+      "expect": {
+        "record_current_bedtime_anchor": false,
+        "consume_current_quota": false,
+        "new_messages": 0
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP16]"
+      }
+    },
+    {
+      "id": "RP17",
+      "rules": [
+        "R4"
+      ],
+      "given": {
+        "source_kind": "direct_user",
+        "text": "准备睡了",
+        "delivery_status": "DELIVERED",
+        "same_bedtime_instance": true
+      },
+      "expect": {
+        "record_anchor": true,
+        "new_messages": 0,
+        "reuse_occurrence_identity": true
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP17]"
+      }
+    },
+    {
+      "id": "RP18",
+      "rules": [
+        "R3",
+        "R4"
+      ],
+      "given": {
+        "early_bedtime_group_items": [
+          "diary",
+          "care"
+        ],
+        "delivery_status": "DELIVERY_UNKNOWN",
+        "fallback_tick_due": true
+      },
+      "expect": {
+        "new_messages": 0,
+        "split_group_and_resend": false,
+        "next_action": "LOOKUP_ORIGINAL_DELIVERY",
+        "preserve_unknown": true
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP18]"
+      }
+    },
+    {
+      "id": "RP19",
+      "rules": [
+        "R1",
+        "R2"
+      ],
+      "given": {
+        "delivery_status": "DELIVERY_UNKNOWN",
+        "target_status": "met",
+        "outside_window": true
+      },
+      "expect": {
+        "new_messages": 0,
+        "preserve_unknown": true,
+        "rewrite_delivery_as_suppressed_or_expired": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP19]"
+      }
+    },
+    {
+      "id": "RP20",
+      "rules": [
+        "R1"
+      ],
+      "given": {
+        "completion_transaction_committed_before_sending": true,
+        "old_worker_lost_fence": true
+      },
+      "expect": {
+        "new_messages": 0,
+        "reject_old_worker_side_effect": true,
+        "preserve_completion": true
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP20]"
+      }
+    },
+    {
+      "id": "RP21",
+      "rules": [
+        "R1"
+      ],
+      "given": {
+        "backfilled_diary_date": "2026-10-12",
+        "current_instance_date": "2026-10-13",
+        "current_target_status": "unknown",
+        "within_window": true
+      },
+      "expect": {
+        "suppress_current_diary": false,
+        "cross_date_completion": false
+      },
+      "execution": {
+        "passed": true,
+        "test": "tests/test_honc_policy_acceptance_cases.py::test_accepted_policy_case_in_durable_backend[RP21]"
+      }
+    }
+  ],
+  "execution_scope": "Actual durable honc backend with isolated test data and fixture delivery callbacks; no real Telegram sends.",
+  "evidence_file": "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml"
+}

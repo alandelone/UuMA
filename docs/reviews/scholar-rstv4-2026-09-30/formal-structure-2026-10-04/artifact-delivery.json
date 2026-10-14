@@ -1,0 +1,37 @@
+[
+  {
+    "kind": "MARKDOWN",
+    "artifact_id": "artifact_7d02544704fd439cbc9b5d29805b1018",
+    "bytes": 289,
+    "sha256": "d3a6e731c72012497accd96b46c0d27ebe5c4308d8fd05f8491324143ffecae9",
+    "http_status": 200
+  },
+  {
+    "kind": "GENERATED_JSON",
+    "artifact_id": "artifact_fbad32694719465a83f6a22b3f42d7f0",
+    "bytes": 1211,
+    "sha256": "b087b516dffa4a0d580f3429f0b7dd3d5055a86be309498f299373942d974bca",
+    "http_status": 200
+  },
+  {
+    "kind": "TEX",
+    "artifact_id": "artifact_cc242ac5bef04d0682cb35e7d4200919",
+    "bytes": 577,
+    "sha256": "24f8d2f42071efe928892d1bdd234110ddf16e4ba3e271c9920cda188ee9f6b4",
+    "http_status": 200
+  },
+  {
+    "kind": "BIB",
+    "artifact_id": "artifact_83798f36040143faa81b5ecf4edaaf0c",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "http_status": 200
+  },
+  {
+    "kind": "PDF",
+    "artifact_id": "artifact_89e2d5dcc9ea4190ad10d239d57238f4",
+    "bytes": 11440,
+    "sha256": "7318a018b43bb782e5d18ea47771f143e0375c5197bff56cc3f92307925e829c",
+    "http_status": 200
+  }
+]

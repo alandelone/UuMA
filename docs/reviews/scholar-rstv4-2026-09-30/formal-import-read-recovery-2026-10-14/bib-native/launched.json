@@ -1,0 +1,12 @@
+{
+  "pid": 42036,
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-bib-serve-v1.py"
+  ],
+  "port": 8891,
+  "no_worker": true,
+  "models_denied": true
+}

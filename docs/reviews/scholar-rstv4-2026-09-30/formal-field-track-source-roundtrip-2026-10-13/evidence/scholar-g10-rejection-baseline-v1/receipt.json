@@ -1,0 +1,8 @@
+{
+  "status": "EXECUTION_BASELINE_CHECKPOINT_ADDED_NOT_VERIFIED",
+  "product_changed": false,
+  "all_original_rejection_assertions_preserved": true,
+  "original_test_sha256": "2f18ad6dfc5d401ba957ba1e68aab98a8f98f2b40e27f6b2afbbd60a5a7ea5c0",
+  "current_test_sha256": "f4e378157e1ddd982ac13eb79f42cad046d89e5c265b05a3dc0102dd22cd082d",
+  "full_current_suite_complete": false
+}

@@ -1,0 +1,33 @@
+Browser tab: 1479456099, Title: "Pepper Writing Studio", URL: "http://127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D&object=manuscript_version_7c2addf4da0f48948f8444b623cbe42e%3Aparagraph_e197b886c810436a823c7171839afac2".
+0 AXWebArea Pepper Writing Studio, URL: 127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D&object=manuscript_version_7c2addf4da0f48948f8444b623cbe42e%3Aparagraph_e197b886c810436a823c7171839afac2
+	1 container
+		2 heading WRITING STUDIO, Value: 1
+			3 text WRITING STUDIO
+		4 text Scholar · RSTV4 · Track → Paper
+		5 button 重新读取 Track 与稿件
+		6 heading 在 Track 中开始一篇 Paper, Value: 2
+			7 text 在 Track 中开始一篇 Paper
+		8 pop up button (collapsed, settable) Description: 选择 Track, Value: Track, Secondary Actions: Expand
+			9 menu
+				10 (selected) Track
+				11 Writing Track
+		12 text field (settable) Description: 新稿件标题, ID: base-ui-_R_adi_
+		13 button (disabled) ＋ 新 Paper
+		14 text Track → Paper
+		15 heading 写作工作区, Value: 2
+			16 text 写作工作区
+		17 text 1 篇稿件
+		18 container
+			19 text TRACK
+			20 heading Track, Value: 3
+				21 text Track
+			22 text 还没有 Paper。
+		23 container
+			24 text TRACK
+			25 heading Writing Track, Value: 3
+				26 text Writing Track
+			27 button Author-led paper WHOLE PAPER REVIEW
+				28 text Author-led paper
+				29 text WHOLE PAPER REVIEW
+
+The focused UI element is 0 AXWebArea Pepper Writing Studio, URL: 127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D&object=manuscript_version_7c2addf4da0f48948f8444b623cbe42e%3Aparagraph_e197b886c810436a823c7171839afac2

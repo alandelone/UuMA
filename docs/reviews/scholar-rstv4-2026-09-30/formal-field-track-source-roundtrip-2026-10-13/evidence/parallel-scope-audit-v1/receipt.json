@@ -1,0 +1,129 @@
+{
+  "status": "PASS for independent read-only scope/source audit; not whole G10 acceptance",
+  "completed_at": "2026-10-13T05:34:18.731Z",
+  "baseline_path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-g10-native-v1/prepared-existing-copy/all-tables.json",
+  "baseline_sha256": "90345354d25ef34f6a73cf76e5dd5900661eedc151bfac32b960425a6732de8a",
+  "field_id": "field_6242993287f547549daa4ded97914f3c",
+  "other_field_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+  "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+  "track_id": "track_cd1adda6220f47b787f409e983c00947",
+  "checks": [
+    "Frozen snapshot manifest all values exact versus baseline; fixed v1 SEALED digest/members both true",
+    "Seven semantic kinds and every baseline field/reference/conditions preserved exactly; explicit scientific_approval=false",
+    "Two source raw units, all parsed layers, page/section/sequence and paper/Skeleton versions equal baseline",
+    "Every semantic discussion context reads frozen record, full original quote, exact source versions/offsets and selected snapshot digest",
+    "Other real arrays all empty and its discussion context has no source version",
+    "Energy Snapshot and semantic object explicitly rejected in Other scope (404)",
+    "Unknown snapshot explicitly rejected (404)",
+    "Track core record exact baseline ACTIVE/MAPPED/revision1; separate available snapshot versus no adoption/node/evidence at observed GET"
+  ],
+  "limitations": [
+    "Legacy source fixture PDF/file/parse digests and identities null; this does not prove real PDF parsing or downloaded document lineage",
+    "Seven semantic objects are software-fixture interpretations, not scientific correctness or approval",
+    "Conditions/qualifications in this fixture are empty arrays; audit proves empty arrays preserved, not nonempty-condition coverage",
+    "No native browser UI tested by this agent; main agent owns native roundtrip and acceptance",
+    "No database-wide unchanged claim while parent may execute authorized UI writes; this audit is limited to fixed source/snapshot and observed scopes",
+    "No message, annotation, extraction, adoption, seed/migration, product change, gate change, session writer or fullsuite run made"
+  ],
+  "source_sha256": {
+    "catalog_web.py": "fdcf19d6075b130ef272d59700b6ba594a40a8884f841f5d63886bd311d58949",
+    "research_views.py": "c5b681c41feb5cb34f6bf669320dcce182e93f50fd976d13e1f418e7c5943f0e",
+    "research_context.py": "2e2cf535d6966735cc4fe5cf00c3deb4fba5f05045ca0febfd23290dc8e0f594",
+    "research_discussions.py": "4b8dcc5cf1065a8bfdb76de16a2b5e657d75254c468a3bfba4ac50988d2597df"
+  },
+  "responses": {
+    "energy": {
+      "status": 200,
+      "at": "2026-10-13T05:32:24.566Z",
+      "method": "GET",
+      "url": "http://127.0.0.1:8885/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace?snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca"
+    },
+    "skeletons": {
+      "status": 200,
+      "at": "2026-10-13T05:32:24.571Z",
+      "method": "GET",
+      "url": "http://127.0.0.1:8885/api/catalog/research/skeletons"
+    },
+    "wrongOwnership": {
+      "status": 404,
+      "at": "2026-10-13T05:32:24.571Z",
+      "method": "GET",
+      "url": "http://127.0.0.1:8885/api/catalog/fields/field_9ecc9f28d2ff460ea8c4105327361727/workspace?snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca"
+    },
+    "track": {
+      "status": 200,
+      "at": "2026-10-13T05:32:24.571Z",
+      "method": "GET",
+      "url": "http://127.0.0.1:8885/api/catalog/tracks/track_cd1adda6220f47b787f409e983c00947/workspace"
+    },
+    "other": {
+      "status": 200,
+      "at": "2026-10-13T05:32:24.570Z",
+      "method": "GET",
+      "url": "http://127.0.0.1:8885/api/catalog/fields/field_9ecc9f28d2ff460ea8c4105327361727/workspace"
+    },
+    "unknownSnapshot": {
+      "status": 404,
+      "at": "2026-10-13T05:32:24.571Z",
+      "method": "GET",
+      "url": "http://127.0.0.1:8885/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace?snapshot=fieldkg_snapshot_unknown_g10_read_only"
+    }
+  },
+  "contexts": {
+    "IDEA_MERGER": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.143Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    },
+    "CONCEPT": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.144Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    },
+    "Other-Energy-fixed-rejected": {
+      "status": 404,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": null
+    },
+    "Other-field": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": "[\"FIELDKG\",\"field_9ecc9f28d2ff460ea8c4105327361727\"]"
+    },
+    "REPORTED_GAP": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    },
+    "Track": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": "[\"TRACK\",\"track_cd1adda6220f47b787f409e983c00947\"]"
+    },
+    "COUNTEREVIDENCE": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    },
+    "DEBATE": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.144Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    },
+    "Other-Energy-semantic-rejected": {
+      "status": 404,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": null
+    },
+    "METHOD": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.144Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    },
+    "FINDING": {
+      "status": 200,
+      "at": "2026-10-13T05:33:40.145Z",
+      "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]"
+    }
+  }
+}

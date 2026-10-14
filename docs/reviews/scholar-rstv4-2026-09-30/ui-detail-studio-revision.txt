@@ -1,0 +1,68 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: UI detail audit · isolated fixture · RSTV4
+  - generic: 已自动保存
+  - button "撤销":
+  - button "重做":
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision" [active]
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - paragraph: Reviewer comments
+  - heading "意见 → 决定 → 修改 → 回复" [level=2]
+  - button "🗃 已删除"
+  - button "📦 投稿包"
+  - textbox "粘贴意见；空行分条。确认前不会写入。"
+  - button "👀 准备预览"
+  - generic: 📄 TXT / MD / DOCX / PDF
+  - article:
+    - button "开始修改意见 comment_81c1023e35fc463595d6165fc628930c":
+    - generic: A01
+    - paragraph: Clarify boundary conditions.
+    - textbox "我的决定"
+    - textbox "回复内容"
+    - combobox "意见状态 A01":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理"
+    - generic: 0 个已验证修改
+    - button "移入已删除":
+  - article:
+    - button "开始修改意见 comment_29059ee14ee640c18102ee577ae0547f":
+    - generic: A02
+    - paragraph: Explain the method choice.
+    - textbox "我的决定"
+    - textbox "回复内容"
+    - combobox "意见状态 A02":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理"
+    - generic: 0 个已验证修改
+    - button "移入已删除":
+  - button "与 Agent 讨论 0 条 · Introduction":
+    - text: 与 Agent 讨论
+    - text: 0 条 · Introduction
+  - button "整篇历史"
+  - button "当前对象"
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - textbox "讨论：Introduction"
+  - button "发送讨论" [disabled]:

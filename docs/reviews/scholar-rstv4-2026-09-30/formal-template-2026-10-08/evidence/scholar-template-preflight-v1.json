@@ -1,0 +1,46 @@
+{
+  "services": {
+    "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-revision-native-p48co4i6",
+    "golden_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+    "golden_database_sha256": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+    "manuscripts": {
+      "revision": "manuscript_3a132decd09349b99b186a5c44dc191d",
+      "reading": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11"
+    },
+    "studio_port": 8877,
+    "frontend_port": 3004,
+    "fixture_clone": true,
+    "scientific_approval": false,
+    "owned_processes": {
+      "studio": 63780,
+      "frontend": 75360
+    },
+    "ready": [
+      "frontend",
+      "studio"
+    ]
+  },
+  "live_owners": [
+    {
+      "ProcessId": 63780,
+      "ParentProcessId": 76852,
+      "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe",
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+      "CreationDate": "/Date(1791441300798)/"
+    },
+    {
+      "ProcessId": 75360,
+      "ParentProcessId": 76852,
+      "ExecutablePath": "C:\\Windows\\SYSTEM32\\cmd.exe",
+      "CommandLine": "cmd.exe /c npm run dev -- --port 3004",
+      "CreationDate": "/Date(1791441300803)/"
+    }
+  ],
+  "before_sha256": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": "269b2c21f163948af23839eb719ffcd3fa7beda7ed461dca7f08149b0ac967a0",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_api.py": "400c04076c19ae40034b8a17389e209beaf55d90f0ff5ec1c045bdbc3840a821",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx": "31744130072434f530756cead2b6a71083ac6614aaf76fe234228674d984aeaf",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts": "26d9202828298b1091a044c81ce3ea66d19c7558d846654c62c9981a6bc06d61",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-api.ts": "bfc598971e3ee7b15c0ff47d4f26195fd6d5f2ca495675b53da84144b102969d"
+  }
+}

@@ -1,0 +1,1206 @@
+{
+  "status": "COMPLETE_ORIGINAL_SCENARIO_TABLE_PIXEL_REVIEW_WITH_RETAINED_PRIMARY_TYPO",
+  "full_original_benchmark_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_95eebae164cc42fd6005",
+    "complete_tables": 3,
+    "value_entries": 124,
+    "valid_numeric_value_entries": 117,
+    "conditional_marker_entries": 6,
+    "unresolved_original_numeric_literals": 1
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+  "original_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities_content_list.json",
+  "original_parser_sha256": "5d6e54284a86c0ee2a50d13ccc8ceacf36e6d4665001641e9353cc6e6578e708",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "tables": [
+    {
+      "matrix_index": 3,
+      "label": "Table 4",
+      "page": 11,
+      "value_entries": 20,
+      "valid_numeric_value_entries": 20,
+      "non_numeric_marker_entries": 0,
+      "unresolved_numeric_entries": 0,
+      "flattened_columns_with_complete_original_header": [
+        "Year",
+        "P2H2P CAPEX EL [USD/kWel]",
+        "P2H2P CAPEX FC [USD/kWel]",
+        "Fuel price [USD/l]",
+        "Electrical efficiency EL [% LHV]",
+        "Electrical efficiency FC [% LHV]"
+      ],
+      "rows": [
+        [
+          "2022",
+          "1000",
+          "2600",
+          "1.1",
+          "60",
+          "55"
+        ],
+        [
+          "2030",
+          "600",
+          "1560",
+          "1.76",
+          "64.5",
+          "60"
+        ],
+        [
+          "2040",
+          "400",
+          "1040",
+          "2.64",
+          "69",
+          "65"
+        ],
+        [
+          "2050",
+          "200",
+          "520",
+          "4.21",
+          "73",
+          "70"
+        ]
+      ],
+      "scope_findings": [
+        "All twenty parameter values and four year identities match both parser data rows and auxiliary rows. Header fuel unit is USD per litre, not USD per digit 1; electrical efficiency is LHV, not an unspecified or HHV efficiency. Future parameter estimates are scenario assumptions rather than measurements."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 11,
+        "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-011.png",
+            "sha256": "9721b88f5d59319fbb9107a7babf8541ef08a39b5581c04fb52e6ba76dbc57f2"
+          },
+          {
+            "id": "crop-134",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\bccb61066aebe8b400cc2d0807494abe442db7df7f4226f054f79198c11f9687.jpg",
+            "sha256": "bff2c0a324deecae1f7e8278124c38efb2997cd431228f03e7d0ca094450e674"
+          },
+          {
+            "id": "crop-142",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\23d1d71b9bdd5293c29567dd3d449ba9743d05b04124a76625f29ab2e87adea5.jpg",
+            "sha256": "6f106d9755c5001f39452380961e4fc1d6a4f1cbe63a591043e9f8083fc955a3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          134,
+          142
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 11,
+        "raw_parser_content_index": 142,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "c3707c73a01f892b0656e739b8f2ea143c753e02f154c64582b8132e68a3affe",
+        "associated_frozen_original_block_ids": [
+          "paper_95eebae164cc42fd6005:b132"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\23d1d71b9bdd5293c29567dd3d449ba9743d05b04124a76625f29ab2e87adea5.jpg",
+        "actual_original_crop_sha256": "6f106d9755c5001f39452380961e4fc1d6a4f1cbe63a591043e9f8083fc955a3",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\011\\record.json",
+        "actual_page_record_sha256": "c69ddcc749cd8b6602d7983e1ac5f2ccda52e54f30b1de6daf27a4968ceaf958",
+        "original_durable_handle": "run_3826f8ed2d5e4deba7b5f96e83cb0708",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_95eebae164cc42fd6005",
+          "actual_pdf_page": 11,
+          "raw_parser_content_index": 142,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "c3707c73a01f892b0656e739b8f2ea143c753e02f154c64582b8132e68a3affe",
+          "associated_frozen_original_block_ids": [
+            "paper_95eebae164cc42fd6005:b132"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\23d1d71b9bdd5293c29567dd3d449ba9743d05b04124a76625f29ab2e87adea5.jpg",
+          "actual_original_crop_sha256": "6f106d9755c5001f39452380961e4fc1d6a4f1cbe63a591043e9f8083fc955a3",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\011\\record.json",
+          "actual_page_record_sha256": "c69ddcc749cd8b6602d7983e1ac5f2ccda52e54f30b1de6daf27a4968ceaf958",
+          "original_durable_handle": "run_3826f8ed2d5e4deba7b5f96e83cb0708",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            1
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td rowspan=\"2\">Year</td><td colspan=\"2\">P2H2PCAPEX [USD/kWe1]</td><td rowspan=\"2\">Fuel price [USD/1]</td><td colspan=\"2\">Electrical efficiency [% LHV]</td></tr><tr><td>EL</td><td>FC</td><td>EL</td><td>FC</td></tr><tr><td>2022</td><td>1000</td><td>2600</td><td>1.1</td><td>60</td><td>55</td></tr><tr><td>2030</td><td>600</td><td>1560</td><td>1.76</td><td>64.5</td><td>60</td></tr><tr><td>2040</td><td>400</td><td>1040</td><td>2.64</td><td>69</td><td>65</td></tr><tr><td>2050</td><td>200</td><td>520</td><td>4.21</td><td>73</td><td>70</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Year",
+            "P2H2PCAPEX [USD/kWe1]",
+            "Fuel price [USD/1]",
+            "Electrical efficiency [% LHV]"
+          ],
+          [
+            "EL",
+            "FC",
+            "EL",
+            "FC"
+          ],
+          [
+            "2022",
+            "1000",
+            "2600",
+            "1.1",
+            "60",
+            "55"
+          ],
+          [
+            "2030",
+            "600",
+            "1560",
+            "1.76",
+            "64.5",
+            "60"
+          ],
+          [
+            "2040",
+            "400",
+            "1040",
+            "2.64",
+            "69",
+            "65"
+          ],
+          [
+            "2050",
+            "200",
+            "520",
+            "4.21",
+            "73",
+            "70"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 4 Selected parameter estimated in the future. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 1,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 4",
+              "location": "BOTTOM",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-142"
+              ],
+              "exact_visible_text": "Selected parameter estimated in the future.\nYear P2H2P CAPEX [USD/kWel] Fuel price [USD/l] Electrical efficiency [% LHV]\nEL FC EL FC\n2022 1000 2600 1.1 60 55\n2030 600 1560 1.76 64.5 60\n2040 400 1040 2.64 69 65\n2050 200 520 4.21 73 70",
+              "table_rows": [
+                [
+                  "Year",
+                  "P2H2P CAPEX [USD/kWel]",
+                  "",
+                  "Fuel price [USD/l]",
+                  "Electrical efficiency [% LHV]",
+                  ""
+                ],
+                [
+                  "",
+                  "EL",
+                  "FC",
+                  "",
+                  "EL",
+                  "FC"
+                ],
+                [
+                  "2022",
+                  "1000",
+                  "2600",
+                  "1.1",
+                  "60",
+                  "55"
+                ],
+                [
+                  "2030",
+                  "600",
+                  "1560",
+                  "1.76",
+                  "64.5",
+                  "60"
+                ],
+                [
+                  "2040",
+                  "400",
+                  "1040",
+                  "2.64",
+                  "69",
+                  "65"
+                ],
+                [
+                  "2050",
+                  "200",
+                  "520",
+                  "4.21",
+                  "73",
+                  "70"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 1,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {
+              "1": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {},
+            "parser_row_lengths": [
+              4,
+              4,
+              6,
+              6,
+              6,
+              6
+            ],
+            "auxiliary_row_lengths": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "original_parser_or_model_outputs_replaced": false,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 4,
+      "label": "Table 5",
+      "page": 12,
+      "value_entries": 84,
+      "valid_numeric_value_entries": 77,
+      "non_numeric_marker_entries": 6,
+      "unresolved_numeric_entries": 1,
+      "flattened_columns_with_complete_original_header": [
+        "Year",
+        "Indicator",
+        "PV/BAT",
+        "PV/DG",
+        "PV/P2H2P",
+        "PV/BAT/DG",
+        "PV/BA/DG/P2H2P",
+        "PV/DG/P2H2P",
+        "PV/BAT/P2H2P"
+      ],
+      "rows": [
+        [
+          "2022",
+          "TAC [USD]",
+          "272,963",
+          "164,857",
+          "348,074",
+          "160,831",
+          "/b",
+          "/b",
+          "211,924"
+        ],
+        [
+          "2022",
+          "RE share [%]",
+          "100",
+          "36.02",
+          "100",
+          "49.92",
+          "/b",
+          "/b",
+          "100"
+        ],
+        [
+          "2022",
+          "Excess generation [%]",
+          "50.5",
+          "3.06",
+          "7.09",
+          "2.27",
+          "/b",
+          "/b",
+          "14.1.7"
+        ],
+        [
+          "2030",
+          "TAC",
+          "349,351",
+          "229,113",
+          "266,189",
+          "177,584",
+          "177,352",
+          "222,202",
+          "199,653"
+        ],
+        [
+          "2030",
+          "RE share",
+          "100a",
+          "41.05",
+          "100",
+          "95.4",
+          "95.6",
+          "60.68",
+          "100"
+        ],
+        [
+          "2030",
+          "Excess generation",
+          "58.3a",
+          "7.2",
+          "5.77",
+          "6.5",
+          "5.23",
+          "1.25",
+          "5.1"
+        ],
+        [
+          "2040",
+          "TAC",
+          "349,351",
+          "312,191",
+          "220,634",
+          "183,876",
+          "180,324",
+          "212,448",
+          "190,990"
+        ],
+        [
+          "2040",
+          "RE share",
+          "100a",
+          "45.87",
+          "100",
+          "97.11",
+          "98.11",
+          "97.54",
+          "100"
+        ],
+        [
+          "2040",
+          "Excess generation",
+          "58.3a",
+          "12.3",
+          "5.68",
+          "9.02",
+          "5.96",
+          "3.56",
+          "4.65"
+        ],
+        [
+          "2050",
+          "TAC",
+          "349,351",
+          "456,186",
+          "184,230",
+          "191,288",
+          "177,497",
+          "182,736",
+          "179,216"
+        ],
+        [
+          "2050",
+          "RE share",
+          "100a",
+          "51.25",
+          "100",
+          "98.13",
+          "99.62",
+          "99.44",
+          "100"
+        ],
+        [
+          "2050",
+          "Excess generation",
+          "58.3a",
+          "18.89",
+          "5.64",
+          "12.36",
+          "6.52",
+          "6.54",
+          "5.55"
+        ]
+      ],
+      "inherited_indicator_units_for_all_four_years": {
+        "TAC": "USD",
+        "RE share": "%",
+        "Excess generation": "%"
+      },
+      "footnotes": {
+        "a": "Simplified assumptions for a lithium-ion technology considered as described in Section 3.1.",
+        "b": "Optimal energy system topology under given parameter constellation does not include P2H2P."
+      },
+      "scope_findings": [
+        "All 84 value entries checked against complete original page and original crop. Six /b entries are conditional structural absence of P2H2P, not measured zeros or unspecified missing results.",
+        "The three future PV/BAT renewable-share and excess-generation pairs carry footnote a, linked to the lithium-ion assumptions in Section 3.1. Units persist across each three-row year group.",
+        "IMPORTANT PRIMARY TYPO: 2022 PV/BAT/P2H2P excess generation is literally 14.1.7 in the original PDF, the crop, parser HTML and auxiliary output. Newly rendered complete original PDF page 12 at 160 dpi confirms both decimal points. No canonical 14.17, 14.7 or other number is invented. Retain unresolved original numeric literal, distinct from parser or auxiliary error.",
+        "Original parser drops 2030, assigns 2040 to the 2030 excess-generation row, and uses inappropriate row spans. All twelve explicit year/indicator assignments in this supplemental direct review follow the actual original pixels.",
+        "Auxiliary complete table rows preserve all original values, literal 14.1.7, six markers and year groups. The printed PV/BA/DG/P2H2P header is retained without silently inserting T."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-012.png",
+            "sha256": "0083e9ca9387e22cd897c059733251492defcd297d03bbd9d80a159c190a9dd2"
+          },
+          {
+            "id": "crop-143",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\be874587d11447e7c9c95b7b895835e7ab71ceac4746718159816064fc7dc91c.jpg",
+            "sha256": "85a73dd3f70adc7ce29cbaaf4229367966f86520de8a21610a1e0a6bebc34145"
+          },
+          {
+            "id": "crop-148",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\f3f6eeee7ad778881312b1069aba3df3c73cec4adf268ae0c70a0fbd4f035357.jpg",
+            "sha256": "e5dea29c72130187fec6fea506c4e22601cdfe139afa34ed77c20ed7f653aa49"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          143,
+          148
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 143,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "b799b7a5e4f68975867b76ee5287339f0704814cbf29be9d7245a3694a782adc",
+        "associated_frozen_original_block_ids": [
+          "paper_95eebae164cc42fd6005:b133"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\be874587d11447e7c9c95b7b895835e7ab71ceac4746718159816064fc7dc91c.jpg",
+        "actual_original_crop_sha256": "85a73dd3f70adc7ce29cbaaf4229367966f86520de8a21610a1e0a6bebc34145",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\012\\record.json",
+        "actual_page_record_sha256": "c3f4057390fd283f58b4b62f9d59cf4756d61c79a73fd9f69b8ddc5e00b813d2",
+        "original_durable_handle": "run_4a9372d104534fbd8787788c8b8325bc",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_95eebae164cc42fd6005",
+          "actual_pdf_page": 12,
+          "raw_parser_content_index": 143,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "b799b7a5e4f68975867b76ee5287339f0704814cbf29be9d7245a3694a782adc",
+          "associated_frozen_original_block_ids": [
+            "paper_95eebae164cc42fd6005:b133"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\be874587d11447e7c9c95b7b895835e7ab71ceac4746718159816064fc7dc91c.jpg",
+          "actual_original_crop_sha256": "85a73dd3f70adc7ce29cbaaf4229367966f86520de8a21610a1e0a6bebc34145",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\012\\record.json",
+          "actual_page_record_sha256": "c3f4057390fd283f58b4b62f9d59cf4756d61c79a73fd9f69b8ddc5e00b813d2",
+          "original_durable_handle": "run_4a9372d104534fbd8787788c8b8325bc",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Year</td><td>Indicator</td><td>PV/BAT</td><td>PV/DG</td><td>PV/P2H2P</td><td>PV/BAT/DG</td><td>PV/BA/DG/P2H2P</td><td>PV/DG/P2H2P</td><td>PV/BAT/P2H2P</td></tr><tr><td>2022</td><td>TAC[USD]</td><td>272,963</td><td>164,857</td><td>348,074</td><td>160,831</td><td>b</td><td>b</td><td>211,924</td></tr><tr><td rowspan=\"4\"></td><td>RE share [%]</td><td>100</td><td>36.02</td><td>100</td><td>49.92</td><td>b</td><td>b</td><td>100</td></tr><tr><td>Excess generation[%]</td><td>50.5</td><td>3.06</td><td>7.09</td><td>2.27</td><td>b</td><td>b</td><td>14.1.7</td></tr><tr><td>TAC</td><td>349,351</td><td>229,113</td><td>266,189</td><td>177,584</td><td>177,352</td><td>222,202</td><td>199,653</td></tr><tr><td>RE share</td><td>100a</td><td>41.05</td><td>100</td><td>95.4</td><td>95.6</td><td>60.68</td><td>100</td></tr><tr><td rowspan=\"4\">2040</td><td>Excessgeneration</td><td>58.3a</td><td>7.2</td><td>5.77</td><td>6.5</td><td>5.23</td><td>1.25</td><td>5.1</td></tr><tr><td>TAC</td><td>349,351</td><td>312,191</td><td>220,634</td><td>183,876</td><td>180,324</td><td>212,448</td><td>190,990</td></tr><tr><td>RE share</td><td>100a</td><td>45.87</td><td>100</td><td>97.11</td><td>98.11</td><td>97.54</td><td>100</td></tr><tr><td>Excessgeneration</td><td>58.3a</td><td>12.3</td><td>5.68</td><td>9.02</td><td>5.96</td><td>3.56</td><td>4.65</td></tr><tr><td rowspan=\"4\">2050</td><td>TAC</td><td>349,351</td><td>456,186</td><td>184,230</td><td>191,288</td><td>177,497</td><td>182,736</td><td>179,216</td></tr><tr><td>RE share</td><td>100a</td><td>51.25</td><td>100</td><td>98.13</td><td>99.62</td><td>99.44</td><td>100</td></tr><tr><td>Excessgeneration</td><td>58.3a</td><td>18.89</td><td>5.64</td><td>12.36</td><td>6.52</td><td>6.54</td><td>5.55</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Year",
+            "Indicator",
+            "PV/BAT",
+            "PV/DG",
+            "PV/P2H2P",
+            "PV/BAT/DG",
+            "PV/BA/DG/P2H2P",
+            "PV/DG/P2H2P",
+            "PV/BAT/P2H2P"
+          ],
+          [
+            "2022",
+            "TAC[USD]",
+            "272,963",
+            "164,857",
+            "348,074",
+            "160,831",
+            "b",
+            "b",
+            "211,924"
+          ],
+          [
+            "",
+            "RE share [%]",
+            "100",
+            "36.02",
+            "100",
+            "49.92",
+            "b",
+            "b",
+            "100"
+          ],
+          [
+            "Excess generation[%]",
+            "50.5",
+            "3.06",
+            "7.09",
+            "2.27",
+            "b",
+            "b",
+            "14.1.7"
+          ],
+          [
+            "TAC",
+            "349,351",
+            "229,113",
+            "266,189",
+            "177,584",
+            "177,352",
+            "222,202",
+            "199,653"
+          ],
+          [
+            "RE share",
+            "100a",
+            "41.05",
+            "100",
+            "95.4",
+            "95.6",
+            "60.68",
+            "100"
+          ],
+          [
+            "2040",
+            "Excessgeneration",
+            "58.3a",
+            "7.2",
+            "5.77",
+            "6.5",
+            "5.23",
+            "1.25",
+            "5.1"
+          ],
+          [
+            "TAC",
+            "349,351",
+            "312,191",
+            "220,634",
+            "183,876",
+            "180,324",
+            "212,448",
+            "190,990"
+          ],
+          [
+            "RE share",
+            "100a",
+            "45.87",
+            "100",
+            "97.11",
+            "98.11",
+            "97.54",
+            "100"
+          ],
+          [
+            "Excessgeneration",
+            "58.3a",
+            "12.3",
+            "5.68",
+            "9.02",
+            "5.96",
+            "3.56",
+            "4.65"
+          ],
+          [
+            "2050",
+            "TAC",
+            "349,351",
+            "456,186",
+            "184,230",
+            "191,288",
+            "177,497",
+            "182,736",
+            "179,216"
+          ],
+          [
+            "RE share",
+            "100a",
+            "51.25",
+            "100",
+            "98.13",
+            "99.62",
+            "99.44",
+            "100"
+          ],
+          [
+            "Excessgeneration",
+            "58.3a",
+            "18.89",
+            "5.64",
+            "12.36",
+            "6.52",
+            "6.54",
+            "5.55"
+          ],
+          [
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 5 TAC, renewable energy share and excess electricity for different energy system topologies and parameter constellation estimated in future (see Table 4). "
+        ],
+        "original_parser_footnotes": [
+          "a Simplified assumptions for a lithium-ion technology considered as described in Section 3.1. b Optimal energy system topology under given parameter constellation does not include P2H2P. "
+        ],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 5",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-143"
+              ],
+              "exact_visible_text": "Table 5\nTAC, renewable energy share and excess electricity for different energy system topologies and parameter constellation estimated in future (see Table 4).\nYear Indicator PV/BAT PV/DG PV/P2H2P PV/BAT/DG PV/BA/DG/P2H2P PV/DG/P2H2P PV/BAT/P2H2P\n2022 TAC [USD] 272,963 164,857 348,074 160,831 /b /b 211,924\nRE share [%] 100 36.02 100 49.92 /b /b 100\nExcess generation [%] 50.5 3.06 7.09 2.27 /b /b 14.1.7\n2030 TAC 349,351 229,113 266,189 177,584 177,352 222,202 199,653\nRE share 100a 41.05 100 95.4 95.6 60.68 100\nExcess generation 58.3a 7.2 5.77 6.5 5.23 1.25 5.1\n2040 TAC 349,351 312,191 220,634 183,876 180,324 212,448 190,990\nRE share 100a 45.87 100 97.11 98.11 97.54 100\nExcess generation 58.3a 12.3 5.68 9.02 5.96 3.56 4.65\n2050 TAC 349,351 456,186 184,230 191,288 177,497 182,736 179,216\nRE share 100a 51.25 100 98.13 99.62 99.44 100\nExcess generation 58.3a 18.89 5.64 12.36 6.52 6.54 5.55",
+              "table_rows": [
+                [
+                  "Year",
+                  "Indicator",
+                  "PV/BAT",
+                  "PV/DG",
+                  "PV/P2H2P",
+                  "PV/BAT/DG",
+                  "PV/BA/DG/P2H2P",
+                  "PV/DG/P2H2P",
+                  "PV/BAT/P2H2P"
+                ],
+                [
+                  "2022",
+                  "TAC [USD]",
+                  "272,963",
+                  "164,857",
+                  "348,074",
+                  "160,831",
+                  "/b",
+                  "/b",
+                  "211,924"
+                ],
+                [
+                  "",
+                  "RE share [%]",
+                  "100",
+                  "36.02",
+                  "100",
+                  "49.92",
+                  "/b",
+                  "/b",
+                  "100"
+                ],
+                [
+                  "",
+                  "Excess generation [%]",
+                  "50.5",
+                  "3.06",
+                  "7.09",
+                  "2.27",
+                  "/b",
+                  "/b",
+                  "14.1.7"
+                ],
+                [
+                  "2030",
+                  "TAC",
+                  "349,351",
+                  "229,113",
+                  "266,189",
+                  "177,584",
+                  "177,352",
+                  "222,202",
+                  "199,653"
+                ],
+                [
+                  "",
+                  "RE share",
+                  "100a",
+                  "41.05",
+                  "100",
+                  "95.4",
+                  "95.6",
+                  "60.68",
+                  "100"
+                ],
+                [
+                  "",
+                  "Excess generation",
+                  "58.3a",
+                  "7.2",
+                  "5.77",
+                  "6.5",
+                  "5.23",
+                  "1.25",
+                  "5.1"
+                ],
+                [
+                  "2040",
+                  "TAC",
+                  "349,351",
+                  "312,191",
+                  "220,634",
+                  "183,876",
+                  "180,324",
+                  "212,448",
+                  "190,990"
+                ],
+                [
+                  "",
+                  "RE share",
+                  "100a",
+                  "45.87",
+                  "100",
+                  "97.11",
+                  "98.11",
+                  "97.54",
+                  "100"
+                ],
+                [
+                  "",
+                  "Excess generation",
+                  "58.3a",
+                  "12.3",
+                  "5.68",
+                  "9.02",
+                  "5.96",
+                  "3.56",
+                  "4.65"
+                ],
+                [
+                  "2050",
+                  "TAC",
+                  "349,351",
+                  "456,186",
+                  "184,230",
+                  "191,288",
+                  "177,497",
+                  "182,736",
+                  "179,216"
+                ],
+                [
+                  "",
+                  "RE share",
+                  "100a",
+                  "51.25",
+                  "100",
+                  "98.13",
+                  "99.62",
+                  "99.44",
+                  "100"
+                ],
+                [
+                  "",
+                  "Excess generation",
+                  "58.3a",
+                  "18.89",
+                  "5.64",
+                  "12.36",
+                  "6.52",
+                  "6.54",
+                  "5.55"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [
+                "a Simplified assumptions for a lithium-ion technology considered as described in Section 3.1.",
+                "b Optimal energy system topology under given parameter constellation does not include P2H2P."
+              ],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {
+              "2030": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "5": 1,
+              "4": 1
+            },
+            "parser_row_lengths": [
+              9,
+              9,
+              9,
+              8,
+              8,
+              8,
+              9,
+              8,
+              8,
+              8,
+              9,
+              8,
+              8,
+              8
+            ],
+            "auxiliary_row_lengths": [
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "original_parser_or_model_outputs_replaced": false,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 5,
+      "label": "Table 6",
+      "page": 12,
+      "value_entries": 20,
+      "valid_numeric_value_entries": 20,
+      "non_numeric_marker_entries": 0,
+      "unresolved_numeric_entries": 0,
+      "flattened_columns_with_complete_original_header": [
+        "Year",
+        "P2H2P power EL [kWel]",
+        "P2H2P power FC [kWel]",
+        "Battery power [kWel]",
+        "DG power [kWel]",
+        "PV power [kWp]"
+      ],
+      "rows": [
+        [
+          "2022",
+          "0",
+          "0",
+          "247",
+          "47.8",
+          "143"
+        ],
+        [
+          "2030",
+          "8",
+          "1.53",
+          "286.93",
+          "23.5",
+          "332.5"
+        ],
+        [
+          "2040",
+          "41.19",
+          "8.6",
+          "253.65",
+          "17.92",
+          "364.9"
+        ],
+        [
+          "2050",
+          "133.46",
+          "26.98",
+          "161.72",
+          "10.25",
+          "419.93"
+        ]
+      ],
+      "scope_findings": [
+        "All twenty values, four year identities, component columns and distinct PV kWp versus other electrical kWel units checked directly. Auxiliary structured rows agree with all twenty original values.",
+        "Raw parser loses the PV power column and all four PV values 143/332.5/364.9/419.93. It also joins 2022 DG 47.8 with the 2030 DG value 23.5 and leaves the 2030 DG cell empty. These are concrete scientific value/column/year losses, beyond a row-length heuristic.",
+        "The two zero 2022 EL/FC values are genuine numerical zeros; unlike the /b conditional entries in Table 5, they must remain zero. Battery column is printed as power in kWel; no silent conversion to storage capacity kWh is approved."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-012.png",
+            "sha256": "0083e9ca9387e22cd897c059733251492defcd297d03bbd9d80a159c190a9dd2"
+          },
+          {
+            "id": "crop-143",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\be874587d11447e7c9c95b7b895835e7ab71ceac4746718159816064fc7dc91c.jpg",
+            "sha256": "85a73dd3f70adc7ce29cbaaf4229367966f86520de8a21610a1e0a6bebc34145"
+          },
+          {
+            "id": "crop-148",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\f3f6eeee7ad778881312b1069aba3df3c73cec4adf268ae0c70a0fbd4f035357.jpg",
+            "sha256": "e5dea29c72130187fec6fea506c4e22601cdfe139afa34ed77c20ed7f653aa49"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          143,
+          148
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 148,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "9f09f5a1f758aeadae7c5cda5a41858389b2183c3ff29fd68f46863166ab6164",
+        "associated_frozen_original_block_ids": [
+          "paper_95eebae164cc42fd6005:b138"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\f3f6eeee7ad778881312b1069aba3df3c73cec4adf268ae0c70a0fbd4f035357.jpg",
+        "actual_original_crop_sha256": "e5dea29c72130187fec6fea506c4e22601cdfe139afa34ed77c20ed7f653aa49",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\012\\record.json",
+        "actual_page_record_sha256": "c3f4057390fd283f58b4b62f9d59cf4756d61c79a73fd9f69b8ddc5e00b813d2",
+        "original_durable_handle": "run_4a9372d104534fbd8787788c8b8325bc",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_95eebae164cc42fd6005",
+          "actual_pdf_page": 12,
+          "raw_parser_content_index": 148,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "9f09f5a1f758aeadae7c5cda5a41858389b2183c3ff29fd68f46863166ab6164",
+          "associated_frozen_original_block_ids": [
+            "paper_95eebae164cc42fd6005:b138"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities\\images\\f3f6eeee7ad778881312b1069aba3df3c73cec4adf268ae0c70a0fbd4f035357.jpg",
+          "actual_original_crop_sha256": "e5dea29c72130187fec6fea506c4e22601cdfe139afa34ed77c20ed7f653aa49",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\012\\record.json",
+          "actual_page_record_sha256": "c3f4057390fd283f58b4b62f9d59cf4756d61c79a73fd9f69b8ddc5e00b813d2",
+          "original_durable_handle": "run_4a9372d104534fbd8787788c8b8325bc",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            1
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td rowspan=\"2\">Year</td><td colspan=\"2\">P2H2Ppower [kWel]</td><td rowspan=\"2\">Battery power [kWel]</td><td rowspan=\"2\">DG power [kWel] PV power [kWp]</td></tr><tr><td>EL</td><td>FC</td></tr><tr><td>2022</td><td>0</td><td>0</td><td>247</td><td>47.8 23.5</td></tr><tr><td>2030</td><td>8</td><td>1.53</td><td>286.93</td><td></td></tr><tr><td>2040</td><td>41.19</td><td>8.6</td><td>253.65</td><td>17.92</td></tr><tr><td>2050</td><td>133.46</td><td>26.98</td><td>161.72</td><td>10.25</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Year",
+            "P2H2Ppower [kWel]",
+            "Battery power [kWel]",
+            "DG power [kWel] PV power [kWp]"
+          ],
+          [
+            "EL",
+            "FC"
+          ],
+          [
+            "2022",
+            "0",
+            "0",
+            "247",
+            "47.8 23.5"
+          ],
+          [
+            "2030",
+            "8",
+            "1.53",
+            "286.93",
+            ""
+          ],
+          [
+            "2040",
+            "41.19",
+            "8.6",
+            "253.65",
+            "17.92"
+          ],
+          [
+            "2050",
+            "133.46",
+            "26.98",
+            "161.72",
+            "10.25"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 6 Optimal PV/BAT/P2H2P/DG system topology (output power) for parameter constellation estimated in the future. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 1,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 6",
+              "location": "BOTTOM",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-148"
+              ],
+              "exact_visible_text": "Table 6\nOptimal PV/BAT/P2H2P/DG system topology (output power) for parameter constellation\nestimated in the future.\nYear P2H2P power [kWel] Battery power [kWel] DG power [kWel] PV power [kWp]\nEL FC\n2022 0 0 247 47.8 143\n2030 8 1.53 286.93 23.5 332.5\n2040 41.19 8.6 253.65 17.92 364.9\n2050 133.46 26.98 161.72 10.25 419.93",
+              "table_rows": [
+                [
+                  "Year",
+                  "P2H2P power [kWel]",
+                  "",
+                  "Battery power [kWel]",
+                  "DG power [kWel]",
+                  "PV power [kWp]"
+                ],
+                [
+                  "",
+                  "EL",
+                  "FC",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "2022",
+                  "0",
+                  "0",
+                  "247",
+                  "47.8",
+                  "143"
+                ],
+                [
+                  "2030",
+                  "8",
+                  "1.53",
+                  "286.93",
+                  "23.5",
+                  "332.5"
+                ],
+                [
+                  "2040",
+                  "41.19",
+                  "8.6",
+                  "253.65",
+                  "17.92",
+                  "364.9"
+                ],
+                [
+                  "2050",
+                  "133.46",
+                  "26.98",
+                  "161.72",
+                  "10.25",
+                  "419.93"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 1,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {
+              "143": 1,
+              "332.5": 1,
+              "364.9": 1,
+              "419.93": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "6": 1
+            },
+            "parser_row_lengths": [
+              4,
+              2,
+              5,
+              5,
+              5,
+              5
+            ],
+            "auxiliary_row_lengths": [
+              6,
+              6,
+              6,
+              6,
+              6,
+              6
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "original_parser_or_model_outputs_replaced": false,
+      "expert_gold_or_scientific_reference_approval": false
+    }
+  ],
+  "full_original_page12_additional_160dpi_render": {
+    "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\primary-fidelity-scientific-interpretation-v10\\original-scenarios-page12-160dpi.png",
+    "sha256": "0f8496cda804120df3a2167cdf46ee77ad8034c6aa4f51def4f13e084ebb14bd",
+    "renderer_path": "C:\\Users\\Alandelone\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.EXE",
+    "renderer_sha256": "e5b4da7d158cc7428d2ccb4eda1779d6566c067b24df01a0bc09f665659e4ac3",
+    "source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+    "directly_viewed": true
+  },
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "expert_gold_or_scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false
+}

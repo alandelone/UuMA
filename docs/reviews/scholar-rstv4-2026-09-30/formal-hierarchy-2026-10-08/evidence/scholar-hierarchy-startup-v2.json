@@ -1,0 +1,16 @@
+{
+  "stage": "verification",
+  "gate": {
+    "current": "stage-gates/04-verification-report.md",
+    "status": "pending_review",
+    "blocked_by": null
+  },
+  "entire_handoff_chars": 596413,
+  "handoff_raw_sha256": "80980114b2131c102607b463721a7394909473b7f1582ba943b132f218a184c1",
+  "entire_gate_chars": 118214,
+  "prior_context_preserved": true,
+  "external_codegraph": {
+    "RSTV4": false,
+    "writing-studio": false
+  }
+}

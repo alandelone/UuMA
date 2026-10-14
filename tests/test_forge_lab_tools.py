@@ -32,6 +32,130 @@ def test_permission_gate(monkeypatch):
         mcp_worker.procurement_list_requirements()
     with pytest.raises(PermissionError, match="restricted to forge-lab-bot"):
         mcp_worker.procurement_check_crawler_status()
+    with pytest.raises(PermissionError, match="restricted to forge-lab-bot"):
+        mcp_worker.inventory_search_purchase_history("TPU")
+
+
+def test_purchase_search_mcp_returns_staged_evidence(setup_lab_env):
+    mcp_worker._inventory().import_purchase_history([{
+        "source_key": "tpu-order",
+        "source_workbook_hash": "workbook-hash",
+        "source_sheet": "所有订单明细",
+        "source_row": 740,
+        "order_id": "2101620723153132851",
+        "ordered_at": "2024-03-29 08:32:43",
+        "status": "交易成功",
+        "category": "3D打印 / 打印耗材",
+        "product_name": "TPU printing filament",
+        "product_url": "https://item.taobao.com/item.htm?id=41604517259",
+        "variant": "TPU 白色200克1.75mm",
+        "ordered_quantity": 1,
+        "identity_key": "41604517259|TPU 白色200克1.75mm",
+        "component_id": "cmp-tpu-white",
+    }], commit=True)
+    result = mcp_worker.inventory_search_purchase_history("TPU 200 1.75")
+    assert result["count"] == result["total_count"] == 1
+    assert result["match_mode"] == "exact"
+    assert result["rows"][0]["product_url"] == (
+        "https://item.taobao.com/item.htm?id=41604517259"
+    )
+
+
+def test_purchase_search_ranked_fallback(setup_lab_env):
+    mcp_worker._inventory().import_purchase_history([
+        {
+            "source_key": "shield-18650",
+            "source_workbook_hash": "w-hash",
+            "source_sheet": "所有订单明细",
+            "source_row": 820,
+            "order_id": "ORD-18650",
+            "ordered_at": "2023-09-10 13:59:28",
+            "status": "交易成功",
+            "category": "电子元器件",
+            "product_name": "两路18650锂电池扩展板V8移动电源扩展板 5V3V",
+            "product_url": "https://item.taobao.com/item.htm?id=589281902810",
+            "variant": "两路",
+            "ordered_quantity": 1,
+            "identity_key": "589281902810|两路",
+            "component_id": "cmp-18650",
+        },
+        {
+            "source_key": "bms-32650",
+            "source_workbook_hash": "w-hash",
+            "source_sheet": "所有订单明细",
+            "source_row": 587,
+            "order_id": "ORD-32650",
+            "ordered_at": "2024-10-30 15:19:48",
+            "status": "交易成功",
+            "category": "电子元器件",
+            "product_name": "4串12.8V 32650磷酸铁锂电池保护板 带均衡 30A",
+            "product_url": "https://item.taobao.com/item.htm?id=676235704594",
+            "variant": "4串 磷酸铁锂电池保护板[带均衡]",
+            "ordered_quantity": 2,
+            "identity_key": "676235704594|4串",
+            "component_id": "cmp-32650",
+        },
+    ], commit=True)
+
+    # Natural Chinese phrase query that doesn't have an exact all-term match
+    # triggers ranked fallback and surfaces both the 18650 shield and 32650 protection board
+    res = mcp_worker.inventory_search_purchase_history("18650 电池保护板")
+    assert res["total_count"] == 2
+    assert res["match_mode"] == "partial"
+    order_ids = [r["order_id"] for r in res["rows"]]
+    assert "ORD-32650" in order_ids
+    assert "ORD-18650" in order_ids
+
+
+def test_commerce_search_order_lines_mcp(setup_lab_env):
+    store = mcp_worker._commerce_store()
+    store.bootstrap()
+    with store.connect() as conn:
+        conn.execute(
+            """
+            INSERT OR REPLACE INTO commerce_order_lines
+            (line_id, platform, account_id, order_id, product_id, sku_id,
+             product_name, variant_name, unit_price, quantity, line_total,
+             currency, category, ownership, review_status, created_at, updated_at,
+             shop_name, item_url, order_time)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+            """,
+            (
+                "line_test_18650",
+                "taobao",
+                "test@example.com",
+                "ORD-COMM-18650",
+                "p_18650",
+                "sku_18650",
+                "18650电池座 V3开发板兼容 树莓派过充保护 5V",
+                "二路18650电池座（不带线）",
+                11.6,
+                2.0,
+                23.2,
+                "CNY",
+                "electronics",
+                "self",
+                "unreviewed",
+                "2026-09-28T10:00:00+00:00",
+                "2026-09-28T10:00:00+00:00",
+                "专业18650店",
+                "https://item.taobao.com/item.htm?id=806773274407",
+                "2026-09-05",
+            ),
+        )
+        conn.commit()
+
+    # Exact search
+    res = mcp_worker.commerce_search_order_lines("18650 电池座")
+    assert res["count"] == 1
+    assert res["match_mode"] == "exact"
+    assert res["rows"][0]["order_id"] == "ORD-COMM-18650"
+    assert res["rows"][0]["platform"] == "taobao"
+
+    # Search with natural phrase fallback
+    res_fb = mcp_worker.commerce_search_order_lines("18650 电池保护板")
+    assert res_fb["count"] >= 1
+    assert res_fb["rows"][0]["order_id"] == "ORD-COMM-18650"
 
 
 def test_build_management_tools(setup_lab_env):

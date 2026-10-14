@@ -1,0 +1,102 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8891/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223a46f7cabce119f72a8b83d44211676d5d389a7fa58b0a2f2f799528bdd4d719%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8891/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223a46f7cabce119f72a8b83d44211676d5d389a7fa58b0a2f2f799528bdd4d719%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8891/?view=fieldkg&field=field_792bb631f3f74deb8a42c496907730e0&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223a46f7cabce119f72a8b83d44211676d5d389a7fa58b0a2f2f799528bdd4d719%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "新建采集":
+      - generic: 新建采集
+      - generic: ⌄
+  - region "新建文献采集":
+    - generic: ▤
+    - strong: PAPER CATALOG
+    - generic: Scholar · RSTV4 · 文献采集
+    - generic: Topic／Track 文献采集
+    - navigation "采集页面导航":
+      - button "← 返回"
+      - generic: 研究总览 → 新建采集
+      - generic: Scientific Writing / Argumentation / Writing Track
+    - text: Collection / New
+    - heading "新建文献采集" [level=1]
+    - paragraph: 研究归属已由总览确定。可选择 Catalog 已有论文，也可填写 DOI、BibTeX 和检索词。
+    - region "DOI 列表":
+      - heading "DOI 列表" [level=2]
+      - paragraph: 每行一篇；纯 DOI 或 doi.org 链接均可。
+      - generic: 粘贴 DOI
+      - textbox "粘贴 DOI":
+        - /placeholder: "10.1016/j.solener.2024.112345\nhttps://doi.org/10.3390/en13215566"
+    - region "BibTeX":
+      - heading "BibTeX" [level=2]
+      - paragraph: 粘贴内容，或读取本机 .bib 文件。
+      - generic: 粘贴 BibTeX
+      - textbox "粘贴 BibTeX":
+        - /placeholder: "@article{...}"
+        - text: "@article{evidence_6b169de2b78d452f919391b00916f2c8, title = {Other selected source}, author = {Fixture Author}, year = {2026}, doi = {10.1234/other} } @article{evidence_b5348fa59b3948ae9540b75a33ca9bd9, title = {Refreshed live catalog title - software}, author = {Fixture Author}, year = {2026} }"
+      - generic: 选择 .bib 文件
+      - button "选择 .bib 文件 文件超过本版 5 MB 预览上限；请改用较小的 .bib 文件。" [active]
+      - generic: 文件超过本版 5 MB 预览上限；请改用较小的 .bib 文件。
+    - region "检索词":
+      - heading "检索词" [level=2]
+      - paragraph: 每行一条关键词或检索式。
+      - generic: 粘贴检索词
+      - textbox "粘贴检索词 可单独使用，也可与 DOI／BibTeX 一起采集。":
+        - /placeholder: "solar irradiance nowcasting all-sky images\nmicrogrid solar forecasting uncertainty"
+      - generic: 可单独使用，也可与 DOI／BibTeX 一起采集。
+    - region "从 Catalog 选择已有论文":
+      - heading "从 Catalog 选择已有论文" [level=2]
+      - paragraph: 选入本次 Topic／Track 后重新按研究范围筛选。已有文件会检查完整性后复用，身份待审仍需复核。
+      - generic: 搜索题名、DOI 或作者
+      - textbox "搜索题名、DOI 或作者":
+        - /placeholder: 题名、DOI 或作者…
+      - checkbox "Refreshed live catalog title - software"
+      - strong: Refreshed live catalog title - software
+      - paragraph: 未记录 DOI · 2026 · Fixture Author
+      - text: 已登记验证文件，复用前检查完整性
+      - checkbox "Other selected source"
+      - strong: Other selected source
+      - paragraph: 10.1234/other · 2026 · Fixture Author
+      - text: 已登记验证文件，复用前检查完整性
+      - text: Catalog 匹配 2 篇
+      - button "上一页" [disabled]
+      - button "下一页" [disabled]
+      - status: 这里只选择目录论文，检查输入才会确认文件是否可以复用。
+      - heading "已选择 0 篇" [level=3]
+      - paragraph: 还未选择已有论文。
+      - paragraph: 与 DOI／BibTeX 指向同一论文的输入合并为一个采集成员；原始输入保留。
+    - complementary "采集输入预览":
+      - text: Before you begin
+      - heading "本次采集预览" [level=2]
+      - paragraph: 输入会即时汇总。「检查输入」会核对 Catalog 与实际 PDF 文件，不会创建任务。
+      - strong: "1"
+      - generic: 唯一 DOI
+      - strong: "2"
+      - generic: BibTeX 条目
+      - strong: "0"
+      - generic: 检索式
+      - list:
+        - generic: 研究归属
+        - strong: Scientific Writing / Argumentation / Writing Track
+        - generic: 输入内重复 DOI
+        - strong: "0"
+        - generic: 无效 DOI 行
+        - strong: "0"
+        - generic: Catalog 已有论文
+        - strong: 待检查
+        - generic: 可复用 PDF
+        - strong: 待检查
+        - generic: 身份待审核
+        - strong: 待检查
+      - generic "采集预算：默认 500 篇／10 GiB／24 小时"
+      - strong: 按「开始采集」之后
+      - paragraph: 创建 Collection 并返回原 Topic／Track。右侧状态可打开详情，查看任务、失败和人工处理项。已有且完整的已验证 PDF 会复用；无 DOI 的 BibTeX 与新论文仍需身份解析。排队状态会等待相应服务处理。
+    - paragraph: 检查输入可查看 Catalog 去重与文件复用；开始采集才会创建任务。
+    - button "检查输入"
+    - button "开始采集 →"
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

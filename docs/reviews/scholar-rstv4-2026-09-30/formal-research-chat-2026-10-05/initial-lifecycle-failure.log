@@ -1,0 +1,2314 @@
+CHECK ['-m', 'pytest', 'tests/test_research_discussions.py', 'tests/test_fieldkg_workspace.py', 'tests/test_research_workspace.py', 'tests/test_catalog_web.py', '-q']
+EEEEEEEEEEEEEEEEEEEFEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEFFFFFFFFFFF       [100%]
+=================================== ERRORS ====================================
+____ ERROR at setup of test_source_context_and_empty_history_are_read_only ____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_source_context_and_empty_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_source_context_and_empty_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_discussion_freezes_exact_original_and_actual_fixture_contract _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_discussion_freezes_exact_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_discussion_freezes_exact_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_mismatched_quote_and_stale_source_are_rejected_before_model _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_mismatched_quote_and_stal0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_mismatched_quote_and_stal0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_________ ERROR at setup of test_utf16_quote_cannot_split_a_character _________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_utf16_quote_cannot_split_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_utf16_quote_cannot_split_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+___ ERROR at setup of test_changed_or_deleted_sources_keep_original_history ___
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_changed_or_deleted_source0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_changed_or_deleted_source0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_retry_original_request_after_source_change_never_reapplies_or_recalls _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_retry_original_request_af0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_retry_original_request_af0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+____ ERROR at setup of test_concurrent_duplicate_requests_call_model_once _____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_concurrent_duplicate_requ0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_concurrent_duplicate_requ0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_annotation_is_immutable_and_retry_does_not_duplicate _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_annotation_is_immutable_a0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_annotation_is_immutable_a0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_failed_model_answer_retains_author_and_provenance_without_recall _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_failed_model_answer_retai0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_failed_model_answer_retai0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+________ ERROR at setup of test_model_cannot_cite_an_unsupplied_source ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_model_cannot_cite_an_unsu0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_model_cannot_cite_an_unsu0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+___ ERROR at setup of test_cross_scope_read_and_request_lookup_are_rejected ___
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_cross_scope_read_and_requ0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_cross_scope_read_and_requ0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_explicit_additional_sources_are_all_frozen_and_scope_switch_is_explicit _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_explicit_additional_sourc0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_explicit_additional_sourc0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_historical_fixed_object_can_be_discussed_after_original_disappears _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_historical_fixed_object_c0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_historical_fixed_object_c0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_tampered_saved_context_cannot_be_reused_or_reported_as_original _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_tampered_saved_context_ca0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_tampered_saved_context_ca0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_snapshot_discussion_uses_frozen_source_even_after_living_change _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_snapshot_discussion_uses_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_snapshot_discussion_uses_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+__ ERROR at setup of test_source_history_pagination_keeps_exact_message_ids ___
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_source_history_pagination0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_source_history_pagination0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_restart_observation_does_not_automatically_reinvoke_running_model _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_restart_observation_does_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_restart_observation_does_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_discussion_receipt_insert_failure_rolls_back_and_never_calls_model _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_discussion_receipt_insert0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_discussion_receipt_insert0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_large_context_is_explicitly_rejected_without_truncating_or_calling_model _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_large_context_is_explicit0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_large_context_is_explicit0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_field_read_is_scoped_and_sources_have_exact_original_versions _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_field_read_is_scoped_and_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_field_read_is_scoped_and_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_create_build_uses_selected_fixed_skeleton_and_retries_without_duplicate _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_create_build_uses_selecte0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_create_build_uses_selecte0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_source_changed_since_picker_rejects_new_build_atomically _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_source_changed_since_pick0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_source_changed_since_pick0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_review_rejects_wrong_field_and_candidate_source_tampering _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_review_rejects_wrong_fiel0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_review_rejects_wrong_fiel0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_gap_cannot_be_accepted_before_its_evidence_is_reviewed _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_gap_cannot_be_accepted_be0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_gap_cannot_be_accepted_be0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_refreshed_candidate_still_rejects_mismatched_original_source _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_refreshed_candidate_still0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_refreshed_candidate_still0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_complete_review_seal_and_explicit_adoption_keeps_candidates_non_scientific _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_complete_review_seal_and_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_complete_review_seal_and_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_seal_rejects_pending_candidates_and_missing_accepted_evidence _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_seal_rejects_pending_cand0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_seal_rejects_pending_cand0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_snapshot_is_frozen_when_living_source_changes_and_adoption_stays_fixed _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_snapshot_is_frozen_when_l0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_snapshot_is_frozen_when_l0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_receipt_failure_rolls_back_review_evidence_and_projection _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_receipt_failure_rolls_bac0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_receipt_failure_rolls_bac0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_concurrent_accept_and_reject_have_one_winner_and_original_retry_remains _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_concurrent_accept_and_rej0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_concurrent_accept_and_rej0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_wrong_field_snapshot_and_modified_track_cannot_be_adopted _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_wrong_field_snapshot_and_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_wrong_field_snapshot_and_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_tampered_snapshot_digest_and_evidence_cannot_be_silently_used _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_tampered_snapshot_digest_0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_tampered_snapshot_digest_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_all_actions_require_confirmation_and_forbid_approval_fields _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_all_actions_require_confi0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_all_actions_require_confi0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_details_keep_independent_milestones_and_owned_projects _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_details_keep_indepe0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_details_keep_indepe0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_cross_field_gap_reference_is_hidden_and_cannot_be_sealed _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_cross_field_gap_reference0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_cross_field_gap_reference0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_____ ERROR at setup of test_snapshot_member_tampering_prevents_adoption ______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_snapshot_member_tampering0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_snapshot_member_tampering0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+____ ERROR at setup of test_sealed_gap_references_keep_original_raw_source ____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_sealed_gap_references_kee0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_sealed_gap_references_kee0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_can_explicitly_adopt_multiple_fixed_versions_without_replacing_first _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_can_explicitly_adop0')
+
+    @pytest.fixture
+    def setup(tmp_path: Path):
+        service = TrackFirstService(tmp_path)
+        field = service.create_field(FieldInput(name="Energy"))
+        other = service.create_field(FieldInput(name="Other"))
+        topic = service.create_topic(TrackFirstTopicInput(field_id=field["field_id"], name="Trading"))
+        track = service.create_track(TrackFirstTrackInput(field_id=field["field_id"], primary_topic_id=topic["topic_id"], title="Track", research_type="conceptual_framework"))
+        pool = tmp_path / "pool.db"
+        make_paperpool(pool)
+        build = service.create_fieldkg_build(FieldKGBuildInput(field_id=field["field_id"]))
+        service.import_paperpool(build["build_id"], str(pool), [])
+>       return TestClient(create_app(tmp_path)), service.db_path, field["field_id"], other["field_id"], track["track_id"], build["build_id"]
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_fieldkg_workspace.py:35: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_can_explicitly_adop0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_retries_return_original_receipt_without_duplicate_track _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_retries_return_original_r0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_retries_return_original_r0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_________ ERROR at setup of test_same_request_id_cannot_be_repurposed _________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_same_request_id_cannot_be0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_same_request_id_cannot_be0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_____ ERROR at setup of test_duplicate_names_require_explicit_topic_link ______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_duplicate_names_require_e0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_duplicate_names_require_e0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_shared_topic_edit_changes_one_record_and_no_track_scope _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_shared_topic_edit_changes0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_shared_topic_edit_changes0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_stale_edit_and_identical_name_restoration_do_not_revive_old_draft _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_stale_edit_and_identical_0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_stale_edit_and_identical_0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+________ ERROR at setup of test_two_concurrent_editors_have_one_winner ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_two_concurrent_editors_ha0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_two_concurrent_editors_ha0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+__ ERROR at setup of test_receipt_failure_rolls_back_the_track_and_its_links __
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_receipt_failure_rolls_bac1')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_receipt_failure_rolls_bac1')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_missing_and_wrong_field_topic_ownership_reject_without_action _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_missing_and_wrong_field_t0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_missing_and_wrong_field_t0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_title_editor_cannot_alter_scientific_state[extra0] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_title_editor_cannot_alter_scientific_state[extra1] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot1')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot1')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_title_editor_cannot_alter_scientific_state[extra2] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot2')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot2')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_title_editor_cannot_alter_scientific_state[extra3] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot3')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot3')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_track_title_editor_cannot_alter_scientific_state[extra4] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot4')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_track_title_editor_cannot4')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_reading_legacy_overview_installs_no_schema_and_exposes_no_local_path _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_reading_legacy_overview_i0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_reading_legacy_overview_i0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ ERROR at setup of test_overview_digest_matches_current_receipt_and_external_edit_invalidates_it _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_overview_digest_matches_c0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_overview_digest_matches_c0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+____ ERROR at setup of test_unknown_research_type_and_extra_field_rejected ____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_unknown_research_type_and0')
+
+    @pytest.fixture
+    def catalog(tmp_path: Path) -> tuple[TestClient, Path]:
+        db = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db)
+>       return TestClient(create_app(tmp_path)), db
+                          ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_workspace.py:19: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_unknown_research_type_and0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+================================== FAILURES ===================================
+___ test_actual_pdf_page_uses_registered_file_sha_and_rejects_changed_file ____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_actual_pdf_page_uses_regi0')
+
+    def test_actual_pdf_page_uses_registered_file_sha_and_rejects_changed_file(tmp_path):
+        if not shutil.which("pdftotext"):
+            pytest.skip("The actual PDF extractor is unavailable")
+        seed_catalog(tmp_path)
+        pdf = tmp_path / "sample.pdf"
+        with sqlite3.connect(tmp_path / "data/catalog.db") as conn:
+            conn.execute("UPDATE source_file_versions SET sha256=?", (hashlib.sha256(pdf.read_bytes()).hexdigest(),))
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_discussions.py:354: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_actual_pdf_page_uses_regi0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_ test_research_overview_returns_track_owned_manuscripts_and_collection_jobs __
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_research_overview_returns0')
+
+    def test_research_overview_returns_track_owned_manuscripts_and_collection_jobs(
+        tmp_path: Path,
+    ) -> None:
+        db_path = tmp_path / "data" / "catalog.db"
+        initialize_catalog(db_path)
+        now = "2026-09-28T10:00:00Z"
+        with sqlite3.connect(db_path) as conn:
+            conn.execute("INSERT INTO research_fields VALUES(?,?,?,?,?,?)",
+                         ("f1", "solar", "Solar", None, now, now))
+            conn.execute("INSERT INTO topics VALUES(?,?,?,?,?,?)",
+                         ("t1", "nowcasting", "Nowcasting", None, now, now))
+            conn.execute("INSERT INTO field_topics VALUES(?,?,?)", ("f1", "t1", now))
+            conn.execute("""INSERT INTO research_tracks
+                         (track_id,field_id,primary_topic_id,title,research_type,status,
+                          mapping_status,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)""",
+                         ("tr1", "f1", "t1", "All-sky", "EMPIRICAL", "ACTIVE", "MAPPED",
+                          now, now))
+            conn.execute("""INSERT INTO research_nodes
+                         (node_id,track_id,node_type,status,statement,rationale,payload_json,
+                          created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)""",
+                         ("q1", "tr1", "research_question", "APPROVED", "Can images help?",
+                          "", "{}", now, now))
+            conn.execute("""INSERT INTO manuscripts
+                         (manuscript_id,track_id,title,research_type,writing_status,
+                          workflow_stage,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?)""",
+                         ("m1", "tr1", "Image paper", "EMPIRICAL", "DRAFT", "DRAFTING",
+                          now, now))
+            conn.execute("INSERT INTO manuscript_nodes VALUES(?,?,?,?)",
+                         ("m1", "q1", None, 1))
+            conn.execute("""INSERT INTO collections
+                         (collection_id,field_id,track_id,name,scope_json,scope_version,status,
+                          revision,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?)""",
+                         ("c1", "f1", "tr1", "Seed papers", "{}", 1, "ACTIVE", 1, now, now))
+            conn.execute("""INSERT INTO acquisition_jobs
+                         (job_id,collection_id,job_type,queue_class,status,priority,
+                          idempotency_key,input_json,input_digest,rule_version,available_at,
+                          created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                         ("j1", "c1", "FIND_PDF", "NETWORK", "READY", 1, "key-1", "{}",
+                          "digest-1", "v1", now, now, now))
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:100: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_research_overview_returns0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_______ test_catalog_query_filters_all_rows_before_pagination_and_sorts _______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_catalog_query_filters_all0')
+
+    def test_catalog_query_filters_all_rows_before_pagination_and_sorts(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:116: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_catalog_query_filters_all0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+________ test_catalog_review_banner_and_detail_are_real_database_views ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_catalog_review_banner_and0')
+
+    def test_catalog_review_banner_and_detail_are_real_database_views(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:142: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_catalog_review_banner_and0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_____ test_catalog_page_uses_browser_title_and_rejects_untrusted_filters ______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_catalog_page_uses_browser0')
+
+    def test_catalog_page_uses_browser_title_and_rejects_untrusted_filters(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_catalog_page_uses_browser0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_______ test_research_overview_and_collection_page_remain_discoverable ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_research_overview_and_col0')
+
+    def test_research_overview_and_collection_page_remain_discoverable(tmp_path: Path) -> None:
+        initialize_catalog(tmp_path / "data" / "catalog.db")
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:197: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_research_overview_and_col0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+______________ test_review_shows_authors_from_legacy_nested_json ______________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_review_shows_authors_from0')
+
+    def test_review_shows_authors_from_legacy_nested_json(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+        encoded = json.dumps([json.dumps(json.dumps(["Ben", "Cory"]))])
+        with sqlite3.connect(tmp_path / "data" / "catalog.db") as conn:
+            conn.execute("UPDATE papers SET authors_json=? WHERE paper_id='p2'", (encoded,))
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:221: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_review_shows_authors_from0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+___________ test_parser_needs_human_case_is_visible_with_source_pdf ___________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_parser_needs_human_case_i0')
+
+    def test_parser_needs_human_case_is_visible_with_source_pdf(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+        with sqlite3.connect(tmp_path / "data" / "catalog.db") as conn:
+            conn.execute(
+                """INSERT INTO collections(collection_id,field_id,name,scope_json,scope_version,
+                   status,revision,created_at,updated_at) VALUES(?,?,?,?,?,?,?,?,?)""",
+                ("c1", "field-1", "Review", "{}", 1, "ACTIVE", 1, "2026-09-01", "2026-09-01"),
+            )
+            conn.execute(
+                """INSERT INTO acquisition_jobs(job_id,collection_id,paper_id,job_type,
+                   queue_class,status,priority,idempotency_key,input_json,input_digest,
+                   rule_version,available_at,last_error_detail,created_at,updated_at)
+                   VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+                ("j1", "c1", "p2", "PARSE_PDF", "PARSER", "NEEDS_HUMAN", 80, "review-j1",
+                 '{"file_version_id":"f2"}', "digest-j1", "parser-v1", "2026-09-22",
+                 "Reference entries missing on page 4", "2026-09-22", "2026-09-22"),
+            )
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:244: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_parser_needs_human_case_i0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+____ test_human_corrections_are_saved_as_history_without_changing_catalog _____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_human_corrections_are_sav0')
+
+    def test_human_corrections_are_saved_as_history_without_changing_catalog(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+        url = "/api/catalog/review/cases/f2/findings"
+        finding = {
+            "submission_id": "submission-doi-1", "issue_type": "DOI",
+            "assessment": "AUTO_CHECK_MISSED", "proposed_value": "10.1/b",
+            "evidence_page": 1, "evidence_quote": "DOI 10.1/b",
+            "note": "The DOI is visible in the original PDF.", "reviewer_label": "Reviewer A",
+        }
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:261: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_human_corrections_are_sav0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_________ test_pdf_annotations_autocorrect_catalog_from_source_words __________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_pdf_annotations_autocorre0')
+
+    @pytest.mark.skipif(not shutil.which("pdftotext"), reason="Poppler text extractor unavailable")
+    def test_pdf_annotations_autocorrect_catalog_from_source_words(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+        with sqlite3.connect(tmp_path / "data" / "catalog.db") as conn:
+            conn.execute(
+                """INSERT INTO paper_identities VALUES(
+                   'old-doi','p2','DOI','10.1/b','CONFIRMED','canonical','2026-09-01')"""
+            )
+        url = "/api/catalog/review/cases/f2/annotations"
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:298: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_pdf_annotations_autocorre0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+________ test_pdf_review_decisions_autosave_without_inventing_metadata ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_pdf_review_decisions_auto0')
+
+    def test_pdf_review_decisions_autosave_without_inventing_metadata(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+        url = "/api/catalog/review/cases/f2/annotations"
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:382: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_pdf_review_decisions_auto0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+_____________ test_pdf_doi_collision_does_not_mutate_either_paper _____________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_pdf_doi_collision_does_no0')
+
+    @pytest.mark.skipif(not shutil.which("pdftotext"), reason="Poppler text extractor unavailable")
+    def test_pdf_doi_collision_does_not_mutate_either_paper(tmp_path: Path) -> None:
+        seed_catalog(tmp_path)
+        with sqlite3.connect(tmp_path / "data" / "catalog.db") as conn:
+            conn.execute("UPDATE papers SET doi='10.1234/b',canonical_key='doi:10.1234/b' WHERE paper_id='p1'")
+        url = "/api/catalog/review/cases/f2/annotations"
+>       with TestClient(create_app(tmp_path)) as client:
+                        ^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_web.py:407: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-808/test_pdf_doi_collision_does_no0')
+
+    def create_app(root: str | Path | None = None) -> FastAPI:
+        root_path = Path(root or os.environ.get("RSTV4_ROOT") or Path(__file__).resolve().parents[2])
+        root_path = root_path.resolve()
+        db_path = root_path / "data" / "catalog.db"
+        page_path = Path(__file__).with_name("catalog_web.html")
+        app = FastAPI(title="Paper Catalog", version="1.0")
+        discussions = ResearchDiscussionService(root_path)
+        app.state.discussions = discussions
+>       app.add_event_handler("shutdown", discussions.shutdown)
+        ^^^^^^^^^^^^^^^^^^^^^
+E       AttributeError: 'FastAPI' object has no attribute 'add_event_handler'
+
+src\rstv4\catalog_web.py:324: AttributeError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+ERROR tests/test_research_discussions.py::test_source_context_and_empty_history_are_read_only
+ERROR tests/test_research_discussions.py::test_discussion_freezes_exact_original_and_actual_fixture_contract
+ERROR tests/test_research_discussions.py::test_mismatched_quote_and_stale_source_are_rejected_before_model
+ERROR tests/test_research_discussions.py::test_utf16_quote_cannot_split_a_character
+ERROR tests/test_research_discussions.py::test_changed_or_deleted_sources_keep_original_history
+ERROR tests/test_research_discussions.py::test_retry_original_request_after_source_change_never_reapplies_or_recalls
+ERROR tests/test_research_discussions.py::test_concurrent_duplicate_requests_call_model_once
+ERROR tests/test_research_discussions.py::test_annotation_is_immutable_and_retry_does_not_duplicate
+ERROR tests/test_research_discussions.py::test_failed_model_answer_retains_author_and_provenance_without_recall
+ERROR tests/test_research_discussions.py::test_model_cannot_cite_an_unsupplied_source
+ERROR tests/test_research_discussions.py::test_cross_scope_read_and_request_lookup_are_rejected
+ERROR tests/test_research_discussions.py::test_explicit_additional_sources_are_all_frozen_and_scope_switch_is_explicit
+ERROR tests/test_research_discussions.py::test_historical_fixed_object_can_be_discussed_after_original_disappears
+ERROR tests/test_research_discussions.py::test_tampered_saved_context_cannot_be_reused_or_reported_as_original
+ERROR tests/test_research_discussions.py::test_snapshot_discussion_uses_frozen_source_even_after_living_change
+ERROR tests/test_research_discussions.py::test_source_history_pagination_keeps_exact_message_ids
+ERROR tests/test_research_discussions.py::test_restart_observation_does_not_automatically_reinvoke_running_model
+ERROR tests/test_research_discussions.py::test_discussion_receipt_insert_failure_rolls_back_and_never_calls_model
+ERROR tests/test_research_discussions.py::test_large_context_is_explicitly_rejected_without_truncating_or_calling_model
+ERROR tests/test_fieldkg_workspace.py::test_field_read_is_scoped_and_sources_have_exact_original_versions
+ERROR tests/test_fieldkg_workspace.py::test_create_build_uses_selected_fixed_skeleton_and_retries_without_duplicate
+ERROR tests/test_fieldkg_workspace.py::test_source_changed_since_picker_rejects_new_build_atomically
+ERROR tests/test_fieldkg_workspace.py::test_review_rejects_wrong_field_and_candidate_source_tampering
+ERROR tests/test_fieldkg_workspace.py::test_gap_cannot_be_accepted_before_its_evidence_is_reviewed
+ERROR tests/test_fieldkg_workspace.py::test_refreshed_candidate_still_rejects_mismatched_original_source
+ERROR tests/test_fieldkg_workspace.py::test_complete_review_seal_and_explicit_adoption_keeps_candidates_non_scientific
+ERROR tests/test_fieldkg_workspace.py::test_seal_rejects_pending_candidates_and_missing_accepted_evidence
+ERROR tests/test_fieldkg_workspace.py::test_snapshot_is_frozen_when_living_source_changes_and_adoption_stays_fixed
+ERROR tests/test_fieldkg_workspace.py::test_receipt_failure_rolls_back_review_evidence_and_projection
+ERROR tests/test_fieldkg_workspace.py::test_concurrent_accept_and_reject_have_one_winner_and_original_retry_remains
+ERROR tests/test_fieldkg_workspace.py::test_wrong_field_snapshot_and_modified_track_cannot_be_adopted
+ERROR tests/test_fieldkg_workspace.py::test_tampered_snapshot_digest_and_evidence_cannot_be_silently_used
+ERROR tests/test_fieldkg_workspace.py::test_all_actions_require_confirmation_and_forbid_approval_fields
+ERROR tests/test_fieldkg_workspace.py::test_track_details_keep_independent_milestones_and_owned_projects
+ERROR tests/test_fieldkg_workspace.py::test_cross_field_gap_reference_is_hidden_and_cannot_be_sealed
+ERROR tests/test_fieldkg_workspace.py::test_snapshot_member_tampering_prevents_adoption
+ERROR tests/test_fieldkg_workspace.py::test_sealed_gap_references_keep_original_raw_source
+ERROR tests/test_fieldkg_workspace.py::test_track_can_explicitly_adopt_multiple_fixed_versions_without_replacing_first
+ERROR tests/test_research_workspace.py::test_retries_return_original_receipt_without_duplicate_track
+ERROR tests/test_research_workspace.py::test_same_request_id_cannot_be_repurposed
+ERROR tests/test_research_workspace.py::test_duplicate_names_require_explicit_topic_link
+ERROR tests/test_research_workspace.py::test_shared_topic_edit_changes_one_record_and_no_track_scope
+ERROR tests/test_research_workspace.py::test_stale_edit_and_identical_name_restoration_do_not_revive_old_draft
+ERROR tests/test_research_workspace.py::test_two_concurrent_editors_have_one_winner
+ERROR tests/test_research_workspace.py::test_receipt_failure_rolls_back_the_track_and_its_links
+ERROR tests/test_research_workspace.py::test_missing_and_wrong_field_topic_ownership_reject_without_action
+ERROR tests/test_research_workspace.py::test_track_title_editor_cannot_alter_scientific_state[extra0]
+ERROR tests/test_research_workspace.py::test_track_title_editor_cannot_alter_scientific_state[extra1]
+ERROR tests/test_research_workspace.py::test_track_title_editor_cannot_alter_scientific_state[extra2]
+ERROR tests/test_research_workspace.py::test_track_title_editor_cannot_alter_scientific_state[extra3]
+ERROR tests/test_research_workspace.py::test_track_title_editor_cannot_alter_scientific_state[extra4]
+ERROR tests/test_research_workspace.py::test_reading_legacy_overview_installs_no_schema_and_exposes_no_local_path
+ERROR tests/test_research_workspace.py::test_overview_digest_matches_current_receipt_and_external_edit_invalidates_it
+ERROR tests/test_research_workspace.py::test_unknown_research_type_and_extra_field_rejected
+FAILED tests/test_research_discussions.py::test_actual_pdf_page_uses_registered_file_sha_and_rejects_changed_file
+FAILED tests/test_catalog_web.py::test_research_overview_returns_track_owned_manuscripts_and_collection_jobs
+FAILED tests/test_catalog_web.py::test_catalog_query_filters_all_rows_before_pagination_and_sorts
+FAILED tests/test_catalog_web.py::test_catalog_review_banner_and_detail_are_real_database_views
+FAILED tests/test_catalog_web.py::test_catalog_page_uses_browser_title_and_rejects_untrusted_filters
+FAILED tests/test_catalog_web.py::test_research_overview_and_collection_page_remain_discoverable
+FAILED tests/test_catalog_web.py::test_review_shows_authors_from_legacy_nested_json
+FAILED tests/test_catalog_web.py::test_parser_needs_human_case_is_visible_with_source_pdf
+FAILED tests/test_catalog_web.py::test_human_corrections_are_saved_as_history_without_changing_catalog
+FAILED tests/test_catalog_web.py::test_pdf_annotations_autocorrect_catalog_from_source_words
+FAILED tests/test_catalog_web.py::test_pdf_review_decisions_autosave_without_inventing_metadata
+FAILED tests/test_catalog_web.py::test_pdf_doi_collision_does_not_mutate_either_paper
+12 failed, 1 warning, 54 errors in 214.65s (0:03:34)
+Exit: 1

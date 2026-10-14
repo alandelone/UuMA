@@ -1,0 +1,60 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_templates.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_hierarchy.py']
+All checks passed!
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', '-q', 'tests/test_studio_hierarchy.py', 'tests/test_studio_templates.py', 'tests/test_studio_structure.py', 'tests/test_writing_studio.py']
+...................F.................................................    [100%]
+================================== FAILURES ===================================
+____ test_actual_generation_worker_freezes_child_path_and_author_relations ____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-957/test_actual_generation_worker_0')
+
+    def test_actual_generation_worker_freezes_child_path_and_author_relations(tmp_path):
+        service, _, ms = create_studio(tmp_path)
+        doc = complete_document(service.get_workspace(ms))
+        root = doc['sections'][0]
+        paragraph = root['paragraphs'].pop()
+        paragraph['logical_relation'] = 'Author-defined conditional sequence'
+        child = {'id':'author-child','title':'Explicit author child','role':'',
+                 'parent_section_id':root['id'],'paragraphs':[paragraph]}
+        doc['sections'].append(child)
+        intent = paragraph['intents'][0]
+        thought = intent['thoughts'][0]
+        doc['argument_relations'] = [{'id':'author-worker-edge','source_id':intent['id'],
+            'target_id':thought['id'],'relation':'Specifies','condition':'Only under author scope Ω'}]
+        service.save_document(ms,base_revision=0,operation_id='worker-hierarchy',document=doc)
+        captured = []
+        compiled = []
+    
+        def software_gateway(task, payload):
+            captured.append(deepcopy(payload))
+            return {'paragraph':thought['text'],
+                    'sentence_mappings':[{'sentence':0,'thought_ids':[thought['id']]}]}
+    
+        def software_compile(job, generated):
+            compiled.append(deepcopy(generated))
+            return []
+    
+        service.gateway.analyze = software_gateway
+        service._compile_artifacts = software_compile
+        job = wait_for_job(service, service.create_job(ms,'GENERATE',input_revision=1))
+        assert job['status']=='SUCCEEDED', job
+        assert len(captured)==len(compiled)==1
+        assert captured[0]['section_path']==[root['title'],child['title']]
+        assert captured[0]['logical_relation']==paragraph['logical_relation']
+        edge = captured[0]['argument_relations'][0]
+        assert edge['origin']=='AUTHOR_ARGUMENT_RELATION'
+        assert edge['source']['id']==intent['id'] and thought['text'] in edge['source']['author_text']
+        assert edge['target']['author_text']==thought['text']
+        assert edge['condition']==doc['argument_relations'][0]['condition']
+        assert compiled[0]['argument_relations']==doc['argument_relations']
+        assert compiled[0]['sections'][0]['paragraphs']==[]
+        assert compiled[0]['sections'][1]['section_depth']==1
+        assert service.get_workspace(ms)['document']==doc
+        with sqlite3.connect(service.db_path) as conn:
+>           request = json.loads(conn.execute('SELECT request_json FROM studio_model_calls').fetchone()[0])
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           sqlite3.OperationalError: no such column: request_json
+
+tests\test_studio_hierarchy.py:177: OperationalError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_hierarchy.py::test_actual_generation_worker_freezes_child_path_and_author_relations
+1 failed, 68 passed in 49.78s

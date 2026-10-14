@@ -1,0 +1,182 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_review_workflow.py', 'tests/test_parser_quality.py', 'tests/test_native_paperpool.py', 'tests/test_catalog_web.py', 'tests/test_collection_workspace.py', '-q']
+FFFF...................................................F..               [100%]
+================================== FAILURES ===================================
+_ test_identity_annotations_then_explicit_review_approves_and_queues_exact_parse _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-856/test_identity_annotations_then0')
+
+    def test_identity_annotations_then_explicit_review_approves_and_queues_exact_parse(tmp_path: Path):
+>       service,collection,paper,file=fixture(tmp_path,mismatch=True)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_review_workflow.py:63: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_catalog_review_workflow.py:46: in fixture
+    file=service.register_pdf(collection['collection_id'],PdfRegistrationInput(paper_id=paper['paper_id'],path=str(source),acquisition_method='TEST',idempotency_key='review-fixture-registration'))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition.AcquisitionService object at 0x0000018CDBE2F810>
+collection_id = 'collection_e9f4b6ce61e76d9e210efa9407939ddf'
+payload = PdfRegistrationInput(paper_id='paper_dde0a449e93444c2771e7b0edeb7daf9', path='C:\\Users\\Alandelone\\AppData\\Local\\T...otations_then0\\source.pdf', acquisition_method='TEST', source_url=None, idempotency_key='review-fixture-registration')
+extra_allowed_root = None
+
+    def register_pdf(
+        self,
+        collection_id: str,
+        payload: PdfRegistrationInput,
+        *,
+        extra_allowed_root: Path | None = None,
+    ) -> dict[str, Any]:
+        source = Path(payload.path).expanduser().resolve()
+        allowed = [self.import_root.resolve(), (self.root / "文献POOL").resolve()]
+        if extra_allowed_root:
+            allowed.append(extra_allowed_root.resolve())
+        if not any(source == root or root in source.parents for root in allowed):
+>           raise PermissionError("PDF must be inside a registered import directory")
+E           PermissionError: PDF must be inside a registered import directory
+
+src\rstv4\acquisition.py:678: PermissionError
+____________ test_wrong_pdf_and_changed_source_cannot_be_approved _____________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-856/test_wrong_pdf_and_changed_sou0')
+
+    def test_wrong_pdf_and_changed_source_cannot_be_approved(tmp_path: Path):
+>       service,_,_,file=fixture(tmp_path,mismatch=True)
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_review_workflow.py:94: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_catalog_review_workflow.py:46: in fixture
+    file=service.register_pdf(collection['collection_id'],PdfRegistrationInput(paper_id=paper['paper_id'],path=str(source),acquisition_method='TEST',idempotency_key='review-fixture-registration'))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition.AcquisitionService object at 0x0000018CDBBD49D0>
+collection_id = 'collection_e9f4b6ce61e76d9e210efa9407939ddf'
+payload = PdfRegistrationInput(paper_id='paper_dde0a449e93444c2771e7b0edeb7daf9', path='C:\\Users\\Alandelone\\AppData\\Local\\T...d_changed_sou0\\source.pdf', acquisition_method='TEST', source_url=None, idempotency_key='review-fixture-registration')
+extra_allowed_root = None
+
+    def register_pdf(
+        self,
+        collection_id: str,
+        payload: PdfRegistrationInput,
+        *,
+        extra_allowed_root: Path | None = None,
+    ) -> dict[str, Any]:
+        source = Path(payload.path).expanduser().resolve()
+        allowed = [self.import_root.resolve(), (self.root / "文献POOL").resolve()]
+        if extra_allowed_root:
+            allowed.append(extra_allowed_root.resolve())
+        if not any(source == root or root in source.parents for root in allowed):
+>           raise PermissionError("PDF must be inside a registered import directory")
+E           PermissionError: PDF must be inside a registered import directory
+
+src\rstv4\acquisition.py:678: PermissionError
+_ test_parser_source_correction_is_rechecked_then_publishes_and_keeps_history _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-856/test_parser_source_correction_0')
+
+    def test_parser_source_correction_is_rechecked_then_publishes_and_keeps_history(tmp_path: Path):
+>       service,collection,paper,file=fixture(tmp_path)
+                                      ^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_review_workflow.py:109: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_catalog_review_workflow.py:46: in fixture
+    file=service.register_pdf(collection['collection_id'],PdfRegistrationInput(paper_id=paper['paper_id'],path=str(source),acquisition_method='TEST',idempotency_key='review-fixture-registration'))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition.AcquisitionService object at 0x0000018CD9E14A10>
+collection_id = 'collection_e9f4b6ce61e76d9e210efa9407939ddf'
+payload = PdfRegistrationInput(paper_id='paper_dde0a449e93444c2771e7b0edeb7daf9', path='C:\\Users\\Alandelone\\AppData\\Local\\T...e_correction_0\\source.pdf', acquisition_method='TEST', source_url=None, idempotency_key='review-fixture-registration')
+extra_allowed_root = None
+
+    def register_pdf(
+        self,
+        collection_id: str,
+        payload: PdfRegistrationInput,
+        *,
+        extra_allowed_root: Path | None = None,
+    ) -> dict[str, Any]:
+        source = Path(payload.path).expanduser().resolve()
+        allowed = [self.import_root.resolve(), (self.root / "文献POOL").resolve()]
+        if extra_allowed_root:
+            allowed.append(extra_allowed_root.resolve())
+        if not any(source == root or root in source.parents for root in allowed):
+>           raise PermissionError("PDF must be inside a registered import directory")
+E           PermissionError: PDF must be inside a registered import directory
+
+src\rstv4\acquisition.py:678: PermissionError
+_ test_changed_parse_output_creates_new_version_and_exact_replay_does_not_replace_old _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-856/test_changed_parse_output_crea0')
+
+    def test_changed_parse_output_creates_new_version_and_exact_replay_does_not_replace_old(tmp_path: Path):
+>       service,collection,paper,file=fixture(tmp_path)
+                                      ^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_review_workflow.py:147: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_catalog_review_workflow.py:46: in fixture
+    file=service.register_pdf(collection['collection_id'],PdfRegistrationInput(paper_id=paper['paper_id'],path=str(source),acquisition_method='TEST',idempotency_key='review-fixture-registration'))
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition.AcquisitionService object at 0x0000018CD9EB3710>
+collection_id = 'collection_e9f4b6ce61e76d9e210efa9407939ddf'
+payload = PdfRegistrationInput(paper_id='paper_dde0a449e93444c2771e7b0edeb7daf9', path='C:\\Users\\Alandelone\\AppData\\Local\\T...e_output_crea0\\source.pdf', acquisition_method='TEST', source_url=None, idempotency_key='review-fixture-registration')
+extra_allowed_root = None
+
+    def register_pdf(
+        self,
+        collection_id: str,
+        payload: PdfRegistrationInput,
+        *,
+        extra_allowed_root: Path | None = None,
+    ) -> dict[str, Any]:
+        source = Path(payload.path).expanduser().resolve()
+        allowed = [self.import_root.resolve(), (self.root / "文献POOL").resolve()]
+        if extra_allowed_root:
+            allowed.append(extra_allowed_root.resolve())
+        if not any(source == root or root in source.parents for root in allowed):
+>           raise PermissionError("PDF must be inside a registered import directory")
+E           PermissionError: PDF must be inside a registered import directory
+
+src\rstv4\acquisition.py:678: PermissionError
+_ test_version_six_migration_preserves_existing_collection_and_startup_is_stable _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-856/test_version_six_migration_pre0')
+
+    def test_version_six_migration_preserves_existing_collection_and_startup_is_stable(tmp_path: Path):
+        db = setup(tmp_path)
+        service = AcquisitionService(tmp_path)
+        service.create_collection(CollectionCreateInput(**payload()))
+        with closing(sqlite3.connect(db)) as conn, conn:
+            conn.execute("ALTER TABLE collections DROP COLUMN topic_id")
+            conn.execute("ALTER TABLE collections DROP COLUMN creation_request_json")
+            conn.execute("UPDATE schema_version SET version=5 WHERE component='catalog'")
+            before = conn.execute("SELECT * FROM collections").fetchall()
+        initialize_catalog(db)
+        with closing(sqlite3.connect(db)) as conn, conn:
+            migrated = conn.execute("SELECT * FROM collections").fetchall()
+            assert [row[:10] for row in migrated] == before
+            assert all(row[10:] == (None, None) for row in migrated)
+>           assert conn.execute("SELECT version FROM schema_version WHERE component='catalog'").fetchone()[0] == 6
+E           assert 7 == 6
+
+tests\test_collection_workspace.py:225: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_catalog_review_workflow.py::test_identity_annotations_then_explicit_review_approves_and_queues_exact_parse
+FAILED tests/test_catalog_review_workflow.py::test_wrong_pdf_and_changed_source_cannot_be_approved
+FAILED tests/test_catalog_review_workflow.py::test_parser_source_correction_is_rechecked_then_publishes_and_keeps_history
+FAILED tests/test_catalog_review_workflow.py::test_changed_parse_output_creates_new_version_and_exact_replay_does_not_replace_old
+FAILED tests/test_collection_workspace.py::test_version_six_migration_preserves_existing_collection_and_startup_is_stable
+5 failed, 53 passed, 1 warning in 14.10s

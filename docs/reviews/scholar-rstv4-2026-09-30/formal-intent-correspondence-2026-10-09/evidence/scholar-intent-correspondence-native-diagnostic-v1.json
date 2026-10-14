@@ -1,0 +1,215 @@
+[
+  {
+    "table": "manuscript_versions",
+    "counts": [
+      6,
+      7
+    ],
+    "columns": [
+      "manuscript_version_id",
+      "manuscript_id",
+      "version",
+      "content",
+      "inputs_json",
+      "created_at"
+    ]
+  },
+  {
+    "table": "manuscripts",
+    "counts": [
+      11,
+      11
+    ],
+    "columns": [
+      "manuscript_id",
+      "track_id",
+      "title",
+      "scope",
+      "research_type",
+      "writing_status",
+      "needs_scientific_review",
+      "blocker",
+      "next_step",
+      "revision",
+      "created_at",
+      "updated_at",
+      "workflow_stage"
+    ]
+  },
+  {
+    "table": "studio_artifacts",
+    "counts": [
+      30,
+      35
+    ],
+    "columns": [
+      "artifact_id",
+      "job_id",
+      "manuscript_id",
+      "document_revision",
+      "artifact_kind",
+      "storage_path",
+      "sha256",
+      "size_bytes",
+      "created_at"
+    ]
+  },
+  {
+    "table": "studio_assets",
+    "counts": [
+      3,
+      3
+    ],
+    "columns": [
+      "asset_id",
+      "manuscript_id",
+      "filename",
+      "media_type",
+      "size_bytes",
+      "sha256",
+      "storage_path",
+      "asset_kind",
+      "status",
+      "metadata_json",
+      "created_at"
+    ]
+  },
+  {
+    "table": "studio_change_link_state",
+    "counts": [
+      77,
+      88
+    ],
+    "columns": [
+      "change_id",
+      "initial_comment_ids_json",
+      "initial_origin",
+      "link_revision",
+      "created_at"
+    ]
+  },
+  {
+    "table": "studio_changes",
+    "counts": [
+      99,
+      110
+    ],
+    "columns": [
+      "change_id",
+      "manuscript_id",
+      "operation_id",
+      "before_json",
+      "after_json",
+      "is_compensating",
+      "created_at"
+    ]
+  },
+  {
+    "table": "studio_documents",
+    "counts": [
+      11,
+      11
+    ],
+    "columns": [
+      "manuscript_id",
+      "revision",
+      "document_json",
+      "active_generated_version_id",
+      "last_generated_revision",
+      "created_at",
+      "updated_at"
+    ]
+  },
+  {
+    "table": "studio_jobs",
+    "counts": [
+      15,
+      16
+    ],
+    "columns": [
+      "job_id",
+      "manuscript_id",
+      "job_kind",
+      "status",
+      "input_revision",
+      "request_json",
+      "result_json",
+      "error_json",
+      "created_at",
+      "started_at",
+      "completed_at"
+    ]
+  },
+  {
+    "table": "studio_model_calls",
+    "counts": [
+      6,
+      8
+    ],
+    "columns": [
+      "call_id",
+      "manuscript_id",
+      "job_id",
+      "message_id",
+      "task",
+      "input_revision",
+      "input_sha256",
+      "input_json",
+      "output_json",
+      "contract_json",
+      "status",
+      "error_json",
+      "started_at",
+      "completed_at"
+    ]
+  },
+  {
+    "table": "studio_operations",
+    "counts": [
+      99,
+      110
+    ],
+    "columns": [
+      "operation_id",
+      "manuscript_id",
+      "base_revision",
+      "resulting_revision",
+      "operation_kind",
+      "payload_json",
+      "inverse_json",
+      "created_at"
+    ]
+  },
+  {
+    "table": "studio_sample_candidates",
+    "counts": [
+      16,
+      26
+    ],
+    "columns": [
+      "manuscript_id",
+      "anchor_id",
+      "document_revision",
+      "query_key",
+      "candidate_id",
+      "sample_json",
+      "created_at"
+    ]
+  },
+  {
+    "table": "studio_template_instances",
+    "counts": [
+      19,
+      20
+    ],
+    "columns": [
+      "template_instance_id",
+      "manuscript_id",
+      "source_skeleton_id",
+      "source_version",
+      "adopted_json",
+      "created_at",
+      "updated_at"
+    ]
+  }
+]

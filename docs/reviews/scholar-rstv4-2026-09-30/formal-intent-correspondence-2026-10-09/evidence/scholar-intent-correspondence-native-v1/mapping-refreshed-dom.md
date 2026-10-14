@@ -1,0 +1,12 @@
+- main:
+  - heading "WRITING STUDIO" [level=1]
+  - paragraph: Scholar · RSTV4 · Track → Paper
+  - button "重新读取 Track 与稿件":
+  - heading "在 Track 中开始一篇 Paper" [level=2]
+  - combobox "选择 Track"
+  - textbox "新稿件标题":
+    - /placeholder: Paper title
+  - button "＋ 新 Paper" [disabled]
+  - paragraph: Track → Paper
+  - heading "写作工作区" [level=2]
+  - generic: 0 篇稿件

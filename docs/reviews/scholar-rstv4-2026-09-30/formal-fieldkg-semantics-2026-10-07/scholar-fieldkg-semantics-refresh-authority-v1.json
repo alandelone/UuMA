@@ -1,0 +1,27 @@
+{
+    "console":  [
+                    {
+                        "ProcessId":  32228,
+                        "ParentProcessId":  23020,
+                        "ExecutablePath":  "C:\\Windows\\system32\\conhost.exe"
+                    }
+                ],
+    "processes":  [
+                      {
+                          "ProcessId":  23020,
+                          "ParentProcessId":  69940,
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-overview-server.py --root C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h --port 8885 "
+                      },
+                      {
+                          "ProcessId":  74572,
+                          "ParentProcessId":  23020,
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-overview-server.py --root C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h --port 8885 "
+                      }
+                  ],
+    "listeners":  [
+                      {
+                          "LocalPort":  8885,
+                          "OwningProcess":  74572
+                      }
+                  ]
+}

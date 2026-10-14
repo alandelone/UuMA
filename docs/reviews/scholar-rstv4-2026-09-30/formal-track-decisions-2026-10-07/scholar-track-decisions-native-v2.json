@@ -1,0 +1,85 @@
+{
+  "status": "PASS_ACTUAL_TRACK_PROPOSAL_AND_EXACT_RETRY_WITHOUT_APPROVAL",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-track-4pak47nf",
+  "source_database": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-literature-3kq271_p\\data\\catalog.db",
+  "source_database_sha256": "5e470cc45cabb2050bc2ee65c3edca571aae1ceaad83f5462db94382fa7545b7",
+  "source_receipt_sha256": "357ad402be51a4f80b59203bf64d6b456a7a86be9b8f4ae2aa1f7f00e69af416",
+  "database_sha256": "84982615206dcb22f193849063b8fc16503d67bffc741902f02c0c3def5743cb",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/catalog-track-decisions.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/research/skeletons",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 403
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 404
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    }
+  ],
+  "actual_http_requests": 13,
+  "table_count": 102,
+  "all_original_rows_preserved": true,
+  "new_approval_grants": 0,
+  "new_approved_scientific_nodes": 0,
+  "new_model_calls": 0,
+  "browser_verified": false,
+  "scientific_approval": false,
+  "gap_path_verified": false,
+  "missing_structured_intent_preserved": true
+}

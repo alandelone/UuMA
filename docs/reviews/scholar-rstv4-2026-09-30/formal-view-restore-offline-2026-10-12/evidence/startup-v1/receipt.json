@@ -1,0 +1,37 @@
+{
+  "previous_goal_turn": "PROGRESS",
+  "full_startup_reads": {
+    "AGENTS.md": {
+      "sha256": "8192352fd8def00c32806198efb62ebcd0a9bc5901917cc88da6709e2ad3d91a",
+      "logical_chars": 3093
+    },
+    "mission_status.json": {
+      "sha256": "59236a9cf52d80205e620cc971befdd1d974224e62718d8c20a9215a6ec5ea3e",
+      "logical_chars": 465
+    },
+    "rules/session-lifecycle.md": {
+      "sha256": "929763957b34c5f41f9f03f651e45b99dea5068f95ce45be7c5366dd93f65978",
+      "logical_chars": 3011
+    },
+    "stage-gates/04-verification-report.md": {
+      "sha256": "94ad15d46307c76fbc6b9a7be5f2cca6bbf265bccb118bc2d12518028eaecea8",
+      "logical_chars": 181553
+    },
+    "active-session/HANDOFF.md": {
+      "sha256": "d07547fdf76b451274fe54734295c3696825e8344d56aad67869cf54df2c3728",
+      "logical_chars": 925459
+    }
+  },
+  "previous109_sealed_files_exact": true,
+  "previous12_source_files_current_exact": true,
+  "original_requirements": 118,
+  "original_groups": 11,
+  "g03_definition": "| G-03 | P1：离开保护与视图恢复不完整 | S:14、95–96；O:30；ST-24 | [入口:147](C:/Users/Alandelone/CodeSpace_Local/writing-studio/app/page.tsx:147) 直接导航；[初始化:341](C:/Users/Alandelone/CodeSpace_Local/writing-studio/components/studio-workspace.tsx:341) 重置选择与面板。现场隐藏两栏→刷新，两栏重新出现；Catalog:715 更新重建树 | 待同步／断线时换区保留草稿；返回稿件恢复对象、滚动、折叠和偏好；总览手动更新不展开全部 |",
+  "all11_complete": false,
+  "sibling_index_and_instructions": {
+    "../RSTV4/.codegraph": false,
+    "../writing-studio/.codegraph": false,
+    "../RSTV4/AGENTS.md": false,
+    "../writing-studio/AGENTS.md": false
+  }
+}

@@ -1,0 +1,67 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_collection_workspace.py', 'tests/test_native_paperpool.py', 'tests/test_catalog_web.py', 'tests/test_database_initialization.py', '-q']
+..........F....................F..........                               [100%]
+================================== FAILURES ===================================
+_ test_retry_is_bound_to_owner_fencing_status_time_and_never_confirms_human_review _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-841/test_retry_is_bound_to_owner_f0')
+
+    def test_retry_is_bound_to_owner_fencing_status_time_and_never_confirms_human_review(tmp_path: Path):
+        db = setup(tmp_path)
+        service = AcquisitionService(tmp_path)
+        collection = service.create_collection(CollectionCreateInput(**payload()))
+        job = service.claim_job("fixture-worker", ["NETWORK"])
+        failed = service.fail_job(job["job_id"], "fixture-worker", job["fencing_token"],
+                                  error_code="TEST_FAIL", detail="Fixture failure")
+        url = f"/api/catalog/collections/{collection['collection_id']}/jobs/{job['job_id']}/retry"
+        body = {"expected_fencing_token": failed["fencing_token"], "expected_status": failed["status"],
+                "expected_updated_at": failed["updated_at"]}
+        with TestClient(create_app(tmp_path)) as client:
+            before = fingerprint(db)
+            assert client.post(url.replace(collection["collection_id"], "other"), json=body).status_code == 404
+            assert client.post(url, json={**body, "expected_updated_at": "old"}).status_code == 409
+            assert client.post(url, json={**body, "expected_fencing_token": 0}).status_code == 409
+            assert fingerprint(db) == before
+            retried = client.post(url, json=body)
+            assert retried.status_code == 200 and retried.json()["status"] == "READY"
+            assert client.post(url, json=body).status_code == 409
+            human = service.claim_job("fixture-worker", ["NETWORK"])
+>           service.defer_job(human["job_id"], "fixture-worker", human["fencing_token"],
+                              status="NEEDS_HUMAN", error_code="REVIEW", detail="Identity review required")
+E           TypeError: AcquisitionService.defer_job() missing 1 required keyword-only argument: 'retry_after_seconds'
+
+tests\test_collection_workspace.py:162: TypeError
+_______ test_research_overview_and_collection_page_remain_discoverable ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-841/test_research_overview_and_col0')
+
+    def test_research_overview_and_collection_page_remain_discoverable(tmp_path: Path) -> None:
+        initialize_catalog(tmp_path / "data" / "catalog.db")
+        with TestClient(create_app(tmp_path)) as client:
+            for route in ("/", "/?view=collect", "/?view=all", "/?view=review"):
+                response = client.get(route)
+                assert response.status_code == 200
+            page = client.get("/").text
+            assert 'id="overview" aria-label="研究总览"' in page
+            assert 'id="overview-tree"' in page
+            assert all(f'data-level="{level}"' in page for level in (
+                "field", "topic", "track", "question", "paper",
+            ))
+            assert 'data-demo-collection="Solar Nowcasting"' in page
+            assert 'id="collect" hidden aria-label="新建文献采集"' in page
+            assert all(f'id="collect-{field}"' in page for field in (
+                "scope", "dois", "bibtex", "queries", "check",
+            ))
+>           assert 'disabled title="等待采集后端接入">开始采集' in page
+E           assert 'disabled title="等待采集后端接入">开始采集' in '<!doctype html>\r\n<html lang="zh-CN">\r\n<head>\r\n  <meta charset="utf-8">\r\n  <meta name="viewport" content="widt...);void setView(viewFromUrl(),false).then(restoreDiscussionLink);\r\n    })();\r\n  </script>\r\n</body>\r\n</html>\r\n'
+
+tests\test_catalog_web.py:212: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_collection_workspace.py::test_retry_is_bound_to_owner_fencing_status_time_and_never_confirms_human_review
+FAILED tests/test_catalog_web.py::test_research_overview_and_collection_page_remain_discoverable
+2 failed, 40 passed, 1 warning in 12.58s

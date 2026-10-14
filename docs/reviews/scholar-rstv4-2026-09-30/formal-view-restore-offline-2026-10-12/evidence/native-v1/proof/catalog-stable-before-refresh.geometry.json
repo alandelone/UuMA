@@ -1,0 +1,63 @@
+{
+  "h": 875,
+  "rows": [
+    {
+      "expanded": "true",
+      "hidden": false,
+      "node": "[\"field\",\"field_792bb631f3f74deb8a42c496907730e0\"]"
+    },
+    {
+      "expanded": "true",
+      "hidden": false,
+      "node": "[\"topic\",\"field_792bb631f3f74deb8a42c496907730e0\",\"topic_16772a566f3d45d39f5cffdbcb8d2f26\"]"
+    },
+    {
+      "expanded": "false",
+      "hidden": false,
+      "node": "[\"track\",\"track_8fc0672591694b79bb747470d402772d\"]"
+    },
+    {
+      "expanded": null,
+      "hidden": true,
+      "node": "[\"paper\",\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"[\\\"track\\\",\\\"track_8fc0672591694b79bb747470d402772d\\\"]\"]"
+    },
+    {
+      "expanded": null,
+      "hidden": true,
+      "node": "[\"paper\",\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"[\\\"track\\\",\\\"track_8fc0672591694b79bb747470d402772d\\\"]\"]"
+    },
+    {
+      "expanded": "false",
+      "hidden": false,
+      "node": "[\"field\",\"f1\"]"
+    },
+    {
+      "expanded": "true",
+      "hidden": true,
+      "node": "[\"topic\",\"f1\",\"t1\"]"
+    },
+    {
+      "expanded": null,
+      "hidden": true,
+      "node": "[\"track\",\"tr1\"]"
+    },
+    {
+      "expanded": "true",
+      "hidden": false,
+      "node": "[\"field\",\"f2\"]"
+    },
+    {
+      "expanded": null,
+      "hidden": false,
+      "node": "[\"topic\",\"f2\",\"t2\"]"
+    },
+    {
+      "expanded": null,
+      "hidden": false,
+      "node": null
+    }
+  ],
+  "url": "http://127.0.0.1:8875/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a7cab27dfb6b7ff15ebad0bfaa100e4a033739230c8574c36342a6c44b72414%22%7D",
+  "viewport": 807,
+  "y": 0
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS_SAME_SEMANTIC_FIXTURE_POST_CLOSE_READBACK",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-semantic-z_i0zcqj",
+  "database_sha256": "b26cfc52d956ac0f63a177daabf2d65248d9a7b420437c407ca34978ebd7af83",
+  "all_table_rows_unchanged": 104,
+  "requests": [
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace?snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    }
+  ],
+  "actual_http_requests": 9,
+  "model_is_explicit_software_fixture": true,
+  "new_model_calls": 0,
+  "scientific_approval": false,
+  "browser_verified": false,
+  "prior_pre_close_sha256": "e98b6d02b6ad957b3096812a4d8f4cd5ffb9b81360aed85d9e1a894a7310e135",
+  "prior_pre_close_wal_hash_failure_retained": true
+}

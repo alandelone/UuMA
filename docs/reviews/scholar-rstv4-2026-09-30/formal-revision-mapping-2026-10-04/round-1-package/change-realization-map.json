@@ -1,0 +1,571 @@
+{
+  "method": "author-to-recorded-sentence-to-final-pdf-v1",
+  "scientific_acceptance": false,
+  "automatic_response_approval": false,
+  "pdf": {
+    "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+    "layout_sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1",
+    "status": "EXTRACTED",
+    "lines": [
+      {
+        "page": 1,
+        "line": 1,
+        "text": "Two-round software acceptance fixture",
+        "words": [
+          {
+            "text": "Two-round",
+            "box": [
+              172.374,
+              113.215342,
+              247.415929,
+              130.430742
+            ]
+          },
+          {
+            "text": "software",
+            "box": [
+              251.702563,
+              113.215342,
+              310.562016,
+              130.430742
+            ]
+          },
+          {
+            "text": "acceptance",
+            "box": [
+              314.84865,
+              113.215342,
+              390.355395,
+              130.430742
+            ]
+          },
+          {
+            "text": "fixture",
+            "box": [
+              394.659245,
+              113.215342,
+              439.608654,
+              130.430742
+            ]
+          }
+        ]
+      },
+      {
+        "page": 1,
+        "line": 2,
+        "text": "October 4, 2026",
+        "words": [
+          {
+            "text": "October",
+            "box": [
+              267.319,
+              172.103078,
+              305.826699,
+              184.058278
+            ]
+          },
+          {
+            "text": "4,",
+            "box": [
+              308.815499,
+              172.103078,
+              317.781899,
+              184.058278
+            ]
+          },
+          {
+            "text": "2026",
+            "box": [
+              320.770699,
+              172.103078,
+              344.681099,
+              184.058278
+            ]
+          }
+        ]
+      },
+      {
+        "page": 1,
+        "line": 3,
+        "text": "1 Introduction",
+        "words": [
+          {
+            "text": "1",
+            "box": [
+              72.0,
+              217.128771,
+              79.1731,
+              231.474971
+            ]
+          },
+          {
+            "text": "Introduction",
+            "box": [
+              93.5193,
+              217.128771,
+              171.433512,
+              231.474971
+            ]
+          }
+        ]
+      },
+      {
+        "page": 1,
+        "line": 4,
+        "text": "This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. It",
+        "words": [
+          {
+            "text": "This",
+            "box": [
+              72.0,
+              244.832175,
+              91.39638,
+              255.741275
+            ]
+          },
+          {
+            "text": "software",
+            "box": [
+              94.1782,
+              244.832175,
+              131.476413,
+              255.741275
+            ]
+          },
+          {
+            "text": "acceptance",
+            "box": [
+              134.258234,
+              244.832175,
+              182.105546,
+              255.741275
+            ]
+          },
+          {
+            "text": "fixture",
+            "box": [
+              184.898276,
+              244.832175,
+              213.381936,
+              255.741275
+            ]
+          },
+          {
+            "text": "finally",
+            "box": [
+              216.174666,
+              244.832175,
+              243.796507,
+              255.741275
+            ]
+          },
+          {
+            "text": "contains",
+            "box": [
+              246.578327,
+              244.832175,
+              282.938358,
+              255.741275
+            ]
+          },
+          {
+            "text": "three",
+            "box": [
+              285.731087,
+              244.832175,
+              307.538378,
+              255.741275
+            ]
+          },
+          {
+            "text": "toolbars",
+            "box": [
+              310.331108,
+              244.832175,
+              345.480228,
+              255.741275
+            ]
+          },
+          {
+            "text": "and",
+            "box": [
+              348.262048,
+              244.832175,
+              364.014789,
+              255.741275
+            ]
+          },
+          {
+            "text": "two",
+            "box": [
+              366.807518,
+              244.832175,
+              382.800259,
+              255.741275
+            ]
+          },
+          {
+            "text": "distinct",
+            "box": [
+              385.582079,
+              244.832175,
+              417.556652,
+              255.741275
+            ]
+          },
+          {
+            "text": "reviewer",
+            "box": [
+              420.338472,
+              244.832175,
+              457.58214,
+              255.741275
+            ]
+          },
+          {
+            "text": "round",
+            "box": [
+              460.36396,
+              244.832175,
+              485.81489,
+              255.741275
+            ]
+          },
+          {
+            "text": "selectors.",
+            "box": [
+              488.60762,
+              244.832175,
+              529.505836,
+              255.741275
+            ]
+          },
+          {
+            "text": "It",
+            "box": [
+              533.33493,
+              244.832175,
+              540.00039,
+              255.741275
+            ]
+          }
+        ]
+      },
+      {
+        "page": 1,
+        "line": 5,
+        "text": "makes no research claim.",
+        "words": [
+          {
+            "text": "makes",
+            "box": [
+              72.0,
+              258.382175,
+              99.665478,
+              269.291275
+            ]
+          },
+          {
+            "text": "no",
+            "box": [
+              102.381844,
+              258.382175,
+              113.290944,
+              269.291275
+            ]
+          },
+          {
+            "text": "research",
+            "box": [
+              116.018219,
+              258.382175,
+              152.203703,
+              269.291275
+            ]
+          },
+          {
+            "text": "claim.",
+            "box": [
+              154.920069,
+              258.382175,
+              181.887364,
+              269.291275
+            ]
+          }
+        ]
+      },
+      {
+        "page": 1,
+        "line": 6,
+        "text": "1",
+        "words": [
+          {
+            "text": "1",
+            "box": [
+              303.273,
+              741.346175,
+              308.72755,
+              752.255275
+            ]
+          }
+        ]
+      }
+    ],
+    "line_number_kind": "visible_text_line_from_top_of_physical_page",
+    "method": "pdftotext-bbox-layout-v1"
+  },
+  "rows": [
+    {
+      "comment_id": "comment_e9bd59c253334672a59d2516df681802",
+      "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+      "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+      "baseline_version_id": "manuscript_version_71c1a930a0cc4b52844b33e95159ead1",
+      "final_pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "final_line": 4,
+      "final_page": 1,
+      "final_line_end": 4,
+      "final_page_end": 1,
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "changed_text": "This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors.",
+      "thought_id": "thought-rounds-live-version",
+      "paragraph_id": "paragraph_764ec4bb201640329729f0a8c7ead3e0",
+      "sentence_index": 0,
+      "boxes": [
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            72.0,
+            244.832175,
+            91.39638,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            94.1782,
+            244.832175,
+            131.476413,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            134.258234,
+            244.832175,
+            182.105546,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            184.898276,
+            244.832175,
+            213.381936,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            216.174666,
+            244.832175,
+            243.796507,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            246.578327,
+            244.832175,
+            282.938358,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            285.731087,
+            244.832175,
+            307.538378,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            310.331108,
+            244.832175,
+            345.480228,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            348.262048,
+            244.832175,
+            364.014789,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            366.807518,
+            244.832175,
+            382.800259,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            385.582079,
+            244.832175,
+            417.556652,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            420.338472,
+            244.832175,
+            457.58214,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            460.36396,
+            244.832175,
+            485.81489,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            488.60762,
+            244.832175,
+            529.505836,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            488.60762,
+            244.832175,
+            529.505836,
+            255.741275
+          ]
+        }
+      ],
+      "status": "GENERATED_TEXT_CHANGED",
+      "text_comparison": "GENERATED_TEXT_CHANGED",
+      "reason": "UNIQUE_FULL_PARAGRAPH"
+    },
+    {
+      "comment_id": "comment_e9bd59c253334672a59d2516df681802",
+      "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+      "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+      "baseline_version_id": "manuscript_version_71c1a930a0cc4b52844b33e95159ead1",
+      "final_pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "final_line": 4,
+      "final_page": 1,
+      "final_line_end": 5,
+      "final_page_end": 1,
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "changed_text": "It makes no research claim.",
+      "thought_id": "thought-rounds-live-version",
+      "paragraph_id": "paragraph_764ec4bb201640329729f0a8c7ead3e0",
+      "sentence_index": 1,
+      "boxes": [
+        {
+          "page": 1,
+          "line": 4,
+          "box": [
+            533.33493,
+            244.832175,
+            540.00039,
+            255.741275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 5,
+          "box": [
+            72.0,
+            258.382175,
+            99.665478,
+            269.291275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 5,
+          "box": [
+            102.381844,
+            258.382175,
+            113.290944,
+            269.291275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 5,
+          "box": [
+            116.018219,
+            258.382175,
+            152.203703,
+            269.291275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 5,
+          "box": [
+            154.920069,
+            258.382175,
+            181.887364,
+            269.291275
+          ]
+        },
+        {
+          "page": 1,
+          "line": 5,
+          "box": [
+            154.920069,
+            258.382175,
+            181.887364,
+            269.291275
+          ]
+        }
+      ],
+      "status": "GENERATED_TEXT_CHANGED",
+      "text_comparison": "GENERATED_TEXT_CHANGED",
+      "reason": "UNIQUE_FULL_PARAGRAPH"
+    }
+  ]
+}

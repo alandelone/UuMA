@@ -1,0 +1,261 @@
+
+Running 8 tests using 1 worker
+
+(node:320) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  1 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold comments failure cannot masquerade as empty or permit round creation; retry reads only (783ms)
+(node:9788) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  2 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold rounds failure cannot masquerade as empty or permit round creation; retry reads only (692ms)
+(node:37540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 3 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:155:3 › Revision comments and rounds read recovery › successful empty reads display a genuine empty state (499ms)
+  x  4 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:164:3 › Revision comments and rounds read recovery › warm failure retains opinions, current round, local input and preview; retry does not write (652ms)
+(node:6756) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 5 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:181:3 › Revision comments and rounds read recovery › acknowledged round creation followed by failed reload never repeats create POST (1.0s)
+  x  6 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:195:3 › Revision comments and rounds read recovery › acknowledged import followed by failed reload retries GET without duplicate import (765ms)
+(node:47836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  7 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:210:5 › Revision comments and rounds read recovery › late older empty response cannot replace a newer successful read (779ms)
+(node:40384) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  x  8 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:210:5 › Revision comments and rounds read recovery › late older failure response cannot replace a newer successful read (745ms)
+
+
+  1) ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold comments failure cannot masquerade as empty or permit round creation; retry reads only 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Original software opinion A210', { exact: true })
+    Expected: visible
+    Error: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:
+        1) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })
+        2) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Original software opinion A210', { exact: true })
+
+
+      147 |       expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);
+      148 |       await expectReadOnlyRetry(page, state, 3, true);
+    > 149 |       await expect(opinion(page)).toBeVisible();
+          |                                   ^
+      150 |       await expect(roundPicker(page).locator('option')).toHaveCount(4);
+      151 |       await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');
+      152 |       expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);
+        at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:149:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold rounds failure cannot masquerade as empty or permit round creation; retry reads only 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Original software opinion A210', { exact: true })
+    Expected: visible
+    Error: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:
+        1) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })
+        2) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Original software opinion A210', { exact: true })
+
+
+      147 |       expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);
+      148 |       await expectReadOnlyRetry(page, state, 3, true);
+    > 149 |       await expect(opinion(page)).toBeVisible();
+          |                                   ^
+      150 |       await expect(roundPicker(page).locator('option')).toHaveCount(4);
+      151 |       await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');
+      152 |       expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);
+        at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:149:35
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:164:3 › Revision comments and rounds read recovery › warm failure retains opinions, current round, local input and preview; retry does not write 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Original software opinion A210', { exact: true })
+    Expected: visible
+    Error: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:
+        1) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })
+        2) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Original software opinion A210', { exact: true })
+
+
+      169 |     state.failRead = 'rounds'; await retry(page).click(); await expectFailed(page);
+      170 |     await expect(readStatus(page)).toContainText('当前显示上次读取的数据');
+    > 171 |     await expect(opinion(page)).toBeVisible();
+          |                                 ^
+      172 |     await expect(roundPicker(page)).toHaveValue(roundId(3));
+      173 |     await expect(page.getByRole('textbox', { name: '审稿意见输入', exact: true })).toHaveValue('Unsaved original import draft.');
+      174 |     await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Edited local preview with source preserved.');
+        at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:171:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c212b-review-retry-does-not-write\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c212b-review-retry-does-not-write\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c212b-review-retry-does-not-write\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c212b-review-retry-does-not-write\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:195:3 › Revision comments and rounds read recovery › acknowledged import followed by failed reload retries GET without duplicate import 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('One acknowledged import, never replayed.', { exact: true })
+    Expected: visible
+    Error: strict mode violation: getByText('One acknowledged import, never replayed.', { exact: true }) resolved to 2 elements:
+        1) <p class="whitespace-pre-wrap">One acknowledged import, never replayed.</p> aka getByRole('paragraph').filter({ hasText: 'One acknowledged import,' })
+        2) <p class="whitespace-pre-wrap">One acknowledged import, never replayed.</p> aka getByText('One acknowledged import,').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('One acknowledged import, never replayed.', { exact: true }) with timeout 5000ms
+      - waiting for getByText('One acknowledged import, never replayed.', { exact: true })
+
+
+      203 |     await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toHaveCount(0);
+      204 |     await expectReadOnlyRetry(page, state);
+    > 205 |     await expect(page.getByText('One acknowledged import, never replayed.', { exact: true })).toBeVisible();
+          |                                                                                               ^
+      206 |     expect(state.importPosts).toBe(1); expect(state.createPosts).toBe(0);
+      207 |     expect(state.comments.filter((r) => r.edited_text === 'One acknowledged import, never replayed.')).toHaveLength(1);
+      208 |   });
+        at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:205:95
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c6597-ET-without-duplicate-import\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c6597-ET-without-duplicate-import\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c6597-ET-without-duplicate-import\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-c6597-ET-without-duplicate-import\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:210:5 › Revision comments and rounds read recovery › late older empty response cannot replace a newer successful read 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Original software opinion A210', { exact: true })
+    Expected: visible
+    Error: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:
+        1) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })
+        2) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Original software opinion A210', { exact: true })
+
+
+      217 |       await page.getByRole('button', { name: '🧩 结构', exact: true }).click();
+      218 |       await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();
+    > 219 |       await ready(page); await expect(opinion(page)).toBeVisible();
+          |                                                      ^
+      220 |       const held = state.held.splice(0);
+      221 |       await Promise.all(held.map((release) => release(stale)));
+      222 |       // Wait for response-triggered React work before asserting retained state.
+        at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:219:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:210:5 › Revision comments and rounds read recovery › late older failure response cannot replace a newer successful read 
+
+    Error: expect(locator).toBeVisible() failed
+
+    Locator: getByText('Original software opinion A210', { exact: true })
+    Expected: visible
+    Error: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:
+        1) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })
+        2) <p class="whitespace-pre-wrap">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)
+
+    Call log:
+      - Expect "toBeVisible" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms
+      - waiting for getByText('Original software opinion A210', { exact: true })
+
+
+      217 |       await page.getByRole('button', { name: '🧩 结构', exact: true }).click();
+      218 |       await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();
+    > 219 |       await ready(page); await expect(opinion(page)).toBeVisible();
+          |                                                      ^
+      220 |       const held = state.held.splice(0);
+      221 |       await Promise.all(held.map((release) => release(stale)));
+      222 |       // Wait for response-triggered React work before asserting retained state.
+        at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:219:54
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\..\..\..\..\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-native-import-v1\comments-read-recovery-v1\e2e-v1\test-results\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6 failed
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold comments failure cannot masquerade as empty or permit round creation; retry reads only 
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold rounds failure cannot masquerade as empty or permit round creation; retry reads only 
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:164:3 › Revision comments and rounds read recovery › warm failure retains opinions, current round, local input and preview; retry does not write 
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:195:3 › Revision comments and rounds read recovery › acknowledged import followed by failed reload retries GET without duplicate import 
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:210:5 › Revision comments and rounds read recovery › late older empty response cannot replace a newer successful read 
+    ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:210:5 › Revision comments and rounds read recovery › late older failure response cannot replace a newer successful read 
+  2 passed (10.4s)

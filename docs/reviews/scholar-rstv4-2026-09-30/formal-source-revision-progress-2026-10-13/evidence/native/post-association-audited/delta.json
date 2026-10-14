@@ -1,0 +1,130 @@
+{
+  "comment_changes": {
+    "old": 4,
+    "now": 6,
+    "removed_or_modified": [],
+    "new_or_modified": [
+      {
+        "comment_id": "comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1",
+        "change_id": "change_ee83003b4ee34353abed917e48f9d338"
+      },
+      {
+        "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+        "change_id": "change_b4d65900fbe541aeb4d597de70681d46"
+      }
+    ]
+  },
+  "review_comments": {
+    "old": 205,
+    "now": 206,
+    "removed_or_modified": [],
+    "new_or_modified": [
+      {
+        "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+        "review_round_id": "review_round_b51564f0224e499081e58f341103b336",
+        "source": "PASTED",
+        "reviewer": null,
+        "original_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.",
+        "edited_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.\nG09 author preview note: this second-round opinion is a software fixture, not an external review.",
+        "author_decision": null,
+        "response_text": null,
+        "status": "PENDING",
+        "archived_at": null,
+        "import_metadata_json": "{\"comment_number\":206,\"import_batch_id\":\"comment_import_3c39a6fab1d7498a92deba6e55d2fb28\",\"original_index\":0,\"original_text\":\"G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\\nPreserve every source and condition; link only the actual author change that answers this software request.\\nNo external reviewer or scientific judgment is asserted.\",\"raw_import_text\":\"G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\\nPreserve every source and condition; link only the actual author change that answers this software request.\\nNo external reviewer or scientific judgment is asserted.\"}",
+        "created_at": "2026-10-13T03:45:27.649261+00:00",
+        "updated_at": "2026-10-13T03:45:27.649261+00:00"
+      }
+    ]
+  },
+  "studio_change_link_events": {
+    "old": 0,
+    "now": 4,
+    "removed_or_modified": [],
+    "new_or_modified": [
+      {
+        "event_id": "change_link_event_f5db43be4361454686c08d4984b42e49",
+        "request_id": "167ef095-93d6-46c0-8398-82ee61b374f6",
+        "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+        "base_link_revision": 0,
+        "resulting_link_revision": 1,
+        "before_comment_ids_json": "[]",
+        "after_comment_ids_json": "[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\",\"comment_f7969d2589c14c6a9e3d1c923bd1b381\"]",
+        "reverses_event_id": null,
+        "request_json": "{\"change_id\":\"change_ee83003b4ee34353abed917e48f9d338\",\"comment_ids\":[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\",\"comment_f7969d2589c14c6a9e3d1c923bd1b381\"],\"expected_link_revision\":0,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":null}",
+        "created_at": "2026-10-13T03:56:44.363625+00:00"
+      },
+      {
+        "event_id": "change_link_event_2bb7e2b41c904166914ed1a680e28080",
+        "request_id": "bdfdaeb8-5cfa-4a43-b3fd-17e4185b0d87",
+        "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+        "base_link_revision": 1,
+        "resulting_link_revision": 2,
+        "before_comment_ids_json": "[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\",\"comment_f7969d2589c14c6a9e3d1c923bd1b381\"]",
+        "after_comment_ids_json": "[]",
+        "reverses_event_id": "change_link_event_f5db43be4361454686c08d4984b42e49",
+        "request_json": "{\"change_id\":\"change_ee83003b4ee34353abed917e48f9d338\",\"comment_ids\":[],\"expected_link_revision\":1,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":\"change_link_event_f5db43be4361454686c08d4984b42e49\"}",
+        "created_at": "2026-10-13T03:57:09.035384+00:00"
+      },
+      {
+        "event_id": "change_link_event_32f329aba43b4848b916859fa82b64fc",
+        "request_id": "755315d5-11fd-40a0-8636-5bff45c079de",
+        "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+        "base_link_revision": 2,
+        "resulting_link_revision": 3,
+        "before_comment_ids_json": "[]",
+        "after_comment_ids_json": "[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\"]",
+        "reverses_event_id": null,
+        "request_json": "{\"change_id\":\"change_ee83003b4ee34353abed917e48f9d338\",\"comment_ids\":[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\"],\"expected_link_revision\":2,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":null}",
+        "created_at": "2026-10-13T03:57:31.628869+00:00"
+      },
+      {
+        "event_id": "change_link_event_f4cb6c9cfd894cf883c36e8d0f97754e",
+        "request_id": "9b97b2e3-14c3-4357-b38b-8d40583bb8db",
+        "change_id": "change_b4d65900fbe541aeb4d597de70681d46",
+        "base_link_revision": 0,
+        "resulting_link_revision": 1,
+        "before_comment_ids_json": "[]",
+        "after_comment_ids_json": "[\"comment_8ecd722c5ea041858723009b72fc4cce\"]",
+        "reverses_event_id": null,
+        "request_json": "{\"change_id\":\"change_b4d65900fbe541aeb4d597de70681d46\",\"comment_ids\":[\"comment_8ecd722c5ea041858723009b72fc4cce\"],\"expected_link_revision\":0,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":null}",
+        "created_at": "2026-10-13T03:58:03.269963+00:00"
+      }
+    ]
+  },
+  "studio_change_link_state": {
+    "old": 42,
+    "now": 42,
+    "removed_or_modified": [
+      {
+        "change_id": "change_b4d65900fbe541aeb4d597de70681d46",
+        "initial_comment_ids_json": "[]",
+        "initial_origin": "recorded_at_save",
+        "link_revision": 0,
+        "created_at": "2026-10-12T03:10:22.640317+00:00"
+      },
+      {
+        "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+        "initial_comment_ids_json": "[]",
+        "initial_origin": "recorded_at_save",
+        "link_revision": 0,
+        "created_at": "2026-10-12T07:31:56.203048+00:00"
+      }
+    ],
+    "new_or_modified": [
+      {
+        "change_id": "change_b4d65900fbe541aeb4d597de70681d46",
+        "initial_comment_ids_json": "[]",
+        "initial_origin": "recorded_at_save",
+        "link_revision": 1,
+        "created_at": "2026-10-12T03:10:22.640317+00:00"
+      },
+      {
+        "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+        "initial_comment_ids_json": "[]",
+        "initial_origin": "recorded_at_save",
+        "link_revision": 3,
+        "created_at": "2026-10-12T07:31:56.203048+00:00"
+      }
+    ]
+  }
+}

@@ -1,0 +1,32 @@
+[
+  {
+    "button": "撤销",
+    "key": "Enter",
+    "group": 1,
+    "actualGroup": 1
+  },
+  {
+    "button": "重做",
+    "key": "Control+Shift+z",
+    "group": 0,
+    "actualGroup": 0
+  },
+  {
+    "button": "撤销",
+    "key": "Enter",
+    "group": 1,
+    "actualGroup": 1
+  },
+  {
+    "button": "重做",
+    "key": "Enter",
+    "group": 0,
+    "actualGroup": 0
+  },
+  {
+    "button": "撤销",
+    "key": "Enter",
+    "group": 1,
+    "actualGroup": 1
+  }
+]

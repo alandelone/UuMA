@@ -1,0 +1,171 @@
+{
+  "scope": "All ten papers/twenty fixed whole-paper scientific-argument candidates",
+  "whole_cases": [
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "record_digest": "93a441d3fb5e492c85d5d4c6bb576a849ee7aceccf38999d8bc79cfa1d68affb",
+      "error": "Bounded partition output contract exhausted: Duplicate JSON review key: source_span_ids"
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_95eebae164cc42fd6005\\optimized\\record.json",
+      "record_digest": "c5d77b2d3e437c46650f7d0284fccdd10b29a6dd721ba086714b3ee5914cf3df",
+      "error": "Durable inference run_4d796e4876044d5385a7b056cf3b7012 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "record_digest": "3690530ed8edd8b7186a193f908da0c641f73b18c128f9431410a75e2ddb6f5d",
+      "error": "Bounded partition output contract exhausted: Duplicate JSON review key: source_span_ids"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "record_digest": "772ed106860c6ae21a3bf59e09da4cf5a3ddf55ad2f65aa62f8055d1f00a4b7a",
+      "error": "Bounded partition output contract exhausted: Whole-aspect judgment uses nonexistent actual source spans"
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "record_digest": "09cc144cde46e2a9449d1b1dc0cd26acc0c109e968982aca7091ec4a5ebb55a2",
+      "error": "Bounded partition output contract exhausted: Whole argument verdict changed actual directed endpoints or relation"
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "record_digest": "a0f51bf738ed52d40ddf300f7122ddcc26ae53d02485f80895609f4c530a3b01",
+      "error": "Bounded partition output contract exhausted: Failed to parse field scientific_argument_aspects: 1 validation error for AllEightWholeCandidateAspects\nmethod_design.source_span_ids_extra\n  Extra inputs are not permitted [type=extra_forbidden, input_value=[], input_type=list]\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden\n\nAdapter UniqueKeyJSONAdapter failed to parse the LM response. \n\nLM Response: ```json\n{\n  \"scientific_argument_aspects\": {\n    \"research_problem\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\"c0\", \"c1\", \"c2\"],\n      \"source_span_ids\": [\"paper_ad7ea2de394ae32d2ed2:b9:s1\", \"paper_ad7ea2de394ae32d2ed2:b9:s2\", \"paper_ad7ea2de394ae32d2ed2:b11:s1\", \"paper_ad7ea2de394ae32d2ed2:b11:s2\"],\n      \"rationale\": \"The research problem concerns ensuring reliable availability and cooling for vaccines, medicines, and perishable goods in remote or off-grid areas using solar photovoltaic refrigeration systems.\"\n    },\n    \"objective\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\"c3\", \"c4\", \"c5\"],\n      \"source_span_ids\": [\"paper_ad7ea2de394ae32d2ed2:b9:s3\", \"paper_ad7ea2de394ae32d2ed2:b9:s6\", \"paper_ad7ea2de394ae32d2ed2:b13:s3\", \"paper_ad7ea2de394ae32d2ed2:b13:s4\"],\n      \"rationale\": \"The objective is to present, test, and validate a compact sun-powered refrigerator maintaining temperatures between +2 °C and -20 °C, assessing its feasibility, efficacy, and performance under varying operating conditions.\"\n    },\n    \"method_design\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\"c6\", \"c7\", \"c8\"],\n      \"source_span_ids\": [\"paper_ad7ea2de394ae32d2ed2:b15:s1\", \"paper_ad7ea2de394ae32d2ed2:b15:s2\", \"paper_ad7ea2de394ae32d2ed2:b18:s1\", \"paper_ad7ea2de394ae32d2ed2:b21:s3\"],\n      \"source_span_ids_extra\": [],\n      \"rationale\": \"The prototype design integrates a commercial VCR refrigerator operating with R290, a DC variable-speed compressor, a rooftop-mounted foldable 160 W monocrystalline PV panel, a 12 V 100 Ah lead-acid battery, and a solar charge regulator with MPPT.\"\n    },\n    \"data_and_conditions\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\"c9\", \"c10\", \"c11\"],\n      \"source_span_ids\": [\"paper_ad7ea2de394ae32d2ed2:b25:s1\", \"paper_ad7ea2de394ae32d2ed2:b25:s2\", \"paper_ad7ea2de394ae32d2ed2:b30:s1\"],\n      \"rationale\": \"Testing involves four set-point temperatures (-20 °C, -10 °C, 0 °C, and +4 °C) with a ±1 °C hysteresis, 24-hour test durations starting at 17:00 with a fully charged battery, and July climatic conditio"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "record_digest": "7417b9d238fa4f27d3778a4a8fc009eafcf35522485237f5fa19a2ae7e607914",
+      "error": "Durable inference run_af7b60b3e1ec4d20991ace440ef15a6d failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro: cooldown"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "record_digest": "bfcfe1e1cba78be35dcdc777139360971484033bbde6e9034d2bce6111aac962",
+      "error": "Durable inference run_4ab412c0e4b5468ab4ba600aa167d802 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "baseline",
+      "status": "WHOLE_SOURCE_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-science-v3\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "record_digest": "8ead8341d167e9210def9079cfecaf162c681286b747ff9373847722e0d194ff",
+      "error": "Bounded partition output contract exhausted: Whole assertion source citations must be ordered and consecutive"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "optimized",
+      "status": "WHOLE_SOURCE_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-science-v3\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "record_digest": "e87a3c7137e7f33c7864deb9beabebb3db1ec388bc9d2620fa3aedfa9076fc03",
+      "error": "Bounded partition output contract exhausted: Whole assertion source citations must be ordered and consecutive"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "record_digest": "8d88fd1ca5e51ea47b90c29c7b3aaadcf65057c980edd30fc174dfbc4f3a6697",
+      "error": "Durable inference run_eb4fd9cbbb5b44d9a54248595f733cd5 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro: cooldown"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "record_digest": "b97d37346c9d4577f46bf6cd003eeec1f9df4a853e77f159dac03b3a112fb2ab",
+      "error": "Durable inference run_f573feaa4fb745119fe1719d88793d89 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "baseline",
+      "status": "WHOLE_SOURCE_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-science-v3\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "record_digest": "505980bd83dd2bac401ccec9c9042c76ab61af2728dbc9b04244674fd5add383",
+      "error": "Bounded partition output contract exhausted: Whole assertion source citations must be ordered and consecutive"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "optimized",
+      "status": "WHOLE_SOURCE_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-science-v3\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "record_digest": "f1e45b045b2ada786edce68facce67d65995dd3a5feeeac8dbcec3d6bf3ac5a2",
+      "error": "Bounded partition output contract exhausted: Whole assertion source citations must be ordered and consecutive"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "baseline",
+      "status": "WHOLE_SOURCE_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-science-v3\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "record_digest": "a6e8e974e594988299c71f86ffbe68337f68c451441efd4ce28a54d607cfa186",
+      "error": "Bounded partition output contract exhausted: Whole assertion source citations must be ordered and consecutive"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "optimized",
+      "status": "WHOLE_SOURCE_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-science-v3\\paper_603603415f45919cbdc8\\optimized\\record.json",
+      "record_digest": "54fe9cb6fa40061433b7a3cd4e5a431ebdfa0d6dfc3ba6bc5fd15b0cfef7d896",
+      "error": "Bounded partition output contract exhausted: Whole assertion source citations must be ordered and consecutive"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_fb88f52bf6ea0323e952\\baseline\\record.json",
+      "record_digest": "794b9921c2c582a58e134a34466cb926236314ece4a44a5536ed97df5477bd38",
+      "error": "Durable inference run_f46af80935ce490fa3d82a6121d012b4 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_fb88f52bf6ea0323e952\\optimized\\record.json",
+      "record_digest": "f7b243706fed2a8629ff6346007ba755398b753c9ef5cb620d7aab50931a5dd2",
+      "error": "Durable inference run_48b9e0d507d84ed68cfbe22f22443488 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "record_digest": "7aebb11c02a81efb2efed8e95b319af6ec098a90e8a8ae93bf027f34d1b0ba1a",
+      "error": "Durable inference run_c56527e9268947bd987ebc414afa1f34 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro: cooldown"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-paper-alias-recovery-v4\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "record_digest": "47855479017d78e72dd894a38dbb325610204b11247ece1574800e83fb44f370",
+      "error": "Bounded partition output contract exhausted: Duplicate JSON review key: source_span_ids"
+    }
+  ],
+  "independently_audited_whole_cases": 0,
+  "lossless_recovery_terminal": false,
+  "exhaustive_local_atomic_benchmark_scientific_acceptance": false,
+  "expert_gold": false,
+  "optimization_gain_proven": false,
+  "model_calls": 0
+}

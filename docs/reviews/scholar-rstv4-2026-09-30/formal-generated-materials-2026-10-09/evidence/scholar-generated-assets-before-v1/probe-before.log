@@ -1,0 +1,36 @@
+F                                                                        [100%]
+================================== FAILURES ===================================
+_____ test_all_six_original_materials_appear_in_frozen_view_and_real_pdf ______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-983/test_all_six_original_material0')
+
+    def test_all_six_original_materials_appear_in_frozen_view_and_real_pdf(tmp_path):
+        service,_,ms=create_studio(tmp_path)
+        doc=complete_document(service.get_workspace(ms))
+        assets,files=six_materials(service,ms)
+        paragraph=doc['sections'][0]['paragraphs'][0]
+        paragraph['asset_ids']=[a['asset_id'] for a in assets]
+        service.save_document(ms,base_revision=0,operation_id='six-materials',document=doc)
+        captured=[]
+        def realize(task,payload):
+            captured.append(deepcopy(payload))
+            thought=payload['intents'][0]['thoughts'][0]
+            return {'paragraph':thought['text'],'sentence_mappings':[{'sentence':0,'thought_ids':[thought['id']]}],
+                    '_contract':{'actual_model':'TEST_FIXTURE_MATERIALS','task':task}}
+        service.gateway.analyze=realize
+        try:
+            job=wait_for_job(service,service.create_job(ms,'GENERATE',input_revision=1))
+            assert job['status']=='SUCCEEDED',job
+            version=service.get_generated_version(ms,job['result']['generated_version_id'])
+            generated=json.loads(Path(next(a['storage_path'] for a in version['artifacts'] if a['artifact_kind']=='GENERATED_JSON')).read_text(encoding='utf-8'))
+            rendered=generated['sections'][0]['paragraphs'][0]
+>           assert rendered.get('asset_ids')==paragraph['asset_ids'], 'Original material IDs must reach output'
+E           AssertionError: Original material IDs must reach output
+E           assert None == ['asset_1f553ddc25264b90b8e40136f3e9dc73', 'asset_a209ac94b3cb42239c4fb9badd04e87b', 'asset_28911bc000d346abab831de3d1..._5466045eef66463ea2a0fc352cb26e1d', 'asset_fd7da2afbab34abfaa8cc8fbafa1e182', 'asset_f688a0cb5d984bb48e5077832a20cf40']
+E            +  where None = <built-in method get of dict object at 0x000002437CC18140>('asset_ids')
+E            +    where <built-in method get of dict object at 0x000002437CC18140> = {'evidence_ids': [], 'formulas': [], 'model_call_id': 'studio_model_call_645d033565f84241ac7cf1b228fe2d70', 'model_contract': {'actual_model': 'TEST_FIXTURE_MATERIALS', 'task': 'paragraph_realization'}, ...}.get
+
+tests\test_studio_generated_assets.py:61: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_generated_assets.py::test_all_six_original_materials_appear_in_frozen_view_and_real_pdf
+1 failed in 7.31s

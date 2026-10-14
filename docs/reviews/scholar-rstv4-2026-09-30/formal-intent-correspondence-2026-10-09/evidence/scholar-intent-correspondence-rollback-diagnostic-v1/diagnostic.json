@@ -1,0 +1,30 @@
+{
+  "fixture_root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\sci-roll-mprfqd8n",
+  "threads_before": [
+    "MainThread"
+  ],
+  "threads_after": [
+    "MainThread"
+  ],
+  "before_params": {
+    "page_size": 4096,
+    "page_count": 297,
+    "freelist_count": 0,
+    "schema_version": 132,
+    "auto_vacuum": 0
+  },
+  "after_params": {
+    "page_size": 4096,
+    "page_count": 297,
+    "freelist_count": 0,
+    "schema_version": 132,
+    "auto_vacuum": 0
+  },
+  "bytes_equal": true,
+  "row_equality": true,
+  "changed_tables": [],
+  "different_byte_count": 0,
+  "first_differences": [],
+  "before_sha256": "c4908819a72d427afe33b02cbf736c65b1af8a094e5152777fd2efcffc7c19fd",
+  "after_sha256": "c4908819a72d427afe33b02cbf736c65b1af8a094e5152777fd2efcffc7c19fd"
+}

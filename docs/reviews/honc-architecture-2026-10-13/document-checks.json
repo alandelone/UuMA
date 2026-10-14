@@ -1,0 +1,16 @@
+{
+  "status": "DOCUMENT_CHECKS_PASS",
+  "documents_checked": 7,
+  "local_links_checked": 27,
+  "json_examples_checked": 3,
+  "unverified_feature_contracts": 13,
+  "source_receipts": 13,
+  "product_tests_run": false,
+  "proposed_tools_verified": false,
+  "review_items_pending": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ]
+}

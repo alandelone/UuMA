@@ -1,0 +1,16 @@
+{
+  "args": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-m",
+    "pytest",
+    "tests/test_parser_quality.py::test_mineru_retries_use_fresh_output_directories",
+    "tests/test_studio_revision_mapping.py::test_actual_compiled_page_lines_map_multiple_sentences_and_retained_text_separately",
+    "tests/test_studio_source_context.py",
+    "-q",
+    "--basetemp",
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scsrc-path-7fb58203"
+  ],
+  "exit_code": 0,
+  "short_isolated_base": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scsrc-path-7fb58203",
+  "assertions_unchanged": true
+}

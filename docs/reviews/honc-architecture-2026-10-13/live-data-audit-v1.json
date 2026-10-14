@@ -1,0 +1,44 @@
+{
+  "observed_at": "2026-10-14T03:31:12.088Z",
+  "database": "honc.db",
+  "objects": [
+    {
+      "kind": "habit_definition",
+      "count": 8
+    },
+    {
+      "kind": "settings",
+      "count": 1
+    }
+  ],
+  "legacy_raw_events": 4,
+  "settings": {
+    "advance_explicit_bedtime": true,
+    "advance_explicit_wake_or_day_start": true,
+    "bedtime_fallback_time": "21:30",
+    "body_followup_enabled": false,
+    "default_importance": "normal",
+    "default_reminder_count": 1,
+    "fixed_point_grace_minutes": 30,
+    "group_simultaneous": true,
+    "importance_does_not_change_count": true,
+    "missed_window_policy": "expire",
+    "nightly_unchecked_habit_chase_enabled": false,
+    "revision": 1,
+    "suppress_when_complete": true,
+    "timezone": "Asia/Kuala_Lumpur",
+    "wake_fallback_time": "08:00"
+  },
+  "occurrences": [
+    {
+      "business_date": "2026-10-13",
+      "count": 12
+    },
+    {
+      "business_date": "2026-10-14",
+      "count": 12
+    }
+  ],
+  "groups": [],
+  "scope": "Read-only snapshot; no synthetic personal facts were migrated or seeded."
+}

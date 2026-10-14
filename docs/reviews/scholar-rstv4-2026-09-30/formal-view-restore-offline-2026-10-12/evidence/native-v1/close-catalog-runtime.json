@@ -1,0 +1,19 @@
+{
+  "mode": "close-catalog",
+  "stops": [
+    {
+      "pid": 86264,
+      "state": "STOPPED_VERIFIED"
+    },
+    {
+      "pid": 120976,
+      "state": "ALREADY_EXITED"
+    }
+  ],
+  "port": 8875,
+  "status": "PASS",
+  "all109tables_exact": true,
+  "database_bytes_exact": true,
+  "frontend_unchanged": true,
+  "no_new_model_calls": true
+}

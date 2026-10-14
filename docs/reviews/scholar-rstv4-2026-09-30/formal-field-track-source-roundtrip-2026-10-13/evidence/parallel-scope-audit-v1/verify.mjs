@@ -1,0 +1,70 @@
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import crypto from 'node:crypto';
+import { fileURLToPath } from 'node:url';
+const root = path.dirname(fileURLToPath(import.meta.url));
+const load = async name => JSON.parse(await fs.readFile(path.join(root, name), 'utf8'));
+const receipt = await load('receipt.json');
+const raw = await fs.readFile(receipt.baseline_path);
+assert.equal(crypto.createHash('sha256').update(raw).digest('hex'), receipt.baseline_sha256);
+const baseline = JSON.parse(raw);
+const parse = row => Object.fromEntries(Object.entries(row).map(([k,v]) => k.endsWith('_json') ? [k.slice(0,-5), v ? JSON.parse(v) : null] : [k,v]));
+const energy = (await load('energy.json')).body;
+const snapshot = energy.selected_snapshot;
+const original = baseline.fieldkg_snapshots.find(s => s.snapshot_id === snapshot.snapshot_id);
+assert.deepEqual(snapshot.manifest, JSON.parse(original.manifest_json));
+for (const [k,v] of Object.entries(original)) if (k !== 'manifest_json') assert.deepEqual(snapshot[k],v);
+assert.equal(snapshot.digest_matches, true);
+assert.equal(snapshot.members_match, true);
+assert.equal(snapshot.source_records_available, true);
+const sortRows = rows => [...rows].sort((a,b) => JSON.stringify(a).localeCompare(JSON.stringify(b)));
+assert.deepEqual(sortRows(snapshot.members), sortRows(baseline.fieldkg_snapshot_members));
+assert.deepEqual(energy.semantic_objects.map(o => o.kind).sort(), ['CONCEPT','METHOD','FINDING','REPORTED_GAP','COUNTEREVIDENCE','DEBATE','IDEA_MERGER'].sort());
+for (const obj of energy.semantic_objects) {
+  const expected = parse(baseline.fieldkg_semantic_objects.find(o => o.object_id === obj.object_id));
+  for (const [k,v] of Object.entries(expected)) assert.deepEqual(obj[k],v);
+  assert.equal(obj.scientific_approval,false);
+  const context = await load('context-'+obj.kind+'.json');
+  assert.equal(context.status,200);
+  assert.equal(context.body.scope_key,JSON.stringify(['FIELDKG',energy.field.field_id]));
+  assert.deepEqual(context.body.record,snapshot.frozen_semantic_objects.find(o => o.object_id === obj.object_id));
+  assert.equal(context.body.object_text,context.body.record.statement+'\n\n'+obj.references.map(r => r.quote).join('\n\n'));
+  assert.equal(context.body.target.snapshot_id,snapshot.snapshot_id);
+  assert.deepEqual(context.body.versions.at(-1),{snapshot_id:snapshot.snapshot_id,snapshot_digest:snapshot.content_digest,snapshot_version:snapshot.version});
+  assert.equal(context.body.versions.length,obj.references.length+1);
+  for (const [i,ref] of obj.references.entries()) {
+    const unit = baseline.skeleton_units.find(u => u.unit_id === ref.unit_id);
+    assert.ok(unit);
+    assert.equal(ref.original_text,unit.raw_text);
+    assert.equal(ref.unit_digest,unit.content_digest);
+    assert.equal(ref.source.skeleton_id,unit.skeleton_id);
+    for (const k of ['page_idx','seq_idx','section']) assert.equal(ref.location[k],unit[k]);
+    assert.equal(Array.from(unit.raw_text).slice(ref.location.start,ref.location.end).join(''),ref.quote);
+    const skeleton = baseline.paper_skeletons.find(s => s.skeleton_id === unit.skeleton_id);
+    assert.equal(ref.source.paper_version_id,skeleton.paper_version_id);
+    const version = baseline.paper_versions.find(v => v.paper_version_id === skeleton.paper_version_id);
+    assert.equal(ref.source.paper_id,version.paper_id);
+    assert.equal(ref.source.paper_version,version.version);
+    for (const k of ['paper_id','paper_version_id','skeleton_id','file_version_id','parse_run_id','pdf_digest','parsed_digest']) assert.deepEqual(context.body.versions[i][k],ref.source[k]);
+    for (const [k,v] of Object.entries(ref.location)) assert.deepEqual(context.body.versions[i][k],v);
+    assert.equal(context.body.versions[i].unit_id,ref.unit_id);
+  }
+}
+for (const source of snapshot.sources) for (const unit of source.units) assert.deepEqual(unit,parse(baseline.skeleton_units.find(u => u.unit_id === unit.unit_id)));
+const other = (await load('other.json')).body;
+for (const k of ['topics','tracks','builds','sources','evidence','candidates','candidate_gaps','semantic_objects','semantic_runs','snapshots','citations','source_reviews']) assert.deepEqual(other[k],[]);
+assert.deepEqual(other.projection.outbox,[]);
+assert.equal(other.selected_snapshot,null);
+for (const [file,detail] of [['wrongOwnership.json','Snapshot does not belong to this Field'],['unknownSnapshot.json','Unknown snapshot'],['context-Other-Energy-fixed-rejected.json','Snapshot does not belong to this Field'],['context-Other-Energy-semantic-rejected.json','Semantic object is outside the selected Field or Snapshot']]) {
+  const result=await load(file); assert.equal(result.status,404); assert.equal(result.body.detail,detail);
+}
+const otherContext=await load('context-Other-field.json');
+assert.equal(otherContext.status,200); assert.equal(otherContext.body.object_text,'Other\n'); assert.deepEqual(otherContext.body.versions,[]);
+const track=(await load('track.json')).body;
+for (const [k,v] of Object.entries(baseline.research_tracks[0])) assert.deepEqual(track.track[k],v);
+const trackContext=await load('context-Track.json');
+assert.equal(trackContext.status,200); assert.equal(trackContext.body.scope_key,JSON.stringify(['TRACK',track.track.track_id]));
+assert.equal(trackContext.body.versions[0].track_revision,1);
+export const result={status:'PASS',scope:'G10 independent read-only API source/scope assertions; not whole G10 acceptance',responses:6,contexts:11,semanticKinds:7,sourceUnits:2};
+console.log(result);

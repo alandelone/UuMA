@@ -119,3 +119,83 @@ def test_order_workbook_preview_is_purchase_history_not_stock(tmp_path):
     assert inventory.balances() == []
     with inventory.connect() as connection:
         assert connection.execute("SELECT COUNT(*) FROM inventory_events").fetchone()[0] == 0
+
+
+def test_purchase_search_finds_older_resolved_tpu_and_returns_product_link(tmp_path):
+    inventory = InventoryStore(tmp_path / "lab.db")
+    target = {
+        "source_key": "order-old-tpu",
+        "source_workbook_hash": "workbook-hash",
+        "source_sheet": "所有订单明细",
+        "source_row": 740,
+        "order_id": "2101620723153132851",
+        "ordered_at": "2024-03-29 08:32:43",
+        "status": "交易成功",
+        "supplier": "以祥yasin3D耗材直销",
+        "category": "3D打印 / 打印耗材",
+        "product_name": "yasin以祥 TPU打印机耗材1.75",
+        "product_url": "https://item.taobao.com/item.htm?id=41604517259",
+        "variant": "TPU 白色200克1.75mm",
+        "ordered_quantity": 1,
+        "identity_key": "41604517259|TPU 白色200克1.75mm",
+        "component_id": "cmp-tpu-white",
+        "evidence_ref": "orders.xlsx#所有订单明细!A740:L740",
+    }
+    newer = [
+        {
+            **target,
+            "source_key": f"newer-{index}",
+            "source_row": index + 1,
+            "order_id": f"NEWER-{index}",
+            "ordered_at": "2026-01-01 00:00:00",
+            "product_name": "Unrelated hardware",
+            "product_url": f"https://item.taobao.com/item.htm?id={index + 1000}",
+            "variant": "unrelated",
+            "identity_key": f"newer-{index}",
+        }
+        for index in range(101)
+    ]
+    inventory.import_purchase_history([target, *newer], commit=True)
+
+    assert all(
+        row["order_id"] != target["order_id"]
+        for row in inventory.purchase_history(needs_review_only=False, limit=100)
+    )
+    assert inventory.purchase_history(needs_review_only=True) == []
+    result = inventory.search_purchase_history("TPU 200g 1.75mm", category="打印耗材")
+    assert result["total_count"] == 1
+    assert result["rows"][0]["order_id"] == target["order_id"]
+    assert result["rows"][0]["product_url"] == target["product_url"]
+    assert result["rows"][0]["evidence_ref"] == target["evidence_ref"]
+    assert inventory.balances() == []
+
+
+def test_purchase_search_alternatives_and_pagination(tmp_path):
+    inventory = InventoryStore(tmp_path / "lab.db")
+    rows = [
+        {
+            "source_key": f"order-{material}",
+            "source_workbook_hash": "workbook-hash",
+            "source_sheet": "所有订单明细",
+            "source_row": index + 1,
+            "order_id": f"ORDER-{material}",
+            "ordered_at": f"2026-01-0{index + 1} 00:00:00",
+            "status": "交易成功",
+            "category": "3D打印 / 打印耗材",
+            "product_name": f"{material} filament",
+            "product_url": f"https://example.test/{material}",
+            "variant": "1.75mm",
+            "ordered_quantity": 1,
+            "identity_key": f"{material}|1.75mm",
+        }
+        for index, material in enumerate(("TPU", "TPE"))
+    ]
+    inventory.import_purchase_history(rows, commit=True)
+    first = inventory.search_purchase_history("TPU | TPE", limit=1)
+    second = inventory.search_purchase_history("TPU | TPE", limit=1, offset=1)
+    assert first["total_count"] == second["total_count"] == 2
+    assert first["has_more"] is True
+    assert second["has_more"] is False
+    assert {first["rows"][0]["order_id"], second["rows"][0]["order_id"]} == {
+        "ORDER-TPU", "ORDER-TPE"
+    }

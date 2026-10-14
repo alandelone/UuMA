@@ -1,0 +1,1287 @@
+{
+  "status": "NATIVE_OWNED_READONLY_REPLY_HISTORY_PASSED",
+  "history": [
+    {
+      "check_id": "response_check_7986ebb8a8df4bf39a60647ae00f7e91",
+      "request_id": "native-author-response-review-2026-10-04-1",
+      "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+      "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+      "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+      "state_sha256": "254f71b2f18c6da6aad5ccc779f76c9a53531ed9ff258f531ba8d48a085c3483",
+      "context_sha256": "e053defb86954d50b1adeed40906a91bb135c99e31eb46bdedb19e8f933f4f7e",
+      "outcome": "MODIFIED",
+      "created_at": "2026-10-04T04:50:32.467838+00:00",
+      "request": {
+        "acknowledged_all_assertions": true,
+        "claims": [
+          {
+            "end": 74,
+            "evidence_ids": [
+              "14d4df737f670e9fa165a3841313fd168f81d838570f430584f91fbf5bde0502"
+            ],
+            "offset_unit": "utf16",
+            "start": 0,
+            "text": "We revised the fixture to three toolbars and two reviewer round selectors."
+          }
+        ],
+        "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+        "context_sha256": "e053defb86954d50b1adeed40906a91bb135c99e31eb46bdedb19e8f933f4f7e",
+        "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+        "outcome": "MODIFIED",
+        "request_id": "native-author-response-review-2026-10-04-1"
+      },
+      "context": {
+        "automatic_response_approval": false,
+        "baseline_available": true,
+        "baseline_text_sha256": "3b075399a8566ac597e4663ea067ff5bcc8d750c51c33a01cf9af0b3b618ae08",
+        "baseline_to_target_diff": "--- reviewed-baseline.md\n+++ final-manuscript.md\n@@ -2,4 +2,4 @@\n \n ## Introduction\n \n-This software acceptance fixture now contains two toolbars and a first reviewer round selector. It makes no research claim.\n+This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. It makes no research claim.",
+        "baseline_version_number": 2,
+        "context_sha256": "e053defb86954d50b1adeed40906a91bb135c99e31eb46bdedb19e8f933f4f7e",
+        "evidence": [
+          {
+            "baseline_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+            "boxes": [
+              {
+                "box": [
+                  72.0,
+                  244.832175,
+                  91.39638,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  94.1782,
+                  244.832175,
+                  131.476413,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  134.258234,
+                  244.832175,
+                  182.105546,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  184.898276,
+                  244.832175,
+                  213.381936,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  216.174666,
+                  244.832175,
+                  243.796507,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  246.578327,
+                  244.832175,
+                  282.938358,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  285.731087,
+                  244.832175,
+                  307.538378,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  310.331108,
+                  244.832175,
+                  345.480228,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  348.262048,
+                  244.832175,
+                  364.014789,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  366.807518,
+                  244.832175,
+                  382.800259,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  385.582079,
+                  244.832175,
+                  417.556652,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  420.338472,
+                  244.832175,
+                  457.58214,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  460.36396,
+                  244.832175,
+                  485.81489,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  488.60762,
+                  244.832175,
+                  529.505836,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  488.60762,
+                  244.832175,
+                  529.505836,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              }
+            ],
+            "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+            "changed_text": "This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors.",
+            "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+            "evidence_id": "14d4df737f670e9fa165a3841313fd168f81d838570f430584f91fbf5bde0502",
+            "final_line": 4,
+            "final_line_end": 4,
+            "final_page": 1,
+            "final_page_end": 1,
+            "final_pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+            "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": "paragraph_764ec4bb201640329729f0a8c7ead3e0",
+            "reason": "UNIQUE_FULL_PARAGRAPH",
+            "sentence_index": 0,
+            "status": "GENERATED_TEXT_CHANGED",
+            "text_comparison": "GENERATED_TEXT_CHANGED",
+            "thought_id": "thought-rounds-live-version"
+          },
+          {
+            "baseline_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+            "boxes": [
+              {
+                "box": [
+                  533.33493,
+                  244.832175,
+                  540.00039,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  72.0,
+                  258.382175,
+                  99.665478,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  102.381844,
+                  258.382175,
+                  113.290944,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  116.018219,
+                  258.382175,
+                  152.203703,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  154.920069,
+                  258.382175,
+                  181.887364,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  154.920069,
+                  258.382175,
+                  181.887364,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              }
+            ],
+            "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+            "changed_text": "It makes no research claim.",
+            "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+            "evidence_id": "dd8b3b66f3153cb422dd0c72429e7a45a08d5ff598eea3eec19c7935859e37a0",
+            "final_line": 4,
+            "final_line_end": 5,
+            "final_page": 1,
+            "final_page_end": 1,
+            "final_pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+            "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": "paragraph_764ec4bb201640329729f0a8c7ead3e0",
+            "reason": "UNIQUE_FULL_PARAGRAPH",
+            "sentence_index": 1,
+            "status": "EXACT_BASELINE_TEXT_RETAINED",
+            "text_comparison": "EXACT_BASELINE_TEXT_RETAINED",
+            "thought_id": "thought-rounds-live-version"
+          }
+        ],
+        "pdf": {
+          "layout_sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1",
+          "line_number_kind": "visible_text_line_from_top_of_physical_page",
+          "lines": [
+            {
+              "line": 1,
+              "page": 1,
+              "text": "Two-round software acceptance fixture",
+              "words": [
+                {
+                  "box": [
+                    172.374,
+                    113.215342,
+                    247.415929,
+                    130.430742
+                  ],
+                  "text": "Two-round"
+                },
+                {
+                  "box": [
+                    251.702563,
+                    113.215342,
+                    310.562016,
+                    130.430742
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    314.84865,
+                    113.215342,
+                    390.355395,
+                    130.430742
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    394.659245,
+                    113.215342,
+                    439.608654,
+                    130.430742
+                  ],
+                  "text": "fixture"
+                }
+              ]
+            },
+            {
+              "line": 2,
+              "page": 1,
+              "text": "October 4, 2026",
+              "words": [
+                {
+                  "box": [
+                    267.319,
+                    172.103078,
+                    305.826699,
+                    184.058278
+                  ],
+                  "text": "October"
+                },
+                {
+                  "box": [
+                    308.815499,
+                    172.103078,
+                    317.781899,
+                    184.058278
+                  ],
+                  "text": "4,"
+                },
+                {
+                  "box": [
+                    320.770699,
+                    172.103078,
+                    344.681099,
+                    184.058278
+                  ],
+                  "text": "2026"
+                }
+              ]
+            },
+            {
+              "line": 3,
+              "page": 1,
+              "text": "1 Introduction",
+              "words": [
+                {
+                  "box": [
+                    72.0,
+                    217.128771,
+                    79.1731,
+                    231.474971
+                  ],
+                  "text": "1"
+                },
+                {
+                  "box": [
+                    93.5193,
+                    217.128771,
+                    171.433512,
+                    231.474971
+                  ],
+                  "text": "Introduction"
+                }
+              ]
+            },
+            {
+              "line": 4,
+              "page": 1,
+              "text": "This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. It",
+              "words": [
+                {
+                  "box": [
+                    72.0,
+                    244.832175,
+                    91.39638,
+                    255.741275
+                  ],
+                  "text": "This"
+                },
+                {
+                  "box": [
+                    94.1782,
+                    244.832175,
+                    131.476413,
+                    255.741275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    134.258234,
+                    244.832175,
+                    182.105546,
+                    255.741275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    184.898276,
+                    244.832175,
+                    213.381936,
+                    255.741275
+                  ],
+                  "text": "fixture"
+                },
+                {
+                  "box": [
+                    216.174666,
+                    244.832175,
+                    243.796507,
+                    255.741275
+                  ],
+                  "text": "finally"
+                },
+                {
+                  "box": [
+                    246.578327,
+                    244.832175,
+                    282.938358,
+                    255.741275
+                  ],
+                  "text": "contains"
+                },
+                {
+                  "box": [
+                    285.731087,
+                    244.832175,
+                    307.538378,
+                    255.741275
+                  ],
+                  "text": "three"
+                },
+                {
+                  "box": [
+                    310.331108,
+                    244.832175,
+                    345.480228,
+                    255.741275
+                  ],
+                  "text": "toolbars"
+                },
+                {
+                  "box": [
+                    348.262048,
+                    244.832175,
+                    364.014789,
+                    255.741275
+                  ],
+                  "text": "and"
+                },
+                {
+                  "box": [
+                    366.807518,
+                    244.832175,
+                    382.800259,
+                    255.741275
+                  ],
+                  "text": "two"
+                },
+                {
+                  "box": [
+                    385.582079,
+                    244.832175,
+                    417.556652,
+                    255.741275
+                  ],
+                  "text": "distinct"
+                },
+                {
+                  "box": [
+                    420.338472,
+                    244.832175,
+                    457.58214,
+                    255.741275
+                  ],
+                  "text": "reviewer"
+                },
+                {
+                  "box": [
+                    460.36396,
+                    244.832175,
+                    485.81489,
+                    255.741275
+                  ],
+                  "text": "round"
+                },
+                {
+                  "box": [
+                    488.60762,
+                    244.832175,
+                    529.505836,
+                    255.741275
+                  ],
+                  "text": "selectors."
+                },
+                {
+                  "box": [
+                    533.33493,
+                    244.832175,
+                    540.00039,
+                    255.741275
+                  ],
+                  "text": "It"
+                }
+              ]
+            },
+            {
+              "line": 5,
+              "page": 1,
+              "text": "makes no research claim.",
+              "words": [
+                {
+                  "box": [
+                    72.0,
+                    258.382175,
+                    99.665478,
+                    269.291275
+                  ],
+                  "text": "makes"
+                },
+                {
+                  "box": [
+                    102.381844,
+                    258.382175,
+                    113.290944,
+                    269.291275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    116.018219,
+                    258.382175,
+                    152.203703,
+                    269.291275
+                  ],
+                  "text": "research"
+                },
+                {
+                  "box": [
+                    154.920069,
+                    258.382175,
+                    181.887364,
+                    269.291275
+                  ],
+                  "text": "claim."
+                }
+              ]
+            },
+            {
+              "line": 6,
+              "page": 1,
+              "text": "1",
+              "words": [
+                {
+                  "box": [
+                    303.273,
+                    741.346175,
+                    308.72755,
+                    752.255275
+                  ],
+                  "text": "1"
+                }
+              ]
+            }
+          ],
+          "method": "pdftotext-bbox-layout-v1",
+          "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+          "status": "EXTRACTED"
+        },
+        "pdf_artifact_id": "artifact_63ca15e4429049ad9876eae4bbeb0998",
+        "scientific_acceptance": false,
+        "state": {
+          "archived_at": null,
+          "author_decision": "Accept the toolbar and selector clarification; retain the no-research-claim disclaimer.",
+          "baseline_content_sha256": "3b075399a8566ac597e4663ea067ff5bcc8d750c51c33a01cf9af0b3b618ae08",
+          "baseline_manuscript_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+          "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+          "current_author_document_sha256": "9cf7b921f186350878d4e72caa796c3ea1ec57920d2de023b0ca168111f72f21",
+          "current_author_revision": 3,
+          "edited_text": "Round 2 fixture opinion only",
+          "generated_input_revision": 3,
+          "generated_record_sha256": "63c7e37b5d8beeba499b6878fa50d8e36180aaf9fe784bfbe507faf3eee04e4c",
+          "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+          "linked_changes": [
+            {
+              "after_sha256": "9cf7b921f186350878d4e72caa796c3ea1ec57920d2de023b0ca168111f72f21",
+              "before_sha256": "5e6b87f006abc1cf809822bc59a2cc1d71bf24371b51d3e80c206fafeaf59988",
+              "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+              "link_revision": 3
+            }
+          ],
+          "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+          "response_revision": 1,
+          "response_text": "We revised the fixture to three toolbars and two reviewer round selectors. We retained the original no-research-claim disclaimer.",
+          "review_round_id": "review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+          "round_number": 2
+        },
+        "state_sha256": "254f71b2f18c6da6aad5ccc779f76c9a53531ed9ff258f531ba8d48a085c3483",
+        "target_text_sha256": "1f1d1a87285d58656dfc0ec370a3a11d061d436cc2fa5a8c2cb396e2b4850fad",
+        "target_version_number": 3
+      }
+    },
+    {
+      "check_id": "response_check_9cbd72416f6b4e9096a3cfbeaff855cf",
+      "request_id": "native-author-response-review-2026-10-04-2",
+      "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+      "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+      "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+      "state_sha256": "1d4fcf7735cd5bc9e5dd56d0a0dc2024d13223bcc2cd8a54c0274778ac83db69",
+      "context_sha256": "62d5918c5379279fff6807007ac89cd98659ce43e6523b156e6f2d17bf8b40af",
+      "outcome": "MODIFIED",
+      "created_at": "2026-10-04T04:50:32.730756+00:00",
+      "request": {
+        "acknowledged_all_assertions": true,
+        "claims": [
+          {
+            "end": 74,
+            "evidence_ids": [
+              "14d4df737f670e9fa165a3841313fd168f81d838570f430584f91fbf5bde0502"
+            ],
+            "offset_unit": "utf16",
+            "start": 0,
+            "text": "We revised the fixture to three toolbars and two reviewer round selectors."
+          }
+        ],
+        "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+        "context_sha256": "62d5918c5379279fff6807007ac89cd98659ce43e6523b156e6f2d17bf8b40af",
+        "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+        "outcome": "MODIFIED",
+        "request_id": "native-author-response-review-2026-10-04-2"
+      },
+      "context": {
+        "automatic_response_approval": false,
+        "baseline_available": true,
+        "baseline_text_sha256": "3b075399a8566ac597e4663ea067ff5bcc8d750c51c33a01cf9af0b3b618ae08",
+        "baseline_to_target_diff": "--- reviewed-baseline.md\n+++ final-manuscript.md\n@@ -2,4 +2,4 @@\n \n ## Introduction\n \n-This software acceptance fixture now contains two toolbars and a first reviewer round selector. It makes no research claim.\n+This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. It makes no research claim.",
+        "baseline_version_number": 2,
+        "context_sha256": "62d5918c5379279fff6807007ac89cd98659ce43e6523b156e6f2d17bf8b40af",
+        "evidence": [
+          {
+            "baseline_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+            "boxes": [
+              {
+                "box": [
+                  72.0,
+                  244.832175,
+                  91.39638,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  94.1782,
+                  244.832175,
+                  131.476413,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  134.258234,
+                  244.832175,
+                  182.105546,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  184.898276,
+                  244.832175,
+                  213.381936,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  216.174666,
+                  244.832175,
+                  243.796507,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  246.578327,
+                  244.832175,
+                  282.938358,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  285.731087,
+                  244.832175,
+                  307.538378,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  310.331108,
+                  244.832175,
+                  345.480228,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  348.262048,
+                  244.832175,
+                  364.014789,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  366.807518,
+                  244.832175,
+                  382.800259,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  385.582079,
+                  244.832175,
+                  417.556652,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  420.338472,
+                  244.832175,
+                  457.58214,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  460.36396,
+                  244.832175,
+                  485.81489,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  488.60762,
+                  244.832175,
+                  529.505836,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  488.60762,
+                  244.832175,
+                  529.505836,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              }
+            ],
+            "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+            "changed_text": "This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors.",
+            "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+            "evidence_id": "14d4df737f670e9fa165a3841313fd168f81d838570f430584f91fbf5bde0502",
+            "final_line": 4,
+            "final_line_end": 4,
+            "final_page": 1,
+            "final_page_end": 1,
+            "final_pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+            "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": "paragraph_764ec4bb201640329729f0a8c7ead3e0",
+            "reason": "UNIQUE_FULL_PARAGRAPH",
+            "sentence_index": 0,
+            "status": "GENERATED_TEXT_CHANGED",
+            "text_comparison": "GENERATED_TEXT_CHANGED",
+            "thought_id": "thought-rounds-live-version"
+          },
+          {
+            "baseline_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+            "boxes": [
+              {
+                "box": [
+                  533.33493,
+                  244.832175,
+                  540.00039,
+                  255.741275
+                ],
+                "line": 4,
+                "page": 1
+              },
+              {
+                "box": [
+                  72.0,
+                  258.382175,
+                  99.665478,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  102.381844,
+                  258.382175,
+                  113.290944,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  116.018219,
+                  258.382175,
+                  152.203703,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  154.920069,
+                  258.382175,
+                  181.887364,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              },
+              {
+                "box": [
+                  154.920069,
+                  258.382175,
+                  181.887364,
+                  269.291275
+                ],
+                "line": 5,
+                "page": 1
+              }
+            ],
+            "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+            "changed_text": "It makes no research claim.",
+            "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+            "evidence_id": "dd8b3b66f3153cb422dd0c72429e7a45a08d5ff598eea3eec19c7935859e37a0",
+            "final_line": 4,
+            "final_line_end": 5,
+            "final_page": 1,
+            "final_page_end": 1,
+            "final_pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+            "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": "paragraph_764ec4bb201640329729f0a8c7ead3e0",
+            "reason": "UNIQUE_FULL_PARAGRAPH",
+            "sentence_index": 1,
+            "status": "EXACT_BASELINE_TEXT_RETAINED",
+            "text_comparison": "EXACT_BASELINE_TEXT_RETAINED",
+            "thought_id": "thought-rounds-live-version"
+          }
+        ],
+        "pdf": {
+          "layout_sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1",
+          "line_number_kind": "visible_text_line_from_top_of_physical_page",
+          "lines": [
+            {
+              "line": 1,
+              "page": 1,
+              "text": "Two-round software acceptance fixture",
+              "words": [
+                {
+                  "box": [
+                    172.374,
+                    113.215342,
+                    247.415929,
+                    130.430742
+                  ],
+                  "text": "Two-round"
+                },
+                {
+                  "box": [
+                    251.702563,
+                    113.215342,
+                    310.562016,
+                    130.430742
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    314.84865,
+                    113.215342,
+                    390.355395,
+                    130.430742
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    394.659245,
+                    113.215342,
+                    439.608654,
+                    130.430742
+                  ],
+                  "text": "fixture"
+                }
+              ]
+            },
+            {
+              "line": 2,
+              "page": 1,
+              "text": "October 4, 2026",
+              "words": [
+                {
+                  "box": [
+                    267.319,
+                    172.103078,
+                    305.826699,
+                    184.058278
+                  ],
+                  "text": "October"
+                },
+                {
+                  "box": [
+                    308.815499,
+                    172.103078,
+                    317.781899,
+                    184.058278
+                  ],
+                  "text": "4,"
+                },
+                {
+                  "box": [
+                    320.770699,
+                    172.103078,
+                    344.681099,
+                    184.058278
+                  ],
+                  "text": "2026"
+                }
+              ]
+            },
+            {
+              "line": 3,
+              "page": 1,
+              "text": "1 Introduction",
+              "words": [
+                {
+                  "box": [
+                    72.0,
+                    217.128771,
+                    79.1731,
+                    231.474971
+                  ],
+                  "text": "1"
+                },
+                {
+                  "box": [
+                    93.5193,
+                    217.128771,
+                    171.433512,
+                    231.474971
+                  ],
+                  "text": "Introduction"
+                }
+              ]
+            },
+            {
+              "line": 4,
+              "page": 1,
+              "text": "This software acceptance fixture finally contains three toolbars and two distinct reviewer round selectors. It",
+              "words": [
+                {
+                  "box": [
+                    72.0,
+                    244.832175,
+                    91.39638,
+                    255.741275
+                  ],
+                  "text": "This"
+                },
+                {
+                  "box": [
+                    94.1782,
+                    244.832175,
+                    131.476413,
+                    255.741275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    134.258234,
+                    244.832175,
+                    182.105546,
+                    255.741275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    184.898276,
+                    244.832175,
+                    213.381936,
+                    255.741275
+                  ],
+                  "text": "fixture"
+                },
+                {
+                  "box": [
+                    216.174666,
+                    244.832175,
+                    243.796507,
+                    255.741275
+                  ],
+                  "text": "finally"
+                },
+                {
+                  "box": [
+                    246.578327,
+                    244.832175,
+                    282.938358,
+                    255.741275
+                  ],
+                  "text": "contains"
+                },
+                {
+                  "box": [
+                    285.731087,
+                    244.832175,
+                    307.538378,
+                    255.741275
+                  ],
+                  "text": "three"
+                },
+                {
+                  "box": [
+                    310.331108,
+                    244.832175,
+                    345.480228,
+                    255.741275
+                  ],
+                  "text": "toolbars"
+                },
+                {
+                  "box": [
+                    348.262048,
+                    244.832175,
+                    364.014789,
+                    255.741275
+                  ],
+                  "text": "and"
+                },
+                {
+                  "box": [
+                    366.807518,
+                    244.832175,
+                    382.800259,
+                    255.741275
+                  ],
+                  "text": "two"
+                },
+                {
+                  "box": [
+                    385.582079,
+                    244.832175,
+                    417.556652,
+                    255.741275
+                  ],
+                  "text": "distinct"
+                },
+                {
+                  "box": [
+                    420.338472,
+                    244.832175,
+                    457.58214,
+                    255.741275
+                  ],
+                  "text": "reviewer"
+                },
+                {
+                  "box": [
+                    460.36396,
+                    244.832175,
+                    485.81489,
+                    255.741275
+                  ],
+                  "text": "round"
+                },
+                {
+                  "box": [
+                    488.60762,
+                    244.832175,
+                    529.505836,
+                    255.741275
+                  ],
+                  "text": "selectors."
+                },
+                {
+                  "box": [
+                    533.33493,
+                    244.832175,
+                    540.00039,
+                    255.741275
+                  ],
+                  "text": "It"
+                }
+              ]
+            },
+            {
+              "line": 5,
+              "page": 1,
+              "text": "makes no research claim.",
+              "words": [
+                {
+                  "box": [
+                    72.0,
+                    258.382175,
+                    99.665478,
+                    269.291275
+                  ],
+                  "text": "makes"
+                },
+                {
+                  "box": [
+                    102.381844,
+                    258.382175,
+                    113.290944,
+                    269.291275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    116.018219,
+                    258.382175,
+                    152.203703,
+                    269.291275
+                  ],
+                  "text": "research"
+                },
+                {
+                  "box": [
+                    154.920069,
+                    258.382175,
+                    181.887364,
+                    269.291275
+                  ],
+                  "text": "claim."
+                }
+              ]
+            },
+            {
+              "line": 6,
+              "page": 1,
+              "text": "1",
+              "words": [
+                {
+                  "box": [
+                    303.273,
+                    741.346175,
+                    308.72755,
+                    752.255275
+                  ],
+                  "text": "1"
+                }
+              ]
+            }
+          ],
+          "method": "pdftotext-bbox-layout-v1",
+          "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+          "status": "EXTRACTED"
+        },
+        "pdf_artifact_id": "artifact_63ca15e4429049ad9876eae4bbeb0998",
+        "scientific_acceptance": false,
+        "state": {
+          "archived_at": null,
+          "author_decision": "Accept the toolbar and selector clarification; retain the no-research-claim disclaimer.",
+          "baseline_content_sha256": "3b075399a8566ac597e4663ea067ff5bcc8d750c51c33a01cf9af0b3b618ae08",
+          "baseline_manuscript_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+          "comment_id": "comment_ff953cae8bf34b65add52bc0bc2c0af2",
+          "current_author_document_sha256": "9cf7b921f186350878d4e72caa796c3ea1ec57920d2de023b0ca168111f72f21",
+          "current_author_revision": 3,
+          "edited_text": "Round 2 fixture opinion only",
+          "generated_input_revision": 3,
+          "generated_record_sha256": "63c7e37b5d8beeba499b6878fa50d8e36180aaf9fe784bfbe507faf3eee04e4c",
+          "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+          "linked_changes": [
+            {
+              "after_sha256": "9cf7b921f186350878d4e72caa796c3ea1ec57920d2de023b0ca168111f72f21",
+              "before_sha256": "5e6b87f006abc1cf809822bc59a2cc1d71bf24371b51d3e80c206fafeaf59988",
+              "change_id": "change_04ebbdbc1aef44a689cff91709274394",
+              "link_revision": 3
+            }
+          ],
+          "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+          "response_revision": 2,
+          "response_text": "We revised the fixture to three toolbars and two reviewer round selectors. We retained the original no-research-claim disclaimer. The exact final PDF was checked.",
+          "review_round_id": "review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+          "round_number": 2
+        },
+        "state_sha256": "1d4fcf7735cd5bc9e5dd56d0a0dc2024d13223bcc2cd8a54c0274778ac83db69",
+        "target_text_sha256": "1f1d1a87285d58656dfc0ec370a3a11d061d436cc2fa5a8c2cb396e2b4850fad",
+        "target_version_number": 3
+      }
+    }
+  ],
+  "check_ids": [
+    "response_check_7986ebb8a8df4bf39a60647ae00f7e91",
+    "response_check_9cbd72416f6b4e9096a3cfbeaff855cf"
+  ],
+  "browser_verified": false,
+  "new_model_calls": 0,
+  "new_author_mutations": 0,
+  "parent_sha256": "f5af97096e00f3b865e2b77a5f275b09b8bebdb0fe7eae5f22a1c6caae662dd5"
+}

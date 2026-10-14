@@ -1,0 +1,20 @@
+[
+  {
+    "name": "submission_package_462feff00b234357a635a3e63254aff4.zip",
+    "exists": true,
+    "bytes": 0,
+    "mtime_ns": 1791502726820878500,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "clean-manuscript.pdf",
+    "exists": false
+  },
+  {
+    "name": "manuscript.pdf",
+    "exists": true,
+    "bytes": 13498,
+    "mtime_ns": 1791530074343228700,
+    "sha256": "fa294a1fe284baeb7fc3c52a434d4476204e95b9b80067bfcb0f7549fea2f1cb"
+  }
+]

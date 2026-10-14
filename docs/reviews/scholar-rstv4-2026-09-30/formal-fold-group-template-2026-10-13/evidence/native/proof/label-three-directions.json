@@ -1,0 +1,14 @@
+[
+  {
+    "chosen": "upright",
+    "actual": "upright"
+  },
+  {
+    "chosen": "horizontal",
+    "actual": "horizontal"
+  },
+  {
+    "chosen": "rotated",
+    "actual": "rotated"
+  }
+]

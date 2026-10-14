@@ -1,0 +1,30 @@
+{
+  "status": "PASS_ACTUAL_SCRIPT_AND_HTTP_ARTIFACT_READBACK_SOFTWARE_APPROVAL_FIXTURE",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-artifact-kwxepfkn",
+  "run_id": "run_08792b1bf02c4d019aeb8bcc9e69b768",
+  "plan_id": "experiment_plan_53f0d30195694de08dcfa2447a2ce544",
+  "actual_http_requests": 4,
+  "requests": [
+    {
+      "path": "http://127.0.0.1:53192/api/catalog/tracks/track_ef1943fe02964ac0a3bff08734f94d96/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/tracks/track_ef1943fe02964ac0a3bff08734f94d96/runs/run_08792b1bf02c4d019aeb8bcc9e69b768/artifacts/0",
+      "status": 200
+    },
+    {
+      "path": "wrong-track-artifact",
+      "status": 404
+    },
+    {
+      "path": "/api/catalog/tracks/track_ef1943fe02964ac0a3bff08734f94d96/runs/run_08792b1bf02c4d019aeb8bcc9e69b768/artifacts/0",
+      "status": 409
+    }
+  ],
+  "script_actually_executed": true,
+  "approval_is_isolated_software_fixture": true,
+  "scientific_approval": false,
+  "browser_verified": false,
+  "new_model_calls": 0
+}

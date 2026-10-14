@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-13T05:33:40.145Z",
+  "method": "POST (semantic read-only, mode=ro)",
+  "url": "http://127.0.0.1:8885/api/catalog/discussion/context",
+  "request": {
+    "module": "TRACK",
+    "object_kind": "track",
+    "object_id": "track_cd1adda6220f47b787f409e983c00947",
+    "track_id": "track_cd1adda6220f47b787f409e983c00947"
+  },
+  "status": 200,
+  "body": {
+    "target": {
+      "module": "TRACK",
+      "object_kind": "track",
+      "object_id": "track_cd1adda6220f47b787f409e983c00947",
+      "paper_id": null,
+      "field_id": null,
+      "track_id": "track_cd1adda6220f47b787f409e983c00947",
+      "snapshot_id": null,
+      "part": null,
+      "page_number": null
+    },
+    "scope_key": "[\"TRACK\",\"track_cd1adda6220f47b787f409e983c00947\"]",
+    "label": "Track",
+    "object_text": "Track\n",
+    "record": {
+      "track_id": "track_cd1adda6220f47b787f409e983c00947",
+      "field_id": "field_6242993287f547549daa4ded97914f3c",
+      "primary_topic_id": "topic_63348338b6fc403c97c7eaec0f0f77b3",
+      "title": "Track",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "status": "ACTIVE",
+      "mapping_status": "MAPPED",
+      "revision": 1,
+      "created_at": "2026-10-07T15:49:58.666932+00:00",
+      "updated_at": "2026-10-07T15:49:58.666932+00:00"
+    },
+    "versions": [
+      {
+        "track_id": "track_cd1adda6220f47b787f409e983c00947",
+        "track_revision": 1,
+        "field_id": "field_6242993287f547549daa4ded97914f3c"
+      }
+    ],
+    "context_sha256": "263dd96563a51e0bf3a7781d484bea00941068351b6214e96878a132b85abaa9"
+  }
+}

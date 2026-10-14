@@ -1,0 +1,18 @@
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/database.py', 'src/rstv4/research_discussions.py', 'tests/test_studio_shared_discussions.py', 'tests/test_database_initialization.py']
+All checks passed!
+Exit: 0
+CHECK ['-m', 'pytest', 'tests/test_studio_shared_discussions.py', 'tests/test_studio_context.py', 'tests/test_studio_suggestions.py', 'tests/test_studio_realization.py', 'tests/test_studio_structure.py', 'tests/test_writing_studio.py', 'tests/test_research_discussions.py', 'tests/test_research_conversation.py', 'tests/test_database_initialization.py', 'tests/test_research_hierarchy.py', '-q']
+........................................................................ [ 47%]
+........................................................................ [ 94%]
+........                                                                 [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+152 passed, 1 warning in 83.32s (0:01:23)
+Exit: 0
+CHECK ['diff', '--check', '--', 'src/rstv4/database.py', 'src/rstv4/research_discussions.py', 'tests/test_studio_shared_discussions.py', 'tests/test_database_initialization.py']
+warning: in the working copy of 'src/rstv4/database.py', LF will be replaced by CRLF the next time Git touches it
+Exit: 0

@@ -1,0 +1,2977 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销":
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - region "本次全文检查状态":
+    - paragraph: 规则与模型检查已完成；检查意见仍需作者判断。
+    - generic "查看检查依据"
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+    - generic: 结构已变化 · 旧成文保留
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button "关联意见"
+  - paragraph: Reviewer comments
+  - heading "意见 → 决定 → 修改 → 回复" [level=2]
+  - button "🗃 已删除"
+  - button "📦 投稿包"
+  - region "返修轮次与固定被审版本":
+    - text: 返修轮次
+    - combobox "选择返修轮次" [disabled]:
+      - option "请选择轮次…"
+      - option "第 1 轮 · G06 software acceptance — no external reviewer" [selected]
+    - paragraph: 固定被审稿 v4 / 作者结构 r11；本轮生成不会移动基线。
+    - button "建立第 2 轮…" [disabled]
+  - textbox "审稿意见输入":
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+    - text: "G07 corrected software opinion 001: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 002: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 003: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 004: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 005: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 006: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 007: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 008: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 009: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 010: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 011: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 012: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 013: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 014: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 015: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 016: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 017: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 018: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 019: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 020: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 021: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 022: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 023: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 024: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 025: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 026: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 027: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 028: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 029: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 030: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 031: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 032: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 033: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 034: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 035: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 036: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 037: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 038: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 039: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 040: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 041: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 042: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 043: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 044: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 045: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 046: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 047: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 048: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 049: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 050: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 051: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 052: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 053: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 054: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 055: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 056: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 057: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 058: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 059: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 060: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 061: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 062: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 063: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 064: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 065: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 066: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 067: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 068: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 069: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 070: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 071: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 072: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 073: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 074: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 075: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 076: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 077: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 078: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 079: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 080: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 081: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 082: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 083: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 084: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 085: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 086: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 087: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 088: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 089: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 090: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 091: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 092: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 093: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 094: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 095: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 096: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 097: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 098: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 099: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 100: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 corrected software opinion 101: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 CORRECTED LAST 101 — retain until explicitly selected."
+  - button "👀 准备预览"
+  - button "➕ 单条新增"
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button "导入审稿意见文件"
+  - status: 预览 101 条，已选 101 条。每批最多 100 条。
+  - alert: 已选超过 100 条，请取消部分勾选后导入。所有条目和原文均保留。
+  - generic "原始导入全文"
+  - checkbox "纳入意见 1" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 1": "G07 corrected software opinion 001: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 2" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 2": "G07 corrected software opinion 002: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 3" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 3": "G07 corrected software opinion 003: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 4" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 4": "G07 corrected software opinion 004: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 5" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 5": "G07 corrected software opinion 005: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 6" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 6": "G07 corrected software opinion 006: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 7" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 7": "G07 corrected software opinion 007: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 8" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 8": "G07 corrected software opinion 008: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 9" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 9": "G07 corrected software opinion 009: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 10" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 10": "G07 corrected software opinion 010: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 11" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 11": "G07 corrected software opinion 011: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 12" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 12": "G07 corrected software opinion 012: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 13" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 13": "G07 corrected software opinion 013: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 14" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 14": "G07 corrected software opinion 014: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 15" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 15": "G07 corrected software opinion 015: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 16" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 16": "G07 corrected software opinion 016: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 17" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 17": "G07 corrected software opinion 017: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 18" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 18": "G07 corrected software opinion 018: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 19" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 19": "G07 corrected software opinion 019: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 20" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 20": "G07 corrected software opinion 020: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 21" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 21": "G07 corrected software opinion 021: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 22" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 22": "G07 corrected software opinion 022: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 23" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 23": "G07 corrected software opinion 023: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 24" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 24": "G07 corrected software opinion 024: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 25" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 25": "G07 corrected software opinion 025: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 26" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 26": "G07 corrected software opinion 026: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 27" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 27": "G07 corrected software opinion 027: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 28" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 28": "G07 corrected software opinion 028: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 29" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 29": "G07 corrected software opinion 029: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 30" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 30": "G07 corrected software opinion 030: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 31" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 31": "G07 corrected software opinion 031: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 32" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 32": "G07 corrected software opinion 032: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 33" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 33": "G07 corrected software opinion 033: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 34" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 34": "G07 corrected software opinion 034: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 35" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 35": "G07 corrected software opinion 035: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 36" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 36": "G07 corrected software opinion 036: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 37" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 37": "G07 corrected software opinion 037: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 38" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 38": "G07 corrected software opinion 038: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 39" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 39": "G07 corrected software opinion 039: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 40" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 40": "G07 corrected software opinion 040: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 41" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 41": "G07 corrected software opinion 041: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 42" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 42": "G07 corrected software opinion 042: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 43" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 43": "G07 corrected software opinion 043: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 44" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 44": "G07 corrected software opinion 044: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 45" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 45": "G07 corrected software opinion 045: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 46" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 46": "G07 corrected software opinion 046: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 47" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 47": "G07 corrected software opinion 047: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 48" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 48": "G07 corrected software opinion 048: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 49" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 49": "G07 corrected software opinion 049: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 50" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 50": "G07 corrected software opinion 050: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 51" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 51": "G07 corrected software opinion 051: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 52" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 52": "G07 corrected software opinion 052: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 53" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 53": "G07 corrected software opinion 053: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 54" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 54": "G07 corrected software opinion 054: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 55" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 55": "G07 corrected software opinion 055: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 56" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 56": "G07 corrected software opinion 056: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 57" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 57": "G07 corrected software opinion 057: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 58" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 58": "G07 corrected software opinion 058: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 59" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 59": "G07 corrected software opinion 059: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 60" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 60": "G07 corrected software opinion 060: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 61" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 61": "G07 corrected software opinion 061: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 62" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 62": "G07 corrected software opinion 062: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 63" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 63": "G07 corrected software opinion 063: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 64" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 64": "G07 corrected software opinion 064: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 65" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 65": "G07 corrected software opinion 065: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 66" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 66": "G07 corrected software opinion 066: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 67" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 67": "G07 corrected software opinion 067: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 68" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 68": "G07 corrected software opinion 068: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 69" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 69": "G07 corrected software opinion 069: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 70" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 70": "G07 corrected software opinion 070: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 71" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 71": "G07 corrected software opinion 071: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 72" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 72": "G07 corrected software opinion 072: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 73" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 73": "G07 corrected software opinion 073: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 74" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 74": "G07 corrected software opinion 074: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 75" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 75": "G07 corrected software opinion 075: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 76" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 76": "G07 corrected software opinion 076: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 77" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 77": "G07 corrected software opinion 077: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 78" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 78": "G07 corrected software opinion 078: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 79" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 79": "G07 corrected software opinion 079: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 80" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 80": "G07 corrected software opinion 080: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 81" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 81": "G07 corrected software opinion 081: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 82" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 82": "G07 corrected software opinion 082: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 83" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 83": "G07 corrected software opinion 083: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 84" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 84": "G07 corrected software opinion 084: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 85" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 85": "G07 corrected software opinion 085: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 86" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 86": "G07 corrected software opinion 086: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 87" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 87": "G07 corrected software opinion 087: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 88" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 88": "G07 corrected software opinion 088: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 89" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 89": "G07 corrected software opinion 089: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 90" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 90": "G07 corrected software opinion 090: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 91" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 91": "G07 corrected software opinion 091: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 92" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 92": "G07 corrected software opinion 092: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 93" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 93": "G07 corrected software opinion 093: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 94" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 94": "G07 corrected software opinion 094: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 95" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 95": "G07 corrected software opinion 095: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 96" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 96": "G07 corrected software opinion 096: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 97" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 97": "G07 corrected software opinion 097: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 98" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 98": "G07 corrected software opinion 098: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 99" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 99": "G07 corrected software opinion 099: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 100" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 100": "G07 corrected software opinion 100: retain the original item through partial import. This line belongs to the same opinion; no scientific request."
+  - checkbox "纳入意见 101" [checked]:
+  - checkbox [checked]
+  - textbox "编辑意见 101": "G07 corrected software opinion 101: retain the original item through partial import. This line belongs to the same opinion; no scientific request. G07 CORRECTED LAST 101 — retain until explicitly selected."
+  - button "取消"
+  - button "✓ 确认导入 101 条" [disabled]
+  - article:
+    - button "开始修改意见 A01":
+    - generic "comment_f7969d2589c14c6a9e3d1c923bd1b381": A01
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A01":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A01":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A01":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 1 条关联修改
+    - navigation "A01 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_97706f7d6eb44c90a619da82688033b4"
+    - button "移入已删除 A01":
+  - article:
+    - button "开始修改意见 A02":
+    - generic "comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1": A02
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G06 B software comment: keep independent context and stable number when comment A is archived and restored."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A02":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A02":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A02":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 3 条关联修改
+    - navigation "A02 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_97706f7d6eb44c90a619da82688033b4"
+      - link "查看修改 2":
+        - /url: "#change-change_69e7648801234e51a0ee142d41eac866"
+      - link "查看修改 3":
+        - /url: "#change-change_5222914b1d854ee794dcaed135b6e15f"
+    - button "移入已删除 A02":
+  - article:
+    - button "开始修改意见 A03":
+    - generic "comment_6821f9cff55d4b35b124f3f676e064f0": A03
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 single software comment: preserve this entire block as one original opinion. Second paragraph belongs to the same single comment. Keep this line break; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A03":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A03":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A03":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A03":
+  - article:
+    - button "开始修改意见 A04":
+    - generic "comment_09ed4e6374454a71a805948144bd04b7": A04
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 single software comment: preserve this entire block as one original opinion. Second paragraph belongs to the same single comment. Keep this line break; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A04":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A04":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A04":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A04":
+  - article:
+    - button "开始修改意见 A05":
+    - generic "comment_d580c81d68a247f58a4f98b6e6e74d49": A05
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 001: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A05":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A05":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A05":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A05":
+  - article:
+    - button "开始修改意见 A06":
+    - generic "comment_c83e34452cb4498783f3af065f221989": A06
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 002: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A06":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A06":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A06":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A06":
+  - article:
+    - button "开始修改意见 A07":
+    - generic "comment_6bc8a50b678442eda145bb8a6fd1c9c0": A07
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 003: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A07":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A07":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A07":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A07":
+  - article:
+    - button "开始修改意见 A08":
+    - generic "comment_1980947d4ca142449b4125ba587cfc71": A08
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 004: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A08":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A08":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A08":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A08":
+  - article:
+    - button "开始修改意见 A09":
+    - generic "comment_d52f63cddfe445cb8a13b9dae34b5ca3": A09
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 005: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A09":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A09":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A09":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A09":
+  - article:
+    - button "开始修改意见 A10":
+    - generic "comment_7447aba04df84951a8a9ff0812b18cfd": A10
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 006: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A10":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A10":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A10":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A10":
+  - article:
+    - button "开始修改意见 A11":
+    - generic "comment_140144be986f42478edc5dbde6b1ec64": A11
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 007: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A11":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A11":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A11":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A11":
+  - article:
+    - button "开始修改意见 A12":
+    - generic "comment_4ce5639e7bfc449a84c9003cf878bb50": A12
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 008: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A12":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A12":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A12":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A12":
+  - article:
+    - button "开始修改意见 A13":
+    - generic "comment_266d5c7127a841b1975a4ff5973658f8": A13
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 009: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A13":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A13":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A13":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A13":
+  - article:
+    - button "开始修改意见 A14":
+    - generic "comment_7534054e4caf40c89df4a2c82433edd6": A14
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 010: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A14":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A14":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A14":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A14":
+  - article:
+    - button "开始修改意见 A15":
+    - generic "comment_94986ab80b454d83bbbbc7333969e73e": A15
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 011: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A15":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A15":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A15":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A15":
+  - article:
+    - button "开始修改意见 A16":
+    - generic "comment_0f10840dc7df4e9b80539f5bd71fa9c8": A16
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 012: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A16":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A16":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A16":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A16":
+  - article:
+    - button "开始修改意见 A17":
+    - generic "comment_52e0d298e53941f8bff51ef125dfe2bb": A17
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 013: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A17":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A17":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A17":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A17":
+  - article:
+    - button "开始修改意见 A18":
+    - generic "comment_f01f5f29dacb4c1bae3e0d0cf3f9aafc": A18
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 014: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A18":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A18":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A18":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A18":
+  - article:
+    - button "开始修改意见 A19":
+    - generic "comment_dc78fd3bc4904f4788d58e6caa062846": A19
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 015: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A19":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A19":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A19":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A19":
+  - article:
+    - button "开始修改意见 A20":
+    - generic "comment_cfee887b44bc46b9aa2cc2b3e9c3526e": A20
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 016: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A20":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A20":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A20":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A20":
+  - article:
+    - button "开始修改意见 A21":
+    - generic "comment_e756e9cb87eb415995e9186d5cb85b09": A21
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 017: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A21":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A21":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A21":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A21":
+  - article:
+    - button "开始修改意见 A22":
+    - generic "comment_db7d43e7548d4c43972a5c5351574268": A22
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 018: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A22":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A22":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A22":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A22":
+  - article:
+    - button "开始修改意见 A23":
+    - generic "comment_a7e9405b47754cff952284e8b74ce1b0": A23
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 019: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A23":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A23":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A23":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A23":
+  - article:
+    - button "开始修改意见 A24":
+    - generic "comment_fc4efa428e994aec9a742b38b3e8501f": A24
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 020: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A24":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A24":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A24":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A24":
+  - article:
+    - button "开始修改意见 A25":
+    - generic "comment_b0eeec2f81de42a5bf3a580140086dc5": A25
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 021: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A25":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A25":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A25":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A25":
+  - article:
+    - button "开始修改意见 A26":
+    - generic "comment_f4d35e5caac2434289bac9fa620cec98": A26
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 022: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A26":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A26":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A26":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A26":
+  - article:
+    - button "开始修改意见 A27":
+    - generic "comment_bbd46c1fd2be473b98d7f283cc174133": A27
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 023: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A27":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A27":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A27":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A27":
+  - article:
+    - button "开始修改意见 A28":
+    - generic "comment_cf7045ec14c442a4a76d5cf0d84786bc": A28
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 024: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A28":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A28":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A28":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A28":
+  - article:
+    - button "开始修改意见 A29":
+    - generic "comment_f2965b05db604b0e9285d5260d2a41ed": A29
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 025: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A29":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A29":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A29":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A29":
+  - article:
+    - button "开始修改意见 A30":
+    - generic "comment_d887a1e0daf24807af9eb130bd4a44ff": A30
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 026: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A30":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A30":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A30":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A30":
+  - article:
+    - button "开始修改意见 A31":
+    - generic "comment_89982893996045849fe22a9ce3862ee9": A31
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 027: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A31":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A31":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A31":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A31":
+  - article:
+    - button "开始修改意见 A32":
+    - generic "comment_b98eaf35ca1b4e77b17041a46cc55d5f": A32
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 028: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A32":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A32":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A32":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A32":
+  - article:
+    - button "开始修改意见 A33":
+    - generic "comment_2528f6d249b647a29448a1229edfbe46": A33
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 029: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A33":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A33":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A33":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A33":
+  - article:
+    - button "开始修改意见 A34":
+    - generic "comment_f35435945fca44f4991a6d104f05e8f9": A34
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 030: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A34":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A34":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A34":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A34":
+  - article:
+    - button "开始修改意见 A35":
+    - generic "comment_30417fc6d41d4b7a885420c81360b87e": A35
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 031: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A35":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A35":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A35":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A35":
+  - article:
+    - button "开始修改意见 A36":
+    - generic "comment_74caae3339964d3fbb4c53810114c453": A36
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 032: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A36":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A36":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A36":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A36":
+  - article:
+    - button "开始修改意见 A37":
+    - generic "comment_26eb5d54e6804049963e099766618c81": A37
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 033: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A37":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A37":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A37":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A37":
+  - article:
+    - button "开始修改意见 A38":
+    - generic "comment_4f552d4b3e774732ac96ca820e9c4ca8": A38
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 034: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A38":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A38":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A38":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A38":
+  - article:
+    - button "开始修改意见 A39":
+    - generic "comment_e49a409d3da9431ca90f993e0ba283ce": A39
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 035: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A39":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A39":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A39":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A39":
+  - article:
+    - button "开始修改意见 A40":
+    - generic "comment_ae0c9e40dd9f42359869e81dceb21f08": A40
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 036: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A40":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A40":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A40":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A40":
+  - article:
+    - button "开始修改意见 A41":
+    - generic "comment_8831b74a2ee243018dc076590870ee55": A41
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 037: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A41":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A41":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A41":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A41":
+  - article:
+    - button "开始修改意见 A42":
+    - generic "comment_6b0f1dd5509a4770a7f531566dbab426": A42
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 038: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A42":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A42":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A42":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A42":
+  - article:
+    - button "开始修改意见 A43":
+    - generic "comment_cc0e950070f5413f8e1a4d153607881e": A43
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 039: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A43":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A43":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A43":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A43":
+  - article:
+    - button "开始修改意见 A44":
+    - generic "comment_c1f0702b69f44460bb209c9c3cec183e": A44
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 040: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A44":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A44":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A44":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A44":
+  - article:
+    - button "开始修改意见 A45":
+    - generic "comment_6429cb9952194994854dd573b16c29b2": A45
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 041: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A45":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A45":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A45":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A45":
+  - article:
+    - button "开始修改意见 A46":
+    - generic "comment_82887c109b604efe918313cab9d61b94": A46
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 042: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A46":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A46":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A46":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A46":
+  - article:
+    - button "开始修改意见 A47":
+    - generic "comment_f9090ab9b4a0461b8bccc1804d6d0896": A47
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 043: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A47":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A47":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A47":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A47":
+  - article:
+    - button "开始修改意见 A48":
+    - generic "comment_3d50225fc35849118c9cf7bd8ed74f10": A48
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 044: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A48":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A48":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A48":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A48":
+  - article:
+    - button "开始修改意见 A49":
+    - generic "comment_63393add7f53421f8b319c9de7043230": A49
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 045: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A49":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A49":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A49":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A49":
+  - article:
+    - button "开始修改意见 A50":
+    - generic "comment_00a8cfad726949b6914381fb8199b5e7": A50
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 046: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A50":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A50":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A50":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A50":
+  - article:
+    - button "开始修改意见 A51":
+    - generic "comment_d2a5371ee912487ea8761e3c5b8b5c73": A51
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 047: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A51":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A51":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A51":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A51":
+  - article:
+    - button "开始修改意见 A52":
+    - generic "comment_d1f30208168b4c5480743c17768d10b7": A52
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 048: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A52":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A52":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A52":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A52":
+  - article:
+    - button "开始修改意见 A53":
+    - generic "comment_43c738a508e94276ac934619845b2c70": A53
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 049: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A53":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A53":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A53":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A53":
+  - article:
+    - button "开始修改意见 A54":
+    - generic "comment_79d61dc05a4f476090d74c991e639445": A54
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 050: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A54":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A54":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A54":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A54":
+  - article:
+    - button "开始修改意见 A55":
+    - generic "comment_a3f2989cd9954ad0afd67c8d3fb0a7b0": A55
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 051: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A55":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A55":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A55":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A55":
+  - article:
+    - button "开始修改意见 A56":
+    - generic "comment_c8522815507646c39205fd74c710c218": A56
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 052: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A56":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A56":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A56":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A56":
+  - article:
+    - button "开始修改意见 A57":
+    - generic "comment_dddc3c0174fd418b9535000917fa6640": A57
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 053: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A57":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A57":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A57":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A57":
+  - article:
+    - button "开始修改意见 A58":
+    - generic "comment_117a7314e7884b82be73a15c54b4c493": A58
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 054: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A58":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A58":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A58":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A58":
+  - article:
+    - button "开始修改意见 A59":
+    - generic "comment_161e084655ba4432b915e273a69949f1": A59
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 055: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A59":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A59":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A59":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A59":
+  - article:
+    - button "开始修改意见 A60":
+    - generic "comment_186dc3ba78bf4fca8c622befd2e6178d": A60
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 056: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A60":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A60":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A60":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A60":
+  - article:
+    - button "开始修改意见 A61":
+    - generic "comment_2cf24755e45f452283d172ce5f3f894b": A61
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 057: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A61":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A61":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A61":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A61":
+  - article:
+    - button "开始修改意见 A62":
+    - generic "comment_49cc01c267b9434fb6d884f5e55c56b7": A62
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 058: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A62":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A62":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A62":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A62":
+  - article:
+    - button "开始修改意见 A63":
+    - generic "comment_df782e87b972459c8823c519814e8ca9": A63
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 059: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A63":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A63":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A63":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A63":
+  - article:
+    - button "开始修改意见 A64":
+    - generic "comment_0d3cd8e955194f1abe5c1da783328a15": A64
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 060: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A64":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A64":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A64":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A64":
+  - article:
+    - button "开始修改意见 A65":
+    - generic "comment_c5474215f1324e9e82d884174fd634c7": A65
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 061: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A65":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A65":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A65":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A65":
+  - article:
+    - button "开始修改意见 A66":
+    - generic "comment_61d97557f8674264b4b01d390a7b58c0": A66
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 062: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A66":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A66":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A66":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A66":
+  - article:
+    - button "开始修改意见 A67":
+    - generic "comment_b35f6235eb1448c59d0990ee44d97317": A67
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 063: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A67":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A67":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A67":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A67":
+  - article:
+    - button "开始修改意见 A68":
+    - generic "comment_59794f42bc7a406487d34accbee24fe1": A68
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 064: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A68":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A68":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A68":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A68":
+  - article:
+    - button "开始修改意见 A69":
+    - generic "comment_3de920a48f8945d29bb7ea4332dc55ae": A69
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 065: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A69":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A69":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A69":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A69":
+  - article:
+    - button "开始修改意见 A70":
+    - generic "comment_9096dd0a85ef4334b97db9366a9eba47": A70
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 066: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A70":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A70":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A70":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A70":
+  - article:
+    - button "开始修改意见 A71":
+    - generic "comment_c1207685ce9e44faafff643b5aeecca5": A71
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 067: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A71":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A71":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A71":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A71":
+  - article:
+    - button "开始修改意见 A72":
+    - generic "comment_bf7315038d7f42529c02a9442c237189": A72
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 068: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A72":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A72":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A72":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A72":
+  - article:
+    - button "开始修改意见 A73":
+    - generic "comment_d3e3aec3da5a4125b3d26e8e2fde3b79": A73
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 069: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A73":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A73":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A73":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A73":
+  - article:
+    - button "开始修改意见 A74":
+    - generic "comment_88414870e1494cf8a422fee22bc4c442": A74
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 070: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A74":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A74":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A74":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A74":
+  - article:
+    - button "开始修改意见 A75":
+    - generic "comment_9f88f2fe093c4f61a2e503bd8f3f3393": A75
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 071: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A75":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A75":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A75":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A75":
+  - article:
+    - button "开始修改意见 A76":
+    - generic "comment_a3acb192eb5d467e8b4e6b9e46beb5d3": A76
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 072: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A76":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A76":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A76":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A76":
+  - article:
+    - button "开始修改意见 A77":
+    - generic "comment_c06f16b019944cb7be90682aa7780a3f": A77
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 073: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A77":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A77":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A77":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A77":
+  - article:
+    - button "开始修改意见 A78":
+    - generic "comment_63d26f3942234ca38a191bd3d3d21a14": A78
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 074: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A78":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A78":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A78":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A78":
+  - article:
+    - button "开始修改意见 A79":
+    - generic "comment_2555ca67381b419cbdc915676019b52b": A79
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 075: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A79":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A79":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A79":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A79":
+  - article:
+    - button "开始修改意见 A80":
+    - generic "comment_d0c739400e5545c19baaf44b5e56f7ce": A80
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 076: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A80":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A80":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A80":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A80":
+  - article:
+    - button "开始修改意见 A81":
+    - generic "comment_b2432803c63145ca8b24c4a55cee28b3": A81
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 077: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A81":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A81":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A81":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A81":
+  - article:
+    - button "开始修改意见 A82":
+    - generic "comment_ad19e7beb01141ce88336ee353d7bf55": A82
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 078: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A82":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A82":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A82":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A82":
+  - article:
+    - button "开始修改意见 A83":
+    - generic "comment_7794e02a8293465a9a933775e77ab8b8": A83
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 079: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A83":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A83":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A83":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A83":
+  - article:
+    - button "开始修改意见 A84":
+    - generic "comment_413dab3bb973417581835f658e908193": A84
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 080: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A84":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A84":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A84":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A84":
+  - article:
+    - button "开始修改意见 A85":
+    - generic "comment_8fe4337d47994f10b475d3a6df27f4a0": A85
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 081: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A85":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A85":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A85":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A85":
+  - article:
+    - button "开始修改意见 A86":
+    - generic "comment_ce6f326f5bef4e3f8bbb90a580232aaf": A86
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 082: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A86":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A86":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A86":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A86":
+  - article:
+    - button "开始修改意见 A87":
+    - generic "comment_76dee273a9f941eaa068246d720170a9": A87
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 083: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A87":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A87":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A87":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A87":
+  - article:
+    - button "开始修改意见 A88":
+    - generic "comment_cbdb55b51c1f48ce9b38c3045c1760d8": A88
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 084: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A88":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A88":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A88":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A88":
+  - article:
+    - button "开始修改意见 A89":
+    - generic "comment_be1f42f50c364c0b916e2876926132f3": A89
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 085: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A89":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A89":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A89":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A89":
+  - article:
+    - button "开始修改意见 A90":
+    - generic "comment_e10328d6646348aa9e8bc010f37d68f9": A90
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 086: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A90":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A90":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A90":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A90":
+  - article:
+    - button "开始修改意见 A91":
+    - generic "comment_20733e6eead041769c31aa82ed1a1edd": A91
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 087: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A91":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A91":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A91":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A91":
+  - article:
+    - button "开始修改意见 A92":
+    - generic "comment_442ae76d7e5c4211b147a89d89ba3b33": A92
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 088: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A92":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A92":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A92":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A92":
+  - article:
+    - button "开始修改意见 A93":
+    - generic "comment_092afd4806bc4d4bb4120325bb5f4371": A93
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 089: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A93":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A93":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A93":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A93":
+  - article:
+    - button "开始修改意见 A94":
+    - generic "comment_5c5d9bff027b47e88941569f60f6dd2a": A94
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 090: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A94":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A94":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A94":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A94":
+  - article:
+    - button "开始修改意见 A95":
+    - generic "comment_e037bad66ac94493bdf5c69405d972c6": A95
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 091: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A95":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A95":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A95":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A95":
+  - article:
+    - button "开始修改意见 A96":
+    - generic "comment_e9ad6fd68da6427ba6a2da56c96cb140": A96
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 092: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A96":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A96":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A96":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A96":
+  - article:
+    - button "开始修改意见 A97":
+    - generic "comment_a177938b127d4ac18ec381a0078536b0": A97
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 093: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A97":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A97":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A97":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A97":
+  - article:
+    - button "开始修改意见 A98":
+    - generic "comment_8aed579d80df46b995c757b4a3d3ec2d": A98
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 094: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A98":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A98":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A98":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A98":
+  - article:
+    - button "开始修改意见 A99":
+    - generic "comment_3d2b6503d8284f2ab54255d97adfba1d": A99
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 095: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A99":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A99":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A99":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A99":
+  - article:
+    - button "开始修改意见 A100":
+    - generic "comment_a723e28c872e4249b220bcd915de2efd": A100
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 096: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A100":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A100":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A100":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A100":
+  - article:
+    - button "开始修改意见 A101":
+    - generic "comment_a6225a20501b4bf1b76767e74e331390": A101
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 097: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A101":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A101":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A101":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A101":
+  - article:
+    - button "开始修改意见 A102":
+    - generic "comment_b890fef4b6ce4ae49696b435864c1620": A102
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 098: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A102":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A102":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A102":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A102":
+  - article:
+    - button "开始修改意见 A103":
+    - generic "comment_292b2c4ad1704f94bb0f81e1b1ec38c4": A103
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 099: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A103":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A103":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A103":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A103":
+  - article:
+    - button "开始修改意见 A104":
+    - generic "comment_8c7bb82b334140dd9a51c2dc326710b7": A104
+    - generic: 第 1 轮 · 提出人未填写
+    - paragraph: "G07 software bulk opinion 100: preserve full original text without silent truncation; no scientific request."
+    - generic "原意见与导入来源"
+    - paragraph: "G07 software bulk opinion 100: preserve full original text without silent truncation; no scientific request."
+    - paragraph: 原始顺序：第 100 条
+    - paragraph: 导入批次：comment_import_fc841fdb2e104d11a8716469df2040bd
+    - generic "本次导入的完整原文"
+    - generic: "G07 software bulk opinion 001: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 002: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 003: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 004: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 005: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 006: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 007: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 008: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 009: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 010: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 011: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 012: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 013: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 014: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 015: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 016: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 017: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 018: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 019: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 020: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 021: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 022: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 023: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 024: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 025: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 026: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 027: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 028: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 029: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 030: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 031: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 032: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 033: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 034: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 035: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 036: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 037: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 038: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 039: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 040: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 041: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 042: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 043: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 044: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 045: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 046: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 047: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 048: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 049: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 050: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 051: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 052: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 053: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 054: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 055: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 056: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 057: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 058: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 059: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 060: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 061: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 062: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 063: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 064: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 065: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 066: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 067: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 068: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 069: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 070: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 071: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 072: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 073: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 074: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 075: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 076: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 077: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 078: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 079: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 080: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 081: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 082: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 083: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 084: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 085: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 086: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 087: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 088: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 089: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 090: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 091: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 092: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 093: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 094: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 095: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 096: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 097: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 098: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 099: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 100: preserve full original text without silent truncation; no scientific request. G07 software bulk opinion 101: preserve full original text without silent truncation; no scientific request. G07 LAST ITEM 101 — must survive preview and cancel."
+    - textbox "我的决定与理由 A104":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A104":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A104":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A104":
+  - region "已保存修改与意见关联":
+    - heading "已保存修改" [level=3]
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox "显示":
+      - option "全部修改" [selected]
+      - option "未关联意见"
+      - option "已关联意见"
+    - button "刷新修改历史"
+    - article:
+      - strong: 作者修订 r0 → r1
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r1 → r2
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r2 → r3
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r3 → r4
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r4 → r5
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r5 → r6
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r6 → r7
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r7 → r8
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r8 → r9
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r9 → r10
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r10 → r11
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r11 → r12
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r12 → r13
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r13 → r14
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r14 → r15
+      - button "分配／解除意见"
+      - paragraph: A02 · 第 1 轮、A01 · 第 1 轮
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r15 → r16
+      - button "分配／解除意见"
+      - paragraph: A02 · 第 1 轮
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r16 → r17
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r17 → r18
+      - button "分配／解除意见"
+      - paragraph: A02 · 第 1 轮
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+  - region "已生成的投稿包":
+    - heading "投稿包" [level=3]
+    - button "刷新":
+      - text: 刷新
+    - paragraph: 此轮还没有投稿包。按“投稿包”生成后可在这里下载。
+  - status
+  - 'button "与 Agent 讨论 15 条 · G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations." [expanded]':
+    - text: 与 Agent 讨论
+    - text: "15 条 · G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations."
+  - button "整篇历史"
+  - button "当前对象 · 此版本"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: Annotation：Software acceptance only. Keep the original page 2 source fixed to generated v1.
+    - paragraph: "Check these original numbered citations after regeneration: preserve the original source and version."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: verify original numbered citations [1] and [2] using generated v1 fixed sources."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: after generated v2, continue this original v1 quote and its original [1] page 2 source."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: "G01 ALPHA original discussion: preserve this first paragraph, exact selected text and generated v3 after reordering."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: "G01 BETA original discussion: preserve this second paragraph, exact original source and selected text when it moves to first position."
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: "G02 SOFTWARE PARTIAL: propose a paragraph purpose and an extra Intent for this original v3 Alpha object. I will adopt only the purpose, retain the original thought and sources, and leave the extra Intent unadopted."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: Software fixture proposes two structure changes for author comparison. No author change is applied by this reply. The original v3 paragraph, quote and sources stay fixed.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+    - region "待作者审核的建议":
+      - paragraph: 结构建议
+      - paragraph: G02 software partial adoption
+      - paragraph: Select only the paragraph purpose. Keep the proposed extra Intent unadopted, and retain the original author thought and sources.
+      - button "比较与决定 · 2 项"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: "G02 SOFTWARE SOURCE: use the added original v1 page 2 evidence as an unselected source candidate for this original Beta v3 thought. Keep the two original selected citations and author text unchanged."
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - region "待作者审核的建议":
+      - paragraph: 来源候选
+      - paragraph: G02 software source candidate
+      - paragraph: Add this existing owned page 2 source as an unselected candidate. Keep both original selected sources and the original author text.
+      - button "比较与决定 · 1 项"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: "G02 SOFTWARE WORDING: propose replacing only the original word Check with Review for explicit author rejection. Retain all original thought text, citations, objects and versions when rejected."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - region "待作者审核的建议":
+      - paragraph: 措辞建议
+      - paragraph: G02 software wording rejection
+      - paragraph: Offer a five-character wording edit for explicit rejection. Preserve the original author thought when rejected.
+      - button "比较与决定 · 1 项"
+  - generic: "当前选择：G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations."
+  - strong: 草稿对象：Introduction / 段落 1 · 成文 v3 · 结构 r10
+  - generic: 对象已有新版本，当前仍引用历史原文。
+  - blockquote: 草稿引用：First source [1]. Next [2]. Repeat [1].
+  - button "移除草稿选区（保留对象）"
+  - generic: 点击其他对象保留草稿原对象。
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象" [checked]:
+  - checkbox [checked]
+  - text: 固定当前讨论对象
+  - region "比较新选对象与原草稿":
+    - paragraph: "新选：Introduction / G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations. · 结构 r18。当前问题仍绑定原对象。"
+    - button "保留并固定原对象"
+    - button "改用新对象并保留问题"
+    - button "加入比较来源"
+  - generic "固定对象的完整原文与版本"
+  - checkbox "明确允许比较不同研究范围的固定来源"
+  - checkbox
+  - text: 明确允许比较不同研究范围的固定来源
+  - region "本轮讨论的历史上下文":
+    - paragraph:
+      - text: 继续这段讨论 · 2 条历史消息
+      - button "开始新讨论"
+    - generic "本轮会带入的问题、回复与固定来源"
+  - status: 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：Introduction / 段落 1
+    - text: G03 A unsent α draft — keep original v3/r10; DO NOT SEND.
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+    - text: "G03 A annotation α: this draft belongs only to the original Alpha v3 object."
+  - button "发送讨论":
+  - button "保存讨论批注"
+  - button "更新讨论历史"
+  - button "查看原讨论与调用记录"

@@ -1,0 +1,1531 @@
+{
+  "updated_at_utc": "2026-10-09T15:18:07.035693+00:00",
+  "full_original_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "source_window_scope": [
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_19f55daa7f17ede2858b\\000\\record.json",
+      "record_digest": "b21d66f18701ab93ab20decdb664ae0acfcefcfa01c5b1aa968408767837515e",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 25
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_19f55daa7f17ede2858b\\001\\record.json",
+      "record_digest": "6736f9125794f7339acef4123386229880e49579ad3a79f3e005fefa0ed1a09e",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 12
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_19f55daa7f17ede2858b\\002\\record.json",
+      "record_digest": "42b1abc16cd94765e23014fa33a495f00d440add51b9b5bc593d2ac33c64efd3",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 24
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v13\\windows\\paper_19f55daa7f17ede2858b\\003\\record.json",
+      "record_digest": "a1c4e52adf0f0e6c353fc8251064245ff3f1139658b238a79bdb064c6d6703ab",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_19f55daa7f17ede2858b\\004\\record.json",
+      "record_digest": "9bd9a3bc174e5c61ea18fd85fa8823cfa088584482a3b1fd55b2362099a62f2d",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 41
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_19f55daa7f17ede2858b\\005\\record.json",
+      "record_digest": "b169b8ffee09b818da0deb331222c742681ef17143855fccceea79e25f2bf8ee",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v13\\windows\\paper_19f55daa7f17ede2858b\\006\\record.json",
+      "record_digest": "c7a0bdda424abb77b94f7350aee5d9e1038837b5660f06cc5e860c5f644f080f",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_19f55daa7f17ede2858b\\007\\record.json",
+      "record_digest": "ec469cc26d5a74389e5f5a2d0c93012c7b2136a8ebcc67edad640bc9f710aefb",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 15
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_19f55daa7f17ede2858b\\008\\record.json",
+      "record_digest": "e9670c047aeb3a12d18c5448b22e14a00167f898bf0748238de7f1b419adb819",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 15
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_19f55daa7f17ede2858b\\009\\record.json",
+      "record_digest": "d2012d62fdc65d558265f384e7fa3a6fcf1d1a29c37e37e6058c5cf1453474a0",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 10,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_19f55daa7f17ede2858b\\010\\record.json",
+      "record_digest": "fbc9a5ff6340f2ca9dc7d0a658f1fcc27fd0dcb6c39c1622e1ea801c185e2a83",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 11,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v13\\windows\\paper_19f55daa7f17ede2858b\\011\\record.json",
+      "record_digest": "e735bb6368d274e701f37acc32054f8038f72f0a3950d813f925a4ac1fd6ff6c",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 32
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 12,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_19f55daa7f17ede2858b\\012\\record.json",
+      "record_digest": "34c78a79fe5a479dee412db961f4608bb4392b9c26c41316b1b0ef446e35eb33",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 32
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 13,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_19f55daa7f17ede2858b\\013\\record.json",
+      "record_digest": "5d077beb05b9452a511b2186ff512bea79a6fe6b5b3afc17085959bef510e60f",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 14,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_19f55daa7f17ede2858b\\014\\record.json",
+      "record_digest": "1ec1c914e9efddf442756785b7b032360374cf8e2f32b061f7c0457af5ce35f6",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 36
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 15,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_19f55daa7f17ede2858b\\015\\record.json",
+      "record_digest": "059bcdc72c9dae0f9dda2719d86d2f99aaaf8f598a1cdc0f354c9859217f84b3",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 9
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_2f81cb801401904d4767\\000\\record.json",
+      "record_digest": "71ea13e6268f9a5788735f39ba22e4696df16f823b2610c1813db942f8a76bd9",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 26
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_2f81cb801401904d4767\\001\\record.json",
+      "record_digest": "56421f749d3e4a16339da0157fc13ed88c36c9c3a45f369731a2ed87224e6bc1",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 41
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_2f81cb801401904d4767\\002\\record.json",
+      "record_digest": "967a3f84c56973b403f955f2489e53e075b91b1bd3fac8192051e775175c81ca",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_2f81cb801401904d4767\\003\\record.json",
+      "record_digest": "14c24b9e55766c07248303bbfab74eb847903c8de9cad0ceccd638cf2adef5da",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_2f81cb801401904d4767\\004\\record.json",
+      "record_digest": "e71e56a9259481f2fcbac8c17865de5432702b3ecf0dc9e1392d7bae0893a72a",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_2f81cb801401904d4767\\005\\record.json",
+      "record_digest": "f54f8ff818da48eae9218c64f04f553e5fd434ce783b6dd94c38bc89a271c55f",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 34
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_2f81cb801401904d4767\\006\\record.json",
+      "record_digest": "0d3791eee4f165f1589b16d29346436e4e3d937d23685fe2f4b3baef622a1607",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 28
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_2f81cb801401904d4767\\007\\record.json",
+      "record_digest": "3df1446113b6f7531b53f8f26991d08c750a5540023054cfd6fc55d547b222b5",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 30
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_2f81cb801401904d4767\\008\\record.json",
+      "record_digest": "529583a8438a081192a29149dd9b3d33705d1d39bcee3e9b828df33cf7fbfece",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-endpoint-span-successor-v15\\windows\\paper_2f81cb801401904d4767\\009\\record.json",
+      "record_digest": "f6e94341f33b232846bab08c8477d6d186b3598849d6e0d880b306f4ecc84335",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 30
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 10,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v13\\windows\\paper_2f81cb801401904d4767\\010\\record.json",
+      "record_digest": "d0523aa766939fd048e0cfc30d08600623699faa7632f06de032389bfad07390",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 43
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 11,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_2f81cb801401904d4767\\011\\record.json",
+      "record_digest": "c6f82f96095ac2eeee058ccdfcf67a5fcca106347f0b9abd0468a4d07b3224f7",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 17
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "window_index": 12,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_2f81cb801401904d4767\\012\\record.json",
+      "record_digest": "c746d76cb5592fc6047150d682a9f52642450d647fe37560bbbe6b2d1614c35d",
+      "status": "NO_NATIVE_CLAIMS_MECHANICALLY_RECORDED",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 0
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_603603415f45919cbdc8\\000\\record.json",
+      "record_digest": "36205d20167ed345fe3f9008cbb1038741fac6a5724740cebaf0ec4dc5c2d5d2",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 27
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_603603415f45919cbdc8\\001\\record.json",
+      "record_digest": "5f723c0793d8f7beb2298756e181a2c18629e525700a84c6474c8ad9824cf638",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 41
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_603603415f45919cbdc8\\002\\record.json",
+      "record_digest": "ae2191b7e6f22ce3627bbd911ee08bdf24c9cefc49b2d65a909a8fa34f20257a",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 28
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_603603415f45919cbdc8\\003\\record.json",
+      "record_digest": "aa14038dfb79c292425594e931936e9e9db4aec630d13c1685f6735e4234db53",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_603603415f45919cbdc8\\004\\record.json",
+      "record_digest": "56aaba5e2ddb969f0b6043ce9dbc3d6707e7623b81e080de7f41523a963053e2",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_603603415f45919cbdc8\\005\\record.json",
+      "record_digest": "90af7f8c367d313f041e95f0ce8507beff2de8488813339be4c6d589b666937f",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 39
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_603603415f45919cbdc8\\006\\record.json",
+      "record_digest": "7be80a7924d7957cb2240f3419e4b5f332485e99f98bb5bbae330c0015f29c5c",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 11
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_603603415f45919cbdc8\\007\\record.json",
+      "record_digest": "f8024c3672b324fb3609415ae0ac7ff8fd4350f6f059ed964bdeea447c9df58e",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v14\\windows\\paper_603603415f45919cbdc8\\008\\record.json",
+      "record_digest": "5fe15172c616f83137156d3de4f81585fc08443b63fbddbc775ec280bc16b557",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 38
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_603603415f45919cbdc8\\009\\record.json",
+      "record_digest": "343e46f6b97bf211e032739cbd4ce2150a6b76a24ff90ead9c2a542470d7143a",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 3
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_6dc9f2bdd81d9dcf4a46\\000\\record.json",
+      "record_digest": "c558bc2d3d484a0618588c1f58ca056f72c7004483d2a2477f1d35358a2f9b08",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 16
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_6dc9f2bdd81d9dcf4a46\\001\\record.json",
+      "record_digest": "f5dd570cad1f061a2d4efc8b8e956b8cd018080b08912bb726337b74efe168eb",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 27
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_6dc9f2bdd81d9dcf4a46\\002\\record.json",
+      "record_digest": "593926150a40f29294c20f44e7fe13ab1b7736b0a890fa0682d7a438433e9946",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_6dc9f2bdd81d9dcf4a46\\003\\record.json",
+      "record_digest": "374f5627658b5278b1733813e1699c8a4616959cf08167ec6aad6f3d47f2265c",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 23
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_6dc9f2bdd81d9dcf4a46\\004\\record.json",
+      "record_digest": "fdad31207da6c56847b334f3bcd67da059e3997f9e43a900909bbac03473ffd1",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 19
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-endpoint-span-successor-v15\\windows\\paper_6dc9f2bdd81d9dcf4a46\\005\\record.json",
+      "record_digest": "cfb79d082a95820c4e7b9125fcf995896419908a3e1f7c2620171f066a030805",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 27
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_6dc9f2bdd81d9dcf4a46\\006\\record.json",
+      "record_digest": "4d9ad4e028b163633d611f42e9b14970622ec79ab75a3563262c52e77cfd1fd1",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 22
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_6dc9f2bdd81d9dcf4a46\\007\\record.json",
+      "record_digest": "449086986984b00e899ba3a74928c0cab27d2b3e284e0ddf6b75222bd0d8a1fd",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 18
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_6dc9f2bdd81d9dcf4a46\\008\\record.json",
+      "record_digest": "8192e28a88ad1a479f4b10ef1b282117512fe907bf127fc556ddc70362647fe0",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 31
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_6dc9f2bdd81d9dcf4a46\\009\\record.json",
+      "record_digest": "4e67522cee315423b188b655c3921cd73ec06cac00075cd5d49613324af8cc4b",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 22
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_75abf75ded7b6df0c2b5\\000\\record.json",
+      "record_digest": "519ea66cbe012ca2a0ab84dda0c5efd7651551ae3acc17200250e7af6abbb905",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 25
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_75abf75ded7b6df0c2b5\\001\\record.json",
+      "record_digest": "22a73c2f9df557c1b1ec5cdff132badd8887457a1a99f6f532a652af2486e997",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_75abf75ded7b6df0c2b5\\002\\record.json",
+      "record_digest": "db39c2f2af0ef4db323960f5516e2e9159b8fa488c7b8b12d4f03519f7e07abf",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 24
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_75abf75ded7b6df0c2b5\\003\\record.json",
+      "record_digest": "a2c906ee50d65ea612e0d225639d84c1b43d9f74b7306eb0ba49b942cd58b37b",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_75abf75ded7b6df0c2b5\\004\\record.json",
+      "record_digest": "bf68940c4685d86ef99a6cad70baadb9bb0d7cf95e31db7903cb2c4d16d0d4f5",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 14
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_75abf75ded7b6df0c2b5\\005\\record.json",
+      "record_digest": "24a0d2cb16e3e604054aa95b72c152e04da9f1ccd48478074f83c86d93367299",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_75abf75ded7b6df0c2b5\\006\\record.json",
+      "record_digest": "97df0d5c5b6af3eb20e0868699151c4b43af2f90371fb22be9e74ce60c769775",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 24
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_75abf75ded7b6df0c2b5\\007\\record.json",
+      "record_digest": "e237a2dbbb6626411e29ad7efc32c7e076be6a28831e66a44f1bb2f05bad730e",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_75abf75ded7b6df0c2b5\\008\\record.json",
+      "record_digest": "b95fed805299d055fc9e6abb6dd1aca142afb4200c6fca149c9167f3b105cc55",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_75abf75ded7b6df0c2b5\\009\\record.json",
+      "record_digest": "3e30a1c55f76a91738a06a5a418e70c33f8e436511563cdd3f6c578ee21d6aa2",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 10,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_75abf75ded7b6df0c2b5\\010\\record.json",
+      "record_digest": "56f8433f4635685260f2b60b887a96248921bdbd2fda528cf7a123cc8c9b6f63",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 20
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 11,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_75abf75ded7b6df0c2b5\\011\\record.json",
+      "record_digest": "4a00b623b436a67b0c9a910ba775979d458127149e3f874391c43d289274b075",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 21
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "window_index": 12,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_75abf75ded7b6df0c2b5\\012\\record.json",
+      "record_digest": "86222c140c27c16011bb742b7d223f3da7c395e875686d80463e15a963f945e3",
+      "status": "NO_NATIVE_CLAIMS_MECHANICALLY_RECORDED",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\000\\record.json",
+      "record_digest": "f1715a010de8376d6c0fef963ec0af97ff42e27b16588317a33796350da6ce7a",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 14
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_95eebae164cc42fd6005\\001\\record.json",
+      "record_digest": "b17755b0ab81163cb7840402c4bbdd6591c13f0eb5c0dccf0ee5376e3a68c79b",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\002\\record.json",
+      "record_digest": "fee069110086c39f0053c97bb339c44838d2080d0646afa5a92180784c16e8b1",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 34
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v14\\windows\\paper_95eebae164cc42fd6005\\003\\record.json",
+      "record_digest": "a6338dba9ab7d77b083d615cdb7ffc56d59211d96197637af6d78d66d01cbee4",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 35
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\004\\record.json",
+      "record_digest": "79ba13b4dac3e88ffe69b6e4e7aad95f00f83649c89ab8c00a0342c421429f04",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 36
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_95eebae164cc42fd6005\\005\\record.json",
+      "record_digest": "b628054b0043d7d8364e6e1ea24cb2bc82c343459401efdeb5a1a5e498cfd179",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-endpoint-span-successor-v15\\windows\\paper_95eebae164cc42fd6005\\006\\record.json",
+      "record_digest": "12639428f0544a1b043543f40ba865f3ce3da0410e0902da4e60ce10b8830ed2",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\007\\record.json",
+      "record_digest": "ed3bb012c72852148c4df60066c33b6b39df2a999cb91a8cd53d632dacf2b266",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 48
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_95eebae164cc42fd6005\\008\\record.json",
+      "record_digest": "c87f22bc3e6e53e3d20106b3bd66e34f76ab89354b489c2fde0c435c9963b29c",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_95eebae164cc42fd6005\\009\\record.json",
+      "record_digest": "137a1673cabe57664793dd731ff779cadd151171a9807d7775a4bc057da95ea1",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 26
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 10,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\010\\record.json",
+      "record_digest": "88e495003057e4659113ed72ea8d45f306e567b7f1a8dcde9be9a0c1ce885e63",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 15
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 11,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_95eebae164cc42fd6005\\011\\record.json",
+      "record_digest": "51138ba7d22be0079fb6e3ba13b788e275651ac80f87b104b1f5a4d8c81548c6",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 12,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_95eebae164cc42fd6005\\012\\record.json",
+      "record_digest": "c534c84c764e5ce1840ed1637e3b2c45e3897fe29e9cd64c437fec5d52f86d12",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 13,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_95eebae164cc42fd6005\\013\\record.json",
+      "record_digest": "4df7b96f9dedeed15ef762f69e6b0a475c6bb0c663eb352834280727765aeec9",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 36
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 14,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_95eebae164cc42fd6005\\014\\record.json",
+      "record_digest": "5996dbec2f973ee390e76cd1e556891be51812eb218d33deb355ab519cddc457",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 15,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\015\\record.json",
+      "record_digest": "9624f8d61e328522c8f1250560d012340d53d8779249a6f7cdc7ddf36122dcad",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 28
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 16,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_95eebae164cc42fd6005\\016\\record.json",
+      "record_digest": "f22b41894088ed60c6770111e198ef5db9b8da31650e88c67d887561ea47d7ae",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 33
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "window_index": 17,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_95eebae164cc42fd6005\\017\\record.json",
+      "record_digest": "eed2c078bce8983a6593e879d0409cfb7c406d1c975e4bc3ec75f3da33fa9c0e",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_964b88669cfe422e7aef\\000\\record.json",
+      "record_digest": "3a4f2e719d8c5ad0c9f99e020a1a6977eb7555e00610650f69b290510b52722b",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 35
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_964b88669cfe422e7aef\\001\\record.json",
+      "record_digest": "4151894a75cc56814efdc6c09d304e1d8dcf77a7a9db6e3471efa019f66e88e4",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 36
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_964b88669cfe422e7aef\\002\\record.json",
+      "record_digest": "f15887c1d91df326ab9cb403377602312ef844e1700a8204f71c5758f9f6707f",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_964b88669cfe422e7aef\\003\\record.json",
+      "record_digest": "33f5af2299a42ebad2514054b31b64a47c41426aecdfc1fd7445e3598125cc05",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_964b88669cfe422e7aef\\004\\record.json",
+      "record_digest": "2c2cca800e84ed5f43eced9bf727de3f51c5c5db340ad701e763c68e481c51c3",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 14
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_ad7ea2de394ae32d2ed2\\000\\record.json",
+      "record_digest": "0818fcefcf0d47482218258d0d5b2a82ea6397823328d0578c7b078496df9451",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 9
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_ad7ea2de394ae32d2ed2\\001\\record.json",
+      "record_digest": "df932fb77105111f466fe0aafb619b916db1546e759a29532f61ffc5ec6a6b27",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 29
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_ad7ea2de394ae32d2ed2\\002\\record.json",
+      "record_digest": "d9c3eeeb2e9b839683dba6b848057ccdb10ba0df61955525886ff71f45bfbd63",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_ad7ea2de394ae32d2ed2\\003\\record.json",
+      "record_digest": "07b1c21e53b1a102418409f6aebec522acbea1ec83f6d6fd1124e4df86c94b60",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v14\\windows\\paper_ad7ea2de394ae32d2ed2\\004\\record.json",
+      "record_digest": "c22f8ceaed5dc33921e356b2cfe90390aabcf581f58e5079d9b2267601915cb0",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 33
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_ad7ea2de394ae32d2ed2\\005\\record.json",
+      "record_digest": "397f8217b9d3156d5bc01cc31df8cded9ce7c6f9b4a2c5e688344486003ba02d",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 13
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_ad7ea2de394ae32d2ed2\\006\\record.json",
+      "record_digest": "62d4e2124181a1e2f880674f93ac3a400ced9bb6dbe2821066fc588acc5b32e6",
+      "status": "NO_NATIVE_CLAIMS_MECHANICALLY_RECORDED",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 0
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_b637a4adf835d6357900\\000\\record.json",
+      "record_digest": "d35c4a7e970495a81c916b2cc408f905131267995e25bd21885c76292575d688",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 32
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_b637a4adf835d6357900\\001\\record.json",
+      "record_digest": "1c9226bdf8d3cabf8f8823d805365cbbc5bc4ed34855e11f114434662aebb08c",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 22
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\002\\record.json",
+      "record_digest": "591bac618ad1435141fb64fc0e365d362920756c171c7f3740a264be6020e0b1",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 13
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\003\\record.json",
+      "record_digest": "e6119f14230749fa8f66d3776393527f761732864bb1381f99235401c92047c3",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 15
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\004\\record.json",
+      "record_digest": "dae792f7387ed7690512e386cfa2b9511bc5e19ffb82996e022801fb1ee8180b",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 12
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\005\\record.json",
+      "record_digest": "a7c2029bffb2c969a4440007f2b10551230bc427b19a392cd0adf9bb4c54e76c",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 11
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\006\\record.json",
+      "record_digest": "57000fa197166af2cd36e801f1a20aaff25a2b24c4abefd3b064e6c317488620",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 10
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\007\\record.json",
+      "record_digest": "4543a671f8a542bfaf3a2b087dca666f5da1c514a74dc75e08b807df623bef91",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 12
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_b637a4adf835d6357900\\008\\record.json",
+      "record_digest": "b79c4f6b89ea7a2c69b89fca95b2dae9953ec28660b3b68553f743821c7e287e",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 17
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\009\\record.json",
+      "record_digest": "5a598a331a95daecc08ba597e07885438a274f97a8c558621ed18f9b17f69b0a",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 17
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 10,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\010\\record.json",
+      "record_digest": "6f3e2a39a5507fcc52cdbae54929f4917fb7826d673426396a235d606cfb3405",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 11
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 11,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-distinct-graph-successor-v14\\windows\\paper_b637a4adf835d6357900\\011\\record.json",
+      "record_digest": "ea3d25c8428c63fbb7d66a84f0f4f3a7b3ddd8b00f009cb5f365bb6a9a17cbe4",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 21
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 12,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\012\\record.json",
+      "record_digest": "cfa9085d4fbaaa88e8de56c20fded6855469d91caa4e55604d2f948aca8175f5",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 15
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 13,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-endpoint-span-successor-v15\\windows\\paper_b637a4adf835d6357900\\013\\record.json",
+      "record_digest": "9fc4527dfe325810edc9cf71278da9a66112aef14df8a140908bd093e0c18b10",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 17
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 14,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-full126-native-source-v10\\windows\\paper_b637a4adf835d6357900\\014\\record.json",
+      "record_digest": "d9e439bca8caa632941867cd678a1bbed05f0242a08f8a3aa89b80a9c52708e0",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 30
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 15,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_b637a4adf835d6357900\\015\\record.json",
+      "record_digest": "36c36c094e6e35caffb19e7a700fcd0691f7058138a4b8599a2be91be6120c5e",
+      "status": "NO_NATIVE_CLAIMS_MECHANICALLY_RECORDED",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 0
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "window_index": 16,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_b637a4adf835d6357900\\016\\record.json",
+      "record_digest": "cde106e989825432c2bfe7f7e02f3c5f803f0b83eb87aa0bd8426bab3a8fa459",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 13
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 0,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_fb88f52bf6ea0323e952\\000\\record.json",
+      "record_digest": "657365f4af5786caca73eb2b25a3c4d9833d24eefb5d81a8523c3948085d4fa2",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 14
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 1,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\001\\record.json",
+      "record_digest": "b49c925c45efb6398e5933377a57a52e92f573864dac8d671cf1d9ef6a3876a9",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 30
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 2,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\002\\record.json",
+      "record_digest": "361867afbd4c9588ba9953301ffb7029f92b033bf59331394d132918588dfe34",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 3,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_fb88f52bf6ea0323e952\\003\\record.json",
+      "record_digest": "372f4ca05720cece35ce7f954d2779b13827ff3a25f37ed35a3e751af2036889",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 38
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 4,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_fb88f52bf6ea0323e952\\004\\record.json",
+      "record_digest": "709978ef3e5710783f4aed12b852be3407d17dcb5343e9eb324603663edd7f8a",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 5,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\005\\record.json",
+      "record_digest": "eef8670186bd9e3e6df6a2acfab3f73451f8befd61a3628a15cd3b66486728c1",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 6,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_fb88f52bf6ea0323e952\\006\\record.json",
+      "record_digest": "110c587e88a85adef5cd7e93f5f68ddad313731189c497f5f305e221e796acc0",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 7,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\007\\record.json",
+      "record_digest": "e829e4383f42a4785bb57fd1974041d2659354571b2ca37f05e1138dcd997c88",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 8,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v11\\windows\\paper_fb88f52bf6ea0323e952\\008\\record.json",
+      "record_digest": "4536dcdc2bb8dcd8858b9598c8b6931b16381b57441e0a3a4065e51029193726",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 30
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 9,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\009\\record.json",
+      "record_digest": "e8c1669af13e8e7cfdc8aa476d1fdfbc20619e129d642bfccc3d2f0cddc12936",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 34
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 10,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\010\\record.json",
+      "record_digest": "f878dba2c0759023a2ea7e1d4c3061c91fd51f286e85a051f060d226ede28122",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 11,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\011\\record.json",
+      "record_digest": "fc93d7d2782585b44021ed0258c53cb450c9dcc5ea39c2f5a6e305dc2f65c41b",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 12,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\012\\record.json",
+      "record_digest": "e652c1c9d0fe6067da6736e212c3c0d343a6c804715bba876adf131f691bafe9",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 30
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 13,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-source-successor-v12\\windows\\paper_fb88f52bf6ea0323e952\\013\\record.json",
+      "record_digest": "fc352cde117e4afa564472613d0502f7da8a4ca368d0b69ef1eb0ff7f6dffd07",
+      "status": "ORIGINAL_SOURCE_UNACCEPTED_RETAINED",
+      "original_protocol_qualified": false,
+      "new_primary_fidelity_requests": 0
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 14,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_fb88f52bf6ea0323e952\\014\\record.json",
+      "record_digest": "ddb396ba29af1b5270f248213ff823e34a231a3dd5f50e143e612638e780c6c4",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 11
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 15,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_fb88f52bf6ea0323e952\\015\\record.json",
+      "record_digest": "8843103f4f6d7afd3baa58341c21dd4b9c44a15fca56310de3c0fd11ce3a09f9",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 19
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "window_index": 16,
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-transport-recovery-20261008-v1\\windows\\paper_fb88f52bf6ea0323e952\\016\\record.json",
+      "record_digest": "27a8801dd65acaade7696113949218a1988bc78795d8aed04b726ec9484ee869",
+      "status": "SELECTED_PRIMARY_EVIDENCE_FIDELITY_PENDING",
+      "original_protocol_qualified": true,
+      "original_native_claim_count": 9
+    }
+  ],
+  "plan_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all126-selected-primary-fidelity-v1-plan.json",
+  "plan_sha256": "b4a995328cb15ce3807d093680090c5d736f91ab77bde55d957383c96bcb0233",
+  "actual_audit_snapshot_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\primary-fidelity-scientific-interpretation-v10\\33d30cf1d97338615cca883ad4224cd24d3f09f3bdb26bed3341b0191fd15b0b.json",
+  "actual_audit_snapshot_sha256": "33d30cf1d97338615cca883ad4224cd24d3f09f3bdb26bed3341b0191fd15b0b",
+  "audited_claims": 394,
+  "declared_claims": 1967,
+  "selected_evidence_model_status_counts": {
+    "FULL_ASSERTION_ESTABLISHED": 80,
+    "NOT_ESTABLISHED": 251,
+    "PARTIALLY_ESTABLISHED": 63
+  },
+  "pending_claims": 1573,
+  "annotation_to_separate_model_review_transitions": [
+    {
+      "annotation": "FULL_ASSERTION_ESTABLISHED",
+      "separate_review": "FULL_ASSERTION_ESTABLISHED",
+      "claims": 80
+    },
+    {
+      "annotation": "FULL_ASSERTION_ESTABLISHED",
+      "separate_review": "NOT_ESTABLISHED",
+      "claims": 1
+    },
+    {
+      "annotation": "NOT_ESTABLISHED",
+      "separate_review": "NOT_ESTABLISHED",
+      "claims": 241
+    },
+    {
+      "annotation": "PARTIALLY_ESTABLISHED",
+      "separate_review": "NOT_ESTABLISHED",
+      "claims": 9
+    },
+    {
+      "annotation": "PARTIALLY_ESTABLISHED",
+      "separate_review": "PARTIALLY_ESTABLISHED",
+      "claims": 63
+    }
+  ],
+  "separate_model_review_sees_fallible_annotation_and_is_not_blind_expert_review": true,
+  "root_direct_semantic_counterexamples_to_model_full_support": 2,
+  "original_model_full_support_statuses_preserved": true,
+  "not_established_does_not_mean_assertion_false_elsewhere": true,
+  "scientific_reference_approval": false,
+  "benchmark_grades_replaced": false,
+  "new_model_calls": 0,
+  "full_scientific_evaluation_complete": false,
+  "all1967_claim_matrix_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\primary-fidelity-scientific-interpretation-v10\\all1967-claim-evidence-and-judgment-matrix.json",
+  "all1967_claim_matrix_sha256": "cc9443b8f852a0bc38200ff32dc9d1c76cdb59ba7c6ee38b2a85cb66ee17d305",
+  "direct_semantic_counterexamples": [
+    {
+      "original_reference_id": "paper_19f55daa7f17ede2858b:b7:r1",
+      "original_block_id": "paper_19f55daa7f17ede2858b:b7",
+      "assertion": "This paper describes a comprehensive analysis of a hybrid energy system (HES) when satisfying the load demand of an off-grid, rural and hilly community in Bangladesh.",
+      "qualifications": [
+        "off-grid, rural and hilly community in Bangladesh"
+      ],
+      "selected_original_native_text": "Optimal sizing of a grid-independent PV/diesel/pump-hydro hybrid system: A case study in Bangladesh",
+      "primary_evidence_kind": "ORIGINAL_NATIVE_WORDS",
+      "exact_selected_primary_locations": [
+        {
+          "native_word_id": "PDF:P1:L6:W1",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "Optimal",
+          "bbox": [
+            37.5874,
+            161.023387,
+            85.857655,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L6:W2",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "sizing",
+          "bbox": [
+            90.367273,
+            161.023387,
+            124.771094,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L6:W3",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "of",
+          "bbox": [
+            129.259192,
+            161.023387,
+            140.960257,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L6:W4",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "a",
+          "bbox": [
+            145.416076,
+            161.023387,
+            152.261872,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L6:W5",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "grid-independent",
+          "bbox": [
+            156.75535,
+            161.023387,
+            259.025348,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L6:W6",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "PV/diesel/pump-hydro",
+          "bbox": [
+            263.506721,
+            161.023387,
+            401.054758,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L6:W7",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L6",
+          "text": "hybrid",
+          "bbox": [
+            405.57917,
+            161.023387,
+            444.811361,
+            183.01332
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L7:W1",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L7",
+          "text": "system:",
+          "bbox": [
+            37.5874,
+            178.257576,
+            81.782457,
+            200.247509
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L7:W2",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L7",
+          "text": "A",
+          "bbox": [
+            86.28535,
+            178.257576,
+            95.350313,
+            200.247509
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L7:W3",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L7",
+          "text": "case",
+          "bbox": [
+            99.835721,
+            178.257576,
+            124.892139,
+            200.247509
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L7:W4",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L7",
+          "text": "study",
+          "bbox": [
+            129.372168,
+            178.257576,
+            161.664417,
+            200.247509
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L7:W5",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L7",
+          "text": "in",
+          "bbox": [
+            166.109477,
+            178.257576,
+            177.810542,
+            200.247509
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L7:W6",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L7",
+          "text": "Bangladesh",
+          "bbox": [
+            182.322849,
+            178.257576,
+            250.08143,
+            200.247509
+          ]
+        }
+      ],
+      "original_pdf_lineage": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+        "actual_original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "actual_original_parser_sha256": "ea76e04f4cc4f5cfac1d86b8f51257d81a3208e0f393430a6f4ba959f35e2920",
+        "bbox_artifact_sha256": "f54f0866c5046d9b78cf21fd9cc4e243a9be9e65c1131e41ddbb9c6803b58a6a",
+        "layout_artifact_sha256": "da0d6aa357424501b9b5c59be602b9249b69d914d3d2c53789d06a2806f295b7"
+      },
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 0,
+      "partition_index": 0,
+      "status": "FULL_ASSERTION_ESTABLISHED",
+      "root_semantic_review": {
+        "status": "PARTIALLY_ESTABLISHED",
+        "material_elements_not_established": [
+          "rural community",
+          "hilly community",
+          "satisfying community load demand"
+        ],
+        "rationale": "The selected title establishes the system type and Bangladesh case study, but does not establish the rural/hilly qualification or the complete community-load assertion. The full abstract does contain this information elsewhere. Its presence elsewhere cannot be added to the frozen selected title.",
+        "full_original_page_directly_viewed": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 1,
+          "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+          "attachments": [
+            {
+              "id": "page",
+              "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-001.png",
+              "sha256": "65a1a02337ef513702c556ad8c3ab382d9c8d732d4003ed9be7c5d2bf7e3e728"
+            }
+          ],
+          "raw_parser_visual_content_indices": []
+        },
+        "original_selected_claim_and_both_model_outputs_unchanged": true,
+        "expert_gold_or_reference_approval": false
+      },
+      "expert_gold": false,
+      "original_annotation": {
+        "original_reference_id": "paper_19f55daa7f17ede2858b:b7:r1",
+        "exact_selected_original_native_text": "Optimal sizing of a grid-independent PV/diesel/pump-hydro hybrid system: A case study in Bangladesh",
+        "support_status": "FULL_ASSERTION_ESTABLISHED",
+        "material_elements_not_established": [],
+        "rationale": "The selected text directly establishes the title and core subject of the paper corresponding to the assertion regarding the grid-independent PV/diesel/pump-hydro hybrid system and its case study context in Bangladesh."
+      },
+      "separate_model_review": {
+        "original_reference_id": "paper_19f55daa7f17ede2858b:b7:r1",
+        "exact_selected_original_native_text": "Optimal sizing of a grid-independent PV/diesel/pump-hydro hybrid system: A case study in Bangladesh",
+        "support_status": "FULL_ASSERTION_ESTABLISHED",
+        "material_elements_not_established": [],
+        "rationale": "The selected text directly establishes the title and core subject of the paper corresponding to the assertion regarding the grid-independent PV/diesel/pump-hydro hybrid system and its case study context in Bangladesh."
+      },
+      "actual_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all126-selected-primary-fidelity-v1\\paper_19f55daa7f17ede2858b\\000\\000\\independent-audit-v1\\report.json",
+      "actual_audit_canonical_digest": "9ad5c5b400807aef905ccf37499da385aedd08036e4e05d9166b009f2e43643d"
+    },
+    {
+      "original_reference_id": "paper_19f55daa7f17ede2858b:b10:r1",
+      "original_block_id": "paper_19f55daa7f17ede2858b:b10",
+      "assertion": "Global climate change targets aim to cut CO2 emissions by 50-80% by 2050.",
+      "qualifications": [
+        "Global target"
+      ],
+      "selected_original_native_text": "50–80% by 2050 [5].",
+      "primary_evidence_kind": "ORIGINAL_NATIVE_WORDS",
+      "exact_selected_primary_locations": [
+        {
+          "native_word_id": "PDF:P1:L54:W1",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L54",
+          "text": "50–80%",
+          "bbox": [
+            306.594663,
+            458.186926,
+            335.382664,
+            471.21804
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L54:W2",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L54",
+          "text": "by",
+          "bbox": [
+            339.532695,
+            458.186926,
+            348.180253,
+            471.21804
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L54:W3",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L54",
+          "text": "2050",
+          "bbox": [
+            352.345428,
+            458.186926,
+            370.294093,
+            471.21804
+          ]
+        },
+        {
+          "native_word_id": "PDF:P1:L54:W4",
+          "pdf_page_number": 1,
+          "source_line_id": "PDF:P1:L54",
+          "text": "[5].",
+          "bbox": [
+            374.455282,
+            458.186926,
+            387.916781,
+            471.21804
+          ]
+        }
+      ],
+      "original_pdf_lineage": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+        "actual_original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "actual_original_parser_sha256": "ea76e04f4cc4f5cfac1d86b8f51257d81a3208e0f393430a6f4ba959f35e2920",
+        "bbox_artifact_sha256": "f54f0866c5046d9b78cf21fd9cc4e243a9be9e65c1131e41ddbb9c6803b58a6a",
+        "layout_artifact_sha256": "da0d6aa357424501b9b5c59be602b9249b69d914d3d2c53789d06a2806f295b7"
+      },
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "window_index": 0,
+      "partition_index": 1,
+      "status": "FULL_ASSERTION_ESTABLISHED",
+      "root_semantic_review": {
+        "status": "PARTIALLY_ESTABLISHED",
+        "material_elements_not_established": [
+          "global climate-change target",
+          "CO2 emissions as the measured quantity"
+        ],
+        "rationale": "The selected fragment contains only 50–80% by 2050 and a citation. The preceding left-column sentence supplies global climate-change and CO2 context, but was not selected. The percentage and year alone do not establish the complete asserted target.",
+        "full_original_page_directly_viewed": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 1,
+          "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+          "attachments": [
+            {
+              "id": "page",
+              "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-001.png",
+              "sha256": "65a1a02337ef513702c556ad8c3ab382d9c8d732d4003ed9be7c5d2bf7e3e728"
+            }
+          ],
+          "raw_parser_visual_content_indices": []
+        },
+        "original_selected_claim_and_both_model_outputs_unchanged": true,
+        "expert_gold_or_reference_approval": false
+      },
+      "expert_gold": false,
+      "original_annotation": {
+        "original_reference_id": "paper_19f55daa7f17ede2858b:b10:r1",
+        "exact_selected_original_native_text": "50–80% by 2050 [5].",
+        "support_status": "FULL_ASSERTION_ESTABLISHED",
+        "material_elements_not_established": [],
+        "rationale": "The selected text establishes the specific target values (50-80% by 2050) referred to by global climate change targets for cutting CO2 emissions."
+      },
+      "separate_model_review": {
+        "original_reference_id": "paper_19f55daa7f17ede2858b:b10:r1",
+        "exact_selected_original_native_text": "50–80% by 2050 [5].",
+        "support_status": "FULL_ASSERTION_ESTABLISHED",
+        "material_elements_not_established": [],
+        "rationale": "The selected text establishes the specific target values (50-80% by 2050) referred to by global climate change targets for cutting CO2 emissions."
+      },
+      "actual_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all126-selected-primary-fidelity-v1\\paper_19f55daa7f17ede2858b\\000\\001\\independent-audit-v1\\report.json",
+      "actual_audit_canonical_digest": "765c4fd8120f63d000fc77ea91626e0505590be9a9a76128dd03bb24c97d79c0"
+    }
+  ],
+  "complete_refrigerator_table_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-refrigerator-table-pixel-review-v5.json",
+  "complete_refrigerator_table_review_sha256": "bd9de2d12aa02c98c5cfe99f142bac75bafe53a554dc9cd5ef5ae69c5ee1e014"
+}

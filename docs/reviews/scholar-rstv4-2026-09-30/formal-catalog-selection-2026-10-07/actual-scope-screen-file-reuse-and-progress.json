@@ -1,0 +1,341 @@
+{
+  "status": "PASS_ACTUAL_EXISTING_PAPER_PROGRESS",
+  "calls": [
+    {
+      "path": "/api/catalog/collections/collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+      "status": 200,
+      "data": {
+        "collection": {
+          "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+          "field_id": "f1",
+          "track_id": null,
+          "name": "Actual Catalog selection software flow",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 1,
+          "created_at": "2026-10-06T11:00:28.023605+00:00",
+          "updated_at": "2026-10-06T11:00:28.023605+00:00",
+          "topic_id": "t1",
+          "scope": {
+            "topic": "Software scope"
+          }
+        },
+        "counts": {
+          "papers": 1,
+          "jobs": 3
+        },
+        "stages": [
+          {
+            "job_type": "LOCATE_PDF",
+            "status": "SUCCEEDED",
+            "count": 1
+          },
+          {
+            "job_type": "PARSE_PDF",
+            "status": "READY",
+            "count": 1
+          },
+          {
+            "job_type": "SCREEN",
+            "status": "SUCCEEDED",
+            "count": 1
+          }
+        ],
+        "jobs": [
+          {
+            "job_id": "job_08d084c1ed8f7b1234af347905894795",
+            "paper_id": "existing",
+            "job_type": "LOCATE_PDF",
+            "queue_class": "NETWORK",
+            "status": "SUCCEEDED",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-06T11:00:28.152318+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-06T11:00:28.203400+00:00",
+            "lease_state": "NOT_RUNNING"
+          },
+          {
+            "job_id": "job_fcff96d8785cb06a5d2c3916f217cda4",
+            "paper_id": "existing",
+            "job_type": "PARSE_PDF",
+            "queue_class": "PARSER",
+            "status": "READY",
+            "attempts": 0,
+            "fencing_token": 0,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-06T11:00:28.192023+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-06T11:00:28.192023+00:00",
+            "lease_state": "NOT_RUNNING"
+          },
+          {
+            "job_id": "job_a29ea4dee27c38f3fd86f4de5f85def3",
+            "paper_id": "existing",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "SUCCEEDED",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-06T11:00:28.024605+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-06T11:00:28.152318+00:00",
+            "lease_state": "NOT_RUNNING"
+          }
+        ],
+        "recent_attempts": [
+          {
+            "attempt_id": "attempt_6aa9263bf21342d2a171181c5d340189",
+            "job_id": "job_08d084c1ed8f7b1234af347905894795",
+            "fencing_token": 1,
+            "worker_id": "explicit-software-file-reuse",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-06T11:00:28.168862+00:00",
+            "completed_at": "2026-10-06T11:00:28.203400+00:00",
+            "detail_json": "{\"status\": \"REUSED_CATALOG_PDF\", \"file_version_id\": \"existing-file\", \"identity_status\": \"VERIFIED\", \"storage_path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-select-h2dpn_sx\\\\registered.pdf\", \"parse_job_id\": \"job_fcff96d8785cb06a5d2c3916f217cda4\"}"
+          },
+          {
+            "attempt_id": "attempt_af2932f5fa36478f99e37ece0e81f5d0",
+            "job_id": "job_a29ea4dee27c38f3fd86f4de5f85def3",
+            "fencing_token": 1,
+            "worker_id": "explicit-software-screen",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-06T11:00:28.115572+00:00",
+            "completed_at": "2026-10-06T11:00:28.152318+00:00",
+            "detail_json": "{\"assessment\": {\"category\": \"DIRECT\", \"evidence_quotes\": []}, \"contract\": {\"prompt_version\": \"explicit-software-control\"}, \"screening_input\": {\"collection\": {\"collection_id\": \"collection_ab6ff61d49048fd69ff6f8ed3d853d7a\", \"field_id\": \"f1\", \"topic_id\": \"t1\", \"track_id\": null, \"scope_version\": 1, \"scope\": {\"topic\": \"Software scope\"}}, \"paper\": {\"paper_id\": \"existing\", \"doi\": null, \"title\": \"Catalog selected source\", \"published_year\": 2026, \"abstract\": null, \"authors\": [\"Fixture Author\"]}}}"
+          }
+        ],
+        "history": [
+          {
+            "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+            "name": "Actual Catalog selection software flow",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-06T11:00:28.023605+00:00"
+          }
+        ],
+        "offset": 0,
+        "limit": 100,
+        "has_more": false,
+        "observed_at": "2026-10-06T11:00:28.280252+00:00",
+        "worker_observation": "JOB_LEASES_ONLY"
+      }
+    },
+    {
+      "path": "/api/catalog/collections",
+      "body": {
+        "field_id": "f1",
+        "topic_id": "t1",
+        "track_id": null,
+        "name": "Actual Catalog selection software flow",
+        "scope": {
+          "topic": "Software scope"
+        },
+        "paper_ids": [
+          "existing"
+        ],
+        "dois": [],
+        "bibtex": null,
+        "queries": [],
+        "idempotency_key": "actual-catalog-selection-native"
+      },
+      "status": 201,
+      "data": {
+        "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+        "field_id": "f1",
+        "track_id": null,
+        "name": "Actual Catalog selection software flow",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 1,
+        "created_at": "2026-10-06T11:00:28.023605+00:00",
+        "updated_at": "2026-10-06T11:00:28.023605+00:00",
+        "topic_id": "t1",
+        "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual Catalog selection software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+        "scope": {
+          "topic": "Software scope"
+        },
+        "seeds": [
+          {
+            "seed_id": "seed_6e3fdd8de4ce3703196fe8aa7073cba9",
+            "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+            "seed_type": "CATALOG_PAPER",
+            "raw_value": "existing",
+            "normalized_value": "existing",
+            "paper_id": "existing",
+            "created_at": "2026-10-06T11:00:28.024605+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 1,
+          "jobs": 3
+        }
+      }
+    }
+  ],
+  "details": {
+    "collection": {
+      "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+      "field_id": "f1",
+      "track_id": null,
+      "name": "Actual Catalog selection software flow",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-06T11:00:28.023605+00:00",
+      "updated_at": "2026-10-06T11:00:28.023605+00:00",
+      "topic_id": "t1",
+      "scope": {
+        "topic": "Software scope"
+      }
+    },
+    "counts": {
+      "papers": 1,
+      "jobs": 3
+    },
+    "stages": [
+      {
+        "job_type": "LOCATE_PDF",
+        "status": "SUCCEEDED",
+        "count": 1
+      },
+      {
+        "job_type": "PARSE_PDF",
+        "status": "READY",
+        "count": 1
+      },
+      {
+        "job_type": "SCREEN",
+        "status": "SUCCEEDED",
+        "count": 1
+      }
+    ],
+    "jobs": [
+      {
+        "job_id": "job_08d084c1ed8f7b1234af347905894795",
+        "paper_id": "existing",
+        "job_type": "LOCATE_PDF",
+        "queue_class": "NETWORK",
+        "status": "SUCCEEDED",
+        "attempts": 1,
+        "fencing_token": 1,
+        "lease_owner": null,
+        "lease_expires_at": null,
+        "available_at": "2026-10-06T11:00:28.152318+00:00",
+        "last_error_code": null,
+        "last_error_detail": null,
+        "updated_at": "2026-10-06T11:00:28.203400+00:00",
+        "lease_state": "NOT_RUNNING"
+      },
+      {
+        "job_id": "job_fcff96d8785cb06a5d2c3916f217cda4",
+        "paper_id": "existing",
+        "job_type": "PARSE_PDF",
+        "queue_class": "PARSER",
+        "status": "READY",
+        "attempts": 0,
+        "fencing_token": 0,
+        "lease_owner": null,
+        "lease_expires_at": null,
+        "available_at": "2026-10-06T11:00:28.192023+00:00",
+        "last_error_code": null,
+        "last_error_detail": null,
+        "updated_at": "2026-10-06T11:00:28.192023+00:00",
+        "lease_state": "NOT_RUNNING"
+      },
+      {
+        "job_id": "job_a29ea4dee27c38f3fd86f4de5f85def3",
+        "paper_id": "existing",
+        "job_type": "SCREEN",
+        "queue_class": "MODEL_SCREEN",
+        "status": "SUCCEEDED",
+        "attempts": 1,
+        "fencing_token": 1,
+        "lease_owner": null,
+        "lease_expires_at": null,
+        "available_at": "2026-10-06T11:00:28.024605+00:00",
+        "last_error_code": null,
+        "last_error_detail": null,
+        "updated_at": "2026-10-06T11:00:28.152318+00:00",
+        "lease_state": "NOT_RUNNING"
+      }
+    ],
+    "recent_attempts": [
+      {
+        "attempt_id": "attempt_6aa9263bf21342d2a171181c5d340189",
+        "job_id": "job_08d084c1ed8f7b1234af347905894795",
+        "fencing_token": 1,
+        "worker_id": "explicit-software-file-reuse",
+        "status": "SUCCEEDED",
+        "started_at": "2026-10-06T11:00:28.168862+00:00",
+        "completed_at": "2026-10-06T11:00:28.203400+00:00",
+        "detail_json": "{\"status\": \"REUSED_CATALOG_PDF\", \"file_version_id\": \"existing-file\", \"identity_status\": \"VERIFIED\", \"storage_path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-select-h2dpn_sx\\\\registered.pdf\", \"parse_job_id\": \"job_fcff96d8785cb06a5d2c3916f217cda4\"}"
+      },
+      {
+        "attempt_id": "attempt_af2932f5fa36478f99e37ece0e81f5d0",
+        "job_id": "job_a29ea4dee27c38f3fd86f4de5f85def3",
+        "fencing_token": 1,
+        "worker_id": "explicit-software-screen",
+        "status": "SUCCEEDED",
+        "started_at": "2026-10-06T11:00:28.115572+00:00",
+        "completed_at": "2026-10-06T11:00:28.152318+00:00",
+        "detail_json": "{\"assessment\": {\"category\": \"DIRECT\", \"evidence_quotes\": []}, \"contract\": {\"prompt_version\": \"explicit-software-control\"}, \"screening_input\": {\"collection\": {\"collection_id\": \"collection_ab6ff61d49048fd69ff6f8ed3d853d7a\", \"field_id\": \"f1\", \"topic_id\": \"t1\", \"track_id\": null, \"scope_version\": 1, \"scope\": {\"topic\": \"Software scope\"}}, \"paper\": {\"paper_id\": \"existing\", \"doi\": null, \"title\": \"Catalog selected source\", \"published_year\": 2026, \"abstract\": null, \"authors\": [\"Fixture Author\"]}}}"
+      }
+    ],
+    "history": [
+      {
+        "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+        "name": "Actual Catalog selection software flow",
+        "status": "ACTIVE",
+        "updated_at": "2026-10-06T11:00:28.023605+00:00"
+      }
+    ],
+    "offset": 0,
+    "limit": 100,
+    "has_more": false,
+    "observed_at": "2026-10-06T11:00:28.280252+00:00",
+    "worker_observation": "JOB_LEASES_ONLY"
+  },
+  "exact_original_key_reused": true,
+  "actual_collection": {
+    "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+    "field_id": "f1",
+    "track_id": null,
+    "name": "Actual Catalog selection software flow",
+    "scope_version": 1,
+    "status": "ACTIVE",
+    "revision": 1,
+    "created_at": "2026-10-06T11:00:28.023605+00:00",
+    "updated_at": "2026-10-06T11:00:28.023605+00:00",
+    "topic_id": "t1",
+    "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual Catalog selection software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+    "scope": {
+      "topic": "Software scope"
+    },
+    "seeds": [
+      {
+        "seed_id": "seed_6e3fdd8de4ce3703196fe8aa7073cba9",
+        "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+        "seed_type": "CATALOG_PAPER",
+        "raw_value": "existing",
+        "normalized_value": "existing",
+        "paper_id": "existing",
+        "created_at": "2026-10-06T11:00:28.024605+00:00"
+      }
+    ],
+    "counts": {
+      "papers": 1,
+      "jobs": 3
+    }
+  },
+  "browser_verified": false,
+  "real_model_called": false,
+  "scientific_approval": false
+}

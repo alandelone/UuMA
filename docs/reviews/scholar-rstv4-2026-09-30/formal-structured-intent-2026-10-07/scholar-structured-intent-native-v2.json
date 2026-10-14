@@ -1,0 +1,42 @@
+{
+  "status": "STARTED_NEW_STRUCTURED_INTENT_CONTRACT",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-beqtn_vr",
+  "source_database": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-track-4pak47nf\\data\\catalog.db",
+  "source_database_sha256": "84982615206dcb22f193849063b8fc16503d67bffc741902f02c0c3def5743cb",
+  "parent_receipt_sha256": "73e8f9cf694af4a09b35d41688b2d47b419a85bd78c9a22841f84b8e78c0d34c",
+  "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+  "scientific_approval": false,
+  "browser_verified": false,
+  "jobs": [
+    {
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+      "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "job_type": "SKELETON",
+      "queue_class": "MODEL_SKELETON",
+      "status": "RETRY_WAIT",
+      "priority": 200,
+      "idempotency_key": "actual-structured-intent-contract-v1",
+      "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document\", \"request\": {\"idempotency_key\": \"actual-structured-intent-contract-v1\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document\"}, \"user_requested\": true}",
+      "input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+      "rule_version": "skeleton-v1",
+      "attempts": 1,
+      "available_at": "2026-10-07T10:39:25.151171+00:00",
+      "lease_owner": null,
+      "lease_expires_at": null,
+      "fencing_token": 1,
+      "last_error_code": "TEMPORARY_FAILURE",
+      "last_error_detail": "timed out",
+      "result_json": null,
+      "created_at": "2026-10-07T10:33:29.812277+00:00",
+      "updated_at": "2026-10-07T10:38:55.154172+00:00"
+    }
+  ],
+  "request": {
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+    "reason": "Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document",
+    "idempotency_key": "actual-structured-intent-contract-v1"
+  },
+  "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c"
+}

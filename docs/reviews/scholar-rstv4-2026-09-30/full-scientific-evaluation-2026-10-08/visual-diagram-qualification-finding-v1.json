@@ -1,0 +1,27 @@
+{
+  "status": "PIXEL_REVIEW_IDENTIFIES_DIRECTIONAL_INFORMATION_NOT_EXPLICIT_IN_AUXILIARY_TRANSCRIPTION",
+  "reviewer": "Current agent, direct complete rendered-page visual inspection",
+  "paper_id": "paper_95eebae164cc42fd6005",
+  "actual_original_pdf_page": 3,
+  "figure_label": "Fig. 1",
+  "original_render_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-003.png",
+  "original_render_sha256": "6aff4ba0dc38509fab4a4cc6d8584e275f38e525d2ffac9b38c972da44192bc9",
+  "auxiliary_observation_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\003\\auxiliary-observation.json",
+  "auxiliary_observation_sha256": "c721ea48c9a6e7029453f8e9d9c27168c60ea95d17e148842ebecc07c47ab412",
+  "observed_limitations": [
+    {
+      "actual_auxiliary_quote": "PV output connected to DC bus",
+      "actual_pixel_observation": "An arrowhead points from PV output toward the DC bus; the auxiliary connection wording omits direction."
+    },
+    {
+      "actual_auxiliary_quote": "DC bus connected to Excess electricity and BoS including inverter",
+      "actual_pixel_observation": "The visible branches have arrowheads toward Excess electricity and toward BoS including inverter; the auxiliary grouped connection wording omits both directions."
+    }
+  ],
+  "qualification_consequence": "Retain auxiliary transcription for review; do not qualify it as a complete scientific diagram reference from successful transport and schema validation.",
+  "all_other_page_items_or_diagram_edges_reviewed": false,
+  "expert_gold": false,
+  "benchmark_grade_created": false,
+  "original_frozen_source_or_scientific_judgments_replaced": false,
+  "full_goal_complete": false
+}

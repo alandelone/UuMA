@@ -1,0 +1,32 @@
+[
+  {
+    "name": "manuscript (1).pdf",
+    "bytes": 33347,
+    "sha256": "c5c4aa8679b430aa3bab7b61e71da71704e1aefacf679502e9b36f15af04b060"
+  },
+  {
+    "name": "manuscript (2).pdf",
+    "bytes": 33234,
+    "sha256": "9dd3f477ab1f5a30121ece889cd752d0855a002409babb7948437616cee89972"
+  },
+  {
+    "name": "manuscript (3).pdf",
+    "bytes": 9091,
+    "sha256": "a4c396aeeeae23d1ac8ac420fd15306fab5bfce58a91e57c468ec75c031dbc23"
+  },
+  {
+    "name": "manuscript (4).pdf",
+    "bytes": 9404,
+    "sha256": "f4d45ac2f3f5cf1eb3a1caad146139e347a4b9ba8202626f3e3a149ebb3ffd85"
+  },
+  {
+    "name": "manuscript.pdf",
+    "bytes": 13498,
+    "sha256": "fa294a1fe284baeb7fc3c52a434d4476204e95b9b80067bfcb0f7549fea2f1cb"
+  },
+  {
+    "name": "original-source (1).pdf",
+    "bytes": 1586,
+    "sha256": "c74a420d8072b452157bc9891e02f23ff0f98b9f8f09e6aac7d67c0c2c4107bb"
+  }
+]

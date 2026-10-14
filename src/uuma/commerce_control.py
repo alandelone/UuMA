@@ -20,7 +20,18 @@ TASK_STATUSES = {
     "COMPLETED",
 }
 
-COMMAND_ACTIONS = {"EXTRACT", "PAUSE", "RESUME", "CANCEL"}
+COMMAND_ACTIONS = {
+    "EXTRACT",
+    "PAUSE",
+    "RESUME",
+    "CANCEL",
+    "SEARCH_PRODUCTS",
+    "SEARCH_STOREFRONT",
+    "INSPECT_PRODUCT",
+    "ADD_TO_CART",
+    "RELOAD_EXTENSION",
+    "PROCURE_BOM",
+}
 COMMAND_STATUSES = {"PENDING", "CLAIMED", "EXECUTED", "FAILED", "CANCELLED"}
 
 
@@ -141,6 +152,38 @@ class CommerceControlStore:
                 ) VALUES (?, ?, 'EXTRACT', 'PENDING', ?, ?, ?)
                 """,
                 (cmd_id, tid, payload, now, now),
+            )
+        return self.get_task(tid)
+
+    def create_custom_task(
+        self,
+        platform: str,
+        account_id: str,
+        action: str,
+        payload: dict[str, Any],
+        task_id: str | None = None,
+    ) -> dict[str, Any]:
+        if action not in COMMAND_ACTIONS:
+            raise ValueError(f"Invalid command action: '{action}'")
+        tid = task_id.strip() if task_id and task_id.strip() else f"task_{uuid.uuid4().hex}"
+        now = _now()
+        with self.connect() as conn:
+            conn.execute(
+                """
+                INSERT INTO commerce_tasks(
+                    task_id, platform, account_id, status, created_at, updated_at
+                ) VALUES (?, ?, ?, 'QUEUED', ?, ?)
+                """,
+                (tid, platform.strip(), account_id.strip(), now, now),
+            )
+            cmd_id = f"cmd_{uuid.uuid4().hex}"
+            conn.execute(
+                """
+                INSERT INTO commerce_commands(
+                    command_id, task_id, action, status, payload_json, created_at, updated_at
+                ) VALUES (?, ?, ?, 'PENDING', ?, ?, ?)
+                """,
+                (cmd_id, tid, action, json.dumps(payload, ensure_ascii=False), now, now),
             )
         return self.get_task(tid)
 
@@ -330,7 +373,13 @@ class CommerceControlStore:
                 (worker_id.strip(), new_fencing, now, cmd_id),
             )
 
-            new_task_status = "RUNNING" if cmd["action"] in {"EXTRACT", "RESUME"} else "PAUSED" if cmd["action"] == "PAUSE" else "CANCELLED"
+            new_task_status = (
+                "RUNNING"
+                if cmd["action"] in {"EXTRACT", "RESUME", "SEARCH_PRODUCTS", "SEARCH_STOREFRONT", "INSPECT_PRODUCT", "ADD_TO_CART"}
+                else "PAUSED"
+                if cmd["action"] == "PAUSE"
+                else "CANCELLED"
+            )
             conn.execute(
                 """
                 UPDATE commerce_tasks

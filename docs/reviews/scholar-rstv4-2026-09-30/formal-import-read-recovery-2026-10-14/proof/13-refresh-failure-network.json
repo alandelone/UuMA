@@ -1,0 +1,229 @@
+{
+  "cursor": 946,
+  "hasMore": false,
+  "truncated": false,
+  "requests": [
+    {
+      "id": "B72963E9B77BE4733D166DF1FD48ACCE",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "OPTIONS",
+      "start": 170,
+      "status": 200,
+      "bytes": 0
+    },
+    {
+      "id": "F08C8315A6B832E40AD17CD07C6DE95D",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "OPTIONS",
+      "start": 171,
+      "status": 200,
+      "bytes": 0
+    },
+    {
+      "id": "40092.93",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 178,
+      "status": 200,
+      "bytes": 3044632
+    },
+    {
+      "id": "40092.94",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 179,
+      "status": 200,
+      "bytes": 1497
+    },
+    {
+      "id": "40092.100",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 191,
+      "status": 200,
+      "bytes": 3044632
+    },
+    {
+      "id": "40092.101",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 192,
+      "status": 200,
+      "bytes": 1497
+    },
+    {
+      "id": "40092.106",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "POST",
+      "start": 386,
+      "status": 201,
+      "bytes": 892
+    },
+    {
+      "id": "40092.107",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 392,
+      "status": 200,
+      "bytes": 3044632
+    },
+    {
+      "id": "40092.108",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 393,
+      "status": 200,
+      "bytes": 2193
+    },
+    {
+      "id": "1C48175A1DD1030C3C14EEF7420AC643",
+      "url": "http://127.0.0.1:8889/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "method": "OPTIONS",
+      "start": 442,
+      "status": 200,
+      "bytes": 0
+    },
+    {
+      "id": "40092.111",
+      "url": "http://127.0.0.1:8889/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "method": "POST",
+      "start": 448,
+      "status": 201,
+      "bytes": 1373
+    },
+    {
+      "id": "40092.112",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 453,
+      "status": 200,
+      "bytes": 3046061
+    },
+    {
+      "id": "40092.113",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 454,
+      "status": 200,
+      "bytes": 2193
+    },
+    {
+      "id": "40092.115",
+      "url": "http://127.0.0.1:8889/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "method": "POST",
+      "start": 509,
+      "status": 201,
+      "bytes": 1143
+    },
+    {
+      "id": "40092.116",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 514,
+      "status": 200,
+      "bytes": 3047261
+    },
+    {
+      "id": "40092.117",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 515,
+      "status": 200,
+      "bytes": 2193
+    },
+    {
+      "id": "40092.119",
+      "url": "http://127.0.0.1:8889/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "method": "POST",
+      "start": 556,
+      "status": 201,
+      "bytes": 1164
+    },
+    {
+      "id": "40092.120",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 561,
+      "status": 200,
+      "bytes": 3048482
+    },
+    {
+      "id": "40092.121",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 562,
+      "status": 200,
+      "bytes": 2193
+    },
+    {
+      "id": "40092.123",
+      "url": "http://127.0.0.1:8889/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "method": "POST",
+      "start": 619,
+      "status": 201,
+      "bytes": 1077
+    },
+    {
+      "id": "40092.124",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 624,
+      "status": 200,
+      "bytes": 3049616
+    },
+    {
+      "id": "40092.125",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 625,
+      "status": 200,
+      "bytes": 2193
+    },
+    {
+      "id": "9586ECE7801BDC1F73E8E405B9B19DAC",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "OPTIONS",
+      "start": 784,
+      "status": 200,
+      "bytes": 0
+    },
+    {
+      "id": "3F21476C249B3A497D98FC650E6120F0",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "OPTIONS",
+      "start": 785,
+      "status": 200,
+      "bytes": 0
+    },
+    {
+      "id": "40092.163",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 805,
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "id": "40092.164",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 806,
+      "status": 200,
+      "bytes": 2193
+    },
+    {
+      "id": "40092.170",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET",
+      "start": 816,
+      "error": "net::ERR_ABORTED"
+    },
+    {
+      "id": "40092.171",
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET",
+      "start": 817,
+      "status": 200,
+      "bytes": 2193
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "timezone": "Asia/Kuala_Lumpur",
+  "evidence_kind": "LOCAL_SOURCE_AND_DOCUMENT_INSPECTION",
+  "sources": [
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\profiles\\honc\\SOUL.md",
+      "sha256": "c2fd7a4083679b72297417321717c6253a5b33a30cb8cf68fca0faf3bd4deaba"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\profiles\\honc\\skills\\honc-checkin\\SKILL.md",
+      "sha256": "1a0370139860d0cec5b2f22b854bd91c94df7eccabaf7fb0501d21184e1078c6"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\profiles\\honc\\skills\\honc-daily-execution\\SKILL.md",
+      "sha256": "64a96716c071bc4b51e5021f0a94fb1450388549ef5849d562494a077adca0dd"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\src\\uuma\\honc\\models.py",
+      "sha256": "34ecae7a081a85854660cdb5769c280e98ce7cb114829ff7a01c541cf2ab1732"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\src\\uuma\\honc\\service.py",
+      "sha256": "f727982157b660a19899f9fd4acdfdb13a0aacd7c76cefd0b560573750d13695"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\src\\uuma\\honc\\store.py",
+      "sha256": "4f00ed59e556daeaad9690aaa6c58b6a1122e318228b83aa3d4dc2447ac7425c"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\src\\uuma\\honc\\conversation.py",
+      "sha256": "a684028a47b8236364ec3cd775faeba0a49db27ca079bb4cc278237d6c4d4134"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\src\\uuma\\honc\\mcp.py",
+      "sha256": "52d3e16b4241001d05344d7ae4d6249e0615730dce2c31d58a9ae8ff50ee78c3"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\integrations\\hermes\\uuma_control_guard\\__init__.py",
+      "sha256": "3b0addab51ec477b16113b34c6b3852e46e83117e348c17092eabd4f4afdad92"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\hermes\\hermes-agent\\AGENTS.md",
+      "sha256": "f8b59b81bbb68261d6df66c504bb287c6b2a1c9008c5e8cb93929820f190a97d"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\hermes\\hermes-agent\\cron\\scheduler.py",
+      "sha256": "faecc16fcf7f227c6d1efd17452205e82d0c4da9284e2593cfdf577f04e06d62"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\hermes\\hermes-agent\\website\\docs\\guides\\cron-script-only.md",
+      "sha256": "f8bbe66d94d8b1f151c1ea7bf0d67c4caeff6d02d5bb0b135d795c719b4b8591"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\hermes\\hermes-agent\\website\\docs\\developer-guide\\cron-internals.md",
+      "sha256": "53dc80cc6e496ad8a3d402895425d2ce5318034cbf17781433da2e25458883ce"
+    }
+  ],
+  "review_pending": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "limitations": [
+    "No product test or real runtime-model eval was run for this documentation task.",
+    "Installed source capability does not verify effective honc profile deployment or live notifications.",
+    "Tool contracts and manual are proposals; tools were not registered or invoked.",
+    "No job, external message, database migration, model change, or live profile edit.",
+    "Independent implementation review and software acceptance remain future work."
+  ]
+}

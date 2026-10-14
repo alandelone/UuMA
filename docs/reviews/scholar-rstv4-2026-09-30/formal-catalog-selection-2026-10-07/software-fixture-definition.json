@@ -1,0 +1,57 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-select-h2dpn_sx",
+  "port": 63257,
+  "process_id": 50180,
+  "collection_source": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_collections.js",
+  "synthetic_file_identity": true,
+  "simulated_screen_model": true,
+  "scientific_approval": false,
+  "browser_verified": false,
+  "created": {
+    "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+    "field_id": "f1",
+    "track_id": null,
+    "name": "Actual Catalog selection software flow",
+    "scope_version": 1,
+    "status": "ACTIVE",
+    "revision": 1,
+    "created_at": "2026-10-06T11:00:28.023605+00:00",
+    "updated_at": "2026-10-06T11:00:28.023605+00:00",
+    "topic_id": "t1",
+    "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual Catalog selection software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+    "scope": {
+      "topic": "Software scope"
+    },
+    "seeds": [
+      {
+        "seed_id": "seed_6e3fdd8de4ce3703196fe8aa7073cba9",
+        "collection_id": "collection_ab6ff61d49048fd69ff6f8ed3d853d7a",
+        "seed_type": "CATALOG_PAPER",
+        "raw_value": "existing",
+        "normalized_value": "existing",
+        "paper_id": "existing",
+        "created_at": "2026-10-06T11:00:28.024605+00:00"
+      }
+    ],
+    "counts": {
+      "papers": 1,
+      "jobs": 1
+    }
+  },
+  "input": {
+    "field_id": "f1",
+    "topic_id": "t1",
+    "track_id": null,
+    "name": "Actual Catalog selection software flow",
+    "scope": {
+      "topic": "Software scope"
+    },
+    "paper_ids": [
+      "existing"
+    ],
+    "dois": [],
+    "bibtex": null,
+    "queries": [],
+    "idempotency_key": "actual-catalog-selection-native"
+  }
+}

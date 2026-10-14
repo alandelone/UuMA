@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-13",
+  "timezone": "Asia/Kuala_Lumpur",
+  "status": "ACCEPTED",
+  "source": {
+    "kind": "DIRECT_USER_MESSAGE_IN_THIS_CHAT",
+    "text": "all follow your 建议",
+    "context": "Response to the four R1-R4 recommendations in the preceding assistant reply and linked review page"
+  },
+  "proposal_archive": "user-review.proposal.md",
+  "decisions": [
+    {
+      "id": "R1",
+      "status": "ACCEPTED",
+      "decision": "Suppress unsent reminders once the corresponding habit instance is complete"
+    },
+    {
+      "id": "R2",
+      "status": "ACCEPTED",
+      "decision": "Deliver only within the allowed window; expire without later backfill; fixed-point grace defaults to 30 minutes and is configurable"
+    },
+    {
+      "id": "R3",
+      "status": "ACCEPTED",
+      "decision": "Group habits due at the same time into one notification ordered by importance; retain separate instance quotas"
+    },
+    {
+      "id": "R4",
+      "status": "ACCEPTED",
+      "decision": "Advance the bedtime reminder on explicit current bedtime report and share the 21:30 occurrence quota"
+    }
+  ],
+  "review_items_pending": [],
+  "scope": "Product behavior and continued autonomous engineering preparation",
+  "runtime_settings_applied": false,
+  "implementation_verified": false,
+  "mission_gate_changed": false,
+  "production_deployment_authorized_by_this_record": false,
+  "proposal_sha256": "82d3d7c09616fd875a8ad17bf0f29de21e1a1e4c6af6722af67acc23b97829db"
+}

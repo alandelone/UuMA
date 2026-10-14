@@ -1,0 +1,15 @@
+{
+  "status": "PASS_OWNED_CATALOG_V2_READY_NO_DB_CHANGE",
+  "pid": 46656,
+  "port": 8891,
+  "unchanged_other_listeners": {
+    "3009": 13356,
+    "8889": 41364
+  },
+  "large_file": {
+    "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-bib-read-recovery-v1\\native-v3\\large-local-read.bib",
+    "bytes": 4950000,
+    "sha256": "8590537013a0c037d3e93c04e669c4457081c0089d6db39bdc43c2028a8a2578"
+  },
+  "html_source_sha256": "41a91f06c4c13f098269937a31f992f4d52472ce596ed051843d137e4340b348"
+}

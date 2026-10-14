@@ -1,0 +1,18 @@
+CHECK scholar-studio-history-native-view-v2.mjs
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 来源不可用：Headers is not defined。当前草稿与固定来源仍保留。
+    at file:///C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-studio-history-native-view-v2.mjs:46:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+Exit: 1

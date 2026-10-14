@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "mission": "Complete UuMA specialist agent trust, deployment, knowledge, and discussion capabilities",
+  "stage": "verification",
+  "active_skill": null,
+  "gate": {
+    "current": "stage-gates/04-verification-report.md",
+    "status": "pending_review",
+    "blocked_by": null
+  },
+  "allowed_stages": [
+    "discovery",
+    "design",
+    "execution",
+    "verification",
+    "complete"
+  ],
+  "updated_at": "2026-09-08T15:57:35+08:00"
+}

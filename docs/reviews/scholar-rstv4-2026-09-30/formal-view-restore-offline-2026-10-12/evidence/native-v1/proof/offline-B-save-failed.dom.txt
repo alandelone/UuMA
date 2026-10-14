@@ -1,0 +1,74 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: G03 B software draft isolation acceptance · RSTV4
+  - status: 保存失败 · 请重试
+  - button "重试保存"
+  - button "导出本地副本"
+  - button "撤销":
+  - button "重做" [disabled]:
+  - button "Generate":
+    - text: Generate
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料" [active]:
+  - alert:
+    - generic: Failed to fetch
+  - generic "结构选择与移动":
+    - button "多选／分组"
+    - status
+  - textbox "Paper title": G03 B software draft isolation acceptance
+  - textbox "作者摘要":
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+    - text: G03 B offline author abstract — keep locally during disconnection; software acceptance only, no scientific claim.
+  - button "选择并设置 Introduction": SECTION 1
+  - button "拖动章节 Introduction":
+  - button "展开 Introduction":
+  - textbox "章节标题": Introduction
+  - textbox "章节作用": Motivation
+  - generic "章节操作": •••
+  - paragraph: 1 个段落 · 0 个段落组 · 0 个子章节
+  - button "添加章节":
+    - text: 添加章节
+  - status
+  - button "与 Agent 讨论 0 条 · G03 B software draft isolation acceptance" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 0 条 · G03 B software draft isolation acceptance
+  - button "整篇历史"
+  - button "当前对象 · 此版本" [disabled]
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - generic: 当前选择：G03 B software draft isolation acceptance
+  - strong: 草稿对象：G03 B software draft isolation acceptance · 结构 r0
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - region "比较新选对象与原草稿":
+    - paragraph: 新选：Introduction · 结构 r0。当前问题仍绑定原对象。
+    - button "保留并固定原对象"
+    - button "改用新对象并保留问题"
+    - button "加入比较来源"
+  - generic "固定对象的完整原文与版本"
+  - status: 历史读取失败：Failed to fetch。可以重试。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：G03 B software draft isolation acceptance
+    - text: G03 B unsent β draft — belongs only to manuscript B; DO NOT SEND.
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+    - text: G03 B annotation β — keep isolated from A.
+  - button "发送讨论":
+  - button "保存讨论批注"
+  - button "更新讨论历史"

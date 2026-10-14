@@ -139,7 +139,7 @@ class ControlPlaneTestCase(unittest.TestCase):
             conn.close()
 
     def test_bootstrap_and_hash_chain(self) -> None:
-        self.assertEqual(len(self.control.list_agents()), 6)
+        self.assertEqual(len(self.control.list_agents()), 7)
         health = self.control.health()
         self.assertEqual(health["status"], "ok")
         self.assertTrue(health["event_chain_valid"])
@@ -335,7 +335,7 @@ class ControlPlaneTestCase(unittest.TestCase):
             self.control.propose_operation(stale)
         event_count = self.control.health()["counts"]["events"]
         self.assertEqual(self.control.events.rebuild_projections(), event_count)
-        self.assertEqual(self.control.health()["counts"]["agents"], 6)
+        self.assertEqual(self.control.health()["counts"]["agents"], 7)
 
     def test_heartbeat_cannot_write_terminal_or_review_status(self) -> None:
         task = self.task(source="direct")

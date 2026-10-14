@@ -1,0 +1,82 @@
+640 pane Recent download history
+				641 pane (disabled)
+				642 dialog Recent download history Secondary Actions: Raise
+					643 region
+						644 region
+							645 region
+							646 region
+								647 region
+									648 region
+										649 region
+											650 region
+												651 region
+													652 region
+														653 region
+														654 button manuscript.pdf 13.2 KB • Done
+														655 text manuscript.pdf
+														656 region
+														657 region
+														658 text 13.2 KB • 1 minute ago
+														659 region
+													660 region
+														661 region
+														662 button artifact_63ca15e4429049ad9876eae4bbeb0998.txt File wasn’t available on site
+														663 text artifact_63ca15e4429049ad9876eae4bbeb0998.txt
+														664 region
+														665 region
+														666 text File wasn’t available on site
+														667 region
+													668 region
+														669 region
+														670 button submission_package_462feff00b234357a635a3e63254aff4.zip 0 B • 8 hours ago
+														671 text submission_package_462feff00b234357a635a3e63254aff4.zip
+														672 region
+														673 region
+														674 text 0 B • 8 hours ago
+														675 region
+											676 region
+									677 edit (settable, string) File password
+								678 region
+		640 pane Recent download history
+			641 pane (disabled)
+			642 dialog Recent download history Secondary Actions: Raise
+				643 region
+					644 region
+						645 region
+						646 region
+							647 region
+								648 region
+									649 region
+										650 region
+											651 region
+												652 region
+													653 region
+													654 button manuscript.pdf 13.2 KB • Done
+													655 text manuscript.pdf
+													656 region
+													657 region
+													658 text 13.2 KB • 1 minute ago
+													659 region
+												660 region
+													661 region
+													662 button artifact_63ca15e4429049ad9876eae4bbeb0998.txt File wasn’t available on site
+													663 text artifact_63ca15e4429049ad9876eae4bbeb0998.txt
+													664 region
+													665 region
+													666 text File wasn’t available on site
+													667 region
+												668 region
+													669 region
+													670 button submission_package_462feff00b234357a635a3e63254aff4.zip 0 B • 8 hours ago
+													671 text submission_package_462feff00b234357a635a3e63254aff4.zip
+													672 region
+													673 region
+													674 text 0 B • 8 hours ago
+													675 region
+										676 region
+								677 edit (settable, string) File password
+							678 region
+
+Document text: ```
+File password
+```

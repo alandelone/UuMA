@@ -1,0 +1,12 @@
+from pathlib import Path
+code=Path('.tmp/scholar-g04-state-v1.py').read_text(encoding='utf-8')
+code=code.replace("phase!='checked'", "phase!='checked-v2'").replace("phase=='checked'", "phase=='checked-v2'")
+code=code.replace("len(tables['studio_model_calls'])==15", "len(tables['studio_model_calls'])==16")
+code=code.replace("assert len(calls)==1", "assert len(calls)==2 and calls[0]['status']=='FAILED'")
+code=code.replace("assert len(jobs)==1 and jobs[0]['job_kind']=='WHOLE_PAPER_REVIEW' and jobs[0]['status']=='SUCCEEDED'", "assert len(jobs)==2 and all(j['job_kind']=='WHOLE_PAPER_REVIEW' and j['status']=='SUCCEEDED' for j in jobs)")
+code=code.replace("jobs[0]['result_json']", "jobs[-1]['result_json']")
+code=code.replace("out/'checked/all-tables.json'", "out/'checked-v2/all-tables.json'").replace("['studio_jobs'][-1:]", "['studio_jobs'][-2:]")
+code=code.replace("'job':jobs[0],'new_model_call':calls[0]", "'jobs':jobs,'new_model_calls':calls")
+code=code.replace("{'job','new_model_call','findings'}", "{'jobs','new_model_calls','findings'}")
+code=code.replace("'job_id':jobs[0]['job_id']", "'job_id':jobs[-1]['job_id']").replace("list(calls[0])", "list(calls[-1])")
+exec(compile(code,__file__,'exec'))

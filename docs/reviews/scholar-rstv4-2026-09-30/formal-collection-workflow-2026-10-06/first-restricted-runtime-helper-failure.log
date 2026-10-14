@@ -1,0 +1,13 @@
+Collection fixture root identity is unverified.
+At line:6 char:124
++ ... port 8886*'){throw 'Collection fixture root identity is unverified.'}
++                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : OperationStopped: (Collection fixt... is unverified.:String) [], RuntimeException
+    + FullyQualifiedErrorId : Collection fixture root identity is unverified.
+ 
+Traceback (most recent call last):
+  File "C:\Users\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-collection-native-v1.py", line 52, in <module>
+    subprocess.run(['powershell', '-NoProfile', '-Command',
+  File "C:\Users\Alandelone\anaconda3\Lib\subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['powershell', '-NoProfile', '-Command', '$ErrorActionPreference = \'Stop\'\n$receipt = Get-Content -LiteralPath \'.tmp/scholar-collection-fixture-services-v1.json\' -Raw | ConvertFrom-Json\nif(!$receipt.software_fixture_only -or $receipt.port -ne 8886){throw \'Wrong Collection fixture identity.\'}\n$all = @(Get-CimInstance Win32_Process)\n$root = $all | Where-Object ProcessId -eq ([int]$receipt.catalog_process)\nif(!$root -or $root.CommandLine -notlike \'*scholar-overview-server.py*--root*scholar-collection-2026-10-05-*--port 8886*\'){throw \'Collection fixture root identity is unverified.\'}\nif($root.CommandLine -notlike "*$($receipt.root)*"){throw \'Collection fixture checkout does not match its receipt.\'}\n$owned = [System.Collections.Generic.List[int]]::new();$owned.Add([int]$root.ProcessId)\ndo{$changed=$false;foreach($item in $all){if($owned.Contains([int]$item.ParentProcessId) -and !$owned.Contains([int]$item.ProcessId)){$owned.Add([int]$item.ProcessId);$changed=$true}}}while($changed)\n$listeners = @(Get-NetTCPConnection -LocalPort 8886 -State Listen -ErrorAction SilentlyContinue)\nif(!$listeners.Count){throw \'Owned Collection fixture is not listening.\'}\nforeach($item in $listeners){if(!$owned.Contains([int]$item.OwningProcess)){throw \'Collection port has another owner.\'}}\nWrite-Output \'Actual isolated Collection root and listener verified.\'\n']' returned non-zero exit status 1.

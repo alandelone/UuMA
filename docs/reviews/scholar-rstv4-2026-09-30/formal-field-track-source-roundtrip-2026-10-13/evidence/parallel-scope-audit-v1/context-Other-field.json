@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-13T05:33:40.145Z",
+  "method": "POST (semantic read-only, mode=ro)",
+  "url": "http://127.0.0.1:8885/api/catalog/discussion/context",
+  "request": {
+    "module": "FIELDKG",
+    "object_kind": "field",
+    "object_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+    "field_id": "field_9ecc9f28d2ff460ea8c4105327361727"
+  },
+  "status": 200,
+  "body": {
+    "target": {
+      "module": "FIELDKG",
+      "object_kind": "field",
+      "object_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+      "paper_id": null,
+      "field_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+      "track_id": null,
+      "snapshot_id": null,
+      "part": null,
+      "page_number": null
+    },
+    "scope_key": "[\"FIELDKG\",\"field_9ecc9f28d2ff460ea8c4105327361727\"]",
+    "label": "Other",
+    "object_text": "Other\n",
+    "record": {
+      "field_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+      "normalized_name": "other",
+      "name": "Other",
+      "description": null,
+      "created_at": "2026-10-07T15:49:58.643386+00:00",
+      "updated_at": "2026-10-07T15:49:58.643386+00:00"
+    },
+    "versions": [],
+    "context_sha256": "7b0897d159219541bab819f8dc0642c53cde1b7b3ac6de6da193bd4d64660f45"
+  }
+}

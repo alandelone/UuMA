@@ -1,0 +1,66 @@
+{
+  "url": "http://127.0.0.1:8885/api/catalog/tracks/track_cd1adda6220f47b787f409e983c00947/workspace",
+  "method": "GET",
+  "at": "2026-10-13T05:32:24.571Z",
+  "status": 200,
+  "body": {
+    "track": {
+      "track_id": "track_cd1adda6220f47b787f409e983c00947",
+      "field_id": "field_6242993287f547549daa4ded97914f3c",
+      "primary_topic_id": "topic_63348338b6fc403c97c7eaec0f0f77b3",
+      "title": "Track",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "status": "ACTIVE",
+      "mapping_status": "MAPPED",
+      "revision": 1,
+      "created_at": "2026-10-07T15:49:58.666932+00:00",
+      "updated_at": "2026-10-07T15:49:58.666932+00:00",
+      "metadata_digest": "de1d85348b3834ca95be024487b41add5d3ec39ef580a1fa88de898ee749a982"
+    },
+    "adoptions": [],
+    "nodes": [],
+    "milestones": [],
+    "context_sha256": "ec8ac9ce27c637a2faf85b184c32b8e8ae1129f40cc7b20b7e8bb7dd79273d91",
+    "field": {
+      "field_id": "field_6242993287f547549daa4ded97914f3c",
+      "normalized_name": "energy",
+      "name": "Energy",
+      "description": null,
+      "created_at": "2026-10-07T15:49:58.635369+00:00",
+      "updated_at": "2026-10-07T15:49:58.635369+00:00"
+    },
+    "topics": [
+      {
+        "topic_id": "topic_63348338b6fc403c97c7eaec0f0f77b3",
+        "normalized_name": "trading",
+        "name": "Trading",
+        "description": null,
+        "created_at": "2026-10-07T15:49:58.655897+00:00",
+        "updated_at": "2026-10-07T15:49:58.655897+00:00",
+        "role": "PRIMARY"
+      }
+    ],
+    "edges": [],
+    "decisions": [],
+    "projects": [],
+    "plans": [],
+    "runs": [],
+    "evidence": [],
+    "node_evidence": [],
+    "adopted_snapshots": [],
+    "available_snapshots": [
+      {
+        "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+        "version": 1,
+        "status": "SEALED",
+        "content_digest": "b74ce1c252d4b0bf2ee91aaa3cb11b1e369e60fe5341b4fea110aba6151f11f6",
+        "created_at": "2026-10-07T15:49:59.449872+00:00"
+      }
+    ],
+    "manuscripts": [],
+    "manuscript_projects": [],
+    "submission_events": [],
+    "source_reviews": []
+  }
+}

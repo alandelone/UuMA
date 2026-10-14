@@ -1,0 +1,1 @@
+PASS 8 asynchronous BibTeX read contracts: real File, same-name latest wins, cancelled late success/error, oversize invalidation, read-error retry and exact limit.

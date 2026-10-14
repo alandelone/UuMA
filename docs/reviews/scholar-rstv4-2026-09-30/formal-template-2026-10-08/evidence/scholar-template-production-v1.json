@@ -1,0 +1,30 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-template-build-hb6xzpgj\\writing-studio",
+  "command": [
+    "cmd.exe",
+    "/c",
+    "npm.cmd",
+    "run",
+    "start",
+    "--",
+    "--port",
+    "3004",
+    "--hostname",
+    "127.0.0.1"
+  ],
+  "launch_pid": 35552,
+  "port": 3004,
+  "api": "http://127.0.0.1:8877/api",
+  "status": "READY",
+  "development_replaced": true,
+  "golden_frontend_untouched": true,
+  "served_assets_sha256": {
+    "/_next/static/chunks/layout-segment-context-Dky_Nq4b.js": "d83c0231e5cf85cd6e7c337c43949788cbc6b9fb9d47710105868f001210ff63",
+    "/_next/static/chunks/page-6295s1rS.js": "d462a0f094470287efd7df915430c6d181e46a4f3ccb01d2b2f2afede7eb9cb1",
+    "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "/_next/static/chunks/index-DIiHs88q.js": "fc5379cab86f4da6f52bf426208dd6e4ecac5af810d91de8ec2b6e7115c22405",
+    "/_next/static/css/index.CU_wJ0Vv.css": "18fc26ac9066562768451d5d0b0bd216210595dcbd8743f4dd2b96acbe7175d4",
+    "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "/_next/static/chunks/vinext-BfP5UExS.js": "fe6d6bb2761ec8d0261557da1b95798bba4849eb7af74ae8bfeafc8db770250b"
+  }
+}

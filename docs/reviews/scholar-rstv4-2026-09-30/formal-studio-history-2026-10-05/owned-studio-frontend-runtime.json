@@ -1,0 +1,16 @@
+{
+    "root":  "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+    "manuscripts":  {
+                        "revision":  "manuscript_3a132decd09349b99b186a5c44dc191d",
+                        "reading":  "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11"
+                    },
+    "track_id":  "track_29a4619160fa4ca6bb2700fe611ff318",
+    "fixture_model_substitution":  true,
+    "real_compiler":  true,
+    "production_data_changed":  false,
+    "owned_processes":  {
+                            "studio":  54784,
+                            "frontend":  57148
+                        },
+    "frontend_mode":  "production_build_studio_history_preview"
+}

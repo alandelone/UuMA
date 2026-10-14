@@ -1,0 +1,80 @@
+{
+    "root":  "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+    "processes":  [
+                      {
+                          "ProcessId":  4120,
+                          "ParentProcessId":  40888,
+                          "Name":  "python.exe",
+                          "ExecutablePath":  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe",
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-overview-server.py --root C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h --port 8885 "
+                      },
+                      {
+                          "ProcessId":  38776,
+                          "ParentProcessId":  40888,
+                          "Name":  "python.exe",
+                          "ExecutablePath":  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe",
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-ui-fixes-services.py studio "
+                      },
+                      {
+                          "ProcessId":  43856,
+                          "ParentProcessId":  40888,
+                          "Name":  "node.exe",
+                          "ExecutablePath":  "C:\\Program Files\\nodejs\\node.exe",
+                          "CommandLine":  "\"C:\\Program Files\\nodejs\\node.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js start --port 3000 "
+                      },
+                      {
+                          "ProcessId":  52116,
+                          "ParentProcessId":  4120,
+                          "Name":  "conhost.exe",
+                          "ExecutablePath":  "C:\\Windows\\system32\\conhost.exe",
+                          "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                      },
+                      {
+                          "ProcessId":  27448,
+                          "ParentProcessId":  4120,
+                          "Name":  "python.exe",
+                          "ExecutablePath":  "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-overview-server.py --root C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h --port 8885 "
+                      },
+                      {
+                          "ProcessId":  52616,
+                          "ParentProcessId":  38776,
+                          "Name":  "conhost.exe",
+                          "ExecutablePath":  "C:\\Windows\\system32\\conhost.exe",
+                          "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                      },
+                      {
+                          "ProcessId":  50504,
+                          "ParentProcessId":  38776,
+                          "Name":  "python.exe",
+                          "ExecutablePath":  "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-ui-fixes-services.py studio "
+                      },
+                      {
+                          "ProcessId":  19940,
+                          "ParentProcessId":  43856,
+                          "Name":  "conhost.exe",
+                          "ExecutablePath":  "C:\\Windows\\system32\\conhost.exe",
+                          "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4"
+                      }
+                  ],
+    "recordedPids":  [
+                         4120,
+                         38776,
+                         43856
+                     ],
+    "listeners":  [
+                      {
+                          "LocalPort":  8885,
+                          "OwningProcess":  27448
+                      },
+                      {
+                          "LocalPort":  8874,
+                          "OwningProcess":  50504
+                      },
+                      {
+                          "LocalPort":  3000,
+                          "OwningProcess":  43856
+                      }
+                  ]
+}

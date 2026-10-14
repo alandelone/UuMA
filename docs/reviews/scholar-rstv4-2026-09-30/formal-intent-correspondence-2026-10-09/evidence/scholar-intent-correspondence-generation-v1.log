@@ -1,0 +1,124 @@
+...................FF                                                    [100%]
+================================== FAILURES ===================================
+_ test_actual_generation_preserves_mapping_context_citations_and_real_artifacts _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-977/test_actual_generation_preserv0')
+
+    def test_actual_generation_preserves_mapping_context_citations_and_real_artifacts(tmp_path):
+        from pathlib import Path
+        from test_writing_studio import wait_for_job
+    
+        service, manuscript_id, adopted, mapped, originals, slots = mapped_fixture(tmp_path)
+        service.save_document(manuscript_id, base_revision=3, operation_id="map-for-generation",
+                              operation_kind="MAP_AUTHOR_INTENT", document=mapped)
+        captured = []
+    
+        def realize(task, payload):
+            assert task == "paragraph_realization"
+            captured.append(deepcopy(payload))
+            thoughts = [t for intent in payload["intents"] for t in intent["thoughts"]]
+            evidence_ids = list(dict.fromkeys(c["evidence_id"] for t in thoughts
+                                             for c in t["citations"] if c["selected"]))
+            citation = "".join(f" [@{evidence}]" for evidence in evidence_ids)
+            return {"paragraph": " ".join(t["text"] for t in thoughts) + citation,
+                    "sentence_mappings": [{"sentence": 0, "thought_ids": [t["id"] for t in thoughts]}]}
+    
+        service.gateway.analyze = realize
+        try:
+            job = wait_for_job(service, service.create_job(manuscript_id, "GENERATE", input_revision=4))
+            assert job["status"] == "SUCCEEDED", job
+            assert len(captured) == len(slots)
+            expected_thoughts = [t for p in originals for i in p["intents"] for t in i["thoughts"]]
+            assert [t for call in captured for i in call["intents"] for t in i["thoughts"]] == expected_thoughts
+            contexts = [context for call in captured for context in call["author_contexts"]]
+            assert [context["source_paragraph"] for context in contexts] == originals
+            assert all(context["source_group"] == mapped["sections"][-1]["paragraph_groups"][0]
+                       for context in contexts[:2])
+>           version = service.get_generated_version(manuscript_id, job["result"]["generated_version_id"])
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_studio_correspondence.py:213: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\rstv4\studio.py:332: in get_generated_version
+    return read_generated_version(conn, self.storage_root, manuscript_id, version_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x00000164ECDD5C60>
+storage_root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-977/test_actual_generation_preserv0/data/writing-studio')
+manuscript_id = 'manuscript_757c768ffd7c402a9f758c52312d04fb'
+version_id = 'manuscript_version_dec47e20524048869e28ce8e90b2c6ca'
+
+    def generated_version(conn: sqlite3.Connection, storage_root: Path, manuscript_id: str, version_id: str) -> dict:
+        row = conn.execute("SELECT * FROM manuscript_versions WHERE manuscript_id=? AND manuscript_version_id=?", (manuscript_id, version_id)).fetchone()
+        if row is None:
+            raise NotFoundError("The generated version does not belong to this manuscript")
+        version = dict(row)
+        inputs = json.loads(version["inputs_json"])
+        artifacts = conn.execute("SELECT * FROM studio_artifacts WHERE manuscript_id=? AND job_id=?", (manuscript_id, inputs.get("job_id"))).fetchall()
+        generated = inputs.get("generated")
+        by_kind = {item["artifact_kind"]: item for item in artifacts}
+        if generated is None and "GENERATED_JSON" in by_kind:
+            generated = json.loads(verified_artifact_bytes(storage_root, by_kind["GENERATED_JSON"]))
+        if generated is not None and (generated_markdown(generated) != version["content"] or generated["input_revision"] != inputs.get("studio_revision")):
+            raise RSTV4Error("Generated structure does not match its immutable version")
+        if generated is not None:
+            source_paragraphs = None
+            for section in generated["sections"]:
+                for paragraph in section["paragraphs"]:
+                    if not paragraph.get("model_call_id"):
+                        continue
+                    if source_paragraphs is None:
+                        source_document = document_revision(conn, manuscript_id, inputs["studio_revision"])["document"]
+                        source_paragraphs = {p["id"]: p for s in source_document["sections"] for p in s["paragraphs"]}
+                    source_paragraph = source_paragraphs.get(paragraph["paragraph_id"])
+                    call = conn.execute("SELECT * FROM studio_model_calls WHERE call_id=?", (paragraph["model_call_id"],)).fetchone()
+                    if (call is None or call["manuscript_id"] != manuscript_id
+                            or call["job_id"] != inputs.get("job_id")
+                            or call["input_revision"] != inputs.get("studio_revision")
+                            or call["task"] != "paragraph_realization" or call["status"] != "VALIDATED"):
+                        raise RSTV4Error("Generated realization has no matching validated model call")
+                    raw = json.loads(call["output_json"])
+                    call_input = json.loads(call["input_json"])
+                    if (source_paragraph is None or not isinstance(call_input, dict)
+                            or call_input.get("intents") != source_paragraph["intents"]
+                            or paragraph["thought_ids"] != [t["id"] for intent in source_paragraph["intents"] for t in intent["thoughts"]]
+                            or hashlib.sha256(call["input_json"].encode("utf-8")).hexdigest() != call["input_sha256"]):
+>                       raise RSTV4Error("Generated realization does not match its original author input")
+E                       rstv4.service.RSTV4Error: Generated realization does not match its original author input
+
+src\rstv4\studio_read_views.py:97: RSTV4Error
+_ test_correspondence_comments_keep_original_and_target_ids_through_compensation _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-977/test_correspondence_comments_k0')
+
+    def test_correspondence_comments_keep_original_and_target_ids_through_compensation(tmp_path):
+        service, manuscript_id, adopted, mapped, originals, slots = mapped_fixture(tmp_path)
+        round_row = service.create_review_round(manuscript_id, round_number=1, venue="Software fixture")
+        comment = service.import_comments(round_row["review_round_id"],
+            [{"text": "Keep the original and chosen slot linked.", "include": True}], source="PASTED")[0]
+        comment_id = comment["comment_id"]
+        for revision, kind, value in [(3, "MAP_AUTHOR_INTENT", mapped), (4, "UNDO", adopted), (5, "REDO", mapped)]:
+            service.save_document(manuscript_id, base_revision=revision, operation_id=f"comment-{kind}",
+                                  operation_kind=kind, document=value, comment_ids=[comment_id])
+        linked = service.list_comments(manuscript_id)[0]
+        assert linked["comment_id"] == comment_id
+        assert {change["operation_id"] for change in linked["changes"]} == {"comment-MAP_AUTHOR_INTENT", "comment-UNDO", "comment-REDO"}
+        expected = {i["id"] for p in originals + slots for i in p["intents"]} | {originals[0]["id"]}
+>       assert all(expected.issubset(set(change["block_ids"])) for change in linked["changes"])
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_studio_correspondence.py:245: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+.0 = <list_iterator object at 0x00000164ECD55DB0>
+
+>   assert all(expected.issubset(set(change["block_ids"])) for change in linked["changes"])
+                                     ^^^^^^^^^^^^^^^^^^^
+E   KeyError: 'block_ids'
+
+tests\test_studio_correspondence.py:245: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_correspondence.py::test_actual_generation_preserves_mapping_context_citations_and_real_artifacts
+FAILED tests/test_studio_correspondence.py::test_correspondence_comments_keep_original_and_target_ids_through_compensation
+2 failed, 19 passed in 7.49s

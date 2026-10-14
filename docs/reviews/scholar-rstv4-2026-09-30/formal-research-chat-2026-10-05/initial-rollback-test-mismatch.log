@@ -1,0 +1,33 @@
+CHECK ['-m', 'pytest', 'tests/test_research_discussions.py', 'tests/test_fieldkg_workspace.py', 'tests/test_research_workspace.py', 'tests/test_catalog_web.py', '-q']
+..F...............................................................       [100%]
+================================== FAILURES ===================================
+______ test_mismatched_quote_and_stale_source_are_rejected_before_model _______
+
+environment = (<starlette.testclient.TestClient object at 0x00000270848EABD0>, WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/p...408f95cbb2c29c6af147', 'track_d7456d5eca6440579179d0b9f5a1d1fb', 'fieldkg_build_740255b8cf5a4d59ad1876fa21b16728', ...)
+
+    def test_mismatched_quote_and_stale_source_are_rejected_before_model(environment):
+        client, db, field, _, _, _, gateway = environment
+        bound = context(client, unit_target(client, field))
+        body = payload(bound)
+        body["source"]["quote"] = {"text": "Invented original", "start": 0, "end": 17, "offset_unit": "utf16"}
+        assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+        with sqlite3.connect(db) as conn:
+            conn.execute("UPDATE skeleton_units SET raw_text='Source changed'")
+        assert client.post("/api/catalog/discussion/messages", json=payload(bound)).status_code == 409
+        assert not gateway.calls
+        with sqlite3.connect(db) as conn:
+>           assert conn.execute("SELECT COUNT(*) FROM research_discussion_requests").fetchone()[0] == 0
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           sqlite3.OperationalError: no such table: research_discussion_requests
+
+tests\test_research_discussions.py:118: OperationalError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_research_discussions.py::test_mismatched_quote_and_stale_source_are_rejected_before_model
+1 failed, 65 passed, 1 warning in 188.26s (0:03:08)
+Exit: 1

@@ -1,0 +1,23 @@
+...............................                                          [100%]
+============================== warnings summary ===============================
+.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+31 passed, 1 warning in 23.71s
+
+Exit: 0
+All checks passed!
+
+Exit: 0
+
+Exit: 0
+
+Exit: 0
+warning: in the working copy of 'src/rstv4/studio.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+
+Exit: 0
+
+Exit: 0

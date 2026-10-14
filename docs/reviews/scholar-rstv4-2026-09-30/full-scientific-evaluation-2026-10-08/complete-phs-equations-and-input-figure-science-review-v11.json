@@ -1,0 +1,1828 @@
+{
+  "status": "COMPLETE_ALL_23_PRINTED_PHS_FORMULAS_18_PARSER_BLOCKS_AND_FIVE_INPUT_FIGURE_SCOPES",
+  "full_original_benchmark_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_19f55daa7f17ede2858b",
+    "complete_equation_blocks": 18,
+    "complete_printed_equations": 23,
+    "complete_additional_visible_figure_scopes": 5,
+    "all_original_paper_equation_blocks_retained": true
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+  "original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh_content_list.json",
+  "original_parser_sha256": "ea76e04f4cc4f5cfac1d86b8f51257d81a3208e0f393430a6f4ba959f35e2920",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "additional_render_lineages": [
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\render-lineage.json",
+      "sha256": "8cca3d4d0d4e46bf3d9d70dc426ae19a50a2716ff1f7ee358120ae4567713676",
+      "lineage": {
+        "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+        "original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "pages": [
+          {
+            "actual_pdf_page": 2,
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-002-180dpi.png",
+            "sha256": "53b4662e035583ab278db4da64a26c7685c9bf0c440530aaac4705fac1e36a1b",
+            "dpi": 180
+          },
+          {
+            "actual_pdf_page": 3,
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-003-180dpi.png",
+            "sha256": "6613744cf2f325d039df7176e9ebbd456cb6f9120a3010029eece70b8c7b9d4d",
+            "dpi": 180
+          },
+          {
+            "actual_pdf_page": 5,
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-005-180dpi.png",
+            "sha256": "feaa63f42fd977eacc1ed5dd169dcb47052f78146744cd6aad3604bdc16078bc",
+            "dpi": 180
+          },
+          {
+            "actual_pdf_page": 8,
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-008-180dpi.png",
+            "sha256": "ff4b6b055890ee732378fb9d59442202a0da873a0a708ef519bb00b7337947b1",
+            "dpi": 180
+          }
+        ]
+      }
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-equation-page-reading-v11\\render-lineage.json",
+      "sha256": "00fba9277dce2a373d33d6e49195c5a5eeb043f0e88f9a78334447cb6837232c",
+      "lineage": {
+        "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+        "original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "pages": [
+          {
+            "actual_pdf_page": 6,
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-equation-page-reading-v11\\original-page-006-180dpi.png",
+            "sha256": "6cd026e81f8b5b6037783407b41c6ec6c8b4911c088558ad2e26f5cfe5bdf322",
+            "dpi": 180
+          },
+          {
+            "actual_pdf_page": 7,
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-equation-page-reading-v11\\original-page-007-180dpi.png",
+            "sha256": "e3588b7af620ae87b0d126f206a809c54a5e214a5c122d0a5ff2b35c579dd940",
+            "dpi": 180
+          }
+        ]
+      }
+    }
+  ],
+  "equations": [
+    {
+      "matrix_visual_index": 53,
+      "printed_equation_numbers": [
+        1
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-006.png",
+            "sha256": "9376a2e4c4dc65fc0063759b619ae6f4e433dfe9447dff080c1877430ec4e1b2"
+          },
+          {
+            "id": "crop-50",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+            "sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406"
+          },
+          {
+            "id": "crop-51",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+            "sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a"
+          },
+          {
+            "id": "crop-52",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+            "sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          50,
+          51,
+          52,
+          57,
+          59,
+          61
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 57,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "a72f4473aeb760b22b7cb59e4542bd42a57b6940c7b22eb182efca27e120eae2",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b49"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+        "actual_page_record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+        "original_durable_handle": "run_753a56c813b245fab110d7a43643a920",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nP_{P V}=P_{P V-r a t e d}D_{F}\\biggl({\\frac{G}{G_{S}}}\\biggr)[1+\\alpha_{P}(T_{c}-T_{s})]\n$$",
+        "text_format": "latex",
+        "page_idx": 5
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "P_PV = P_PV_rated D_F (G/G_S) [1 + α_p(T_c − T_s)]"
+      ],
+      "scientific_scope_findings": [
+        "PV rated327W, de-rating88%, reference1kW/m², temperature slope−0.35%/°C and reference25°C are explicit full-page prose. Use fractional0.88/−0.0035 when doing dimensional arithmetic; do not insert88 or−0.35 as dimensionless factors. Result per-module power is distinct from installed kW and annual energy.",
+        "No tracking technology is considered per following full page7. This modeled relation is not an independently measured PV-yield result."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 54,
+      "printed_equation_numbers": [
+        2
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-006.png",
+            "sha256": "9376a2e4c4dc65fc0063759b619ae6f4e433dfe9447dff080c1877430ec4e1b2"
+          },
+          {
+            "id": "crop-50",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+            "sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406"
+          },
+          {
+            "id": "crop-51",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+            "sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a"
+          },
+          {
+            "id": "crop-52",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+            "sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          50,
+          51,
+          52,
+          57,
+          59,
+          61
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 59,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "61c86903f69caeabc6f9c9fabc95bd064c6cdb83edbc4b5e0d97a967aac1df7f",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b51"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+        "actual_page_record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+        "original_durable_handle": "run_753a56c813b245fab110d7a43643a920",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nT_{c}=T_{a}+G\\bigg({\\frac{\\tau\\alpha}{U_{L}}}\\bigg)\\bigg(1-{\\frac{\\eta_{P V}}{\\tau\\alpha}}\\bigg)\n$$",
+        "text_format": "latex",
+        "page_idx": 5
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "T_c = T_a + G(τα/U_L)(1 − η_PV/(τα))"
+      ],
+      "scientific_scope_findings": [
+        "Keep subtraction, parentheses and efficiency/transmittance quotient, rather than flattening terms into addition. U_L heat-transfer unit pairs with irradiance to give a temperature increment; η_PV is21.4% from specific module, not21.4 dimensionless."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 55,
+      "printed_equation_numbers": [
+        3
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-006.png",
+            "sha256": "9376a2e4c4dc65fc0063759b619ae6f4e433dfe9447dff080c1877430ec4e1b2"
+          },
+          {
+            "id": "crop-50",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+            "sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406"
+          },
+          {
+            "id": "crop-51",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+            "sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a"
+          },
+          {
+            "id": "crop-52",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+            "sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          50,
+          51,
+          52,
+          57,
+          59,
+          61
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 61,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "39b980498c0614b6a9f7df183b0d79cee21c09e03afe56f17b900f427e1cdf4c",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b53"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+        "actual_page_record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+        "original_durable_handle": "run_753a56c813b245fab110d7a43643a920",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\left(\\frac{\\tau\\alpha}{U_{L}}\\right)=\\frac{T_{c,N O C T}-T_{a,N O C T}}{G_{N O C T}}\n$$",
+        "text_format": "latex",
+        "page_idx": 5
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "τα/U_L = (T_c,NOCT − T_a,NOCT)/G_NOCT"
+      ],
+      "scientific_scope_findings": [
+        "NOCT calibration uses800W/m² and20°C ambient in actual prose, not the standard-test25°C value in the ambiguous nomenclature. G_NOCT must share G units;800W/m² equals0.8kW/m². Calibration values are assumptions/manufacturer inputs, not field observations."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 56,
+      "printed_equation_numbers": [
+        4
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 64,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "a93201b1fd61d1717010bcbbd557c895e0ccde16218a2771bc98687b6d394bca",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b56"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nT_{c}=T_{a}+G\\frac{T_{c,N O C T}-T_{a,N O C T}}{G_{N O C T}}\\left(1-\\frac{\\eta_{P V}}{0.9}\\right)\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "T_c = T_a + G[(T_c,NOCT − T_a,NOCT)/G_NOCT](1 − η_PV/0.9)"
+      ],
+      "scientific_scope_findings": [
+        "Original assumptionτα=0.9 produces the efficiency correction; the0.9 remains in the denominator. Original formula is preserved and not replaced with a different PV thermal model."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 57,
+      "printed_equation_numbers": [
+        5
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 68,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "1041058378d2e3f22327695e029a980efe309cad66e8062d863361f8c4aed4e2",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b60"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nF_{c}=F_{1}R_{D}+F_{2}P_{D}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "F_c = F_1 R_D + F_2 P_D"
+      ],
+      "scientific_scope_findings": [
+        "R_D is generator rating; P_D is instantaneous output. This intercept term is multiplied by rated capacity. DefinitionF_1 in nomenclature l/h/kW_rated is dimensionally compatible, whereas Table4 actualF_1 entries1.65L/h and5.75L/h lack per-kW. Original cross-source unit inconsistency retained; no inferred corrected intercept.",
+        "Full page7 assumes fuelLHV43200kJ/kg,density820kg/m³,price0.70USD/L and no extra transport cost under the stated site access. Scope is modeled local input, not universal fuel price."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 58,
+      "printed_equation_numbers": [
+        6
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 70,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "3dc79a19b0d821bc21dab96cc95aef590e90e2a1702aa3b6b0751b37c8716bca",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b62"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\eta_{D}={\\frac{3600\\times P_{D}}{\\rho\\times F_{c}\\times L H V}}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "η_D = (3600 × P_D)/(ρ × F_c × LHV)"
+      ],
+      "scientific_scope_findings": [
+        "Printed3600 retained. Under printedP_D kW,ρ820kg/m³,F_cL/h,LHVkJ/kg, conversion from liters to m³ is absent from this expression; treatingρas0.820kg/L would be a unit conversion, not the original specified number. Do not silently repair expression or infer model implementation.",
+        "Efficiencies are ratios; an absent conversion factor cannot be accepted merely because syntax and numeric literals are present."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 59,
+      "printed_equation_numbers": [
+        7
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 73,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "dce192638d2b312be8607dfa3ab188fbc02a8e0fd770585cc3d2649a78f03fdc",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b65"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nP_{P}=\\frac{Q_{P}\\rho_{w}g h}{\\eta_{P}}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "P_P = Q_P ρ_w g h / η_P"
+      ],
+      "scientific_scope_findings": [
+        "Pumping divides by efficiency; surplus PV drives lifting water to upper reservoir. FlowQ_P m³/s times mass density in kg/m³,gravitym/s² andheadm yieldsW, while nomenclatureP_P is kW. An explicit1000conversion or appropriately scaled density is required to reconcile those declared units; original equation contains neither declared convention. No forced engineering repair."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 60,
+      "printed_equation_numbers": [
+        8
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 75,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "adf049397c139200b952f5f90c5fd4a7130e4377a0edcc7c664437380dcb5d44",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b67"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nP_{T}=Q_{T}\\rho_{w}g h\\eta_{T}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "P_T = Q_T ρ_w g h η_T"
+      ],
+      "scientific_scope_findings": [
+        "Turbining multiplies by efficiency, unlike pumping. Q_T is discharge from upper reservoir. SimilarW-versuskW unit qualification is preserved. Neither relation directly defines storage energykWh without time or reservoir integration.",
+        "Full page7 site has approximate30m head and proposed upper/lower reservoirs near Sahasradhara waterfall. This site-specific modeling condition is not a generic PHS property."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 61,
+      "printed_equation_numbers": [
+        9
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 79,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "99864cc8c4ca62a9629cc0ed398285a39d7cadfb84729a552355734e07b132a7",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b71"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nE_{B a t t}(t)=E_{B a t t}(t-1)\\times(1-\\sigma)+\\left(E_{T}(t)-\\frac{E_{L}(t)}{\\eta_{i n v}}\\right)\\times\\eta_{b a t}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "E_Batt(t) = E_Batt(t−1)(1−σ) + [E_T(t) − E_L(t)/η_inv] η_bat"
+      ],
+      "scientific_scope_findings": [
+        "Charging equation uses available surplus after inverter load conversion and multiplies by battery efficiency; self-discharge factor retained. E quantitieskWh at hourly time steps, not instantaneous kW.",
+        "Prose describes charging ifE_T>E_L, while the printed positive-surplus threshold in the formula isE_T>E_L/η_inv. Withη_inv95%, these thresholds differ. ExampleE_L=1kWh,E_T=1.01kWh satisfies prose but gives a negative bracket exactly−81/1900kWh. Example is a declared counterexample, not a paper measurement.",
+        "η_bat is defined in surrounding prose even though the nomenclature incorrectly repeatsη_inv for battery/inverter. Preserve contextual distinction and primary ambiguity."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 62,
+      "printed_equation_numbers": [
+        10
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 82,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "f0d80270da831f592aa6788e0537266b8db914bd9cd91e90db63a9146a570d1c",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b73"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nE_{B a t t}(t)=E_{B a t t}(t-1)\\times(1-\\sigma)-\\left(\\frac{E_{L}(t)}{\\eta_{i n\\nu}}-E_{T}(t)\\right)\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "E_Batt(t) = E_Batt(t−1)(1−σ) − [E_L(t)/η_inv − E_T(t)]"
+      ],
+      "scientific_scope_findings": [
+        "Discharge expression does not show a battery discharge-efficiency divisor. Do not add one because another model normally uses it. Keep original charge/discharge asymmetry and distinct availability bounds21/22."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 63,
+      "printed_equation_numbers": [
+        11
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 85,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "c0bf8460503e46f14eb8038024f8206f98e53e52b0e1294652847b2b027e1c83",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b76"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nP_{o u t}=P_{i n}\\eta_{i n\\nu}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "P_out = P_in η_inv"
+      ],
+      "scientific_scope_findings": [
+        "DC input to AC output has95% efficiency. Parser η_inν uses a Greek-nu glyph where original visible symbol is inverter suffixinv; original parser bytes are kept, reading notation separately declared."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 64,
+      "printed_equation_numbers": [
+        12
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 88,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "ce9f48da14387b9e91e6b8e560082ef0cb67eacab0745fcd6e314cb61fb4072e",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b79"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\mathrm{MinNPC}=\\frac{\\mathrm{C}_{\\mathrm{A}_{-}\\mathrm{cap}}+\\mathrm{C}_{\\mathrm{A}_{-}\\mathrm{rep}}+\\mathrm{C}_{\\mathrm{A}_{-}\\mathrm{O}\\&\\mathrm{M}}}{\\mathrm{CRF}(\\mathrm{i},\\mathrm{n})}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "Min NPC = (C_A_cap + C_A_rep + C_A_O&M)/CRF(i,n)"
+      ],
+      "scientific_scope_findings": [
+        "Objective minimizesNPC, not maximizing profit and not blindly minimizingCOE under changing served energy. These are annualized costs divided by annual capital-recovery factor.",
+        "Printed numerator lists capital/replacement/O&M; Table7 separately lists resource and salvage. The text does not explicitly demonstrate which terms are insideO&M for this formula. Full operating-cost composition/implementation remains unresolved; no assumption that fuel or salvage is definitely omitted in actual software.",
+        "Full page7 excludes installation/fabrication,piping,civilworks,instrumentation/control costs. Project lifetime25years. ReportedNPC is not an all-in physical deployment cost."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 65,
+      "printed_equation_numbers": [
+        13
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 90,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "69bea2c30bc6017f15fc3d68bd06e4e0fb1db081e75f44c2c542c6f7b5b01da9",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b81"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\mathrm{CRF}(\\mathrm{i},\\mathrm{n})=\\frac{\\mathrm{i}(1+\\mathrm{i})^{\\mathrm{n}}}{(1+\\mathrm{i})^{\\mathrm{n}}-1}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "CRF(i,n) = i(1+i)^n / [(1+i)^n − 1]"
+      ],
+      "scientific_scope_findings": [
+        "Compound-rate exponentn applies in both numerator/denominator, final−1 remains outside the exponent. n25years. The printed formula has0/0 at i=0; a zero-rate limiting definition is not printed and not invented."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 66,
+      "printed_equation_numbers": [
+        14
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 91,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "62d91b2dc5d1b30c6327832a3d59b607f96221ae545715c438c5e4fd3f667eef",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b82"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\mathbf{i}={\\frac{\\mathbf{i}^{\\prime}-\\mathbf{f}}{1+\\mathbf{f}}}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "i = (i′ − f)/(1+f)"
+      ],
+      "scientific_scope_findings": [
+        "Nominal interest10% and inflation2% from Table5 imply reali4/51, not8% exactly or10%. Use fractions, and keep percentage-versus-fraction interpretation explicit. Nomenclature nominal symbol is visually malformed while this equation usesprime."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 67,
+      "printed_equation_numbers": [
+        15
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 93,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "db83aece4d7fa1ca4b5d58fcb7f33b82f6c63aa068ce361fc042dbc8948d7966",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b84"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\mathrm{COE}=\\frac{\\mathrm{C_{A_{-}c a p}+C_{A_{-}r e p}+C_{A_{-}O\\&\\mathrm{M}}}}{\\mathrm{E_{s}}}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "COE = (C_A_cap + C_A_rep + C_A_O&M)/E_s"
+      ],
+      "scientific_scope_findings": [
+        "Denominator annual served energyE_s, not total generationE_T or nameplate power. SameNPC-toCOE ranking requires fixedCRF/served energy; Table6 designs have different unmet load130/134kWh so a universal equivalence claim is unqualified.",
+        "Cited comparative optimization objective from surrounding prose isNPC, not assumed equal to everyCOE comparison."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 68,
+      "printed_equation_numbers": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-007.png",
+            "sha256": "6324d456fe21bcf92808da63aec9f313fabec9f98c3baec47034084555d7fed3"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64,
+          68,
+          70,
+          73,
+          75,
+          79,
+          82,
+          85,
+          88,
+          90,
+          91,
+          93,
+          96
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 96,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "86a50227ef26180028265f231a6c4d20aed8c34701c180651908ce116a9918ba",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b87"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\007\\record.json",
+        "actual_page_record_sha256": "83b2b586e95362cf57b0018c569a476969b1187b0b24204047d3cd819743c141",
+        "original_durable_handle": "run_3a749146e4e24b0f995f4b7dbe98c13f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}&{N_{P V,m i n}\\leq N_{P V}\\leq N_{P V,m a x}}\\ &{N_{P H S,m i n}\\leq N_{P H S,m a x}}\\ &{N_{B a t t,m i n}\\leq N_{B a t t,m a x}}\\ &{N_{D G,m i n}\\leq N_{D G}\\leq N_{D G,m a x}}\\ &{N_{i n v,m i n}\\leq N_{i n v}\\leq N_{i n v,m a x}}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 6
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "N_PV,min ≤ N_PV ≤ N_PV,max",
+        "N_PHS,min ≤ N_PHS ≤ N_PHS,max",
+        "N_Batt,min ≤ N_Batt ≤ N_Batt,max",
+        "N_DG,min ≤ N_DG ≤ N_DG,max",
+        "N_inv,min ≤ N_inv ≤ N_inv,max"
+      ],
+      "scientific_scope_findings": [
+        "Allfive original inequalities directly checked. Raw parser removes the central decision variable from PHS andBattery constraints, leavingonlymin≤max. This is a substantive extraction loss: feasibility bounds on decision variables become tautological parameter-order comparisons.",
+        "N variables are component counts, not capacitykW/kWh. BoundsTable5 apply to sizing decisions; paper prose says larger load requires increasedupperbounds. Do not silently apply the same limit to any larger population."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 70,
+      "printed_equation_numbers": [
+        21,
+        22
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-008.png",
+            "sha256": "7f7003580abab6ba3b21bfab731c71ca7fa674d8ed9ef75d9a2aa67dd800ca02"
+          },
+          {
+            "id": "crop-98",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\e1ade19bd58fa180d8bf2e05e04997e02656cee8843e780c1dfd491cfa029152.jpg",
+            "sha256": "f5f2a8022adaeea56aca269b2dd1e3ff4c94f96647402e0b7dd43b3d67de41fe"
+          },
+          {
+            "id": "crop-112",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\c4291b74dc1e6ef5583e2c3996ff60a6b2f4e4d5c8967e18c7a5185d39351b7b.jpg",
+            "sha256": "5fa9b30ba9c9616d64d5deff4925a6b8018b29455256c3557eb01ed1d9d16a77"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          98,
+          99,
+          101,
+          112
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "raw_parser_content_index": 99,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "11c36b718a7d9ba629836bc3770ab3aae09e186d0d0d2b4ab8dd096c1815f3b5",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b90"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\008\\record.json",
+        "actual_page_record_sha256": "7e5d0cd8f95baf7fd386588de91a9e9f6a85bcfbef98cae6fbe3f973716f98b7",
+        "original_durable_handle": "run_68cb320b4acb43839616b1f421e49bf5",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}&{E_{B a t t,m i n}\\leq E_{B a t t}\\leq E_{B a t t,m a x}}\\ &{\\qquadE_{P H S,m i n}\\leq E_{P H S}\\leq E_{P H S,m a x}}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 7
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "E_Batt,min ≤ E_Batt ≤ E_Batt,max",
+        "E_PHS,min ≤ E_PHS ≤ E_PHS,max"
+      ],
+      "scientific_scope_findings": [
+        "Both storage-energy capacity bounds keep centralE variables and inclusiveinequalities. Parser concatenation\\qquadE is a spacing/command artifact, not a new variable name. Battery andPHS state/energy remain distinct."
+      ],
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 71,
+      "printed_equation_numbers": [
+        23
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-008.png",
+            "sha256": "7f7003580abab6ba3b21bfab731c71ca7fa674d8ed9ef75d9a2aa67dd800ca02"
+          },
+          {
+            "id": "crop-98",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\e1ade19bd58fa180d8bf2e05e04997e02656cee8843e780c1dfd491cfa029152.jpg",
+            "sha256": "f5f2a8022adaeea56aca269b2dd1e3ff4c94f96647402e0b7dd43b3d67de41fe"
+          },
+          {
+            "id": "crop-112",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\c4291b74dc1e6ef5583e2c3996ff60a6b2f4e4d5c8967e18c7a5185d39351b7b.jpg",
+            "sha256": "5fa9b30ba9c9616d64d5deff4925a6b8018b29455256c3557eb01ed1d9d16a77"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          98,
+          99,
+          101,
+          112
+        ]
+      },
+      "original_visual_item": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "raw_parser_content_index": 101,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "4045d621e099a84fbf6edb8dad9802eb9ddb5a9e32f7e9e83638170acf2c8a25",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b92"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\008\\record.json",
+        "actual_page_record_sha256": "7e5d0cd8f95baf7fd386588de91a9e9f6a85bcfbef98cae6fbe3f973716f98b7",
+        "original_durable_handle": "run_68cb320b4acb43839616b1f421e49bf5",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nL P S P\\leq L P S P_{D e s i r e d}\n$$",
+        "text_format": "latex",
+        "page_idx": 7
+      },
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "LPSP ≤ LPSP_Desired"
+      ],
+      "scientific_scope_findings": [
+        "Reliability is upperbounded rather than lowerbounded. Full page8GA statesdesiredLPSP0% and discardsinfeasiblepopulations. This is a modeled optimization constraint, not evidence of empirical outage-free service or identicalreliability in allTable6configurations."
+      ],
+      "scientific_reference_approval": false
+    }
+  ],
+  "plots": [
+    {
+      "page": 5,
+      "figure": "Fig.2",
+      "caption": "Optimisation framework for HOMER software tool.",
+      "scientific_scope_findings": [
+        "Complete diagram shows solar irradiationFig3 and ambient temperatureFig4 feedPVPower; hardware characteristicsTable4 feedPV/diesel/PHS/battery/inverter models. Their outputs feedHOMER along withobjective/systemconstraints,loadFig5 andhardwareeconomicTable5.",
+        "Output includesoptimalcomponent sizing,COE,NPC,fuelconsumption,emissions,excessenergy,renewablepenetration. Diagram does not showGA hardware searchorindependentvalidationofHOMER. Allarrowdirectionsandinput/outputroleschecked."
+      ],
+      "matrix_visual_index": 47,
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 5,
+        "raw_parser_content_index": 41,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "8489787dd497b5101b9a3e541bc0800ab5f7038613f08ab48796d48b63cfac88",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b35"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\bf2125615f3d361d26fcb74d1c53f2d3ff3c8bb2e7b56037d393599e90fc8dd8.jpg",
+        "actual_original_crop_sha256": "826aab1c0614b44e54b948564cc2b11d3776b975ff7f48eb8109a08003a1488b",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\005\\record.json",
+        "actual_page_record_sha256": "71e9e5c4250658ec85c44f5f16eede3dacee8891254e59df80b2631a19fe76b0",
+        "original_durable_handle": "run_e74046dcdf9042919201f493df60c582",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images/bf2125615f3d361d26fcb74d1c53f2d3ff3c8bb2e7b56037d393599e90fc8dd8.jpg",
+        "img_caption": [
+          "Fig. 2. Optimisation framework for HOMER software tool. "
+        ],
+        "img_footnote": [],
+        "page_idx": 4
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-005.png",
+            "sha256": "b64a6301bcf0561b084938fa3de35571e16b58b5fae570910e6ef41d3afe86a5"
+          },
+          {
+            "id": "crop-41",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\bf2125615f3d361d26fcb74d1c53f2d3ff3c8bb2e7b56037d393599e90fc8dd8.jpg",
+            "sha256": "826aab1c0614b44e54b948564cc2b11d3776b975ff7f48eb8109a08003a1488b"
+          },
+          {
+            "id": "crop-42",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\333e34efa7c1509f256537b24a99bc4b95d9aab241db816d2ee221307be0621a.jpg",
+            "sha256": "2d3819f93c793c5231fcc4b96a06fdd3c838ada9058d745b9007a0a479dd49da"
+          },
+          {
+            "id": "crop-47",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\55e6f4bed7bece40464c4745a3755932563e5cf8f1df86ce64cd8e16c0b176ca.jpg",
+            "sha256": "cb06dbb3630cafa8f8803eb2a7b0420b4c6e086baf629db4be6c96086b6e7419"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          41,
+          42,
+          47
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "page": 6,
+      "figure": "Fig.3",
+      "caption": "Time-resolved solar irradiation of selected area - Sitakunda, Bangladesh.",
+      "horizontal_axis": {
+        "label": "Time (h)",
+        "ticks": [
+          "0",
+          "876",
+          "1752",
+          "2628",
+          "3504",
+          "4380",
+          "5256",
+          "6132",
+          "7008",
+          "7884",
+          "8760"
+        ]
+      },
+      "vertical_axis": {
+        "label": "Solar irradiation (kW/m²)",
+        "ticks": [
+          "0",
+          "0.2",
+          "0.4",
+          "0.6",
+          "0.8",
+          "1",
+          "1.2",
+          "1.4"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Completeyear8760h ofdensepower-fluxobservations,notannualenergyperarea. Periodicnearzerobandsandvisiblevariabilitypreserved;noprecise8760pointvaluesorintegral/averageinventedfromimage.",
+        "Prosepage5saysdatafromHOMERdatabaseand4.77kWh/m²/dayannualmeaninsolation;do not confusepower-axiswithdailyintegratedenergyorasserton-sitehourlyfieldmeasurement."
+      ],
+      "matrix_visual_index": 50,
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 50,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "2362ffbd51d82e1dceeae666d34039c4b159cc3d8c180dbd720c023a2695b2e7",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b43"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+        "actual_original_crop_sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+        "actual_page_record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+        "original_durable_handle": "run_753a56c813b245fab110d7a43643a920",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images/1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+        "img_caption": [
+          "Fig. 3. Time-resolved solar irradiation of selected area - Sitakunda, Bangladesh. "
+        ],
+        "img_footnote": [],
+        "page_idx": 5
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-006.png",
+            "sha256": "9376a2e4c4dc65fc0063759b619ae6f4e433dfe9447dff080c1877430ec4e1b2"
+          },
+          {
+            "id": "crop-50",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+            "sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406"
+          },
+          {
+            "id": "crop-51",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+            "sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a"
+          },
+          {
+            "id": "crop-52",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+            "sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          50,
+          51,
+          52,
+          57,
+          59,
+          61
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "page": 6,
+      "figure": "Fig.4",
+      "caption": "Time-resolved ambient temperature of selected area - Sitakunda, Bangladesh.",
+      "horizontal_axis": {
+        "label": "Time (h)",
+        "ticks": [
+          "0",
+          "876",
+          "1752",
+          "2628",
+          "3504",
+          "4380",
+          "5256",
+          "6132",
+          "7008",
+          "7884",
+          "8760"
+        ]
+      },
+      "vertical_axis": {
+        "label": "Ambient Temperature (°C)",
+        "ticks": [
+          "0",
+          "5",
+          "10",
+          "15",
+          "20",
+          "25",
+          "30"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Seriesisastepfunctionwithmonthscalesegments,notvisible8760independenthourlytemperaturemeasurements. Fullpage5explicitlystatesmonthlyaveragefromHOMERandhourlytemperatureunavailablefromlocalweatherstation.",
+        "Lowestwinter/highestaroundyearmiddlevisible,butexactsegmentvaluesnotprinted. Thecaptiontime-resolveddoesnotestablishhourlymeasuredinput;preservethisprovenancelimitation."
+      ],
+      "matrix_visual_index": 51,
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 51,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "8d20b69f42dd042b506e1debc46db171528b84dea6447e56f66cac92fec5f470",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b44"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+        "actual_original_crop_sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+        "actual_page_record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+        "original_durable_handle": "run_753a56c813b245fab110d7a43643a920",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images/45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+        "img_caption": [
+          "Fig. 4. Time-resolved ambient temperature of selected area $-$ Sitakunda, Bangladesh. "
+        ],
+        "img_footnote": [],
+        "page_idx": 5
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-006.png",
+            "sha256": "9376a2e4c4dc65fc0063759b619ae6f4e433dfe9447dff080c1877430ec4e1b2"
+          },
+          {
+            "id": "crop-50",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+            "sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406"
+          },
+          {
+            "id": "crop-51",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+            "sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a"
+          },
+          {
+            "id": "crop-52",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+            "sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          50,
+          51,
+          52,
+          57,
+          59,
+          61
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "page": 6,
+      "figure": "Fig.5",
+      "caption": "Time-resolved load demand of selected area - Sitakunda, Bangladesh.",
+      "horizontal_axis": {
+        "label": "Time (h)",
+        "ticks": [
+          "0",
+          "876",
+          "1752",
+          "2628",
+          "3504",
+          "4380",
+          "5256",
+          "6132",
+          "7008",
+          "7884",
+          "8760"
+        ]
+      },
+      "vertical_axis": {
+        "label": "Load demand (kW)",
+        "ticks": [
+          "0",
+          "25",
+          "50",
+          "75",
+          "100",
+          "125"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Complete8760h denseannualpowerload,summerpeaksvisiblyhigherthanwinter,noprecisepeaktimestamporexactyearintegralinvented.",
+        "Fullpage5modelassumesfivepersonsperhouseholdand50households,11.24kWh/dayeach→562kWh/day;HOMERselectsresidentialprofilewithJulypeak. Thisisconstructedsite-loadinput,notanindependentlyrecorded8760hourfieldtrace."
+      ],
+      "matrix_visual_index": 52,
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "raw_parser_content_index": 52,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "fd7a9cb739aae1f8ed787c541a0ef508b5eed9a3c20063dedb1c4dc791552630",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b45"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+        "actual_original_crop_sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\006\\record.json",
+        "actual_page_record_sha256": "1948da56b1dbbdf351a09e87e3dba32a3c36113dcd8be4bfd53066331ebf8317",
+        "original_durable_handle": "run_753a56c813b245fab110d7a43643a920",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images/b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+        "img_caption": [
+          "Fig. 5. Time-resolved load demand of selected area - Sitakunda, Bangladesh. "
+        ],
+        "img_footnote": [],
+        "page_idx": 5
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 6,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-006.png",
+            "sha256": "9376a2e4c4dc65fc0063759b619ae6f4e433dfe9447dff080c1877430ec4e1b2"
+          },
+          {
+            "id": "crop-50",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\1a200d98b39b221a60742858568e0c43df4dc6f194985cda0d6d40db09cb8432.jpg",
+            "sha256": "22c05e3efcfa2e235dc2618d120e41c4e0a81cc84aba2863f579013def427406"
+          },
+          {
+            "id": "crop-51",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\45366bb4841cd16692229d9ab25c13e6a48597595f2d4921caad845cd94eae97.jpg",
+            "sha256": "c5b79ade22ddf9cac9fc0aba5eda64025e03062d1e61580b724561394a43f75a"
+          },
+          {
+            "id": "crop-52",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\b023c44a13ef3d5725bf35a4a590ab37f1c02b23fa883c4f9ffc063571b956c7.jpg",
+            "sha256": "665768c16bb270041d5c6071cbd6048791b4311162e7654db160d2599b7beeba"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          50,
+          51,
+          52,
+          57,
+          59,
+          61
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "page": 8,
+      "figure": "Fig.6",
+      "caption": "Convergence of GA for the PV/Diesel/PHS-based HES.",
+      "horizontal_axis": {
+        "label": "No of generations",
+        "ticks": [
+          "0",
+          "100",
+          "200",
+          "300",
+          "400",
+          "500",
+          "600",
+          "700",
+          "800",
+          "900",
+          "1000"
+        ]
+      },
+      "vertical_axis": {
+        "label": "NPC ($)",
+        "ticks": [
+          "500000",
+          "505000",
+          "510000",
+          "515000",
+          "520000",
+          "525000",
+          "530000",
+          "535000"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Completeonecurvequickinitialdecrease,plateauuntilnear430generations,furtherdecreaseandfinalplateau. Noexactunprintediterates,iterationcounttoconvergenceorconfidencebandinvented.",
+        "Fullpage8declarespopulationsize300,max1000generations,butdoesnotgiveactualnumericselection/crossover/mutationrateshere. Oneconvergencetracecannotproveglobaloptimum,reproducibilityacrossseedsorstatisticallysignificantalgoimprovement."
+      ],
+      "matrix_visual_index": 72,
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "raw_parser_content_index": 112,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "3268b967eb3d074c67a1f256d753cd8bc019df24061870eb4ae1719f011a552f",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b102"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\c4291b74dc1e6ef5583e2c3996ff60a6b2f4e4d5c8967e18c7a5185d39351b7b.jpg",
+        "actual_original_crop_sha256": "5fa9b30ba9c9616d64d5deff4925a6b8018b29455256c3557eb01ed1d9d16a77",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\008\\record.json",
+        "actual_page_record_sha256": "7e5d0cd8f95baf7fd386588de91a9e9f6a85bcfbef98cae6fbe3f973716f98b7",
+        "original_durable_handle": "run_68cb320b4acb43839616b1f421e49bf5",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          4
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images/c4291b74dc1e6ef5583e2c3996ff60a6b2f4e4d5c8967e18c7a5185d39351b7b.jpg",
+        "img_caption": [
+          "Fig. 6. Convergence of GA for the PV/Diesel/PHS-based HES. "
+        ],
+        "img_footnote": [],
+        "page_idx": 7
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-008.png",
+            "sha256": "7f7003580abab6ba3b21bfab731c71ca7fa674d8ed9ef75d9a2aa67dd800ca02"
+          },
+          {
+            "id": "crop-98",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\e1ade19bd58fa180d8bf2e05e04997e02656cee8843e780c1dfd491cfa029152.jpg",
+            "sha256": "f5f2a8022adaeea56aca269b2dd1e3ff4c94f96647402e0b7dd43b3d67de41fe"
+          },
+          {
+            "id": "crop-112",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\c4291b74dc1e6ef5583e2c3996ff60a6b2f4e4d5c8967e18c7a5185d39351b7b.jpg",
+            "sha256": "5fa9b30ba9c9616d64d5deff4925a6b8018b29455256c3557eb01ed1d9d16a77"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          98,
+          99,
+          101,
+          112
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    }
+  ],
+  "exact_declared_arithmetic_counterexamples": {
+    "real_interest_rate_fraction": "4/51",
+    "charge_condition_example": {
+      "not_a_paper_measurement": true,
+      "E_L_kWh": "1",
+      "E_T_kWh": "1.01",
+      "inverter_efficiency_fraction": "19/20",
+      "prose_E_T_greater_than_E_L": true,
+      "exact_formula_surplus_before_battery_efficiency_kWh": "-81/1900"
+    },
+    "unit_conversion_errors_are_qualified_to_printed_units": true,
+    "paper_equations_repaired": false
+  },
+  "source_deficiencies_do_not_automatically_create_student_grades": true,
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false
+}

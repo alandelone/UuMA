@@ -1,0 +1,19 @@
+{
+  "scope": {
+    "papers": 10,
+    "original_blocks": 1286,
+    "original_pdf_pages": 150
+  },
+  "raw_visual_item_type_counts": {
+    "image": 99,
+    "table": 70,
+    "equation": 93
+  },
+  "visual_items_without_original_block_association": 7,
+  "raw_visual_images_unavailable": 0,
+  "all_original_pdf_and_parser_bytes_unchanged": true,
+  "model_calls": 0,
+  "scientific_reference_claims_created": 0,
+  "full_scientific_evaluation_complete": false,
+  "complete_inventory_and_render_evidence_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\report.json"
+}

@@ -1,0 +1,694 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销":
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - button "Generate":
+    - text: Generate
+  - region "本次全文检查状态":
+    - paragraph: 规则与模型检查已完成；检查意见仍需作者判断。
+    - generic "查看检查依据"
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+    - generic: 结构已变化 · 旧成文保留
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button "关联意见"
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: New section
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - generic: 1 / 4
+    - generic: Software_Test
+    - blockquote: Original software source body 1.
+    - paragraph: Refreshed live catalog title - software
+    - button "←"
+    - button "→"
+    - button "＋ 预览完整模板"
+    - button "拖入完整模板 Refreshed live catalog title - software":
+      - text: 拖入模板
+    - paragraph: 放到整篇入口，或章节、段落、Intent 后方；先预览，确认后再采用。
+  - generic "结构选择与移动":
+    - button "多选／分组"
+    - status: 已安置整棵原章节，思想、引用与编号保留；可撤销。
+  - textbox "Paper title": Fixed citation source - software acceptance
+  - textbox "作者摘要":
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+  - button "选择并设置 Other software source": SECTION 1
+  - button "拖动章节 Other software source":
+  - button "折叠 Other software source" [expanded]:
+  - textbox "章节标题": Other software source
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Introduction": SUBSECTION 2
+  - button "拖动章节 Introduction":
+  - button "折叠 Introduction" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / Introduction
+  - textbox "章节标题": Introduction
+  - textbox "章节作用": Motivation
+  - generic "章节操作": •••
+  - button "选择并设置 G08 preserved Beta + Alpha group": GROUP
+  - button "拖动段落组 G08 preserved Beta + Alpha group":
+  - button "折叠 G08 preserved Beta + Alpha group" [expanded]:
+  - textbox "段落组用途":
+    - /placeholder: 段落组用途可以暂时未定
+    - text: G08 preserved Beta + Alpha group
+  - generic "段落组操作": •••
+  - article:
+    - 'button "选择并设置 G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations."': P1
+    - 'button "拖动段落 G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations."':
+    - 'button "折叠 G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations." [expanded]':
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+      - text: "G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations."
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original source comparison
+    - generic "段落操作": •••
+    - button "选择并设置 Software distinct source context": INTENT
+    - button "拖动 Intent Software distinct source context":
+    - button "折叠 Software distinct source context" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software distinct source context
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted.
+    - button "选择引用":
+      - generic: "2"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - article:
+    - 'button "选择并设置 G02 adopted software boundary: preserve the original thought and sources."': P2
+    - 'button "拖动段落 G02 adopted software boundary: preserve the original thought and sources."':
+    - 'button "折叠 G02 adopted software boundary: preserve the original thought and sources." [expanded]':
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+      - text: "G02 adopted software boundary: preserve the original thought and sources."
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Research Context": INTENT
+    - button "拖动 Intent Research Context":
+    - button "折叠 Research Context" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Research Context
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: Check original sources only; no scientific claim is asserted.
+    - button "选择引用":
+      - generic: "2"
+    - generic "思想块菜单": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - article:
+    - button "选择并设置 Paragraph 3": P3
+    - button "拖动段落 3":
+    - button "折叠 Paragraph 3" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "组内段落":
+    - text: 组内段落
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Software source section 1": SUBSECTION 3
+  - button "拖动章节 Software source section 1":
+  - button "折叠 Software source section 1" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / Software source section 1
+  - textbox "章节标题": Software source section 1
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Software source section 3": SUBSECTION 4
+  - button "拖动章节 Software source section 3":
+  - button "折叠 Software source section 3" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / Software source section 3
+  - textbox "章节标题": Software source section 3
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Software source section 1": SUBSECTION 5
+  - button "拖动章节 Software source section 1":
+  - button "折叠 Software source section 1" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / Software source section 1
+  - textbox "章节标题": Software source section 1
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software acceptance retained section": INTENT
+    - button "拖动 Intent Software acceptance retained section":
+    - button "折叠 Software acceptance retained section" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software acceptance retained section
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Software source section 2": SUBSECTION 6
+  - button "拖动章节 Software source section 2":
+  - button "折叠 Software source section 2" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / Software source section 2
+  - textbox "章节标题": Software source section 2
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Software source section 3": SUBSECTION 7
+  - button "拖动章节 Software source section 3":
+  - button "折叠 Software source section 3" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / Software source section 3
+  - textbox "章节标题": Software source section 3
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 New section": SUBSECTION 8
+  - button "拖动章节 New section":
+  - button "折叠 New section" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Other software source / New section
+  - textbox "章节标题": New section
+  - textbox "章节作用"
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Test": INTENT
+    - button "拖动 Intent Software_Test":
+    - button "折叠 Software_Test" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "选择并设置 G09 retained software template paragraph": GROUP
+  - button "拖动段落组 G09 retained software template paragraph":
+  - button "折叠 G09 retained software template paragraph" [expanded]:
+  - textbox "段落组用途":
+    - /placeholder: 段落组用途可以暂时未定
+    - text: G09 retained software template paragraph
+  - generic "段落组操作": •••
+  - article:
+    - button "选择并设置 Paragraph 2": P2
+    - button "拖动段落 2":
+    - button "折叠 Paragraph 2" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software acceptance preservation": INTENT
+    - button "拖动 Intent Software acceptance preservation":
+    - button "折叠 Software acceptance preservation" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software acceptance preservation
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted."
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "组内段落":
+    - text: 组内段落
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "添加章节":
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - article:
+      - button "将证据加入当前思想：New original software source body.":
+        - generic: SUPPORTS
+        - generic: 90%
+        - strong: New original software source body.
+        - generic: New original software source body.
+      - generic: Other selected source
+      - generic "查看完整来源"
+    - article:
+      - button "将证据加入当前思想：Original software source body 2.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 2.
+        - generic: Original software source body 2.
+      - generic: Refreshed live catalog title - software
+      - generic "查看完整来源"
+    - article:
+      - button "将证据加入当前思想：Original software source body 1.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 1.
+        - generic: Original software source body 1.
+      - generic: Refreshed live catalog title - software
+      - generic "查看完整来源"
+  - status
+  - button "与 Agent 讨论 15 条 · New section" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 15 条 · New section
+  - button "整篇历史"
+  - button "当前对象 · 此版本"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: Annotation：Software acceptance only. Keep the original page 2 source fixed to generated v1.
+    - paragraph: "Check these original numbered citations after regeneration: preserve the original source and version."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: verify original numbered citations [1] and [2] using generated v1 fixed sources."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: after generated v2, continue this original v1 quote and its original [1] page 2 source."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: "G01 ALPHA original discussion: preserve this first paragraph, exact selected text and generated v3 after reordering."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: "G01 BETA original discussion: preserve this second paragraph, exact original source and selected text when it moves to first position."
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: "G02 SOFTWARE PARTIAL: propose a paragraph purpose and an extra Intent for this original v3 Alpha object. I will adopt only the purpose, retain the original thought and sources, and leave the extra Intent unadopted."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: Software fixture proposes two structure changes for author comparison. No author change is applied by this reply. The original v3 paragraph, quote and sources stay fixed.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+    - region "待作者审核的建议":
+      - paragraph: 结构建议
+      - paragraph: G02 software partial adoption
+      - paragraph: Select only the paragraph purpose. Keep the proposed extra Intent unadopted, and retain the original author thought and sources.
+      - button "比较与决定 · 2 项"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: "G02 SOFTWARE SOURCE: use the added original v1 page 2 evidence as an unselected source candidate for this original Beta v3 thought. Keep the two original selected citations and author text unchanged."
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - region "待作者审核的建议":
+      - paragraph: 来源候选
+      - paragraph: G02 software source candidate
+      - paragraph: Add this existing owned page 2 source as an unselected candidate. Keep both original selected sources and the original author text.
+      - button "比较与决定 · 1 项"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: "G02 SOFTWARE WORDING: propose replacing only the original word Check with Review for explicit author rejection. Retain all original thought text, citations, objects and versions when rejected."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - region "待作者审核的建议":
+      - paragraph: 措辞建议
+      - paragraph: G02 software wording rejection
+      - paragraph: Offer a five-character wording edit for explicit rejection. Preserve the original author thought when rejected.
+      - button "比较与决定 · 1 项"
+  - generic: 当前选择：New section
+  - strong: 草稿对象：Introduction / 段落 1 · 成文 v3 · 结构 r10
+  - blockquote: 草稿引用：First source [1]. Next [2]. Repeat [1].
+  - button "移除草稿选区（保留对象）"
+  - generic: 点击其他对象保留草稿原对象。
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - region "比较新选对象与原草稿":
+    - paragraph: 新选：New section · 结构 r62。当前问题仍绑定原对象。
+    - button "保留并固定原对象"
+    - button "改用新对象并保留问题"
+    - button "加入比较来源"
+  - generic "固定对象的完整原文与版本"
+  - status: 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：Introduction / 段落 1
+    - text: G03 A unsent α draft — keep original v3/r10; DO NOT SEND.
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+    - text: "G03 A annotation α: this draft belongs only to the original Alpha v3 object."
+  - button "发送讨论":
+  - button "保存讨论批注"
+  - button "更新讨论历史"

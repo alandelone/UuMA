@@ -1,0 +1,18 @@
+{
+  "abstract": "G03 B offline author abstract — keep locally during disconnection; software acceptance only, no scientific claim.",
+  "direction": "horizontal",
+  "drafts": [
+    {
+      "label": "讨论草稿",
+      "text": "G03 B unsent β draft — belongs only to manuscript B; DO NOT SEND."
+    },
+    {
+      "label": "当前讨论的 annotation",
+      "text": "G03 B annotation β — keep isolated from A."
+    }
+  ],
+  "folded": [
+    "展开 Introduction"
+  ],
+  "url": "http://127.0.0.1:3008/?manuscript=manuscript_bea23f3050174ed1a0df075a32c25e13&view=structure&left=0&right=0&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%2C%22section_627cd43bfd8b4c19803e735aed09d118%22%5D&object=section_627cd43bfd8b4c19803e735aed09d118"
+}

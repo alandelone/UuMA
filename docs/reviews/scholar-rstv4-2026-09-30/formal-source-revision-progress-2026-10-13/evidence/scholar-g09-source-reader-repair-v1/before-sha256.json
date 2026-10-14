@@ -1,0 +1,10 @@
+{
+  "RSTV4/src/rstv4/studio.py": "7036bd844d77558daf20511a8fdb1c9099f3b5bb6b4390726745afca5f39e468",
+  "RSTV4/src/rstv4/studio_api.py": "53b58465eab35d6b2210d6e60f66ac1bbbd36c48c563e8997421787cb0d85e51",
+  "RSTV4/src/rstv4/studio_read_views.py": "b332d2b5f451ecef177b538d41c63d2c87a884c9ce6d45209c430b788bb3b34c",
+  "RSTV4/tests/test_studio_source_context.py": "7ccda3161c72d1f1c863cec91b3e0adb2645423dee10081a983e3d2bdce925b9",
+  "writing-studio/components/studio-workspace.tsx": "e07fe123cf81b68c274e58575fb32dd8880c503e48b163dc771aeab344e8a049",
+  "writing-studio/components/studio-source-context.tsx": "b142f78a80f9ab8390b03927eb26f33c2de0d32d21670398d75df63df8ed3744",
+  "writing-studio/lib/studio-types.ts": "8af60de45c3e304f890fdbdb8310e7beb17cf95f1a0516a34993e00bc62eeda4",
+  "writing-studio/lib/studio-api.ts": "d1b4a8c4e85dbf46488fd3b5ab408ad3e9d91ef279440e3aa4cbffc23a595768"
+}

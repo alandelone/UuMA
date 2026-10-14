@@ -1,0 +1,66 @@
+[
+  {
+    "previous": {
+      "ProcessId": 41060,
+      "ParentProcessId": 40796,
+      "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g07-build-2aju2a31\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040931)/"
+    },
+    "current": null
+  },
+  {
+    "previous": {
+      "ProcessId": 40796,
+      "ParentProcessId": 8088,
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040883)/"
+    },
+    "current": null
+  },
+  {
+    "previous": {
+      "ProcessId": 8088,
+      "ParentProcessId": 528,
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040729)/"
+    },
+    "current": null
+  },
+  {
+    "previous": {
+      "ProcessId": 528,
+      "ParentProcessId": 39268,
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040615)/"
+    },
+    "current": null
+  },
+  {
+    "previous": {
+      "ProcessId": 21416,
+      "ParentProcessId": 10760,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+      "CreationDate": "/Date(1791861036985)/"
+    },
+    "current": {
+      "ProcessId": 21416,
+      "ParentProcessId": 10760,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+      "CreationDate": "/Date(1791861036985)/"
+    }
+  },
+  {
+    "previous": {
+      "ProcessId": 10760,
+      "ParentProcessId": 39268,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+      "CreationDate": "/Date(1791861036956)/"
+    },
+    "current": {
+      "ProcessId": 10760,
+      "ParentProcessId": 39268,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+      "CreationDate": "/Date(1791861036956)/"
+    }
+  }
+]

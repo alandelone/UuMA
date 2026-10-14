@@ -1,0 +1,13 @@
+{
+  "status": "PASS_ALL_SEVEN_SHIPPED_CATALOG_ASSETS",
+  "assets": [
+    "catalog_web.html",
+    "catalog_research_overview.js",
+    "catalog_research_chat.js",
+    "catalog_research_workspaces.js",
+    "catalog_collections.js",
+    "catalog_review_workflow.js",
+    "catalog_scientific_review.js"
+  ],
+  "wheel": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-wheel-v1\\rstv4-0.1.0-py3-none-any.whl"
+}

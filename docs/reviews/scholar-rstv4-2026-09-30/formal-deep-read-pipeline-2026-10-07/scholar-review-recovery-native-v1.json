@@ -1,0 +1,1366 @@
+{
+  "status": "PASS_ACTUAL_IDENTITY_REVIEW_AND_REAL_MINERU_PARSER_RECOVERY",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn",
+  "responses": [
+    {
+      "method": "POST",
+      "path": "/api/catalog/research-actions",
+      "status": 200,
+      "body": {
+        "operation": "CREATE_FIELD",
+        "object_type": "field",
+        "object_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+        "object": {
+          "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+          "normalized_name": "审核恢复软件 field",
+          "name": "审核恢复软件 Field",
+          "description": null,
+          "created_at": "2026-10-06T00:57:19.221513+00:00",
+          "updated_at": "2026-10-06T00:57:19.221513+00:00"
+        },
+        "request_id": "review-native-field-v1",
+        "action_seq": 1,
+        "metadata_digest": "a94102e6b1d5bbe1f5cd243f9b602e9a3bbc64cb972973685c8f258be893e34a"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/research-actions",
+      "status": 200,
+      "body": {
+        "operation": "CREATE_TOPIC",
+        "object_type": "topic",
+        "object_id": "topic_738405b70b574a248971a315bf333706",
+        "object": {
+          "topic_id": "topic_738405b70b574a248971a315bf333706",
+          "normalized_name": "审核恢复软件 topic",
+          "name": "审核恢复软件 Topic",
+          "description": null,
+          "created_at": "2026-10-06T00:57:19.234531+00:00",
+          "updated_at": "2026-10-06T00:57:19.234531+00:00"
+        },
+        "request_id": "review-native-topic-v1",
+        "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+        "action_seq": 2,
+        "metadata_digest": "3b3dc7e9476c1a077c20ab0dba804440c5bc763e96df65c3fd3a47c91ec9681f"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections",
+      "status": 201,
+      "body": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+        "track_id": null,
+        "name": "审核恢复软件 Collection",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 1,
+        "created_at": "2026-10-06T00:57:19.249564+00:00",
+        "updated_at": "2026-10-06T00:57:19.249564+00:00",
+        "topic_id": "topic_738405b70b574a248971a315bf333706",
+        "creation_request_json": "{\"bibtex\": null, \"dois\": [\"10.1234/original\"], \"field_id\": \"field_2d25f31c2f6f4f01a69332408f6c9e7c\", \"name\": \"审核恢复软件 Collection\", \"queries\": [], \"scope\": {}, \"topic_id\": \"topic_738405b70b574a248971a315bf333706\", \"track_id\": null}",
+        "scope": {},
+        "seeds": [
+          {
+            "seed_id": "seed_e6c359882995e32906a8a748faeeccf6",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "seed_type": "DOI",
+            "raw_value": "10.1234/original",
+            "normalized_value": "10.1234/original",
+            "paper_id": null,
+            "created_at": "2026-10-06T00:57:19.249564+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/review/cases",
+      "status": 200,
+      "body": [
+        {
+          "kind": "PDF_IDENTITY",
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Wrong catalogue identity",
+          "doi": "10.1234/original",
+          "created_at": "2026-10-06T00:57:19.326735+00:00",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+          "detail": {
+            "doi_match": false,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "NEEDS_REVIEW",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 0.333
+          }
+        }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/files/source_file_491d18ddee7958c95deb123a188280d5/pages/1/text",
+      "status": 200,
+      "body": {
+        "width": 1000.0,
+        "height": 1000.0,
+        "words": [
+          {
+            "text": "Software",
+            "x": 30.0,
+            "y": 41.384,
+            "width": 47.352000000000004,
+            "height": 11.100000000000001
+          },
+          {
+            "text": "review",
+            "x": 80.688,
+            "y": 41.384,
+            "width": 34.66799999999999,
+            "height": 11.100000000000001
+          },
+          {
+            "text": "identity",
+            "x": 118.692,
+            "y": 41.384,
+            "width": 38.016000000000005,
+            "height": 11.100000000000001
+          },
+          {
+            "text": "title",
+            "x": 160.044,
+            "y": 41.384,
+            "width": 18.671999999999997,
+            "height": 11.100000000000001
+          },
+          {
+            "text": "DOI",
+            "x": 30.0,
+            "y": 71.384,
+            "width": 21.336,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "10.1234/corrected",
+            "x": 54.672,
+            "y": 71.384,
+            "width": 96.72,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Software",
+            "x": 30.0,
+            "y": 101.384,
+            "width": 47.352000000000004,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "fixture",
+            "x": 80.688,
+            "y": 101.384,
+            "width": 32.676,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "body",
+            "x": 116.7,
+            "y": 101.384,
+            "width": 26.016000000000005,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "preserves",
+            "x": 146.052,
+            "y": 101.384,
+            "width": 52.68000000000001,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "source,",
+            "x": 202.068,
+            "y": 101.384,
+            "width": 39.347999999999985,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "ownership",
+            "x": 244.752,
+            "y": 101.384,
+            "width": 54.68399999999997,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "and",
+            "x": 302.772,
+            "y": 101.384,
+            "width": 20.01600000000002,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "exact",
+            "x": 326.124,
+            "y": 101.384,
+            "width": 28.67999999999995,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "references.",
+            "x": 358.14,
+            "y": 101.384,
+            "width": 60.024,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Software",
+            "x": 421.5,
+            "y": 101.384,
+            "width": 47.351999999999975,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "fixture",
+            "x": 472.188,
+            "y": 101.384,
+            "width": 32.67599999999999,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "body",
+            "x": 508.2,
+            "y": 101.384,
+            "width": 26.01600000000002,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "preserves",
+            "x": 537.552,
+            "y": 101.384,
+            "width": 52.67999999999995,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "source,",
+            "x": 593.568,
+            "y": 101.384,
+            "width": 39.34800000000007,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "ownership",
+            "x": 636.252,
+            "y": 101.384,
+            "width": 54.68400000000008,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "and",
+            "x": 694.272,
+            "y": 101.384,
+            "width": 20.015999999999963,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "exact",
+            "x": 717.624,
+            "y": 101.384,
+            "width": 28.67999999999995,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "references.",
+            "x": 749.64,
+            "y": 101.384,
+            "width": 60.024,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Software",
+            "x": 813.0,
+            "y": 101.384,
+            "width": 47.351999999999975,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "fixture",
+            "x": 863.688,
+            "y": 101.384,
+            "width": 32.676000000000045,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "body",
+            "x": 899.7,
+            "y": 101.384,
+            "width": 26.015999999999963,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "preserves",
+            "x": 929.052,
+            "y": 101.384,
+            "width": 52.67999999999995,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "sou",
+            "x": 985.068,
+            "y": 101.384,
+            "width": 19.34400000000005,
+            "height": 11.099999999999994
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/annotations",
+      "status": 201,
+      "body": {
+        "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+        "submission_id": "native-source-TITLE",
+        "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "field_name": "TITLE",
+        "decision": "FOUND",
+        "selected_text": "Software review identity title",
+        "page_number": 1,
+        "word_start": 0,
+        "word_end": 3,
+        "comment": "",
+        "value_before": "Wrong catalogue identity",
+        "value_after": "Software review identity title",
+        "canonical_key_before": null,
+        "canonical_key_after": null,
+        "reviewer_label": "Alandelone",
+        "supersedes_annotation_id": null,
+        "created_at": "2026-10-06T00:57:19.437627+00:00",
+        "catalog_title": "Software review identity title",
+        "catalog_doi": "10.1234/original"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/annotations",
+      "status": 201,
+      "body": {
+        "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+        "submission_id": "native-source-DOI",
+        "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "field_name": "DOI",
+        "decision": "FOUND",
+        "selected_text": "10.1234/corrected",
+        "page_number": 1,
+        "word_start": 5,
+        "word_end": 5,
+        "comment": "",
+        "value_before": "10.1234/original",
+        "value_after": "10.1234/corrected",
+        "canonical_key_before": "doi:10.1234/original",
+        "canonical_key_after": "doi:10.1234/corrected",
+        "reviewer_label": "Alandelone",
+        "supersedes_annotation_id": null,
+        "created_at": "2026-10-06T00:57:19.481197+00:00",
+        "catalog_title": "Software review identity title",
+        "catalog_doi": "10.1234/corrected"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/review/cases/job_3e2ae537ca5bf4d9735deeb7cb972065/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+        "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1",
+        "kind": "PARSER",
+        "file": {
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "size_bytes": 1827,
+          "identity_status": "VERIFIED",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1.0
+          }
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "canonical_key": "doi:10.1234/corrected",
+          "updated_at": "2026-10-06T00:57:19.481197+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {
+          "DOI": {
+            "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+            "submission_id": "native-source-DOI",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "DOI",
+            "decision": "FOUND",
+            "selected_text": "10.1234/corrected",
+            "page_number": 1,
+            "word_start": 5,
+            "word_end": 5,
+            "comment": "",
+            "value_before": "10.1234/original",
+            "value_after": "10.1234/corrected",
+            "canonical_key_before": "doi:10.1234/original",
+            "canonical_key_after": "doi:10.1234/corrected",
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "TITLE": {
+            "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+            "submission_id": "native-source-TITLE",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "TITLE",
+            "decision": "FOUND",
+            "selected_text": "Software review identity title",
+            "page_number": 1,
+            "word_start": 0,
+            "word_end": 3,
+            "comment": "",
+            "value_before": "Wrong catalogue identity",
+            "value_after": "Software review identity title",
+            "canonical_key_before": null,
+            "canonical_key_after": null,
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.437627+00:00"
+          }
+        },
+        "findings": [],
+        "blocked_jobs": [
+          {
+            "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "job_type": "PARSE_PDF",
+            "status": "NEEDS_HUMAN",
+            "fencing_token": 1,
+            "updated_at": "2026-10-06T00:57:21.490794+00:00",
+            "review_kind": "PARSE_QUALITY"
+          }
+        ],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "name": "审核恢复软件 Collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": {
+          "available": true,
+          "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c",
+          "quality": {
+            "reference_page_alignment": {
+              "missing_source_numbered_references": [
+                6
+              ]
+            }
+          },
+          "parser": "controlled-incomplete-parser",
+          "body_blocks": 1,
+          "reference_entries": 5
+        },
+        "job": {
+          "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "job_type": "PARSE_PDF",
+          "status": "NEEDS_HUMAN",
+          "fencing_token": 1,
+          "updated_at": "2026-10-06T00:57:21.490794+00:00",
+          "last_error_detail": "Parser omitted numbered references present in PDF: [6]",
+          "result_json": "{\"review\": {\"kind\": \"PARSE_QUALITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\review\\\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\\\candidate.json\", \"sha256\": \"b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c\"}, \"correction_action_ids\": []}}"
+        },
+        "last_action_id": null,
+        "context_sha256": "f7ab6b7dd99fbd4b9c0147fd58575e2593ab59384e1468484769d954304b4e16",
+        "history": [],
+        "allowed_actions": [
+          "RECHECK_PARSE"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/files/source_file_491d18ddee7958c95deb123a188280d5/pages/2/text",
+      "status": 200,
+      "body": {
+        "width": 1000.0,
+        "height": 1000.0,
+        "words": [
+          {
+            "text": "References",
+            "x": 30.0,
+            "y": 41.384,
+            "width": 61.355999999999995,
+            "height": 11.100000000000001
+          },
+          {
+            "text": "[1]",
+            "x": 30.0,
+            "y": 71.384,
+            "width": 13.344000000000001,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Reference",
+            "x": 46.68,
+            "y": 71.384,
+            "width": 55.356,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "author",
+            "x": 105.372,
+            "y": 71.384,
+            "width": 34.019999999999996,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "1.",
+            "x": 142.728,
+            "y": 71.384,
+            "width": 10.007999999999981,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Distinct",
+            "x": 156.072,
+            "y": 71.384,
+            "width": 39.335999999999984,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "software",
+            "x": 198.744,
+            "y": 71.384,
+            "width": 45.34800000000001,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "citation",
+            "x": 247.428,
+            "y": 71.384,
+            "width": 38.01600000000002,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "experiment",
+            "x": 288.78,
+            "y": 71.384,
+            "width": 59.35200000000003,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "validation",
+            "x": 351.468,
+            "y": 71.384,
+            "width": 50.68799999999999,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "1.",
+            "x": 405.492,
+            "y": 71.384,
+            "width": 10.007999999999981,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "2026.",
+            "x": 418.836,
+            "y": 71.384,
+            "width": 30.024,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "[2]",
+            "x": 30.0,
+            "y": 101.384,
+            "width": 13.344000000000001,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Reference",
+            "x": 46.68,
+            "y": 101.384,
+            "width": 55.356,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "author",
+            "x": 105.372,
+            "y": 101.384,
+            "width": 34.019999999999996,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "2.",
+            "x": 142.728,
+            "y": 101.384,
+            "width": 10.007999999999981,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "Distinct",
+            "x": 156.072,
+            "y": 101.384,
+            "width": 39.335999999999984,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "software",
+            "x": 198.744,
+            "y": 101.384,
+            "width": 45.34800000000001,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "citation",
+            "x": 247.428,
+            "y": 101.384,
+            "width": 38.01600000000002,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "experiment",
+            "x": 288.78,
+            "y": 101.384,
+            "width": 59.35200000000003,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "validation",
+            "x": 351.468,
+            "y": 101.384,
+            "width": 50.68799999999999,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "2.",
+            "x": 405.492,
+            "y": 101.384,
+            "width": 10.007999999999981,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "2026.",
+            "x": 418.836,
+            "y": 101.384,
+            "width": 30.024,
+            "height": 11.099999999999994
+          },
+          {
+            "text": "[3]",
+            "x": 30.0,
+            "y": 131.384,
+            "width": 13.344000000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Reference",
+            "x": 46.68,
+            "y": 131.384,
+            "width": 55.356,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "author",
+            "x": 105.372,
+            "y": 131.384,
+            "width": 34.019999999999996,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "3.",
+            "x": 142.728,
+            "y": 131.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Distinct",
+            "x": 156.072,
+            "y": 131.384,
+            "width": 39.335999999999984,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "software",
+            "x": 198.744,
+            "y": 131.384,
+            "width": 45.34800000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "citation",
+            "x": 247.428,
+            "y": 131.384,
+            "width": 38.01600000000002,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "experiment",
+            "x": 288.78,
+            "y": 131.384,
+            "width": 59.35200000000003,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "validation",
+            "x": 351.468,
+            "y": 131.384,
+            "width": 50.68799999999999,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "3.",
+            "x": 405.492,
+            "y": 131.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "2026.",
+            "x": 418.836,
+            "y": 131.384,
+            "width": 30.024,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "[4]",
+            "x": 30.0,
+            "y": 161.384,
+            "width": 13.344000000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Reference",
+            "x": 46.68,
+            "y": 161.384,
+            "width": 55.356,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "author",
+            "x": 105.372,
+            "y": 161.384,
+            "width": 34.019999999999996,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "4.",
+            "x": 142.728,
+            "y": 161.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Distinct",
+            "x": 156.072,
+            "y": 161.384,
+            "width": 39.335999999999984,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "software",
+            "x": 198.744,
+            "y": 161.384,
+            "width": 45.34800000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "citation",
+            "x": 247.428,
+            "y": 161.384,
+            "width": 38.01600000000002,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "experiment",
+            "x": 288.78,
+            "y": 161.384,
+            "width": 59.35200000000003,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "validation",
+            "x": 351.468,
+            "y": 161.384,
+            "width": 50.68799999999999,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "4.",
+            "x": 405.492,
+            "y": 161.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "2026.",
+            "x": 418.836,
+            "y": 161.384,
+            "width": 30.024,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "[5]",
+            "x": 30.0,
+            "y": 191.384,
+            "width": 13.344000000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Reference",
+            "x": 46.68,
+            "y": 191.384,
+            "width": 55.356,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "author",
+            "x": 105.372,
+            "y": 191.384,
+            "width": 34.019999999999996,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "5.",
+            "x": 142.728,
+            "y": 191.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Distinct",
+            "x": 156.072,
+            "y": 191.384,
+            "width": 39.335999999999984,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "software",
+            "x": 198.744,
+            "y": 191.384,
+            "width": 45.34800000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "citation",
+            "x": 247.428,
+            "y": 191.384,
+            "width": 38.01600000000002,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "experiment",
+            "x": 288.78,
+            "y": 191.384,
+            "width": 59.35200000000003,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "validation",
+            "x": 351.468,
+            "y": 191.384,
+            "width": 50.68799999999999,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "5.",
+            "x": 405.492,
+            "y": 191.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "2026.",
+            "x": 418.836,
+            "y": 191.384,
+            "width": 30.024,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "[6]",
+            "x": 30.0,
+            "y": 221.384,
+            "width": 13.344000000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Reference",
+            "x": 46.68,
+            "y": 221.384,
+            "width": 55.356,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "author",
+            "x": 105.372,
+            "y": 221.384,
+            "width": 34.019999999999996,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "6.",
+            "x": 142.728,
+            "y": 221.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "Distinct",
+            "x": 156.072,
+            "y": 221.384,
+            "width": 39.335999999999984,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "software",
+            "x": 198.744,
+            "y": 221.384,
+            "width": 45.34800000000001,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "citation",
+            "x": 247.428,
+            "y": 221.384,
+            "width": 38.01600000000002,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "experiment",
+            "x": 288.78,
+            "y": 221.384,
+            "width": 59.35200000000003,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "validation",
+            "x": 351.468,
+            "y": 221.384,
+            "width": 50.68799999999999,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "6.",
+            "x": 405.492,
+            "y": 221.384,
+            "width": 10.007999999999981,
+            "height": 11.100000000000023
+          },
+          {
+            "text": "2026.",
+            "x": 418.836,
+            "y": 221.384,
+            "width": 30.024,
+            "height": 11.100000000000023
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "status": 200,
+      "body": {
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "canonical_key": "doi:10.1234/corrected",
+        "doi": "10.1234/corrected",
+        "normalized_title": "software review identity title",
+        "title": "Software review identity title",
+        "published_year": null,
+        "abstract": null,
+        "landing_url": null,
+        "pdf_url": null,
+        "created_at": "2026-10-06T00:57:19.278039+00:00",
+        "updated_at": "2026-10-06T00:57:19.481197+00:00",
+        "authors": [],
+        "catalog_status": "ACTIVE",
+        "files": [
+          {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "size_bytes": 1827,
+            "mime_type": "application/pdf",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+            "acquisition_method": "SOFTWARE_FIXTURE",
+            "source_url": null,
+            "identity_status": "VERIFIED",
+            "created_at": "2026-10-06T00:57:19.326735+00:00",
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1.0
+            }
+          }
+        ],
+        "sources": [],
+        "parse_runs": [
+          {
+            "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "parser_name": "MinerU/magic-pdf",
+            "parser_version": "1.2.2",
+            "config_digest": "034e95237d3586abed623f98328a6a4e48460bdd73daeddc754377949066bb89",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-06T00:58:45.547170+00:00",
+            "completed_at": "2026-10-06T00:58:45.547170+00:00",
+            "artifact_manifest": {
+              "artifacts_complete": true,
+              "content_list_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\mineru-attempts\\attempt-fe28bf201c514fc7bdd11cef00a567ae\\out\\source\\source_content_list.json",
+              "markdown_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\mineru-attempts\\attempt-fe28bf201c514fc7bdd11cef00a567ae\\out\\source\\source.md",
+              "publication": {
+                "output_revision_sha256": "42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2",
+                "parser_configuration": {
+                  "bridge": "v4",
+                  "method": "auto"
+                },
+                "parser_configuration_sha256": "c210cb74e63e65fd6ccead262791af4126066eae8fe2479341c7447c2b951f6a",
+                "publication_configuration_sha256": "034e95237d3586abed623f98328a6a4e48460bdd73daeddc754377949066bb89"
+              },
+              "quality": {
+                "body_blocks": 3,
+                "body_pages": [
+                  1
+                ],
+                "body_text_chars": 204,
+                "equation_blocks": 0,
+                "figure_caption_blocks": 0,
+                "page_number_basis": "one_based_from_mineru_page_idx",
+                "prose_text_chars": 204,
+                "raw_text_chars": 720,
+                "reference_entries": 6,
+                "reference_heading_found": true,
+                "reference_page_alignment": {
+                  "aligned": 6,
+                  "ambiguous": 0,
+                  "corrected": 0,
+                  "method": "pdftotext_word_overlap",
+                  "missing_source_numbered_references": [],
+                  "numbering_checked": true
+                },
+                "table_blocks": 0
+              },
+              "requested_output_dir": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\parse",
+              "review_correction_action_ids": [
+                "review_action_377782aa4546dafd80beff33918059df"
+              ],
+              "source_pdf_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf"
+            }
+          }
+        ],
+        "references": [
+          {
+            "reference_entry_id": "reference_0a9ac121df9571d6d95b9868b284cde1",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[1] Reference author 1. Distinct software citation experiment validation 1. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "49d63073f2a58fd0871aafc41ef98b631fdb296452fee545d7d2a4b0f206498a",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1.0
+            }
+          },
+          {
+            "reference_entry_id": "reference_115ef3ba8ee865f00cd8f8e7f4653d6f",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[2] Reference author 2. Distinct software citation experiment validation 2. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "55527d36ae7a5d42abd26e91a9d8944a8f68bb490d2285e7acd86ac5fce21e16",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1.0
+            }
+          },
+          {
+            "reference_entry_id": "reference_bec01c96e9be408bfdd2c50c595e4e24",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[3] Reference author 3. Distinct software citation experiment validation 3. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "dd01e80da17eb26054e955a73437640a5a33160549d28febaf6eaa1091a0bcdf",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1.0
+            }
+          },
+          {
+            "reference_entry_id": "reference_96886601bf6663ef4e7b1bfc0aa35ae7",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[4] Reference author 4. Distinct software citation experiment validation 4. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "ae5c4c54d6ce89ba62afe08798ca8cd695222e1d69b0da91552ebf1d59382124",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1.0
+            }
+          },
+          {
+            "reference_entry_id": "reference_b65de6a260a94c819d27b73eeedcf195",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[5] Reference author 5. Distinct software citation experiment validation 5. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "e87b6b2ea6cd9e7c5697b8996ca74022159849969addf90de23972cac713f4ee",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1.0
+            }
+          },
+          {
+            "reference_entry_id": "reference_617af6de4baf3633df9bda3f75afb768",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "acb39d5373aad8293b824dec0dc67477c7c13f7acfd4513823537c52dd735d9f",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1.0
+            }
+          }
+        ],
+        "assessments": [],
+        "skeletons": [],
+        "processing": [
+          {
+            "job_id": "job_2193b0167d8273f30de80f71b50a5b92",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "QUICK_READ",
+            "queue_class": "MODEL_READ",
+            "status": "READY",
+            "priority": 70,
+            "idempotency_key": "a7957e53ed240e1107adcbe8dc542109a1fb926aa97bd31bb6edf6fd210fe823",
+            "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\"}",
+            "input_digest": "b96bda041ed2962232cf2e42c5e04f4427a65acd64eeb752d75224314f91f550",
+            "rule_version": "quick-read-v1",
+            "attempts": 0,
+            "available_at": "2026-10-06T00:58:45.550170+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 0,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": null,
+            "created_at": "2026-10-06T00:58:45.550170+00:00",
+            "updated_at": "2026-10-06T00:58:45.550170+00:00"
+          },
+          {
+            "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "PARSE_PDF",
+            "queue_class": "PARSER",
+            "status": "SUCCEEDED",
+            "priority": 80,
+            "idempotency_key": "16e9540822710a648e842d64a394577a4fafaa092f5736256f83e1671e030c26",
+            "input_json": "{\"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\"}",
+            "input_digest": "dc21525612f70da50616658f58cc661954992ebd1ded588c660b54512aacb74f",
+            "rule_version": "parser-v1",
+            "attempts": 2,
+            "available_at": "2026-10-06T00:57:21.687917+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 2,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"blocks\": 3, \"paper_version_id\": \"paper_version_ec792722735b1f9b62bbdd3810d2282b\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"references\": 6}",
+            "created_at": "2026-10-06T00:57:19.652441+00:00",
+            "updated_at": "2026-10-06T00:58:45.559685+00:00"
+          },
+          {
+            "job_id": "job_ec0c6c3383dca770493ece39af6db184",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "READY",
+            "priority": 60,
+            "idempotency_key": "d50380edccd2b7df87bb14d3a49c70358f58b74a50e8c7524993354485af1ab8",
+            "input_json": "{\"scope_version\": 1}",
+            "input_digest": "afb34bc3a53ca95046c1463b5d1a5a31eeefcae867db2e35c533efc0665a1bcb",
+            "rule_version": "screen-v1-scope-1",
+            "attempts": 0,
+            "available_at": "2026-10-06T00:57:19.287549+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 0,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": null,
+            "created_at": "2026-10-06T00:57:19.287549+00:00",
+            "updated_at": "2026-10-06T00:57:19.287549+00:00"
+          },
+          {
+            "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "LOCATE_PDF",
+            "queue_class": "NETWORK",
+            "status": "READY",
+            "priority": 50,
+            "idempotency_key": "e914ff82d122a9759a14b28bebb1dc57a8d02a2897dc52f7c6bd76c48371a091",
+            "input_json": "{\"doi\": \"10.1234/original\"}",
+            "input_digest": "bf2e5bc8ae8039be23aa9996bba0c5217b9de54e5335d7f89569bd03b4a18dd4",
+            "rule_version": "fulltext-v1",
+            "attempts": 1,
+            "available_at": "2026-10-06T00:57:19.640928+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 1,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\"}}",
+            "created_at": "2026-10-06T00:57:19.287549+00:00",
+            "updated_at": "2026-10-06T00:57:19.640928+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/summary",
+      "status": 200,
+      "body": {
+        "papers": 1,
+        "papers_with_pdf_review": 0,
+        "pdf_review_cases": 0,
+        "parser_review_cases": 0
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/review/cases",
+      "status": 200,
+      "body": []
+    }
+  ],
+  "browser_verified": false,
+  "scientific_approval": false,
+  "network_providers_executed": false,
+  "scientific_models_executed": false,
+  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+  "source_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+  "locator_job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+  "parser_job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+  "candidate": {
+    "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\review\\job_3e2ae537ca5bf4d9735deeb7cb972065-1\\candidate.json",
+    "sha256": "b3138c77bc26b5ce20188b92eb41a4acfd72e109ae0cf79eae8656962cb1919c"
+  },
+  "reference_selection": {
+    "page_number": 2,
+    "word_start": 56,
+    "word_end": 66,
+    "text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026."
+  },
+  "actual_parser_readiness": {
+    "available": true,
+    "python": "C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\python.exe",
+    "detail": "\u001b[93mimport tensorrt_llm failed, if do not use tensorrt, ignore this message\u001b[0m\n\u001b[93mimport lmdeploy failed, if do not use lmdeploy, ignore this message\u001b[0m\nok magic-pdf=1.2.2 transformers=4.42.4"
+  },
+  "actual_parser_execution": {
+    "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+    "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "PARSE_PDF",
+    "queue_class": "PARSER",
+    "status": "SUCCEEDED",
+    "priority": 80,
+    "idempotency_key": "16e9540822710a648e842d64a394577a4fafaa092f5736256f83e1671e030c26",
+    "input_json": "{\"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\"}",
+    "input_digest": "dc21525612f70da50616658f58cc661954992ebd1ded588c660b54512aacb74f",
+    "rule_version": "parser-v1",
+    "attempts": 2,
+    "available_at": "2026-10-06T00:57:21.687917+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 2,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": "{\"blocks\": 3, \"paper_version_id\": \"paper_version_ec792722735b1f9b62bbdd3810d2282b\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"references\": 6}",
+    "created_at": "2026-10-06T00:57:19.652441+00:00",
+    "updated_at": "2026-10-06T00:58:45.559685+00:00"
+  },
+  "published": {
+    "blocks": 3,
+    "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+    "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+    "references": 6
+  },
+  "actual_local_mineru_executed": true,
+  "quick_read_status": "QUEUED_NOT_EXECUTED"
+}

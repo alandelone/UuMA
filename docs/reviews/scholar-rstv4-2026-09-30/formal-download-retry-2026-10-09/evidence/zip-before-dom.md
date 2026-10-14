@@ -1,0 +1,136 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Two-round software acceptance fixture · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button "关联意见"
+  - paragraph: Reviewer comments
+  - heading "意见 → 决定 → 修改 → 回复" [level=2]
+  - button "🗃 已删除"
+  - button "📦 投稿包"
+  - region "返修轮次与固定被审版本":
+    - text: 返修轮次
+    - combobox "选择返修轮次":
+      - option "请选择轮次…"
+      - option "第 1 轮 · Software fixture venue"
+      - option "第 2 轮 · Software fixture venue" [selected]
+    - paragraph: 固定被审稿 v2 / 作者结构 r2；本轮生成不会移动基线。
+    - button "建立第 3 轮…"
+  - textbox "审稿意见输入":
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+  - button "👀 准备预览"
+  - button "➕ 单条新增"
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button "导入审稿意见文件"
+  - article:
+    - button "开始修改意见 A02":
+    - generic "comment_ff953cae8bf34b65add52bc0bc2c0af2": A02
+    - generic: 第 2 轮 · 提出人未填写
+    - paragraph: Round 2 fixture opinion only
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A02":
+      - /placeholder: 我的决定与理由
+      - text: Accept the toolbar and selector clarification; retain the no-research-claim disclaimer.
+    - textbox "回复内容 A02":
+      - /placeholder: 回复内容
+      - text: We revised the fixture to three toolbars and two reviewer round selectors. We retained the original no-research-claim disclaimer. The exact final PDF was checked.
+    - combobox "意见状态 A02":
+      - option "待处理"
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled] [selected]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 作者已核对本版回复
+    - generic: 1 条关联修改
+    - navigation "A02 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_04ebbdbc1aef44a689cff91709274394"
+    - button "移入已删除 A02":
+  - region "已保存修改与意见关联":
+    - heading "已保存修改" [level=3]
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox "显示":
+      - option "全部修改" [selected]
+      - option "未关联意见"
+      - option "已关联意见"
+    - button "刷新修改历史"
+    - article:
+      - strong: 作者修订 r0 → r1
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r1 → r2
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r2 → r3
+      - button "分配／解除意见"
+      - button "撤销上次关联"
+      - paragraph: A01 · 第 1 轮、A02 · 第 2 轮
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 3 次后补决定"
+  - region "已生成的投稿包":
+    - heading "投稿包" [level=3]
+    - button "刷新":
+      - text: 刷新
+    - paragraph: 每份文件固定到生成版本和被审轮次；旧包继续保留。
+    - article:
+      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 12:50 PM
+      - button "下载 成文 v3 · 第 2 轮 · 10/4/26, 12:50 PM 完整投稿包":
+        - text: 下载整包
+      - generic "单独下载文件 · 16"
+    - article:
+      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 11:48 AM
+      - button "下载 成文 v3 · 第 2 轮 · 10/4/26, 11:48 AM 完整投稿包":
+        - text: 下载整包
+      - paragraph: 1 条意见尚未完成，回复需要作者核对。
+      - generic "单独下载文件 · 15"
+    - article:
+      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 9:41 AM
+      - button "下载 成文 v3 · 第 2 轮 · 10/4/26, 9:41 AM 完整投稿包":
+        - text: 下载整包
+      - paragraph: 1 条意见尚未完成，回复需要作者核对。
+      - paragraph: 历史包未保存打包时的文件摘要，不能核实原始字节是否保持不变。
+      - generic "单独下载文件 · 12"
+    - article:
+      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 8:49 AM
+      - button "下载 成文 v3 · 第 2 轮 · 10/4/26, 8:49 AM 完整投稿包":
+        - text: 下载整包
+      - paragraph: 1 条意见尚未完成，回复需要作者核对。
+      - paragraph: 历史包未保存打包时的文件摘要，不能核实原始字节是否保持不变。
+      - generic "单独下载文件 · 10"
+  - status
+  - button "与 Agent 讨论 2 条 · Two-round software acceptance fixture":
+    - text: 与 Agent 讨论
+    - text: 2 条 · Two-round software acceptance fixture

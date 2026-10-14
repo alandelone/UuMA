@@ -1,0 +1,3189 @@
+{
+  "artifact_type": "OFFLINE_REGISTERED_COMPONENT_SCHEMAS",
+  "runtime_registered": false,
+  "live_profile_changed": false,
+  "tools": [
+    {
+      "name": "honc_get_life_context",
+      "description": "Read this owner's settings, habit revisions and current-message operation grants.\n\n        Missing matches never create habits. Only returned request_refs can authorize writes.\n        Settings revision zero means defaults have not yet been persisted.\n        ",
+      "inputSchema": {
+        "properties": {},
+        "title": "honc_get_life_contextArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_configure_habit",
+      "description": "Create, patch, pause, resume or retire a habit using its current-message grant.\n\n        Existing habits require expected_revision; patches retain unspecified fields.\n        Retirement keeps history. Creation without reminder config adds no schedule.\n        ",
+      "inputSchema": {
+        "$defs": {
+          "HabitConfigureRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "request_ref": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Request Ref",
+                "type": "string"
+              },
+              "source_quote": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Source Quote",
+                "type": "string"
+              },
+              "action": {
+                "enum": [
+                  "create",
+                  "update",
+                  "pause",
+                  "resume",
+                  "retire"
+                ],
+                "title": "Action",
+                "type": "string"
+              },
+              "habit_id": {
+                "anyOf": [
+                  {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Habit Id"
+              },
+              "expected_revision": {
+                "anyOf": [
+                  {
+                    "minimum": 1,
+                    "type": "integer"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Expected Revision"
+              },
+              "definition": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/HabitDefinitionInput"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null
+              },
+              "reminder": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/ReminderRule"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null
+              },
+              "definition_patch": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Definition Patch"
+              },
+              "reminder_patch": {
+                "anyOf": [
+                  {
+                    "additionalProperties": true,
+                    "type": "object"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Reminder Patch"
+              }
+            },
+            "required": [
+              "request_ref",
+              "source_quote",
+              "action"
+            ],
+            "title": "HabitConfigureRequest",
+            "type": "object"
+          },
+          "HabitDefinitionInput": {
+            "additionalProperties": false,
+            "properties": {
+              "name": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Name",
+                "type": "string"
+              },
+              "record_type": {
+                "enum": [
+                  "boolean",
+                  "count",
+                  "quantity",
+                  "duration",
+                  "text"
+                ],
+                "title": "Record Type",
+                "type": "string"
+              },
+              "unit": {
+                "anyOf": [
+                  {
+                    "maxLength": 32,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Unit"
+              },
+              "target_value": {
+                "anyOf": [
+                  {
+                    "exclusiveMinimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Target Value"
+              },
+              "target_period": {
+                "default": "day",
+                "enum": [
+                  "day",
+                  "week"
+                ],
+                "title": "Target Period",
+                "type": "string"
+              },
+              "description": {
+                "default": "",
+                "maxLength": 4000,
+                "title": "Description",
+                "type": "string"
+              },
+              "aliases": {
+                "items": {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "title": "Aliases",
+                "type": "array"
+              }
+            },
+            "required": [
+              "name",
+              "record_type"
+            ],
+            "title": "HabitDefinitionInput",
+            "type": "object"
+          },
+          "ReminderRule": {
+            "additionalProperties": false,
+            "properties": {
+              "enabled": {
+                "default": true,
+                "title": "Enabled",
+                "type": "boolean"
+              },
+              "count": {
+                "default": 1,
+                "minimum": 0,
+                "title": "Count",
+                "type": "integer"
+              },
+              "importance": {
+                "default": "normal",
+                "enum": [
+                  "low",
+                  "normal",
+                  "high"
+                ],
+                "title": "Importance",
+                "type": "string"
+              },
+              "recurrence": {
+                "default": "daily",
+                "enum": [
+                  "daily",
+                  "weekdays"
+                ],
+                "title": "Recurrence",
+                "type": "string"
+              },
+              "weekdays": {
+                "items": {
+                  "maximum": 6,
+                  "minimum": 0,
+                  "type": "integer"
+                },
+                "title": "Weekdays",
+                "type": "array"
+              },
+              "slots": {
+                "items": {
+                  "$ref": "#/$defs/ReminderSlot"
+                },
+                "minItems": 1,
+                "title": "Slots",
+                "type": "array"
+              }
+            },
+            "required": [
+              "slots"
+            ],
+            "title": "ReminderRule",
+            "type": "object"
+          },
+          "ReminderSlot": {
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Key",
+                "type": "string"
+              },
+              "trigger": {
+                "enum": [
+                  "fixed_time",
+                  "time_window",
+                  "wake",
+                  "bedtime"
+                ],
+                "title": "Trigger",
+                "type": "string"
+              },
+              "fixed_time": {
+                "anyOf": [
+                  {
+                    "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Fixed Time"
+              },
+              "start": {
+                "anyOf": [
+                  {
+                    "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Start"
+              },
+              "end": {
+                "anyOf": [
+                  {
+                    "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "End"
+              },
+              "fallback_time": {
+                "anyOf": [
+                  {
+                    "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Fallback Time"
+              },
+              "send_times": {
+                "items": {
+                  "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$",
+                  "type": "string"
+                },
+                "title": "Send Times",
+                "type": "array"
+              }
+            },
+            "required": [
+              "key",
+              "trigger"
+            ],
+            "title": "ReminderSlot",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/HabitConfigureRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "honc_configure_habitArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_update_life_settings",
+      "description": "Patch settings with expected_revision and a current-message grant.\n\n        Defaults: wake 08:00, bedtime 21:30, one reminder. Importance never adds sends.\n        Body follow-up, nightly chasing, owner and recipient changes are forbidden.\n        ",
+      "inputSchema": {
+        "$defs": {
+          "SettingsUpdateRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "request_ref": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Request Ref",
+                "type": "string"
+              },
+              "source_quote": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Source Quote",
+                "type": "string"
+              },
+              "expected_revision": {
+                "minimum": 0,
+                "title": "Expected Revision",
+                "type": "integer"
+              },
+              "patch": {
+                "additionalProperties": true,
+                "minProperties": 1,
+                "title": "Patch",
+                "type": "object"
+              }
+            },
+            "required": [
+              "request_ref",
+              "source_quote",
+              "expected_revision",
+              "patch"
+            ],
+            "title": "SettingsUpdateRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/SettingsUpdateRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "honc_update_life_settingsArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_record_habit",
+      "description": "Atomically record 1-8 explicit habit reports against current habit revisions.\n\n        Use exact source quotes and units. Unknown quantity/time stays unknown.\n        This foundation rejects unverified occurrence IDs and does not alter focus rounds.\n        ",
+      "inputSchema": {
+        "$defs": {
+          "HabitCheckinEntry": {
+            "additionalProperties": false,
+            "properties": {
+              "habit_id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Habit Id",
+                "type": "string"
+              },
+              "habit_revision": {
+                "minimum": 1,
+                "title": "Habit Revision",
+                "type": "integer"
+              },
+              "outcome": {
+                "enum": [
+                  "completed",
+                  "partial",
+                  "skipped",
+                  "not_done"
+                ],
+                "title": "Outcome",
+                "type": "string"
+              },
+              "source_quote": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Source Quote",
+                "type": "string"
+              },
+              "instance_id": {
+                "anyOf": [
+                  {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Instance Id"
+              },
+              "value": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Value"
+              },
+              "unit": {
+                "anyOf": [
+                  {
+                    "maxLength": 32,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Unit"
+              },
+              "text": {
+                "anyOf": [
+                  {
+                    "maxLength": 16000,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Text"
+              },
+              "reason": {
+                "anyOf": [
+                  {
+                    "maxLength": 4000,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Reason"
+              },
+              "time": {
+                "$ref": "#/$defs/ObservationTime"
+              }
+            },
+            "required": [
+              "habit_id",
+              "habit_revision",
+              "outcome",
+              "source_quote"
+            ],
+            "title": "HabitCheckinEntry",
+            "type": "object"
+          },
+          "HabitCheckinRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "request_ref": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Request Ref",
+                "type": "string"
+              },
+              "entries": {
+                "items": {
+                  "$ref": "#/$defs/HabitCheckinEntry"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "title": "Entries",
+                "type": "array"
+              }
+            },
+            "required": [
+              "request_ref",
+              "entries"
+            ],
+            "title": "HabitCheckinRequest",
+            "type": "object"
+          },
+          "ObservationTime": {
+            "additionalProperties": false,
+            "properties": {
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "time_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Time Text"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "title": "ObservationTime",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/HabitCheckinRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "honc_record_habitArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_record_body",
+      "description": "Save positive or negative body observations using the user's original words.\n\n        Leave unreported details null. No diagnoses, follow-up questions or reminders are created.\n        Related records must belong to this owner. A committed receipt confirms the write.\n        ",
+      "inputSchema": {
+        "$defs": {
+          "BodyObservation": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Description",
+                "type": "string"
+              },
+              "body_part": {
+                "anyOf": [
+                  {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Body Part"
+              },
+              "severity_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Severity Text"
+              },
+              "reported_score": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Reported Score"
+              },
+              "score_scale": {
+                "anyOf": [
+                  {
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Score Scale"
+              },
+              "change_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 1000,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Change Text"
+              }
+            },
+            "required": [
+              "description"
+            ],
+            "title": "BodyObservation",
+            "type": "object"
+          },
+          "BodyRecordRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "request_ref": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Request Ref",
+                "type": "string"
+              },
+              "source_quote": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Source Quote",
+                "type": "string"
+              },
+              "observations": {
+                "items": {
+                  "$ref": "#/$defs/BodyObservation"
+                },
+                "maxItems": 8,
+                "minItems": 1,
+                "title": "Observations",
+                "type": "array"
+              },
+              "time": {
+                "$ref": "#/$defs/ObservationTime"
+              },
+              "related_record_ids": {
+                "items": {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "title": "Related Record Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "request_ref",
+              "source_quote",
+              "observations"
+            ],
+            "title": "BodyRecordRequest",
+            "type": "object"
+          },
+          "ObservationTime": {
+            "additionalProperties": false,
+            "properties": {
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "time_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Time Text"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "title": "ObservationTime",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/BodyRecordRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "honc_record_bodyArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_save_diary",
+      "description": "Save original diary text and optional date/links; preserve unknown dates.\n\n        Automatic diary-habit binding is pending. This operation never adds a second check-in.\n        ",
+      "inputSchema": {
+        "$defs": {
+          "DiaryRecordRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "request_ref": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Request Ref",
+                "type": "string"
+              },
+              "source_quote": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Source Quote",
+                "type": "string"
+              },
+              "content": {
+                "maxLength": 16000,
+                "minLength": 1,
+                "title": "Content",
+                "type": "string"
+              },
+              "diary_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Diary Date"
+              },
+              "linked_record_ids": {
+                "items": {
+                  "maxLength": 200,
+                  "minLength": 1,
+                  "type": "string"
+                },
+                "title": "Linked Record Ids",
+                "type": "array"
+              }
+            },
+            "required": [
+              "request_ref",
+              "source_quote",
+              "content"
+            ],
+            "title": "DiaryRecordRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/DiaryRecordRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "honc_save_diaryArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_correct_life_record",
+      "description": "Append a correction or void to an explicit fact ID at expected_revision.\n\n        Original versions remain in audit history. Replacement fields must match the fact kind.\n        Habit quantities retain their original unit; configuration uses configure_habit instead.\n        ",
+      "inputSchema": {
+        "$defs": {
+          "BodyObservation": {
+            "additionalProperties": false,
+            "properties": {
+              "description": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Description",
+                "type": "string"
+              },
+              "body_part": {
+                "anyOf": [
+                  {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Body Part"
+              },
+              "severity_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 200,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Severity Text"
+              },
+              "reported_score": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Reported Score"
+              },
+              "score_scale": {
+                "anyOf": [
+                  {
+                    "maxLength": 100,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Score Scale"
+              },
+              "change_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 1000,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Change Text"
+              }
+            },
+            "required": [
+              "description"
+            ],
+            "title": "BodyObservation",
+            "type": "object"
+          },
+          "ObservationTime": {
+            "additionalProperties": false,
+            "properties": {
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "time_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Time Text"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "title": "ObservationTime",
+            "type": "object"
+          },
+          "RecordCorrectionRequest": {
+            "additionalProperties": false,
+            "properties": {
+              "request_ref": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Request Ref",
+                "type": "string"
+              },
+              "source_quote": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Source Quote",
+                "type": "string"
+              },
+              "record_id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Record Id",
+                "type": "string"
+              },
+              "expected_revision": {
+                "minimum": 1,
+                "title": "Expected Revision",
+                "type": "integer"
+              },
+              "reason": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Reason",
+                "type": "string"
+              },
+              "void": {
+                "default": false,
+                "title": "Void",
+                "type": "boolean"
+              },
+              "corrected_time": {
+                "anyOf": [
+                  {
+                    "$ref": "#/$defs/ObservationTime"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null
+              },
+              "corrected_value": {
+                "anyOf": [
+                  {
+                    "minimum": 0,
+                    "type": "number"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Corrected Value"
+              },
+              "corrected_unit": {
+                "anyOf": [
+                  {
+                    "maxLength": 32,
+                    "minLength": 1,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Corrected Unit"
+              },
+              "corrected_text": {
+                "anyOf": [
+                  {
+                    "maxLength": 16000,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Corrected Text"
+              },
+              "corrected_observations": {
+                "anyOf": [
+                  {
+                    "items": {
+                      "$ref": "#/$defs/BodyObservation"
+                    },
+                    "maxItems": 8,
+                    "minItems": 1,
+                    "type": "array"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Corrected Observations"
+              }
+            },
+            "required": [
+              "request_ref",
+              "source_quote",
+              "record_id",
+              "expected_revision",
+              "reason"
+            ],
+            "title": "RecordCorrectionRequest",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "request": {
+            "$ref": "#/$defs/RecordCorrectionRequest"
+          }
+        },
+        "required": [
+          "request"
+        ],
+        "title": "honc_correct_life_recordArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_get_life_operation",
+      "description": "Read one persisted write receipt in the current owner's scope.\n\n        Supply exactly one ID. After UNKNOWN, look up this receipt; do not blindly re-submit.\n        An absent receipt alone does not establish that an uncertain write failed.\n        ",
+      "inputSchema": {
+        "properties": {
+          "operation_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "request_ref": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Request Ref"
+          }
+        },
+        "title": "honc_get_life_operationArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    },
+    {
+      "name": "honc_get_life_history",
+      "description": "Read an explicit fact or date range, scoped to this owner, with bounded pagination.\n\n        Effective excludes voids; audit retains all revisions. Unknown occurrence dates\n        use the marked recorded-date range rather than pretending the event happened today.\n        Offset pagination is provisional and should not be persisted as a stable cursor.\n        ",
+      "inputSchema": {
+        "properties": {
+          "record_id": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Record Id"
+          },
+          "start_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Start Date"
+          },
+          "end_date": {
+            "anyOf": [
+              {
+                "format": "date",
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "End Date"
+          },
+          "view": {
+            "default": "effective",
+            "enum": [
+              "effective",
+              "audit"
+            ],
+            "title": "View",
+            "type": "string"
+          },
+          "limit": {
+            "default": 20,
+            "maximum": 100,
+            "minimum": 1,
+            "title": "Limit",
+            "type": "integer"
+          },
+          "offset": {
+            "default": 0,
+            "minimum": 0,
+            "title": "Offset",
+            "type": "integer"
+          }
+        },
+        "title": "honc_get_life_historyArguments",
+        "type": "object"
+      },
+      "outputSchema": {
+        "$defs": {
+          "RecordReference": {
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Id",
+                "type": "string"
+              },
+              "kind": {
+                "enum": [
+                  "habit",
+                  "body",
+                  "diary",
+                  "anchor",
+                  "activity",
+                  "settings"
+                ],
+                "title": "Kind",
+                "type": "string"
+              },
+              "revision": {
+                "minimum": 1,
+                "title": "Revision",
+                "type": "integer"
+              },
+              "occurred_at": {
+                "anyOf": [
+                  {
+                    "format": "date-time",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred At"
+              },
+              "occurred_date": {
+                "anyOf": [
+                  {
+                    "format": "date",
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Occurred Date"
+              },
+              "precision": {
+                "default": "unknown",
+                "enum": [
+                  "exact",
+                  "date",
+                  "approximate",
+                  "unknown"
+                ],
+                "title": "Precision",
+                "type": "string"
+              }
+            },
+            "required": [
+              "id",
+              "kind",
+              "revision"
+            ],
+            "title": "RecordReference",
+            "type": "object"
+          },
+          "ToolError": {
+            "additionalProperties": false,
+            "properties": {
+              "code": {
+                "maxLength": 200,
+                "minLength": 1,
+                "title": "Code",
+                "type": "string"
+              },
+              "field": {
+                "anyOf": [
+                  {
+                    "maxLength": 500,
+                    "type": "string"
+                  },
+                  {
+                    "type": "null"
+                  }
+                ],
+                "default": null,
+                "title": "Field"
+              },
+              "message": {
+                "maxLength": 4000,
+                "minLength": 1,
+                "title": "Message",
+                "type": "string"
+              }
+            },
+            "required": [
+              "code",
+              "message"
+            ],
+            "title": "ToolError",
+            "type": "object"
+          }
+        },
+        "additionalProperties": false,
+        "properties": {
+          "ok": {
+            "title": "Ok",
+            "type": "boolean"
+          },
+          "status": {
+            "enum": [
+              "READ_OK",
+              "APPLIED",
+              "ALREADY_APPLIED",
+              "NEEDS_INPUT",
+              "CONFLICT",
+              "FAILED",
+              "UNKNOWN",
+              "NOT_FOUND"
+            ],
+            "title": "Status",
+            "type": "string"
+          },
+          "effect_state": {
+            "enum": [
+              "none",
+              "committed",
+              "unknown"
+            ],
+            "title": "Effect State",
+            "type": "string"
+          },
+          "operation_id": {
+            "anyOf": [
+              {
+                "maxLength": 200,
+                "minLength": 1,
+                "type": "string"
+              },
+              {
+                "type": "null"
+              }
+            ],
+            "default": null,
+            "title": "Operation Id"
+          },
+          "records": {
+            "items": {
+              "$ref": "#/$defs/RecordReference"
+            },
+            "title": "Records",
+            "type": "array"
+          },
+          "data": {
+            "additionalProperties": true,
+            "title": "Data",
+            "type": "object"
+          },
+          "receipt_refs": {
+            "additionalProperties": {
+              "type": "string"
+            },
+            "title": "Receipt Refs",
+            "type": "object"
+          },
+          "next_action": {
+            "default": "NONE",
+            "enum": [
+              "NONE",
+              "ASK_USER",
+              "READ_OPERATION",
+              "RELOAD_OBJECT",
+              "REPORT_FAILURE"
+            ],
+            "title": "Next Action",
+            "type": "string"
+          },
+          "retry_policy": {
+            "default": "none",
+            "enum": [
+              "none",
+              "lookup_only",
+              "retry_same"
+            ],
+            "title": "Retry Policy",
+            "type": "string"
+          },
+          "errors": {
+            "items": {
+              "$ref": "#/$defs/ToolError"
+            },
+            "title": "Errors",
+            "type": "array"
+          }
+        },
+        "required": [
+          "ok",
+          "status",
+          "effect_state"
+        ],
+        "title": "ToolResult",
+        "type": "object"
+      }
+    }
+  ]
+}

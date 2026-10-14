@@ -1,0 +1,28 @@
+{
+  "status": "ACTUAL_MODEL_CALL_TIMED_OUT_NOT_VERIFIED",
+  "job": {
+    "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+    "status": "RETRY_WAIT",
+    "last_error_code": "TEMPORARY_FAILURE",
+    "last_error_detail": "timed out",
+    "available_at": "2026-10-07T10:39:25.151171+00:00"
+  },
+  "events": [
+    {
+      "task": "skeleton_layer_1",
+      "event_kind": "STARTED",
+      "error_type": null,
+      "created_at": "2026-10-07T10:33:55.128784+00:00"
+    },
+    {
+      "task": "skeleton_layer_1",
+      "event_kind": "FAILED",
+      "error_type": "TimeoutError",
+      "created_at": "2026-10-07T10:38:55.141138+00:00"
+    }
+  ],
+  "routerReadStatus": 200,
+  "routerReadError": null,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-beqtn_vr",
+  "actualScientificApproval": false
+}

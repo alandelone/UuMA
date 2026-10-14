@@ -34,6 +34,7 @@ from .brainstormer_state import (
     StateTransaction,
     TransactionAction,
 )
+from .colleague_directory import colleague_capabilities
 from .commerce_control import CommerceControlStore
 from .commerce_review import commit_review, preview_review_workbook
 from .commerce_store import CommerceStore
@@ -64,7 +65,7 @@ def _control_plane() -> ControlPlane:
 
 def _agent_id() -> str:
     agent_id = os.environ.get("UUMA_AGENT_ID", "").strip()
-    if agent_id not in {"brainstormer", "scholar", "wisdom-oldman", "forge-lab-bot", "yonc"}:
+    if agent_id not in {"brainstormer", "scholar", "wisdom-oldman", "forge-lab-bot", "yonc", "honc"}:
         raise PermissionError("Worker MCP requires an authorized specialized profile identity.")
     return agent_id
 
@@ -76,6 +77,16 @@ def _worker_mode() -> str:
 def _require_standard_worker() -> None:
     if _worker_mode() == "native":
         raise PermissionError("Tool not permitted in native worker mode.")
+
+
+@mcp.tool()
+def yonc_get_colleague_capabilities(agent_id: str = "", capability: str = "") -> dict[str, Any]:
+    """Read colleague roles, registered capabilities, restrictions and workload; never dispatch."""
+    _require_standard_worker()
+    if _agent_id() != "yonc":
+        raise PermissionError("Colleague capability lookup is restricted to Yonc.")
+    # Do not bootstrap: a lookup must preserve disabled Agents and operator registry changes.
+    return colleague_capabilities(ControlPlane(), agent_id=agent_id, capability=capability)
 
 
 def _require_brainstormer() -> str:
@@ -108,7 +119,7 @@ def _commerce_control() -> CommerceControlStore:
 
 @lru_cache(maxsize=1)
 def _commerce_store() -> CommerceStore:
-    return CommerceStore()
+    return CommerceStore(_inventory().database_path)
 
 
 @lru_cache(maxsize=1)
@@ -666,6 +677,21 @@ def inventory_list_purchase_history(
 
 
 @mcp.tool()
+def inventory_search_purchase_history(
+    query: str = "", category: str = "", limit: int = 50, offset: int = 0
+) -> dict[str, Any]:
+    """Search all staged purchases by keywords (use | for alternatives), including product links.
+
+    This is purchase evidence, not a physical inventory balance. Use category="打印耗材" for
+    3D printing consumables; use offset to page beyond the first result set.
+    """
+    _require_forge_lab_bot()
+    return _inventory().search_purchase_history(
+        query=query, category=category, limit=limit, offset=offset
+    )
+
+
+@mcp.tool()
 def inventory_resolve_purchase_history_line(source_key: str, component_id: str) -> dict[str, Any]:
     """Attach a verified canonical eSchematic component ID to one staged purchase line."""
     _require_forge_lab_bot()
@@ -1212,6 +1238,35 @@ def commerce_commit_review(preview_json: str) -> dict[str, Any]:
     _require_forge_lab_bot()
     preview = json.loads(preview_json)
     return commit_review(preview, _commerce_store())
+
+
+@mcp.tool()
+def commerce_search_order_lines(
+    query: str = "",
+    platform: str = "",
+    review_status: str = "",
+    ownership: str = "",
+    category: str = "",
+    order_id: str = "",
+    limit: int = 50,
+    offset: int = 0,
+) -> dict[str, Any]:
+    """Search extracted commerce order lines by keywords or filters (platform, review_status, ownership).
+
+    Searches product_name, variant_name, shop_name, order_id, product_id, item_url across scraped e-commerce orders.
+    """
+    _require_forge_lab_bot()
+    return _commerce_store().search_order_lines(
+        query=query,
+        platform=platform or None,
+        review_status=review_status or None,
+        ownership=ownership or None,
+        category=category or None,
+        order_id=order_id or None,
+        limit=limit,
+        offset=offset,
+    )
+
 
 
 @mcp.tool()

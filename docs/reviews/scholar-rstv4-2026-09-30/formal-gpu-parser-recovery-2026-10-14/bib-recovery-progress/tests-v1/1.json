@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "node",
+    "tests/test_catalog_bib_file_reader.cjs"
+  ],
+  "exit_code": 0,
+  "seconds": 0.0629999999946449
+}

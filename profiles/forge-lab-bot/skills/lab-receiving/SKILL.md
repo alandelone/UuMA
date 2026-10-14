@@ -18,4 +18,6 @@ The `lab-receiving` skill converts arriving packages and orders into inspected, 
 - **Receive & Inspect Stock**: `inventory_receive`.
 - **Order History Ingest**: `inventory_preview_or_import_order_workbook` (preview with `commit=false` first).
 - **Review Staged Orders**: `inventory_list_purchase_history` (filter by `needs_review_only=true`).
+- **Find Past Purchases**: `inventory_search_purchase_history` searches resolved and unresolved
+  order evidence by item, specification, category, or order ID and returns `product_url`.
 - **Resolve Component Identity**: `inventory_resolve_purchase_history_line`.

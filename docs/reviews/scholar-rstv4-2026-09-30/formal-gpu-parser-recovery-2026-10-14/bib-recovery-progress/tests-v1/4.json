@@ -1,0 +1,8 @@
+{
+  "argv": [
+    "node",
+    "tests/catalog_collection_progress.mjs"
+  ],
+  "exit_code": 0,
+  "seconds": 0.046999999991385266
+}

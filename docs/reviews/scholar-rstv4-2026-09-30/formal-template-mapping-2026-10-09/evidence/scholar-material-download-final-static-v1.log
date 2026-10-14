@@ -1,0 +1,3 @@
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\tsc.cmd', '--noEmit']
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\oxlint.cmd', '--threads=1', 'components/studio-workspace.tsx', 'components/studio-response-review.tsx', 'lib/studio-api.ts', 'lib/studio-downloads.ts', 'app/api/studio-files']
+RUN ['git', 'diff', '--check']

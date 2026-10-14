@@ -1,0 +1,16 @@
+RUF059 Unpacked variable `slots` is never used
+   --> tests\test_studio_correspondence.py:148:57
+    |
+147 | def test_actual_template_mapping_http_history_conflicts_and_undo(tmp_path):
+148 |     service, manuscript_id, adopted, mapped, originals, slots = mapped_fixture(tmp_path)
+    |                                                         ^^^^^
+149 |     changed = service._changed_block_ids(adopted, mapped)
+150 |     assert {p["intents"][0]["id"] for p in originals}.issubset(changed)
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 6 errors (5 fixed, 1 remaining).
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
+2 files reformatted
+..........................                                               [100%]
+26 passed in 10.94s

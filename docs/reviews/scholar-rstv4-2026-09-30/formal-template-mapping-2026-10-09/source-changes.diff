@@ -1,0 +1,750 @@
+--- before/components/studio-workspace.tsx
++++ after/components/studio-workspace.tsx
+@@ -5,6 +5,7 @@
+   DndContext,
+   KeyboardSensor,
+   PointerSensor,
++  useDraggable,
+   useSensor,
+   useSensors,
+   type CollisionDetection,
+@@ -66,13 +67,16 @@
+ import { StudioResponseReview } from '@/components/studio-response-review';
+ import { StudioTemplateAdoption, type TemplateCandidate } from '@/components/studio-template-adoption';
+ import { StudioArgumentRelations } from '@/components/studio-argument-relations';
++import { StudioOriginalPlacement } from '@/components/studio-original-placement';
+ import { BlockControls, BlockMove, DropZone, EditorControls, Ungroup, blockKeyboardCoordinates, useEditorControls, type EditorUi } from '@/components/studio-block-controls';
+ import { ApiError, API_BASE, sharedDiscussionRequest, studioApi } from '@/lib/studio-api';
++import { studioFileUrl } from '@/lib/studio-downloads';
+ import { createSharedDiscussion, discussionDestination, discussionReference, discussionReturn, discussionWithoutReference, exactSelection, readableVersions, studioTarget, type DiscussionController, type DiscussionState, type LocatedSource } from '@/lib/shared-discussion';
+ import { historyFilter, legacySelection, matchesHistory } from '@/lib/studio-discussion-history';
+ import { outbox, sameDocument, type PendingSave } from '@/lib/offline-outbox';
+ import { suggestionResultMode } from '@/lib/suggestion-result';
+-import { addSubsection, ancestors, canMove, deleteSectionTree, moveBlocks, reconcileStructure, sectionBreadcrumb, sectionDepth, sectionEnd, type BlockTarget } from '@/lib/studio-blocks';
++import { restoreUndoHistory, serializeUndoHistory } from '@/lib/studio-undo-history';
++import { addSubsection, ancestors, canDropTemplate, canMove, deleteSectionTree, moveBlocks, reconcileStructure, sectionBreadcrumb, sectionDepth, sectionEnd, type BlockTarget } from '@/lib/studio-blocks';
+ import type {
+   AuthorQuote,
+   ChatContext,
+@@ -149,6 +153,19 @@
+ 
+ function uid(prefix: string) {
+   return `${prefix}_${crypto.randomUUID().replaceAll('-', '')}`;
++}
++
++function TemplateDragHandle({ sample, disabled }: { sample: SampleBlock; disabled: boolean }) {
++  const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({
++    id: `template-${sample.skeleton_id || sample.unit_id}`,
++    disabled: disabled || !sample.skeleton_id,
++    data: { type: 'template', skeletonId: sample.skeleton_id },
++  });
++  return <button type="button" ref={setNodeRef} {...attributes} {...listeners}
++    disabled={disabled || !sample.skeleton_id} aria-label={`拖入完整模板 ${sample.title}`}
++    className="inline-flex items-center gap-2 rounded border px-3 py-2 text-sm cursor-grab touch-none" style={{ transform: CSS.Translate.toString(transform), opacity: isDragging ? 0.7 : 1 }}>
++    <GripVertical /> 拖入模板
++  </button>;
+ }
+ 
+ function cloneDocument(document: StudioDocument): StudioDocument {
+@@ -489,6 +506,12 @@
+   const pendingCommentIdsRef = useRef<string[]>([]);
+   const undoRef = useRef<StudioDocument[]>([]);
+   const redoRef = useRef<StudioDocument[]>([]);
++  const [historyCounts, setHistoryCounts] = useState({ undo: 0, redo: 0 });
++  const [historyWarning, setHistoryWarning] = useState('');
++  const historyReadyRef = useRef(false);
++  const historyChangedRef = useRef(false);
++  const retainedHistoryRef = useRef<string | null>(null);
++  const historyKey = `pepper-studio-history:${API_BASE}:${workspace.manuscript.manuscript_id}`;
+   const channelRef = useRef<BroadcastChannel | null>(null);
+   const canvasRef = useRef<HTMLElement | null>(null);
+   const viewScrollRef = useRef<Record<ViewMode, number>>({ structure: 0, reading: 0, revision: 0 });
+@@ -498,6 +521,34 @@
+   const [foldedIds, setFoldedIds] = useState<string[]>([]);
+   const [railDirection, setRailDirection] = useState<EditorUi['direction']>('upright');
+   const viewStateKey = `pepper-studio-view-${workspace.manuscript.manuscript_id}`;
++
++  useEffect(() => {
++    try {
++      const raw = window.sessionStorage.getItem(historyKey);
++      if (raw) {
++        retainedHistoryRef.current = raw;
++        const restored = restoreUndoHistory(raw, documentRef.current.manuscript_id, revisionRef.current, documentRef.current);
++        undoRef.current = restored.undo; redoRef.current = restored.redo;
++        retainedHistoryRef.current = null;
++      }
++    } catch (caught) { setHistoryWarning(caught instanceof Error ? caught.message : '撤销记录暂时无法读取，请保留此页。'); }
++    finally { historyReadyRef.current = true; }
++  }, [historyKey]);
++
++  useEffect(() => {
++    if (!historyReadyRef.current) return;
++    setHistoryCounts((current) => current.undo === undoRef.current.length && current.redo === redoRef.current.length ? current
++      : { undo: undoRef.current.length, redo: redoRef.current.length });
++    if (retainedHistoryRef.current && !historyChangedRef.current) return;
++    try {
++      if (retainedHistoryRef.current) {
++        window.sessionStorage.setItem(`${historyKey}-retained-${uid('history')}`, retainedHistoryRef.current);
++        retainedHistoryRef.current = null;
++      }
++      // sessionStorage survives reload while keeping each tab's stack independent.
++      window.sessionStorage.setItem(historyKey, serializeUndoHistory(documentRef.current, revisionRef.current, undoRef.current, redoRef.current));
++    } catch { setHistoryWarning('本页撤销仍可用，但刷新后的撤销记录暂时无法保存，请保留此页。'); }
++  }, [document, revision, historyKey]);
+ 
+   const persistChatDraft = useCallback(() => {
+     const key = `pepper-chat-draft-${workspace.manuscript.manuscript_id}`;
+@@ -542,6 +593,9 @@
+       }
+     }
+     recoveredDraftRef.current = pending;
++    retainedHistoryRef.current ||= serializeUndoHistory(documentRef.current, revisionRef.current, undoRef.current, redoRef.current);
++    historyChangedRef.current = false;
++    undoRef.current = []; redoRef.current = [];
+     documentRef.current = cloneDocument(pending.document);
+     setDocument(documentRef.current);
+     draftBaseRef.current = pending.baseRevision;
+@@ -829,6 +883,11 @@
+   const refreshWorkspace = useCallback(async () => {
+     if (dirtyRef.current) await outbox.put(pendingSnapshot());
+     const fresh = await studioApi.workspace(workspace.manuscript.manuscript_id);
++    if (fresh.document_revision !== revisionRef.current || !sameDocument(fresh.document, documentRef.current)) {
++      retainedHistoryRef.current ||= serializeUndoHistory(documentRef.current, revisionRef.current, undoRef.current, redoRef.current);
++      historyChangedRef.current = false;
++      undoRef.current = []; redoRef.current = [];
++    }
+     setWorkspace(fresh);
+     clearJobValidation();
+     setDocument(cloneDocument(fresh.document));
+@@ -1029,6 +1088,7 @@
+       const result = await studioApi.decideSuggestion(workspace.manuscript.manuscript_id, messageId, request);
+       const mode = suggestionResultMode(result, documentRef.current, revisionRef.current, dirtyRef.current);
+       if (mode === 'applied') {
++        historyChangedRef.current = true;
+         undoRef.current.push(before);
+         if (undoRef.current.length > 100) undoRef.current.shift();
+         redoRef.current = [];
+@@ -1127,6 +1187,7 @@
+       change(next);
+       reconcileStructure(next);
+       if (recordHistory) {
++        historyChangedRef.current = true;
+         undoRef.current.push(previous);
+         if (undoRef.current.length > 100) undoRef.current.shift();
+         redoRef.current = [];
+@@ -1270,6 +1331,7 @@
+   useEffect(() => {
+     const handler = (event: KeyboardEvent) => {
+       if (!(event.ctrlKey || event.metaKey)) return;
++      if (event.target instanceof Element && event.target.closest('.chat-dock, [role="dialog"], [role="alertdialog"]')) return;
+       if (event.key.toLowerCase() === 'z' && !event.shiftKey) {
+         event.preventDefault();
+         undo();
+@@ -1526,6 +1588,13 @@
+     const activeId = String(event.active.id);
+     const target = event.over?.data.current?.dropTarget as BlockTarget | undefined;
+     if (!target) return;
++    if (event.active.data.current?.type === 'template') {
++      const skeletonId: unknown = event.active.data.current.skeletonId;
++      if (typeof skeletonId !== 'string' || !canDropTemplate(documentRef.current, target)) return;
++      const chosen = documentSelection(documentRef.current, target.kind === 'paper' ? undefined : target.id);
++      if (chosen) void previewTemplate(skeletonId, chosen);
++      return;
++    }
+     try {
+       const next = moveBlocks(documentRef.current, [activeId], target);
+       if (sameDocument(next, documentRef.current)) return;
+@@ -1566,6 +1635,10 @@
+       setStatusMessage('先选择整篇、章节、段落或 Intent，再预览有固定来源的模板。');
+       return;
+     }
++    await previewTemplate(sample.skeleton_id, selection);
++  };
++
++  const previewTemplate = async (skeletonId: string, chosen: Selection) => {
+     await flushSave();
+     if (dirtyRef.current || savingRef.current || conflictRef.current) {
+       setStatusMessage('请先保存当前修改或核对版本，再预览模板。本地内容已保留。');
+@@ -1582,12 +1655,12 @@
+           label: `${paragraphLabel} / Intent ${intentIndex + 1}：${intent.label || '未定'}` }));
+       });
+     });
+-    if (!targets.some((target) => target.scope_type === selection.type && target.scope_id === (selection.id || workspace.manuscript.manuscript_id))) {
++    if (!targets.some((target) => target.scope_type === chosen.type && target.scope_id === (chosen.id || workspace.manuscript.manuscript_id))) {
+       setStatusMessage('请选择待安置区域以外的作者结构，再预览模板。');
+       return;
+     }
+-    setTemplateCandidate({ skeleton_id: sample.skeleton_id, scope_type: selection.type as TemplateCandidate['scope_type'],
+-      scope_id: selection.id || workspace.manuscript.manuscript_id, label: selection.label,
++    setTemplateCandidate({ skeleton_id: skeletonId, scope_type: chosen.type as TemplateCandidate['scope_type'],
++      scope_id: chosen.id || workspace.manuscript.manuscript_id, label: chosen.label,
+       base_revision: revisionRef.current, operation_id: uid('template'), comment_ids: [...activeCommentsRef.current], targets });
+   };
+ 
+@@ -1611,6 +1684,7 @@
+         return;
+       }
+       if (beforeRevision === request.base_revision && result.document_revision === result.operation.resulting_revision) {
++        historyChangedRef.current = true;
+         undoRef.current.push(before); redoRef.current = [];
+       }
+       documentRef.current = cloneDocument(result.document); setDocument(cloneDocument(result.document));
+@@ -1650,8 +1724,8 @@
+             <Button size="sm" variant="outline" onClick={() => void flushSave()}>重试保存</Button>
+             <Button size="sm" variant="outline" onClick={() => exportLocalDraft(pendingSnapshot())}>导出本地副本</Button>
+           </> : null}
+-          <Button variant="ghost" size="icon" aria-label="撤销" onClick={undo}><Undo2 /></Button>
+-          <Button variant="ghost" size="icon" aria-label="重做" onClick={redo}><Redo2 /></Button>
++          <Button variant="ghost" size="icon" aria-label="撤销" disabled={!historyCounts.undo} onClick={undo}><Undo2 /></Button>
++          <Button variant="ghost" size="icon" aria-label="重做" disabled={!historyCounts.redo} onClick={redo}><Redo2 /></Button>
+           {viewMode === 'structure' ? (
+             <>
+             {stage === 'WHOLE_PAPER_REVIEW' && workspace.active_generated_version_id ? (
+@@ -1670,6 +1744,7 @@
+           ) : null}
+         </div>
+       </header>
++      {historyWarning ? <output className="status-banner">{historyWarning}</output> : null}
+ 
+       {reviewResult ? <section className="stale-banner" aria-label="本次全文检查状态" aria-live="polite">
+         <p>{reviewResult.semantic_status === 'AVAILABLE' ? '规则与模型检查已完成；检查意见仍需作者判断。' : '模型检查未完成，规则结果已保留。可以重新检查。'}</p>
+@@ -1846,6 +1921,7 @@
+         </div>
+       ) : null}
+ 
++      <DndContext sensors={sensors} collisionDetection={sameLayerClosestCenter} onDragEnd={onDragEnd}>
+       <div className={`studio-grid ${showLeft ? '' : 'studio-grid--no-left'} ${showRight ? '' : 'studio-grid--no-right'}`}>
+         {showLeft ? (
+           <aside className="studio-panel studio-panel--left">
+@@ -1864,6 +1940,8 @@
+                   <Button size="sm" variant="outline" onClick={() => setSampleIndex((value) => (value + 1) % samples.length)}>→</Button>
+                   <Button size="sm" variant="outline" onClick={() => void adoptCurrentSample()}>＋ 预览完整模板</Button>
+                 </div>
++                {samples[sampleIndex] ? <TemplateDragHandle sample={samples[sampleIndex]} disabled={viewMode !== 'structure'} /> : null}
++                <p className="text-xs">放到整篇入口，或章节、段落、Intent 后方；先预览，确认后再采用。</p>
+               </div>
+             ) : (
+               <p className="panel-empty">这个层级暂时没有可追溯的相似样本。</p>
+@@ -1887,8 +1965,6 @@
+               selection={selection}
+               setSelection={(value) => { setSelection(value); if (value.quote) setChatOpen(true); }}
+               commit={commit}
+-              sensors={sensors}
+-              onDragEnd={onDragEnd}
+               editorUi={{ document, folded: foldedIds, toggleFold: (id) => setFoldedIds((current) => current.includes(id) ? current.filter((item) => item !== id) : [...current, id]), selectBlock: (id) => { const target = documentSelection(documentRef.current, id); if (target) setSelection(target); }, unfold: unfoldBlocks, direction: railDirection, setDirection: setRailDirection, commit }}
+               assets={workspace.assets}
+               onUpload={async (paragraphId, file) => {
+@@ -2045,6 +2121,7 @@
+           </aside>
+         ) : null}
+       </div>
++      </DndContext>
+ 
+       <section className={`chat-dock ${chatOpen ? 'chat-dock--open' : ''}`}>
+         <button className="chat-dock__toggle" type="button" aria-expanded={chatOpen} aria-controls="studio-discussion-body" onClick={() => setChatOpen((value) => !value)}>
+@@ -2178,8 +2255,6 @@
+   selection,
+   setSelection,
+   commit,
+-  sensors,
+-  onDragEnd,
+   assets,
+   onUpload,
+   editorUi,
+@@ -2188,14 +2263,11 @@
+   selection: Selection;
+   setSelection: (selection: Selection) => void;
+   commit: (change: (draft: StudioDocument) => void, operationKind?: string) => void;
+-  sensors: ReturnType<typeof useSensors>;
+-  onDragEnd: (event: DragEndEvent) => void;
+   assets: Workspace['assets'];
+   onUpload: (paragraphId: string, file: File) => Promise<void>;
+   editorUi: EditorUi;
+ }) {
+   return (
+-    <DndContext sensors={sensors} collisionDetection={sameLayerClosestCenter} onDragEnd={onDragEnd}>
+       <EditorControls ui={editorUi}>
+       <SortableContext items={document.sections.map((item) => item.id)} strategy={verticalListSortingStrategy}>
+         <div className="paper-sheet" data-rail-direction={editorUi.direction}>
+@@ -2245,7 +2317,6 @@
+         </div>
+       </SortableContext>
+       </EditorControls>
+-    </DndContext>
+   );
+ }
+ 
+@@ -2316,6 +2387,7 @@
+       <div className="structure-content">
+         {section.placement_status === 'UNPLACED' ? <div className="status-banner" aria-label="待安置的原内容">
+           <output><strong>待安置</strong> · 原内容、引用与编号完整保留。可将内容移入模板；未安置时不能生成成文。</output>
++          <StudioOriginalPlacement sectionId={section.id} />
+           <Button size="sm" variant="outline" onClick={() => commit((draft) => {
+             for (const item of draft.sections.slice(sectionIndex,sectionEnd(draft.sections,sectionIndex))) delete item.placement_status;
+           }, 'PLACE_ORIGINAL_SECTION')}>将此章节标记为已安置</Button>
+@@ -2709,7 +2781,7 @@
+         <Button variant="outline" size="sm" onClick={onReview}>🔎 全文检查</Button>
+         {(stage === 'FINALIZATION_SUBMISSION' || stage === 'REVISION') ? <Button variant="outline" size="sm" onClick={onPackage}>📦 投稿包</Button> : null}
+         {artifacts.filter((item) => ['PDF', 'TEX', 'BIB', 'MARKDOWN', 'GENERATED_JSON'].includes(item.artifact_kind)).map((artifact) => (
+-          <a key={artifact.artifact_id} className="artifact-link" href={`${API_BASE}/artifacts/${artifact.artifact_id}`} target="_blank" rel="noreferrer">{({ PDF: '📎 PDF', TEX: 'LaTeX', BIB: '参考文献', MARKDOWN: 'Markdown', GENERATED_JSON: '成文与来源记录' } as Record<string, string>)[artifact.artifact_kind]}</a>
++          <a key={artifact.artifact_id} className="artifact-link" href={studioFileUrl(`/artifacts/${artifact.artifact_id}`)} target="_blank" rel="noreferrer">{({ PDF: '📎 PDF', TEX: 'LaTeX', BIB: '参考文献', MARKDOWN: 'Markdown', GENERATED_JSON: '成文与来源记录' } as Record<string, string>)[artifact.artifact_kind]}</a>
+         ))}
+         {stage === 'WHOLE_PAPER_REVIEW' ? <Button size="sm" onClick={() => onStage('FINALIZATION_SUBMISSION')}>进入定稿 →</Button> : null}
+         {stage === 'FINALIZATION_SUBMISSION' ? <Button size="sm" onClick={() => onStage('REVISION')}>开始返修 →</Button> : null}
+--- before/components/studio-block-controls.tsx
++++ after/components/studio-block-controls.tsx
+@@ -26,6 +26,7 @@
+ import {
+   blocks,
+   canMove,
++  canDropTemplate,
+   groupParagraphs,
+   moveBlocks,
+   ungroupParagraphs,
+@@ -354,12 +355,14 @@
+   const ui = useEditorControls();
+   const { active } = useDndContext();
+   const activeId = active?.id;
++  const templateDrag = active?.data.current?.type === 'template';
+   const { kind, id, placement } = target;
+   const enabled = useMemo(
+     () =>
+       activeId !== undefined &&
+-      canMove(ui.document, [String(activeId)], { kind, id, placement }, ui.locations),
+-    [activeId, ui.document, ui.locations, kind, id, placement],
++      (templateDrag ? canDropTemplate(ui.document, { kind, id, placement })
++        : canMove(ui.document, [String(activeId)], { kind, id, placement }, ui.locations)),
++    [activeId, templateDrag, ui.document, ui.locations, kind, id, placement],
+   );
+   const { setNodeRef, isOver } = useDroppable({
+     id: `drop-${target.kind}-${target.id}-${target.placement}`,
+@@ -370,6 +373,7 @@
+     ui.locations.get(target.id)?.label ||
+     '原对象';
+   const instruction =
++    templateDrag ? (kind === 'paper' ? '预览并插入整篇模板' : `在 ${label} 后面预览模板`) :
+     target.placement === 'inside'
+       ? `放入 ${label} 里面`
+       : `放在 ${label} ${target.placement === 'before' ? '前面' : '后面'}`;
+--- before/components/studio-original-placement.tsx
++++ after/components/studio-original-placement.tsx
+@@ -0,0 +1,67 @@
++'use client';
++
++import { useState } from 'react';
++import { Button } from '@/components/ui/button';
++import { Checkbox } from '@/components/ui/checkbox';
++import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
++import { useEditorControls } from '@/components/studio-block-controls';
++import { ancestors, canPlaceOriginalSection, placeOriginalSection, sectionBreadcrumb, sectionEnd } from '@/lib/studio-blocks';
++
++export function StudioOriginalPlacement({ sectionId }: { sectionId: string }) {
++  const ui = useEditorControls();
++  const [open, setOpen] = useState(false);
++  const [targetId, setTargetId] = useState('');
++  const [confirmation, setConfirmation] = useState('');
++  const [error, setError] = useState('');
++  const index = ui.document.sections.findIndex((section) => section.id === sectionId);
++  const tree = index < 0 ? [] : ui.document.sections.slice(index, sectionEnd(ui.document.sections, index));
++  const targets = ui.document.sections.filter((section) => canPlaceOriginalSection(ui.document, sectionId, section.id));
++  const target = targets.find((section) => section.id === targetId);
++  const paragraphs = tree.flatMap((section) => section.paragraphs);
++  const thoughts = paragraphs.flatMap((paragraph) => paragraph.intents.flatMap((intent) => intent.thoughts));
++  const sourceIds = new Set(paragraphs.flatMap((paragraph) => [paragraph.id, ...paragraph.intents.flatMap((intent) => [intent.id, ...intent.thoughts.map((thought) => thought.id)])]));
++  const edges = (ui.document.argument_relations || []).filter((edge) => sourceIds.has(edge.source_id) || sourceIds.has(edge.target_id));
++  // A confirmation belongs to the exact reviewed source tree and destination, even after edits.
++  const review = JSON.stringify({ tree, target, edges });
++
++  return <>
++    <Button size="sm" variant="outline" onClick={() => { setOpen(true); setTargetId(''); setConfirmation(''); setError(''); }}>预览安置原章节</Button>
++    <Dialog open={open} onOpenChange={setOpen}>
++      <DialogContent className="sm:max-w-2xl min-w-0 max-h-[85vh] overflow-y-auto">
++        <DialogTitle>安置原章节与子项</DialogTitle>
++        <DialogDescription>选择目标后，整棵原章节作为它的子章节放入。作者思想、引用、公式、附件、段落组和编号一起保留；模板空槽仍需作者填写。</DialogDescription>
++        <label className="grid min-w-0 gap-1 text-sm">目标章节
++          <select aria-label="原内容安置目标" className="min-w-0 w-full" value={targetId} onChange={(event) => { setTargetId(event.target.value); setConfirmation(''); setError(''); }}>
++            <option value="">选择目标章节</option>
++            {targets.map((section) => <option key={section.id} value={section.id}>{sectionBreadcrumb(ui.document, section.id)}</option>)}
++          </select>
++        </label>
++        {!targets.length ? <p role="alert">当前没有可容纳整棵原章节的目标。请先添加主章节，或调整过深的层级。</p> : null}
++        {target ? <p className="text-sm break-words">安置后：{sectionBreadcrumb(ui.document, target.id)} / {tree[0]?.title || '未定章节'}</p> : null}
++        <p className="text-sm">保留 {tree.length} 个章节、{tree.flatMap((section) => section.paragraph_groups || []).length} 个段落组、{paragraphs.length} 个段落、{thoughts.length} 个思想、{thoughts.flatMap((thought) => thought.citations).length} 个引用候选、{paragraphs.flatMap((paragraph) => paragraph.formulas || []).length} 个公式、{paragraphs.flatMap((paragraph) => paragraph.asset_ids).length} 个附件关联、{edges.length} 条 L2 关系。</p>
++        <div className="grid gap-3 text-sm" aria-label="原内容安置预览">
++          {tree.map((section) => <section key={section.id} className="rounded border p-3 break-words">
++            <h3>{sectionBreadcrumb(ui.document, section.id)}</h3>
++            {section.paragraphs.map((paragraph) => <div key={paragraph.id} className="mt-2">
++              <strong>{paragraph.purpose || '未定段落用途'}</strong>
++              {paragraph.intents.map((intent) => <div key={intent.id}><p>{intent.label || '未定 Intent'}</p>{intent.thoughts.map((thought) => <blockquote key={thought.id} className="whitespace-pre-wrap">{thought.text || '空思想'}</blockquote>)}</div>)}
++            </div>)}
++          </section>)}
++        </div>
++        <label htmlFor={`placement-confirm-${sectionId}`} className="flex items-center gap-2 text-sm"><Checkbox id={`placement-confirm-${sectionId}`} checked={Boolean(target && confirmation === review)} disabled={!target} onCheckedChange={(checked) => setConfirmation(checked ? review : '')} />我已核对目标与完整原内容，确认按此位置安置</label>
++        {error ? <p role="alert">{error}</p> : null}
++        <div className="flex gap-2 justify-end">
++          <Button variant="outline" onClick={() => setOpen(false)}>取消</Button>
++          <Button disabled={!target || confirmation !== review} onClick={() => {
++            try {
++              ui.commit((document) => Object.assign(document, placeOriginalSection(document, sectionId, targetId)), 'PLACE_ORIGINAL_TREE');
++              ui.unfold([...ancestors(ui.document, targetId), targetId]);
++              ui.selectBlock(sectionId); setOpen(false);
++              ui.notice('已安置整棵原章节，思想、引用与编号保留；可撤销。');
++            } catch (caught) { setError(caught instanceof Error ? caught.message : '原结构已变化，请重新核对。'); }
++          }}>确认安置原章节</Button>
++        </div>
++      </DialogContent>
++    </Dialog>
++  </>;
++}
+--- before/components/studio-response-review.tsx
++++ after/components/studio-response-review.tsx
+@@ -6,7 +6,8 @@
+ import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
+ import { Input } from '@/components/ui/input';
+ import { Textarea } from '@/components/ui/textarea';
+-import { ApiError, API_BASE, studioApi } from '@/lib/studio-api';
++import { ApiError, studioApi } from '@/lib/studio-api';
++import { studioFileUrl } from '@/lib/studio-downloads';
+ import type { ReplyAssertion, ResponseReviewContext, ResponseReviewRequest, ReviewComment } from '@/lib/studio-types';
+ 
+ type Draft = { author_decision: string; response_text: string };
+@@ -251,7 +252,7 @@
+     </div> : <p className="text-sm">确认之前，请确保决定中保留不修改的理由，完整回复没有声称实施了未发生的修改。</p>}
+     <label className="flex items-start gap-2 text-sm"><Checkbox disabled={disabled} checked={acknowledged} onCheckedChange={(checked) => setAcknowledged(Boolean(checked))} /><span>{outcome === 'MODIFIED' ? '我已检查完整回复，将每处“已修改”声明逐条列出，并核对所选实际变化。' : '我已检查完整回复，保留不修改的理由，且没有遗漏需要核对的修改声明。'}</span></label>
+     {notice ? <output aria-live="polite" className="text-sm">{notice}</output> : null}
+-    {context.pdf_artifact_id ? <a className="text-sm underline" href={`${API_BASE}/artifacts/${context.pdf_artifact_id}`} target="_blank" rel="noreferrer">查看本版最终 PDF</a> : null}
++    {context.pdf_artifact_id ? <a className="text-sm underline" href={studioFileUrl(`/artifacts/${context.pdf_artifact_id}`)} target="_blank" rel="noreferrer">查看本版最终 PDF</a> : null}
+     <details><summary>保留的核对历史（{context.history.length}）</summary><ResponseHistory history={context.history} /></details>
+     <div className="flex flex-wrap justify-end gap-2"><Button variant="outline" onClick={() => onOpenChange(false)}>返回</Button><Button disabled={disabled || stale || !acknowledged || !context.state.response_text?.trim() || !context.state.author_decision?.trim() || (outcome === 'MODIFIED' && (!context.baseline_to_target_diff || !claims.length || claims.some((item) => !item.evidence_ids.length)))} onClick={() => {
+       void onConfirm({ request_id: crypto.randomUUID(), context_sha256: context.context_sha256, outcome, claims: outcome === 'MODIFIED' ? claims : [], acknowledged_all_assertions: true });
+--- before/lib/studio-blocks.ts
++++ after/lib/studio-blocks.ts
+@@ -20,6 +20,33 @@
+   paragraphId?: string;
+   intentId?: string;
+   groupId?: string;
++}
++
++export function canDropTemplate(document: StudioDocument, target: BlockTarget): boolean {
++  if (target.kind === 'paper')
++    return target.id === document.manuscript_id && target.placement === 'inside';
++  if (!['section', 'paragraph', 'intent'].includes(target.kind) || target.placement !== 'after')
++    return false;
++  const location = blocks(document).find((item) => item.id === target.id && item.kind === target.kind);
++  return Boolean(location && document.sections.find((section) => section.id === location.sectionId)?.placement_status !== 'UNPLACED');
++}
++
++export function placeOriginalSection(document: StudioDocument, sourceId: string, targetId: string): StudioDocument {
++  const result = structuredClone(document);
++  const index = result.sections.findIndex((section) => section.id === sourceId);
++  const target = result.sections.find((section) => section.id === targetId);
++  if (index < 0 || result.sections[index].placement_status !== 'UNPLACED' || !target || target.placement_status === 'UNPLACED')
++    throw new Error('请选择待安置的原章节与已安置的目标章节。');
++  const tree = result.sections.slice(index, sectionEnd(result.sections, index));
++  if (tree.some((section) => section.id === targetId || section.placement_status !== 'UNPLACED'))
++    throw new Error('原章节的安置状态已变化，请重新核对。');
++  for (const section of tree) delete section.placement_status;
++  return moveBlocks(result, [sourceId], { kind: 'section', id: targetId, placement: 'inside' });
++}
++
++export function canPlaceOriginalSection(document: StudioDocument, sourceId: string, targetId: string): boolean {
++  try { placeOriginalSection(document, sourceId, targetId); return true; }
++  catch { return false; }
+ }
+ 
+ export function sectionDepth(document: StudioDocument, id: string): number {
+--- before/lib/studio-undo-history.ts
++++ after/lib/studio-undo-history.ts
+@@ -0,0 +1,37 @@
++import { sameDocument } from './offline-outbox';
++import type { StudioDocument } from './studio-types';
++
++type RecordValue = Record<string, unknown>;
++const record = (value: unknown): value is RecordValue => Boolean(value && typeof value === 'object' && !Array.isArray(value));
++const strings = (value: unknown): value is string[] => Array.isArray(value) && value.every((item) => typeof item === 'string');
++const textFields = (value: RecordValue, fields: string[]) => fields.every((field) => typeof value[field] === 'string');
++
++function historyDocument(value: unknown, manuscriptId: string): value is StudioDocument {
++  if (!record(value) || value.schema_version !== 1 || value.manuscript_id !== manuscriptId
++    || !textFields(value, ['title', 'abstract', 'venue']) || !Array.isArray(value.sections)) return false;
++  return value.sections.every((section: unknown) => record(section) && textFields(section, ['id', 'title', 'role'])
++    && Array.isArray(section.paragraphs) && section.paragraphs.every((paragraph: unknown) => record(paragraph)
++      && textFields(paragraph, ['id', 'purpose', 'paradigm']) && strings(paragraph.asset_ids)
++      && Array.isArray(paragraph.intents) && paragraph.intents.every((intent: unknown) => record(intent)
++        && textFields(intent, ['id', 'label']) && Array.isArray(intent.thoughts)
++        && intent.thoughts.every((thought: unknown) => record(thought) && textFields(thought, ['id', 'text'])
++          && ['PENDING', 'NONE', 'SELECTED'].includes(String(thought.citation_mode))
++          && Array.isArray(thought.citations) && thought.citations.every((citation: unknown) => record(citation)
++            && typeof citation.evidence_id === 'string' && typeof citation.selected === 'boolean')))))
++    && (value.argument_relations === undefined || (Array.isArray(value.argument_relations)
++      && value.argument_relations.every((edge: unknown) => record(edge) && textFields(edge, ['id', 'source_id', 'target_id', 'relation', 'condition']))));
++}
++
++export function restoreUndoHistory(raw: string, manuscriptId: string, revision: number, document: StudioDocument): { undo: StudioDocument[]; redo: StudioDocument[] } {
++  const saved: unknown = JSON.parse(raw);
++  if (!record(saved) || saved.version !== 1 || saved.revision !== revision
++    || !historyDocument(saved.current, manuscriptId) || !sameDocument(saved.current, document)
++    || !Array.isArray(saved.undo) || !Array.isArray(saved.redo) || saved.undo.length > 100 || saved.redo.length > 100
++    || ![...saved.undo, ...saved.redo].every((item: unknown) => historyDocument(item, manuscriptId)))
++    throw new Error('原撤销记录无法与当前稿件核对，已保留原记录；本页从当前稿件开始记录新操作。');
++  return { undo: structuredClone(saved.undo) as StudioDocument[], redo: structuredClone(saved.redo) as StudioDocument[] };
++}
++
++export function serializeUndoHistory(document: StudioDocument, revision: number, undo: StudioDocument[], redo: StudioDocument[]): string {
++  return JSON.stringify({ version: 1, revision, current: document, undo: undo.slice(-100), redo: redo.slice(-100) });
++}
+--- before/lib/studio-api.ts
++++ after/lib/studio-api.ts
+@@ -1,3 +1,4 @@
++import { studioFileUrl } from './studio-downloads';
+ import type {
+   ChatMessage,
+   AuthorQuote,
+@@ -72,14 +73,16 @@
+ }
+ 
+ async function download(path: string): Promise<Blob> {
+-  const response = await fetch(`${API_BASE}${path}`);
+-  if (!response.ok) {
++  const response = await fetch(studioFileUrl(path));
++  if (response.status !== 200) {
+     let body: Record<string, unknown>;
+     try { body = await response.json(); }
+-    catch { body = { detail: response.statusText }; }
++    catch { body = { detail: '固定文件服务未返回文件，请重试。' }; }
+     throw new ApiError(response.status, body);
+   }
+-  return response.blob();
++  const blob = await response.blob();
++  if (blob.size === 0) throw new ApiError(502, { detail: '固定文件内容为空，未发起下载。' });
++  return blob;
+ }
+ 
+ export const studioApi = {
+--- before/lib/studio-downloads.ts
++++ after/lib/studio-downloads.ts
+@@ -0,0 +1,57 @@
++/** Fixed Studio files are delivered through the same origin as the workspace. */
++export function studioFileUrl(path: string): string {
++  return `/api/studio-files${path}`;
++}
++
++function fixedFilePath(segments: string[]): string | null {
++  const id = /^[a-zA-Z0-9_-]{1,128}$/;
++  if (segments.length === 2 && segments[0] === 'artifacts' && id.test(segments[1])) {
++    return `/artifacts/${segments[1]}`;
++  }
++  if (segments[0] !== 'manuscripts' || !id.test(segments[1] || '') ||
++      segments[2] !== 'packages' || !id.test(segments[3] || '')) return null;
++  if (segments.length === 5 && segments[4] === 'download') return `/${segments.join('/')}`;
++  const filename = segments[5] || '';
++  if (segments.length === 6 && segments[4] === 'files' &&
++      /^[a-zA-Z0-9][a-zA-Z0-9._-]{0,199}$/.test(filename)) return `/${segments.join('/')}`;
++  return null;
++}
++
++export async function serveStudioFile(
++  request: Request,
++  segments: string[],
++  configuredBase: string,
++  fetchFile: typeof fetch = fetch,
++): Promise<Response> {
++  const error = (status: number, detail: string) => Response.json({ detail }, {
++    status, headers: { 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' },
++  });
++  if (request.method !== 'GET') return error(405, '文件入口只接受读取请求。');
++  const origin = request.headers.get('Origin');
++  if (origin && origin !== new URL(request.url).origin) return error(403, '请从本写作工作区下载文件。');
++  const path = fixedFilePath(segments);
++  if (!path || new URL(request.url).search) return error(404, '固定文件入口不存在。');
++  let base: URL;
++  try { base = new URL(configuredBase); }
++  catch { return error(503, '固定文件服务地址无效。'); }
++  if (base.protocol !== 'http:' || !['127.0.0.1', 'localhost'].includes(base.hostname) ||
++      base.username || base.password || base.search || base.hash ||
++      base.pathname.replace(/\/$/, '') !== '/api') return error(503, '固定文件服务地址无效。');
++  try {
++    const upstream = await fetchFile(`${base.href.replace(/\/$/, '')}${path}`, {
++      method: 'GET', cache: 'no-store', redirect: 'error', signal: AbortSignal.timeout(15_000),
++    });
++    if (upstream.status !== 200 && upstream.status < 400) {
++      await upstream.body?.cancel();
++      return error(502, '固定文件服务未返回文件，请稍后重试。');
++    }
++    const headers = new Headers({ 'Cache-Control': 'no-store', 'X-Content-Type-Options': 'nosniff' });
++    for (const name of ['Content-Type', 'Content-Length', 'Content-Disposition']) {
++      const value = upstream.headers.get(name);
++      if (value) headers.set(name, value);
++    }
++    return new Response(upstream.body, { status: upstream.status, headers });
++  } catch {
++    return error(502, '固定文件服务连接失败，请检查连接后重试。原文件仍保留。');
++  }
++}
+--- before/app/api/studio-files/[...path]/route.ts
++++ after/app/api/studio-files/[...path]/route.ts
+@@ -0,0 +1,7 @@
++import { serveStudioFile } from '../../../../lib/studio-downloads';
++
++export async function GET(request: Request, context: { params: Promise<{ path: string[] }> }) {
++  const { path } = await context.params;
++  return serveStudioFile(request, path,
++    process.env.RSTV4_API ?? process.env.NEXT_PUBLIC_RSTV4_API ?? 'http://127.0.0.1:8874/api');
++}
+--- before/tests/unit/studio-template-placement.cjs
++++ after/tests/unit/studio-template-placement.cjs
+@@ -0,0 +1,60 @@
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const Module = require('node:module');
++const ts = require('typescript');
++const path = require('node:path');
++const file = path.resolve('lib/studio-blocks.ts');
++const compiled = ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
++const mod = new Module(file,module);mod.filename=file;mod.paths=module.paths;mod._compile(compiled,file);
++const {canDropTemplate,canPlaceOriginalSection,placeOriginalSection,sectionDepth}=mod.exports;
++const paragraph = {id:'p',purpose:'Author purpose',paradigm:'Custom Ω',logical_relation:'Author relation',asset_ids:['asset'],formulas:[{id:'formula',latex:'x=1',caption:'Exact caption'}],intents:[{id:'i',label:'Author Intent',thoughts:[{id:'t',text:'Exact author Ω words',citation_mode:'SELECTED',citations:[{evidence_id:'e',selected:true}]}]}]};
++const doc={schema_version:1,manuscript_id:'ms',title:'Author',abstract:'',venue:'',sections:[
++  {id:'template',title:'Template',role:'',paragraphs:[{id:'slot',purpose:'',paradigm:'',asset_ids:[],template_source:{skeleton_id:'sk',unit_id:'u',source_sha256:'fixed'},intents:[{id:'empty-i',label:'Structural source Intent',thoughts:[]}]}]},
++  {id:'original',title:'Original Ω',role:'Author role',placement_status:'UNPLACED',unplaced_parent_section_id:'prior-parent',paragraphs:[]},
++  {id:'child',title:'Child',role:'',placement_status:'UNPLACED',parent_section_id:'original',paragraphs:[paragraph],paragraph_groups:[{id:'group',label:'Exact group',paragraph_ids:['p']}],block_order:['group']},
++  {id:'other',title:'Other unresolved original',role:'',placement_status:'UNPLACED',paragraphs:[]}
++],argument_relations:[{id:'edge',source_id:'p',target_id:'empty-i',relation:'Conditions Ω',condition:'Author explicit condition'}]};
++let count=0;function check(name,fn){fn();count++;console.log('PASS '+name);}
++check('template drop only exposes locations with the same insertion meaning as preview',()=>{
++  for(const kindId of [['section','template'],['paragraph','slot'],['intent','empty-i']]) {
++    assert.equal(canDropTemplate(doc,{kind:kindId[0],id:kindId[1],placement:'after'}),true);
++    for(const placement of ['before','inside']) assert.equal(canDropTemplate(doc,{kind:kindId[0],id:kindId[1],placement}),false);
++  }
++  assert.equal(canDropTemplate(doc,{kind:'paper',id:'ms',placement:'inside'}),true);
++});
++check('unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations',()=>{
++  for(const target of [{kind:'section',id:'original',placement:'after'},{kind:'paragraph',id:'p',placement:'after'},{kind:'thought',id:'t',placement:'after'},{kind:'paragraph_group',id:'group',placement:'after'},{kind:'paragraph',id:'missing',placement:'after'},{kind:'paper',id:'foreign',placement:'inside'}]) assert.equal(canDropTemplate(doc,target),false);
++});
++check('whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings',()=>{
++  const before=structuredClone(doc),next=placeOriginalSection(doc,'original','template');
++  assert.deepEqual(doc,before);
++  assert.deepEqual(next.sections.map(s=>s.id),['template','original','child','other']);
++  assert.equal(next.sections[1].parent_section_id,'template');assert.equal(sectionDepth(next,'child'),2);
++  assert.equal(next.sections[1].placement_status,undefined);assert.equal(next.sections[2].placement_status,undefined);
++  assert.equal(next.sections[1].unplaced_parent_section_id,'prior-parent');
++  assert.deepEqual(next.sections[2].paragraphs,before.sections[2].paragraphs);
++  assert.deepEqual(next.sections[2].paragraph_groups,before.sections[2].paragraph_groups);
++  assert.deepEqual(next.sections[2].block_order,before.sections[2].block_order);
++  assert.deepEqual(next.sections[0].paragraphs,before.sections[0].paragraphs);
++  assert.deepEqual(next.argument_relations,before.argument_relations);
++  assert.equal(next.sections[3].placement_status,'UNPLACED');
++});
++check('repeated placement, missing and unplaced destination, self and descendant never change input',()=>{
++  const before=structuredClone(doc);
++  for(const ids of [['template','original'],['missing','template'],['original','missing'],['original','other'],['original','original'],['original','child']]) {
++    assert.equal(canPlaceOriginalSection(doc,...ids),false);assert.throws(()=>placeOriginalSection(doc,...ids));assert.deepEqual(doc,before);
++  }
++});
++check('depth limit considers the entire original subtree',()=>{
++  const next=structuredClone(doc);next.sections.unshift({id:'root',title:'Root',role:'',paragraphs:[]},{id:'deep1',title:'Deep',role:'',parent_section_id:'root',paragraphs:[]},{id:'deep2',title:'Deeper',role:'',parent_section_id:'deep1',paragraphs:[]});next.sections[3].parent_section_id='deep2';
++  assert.equal(canPlaceOriginalSection(next,'original','template'),false);assert.throws(()=>placeOriginalSection(next,'original','template'));
++});
++check('extracting an unplaced subtree leaves its unresolved parent and all external relations',()=>{
++  const next=placeOriginalSection(doc,'child','template');assert.equal(next.sections.find(s=>s.id==='child').parent_section_id,'template');
++  assert.equal(next.sections.find(s=>s.id==='original').placement_status,'UNPLACED');assert.deepEqual(next.argument_relations,doc.argument_relations);
++});
++check('old immutable snapshot can undo and redo without content conversion or provenance loss',()=>{
++  const before=structuredClone(doc),placed=placeOriginalSection(doc,'original','template');
++  const undone=structuredClone(before),redone=structuredClone(placed);assert.deepEqual(undone,doc);assert.deepEqual(redone,placed);
++});
++console.log(`${count} template drag destination and reviewed placement preservation cases passed; no browser used.`);
+--- before/tests/unit/studio-undo-history.cjs
++++ after/tests/unit/studio-undo-history.cjs
+@@ -0,0 +1,22 @@
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const Module = require('node:module');
++const ts = require('typescript');
++const path = require('node:path');
++function load(name) {
++  const file=path.resolve('lib/'+name+'.ts');const mod=new Module(file,module);mod.filename=file;mod.paths=module.paths;
++  const source=ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
++  if(name==='studio-undo-history') mod.require=(name)=> name==='./offline-outbox' ? load('offline-outbox') : require(name);
++  mod._compile(source,file);return mod.exports;
++}
++const {restoreUndoHistory,serializeUndoHistory}=load('studio-undo-history');
++const doc={schema_version:1,manuscript_id:'ms',title:'Current Ω',abstract:'',venue:'',sections:[{id:'s',title:'S',role:'',paragraphs:[{id:'p',purpose:'Purpose',paradigm:'Custom',asset_ids:['asset'],formulas:[{id:'f',latex:'x=1',caption:'Formula'}],intents:[{id:'i',label:'Intent',thoughts:[{id:'t',text:'Exact Ω thought',citation_mode:'SELECTED',citations:[{evidence_id:'e',selected:true}]}]}]}]}],argument_relations:[{id:'edge',source_id:'p',target_id:'t',relation:'Relation Ω',condition:'Exact condition'}]};
++const previous=structuredClone(doc);previous.title='Previous';const later=structuredClone(doc);later.title='Later';
++let count=0;function check(name,fn){fn();count++;console.log('PASS '+name);}
++check('full author snapshots survive storage round trip, including citations, assets, formula and relations',()=>{const raw=serializeUndoHistory(doc,55,[previous],[later]);const restored=restoreUndoHistory(raw,'ms',55,structuredClone(doc));assert.deepEqual(restored,{undo:[previous],redo:[later]});restored.undo[0].sections[0].paragraphs[0].intents[0].thoughts[0].text='changed';assert.equal(restoreUndoHistory(raw,'ms',55,doc).undo[0].sections[0].paragraphs[0].intents[0].thoughts[0].text,'Exact Ω thought');});
++check('server key order changes do not erase a semantically equal stack',()=>{const reordered=JSON.parse(JSON.stringify(doc,(key,value)=>value && !Array.isArray(value) && typeof value==='object' ? Object.fromEntries(Object.entries(value).reverse()) : value));assert.deepEqual(restoreUndoHistory(serializeUndoHistory(doc,55,[previous],[]),'ms',55,reordered).undo,[previous]);});
++check('foreign manuscript, changed revision and changed author word or array ordering are rejected',()=>{const raw=serializeUndoHistory(doc,55,[previous],[]);assert.throws(()=>restoreUndoHistory(raw,'foreign',55,doc));assert.throws(()=>restoreUndoHistory(raw,'ms',56,doc));const changed=structuredClone(doc);changed.sections[0].paragraphs[0].intents[0].thoughts[0].text+='!';assert.throws(()=>restoreUndoHistory(raw,'ms',55,changed));});
++check('unreadable or malformed stacks and foreign snapshot stay unusable without mutating the saved raw',()=>{for(const raw of ['{', '{}',serializeUndoHistory(doc,55,[{...previous,manuscript_id:'foreign'}],[]),serializeUndoHistory(doc,55,[{...previous,sections:[{id:'bad'}]}],[])]){const before=raw;assert.throws(()=>restoreUndoHistory(raw,'ms',55,doc));assert.equal(raw,before);}});
++check('history is bounded to the most recent 100 complete operations',()=>{const items=Array.from({length:102},(_,i)=>({...previous,title:String(i)}));const restored=restoreUndoHistory(serializeUndoHistory(doc,55,items,items),'ms',55,doc);assert.equal(restored.undo.length,100);assert.equal(restored.redo.length,100);assert.equal(restored.undo[0].title,'2');assert.equal(restored.undo[99].title,'101');});
++check('undo and redo stacks can each resume after a different saved revision',()=>{const raw=serializeUndoHistory(previous,56,[],[doc]);assert.deepEqual(restoreUndoHistory(raw,'ms',56,previous),{undo:[],redo:[doc]});const redo=serializeUndoHistory(doc,57,[previous],[]);assert.deepEqual(restoreUndoHistory(redo,'ms',57,doc),{undo:[previous],redo:[]});});
++console.log(`${count} durable undo storage binding and preservation cases passed; no browser used.`);
+--- before/tests/unit/studio-downloads.cjs
++++ after/tests/unit/studio-downloads.cjs
+@@ -0,0 +1,66 @@
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const Module = require('node:module');
++const path = require('node:path');
++const ts = require('typescript');
++const file = path.resolve(__dirname, '../../lib/studio-downloads.ts');
++const mod = new Module(file, module); mod.filename=file; mod.paths=module.paths;
++mod._compile(ts.transpileModule(fs.readFileSync(file, 'utf8'), {
++  compilerOptions: {module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022},
++}).outputText, file);
++const {serveStudioFile, studioFileUrl} = mod.exports;
++const root='http://127.0.0.1:3004/api/studio-files';
++const request=(suffix='',origin='http://127.0.0.1:3004',method='GET')=>new Request(root+suffix,{method,headers:{Origin:origin}});
++const base='http://127.0.0.1:8877/api';
++const segments=['manuscripts','manuscript_1','packages','submission_package_1','download'];
++let count=0;
++async function test(name, fn){await fn();count++;console.log('PASS '+name);}
++(async()=>{
++await test('ZIP bytes, length and fixed filename stream unchanged through same-origin delivery',async()=>{
++  const bytes=Uint8Array.from([80,75,0,255,65]);let calls=0;
++  const out=await serveStudioFile(request(),segments,base,async(url,init)=>{
++    calls++;assert.equal(url,base+'/manuscripts/manuscript_1/packages/submission_package_1/download');
++    assert.equal(init.redirect,'error');assert.equal(init.cache,'no-store');assert.equal(init.method,'GET');
++    return new Response(bytes,{headers:{'Content-Type':'application/zip','Content-Length':String(bytes.length),'Content-Disposition':'attachment; filename="fixed.zip"','Set-Cookie':'secret=not-forwarded'}});
++  });
++  assert.equal(calls,1);assert.equal(out.status,200);assert.deepEqual(new Uint8Array(await out.arrayBuffer()),bytes);
++  assert.equal(out.headers.get('content-disposition'),'attachment; filename="fixed.zip"');
++  assert.equal(out.headers.get('content-length'),String(bytes.length));assert.equal(out.headers.get('set-cookie'),null);
++  assert.equal(out.headers.get('cache-control'),'no-store');
++});
++await test('package PDF and generated artifact use only fixed file routes',async()=>{
++  for (const parts of [['manuscripts','ms','packages','pkg','files','clean-manuscript.pdf'],['artifacts','artifact_1']]) {
++    const response=await serveStudioFile(request(),parts,base,async(url)=>{assert.equal(url,base+'/'+parts.join('/'));return new Response('PDF exact bytes',{headers:{'Content-Type':'application/pdf'}});});
++    assert.equal(await response.text(),'PDF exact bytes');
++  }
++  assert.equal(studioFileUrl('/artifacts/artifact_1'),'/api/studio-files/artifacts/artifact_1');
++});
++await test('unavailable fixed files preserve 410 and backend explanation',async()=>{
++  const out=await serveStudioFile(request(),segments,base,async()=>Response.json({detail:'Immutable package file digest mismatch'},{status:410}));
++  assert.equal(out.status,410);assert.deepEqual(await out.json(),{detail:'Immutable package file digest mismatch'});
++});
++await test('arbitrary API, path traversal, URL and query requests never reach backend',async()=>{
++  const forbidden=async()=>{throw new Error('must not fetch');};
++  for(const parts of [['manuscripts','ms','workspace'],['artifacts','../state.db'],['manuscripts','ms','packages','pkg','files','../secret'],['http:','remote'],['manuscripts','ms','packages','pkg','files','x.pdf','extra']]) {
++    assert.equal((await serveStudioFile(request(),parts,base,forbidden)).status,404);
++  }
++  assert.equal((await serveStudioFile(request('?url=http://remote/'),segments,base,forbidden)).status,404);
++});
++await test('foreign origins and writes do not reach file service',async()=>{
++  const forbidden=async()=>{throw new Error('must not fetch');};
++  assert.equal((await serveStudioFile(request('','http://foreign.example'),segments,base,forbidden)).status,403);
++  assert.equal((await serveStudioFile(request('','http://127.0.0.1:3004','POST'),segments,base,forbidden)).status,405);
++});
++await test('server destination is configured loopback API only',async()=>{
++  const forbidden=async()=>{throw new Error('must not fetch');};
++  for(const address of ['http://remote.example/api','http://127.0.0.1:8877/api?url=secret','http://user:secret@localhost/api','file:///api','http://localhost/other','invalid']) assert.equal((await serveStudioFile(request(),segments,address,forbidden)).status,503);
++});
++await test('empty responses and redirects cannot become apparently successful downloads',async()=>{
++  for(const status of [204,302]) {
++    const out=await serveStudioFile(request(),segments,base,async()=>new Response(null,{status}));
++    assert.equal(out.status,502);assert.match((await out.json()).detail,/未返回文件/);
++  }
++  assert.equal((await serveStudioFile(request(),segments,base,async()=>{throw new Error('failed');})).status,502);
++});
++console.log(`${count} fixed-file delivery contracts passed; controlled requests, no browser used.`);
++})().catch(e=>{console.error(e);process.exitCode=1;});

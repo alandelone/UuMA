@@ -1,0 +1,10 @@
+{
+  "database.py": "7d631039ad85ec731b0d5f0c7e334d26e02ba1067257eaf365d7163e014a941a",
+  "model_gateway.py": "401ab5a176588332925cdb26d1fb6e3e8a0ae128cabf6f0d1ffaa288fc7ebc1e",
+  "fieldkg_workspace.py": "fb92a952c534ca5c247004ac0c12d3e37d2d8dccd05da748155f1a060e5308ad",
+  "research_views.py": "0a90d62daaa18194ca9da4a3fcdef1283af5969844fccec618b0be4b628703ff",
+  "research_context.py": "e5ddbcffcfcbc95737eddca5dfdedb75c80b10ee6cf8d2a869eb0e5291d94310",
+  "catalog_web.py": "950f6704c83502859a2b59cd6fd5895b923334235152e495b3cac618761d7700",
+  "catalog_research_workspaces.js": "fc85fe4d4f1a7d61d53098d844546595e992065c126a3a9289c6dd72f13ead27",
+  "catalog_web.html": "21cfcb2f8f3c9c2c17ddc88a02cac330f554e795d317302a40dd2716cfd24fcd"
+}

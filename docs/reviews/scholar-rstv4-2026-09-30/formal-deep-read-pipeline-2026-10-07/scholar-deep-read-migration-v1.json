@@ -1,0 +1,13 @@
+{
+  "status": "PASS_CONTROLLED_ORIGINAL_10_TO_11_MIGRATION",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+  "old_table_count": 105,
+  "current_table_count": 106,
+  "old_tables_unchanged_except_catalog_schema_version": true,
+  "old_schema_objects_preserved_except_declared_skeleton_run_history_constraint": true,
+  "new_model_call_table_empty": true,
+  "original_database_sha256": "b553cd37d77d4df49fe43beba880e59a6d65aefbd5e098f5432f81cb0ac87d37",
+  "current_database_sha256": "39f8ca91435007f59e4e476c73ac8c860c5cfb758aa0098c79999cd44b81b88a",
+  "models_added": 0,
+  "actual_scientific_approval": false
+}

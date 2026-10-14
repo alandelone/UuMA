@@ -1,0 +1,88 @@
+........................................................................ [  6%]
+........................................................................ [ 13%]
+........................................F............................... [ 20%]
+........................................................................ [ 26%]
+........................................................................ [ 33%]
+........................................................................ [ 40%]
+........................................................................ [ 46%]
+........................................................................ [ 53%]
+........................................................................ [ 60%]
+........................................................................ [ 66%]
+........................................................................ [ 73%]
+........................................................................ [ 80%]
+........................................................................ [ 86%]
+........................................................................ [ 93%]
+......................................................................   [100%]
+================================== FAILURES ===================================
+_________ test_unknown_or_other_scope_parent_rolls_back_before_model __________
+
+environment = (<starlette.testclient.TestClient object at 0x0000027800614850>, WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/p...4be4b2cc76d2219c3493', 'track_9d1b7ccf10d54cadba86275620e7938d', 'fieldkg_build_de0e8a1ed32b483b94afe1f7b6723bd4', ...)
+
+    def test_unknown_or_other_scope_parent_rolls_back_before_model(environment):
+        client, db, field, _, track, _, gateway = environment
+        bound = context(client, unit_target(client, field))
+        _, first = round_trip(client, bound, "owner-first-request")
+        other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+        # This phase verifies rejected requests against physical database bytes.
+        # Drain the preceding legitimate writer before freezing that baseline.
+        client.app.state.discussions.shutdown()
+        for owner, parent in [(bound, "missing-message"), (other, first["messages"][-1]["message_id"])]:
+            before = db.read_bytes()
+            response = client.post("/api/catalog/discussion/messages", json=payload(owner, request_id="invalid-parent-next", parent_message_id=parent, allow_cross_scope=True))
+            assert response.status_code == 404
+>           assert db.read_bytes() == before
+E           assert b'SQLite form....321977+00:00' == b'SQLite form...: "standard"}'
+E             
+E             At index 27 diff: b'\x05' != b'\x03'
+E             Use -v to get more diff
+
+tests\test_research_conversation.py:102: AssertionError
+============================== warnings summary ===============================
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_context_reference.py:67: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**inputs, repair_feedback=feedback)
+
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\anaconda3\Lib\site-packages\pydantic\_internal\_generate_schema.py:1463: UserWarning: Item 'summary' on TypedDict class 'ChatCompletionReasoningItem' is using the `ReadOnly` qualifier. Pydantic will not protect items from any mutation on dictionary instances.
+    warnings.warn(
+
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_graph_reference.py:281: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_lossless_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph_v2.py:363: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:246: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:347: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_verified_reference.py:147: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_research_conversation.py::test_unknown_or_other_scope_parent_rolls_back_before_model
+1 failed, 1077 passed, 20 warnings in 467.85s (0:07:47)

@@ -1,0 +1,249 @@
+{
+  "selected": [
+    {
+      "ProcessId": 59032,
+      "ParentProcessId": 81980,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\node.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js start --host 127.0.0.1 --port 3000 ",
+      "CreationDate": "/Date(1791429299090)/",
+      "WorkingSetSize": 46800896
+    },
+    {
+      "ProcessId": 88324,
+      "ParentProcessId": 90836,
+      "Name": "node.exe",
+      "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-material-download-build-p5pwps28\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3004 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791503236994)/",
+      "WorkingSetSize": 50307072
+    },
+    {
+      "ProcessId": 90836,
+      "ParentProcessId": 39364,
+      "Name": "cmd.exe",
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3004 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791503236973)/",
+      "WorkingSetSize": 6316032
+    },
+    {
+      "ProcessId": 39364,
+      "ParentProcessId": 46628,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3004 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791503236836)/",
+      "WorkingSetSize": 43159552
+    },
+    {
+      "ProcessId": 46628,
+      "ParentProcessId": 81720,
+      "Name": "cmd.exe",
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3004 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791503236732)/",
+      "WorkingSetSize": 6299648
+    },
+    {
+      "ProcessId": 34824,
+      "ParentProcessId": 85088,
+      "Name": "node.exe",
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-source-hierarchy-build-w7ni3d4n\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3005 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791506054241)/",
+      "WorkingSetSize": 49057792
+    },
+    {
+      "ProcessId": 85088,
+      "ParentProcessId": 41200,
+      "Name": "cmd.exe",
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3005 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791506054220)/",
+      "WorkingSetSize": 6316032
+    },
+    {
+      "ProcessId": 41200,
+      "ParentProcessId": 93868,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3005 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791506054076)/",
+      "WorkingSetSize": 43163648
+    },
+    {
+      "ProcessId": 93868,
+      "ParentProcessId": 58828,
+      "Name": "cmd.exe",
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3005 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791506053971)/",
+      "WorkingSetSize": 6299648
+    },
+    {
+      "ProcessId": 96084,
+      "ParentProcessId": 98300,
+      "Name": "node.exe",
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-intent-correspondence-build-vcvedpss\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3006 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791522980705)/",
+      "WorkingSetSize": 50114560
+    },
+    {
+      "ProcessId": 98300,
+      "ParentProcessId": 84508,
+      "Name": "cmd.exe",
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3006 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791522980684)/",
+      "WorkingSetSize": 6328320
+    },
+    {
+      "ProcessId": 84508,
+      "ParentProcessId": 97464,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3006 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791522980539)/",
+      "WorkingSetSize": 43171840
+    },
+    {
+      "ProcessId": 97464,
+      "ParentProcessId": 98144,
+      "Name": "cmd.exe",
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3006 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791522980431)/",
+      "WorkingSetSize": 6311936
+    },
+    {
+      "ProcessId": 65924,
+      "ParentProcessId": 83600,
+      "Name": "node.exe",
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-generated-materials-build-kkdc1yik\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3007 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791533233035)/",
+      "WorkingSetSize": 68931584
+    },
+    {
+      "ProcessId": 83600,
+      "ParentProcessId": 57404,
+      "Name": "cmd.exe",
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3007 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791533233013)/",
+      "WorkingSetSize": 6336512
+    },
+    {
+      "ProcessId": 57404,
+      "ParentProcessId": 100000,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3007 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791533232876)/",
+      "WorkingSetSize": 43495424
+    },
+    {
+      "ProcessId": 100000,
+      "ParentProcessId": 26788,
+      "Name": "cmd.exe",
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3007 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791533232761)/",
+      "WorkingSetSize": 6320128
+    }
+  ],
+  "preserved": [
+    {
+      "ProcessId": 104724,
+      "ParentProcessId": 90264,
+      "Name": "node.exe",
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-citation-source-build-5nahp9hl\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791559989181)/",
+      "WorkingSetSize": 99418112
+    },
+    {
+      "ProcessId": 90264,
+      "ParentProcessId": 90584,
+      "Name": "cmd.exe",
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791559989157)/",
+      "WorkingSetSize": 7712768
+    },
+    {
+      "ProcessId": 90584,
+      "ParentProcessId": 68596,
+      "Name": "node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791559989006)/",
+      "WorkingSetSize": 60919808
+    },
+    {
+      "ProcessId": 68596,
+      "ParentProcessId": 89892,
+      "Name": "cmd.exe",
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791559988885)/",
+      "WorkingSetSize": 7766016
+    },
+    {
+      "ProcessId": 104544,
+      "ParentProcessId": 104836,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g01-two-paragraph-native-server-v1.py",
+      "CreationDate": "/Date(1791561040760)/",
+      "WorkingSetSize": 80441344
+    },
+    {
+      "ProcessId": 104836,
+      "ParentProcessId": 103120,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g01-two-paragraph-native-server-v1.py",
+      "CreationDate": "/Date(1791561040739)/",
+      "WorkingSetSize": 3731456
+    },
+    {
+      "ProcessId": 98484,
+      "ParentProcessId": 47692,
+      "Name": "python.exe",
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-v1.py serve",
+      "CreationDate": "/Date(1791538631644)/",
+      "WorkingSetSize": 115417088
+    },
+    {
+      "ProcessId": 47692,
+      "ParentProcessId": 16012,
+      "Name": "python.exe",
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-v1.py serve",
+      "CreationDate": "/Date(1791538631626)/",
+      "WorkingSetSize": 3727360
+    }
+  ],
+  "ownership_receipts": {
+    "3000": ".tmp/scholar-ui-fixes-services.json",
+    "3004": ".tmp/scholar-material-download-runtime-final-v1.json",
+    "3005": ".tmp/scholar-source-hierarchy-modal-runtime-v2.json",
+    "3006": ".tmp/scholar-intent-correspondence-native-v1.json",
+    "3007": ".tmp/scholar-generated-assets-native-v1.json"
+  },
+  "console_hosts_left_to_exit_with_owned_parent": [
+    {
+      "ProcessId": 79728,
+      "ParentProcessId": 93868,
+      "Name": "conhost.exe",
+      "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+      "CreationDate": "/Date(1791506053977)/",
+      "WorkingSetSize": 6541312
+    },
+    {
+      "ProcessId": 95892,
+      "ParentProcessId": 97464,
+      "Name": "conhost.exe",
+      "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+      "CreationDate": "/Date(1791522980437)/",
+      "WorkingSetSize": 6557696
+    },
+    {
+      "ProcessId": 93680,
+      "ParentProcessId": 100000,
+      "Name": "conhost.exe",
+      "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+      "CreationDate": "/Date(1791533232770)/",
+      "WorkingSetSize": 6549504
+    }
+  ],
+  "retained_database_sha256": {
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\fieldkg-software-source-v1.db": "96fd1b07677c605961e853f7eaf5ddea8d0e70c87d3050cbf6e08c80e1f7cfc1",
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\catalog.db": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-source-hierarchy-native-vrh2ab3g\\template-software-fixture-v1.db": "4b7400618e781f7e7ac3fff9ada22a91533be3d57a6bf2d5f96e6d0d84693f8a",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-source-hierarchy-native-vrh2ab3g\\data\\catalog.db": "36ed83a0bfc4ab29bde00c78d2492dba720d4c8362525b6e68b4b6d404395179",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-correspondence-native-u49yxqpe\\template-software-fixture-v1.db": "4b7400618e781f7e7ac3fff9ada22a91533be3d57a6bf2d5f96e6d0d84693f8a",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-correspondence-native-u49yxqpe\\data\\catalog.db": "d9fb5dc792d62ae433608acdfe41b36dba5efc5f9d69401fdd4f5b40821e1dbc",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\template-software-fixture-v1.db": "4b7400618e781f7e7ac3fff9ada22a91533be3d57a6bf2d5f96e6d0d84693f8a",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\catalog.db": "1540befe83e660f264590d7db2ee1b2b484b9656c3c51b5085d7b0e85a366c6d"
+  }
+}

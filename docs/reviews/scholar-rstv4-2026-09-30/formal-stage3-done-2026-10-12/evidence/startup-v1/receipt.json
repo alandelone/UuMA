@@ -1,0 +1,37 @@
+{
+  "previous_goal_turn": "PROGRESS",
+  "full_startup_reads": {
+    "AGENTS.md": {
+      "sha256": "8192352fd8def00c32806198efb62ebcd0a9bc5901917cc88da6709e2ad3d91a",
+      "logical_chars": 3093
+    },
+    "mission_status.json": {
+      "sha256": "59236a9cf52d80205e620cc971befdd1d974224e62718d8c20a9215a6ec5ea3e",
+      "logical_chars": 465
+    },
+    "rules/session-lifecycle.md": {
+      "sha256": "929763957b34c5f41f9f03f651e45b99dea5068f95ce45be7c5366dd93f65978",
+      "logical_chars": 3011
+    },
+    "stage-gates/04-verification-report.md": {
+      "sha256": "6d622894c4acef92b08af9c4edf9ee7360e26f96702c2aa461ae3c832dd3d1ea",
+      "logical_chars": 181871
+    },
+    "active-session/HANDOFF.md": {
+      "sha256": "a6b0b34be8c42e086a426457c34b54fbd2735e3e470b4d6aad0e7f31079b9ce9",
+      "logical_chars": 933679
+    }
+  },
+  "previous116_sealed_files_exact": true,
+  "previous15_source_files_current_exact": true,
+  "original_requirements": 118,
+  "original_groups": 11,
+  "g04_definition": "| G-04 | P2：Stage 3 修改结构时的 Done 放置／语义与 V6 不一致 | S:276–278 | [Studio:953](C:/Users/Alandelone/CodeSpace_Local/writing-studio/components/studio-workspace.tsx:953) structure 只有 Generate，非 structure 才 Done | 从正式生成稿改结构，有 Done 返回旧成文且收两栏；不生成、不清问题、不推进阶段 |",
+  "all11_complete": false,
+  "sibling_index_and_instructions": {
+    "../RSTV4/.codegraph": false,
+    "../writing-studio/.codegraph": false,
+    "../RSTV4/AGENTS.md": false,
+    "../writing-studio/AGENTS.md": false
+  }
+}

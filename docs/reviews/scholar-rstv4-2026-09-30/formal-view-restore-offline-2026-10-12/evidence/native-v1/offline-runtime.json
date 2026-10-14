@@ -1,0 +1,19 @@
+{
+  "mode": "offline",
+  "stops": [
+    {
+      "pid": 114708,
+      "state": "STOPPED_VERIFIED"
+    },
+    {
+      "pid": 28156,
+      "state": "ALREADY_EXITED"
+    }
+  ],
+  "port": 8881,
+  "status": "PASS",
+  "all109tables_exact": true,
+  "database_bytes_exact": true,
+  "frontend_unchanged": true,
+  "no_new_model_calls": true
+}

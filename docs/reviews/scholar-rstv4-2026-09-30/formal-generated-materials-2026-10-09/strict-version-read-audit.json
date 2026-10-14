@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "all109tables_exact_after_reads": true,
+  "versions": [
+    {
+      "version": 1,
+      "generated_version_id": "manuscript_version_9f842e3acfea471a8c2a48abc8f02817",
+      "strict_current_reader": "PASS"
+    },
+    {
+      "version": 2,
+      "generated_version_id": "manuscript_version_ea811e5a5f784c389fc664f84f18fa00",
+      "strict_current_reader": "PASS"
+    },
+    {
+      "version": 3,
+      "generated_version_id": "manuscript_version_02338a596162441587a28d1c0ee72dbf",
+      "strict_current_reader": "PASS"
+    }
+  ]
+}

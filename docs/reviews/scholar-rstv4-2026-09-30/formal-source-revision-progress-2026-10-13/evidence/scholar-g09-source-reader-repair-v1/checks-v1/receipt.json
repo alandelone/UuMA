@@ -1,0 +1,14 @@
+[
+  {
+    "name": "source-context-tests",
+    "exit_code": 0
+  },
+  {
+    "name": "typecheck",
+    "exit_code": 0
+  },
+  {
+    "name": "lint",
+    "exit_code": 1
+  }
+]

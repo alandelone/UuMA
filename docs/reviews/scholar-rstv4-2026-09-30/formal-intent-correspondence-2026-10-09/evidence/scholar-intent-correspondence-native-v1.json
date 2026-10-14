@@ -1,0 +1,142 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-correspondence-native-u49yxqpe",
+  "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+  "skeleton_id": "skeleton_e3437eb301788bdbc563ac3a0d5af2cf",
+  "baseline_revision": 8,
+  "baseline_document": {
+    "abstract": "",
+    "argument_relations": [
+      {
+        "condition": "Software-only relation condition Ω",
+        "id": "argument_relation_e8b8434232e5450396afceba1b56eaf0",
+        "relation": "Author comparison Ω",
+        "source_id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+        "target_id": "thought_640bf2359f714dc789eaa9792328adf2"
+      }
+    ],
+    "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+    "schema_version": 1,
+    "sections": [
+      {
+        "block_order": [
+          "paragraph_group_d6e12e2942b045018c19de523b462c9a"
+        ],
+        "id": "section_e6c46cea1637456487cbf22f6d6d2ca5",
+        "paragraph_groups": [
+          {
+            "id": "paragraph_group_d6e12e2942b045018c19de523b462c9a",
+            "label": "Original author group Ω",
+            "paragraph_ids": [
+              "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+              "paragraph_356c9c06059e4d308dc1eda0e7c4c6db"
+            ]
+          }
+        ],
+        "paragraphs": [
+          {
+            "asset_ids": [
+              "asset_995ed7847a3546ff94c7abbd6a0ef352"
+            ],
+            "formulas": [
+              {
+                "caption": "Original author formula",
+                "id": "formula_d337c2e309f24eefbba3eb27454548ae",
+                "latex": "x=1"
+              }
+            ],
+            "id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+            "intents": [
+              {
+                "id": "intent_c27c009a52334af0834cd9978e18cd01",
+                "label": "Original author intent",
+                "thoughts": [
+                  {
+                    "citation_mode": "SELECTED",
+                    "citations": [
+                      {
+                        "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                        "selected": true
+                      }
+                    ],
+                    "id": "thought_aa60ef502db549e1ac1b2a82fb19c6cf",
+                    "text": "AUTHOR original wording Ω with its selected software citation."
+                  }
+                ]
+              }
+            ],
+            "logic": {
+              "discourse_relation": "Author comparison"
+            },
+            "logical_relation": "Author comparison",
+            "paradigm": "Original author organization",
+            "purpose": "Original author purpose Ω"
+          },
+          {
+            "asset_ids": [
+              "asset_995ed7847a3546ff94c7abbd6a0ef352"
+            ],
+            "formulas": [
+              {
+                "caption": "Original author formula",
+                "id": "formula_3eeb0c2412b74c0ba6228f215a8a525d",
+                "latex": "x=1"
+              }
+            ],
+            "id": "paragraph_356c9c06059e4d308dc1eda0e7c4c6db",
+            "intents": [
+              {
+                "id": "intent_56a5681618b24da2b65bfa184158e683",
+                "label": "Original author intent",
+                "thoughts": [
+                  {
+                    "citation_mode": "SELECTED",
+                    "citations": [
+                      {
+                        "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                        "selected": true
+                      }
+                    ],
+                    "id": "thought_640bf2359f714dc789eaa9792328adf2",
+                    "text": "AUTHOR second original wording stays independent."
+                  }
+                ]
+              }
+            ],
+            "logic": {
+              "discourse_relation": "Author comparison"
+            },
+            "logical_relation": "Author comparison",
+            "paradigm": "Original author organization",
+            "purpose": "Original author purpose Ω"
+          }
+        ],
+        "role": "Motivation",
+        "title": "Original author root Ω"
+      }
+    ],
+    "title": "Source hierarchy native acceptance Ω — software fixture",
+    "venue": ""
+  },
+  "asset_paths": [
+    {
+      "id": "asset_995ed7847a3546ff94c7abbd6a0ef352",
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-correspondence-native-u49yxqpe\\data\\writing-studio\\manuscript_98c35f5b5557453583cb20df8d52810d\\assets\\81bf9fa83c6f7f15-author-software-table.csv",
+      "sha256": "81bf9fa83c6f7f151bd491a98cd7d933de3965289e3ebd77c6c425f7eaa16392"
+    }
+  ],
+  "software_fixture": true,
+  "actual_model_calls": 0,
+  "scientific_acceptance": false,
+  "native_downloads_paused": true,
+  "old_runtimes_and_tabs_preserved": true,
+  "production_root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-intent-correspondence-build-vcvedpss\\writing-studio",
+  "processes": {
+    "backend": 91564,
+    "frontend": 97464
+  },
+  "ready": [
+    "backend",
+    "frontend"
+  ],
+  "url": "http://127.0.0.1:3006/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0"
+}

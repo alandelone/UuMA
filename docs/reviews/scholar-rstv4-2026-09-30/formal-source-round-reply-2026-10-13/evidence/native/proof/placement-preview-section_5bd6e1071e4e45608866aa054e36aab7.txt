@@ -1,0 +1,24 @@
+安置原章节与子项
+
+选择目标后，整棵原章节作为它的子章节放入。作者思想、引用、公式、附件、段落组和编号一起保留；模板空槽仍需作者填写。
+
+目标章节
+选择目标章节
+Other software source
+Other software source / Introduction
+Other software source / Software source section 1
+
+安置后：Other software source / Software source section 3
+
+保留 1 个章节、0 个段落组、1 个段落、1 个思想、0 个引用候选、0 个公式、0 个附件关联、0 条 L2 关系。
+
+Software source section 3
+未定段落用途
+
+Software_Test
+
+G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.
+我已核对目标与完整原内容，确认按此位置安置
+取消
+确认安置原章节
+Close

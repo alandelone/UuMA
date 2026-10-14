@@ -1,0 +1,22 @@
+[
+  {
+    "pid": 15112,
+    "created": 1791949013.7871275,
+    "argv": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-gpu-healthy-serve-v1.py"
+    ]
+  },
+  {
+    "pid": 40736,
+    "created": 1791949013.8054082,
+    "argv": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-gpu-healthy-serve-v1.py"
+    ]
+  }
+]

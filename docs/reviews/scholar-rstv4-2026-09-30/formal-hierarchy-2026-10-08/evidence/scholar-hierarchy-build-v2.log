@@ -1,0 +1,101 @@
+
+> pepper-writing-studio@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.3.0)
+
+[1/5] analyze client references...
+transforming...
+✓ 249 modules transformed.
+rendering chunks...
+✓ built in 2.45s
+[2/5] analyze server references...
+transforming...
+✓ 364 modules transformed.
+rendering chunks...
+✓ built in 462ms
+[3/5] build rsc environment...
+transforming...
+✓ 241 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/__vinext_cacheability_manifest.js                                                                                                0.02 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/__vinext_pregenerated_concrete_paths.js                                                                                          0.05 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/css/index.96ejn0I9.css                                                                                            242.81 kB │ gzip: 36.96 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/page-DIPVwk6S.js                                                                                                    0.17 kB │ gzip:  0.16 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/base-path-Cmiu3HvG.js                                                                                               0.31 kB │ gzip:  0.22 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/request-context-BhsuY6Gk.js                                                                                         0.47 kB │ gzip:  0.32 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/next-error-digest-5ayqyzJb.js                                                                                       0.63 kB │ gzip:  0.42 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/rolldown-runtime-hePW80VL.js                                                                                        0.71 kB │ gzip:  0.42 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/isr-decision-6CTp_Zux.js                                                                                            0.76 kB │ gzip:  0.36 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/framework~index~layout~seed-cache~app-route-handler-dispatch~app-page-cache~app-page-cache-render-DdqYFyLc.js       0.82 kB │ gzip:  0.55 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/utils-C9PM00n7.js                                                                                                   0.85 kB │ gzip:  0.37 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-static-generation-BX8cz43B.js                                                                                   0.91 kB │ gzip:  0.51 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/root-params-Clz0R48n.js                                                                                             1.18 kB │ gzip:  0.62 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/cacheability-request-B1uZb-i9.js                                                                                    1.80 kB │ gzip:  0.88 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/headers-DK7WrXnv.js                                                                                                 1.96 kB │ gzip:  0.87 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-page-cache-render-CPjs0Lra.js                                                                                   2.01 kB │ gzip:  0.94 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-prerender-endpoints-WyykVXKN.js                                                                                 2.36 kB │ gzip:  0.95 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/seed-cache-C4Q12PsU.js                                                                                              3.20 kB │ gzip:  1.37 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/unified-request-context-Cy4lodWR.js                                                                                 3.38 kB │ gzip:  1.35 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/request-pipeline-D91AdHab.js                                                                                        3.96 kB │ gzip:  1.62 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/isr-cache-W36MyoOj.js                                                                                               4.16 kB │ gzip:  1.94 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/cache-handler-D-mhLqkd.js                                                                                           4.20 kB │ gzip:  1.54 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/cache-control-DnLxFr-L.js                                                                                           4.52 kB │ gzip:  1.85 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/framework~index~layout~page~seed-cache~app-route-handler-dispatch~app-page-cache~app-page-c~nozlz7yf-BO2z_WaE.js    5.49 kB │ gzip:  2.28 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-page-cache-DmBwavJg.js                                                                                          5.94 kB │ gzip:  2.00 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-rsc-response-stage-By4XTuTm.js                                                                                  7.04 kB │ gzip:  2.44 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/artifact-compatibility-6zXskz3H.js                                                                                  9.38 kB │ gzip:  3.17 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/cache-request-state-Cp81OX60.js                                                                                    10.90 kB │ gzip:  3.71 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-elements-DG1e7s7I.js                                                                                           12.61 kB │ gzip:  4.40 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/fetch-cache-CApcjFhL.js                                                                                            13.85 kB │ gzip:  4.94 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/config-headers-6-y2EqMc.js                                                                                         14.37 kB │ gzip:  4.58 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/text-stream-C0CnE6Az.js                                                                                            19.95 kB │ gzip:  5.84 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/app-route-handler-dispatch-CMfZd8L8.js                                                                             33.75 kB │ gzip: 10.42 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/_next/static/framework~index-Qi8JcatL.js                                                                                        56.77 kB │ gzip: 16.90 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/index.js                                                                                                                       237.80 kB │ gzip: 68.67 kB
+
+✓ built in 444ms
+[4/5] build client environment...
+transforming...
+✓ 2157 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/vinext-client-entry-manifest.json                         0.06 kB │ gzip:   0.08 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/.vite/manifest.json                                       2.26 kB │ gzip:   0.48 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/css/index.96ejn0I9.css                     242.81 kB │ gzip:  36.96 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/chunks/layout-segment-context-BLgeq7Ki.js    0.49 kB │ gzip:   0.34 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/chunks/rolldown-runtime-hePW80VL.js          0.71 kB │ gzip:   0.42 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/chunks/index-BcmfB3LY.js                   108.74 kB │ gzip:  32.41 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/chunks/vinext-BFhHyQkQ.js                  111.47 kB │ gzip:  33.22 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/chunks/framework-A1pNZAzD.js               190.10 kB │ gzip:  59.72 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/client/_next/static/chunks/page-Bk872bCj.js                    411.41 kB │ gzip: 128.51 kB
+
+✓ built in 1.23s
+[5/5] build ssr environment...
+transforming...
+✓ 367 modules transformed.
+rendering chunks...
+computing gzip size...
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/_next/static/app-prefetch-fetch-queue-CAISgiXf.js    0.00 kB │ gzip:   0.02 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/_next/static/layout-segment-context-BY80lv-f.js      0.37 kB │ gzip:   0.27 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/_next/static/streamed-icons-D2p1hUS_.js              0.65 kB │ gzip:   0.42 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/_next/static/app-router-scroll-B4ZHvoOq.js           2.55 kB │ gzip:   1.14 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/_next/static/error-boundary-C5JHILRm.js              5.37 kB │ gzip:   1.61 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/index.js                                            77.51 kB │ gzip:  26.17 kB
+../../../../../../Alandelone/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/dist/server/ssr/_next/static/page-CQhiV8-Z.js                      396.66 kB │ gzip: 127.58 kB
+
+✓ built in 419ms
+[0m
+  Route (app)
+  ─ ? /
+
+  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+

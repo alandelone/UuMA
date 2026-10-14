@@ -1,0 +1,79 @@
+{
+  "checks": [
+    "exact shipped controller and HTML",
+    "reuse same explicit Track adoption and immutable Snapshot; source L3 has no structured intent, no Evidence Candidate invented",
+    "shipped controller submits actual HTTP and retries exact completed request without duplicate",
+    "no user grant, wrong Field and cross-origin changes rejected"
+  ],
+  "requests": [
+    {
+      "path": "/api/catalog/research/skeletons",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 403
+    },
+    {
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 404
+    },
+    {
+      "path": "/api/catalog/track-scientific-actions",
+      "status": 403
+    },
+    {
+      "path": "/api/catalog/tracks/track_5db301885c864f13b784f032a2a71f4b/scientific-context",
+      "status": 200
+    }
+  ],
+  "source_skeleton_id": "skeleton_ad1dc385a70f2dd67e89eb1ebec075cd",
+  "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+  "track_id": "track_5db301885c864f13b784f032a2a71f4b",
+  "snapshot_id": "fieldkg_snapshot_75cb14c33e0e4d48a446793df565dddf",
+  "proposal_id": "proposal_c6cd7cb94f944e6482c6dfae89bed3ca",
+  "original_request": {
+    "operation": "PROPOSE_DECISION",
+    "request_id": "fcf44d40-1988-4044-8bdc-a0adaedb5b2c",
+    "confirmed": true,
+    "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+    "track_id": "track_5db301885c864f13b784f032a2a71f4b",
+    "expected_context_sha256": "a541ce6ef436bfa430c69d38bfb93644bfd6a82a5187e34d063fd2c808ec3bcd",
+    "proposal": {
+      "kind": "method",
+      "statement": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+      "rationale": "Verify proposal and immutable provenance only; scientific approval remains pending",
+      "evidence_ids": [],
+      "upstream_node_ids": [],
+      "supersedes_node_id": null,
+      "track_id": "track_5db301885c864f13b784f032a2a71f4b"
+    }
+  },
+  "browser_verified": false,
+  "scientific_approval": false
+}

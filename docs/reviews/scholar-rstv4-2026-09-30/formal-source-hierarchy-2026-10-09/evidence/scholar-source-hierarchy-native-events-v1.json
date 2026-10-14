@@ -1,0 +1,146 @@
+[
+  {
+    "label": "full-preview",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-full-preview-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-full-preview-v1.png"
+  },
+  {
+    "label": "partial-selected",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-selected-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-selected-v1.png"
+  },
+  {
+    "label": "partial-adopted",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-adopted-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-adopted-v1.png"
+  },
+  {
+    "label": "partial-reloaded",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-reloaded-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-reloaded-v1.png"
+  },
+  {
+    "label": "partial-undo",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-undo-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-undo-v1.png"
+  },
+  {
+    "label": "partial-redo",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-redo-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-redo-v1.png"
+  },
+  {
+    "label": "nested-target-reviewed",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-nested-target-reviewed-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-nested-target-reviewed-v1.png"
+  },
+  {
+    "label": "nested-full-adopted",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-nested-full-adopted-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-nested-full-adopted-v1.png"
+  },
+  {
+    "label": "nested-full-undo",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-nested-full-undo-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-nested-full-undo-v1.png"
+  },
+  {
+    "label": "partial-return-original",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-return-original-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-partial-return-original-v1.png"
+  },
+  {
+    "label": "replace-unconfirmed",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-unconfirmed-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-unconfirmed-v1.png"
+  },
+  {
+    "label": "replace-reviewed",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-reviewed-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-reviewed-v1.png"
+  },
+  {
+    "label": "replace-adopted",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-adopted-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-adopted-v1.png"
+  },
+  {
+    "label": "replace-initial-not-proven-reload",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-initial-not-proven-reload-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-initial-not-proven-reload-v1.png"
+  },
+  {
+    "label": "replace-fresh-reviewed",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-fresh-reviewed-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-fresh-reviewed-v1.png"
+  },
+  {
+    "label": "replace-fresh-not-proven",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-fresh-not-proven-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-replace-fresh-not-proven-v1.png"
+  },
+  {
+    "label": "bounded-replace-reviewed",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-reviewed-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-reviewed-v1.png"
+  },
+  {
+    "label": "bounded-replace-adopted",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-adopted-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-adopted-v1.png"
+  },
+  {
+    "label": "unplaced-generate-check",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-unplaced-generate-check-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-unplaced-generate-check-v1.png"
+  },
+  {
+    "label": "unplaced-generate-result",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-unplaced-generate-result-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-unplaced-generate-result-v1.png"
+  },
+  {
+    "label": "bounded-replace-reloaded",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-reloaded-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-reloaded-v1.png"
+  },
+  {
+    "label": "bounded-replace-undo",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-undo-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-bounded-replace-undo-v1.png"
+  },
+  {
+    "label": "final-original-saved",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-final-original-saved-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-final-original-saved-v1.png"
+  },
+  {
+    "label": "handoff-preview",
+    "url": "http://127.0.0.1:3005/?manuscript=manuscript_98c35f5b5557453583cb20df8d52810d&view=structure&left=1&right=1&chat=0",
+    "dom_file": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-handoff-preview-v1.md",
+    "screenshot": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-source-hierarchy-native-handoff-preview-v1.png"
+  }
+]

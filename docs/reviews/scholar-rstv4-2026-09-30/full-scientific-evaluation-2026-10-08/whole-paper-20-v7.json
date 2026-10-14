@@ -1,0 +1,265 @@
+{
+  "whole_cases": [
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "record_digest": "119faa20d6e85e72b0b17e5c06073f511c97c12a28b004ee92783bd2e2a2b7d2",
+      "error": "Bounded partition output contract exhausted: Incomplete original reconstruction cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_95eebae164cc42fd6005\\optimized\\record.json",
+      "record_digest": "462453fdd5c78b1e0c2f320bf2a0a4953db6383a8d4b765cb9b282ca054a7b2e",
+      "error": "Durable inference run_309aa9f8114c4531b9f6a2a4c16f51ce failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "record_digest": "4c287693f0044993ed2af8f1ed934ec2e1521b96c38d833be6c3a82e18838dc2",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_964b88669cfe422e7aef\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 5,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 60,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "record_digest": "cbe1e40a1ee200e1712a736870ec33c2ce6af3aa5db164ef4da2583f052bde9d",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_964b88669cfe422e7aef\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 3,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 60,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "record_digest": "fc94d0305d3182ba8d8023ffe06e8a963d199d4af046bba6a4a55d03ec1bfa47",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 5,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 57,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "record_digest": "11f61f49bead94118c3a1f519a9bdfa7956f6a97b18c14fda9b7c152c23f8e18",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 13,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 57,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "record_digest": "211f6e0e5d629df707317ed294cb11ff0cc60f955a434e8c7ff40a9a49da41fa",
+      "error": "Bounded partition output contract exhausted: Incomplete original reconstruction cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "record_digest": "8e1c001582f1cecaf48a663848cb6720c26acee6827331181a7af90e4ad18db0",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_19f55daa7f17ede2858b\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 28,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 164,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "record_digest": "d05962f8defe94593c1cb9f4a123560b123373a0567ab1056c4bc8bf775084ed",
+      "error": "Bounded partition output contract exhausted: Unresolved or contradicted source cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "record_digest": "87f2dc196a5ecbe64eabdd602f4128291c6afbafa2aae2f294ea8e4a8beb567a",
+      "error": "Bounded partition output contract exhausted: Unresolved or contradicted source cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "record_digest": "1b7605e731228b57bb76c00e25edfbec21ffc2b6a21652b2795f2024a2b4b0c1",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 13,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 143,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "record_digest": "dd1838697d67c3086600a9e9e91caecfff2f5886cf455f42bce71aa033184a6d",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 20,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 143,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "record_digest": "872d61b96306616ad204f8eb5b43f029941ef5279fee89ebc490ff4eb3859203",
+      "error": "Bounded partition output contract exhausted: Incomplete original reconstruction cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "record_digest": "e763d01bb6b8aadefd698c9fa88b039f81e0bfed6e27330c5183ce9deebb167a",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 12,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 111,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "record_digest": "0125e2adcaa4d11c5874d45f74f7d2e16f4afa01d4db8d47b3b650c33e010970",
+      "error": "Bounded partition output contract exhausted: Supported whole argument cannot contain an unsupported/uncertain actual link"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_603603415f45919cbdc8\\optimized\\record.json",
+      "record_digest": "e7054fe0bb5f0b130d9ce87e5e4fa6f29f6287736a40bdf10e966234960567ea",
+      "error": "Bounded partition output contract exhausted: Complete scientific argument coverage needs actual candidate and source evidence"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_fb88f52bf6ea0323e952\\baseline\\record.json",
+      "record_digest": "2e8b9e474190f8c94be06e9a8af46d8bfcdcacdd0fb409eb341679ddaaa65d22",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_fb88f52bf6ea0323e952\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 47,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 151,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_fb88f52bf6ea0323e952\\optimized\\record.json",
+      "record_digest": "16155fc8340b2348928673d399db728c46e422c786f7f9d7ecc356ad2428571f",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_fb88f52bf6ea0323e952\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 30,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 151,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-partitioned-science-v7\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "record_digest": "8b72497507107a37427eab29381ffc8bfb09ee7f8057b462f0d07c343e9ef6c2",
+      "error": "Bounded partition output contract exhausted: Incomplete original reconstruction cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "record_digest": "093712dfbcb9bd40ff964370622e4bee43a29b775ab8eee76993ec5ba1386343",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_75abf75ded7b6df0c2b5\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 10,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 145,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    }
+  ],
+  "scientific_labels_changed": false,
+  "model_calls": 0
+}

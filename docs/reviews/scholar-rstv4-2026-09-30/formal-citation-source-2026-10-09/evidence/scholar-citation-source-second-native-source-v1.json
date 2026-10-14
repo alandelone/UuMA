@@ -1,0 +1,65 @@
+{
+  "evidence": {
+    "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+    "scope_kind": "TRACK",
+    "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+    "track_id": "track_8fc0672591694b79bb747470d402772d",
+    "paper_id": "other",
+    "paper_version_id": null,
+    "experiment_run_id": null,
+    "statement": "New original software source body.",
+    "excerpt": "New original software source body.",
+    "location_json": "{\"page\":1,\"section\":\"Other software source\",\"sequence\":0,\"skeleton_digest\":\"468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3\",\"skeleton_id\":\"skeleton_dacb7912eb37f640e511be09e374aacf\",\"unit_digest\":\"a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450\",\"unit_id\":\"unit_aa3c1d64881f03b52cc0af2c6b4d8f52\"}",
+    "relation": "SUPPORTS",
+    "confidence": 0.9,
+    "extractor_model": "TEST_FIXTURE_SOURCE_NATIVE",
+    "prompt_version": "1",
+    "content_digest": "795f31789f6c1f5700c4f0842cc1ee1a8728e218084f19b8df1e5aaf3b397c71",
+    "created_at": "2026-10-09T10:42:34.310867+00:00"
+  },
+  "source": {
+    "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+    "paper_version_id": "paper_version_db977494b25f25023cb1c71b98ae7814",
+    "version": 1,
+    "extractor_model": "TEST_FIXTURE_SOURCE_NATIVE",
+    "prompt_version": "paper-skeleton-v1",
+    "content_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+    "created_at": "2026-10-09T10:42:34.279752+00:00",
+    "paper_id": "other",
+    "paper_version": 1,
+    "pdf_digest": "d7fe4a2e21964adb7b9d685cc9c0dc639239b686894978b552c2397be638f7e9",
+    "parsed_digest": "d5df6e8dfff67e808c00be3a8084b8daac70cdf3280771eb6a2b95d1fda76f10",
+    "title": "Other selected source",
+    "doi": "10.1234/other",
+    "file_version_id": "software-native-other-file",
+    "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+    "units": [
+      {
+        "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52",
+        "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+        "seq_idx": 0,
+        "page_idx": 1,
+        "section": "Other software source",
+        "raw_text": "New original software source body.",
+        "layer1": {
+          "triplets": []
+        },
+        "layer2": {},
+        "layer3": {
+          "intent": "Software_Test"
+        },
+        "layer4": "Software_Test",
+        "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450"
+      }
+    ],
+    "triplets": [],
+    "context_sha256": "04547d056e333e010376e4179759f6a3a6d5a829c909ba9e396655976aaf8d72"
+  },
+  "original_pdf": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\other-software-original.pdf",
+  "original_pdf_sha256": "d7fe4a2e21964adb7b9d685cc9c0dc639239b686894978b552c2397be638f7e9",
+  "old_original_unchanged": true,
+  "author_document_unchanged": true,
+  "software_fixture": true,
+  "actual_remote_model_calls": 0,
+  "scientific_acceptance": false
+}

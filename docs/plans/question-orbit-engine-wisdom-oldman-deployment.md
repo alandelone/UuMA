@@ -1,5 +1,16 @@
 # Question Orbit Engine 部署到 Wisdom Oldman 的计划
 
+## 2026-10-02 工具与持续研究架构修订
+
+后续实现遵循 [Agent 研究工具契约](../architecture/agent-research-tools.md)：ChatGPT 是 Wisdom
+可以选择 chat、search 或 deep_research 模式的工具；未来来源采用同一能力／适配器边界。
+没有新来源时调整检索方式或推进其他缺口，不能据此自动暂停整个主题。
+暂停、预算耗尽、等待工具结果和执行受阻须分别说明原因及下一步，普通聊天继续可用。
+
+本次修订与操作指引更新不代表自动 Deep Research、持久报告回收或暂停逻辑修复已经上线。
+下列第一阶段部署记录保留为历史；较早“默认 QUICK”“无可用来源即终态”等设计说明
+以 2026-09-24 的用户授权 DEEP 默认和本次架构契约为准。新主题继续需要用户明确同意。
+
 ## Topic document delivery extension (2026-09-24)
 
 The Orbit is now an execution attached to a durable topic/question graph rather than the owner of a

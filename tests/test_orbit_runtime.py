@@ -1441,6 +1441,43 @@ def test_runner_retries_transient_graph_reasoning_failure(tmp_path: Path, monkey
     assert orbits.discovery_usage(provider="openalex")["requests"] == 0
 
 
+def test_runner_retries_readiness_timeout_without_research_or_publication(tmp_path, monkeypatch):
+    monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {
+        "ready": False, "reason": "TimeoutError",
+    })
+    service, orbits, orbit_id = _started_orbit(tmp_path)
+    reasoner = _Reasoner()
+    runner = OrbitRunner(service, orbits, reasoner, [_Provider()], _Ingestor(service),
+                         _Constructor(), _Projection(), _Dispatcher(),
+                         owner_id="readiness-retry", heartbeat_interval=0)
+    assert runner.run_once()
+    cycle = service.list_records("orbit_cycle")["records"][0]
+    assert cycle["status"] == "RETRY" and "TimeoutError" in cycle["error"]
+    assert orbits.get(orbit_id)["orbit"]["status"] == "ACTIVE"
+    assert reasoner.calls == 0
+    assert service.list_records("topic_document_version")["count"] == 0
+    assert orbits.discovery_usage(provider="openalex")["requests"] == 0
+
+
+def test_runner_retries_graph_http_failure_without_publishing_or_discovery(tmp_path, monkeypatch):
+    from unittest.mock import Mock
+
+    from uuma.kag_adapter import KagUnavailableError
+
+    monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {"ready": True})
+    service, orbits, orbit_id = _started_orbit(tmp_path)
+    reasoner = Mock(answer=Mock(side_effect=KagUnavailableError("HTTP 503")))
+    runner = OrbitRunner(service, orbits, reasoner, [_Provider()], _Ingestor(service),
+                         _Constructor(), _Projection(), _Dispatcher(),
+                         owner_id="http-retry", heartbeat_interval=0)
+    assert runner.run_once()
+    cycle = service.list_records("orbit_cycle")["records"][0]
+    assert cycle["status"] == "RETRY" and "图谱检索" in cycle["error"]
+    assert orbits.get(orbit_id)["orbit"]["status"] == "ACTIVE"
+    assert service.list_records("topic_document_version")["count"] == 0
+    assert orbits.discovery_usage(provider="openalex")["requests"] == 0
+
+
 class _TwoSourceProvider:
     name = "openalex"
 
@@ -1651,4 +1688,3 @@ def test_configured_providers_includes_chatgpt_first() -> None:
     assert providers[0] is mock_chatgpt
     assert any(p.name == "openalex" for p in providers)
     assert any(p.name == "ddgs" for p in providers)
-

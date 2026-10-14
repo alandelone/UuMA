@@ -1,0 +1,51 @@
+{
+  "Processes": [
+    {
+      "ProcessId": 75360,
+      "ParentProcessId": 76852,
+      "ExecutablePath": "C:\\Windows\\SYSTEM32\\cmd.exe",
+      "CommandLine": "cmd.exe /c npm run dev -- --port 3004",
+      "CreationDate": "/Date(1791441300803)/"
+    },
+    {
+      "ProcessId": 73892,
+      "ParentProcessId": 75360,
+      "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+      "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+      "CreationDate": "/Date(1791441300809)/"
+    },
+    {
+      "ProcessId": 41788,
+      "ParentProcessId": 75360,
+      "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run dev -- --port 3004",
+      "CreationDate": "/Date(1791441301225)/"
+    },
+    {
+      "ProcessId": 18988,
+      "ParentProcessId": 41788,
+      "ExecutablePath": "C:\\Windows\\system32\\cmd.exe",
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext dev --port 3004",
+      "CreationDate": "/Date(1791441302023)/"
+    },
+    {
+      "ProcessId": 78244,
+      "ParentProcessId": 18988,
+      "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+      "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" dev --port 3004",
+      "CreationDate": "/Date(1791441302053)/"
+    }
+  ],
+  "Listener": [
+    {
+      "LocalPort": 3004,
+      "OwningProcess": 78244
+    }
+  ],
+  "Memory": {
+    "TotalVisibleMemorySize": 33289112,
+    "FreePhysicalMemory": 8093296,
+    "TotalVirtualMemorySize": 43529112,
+    "FreeVirtualMemory": 192788
+  }
+}

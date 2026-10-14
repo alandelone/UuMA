@@ -1,0 +1,93 @@
+{
+  "status": "TWO_ACTUAL_NATIVE_SYMBOL_COUNTEREXAMPLES_SUPPLEMENT_ORIGINAL_REVIEW_RETAINED",
+  "original_student_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\retracted-frozen-student-all-seven-parser-table-and-key-claims-review-v16.json",
+  "original_student_review_sha256": "a5db83482c1e4bfbc93cbcfaf795aa4aa548ac6c5aef993d55ee9b3011db432e",
+  "supplementary_atom_records": [
+    {
+      "program": "baseline",
+      "entire_previous_atom_review_preserved": {
+        "program": "baseline",
+        "matrix_table_index": null,
+        "unchanged_original_atom": {
+          "atom_id": "paper_75abf75ded7b6df0c2b5:b36:a3",
+          "statement": "phi is a coefficient of power temperature (%/C).",
+          "quote": "where $P_{\\mathrm{STC}}\\:(\\mathrm{W_{p})}$ is the power yielded at the Standard Test Conditions; $G_{h}(t)~\\mathrm{(kWh/m^{2})}$ is the irradiation in excess of PV panels tilted side during hour $t;\\emptyset$ is a co-efficient of power temperature $(\\%/^{\\circ}C)$ ; $T_{a}(t)$ is the temperature of ambient $(^{\\circ}C)$ ; NOCT is the nominal operation cell temperature ${(^{\\circ}C)}$ , in addition $F_{\\mathrm{dirt}}$ is the loss factor owing to grime, cables, module discrepancy, or power fluctuation (around 0.85-0.9).",
+          "source_span_ids": [
+            "paper_75abf75ded7b6df0c2b5:b36:s1"
+          ],
+          "epistemic_status": "AUTHOR_REPORT",
+          "qualifications": [],
+          "triplets": [
+            {
+              "subject": "coefficient of power temperature",
+              "predicate": "has unit",
+              "object": "%/C"
+            }
+          ],
+          "objects": [],
+          "source_span": [
+            0,
+            523
+          ],
+          "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+        },
+        "exact_resolved_original_quote": "where $P_{\\mathrm{STC}}\\:(\\mathrm{W_{p})}$ is the power yielded at the Standard Test Conditions; $G_{h}(t)~\\mathrm{(kWh/m^{2})}$ is the irradiation in excess of PV panels tilted side during hour $t;\\emptyset$ is a co-efficient of power temperature $(\\%/^{\\circ}C)$ ; $T_{a}(t)$ is the temperature of ambient $(^{\\circ}C)$ ; NOCT is the nominal operation cell temperature ${(^{\\circ}C)}$ , in addition $F_{\\mathrm{dirt}}$ is the loss factor owing to grime, cables, module discrepancy, or power fluctuation (around 0.85-0.9).",
+        "specific_fidelity_issues": [],
+        "root_direct_evidence_disposition": "AUTHOR_REPORTED_CONTENT_WITH_DECLARED_PRIMARY_CONTEXT_AND_METHOD_LIMITATIONS",
+        "material_support_limitations_or_extra_qualifications": [],
+        "native_quote_or_source_ids_repaired": false,
+        "original_benchmark_grade_replaced": false
+      },
+      "primary_pdf_page": 4,
+      "primary_visible_symbol": "α",
+      "supplementary_observation": "NATIVE_UNSUPPORTED_SYMBOL_PHI_AND_PRIMARY_ALPHA_MISMATCH",
+      "root_observation_replaces_no_original_benchmark_or_model_verdict": true
+    },
+    {
+      "program": "optimized",
+      "entire_previous_atom_review_preserved": {
+        "program": "optimized",
+        "matrix_table_index": null,
+        "unchanged_original_atom": {
+          "atom_id": "paper_75abf75ded7b6df0c2b5:b36:a3",
+          "statement": "\\emptyset is a co-efficient of power temperature.",
+          "quote": "where $P_{\\mathrm{STC}}\\:(\\mathrm{W_{p})}$ is the power yielded at the Standard Test Conditions; $G_{h}(t)~\\mathrm{(kWh/m^{2})}$ is the irradiation in excess of PV panels tilted side during hour $t;\\emptyset$ is a co-efficient of power temperature $(\\%/^{\\circ}C)$ ; $T_{a}(t)$ is the temperature of ambient $(^{\\circ}C)$ ; NOCT is the nominal operation cell temperature ${(^{\\circ}C)}$ , in addition $F_{\\mathrm{dirt}}$ is the loss factor owing to grime, cables, module discrepancy, or power fluctuation (around 0.85-0.9).",
+          "source_span_ids": [
+            "paper_75abf75ded7b6df0c2b5:b36:s1"
+          ],
+          "epistemic_status": "AUTHOR_REPORT",
+          "qualifications": [
+            "(%/°C)"
+          ],
+          "triplets": [
+            {
+              "subject": "\\emptyset",
+              "predicate": "represents",
+              "object": "co-efficient of power temperature"
+            }
+          ],
+          "objects": [],
+          "source_span": [
+            0,
+            523
+          ],
+          "source_span_basis": "whitespace_and_soft_hyphen_normalized_block_text"
+        },
+        "exact_resolved_original_quote": "where $P_{\\mathrm{STC}}\\:(\\mathrm{W_{p})}$ is the power yielded at the Standard Test Conditions; $G_{h}(t)~\\mathrm{(kWh/m^{2})}$ is the irradiation in excess of PV panels tilted side during hour $t;\\emptyset$ is a co-efficient of power temperature $(\\%/^{\\circ}C)$ ; $T_{a}(t)$ is the temperature of ambient $(^{\\circ}C)$ ; NOCT is the nominal operation cell temperature ${(^{\\circ}C)}$ , in addition $F_{\\mathrm{dirt}}$ is the loss factor owing to grime, cables, module discrepancy, or power fluctuation (around 0.85-0.9).",
+        "specific_fidelity_issues": [],
+        "root_direct_evidence_disposition": "AUTHOR_REPORTED_CONTENT_WITH_DECLARED_PRIMARY_CONTEXT_AND_METHOD_LIMITATIONS",
+        "material_support_limitations_or_extra_qualifications": [],
+        "native_quote_or_source_ids_repaired": false,
+        "original_benchmark_grade_replaced": false
+      },
+      "primary_pdf_page": 4,
+      "primary_visible_symbol": "α",
+      "supplementary_observation": "INHERITED_NATIVE_PARSE_EMPTYSET_VERSUS_PRIMARY_ALPHA",
+      "root_observation_replaces_no_original_benchmark_or_model_verdict": true
+    }
+  ],
+  "novelty_scope_qualification_observation": "Bothb27a1statementsdropToourrealizationbutactualepistemic_statusAUTHOR_INTERPRETATIONpreservesauthorinterpretationcontext;notrelabelledasunqualifiedobjectivegold. Previous-literatureclaimnotindependentlyexhaustivelyproved.",
+  "original_all421_atom_reviews_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "full_goal_complete": false
+}

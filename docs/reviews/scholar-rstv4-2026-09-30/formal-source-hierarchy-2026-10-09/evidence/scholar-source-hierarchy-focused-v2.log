@@ -1,0 +1,46 @@
+.F...............................................................        [100%]
+================================== FAILURES ===================================
+_ test_partial_adoption_preserves_ancestors_repeated_titles_and_source_locations _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-962/test_partial_adoption_preserve0')
+
+    def test_partial_adoption_preserves_ancestors_repeated_titles_and_source_locations(tmp_path):
+        service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+        before = rows(db)
+        assert [s["depth"] for s in preview["sections"]] == [0, 1, 2, 1, 0]
+        assert preview["sections"][1]["title"] == preview["sections"][3]["title"]
+        assert preview["sections"][1]["source_section_id"] != preview["sections"][3]["source_section_id"]
+        selected = preview["sections"][2]["paragraphs"][0]["unit_id"]
+        request = {"base_revision": 1, "operation_id": "source-partial", "skeleton_id": preview["skeleton_id"],
+                   "source_sha256": preview["source_sha256"], "selected_unit_ids": [selected],
+                   "scope_type": "paper", "scope_id": manuscript_id, "mode": "INSERT",
+                   "replace_confirmed": False, "comment_ids": []}
+        saved = service.apply_template(manuscript_id, request)
+        added = saved["document"]["sections"][len(original["sections"]):]
+        assert len(added) == 3
+        assert [len(s["paragraphs"]) for s in added] == [0, 0, 1]
+        assert added[1]["parent_section_id"] == added[0]["id"]
+        assert added[2]["parent_section_id"] == added[1]["id"]
+        p = added[2]["paragraphs"][0]
+        assert p["template_source"]["source_path"] == [s["title"] for s in added]
+        assert p["template_source"]["page_number"] == 3
+        assert p["template_source"]["heading_location"]["bbox"] == [1, 2, 3, 4]
+        assert p["intents"][0]["template_source"] == p["template_source"]
+        assert p["intents"][0]["thoughts"] == []
+        assert "SOURCE_BODY" not in json.dumps(saved["document"])
+        assert saved["document"]["sections"][:len(original["sections"])] == original["sections"]
+        service.save_document(manuscript_id, base_revision=2, operation_id="source-undo",
+                              operation_kind="UNDO", document=original)
+        assert service.get_workspace(manuscript_id)["document"] == original
+        assert service.get_document_revision(manuscript_id, 2)["document"] == saved["document"]
+        after = rows(db)
+        for table in ("skeleton_source_outlines", "skeleton_units", "paper_skeletons", "approval_grants",
+                      "acquisition_model_calls", "acquisition_model_call_events", "studio_model_calls", "studio_jobs"):
+>           assert after[table] == before[table]
+                   ^^^^^^^^^^^^
+E           KeyError: 'acquisition_model_calls'
+
+tests\test_skeleton_source_outline.py:113: KeyError
+=========================== short test summary info ===========================
+FAILED tests/test_skeleton_source_outline.py::test_partial_adoption_preserves_ancestors_repeated_titles_and_source_locations
+1 failed, 64 passed in 27.46s

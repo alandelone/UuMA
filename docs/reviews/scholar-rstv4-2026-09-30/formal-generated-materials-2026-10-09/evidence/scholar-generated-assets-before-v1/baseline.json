@@ -1,0 +1,19 @@
+{
+  "source_sha256": {
+    "RSTV4/src/rstv4/studio.py": "3735be6046aa3a3e5a256cf24bd134c634e3ea52885746df11368da0fd6c81bb",
+    "RSTV4/src/rstv4/studio_context.py": "d17c9caebc358c622f7f2e1e13ad4ae2fe13ba57464daaa73ef6e123cd3f7187",
+    "RSTV4/src/rstv4/studio_read_views.py": "5ccfe756896a35a3c1b8ce02d4e88b655cfa30910fe0b6eb04cb4ceb3184039d",
+    "RSTV4/src/rstv4/studio_delivery.py": "12f40f50ab24c39ab1ffac07670d6398fde63832e9cbe9703d5c4c0837308a06",
+    "RSTV4/pyproject.toml": "78fc95b9361899a88adc268b2126d9a16e45a52edbf16b43dff77b05b522b3dc",
+    "writing-studio/components/studio-workspace.tsx": "9a4bc8fa7edfbecc340c37b5fe0dca93a4e53333b8cfa04b7a2e4bbaf361418c",
+    "writing-studio/lib/studio-types.ts": "39069007ab333b5ddbc341e5858f184a794d6e4d633766774d413cb0cacfff73"
+  },
+  "unrelated_git_status_preserved": {
+    "UuMA": 85,
+    "RSTV4": 285,
+    "writing-studio": 19
+  },
+  "all118_all11_scope_retained": true,
+  "downloads_resumed": true,
+  "overall_complete": false
+}

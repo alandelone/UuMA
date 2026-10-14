@@ -1,0 +1,34 @@
+{
+  "status": "PASS_READ_ONLY_EXACT_G01_STATE",
+  "phase": "after-reorder-v4",
+  "database_bytes_preserved": true,
+  "table_count": 109,
+  "document_revision": 11,
+  "generated_versions": [
+    "manuscript_version_7ea00b67724045db8db687b46beb1530",
+    "manuscript_version_e7f175c6d7f84911b13c1e4453041a30",
+    "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+    "manuscript_version_2feb293fad7e4e6591d4217cd322d9d9"
+  ],
+  "v3_paragraphs": [
+    {
+      "object_id": "paragraph_e197b886c810436a823c7171839afac2",
+      "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_e197b886c810436a823c7171839afac2",
+      "display_text": "First source [1]. Next [2]. Repeat [1]."
+    },
+    {
+      "object_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "display_text": "Beta software paragraph cites original page 1 [2] and additional source [1]."
+    }
+  ],
+  "original_author_messages": [
+    "research_message_aeeabee02e1040cab40e519ccdb8447b",
+    "research_message_d6c3dd43667b462eb59db02dd6986fd4"
+  ],
+  "original_agent_messages": [
+    "research_message_061ca35823f9430cbbc393f0a811eb87",
+    "research_message_dc37f5ced89349809339c1f80b014530"
+  ],
+  "all_old_failure_and_versions_exact": true
+}

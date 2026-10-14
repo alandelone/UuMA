@@ -1,0 +1,9 @@
+{
+  "url": "http://127.0.0.1:8885/api/catalog/fields/field_9ecc9f28d2ff460ea8c4105327361727/workspace?snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+  "method": "GET",
+  "at": "2026-10-13T05:32:24.571Z",
+  "status": 404,
+  "body": {
+    "detail": "Snapshot does not belong to this Field"
+  }
+}

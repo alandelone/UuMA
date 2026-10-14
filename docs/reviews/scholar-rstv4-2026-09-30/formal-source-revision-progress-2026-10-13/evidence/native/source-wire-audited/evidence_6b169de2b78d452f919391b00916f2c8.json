@@ -1,0 +1,106 @@
+{
+  "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+  "statement": "New original software source body.",
+  "excerpt": "New original software source body.",
+  "relation": "SUPPORTS",
+  "confidence": 0.9,
+  "paper_id": "other",
+  "paper_version_id": null,
+  "title": "Other selected source",
+  "published_year": 2026,
+  "doi": "10.1234/other",
+  "landing_url": null,
+  "pdf_url": null,
+  "location": {
+    "page": 1,
+    "section": "Other software source",
+    "sequence": 0,
+    "skeleton_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+    "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+    "unit_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450",
+    "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+  },
+  "authors": [
+    "Fixture Author"
+  ],
+  "source_context": {
+    "paper_id": "other",
+    "paper_version_id": "paper_version_db977494b25f25023cb1c71b98ae7814",
+    "paper_version": 1,
+    "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+    "version": 1,
+    "content_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+    "pdf_digest": "d7fe4a2e21964adb7b9d685cc9c0dc639239b686894978b552c2397be638f7e9",
+    "parsed_digest": "d5df6e8dfff67e808c00be3a8084b8daac70cdf3280771eb6a2b95d1fda76f10",
+    "file_version_id": "software-native-other-file",
+    "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+    "units": [
+      {
+        "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52",
+        "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+        "seq_idx": 0,
+        "page_idx": 1,
+        "section": "Other software source",
+        "raw_text": "New original software source body.",
+        "layer1": {
+          "triplets": []
+        },
+        "layer2": {},
+        "layer3": {
+          "intent": "Software_Test"
+        },
+        "layer4": "Software_Test",
+        "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450"
+      }
+    ],
+    "available": true,
+    "schema_version": 1,
+    "unit": {
+      "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52",
+      "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+      "seq_idx": 0,
+      "page_idx": 1,
+      "section": "Other software source",
+      "raw_text": "New original software source body.",
+      "layer1": {
+        "triplets": []
+      },
+      "layer2": {},
+      "layer3": {
+        "intent": "Software_Test"
+      },
+      "layer4": "Software_Test",
+      "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450"
+    },
+    "file_version": {
+      "file_version_id": "software-native-other-file",
+      "paper_id": "other",
+      "sha256": "d7fe4a2e21964adb7b9d685cc9c0dc639239b686894978b552c2397be638f7e9",
+      "size_bytes": 731,
+      "mime_type": "application/pdf"
+    },
+    "parsed_blocks": [
+      {
+        "block_id": "block_48471b35baf012c4343ebf7094b5708e",
+        "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+        "sequence": 0,
+        "page_number": 1,
+        "section": "Other software source",
+        "block_type": "TEXT",
+        "text": "New original software source body.",
+        "location": {
+          "bbox": [
+            72,
+            120,
+            420,
+            140
+          ]
+        },
+        "content_digest": "6101be811f067e87b87315caa2e9edffb7c745d643de3ec1ec8ea14ed73dfcfa"
+      }
+    ],
+    "full_text_available": true,
+    "full_text_reason": null,
+    "context_sha256": "a81c38d1c21a5e3cdb5d93e9eb065c1462968bf47d8132e3a82ebe9d08f49f2a"
+  }
+}

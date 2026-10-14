@@ -9,7 +9,7 @@ from datetime import UTC, datetime
 from pathlib import Path, PurePosixPath
 
 SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
-    "yonc": frozenset({"yonc-project-management"}),
+    "yonc": frozenset({"yonc-project-management", "yonc-colleagues"}),
     "brainstormer": frozenset(
         {
             "chatgpt-consultation",
@@ -46,6 +46,19 @@ SPECIALIST_SKILL_ALLOWLISTS: dict[str, frozenset[str]] = {
             "hardware-lab/lab-procurement-advice",
             "hardware-lab/lab-receiving",
             "hardware-lab/lab-worklog",
+        }
+    ),
+    "honc": frozenset(
+        {
+            "honc-daily-execution",
+            "honc-tracing",
+            "honc-focus",
+            "honc-checkin",
+            "honc-body-tracker",
+            "honc-diary",
+            "honc-life-settings",
+            "honc-wake-bedtime",
+            "honc-life-history",
         }
     ),
 }

@@ -1,0 +1,28 @@
+{
+  "mission": {
+    "schema_version": 1,
+    "mission": "Complete UuMA specialist agent trust, deployment, knowledge, and discussion capabilities",
+    "stage": "verification",
+    "active_skill": null,
+    "gate": {
+      "current": "stage-gates/04-verification-report.md",
+      "status": "pending_review",
+      "blocked_by": null
+    },
+    "allowed_stages": [
+      "discovery",
+      "design",
+      "execution",
+      "verification",
+      "complete"
+    ],
+    "updated_at": "2026-09-08T15:57:35+08:00"
+  },
+  "entire_gate_chars": 118768,
+  "entire_handoff_chars": 607782,
+  "handoff_raw_sha256": "75aaee1531f5c51d59a8fc020959ddeed629bbba8a9c8cdc690b42dd4b387888",
+  "external_codegraph": {
+    "RSTV4": false,
+    "writing-studio": false
+  }
+}

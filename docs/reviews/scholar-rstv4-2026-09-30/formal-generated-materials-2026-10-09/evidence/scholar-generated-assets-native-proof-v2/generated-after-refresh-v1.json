@@ -1,0 +1,238 @@
+{
+  "images": [
+    {
+      "complete": true,
+      "height": 160,
+      "name": "original-png.png",
+      "src": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_ace1a6e97fc8494c927cfe7e5b4e0d4b/render",
+      "width": 320
+    },
+    {
+      "complete": true,
+      "height": 160,
+      "name": "original-jpeg.jpeg",
+      "src": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_c07454d78470406583d021c3ce074d21/render",
+      "width": 320
+    },
+    {
+      "complete": true,
+      "height": 900,
+      "name": "original-svg.svg",
+      "src": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_266ed66047a74b1aaab625bedc6305a8/render",
+      "width": 1800
+    }
+  ],
+  "sources": [
+    {
+      "name": "原素材：original-png.png",
+      "url": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_ace1a6e97fc8494c927cfe7e5b4e0d4b/source"
+    },
+    {
+      "name": "原素材：original-jpeg.jpeg",
+      "url": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_c07454d78470406583d021c3ce074d21/source"
+    },
+    {
+      "name": "原素材：original-svg.svg",
+      "url": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_266ed66047a74b1aaab625bedc6305a8/source"
+    },
+    {
+      "name": "原素材：original-csv.csv",
+      "url": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_b6d450fed7d04f988e9779aaad80446f/source"
+    },
+    {
+      "name": "原素材：original-xlsx.xlsx",
+      "url": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_fdbbdb2b396442d68882200259647fd5/source"
+    },
+    {
+      "name": "原素材：original-markdown.md",
+      "url": "http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_f87909a1ca484ee497b16b2c3896b2ce/source"
+    }
+  ],
+  "tables": [
+    {
+      "rows": [
+        [
+          "Item",
+          "Value",
+          "Condition"
+        ],
+        [
+          "CSV_ROW_1",
+          "1",
+          "scope_1"
+        ],
+        [
+          "CSV_ROW_2",
+          "2",
+          "scope_2"
+        ],
+        [
+          "CSV_ROW_3",
+          "3",
+          "scope_3"
+        ],
+        [
+          "CSV_ROW_4",
+          "4",
+          "scope_4"
+        ],
+        [
+          "CSV_ROW_5",
+          "5",
+          "scope_5"
+        ],
+        [
+          "CSV_ROW_6",
+          "6",
+          "scope_6"
+        ],
+        [
+          "CSV_ROW_7",
+          "7",
+          "scope_7"
+        ],
+        [
+          "CSV_ROW_8",
+          "8",
+          "scope_8"
+        ],
+        [
+          "CSV_ROW_9",
+          "9",
+          "scope_9"
+        ],
+        [
+          "CSV_ROW_10",
+          "10",
+          "scope_10"
+        ]
+      ],
+      "title": "original-csv.csv"
+    },
+    {
+      "rows": [
+        [
+          "XLSX_ROW_1",
+          "1",
+          "scope_1"
+        ],
+        [
+          "XLSX_ROW_2",
+          "2",
+          "scope_2"
+        ],
+        [
+          "XLSX_ROW_3",
+          "3",
+          "scope_3"
+        ],
+        [
+          "XLSX_ROW_4",
+          "4",
+          "scope_4"
+        ],
+        [
+          "XLSX_ROW_5",
+          "5",
+          "scope_5"
+        ],
+        [
+          "XLSX_ROW_6",
+          "6",
+          "scope_6"
+        ],
+        [
+          "XLSX_ROW_7",
+          "7",
+          "scope_7"
+        ],
+        [
+          "XLSX_ROW_8",
+          "8",
+          "scope_8"
+        ],
+        [
+          "XLSX_ROW_9",
+          "9",
+          "scope_9"
+        ],
+        [
+          "XLSX_ROW_10",
+          "10",
+          "scope_10"
+        ]
+      ],
+      "title": "Original first sheet"
+    },
+    {
+      "rows": [
+        [
+          "SECOND_SHEET_ORIGINAL",
+          "7",
+          "Explicit condition"
+        ]
+      ],
+      "title": "Original second sheet"
+    },
+    {
+      "rows": [
+        [
+          "Item",
+          "Value",
+          "Condition"
+        ],
+        [
+          "MD_ROW_1",
+          "1",
+          "scope_1"
+        ],
+        [
+          "MD_ROW_2",
+          "2",
+          "scope_2"
+        ],
+        [
+          "MD_ROW_3",
+          "3",
+          "scope_3"
+        ],
+        [
+          "MD_ROW_4",
+          "4",
+          "scope_4"
+        ],
+        [
+          "MD_ROW_5",
+          "5",
+          "scope_5"
+        ],
+        [
+          "MD_ROW_6",
+          "6",
+          "scope_6"
+        ],
+        [
+          "MD_ROW_7",
+          "7",
+          "scope_7"
+        ],
+        [
+          "MD_ROW_8",
+          "8",
+          "scope_8"
+        ],
+        [
+          "MD_ROW_9",
+          "9",
+          "scope_9"
+        ],
+        [
+          "MD_ROW_10",
+          "10",
+          "scope_10"
+        ]
+      ],
+      "title": "original-markdown.md"
+    }
+  ]
+}

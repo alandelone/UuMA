@@ -1,0 +1,48 @@
+{
+  "processes": [
+    {
+      "ProcessId": 82248,
+      "ParentProcessId": 83012,
+      "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve"
+    },
+    {
+      "ProcessId": 83352,
+      "ParentProcessId": 82248,
+      "ExecutablePath": "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve"
+    },
+    {
+      "ProcessId": 77740,
+      "ParentProcessId": 67640,
+      "ExecutablePath": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+      "CommandLine": "powershell -NoProfile -Command \"Get-CimInstance Win32_Process -Filter \\\"CommandLine LIKE '%scholar-revision-isolated-services-v1.py%'\\\" | Select-Object ProcessId,ParentProcessId,ExecutablePath,CommandLine | ConvertTo-Json\""
+    }
+  ],
+  "http": [
+    {
+      "kind": "reading",
+      "suffix": "/workspace",
+      "status": 200,
+      "response": "valid"
+    },
+    {
+      "kind": "reading",
+      "suffix": "/templates/skeleton_c4def72df1572dd62073ba2ac38a556c",
+      "status": 422,
+      "response": "{\"error\":\"invalid_input\",\"detail\":\"Template source is unavailable in this manuscript scope\"}"
+    },
+    {
+      "kind": "revision",
+      "suffix": "/workspace",
+      "status": 200,
+      "response": "valid"
+    },
+    {
+      "kind": "revision",
+      "suffix": "/templates/skeleton_c4def72df1572dd62073ba2ac38a556c",
+      "status": 422,
+      "response": "{\"error\":\"invalid_input\",\"detail\":\"Template source is unavailable in this manuscript scope\"}"
+    }
+  ]
+}

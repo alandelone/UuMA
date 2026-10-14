@@ -1,0 +1,41 @@
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_read_views.py', 'src/rstv4/studio_discussions.py', 'src/rstv4/research_context.py', 'src/rstv4/research_discussions.py', 'src/rstv4/research_discussion_api.py', 'src/rstv4/catalog_web.py', 'src/rstv4/model_gateway.py', 'tests/test_studio_shared_discussions.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_studio_shared_discussions.py:2:1
+   |
+ 1 |   """Real source revisions, SQLite projections and explicit adoption; fixture model only."""
+ 2 | / from __future__ import annotations
+ 3 | |
+ 4 | | import hashlib
+ 5 | | import json
+ 6 | | import sqlite3
+ 7 | | import threading
+ 8 | | from copy import deepcopy
+ 9 | |
+10 | | import pytest
+11 | | from fastapi.testclient import TestClient
+12 | | from rstv4.catalog_web import create_app as catalog_app
+13 | | from rstv4.database import transaction
+14 | | from rstv4.studio_api import create_app
+15 | | from test_studio_context import generated_fixture
+16 | | from test_studio_suggestions import decision_url, fixture, proposal, request_for
+   | |________________________________________________________________________________^
+17 |
+18 |   PREFIX = "/api/research/discussion"
+   |
+help: Organize imports
+   |
+11 | from fastapi.testclient import TestClient
+12 + from test_studio_context import generated_fixture
+13 + from test_studio_suggestions import decision_url, fixture, proposal, request_for
+14 +
+15 | from rstv4.catalog_web import create_app as catalog_app
+16 | from rstv4.database import transaction
+17 | from rstv4.studio_api import create_app
+   - from test_studio_context import generated_fixture
+   - from test_studio_suggestions import decision_url, fixture, proposal, request_for
+18 |
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+Exit: 1

@@ -21,6 +21,39 @@ class MutableClock:
         self.value += timedelta(seconds=seconds)
 
 
+def test_reviewed_capture_correction_preserves_history_and_skips_delivery(journal) -> None:
+    store, _ = journal
+    original = store.queue_write("CREATE_LOG", {"raw_note": "Wrong material"}, "original")
+    replacement = store.queue_write("CREATE_LOG", {"raw_note": "Correct material"}, "corrected")
+    with pytest.raises(PermissionError):
+        store.supersede_queued_capture(
+            original["sync_job_id"], replacement["journal_id"], "User correction",
+            actor_id="forge-lab-bot",
+        )
+    result = store.supersede_queued_capture(
+        original["sync_job_id"], replacement["journal_id"], "User correction",
+        actor_id="orchestrator",
+    )
+    assert result["status"] == "CANCELLED"
+    assert store.get_page(original["journal_id"])["sync_status"] == "LOCAL"
+    assert store.claim_write("runner")["sync_job_id"] == replacement["sync_job_id"]
+    assert store.claim_write("runner") is None
+    with store.connect() as connection:
+        preserved = connection.execute(
+            "SELECT payload_json FROM forge_journal_sync_jobs WHERE sync_job_id = ?",
+            (original["sync_job_id"],),
+        ).fetchone()
+    assert json.loads(preserved[0]) == original["payload"]
+    events = store.list_events(original["journal_id"])
+    correction = next(e for e in events if e["event_type"] == "CAPTURE_SUPERSEDED")
+    assert correction["details"]["replacement_journal_id"] == replacement["journal_id"]
+    with pytest.raises(JournalSyncError, match="queued, unsent"):
+        store.supersede_queued_capture(
+            replacement["sync_job_id"], original["journal_id"], "Already leased",
+            actor_id="orchestrator",
+        )
+
+
 @pytest.fixture()
 def journal(tmp_path):
     clock = MutableClock()

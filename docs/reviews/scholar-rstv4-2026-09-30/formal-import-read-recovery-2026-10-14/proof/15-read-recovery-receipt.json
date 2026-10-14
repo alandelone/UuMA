@@ -1,0 +1,731 @@
+{
+  "status": "PASS_NATIVE_WARM_RECOVERY",
+  "check": {
+    "alertCount": 0,
+    "confirmEnabled": true,
+    "previewText": "Read recovery software preview only. Do not import.",
+    "round": {
+      "options": [
+        {
+          "text": "请选择轮次…",
+          "value": ""
+        },
+        {
+          "text": "第 1 轮 · G06 software acceptance — no external reviewer",
+          "value": "review_round_16b039af771747eb899cc0939c271cd4"
+        },
+        {
+          "text": "第 2 轮 · G09 software acceptance - independent round 2; no external reviewer",
+          "value": "review_round_b51564f0224e499081e58f341103b336"
+        },
+        {
+          "text": "第 3 轮 · G11 original118 native file import software acceptance — no external reviewer or scientific approval",
+          "value": "review_round_e4845ca796d74594b33b86fb529b4404"
+        }
+      ],
+      "value": "review_round_e4845ca796d74594b33b86fb529b4404"
+    },
+    "fourComments": 4
+  },
+  "requests": [
+    {
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "method": "GET"
+    },
+    {
+      "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "method": "GET"
+    }
+  ],
+  "network": {
+    "cursor": 1327,
+    "events": [
+      {
+        "sequence": 1291,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.requestWillBeSent",
+        "params": {
+          "documentURL": "http://127.0.0.1:3009/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_e4845ca796d74594b33b86fb529b4404",
+          "frameId": "212DFF90C36915C0908587AFD3E99057",
+          "hasUserGesture": false,
+          "initiator": {
+            "stack": {
+              "callFrames": [
+                {
+                  "columnNumber": 191499,
+                  "functionName": "gm",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 194680,
+                  "functionName": "comments",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 15120,
+                  "functionName": "",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 46848,
+                  "functionName": "onClick",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 44092,
+                  "functionName": "onClick",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 125813,
+                  "functionName": "yd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 130807,
+                  "functionName": "",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 15079,
+                  "functionName": "_n",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 127040,
+                  "functionName": "wd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28427,
+                  "functionName": "up",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28249,
+                  "functionName": "cp",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                }
+              ]
+            },
+            "type": "script"
+          },
+          "loaderId": "BD2DBD193A7828159F71B963FD83C15B",
+          "redirectHasExtraInfo": false,
+          "request": {
+            "headers": {
+              "Referer": "http://127.0.0.1:3009/",
+              "content-type": "application/json"
+            },
+            "initialPriority": "High",
+            "isSameSite": true,
+            "method": "GET",
+            "mixedContentType": "none",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+          },
+          "requestId": "40092.226",
+          "timestamp": 84780.343167,
+          "type": "Fetch",
+          "wallTime": 1791944380.28632
+        }
+      },
+      {
+        "sequence": 1292,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.loadingFailed",
+        "params": {
+          "blockedReason": "inspector",
+          "canceled": false,
+          "errorText": "",
+          "requestId": "40092.226",
+          "timestamp": 84780.343208,
+          "type": "Fetch"
+        }
+      },
+      {
+        "sequence": 1293,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.requestWillBeSent",
+        "params": {
+          "documentURL": "http://127.0.0.1:3009/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_e4845ca796d74594b33b86fb529b4404",
+          "frameId": "212DFF90C36915C0908587AFD3E99057",
+          "hasUserGesture": false,
+          "initiator": {
+            "stack": {
+              "callFrames": [
+                {
+                  "columnNumber": 191499,
+                  "functionName": "gm",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 194751,
+                  "functionName": "reviewRounds",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 15162,
+                  "functionName": "",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 46848,
+                  "functionName": "onClick",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 44092,
+                  "functionName": "onClick",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 125813,
+                  "functionName": "yd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 130807,
+                  "functionName": "",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 15079,
+                  "functionName": "_n",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 127040,
+                  "functionName": "wd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28427,
+                  "functionName": "up",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28249,
+                  "functionName": "cp",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                }
+              ]
+            },
+            "type": "script"
+          },
+          "loaderId": "BD2DBD193A7828159F71B963FD83C15B",
+          "redirectHasExtraInfo": false,
+          "request": {
+            "headers": {
+              "Referer": "http://127.0.0.1:3009/",
+              "content-type": "application/json"
+            },
+            "initialPriority": "High",
+            "isSameSite": true,
+            "method": "GET",
+            "mixedContentType": "none",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+          },
+          "requestId": "40092.227",
+          "timestamp": 84780.343251,
+          "type": "Fetch",
+          "wallTime": 1791944380.286387
+        }
+      },
+      {
+        "sequence": 1294,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.loadingFailed",
+        "params": {
+          "blockedReason": "inspector",
+          "canceled": false,
+          "errorText": "",
+          "requestId": "40092.227",
+          "timestamp": 84780.343271,
+          "type": "Fetch"
+        }
+      },
+      {
+        "sequence": 1298,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.requestWillBeSent",
+        "params": {
+          "documentURL": "http://127.0.0.1:3009/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_e4845ca796d74594b33b86fb529b4404",
+          "frameId": "212DFF90C36915C0908587AFD3E99057",
+          "hasUserGesture": true,
+          "initiator": {
+            "stack": {
+              "callFrames": [
+                {
+                  "columnNumber": 191499,
+                  "functionName": "gm",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 194680,
+                  "functionName": "comments",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 15120,
+                  "functionName": "",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 46848,
+                  "functionName": "onClick",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 44092,
+                  "functionName": "onClick",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 125813,
+                  "functionName": "yd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 130807,
+                  "functionName": "",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 15079,
+                  "functionName": "_n",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 127040,
+                  "functionName": "wd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28427,
+                  "functionName": "up",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28249,
+                  "functionName": "cp",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                }
+              ]
+            },
+            "type": "script"
+          },
+          "loaderId": "BD2DBD193A7828159F71B963FD83C15B",
+          "redirectHasExtraInfo": false,
+          "request": {
+            "headers": {
+              "Referer": "http://127.0.0.1:3009/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+              "content-type": "application/json",
+              "sec-ch-ua": "\"Google Chrome\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": "\"Windows\""
+            },
+            "initialPriority": "High",
+            "isSameSite": true,
+            "method": "GET",
+            "mixedContentType": "none",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+          },
+          "requestId": "40092.228",
+          "timestamp": 84784.362075,
+          "type": "Fetch",
+          "wallTime": 1791944384.305231
+        }
+      },
+      {
+        "sequence": 1299,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.requestWillBeSent",
+        "params": {
+          "documentURL": "http://127.0.0.1:3009/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_e4845ca796d74594b33b86fb529b4404",
+          "frameId": "212DFF90C36915C0908587AFD3E99057",
+          "hasUserGesture": true,
+          "initiator": {
+            "stack": {
+              "callFrames": [
+                {
+                  "columnNumber": 191499,
+                  "functionName": "gm",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 194751,
+                  "functionName": "reviewRounds",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 15162,
+                  "functionName": "",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 46848,
+                  "functionName": "onClick",
+                  "lineNumber": 8,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 44092,
+                  "functionName": "onClick",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 42366,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "166",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/page-BmC3PKPt.js"
+                },
+                {
+                  "columnNumber": 125813,
+                  "functionName": "yd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 130807,
+                  "functionName": "",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 15079,
+                  "functionName": "_n",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 127040,
+                  "functionName": "wd",
+                  "lineNumber": 7,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28427,
+                  "functionName": "up",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28249,
+                  "functionName": "cp",
+                  "lineNumber": 8,
+                  "scriptId": "11",
+                  "url": "http://127.0.0.1:3009/_next/static/chunks/framework-A1pNZAzD.js"
+                }
+              ]
+            },
+            "type": "script"
+          },
+          "loaderId": "BD2DBD193A7828159F71B963FD83C15B",
+          "redirectHasExtraInfo": false,
+          "request": {
+            "headers": {
+              "Referer": "http://127.0.0.1:3009/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36",
+              "content-type": "application/json",
+              "sec-ch-ua": "\"Google Chrome\";v=\"155\", \"Chromium\";v=\"155\", \"Not(A:Brand\";v=\"24\"",
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": "\"Windows\""
+            },
+            "initialPriority": "High",
+            "isSameSite": true,
+            "method": "GET",
+            "mixedContentType": "none",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+          },
+          "requestId": "40092.229",
+          "timestamp": 84784.362178,
+          "type": "Fetch",
+          "wallTime": 1791944384.305339
+        }
+      },
+      {
+        "sequence": 1302,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.responseReceived",
+        "params": {
+          "frameId": "212DFF90C36915C0908587AFD3E99057",
+          "hasExtraInfo": true,
+          "loaderId": "BD2DBD193A7828159F71B963FD83C15B",
+          "requestId": "40092.229",
+          "response": {
+            "alternateProtocolUsage": "unspecifiedReason",
+            "charset": "",
+            "connectionId": 1763,
+            "connectionReused": false,
+            "encodedDataLength": 193,
+            "fromDiskCache": false,
+            "fromPrefetchCache": false,
+            "fromServiceWorker": false,
+            "headers": {
+              "access-control-allow-origin": "http://127.0.0.1:3009",
+              "content-length": "2000",
+              "content-type": "application/json",
+              "date": "Wed, 14 Oct 2026 02:19:43 GMT",
+              "server": "uvicorn",
+              "vary": "Origin"
+            },
+            "mimeType": "application/json",
+            "protocol": "http/1.1",
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 8889,
+            "responseTime": 1791944384333.496,
+            "securityState": "secure",
+            "status": 200,
+            "statusText": "OK",
+            "timing": {
+              "connectEnd": 1.869,
+              "connectStart": 1.636,
+              "dnsEnd": 1.636,
+              "dnsStart": 1.634,
+              "proxyEnd": -1,
+              "proxyStart": -1,
+              "pushEnd": 0,
+              "pushStart": 0,
+              "receiveHeadersEnd": 27.895,
+              "receiveHeadersStart": 27.734,
+              "requestTime": 84784.362652,
+              "sendEnd": 1.903,
+              "sendStart": 1.882,
+              "sslEnd": -1,
+              "sslStart": -1,
+              "workerFetchStart": -1,
+              "workerReady": -1,
+              "workerRespondWithSettled": -1,
+              "workerStart": -1
+            },
+            "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+          },
+          "timestamp": 84784.391071,
+          "type": "Fetch"
+        }
+      },
+      {
+        "sequence": 1306,
+        "source": {
+          "tabId": 1
+        },
+        "method": "Network.responseReceived",
+        "params": {
+          "frameId": "212DFF90C36915C0908587AFD3E99057",
+          "hasExtraInfo": true,
+          "loaderId": "BD2DBD193A7828159F71B963FD83C15B",
+          "requestId": "40092.228",
+          "response": {
+            "alternateProtocolUsage": "unspecifiedReason",
+            "charset": "",
+            "connectionId": 1759,
+            "connectionReused": false,
+            "encodedDataLength": 196,
+            "fromDiskCache": false,
+            "fromPrefetchCache": false,
+            "fromServiceWorker": false,
+            "headers": {
+              "access-control-allow-origin": "http://127.0.0.1:3009",
+              "content-length": "3049420",
+              "content-type": "application/json",
+              "date": "Wed, 14 Oct 2026 02:19:43 GMT",
+              "server": "uvicorn",
+              "vary": "Origin"
+            },
+            "mimeType": "application/json",
+            "protocol": "http/1.1",
+            "remoteIPAddress": "127.0.0.1",
+            "remotePort": 8889,
+            "responseTime": 1791944384442.602,
+            "securityState": "secure",
+            "status": 200,
+            "statusText": "OK",
+            "timing": {
+              "connectEnd": 1.841,
+              "connectStart": 1.48,
+              "dnsEnd": 1.48,
+              "dnsStart": 1.263,
+              "proxyEnd": -1,
+              "proxyStart": -1,
+              "pushEnd": 0,
+              "pushStart": 0,
+              "receiveHeadersEnd": 137.875,
+              "receiveHeadersStart": 136.905,
+              "requestTime": 84784.362587,
+              "sendEnd": 1.921,
+              "sendStart": 1.874,
+              "sslEnd": -1,
+              "sslStart": -1,
+              "workerFetchStart": -1,
+              "workerReady": -1,
+              "workerRespondWithSettled": -1,
+              "workerStart": -1
+            },
+            "url": "http://127.0.0.1:8889/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+          },
+          "timestamp": 84784.501286,
+          "type": "Fetch"
+        }
+      }
+    ],
+    "hasMore": false,
+    "truncated": false
+  }
+}

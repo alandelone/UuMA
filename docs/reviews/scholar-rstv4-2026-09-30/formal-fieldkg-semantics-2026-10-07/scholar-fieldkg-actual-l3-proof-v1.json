@@ -1,0 +1,86 @@
+{
+  "status": "PASS_FIRST_ACTUAL_LOCATED_LAYER3",
+  "call": {
+    "call_id": "acquisition-call-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+    "started_at": "2026-10-07T15:26:21.795303+00:00",
+    "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+    "fencing_token": 64,
+    "task": "skeleton_layer_3",
+    "status": "RETURNED",
+    "input": {
+      "layer1": {
+        "atomic_propositions": [
+          "Software review identity title"
+        ],
+        "coreference_resolved_text": "Software review identity title",
+        "triplets": []
+      },
+      "layer2": {
+        "discourse_relations": [],
+        "rhetorical_function": "title",
+        "topic_continuity": {
+          "active_topic": "Software review identity title",
+          "continuity_type": "none_single_unit",
+          "topic_transitions": []
+        }
+      },
+      "raw_text": "Software review identity title"
+    },
+    "source": {
+      "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+      "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+      "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+      "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+      "transport_operation_id": "rstv4-model-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb"
+    },
+    "output": {
+      "_contract": {
+        "actual_model": "gemini-3.8-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 100,
+        "prompt_version": "skeleton-l3-v2-located-intent",
+        "receipt_id": "acquisition-call-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+        "router_run_id": "run_1a9883cc49ef415194a42d774886870e",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_3",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+        "usage": {
+          "completion_tokens": 53,
+          "prompt_tokens": 408,
+          "total_tokens": 712
+        }
+      },
+      "confidence": 1,
+      "evidence_quote": "Software review identity title",
+      "intent": "Formal",
+      "qualifications": [],
+      "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+    },
+    "contract": {
+      "actual_model": "gemini-3.8-flash",
+      "delivery": "durable-run-v1",
+      "estimated_input_tokens": 100,
+      "prompt_version": "skeleton-l3-v2-located-intent",
+      "receipt_id": "acquisition-call-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+      "router_run_id": "run_1a9883cc49ef415194a42d774886870e",
+      "status": "SUCCESS",
+      "task": "skeleton_layer_3",
+      "tier": "standard",
+      "transport_operation_id": "rstv4-model-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+      "usage": {
+        "completion_tokens": 53,
+        "prompt_tokens": 408,
+        "total_tokens": 712
+      }
+    },
+    "error_type": null,
+    "completed_at": "2026-10-07T15:39:35.763246+00:00"
+  },
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-beqtn_vr",
+  "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+  "all_blocks_completed": false,
+  "scientific_approval": false
+}

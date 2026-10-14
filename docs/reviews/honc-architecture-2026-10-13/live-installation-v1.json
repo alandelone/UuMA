@@ -1,0 +1,533 @@
+{
+  "installed_at": "2026-10-14T03:13:00.289379+00:00",
+  "profile": "honc",
+  "backup_manifest": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-deployment-backups\\89f82d0ac2a24dc798b59df66046a291\\manifest.json",
+  "model_preserved": true,
+  "credentials_preserved": true,
+  "native_job": {
+    "id": "3381ec71b9d2",
+    "name": "honc-life-semantic-tick-v1",
+    "enabled": true,
+    "state": "scheduled",
+    "last_run_at": "2026-10-14T11:37:20.131084+08:00",
+    "last_status": "ok",
+    "last_error": null,
+    "next_run_at": "2026-10-14T11:38:20.131084+08:00"
+  },
+  "life_tools": 19,
+  "skills": [
+    "honc-body-tracker",
+    "honc-checkin",
+    "honc-daily-execution",
+    "honc-diary",
+    "honc-focus",
+    "honc-life-history",
+    "honc-life-settings",
+    "honc-tracing",
+    "honc-wake-bedtime"
+  ],
+  "migration": {
+    "original_cache_sha256": "43dbe9e74854612b05195c58776dd66dd4e5f0586928e504566c03f002412ba5",
+    "mapping": [
+      {
+        "legacy_name": "晨仪:💊",
+        "definition": {
+          "name": "晨仪:💊",
+          "record_type": "boolean",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "Eat Medi, Supplement",
+          "aliases": [
+            "晨仪",
+            "服药",
+            "营养素"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "checkbox"
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "wake",
+              "trigger": "wake",
+              "fixed_time": null,
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 8,
+            "end_hour": null,
+            "section": 1,
+            "cron_type": "trace",
+            "name_in_db": "晨仪:💊",
+            "description": "Eat Medi, Supplement",
+            "raw": "8.1 | trace | 晨仪:💊 | Eat Medi, Supplement"
+          }
+        ],
+        "mapping_notes": "保留原内容和独立时段。",
+        "habit_id": "habit_definition_2e8ca042f8d1451082bdcd38373225f9",
+        "operation_id": "operation_944a56a14cff41219993b66094556ee0"
+      },
+      {
+        "legacy_name": "睡前15",
+        "definition": {
+          "name": "睡前15",
+          "record_type": "text",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "yesterday got done ?\n保养suggestion, 宝宝&me睡前保养(肌肤，保养头发，保养按摩),精进",
+          "aliases": [
+            "睡前保养",
+            "保养"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "rich_text"
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "bedtime",
+              "trigger": "bedtime",
+              "fixed_time": null,
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 8,
+            "end_hour": null,
+            "section": 2,
+            "cron_type": "trace",
+            "name_in_db": "睡前15",
+            "description": "yesterday got done ?",
+            "raw": "8.2 | trace | 睡前15 | yesterday got done ?"
+          },
+          {
+            "start_hour": 21,
+            "end_hour": null,
+            "section": 2,
+            "cron_type": "trace",
+            "name_in_db": "睡前15",
+            "description": "保养suggestion, 宝宝&me睡前保养(肌肤，保养头发，保养按摩),精进",
+            "raw": "21.2 | trace | 睡前15 | 保养suggestion, 宝宝&me睡前保养(肌肤，保养头发，保养按摩),精进"
+          }
+        ],
+        "mapping_notes": "睡前统一 21:30 或明确更早睡觉；不恢复次晨追问昨晚是否完成。",
+        "habit_id": "habit_definition_4b3fe2da48764adc86440f660c12ce0c",
+        "operation_id": "operation_7622d0aef32845afbe9f91d6f724b63d"
+      },
+      {
+        "legacy_name": "eat_bh",
+        "definition": {
+          "name": "eat_bh",
+          "record_type": "boolean",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "六分饱，咬15次",
+          "aliases": [
+            "吃饭习惯",
+            "早餐",
+            "午餐",
+            "晚餐"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "checkbox"
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "at_09",
+              "trigger": "fixed_time",
+              "fixed_time": "09:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            },
+            {
+              "key": "at_12",
+              "trigger": "fixed_time",
+              "fixed_time": "12:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            },
+            {
+              "key": "at_18",
+              "trigger": "fixed_time",
+              "fixed_time": "18:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 9,
+            "end_hour": null,
+            "section": 1,
+            "cron_type": "alert",
+            "name_in_db": "eat_bh",
+            "description": "六分饱，咬15次",
+            "raw": "9.1 | alert | eat_bh | 六分饱，咬15次"
+          },
+          {
+            "start_hour": 12,
+            "end_hour": null,
+            "section": 2,
+            "cron_type": "trace",
+            "name_in_db": "eat_bh",
+            "description": "六分饱，咬15次",
+            "raw": "12.2 | trace | eat_bh | 六分饱，咬15次"
+          },
+          {
+            "start_hour": 18,
+            "end_hour": null,
+            "section": 1,
+            "cron_type": "trace",
+            "name_in_db": "eat_bh",
+            "description": "六分饱，咬15次",
+            "raw": "18.1  | trace | eat_bh | 六分饱，咬15次"
+          }
+        ],
+        "mapping_notes": "保留原内容和独立时段。",
+        "habit_id": "habit_definition_73dd3abf36c64f05a0626c99809658c4",
+        "operation_id": "operation_87e57fd3ef704faebeb54d40f7fcdd79"
+      },
+      {
+        "legacy_name": "锻体tod",
+        "definition": {
+          "name": "锻体tod",
+          "record_type": "number",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "what type? (where are u today ?) >> remind later to start",
+          "aliases": [
+            "锻炼",
+            "运动",
+            "训练"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "number"
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "at_09",
+              "trigger": "fixed_time",
+              "fixed_time": "09:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            },
+            {
+              "key": "at_12",
+              "trigger": "fixed_time",
+              "fixed_time": "12:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            },
+            {
+              "key": "at_15",
+              "trigger": "fixed_time",
+              "fixed_time": "15:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            },
+            {
+              "key": "at_18",
+              "trigger": "fixed_time",
+              "fixed_time": "18:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 9,
+            "end_hour": [
+              12,
+              15,
+              18
+            ],
+            "section": 3,
+            "cron_type": "traceXlt",
+            "name_in_db": "锻体tod",
+            "description": "what type? (where are u today ?) >> remind later to start",
+            "raw": "9,12,15,18 | traceXlt | 锻体tod |  what type? (where are u today ?) >> remind later to start"
+          }
+        ],
+        "mapping_notes": "原始数字单位未知；逐条保存显式报告单位，不把旧数字猜成次数或分钟。",
+        "habit_id": "habit_definition_b5ae7f5371a74a759212c2d7511757d9",
+        "operation_id": "operation_0763c5c309db44a89868818b6e5c174e"
+      },
+      {
+        "legacy_name": "OffJobBh",
+        "definition": {
+          "name": "OffJobBh",
+          "record_type": "selection",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "Toilet Mode record and resting",
+          "aliases": [
+            "微习惯",
+            "断水",
+            "PC练习",
+            "腹式呼吸"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "multi_select"
+        },
+        "reminder": null,
+        "original_entries": [
+          {
+            "start_hour": 9,
+            "end_hour": 18,
+            "section": 3,
+            "cron_type": "Trighear",
+            "name_in_db": "OffJobBh",
+            "description": "Toilet Mode record and resting",
+            "raw": "9-18.3 | Trighear | OffJobBh |  Toilet Mode record and resting"
+          }
+        ],
+        "mapping_notes": "保留内容但不恢复 Toilet/Rest 触发。",
+        "habit_id": "habit_definition_ab004f21e00f46a8b05bb39feb6ccd29",
+        "operation_id": "operation_170740a1b9d64934b48e9d48a8b30480"
+      },
+      {
+        "legacy_name": "FullRest",
+        "definition": {
+          "name": "FullRest",
+          "record_type": "text",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "Clear Dofi:100 次 意念数腹式呼吸+ 伏魔经Loop",
+          "aliases": [
+            "深度休息"
+          ],
+          "selection_options": [],
+          "legacy_property_type": null
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "at_15",
+              "trigger": "fixed_time",
+              "fixed_time": "15:00",
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 15,
+            "end_hour": null,
+            "section": 1,
+            "cron_type": "trace",
+            "name_in_db": "FullRest",
+            "description": "Clear Dofi:100 次 意念数腹式呼吸+ 伏魔经Loop",
+            "raw": "15.1  | trace | FullRest |  Clear Dofi:100 次 意念数腹式呼吸+ 伏魔经Loop"
+          }
+        ],
+        "mapping_notes": "保留原属性类型不确定的信息；新记录保存原文，不改写旧值。",
+        "habit_id": "habit_definition_fb7a2daa62af4814aadb58eed38be00d",
+        "operation_id": "operation_103f8e5b0eeb41949ce6dc918e860c4c"
+      },
+      {
+        "legacy_name": "泡脚",
+        "definition": {
+          "name": "泡脚",
+          "record_type": "boolean",
+          "semantic_role": "habit",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "泡脚alert",
+          "aliases": [
+            "足浴"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "checkbox"
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "bedtime",
+              "trigger": "bedtime",
+              "fixed_time": null,
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 21,
+            "end_hour": null,
+            "section": 1,
+            "cron_type": "trace",
+            "name_in_db": "泡脚",
+            "description": "泡脚alert",
+            "raw": "21.1 | trace | 泡脚 | 泡脚alert"
+          }
+        ],
+        "mapping_notes": "睡前统一 21:30 或明确更早睡觉；不恢复次晨追问昨晚是否完成。",
+        "habit_id": "habit_definition_6ea92a9b7d174ba8ae4e16636a1c95bb",
+        "operation_id": "operation_7f647e1d22c14002af371d02fc19235f"
+      },
+      {
+        "legacy_name": "Dairy",
+        "definition": {
+          "name": "Dairy",
+          "record_type": "text",
+          "semantic_role": "diary",
+          "unit": null,
+          "target_value": null,
+          "target_period": "day",
+          "description": "Record Daily",
+          "aliases": [
+            "日记",
+            "diary",
+            "journal"
+          ],
+          "selection_options": [],
+          "legacy_property_type": "rich_text"
+        },
+        "reminder": {
+          "enabled": true,
+          "count": 1,
+          "importance": "normal",
+          "recurrence": "daily",
+          "weekdays": [],
+          "slots": [
+            {
+              "key": "bedtime",
+              "trigger": "bedtime",
+              "fixed_time": null,
+              "start": null,
+              "end": null,
+              "fallback_time": null,
+              "send_times": []
+            }
+          ]
+        },
+        "original_entries": [
+          {
+            "start_hour": 21,
+            "end_hour": null,
+            "section": 2,
+            "cron_type": "trace",
+            "name_in_db": "Dairy",
+            "description": "Record Daily",
+            "raw": "21.2 | trace | Dairy | Record Daily"
+          }
+        ],
+        "mapping_notes": "睡前统一 21:30 或明确更早睡觉；不恢复次晨追问昨晚是否完成。",
+        "habit_id": "habit_definition_e16205900cb04aa288efc48ebb589b59",
+        "operation_id": "operation_e1073c8615bb42cdb43e7feb9359ac8d"
+      }
+    ],
+    "original_files_unchanged": true,
+    "notion_sync_enabled": false
+  },
+  "settings_initialization": {
+    "state": "INITIALIZED",
+    "operation_id": "operation_98eb746b2ebc4fadacf0812346a0908f"
+  },
+  "activated": true,
+  "activation": {
+    "activated_at": "2026-10-14T03:27:55.149889+00:00",
+    "verified_at": "2026-10-14T03:37:28.833895+00:00",
+    "runtime_receipt": "live-runtime-verification-v1.json",
+    "first_tick_receipt": "first-live-tick-v1.json",
+    "native_job": {
+      "id": "3381ec71b9d2",
+      "name": "honc-life-semantic-tick-v1",
+      "enabled": true,
+      "state": "scheduled",
+      "last_run_at": "2026-10-14T11:37:20.131084+08:00",
+      "last_status": "ok",
+      "last_error": null,
+      "next_run_at": "2026-10-14T11:38:20.131084+08:00"
+    },
+    "gateway_pid": 11784,
+    "telegram_connected": true
+  },
+  "native_job_at_install": {
+    "id": "3381ec71b9d2",
+    "name": "honc-life-semantic-tick-v1",
+    "enabled": false,
+    "state": "paused",
+    "script": "C:\\Users\\Alandelone\\AppData\\Local\\hermes\\profiles\\honc\\scripts\\honc-life-tick.py",
+    "next_run_at": null,
+    "last_status": null,
+    "last_error": null
+  }
+}

@@ -441,6 +441,14 @@ foreach ($profile in $profiles) {
     Prune-SpecialistProfileSkills -ProfileHome $profileHome -AgentId $id
 }
 
+$yoncProfileHome = Join-Path $profilesRoot "yonc"
+if (Test-Path -LiteralPath (Join-Path $yoncProfileHome "config.yaml")) {
+    & $PythonExe (Join-Path $ProjectRoot "scripts\deploy-yonc-profile.py") `
+        --source-root $ProjectRoot --profile-home $yoncProfileHome `
+        --backup-root (Join-Path $resolvedSkillQuarantineRoot "yonc-deployment") --apply
+    if ($LASTEXITCODE -ne 0) { throw "Failed to deploy the existing Yonc profile." }
+}
+
 if ($QuestionOrbitEnabled) {
     $orbitProfileHome = Join-Path $profilesRoot "wisdom-oldman"
     try {

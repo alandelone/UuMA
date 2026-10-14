@@ -1,0 +1,326 @@
+{
+  "status": "PASS_HTTP_EXACT_RETRY_AFTER_UNDO",
+  "request": {
+    "base_revision": 55,
+    "comment_ids": [],
+    "mode": "REPLACE",
+    "operation_id": "template_48251919b82b46b1896150cb66f0a884",
+    "replace_confirmed": true,
+    "scope_id": "section_adf87bef037b4457916e6262e1f4497b",
+    "scope_type": "section",
+    "selected_unit_ids": [
+      "unit_1393ca80ec63a7c600dc3e676b18dd09",
+      "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+      "unit_01c79df01e47e65eeb68a0aff1c4a359"
+    ],
+    "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+    "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+  },
+  "response": {
+    "document_revision": 61,
+    "document": {
+      "abstract": "",
+      "argument_relations": [
+        {
+          "condition": "Independent saved condition Ω; software only.",
+          "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+          "relation": "Independent durable comparison Ω v2",
+          "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+          "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+        }
+      ],
+      "manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "schema_version": 1,
+      "sections": [
+        {
+          "block_order": [],
+          "id": "section_aeb09e1a56a64d07b9a5107aec548679",
+          "paragraph_groups": [],
+          "paragraphs": [],
+          "role": "Motivation",
+          "title": "Introduction"
+        },
+        {
+          "id": "section_5a532074501241aea21a1d9eec512e29",
+          "paragraphs": [
+            {
+              "asset_ids": [],
+              "formulas": [],
+              "id": "paragraph_e5d394c1259e4954a53e3f244bab5cc6",
+              "intents": [
+                {
+                  "id": "intent_31a9a42dbdb7466c90fb6ae5b521eecf",
+                  "label": "Research_Context",
+                  "thoughts": []
+                }
+              ],
+              "logic": {
+                "discourse_relation": "Context",
+                "software_only": true
+              },
+              "logical_relation": "Context",
+              "paradigm": "",
+              "purpose": "",
+              "template_source": {
+                "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+                "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e",
+                "unit_id": "unit_1393ca80ec63a7c600dc3e676b18dd09"
+              }
+            },
+            {
+              "asset_ids": [],
+              "formulas": [],
+              "id": "paragraph_21cfb55d1ae34764be423ae1f5353566",
+              "intents": [
+                {
+                  "id": "intent_6617b72b133947e18cf181c3cacf2a7c",
+                  "label": "Boundary_Condition",
+                  "thoughts": []
+                }
+              ],
+              "logic": {
+                "discourse_relation": "Context",
+                "software_only": true
+              },
+              "logical_relation": "Context",
+              "paradigm": "",
+              "purpose": "",
+              "template_source": {
+                "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+                "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e",
+                "unit_id": "unit_b5a152c2527c0b924ec6b1e4c662af9f"
+              }
+            }
+          ],
+          "parent_section_id": "section_aeb09e1a56a64d07b9a5107aec548679",
+          "role": "Software_Test",
+          "title": "Structure Alpha"
+        },
+        {
+          "id": "section_adf87bef037b4457916e6262e1f4497b",
+          "paragraphs": [],
+          "parent_section_id": "section_5a532074501241aea21a1d9eec512e29",
+          "role": "",
+          "title": "Author child Ω",
+          "unplaced_parent_section_id": "section_aeb09e1a56a64d07b9a5107aec548679"
+        },
+        {
+          "block_order": [
+            "paragraph_group_7878379a2c7640cdb4c746172d425c4a"
+          ],
+          "id": "section_3c2f9eb9623c4896825bf8d11433a036",
+          "paragraph_groups": [
+            {
+              "id": "paragraph_group_7878379a2c7640cdb4c746172d425c4a",
+              "label": "Original author group",
+              "paragraph_ids": [
+                "paragraph_1822a4ff57c14641a5debb8644f9b302",
+                "paragraph_8f4c22abeb274217bed9f370862b28c5"
+              ]
+            }
+          ],
+          "paragraphs": [
+            {
+              "asset_ids": [
+                "asset_b4b2ed991eba4b0a958a7923fa8f368f"
+              ],
+              "formulas": [
+                {
+                  "caption": "Original author formula",
+                  "id": "formula_9f604d90e0f94946ae87b9c945991794",
+                  "latex": "x=1"
+                }
+              ],
+              "id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+              "intents": [
+                {
+                  "id": "intent_10f7af5816f24150abedaee49fd78843",
+                  "label": "Author intent",
+                  "thoughts": [
+                    {
+                      "citation_mode": "SELECTED",
+                      "citations": [
+                        {
+                          "evidence_id": "evidence_70cb4a2d578d4ba29c09b43012e93535",
+                          "selected": true
+                        }
+                      ],
+                      "id": "thought_31ab9ef212ef4af98cd48b0192905038",
+                      "text": "AUTHOR software thought Ω retains its exact wording and selected citation."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "Original custom organization",
+              "purpose": "Original author purpose"
+            },
+            {
+              "asset_ids": [
+                "asset_b4b2ed991eba4b0a958a7923fa8f368f"
+              ],
+              "formulas": [
+                {
+                  "caption": "Original author formula",
+                  "id": "formula_3b0b93a2cece4514b1f8bde6f3c31d1e",
+                  "latex": "x=1"
+                }
+              ],
+              "id": "paragraph_8f4c22abeb274217bed9f370862b28c5",
+              "intents": [
+                {
+                  "id": "intent_d3ffabdc712e44db8021e0dc1bf6db39",
+                  "label": "Author intent",
+                  "thoughts": [
+                    {
+                      "citation_mode": "SELECTED",
+                      "citations": [
+                        {
+                          "evidence_id": "evidence_70cb4a2d578d4ba29c09b43012e93535",
+                          "selected": true
+                        }
+                      ],
+                      "id": "thought_83e4debc24ae4b2987e58738b59b2365",
+                      "text": "AUTHOR second software thought stays separate."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "Original custom organization",
+              "purpose": "Original author purpose"
+            }
+          ],
+          "parent_section_id": "section_adf87bef037b4457916e6262e1f4497b",
+          "role": "",
+          "title": "Author grandchild"
+        },
+        {
+          "id": "section_251aea8fda9c4900a1ae548a8d69d4fa",
+          "paragraphs": [
+            {
+              "asset_ids": [],
+              "formulas": [],
+              "id": "paragraph_7f141084424945138a38b84651da7729",
+              "intents": [
+                {
+                  "id": "intent_7481be18c0d04df18a0ab14ef56ef2f2",
+                  "label": "",
+                  "thoughts": []
+                }
+              ],
+              "logic": {
+                "discourse_relation": "Context",
+                "software_only": true
+              },
+              "logical_relation": "Context",
+              "paradigm": "",
+              "purpose": "",
+              "template_source": {
+                "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+                "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e",
+                "unit_id": "unit_01c79df01e47e65eeb68a0aff1c4a359"
+              }
+            }
+          ],
+          "parent_section_id": "section_aeb09e1a56a64d07b9a5107aec548679",
+          "role": "Software_Test",
+          "title": "Structure Beta"
+        }
+      ],
+      "title": "Template native acceptance — software fixture",
+      "venue": ""
+    },
+    "operation": {
+      "operation_id": "template_48251919b82b46b1896150cb66f0a884",
+      "manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "base_revision": 55,
+      "resulting_revision": 56,
+      "operation_kind": "ADOPT_TEMPLATE",
+      "payload_json": "{\"comment_ids\":[],\"document\":{\"abstract\":\"\",\"argument_relations\":[{\"condition\":\"Independent saved condition Ω; software only.\",\"id\":\"argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e\",\"relation\":\"Independent durable comparison Ω v2\",\"source_id\":\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"target_id\":\"thought_83e4debc24ae4b2987e58738b59b2365\"}],\"manuscript_id\":\"manuscript_c9bd5a665e5143eebb0ac01fbd36f74f\",\"schema_version\":1,\"sections\":[{\"block_order\":[],\"id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"paragraph_groups\":[],\"paragraphs\":[],\"role\":\"Motivation\",\"title\":\"Introduction\"},{\"id\":\"section_5a532074501241aea21a1d9eec512e29\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_e5d394c1259e4954a53e3f244bab5cc6\",\"intents\":[{\"id\":\"intent_31a9a42dbdb7466c90fb6ae5b521eecf\",\"label\":\"Research_Context\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_1393ca80ec63a7c600dc3e676b18dd09\"}},{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_21cfb55d1ae34764be423ae1f5353566\",\"intents\":[{\"id\":\"intent_6617b72b133947e18cf181c3cacf2a7c\",\"label\":\"Boundary_Condition\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_b5a152c2527c0b924ec6b1e4c662af9f\"}}],\"parent_section_id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"role\":\"Software_Test\",\"title\":\"Structure Alpha\"},{\"id\":\"section_b579ade4366743ecae7d3792fa7f75a1\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_6ac3db8169cd4a0daed16a81c6f5fc6f\",\"intents\":[{\"id\":\"intent_696cc4f0ccaa44f1ae7baa144e4e1a9f\",\"label\":\"Research_Context\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_1393ca80ec63a7c600dc3e676b18dd09\"}},{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_20ac95884c8547ec90c833683fa033b6\",\"intents\":[{\"id\":\"intent_9166c8c15a6e4c52a614808219024d46\",\"label\":\"Boundary_Condition\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_b5a152c2527c0b924ec6b1e4c662af9f\"}}],\"parent_section_id\":\"section_5a532074501241aea21a1d9eec512e29\",\"role\":\"Software_Test\",\"title\":\"Structure Alpha\"},{\"id\":\"section_f7b851ea518640fcaf8a8f164d3e6996\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_172855cda7f54178acea1b7b64c417be\",\"intents\":[{\"id\":\"intent_a81b8ea954d44af2a349fd7fa5c6308b\",\"label\":\"\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_01c79df01e47e65eeb68a0aff1c4a359\"}}],\"parent_section_id\":\"section_5a532074501241aea21a1d9eec512e29\",\"role\":\"Software_Test\",\"title\":\"Structure Beta\"},{\"id\":\"section_251aea8fda9c4900a1ae548a8d69d4fa\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_7f141084424945138a38b84651da7729\",\"intents\":[{\"id\":\"intent_7481be18c0d04df18a0ab14ef56ef2f2\",\"label\":\"\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_01c79df01e47e65eeb68a0aff1c4a359\"}}],\"parent_section_id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"role\":\"Software_Test\",\"title\":\"Structure Beta\"},{\"id\":\"section_adf87bef037b4457916e6262e1f4497b\",\"paragraphs\":[],\"placement_status\":\"UNPLACED\",\"role\":\"\",\"title\":\"Author child Ω\",\"unplaced_parent_section_id\":\"section_5a532074501241aea21a1d9eec512e29\"},{\"block_order\":[\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\"],\"id\":\"section_3c2f9eb9623c4896825bf8d11433a036\",\"paragraph_groups\":[{\"id\":\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\",\"label\":\"Original author group\",\"paragraph_ids\":[\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"paragraph_8f4c22abeb274217bed9f370862b28c5\"]}],\"paragraphs\":[{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_9f604d90e0f94946ae87b9c945991794\",\"latex\":\"x=1\"}],\"id\":\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"intents\":[{\"id\":\"intent_10f7af5816f24150abedaee49fd78843\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_31ab9ef212ef4af98cd48b0192905038\",\"text\":\"AUTHOR software thought Ω retains its exact wording and selected citation.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"},{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_3b0b93a2cece4514b1f8bde6f3c31d1e\",\"latex\":\"x=1\"}],\"id\":\"paragraph_8f4c22abeb274217bed9f370862b28c5\",\"intents\":[{\"id\":\"intent_d3ffabdc712e44db8021e0dc1bf6db39\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_83e4debc24ae4b2987e58738b59b2365\",\"text\":\"AUTHOR second software thought stays separate.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"}],\"parent_section_id\":\"section_adf87bef037b4457916e6262e1f4497b\",\"placement_status\":\"UNPLACED\",\"role\":\"\",\"title\":\"Author grandchild\"}],\"title\":\"Template native acceptance — software fixture\",\"venue\":\"\"}}",
+      "inverse_json": "{\"document\":{\"abstract\":\"\",\"argument_relations\":[{\"condition\":\"Independent saved condition Ω; software only.\",\"id\":\"argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e\",\"relation\":\"Independent durable comparison Ω v2\",\"source_id\":\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"target_id\":\"thought_83e4debc24ae4b2987e58738b59b2365\"}],\"manuscript_id\":\"manuscript_c9bd5a665e5143eebb0ac01fbd36f74f\",\"schema_version\":1,\"sections\":[{\"block_order\":[],\"id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"paragraph_groups\":[],\"paragraphs\":[],\"role\":\"Motivation\",\"title\":\"Introduction\"},{\"id\":\"section_5a532074501241aea21a1d9eec512e29\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_e5d394c1259e4954a53e3f244bab5cc6\",\"intents\":[{\"id\":\"intent_31a9a42dbdb7466c90fb6ae5b521eecf\",\"label\":\"Research_Context\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_1393ca80ec63a7c600dc3e676b18dd09\"}},{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_21cfb55d1ae34764be423ae1f5353566\",\"intents\":[{\"id\":\"intent_6617b72b133947e18cf181c3cacf2a7c\",\"label\":\"Boundary_Condition\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_b5a152c2527c0b924ec6b1e4c662af9f\"}}],\"parent_section_id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"role\":\"Software_Test\",\"title\":\"Structure Alpha\"},{\"id\":\"section_adf87bef037b4457916e6262e1f4497b\",\"paragraphs\":[],\"parent_section_id\":\"section_5a532074501241aea21a1d9eec512e29\",\"role\":\"\",\"title\":\"Author child Ω\",\"unplaced_parent_section_id\":\"section_aeb09e1a56a64d07b9a5107aec548679\"},{\"block_order\":[\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\"],\"id\":\"section_3c2f9eb9623c4896825bf8d11433a036\",\"paragraph_groups\":[{\"id\":\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\",\"label\":\"Original author group\",\"paragraph_ids\":[\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"paragraph_8f4c22abeb274217bed9f370862b28c5\"]}],\"paragraphs\":[{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_9f604d90e0f94946ae87b9c945991794\",\"latex\":\"x=1\"}],\"id\":\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"intents\":[{\"id\":\"intent_10f7af5816f24150abedaee49fd78843\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_31ab9ef212ef4af98cd48b0192905038\",\"text\":\"AUTHOR software thought Ω retains its exact wording and selected citation.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"},{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_3b0b93a2cece4514b1f8bde6f3c31d1e\",\"latex\":\"x=1\"}],\"id\":\"paragraph_8f4c22abeb274217bed9f370862b28c5\",\"intents\":[{\"id\":\"intent_d3ffabdc712e44db8021e0dc1bf6db39\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_83e4debc24ae4b2987e58738b59b2365\",\"text\":\"AUTHOR second software thought stays separate.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"}],\"parent_section_id\":\"section_adf87bef037b4457916e6262e1f4497b\",\"role\":\"\",\"title\":\"Author grandchild\"},{\"id\":\"section_251aea8fda9c4900a1ae548a8d69d4fa\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_7f141084424945138a38b84651da7729\",\"intents\":[{\"id\":\"intent_7481be18c0d04df18a0ab14ef56ef2f2\",\"label\":\"\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_01c79df01e47e65eeb68a0aff1c4a359\"}}],\"parent_section_id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"role\":\"Software_Test\",\"title\":\"Structure Beta\"}],\"title\":\"Template native acceptance — software fixture\",\"venue\":\"\"}}",
+      "created_at": "2026-10-08T11:27:42.462040+00:00"
+    },
+    "idempotent_replay": true,
+    "saved_at": "2026-10-08T23:29:05.150931+00:00",
+    "template_instance": {
+      "template_instance_id": "template_instance_48992a17a41141f6b79d2fb18991c19c",
+      "manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "source_skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_version": "1",
+      "created_at": "2026-10-08T11:27:42.463046+00:00",
+      "updated_at": "2026-10-08T11:27:42.463046+00:00",
+      "adopted": {
+        "operation_id": "template_48251919b82b46b1896150cb66f0a884",
+        "request": {
+          "base_revision": 55,
+          "comment_ids": [],
+          "mode": "REPLACE",
+          "operation_id": "template_48251919b82b46b1896150cb66f0a884",
+          "replace_confirmed": true,
+          "scope_id": "section_adf87bef037b4457916e6262e1f4497b",
+          "scope_type": "section",
+          "selected_unit_ids": [
+            "unit_1393ca80ec63a7c600dc3e676b18dd09",
+            "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+            "unit_01c79df01e47e65eeb68a0aff1c4a359"
+          ],
+          "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+          "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+        },
+        "resulting_revision": 56,
+        "source": {
+          "author_text_copied": false,
+          "paper_id": "paper_243486e2f803498a6cea78e38df8aa1f",
+          "paper_version": 1,
+          "sections": [
+            {
+              "paragraphs": [
+                {
+                  "intent": "Research_Context",
+                  "logic": {
+                    "discourse_relation": "Context",
+                    "software_only": true
+                  },
+                  "role": "Software_Test",
+                  "unit_id": "unit_1393ca80ec63a7c600dc3e676b18dd09"
+                },
+                {
+                  "intent": "Boundary_Condition",
+                  "logic": {
+                    "discourse_relation": "Context",
+                    "software_only": true
+                  },
+                  "role": "Software_Test",
+                  "unit_id": "unit_b5a152c2527c0b924ec6b1e4c662af9f"
+                }
+              ],
+              "title": "Structure Alpha"
+            },
+            {
+              "paragraphs": [
+                {
+                  "intent": "",
+                  "logic": {
+                    "discourse_relation": "Context",
+                    "software_only": true
+                  },
+                  "role": "Software_Test",
+                  "unit_id": "unit_01c79df01e47e65eeb68a0aff1c4a359"
+                }
+              ],
+              "title": "Structure Beta"
+            }
+          ],
+          "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+          "skeleton_version": 1,
+          "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e",
+          "title": "Software-only template source"
+        }
+      }
+    }
+  },
+  "current_revision": 61,
+  "original_resulting_revision": 56,
+  "whole_database_unchanged": true,
+  "native_browser_retry": false,
+  "db_sha256": "5134adca967243e086f1f53cb1b15f7f5fc12da9ca1ac9aed85306daf5a669ca"
+}

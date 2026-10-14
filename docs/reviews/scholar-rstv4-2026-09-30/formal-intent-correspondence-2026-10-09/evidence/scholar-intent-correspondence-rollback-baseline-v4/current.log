@@ -1,0 +1,33 @@
+ACTUAL_STUDIO_SOURCE C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\studio.py 0fd79fd8c327fbdf2e81cb2a84d06db8d2cb0af88855487f2e4e1e50dcc89795
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_adoption_record_failure_rolls_back_document_and_operation ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-972/test_adoption_record_failure_r0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x00000200722A9610>
+
+    def test_adoption_record_failure_rolls_back_document_and_operation(tmp_path, monkeypatch):
+        service, manuscript_id, _, _, request = fixture(tmp_path)
+        save = service.save_document
+    
+        def interrupted(*args, **kwargs):
+            saved = save(*args, **kwargs)
+            assert saved["document_revision"] == 2
+            raise RuntimeError("software fixture failure after document writes")
+    
+        monkeypatch.setattr(service, "save_document", interrupted)
+        before = service.db_path.read_bytes()
+        with pytest.raises(RuntimeError, match="after document writes"):
+            service.apply_template(manuscript_id, request)
+>       assert service.db_path.read_bytes() == before
+E       AssertionError: assert b'SQLite form...0\x00\x00\x00' == b'SQLite form...0\x00\x00\x00'
+E         
+E         At index 12292 diff: b'\x01' != b'\x00'
+E         Use -v to get more diff
+
+..\RSTV4\tests\test_studio_templates.py:177: AssertionError
+=========================== short test summary info ===========================
+FAILED ..\RSTV4\tests\test_studio_templates.py::test_adoption_record_failure_rolls_back_document_and_operation
+1 failed in 1.23s
+{"freelist_trunks_before": [], "freelist_leaves_before": [], "changed_pages": [4, 5, 6, 7, 44, 45, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 97, 98, 99, 100, 120, 121], "only_before_free_leaf_pages_changed": false, "pytest_exit": 1, "variant": "current", "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py", "bytes_equal": false, "rows_equal": true, "before": {"params": {"page_size": 4096, "page_count": 297, "freelist_count": 0, "schema_version": 132, "auto_vacuum": 0, "journal_mode": "wal"}, "page4": "DBSTAT_UNAVAILABLE_IN_OBSERVED_BUILD", "threads": ["MainThread"], "wal_exists_at_raw_read": true, "wal_bytes_at_raw_read": 135992, "wal_sha256_at_raw_read": "3aa20d118a490b22ceb97b121c2bfc7928893ed01290343863b33681f6333431", "checkpoint_before_freeze": null, "checkpoint_all_rows_unchanged": false}, "after": {"params": {"page_size": 4096, "page_count": 297, "freelist_count": 0, "schema_version": 132, "auto_vacuum": 0, "journal_mode": "wal"}, "page4": "DBSTAT_UNAVAILABLE_IN_OBSERVED_BUILD", "threads": ["MainThread"], "wal_exists_at_raw_read": true, "wal_bytes_at_raw_read": 0, "wal_sha256_at_raw_read": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855", "checkpoint_before_freeze": null, "checkpoint_all_rows_unchanged": false}, "changed_tables": [], "byte_differences": 4832, "first_differences": [12292, 12293, 12294, 12296, 12297, 16179, 16180, 16181, 16182, 16183, 16184, 16185, 16186, 16187, 16188, 16189, 16190, 16193, 16194, 16195, 16196, 16197, 16198, 16199, 16200, 16201, 16202, 16203, 16204, 16205]}
+

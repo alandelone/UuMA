@@ -1,0 +1,1357 @@
+{
+  "status": "PASS_ACTUAL_BUDGET_REFERENCE_FRONTIER_AND_IDLE_WORKER",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-frontier-o_j3jx8x",
+  "trace": [
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/catalog-collections.js",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/preview",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/catalog-collections.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress?reference_offset=0",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/budget",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress?reference_offset=0",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/budget",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress?reference_offset=0",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/budget",
+      "status": 409
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/resume",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/pause",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/catalog-collections.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "http://127.0.0.1:55501/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+      "status": 200
+    }
+  ],
+  "actual_http_requests": 16,
+  "screen_job": {
+    "job_id": "job_bc9bef211484ebf86e572c8906603d39",
+    "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+    "paper_id": "existing",
+    "job_type": "SCREEN",
+    "queue_class": "MODEL_SCREEN",
+    "status": "SUCCEEDED",
+    "priority": 60,
+    "idempotency_key": "82664872115094f9f98712d5c1e6b92fc728a792f695582f24ba903043d9eea1",
+    "input_json": "{\"scope_version\": 1, \"screen_context_sha256\": \"9a92d1c2db9b6adca25021dc7bf3ed78e0dcb5952c52e34fa20056cfa5dfaaf9\"}",
+    "input_digest": "9c29d3fe51938f920c94392a2108dab6ec480f7d679e7d747d90cae6ba5e1573",
+    "rule_version": "screen-v1-scope-1",
+    "attempts": 1,
+    "available_at": "2026-10-07T04:35:41.378261+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 1,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": "{\"assessment\": {\"category\": \"DIRECT\", \"evidence_quotes\": []}, \"contract\": {\"prompt_version\": \"explicit-software-control\"}, \"screening_input\": {\"collection\": {\"collection_id\": \"collection_2fbda3147fb3d3de342b8d0269221162\", \"field_id\": \"f1\", \"scope\": {\"topic\": \"Explicit software scope\"}, \"scope_version\": 1, \"topic_id\": \"t1\", \"track_id\": null}, \"paper\": {\"abstract\": null, \"authors\": [\"Fixture Author\"], \"doi\": null, \"paper_id\": \"existing\", \"published_year\": 2026, \"title\": \"Catalog selected source\"}}}",
+    "created_at": "2026-10-07T04:35:41.378261+00:00",
+    "updated_at": "2026-10-07T04:35:41.467875+00:00"
+  },
+  "software_parse_publication": {
+    "parse_run_id": "parse_run_3bb5e4434f3bf4f741ee314bd35c36b4",
+    "paper_version_id": "paper_version_3c188406efd8b5853360b45bf4054630",
+    "blocks": 1,
+    "references": 1
+  },
+  "created": {
+    "status": "PASS_ACTUAL_FRONTIER_CREATE",
+    "calls": [
+      {
+        "path": "/api/catalog/collections/preview",
+        "body": {
+          "field_id": "f1",
+          "topic_id": "t1",
+          "track_id": null,
+          "name": "Actual budget and preserved reference software flow",
+          "scope": {
+            "topic": "Explicit software scope"
+          },
+          "paper_ids": [
+            "existing"
+          ],
+          "dois": [],
+          "bibtex": null,
+          "queries": [],
+          "budget": {
+            "max_papers": 1,
+            "max_registered_pdf_bytes": null,
+            "max_active_seconds": null,
+            "max_task_attempts": 1
+          },
+          "idempotency_key": "actual-frontier-create-v1"
+        },
+        "status": 200,
+        "data": {
+          "field_id": "f1",
+          "topic_id": "t1",
+          "track_id": null,
+          "counts": {
+            "unique_dois": 0,
+            "bibtex_entries": 0,
+            "unique_seeds": 0,
+            "queries": 0,
+            "duplicate_inputs": 0,
+            "catalog_selected": 1,
+            "catalog_papers": 1,
+            "reusable_pdfs": 1,
+            "needs_review": 0
+          },
+          "matched_papers": [
+            {
+              "paper_id": "existing",
+              "title": "Catalog selected source",
+              "doi": null,
+              "reusable_pdf": true,
+              "needs_review": false,
+              "quarantined": false
+            }
+          ],
+          "creates_jobs": false,
+          "note": "Title-only BibTeX and new papers still require identity resolution"
+        }
+      },
+      {
+        "path": "/api/catalog/collections",
+        "body": {
+          "field_id": "f1",
+          "topic_id": "t1",
+          "track_id": null,
+          "name": "Actual budget and preserved reference software flow",
+          "scope": {
+            "topic": "Explicit software scope"
+          },
+          "paper_ids": [
+            "existing"
+          ],
+          "dois": [],
+          "bibtex": null,
+          "queries": [],
+          "budget": {
+            "max_papers": 1,
+            "max_registered_pdf_bytes": null,
+            "max_active_seconds": null,
+            "max_task_attempts": 1
+          },
+          "idempotency_key": "actual-frontier-create-v1"
+        },
+        "status": 201,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "field_id": "f1",
+          "track_id": null,
+          "name": "Actual budget and preserved reference software flow",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 1,
+          "created_at": "2026-10-07T04:35:41.378261+00:00",
+          "updated_at": "2026-10-07T04:35:41.378261+00:00",
+          "topic_id": "t1",
+          "creation_request_json": "{\"bibtex\": null, \"budget\": {\"max_active_seconds\": null, \"max_papers\": 1, \"max_registered_pdf_bytes\": null, \"max_task_attempts\": 1}, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual budget and preserved reference software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Explicit software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+          "scope": {
+            "topic": "Explicit software scope"
+          },
+          "seeds": [
+            {
+              "seed_id": "seed_ddcacec22de46c50313739d587c53fb3",
+              "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+              "seed_type": "CATALOG_PAPER",
+              "raw_value": "existing",
+              "normalized_value": "existing",
+              "paper_id": "existing",
+              "created_at": "2026-10-07T04:35:41.378261+00:00"
+            }
+          ],
+          "counts": {
+            "papers": 1,
+            "jobs": 1
+          }
+        }
+      }
+    ],
+    "created": {
+      "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+      "field_id": "f1",
+      "track_id": null,
+      "name": "Actual budget and preserved reference software flow",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-07T04:35:41.378261+00:00",
+      "updated_at": "2026-10-07T04:35:41.378261+00:00",
+      "topic_id": "t1",
+      "creation_request_json": "{\"bibtex\": null, \"budget\": {\"max_active_seconds\": null, \"max_papers\": 1, \"max_registered_pdf_bytes\": null, \"max_task_attempts\": 1}, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual budget and preserved reference software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Explicit software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+      "scope": {
+        "topic": "Explicit software scope"
+      },
+      "seeds": [
+        {
+          "seed_id": "seed_ddcacec22de46c50313739d587c53fb3",
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "seed_type": "CATALOG_PAPER",
+          "raw_value": "existing",
+          "normalized_value": "existing",
+          "paper_id": "existing",
+          "created_at": "2026-10-07T04:35:41.378261+00:00"
+        }
+      ],
+      "counts": {
+        "papers": 1,
+        "jobs": 1
+      }
+    },
+    "input": {
+      "field_id": "f1",
+      "topic_id": "t1",
+      "track_id": null,
+      "name": "Actual budget and preserved reference software flow",
+      "scope": {
+        "topic": "Explicit software scope"
+      },
+      "paper_ids": [
+        "existing"
+      ],
+      "dois": [],
+      "bibtex": null,
+      "queries": [],
+      "budget": {
+        "max_papers": 1,
+        "max_registered_pdf_bytes": null,
+        "max_active_seconds": null,
+        "max_task_attempts": 1
+      }
+    },
+    "browser_verified": false,
+    "real_model_calls": 0,
+    "scientific_approval": false
+  },
+  "recovered": {
+    "status": "PASS_ACTUAL_FRONTIER_RECOVER",
+    "calls": [
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 2,
+          "status": "PAUSED",
+          "completion": "PARTIAL_BUDGET",
+          "frontier_jobs": 2,
+          "budget": {
+            "limits": {
+              "max_active_seconds": null,
+              "max_papers": 1,
+              "max_registered_pdf_bytes": null,
+              "max_task_attempts": 1
+            },
+            "configuration": "RECORDED",
+            "usage": {
+              "papers": 1,
+              "registered_pdf_bytes": 33,
+              "task_attempts": 1,
+              "active_seconds": 0.123676,
+              "stop_reason": {
+                "dimension": "papers",
+                "kind": "BUDGET_EXHAUSTED",
+                "limit": 1,
+                "observed": 1
+              },
+              "observed_at": "2026-10-07T04:35:41.608123+00:00"
+            },
+            "history": [
+              {
+                "request_id": "initial:actual-frontier-create-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+                "created_at": "2026-10-07T04:35:41.378261+00:00"
+              }
+            ]
+          },
+          "references": [
+            {
+              "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+              "citing_paper_id": "existing",
+              "file_version_id": "existing-file",
+              "raw_text": "Original reference 10.1234/frontier-native",
+              "page_number": 4,
+              "target_paper_id": null,
+              "resolution_status": "DEFERRED_BUDGET",
+              "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+              "created_at": "2026-10-07T04:35:41.508448+00:00",
+              "identity_resolution_status": "UNRESOLVED",
+              "location": {
+                "section": "References",
+                "line": 9
+              },
+              "resolution_note": "预算触限，原文与位置保留"
+            }
+          ],
+          "reference_total": 1,
+          "reference_offset": 0,
+          "unresolved_references": 1,
+          "budget_held_candidates": 0,
+          "references_have_more": false,
+          "workers": [
+            {
+              "worker_id": "actual-software-screen",
+              "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+              "role": "model",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.412458+00:00",
+              "observed_at": "2026-10-07T04:35:41.488905+00:00",
+              "expires_at": "2026-10-07T04:36:26.488905+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            },
+            {
+              "worker_id": "actual-idle-parser",
+              "instance_id": "1909444ca524493d91147c12328aa4a9",
+              "role": "parser",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "IDLE",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.527050+00:00",
+              "observed_at": "2026-10-07T04:35:41.544119+00:00",
+              "expires_at": "2026-10-07T04:36:26.544119+00:00",
+              "recent_heartbeat": true,
+              "observation": "RECENT_HEARTBEAT"
+            }
+          ],
+          "worker_observation": "INDEPENDENT_HEARTBEATS",
+          "fixed_depth_cutoff": null
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress?reference_offset=0",
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 2,
+          "status": "PAUSED",
+          "completion": "PARTIAL_BUDGET",
+          "frontier_jobs": 2,
+          "budget": {
+            "limits": {
+              "max_active_seconds": null,
+              "max_papers": 1,
+              "max_registered_pdf_bytes": null,
+              "max_task_attempts": 1
+            },
+            "configuration": "RECORDED",
+            "usage": {
+              "papers": 1,
+              "registered_pdf_bytes": 33,
+              "task_attempts": 1,
+              "active_seconds": 0.123676,
+              "stop_reason": {
+                "dimension": "papers",
+                "kind": "BUDGET_EXHAUSTED",
+                "limit": 1,
+                "observed": 1
+              },
+              "observed_at": "2026-10-07T04:35:41.623161+00:00"
+            },
+            "history": [
+              {
+                "request_id": "initial:actual-frontier-create-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+                "created_at": "2026-10-07T04:35:41.378261+00:00"
+              }
+            ]
+          },
+          "references": [
+            {
+              "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+              "citing_paper_id": "existing",
+              "file_version_id": "existing-file",
+              "raw_text": "Original reference 10.1234/frontier-native",
+              "page_number": 4,
+              "target_paper_id": null,
+              "resolution_status": "DEFERRED_BUDGET",
+              "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+              "created_at": "2026-10-07T04:35:41.508448+00:00",
+              "identity_resolution_status": "UNRESOLVED",
+              "location": {
+                "section": "References",
+                "line": 9
+              },
+              "resolution_note": "预算触限，原文与位置保留"
+            }
+          ],
+          "reference_total": 1,
+          "reference_offset": 0,
+          "unresolved_references": 1,
+          "budget_held_candidates": 0,
+          "references_have_more": false,
+          "workers": [
+            {
+              "worker_id": "actual-software-screen",
+              "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+              "role": "model",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.412458+00:00",
+              "observed_at": "2026-10-07T04:35:41.488905+00:00",
+              "expires_at": "2026-10-07T04:36:26.488905+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            },
+            {
+              "worker_id": "actual-idle-parser",
+              "instance_id": "1909444ca524493d91147c12328aa4a9",
+              "role": "parser",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "IDLE",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.527050+00:00",
+              "observed_at": "2026-10-07T04:35:41.544119+00:00",
+              "expires_at": "2026-10-07T04:36:26.544119+00:00",
+              "recent_heartbeat": true,
+              "observation": "RECENT_HEARTBEAT"
+            }
+          ],
+          "worker_observation": "INDEPENDENT_HEARTBEATS",
+          "fixed_depth_cutoff": null
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/budget",
+        "body": {
+          "request_id": "actual-frontier-budget-v1",
+          "expected_revision": 2,
+          "limits": {
+            "max_papers": 2,
+            "max_registered_pdf_bytes": null,
+            "max_active_seconds": null,
+            "max_task_attempts": 10
+          },
+          "reason": "Explicit software fixture: resume preserved frontier"
+        },
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 3,
+          "status": "PAUSED",
+          "limits": {
+            "max_papers": 2,
+            "max_registered_pdf_bytes": null,
+            "max_active_seconds": null,
+            "max_task_attempts": 10
+          }
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress?reference_offset=0",
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 3,
+          "status": "PAUSED",
+          "completion": "PARTIAL_BUDGET",
+          "frontier_jobs": 2,
+          "budget": {
+            "limits": {
+              "max_active_seconds": null,
+              "max_papers": 2,
+              "max_registered_pdf_bytes": null,
+              "max_task_attempts": 10
+            },
+            "configuration": "RECORDED",
+            "usage": {
+              "papers": 1,
+              "registered_pdf_bytes": 33,
+              "task_attempts": 1,
+              "active_seconds": 0.123676,
+              "stop_reason": {
+                "dimension": "papers",
+                "kind": "BUDGET_EXHAUSTED",
+                "limit": 1,
+                "observed": 1
+              },
+              "observed_at": "2026-10-07T04:35:41.655212+00:00"
+            },
+            "history": [
+              {
+                "request_id": "initial:actual-frontier-create-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+                "created_at": "2026-10-07T04:35:41.378261+00:00"
+              },
+              {
+                "request_id": "actual-frontier-budget-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+                "created_at": "2026-10-07T04:35:41.640194+00:00"
+              }
+            ]
+          },
+          "references": [
+            {
+              "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+              "citing_paper_id": "existing",
+              "file_version_id": "existing-file",
+              "raw_text": "Original reference 10.1234/frontier-native",
+              "page_number": 4,
+              "target_paper_id": null,
+              "resolution_status": "DEFERRED_BUDGET",
+              "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+              "created_at": "2026-10-07T04:35:41.508448+00:00",
+              "identity_resolution_status": "UNRESOLVED",
+              "location": {
+                "section": "References",
+                "line": 9
+              },
+              "resolution_note": "预算触限，原文与位置保留"
+            }
+          ],
+          "reference_total": 1,
+          "reference_offset": 0,
+          "unresolved_references": 1,
+          "budget_held_candidates": 0,
+          "references_have_more": false,
+          "workers": [
+            {
+              "worker_id": "actual-software-screen",
+              "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+              "role": "model",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.412458+00:00",
+              "observed_at": "2026-10-07T04:35:41.488905+00:00",
+              "expires_at": "2026-10-07T04:36:26.488905+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            },
+            {
+              "worker_id": "actual-idle-parser",
+              "instance_id": "1909444ca524493d91147c12328aa4a9",
+              "role": "parser",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "IDLE",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.527050+00:00",
+              "observed_at": "2026-10-07T04:35:41.544119+00:00",
+              "expires_at": "2026-10-07T04:36:26.544119+00:00",
+              "recent_heartbeat": true,
+              "observation": "RECENT_HEARTBEAT"
+            }
+          ],
+          "worker_observation": "INDEPENDENT_HEARTBEATS",
+          "fixed_depth_cutoff": null
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/budget",
+        "body": {
+          "request_id": "actual-frontier-budget-v1",
+          "expected_revision": 2,
+          "limits": {
+            "max_papers": 2,
+            "max_registered_pdf_bytes": null,
+            "max_active_seconds": null,
+            "max_task_attempts": 10
+          },
+          "reason": "Explicit software fixture: resume preserved frontier"
+        },
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "limits": {
+            "max_active_seconds": null,
+            "max_papers": 2,
+            "max_registered_pdf_bytes": null,
+            "max_task_attempts": 10
+          },
+          "revision": 3,
+          "status": "PAUSED"
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress?reference_offset=0",
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 3,
+          "status": "PAUSED",
+          "completion": "PARTIAL_BUDGET",
+          "frontier_jobs": 2,
+          "budget": {
+            "limits": {
+              "max_active_seconds": null,
+              "max_papers": 2,
+              "max_registered_pdf_bytes": null,
+              "max_task_attempts": 10
+            },
+            "configuration": "RECORDED",
+            "usage": {
+              "papers": 1,
+              "registered_pdf_bytes": 33,
+              "task_attempts": 1,
+              "active_seconds": 0.123676,
+              "stop_reason": {
+                "dimension": "papers",
+                "kind": "BUDGET_EXHAUSTED",
+                "limit": 1,
+                "observed": 1
+              },
+              "observed_at": "2026-10-07T04:35:41.682411+00:00"
+            },
+            "history": [
+              {
+                "request_id": "initial:actual-frontier-create-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+                "created_at": "2026-10-07T04:35:41.378261+00:00"
+              },
+              {
+                "request_id": "actual-frontier-budget-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+                "created_at": "2026-10-07T04:35:41.640194+00:00"
+              }
+            ]
+          },
+          "references": [
+            {
+              "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+              "citing_paper_id": "existing",
+              "file_version_id": "existing-file",
+              "raw_text": "Original reference 10.1234/frontier-native",
+              "page_number": 4,
+              "target_paper_id": null,
+              "resolution_status": "DEFERRED_BUDGET",
+              "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+              "created_at": "2026-10-07T04:35:41.508448+00:00",
+              "identity_resolution_status": "UNRESOLVED",
+              "location": {
+                "section": "References",
+                "line": 9
+              },
+              "resolution_note": "预算触限，原文与位置保留"
+            }
+          ],
+          "reference_total": 1,
+          "reference_offset": 0,
+          "unresolved_references": 1,
+          "budget_held_candidates": 0,
+          "references_have_more": false,
+          "workers": [
+            {
+              "worker_id": "actual-software-screen",
+              "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+              "role": "model",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.412458+00:00",
+              "observed_at": "2026-10-07T04:35:41.488905+00:00",
+              "expires_at": "2026-10-07T04:36:26.488905+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            },
+            {
+              "worker_id": "actual-idle-parser",
+              "instance_id": "1909444ca524493d91147c12328aa4a9",
+              "role": "parser",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "IDLE",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.527050+00:00",
+              "observed_at": "2026-10-07T04:35:41.671224+00:00",
+              "expires_at": "2026-10-07T04:36:26.671224+00:00",
+              "recent_heartbeat": true,
+              "observation": "RECENT_HEARTBEAT"
+            }
+          ],
+          "worker_observation": "INDEPENDENT_HEARTBEATS",
+          "fixed_depth_cutoff": null
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/budget",
+        "body": {
+          "request_id": "actual-frontier-budget-v1",
+          "expected_revision": 2,
+          "limits": {
+            "max_papers": 2,
+            "max_registered_pdf_bytes": null,
+            "max_active_seconds": null,
+            "max_task_attempts": 10
+          },
+          "reason": "Different contents under original key"
+        },
+        "status": 409,
+        "data": {
+          "detail": "Budget request key already belongs to another change"
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/resume",
+        "body": {
+          "expected_revision": 3
+        },
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "field_id": "f1",
+          "track_id": null,
+          "name": "Actual budget and preserved reference software flow",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 4,
+          "created_at": "2026-10-07T04:35:41.378261+00:00",
+          "updated_at": "2026-10-07T04:35:41.717197+00:00",
+          "topic_id": "t1",
+          "creation_request_json": "{\"bibtex\": null, \"budget\": {\"max_active_seconds\": null, \"max_papers\": 1, \"max_registered_pdf_bytes\": null, \"max_task_attempts\": 1}, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual budget and preserved reference software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Explicit software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+          "scope": {
+            "topic": "Explicit software scope"
+          },
+          "seeds": [
+            {
+              "seed_id": "seed_ddcacec22de46c50313739d587c53fb3",
+              "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+              "seed_type": "CATALOG_PAPER",
+              "raw_value": "existing",
+              "normalized_value": "existing",
+              "paper_id": "existing",
+              "created_at": "2026-10-07T04:35:41.378261+00:00"
+            }
+          ],
+          "counts": {
+            "papers": 2,
+            "jobs": 4
+          }
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 4,
+          "status": "ACTIVE",
+          "completion": "PROCESSING",
+          "frontier_jobs": 3,
+          "budget": {
+            "limits": {
+              "max_active_seconds": null,
+              "max_papers": 2,
+              "max_registered_pdf_bytes": null,
+              "max_task_attempts": 10
+            },
+            "configuration": "RECORDED",
+            "usage": {
+              "papers": 2,
+              "registered_pdf_bytes": 33,
+              "task_attempts": 1,
+              "active_seconds": 0.169231,
+              "stop_reason": null,
+              "observed_at": "2026-10-07T04:35:41.762752+00:00"
+            },
+            "history": [
+              {
+                "request_id": "initial:actual-frontier-create-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+                "created_at": "2026-10-07T04:35:41.378261+00:00"
+              },
+              {
+                "request_id": "actual-frontier-budget-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+                "created_at": "2026-10-07T04:35:41.640194+00:00"
+              }
+            ]
+          },
+          "references": [
+            {
+              "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+              "citing_paper_id": "existing",
+              "file_version_id": "existing-file",
+              "raw_text": "Original reference 10.1234/frontier-native",
+              "page_number": 4,
+              "target_paper_id": "paper_c11465df81e2ffe3fb6d75836d9f3f62",
+              "resolution_status": "RESOLVED",
+              "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+              "created_at": "2026-10-07T04:35:41.508448+00:00",
+              "identity_resolution_status": "RESOLVED",
+              "location": {
+                "section": "References",
+                "line": 9
+              },
+              "resolution_note": "RESOLVED"
+            }
+          ],
+          "reference_total": 1,
+          "reference_offset": 0,
+          "unresolved_references": 0,
+          "budget_held_candidates": 0,
+          "references_have_more": false,
+          "workers": [
+            {
+              "worker_id": "actual-software-screen",
+              "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+              "role": "model",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.412458+00:00",
+              "observed_at": "2026-10-07T04:35:41.488905+00:00",
+              "expires_at": "2026-10-07T04:36:26.488905+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            },
+            {
+              "worker_id": "actual-idle-parser",
+              "instance_id": "1909444ca524493d91147c12328aa4a9",
+              "role": "parser",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "IDLE",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.527050+00:00",
+              "observed_at": "2026-10-07T04:35:41.671224+00:00",
+              "expires_at": "2026-10-07T04:36:26.671224+00:00",
+              "recent_heartbeat": true,
+              "observation": "RECENT_HEARTBEAT"
+            }
+          ],
+          "worker_observation": "INDEPENDENT_HEARTBEATS",
+          "fixed_depth_cutoff": null
+        }
+      },
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/pause",
+        "body": {
+          "expected_revision": 4
+        },
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "field_id": "f1",
+          "track_id": null,
+          "name": "Actual budget and preserved reference software flow",
+          "scope_version": 1,
+          "status": "PAUSED",
+          "revision": 5,
+          "created_at": "2026-10-07T04:35:41.378261+00:00",
+          "updated_at": "2026-10-07T04:35:41.778760+00:00",
+          "topic_id": "t1",
+          "creation_request_json": "{\"bibtex\": null, \"budget\": {\"max_active_seconds\": null, \"max_papers\": 1, \"max_registered_pdf_bytes\": null, \"max_task_attempts\": 1}, \"dois\": [], \"field_id\": \"f1\", \"name\": \"Actual budget and preserved reference software flow\", \"paper_ids\": [\"existing\"], \"queries\": [], \"scope\": {\"topic\": \"Explicit software scope\"}, \"topic_id\": \"t1\", \"track_id\": null}",
+          "scope": {
+            "topic": "Explicit software scope"
+          },
+          "seeds": [
+            {
+              "seed_id": "seed_ddcacec22de46c50313739d587c53fb3",
+              "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+              "seed_type": "CATALOG_PAPER",
+              "raw_value": "existing",
+              "normalized_value": "existing",
+              "paper_id": "existing",
+              "created_at": "2026-10-07T04:35:41.378261+00:00"
+            }
+          ],
+          "counts": {
+            "papers": 2,
+            "jobs": 4
+          }
+        }
+      }
+    ],
+    "before": {
+      "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+      "revision": 2,
+      "status": "PAUSED",
+      "completion": "PARTIAL_BUDGET",
+      "frontier_jobs": 2,
+      "budget": {
+        "limits": {
+          "max_active_seconds": null,
+          "max_papers": 1,
+          "max_registered_pdf_bytes": null,
+          "max_task_attempts": 1
+        },
+        "configuration": "RECORDED",
+        "usage": {
+          "papers": 1,
+          "registered_pdf_bytes": 33,
+          "task_attempts": 1,
+          "active_seconds": 0.123676,
+          "stop_reason": {
+            "dimension": "papers",
+            "kind": "BUDGET_EXHAUSTED",
+            "limit": 1,
+            "observed": 1
+          },
+          "observed_at": "2026-10-07T04:35:41.608123+00:00"
+        },
+        "history": [
+          {
+            "request_id": "initial:actual-frontier-create-v1",
+            "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+            "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+            "created_at": "2026-10-07T04:35:41.378261+00:00"
+          }
+        ]
+      },
+      "references": [
+        {
+          "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+          "citing_paper_id": "existing",
+          "file_version_id": "existing-file",
+          "raw_text": "Original reference 10.1234/frontier-native",
+          "page_number": 4,
+          "target_paper_id": null,
+          "resolution_status": "DEFERRED_BUDGET",
+          "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+          "created_at": "2026-10-07T04:35:41.508448+00:00",
+          "identity_resolution_status": "UNRESOLVED",
+          "location": {
+            "section": "References",
+            "line": 9
+          },
+          "resolution_note": "预算触限，原文与位置保留"
+        }
+      ],
+      "reference_total": 1,
+      "reference_offset": 0,
+      "unresolved_references": 1,
+      "budget_held_candidates": 0,
+      "references_have_more": false,
+      "workers": [
+        {
+          "worker_id": "actual-software-screen",
+          "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+          "role": "model",
+          "hostname": "小钢炮",
+          "process_id": 61836,
+          "state": "STOPPED",
+          "job_id": null,
+          "started_at": "2026-10-07T04:35:41.412458+00:00",
+          "observed_at": "2026-10-07T04:35:41.488905+00:00",
+          "expires_at": "2026-10-07T04:36:26.488905+00:00",
+          "recent_heartbeat": true,
+          "observation": "STOPPED"
+        },
+        {
+          "worker_id": "actual-idle-parser",
+          "instance_id": "1909444ca524493d91147c12328aa4a9",
+          "role": "parser",
+          "hostname": "小钢炮",
+          "process_id": 61836,
+          "state": "IDLE",
+          "job_id": null,
+          "started_at": "2026-10-07T04:35:41.527050+00:00",
+          "observed_at": "2026-10-07T04:35:41.544119+00:00",
+          "expires_at": "2026-10-07T04:36:26.544119+00:00",
+          "recent_heartbeat": true,
+          "observation": "RECENT_HEARTBEAT"
+        }
+      ],
+      "worker_observation": "INDEPENDENT_HEARTBEATS",
+      "fixed_depth_cutoff": null
+    },
+    "original_budget_request": {
+      "request_id": "actual-frontier-budget-v1",
+      "expected_revision": 2,
+      "limits": {
+        "max_papers": 2,
+        "max_registered_pdf_bytes": null,
+        "max_active_seconds": null,
+        "max_task_attempts": 10
+      },
+      "reason": "Explicit software fixture: resume preserved frontier"
+    },
+    "saved": {
+      "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+      "limits": {
+        "max_active_seconds": null,
+        "max_papers": 2,
+        "max_registered_pdf_bytes": null,
+        "max_task_attempts": 10
+      },
+      "revision": 3,
+      "status": "PAUSED"
+    },
+    "after": {
+      "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+      "revision": 4,
+      "status": "ACTIVE",
+      "completion": "PROCESSING",
+      "frontier_jobs": 3,
+      "budget": {
+        "limits": {
+          "max_active_seconds": null,
+          "max_papers": 2,
+          "max_registered_pdf_bytes": null,
+          "max_task_attempts": 10
+        },
+        "configuration": "RECORDED",
+        "usage": {
+          "papers": 2,
+          "registered_pdf_bytes": 33,
+          "task_attempts": 1,
+          "active_seconds": 0.169231,
+          "stop_reason": null,
+          "observed_at": "2026-10-07T04:35:41.762752+00:00"
+        },
+        "history": [
+          {
+            "request_id": "initial:actual-frontier-create-v1",
+            "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+            "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+            "created_at": "2026-10-07T04:35:41.378261+00:00"
+          },
+          {
+            "request_id": "actual-frontier-budget-v1",
+            "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+            "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+            "created_at": "2026-10-07T04:35:41.640194+00:00"
+          }
+        ]
+      },
+      "references": [
+        {
+          "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+          "citing_paper_id": "existing",
+          "file_version_id": "existing-file",
+          "raw_text": "Original reference 10.1234/frontier-native",
+          "page_number": 4,
+          "target_paper_id": "paper_c11465df81e2ffe3fb6d75836d9f3f62",
+          "resolution_status": "RESOLVED",
+          "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+          "created_at": "2026-10-07T04:35:41.508448+00:00",
+          "identity_resolution_status": "RESOLVED",
+          "location": {
+            "section": "References",
+            "line": 9
+          },
+          "resolution_note": "RESOLVED"
+        }
+      ],
+      "reference_total": 1,
+      "reference_offset": 0,
+      "unresolved_references": 0,
+      "budget_held_candidates": 0,
+      "references_have_more": false,
+      "workers": [
+        {
+          "worker_id": "actual-software-screen",
+          "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+          "role": "model",
+          "hostname": "小钢炮",
+          "process_id": 61836,
+          "state": "STOPPED",
+          "job_id": null,
+          "started_at": "2026-10-07T04:35:41.412458+00:00",
+          "observed_at": "2026-10-07T04:35:41.488905+00:00",
+          "expires_at": "2026-10-07T04:36:26.488905+00:00",
+          "recent_heartbeat": true,
+          "observation": "STOPPED"
+        },
+        {
+          "worker_id": "actual-idle-parser",
+          "instance_id": "1909444ca524493d91147c12328aa4a9",
+          "role": "parser",
+          "hostname": "小钢炮",
+          "process_id": 61836,
+          "state": "IDLE",
+          "job_id": null,
+          "started_at": "2026-10-07T04:35:41.527050+00:00",
+          "observed_at": "2026-10-07T04:35:41.671224+00:00",
+          "expires_at": "2026-10-07T04:36:26.671224+00:00",
+          "recent_heartbeat": true,
+          "observation": "RECENT_HEARTBEAT"
+        }
+      ],
+      "worker_observation": "INDEPENDENT_HEARTBEATS",
+      "fixed_depth_cutoff": null
+    },
+    "exact_retry_preserved": true,
+    "adjustment_did_not_resume": true,
+    "browser_verified": false,
+    "real_model_calls": 0,
+    "scientific_approval": false
+  },
+  "stopped": {
+    "status": "PASS_ACTUAL_FRONTIER_STOPPED",
+    "calls": [
+      {
+        "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+        "status": 200,
+        "data": {
+          "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+          "revision": 5,
+          "status": "PAUSED",
+          "completion": "PAUSED",
+          "frontier_jobs": 3,
+          "budget": {
+            "limits": {
+              "max_active_seconds": null,
+              "max_papers": 2,
+              "max_registered_pdf_bytes": null,
+              "max_task_attempts": 10
+            },
+            "configuration": "RECORDED",
+            "usage": {
+              "papers": 2,
+              "registered_pdf_bytes": 33,
+              "task_attempts": 1,
+              "active_seconds": 0.185239,
+              "stop_reason": null,
+              "observed_at": "2026-10-07T04:35:41.873894+00:00"
+            },
+            "history": [
+              {
+                "request_id": "initial:actual-frontier-create-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+                "created_at": "2026-10-07T04:35:41.378261+00:00"
+              },
+              {
+                "request_id": "actual-frontier-budget-v1",
+                "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+                "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+                "created_at": "2026-10-07T04:35:41.640194+00:00"
+              }
+            ]
+          },
+          "references": [
+            {
+              "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+              "citing_paper_id": "existing",
+              "file_version_id": "existing-file",
+              "raw_text": "Original reference 10.1234/frontier-native",
+              "page_number": 4,
+              "target_paper_id": "paper_c11465df81e2ffe3fb6d75836d9f3f62",
+              "resolution_status": "RESOLVED",
+              "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+              "created_at": "2026-10-07T04:35:41.508448+00:00",
+              "identity_resolution_status": "RESOLVED",
+              "location": {
+                "section": "References",
+                "line": 9
+              },
+              "resolution_note": "RESOLVED"
+            }
+          ],
+          "reference_total": 1,
+          "reference_offset": 0,
+          "unresolved_references": 0,
+          "budget_held_candidates": 0,
+          "references_have_more": false,
+          "workers": [
+            {
+              "worker_id": "actual-software-screen",
+              "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+              "role": "model",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.412458+00:00",
+              "observed_at": "2026-10-07T04:35:41.488905+00:00",
+              "expires_at": "2026-10-07T04:36:26.488905+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            },
+            {
+              "worker_id": "actual-idle-parser",
+              "instance_id": "1909444ca524493d91147c12328aa4a9",
+              "role": "parser",
+              "hostname": "小钢炮",
+              "process_id": 61836,
+              "state": "STOPPED",
+              "job_id": null,
+              "started_at": "2026-10-07T04:35:41.527050+00:00",
+              "observed_at": "2026-10-07T04:35:41.804205+00:00",
+              "expires_at": "2026-10-07T04:36:26.804205+00:00",
+              "recent_heartbeat": true,
+              "observation": "STOPPED"
+            }
+          ],
+          "worker_observation": "INDEPENDENT_HEARTBEATS",
+          "fixed_depth_cutoff": null
+        }
+      }
+    ],
+    "progress": {
+      "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+      "revision": 5,
+      "status": "PAUSED",
+      "completion": "PAUSED",
+      "frontier_jobs": 3,
+      "budget": {
+        "limits": {
+          "max_active_seconds": null,
+          "max_papers": 2,
+          "max_registered_pdf_bytes": null,
+          "max_task_attempts": 10
+        },
+        "configuration": "RECORDED",
+        "usage": {
+          "papers": 2,
+          "registered_pdf_bytes": 33,
+          "task_attempts": 1,
+          "active_seconds": 0.185239,
+          "stop_reason": null,
+          "observed_at": "2026-10-07T04:35:41.873894+00:00"
+        },
+        "history": [
+          {
+            "request_id": "initial:actual-frontier-create-v1",
+            "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+            "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+            "created_at": "2026-10-07T04:35:41.378261+00:00"
+          },
+          {
+            "request_id": "actual-frontier-budget-v1",
+            "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+            "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+            "created_at": "2026-10-07T04:35:41.640194+00:00"
+          }
+        ]
+      },
+      "references": [
+        {
+          "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+          "citing_paper_id": "existing",
+          "file_version_id": "existing-file",
+          "raw_text": "Original reference 10.1234/frontier-native",
+          "page_number": 4,
+          "target_paper_id": "paper_c11465df81e2ffe3fb6d75836d9f3f62",
+          "resolution_status": "RESOLVED",
+          "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+          "created_at": "2026-10-07T04:35:41.508448+00:00",
+          "identity_resolution_status": "RESOLVED",
+          "location": {
+            "section": "References",
+            "line": 9
+          },
+          "resolution_note": "RESOLVED"
+        }
+      ],
+      "reference_total": 1,
+      "reference_offset": 0,
+      "unresolved_references": 0,
+      "budget_held_candidates": 0,
+      "references_have_more": false,
+      "workers": [
+        {
+          "worker_id": "actual-software-screen",
+          "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+          "role": "model",
+          "hostname": "小钢炮",
+          "process_id": 61836,
+          "state": "STOPPED",
+          "job_id": null,
+          "started_at": "2026-10-07T04:35:41.412458+00:00",
+          "observed_at": "2026-10-07T04:35:41.488905+00:00",
+          "expires_at": "2026-10-07T04:36:26.488905+00:00",
+          "recent_heartbeat": true,
+          "observation": "STOPPED"
+        },
+        {
+          "worker_id": "actual-idle-parser",
+          "instance_id": "1909444ca524493d91147c12328aa4a9",
+          "role": "parser",
+          "hostname": "小钢炮",
+          "process_id": 61836,
+          "state": "STOPPED",
+          "job_id": null,
+          "started_at": "2026-10-07T04:35:41.527050+00:00",
+          "observed_at": "2026-10-07T04:35:41.804205+00:00",
+          "expires_at": "2026-10-07T04:36:26.804205+00:00",
+          "recent_heartbeat": true,
+          "observation": "STOPPED"
+        }
+      ],
+      "worker_observation": "INDEPENDENT_HEARTBEATS",
+      "fixed_depth_cutoff": null
+    },
+    "browser_verified": false,
+    "real_model_calls": 0,
+    "scientific_approval": false
+  },
+  "original_paper_and_file_rows_preserved": true,
+  "real_model_calls": 0,
+  "software_screen_calls": 1,
+  "actual_parser_executed": false,
+  "scientific_approval": false,
+  "browser_verified": false,
+  "collection_paused": true
+}

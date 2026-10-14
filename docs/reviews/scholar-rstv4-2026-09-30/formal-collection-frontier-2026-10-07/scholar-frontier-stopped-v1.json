@@ -1,0 +1,200 @@
+{
+  "status": "PASS_ACTUAL_FRONTIER_STOPPED",
+  "calls": [
+    {
+      "path": "/api/catalog/collections/collection_2fbda3147fb3d3de342b8d0269221162/progress",
+      "status": 200,
+      "data": {
+        "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+        "revision": 5,
+        "status": "PAUSED",
+        "completion": "PAUSED",
+        "frontier_jobs": 3,
+        "budget": {
+          "limits": {
+            "max_active_seconds": null,
+            "max_papers": 2,
+            "max_registered_pdf_bytes": null,
+            "max_task_attempts": 10
+          },
+          "configuration": "RECORDED",
+          "usage": {
+            "papers": 2,
+            "registered_pdf_bytes": 33,
+            "task_attempts": 1,
+            "active_seconds": 0.185239,
+            "stop_reason": null,
+            "observed_at": "2026-10-07T04:35:41.873894+00:00"
+          },
+          "history": [
+            {
+              "request_id": "initial:actual-frontier-create-v1",
+              "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+              "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+              "created_at": "2026-10-07T04:35:41.378261+00:00"
+            },
+            {
+              "request_id": "actual-frontier-budget-v1",
+              "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+              "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+              "created_at": "2026-10-07T04:35:41.640194+00:00"
+            }
+          ]
+        },
+        "references": [
+          {
+            "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+            "citing_paper_id": "existing",
+            "file_version_id": "existing-file",
+            "raw_text": "Original reference 10.1234/frontier-native",
+            "page_number": 4,
+            "target_paper_id": "paper_c11465df81e2ffe3fb6d75836d9f3f62",
+            "resolution_status": "RESOLVED",
+            "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+            "created_at": "2026-10-07T04:35:41.508448+00:00",
+            "identity_resolution_status": "RESOLVED",
+            "location": {
+              "section": "References",
+              "line": 9
+            },
+            "resolution_note": "RESOLVED"
+          }
+        ],
+        "reference_total": 1,
+        "reference_offset": 0,
+        "unresolved_references": 0,
+        "budget_held_candidates": 0,
+        "references_have_more": false,
+        "workers": [
+          {
+            "worker_id": "actual-software-screen",
+            "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+            "role": "model",
+            "hostname": "小钢炮",
+            "process_id": 61836,
+            "state": "STOPPED",
+            "job_id": null,
+            "started_at": "2026-10-07T04:35:41.412458+00:00",
+            "observed_at": "2026-10-07T04:35:41.488905+00:00",
+            "expires_at": "2026-10-07T04:36:26.488905+00:00",
+            "recent_heartbeat": true,
+            "observation": "STOPPED"
+          },
+          {
+            "worker_id": "actual-idle-parser",
+            "instance_id": "1909444ca524493d91147c12328aa4a9",
+            "role": "parser",
+            "hostname": "小钢炮",
+            "process_id": 61836,
+            "state": "STOPPED",
+            "job_id": null,
+            "started_at": "2026-10-07T04:35:41.527050+00:00",
+            "observed_at": "2026-10-07T04:35:41.804205+00:00",
+            "expires_at": "2026-10-07T04:36:26.804205+00:00",
+            "recent_heartbeat": true,
+            "observation": "STOPPED"
+          }
+        ],
+        "worker_observation": "INDEPENDENT_HEARTBEATS",
+        "fixed_depth_cutoff": null
+      }
+    }
+  ],
+  "progress": {
+    "collection_id": "collection_2fbda3147fb3d3de342b8d0269221162",
+    "revision": 5,
+    "status": "PAUSED",
+    "completion": "PAUSED",
+    "frontier_jobs": 3,
+    "budget": {
+      "limits": {
+        "max_active_seconds": null,
+        "max_papers": 2,
+        "max_registered_pdf_bytes": null,
+        "max_task_attempts": 10
+      },
+      "configuration": "RECORDED",
+      "usage": {
+        "papers": 2,
+        "registered_pdf_bytes": 33,
+        "task_attempts": 1,
+        "active_seconds": 0.185239,
+        "stop_reason": null,
+        "observed_at": "2026-10-07T04:35:41.873894+00:00"
+      },
+      "history": [
+        {
+          "request_id": "initial:actual-frontier-create-v1",
+          "limits_json": "{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}",
+          "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"limits\":{\"max_active_seconds\":null,\"max_papers\":1,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":1}}",
+          "created_at": "2026-10-07T04:35:41.378261+00:00"
+        },
+        {
+          "request_id": "actual-frontier-budget-v1",
+          "limits_json": "{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10}",
+          "request_json": "{\"collection_id\":\"collection_2fbda3147fb3d3de342b8d0269221162\",\"expected_revision\":2,\"limits\":{\"max_active_seconds\":null,\"max_papers\":2,\"max_registered_pdf_bytes\":null,\"max_task_attempts\":10},\"reason\":\"Explicit software fixture: resume preserved frontier\",\"request_id\":\"actual-frontier-budget-v1\"}",
+          "created_at": "2026-10-07T04:35:41.640194+00:00"
+        }
+      ]
+    },
+    "references": [
+      {
+        "reference_entry_id": "reference_83bd1a844ac637033ca041f019ecaed3",
+        "citing_paper_id": "existing",
+        "file_version_id": "existing-file",
+        "raw_text": "Original reference 10.1234/frontier-native",
+        "page_number": 4,
+        "target_paper_id": "paper_c11465df81e2ffe3fb6d75836d9f3f62",
+        "resolution_status": "RESOLVED",
+        "content_digest": "58e630f63ddf62cef7eb19089be192bfd689e0bbe83e93ee8764c9f0d6e6643d",
+        "created_at": "2026-10-07T04:35:41.508448+00:00",
+        "identity_resolution_status": "RESOLVED",
+        "location": {
+          "section": "References",
+          "line": 9
+        },
+        "resolution_note": "RESOLVED"
+      }
+    ],
+    "reference_total": 1,
+    "reference_offset": 0,
+    "unresolved_references": 0,
+    "budget_held_candidates": 0,
+    "references_have_more": false,
+    "workers": [
+      {
+        "worker_id": "actual-software-screen",
+        "instance_id": "68945a4b1c174a0987ae7d6bd4930158",
+        "role": "model",
+        "hostname": "小钢炮",
+        "process_id": 61836,
+        "state": "STOPPED",
+        "job_id": null,
+        "started_at": "2026-10-07T04:35:41.412458+00:00",
+        "observed_at": "2026-10-07T04:35:41.488905+00:00",
+        "expires_at": "2026-10-07T04:36:26.488905+00:00",
+        "recent_heartbeat": true,
+        "observation": "STOPPED"
+      },
+      {
+        "worker_id": "actual-idle-parser",
+        "instance_id": "1909444ca524493d91147c12328aa4a9",
+        "role": "parser",
+        "hostname": "小钢炮",
+        "process_id": 61836,
+        "state": "STOPPED",
+        "job_id": null,
+        "started_at": "2026-10-07T04:35:41.527050+00:00",
+        "observed_at": "2026-10-07T04:35:41.804205+00:00",
+        "expires_at": "2026-10-07T04:36:26.804205+00:00",
+        "recent_heartbeat": true,
+        "observation": "STOPPED"
+      }
+    ],
+    "worker_observation": "INDEPENDENT_HEARTBEATS",
+    "fixed_depth_cutoff": null
+  },
+  "browser_verified": false,
+  "real_model_calls": 0,
+  "scientific_approval": false
+}

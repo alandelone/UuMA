@@ -1,0 +1,137 @@
+{
+  "manuscript_id": "manuscript_2bd691ac342d487f890a354fe64b7e31",
+  "generated_version_id": "manuscript_version_cbd0d0c8bb3c4f43ae61fcd2079461b3",
+  "version": 1,
+  "content": "# Fixed citation source - software acceptance\n\n## Introduction\n\nFirst source [@evidence_ee16941d71c1424985d807dabb79f3da]. Next [@evidence_370af703205847fea17dc53b86e4d485]. Repeat [@evidence_ee16941d71c1424985d807dabb79f3da].\n",
+  "input_revision": 1,
+  "structure_mapping_available": true,
+  "blocks": [
+    {
+      "kind": "title",
+      "object_id": "title",
+      "anchor_id": "manuscript_version_cbd0d0c8bb3c4f43ae61fcd2079461b3:title",
+      "text": "Fixed citation source - software acceptance",
+      "display_text": "Fixed citation source - software acceptance",
+      "label": "Fixed citation source - software acceptance"
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_8f8a4949293c4d59a45f7d05039aac9a",
+      "anchor_id": "manuscript_version_cbd0d0c8bb3c4f43ae61fcd2079461b3:section_8f8a4949293c4d59a45f7d05039aac9a",
+      "text": "Introduction",
+      "display_text": "Introduction",
+      "label": "Introduction"
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_1aa31421518f49ebb3b3e9b6bd97d285",
+      "anchor_id": "manuscript_version_cbd0d0c8bb3c4f43ae61fcd2079461b3:paragraph_1aa31421518f49ebb3b3e9b6bd97d285",
+      "text": "First source [@evidence_ee16941d71c1424985d807dabb79f3da]. Next [@evidence_370af703205847fea17dc53b86e4d485]. Repeat [@evidence_ee16941d71c1424985d807dabb79f3da].",
+      "display_text": "First source [1]. Next [2]. Repeat [1].",
+      "label": "Introduction / 段落 1",
+      "section_id": "section_8f8a4949293c4d59a45f7d05039aac9a",
+      "thought_ids": [
+        "thought_author_1"
+      ],
+      "formulas": []
+    }
+  ],
+  "realizations": [
+    {
+      "paragraph_id": "paragraph_1aa31421518f49ebb3b3e9b6bd97d285",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        }
+      ],
+      "sentences": [],
+      "sentence_positions_verified": false,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_SOURCE",
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_e0d5f67b2ee84fa79c2d254ae5026721"
+    }
+  ],
+  "references": [
+    {
+      "authors": [
+        "Fixture Author"
+      ],
+      "citation_index": 1,
+      "confidence": 0.8,
+      "content_digest": "990d070fa6776b5a9029c9b2aeb94fd6c7885244d5d0a50aa84d7b4dd54d4946",
+      "created_at": "2026-10-09T10:07:32.852742+00:00",
+      "doi": null,
+      "evidence_id": "evidence_ee16941d71c1424985d807dabb79f3da",
+      "excerpt": "Original software source body 2.",
+      "experiment_run_id": null,
+      "extractor_model": "TEST_FIXTURE_SOURCE",
+      "field_id": "field_a77bf7dbfdfd4b4c85d66d67d2b26572",
+      "landing_url": null,
+      "location": {
+        "page": 2,
+        "section": "Software source section 2",
+        "sequence": 1,
+        "skeleton_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "unit_digest": "e0bac981d5b60cfabde835eb17e8a43ed5122a04e25d5b3930e11169b2650df5",
+        "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+      },
+      "paper_id": "existing",
+      "paper_version_id": null,
+      "pdf_url": null,
+      "prompt_version": "1",
+      "published_year": 2026,
+      "reference_snapshot_source": "generation_input",
+      "relation": "SUPPORTS",
+      "scope_kind": "TRACK",
+      "source_snapshot_available": true,
+      "statement": "Original software source body 2.",
+      "title": "Catalog selected source",
+      "track_id": "track_141e0cc645df43db8eb55f2b6379a195"
+    },
+    {
+      "authors": [
+        "Fixture Author"
+      ],
+      "citation_index": 2,
+      "confidence": 0.8,
+      "content_digest": "ab40e7c12d84550949ae0b056004db888bc7058b97806672b6976f787fa0502b",
+      "created_at": "2026-10-09T10:07:32.832209+00:00",
+      "doi": null,
+      "evidence_id": "evidence_370af703205847fea17dc53b86e4d485",
+      "excerpt": "Original software source body 1.",
+      "experiment_run_id": null,
+      "extractor_model": "TEST_FIXTURE_SOURCE",
+      "field_id": "field_a77bf7dbfdfd4b4c85d66d67d2b26572",
+      "landing_url": null,
+      "location": {
+        "page": 1,
+        "section": "Software source section 1",
+        "sequence": 0,
+        "skeleton_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "unit_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+        "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+      },
+      "paper_id": "existing",
+      "paper_version_id": null,
+      "pdf_url": null,
+      "prompt_version": "1",
+      "published_year": 2026,
+      "reference_snapshot_source": "generation_input",
+      "relation": "SUPPORTS",
+      "scope_kind": "TRACK",
+      "source_snapshot_available": true,
+      "statement": "Original software source body 1.",
+      "title": "Catalog selected source",
+      "track_id": "track_141e0cc645df43db8eb55f2b6379a195"
+    }
+  ],
+  "citation_style": "numeric_first_use",
+  "artifacts": []
+}

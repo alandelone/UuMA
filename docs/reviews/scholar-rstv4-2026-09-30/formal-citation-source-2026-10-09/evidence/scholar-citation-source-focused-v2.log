@@ -1,0 +1,168 @@
+RUN ['-m', 'ruff', 'check', 'src/rstv4/studio_sources.py', 'src/rstv4/studio.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_source_context.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\studio_read_views.py:2:1
+   |
+ 1 |   """Read immutable author/generated views without starting jobs or seeding documents."""
+ 2 | / from __future__ import annotations
+ 3 | |
+ 4 | | import hashlib
+ 5 | | import json
+ 6 | | import sqlite3
+ 7 | | from pathlib import Path
+ 8 | | from typing import Any
+ 9 | |
+10 | | from .service import NotFoundError, RSTV4Error
+11 | | from .studio_context import citation_ids, generated_view, legacy_bibliography
+12 | | from .studio_correspondence import has_correspondence, realization_document
+13 | | from .studio_materials import markdown as material_markdown
+14 | | from .studio_materials import verify_files as verify_material_files
+15 | | from .studio_realization import validate as validate_realization
+16 | | from .studio_structure import argument_context
+17 | | from .studio_sources import validate_references
+   | |_______________________________________________^
+help: Organize imports
+   |
+15 | from .studio_realization import validate as validate_realization
+16 + from .studio_sources import validate_references
+17 | from .studio_structure import argument_context
+   - from .studio_sources import validate_references
+18 |
+   |
+
+RUF059 Unpacked variable `source` is never used
+   --> tests\test_studio_source_context.py:122:28
+    |
+120 | @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+121 | def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+122 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                            ^^^^^^
+123 |     with transaction(service.db_path) as conn:
+124 |         if defect == "paper":
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `pdf` is never used
+   --> tests\test_studio_source_context.py:122:36
+    |
+120 | @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+121 | def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+122 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                    ^^^
+123 |     with transaction(service.db_path) as conn:
+124 |         if defect == "paper":
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `document` is never used
+   --> tests\test_studio_source_context.py:122:41
+    |
+120 | @pytest.mark.parametrize("defect", ["paper", "skeleton", "unit", "excerpt", "page", "unit_digest", "skeleton_digest"])
+121 | def test_explicit_foreign_or_changed_source_rejects_before_model_execution(tmp_path, defect):
+122 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                         ^^^^^^^^
+123 |     with transaction(service.db_path) as conn:
+124 |         if defect == "paper":
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `source` is never used
+   --> tests\test_studio_source_context.py:142:28
+    |
+141 | def test_fixed_pdf_route_rejects_foreign_reference_and_changed_original_bytes(tmp_path):
+142 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                            ^^^^^^
+143 |     first = generate(service, ms)
+144 |     route = f"/api/manuscripts/{ms}/generated-versions/{first['generated_version_id']}/sources/{evidence[1]['evidence_id']}/pdf"
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `document` is never used
+   --> tests\test_studio_source_context.py:142:41
+    |
+141 | def test_fixed_pdf_route_rejects_foreign_reference_and_changed_original_bytes(tmp_path):
+142 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                         ^^^^^^^^
+143 |     first = generate(service, ms)
+144 |     route = f"/api/manuscripts/{ms}/generated-versions/{first['generated_version_id']}/sources/{evidence[1]['evidence_id']}/pdf"
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `evidence` is never used
+   --> tests\test_studio_source_context.py:156:18
+    |
+155 | def test_generated_reference_cannot_override_original_validated_source_snapshot(tmp_path):
+156 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                  ^^^^^^^^
+157 |     first = generate(service, ms)
+158 |     with transaction(service.db_path) as conn:
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `source` is never used
+   --> tests\test_studio_source_context.py:156:28
+    |
+155 | def test_generated_reference_cannot_override_original_validated_source_snapshot(tmp_path):
+156 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                            ^^^^^^
+157 |     first = generate(service, ms)
+158 |     with transaction(service.db_path) as conn:
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `pdf` is never used
+   --> tests\test_studio_source_context.py:156:36
+    |
+155 | def test_generated_reference_cannot_override_original_validated_source_snapshot(tmp_path):
+156 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                    ^^^
+157 |     first = generate(service, ms)
+158 |     with transaction(service.db_path) as conn:
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `document` is never used
+   --> tests\test_studio_source_context.py:156:41
+    |
+155 | def test_generated_reference_cannot_override_original_validated_source_snapshot(tmp_path):
+156 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                         ^^^^^^^^
+157 |     first = generate(service, ms)
+158 |     with transaction(service.db_path) as conn:
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `source` is never used
+   --> tests\test_studio_source_context.py:168:28
+    |
+167 | def test_unknown_source_provenance_remains_explicit_without_latest_source_guess(tmp_path):
+168 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                            ^^^^^^
+169 |     with transaction(service.db_path) as conn:
+170 |         conn.execute("UPDATE evidence SET location_json='{}' WHERE evidence_id=?", (evidence[1]["evidence_id"],))
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `pdf` is never used
+   --> tests\test_studio_source_context.py:168:36
+    |
+167 | def test_unknown_source_provenance_remains_explicit_without_latest_source_guess(tmp_path):
+168 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                    ^^^
+169 |     with transaction(service.db_path) as conn:
+170 |         conn.execute("UPDATE evidence SET location_json='{}' WHERE evidence_id=?", (evidence[1]["evidence_id"],))
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `document` is never used
+   --> tests\test_studio_source_context.py:168:41
+    |
+167 | def test_unknown_source_provenance_remains_explicit_without_latest_source_guess(tmp_path):
+168 |     service, ms, evidence, source, pdf, document = source_studio(tmp_path)
+    |                                         ^^^^^^^^
+169 |     with transaction(service.db_path) as conn:
+170 |         conn.execute("UPDATE evidence SET location_json='{}' WHERE evidence_id=?", (evidence[1]["evidence_id"],))
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 13 errors.
+[*] 1 fixable with the `--fix` option (12 hidden fixes can be enabled with the `--unsafe-fixes` option).

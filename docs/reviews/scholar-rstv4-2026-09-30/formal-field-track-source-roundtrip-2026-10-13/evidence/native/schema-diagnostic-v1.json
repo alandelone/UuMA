@@ -1,0 +1,25 @@
+{
+  "root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g10-existing-copy-0v_dpup3",
+  "tables": 105,
+  "added": {
+    "skeleton_source_outlines": 0
+  },
+  "changed": {
+    "schema_version": {
+      "before": [
+        {
+          "component": "catalog",
+          "version": 12,
+          "applied_at": "2026-10-07 15:49:58"
+        }
+      ],
+      "after": [
+        {
+          "component": "catalog",
+          "version": 13,
+          "applied_at": "2026-10-13 05:25:14"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "status": "MISSING_CONTEXT_RECORDED_BEFORE_V2",
+  "no_product_change": true,
+  "failed_source_sha256": "13c2bc220ea04b7e08d9f0270c7ca9b1f5adcf3432f3e19a27bb9a5821da1a69",
+  "new_helper_sha256": "ff0a9ca38de9a539838f13eaede81d2cae7a635808fa5513545de2eb6815d4b0",
+  "all_original_source_and_actual_dist_guards_required": true,
+  "original118_all11_scope_retained": true
+}

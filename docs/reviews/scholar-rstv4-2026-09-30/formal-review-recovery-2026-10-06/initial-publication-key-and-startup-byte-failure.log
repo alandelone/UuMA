@@ -1,0 +1,150 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_review_workflow.py', 'tests/test_parser_quality.py', 'tests/test_native_paperpool.py', 'tests/test_catalog_web.py', 'tests/test_collection_workspace.py', '-q']
+...F...................................................F..               [100%]
+================================== FAILURES ===================================
+_ test_changed_parse_output_creates_new_version_and_exact_replay_does_not_replace_old _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-857/test_changed_parse_output_crea0')
+
+    def test_changed_parse_output_creates_new_version_and_exact_replay_does_not_replace_old(tmp_path: Path):
+        service,collection,paper,file=fixture(tmp_path)
+        params={'parser_name':'fixture','parser_version':'1','config':{},'manifest':{},'references':[]}
+        first=service.publish_parse_result(collection['collection_id'],paper['paper_id'],file['file_version_id'],blocks=[{'text':'Original source body'}],**params)
+        with closing(sqlite3.connect(service.db_path)) as conn:
+            old_run=conn.execute('SELECT * FROM parse_runs').fetchall()
+            old_block=conn.execute('SELECT * FROM document_blocks').fetchall()
+            old_version=conn.execute('SELECT * FROM paper_versions').fetchall()
+>       second=service.publish_parse_result(collection['collection_id'],paper['paper_id'],file['file_version_id'],blocks=[{'text':'Corrected source body'}],**params)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_catalog_review_workflow.py:155: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition.AcquisitionService object at 0x00000289AC26D890>
+collection_id = 'collection_e9f4b6ce61e76d9e210efa9407939ddf'
+paper_id = 'paper_dde0a449e93444c2771e7b0edeb7daf9'
+file_version_id = 'source_file_9a590ba922c7e9366c43fd7b7193ce28'
+parser_name = 'fixture', parser_version = '1', config = {}, manifest = {}
+blocks = [{'text': 'Corrected source body'}], references = [], job_id = None
+worker_id = None, fencing_token = None
+
+    def publish_parse_result(
+        self,
+        collection_id: str,
+        paper_id: str,
+        file_version_id: str,
+        *,
+        parser_name: str,
+        parser_version: str,
+        config: dict[str, Any],
+        manifest: dict[str, Any],
+        blocks: list[dict[str, Any]],
+        references: list[dict[str, Any]],
+        job_id: str | None = None,
+        worker_id: str | None = None,
+        fencing_token: int | None = None,
+    ) -> dict[str, Any]:
+        config_digest = digest(config)
+        output_digest = digest({"manifest": manifest, "blocks": blocks, "references": references})
+        parse_run_id = stable_id(
+            "parse_run", file_version_id, parser_name, parser_version, config_digest, output_digest
+        )
+        timestamp = utc_now()
+        with transaction(self.db_path) as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            self._require_membership(conn, collection_id, paper_id)
+            if job_id is not None:
+                leased = conn.execute("SELECT * FROM acquisition_jobs WHERE job_id=? AND collection_id=? AND paper_id=? AND job_type='PARSE_PDF' AND status='RUNNING' AND lease_owner=? AND fencing_token=?",
+                                      (job_id, collection_id, paper_id, worker_id, fencing_token)).fetchone()
+                if leased is None or json.loads(leased["input_json"]).get("file_version_id") != file_version_id:
+                    raise ValueError("Parser publication lease or source is stale")
+            source_file = conn.execute(
+                """SELECT * FROM source_file_versions WHERE file_version_id=?
+                   AND paper_id=? AND identity_status='VERIFIED'""",
+                (file_version_id, paper_id),
+            ).fetchone()
+            if source_file is None:
+                raise ValueError("Only an identity-verified PDF may be parsed")
+            source_path = Path(source_file["storage_path"])
+            if (not source_path.is_file() or source_path.stat().st_size != source_file["size_bytes"]
+                    or self._file_digest(source_path) != source_file["sha256"]):
+                raise ValueError("Original PDF changed before parser publication")
+            missing = manifest.get("quality", {}).get("reference_page_alignment", {}).get("missing_source_numbered_references", [])
+            if missing:
+                raise ValueError("Parser quality gate still has missing original references")
+            if not any(str(block.get("text") or "").strip() for block in blocks):
+                raise ValueError("Parser output has no readable document blocks")
+            conn.execute(
+                """INSERT OR IGNORE INTO parse_runs
+                   VALUES(?,?,?,?,?,'SUCCEEDED',?,?,?)""",
+                (
+                    parse_run_id,
+                    file_version_id,
+                    parser_name,
+                    parser_version,
+                    config_digest,
+                    json.dumps(manifest, ensure_ascii=False, sort_keys=True),
+                    timestamp,
+                    timestamp,
+                ),
+            )
+            for sequence, block in enumerate(blocks):
+                text = str(block.get("text") or "").strip()
+                if not text:
+                    continue
+                block_digest = digest(block)
+>               conn.execute(
+                    """INSERT OR IGNORE INTO document_blocks
+                       VALUES(?,?,?,?,?,?,?,?,?)""",
+                    (
+                        stable_id("block", parse_run_id, sequence, block_digest),
+                        parse_run_id,
+                        sequence,
+                        block.get("page_number"),
+                        block.get("section"),
+                        block.get("block_type", "TEXT"),
+                        text,
+                        json.dumps(block.get("location", {}), ensure_ascii=False),
+                        block_digest,
+                    ),
+                )
+E               sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+src\rstv4\acquisition.py:1726: IntegrityError
+_ test_version_six_migration_preserves_existing_collection_and_startup_is_stable _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-857/test_version_six_migration_pre0')
+
+    def test_version_six_migration_preserves_existing_collection_and_startup_is_stable(tmp_path: Path):
+        db = setup(tmp_path)
+        service = AcquisitionService(tmp_path)
+        service.create_collection(CollectionCreateInput(**payload()))
+        with closing(sqlite3.connect(db)) as conn, conn:
+            conn.execute("ALTER TABLE collections DROP COLUMN topic_id")
+            conn.execute("ALTER TABLE collections DROP COLUMN creation_request_json")
+            conn.execute("UPDATE schema_version SET version=5 WHERE component='catalog'")
+            before = conn.execute("SELECT * FROM collections").fetchall()
+        initialize_catalog(db)
+        with closing(sqlite3.connect(db)) as conn, conn:
+            migrated = conn.execute("SELECT * FROM collections").fetchall()
+            assert [row[:10] for row in migrated] == before
+            assert all(row[10:] == (None, None) for row in migrated)
+            assert conn.execute("SELECT version FROM schema_version WHERE component='catalog'").fetchone()[0] == CATALOG_VERSION
+        before_bytes = fingerprint(db)
+        initialize_catalog(db)
+>       assert fingerprint(db) == before_bytes
+E       AssertionError: assert ('966ed11f8ce...n)\n);', ...]) == ('97e8d54f8a7...n)\n);', ...])
+E         
+E         At index 0 diff: '966ed11f8cea1c1ea2a27dc030166c20fce3cdbcbcd81d766c5fe4fcbe30dbaf' != '97e8d54f8a7255106f66cf1b213c4a4d7b558d21310b1c2bfedc3d0d526dddda'
+E         Use -v to get more diff
+
+tests\test_collection_workspace.py:228: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_catalog_review_workflow.py::test_changed_parse_output_creates_new_version_and_exact_replay_does_not_replace_old
+FAILED tests/test_collection_workspace.py::test_version_six_migration_preserves_existing_collection_and_startup_is_stable
+2 failed, 56 passed, 1 warning in 14.50s

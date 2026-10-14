@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "argv": [
+        "node",
+        "tests/test_catalog_bib_file_reader.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.0629999999946449
+    },
+    {
+      "argv": [
+        "node",
+        "tests/catalog_collections.mjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.04700000000593718
+    },
+    {
+      "argv": [
+        "node",
+        "tests/catalog_existing_papers.mjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.046000000002095476
+    },
+    {
+      "argv": [
+        "node",
+        "tests/catalog_collection_progress.mjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.046999999991385266
+    },
+    {
+      "argv": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "tests/test_catalog_web.py",
+        "tests/test_catalog_paper_selection.py",
+        "tests/test_collection_workspace.py",
+        "-q"
+      ],
+      "exit_code": 0,
+      "seconds": 16.578000000008615
+    }
+  ],
+  "source_exact": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_collections.js": "4373f00cea3df782c69d2944786a2c8e8d2f8788a6032c4173f95f6cc6ba101c",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_web.html": "41a91f06c4c13f098269937a31f992f4d52472ce596ed051843d137e4340b348",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_catalog_bib_file_reader.cjs": "b73c597eb835743d2da3c93a3d87a04926e0fdfa28656200019a38ceefbc271d"
+  }
+}

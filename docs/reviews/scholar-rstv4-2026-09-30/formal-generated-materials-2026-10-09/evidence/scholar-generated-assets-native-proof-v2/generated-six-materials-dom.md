@@ -1,0 +1,255 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Six original material formats - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做":
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文" [active]
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - article:
+    - button "修改原始结构":
+      - text: 修改原始结构
+    - button "🔎 全文检查"
+    - button "📦 投稿包"
+    - link "Markdown":
+      - /url: /api/studio-files/artifacts/artifact_bf9c31c8b2894dbc8ebe2fb7d0f7c80e
+    - link "成文与来源记录":
+      - /url: /api/studio-files/artifacts/artifact_9f7f32d8fd76401791c38ce080637918
+    - link "LaTeX":
+      - /url: /api/studio-files/artifacts/artifact_c8c21d99c24540c89135be3c0ae3dcec
+    - link "参考文献":
+      - /url: /api/studio-files/artifacts/artifact_bd81ec3c3bd14c1bb4ce391af6403e32
+    - link "📎 PDF":
+      - /url: /api/studio-files/artifacts/artifact_c8d2d4d638144d77a88a188c1fc2716b
+    - button "开始返修 →"
+    - button "出版归档"
+    - region "已生成的投稿包":
+      - heading "投稿包" [level=3]
+      - button "刷新":
+        - text: 刷新
+      - paragraph: 每份文件固定到生成版本和被审轮次；旧包继续保留。
+      - article:
+        - strong: 成文 v1 · 初次投稿 · 10/9/26, 5:28 PM
+        - button "下载 成文 v1 · 初次投稿 · 10/9/26, 5:28 PM 完整投稿包":
+          - text: 下载整包
+        - paragraph: 这是保留的历史成文版本。
+        - generic "单独下载文件 · 25"
+    - region "投稿与出版事件":
+      - strong: 📮 投稿／出版记录
+      - generic: 这是事件记录，不增加新的阶段轴。
+      - textbox "期刊／会议"
+      - spinbutton "轮次": "1"
+      - combobox "投稿状态":
+        - option "SUBMITTED" [selected]
+        - option "UNDER_REVIEW"
+        - option "REVISION_REQUESTED"
+        - option "REJECTED"
+        - option "WITHDRAWN"
+        - option "ACCEPTED"
+        - option "PUBLISHED"
+      - textbox "稿号、DOI、校样说明或发表信息"
+      - button "＋ 记录" [disabled]
+      - paragraph: 尚未记录投稿事件。
+      - generic: 📚 归档校样／终稿
+    - heading "Six original material formats - software acceptance" [level=1]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - heading "Original materials" [level=2]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - paragraph: These six original software fixtures test material delivery only. No scientific result is asserted.
+    - figure "原素材：original-png.png · 此成文版本的固定素材":
+      - img "original-png.png"
+      - link "原素材：original-png.png":
+        - /url: http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_ace1a6e97fc8494c927cfe7e5b4e0d4b/source
+      - text: · 此成文版本的固定素材
+    - figure "原素材：original-jpeg.jpeg · 此成文版本的固定素材":
+      - img "original-jpeg.jpeg"
+      - link "原素材：original-jpeg.jpeg":
+        - /url: http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_c07454d78470406583d021c3ce074d21/source
+      - text: · 此成文版本的固定素材
+    - figure "原素材：original-svg.svg · 此成文版本的固定素材":
+      - img "original-svg.svg"
+      - link "原素材：original-svg.svg":
+        - /url: http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_266ed66047a74b1aaab625bedc6305a8/source
+      - text: · 此成文版本的固定素材
+    - figure "原素材：original-csv.csv · 此成文版本的固定素材":
+      - table "original-csv.csv":
+        - caption: original-csv.csv
+        - rowgroup:
+          - row "Item Value Condition":
+            - cell "Item"
+            - cell "Value"
+            - cell "Condition"
+          - row "CSV_ROW_1 1 scope_1":
+            - cell "CSV_ROW_1"
+            - cell "1"
+            - cell "scope_1"
+          - row "CSV_ROW_2 2 scope_2":
+            - cell "CSV_ROW_2"
+            - cell "2"
+            - cell "scope_2"
+          - row "CSV_ROW_3 3 scope_3":
+            - cell "CSV_ROW_3"
+            - cell "3"
+            - cell "scope_3"
+          - row "CSV_ROW_4 4 scope_4":
+            - cell "CSV_ROW_4"
+            - cell "4"
+            - cell "scope_4"
+          - row "CSV_ROW_5 5 scope_5":
+            - cell "CSV_ROW_5"
+            - cell "5"
+            - cell "scope_5"
+          - row "CSV_ROW_6 6 scope_6":
+            - cell "CSV_ROW_6"
+            - cell "6"
+            - cell "scope_6"
+          - row "CSV_ROW_7 7 scope_7":
+            - cell "CSV_ROW_7"
+            - cell "7"
+            - cell "scope_7"
+          - row "CSV_ROW_8 8 scope_8":
+            - cell "CSV_ROW_8"
+            - cell "8"
+            - cell "scope_8"
+          - row "CSV_ROW_9 9 scope_9":
+            - cell "CSV_ROW_9"
+            - cell "9"
+            - cell "scope_9"
+          - row "CSV_ROW_10 10 scope_10":
+            - cell "CSV_ROW_10"
+            - cell "10"
+            - cell "scope_10"
+      - link "原素材：original-csv.csv":
+        - /url: http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_b6d450fed7d04f988e9779aaad80446f/source
+      - text: · 此成文版本的固定素材
+    - figure "原素材：original-xlsx.xlsx · 此成文版本的固定素材":
+      - table "Original first sheet":
+        - caption: Original first sheet
+        - rowgroup:
+          - row "XLSX_ROW_1 1 scope_1":
+            - cell "XLSX_ROW_1"
+            - cell "1"
+            - cell "scope_1"
+          - row "XLSX_ROW_2 2 scope_2":
+            - cell "XLSX_ROW_2"
+            - cell "2"
+            - cell "scope_2"
+          - row "XLSX_ROW_3 3 scope_3":
+            - cell "XLSX_ROW_3"
+            - cell "3"
+            - cell "scope_3"
+          - row "XLSX_ROW_4 4 scope_4":
+            - cell "XLSX_ROW_4"
+            - cell "4"
+            - cell "scope_4"
+          - row "XLSX_ROW_5 5 scope_5":
+            - cell "XLSX_ROW_5"
+            - cell "5"
+            - cell "scope_5"
+          - row "XLSX_ROW_6 6 scope_6":
+            - cell "XLSX_ROW_6"
+            - cell "6"
+            - cell "scope_6"
+          - row "XLSX_ROW_7 7 scope_7":
+            - cell "XLSX_ROW_7"
+            - cell "7"
+            - cell "scope_7"
+          - row "XLSX_ROW_8 8 scope_8":
+            - cell "XLSX_ROW_8"
+            - cell "8"
+            - cell "scope_8"
+          - row "XLSX_ROW_9 9 scope_9":
+            - cell "XLSX_ROW_9"
+            - cell "9"
+            - cell "scope_9"
+          - row "XLSX_ROW_10 10 scope_10":
+            - cell "XLSX_ROW_10"
+            - cell "10"
+            - cell "scope_10"
+      - table "Original second sheet":
+        - caption: Original second sheet
+        - rowgroup:
+          - row "SECOND_SHEET_ORIGINAL 7 Explicit condition":
+            - cell "SECOND_SHEET_ORIGINAL"
+            - cell "7"
+            - cell "Explicit condition"
+      - link "原素材：original-xlsx.xlsx":
+        - /url: http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_fdbbdb2b396442d68882200259647fd5/source
+      - text: · 此成文版本的固定素材
+    - figure "原素材：original-markdown.md · 此成文版本的固定素材":
+      - table "original-markdown.md":
+        - caption: original-markdown.md
+        - rowgroup:
+          - row "Item Value Condition":
+            - cell "Item"
+            - cell "Value"
+            - cell "Condition"
+          - row "MD_ROW_1 1 scope_1":
+            - cell "MD_ROW_1"
+            - cell "1"
+            - cell "scope_1"
+          - row "MD_ROW_2 2 scope_2":
+            - cell "MD_ROW_2"
+            - cell "2"
+            - cell "scope_2"
+          - row "MD_ROW_3 3 scope_3":
+            - cell "MD_ROW_3"
+            - cell "3"
+            - cell "scope_3"
+          - row "MD_ROW_4 4 scope_4":
+            - cell "MD_ROW_4"
+            - cell "4"
+            - cell "scope_4"
+          - row "MD_ROW_5 5 scope_5":
+            - cell "MD_ROW_5"
+            - cell "5"
+            - cell "scope_5"
+          - row "MD_ROW_6 6 scope_6":
+            - cell "MD_ROW_6"
+            - cell "6"
+            - cell "scope_6"
+          - row "MD_ROW_7 7 scope_7":
+            - cell "MD_ROW_7"
+            - cell "7"
+            - cell "scope_7"
+          - row "MD_ROW_8 8 scope_8":
+            - cell "MD_ROW_8"
+            - cell "8"
+            - cell "scope_8"
+          - row "MD_ROW_9 9 scope_9":
+            - cell "MD_ROW_9"
+            - cell "9"
+            - cell "scope_9"
+          - row "MD_ROW_10 10 scope_10":
+            - cell "MD_ROW_10"
+            - cell "10"
+            - cell "scope_10"
+      - link "原素材：original-markdown.md":
+        - /url: http://127.0.0.1:8880/api/manuscripts/manuscript_3c63372cb2ae406d977def5953d53b59/generated-versions/manuscript_version_02338a596162441587a28d1c0ee72dbf/materials/asset_f87909a1ca484ee497b16b2c3896b2ce/source
+      - text: · 此成文版本的固定素材
+    - button "💬 讨论此段"
+    - button "讨论选区"
+    - button "修改此段原始结构"
+  - status
+  - button "与 Agent 讨论 0 条 · Present all original software fixtures without rewriting their data — layout verification":
+    - text: 与 Agent 讨论
+    - text: 0 条 · Present all original software fixtures without rewriting their data — layout verification

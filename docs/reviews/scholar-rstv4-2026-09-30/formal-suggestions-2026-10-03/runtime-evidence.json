@@ -1,0 +1,2427 @@
+{
+  "date": "2026-10-03",
+  "production_data_changed": false,
+  "actual_model_attempted": true,
+  "fixture_model_substitution": false,
+  "browser_verified": false,
+  "status": "ACTUAL_MODEL_AND_ISOLATED_DECISION_FLOW_PASSED",
+  "responses": [
+    {
+      "method": "GET",
+      "path": "/health",
+      "status": 200,
+      "body": {
+        "status": "ok",
+        "workflow_stages": [
+          "PLANNING",
+          "DRAFTING",
+          "WHOLE_PAPER_REVIEW",
+          "FINALIZATION_SUBMISSION",
+          "REVISION",
+          "PUBLICATION"
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/workspace",
+      "status": 200,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "revision 界面验收（隔离数据）",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "REVISING",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 4,
+          "created_at": "2026-10-02T18:44:40.540160+00:00",
+          "updated_at": "2026-10-02T23:50:15.554981+00:00",
+          "workflow_stage": "REVISION",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [
+            {
+              "manuscript_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "version": 1,
+              "content": "# revision 界面验收（隔离数据）\n\n## Introduction\n\nAuthor-owned revision acceptance baseline.\n",
+              "inputs_json": "{\"job_id\":\"studio_job_509faedead1c48f79f86048512aaa214\",\"studio_revision\":1}",
+              "created_at": "2026-10-02T18:44:43.159616+00:00"
+            }
+          ],
+          "history": [
+            {
+              "history_id": "history_6ee73312b0f74f46b8c560a0229a6164",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-02T18:44:40.540160+00:00"
+            },
+            {
+              "history_id": "history_f40e3c2c43744943aad8d82a5fee8ea0",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "status": "READY_TO_SUBMIT",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Isolated UI acceptance fixture",
+              "revision": 3,
+              "created_at": "2026-10-02T18:44:43.256046+00:00"
+            },
+            {
+              "history_id": "history_e022bd93925a44d7bd632b09b75ea4db",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "status": "REVISING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Isolated UI acceptance fixture",
+              "revision": 4,
+              "created_at": "2026-10-02T18:44:43.278077+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "REVISION",
+        "document_revision": 6,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_820b0521e9874a4a8f6ffa5ee95c99f2",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_321b0add21434829acff130b0931b921",
+                  "intents": [
+                    {
+                      "id": "intent_4480273268ac4f2d872b1f34bbc7a42f",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_revision",
+                          "text": "Author-owned revision acceptance baseline. Ordinary edit after A01 was archived."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "",
+                  "purpose": ""
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "revision 界面验收（隔离数据）",
+          "venue": ""
+        },
+        "active_generated_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d",
+        "last_generated_revision": 1,
+        "generated_is_stale": true,
+        "assets": [],
+        "latest_job": {
+          "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+          "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+          "job_kind": "GENERATE",
+          "status": "SUCCEEDED",
+          "input_revision": 1,
+          "created_at": "2026-10-02T18:44:40.577966+00:00",
+          "started_at": "2026-10-02T18:44:40.586474+00:00",
+          "completed_at": "2026-10-02T18:44:43.165123+00:00",
+          "request": {},
+          "result": {
+            "artifacts": [
+              {
+                "artifact_id": "artifact_31a82521af2d4b2299a92e6029cf5881",
+                "kind": "MARKDOWN",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.md"
+              },
+              {
+                "artifact_id": "artifact_60b8db2fe9a2486a9f0da95aacfa696e",
+                "kind": "GENERATED_JSON",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\generated.json"
+              },
+              {
+                "artifact_id": "artifact_bf0e018f80b6484cb60c206a7ba1f0b9",
+                "kind": "TEX",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.tex"
+              },
+              {
+                "artifact_id": "artifact_231acf62102043759e17f4f6f7a26b12",
+                "kind": "BIB",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\references.bib"
+              },
+              {
+                "artifact_id": "artifact_5f52c7e5142e466b9e292557ad287c44",
+                "kind": "PDF",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.pdf"
+              }
+            ],
+            "generated_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d"
+          },
+          "error": null
+        },
+        "artifacts": [
+          {
+            "artifact_id": "artifact_60b8db2fe9a2486a9f0da95aacfa696e",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "GENERATED_JSON",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\generated.json",
+            "sha256": "4821598d0def729a6dde0321a6219b1a3694bd6bf8f2a097f75611ca86a932da",
+            "size_bytes": 446,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_bf0e018f80b6484cb60c206a7ba1f0b9",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "TEX",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.tex",
+            "sha256": "4e8f6453aae1cef0c5683da64c9f03e967719b1d20b5ce6c5cbb744c74e3f370",
+            "size_bytes": 351,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_231acf62102043759e17f4f6f7a26b12",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "BIB",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\references.bib",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size_bytes": 0,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_5f52c7e5142e466b9e292557ad287c44",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "PDF",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.pdf",
+            "sha256": "5c77f440f7891204ec6f615aea68a05060f75092e443bc908ccd1559739aafa7",
+            "size_bytes": 7267,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_31a82521af2d4b2299a92e6029cf5881",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "MARKDOWN",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.md",
+            "sha256": "34f9582abbb659e79c346b690c1a72c54d3c51810ea83a994b2fa41924a48bd9",
+            "size_bytes": 108,
+            "created_at": "2026-10-02T18:44:43.148600+00:00"
+          }
+        ],
+        "findings": [],
+        "template_instances": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_6d6a4ed3c59a40f08be2d7e68da63b11/workspace",
+      "status": 200,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "reading 界面验收（隔离数据）",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "INTERNAL_REVIEW",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 2,
+          "created_at": "2026-10-02T18:44:43.315831+00:00",
+          "updated_at": "2026-10-02T23:43:11.540799+00:00",
+          "workflow_stage": "WHOLE_PAPER_REVIEW",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [
+            {
+              "manuscript_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+              "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+              "version": 1,
+              "content": "# reading 界面验收（隔离数据）\n\n## Introduction\n\nAuthor-owned reading acceptance baseline.\n",
+              "inputs_json": "{\"job_id\":\"studio_job_e67a1ddea8f94c868b86b1453020c5fc\",\"studio_revision\":1}",
+              "created_at": "2026-10-02T18:44:45.943940+00:00"
+            }
+          ],
+          "history": [
+            {
+              "history_id": "history_3414c730cb9748588fe80929240c1a5d",
+              "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-02T18:44:43.315831+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "WHOLE_PAPER_REVIEW",
+        "document_revision": 5,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_089fd87f868049b192b49039276502fb",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_9f125f7e546a48a7a52202c7fa0d3f6d",
+                  "intents": [
+                    {
+                      "id": "intent_41125729292e40b083d74a0a14a25e24",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_reading",
+                          "text": "Author-owned reading acceptance baseline. A structure edit remains separate from the generated version."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "",
+                  "purpose": ""
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "reading 界面验收（隔离数据）",
+          "venue": ""
+        },
+        "active_generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+        "last_generated_revision": 1,
+        "generated_is_stale": true,
+        "assets": [],
+        "latest_job": {
+          "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+          "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+          "job_kind": "GENERATE",
+          "status": "SUCCEEDED",
+          "input_revision": 1,
+          "created_at": "2026-10-02T18:44:43.357308+00:00",
+          "started_at": "2026-10-02T18:44:43.364050+00:00",
+          "completed_at": "2026-10-02T18:44:45.949942+00:00",
+          "request": {},
+          "result": {
+            "artifacts": [
+              {
+                "artifact_id": "artifact_c554014632f64780b1f2ecd9b0dee6cc",
+                "kind": "MARKDOWN",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.md"
+              },
+              {
+                "artifact_id": "artifact_1405e08949eb4e8eac3d94fe4c91a3fa",
+                "kind": "GENERATED_JSON",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\generated.json"
+              },
+              {
+                "artifact_id": "artifact_971c13fe3a27449ba8469bddc35eb2fa",
+                "kind": "TEX",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.tex"
+              },
+              {
+                "artifact_id": "artifact_66ed50bedb8443d68a61cd919f499ccd",
+                "kind": "BIB",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\references.bib"
+              },
+              {
+                "artifact_id": "artifact_f6f67deaaffb4a2390847b646988d13d",
+                "kind": "PDF",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.pdf"
+              }
+            ],
+            "generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd"
+          },
+          "error": null
+        },
+        "artifacts": [
+          {
+            "artifact_id": "artifact_971c13fe3a27449ba8469bddc35eb2fa",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "TEX",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.tex",
+            "sha256": "945d6787a8e2de103486af823a97eb1be3487fcf52ae8820d6f53c08ffa30662",
+            "size_bytes": 349,
+            "created_at": "2026-10-02T18:44:45.937935+00:00"
+          },
+          {
+            "artifact_id": "artifact_66ed50bedb8443d68a61cd919f499ccd",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "BIB",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\references.bib",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size_bytes": 0,
+            "created_at": "2026-10-02T18:44:45.937935+00:00"
+          },
+          {
+            "artifact_id": "artifact_f6f67deaaffb4a2390847b646988d13d",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "PDF",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.pdf",
+            "sha256": "1282aa4a24cb44ec4f6fa856f4bab83dfc795b37a44eea28c8be9339aa74d78b",
+            "size_bytes": 7396,
+            "created_at": "2026-10-02T18:44:45.937935+00:00"
+          },
+          {
+            "artifact_id": "artifact_1405e08949eb4e8eac3d94fe4c91a3fa",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "GENERATED_JSON",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\generated.json",
+            "sha256": "2895be780e781021572f3a7d745d711f924e91908570b1d87fd19de863ec9b09",
+            "size_bytes": 442,
+            "created_at": "2026-10-02T18:44:45.936935+00:00"
+          },
+          {
+            "artifact_id": "artifact_c554014632f64780b1f2ecd9b0dee6cc",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "MARKDOWN",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.md",
+            "sha256": "ed04c788f552a72cc6d66ca2695b37dcef4826ac2842311aaefc149733f190bf",
+            "size_bytes": 106,
+            "created_at": "2026-10-02T18:44:45.932431+00:00"
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "finding_done_fixture",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+            "finding_kind": "EDITORIAL",
+            "severity": "INFO",
+            "detail": "Isolated acceptance finding: Done must leave this OPEN.",
+            "source": "TEST_FIXTURE",
+            "status": "OPEN",
+            "created_at": "2026-10-02T23:31:56.338947+00:00",
+            "resolved_at": null,
+            "anchor": {
+              "type": "thought",
+              "id": "thought_reading"
+            }
+          }
+        ],
+        "template_instances": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/manuscripts",
+      "status": 201,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "PLANNING",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 1,
+          "created_at": "2026-10-03T12:23:25.775895+00:00",
+          "updated_at": "2026-10-03T12:23:25.775895+00:00",
+          "workflow_stage": "PLANNING",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [],
+          "history": [
+            {
+              "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-03T12:23:25.775895+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "PLANNING",
+        "document_revision": 0,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "intents": [
+                    {
+                      "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "id": "thought_suggestion_http",
+                          "text": "The author defines the scope of this study.",
+                          "citation_mode": "NONE",
+                          "citations": []
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "Context, then boundary",
+                  "purpose": "Study context"
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "venue": ""
+        },
+        "active_generated_version_id": null,
+        "last_generated_revision": null,
+        "generated_is_stale": false,
+        "assets": [],
+        "latest_job": null,
+        "artifacts": [],
+        "findings": [],
+        "template_instances": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/document",
+      "status": 200,
+      "body": {
+        "document_revision": 1,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "intents": [
+                    {
+                      "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_suggestion_http",
+                          "text": "The author defines the scope of this study."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "Context, then boundary",
+                  "purpose": "Study context"
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "venue": ""
+        },
+        "operation": {
+          "operation_id": "http-suggestion-baseline-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "operation_kind": "EDIT",
+          "resulting_revision": 1,
+          "created_at": "2026-10-03T12:23:25.834280+00:00"
+        },
+        "idempotent_replay": false,
+        "saved_at": "2026-10-03T12:23:25.834280+00:00"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/workspace",
+      "status": 200,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "DRAFTING",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 1,
+          "created_at": "2026-10-03T12:23:25.775895+00:00",
+          "updated_at": "2026-10-03T12:23:25.834280+00:00",
+          "workflow_stage": "DRAFTING",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [],
+          "history": [
+            {
+              "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-03T12:23:25.775895+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "DRAFTING",
+        "document_revision": 1,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "intents": [
+                    {
+                      "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_suggestion_http",
+                          "text": "The author defines the scope of this study."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "Context, then boundary",
+                  "purpose": "Study context"
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "venue": ""
+        },
+        "active_generated_version_id": null,
+        "last_generated_revision": null,
+        "generated_is_stale": false,
+        "assets": [],
+        "latest_job": null,
+        "artifacts": [],
+        "findings": [],
+        "template_instances": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat",
+      "status": 201,
+      "body": {
+        "author": {
+          "message_id": "message_b913651b8ed643ec9cdc54a354d4c7b9",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "parent_message_id": null,
+          "role": "AUTHOR",
+          "content": "Please provide exactly one STRUCTURE suggestion with two independent SET_FIELD changes for paragraph paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace. Set its purpose to 'Clarify the study boundary' and paradigm to 'Context then limits'. Keep the author's thoughts, citations, ids and other fields unchanged. Include a short explanation. This is a software acceptance fixture, not a scientific decision.",
+          "anchor_type": "paragraph",
+          "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+          "anchor_revision": 1,
+          "status": "COMPLETE",
+          "created_at": "2026-10-03T12:23:25.868573+00:00",
+          "quoted": {
+            "annotation": "Keep the original author thought and reference decisions.",
+            "object_text": "The author defines the scope of this study.",
+            "raw_object_text": "The author defines the scope of this study.",
+            "source": {
+              "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "anchor_revision": 1,
+              "anchor_type": "paragraph",
+              "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+              "generated_version_id": null,
+              "label": "Introduction / Study context",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+            }
+          }
+        },
+        "agent": {
+          "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "parent_message_id": "message_b913651b8ed643ec9cdc54a354d4c7b9",
+          "role": "AGENT",
+          "content": "Here is the requested STRUCTURE suggestion featuring two independent SET_FIELD changes for paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace, updating its purpose and paradigm as specified while preserving all author thoughts and IDs.",
+          "anchor_type": "paragraph",
+          "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+          "anchor_revision": 1,
+          "status": "SUGGESTION",
+          "created_at": "2026-10-03T12:23:34.812759+00:00",
+          "quoted": {
+            "annotation": "Keep the original author thought and reference decisions.",
+            "evidence_ids": [],
+            "model_contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 714,
+              "prompt_version": "writing-chat-v2-author-decisions",
+              "status": "SUCCESS",
+              "task": "writing_chat",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 266,
+                "prompt_tokens": 1052,
+                "total_tokens": 1319
+              }
+            },
+            "object_text": "The author defines the scope of this study.",
+            "raw_object_text": "The author defines the scope of this study.",
+            "source": {
+              "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "anchor_revision": 1,
+              "anchor_type": "paragraph",
+              "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+              "generated_version_id": null,
+              "label": "Introduction / Study context",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+            },
+            "suggestions": [
+              {
+                "changes": [
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Study context",
+                    "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                    "field": "purpose",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Clarify the study boundary"
+                  },
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Context, then boundary",
+                    "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                    "field": "paradigm",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Context then limits"
+                  }
+                ],
+                "kind": "STRUCTURE",
+                "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+                "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+                "title": "Update purpose and paradigm for boundary clarification"
+              }
+            ]
+          }
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/workspace",
+      "status": 200,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "DRAFTING",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 1,
+          "created_at": "2026-10-03T12:23:25.775895+00:00",
+          "updated_at": "2026-10-03T12:23:25.834280+00:00",
+          "workflow_stage": "DRAFTING",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [],
+          "history": [
+            {
+              "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-03T12:23:25.775895+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "DRAFTING",
+        "document_revision": 1,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "intents": [
+                    {
+                      "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_suggestion_http",
+                          "text": "The author defines the scope of this study."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "Context, then boundary",
+                  "purpose": "Study context"
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "Suggestion decisions — isolated acceptance fixture",
+          "venue": ""
+        },
+        "active_generated_version_id": null,
+        "last_generated_revision": null,
+        "generated_is_stale": false,
+        "assets": [],
+        "latest_job": null,
+        "artifacts": [],
+        "findings": [],
+        "template_instances": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/suggestions/suggestion_c74bd8c6553a4020ac071049af6c1bd2/preview",
+      "status": 200,
+      "body": {
+        "suggestion": {
+          "changes": [
+            {
+              "action": "SET_FIELD",
+              "before": "Study context",
+              "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+              "field": "purpose",
+              "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "target_label": "Introduction / Study context",
+              "target_type": "paragraph",
+              "value": "Clarify the study boundary"
+            },
+            {
+              "action": "SET_FIELD",
+              "before": "Context, then boundary",
+              "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+              "field": "paradigm",
+              "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "target_label": "Introduction / Study context",
+              "target_type": "paragraph",
+              "value": "Context then limits"
+            }
+          ],
+          "kind": "STRUCTURE",
+          "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+          "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+          "title": "Update purpose and paradigm for boundary clarification"
+        },
+        "source": {
+          "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+          "anchor_revision": 1,
+          "anchor_type": "paragraph",
+          "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+          "generated_version_id": null,
+          "label": "Introduction / Study context",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+        },
+        "document_revision": 1,
+        "changes": [
+          {
+            "action": "SET_FIELD",
+            "before": "Study context",
+            "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+            "field": "purpose",
+            "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+            "target_label": "Introduction / Study context",
+            "target_type": "paragraph",
+            "value": "Clarify the study boundary",
+            "available": true,
+            "current_label": "Introduction / Study context",
+            "current_before": "Study context",
+            "target_changed": false,
+            "after_preview": "Clarify the study boundary",
+            "already_adopted": false
+          },
+          {
+            "action": "SET_FIELD",
+            "before": "Context, then boundary",
+            "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+            "field": "paradigm",
+            "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+            "target_label": "Introduction / Study context",
+            "target_type": "paragraph",
+            "value": "Context then limits",
+            "available": true,
+            "current_label": "Introduction / Study context",
+            "current_before": "Context, then boundary",
+            "target_changed": false,
+            "after_preview": "Context then limits",
+            "already_adopted": false
+          }
+        ],
+        "decisions": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/decisions",
+      "status": 201,
+      "body": {
+        "decision": {
+          "decision_id": "http-partial-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+          "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+          "outcome": "ACCEPT_PARTIAL",
+          "operation_id": "http-partial-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "created_at": "2026-10-03T12:23:34.875241+00:00",
+          "request": {
+            "base_revision": 1,
+            "comment_ids": [],
+            "confirmed_changed_ids": [],
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "outcome": "ACCEPT_PARTIAL",
+            "selected_change_ids": [
+              "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3"
+            ],
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+          },
+          "provenance": {
+            "author_revision_at_decision": 1,
+            "changes": [
+              {
+                "action": "SET_FIELD",
+                "after_preview": "Clarify the study boundary",
+                "available": true,
+                "before": "Study context",
+                "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                "current_before": "Study context",
+                "current_label": "Introduction / Study context",
+                "field": "purpose",
+                "target_changed": false,
+                "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                "target_label": "Introduction / Study context",
+                "target_type": "paragraph",
+                "value": "Clarify the study boundary"
+              }
+            ],
+            "model_contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 714,
+              "prompt_version": "writing-chat-v2-author-decisions",
+              "status": "SUCCESS",
+              "task": "writing_chat",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 266,
+                "prompt_tokens": 1052,
+                "total_tokens": 1319
+              }
+            },
+            "source": {
+              "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "anchor_revision": 1,
+              "anchor_type": "paragraph",
+              "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+              "generated_version_id": null,
+              "label": "Introduction / Study context",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+            },
+            "suggestion": {
+              "changes": [
+                {
+                  "action": "SET_FIELD",
+                  "before": "Study context",
+                  "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                  "field": "purpose",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Clarify the study boundary"
+                },
+                {
+                  "action": "SET_FIELD",
+                  "before": "Context, then boundary",
+                  "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                  "field": "paradigm",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Context then limits"
+                }
+              ],
+              "kind": "STRUCTURE",
+              "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+              "title": "Update purpose and paradigm for boundary clarification"
+            }
+          }
+        },
+        "workspace": {
+          "manuscript": {
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 0,
+            "blocker": null,
+            "next_step": null,
+            "revision": 1,
+            "created_at": "2026-10-03T12:23:25.775895+00:00",
+            "updated_at": "2026-10-03T12:23:34.875241+00:00",
+            "workflow_stage": "DRAFTING",
+            "projects": [],
+            "nodes": [],
+            "evidence": [],
+            "versions": [],
+            "history": [
+              {
+                "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+                "status": "PLANNING",
+                "blocker": null,
+                "next_step": null,
+                "reason": "Created",
+                "revision": 1,
+                "created_at": "2026-10-03T12:23:25.775895+00:00"
+              }
+            ],
+            "submissions": []
+          },
+          "workflow_stage": "DRAFTING",
+          "document_revision": 2,
+          "document": {
+            "abstract": "",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "schema_version": 1,
+            "sections": [
+              {
+                "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+                "paragraphs": [
+                  {
+                    "asset_ids": [],
+                    "formulas": [],
+                    "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "intents": [
+                      {
+                        "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                        "label": "Research Context",
+                        "thoughts": [
+                          {
+                            "citation_mode": "NONE",
+                            "citations": [],
+                            "id": "thought_suggestion_http",
+                            "text": "The author defines the scope of this study."
+                          }
+                        ]
+                      }
+                    ],
+                    "paradigm": "Context, then boundary",
+                    "purpose": "Clarify the study boundary"
+                  }
+                ],
+                "role": "Motivation",
+                "title": "Introduction"
+              }
+            ],
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "venue": ""
+          },
+          "active_generated_version_id": null,
+          "last_generated_revision": null,
+          "generated_is_stale": false,
+          "assets": [],
+          "latest_job": null,
+          "artifacts": [],
+          "findings": [],
+          "template_instances": []
+        },
+        "idempotent_replay": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/decisions",
+      "status": 201,
+      "body": {
+        "decision": {
+          "decision_id": "http-partial-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+          "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+          "outcome": "ACCEPT_PARTIAL",
+          "operation_id": "http-partial-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "created_at": "2026-10-03T12:23:34.875241+00:00",
+          "request": {
+            "base_revision": 1,
+            "comment_ids": [],
+            "confirmed_changed_ids": [],
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "outcome": "ACCEPT_PARTIAL",
+            "selected_change_ids": [
+              "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3"
+            ],
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+          },
+          "provenance": {
+            "author_revision_at_decision": 1,
+            "changes": [
+              {
+                "action": "SET_FIELD",
+                "after_preview": "Clarify the study boundary",
+                "available": true,
+                "before": "Study context",
+                "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                "current_before": "Study context",
+                "current_label": "Introduction / Study context",
+                "field": "purpose",
+                "target_changed": false,
+                "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                "target_label": "Introduction / Study context",
+                "target_type": "paragraph",
+                "value": "Clarify the study boundary"
+              }
+            ],
+            "model_contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 714,
+              "prompt_version": "writing-chat-v2-author-decisions",
+              "status": "SUCCESS",
+              "task": "writing_chat",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 266,
+                "prompt_tokens": 1052,
+                "total_tokens": 1319
+              }
+            },
+            "source": {
+              "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "anchor_revision": 1,
+              "anchor_type": "paragraph",
+              "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+              "generated_version_id": null,
+              "label": "Introduction / Study context",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+            },
+            "suggestion": {
+              "changes": [
+                {
+                  "action": "SET_FIELD",
+                  "before": "Study context",
+                  "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                  "field": "purpose",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Clarify the study boundary"
+                },
+                {
+                  "action": "SET_FIELD",
+                  "before": "Context, then boundary",
+                  "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                  "field": "paradigm",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Context then limits"
+                }
+              ],
+              "kind": "STRUCTURE",
+              "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+              "title": "Update purpose and paradigm for boundary clarification"
+            }
+          }
+        },
+        "workspace": {
+          "manuscript": {
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 0,
+            "blocker": null,
+            "next_step": null,
+            "revision": 1,
+            "created_at": "2026-10-03T12:23:25.775895+00:00",
+            "updated_at": "2026-10-03T12:23:34.875241+00:00",
+            "workflow_stage": "DRAFTING",
+            "projects": [],
+            "nodes": [],
+            "evidence": [],
+            "versions": [],
+            "history": [
+              {
+                "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+                "status": "PLANNING",
+                "blocker": null,
+                "next_step": null,
+                "reason": "Created",
+                "revision": 1,
+                "created_at": "2026-10-03T12:23:25.775895+00:00"
+              }
+            ],
+            "submissions": []
+          },
+          "workflow_stage": "DRAFTING",
+          "document_revision": 2,
+          "document": {
+            "abstract": "",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "schema_version": 1,
+            "sections": [
+              {
+                "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+                "paragraphs": [
+                  {
+                    "asset_ids": [],
+                    "formulas": [],
+                    "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "intents": [
+                      {
+                        "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                        "label": "Research Context",
+                        "thoughts": [
+                          {
+                            "citation_mode": "NONE",
+                            "citations": [],
+                            "id": "thought_suggestion_http",
+                            "text": "The author defines the scope of this study."
+                          }
+                        ]
+                      }
+                    ],
+                    "paradigm": "Context, then boundary",
+                    "purpose": "Clarify the study boundary"
+                  }
+                ],
+                "role": "Motivation",
+                "title": "Introduction"
+              }
+            ],
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "venue": ""
+          },
+          "active_generated_version_id": null,
+          "last_generated_revision": null,
+          "generated_is_stale": false,
+          "assets": [],
+          "latest_job": null,
+          "artifacts": [],
+          "findings": [],
+          "template_instances": []
+        },
+        "idempotent_replay": true
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/decisions",
+      "status": 201,
+      "body": {
+        "decision": {
+          "decision_id": "http-reject-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+          "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+          "outcome": "REJECT",
+          "operation_id": null,
+          "created_at": "2026-10-03T12:23:34.917666+00:00",
+          "request": {
+            "base_revision": 2,
+            "comment_ids": [],
+            "confirmed_changed_ids": [],
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "outcome": "REJECT",
+            "selected_change_ids": [],
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+          },
+          "provenance": {
+            "author_revision_at_decision": 2,
+            "changes": [],
+            "model_contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 714,
+              "prompt_version": "writing-chat-v2-author-decisions",
+              "status": "SUCCESS",
+              "task": "writing_chat",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 266,
+                "prompt_tokens": 1052,
+                "total_tokens": 1319
+              }
+            },
+            "source": {
+              "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "anchor_revision": 1,
+              "anchor_type": "paragraph",
+              "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+              "generated_version_id": null,
+              "label": "Introduction / Study context",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+            },
+            "suggestion": {
+              "changes": [
+                {
+                  "action": "SET_FIELD",
+                  "before": "Study context",
+                  "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                  "field": "purpose",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Clarify the study boundary"
+                },
+                {
+                  "action": "SET_FIELD",
+                  "before": "Context, then boundary",
+                  "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                  "field": "paradigm",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Context then limits"
+                }
+              ],
+              "kind": "STRUCTURE",
+              "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+              "title": "Update purpose and paradigm for boundary clarification"
+            }
+          }
+        },
+        "workspace": {
+          "manuscript": {
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 0,
+            "blocker": null,
+            "next_step": null,
+            "revision": 1,
+            "created_at": "2026-10-03T12:23:25.775895+00:00",
+            "updated_at": "2026-10-03T12:23:34.875241+00:00",
+            "workflow_stage": "DRAFTING",
+            "projects": [],
+            "nodes": [],
+            "evidence": [],
+            "versions": [],
+            "history": [
+              {
+                "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+                "status": "PLANNING",
+                "blocker": null,
+                "next_step": null,
+                "reason": "Created",
+                "revision": 1,
+                "created_at": "2026-10-03T12:23:25.775895+00:00"
+              }
+            ],
+            "submissions": []
+          },
+          "workflow_stage": "DRAFTING",
+          "document_revision": 2,
+          "document": {
+            "abstract": "",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "schema_version": 1,
+            "sections": [
+              {
+                "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+                "paragraphs": [
+                  {
+                    "asset_ids": [],
+                    "formulas": [],
+                    "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "intents": [
+                      {
+                        "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                        "label": "Research Context",
+                        "thoughts": [
+                          {
+                            "citation_mode": "NONE",
+                            "citations": [],
+                            "id": "thought_suggestion_http",
+                            "text": "The author defines the scope of this study."
+                          }
+                        ]
+                      }
+                    ],
+                    "paradigm": "Context, then boundary",
+                    "purpose": "Clarify the study boundary"
+                  }
+                ],
+                "role": "Motivation",
+                "title": "Introduction"
+              }
+            ],
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "venue": ""
+          },
+          "active_generated_version_id": null,
+          "last_generated_revision": null,
+          "generated_is_stale": false,
+          "assets": [],
+          "latest_job": null,
+          "artifacts": [],
+          "findings": [],
+          "template_instances": []
+        },
+        "idempotent_replay": false
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/decisions",
+      "status": 201,
+      "body": {
+        "decision": {
+          "decision_id": "http-remainder-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+          "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+          "outcome": "ACCEPT_PARTIAL",
+          "operation_id": "http-remainder-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+          "created_at": "2026-10-03T12:23:34.943655+00:00",
+          "request": {
+            "base_revision": 2,
+            "comment_ids": [],
+            "confirmed_changed_ids": [],
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "outcome": "ACCEPT_PARTIAL",
+            "selected_change_ids": [
+              "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9"
+            ],
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+          },
+          "provenance": {
+            "author_revision_at_decision": 2,
+            "changes": [
+              {
+                "action": "SET_FIELD",
+                "after_preview": "Context then limits",
+                "available": true,
+                "before": "Context, then boundary",
+                "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                "current_before": "Context, then boundary",
+                "current_label": "Introduction / Clarify the study boundary",
+                "field": "paradigm",
+                "target_changed": false,
+                "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                "target_label": "Introduction / Study context",
+                "target_type": "paragraph",
+                "value": "Context then limits"
+              }
+            ],
+            "model_contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 714,
+              "prompt_version": "writing-chat-v2-author-decisions",
+              "status": "SUCCESS",
+              "task": "writing_chat",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 266,
+                "prompt_tokens": 1052,
+                "total_tokens": 1319
+              }
+            },
+            "source": {
+              "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "anchor_revision": 1,
+              "anchor_type": "paragraph",
+              "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+              "generated_version_id": null,
+              "label": "Introduction / Study context",
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+            },
+            "suggestion": {
+              "changes": [
+                {
+                  "action": "SET_FIELD",
+                  "before": "Study context",
+                  "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                  "field": "purpose",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Clarify the study boundary"
+                },
+                {
+                  "action": "SET_FIELD",
+                  "before": "Context, then boundary",
+                  "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                  "field": "paradigm",
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Context then limits"
+                }
+              ],
+              "kind": "STRUCTURE",
+              "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+              "title": "Update purpose and paradigm for boundary clarification"
+            }
+          }
+        },
+        "workspace": {
+          "manuscript": {
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 0,
+            "blocker": null,
+            "next_step": null,
+            "revision": 1,
+            "created_at": "2026-10-03T12:23:25.775895+00:00",
+            "updated_at": "2026-10-03T12:23:34.943655+00:00",
+            "workflow_stage": "DRAFTING",
+            "projects": [],
+            "nodes": [],
+            "evidence": [],
+            "versions": [],
+            "history": [
+              {
+                "history_id": "history_d4c4004931994331a07066f87a50d1c0",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+                "status": "PLANNING",
+                "blocker": null,
+                "next_step": null,
+                "reason": "Created",
+                "revision": 1,
+                "created_at": "2026-10-03T12:23:25.775895+00:00"
+              }
+            ],
+            "submissions": []
+          },
+          "workflow_stage": "DRAFTING",
+          "document_revision": 3,
+          "document": {
+            "abstract": "",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "schema_version": 1,
+            "sections": [
+              {
+                "id": "section_fd129b7a06e24d6f8ce4ec035d25c197",
+                "paragraphs": [
+                  {
+                    "asset_ids": [],
+                    "formulas": [],
+                    "id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "intents": [
+                      {
+                        "id": "intent_4c5ea8aec4994ae99cf6c6fa3fe1a4ae",
+                        "label": "Research Context",
+                        "thoughts": [
+                          {
+                            "citation_mode": "NONE",
+                            "citations": [],
+                            "id": "thought_suggestion_http",
+                            "text": "The author defines the scope of this study."
+                          }
+                        ]
+                      }
+                    ],
+                    "paradigm": "Context then limits",
+                    "purpose": "Clarify the study boundary"
+                  }
+                ],
+                "role": "Motivation",
+                "title": "Introduction"
+              }
+            ],
+            "title": "Suggestion decisions — isolated acceptance fixture",
+            "venue": ""
+          },
+          "active_generated_version_id": null,
+          "last_generated_revision": null,
+          "generated_is_stale": false,
+          "assets": [],
+          "latest_job": null,
+          "artifacts": [],
+          "findings": [],
+          "template_instances": []
+        },
+        "idempotent_replay": false
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b/chat/message_7656f0e72b0f4ef7aa2c7b02c9d71bb2/suggestions/suggestion_c74bd8c6553a4020ac071049af6c1bd2/preview",
+      "status": 200,
+      "body": {
+        "suggestion": {
+          "changes": [
+            {
+              "action": "SET_FIELD",
+              "before": "Study context",
+              "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+              "field": "purpose",
+              "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "target_label": "Introduction / Study context",
+              "target_type": "paragraph",
+              "value": "Clarify the study boundary"
+            },
+            {
+              "action": "SET_FIELD",
+              "before": "Context, then boundary",
+              "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+              "field": "paradigm",
+              "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+              "target_label": "Introduction / Study context",
+              "target_type": "paragraph",
+              "value": "Context then limits"
+            }
+          ],
+          "kind": "STRUCTURE",
+          "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+          "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+          "title": "Update purpose and paradigm for boundary clarification"
+        },
+        "source": {
+          "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+          "anchor_revision": 1,
+          "anchor_type": "paragraph",
+          "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+          "generated_version_id": null,
+          "label": "Introduction / Study context",
+          "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+        },
+        "document_revision": 3,
+        "changes": [
+          {
+            "action": "SET_FIELD",
+            "before": "Study context",
+            "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+            "field": "purpose",
+            "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+            "target_label": "Introduction / Study context",
+            "target_type": "paragraph",
+            "value": "Clarify the study boundary",
+            "available": true,
+            "current_label": "Introduction / Clarify the study boundary",
+            "current_before": "Clarify the study boundary",
+            "target_changed": true,
+            "after_preview": "Clarify the study boundary",
+            "already_adopted": true
+          },
+          {
+            "action": "SET_FIELD",
+            "before": "Context, then boundary",
+            "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+            "field": "paradigm",
+            "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+            "target_label": "Introduction / Study context",
+            "target_type": "paragraph",
+            "value": "Context then limits",
+            "available": true,
+            "current_label": "Introduction / Clarify the study boundary",
+            "current_before": "Context then limits",
+            "target_changed": true,
+            "after_preview": "Context then limits",
+            "already_adopted": true
+          }
+        ],
+        "decisions": [
+          {
+            "decision_id": "http-partial-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+            "outcome": "ACCEPT_PARTIAL",
+            "operation_id": "http-partial-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "created_at": "2026-10-03T12:23:34.875241+00:00",
+            "request": {
+              "base_revision": 1,
+              "comment_ids": [],
+              "confirmed_changed_ids": [],
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+              "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+              "outcome": "ACCEPT_PARTIAL",
+              "selected_change_ids": [
+                "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3"
+              ],
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+            },
+            "provenance": {
+              "author_revision_at_decision": 1,
+              "changes": [
+                {
+                  "action": "SET_FIELD",
+                  "after_preview": "Clarify the study boundary",
+                  "available": true,
+                  "before": "Study context",
+                  "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                  "current_before": "Study context",
+                  "current_label": "Introduction / Study context",
+                  "field": "purpose",
+                  "target_changed": false,
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Clarify the study boundary"
+                }
+              ],
+              "model_contract": {
+                "actual_model": "gemini-3.7-flash",
+                "estimated_input_tokens": 714,
+                "prompt_version": "writing-chat-v2-author-decisions",
+                "status": "SUCCESS",
+                "task": "writing_chat",
+                "tier": "standard",
+                "usage": {
+                  "completion_tokens": 266,
+                  "prompt_tokens": 1052,
+                  "total_tokens": 1319
+                }
+              },
+              "source": {
+                "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                "anchor_revision": 1,
+                "anchor_type": "paragraph",
+                "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+                "generated_version_id": null,
+                "label": "Introduction / Study context",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+              },
+              "suggestion": {
+                "changes": [
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Study context",
+                    "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                    "field": "purpose",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Clarify the study boundary"
+                  },
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Context, then boundary",
+                    "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                    "field": "paradigm",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Context then limits"
+                  }
+                ],
+                "kind": "STRUCTURE",
+                "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+                "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+                "title": "Update purpose and paradigm for boundary clarification"
+              }
+            }
+          },
+          {
+            "decision_id": "http-reject-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+            "outcome": "REJECT",
+            "operation_id": null,
+            "created_at": "2026-10-03T12:23:34.917666+00:00",
+            "request": {
+              "base_revision": 2,
+              "comment_ids": [],
+              "confirmed_changed_ids": [],
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+              "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+              "outcome": "REJECT",
+              "selected_change_ids": [],
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+            },
+            "provenance": {
+              "author_revision_at_decision": 2,
+              "changes": [],
+              "model_contract": {
+                "actual_model": "gemini-3.7-flash",
+                "estimated_input_tokens": 714,
+                "prompt_version": "writing-chat-v2-author-decisions",
+                "status": "SUCCESS",
+                "task": "writing_chat",
+                "tier": "standard",
+                "usage": {
+                  "completion_tokens": 266,
+                  "prompt_tokens": 1052,
+                  "total_tokens": 1319
+                }
+              },
+              "source": {
+                "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                "anchor_revision": 1,
+                "anchor_type": "paragraph",
+                "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+                "generated_version_id": null,
+                "label": "Introduction / Study context",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+              },
+              "suggestion": {
+                "changes": [
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Study context",
+                    "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                    "field": "purpose",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Clarify the study boundary"
+                  },
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Context, then boundary",
+                    "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                    "field": "paradigm",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Context then limits"
+                  }
+                ],
+                "kind": "STRUCTURE",
+                "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+                "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+                "title": "Update purpose and paradigm for boundary clarification"
+              }
+            }
+          },
+          {
+            "decision_id": "http-remainder-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+            "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+            "outcome": "ACCEPT_PARTIAL",
+            "operation_id": "http-remainder-manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+            "created_at": "2026-10-03T12:23:34.943655+00:00",
+            "request": {
+              "base_revision": 2,
+              "comment_ids": [],
+              "confirmed_changed_ids": [],
+              "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+              "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+              "outcome": "ACCEPT_PARTIAL",
+              "selected_change_ids": [
+                "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9"
+              ],
+              "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2"
+            },
+            "provenance": {
+              "author_revision_at_decision": 2,
+              "changes": [
+                {
+                  "action": "SET_FIELD",
+                  "after_preview": "Context then limits",
+                  "available": true,
+                  "before": "Context, then boundary",
+                  "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                  "current_before": "Context, then boundary",
+                  "current_label": "Introduction / Clarify the study boundary",
+                  "field": "paradigm",
+                  "target_changed": false,
+                  "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                  "target_label": "Introduction / Study context",
+                  "target_type": "paragraph",
+                  "value": "Context then limits"
+                }
+              ],
+              "model_contract": {
+                "actual_model": "gemini-3.7-flash",
+                "estimated_input_tokens": 714,
+                "prompt_version": "writing-chat-v2-author-decisions",
+                "status": "SUCCESS",
+                "task": "writing_chat",
+                "tier": "standard",
+                "usage": {
+                  "completion_tokens": 266,
+                  "prompt_tokens": 1052,
+                  "total_tokens": 1319
+                }
+              },
+              "source": {
+                "anchor_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                "anchor_revision": 1,
+                "anchor_type": "paragraph",
+                "content_sha256": "6c2e5007e746408f3628ace767eb9231eb508baeadc83eab41849dca1d2e7804",
+                "generated_version_id": null,
+                "label": "Introduction / Study context",
+                "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b"
+              },
+              "suggestion": {
+                "changes": [
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Study context",
+                    "change_id": "suggestion_change_7a55c5b6564642e5b1a7d54c348841b3",
+                    "field": "purpose",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Clarify the study boundary"
+                  },
+                  {
+                    "action": "SET_FIELD",
+                    "before": "Context, then boundary",
+                    "change_id": "suggestion_change_8f8772aed2a74fea91f16b61cbb0fcd9",
+                    "field": "paradigm",
+                    "target_id": "paragraph_ed5947d4b27c4ba7b94e4eccf4ad9ace",
+                    "target_label": "Introduction / Study context",
+                    "target_type": "paragraph",
+                    "value": "Context then limits"
+                  }
+                ],
+                "kind": "STRUCTURE",
+                "rationale": "Updates the paragraph purpose to 'Clarify the study boundary' and paradigm to 'Context then limits' independently via SET_FIELD as requested.",
+                "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+                "title": "Update purpose and paradigm for boundary clarification"
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_3a132decd09349b99b186a5c44dc191d/workspace",
+      "status": 200,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "revision 界面验收（隔离数据）",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "REVISING",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 4,
+          "created_at": "2026-10-02T18:44:40.540160+00:00",
+          "updated_at": "2026-10-02T23:50:15.554981+00:00",
+          "workflow_stage": "REVISION",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [
+            {
+              "manuscript_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "version": 1,
+              "content": "# revision 界面验收（隔离数据）\n\n## Introduction\n\nAuthor-owned revision acceptance baseline.\n",
+              "inputs_json": "{\"job_id\":\"studio_job_509faedead1c48f79f86048512aaa214\",\"studio_revision\":1}",
+              "created_at": "2026-10-02T18:44:43.159616+00:00"
+            }
+          ],
+          "history": [
+            {
+              "history_id": "history_6ee73312b0f74f46b8c560a0229a6164",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-02T18:44:40.540160+00:00"
+            },
+            {
+              "history_id": "history_f40e3c2c43744943aad8d82a5fee8ea0",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "status": "READY_TO_SUBMIT",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Isolated UI acceptance fixture",
+              "revision": 3,
+              "created_at": "2026-10-02T18:44:43.256046+00:00"
+            },
+            {
+              "history_id": "history_e022bd93925a44d7bd632b09b75ea4db",
+              "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+              "status": "REVISING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Isolated UI acceptance fixture",
+              "revision": 4,
+              "created_at": "2026-10-02T18:44:43.278077+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "REVISION",
+        "document_revision": 6,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_820b0521e9874a4a8f6ffa5ee95c99f2",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_321b0add21434829acff130b0931b921",
+                  "intents": [
+                    {
+                      "id": "intent_4480273268ac4f2d872b1f34bbc7a42f",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_revision",
+                          "text": "Author-owned revision acceptance baseline. Ordinary edit after A01 was archived."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "",
+                  "purpose": ""
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "revision 界面验收（隔离数据）",
+          "venue": ""
+        },
+        "active_generated_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d",
+        "last_generated_revision": 1,
+        "generated_is_stale": true,
+        "assets": [],
+        "latest_job": {
+          "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+          "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+          "job_kind": "GENERATE",
+          "status": "SUCCEEDED",
+          "input_revision": 1,
+          "created_at": "2026-10-02T18:44:40.577966+00:00",
+          "started_at": "2026-10-02T18:44:40.586474+00:00",
+          "completed_at": "2026-10-02T18:44:43.165123+00:00",
+          "request": {},
+          "result": {
+            "artifacts": [
+              {
+                "artifact_id": "artifact_31a82521af2d4b2299a92e6029cf5881",
+                "kind": "MARKDOWN",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.md"
+              },
+              {
+                "artifact_id": "artifact_60b8db2fe9a2486a9f0da95aacfa696e",
+                "kind": "GENERATED_JSON",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\generated.json"
+              },
+              {
+                "artifact_id": "artifact_bf0e018f80b6484cb60c206a7ba1f0b9",
+                "kind": "TEX",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.tex"
+              },
+              {
+                "artifact_id": "artifact_231acf62102043759e17f4f6f7a26b12",
+                "kind": "BIB",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\references.bib"
+              },
+              {
+                "artifact_id": "artifact_5f52c7e5142e466b9e292557ad287c44",
+                "kind": "PDF",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.pdf"
+              }
+            ],
+            "generated_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d"
+          },
+          "error": null
+        },
+        "artifacts": [
+          {
+            "artifact_id": "artifact_60b8db2fe9a2486a9f0da95aacfa696e",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "GENERATED_JSON",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\generated.json",
+            "sha256": "4821598d0def729a6dde0321a6219b1a3694bd6bf8f2a097f75611ca86a932da",
+            "size_bytes": 446,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_bf0e018f80b6484cb60c206a7ba1f0b9",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "TEX",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.tex",
+            "sha256": "4e8f6453aae1cef0c5683da64c9f03e967719b1d20b5ce6c5cbb744c74e3f370",
+            "size_bytes": 351,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_231acf62102043759e17f4f6f7a26b12",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "BIB",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\references.bib",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size_bytes": 0,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_5f52c7e5142e466b9e292557ad287c44",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "PDF",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.pdf",
+            "sha256": "5c77f440f7891204ec6f615aea68a05060f75092e443bc908ccd1559739aafa7",
+            "size_bytes": 7267,
+            "created_at": "2026-10-02T18:44:43.152601+00:00"
+          },
+          {
+            "artifact_id": "artifact_31a82521af2d4b2299a92e6029cf5881",
+            "job_id": "studio_job_509faedead1c48f79f86048512aaa214",
+            "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+            "document_revision": 1,
+            "artifact_kind": "MARKDOWN",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_3a132decd09349b99b186a5c44dc191d\\generated\\studio_job_509faedead1c48f79f86048512aaa214\\manuscript.md",
+            "sha256": "34f9582abbb659e79c346b690c1a72c54d3c51810ea83a994b2fa41924a48bd9",
+            "size_bytes": 108,
+            "created_at": "2026-10-02T18:44:43.148600+00:00"
+          }
+        ],
+        "findings": [],
+        "template_instances": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/manuscripts/manuscript_6d6a4ed3c59a40f08be2d7e68da63b11/workspace",
+      "status": 200,
+      "body": {
+        "manuscript": {
+          "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+          "track_id": "track_29a4619160fa4ca6bb2700fe611ff318",
+          "title": "reading 界面验收（隔离数据）",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "writing_status": "INTERNAL_REVIEW",
+          "needs_scientific_review": 0,
+          "blocker": null,
+          "next_step": null,
+          "revision": 2,
+          "created_at": "2026-10-02T18:44:43.315831+00:00",
+          "updated_at": "2026-10-02T23:43:11.540799+00:00",
+          "workflow_stage": "WHOLE_PAPER_REVIEW",
+          "projects": [],
+          "nodes": [],
+          "evidence": [],
+          "versions": [
+            {
+              "manuscript_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+              "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+              "version": 1,
+              "content": "# reading 界面验收（隔离数据）\n\n## Introduction\n\nAuthor-owned reading acceptance baseline.\n",
+              "inputs_json": "{\"job_id\":\"studio_job_e67a1ddea8f94c868b86b1453020c5fc\",\"studio_revision\":1}",
+              "created_at": "2026-10-02T18:44:45.943940+00:00"
+            }
+          ],
+          "history": [
+            {
+              "history_id": "history_3414c730cb9748588fe80929240c1a5d",
+              "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+              "status": "PLANNING",
+              "blocker": null,
+              "next_step": null,
+              "reason": "Created",
+              "revision": 1,
+              "created_at": "2026-10-02T18:44:43.315831+00:00"
+            }
+          ],
+          "submissions": []
+        },
+        "workflow_stage": "WHOLE_PAPER_REVIEW",
+        "document_revision": 5,
+        "document": {
+          "abstract": "",
+          "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+          "schema_version": 1,
+          "sections": [
+            {
+              "id": "section_089fd87f868049b192b49039276502fb",
+              "paragraphs": [
+                {
+                  "asset_ids": [],
+                  "formulas": [],
+                  "id": "paragraph_9f125f7e546a48a7a52202c7fa0d3f6d",
+                  "intents": [
+                    {
+                      "id": "intent_41125729292e40b083d74a0a14a25e24",
+                      "label": "Research Context",
+                      "thoughts": [
+                        {
+                          "citation_mode": "NONE",
+                          "citations": [],
+                          "id": "thought_reading",
+                          "text": "Author-owned reading acceptance baseline. A structure edit remains separate from the generated version."
+                        }
+                      ]
+                    }
+                  ],
+                  "paradigm": "",
+                  "purpose": ""
+                }
+              ],
+              "role": "Motivation",
+              "title": "Introduction"
+            }
+          ],
+          "title": "reading 界面验收（隔离数据）",
+          "venue": ""
+        },
+        "active_generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+        "last_generated_revision": 1,
+        "generated_is_stale": true,
+        "assets": [],
+        "latest_job": {
+          "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+          "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+          "job_kind": "GENERATE",
+          "status": "SUCCEEDED",
+          "input_revision": 1,
+          "created_at": "2026-10-02T18:44:43.357308+00:00",
+          "started_at": "2026-10-02T18:44:43.364050+00:00",
+          "completed_at": "2026-10-02T18:44:45.949942+00:00",
+          "request": {},
+          "result": {
+            "artifacts": [
+              {
+                "artifact_id": "artifact_c554014632f64780b1f2ecd9b0dee6cc",
+                "kind": "MARKDOWN",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.md"
+              },
+              {
+                "artifact_id": "artifact_1405e08949eb4e8eac3d94fe4c91a3fa",
+                "kind": "GENERATED_JSON",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\generated.json"
+              },
+              {
+                "artifact_id": "artifact_971c13fe3a27449ba8469bddc35eb2fa",
+                "kind": "TEX",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.tex"
+              },
+              {
+                "artifact_id": "artifact_66ed50bedb8443d68a61cd919f499ccd",
+                "kind": "BIB",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\references.bib"
+              },
+              {
+                "artifact_id": "artifact_f6f67deaaffb4a2390847b646988d13d",
+                "kind": "PDF",
+                "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.pdf"
+              }
+            ],
+            "generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd"
+          },
+          "error": null
+        },
+        "artifacts": [
+          {
+            "artifact_id": "artifact_971c13fe3a27449ba8469bddc35eb2fa",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "TEX",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.tex",
+            "sha256": "945d6787a8e2de103486af823a97eb1be3487fcf52ae8820d6f53c08ffa30662",
+            "size_bytes": 349,
+            "created_at": "2026-10-02T18:44:45.937935+00:00"
+          },
+          {
+            "artifact_id": "artifact_66ed50bedb8443d68a61cd919f499ccd",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "BIB",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\references.bib",
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+            "size_bytes": 0,
+            "created_at": "2026-10-02T18:44:45.937935+00:00"
+          },
+          {
+            "artifact_id": "artifact_f6f67deaaffb4a2390847b646988d13d",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "PDF",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.pdf",
+            "sha256": "1282aa4a24cb44ec4f6fa856f4bab83dfc795b37a44eea28c8be9339aa74d78b",
+            "size_bytes": 7396,
+            "created_at": "2026-10-02T18:44:45.937935+00:00"
+          },
+          {
+            "artifact_id": "artifact_1405e08949eb4e8eac3d94fe4c91a3fa",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "GENERATED_JSON",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\generated.json",
+            "sha256": "2895be780e781021572f3a7d745d711f924e91908570b1d87fd19de863ec9b09",
+            "size_bytes": 442,
+            "created_at": "2026-10-02T18:44:45.936935+00:00"
+          },
+          {
+            "artifact_id": "artifact_c554014632f64780b1f2ecd9b0dee6cc",
+            "job_id": "studio_job_e67a1ddea8f94c868b86b1453020c5fc",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "document_revision": 1,
+            "artifact_kind": "MARKDOWN",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\writing-studio\\manuscript_6d6a4ed3c59a40f08be2d7e68da63b11\\generated\\studio_job_e67a1ddea8f94c868b86b1453020c5fc\\manuscript.md",
+            "sha256": "ed04c788f552a72cc6d66ca2695b37dcef4826ac2842311aaefc149733f190bf",
+            "size_bytes": 106,
+            "created_at": "2026-10-02T18:44:45.932431+00:00"
+          }
+        ],
+        "findings": [
+          {
+            "finding_id": "finding_done_fixture",
+            "manuscript_id": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11",
+            "generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+            "finding_kind": "EDITORIAL",
+            "severity": "INFO",
+            "detail": "Isolated acceptance finding: Done must leave this OPEN.",
+            "source": "TEST_FIXTURE",
+            "status": "OPEN",
+            "created_at": "2026-10-02T23:31:56.338947+00:00",
+            "resolved_at": null,
+            "anchor": {
+              "type": "thought",
+              "id": "thought_reading"
+            }
+          }
+        ],
+        "template_instances": []
+      }
+    }
+  ],
+  "frontend_http_status": 200,
+  "manuscript_id": "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b",
+  "actual_model_elapsed_seconds": 8.97,
+  "document_unchanged_by_discussion": true,
+  "actual_model_contract": {
+    "actual_model": "gemini-3.7-flash",
+    "estimated_input_tokens": 714,
+    "prompt_version": "writing-chat-v2-author-decisions",
+    "status": "SUCCESS",
+    "task": "writing_chat",
+    "tier": "standard",
+    "usage": {
+      "completion_tokens": 266,
+      "prompt_tokens": 1052,
+      "total_tokens": 1319
+    }
+  },
+  "partial_adoption_verified": true,
+  "exact_retry_verified": true,
+  "reject_does_not_edit": true,
+  "remainder_verified": true,
+  "original_author_thoughts_citations_ids_preserved": true,
+  "original_context_revision": 1,
+  "final_author_revision": 3,
+  "suggestion_id": "suggestion_c74bd8c6553a4020ac071049af6c1bd2",
+  "message_id": "message_7656f0e72b0f4ef7aa2c7b02c9d71bb2",
+  "existing_two_manuscripts_unchanged": true
+}

@@ -1,0 +1,14 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_templates.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_hierarchy.py']
+RUF059 Unpacked variable `preview` is never used
+  --> tests\test_studio_hierarchy.py:20:28
+   |
+19 | def nested_fixture(root):
+20 |     service, ms, original, preview, request = fixture(root)
+   |                            ^^^^^^^
+21 |     document = deepcopy(original)
+22 |     parent = document['sections'][0]
+   |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 1 error.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

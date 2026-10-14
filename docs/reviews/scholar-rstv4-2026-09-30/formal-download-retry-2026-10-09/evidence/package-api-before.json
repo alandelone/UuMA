@@ -1,0 +1,718 @@
+[
+  {
+    "package_id": "submission_package_462feff00b234357a635a3e63254aff4",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_aed8b558d0084f2eb51c9608fad15d72",
+    "created_at": "2026-10-04T04:50:32.956031+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+    "round_number": 2,
+    "baseline_manuscript_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+    "unresolved_comment_ids": [],
+    "location_summary": {
+      "changed_text_rows_with_final_location": 1,
+      "layout_status": "EXTRACTED",
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "retained_text_rows_with_final_location": 1,
+      "rows": 2,
+      "semantic_or_response_claims_approved": false,
+      "unknown_or_unattributed_rows": 0
+    },
+    "files": [
+      {
+        "name": "author-structure.json",
+        "available": true,
+        "size_bytes": 875,
+        "sha256": "89f36494af08ae46283ae171b687f38ee6eb8abbe1fe42b723be1f4a825fd016"
+      },
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": 1270,
+        "sha256": "a7ba25d25aa1c2859d768d57331eb367af99747e83ea8bc9a965d81988887afe"
+      },
+      {
+        "name": "change-realization-map.json",
+        "available": true,
+        "size_bytes": 13345,
+        "sha256": "cf802d259688a5ad3cc316137d07cfc69527b2610853b36468d47606e80f73c3"
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": 199,
+        "sha256": "134286899f172c33289bfecf2a45d88996d01f66dcbeafee19ed4efca0d26887"
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": 8144,
+        "sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754"
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": 458,
+        "sha256": "97328b054be8dae896c82983d52cca25128a56f07dee56a8cbaa6e4d24b401a8"
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": 393,
+        "sha256": "16facb9b12204dd3de53ae779c8618e03a507f53c4d6e4c56107d21f3a6f3636"
+      },
+      {
+        "name": "final-compiled-layout.xhtml",
+        "available": true,
+        "size_bytes": 4846,
+        "sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1"
+      },
+      {
+        "name": "generated.json",
+        "available": true,
+        "size_bytes": 1326,
+        "sha256": "e38186f7223242eaf092e2d35e04ea912c15706aefb01496a2635baba50455be"
+      },
+      {
+        "name": "generation-model-calls.json",
+        "available": true,
+        "size_bytes": 2641,
+        "sha256": "5c1f65bceee1e8f7971320c78ad59eaa9f3b0197fe314e100444da72f960b0ee"
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": 407,
+        "sha256": "84bcec77b53fbbc186c957a19d65911448cf2a5221e137170b0fdc9bdb306f89"
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "response-review-history.json",
+        "available": true,
+        "size_bytes": 19325,
+        "sha256": "6013449842965cb182f80e9d3bd15206ab130de739b50935c488ae8aaacef47e"
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": 268,
+        "sha256": "bf3e3fc19e57fa2d0a70ae7203045f86d7edb5e093d428191540486f07d24c7e"
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": 2,
+        "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+      }
+    ],
+    "integrity_status": "RECORDED_AT_PACKAGING"
+  },
+  {
+    "package_id": "submission_package_6892c7e2a640445384ba82d7784a9ba8",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_bf3cc5560a20459eb0bd3e59cf55a065",
+    "created_at": "2026-10-04T03:48:56.720234+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+    "round_number": 2,
+    "baseline_manuscript_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+    "unresolved_comment_ids": [
+      "comment_ff953cae8bf34b65add52bc0bc2c0af2"
+    ],
+    "location_summary": {
+      "changed_text_rows_with_final_location": 1,
+      "layout_status": "EXTRACTED",
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "retained_text_rows_with_final_location": 1,
+      "rows": 2,
+      "semantic_or_response_claims_approved": false,
+      "unknown_or_unattributed_rows": 0
+    },
+    "files": [
+      {
+        "name": "author-structure.json",
+        "available": true,
+        "size_bytes": 875,
+        "sha256": "89f36494af08ae46283ae171b687f38ee6eb8abbe1fe42b723be1f4a825fd016"
+      },
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": 1270,
+        "sha256": "a7ba25d25aa1c2859d768d57331eb367af99747e83ea8bc9a965d81988887afe"
+      },
+      {
+        "name": "change-realization-map.json",
+        "available": true,
+        "size_bytes": 13345,
+        "sha256": "cf802d259688a5ad3cc316137d07cfc69527b2610853b36468d47606e80f73c3"
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": 199,
+        "sha256": "134286899f172c33289bfecf2a45d88996d01f66dcbeafee19ed4efca0d26887"
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": 8144,
+        "sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754"
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": 458,
+        "sha256": "97328b054be8dae896c82983d52cca25128a56f07dee56a8cbaa6e4d24b401a8"
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": 143,
+        "sha256": "908c88a09ce14e8497fbfc1e2bf63cf1add27902a2cd8e44f82380003a12c3b1"
+      },
+      {
+        "name": "final-compiled-layout.xhtml",
+        "available": true,
+        "size_bytes": 4846,
+        "sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1"
+      },
+      {
+        "name": "generated.json",
+        "available": true,
+        "size_bytes": 1326,
+        "sha256": "e38186f7223242eaf092e2d35e04ea912c15706aefb01496a2635baba50455be"
+      },
+      {
+        "name": "generation-model-calls.json",
+        "available": true,
+        "size_bytes": 2641,
+        "sha256": "5c1f65bceee1e8f7971320c78ad59eaa9f3b0197fe314e100444da72f960b0ee"
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": 407,
+        "sha256": "84bcec77b53fbbc186c957a19d65911448cf2a5221e137170b0fdc9bdb306f89"
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": 123,
+        "sha256": "29f39d1a857ba98dfcdc826737d256a633d075fa66944e7bf411740c437a7e1d"
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": 44,
+        "sha256": "e2606df8c8412a78748ad04c733c2a5dfc86a58fb6296fb7c9c2fbcd6e5ccdae"
+      }
+    ],
+    "integrity_status": "RECORDED_AT_PACKAGING"
+  },
+  {
+    "package_id": "submission_package_d9568167d148448f949f1bd4e1d9169b",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_1c1a006fa39d429a8510adfb985dd56c",
+    "created_at": "2026-10-04T03:48:55.876384+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_8153edd05532410b837cd32df3f200e5",
+    "round_number": 1,
+    "baseline_manuscript_version_id": "manuscript_version_71c1a930a0cc4b52844b33e95159ead1",
+    "unresolved_comment_ids": [
+      "comment_e9bd59c253334672a59d2516df681802"
+    ],
+    "location_summary": {
+      "changed_text_rows_with_final_location": 2,
+      "layout_status": "EXTRACTED",
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "retained_text_rows_with_final_location": 0,
+      "rows": 2,
+      "semantic_or_response_claims_approved": false,
+      "unknown_or_unattributed_rows": 0
+    },
+    "files": [
+      {
+        "name": "author-structure.json",
+        "available": true,
+        "size_bytes": 875,
+        "sha256": "89f36494af08ae46283ae171b687f38ee6eb8abbe1fe42b723be1f4a825fd016"
+      },
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": 1258,
+        "sha256": "60d6512fbed290fce1b6d5f300f0ccba3faba0a4c73d39f9c4fa7be73ea28eef"
+      },
+      {
+        "name": "change-realization-map.json",
+        "available": true,
+        "size_bytes": 13333,
+        "sha256": "a43640e619788d0b5bf453016c5f269ac1ddd0d8bd2bb86a5dd2241686c36239"
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": 199,
+        "sha256": "134286899f172c33289bfecf2a45d88996d01f66dcbeafee19ed4efca0d26887"
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": 8144,
+        "sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754"
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": 458,
+        "sha256": "97328b054be8dae896c82983d52cca25128a56f07dee56a8cbaa6e4d24b401a8"
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": 143,
+        "sha256": "2b26da301c51d2f6c62bb1bab58f40975ee157e0859123387736aac0100c1ae7"
+      },
+      {
+        "name": "final-compiled-layout.xhtml",
+        "available": true,
+        "size_bytes": 4846,
+        "sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1"
+      },
+      {
+        "name": "generated.json",
+        "available": true,
+        "size_bytes": 1326,
+        "sha256": "e38186f7223242eaf092e2d35e04ea912c15706aefb01496a2635baba50455be"
+      },
+      {
+        "name": "generation-model-calls.json",
+        "available": true,
+        "size_bytes": 2641,
+        "sha256": "5c1f65bceee1e8f7971320c78ad59eaa9f3b0197fe314e100444da72f960b0ee"
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": 406,
+        "sha256": "ee7e9323e4ca0ef9a27963ab04a91425e6ddc3fcff514a9a3e534114fd16bc4f"
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": 123,
+        "sha256": "1d959dd1fb66716e96b7146db5f310ebcc8afe637832121f969873e5e65d3035"
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": 44,
+        "sha256": "2ecc4b21f3210ea7a3b52294ddbba38843b441513ceca0079fab706c4b569439"
+      }
+    ],
+    "integrity_status": "RECORDED_AT_PACKAGING"
+  },
+  {
+    "package_id": "submission_package_0910bfb9aace4278a2096566f024b147",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_6648869777114891b5e02a186491d853",
+    "created_at": "2026-10-04T01:41:45.696363+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+    "round_number": 2,
+    "baseline_manuscript_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+    "unresolved_comment_ids": [
+      "comment_ff953cae8bf34b65add52bc0bc2c0af2"
+    ],
+    "location_summary": {
+      "changed_text_rows_with_final_location": 1,
+      "layout_status": "EXTRACTED",
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "retained_text_rows_with_final_location": 1,
+      "rows": 2,
+      "semantic_or_response_claims_approved": false,
+      "unknown_or_unattributed_rows": 0
+    },
+    "files": [
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "change-realization-map.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "final-compiled-layout.xhtml",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      }
+    ],
+    "integrity_status": "LEGACY_ORIGINAL_DIGEST_UNAVAILABLE"
+  },
+  {
+    "package_id": "submission_package_ad6fb128dc534109aa3f1a0b73bdea94",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_163c9044b8b9451ebd5aac1fa302b347",
+    "created_at": "2026-10-04T01:41:45.107381+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_8153edd05532410b837cd32df3f200e5",
+    "round_number": 1,
+    "baseline_manuscript_version_id": "manuscript_version_71c1a930a0cc4b52844b33e95159ead1",
+    "unresolved_comment_ids": [
+      "comment_e9bd59c253334672a59d2516df681802"
+    ],
+    "location_summary": {
+      "changed_text_rows_with_final_location": 2,
+      "layout_status": "EXTRACTED",
+      "line_number_kind": "visible_text_line_from_top_of_physical_page",
+      "pdf_sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "retained_text_rows_with_final_location": 0,
+      "rows": 2,
+      "semantic_or_response_claims_approved": false,
+      "unknown_or_unattributed_rows": 0
+    },
+    "files": [
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "change-realization-map.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "final-compiled-layout.xhtml",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      }
+    ],
+    "integrity_status": "LEGACY_ORIGINAL_DIGEST_UNAVAILABLE"
+  },
+  {
+    "package_id": "submission_package_9ac83b66a3644e65bc0e4f9946c5c389",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_cccc599740d846bcb370d4181655455a",
+    "created_at": "2026-10-04T00:49:27.854952+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+    "round_number": 2,
+    "baseline_manuscript_version_id": "manuscript_version_25bb720476d542f0b541661c3555a6f9",
+    "unresolved_comment_ids": [
+      "comment_ff953cae8bf34b65add52bc0bc2c0af2"
+    ],
+    "location_summary": null,
+    "files": [
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      }
+    ],
+    "integrity_status": "LEGACY_ORIGINAL_DIGEST_UNAVAILABLE"
+  },
+  {
+    "package_id": "submission_package_303e2f3c684946fbb25c455e43badc65",
+    "manuscript_id": "manuscript_bd7568923be94a2c8510d176010e4cca",
+    "job_id": "studio_job_e0f0f43108554178aa99d13329beb4b3",
+    "created_at": "2026-10-04T00:49:26.772790+00:00",
+    "input_revision": 3,
+    "generated_version_id": "manuscript_version_9310b0716451416783ae5b2679304586",
+    "generated_version_number": 3,
+    "review_round_id": "review_round_8153edd05532410b837cd32df3f200e5",
+    "round_number": 1,
+    "baseline_manuscript_version_id": "manuscript_version_71c1a930a0cc4b52844b33e95159ead1",
+    "unresolved_comment_ids": [
+      "comment_e9bd59c253334672a59d2516df681802"
+    ],
+    "location_summary": null,
+    "files": [
+      {
+        "name": "change-location-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.pdf",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "clean-manuscript.tex",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "comment-change-map.csv",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "manifest.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "marked-comparison.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "references.bib",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "response-to-reviewers.md",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      },
+      {
+        "name": "unresolved-comments.json",
+        "available": true,
+        "size_bytes": null,
+        "sha256": null
+      }
+    ],
+    "integrity_status": "LEGACY_ORIGINAL_DIGEST_UNAVAILABLE"
+  }
+]

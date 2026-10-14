@@ -1,0 +1,25 @@
+{
+  "status": "PASS_OWNED_NATIVE_GATEWAY_REFRESH",
+  "verified_old_processes": [
+    {
+      "ProcessId": 104768,
+      "ParentProcessId": 81104,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-v1.py serve",
+      "CreationDate": "/Date(1791559408227)/"
+    },
+    {
+      "ProcessId": 81104,
+      "ParentProcessId": 8172,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-v1.py serve",
+      "CreationDate": "/Date(1791559408210)/"
+    }
+  ],
+  "new_backend_root_pid": 104836,
+  "all109rows_preserved": true,
+  "both_services_explicit_software_fixture": true,
+  "previous_recorded_real_reply_preserved": 1,
+  "new_remote_model_calls_by_refresh": 0,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2",
+  "frontend_untouched": true,
+  "other_workers_untouched": true
+}

@@ -1,0 +1,7 @@
+{
+  "src/rstv4/model_gateway.py": "1abcaa9a7c909ddee870bc383162d1236a38b691d699c4ebaf0400a09e0d2f95",
+  "src/rstv4/acquisition_worker.py": "155da7ced179a9955616c2076f6db575876ecfb53a6d2284e3192b437db4aa91",
+  "src/rstv4/fieldkg_workspace.py": "8b92a6add00cc182aec03a4474ffbc738d6a2ff80b914686727c082d1b645636",
+  "src/rstv4/research_views.py": "2271bedb8db025c64dba84641190031024237bfbe58e0a821ce2d8c15f4f1bc7",
+  "src/rstv4/catalog_research_workspaces.js": "9ccb13d081dc1937ac7ad631da34ccbeb750d14f0334a54153c5c63b21293377"
+}

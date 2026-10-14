@@ -1,0 +1,450 @@
+{
+  "scope": "Resolved, audited AI-source scientific windows with paired complete candidates and nonzero reference claims only",
+  "full_252_case_benchmark_acceptance": false,
+  "gain_proven": false,
+  "full_benchmark_failure_denominators": {
+    "AUDITED_AI_SCIENTIFIC_COMPARISON": 106,
+    "SOURCE_REFERENCE_UNACCEPTED": 124,
+    "AUDITED_UNRESOLVED_SCIENCE": 9,
+    "ORIGINAL_EXTRACTION_CONTRACT_FAILURE": 8,
+    "EVALUATION_CONTRACT_FAILURE": 5
+  },
+  "available_scientific_window_pairs": 41,
+  "available_paper_clusters": 10,
+  "administrative_zero_claim_windows_excluded_from_this_diagnostic_only": true,
+  "original_extraction_failures_and_uncertain_source_cases_retained_in_main_252_scope": true,
+  "endpoint_results": {
+    "layer1_coverage": {
+      "baseline_paper_mean": 0.9162096391034584,
+      "optimized_paper_mean": 0.9586448576253644,
+      "optimized_minus_baseline": 0.04243521852190598,
+      "conditional_exchangeability_sign_flip_p": 0.28125,
+      "paper_clusters": 10,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "qualification_recall": {
+      "baseline_paper_mean": 0.9162096391034584,
+      "optimized_paper_mean": 0.9586448576253644,
+      "optimized_minus_baseline": 0.04243521852190598,
+      "conditional_exchangeability_sign_flip_p": 0.28125,
+      "paper_clusters": 10,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "layer2_macro_f1": {
+      "baseline_paper_mean": 0.07393454299690479,
+      "optimized_paper_mean": 0.06980897914721443,
+      "optimized_minus_baseline": -0.0041255638496903455,
+      "conditional_exchangeability_sign_flip_p": 0.875,
+      "paper_clusters": 10,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "layer3_macro_f1": {
+      "baseline_paper_mean": 0.39540019243128444,
+      "optimized_paper_mean": 0.41248564027551,
+      "optimized_minus_baseline": 0.017085447844225537,
+      "conditional_exchangeability_sign_flip_p": 0.810546875,
+      "paper_clusters": 10,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "layer4_accuracy": {
+      "baseline_paper_mean": 0.7573200620927893,
+      "optimized_paper_mean": 0.7693666644803009,
+      "optimized_minus_baseline": 0.012046602387511485,
+      "conditional_exchangeability_sign_flip_p": 0.625,
+      "paper_clusters": 10,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "unsupported_claim_rate": {
+      "baseline_paper_mean": 0.0038995726495726496,
+      "optimized_paper_mean": 0.001740314769975787,
+      "optimized_minus_baseline": -0.002159257879596863,
+      "conditional_exchangeability_sign_flip_p": 0.75,
+      "paper_clusters": 10,
+      "higher_is_better": false,
+      "conditional_holm_adjusted_p": 1.0
+    },
+    "fixed_composite_window_mean": {
+      "baseline_paper_mean": 0.6591019382343135,
+      "optimized_paper_mean": 0.6824981487216992,
+      "optimized_minus_baseline": 0.023396210487385678,
+      "conditional_exchangeability_sign_flip_p": 0.513671875,
+      "paper_clusters": 10,
+      "higher_is_better": true,
+      "conditional_holm_adjusted_p": 1.0
+    }
+  },
+  "actual_window_keys": [
+    [
+      "paper_95eebae164cc42fd6005",
+      0
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      7
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      13
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      15
+    ],
+    [
+      "paper_95eebae164cc42fd6005",
+      16
+    ],
+    [
+      "paper_964b88669cfe422e7aef",
+      0
+    ],
+    [
+      "paper_ad7ea2de394ae32d2ed2",
+      0
+    ],
+    [
+      "paper_ad7ea2de394ae32d2ed2",
+      1
+    ],
+    [
+      "paper_ad7ea2de394ae32d2ed2",
+      5
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      1
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      2
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      4
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      7
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      8
+    ],
+    [
+      "paper_19f55daa7f17ede2858b",
+      15
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      0
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      1
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      3
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      4
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      5
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      7
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      8
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      9
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      10
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      12
+    ],
+    [
+      "paper_b637a4adf835d6357900",
+      16
+    ],
+    [
+      "paper_2f81cb801401904d4767",
+      1
+    ],
+    [
+      "paper_2f81cb801401904d4767",
+      5
+    ],
+    [
+      "paper_2f81cb801401904d4767",
+      11
+    ],
+    [
+      "paper_6dc9f2bdd81d9dcf4a46",
+      3
+    ],
+    [
+      "paper_6dc9f2bdd81d9dcf4a46",
+      7
+    ],
+    [
+      "paper_603603415f45919cbdc8",
+      1
+    ],
+    [
+      "paper_603603415f45919cbdc8",
+      6
+    ],
+    [
+      "paper_fb88f52bf6ea0323e952",
+      0
+    ],
+    [
+      "paper_fb88f52bf6ea0323e952",
+      3
+    ],
+    [
+      "paper_fb88f52bf6ea0323e952",
+      8
+    ],
+    [
+      "paper_fb88f52bf6ea0323e952",
+      16
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      2
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      4
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      6
+    ],
+    [
+      "paper_75abf75ded7b6df0c2b5",
+      11
+    ]
+  ],
+  "per_paper_metrics": {
+    "paper_95eebae164cc42fd6005": {
+      "baseline": {
+        "layer1_coverage": 0.6981132075471698,
+        "qualification_recall": 0.6981132075471698,
+        "layer2_macro_f1": 0.07142857142857142,
+        "layer3_macro_f1": 0.3872173377481345,
+        "layer4_accuracy": 0.8095238095238095,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.5575670112781955
+      },
+      "optimized": {
+        "layer1_coverage": 0.6981132075471698,
+        "qualification_recall": 0.6981132075471698,
+        "layer2_macro_f1": 0.07142857142857142,
+        "layer3_macro_f1": 0.49242459651666814,
+        "layer4_accuracy": 0.8095238095238095,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.5609042056708724
+      }
+    },
+    "paper_964b88669cfe422e7aef": {
+      "baseline": {
+        "layer1_coverage": 0.6285714285714286,
+        "qualification_recall": 0.6285714285714286,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.03333333333333333,
+        "layer4_accuracy": 0.75,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.4020238095238095
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.044444444444444446,
+        "layer3_macro_f1": 0.4796037296037296,
+        "layer4_accuracy": 0.5833333333333334,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6423096348096348
+      }
+    },
+    "paper_ad7ea2de394ae32d2ed2": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.17436448263515933,
+        "layer3_macro_f1": 0.386387402012402,
+        "layer4_accuracy": 0.5925925925925926,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6776748578219166
+      },
+      "optimized": {
+        "layer1_coverage": 0.9607843137254902,
+        "qualification_recall": 0.9607843137254902,
+        "layer2_macro_f1": 0.01680672268907563,
+        "layer3_macro_f1": 0.1865546218487395,
+        "layer4_accuracy": 0.8148148148148148,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.5936125911125911
+      }
+    },
+    "paper_19f55daa7f17ede2858b": {
+      "baseline": {
+        "layer1_coverage": 0.9482758620689655,
+        "qualification_recall": 0.9482758620689655,
+        "layer2_macro_f1": 0.09640522875816994,
+        "layer3_macro_f1": 0.3333251101863095,
+        "layer4_accuracy": 0.9642857142857143,
+        "unsupported_claim_rate": 0.03418803418803419,
+        "fixed_composite_window_mean": 0.73375565567612
+      },
+      "optimized": {
+        "layer1_coverage": 0.9827586206896551,
+        "qualification_recall": 0.9827586206896551,
+        "layer2_macro_f1": 0.014814814814814815,
+        "layer3_macro_f1": 0.36484888692319034,
+        "layer4_accuracy": 0.9642857142857143,
+        "unsupported_claim_rate": 0.00847457627118644,
+        "fixed_composite_window_mean": 0.7666810846560846
+      }
+    },
+    "paper_b637a4adf835d6357900": {
+      "baseline": {
+        "layer1_coverage": 0.9830508474576272,
+        "qualification_recall": 0.9830508474576272,
+        "layer2_macro_f1": 0.0777027027027027,
+        "layer3_macro_f1": 0.32641952614379083,
+        "layer4_accuracy": 0.859504132231405,
+        "unsupported_claim_rate": 0.004807692307692308,
+        "fixed_composite_window_mean": 0.696677849302229
+      },
+      "optimized": {
+        "layer1_coverage": 0.9774011299435028,
+        "qualification_recall": 0.9774011299435028,
+        "layer2_macro_f1": 0.1461038961038961,
+        "layer3_macro_f1": 0.44073809040301964,
+        "layer4_accuracy": 0.8429752066115702,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7226597657243431
+      }
+    },
+    "paper_2f81cb801401904d4767": {
+      "baseline": {
+        "layer1_coverage": 0.9782608695652174,
+        "qualification_recall": 0.9782608695652174,
+        "layer2_macro_f1": 0.24166666666666667,
+        "layer3_macro_f1": 0.5729582742187784,
+        "layer4_accuracy": 0.5151515151515151,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7076682982912432
+      },
+      "optimized": {
+        "layer1_coverage": 0.967391304347826,
+        "qualification_recall": 0.967391304347826,
+        "layer2_macro_f1": 0.19047619047619047,
+        "layer3_macro_f1": 0.33382848088730444,
+        "layer4_accuracy": 0.5757575757575758,
+        "unsupported_claim_rate": 0.008928571428571428,
+        "fixed_composite_window_mean": 0.6522361600215046
+      }
+    },
+    "paper_6dc9f2bdd81d9dcf4a46": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.03333333333333333,
+        "layer3_macro_f1": 0.5468684321143338,
+        "layer4_accuracy": 0.625,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6571942486672089
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.01818181818181818,
+        "layer3_macro_f1": 0.38095238095238093,
+        "layer4_accuracy": 0.625,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6455992260427745
+      }
+    },
+    "paper_603603415f45919cbdc8": {
+      "baseline": {
+        "layer1_coverage": 0.9807692307692307,
+        "qualification_recall": 0.9807692307692307,
+        "layer2_macro_f1": 0.044444444444444446,
+        "layer3_macro_f1": 0.3287037037037037,
+        "layer4_accuracy": 0.85,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6317336353733413
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.19583333333333333,
+        "layer3_macro_f1": 0.32375992063492065,
+        "layer4_accuracy": 0.85,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.6768174603174604
+      }
+    },
+    "paper_fb88f52bf6ea0323e952": {
+      "baseline": {
+        "layer1_coverage": 0.945054945054945,
+        "qualification_recall": 0.945054945054945,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.5951937689969605,
+        "layer4_accuracy": 0.8571428571428571,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7679904916512059
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.6278183608126111,
+        "layer4_accuracy": 0.8571428571428571,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7947283231474408
+      }
+    },
+    "paper_75abf75ded7b6df0c2b5": {
+      "baseline": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.4435950358550978,
+        "layer4_accuracy": 0.75,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7587335247578655
+      },
+      "optimized": {
+        "layer1_coverage": 1.0,
+        "qualification_recall": 1.0,
+        "layer2_macro_f1": 0.0,
+        "layer3_macro_f1": 0.49432733417253544,
+        "layer4_accuracy": 0.7708333333333334,
+        "unsupported_claim_rate": 0.0,
+        "fixed_composite_window_mean": 0.7694330357142858
+      }
+    }
+  },
+  "statistical_limitations": "Descriptive available-case diagnostic. Sources/grades are AI references, not expert gold. Missingness is not random. Sign-flip p values assume within-paper exchangeability and do not establish whole-benchmark or population superiority."
+}

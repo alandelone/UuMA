@@ -1,0 +1,30 @@
+--- G01/studio-workspace.tsx
++++ G02/studio-workspace.tsx
+@@ -1576,7 +1576,27 @@
+     setPinnedReference(null);
+     setPinnedReferenceVersion(null);
+     setShowRight(true);
++    setStatusMessage('');
+     try {
++      const message = chat.find((item) => item.message_id === messageId);
++      if (message?.quoted._research_discussion) {
++        const scope = JSON.stringify(['STUDIO', workspace.manuscript.manuscript_id]);
++        const history = await sharedDiscussionRequest(`/api/catalog/discussion/messages/${encodeURIComponent(messageId)}/context?scope=${encodeURIComponent(scope)}`) as { sources: Array<LocatedSource['source']> };
++        if (request !== sourcePreviewRequestRef.current) return;
++        const versions = history.sources.flatMap((source) => source.context.record.generated ? [source.context.record.generated] : []);
++        // The fixed model input gives primary sources precedence over comparison sources.
++        const match = versions.flatMap((version) => {
++          const reference = version.references.find((item) => item.evidence_id === evidenceId);
++          return reference ? [{ version, reference }] : [];
++        })[0];
++        if (match) {
++          setPinnedReference(match.reference);
++          setPinnedReferenceVersion({ manuscriptId: match.version.manuscript_id,
++            id: match.version.generated_version_id, version: match.version.version });
++        } else if (versions.length) throw new Error('原讨论没有保存这条引用的来源快照；无法回查原来源。');
++        else setSourceQuery(evidenceId);
++        return;
++      }
+       const original = await studioApi.chatContext(workspace.manuscript.manuscript_id, messageId);
+       if (request !== sourcePreviewRequestRef.current) return;
+       if (original.generated) {

@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from uuma.commerce_adapters import (
+    LazadaMYAdapter,
     PinduoduoOrderAdapter,
     ShopeeMYAdapter,
     TaobaoOrderAdapter,
@@ -141,4 +142,51 @@ def test_pinduoduo_adapter_parses_five_sample_cases():
     assert ord5["status"] == "待发货"
     assert ord5["shipping_fee"] == 6.0
     assert ord5["total_amount"] == 39.0
+
+
+def test_lazada_adapter_parses_sample_cases():
+    html_path = FIXTURES_DIR / "lazada_orders.html"
+    assert html_path.exists(), "Lazada orders HTML fixture missing."
+    html_content = html_path.read_text(encoding="utf-8")
+
+    orders = LazadaMYAdapter.parse_orders_html(html_content)
+    assert len(orders) == 4, f"Expected 4 Lazada orders, got {len(orders)}."
+
+    # Sample 1: One order with multiple items (一单多行)
+    ord1 = next(o for o in orders if o["order_id"] == "261004LZ889001")
+    assert ord1["status"] == "Delivered"
+    assert ord1["currency"] == "MYR"
+    assert ord1["total_amount"] == 48.70
+    assert ord1["shipping_fee"] == 4.50
+    assert ord1["shop_name"] == "Maker Lab Official Store"
+    assert len(ord1["items"]) == 2
+    assert "ESP32-WROOM-32D" in ord1["items"][0]["product_name"]
+    assert ord1["items"][0]["quantity"] == 2.0
+    assert ord1["items"][0]["unit_price"] == 18.50
+    assert ord1["items"][0]["ai_category_suggestion"] == "electronics"
+    assert "OLED" in ord1["items"][1]["product_name"]
+    assert ord1["items"][1]["unit_price"] == 7.20
+
+    # Sample 2: SKU differences
+    ord2 = next(o for o in orders if o["order_id"] == "261004LZ889002")
+    assert ord2["status"] == "Shipped"
+    assert len(ord2["items"]) == 2
+    assert "100uF" in ord2["items"][0]["variant_name"]
+    assert "470uF" in ord2["items"][1]["variant_name"]
+    assert ord2["items"][1]["quantity"] == 2.0
+
+    # Sample 3: Multi-package structure (Package 1 of 2)
+    ord3 = next(o for o in orders if o["order_id"] == "261004LZ889003")
+    assert ord3["status"] == "Processing"
+    assert len(ord3["items"]) == 2
+    assert "Soldering Station" in ord3["items"][0]["product_name"]
+    assert ord3["items"][0]["ai_category_suggestion"] == "tool"
+    assert "Solder Wire" in ord3["items"][1]["product_name"]
+    assert ord3["items"][1]["ai_category_suggestion"] == "consumable"
+
+    # Sample 4: Cancelled order
+    ord4 = next(o for o in orders if o["order_id"] == "261004LZ889004")
+    assert ord4["status"] == "Cancelled"
+    assert ord4["total_amount"] == 0.0
+
 

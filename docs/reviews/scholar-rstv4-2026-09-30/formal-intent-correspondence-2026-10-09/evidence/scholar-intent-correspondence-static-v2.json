@@ -1,0 +1,111 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/rstv4/studio_correspondence.py",
+      "src/rstv4/studio.py",
+      "src/rstv4/studio_context.py",
+      "src/rstv4/studio_structure.py",
+      "src/rstv4/studio_templates.py",
+      "src/rstv4/studio_read_views.py",
+      "tests/test_studio_correspondence.py",
+      "tests/test_studio_templates.py"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd",
+      "--type-aware",
+      "--deny-warnings",
+      "lib/studio-correspondence.ts",
+      "lib/studio-blocks.ts",
+      "lib/studio-types.ts",
+      "components/studio-intent-correspondence.tsx",
+      "components/studio-workspace.tsx"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "git",
+      "diff",
+      "--check"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-correspondence.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-template-placement.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-blocks.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-block-controls.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-structure.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-hierarchy.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-undo-history.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-discussion-history.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-response-review.cjs"
+    ],
+    "exit_code": 1
+  }
+]

@@ -1,0 +1,224 @@
+"""Real SQLite receipts and parent chains; the model is explicitly a fixture."""
+from __future__ import annotations
+
+import json
+import sqlite3
+
+import pytest
+from test_research_discussions import context, payload, unit_target, wait
+from test_research_discussions import environment as _environment
+from test_research_discussions import fieldkg_setup as _fieldkg_setup
+
+from rstv4.fieldkg import digest
+
+environment = _environment
+fieldkg_setup = _fieldkg_setup
+
+
+def round_trip(client, bound, request_id, **values):
+    body = payload(bound, request_id=request_id, **values)
+    response = client.post("/api/catalog/discussion/messages", json=body)
+    assert response.status_code == 202, response.text
+    return body, wait(client, request_id, bound)
+
+
+def test_followup_contains_exact_original_question_reply_selection_and_call(environment):
+    client, _, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    first = payload(bound)["source"]
+    first["quote"] = {"text": "Few studies", "start": 0, "end": 11, "offset_unit": "utf16", "annotation": "First note"}
+    _, original = round_trip(client, bound, "conversation-first", source=first, content="What does the limitation mean?")
+    parent = original["messages"][-1]["message_id"]
+    body, second = round_trip(client, bound, "conversation-followup", content="Explain your previous answer", parent_message_id=parent)
+    history = second["job"]["input"]["conversation"]
+    assert [item["content"] for item in history] == ["What does the limitation mean?", "Discussion only, no changes applied"]
+    assert history[0]["quote"]["text"] == "Few studies" and history[0]["quote"]["annotation"] == "First note"
+    assert history[1]["call_record"]["model_contract"]["fixture"]
+    assert second["messages"][0]["reply_to"] == parent
+    assert gateway.calls[-1][1]["conversation"] == history
+    assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+    wait(client, body["request_id"], bound)
+    assert len(gateway.calls) == 2
+
+
+def test_new_discussion_and_branch_have_only_explicit_parent_history(environment):
+    client, _, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    _, first = round_trip(client, bound, "branch-first-001")
+    parent = first["messages"][-1]["message_id"]
+    _, second = round_trip(client, bound, "branch-second-002", parent_message_id=parent)
+    _, branch = round_trip(client, bound, "branch-third-003", parent_message_id=parent)
+    _, new = round_trip(client, bound, "branch-independent")
+    assert len(second["job"]["input"]["conversation"]) == len(branch["job"]["input"]["conversation"]) == 2
+    assert second["messages"][0]["message_id"] not in [item["message_id"] for item in branch["job"]["input"]["conversation"]]
+    assert new["job"]["input"]["conversation"] == []
+    assert len(gateway.calls) == 4
+
+
+def test_changed_current_version_keeps_old_chain_and_distinguishes_current_source(environment):
+    client, db, field, _, _, _, gateway = environment
+    target = unit_target(client, field)
+    old = context(client, target)
+    _, first = round_trip(client, old, "old-source-first")
+    with sqlite3.connect(db) as conn:
+        conn.execute("UPDATE skeleton_units SET raw_text='Later current source'")
+    current = context(client, target)
+    gateway.sources = [old["context_sha256"]]
+    _, next_reply = round_trip(client, current, "new-source-followup", parent_message_id=first["messages"][-1]["message_id"])
+    model_input = next_reply["job"]["input"]
+    assert model_input["source"]["context"] == current
+    assert model_input["conversation"][0]["context"] == old
+    assert next_reply["job"]["status"] == "COMPLETE"
+
+
+def test_deleted_source_can_continue_frozen_chain_without_source_substitution(environment):
+    client, db, field, _, _, _, _ = environment
+    bound = context(client, unit_target(client, field))
+    _, first = round_trip(client, bound, "deleted-source-first")
+    parent = first["messages"][-1]["message_id"]
+    with sqlite3.connect(db) as conn:
+        conn.execute("DELETE FROM skeleton_units")
+    selected = {**payload(bound)["source"], "history_message_id": parent}
+    _, next_reply = round_trip(client, bound, "deleted-source-next", source=selected, parent_message_id=parent)
+    assert next_reply["job"]["input"]["source"]["context"] == bound
+    assert next_reply["job"]["input"]["conversation"][0]["context"] == bound
+    historical = client.get(f"/api/catalog/discussion/messages/{parent}/context", params={"scope": bound["scope_key"]}).json()
+    assert historical["sources"][0]["current_source_state"] == "SOURCE_UNAVAILABLE"
+    assert len(historical["conversation"]) == 2
+
+
+def test_unknown_or_other_scope_parent_rolls_back_before_model(environment):
+    client, db, field, _, track, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    _, first = round_trip(client, bound, "owner-first-request")
+    other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+    # This phase verifies rejected requests against physical database bytes.
+    # Drain the preceding legitimate writer before freezing that baseline.
+    client.app.state.discussions.shutdown()
+    for owner, parent in [(bound, "missing-message"), (other, first["messages"][-1]["message_id"])]:
+        before = db.read_bytes()
+        response = client.post("/api/catalog/discussion/messages", json=payload(owner, request_id="invalid-parent-next", parent_message_id=parent, allow_cross_scope=True))
+        assert response.status_code == 404
+        assert db.read_bytes() == before
+    assert len(gateway.calls) == 1
+
+
+def test_running_question_cannot_be_used_as_completed_parent(environment):
+    client, db, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    gateway.release.clear()
+    body = payload(bound)
+    client.post("/api/catalog/discussion/messages", json=body)
+    assert gateway.entered.wait(2)
+    state = client.app.state.discussions.request(body["request_id"], bound["scope_key"])
+    try:
+        response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="running-parent-next", parent_message_id=state["messages"][0]["message_id"]))
+        assert response.status_code == 409
+        with sqlite3.connect(db) as conn:
+            assert conn.execute("SELECT COUNT(*) FROM research_discussion_jobs").fetchone()[0] == 1
+    finally:
+        gateway.release.set()
+        wait(client, body["request_id"], bound)
+    assert len(gateway.calls) == 1
+
+
+def test_failed_question_remains_a_real_failed_turn_and_can_be_followed_up(environment):
+    client, _, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    gateway.failure = RuntimeError("Recorded model outage")
+    _, first = round_trip(client, bound, "failed-parent-first")
+    gateway.failure = None
+    _, second = round_trip(client, bound, "failed-parent-next", parent_message_id=first["messages"][0]["message_id"])
+    history = second["job"]["input"]["conversation"]
+    assert len(history) == 1 and history[0]["actor"] == "AUTHOR"
+    assert history[0]["call_record"]["error"]["detail"] == "Recorded model outage"
+    assert history[0]["call_record"]["model_contract"] is None
+    assert second["job"]["status"] == "COMPLETE"
+
+
+@pytest.mark.parametrize("field_name,value", [("content", "Invented reply"), ("reply_to", "wrong-message")])
+def test_tampered_reply_or_parent_is_never_forwarded_as_history(environment, field_name, value):
+    client, db, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    _, first = round_trip(client, bound, "tamper-parent-first")
+    parent = first["messages"][-1]["message_id"]
+    with sqlite3.connect(db) as conn:
+        conn.execute(f"UPDATE research_discussion_messages SET {field_name}=? WHERE message_id=?", (value, parent))
+    before = db.read_bytes()
+    response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="tamper-parent-next", parent_message_id=parent))
+    assert response.status_code == 410 and db.read_bytes() == before
+    assert client.post("/api/catalog/discussion/history", json={"target": bound["target"]}).status_code == 410
+    assert len(gateway.calls) == 1
+
+
+def test_inherited_cross_scope_sources_require_explicit_confirmation_each_call(environment):
+    client, db, field, _, track, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+    _, first = round_trip(client, bound, "cross-parent-first", additional_sources=[payload(other)["source"]], allow_cross_scope=True)
+    parent = first["messages"][-1]["message_id"]
+    before = db.read_bytes()
+    body = payload(bound, request_id="cross-parent-next", parent_message_id=parent)
+    assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+    assert db.read_bytes() == before and len(gateway.calls) == 1
+    body["allow_cross_scope"] = True
+    assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+    second = wait(client, body["request_id"], bound)
+    assert second["job"]["input"]["conversation"][0]["additional_sources"][0]["context"] == other
+
+
+def test_combined_history_budget_rejects_full_input_without_truncation(environment):
+    client, db, field, _, _, _, gateway = environment
+    target = unit_target(client, field)
+    with sqlite3.connect(db) as conn:
+        conn.execute("UPDATE skeleton_units SET raw_text=?", ("Original source " * 700,))
+    bound = context(client, target)
+    _, first = round_trip(client, bound, "budget-history-first")
+    assert first["job"]["status"] == "COMPLETE"
+    before = db.read_bytes()
+    response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="budget-history-next", parent_message_id=first["messages"][-1]["message_id"]))
+    assert response.status_code == 422
+    assert db.read_bytes() == before and len(gateway.calls) == 1
+
+
+def test_saved_chain_tampering_is_rejected_before_any_repeated_model_call(environment):
+    client, db, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    _, first = round_trip(client, bound, "chain-integrity-first")
+    _, second = round_trip(client, bound, "chain-integrity-next", parent_message_id=first["messages"][-1]["message_id"])
+    with sqlite3.connect(db) as conn:
+        model_input = second["job"]["input"]
+        model_input["conversation"][0]["content"] = "Altered past question"
+        conn.execute("UPDATE research_discussion_jobs SET input_json=? WHERE request_id=?", (json.dumps(model_input), second["request_id"]))
+    response = client.get(f"/api/catalog/discussion/requests/{second['request_id']}", params={"scope": bound["scope_key"]})
+    assert response.status_code == 410 and len(gateway.calls) == 2
+
+
+@pytest.mark.parametrize("column,value", [("context_json", "invalid JSON"), ("additional_sources_json", "null"), ("status", "QUEUED"), ("scope_key", '["FIELDKG","another-field"]')])
+def test_malformed_or_wrong_owner_history_is_unavailable_without_model(environment, column, value):
+    client, db, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    _, first = round_trip(client, bound, "malformed-history-first")
+    parent = first["messages"][-1]["message_id"]
+    with sqlite3.connect(db) as conn:
+        conn.execute(f"UPDATE research_discussion_messages SET {column}=? WHERE message_id=?", (value, parent))
+    response = client.get(f"/api/catalog/discussion/requests/{first['request_id']}", params={"scope": bound["scope_key"]})
+    assert response.status_code == 410 and len(gateway.calls) == 1
+
+
+def test_original_pre_conversation_receipt_can_be_retried_and_used_as_parent(environment):
+    client, db, field, _, _, _, gateway = environment
+    bound = context(client, unit_target(client, field))
+    body, first = round_trip(client, bound, "legacy-fixed-source-001")
+    with sqlite3.connect(db) as conn:
+        request_data = json.loads(conn.execute("SELECT request_json FROM research_discussion_requests WHERE request_id=?", (body["request_id"],)).fetchone()[0])
+        assert "parent_message_id" not in request_data
+        old_input = first["job"]["input"]
+        old_input.pop("conversation")
+        conn.execute("UPDATE research_discussion_jobs SET input_json=?,input_sha256=? WHERE request_id=?", (json.dumps(old_input), digest(old_input), body["request_id"]))
+    assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+    assert len(wait(client, body["request_id"], bound)["messages"]) == 2
+    assert len(gateway.calls) == 1
+    _, second = round_trip(client, bound, "legacy-parent-followup", parent_message_id=first["messages"][-1]["message_id"])
+    assert len(second["job"]["input"]["conversation"]) == 2
+    assert len(gateway.calls) == 2

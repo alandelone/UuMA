@@ -1,0 +1,7 @@
+{
+  "failure": "The accessibility receipt was a no-change diff, not a full tree. The original full DOM snapshot and screenshot retain the actual source-button error.",
+  "failed_receipt": ".tmp/scholar-g02-partial-native-v1/proof/additional-source-button-failed.txt",
+  "complete_snapshot": ".tmp/scholar-g02-partial-native-v1/proof/additional-source-button-failed.dom.txt",
+  "guard": "Require the same exact error text in the originally captured complete DOM snapshot. No live product state, original evidence or product assertion changes.",
+  "original_sealer_sha256": "e32fd653ad56bcc79a4bb3ca2e53f14a46835844c752a2a956c563a9edebf599"
+}

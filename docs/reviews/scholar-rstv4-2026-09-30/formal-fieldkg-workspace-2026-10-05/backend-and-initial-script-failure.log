@@ -1,0 +1,33 @@
+CHECK ['-m', 'pytest', 'tests/test_fieldkg_workspace.py', 'tests/test_research_workspace.py', 'tests/test_catalog_web.py', 'tests/test_track_first_fieldkg.py', '-q']
+..................................................                       [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+50 passed, 2 warnings in 22.18s
+Exit: 0
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/research_views.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/catalog_web.py', 'tests/test_fieldkg_workspace.py']
+All checks passed!
+Exit: 0
+CHECK ['tests/catalog_research_workspaces.mjs']
+evalmachine.<anonymous>:173
+      return `<header class="research-head"><div><p class="eyebrow">FieldKG · ${snapshot ? '固定 Snapshot' : 'Living'}</p><h1>${esc(data.field.name)}</h1><p>${esc(data.field.description || '')}</p></div><button type="button" data-build-create>从已保存 Skeleton 创建 Build</button></header><p class="status-line" role="status">${snapshot ? `Snapshot v${snapshot.version} · ${snapshot.digest_matches && snapshot.members_match ? '摘要与成员清单一致' : '摘要或成员清单不符，停止采用'} · ${snapshot.source_records_available ? '保留当时来源记录' : '旧快照未保存完整来源副本'}` : '当前 Field 的权威记录；Living 更新不会自动更换 Track 已采用的 Snapshot。'}</p><nav class="research-tabs" aria-label="FieldKG 版本"><a href="${esc(researchUrl('fieldkg', data.field.field_id))}" data-research-nav>Living</a>${data.snapshots.map(s => `<a href="${esc(researchUrl('fieldkg', data.field.field_id, null, s.snapshot_id))}" data-research-nav>Snapshot v${s.version}</a>`).join('')}</nav>${section('图谱', graphHtml(model))}${section('对象与来源列表', categoryRows(model, sources))}${section('关系 / Citation Network', model.edges.map(edge => `<button type="button" class="research-edge" data-research-select="${esc(edge.key)}">${esc(model.nodes.find(n => n.key === edge.from)?.label || edge.from)} → ${esc(edge.label)} → ${esc(model.nodes.find(n => n.key === edge.to)?.label || edge.to)}</button>`).join('') || '<p>此范围尚无关系记录。</p>')}${snapshot ? section('固定依据与采用记录', `<p>摘要：${esc(snapshot.content_digest)}</p><p>${snapshot.adoptions.map(a => `${esc(a.title)} · ${dates(a.adopted_at)}`).join('<br>') || '尚未被 Track 采用。'}</p><details><summary>固定成员清单</summary><pre>${esc(JSON.stringify(snapshot.members, null, 2))}</pre></details>`) : section('Build / Pipeline', buttons || '<p>此 Field 尚无 Build。</p>')}${section('查询投影', `<p>实时服务健康：尚未探测。权威资料仍在 RSTV4。</p>${data.projection.outbox.map(item => `<p>${esc(item.aggregate_type)} · ${badge(item.status)} · 重试 ${item.attempts} · ${esc(item.last_error || '')}</p>`).join('') || '<p>此 Field 尚无待同步记录。</p>')}${section('该 Field 的 Tracks', data.tracks.map(t => `<a class="research-link" href="${esc(researchUrl('track', data.field.field_id, t.track.track_id))}" data-research-nav>${esc(t.track.title)}</a>`).join('') || '<p>尚无 Track。</p>')}<aside class="research-source-detail" data-research-detail hidden></aside>`;
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            
+
+SyntaxError: Missing } in template expression
+    at new Script (node:vm:117:7)
+    at createScript (node:vm:269:10)
+    at Object.runInNewContext (node:vm:310:10)
+    at file:///C:/Users/Alandelone/CodeSpace_Local/RSTV4/tests/catalog_research_workspaces.mjs:10:4
+    at ModuleJob.run (node:internal/modules/esm/module_job:439:25)
+    at async node:internal/modules/esm/loader:643:26
+    at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:101:5)
+
+Node.js v24.19.0
+Exit: 1

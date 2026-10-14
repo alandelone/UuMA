@@ -1,0 +1,102 @@
+{
+  "34": {
+    "before_json": null,
+    "after_json": [
+      {
+        "condition": "Only for this software fixture; no scientific approval.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Contrasts with author boundary Ω",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ]
+  },
+  "35": {
+    "before_json": [
+      {
+        "condition": "Only for this software fixture; no scientific approval.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Contrasts with author boundary Ω",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ],
+    "after_json": []
+  },
+  "36": {
+    "before_json": [],
+    "after_json": [
+      {
+        "condition": "Only for this software fixture; no scientific approval.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Author conditional comparison Ω",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ]
+  },
+  "38": {
+    "before_json": [
+      {
+        "condition": "Only for this software fixture; no scientific approval.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Author conditional comparison Ω",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ],
+    "after_json": [
+      {
+        "condition": "Only for this software fixture; no scientific approval.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Author conditional comparison Ω",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ]
+  },
+  "39": {
+    "before_json": [
+      {
+        "condition": "Only for this software fixture; no scientific approval.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Author conditional comparison Ω",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ],
+    "after_json": [
+      {
+        "condition": "Independent saved condition Ω; software only.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Independent durable comparison Ω v2",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ]
+  },
+  "40": {
+    "before_json": [
+      {
+        "condition": "Independent saved condition Ω; software only.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Independent durable comparison Ω v2",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ],
+    "after_json": []
+  },
+  "41": {
+    "before_json": [],
+    "after_json": [
+      {
+        "condition": "Independent saved condition Ω; software only.",
+        "id": "argument_relation_066c85bd-15b7-4e66-bd26-b2d3b97a5b3e",
+        "relation": "Independent durable comparison Ω v2",
+        "source_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+        "target_id": "thought_83e4debc24ae4b2987e58738b59b2365"
+      }
+    ]
+  }
+}

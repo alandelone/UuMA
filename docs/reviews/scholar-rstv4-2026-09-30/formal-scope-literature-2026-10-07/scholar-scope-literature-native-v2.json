@@ -1,0 +1,50 @@
+{
+  "status": "PASS_ACTUAL_SCOPE_LIST_READ_ONLY",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-literature-3kq271_p",
+  "requests": [
+    {
+      "method": "GET",
+      "path": "/catalog-research-overview.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/research-overview",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/papers/query",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/papers/query",
+      "status": 404
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/papers/query",
+      "status": 200
+    }
+  ],
+  "actual_http_requests": 7,
+  "source_database_sha256": "845b05494db9799e9770df5e0831985fb0d90ee40db6c10e84091be672568011",
+  "source_database": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-deep-p3__dhff\\data\\catalog.db",
+  "source_receipt_sha256": "970b933a5b0bf9da50d9a9d9a0b39db3b819ff084f4ae0a0f875c014539b9ad4",
+  "all_tables_unchanged": 102,
+  "database_sha256": "5e470cc45cabb2050bc2ee65c3edca571aae1ceaad83f5462db94382fa7545b7",
+  "new_model_calls": 0,
+  "browser_verified": false,
+  "scientific_approval": false
+}

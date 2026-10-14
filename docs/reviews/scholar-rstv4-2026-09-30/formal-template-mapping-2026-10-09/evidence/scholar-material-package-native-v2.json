@@ -1,0 +1,188 @@
+{
+  "outcome": {
+    "error": "Error: Timed out after 12000ms waiting for download."
+  },
+  "network": {
+    "cursor": 40,
+    "events": [
+      {
+        "sequence": 37,
+        "source": {
+          "tabId": 1479454337
+        },
+        "method": "Network.requestWillBeSent",
+        "params": {
+          "documentURL": "http://127.0.0.1:3004/?manuscript=manuscript_bd7568923be94a2c8510d176010e4cca&view=revision&left=0&right=0&chat=0&round=review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+          "frameId": "E7FB911E3F628817418B346F01381945",
+          "hasUserGesture": true,
+          "initiator": {
+            "stack": {
+              "callFrames": [
+                {
+                  "columnNumber": 191650,
+                  "functionName": "gm",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 194123,
+                  "functionName": "downloadPackage",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 211558,
+                  "functionName": "y",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 212976,
+                  "functionName": "onClick",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 42382,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 44108,
+                  "functionName": "onClick",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 42382,
+                  "functionName": "",
+                  "lineNumber": 4,
+                  "scriptId": "6",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+                },
+                {
+                  "columnNumber": 125813,
+                  "functionName": "yd",
+                  "lineNumber": 7,
+                  "scriptId": "8",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 130807,
+                  "functionName": "",
+                  "lineNumber": 7,
+                  "scriptId": "8",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 15079,
+                  "functionName": "_n",
+                  "lineNumber": 7,
+                  "scriptId": "8",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 127040,
+                  "functionName": "wd",
+                  "lineNumber": 7,
+                  "scriptId": "8",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28427,
+                  "functionName": "up",
+                  "lineNumber": 8,
+                  "scriptId": "8",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+                },
+                {
+                  "columnNumber": 28249,
+                  "functionName": "cp",
+                  "lineNumber": 8,
+                  "scriptId": "8",
+                  "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+                }
+              ]
+            },
+            "type": "script"
+          },
+          "loaderId": "B47F69821140DFD254A7CF270C25FC64",
+          "redirectHasExtraInfo": false,
+          "request": {
+            "headers": {
+              "Referer": "http://127.0.0.1:3004/",
+              "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+              "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+              "sec-ch-ua-mobile": "?0",
+              "sec-ch-ua-platform": "\"Windows\""
+            },
+            "initialPriority": "High",
+            "isSameSite": true,
+            "method": "GET",
+            "mixedContentType": "none",
+            "referrerPolicy": "strict-origin-when-cross-origin",
+            "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/packages/submission_package_462feff00b234357a635a3e63254aff4/download"
+          },
+          "requestId": "93112.53",
+          "timestamp": 248723.415777,
+          "type": "Fetch",
+          "wallTime": 1791502457.855989
+        }
+      },
+      {
+        "sequence": 39,
+        "source": {
+          "tabId": 1479454337
+        },
+        "method": "Network.responseReceivedExtraInfo",
+        "params": {
+          "blockedCookies": [],
+          "cookiePartitionKey": {
+            "hasCrossSiteAncestor": false,
+            "topLevelSite": "http://127.0.0.1"
+          },
+          "cookiePartitionKeyOpaque": false,
+          "exemptedCookies": [],
+          "headers": {
+            "Cache-Control": "no-cache",
+            "Connection": "close",
+            "Pragma": "no-cache"
+          },
+          "headersText": "HTTP/1.0 204 Intercepted by the IDM Advanced Integration\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close\r\n\r\n",
+          "requestId": "93112.53",
+          "resourceIPAddressSpace": "Loopback",
+          "statusCode": 204
+        }
+      },
+      {
+        "sequence": 40,
+        "source": {
+          "tabId": 1479454337
+        },
+        "method": "Network.loadingFailed",
+        "params": {
+          "canceled": false,
+          "corsErrorStatus": {
+            "corsError": "MissingAllowOriginHeader",
+            "failedParameter": ""
+          },
+          "errorText": "net::ERR_FAILED",
+          "requestId": "93112.53",
+          "timestamp": 248724.543222,
+          "type": "Fetch"
+        }
+      }
+    ],
+    "hasMore": false,
+    "truncated": false
+  },
+  "snapshot": "- main:\n  - generic: WRITING STUDIO\n  - generic: Two-round software acceptance fixture · RSTV4\n  - status: 已自动保存\n  - button \"撤销\" [disabled]:\n  - button \"重做\" [disabled]:\n  - button \"Done\":\n    - text: Done\n  - navigation \"稿件视图\":\n    - button \"返回 Track\":\n      - text: Track\n    - generic \"Paper workflow stage\":\n      - generic: 1 Planning\n      - generic: 2 Drafting\n      - generic: 3 全文检查\n      - generic: 4 定稿／投稿\n      - generic: 5 Revision\n      - generic: 6 Publication\n    - generic \"稿件内容视图\":\n      - button \"🧩 结构\"\n      - button \"📄 成文\"\n      - button \"✍️ Revision\"\n    - generic \"面板显示\":\n      - button \"显示或隐藏左侧样本\":\n      - button \"显示或隐藏右侧资料\":\n  - generic \"当前意见关联\":\n    - strong: 普通编辑\n    - generic: 后续修改不关联审稿意见\n    - button \"关联意见\"\n  - paragraph: Reviewer comments\n  - heading \"意见 → 决定 → 修改 → 回复\" [level=2]\n  - button \"🗃 已删除\"\n  - button \"📦 投稿包\"\n  - region \"返修轮次与固定被审版本\":\n    - text: 返修轮次\n    - combobox \"选择返修轮次\":\n      - option \"请选择轮次…\"\n      - option \"第 1 轮 · Software fixture venue\"\n      - option \"第 2 轮 · Software fixture venue\" [selected]\n    - paragraph: 固定被审稿 v2 / 作者结构 r2；本轮生成不会移动基线。\n    - button \"建立第 3 轮…\"\n  - textbox \"审稿意见输入\":\n    - /placeholder: 粘贴意见；空行分条。确认前不会写入。\n  - button \"👀 准备预览\"\n  - button \"➕ 单条新增\"\n  - text: 📄 TXT / MD / DOCX / PDF\n  - button \"导入审稿意见文件\"\n  - article:\n    - button \"开始修改意见 A02\":\n    - generic \"comment_ff953cae8bf34b65add52bc0bc2c0af2\": A02\n    - generic: 第 2 轮 · 提出人未填写\n    - paragraph: Round 2 fixture opinion only\n    - generic \"原意见与导入来源\"\n    - textbox \"我的决定与理由 A02\":\n      - /placeholder: 我的决定与理由\n      - text: Accept the toolbar and selector clarification; retain the no-research-claim disclaimer.\n    - textbox \"回复内容 A02\":\n      - /placeholder: 回复内容\n      - text: We revised the fixture to three toolbars and two reviewer round selectors. We retained the original no-research-claim disclaimer. The exact final PDF was checked.\n    - combobox \"意见状态 A02\":\n      - option \"待处理\"\n      - option \"已决定回应\"\n      - option \"修改中\"\n      - option \"待核对\"\n      - option \"已处理 · 需作者核对\" [disabled] [selected]\n    - button \"保存回复\"\n    - button \"核对回复\"\n    - button \"查看核对历史\"\n    - paragraph: 作者已核对本版回复\n    - generic: 1 条关联修改\n    - navigation \"A02 的真实修改记录\":\n      - link \"查看修改 1\":\n        - /url: \"#change-change_04ebbdbc1aef44a689cff91709274394\"\n    - button \"移入已删除 A02\":\n  - region \"已保存修改与意见关联\":\n    - heading \"已保存修改\" [level=3]\n    - text: 查看实际前后对照，分配给一条或多条意见。\n    - text: 显示\n    - combobox \"显示\":\n      - option \"全部修改\" [selected]\n      - option \"未关联意见\"\n      - option \"已关联意见\"\n    - button \"刷新修改历史\"\n    - article:\n      - strong: 作者修订 r0 → r1\n      - button \"分配／解除意见\"\n      - paragraph: 未关联意见\n      - generic \"查看实际修改前后对照\"\n      - generic \"意见关联历史 · 0 次后补决定\"\n    - article:\n      - strong: 作者修订 r1 → r2\n      - button \"分配／解除意见\"\n      - paragraph: 未关联意见\n      - generic \"查看实际修改前后对照\"\n      - generic \"意见关联历史 · 0 次后补决定\"\n    - article:\n      - strong: 作者修订 r2 → r3\n      - button \"分配／解除意见\"\n      - button \"撤销上次关联\"\n      - paragraph: A01 · 第 1 轮、A02 · 第 2 轮\n      - generic \"查看实际修改前后对照\"\n      - generic \"意见关联历史 · 3 次后补决定\"\n  - region \"已生成的投稿包\":\n    - heading \"投稿包\" [level=3]\n    - button \"刷新\":\n      - text: 刷新\n    - paragraph: 每份文件固定到生成版本和被审轮次；旧包继续保留。\n    - alert: Failed to fetch\n    - article:\n      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 12:50 PM\n      - button \"下载 成文 v3 · 第 2 轮 · 10/4/26, 12:50 PM 完整投稿包\":\n        - text: 下载整包\n      - generic \"单独下载文件 · 16\"\n    - article:\n      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 11:48 AM\n      - button \"下载 成文 v3 · 第 2 轮 · 10/4/26, 11:48 AM 完整投稿包\":\n        - text: 下载整包\n      - paragraph: 1 条意见尚未完成，回复需要作者核对。\n      - generic \"单独下载文件 · 15\"\n    - article:\n      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 9:41 AM\n      - button \"下载 成文 v3 · 第 2 轮 · 10/4/26, 9:41 AM 完整投稿包\":\n        - text: 下载整包\n      - paragraph: 1 条意见尚未完成，回复需要作者核对。\n      - paragraph: 历史包未保存打包时的文件摘要，不能核实原始字节是否保持不变。\n      - generic \"单独下载文件 · 12\"\n    - article:\n      - strong: 成文 v3 · 第 2 轮 · 10/4/26, 8:49 AM\n      - button \"下载 成文 v3 · 第 2 轮 · 10/4/26, 8:49 AM 完整投稿包\":\n        - text: 下载整包\n      - paragraph: 1 条意见尚未完成，回复需要作者核对。\n      - paragraph: 历史包未保存打包时的文件摘要，不能核实原始字节是否保持不变。\n      - generic \"单独下载文件 · 10\"\n  - status\n  - button \"与 Agent 讨论 2 条 · Two-round software acceptance fixture\":\n    - text: 与 Agent 讨论\n    - text: 2 条 · Two-round software acceptance fixture",
+  "url": "http://127.0.0.1:3004/?manuscript=manuscript_bd7568923be94a2c8510d176010e4cca&view=revision&left=0&right=0&chat=0&round=review_round_41ae32ad3c1f4392b35e9fdd4a752a30"
+}

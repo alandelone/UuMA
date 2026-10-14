@@ -1,0 +1,12 @@
+TRY004 Prefer `TypeError` exception for invalid type
+  --> src\rstv4\acquisition_model_calls.py:52:13
+   |
+50 |         contract = result.get('_contract')
+51 |         if not isinstance(contract, dict):
+52 |             raise ValueError('Model output has no actual execution contract')
+   |             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+53 |     except Exception as error:
+54 |         with transaction(service.db_path) as conn:
+   |
+
+Found 3 errors (2 fixed, 1 remaining).

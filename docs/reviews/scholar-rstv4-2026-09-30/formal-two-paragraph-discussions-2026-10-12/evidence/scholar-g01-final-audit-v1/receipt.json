@@ -1,0 +1,407 @@
+{
+  "status": "PASS_G01_ORIGINAL_TWO_PARAGRAPH_NATIVE_ACCEPTANCE",
+  "previous_goal_turn": "PROGRESS",
+  "original_requirements": 118,
+  "original_groups": 11,
+  "g01_original_definition": "| G-01 | P1：成文段落讨论没有稳定 ID／生成版本；文字选区 quote 未从前端送入 Chat | S:255、261；U | [Studio:1076](C:/Users/Alandelone/CodeSpace_Local/writing-studio/components/studio-workspace.tsx:1076) 只 setSelection(type,label)；[1697](C:/Users/Alandelone/CodeSpace_Local/writing-studio/components/studio-workspace.tsx:1697) 以 index 标签讨论；[API:148](C:/Users/Alandelone/CodeSpace_Local/writing-studio/lib/studio-api.ts:148) 无 quote 参数，HTTP:52 有 quote | 同稿两个生成段落分别讨论，刷新／改序／重新生成后旧消息仍指原版本原段；选区原文可回查 |",
+  "g01_software_native_acceptance": true,
+  "all11_complete": false,
+  "database_read_only_and_physical_bytes_exact": true,
+  "initial_alpha_author_content_exact": true,
+  "r10_to_r11_only_move_and_explicit_empty_groups_block_order": true,
+  "one_actual_ui_move_operation": "operation_2d41e9e71de44ec39e3edd8e0178a882",
+  "original_v3_messages_calls_versions_artifacts_exact": true,
+  "all109tables_audited": true,
+  "sample_cache_changes_only_revision_and_timestamp": [
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_e197b886c810436a823c7171839afac2",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_e197b886c810436a823c7171839afac2",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_e197b886c810436a823c7171839afac2",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_e197b886c810436a823c7171839afac2",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_895901de3a694d6f9a4b996e5459feeb",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_895901de3a694d6f9a4b996e5459feeb",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_895901de3a694d6f9a4b996e5459feeb",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    },
+    {
+      "key": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_895901de3a694d6f9a4b996e5459feeb",
+        "query_key": "85231bcffdbb9f9dc1c2c1aeea6ee4b82c9c3a6a2a1cf32dace57b7b9b9c08db",
+        "candidate_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+      },
+      "changed_fields": [
+        "document_revision",
+        "created_at"
+      ]
+    }
+  ],
+  "four_versions": [
+    "manuscript_version_7ea00b67724045db8db687b46beb1530",
+    "manuscript_version_e7f175c6d7f84911b13c1e4453041a30",
+    "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+    "manuscript_version_2feb293fad7e4e6591d4217cd322d9d9"
+  ],
+  "model_call_status_counts": {
+    "VALIDATED": 6,
+    "REJECTED": 1,
+    "RETURNED": 4
+  },
+  "new_g01_model_calls": 6,
+  "new_g01_calls_explicit_software_fixture": true,
+  "one_original_actual_gemini_rejection_retained": true,
+  "new_backend_source_changes": false,
+  "changed_frontend_source": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx"
+  ],
+  "current_source_sha256": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_sources.py": "027dcb3d733b7ca19760f07e024a77d45fdde89b9a492b310934defe1527aa52",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": "7036bd844d77558daf20511a8fdb1c9099f3b5bb6b4390726745afca5f39e468",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_api.py": "53b58465eab35d6b2210d6e60f66ac1bbbd36c48c563e8997421787cb0d85e51",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_read_views.py": "b332d2b5f451ecef177b538d41c63d2c87a884c9ce6d45209c430b788bb3b34c",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_discussions.py": "ea9bbc8e4db785c0a694a0ad2eb34580ec0b2a21ce96f0ebcb59221a74cf385c",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_studio_source_context.py": "7ccda3161c72d1f1c863cec91b3e0adb2645423dee10081a983e3d2bdce925b9",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_studio_discussion_fixed_references.py": "fd297eb025bbf30a710d14b0584475d6eb86e43823069f123098381ad8273854",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-source-context.tsx": "b142f78a80f9ab8390b03927eb26f33c2de0d32d21670398d75df63df8ed3744",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx": "1badb5c1111703684d5ea7de9dbf6e4f9d8c3d5112282219ce4369d22839d01e",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts": "8af60de45c3e304f890fdbdb8310e7beb17cf95f1a0516a34993e00bc62eeda4",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-downloads.ts": "d3a8cae2577bf59a5fa918ae2fd4d9c2251feacb3f9cdee7e431af24183863c9",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-downloads.cjs": "3d7626f95fb586f2b76db6e5da0eab2175541aa715ba39abc1601ded858a08ac"
+  },
+  "all20artifact_bytes_exact": [
+    {
+      "id": "artifact_5b694a79aff249278af78067de0f4b0d",
+      "kind": "MARKDOWN",
+      "revision": 1,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.md",
+      "sha256": "ec876e85433dd186a43b67d8692c26e3b7619ab4facb89523b4f651c116b4aa4",
+      "bytes": 232
+    },
+    {
+      "id": "artifact_dfbe848f0e8c462c94e364dcf1e79e65",
+      "kind": "GENERATED_JSON",
+      "revision": 1,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\generated.json",
+      "sha256": "e11ebbd5ef6911f44564724959dda17880749ab77011cc302b8604b45ed48626",
+      "bytes": 16565
+    },
+    {
+      "id": "artifact_89d3f80f6aed4695b048ef58fd439b68",
+      "kind": "TEX",
+      "revision": 1,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.tex",
+      "sha256": "a4340bee5f8607d9a81b506f4e0eb1e251079e0387e3b3a41d44b0372029f40d",
+      "bytes": 563
+    },
+    {
+      "id": "artifact_cd0863e680fe4bd7b0e197555e7d5765",
+      "kind": "BIB",
+      "revision": 1,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\references.bib",
+      "sha256": "f882360d52db2dbf92464deb2feca05e493311a7acc2f4b3a024596b56ca1406",
+      "bytes": 284
+    },
+    {
+      "id": "artifact_35b9305bb4524c8c84456247c7ae43b9",
+      "kind": "PDF",
+      "revision": 1,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.pdf",
+      "sha256": "a4c396aeeeae23d1ac8ac420fd15306fab5bfce58a91e57c468ec75c031dbc23",
+      "bytes": 9091
+    },
+    {
+      "id": "artifact_6e28e7b4d095407289626fb03c88639f",
+      "kind": "MARKDOWN",
+      "revision": 4,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.md",
+      "sha256": "da41dcfb42e0053a9db932a2592b5308632c8b6ad310c2d2895a5139eb4578dc",
+      "bytes": 232
+    },
+    {
+      "id": "artifact_df885ac1882e42bf88dce4c2e01be4b9",
+      "kind": "GENERATED_JSON",
+      "revision": 4,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\generated.json",
+      "sha256": "e4e31a2d5430586d08999b1b5e047e5a5609f23041cfb43b5c6897c124c4046d",
+      "bytes": 12064
+    },
+    {
+      "id": "artifact_227d169568f84a9aabbae927c3203c54",
+      "kind": "TEX",
+      "revision": 4,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.tex",
+      "sha256": "c2745bd8f1592f0f813307f5e286ef06a940d99ad03108d08723bed3e48e157a",
+      "bytes": 563
+    },
+    {
+      "id": "artifact_2ecef37439e04a609d33a1a721bd4a04",
+      "kind": "BIB",
+      "revision": 4,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\references.bib",
+      "sha256": "122f86ce0bdd360dffd25da0791b2b1a5a5ece3f365ba5c47d63fdb5ec7a2e0f",
+      "bytes": 324
+    },
+    {
+      "id": "artifact_cad04d0586ce4a51b5b7d5f45519b56e",
+      "kind": "PDF",
+      "revision": 4,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.pdf",
+      "sha256": "f4d45ac2f3f5cf1eb3a1caad146139e347a4b9ba8202626f3e3a149ebb3ffd85",
+      "bytes": 9404
+    },
+    {
+      "id": "artifact_d1328b33a4154d3986cbd5be8b0f02f2",
+      "kind": "MARKDOWN",
+      "revision": 10,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.md",
+      "sha256": "5cd67372f21dccab8c1ebbe87a2d25a2b07f4ec07e78fd621a0979c88f6045e5",
+      "bytes": 394
+    },
+    {
+      "id": "artifact_7b0c5b8e344c427fb79a5de7ae07b2ef",
+      "kind": "GENERATED_JSON",
+      "revision": 10,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\generated.json",
+      "sha256": "64e49976c1023beb4fc62bb1b5f30bbb6c6a4d18832677ad07d22007feee9788",
+      "bytes": 12807
+    },
+    {
+      "id": "artifact_13c3e127a6924a148b803b3f599d449d",
+      "kind": "TEX",
+      "revision": 10,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.tex",
+      "sha256": "49553aa1e7864f00c4b5a15790583ac1e9a82b4775ab8673a02f5d33c63cb9b6",
+      "bytes": 735
+    },
+    {
+      "id": "artifact_72be87fbf6b04759ab5431968eb4e0d1",
+      "kind": "BIB",
+      "revision": 10,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\references.bib",
+      "sha256": "122f86ce0bdd360dffd25da0791b2b1a5a5ece3f365ba5c47d63fdb5ec7a2e0f",
+      "bytes": 324
+    },
+    {
+      "id": "artifact_4012958fd937410ea0620eca7bd11c73",
+      "kind": "PDF",
+      "revision": 10,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.pdf",
+      "sha256": "6d956fd784fe3bb8331a1966d40460aac702bd034bf44a7f0d5011c0b7809f6d",
+      "bytes": 9757
+    },
+    {
+      "id": "artifact_5ad74027523a436d84b228bbbf6f0ae2",
+      "kind": "MARKDOWN",
+      "revision": 11,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.md",
+      "sha256": "f8d520de323fd7d1abb5545dc2d0f15b2190ee00d2772c43b9596c45ec2e59ce",
+      "bytes": 394
+    },
+    {
+      "id": "artifact_f4ee8b5f953149aa9121a569b02ee576",
+      "kind": "GENERATED_JSON",
+      "revision": 11,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\generated.json",
+      "sha256": "12af18e38da2786c3cc047176161b71634d94c6074a16f2603aaf063da1b2a40",
+      "bytes": 12807
+    },
+    {
+      "id": "artifact_eaffa9a0da7d41058f910d59dbf1a152",
+      "kind": "TEX",
+      "revision": 11,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.tex",
+      "sha256": "e87bb411a589b09af127603cdcbad70c64b9ce4007abb3f5b9b146d3cc9e058f",
+      "bytes": 735
+    },
+    {
+      "id": "artifact_195566734c1d461ea9683fb07d8d0ca0",
+      "kind": "BIB",
+      "revision": 11,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\references.bib",
+      "sha256": "f524812653e997389a89270353f276fc2f096696db5d2beccf447dc043336edb",
+      "bytes": 324
+    },
+    {
+      "id": "artifact_7477255312e6405988e21c626026e5ae",
+      "kind": "PDF",
+      "revision": 11,
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.pdf",
+      "sha256": "320d3f6acc8f24f00412b7468cc89b2dbefc6a46fc40c8391f2a92c90f5824c0",
+      "bytes": 9639
+    }
+  ],
+  "new_pdf_text": {
+    "10": {
+      "pages": 1,
+      "text": "Fixed citation source - software acceptance October 9, 2026 1 Introduction First source [1]. Next [ 2]. Repeat [ 1]. Beta software paragraph cites original page 1 [ 2] and additional source [ 1]. References [1] Fixture Author. Other selected source. 2026. doi: 10.1234/other. [2] Fixture Author. Refreshed live catalog title - software. 2026. 1",
+      "sha256": "6d956fd784fe3bb8331a1966d40460aac702bd034bf44a7f0d5011c0b7809f6d"
+    },
+    "11": {
+      "pages": 1,
+      "text": "Fixed citation source - software acceptance October 10, 2026 1 Introduction Beta software paragraph cites original page 1 [ 1] and additional source [ 2]. First source [2]. Next [ 1]. Repeat [ 2]. References [1] Fixture Author. Refreshed live catalog title - software. 2026. [2] Fixture Author. Other selected source. 2026. doi: 10.1234/other. 1",
+      "sha256": "320d3f6acc8f24f00412b7468cc89b2dbefc6a46fc40c8391f2a92c90f5824c0"
+    }
+  },
+  "prior207files_exact": true,
+  "current_owned_processes": [
+    {
+      "ProcessId": 104836,
+      "ParentProcessId": 103120,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g01-two-paragraph-native-server-v1.py",
+      "CreationDate": "/Date(1791561040739)/"
+    },
+    {
+      "ProcessId": 104544,
+      "ParentProcessId": 104836,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g01-two-paragraph-native-server-v1.py",
+      "CreationDate": "/Date(1791561040760)/"
+    },
+    {
+      "ProcessId": 109108,
+      "ParentProcessId": 90652,
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591531891)/"
+    },
+    {
+      "ProcessId": 108764,
+      "ParentProcessId": 109108,
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591532006)/"
+    },
+    {
+      "ProcessId": 107072,
+      "ParentProcessId": 108764,
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591532154)/"
+    },
+    {
+      "ProcessId": 111168,
+      "ParentProcessId": 107072,
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g01-loading-build-1ou2ff1y\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591532175)/"
+    }
+  ],
+  "obsolete_preview_ports_still_closed": true
+}

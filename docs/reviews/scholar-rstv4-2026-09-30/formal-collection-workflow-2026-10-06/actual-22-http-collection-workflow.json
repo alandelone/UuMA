@@ -1,0 +1,1008 @@
+{
+  "status": "PASS_REAL_HTTP_COLLECTION_SOFTWARE_WORKFLOW",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-collection-2026-10-05-_iaj7quw",
+  "browser_verified": false,
+  "software_fixture_only": true,
+  "scientific_approval": false,
+  "network_providers_executed": false,
+  "model_calls": 0,
+  "responses": [
+    {
+      "method": "POST",
+      "path": "/api/catalog/research-actions",
+      "status": 200,
+      "body": {
+        "operation": "CREATE_FIELD",
+        "object_type": "field",
+        "object_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "object": {
+          "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+          "normalized_name": "collection 软件验收 field",
+          "name": "Collection 软件验收 Field",
+          "description": "Software fixture only",
+          "created_at": "2026-10-05T15:36:51.073734+00:00",
+          "updated_at": "2026-10-05T15:36:51.073734+00:00"
+        },
+        "request_id": "collection-fixture-field-v2",
+        "action_seq": 1,
+        "metadata_digest": "771847466ebb5a02a1a370829d6cf615064c4bf7049f44b4b3f08dff9ecc747e"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/research-actions",
+      "status": 200,
+      "body": {
+        "operation": "CREATE_TOPIC",
+        "object_type": "topic",
+        "object_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "object": {
+          "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+          "normalized_name": "collection 软件验收 topic",
+          "name": "Collection 软件验收 Topic",
+          "description": null,
+          "created_at": "2026-10-05T15:36:51.087750+00:00",
+          "updated_at": "2026-10-05T15:36:51.087750+00:00"
+        },
+        "request_id": "collection-fixture-topic-v2",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "action_seq": 2,
+        "metadata_digest": "416a4ff7b35ac82efcacc00f2cd39508c8beba69c39b4e5f64640452b3e05d48"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/research-actions",
+      "status": 200,
+      "body": {
+        "operation": "CREATE_TRACK",
+        "object_type": "track",
+        "object_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+        "object": {
+          "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+          "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+          "primary_topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+          "title": "Collection 软件验收 Track",
+          "scope": "Software acceptance only",
+          "research_type": "conceptual_framework",
+          "status": "ACTIVE",
+          "mapping_status": "MAPPED",
+          "revision": 1,
+          "created_at": "2026-10-05T15:36:51.116776+00:00",
+          "updated_at": "2026-10-05T15:36:51.116776+00:00"
+        },
+        "request_id": "collection-fixture-track-v2",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "action_seq": 3,
+        "metadata_digest": "1a6775e07ea06b146b6dee7db32930a39a2b33cc002ed88b903b07ccde01dfda"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/preview",
+      "status": 200,
+      "body": {
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "track_id": null,
+        "counts": {
+          "unique_dois": 0,
+          "bibtex_entries": 1,
+          "unique_seeds": 1,
+          "queries": 0,
+          "duplicate_inputs": 0,
+          "catalog_papers": 0,
+          "reusable_pdfs": 0,
+          "needs_review": 0
+        },
+        "matched_papers": [],
+        "creates_jobs": false,
+        "note": "Title-only BibTeX and new papers still require identity resolution"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections",
+      "status": 201,
+      "body": {
+        "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": null,
+        "name": "软件采集 · 实际 BibTeX 入队",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 1,
+        "created_at": "2026-10-05T15:36:51.154392+00:00",
+        "updated_at": "2026-10-05T15:36:51.154392+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": \"@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}\", \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件采集 · 实际 BibTeX 入队\", \"queries\": [], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": null}",
+        "scope": {},
+        "seeds": [
+          {
+            "seed_id": "seed_8f51e82ca52e0ffe362b7383985488b3",
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "seed_type": "BIBTEX",
+            "raw_value": "@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}",
+            "normalized_value": "bib:5d8e0d210001c68447c97dff20e0e42e11f43ec4ccb2e8a1945a23d0af426b4d",
+            "paper_id": null,
+            "created_at": "2026-10-05T15:36:51.154392+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections",
+      "status": 201,
+      "body": {
+        "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": null,
+        "name": "软件采集 · 实际 BibTeX 入队",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 1,
+        "created_at": "2026-10-05T15:36:51.154392+00:00",
+        "updated_at": "2026-10-05T15:36:51.154392+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": \"@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}\", \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件采集 · 实际 BibTeX 入队\", \"queries\": [], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": null}",
+        "scope": {},
+        "seeds": [
+          {
+            "seed_id": "seed_8f51e82ca52e0ffe362b7383985488b3",
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "seed_type": "BIBTEX",
+            "raw_value": "@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}",
+            "normalized_value": "bib:5d8e0d210001c68447c97dff20e0e42e11f43ec4ccb2e8a1945a23d0af426b4d",
+            "paper_id": null,
+            "created_at": "2026-10-05T15:36:51.154392+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections",
+      "status": 409,
+      "body": {
+        "detail": "Collection request key already belongs to different inputs"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/pause",
+      "status": 200,
+      "body": {
+        "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": null,
+        "name": "软件采集 · 实际 BibTeX 入队",
+        "scope_version": 1,
+        "status": "PAUSED",
+        "revision": 2,
+        "created_at": "2026-10-05T15:36:51.154392+00:00",
+        "updated_at": "2026-10-05T15:36:51.204450+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": \"@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}\", \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件采集 · 实际 BibTeX 入队\", \"queries\": [], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": null}",
+        "scope": {},
+        "seeds": [
+          {
+            "seed_id": "seed_8f51e82ca52e0ffe362b7383985488b3",
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "seed_type": "BIBTEX",
+            "raw_value": "@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}",
+            "normalized_value": "bib:5d8e0d210001c68447c97dff20e0e42e11f43ec4ccb2e8a1945a23d0af426b4d",
+            "paper_id": null,
+            "created_at": "2026-10-05T15:36:51.154392+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/resume",
+      "status": 200,
+      "body": {
+        "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": null,
+        "name": "软件采集 · 实际 BibTeX 入队",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 3,
+        "created_at": "2026-10-05T15:36:51.154392+00:00",
+        "updated_at": "2026-10-05T15:36:51.230489+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": \"@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}\", \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件采集 · 实际 BibTeX 入队\", \"queries\": [], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": null}",
+        "scope": {},
+        "seeds": [
+          {
+            "seed_id": "seed_8f51e82ca52e0ffe362b7383985488b3",
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "seed_type": "BIBTEX",
+            "raw_value": "@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}",
+            "normalized_value": "bib:5d8e0d210001c68447c97dff20e0e42e11f43ec4ccb2e8a1945a23d0af426b4d",
+            "paper_id": null,
+            "created_at": "2026-10-05T15:36:51.154392+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9",
+      "status": 200,
+      "body": {
+        "collection": {
+          "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+          "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+          "track_id": null,
+          "name": "软件采集 · 实际 BibTeX 入队",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 3,
+          "created_at": "2026-10-05T15:36:51.154392+00:00",
+          "updated_at": "2026-10-05T15:36:51.230489+00:00",
+          "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+          "scope": {}
+        },
+        "counts": {
+          "papers": 1,
+          "jobs": 2
+        },
+        "stages": [
+          {
+            "job_type": "RESOLVE_SEED",
+            "status": "SUCCEEDED",
+            "count": 1
+          },
+          {
+            "job_type": "SCREEN",
+            "status": "READY",
+            "count": 1
+          }
+        ],
+        "jobs": [
+          {
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "paper_id": null,
+            "job_type": "RESOLVE_SEED",
+            "queue_class": "NETWORK",
+            "status": "SUCCEEDED",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-05T15:36:51.154392+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-05T15:36:51.267066+00:00",
+            "lease_state": "NOT_RUNNING"
+          },
+          {
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "READY",
+            "attempts": 0,
+            "fencing_token": 0,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-05T15:36:51.258032+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-05T15:36:51.258032+00:00",
+            "lease_state": "NOT_RUNNING"
+          }
+        ],
+        "recent_attempts": [
+          {
+            "attempt_id": "attempt_8d3c1046d0104b2ebaabcd1079f4603f",
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "fencing_token": 1,
+            "worker_id": "owned-collection-software-worker-v2",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-05T15:36:51.239002+00:00",
+            "completed_at": "2026-10-05T15:36:51.267066+00:00",
+            "detail_json": "{\"paper_id\": \"paper_740fa04c554314e2e1264ea663bb5c49\"}"
+          }
+        ],
+        "history": [
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "name": "软件采集 · 实际 BibTeX 入队",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-05T15:36:51.230489+00:00"
+          }
+        ],
+        "offset": 0,
+        "limit": 100,
+        "has_more": false,
+        "observed_at": "2026-10-05T15:36:51.277577+00:00",
+        "worker_observation": "JOB_LEASES_ONLY"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/papers/paper_740fa04c554314e2e1264ea663bb5c49",
+      "status": 200,
+      "body": {
+        "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+        "canonical_key": "work:bf8ac7a438e747fbca3a375579c633b83adf6ab16b5cae4edf9ec136a3ebc4a9",
+        "doi": null,
+        "normalized_title": "collection software acceptance fixture",
+        "title": "Collection software acceptance fixture",
+        "published_year": 2026,
+        "abstract": null,
+        "landing_url": null,
+        "pdf_url": null,
+        "created_at": "2026-10-05T15:36:51.250520+00:00",
+        "updated_at": "2026-10-05T15:36:51.250520+00:00",
+        "authors": [
+          "Fixture, Software"
+        ],
+        "catalog_status": "ACTIVE",
+        "files": [],
+        "sources": [],
+        "parse_runs": [],
+        "references": [],
+        "assessments": [],
+        "skeletons": [],
+        "processing": [
+          {
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "READY",
+            "priority": 60,
+            "idempotency_key": "54f30f7974707f4b2d072df5c2cc91b9ab64b9629d1b7dcfc8c11fe6bfcb4c82",
+            "input_json": "{\"scope_version\": 1}",
+            "input_digest": "afb34bc3a53ca95046c1463b5d1a5a31eeefcae867db2e35c533efc0665a1bcb",
+            "rule_version": "screen-v1-scope-1",
+            "attempts": 0,
+            "available_at": "2026-10-05T15:36:51.258032+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 0,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": null,
+            "created_at": "2026-10-05T15:36:51.258032+00:00",
+            "updated_at": "2026-10-05T15:36:51.258032+00:00"
+          }
+        ]
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9",
+      "status": 200,
+      "body": {
+        "collection": {
+          "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+          "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+          "track_id": null,
+          "name": "软件采集 · 实际 BibTeX 入队",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 3,
+          "created_at": "2026-10-05T15:36:51.154392+00:00",
+          "updated_at": "2026-10-05T15:36:51.230489+00:00",
+          "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+          "scope": {}
+        },
+        "counts": {
+          "papers": 1,
+          "jobs": 2
+        },
+        "stages": [
+          {
+            "job_type": "RESOLVE_SEED",
+            "status": "SUCCEEDED",
+            "count": 1
+          },
+          {
+            "job_type": "SCREEN",
+            "status": "RUNNING",
+            "count": 1
+          }
+        ],
+        "jobs": [
+          {
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "RUNNING",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": "owned-fixture-no-model-v2",
+            "lease_expires_at": "2026-10-05T15:38:51.288083+00:00",
+            "available_at": "2026-10-05T15:36:51.258032+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-05T15:36:51.288083+00:00",
+            "lease_state": "OBSERVED_ACTIVE"
+          },
+          {
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "paper_id": null,
+            "job_type": "RESOLVE_SEED",
+            "queue_class": "NETWORK",
+            "status": "SUCCEEDED",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-05T15:36:51.154392+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-05T15:36:51.267066+00:00",
+            "lease_state": "NOT_RUNNING"
+          }
+        ],
+        "recent_attempts": [
+          {
+            "attempt_id": "attempt_5a37ed91f61b48eeb26eba9a321b4322",
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "fencing_token": 1,
+            "worker_id": "owned-fixture-no-model-v2",
+            "status": "RUNNING",
+            "started_at": "2026-10-05T15:36:51.288083+00:00",
+            "completed_at": null,
+            "detail_json": "{}"
+          },
+          {
+            "attempt_id": "attempt_8d3c1046d0104b2ebaabcd1079f4603f",
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "fencing_token": 1,
+            "worker_id": "owned-collection-software-worker-v2",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-05T15:36:51.239002+00:00",
+            "completed_at": "2026-10-05T15:36:51.267066+00:00",
+            "detail_json": "{\"paper_id\": \"paper_740fa04c554314e2e1264ea663bb5c49\"}"
+          }
+        ],
+        "history": [
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "name": "软件采集 · 实际 BibTeX 入队",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-05T15:36:51.230489+00:00"
+          }
+        ],
+        "offset": 0,
+        "limit": 100,
+        "has_more": false,
+        "observed_at": "2026-10-05T15:36:51.299104+00:00",
+        "worker_observation": "JOB_LEASES_ONLY"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/jobs/job_41f42b1e15d39a06b789cb845deb06d4/retry",
+      "status": 409,
+      "body": {
+        "detail": "Job status changed; refresh before retrying"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/jobs/job_41f42b1e15d39a06b789cb845deb06d4/retry",
+      "status": 200,
+      "body": {
+        "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+        "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+        "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+        "job_type": "SCREEN",
+        "queue_class": "MODEL_SCREEN",
+        "status": "READY",
+        "priority": 60,
+        "idempotency_key": "54f30f7974707f4b2d072df5c2cc91b9ab64b9629d1b7dcfc8c11fe6bfcb4c82",
+        "input_json": "{\"scope_version\": 1}",
+        "input_digest": "afb34bc3a53ca95046c1463b5d1a5a31eeefcae867db2e35c533efc0665a1bcb",
+        "rule_version": "screen-v1-scope-1",
+        "attempts": 1,
+        "available_at": "2026-10-05T15:36:51.321635+00:00",
+        "lease_owner": null,
+        "lease_expires_at": null,
+        "fencing_token": 1,
+        "last_error_code": null,
+        "last_error_detail": null,
+        "result_json": null,
+        "created_at": "2026-10-05T15:36:51.258032+00:00",
+        "updated_at": "2026-10-05T15:36:51.321635+00:00"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/jobs/job_41f42b1e15d39a06b789cb845deb06d4/retry",
+      "status": 409,
+      "body": {
+        "detail": "Job status changed; refresh before retrying"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/jobs/job_41f42b1e15d39a06b789cb845deb06d4/retry",
+      "status": 422,
+      "body": {
+        "detail": [
+          {
+            "type": "literal_error",
+            "loc": [
+              "body",
+              "expected_status"
+            ],
+            "msg": "Input should be 'RETRY_WAIT', 'RESOURCE_WAIT' or 'FAILED_TERMINAL'",
+            "input": "NEEDS_HUMAN",
+            "ctx": {
+              "expected": "'RETRY_WAIT', 'RESOURCE_WAIT' or 'FAILED_TERMINAL'"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections",
+      "status": 201,
+      "body": {
+        "collection_id": "collection_591db24ada671e793fff0b9ad213cc1f",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+        "name": "软件 Track · 纯检索词",
+        "scope_version": 1,
+        "status": "ACTIVE",
+        "revision": 1,
+        "created_at": "2026-10-05T15:36:51.359180+00:00",
+        "updated_at": "2026-10-05T15:36:51.359180+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件 Track · 纯检索词\", \"queries\": [\"software collection acceptance\", \"software collection acceptance\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+        "scope": {},
+        "seeds": [],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/research-overview",
+      "status": 200,
+      "body": {
+        "fields": [
+          {
+            "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+            "normalized_name": "collection 软件验收 field",
+            "name": "Collection 软件验收 Field",
+            "description": "Software fixture only",
+            "created_at": "2026-10-05T15:36:51.073734+00:00",
+            "updated_at": "2026-10-05T15:36:51.073734+00:00",
+            "metadata_digest": "771847466ebb5a02a1a370829d6cf615064c4bf7049f44b4b3f08dff9ecc747e"
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+            "normalized_name": "collection 软件验收 topic",
+            "name": "Collection 软件验收 Topic",
+            "description": null,
+            "created_at": "2026-10-05T15:36:51.087750+00:00",
+            "updated_at": "2026-10-05T15:36:51.087750+00:00",
+            "metadata_digest": "416a4ff7b35ac82efcacc00f2cd39508c8beba69c39b4e5f64640452b3e05d48"
+          }
+        ],
+        "field_topics": [
+          {
+            "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+            "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d"
+          }
+        ],
+        "tracks": [
+          {
+            "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+            "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+            "primary_topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+            "title": "Collection 软件验收 Track",
+            "scope": "Software acceptance only",
+            "research_type": "conceptual_framework",
+            "status": "ACTIVE",
+            "mapping_status": "MAPPED",
+            "revision": 1,
+            "created_at": "2026-10-05T15:36:51.116776+00:00",
+            "updated_at": "2026-10-05T15:36:51.116776+00:00",
+            "metadata_digest": "1a6775e07ea06b146b6dee7db32930a39a2b33cc002ed88b903b07ccde01dfda"
+          }
+        ],
+        "questions": [],
+        "manuscripts": [],
+        "manuscript_questions": [],
+        "collections": [
+          {
+            "collection_id": "collection_591db24ada671e793fff0b9ad213cc1f",
+            "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+            "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+            "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+            "name": "软件 Track · 纯检索词",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-05T15:36:51.359180+00:00"
+          },
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+            "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+            "track_id": null,
+            "name": "软件采集 · 实际 BibTeX 入队",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-05T15:36:51.230489+00:00"
+          }
+        ],
+        "collection_jobs": [
+          {
+            "collection_id": "collection_591db24ada671e793fff0b9ad213cc1f",
+            "status": "READY",
+            "count": 1,
+            "latest_job_at": "2026-10-05T15:36:51.359180+00:00"
+          },
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "status": "NEEDS_HUMAN",
+            "count": 1,
+            "latest_job_at": "2026-10-05T15:36:51.344656+00:00"
+          },
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "status": "SUCCEEDED",
+            "count": 1,
+            "latest_job_at": "2026-10-05T15:36:51.267066+00:00"
+          }
+        ],
+        "workspace_id": "c959454fe8fd1bdea4d068176573cc7c6057269031e6cc21867da2624a0b33e1"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9",
+      "status": 200,
+      "body": {
+        "collection": {
+          "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+          "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+          "track_id": null,
+          "name": "软件采集 · 实际 BibTeX 入队",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 3,
+          "created_at": "2026-10-05T15:36:51.154392+00:00",
+          "updated_at": "2026-10-05T15:36:51.230489+00:00",
+          "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+          "scope": {}
+        },
+        "counts": {
+          "papers": 1,
+          "jobs": 2
+        },
+        "stages": [
+          {
+            "job_type": "RESOLVE_SEED",
+            "status": "SUCCEEDED",
+            "count": 1
+          },
+          {
+            "job_type": "SCREEN",
+            "status": "NEEDS_HUMAN",
+            "count": 1
+          }
+        ],
+        "jobs": [
+          {
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "NEEDS_HUMAN",
+            "attempts": 2,
+            "fencing_token": 2,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-06T15:36:51.339654+00:00",
+            "last_error_code": "SOFTWARE_REVIEW_FIXTURE",
+            "last_error_detail": "Explicit software review fixture, not a scientific decision",
+            "updated_at": "2026-10-05T15:36:51.344656+00:00",
+            "lease_state": "NOT_RUNNING"
+          },
+          {
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "paper_id": null,
+            "job_type": "RESOLVE_SEED",
+            "queue_class": "NETWORK",
+            "status": "SUCCEEDED",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-05T15:36:51.154392+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-05T15:36:51.267066+00:00",
+            "lease_state": "NOT_RUNNING"
+          }
+        ],
+        "recent_attempts": [
+          {
+            "attempt_id": "attempt_145f50de02804e55bffa3ff22de2152d",
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "fencing_token": 2,
+            "worker_id": "owned-fixture-no-model-v2",
+            "status": "NEEDS_HUMAN",
+            "started_at": "2026-10-05T15:36:51.336656+00:00",
+            "completed_at": "2026-10-05T15:36:51.344656+00:00",
+            "detail_json": "{\"error_code\": \"SOFTWARE_REVIEW_FIXTURE\", \"detail\": \"Explicit software review fixture, not a scientific decision\"}"
+          },
+          {
+            "attempt_id": "attempt_5a37ed91f61b48eeb26eba9a321b4322",
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "fencing_token": 1,
+            "worker_id": "owned-fixture-no-model-v2",
+            "status": "RETRY_WAIT",
+            "started_at": "2026-10-05T15:36:51.288083+00:00",
+            "completed_at": "2026-10-05T15:36:51.303101+00:00",
+            "detail_json": "{\"error_code\": \"SOFTWARE_FIXTURE_FAILURE\", \"detail\": \"Explicit software failure fixture, no model execution\"}"
+          },
+          {
+            "attempt_id": "attempt_8d3c1046d0104b2ebaabcd1079f4603f",
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "fencing_token": 1,
+            "worker_id": "owned-collection-software-worker-v2",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-05T15:36:51.239002+00:00",
+            "completed_at": "2026-10-05T15:36:51.267066+00:00",
+            "detail_json": "{\"paper_id\": \"paper_740fa04c554314e2e1264ea663bb5c49\"}"
+          }
+        ],
+        "history": [
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "name": "软件采集 · 实际 BibTeX 入队",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-05T15:36:51.230489+00:00"
+          }
+        ],
+        "offset": 0,
+        "limit": 100,
+        "has_more": false,
+        "observed_at": "2026-10-05T15:36:51.378715+00:00",
+        "worker_observation": "JOB_LEASES_ONLY"
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9",
+      "status": 200,
+      "body": {
+        "collection": {
+          "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+          "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+          "track_id": null,
+          "name": "软件采集 · 实际 BibTeX 入队",
+          "scope_version": 1,
+          "status": "ACTIVE",
+          "revision": 3,
+          "created_at": "2026-10-05T15:36:51.154392+00:00",
+          "updated_at": "2026-10-05T15:36:51.230489+00:00",
+          "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+          "scope": {}
+        },
+        "counts": {
+          "papers": 1,
+          "jobs": 2
+        },
+        "stages": [
+          {
+            "job_type": "RESOLVE_SEED",
+            "status": "SUCCEEDED",
+            "count": 1
+          },
+          {
+            "job_type": "SCREEN",
+            "status": "NEEDS_HUMAN",
+            "count": 1
+          }
+        ],
+        "jobs": [
+          {
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "NEEDS_HUMAN",
+            "attempts": 2,
+            "fencing_token": 2,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-06T15:36:51.339654+00:00",
+            "last_error_code": "SOFTWARE_REVIEW_FIXTURE",
+            "last_error_detail": "Explicit software review fixture, not a scientific decision",
+            "updated_at": "2026-10-05T15:36:51.344656+00:00",
+            "lease_state": "NOT_RUNNING"
+          },
+          {
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "paper_id": null,
+            "job_type": "RESOLVE_SEED",
+            "queue_class": "NETWORK",
+            "status": "SUCCEEDED",
+            "attempts": 1,
+            "fencing_token": 1,
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "available_at": "2026-10-05T15:36:51.154392+00:00",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "updated_at": "2026-10-05T15:36:51.267066+00:00",
+            "lease_state": "NOT_RUNNING"
+          }
+        ],
+        "recent_attempts": [
+          {
+            "attempt_id": "attempt_145f50de02804e55bffa3ff22de2152d",
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "fencing_token": 2,
+            "worker_id": "owned-fixture-no-model-v2",
+            "status": "NEEDS_HUMAN",
+            "started_at": "2026-10-05T15:36:51.336656+00:00",
+            "completed_at": "2026-10-05T15:36:51.344656+00:00",
+            "detail_json": "{\"error_code\": \"SOFTWARE_REVIEW_FIXTURE\", \"detail\": \"Explicit software review fixture, not a scientific decision\"}"
+          },
+          {
+            "attempt_id": "attempt_5a37ed91f61b48eeb26eba9a321b4322",
+            "job_id": "job_41f42b1e15d39a06b789cb845deb06d4",
+            "fencing_token": 1,
+            "worker_id": "owned-fixture-no-model-v2",
+            "status": "RETRY_WAIT",
+            "started_at": "2026-10-05T15:36:51.288083+00:00",
+            "completed_at": "2026-10-05T15:36:51.303101+00:00",
+            "detail_json": "{\"error_code\": \"SOFTWARE_FIXTURE_FAILURE\", \"detail\": \"Explicit software failure fixture, no model execution\"}"
+          },
+          {
+            "attempt_id": "attempt_8d3c1046d0104b2ebaabcd1079f4603f",
+            "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+            "fencing_token": 1,
+            "worker_id": "owned-collection-software-worker-v2",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-05T15:36:51.239002+00:00",
+            "completed_at": "2026-10-05T15:36:51.267066+00:00",
+            "detail_json": "{\"paper_id\": \"paper_740fa04c554314e2e1264ea663bb5c49\"}"
+          }
+        ],
+        "history": [
+          {
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "name": "软件采集 · 实际 BibTeX 入队",
+            "status": "ACTIVE",
+            "updated_at": "2026-10-05T15:36:51.230489+00:00"
+          }
+        ],
+        "offset": 0,
+        "limit": 100,
+        "has_more": false,
+        "observed_at": "2026-10-05T15:36:51.391229+00:00",
+        "worker_observation": "JOB_LEASES_ONLY"
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_6d29943b5cbedf7766c02f3da4d647b9/pause",
+      "status": 200,
+      "body": {
+        "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": null,
+        "name": "软件采集 · 实际 BibTeX 入队",
+        "scope_version": 1,
+        "status": "PAUSED",
+        "revision": 4,
+        "created_at": "2026-10-05T15:36:51.154392+00:00",
+        "updated_at": "2026-10-05T15:36:51.401244+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": \"@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}\", \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件采集 · 实际 BibTeX 入队\", \"queries\": [], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": null}",
+        "scope": {},
+        "seeds": [
+          {
+            "seed_id": "seed_8f51e82ca52e0ffe362b7383985488b3",
+            "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+            "seed_type": "BIBTEX",
+            "raw_value": "@article{software_fixture, title={Collection software acceptance fixture}, author={Fixture, Software}, year=2026}",
+            "normalized_value": "bib:5d8e0d210001c68447c97dff20e0e42e11f43ec4ccb2e8a1945a23d0af426b4d",
+            "paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+            "created_at": "2026-10-05T15:36:51.154392+00:00"
+          }
+        ],
+        "counts": {
+          "papers": 1,
+          "jobs": 2
+        }
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/collections/collection_591db24ada671e793fff0b9ad213cc1f/pause",
+      "status": 200,
+      "body": {
+        "collection_id": "collection_591db24ada671e793fff0b9ad213cc1f",
+        "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+        "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+        "name": "软件 Track · 纯检索词",
+        "scope_version": 1,
+        "status": "PAUSED",
+        "revision": 2,
+        "created_at": "2026-10-05T15:36:51.359180+00:00",
+        "updated_at": "2026-10-05T15:36:51.412749+00:00",
+        "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+        "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"软件 Track · 纯检索词\", \"queries\": [\"software collection acceptance\", \"software collection acceptance\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+        "scope": {},
+        "seeds": [],
+        "counts": {
+          "papers": 0,
+          "jobs": 1
+        }
+      }
+    }
+  ],
+  "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+  "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+  "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+  "collection_ids": [
+    "collection_6d29943b5cbedf7766c02f3da4d647b9",
+    "collection_591db24ada671e793fff0b9ad213cc1f"
+  ],
+  "candidate_paper_id": "paper_740fa04c554314e2e1264ea663bb5c49",
+  "worker_execution": {
+    "job_id": "job_e37c820c1346272ac47fd92af65d3b6c",
+    "collection_id": "collection_6d29943b5cbedf7766c02f3da4d647b9",
+    "paper_id": null,
+    "job_type": "RESOLVE_SEED",
+    "queue_class": "NETWORK",
+    "status": "SUCCEEDED",
+    "priority": 100,
+    "idempotency_key": "09cc05c3167c0b44a30e1578774acc86d2a20969d8fc3be473443b7d23f9fe09",
+    "input_json": "{\"identity\": {\"author\": \"Fixture, Software\", \"title\": \"Collection software acceptance fixture\", \"year\": \"2026\"}, \"seed_id\": \"seed_8f51e82ca52e0ffe362b7383985488b3\"}",
+    "input_digest": "621d96af933772dcde5cb8f2fb1e12752218a573f24c852ef5292f98473896d0",
+    "rule_version": "identity-v1",
+    "attempts": 1,
+    "available_at": "2026-10-05T15:36:51.154392+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 1,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": "{\"paper_id\": \"paper_740fa04c554314e2e1264ea663bb5c49\"}",
+    "created_at": "2026-10-05T15:36:51.154392+00:00",
+    "updated_at": "2026-10-05T15:36:51.267066+00:00"
+  },
+  "preview_read_only": true,
+  "exact_start_retry_no_write": true,
+  "candidate_status": "NOT_SCIENTIFICALLY_APPROVED",
+  "final_collections_paused": true
+}

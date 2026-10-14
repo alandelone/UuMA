@@ -1,0 +1,144 @@
+CHECK ['tests/unit/catalog-research-chat.mjs']
+PASS click binds the real selected object
+PASS new source cannot silently rebind nonempty question
+PASS a slow old click cannot overwrite the newer choice
+PASS pin keeps the original scope across navigation
+PASS UTF16 emoji selection remains exact
+PASS a mismatched quote cannot attach to another version
+PASS removing selection keeps original question and object
+PASS local draft restores its own immutable source
+PASS storage failure keeps draft and permits explicit send
+PASS uncertain result reconciles original ID without another model submission
+PASS failed reply retains actual failure and author receipt
+PASS persisted RUNNING does not prove a live worker
+PASS cross-scope sources require explicit choice
+PASS deleted original remains a historical fixed source
+PASS restoring an uncertain request performs no new POST
+PASS annotation retry preserves the exact original request
+PASS leaving invalidates an outstanding source read
+PASS rejected stale source retains question for explicit comparison
+PASS followup explicitly carries the last actual reply as parent
+PASS starting a new discussion retains question and fixed selection
+PASS changing source starts its own discussion and preserves old continuation draft
+PASS restored continuation retains the exact chosen reply and history
+PASS old response cannot replace the newly selected source or its question
+PASS continuing a chosen historical branch never replaces a protected draft
+PASS failed turn can be followed up without inventing an assistant reply
+PASS historical call lookup is read only and leaves current question intact
+26 controlled discussion state checks passed; fixture model, no browser claim.
+Exit: 0
+CHECK ['tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+14 controlled workspace scenarios passed
+Exit: 0
+CHECK ['tests/catalog_research_overview.mjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed
+Exit: 0
+CHECK ['tests/unit/catalog-return.mjs']
+11 Catalog return origin/context cases passed
+Exit: 0
+CHECK ['--check', 'src/rstv4/catalog_research_chat.js']
+Exit: 0
+CHECK ['-e', "const fs=require('fs'),vm=require('vm');for(const m of fs.readFileSync('src/rstv4/catalog_web.html','utf8').matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/g)){new vm.Script(m[1]);}console.log('Shipped Catalog inline scripts parse');"]
+Shipped Catalog inline scripts parse
+Exit: 0
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/research_context.py', 'src/rstv4/research_discussions.py', 'src/rstv4/model_gateway.py', 'src/rstv4/catalog_web.py', 'tests/test_research_discussions.py', 'tests/test_research_conversation.py']
+All checks passed!
+Exit: 0
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\oxlint\\bin\\oxlint', '--disable-nested-config', 'C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_research_chat.js', 'C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_research_workspaces.js', 'C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\catalog-research-chat.mjs']
+Exit: 0
+CHECK ['-m', 'pytest', 'tests/test_research_discussions.py', 'tests/test_research_conversation.py', 'tests/test_fieldkg_workspace.py', 'tests/test_research_workspace.py', 'tests/test_catalog_web.py', '-q']
+.................F...................................................... [ 91%]
+.......                                                                  [100%]
+================================== FAILURES ===================================
+___ test_restart_observation_does_not_automatically_reinvoke_running_model ____
+
+environment = (<starlette.testclient.TestClient object at 0x0000024512ACE4D0>, WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/p...4258940047f971dff049', 'track_a3095fc0aee5417f9530612a34fd9ef0', 'fieldkg_build_7a4f4730e4d74f52b20c0dd27f8559b1', ...)
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-816/test_restart_observation_does_0')
+
+    def test_restart_observation_does_not_automatically_reinvoke_running_model(environment, tmp_path):
+        client, db, field, _, _, _, gateway = environment
+        bound = context(client, unit_target(client, field)); body = payload(bound)
+        client.post("/api/catalog/discussion/messages", json=body); wait(client, body["request_id"], bound)
+        with sqlite3.connect(db) as conn:
+            conn.execute("UPDATE research_discussion_jobs SET status='RUNNING'")
+        new_gateway = FakeGateway()
+        new = ResearchDiscussionService(db.parent.parent, new_gateway)
+        try:
+>           state = new.request(body["request_id"], bound["scope_key"])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_research_discussions.py:338: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\rstv4\research_discussions.py:378: in request
+    messages = [_verified_message(conn, row) for row in conn.execute("SELECT * FROM research_discussion_messages WHERE request_id=? ORDER BY seq", (request_id,))]
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_discussions.py:378: in <listcomp>
+    messages = [_verified_message(conn, row) for row in conn.execute("SELECT * FROM research_discussion_messages WHERE request_id=? ORDER BY seq", (request_id,))]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x0000024512AD9D50>
+row = <sqlite3.Row object at 0x000002451299D600>
+
+    def _verified_message(conn: sqlite3.Connection, row: sqlite3.Row) -> dict:
+        """Match historical words and parent links to the immutable call receipt."""
+        message = _message(row)
+        job = conn.execute("SELECT * FROM research_discussion_jobs WHERE request_id=?", (message["request_id"],)).fetchone()
+        if job is None:
+            raise WorkspaceError(410, "The historical discussion call is unavailable")
+        model_input = json.loads(job["input_json"])
+        if digest(model_input) != job["input_sha256"]:
+            raise WorkspaceError(410, "The saved model input is inconsistent")
+        for source in _input_sources(model_input):
+            _verify_source(source)
+        primary = model_input["source"]
+        expected = (primary["context"], primary["quote"], model_input["additional_sources"])
+        if (message["context"], message["quote"], message["additional_sources"]) != expected:
+            raise WorkspaceError(410, "The historical discussion source differs from its call")
+        if message["actor"] == "AUTHOR":
+            conversation = model_input.get("conversation", [])
+            parent = conversation[-1]["message_id"] if conversation else None
+            if message["message_id"] != job["author_message_id"] or message["content"] != model_input["question"] or message["reply_to"] != parent:
+                raise WorkspaceError(410, "The historical question or parent differs from its call")
+        elif message["actor"] == "AGENT":
+            response = json.loads(job["response_json"]) if job["response_json"] else {}
+            if job["status"] != "COMPLETE" or message["reply_to"] != job["author_message_id"] or message["content"] != response.get("answer", "").strip():
+>               raise WorkspaceError(410, "The historical reply differs from its call")
+E               rstv4.research_workspace.WorkspaceError: The historical reply differs from its call
+
+src\rstv4\research_discussions.py:156: WorkspaceError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_research_discussions.py::test_restart_observation_does_not_automatically_reinvoke_running_model
+1 failed, 78 passed, 1 warning in 28.44s
+Exit: 1

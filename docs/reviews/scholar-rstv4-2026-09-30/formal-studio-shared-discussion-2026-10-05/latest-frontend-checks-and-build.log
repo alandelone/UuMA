@@ -1,0 +1,82 @@
+CHECK ['node_modules/typescript/bin/tsc', '--noEmit']
+Exit: 0
+CHECK ['node_modules/oxlint/bin/oxlint', 'components/studio-workspace.tsx', 'lib/shared-discussion.ts', 'lib/studio-api.ts']
+Exit: 0
+CHECK ['tests/unit/catalog-research-chat.mjs']
+PASS click binds the real selected object
+PASS new source cannot silently rebind nonempty question
+PASS a slow old click cannot overwrite the newer choice
+PASS pin keeps the original scope across navigation
+PASS UTF16 emoji selection remains exact
+PASS a mismatched quote cannot attach to another version
+PASS removing selection keeps original question and object
+PASS local draft restores its own immutable source
+PASS storage failure keeps draft and permits explicit send
+PASS uncertain result reconciles original ID without another model submission
+PASS failed reply retains actual failure and author receipt
+PASS persisted RUNNING does not prove a live worker
+PASS cross-scope sources require explicit choice
+PASS deleted original remains a historical fixed source
+PASS restoring an uncertain request performs no new POST
+PASS annotation retry preserves the exact original request
+PASS leaving invalidates an outstanding source read
+PASS rejected stale source retains question for explicit comparison
+PASS followup explicitly carries the last actual reply as parent
+PASS starting a new discussion retains question and fixed selection
+PASS changing source starts its own discussion and preserves old continuation draft
+PASS restored continuation retains the exact chosen reply and history
+PASS old response cannot replace the newly selected source or its question
+PASS continuing a chosen historical branch never replaces a protected draft
+PASS failed turn can be followed up without inventing an assistant reply
+PASS historical call lookup is read only and leaves current question intact
+PASS saving an annotation preserves an unsent question and continuation
+PASS Studio generated selection freezes its own revision and version through followup
+28 controlled discussion state checks passed; fixture model, no browser claim.
+Exit: 0
+CHECK ['node_modules/vinext/dist/cli.js', 'build']
+
+  vinext build  (Vite 8.3.0)
+
+[1/5] analyze client references...
+transforming...
+✓ 249 modules transformed.
+rendering chunks...
+✓ built in 492ms
+[2/5] analyze server references...
+transforming...
+✓ 361 modules transformed.
+rendering chunks...
+✓ built in 353ms
+[3/5] build rsc environment...
+transforming...
+✓ 241 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 368ms
+[4/5] build client environment...
+transforming...
+✓ 2154 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 971ms
+[5/5] build ssr environment...
+transforming...
+✓ 364 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 300ms
+[0m
+  Route (app)
+  ─ ? /
+
+  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
+Exit: 0
+CHECK ['diff', '--check']
+Exit: 0

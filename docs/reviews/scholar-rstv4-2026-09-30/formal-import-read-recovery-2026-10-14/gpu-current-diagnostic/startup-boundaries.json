@@ -1,0 +1,40 @@
+{
+  "mission": {
+    "schema_version": 1,
+    "mission": "Complete UuMA specialist agent trust, deployment, knowledge, and discussion capabilities",
+    "stage": "verification",
+    "active_skill": null,
+    "gate": {
+      "current": "stage-gates/04-verification-report.md",
+      "status": "pending_review",
+      "blocked_by": null
+    },
+    "allowed_stages": [
+      "discovery",
+      "design",
+      "execution",
+      "verification",
+      "complete"
+    ],
+    "updated_at": "2026-09-08T15:57:35+08:00"
+  },
+  "files": {
+    "AGENTS.md": {
+      "bytes": 3093,
+      "sha256": "8192352fd8def00c32806198efb62ebcd0a9bc5901917cc88da6709e2ad3d91a"
+    },
+    "mission_status.json": {
+      "bytes": 465,
+      "sha256": "59236a9cf52d80205e620cc971befdd1d974224e62718d8c20a9215a6ec5ea3e"
+    },
+    "active-session/HANDOFF.md": {
+      "bytes": 1040292,
+      "sha256": "2782252a343bea543a1d6df4146fd1d7f11178de78b508dc482dbc21c68fb8e8"
+    },
+    "stage-gates/04-verification-report.md": {
+      "bytes": 199689,
+      "sha256": "2c2dd6285f8c2ea00a8f89dea5d06c8c7305eab069d0ec6bc5c800d385cbde05"
+    }
+  },
+  "sourceTask": "Read-only GPU failures/resources/nextstep; no model, worker, CPU fallback, global edit, browser/service/database access or session writer"
+}

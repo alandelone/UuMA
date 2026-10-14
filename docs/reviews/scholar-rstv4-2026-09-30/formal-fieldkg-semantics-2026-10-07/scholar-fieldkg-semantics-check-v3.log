@@ -1,0 +1,14 @@
+['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/fieldkg_semantics.py', 'src/rstv4/catalog_web.py', 'src/rstv4/research_context.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/research_views.py', 'tests/test_fieldkg_semantics.py']
+RUF059 Unpacked variable `db` is never used
+   --> tests\test_fieldkg_semantics.py:122:12
+    |
+121 | def test_waiting_run_and_duplicate_advance_keep_one_interpretation_set(setup):
+122 |     client,db,field,_,_,build,gateway=setup
+    |            ^^
+123 |     gateway.pending=True
+124 |     run,_=create(client,field,build)
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 3 errors (2 fixed, 1 remaining).
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

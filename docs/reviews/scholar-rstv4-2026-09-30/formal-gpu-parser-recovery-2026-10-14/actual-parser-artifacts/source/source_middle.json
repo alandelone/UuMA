@@ -1,0 +1,664 @@
+{
+    "pdf_info": [
+        {
+            "preproc_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        29,
+                        38,
+                        181,
+                        52
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                30,
+                                39,
+                                178,
+                                53
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        39,
+                                        178,
+                                        53
+                                    ],
+                                    "score": 1.0,
+                                    "content": "Software review identity title",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        29,
+                        68,
+                        154,
+                        83
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                29,
+                                68,
+                                151,
+                                82
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        68,
+                                        151,
+                                        82
+                                    ],
+                                    "score": 1.0,
+                                    "content": "DOI 10.1234/corrected",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        165,
+                        97,
+                        998,
+                        114
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                163,
+                                101,
+                                999,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        163,
+                                        101,
+                                        999,
+                                        116
+                                    ],
+                                    "score": 1.0,
+                                    "content": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 2
+                }
+            ],
+            "layout_bboxes": [],
+            "page_idx": 0,
+            "page_size": [
+                1000.0,
+                1000.0
+            ],
+            "_layout_tree": [],
+            "images": [],
+            "tables": [],
+            "interline_equations": [],
+            "discarded_blocks": [],
+            "need_drop": false,
+            "drop_reason": [],
+            "para_blocks": [
+                {
+                    "type": "text",
+                    "bbox": [
+                        29,
+                        38,
+                        181,
+                        52
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                30,
+                                39,
+                                178,
+                                53
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        39,
+                                        178,
+                                        53
+                                    ],
+                                    "score": 1.0,
+                                    "content": "Software review identity title",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "page_num": "page_0",
+                    "page_size": [
+                        1000.0,
+                        1000.0
+                    ],
+                    "bbox_fs": [
+                        30,
+                        39,
+                        178,
+                        53
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        29,
+                        68,
+                        154,
+                        83
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                29,
+                                68,
+                                151,
+                                82
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        68,
+                                        151,
+                                        82
+                                    ],
+                                    "score": 1.0,
+                                    "content": "DOI 10.1234/corrected",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 1
+                        }
+                    ],
+                    "index": 1,
+                    "page_num": "page_0",
+                    "page_size": [
+                        1000.0,
+                        1000.0
+                    ],
+                    "bbox_fs": [
+                        29,
+                        68,
+                        151,
+                        82
+                    ]
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        165,
+                        97,
+                        998,
+                        114
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                163,
+                                101,
+                                999,
+                                116
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        163,
+                                        101,
+                                        999,
+                                        116
+                                    ],
+                                    "score": 1.0,
+                                    "content": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 2
+                        }
+                    ],
+                    "index": 2,
+                    "page_num": "page_0",
+                    "page_size": [
+                        1000.0,
+                        1000.0
+                    ],
+                    "bbox_fs": [
+                        163,
+                        101,
+                        999,
+                        116
+                    ]
+                }
+            ]
+        },
+        {
+            "preproc_blocks": [
+                {
+                    "type": "title",
+                    "bbox": [
+                        29,
+                        38,
+                        92,
+                        53
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                29,
+                                38,
+                                92,
+                                54
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        38,
+                                        92,
+                                        54
+                                    ],
+                                    "score": 1.0,
+                                    "content": "References",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0
+                },
+                {
+                    "type": "text",
+                    "bbox": [
+                        25,
+                        65,
+                        452,
+                        235
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                29,
+                                69,
+                                448,
+                                86
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        69,
+                                        448,
+                                        86
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[1] Reference author 1. Distinct software citation experiment validation 1. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 1
+                        },
+                        {
+                            "bbox": [
+                                30,
+                                100,
+                                448,
+                                115
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        100,
+                                        448,
+                                        115
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[2] Reference author 2. Distinct software citation experiment validation 2. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 2
+                        },
+                        {
+                            "bbox": [
+                                29,
+                                130,
+                                448,
+                                146
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        130,
+                                        448,
+                                        146
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[3] Reference author 3. Distinct software citation experiment validation 3. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 3
+                        },
+                        {
+                            "bbox": [
+                                28,
+                                159,
+                                448,
+                                176
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        28,
+                                        159,
+                                        448,
+                                        176
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[4] Reference author 4. Distinct software citation experiment validation 4. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 4
+                        },
+                        {
+                            "bbox": [
+                                30,
+                                190,
+                                448,
+                                205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        190,
+                                        448,
+                                        205
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[5] Reference author 5. Distinct software citation experiment validation 5. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 5
+                        },
+                        {
+                            "bbox": [
+                                29,
+                                219,
+                                448,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        219,
+                                        448,
+                                        236
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 6
+                        }
+                    ],
+                    "index": 3.5
+                }
+            ],
+            "layout_bboxes": [],
+            "page_idx": 1,
+            "page_size": [
+                1000.0,
+                1000.0
+            ],
+            "_layout_tree": [],
+            "images": [],
+            "tables": [],
+            "interline_equations": [],
+            "discarded_blocks": [],
+            "need_drop": false,
+            "drop_reason": [],
+            "para_blocks": [
+                {
+                    "type": "title",
+                    "bbox": [
+                        29,
+                        38,
+                        92,
+                        53
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                29,
+                                38,
+                                92,
+                                54
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        38,
+                                        92,
+                                        54
+                                    ],
+                                    "score": 1.0,
+                                    "content": "References",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 0
+                        }
+                    ],
+                    "index": 0,
+                    "page_num": "page_1",
+                    "page_size": [
+                        1000.0,
+                        1000.0
+                    ]
+                },
+                {
+                    "type": "list",
+                    "bbox": [
+                        25,
+                        65,
+                        452,
+                        235
+                    ],
+                    "lines": [
+                        {
+                            "bbox": [
+                                29,
+                                69,
+                                448,
+                                86
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        69,
+                                        448,
+                                        86
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[1] Reference author 1. Distinct software citation experiment validation 1. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 1,
+                            "is_list_end_line": true
+                        },
+                        {
+                            "bbox": [
+                                30,
+                                100,
+                                448,
+                                115
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        100,
+                                        448,
+                                        115
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[2] Reference author 2. Distinct software citation experiment validation 2. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 2,
+                            "is_list_start_line": true,
+                            "is_list_end_line": true
+                        },
+                        {
+                            "bbox": [
+                                29,
+                                130,
+                                448,
+                                146
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        130,
+                                        448,
+                                        146
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[3] Reference author 3. Distinct software citation experiment validation 3. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 3,
+                            "is_list_start_line": true,
+                            "is_list_end_line": true
+                        },
+                        {
+                            "bbox": [
+                                28,
+                                159,
+                                448,
+                                176
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        28,
+                                        159,
+                                        448,
+                                        176
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[4] Reference author 4. Distinct software citation experiment validation 4. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 4,
+                            "is_list_start_line": true,
+                            "is_list_end_line": true
+                        },
+                        {
+                            "bbox": [
+                                30,
+                                190,
+                                448,
+                                205
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        30,
+                                        190,
+                                        448,
+                                        205
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[5] Reference author 5. Distinct software citation experiment validation 5. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 5,
+                            "is_list_start_line": true,
+                            "is_list_end_line": true
+                        },
+                        {
+                            "bbox": [
+                                29,
+                                219,
+                                448,
+                                236
+                            ],
+                            "spans": [
+                                {
+                                    "bbox": [
+                                        29,
+                                        219,
+                                        448,
+                                        236
+                                    ],
+                                    "score": 1.0,
+                                    "content": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026.",
+                                    "type": "text"
+                                }
+                            ],
+                            "index": 6,
+                            "is_list_start_line": true,
+                            "is_list_end_line": true
+                        }
+                    ],
+                    "index": 3.5,
+                    "page_num": "page_1",
+                    "page_size": [
+                        1000.0,
+                        1000.0
+                    ],
+                    "bbox_fs": [
+                        28,
+                        69,
+                        448,
+                        236
+                    ]
+                }
+            ]
+        }
+    ],
+    "_parse_type": "txt",
+    "_version_name": "1.2.2"
+}

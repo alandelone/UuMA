@@ -1,0 +1,31 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const Module = require('node:module');
+const path = require('node:path');
+const ts = require('typescript');
+const file = path.resolve(__dirname, '../../lib/studio-view-state.ts');
+const mod = new Module(file, module); mod.filename = file; mod.paths = module.paths;
+mod._compile(ts.transpileModule(fs.readFileSync(file, 'utf8'), {
+  compilerOptions: {module: ts.ModuleKind.CommonJS, target: ts.ScriptTarget.ES2022},
+}).outputText, file);
+const {manuscriptNavigationUrl, restoredReadingVersion, restoredSourceLocation} = mod.exports;
+const original = new URL('http://127.0.0.1:3008/?manuscript=A&track=T&from=catalog&catalog_view=overview');
+for (const key of ['view','left','right','chat','folds','round','object','reading_version','discussion','discussion_scope','discussion_source','studio_discussion','discussion_return']) original.searchParams.set(key, 'A-only');
+const other = manuscriptNavigationUrl(original.href, 'B');
+assert.deepEqual([...other.searchParams], [['manuscript','B'],['track','T'],['from','catalog'],['catalog_view','overview']]);
+assert.equal(manuscriptNavigationUrl(other.href).searchParams.has('manuscript'), false);
+assert.equal(original.searchParams.get('object'), 'A-only');
+console.log('PASS ordinary navigation isolates manuscript view while preserving Track/Catalog return');
+const version = 'manuscript_version_original';
+assert.equal(restoredReadingVersion(null, {type:'generated_paragraph',id:version+':Alpha',quote:{generated_version_id:version}}), version);
+assert.equal(restoredReadingVersion(undefined, {type:'generated_paragraph',id:version+':Alpha'}), version);
+assert.equal(restoredReadingVersion(null, {type:'paragraph',id:'Alpha'}), null);
+assert.equal(restoredReadingVersion('', {type:'generated_paragraph',id:'other:Alpha',quote:{generated_version_id:version}}), null);
+console.log('PASS old generated anchors retain original version and author objects do not invent one');
+const location = {kind:'shared',reference:{message_id:'message_original',index:1,scope:JSON.stringify(['STUDIO','A'])}};
+assert.deepEqual(restoredSourceLocation(location, 'A'), location);
+assert.equal(restoredSourceLocation(location, 'B'), null);
+for (const index of [-1,9,0.5,'1',null]) assert.equal(restoredSourceLocation({...location,reference:{...location.reference,index}},'A'),null);
+for (const scope of ['bad',JSON.stringify(['CATALOG','A']),JSON.stringify(['STUDIO','A','extra'])]) assert.equal(restoredSourceLocation({...location,reference:{...location.reference,scope}},'A'),null);
+assert.equal(restoredSourceLocation({kind:'legacy',messageId:''},'A'), null);
+console.log('PASS restored pointers reject foreign scopes, invalid indices and empty legacy IDs');

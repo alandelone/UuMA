@@ -1,8 +1,13 @@
 # ChatGPT Web Bridge
 
 The bridge gives selected UuMA identities a bounded consultation tool backed by the user's signed-in
-ChatGPT Web account. ChatGPT is an external adviser; it is not an Agent, approval authority, or
-source of accepted knowledge.
+ChatGPT Web account. ChatGPT is a callable tool/worker: the calling Agent decides its bounded task
+and remains responsible for the result. The bridge does not transfer task ownership or confer
+approval authority. Returned claims require the caller's normal evidence and review workflow.
+
+For Wisdom's automatic mode selection, long-running report collection and explainable progress,
+see the [research-tool architecture](../architecture/agent-research-tools.md). Those requirements
+are separate from the bridge's existing ability to execute an explicitly submitted request.
 
 ## Access
 

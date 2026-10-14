@@ -1,0 +1,53 @@
+{
+  "status": "PASS_NEW_OWNED_FRONTEND_READY",
+  "new_frontend_root_pid": 109108,
+  "new_verified_port3008_chain": [
+    {
+      "ProcessId": 111168,
+      "ParentProcessId": 107072,
+      "CommandLine": "\"node\"   \"C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g01-loading-build-1ou2ff1y\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591532175)/"
+    },
+    {
+      "ProcessId": 107072,
+      "ParentProcessId": 108764,
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591532154)/"
+    },
+    {
+      "ProcessId": 108764,
+      "ParentProcessId": 109108,
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591532006)/"
+    },
+    {
+      "ProcessId": 109108,
+      "ParentProcessId": 90652,
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791591531891)/"
+    }
+  ],
+  "old_verified_frontend_stops": [
+    {
+      "pid": 104724,
+      "state": "STOPPED_VERIFIED"
+    },
+    {
+      "pid": 90264,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 90584,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 68596,
+      "state": "ALREADY_EXITED"
+    }
+  ],
+  "production_root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g01-loading-build-1ou2ff1y\\writing-studio",
+  "database_bytes_preserved": true,
+  "current_backend_identity_unchanged": true,
+  "all_other_runtime_processes_untouched": true,
+  "frontend_source_sha256": "1badb5c1111703684d5ea7de9dbf6e4f9d8c3d5112282219ce4369d22839d01e"
+}

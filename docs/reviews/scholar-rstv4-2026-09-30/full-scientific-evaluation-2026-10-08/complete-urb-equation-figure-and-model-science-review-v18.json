@@ -1,0 +1,1261 @@
+{
+  "status": "COMPLETE_ALL_ORIGINAL_PAGES_IMAGES_AND_EQUATIONS_PRIOR_TABLES_RETAINED",
+  "full_original_benchmark_scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_964b88669cfe422e7aef",
+    "complete_original_pages": 6,
+    "complete_parser_image_items": 10,
+    "newly_completed_equation_blocks": 3,
+    "newly_completed_printed_equations": 6,
+    "new_parser_tables": 0,
+    "prior_tables_retained_without_recount": 0
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas.pdf",
+  "original_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas_content_list.json",
+  "original_parser_sha256": "516e91063c8272cc836610ffbfffa245649df371c18050341d0db65b96210ce7",
+  "original_matrix_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-original-visual-review-matrix-v2.json",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "original_page_freeze_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\freeze.json",
+  "original_page_freeze_sha256": "e8e9ed2454e4f221b747dbc344104ea82844d665ee8feda5f86ee45fbbb8b437",
+  "additional_render_lineage_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\render-lineage.json",
+  "additional_render_lineage_sha256": "01d34342ebd98a747f0e72f881f2322c8fe54b6efa6126895e5ff91045bde5eb",
+  "additional_render_lineage": {
+    "paper_id": "paper_964b88669cfe422e7aef",
+    "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas.pdf",
+    "original_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+    "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas_content_list.json",
+    "original_parser_sha256": "516e91063c8272cc836610ffbfffa245649df371c18050341d0db65b96210ce7",
+    "corpus_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.rstv4-local\\skeleton-optimization\\corpus-v2-fresh-test\\paper_964b88669cfe422e7aef.json",
+    "corpus_sha256": "b385c16ee5ad508ec98bd5629d5da957fc5654f54af19e6a889ed739e98856ea",
+    "pages": [
+      {
+        "actual_pdf_page": 1,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-001-180dpi.png",
+        "sha256": "1bf851aaba8507cc3585d0343368c36cae231076874133b9836a78bbc6287143",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-002-180dpi.png",
+        "sha256": "1e3fdb3fd27e0dbab30df43edd63207700a1929c1512b8388d61a405ae253090",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "e54bd32f12f99c2ef5642dee67b99a5b22c3adb60b69c2fdc3cf893080b6d31e",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "81146859af421ae5817c7d8f461a2f48fe1942cdcfae31c0af98fcf14c3d2717",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-005-180dpi.png",
+        "sha256": "5926362a927d166d980ee43ff0fa7f9e237353408a57a89a2fd5bc3e75efcca8",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 6,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-006-180dpi.png",
+        "sha256": "926407df4a2273e0ec6bc07abdd310b5abde59bef576042118a6e414e4f14184",
+        "dpi": 180
+      }
+    ],
+    "original_text_layer_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-pdf-text-layer.txt",
+    "original_text_layer_sha256": "962413796451abde6e46a328894918f00467dca6df87cdf0d5fc5e8f9a6436c4"
+  },
+  "all_original_page_records": [
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 1,
+      "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-001.png",
+          "sha256": "9bce0469a0e0888ab64759487da704ce052344172b011535d34840922afd0994"
+        },
+        {
+          "id": "crop-16",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\f8fd6b989f716adaad45adf29df7ed66035943390df22c20ae658f1cd155e57e.jpg",
+          "sha256": "6d91b3d4d6dcc6598dd04ceaf50c711ee7b988657b979d77d8f9007221681a66"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        16
+      ]
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 2,
+      "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-002.png",
+          "sha256": "d7727abf26af1849ebd22cc7b3172e1115079d839c2306509f5cf9da792a2fc8"
+        },
+        {
+          "id": "crop-17",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\ca2e733e13da336429ee794dd2b509712afb85100912ae1df57d1fe5a897bc6a.jpg",
+          "sha256": "05db5735f676530e7d836be70a197bfdc823e7c73ffa911662ddd22332881768"
+        },
+        {
+          "id": "crop-25",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\a31eba0f8758d498bd0be3633330b21ea4a942ed08ef3f52e3eb929a64f4d265.jpg",
+          "sha256": "5df8d9ce933bbcaa11cdcd892eea16127014df49f3822f17e68e55c98262877c"
+        },
+        {
+          "id": "crop-26",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\12e71c6db6f0b5f6af4d2eeeb9b9cc893b35bb6fc3b77443e000f0bc95d36143.jpg",
+          "sha256": "884eb60d80f8e4d3ee309ff517453541a1780003856bc20ca6973d692e58401d"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        17,
+        25,
+        26
+      ]
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 3,
+      "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-003.png",
+          "sha256": "0f93a898de4f4b41aa8aefdd94798b0f4dd7f0a76545292b097f124affaafd5b"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        35,
+        38,
+        40
+      ]
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 4,
+      "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-004.png",
+          "sha256": "e255dffb9410f23da7da48075afbd609f4da784bb6cbb8da8d7b7a99fcf65cf1"
+        },
+        {
+          "id": "crop-45",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\62b5236d6e9c6b660cd53aea6efd818f427874c27858bf0f59b21cc892206361.jpg",
+          "sha256": "ad80b8bddad789f01e39c3b69926acc5eca4b91bc3ea45f90f1e9f4ca58d5c88"
+        },
+        {
+          "id": "crop-46",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\852ab2ee4a700245e3c932ba6b51151daaf508d15499896fd7a88b9f34af60a3.jpg",
+          "sha256": "1e3c937ba47df33bd8df3b313ab57d076a432b3dab793eda59fcb6f31ba94795"
+        },
+        {
+          "id": "crop-47",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\cb94f3b423d5ceb4b84331253d06a15b53ef2e9543d1a88b3187d114000b3ad4.jpg",
+          "sha256": "1dacbc48ceabba0ad2f612ea711dd853bf3fb2a2ca52c0924d02d4ba5580bcda"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        45,
+        46,
+        47
+      ]
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 5,
+      "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-005.png",
+          "sha256": "008ea5ee0d45bc4f46e1c1ce61066b8791037da2d6d66d603f17e5ca8277ee04"
+        },
+        {
+          "id": "crop-53",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\b0ee9936721b431ca33c36d959d032e8a01a784f087577c29d663c52686518be.jpg",
+          "sha256": "9ce9cf63a97a2cb446186779c54276c91d68c90d3e868a7f381a41dfce934a98"
+        },
+        {
+          "id": "crop-54",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\d82174f4e75d641418742ff00d04f78c1d42d9a7ac63d8934c5e854aa35e2126.jpg",
+          "sha256": "e4d94657c32b64217756bdc49636fd2ff68c2c7d07ee7a6113e04097f12ed643"
+        },
+        {
+          "id": "crop-55",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\37ec79b27d6625d12a594badab4045b03fb9bd07bbaf7516aa54e2cfac624513.jpg",
+          "sha256": "7884888244cd3d984cf2f684b62b1688f11b5fbb3794b5ea04a1d4800920a4e6"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        53,
+        54,
+        55
+      ]
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 6,
+      "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-006.png",
+          "sha256": "69612d5734b9a8e6f3726665cfef6f739d59f04175a1dd8a37bd6e84c611909b"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    }
+  ],
+  "original_pdf_text_layer_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-pdf-text-layer.txt",
+  "original_pdf_text_layer_sha256": "962413796451abde6e46a328894918f00467dca6df87cdf0d5fc5e8f9a6436c4",
+  "plots": [
+    {
+      "matrix_visual_index": 21,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 1,
+        "raw_parser_content_index": 16,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "67c6edcabfb75cd04a5148bd88e16e024c0f7507d41a3d25163319ecca7b0422",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b15"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\f8fd6b989f716adaad45adf29df7ed66035943390df22c20ae658f1cd155e57e.jpg",
+        "actual_original_crop_sha256": "6d91b3d4d6dcc6598dd04ceaf50c711ee7b988657b979d77d8f9007221681a66",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\001\\record.json",
+        "actual_page_record_sha256": "ff68cfed5c846a166aa12ab4aef9b00c0ce1c3adb9414979c06045ac17cd7030",
+        "original_durable_handle": "run_f2911e1c19fd4dbba111fbdc6543c269",
+        "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/f8fd6b989f716adaad45adf29df7ed66035943390df22c20ae658f1cd155e57e.jpg",
+        "img_caption": [
+          "Fig. 1 Flowchart of work flow for the building geometry creation algorithm "
+        ],
+        "img_footnote": [],
+        "page_idx": 0
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 1,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-001-180dpi.png",
+        "sha256": "1bf851aaba8507cc3585d0343368c36cae231076874133b9836a78bbc6287143",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 1,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-001.png",
+            "sha256": "9bce0469a0e0888ab64759487da704ce052344172b011535d34840922afd0994"
+          },
+          {
+            "id": "crop-16",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\f8fd6b989f716adaad45adf29df7ed66035943390df22c20ae658f1cd155e57e.jpg",
+            "sha256": "6d91b3d4d6dcc6598dd04ceaf50c711ee7b988657b979d77d8f9007221681a66"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          16
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.1",
+      "complete_visible_panel_count": 1,
+      "scientific_scope_findings": [
+        "Entire flowchart: image→manual color rules→outline→K-means clustering→concave hull/alpha shape→2D footprint→extruded3D. Maximumsilhouette chooses cluster count, not independently measured building accuracy. Color/scale/height inputs remain manual; automated title does not mean fully automatic geometry."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 22,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 2,
+        "raw_parser_content_index": 17,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "ca038960e189e3a70fecf06e7a48e44668fb52c5a2b72c39209a11bf7df6f188",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b16"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\ca2e733e13da336429ee794dd2b509712afb85100912ae1df57d1fe5a897bc6a.jpg",
+        "actual_original_crop_sha256": "05db5735f676530e7d836be70a197bfdc823e7c73ffa911662ddd22332881768",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\002\\record.json",
+        "actual_page_record_sha256": "84fdbe5639fa9bb9161b17929d4a9188e1041ec657f219bb09615a5a48b01375",
+        "original_durable_handle": "run_8a1f9e852a304652aade59ae5175c65a",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/ca2e733e13da336429ee794dd2b509712afb85100912ae1df57d1fe5a897bc6a.jpg",
+        "img_caption": [
+          "Fig. 2 Extraction of the building footprint from onemap images. All the buildings of the same color code have been extracted. "
+        ],
+        "img_footnote": [],
+        "page_idx": 1
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-002-180dpi.png",
+        "sha256": "1e3fdb3fd27e0dbab30df43edd63207700a1929c1512b8388d61a405ae253090",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 2,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-002.png",
+            "sha256": "d7727abf26af1849ebd22cc7b3172e1115079d839c2306509f5cf9da792a2fc8"
+          },
+          {
+            "id": "crop-17",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\ca2e733e13da336429ee794dd2b509712afb85100912ae1df57d1fe5a897bc6a.jpg",
+            "sha256": "05db5735f676530e7d836be70a197bfdc823e7c73ffa911662ddd22332881768"
+          },
+          {
+            "id": "crop-25",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\a31eba0f8758d498bd0be3633330b21ea4a942ed08ef3f52e3eb929a64f4d265.jpg",
+            "sha256": "5df8d9ce933bbcaa11cdcd892eea16127014df49f3822f17e68e55c98262877c"
+          },
+          {
+            "id": "crop-26",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\12e71c6db6f0b5f6af4d2eeeb9b9cc893b35bb6fc3b77443e000f0bc95d36143.jpg",
+            "sha256": "884eb60d80f8e4d3ee309ff517453541a1780003856bc20ca6973d692e58401d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          17,
+          25,
+          26
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.2",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Full onemap image and extracted same-color footprints; greenarrow visual illustration. No geographic scale/building-height data/ground-truth segmentation or error metric printed. Body later calls this final solid model though actualfigure is2D footprint; inherited figure reference error kept."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 23,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 2,
+        "raw_parser_content_index": 25,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "492bee29e45eb1c6649d5173ff7f8c1802786d0c15ca805cbb2b37da6392d905",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b23"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\a31eba0f8758d498bd0be3633330b21ea4a942ed08ef3f52e3eb929a64f4d265.jpg",
+        "actual_original_crop_sha256": "5df8d9ce933bbcaa11cdcd892eea16127014df49f3822f17e68e55c98262877c",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\002\\record.json",
+        "actual_page_record_sha256": "84fdbe5639fa9bb9161b17929d4a9188e1041ec657f219bb09615a5a48b01375",
+        "original_durable_handle": "run_8a1f9e852a304652aade59ae5175c65a",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/a31eba0f8758d498bd0be3633330b21ea4a942ed08ef3f52e3eb929a64f4d265.jpg",
+        "img_caption": [
+          "Fig. 3 Flowchart of work flow for the tree extrusion or revolution algorithm "
+        ],
+        "img_footnote": [],
+        "page_idx": 1
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-002-180dpi.png",
+        "sha256": "1e3fdb3fd27e0dbab30df43edd63207700a1929c1512b8388d61a405ae253090",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 2,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-002.png",
+            "sha256": "d7727abf26af1849ebd22cc7b3172e1115079d839c2306509f5cf9da792a2fc8"
+          },
+          {
+            "id": "crop-17",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\ca2e733e13da336429ee794dd2b509712afb85100912ae1df57d1fe5a897bc6a.jpg",
+            "sha256": "05db5735f676530e7d836be70a197bfdc823e7c73ffa911662ddd22332881768"
+          },
+          {
+            "id": "crop-25",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\a31eba0f8758d498bd0be3633330b21ea4a942ed08ef3f52e3eb929a64f4d265.jpg",
+            "sha256": "5df8d9ce933bbcaa11cdcd892eea16127014df49f3822f17e68e55c98262877c"
+          },
+          {
+            "id": "crop-26",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\12e71c6db6f0b5f6af4d2eeeb9b9cc893b35bb6fc3b77443e000f0bc95d36143.jpg",
+            "sha256": "884eb60d80f8e4d3ee309ff517453541a1780003856bc20ca6973d692e58401d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          17,
+          25,
+          26
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.3",
+      "complete_visible_panel_count": 1,
+      "scientific_scope_findings": [
+        "All tree workflow branches preserved: color trunk/crown→Delaunay triangulation/alpha shape→clustering→concave hull→2D→extrusion→3D components→combinedfulltree. Prose selects Delaunay instead ofconcavehull and revolution forillustration; diagramlabels extrusion vs captionextrusion/revolution and hybridbranches not unique executablealgorithm. No implementation inferred from arrows."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 24,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 2,
+        "raw_parser_content_index": 26,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "e46be5193cb962501765f00122b492f86b89adf126ad7163e8c555b2aaa3c28e",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b24"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\12e71c6db6f0b5f6af4d2eeeb9b9cc893b35bb6fc3b77443e000f0bc95d36143.jpg",
+        "actual_original_crop_sha256": "884eb60d80f8e4d3ee309ff517453541a1780003856bc20ca6973d692e58401d",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\002\\record.json",
+        "actual_page_record_sha256": "84fdbe5639fa9bb9161b17929d4a9188e1041ec657f219bb09615a5a48b01375",
+        "original_durable_handle": "run_8a1f9e852a304652aade59ae5175c65a",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/12e71c6db6f0b5f6af4d2eeeb9b9cc893b35bb6fc3b77443e000f0bc95d36143.jpg",
+        "img_caption": [
+          "Fig. 4 Creation of the CAD model of the tree from an image. The algorithm creates a two-dimensional representation of the tree. Extrusion or rotation of the two-dimensional object produces the three-dimensional tree model. "
+        ],
+        "img_footnote": [],
+        "page_idx": 1
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-002-180dpi.png",
+        "sha256": "1e3fdb3fd27e0dbab30df43edd63207700a1929c1512b8388d61a405ae253090",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 2,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-002.png",
+            "sha256": "d7727abf26af1849ebd22cc7b3172e1115079d839c2306509f5cf9da792a2fc8"
+          },
+          {
+            "id": "crop-17",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\ca2e733e13da336429ee794dd2b509712afb85100912ae1df57d1fe5a897bc6a.jpg",
+            "sha256": "05db5735f676530e7d836be70a197bfdc823e7c73ffa911662ddd22332881768"
+          },
+          {
+            "id": "crop-25",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\a31eba0f8758d498bd0be3633330b21ea4a942ed08ef3f52e3eb929a64f4d265.jpg",
+            "sha256": "5df8d9ce933bbcaa11cdcd892eea16127014df49f3822f17e68e55c98262877c"
+          },
+          {
+            "id": "crop-26",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\12e71c6db6f0b5f6af4d2eeeb9b9cc893b35bb6fc3b77443e000f0bc95d36143.jpg",
+            "sha256": "884eb60d80f8e4d3ee309ff517453541a1780003856bc20ca6973d692e58401d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          17,
+          25,
+          26
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.4",
+      "complete_visible_panel_count": 3,
+      "scientific_scope_findings": [
+        "Photo, segmented2D trunk/crown,3Dtree allreviewed. CADmodel from singleimage requires scale/3Dassumptions, not measured 3Dspecies/opticaltransmission verification. Complete sourcefootnote nparks.gov.sg retained onfullpage, not new measuredleafdata."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 28,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 4,
+        "raw_parser_content_index": 45,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "a3170dc73f483a5ae488c1be8707f777706eb09fe8e45e59a13af719dbd15458",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b43"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\62b5236d6e9c6b660cd53aea6efd818f427874c27858bf0f59b21cc892206361.jpg",
+        "actual_original_crop_sha256": "ad80b8bddad789f01e39c3b69926acc5eca4b91bc3ea45f90f1e9f4ca58d5c88",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\004\\record.json",
+        "actual_page_record_sha256": "b9c064594a8b541b0e6bc41afe51fad30902e4ace150fe80bcb7236d4f4ce838",
+        "original_durable_handle": "run_db249f6e244f4379b0ab79c20ab67546",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/62b5236d6e9c6b660cd53aea6efd818f427874c27858bf0f59b21cc892206361.jpg",
+        "img_caption": [
+          "Fig. 5 Comparison of direct and diffuse solar radiation (as a function of time) on different domains in WRF for Toa Payoh on Aug. 24, 2017. Simulations in the $1\\times1k m$ grid are nested within $3\\times3\\mathrm{km}$ grid. The $x\\cdot$ -axis represents the hour of the day (in a 0-24 scale): (a) $3\\times3\\mathrm{km}$ horizontal resolution and (b) $1\\times1$ km horizontal resolution. "
+        ],
+        "img_footnote": [],
+        "page_idx": 3
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "81146859af421ae5817c7d8f461a2f48fe1942cdcfae31c0af98fcf14c3d2717",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 4,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-004.png",
+            "sha256": "e255dffb9410f23da7da48075afbd609f4da784bb6cbb8da8d7b7a99fcf65cf1"
+          },
+          {
+            "id": "crop-45",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\62b5236d6e9c6b660cd53aea6efd818f427874c27858bf0f59b21cc892206361.jpg",
+            "sha256": "ad80b8bddad789f01e39c3b69926acc5eca4b91bc3ea45f90f1e9f4ca58d5c88"
+          },
+          {
+            "id": "crop-46",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\852ab2ee4a700245e3c932ba6b51151daaf508d15499896fd7a88b9f34af60a3.jpg",
+            "sha256": "1e3c937ba47df33bd8df3b313ab57d076a432b3dab793eda59fcb6f31ba94795"
+          },
+          {
+            "id": "crop-47",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\cb94f3b423d5ceb4b84331253d06a15b53ef2e9543d1a88b3187d114000b3ad4.jpg",
+            "sha256": "1dacbc48ceabba0ad2f612ea711dd853bf3fb2a2ca52c0924d02d4ba5580bcda"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          45,
+          46,
+          47
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.5",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Two3x3km/1x1km WRF domains, directredsolid/diffusebluedashed, timehour~7..18 and W/m²axis0..1000 reviewed. Caption0–24scale describes clock convention, not actualfull24hplottedrange. Finergrid sharp intermittentdrops notdemonstrated accuracy without measuredirradiance/errors. Prose10–12PM conflicts daytimeclock10..12; preserve originaltimewording, no nativefix."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 29,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 4,
+        "raw_parser_content_index": 46,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "3d620f700c904535c2017eda13e449632e21f19d3851601ecb9dedb3f2623b27",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b44"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\852ab2ee4a700245e3c932ba6b51151daaf508d15499896fd7a88b9f34af60a3.jpg",
+        "actual_original_crop_sha256": "1e3c937ba47df33bd8df3b313ab57d076a432b3dab793eda59fcb6f31ba94795",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\004\\record.json",
+        "actual_page_record_sha256": "b9c064594a8b541b0e6bc41afe51fad30902e4ace150fe80bcb7236d4f4ce838",
+        "original_durable_handle": "run_db249f6e244f4379b0ab79c20ab67546",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/852ab2ee4a700245e3c932ba6b51151daaf508d15499896fd7a88b9f34af60a3.jpg",
+        "img_caption": [
+          "Fig. 6 Comparison of direct solar radiation (in ${\\mathsf{W}}{\\mathsf{m}}^{-2}$ ) obtained from WRF simulation at 2 PM (Singapore standard time) on Aug. 24, 2017: (a) $3\\times3\\mathrm{km}$ horizontal resolution and (b) $1\\times\\cdot$ 1 km horizontal resolution "
+        ],
+        "img_footnote": [],
+        "page_idx": 3
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "81146859af421ae5817c7d8f461a2f48fe1942cdcfae31c0af98fcf14c3d2717",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 4,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-004.png",
+            "sha256": "e255dffb9410f23da7da48075afbd609f4da784bb6cbb8da8d7b7a99fcf65cf1"
+          },
+          {
+            "id": "crop-45",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\62b5236d6e9c6b660cd53aea6efd818f427874c27858bf0f59b21cc892206361.jpg",
+            "sha256": "ad80b8bddad789f01e39c3b69926acc5eca4b91bc3ea45f90f1e9f4ca58d5c88"
+          },
+          {
+            "id": "crop-46",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\852ab2ee4a700245e3c932ba6b51151daaf508d15499896fd7a88b9f34af60a3.jpg",
+            "sha256": "1e3c937ba47df33bd8df3b313ab57d076a432b3dab793eda59fcb6f31ba94795"
+          },
+          {
+            "id": "crop-47",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\cb94f3b423d5ceb4b84331253d06a15b53ef2e9543d1a88b3187d114000b3ad4.jpg",
+            "sha256": "1dacbc48ceabba0ad2f612ea711dd853bf3fb2a2ca52c0924d02d4ba5580bcda"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          45,
+          46,
+          47
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.6",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Both geographic direct-radiation contours at2PM Singaporestandardtime24Aug2017, lat1.20/1.35/1.50, lon103.6..104.2, colorbar0..800ticks andblackboundary reviewed. Figurecontainsdirectonly; prose saysdirectanddiffuse shown6(b), no diffusemap or hiddendata invented. Two spatialresolutions differcloudfield, not independent observational skill validation."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 30,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 4,
+        "raw_parser_content_index": 47,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "500ca9f3425354e2ce4cb46aa4ca9fd7b48be15b40b165da79d1dc9c7ec543cd",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b45"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\cb94f3b423d5ceb4b84331253d06a15b53ef2e9543d1a88b3187d114000b3ad4.jpg",
+        "actual_original_crop_sha256": "1dacbc48ceabba0ad2f612ea711dd853bf3fb2a2ca52c0924d02d4ba5580bcda",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\004\\record.json",
+        "actual_page_record_sha256": "b9c064594a8b541b0e6bc41afe51fad30902e4ace150fe80bcb7236d4f4ce838",
+        "original_durable_handle": "run_db249f6e244f4379b0ab79c20ab67546",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/cb94f3b423d5ceb4b84331253d06a15b53ef2e9543d1a88b3187d114000b3ad4.jpg",
+        "img_caption": [
+          "Fig. 7 Illustration of the solar load calculator: (a) different materials: buildings, trees, expressway and terrain and (b) contour plot of solar radiation forecast (in ${\\mathsf{W}}{\\mathsf{m}}^{-2}.$ ) on different surfaces "
+        ],
+        "img_footnote": [],
+        "page_idx": 3
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "81146859af421ae5817c7d8f461a2f48fe1942cdcfae31c0af98fcf14c3d2717",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 4,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-004.png",
+            "sha256": "e255dffb9410f23da7da48075afbd609f4da784bb6cbb8da8d7b7a99fcf65cf1"
+          },
+          {
+            "id": "crop-45",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\62b5236d6e9c6b660cd53aea6efd818f427874c27858bf0f59b21cc892206361.jpg",
+            "sha256": "ad80b8bddad789f01e39c3b69926acc5eca4b91bc3ea45f90f1e9f4ca58d5c88"
+          },
+          {
+            "id": "crop-46",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\852ab2ee4a700245e3c932ba6b51151daaf508d15499896fd7a88b9f34af60a3.jpg",
+            "sha256": "1e3c937ba47df33bd8df3b313ab57d076a432b3dab793eda59fcb6f31ba94795"
+          },
+          {
+            "id": "crop-47",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\cb94f3b423d5ceb4b84331253d06a15b53ef2e9543d1a88b3187d114000b3ad4.jpg",
+            "sha256": "1dacbc48ceabba0ad2f612ea711dd853bf3fb2a2ca52c0924d02d4ba5580bcda"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          45,
+          46,
+          47
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.7",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Complete assignedmaterial CAD versus11AM radiationsurfacecontour, colorbar0/100/200/300/400W/m². Bodyassigns buildings.8/expressway.4/trees.1/flat-terrainWRF; these differ Fig9idealizedalbedos duedifferentcase, not numerical contradiction. Simulatedflux not PV electricalplantoutput; no area/moduleefficiency/IV/temperature/grid-loss conversion validated."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 31,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 5,
+        "raw_parser_content_index": 53,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "0db06a5f315b9fb47b2d4e7193f97c089de68a6714cb889a8afc097dff740dd1",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b49"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\b0ee9936721b431ca33c36d959d032e8a01a784f087577c29d663c52686518be.jpg",
+        "actual_original_crop_sha256": "9ce9cf63a97a2cb446186779c54276c91d68c90d3e868a7f381a41dfce934a98",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\005\\record.json",
+        "actual_page_record_sha256": "cc8757a84e3db48cc8a5bd3edca6b33a6fa9ff780348f416c8db5cee7844134b",
+        "original_durable_handle": "run_3c50c4a21d984429984c6afcbcfe34ef",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/b0ee9936721b431ca33c36d959d032e8a01a784f087577c29d663c52686518be.jpg",
+        "img_caption": [
+          "Fig. 8 Profiles of direct and diffuse radiation for an idealized day-time scenario for two extreme situations: (a) clear-sky and (b) complete cloud cover "
+        ],
+        "img_footnote": [],
+        "page_idx": 4
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-005-180dpi.png",
+        "sha256": "5926362a927d166d980ee43ff0fa7f9e237353408a57a89a2fd5bc3e75efcca8",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-005.png",
+            "sha256": "008ea5ee0d45bc4f46e1c1ce61066b8791037da2d6d66d603f17e5ca8277ee04"
+          },
+          {
+            "id": "crop-53",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\b0ee9936721b431ca33c36d959d032e8a01a784f087577c29d663c52686518be.jpg",
+            "sha256": "9ce9cf63a97a2cb446186779c54276c91d68c90d3e868a7f381a41dfce934a98"
+          },
+          {
+            "id": "crop-54",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\d82174f4e75d641418742ff00d04f78c1d42d9a7ac63d8934c5e854aa35e2126.jpg",
+            "sha256": "e4d94657c32b64217756bdc49636fd2ff68c2c7d07ee7a6113e04097f12ed643"
+          },
+          {
+            "id": "crop-55",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\37ec79b27d6625d12a594badab4045b03fb9bd07bbaf7516aa54e2cfac624513.jpg",
+            "sha256": "7884888244cd3d984cf2f684b62b1688f11b5fbb3794b5ea04a1d4800920a4e6"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          53,
+          54,
+          55
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.8",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Both idealized24h clear/cloudy inputprofiles,red direct/bluedasheddiffuse, ownymax1000vs600 W/m². Completecloudcover label stillnonzero direct; modeldefinition notuniversalzero-direct assertion. Syntheticinputs notobservedvalidation; no unprintedtimepointvaluesdigitized."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 32,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 5,
+        "raw_parser_content_index": 54,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "c78f00bd2c514bc9ae74145398ba044581d4b3c94650a4b05989f03bb0093705",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b50"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\d82174f4e75d641418742ff00d04f78c1d42d9a7ac63d8934c5e854aa35e2126.jpg",
+        "actual_original_crop_sha256": "e4d94657c32b64217756bdc49636fd2ff68c2c7d07ee7a6113e04097f12ed643",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\005\\record.json",
+        "actual_page_record_sha256": "cc8757a84e3db48cc8a5bd3edca6b33a6fa9ff780348f416c8db5cee7844134b",
+        "original_durable_handle": "run_3c50c4a21d984429984c6afcbcfe34ef",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/d82174f4e75d641418742ff00d04f78c1d42d9a7ac63d8934c5e854aa35e2126.jpg",
+        "img_caption": [
+          "Fig. 9 Setup of the CAD model for the idealized resolution studies. Different albedo values (given in brackets) are assigned for the pavement (0.05), buildings (0.55), grass (0.25), and trees (0.15). Buildings A and B are raised above the ground to create a void-deck space: (a) geometry setup and (b) top view. "
+        ],
+        "img_footnote": [],
+        "page_idx": 4
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-005-180dpi.png",
+        "sha256": "5926362a927d166d980ee43ff0fa7f9e237353408a57a89a2fd5bc3e75efcca8",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-005.png",
+            "sha256": "008ea5ee0d45bc4f46e1c1ce61066b8791037da2d6d66d603f17e5ca8277ee04"
+          },
+          {
+            "id": "crop-53",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\b0ee9936721b431ca33c36d959d032e8a01a784f087577c29d663c52686518be.jpg",
+            "sha256": "9ce9cf63a97a2cb446186779c54276c91d68c90d3e868a7f381a41dfce934a98"
+          },
+          {
+            "id": "crop-54",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\d82174f4e75d641418742ff00d04f78c1d42d9a7ac63d8934c5e854aa35e2126.jpg",
+            "sha256": "e4d94657c32b64217756bdc49636fd2ff68c2c7d07ee7a6113e04097f12ed643"
+          },
+          {
+            "id": "crop-55",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\37ec79b27d6625d12a594badab4045b03fb9bd07bbaf7516aa54e2cfac624513.jpg",
+            "sha256": "7884888244cd3d984cf2f684b62b1688f11b5fbb3794b5ea04a1d4800920a4e6"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          53,
+          54,
+          55
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.9",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Geometry andtopview allfourmaterials/tworaisedvoid-deckbuildingsA/B. Printedalbedos pavement.05/buildings.55/grass.25/trees.15 exactretained; no unspecifieddimensions/heights/opticalproperties invented."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 33,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 5,
+        "raw_parser_content_index": 55,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "43164db155cc37d95481560ebfbd5625252e6759ff9471a67d28f491b083b9b5",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b51"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\37ec79b27d6625d12a594badab4045b03fb9bd07bbaf7516aa54e2cfac624513.jpg",
+        "actual_original_crop_sha256": "7884888244cd3d984cf2f684b62b1688f11b5fbb3794b5ea04a1d4800920a4e6",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\005\\record.json",
+        "actual_page_record_sha256": "cc8757a84e3db48cc8a5bd3edca6b33a6fa9ff780348f416c8db5cee7844134b",
+        "original_durable_handle": "run_3c50c4a21d984429984c6afcbcfe34ef",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images/37ec79b27d6625d12a594badab4045b03fb9bd07bbaf7516aa54e2cfac624513.jpg",
+        "img_caption": [
+          "Fig. 10 Shadow and shading effects for clear-sky and fully cloudy conditions. View is from the top: (a) clear-sky—coarse grid, (b) clear-sky—fine grid, (c) cloudy—coarse grid, and (d) cloudy—fine grid. "
+        ],
+        "img_footnote": [],
+        "page_idx": 4
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-005-180dpi.png",
+        "sha256": "5926362a927d166d980ee43ff0fa7f9e237353408a57a89a2fd5bc3e75efcca8",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-005.png",
+            "sha256": "008ea5ee0d45bc4f46e1c1ce61066b8791037da2d6d66d603f17e5ca8277ee04"
+          },
+          {
+            "id": "crop-53",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\b0ee9936721b431ca33c36d959d032e8a01a784f087577c29d663c52686518be.jpg",
+            "sha256": "9ce9cf63a97a2cb446186779c54276c91d68c90d3e868a7f381a41dfce934a98"
+          },
+          {
+            "id": "crop-54",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\d82174f4e75d641418742ff00d04f78c1d42d9a7ac63d8934c5e854aa35e2126.jpg",
+            "sha256": "e4d94657c32b64217756bdc49636fd2ff68c2c7d07ee7a6113e04097f12ed643"
+          },
+          {
+            "id": "crop-55",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas\\images\\37ec79b27d6625d12a594badab4045b03fb9bd07bbaf7516aa54e2cfac624513.jpg",
+            "sha256": "7884888244cd3d984cf2f684b62b1688f11b5fbb3794b5ea04a1d4800920a4e6"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          53,
+          54,
+          55
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Fig.10",
+      "complete_visible_panel_count": 4,
+      "scientific_scope_findings": [
+        "Allfourtopviewpanels clearcoarse/clearfine/cloudycoarse/cloudyfine atabout11:30AM; fineboundarysharperqualitative, not quantitativeconvergenceorobservedradiometry. Clearcolorbarticks100/400/700/1000 versuscloudy300/425/550/675/800W/m² distinctscales cannotvisuallycomparecolorasameabsolutevalue. Exactunprintedfluxsamples notinvented."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    }
+  ],
+  "equations": [
+    {
+      "matrix_visual_index": 25,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 35,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "07445f10e8e2c3d23c3cdae33995529d7f2212c0ff088f5fdf0bc85da75bcd93",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b33"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\003\\record.json",
+        "actual_page_record_sha256": "0dbc8c85f35191a9baa25c1f33298eea3bc96f2dc24bcd68dabbb92c3fac4267",
+        "original_durable_handle": "run_e9dbc39d28e74f15bf0b25cc23e7f5eb",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nI_{\\mathrm{dir}}=I\\cos(\\theta)\n$$",
+        "text_format": "latex",
+        "page_idx": 2
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "e54bd32f12f99c2ef5642dee67b99a5b22c3adb60b69c2fdc3cf893080b6d31e",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-003.png",
+            "sha256": "0f93a898de4f4b41aa8aefdd94798b0f4dd7f0a76545292b097f124affaafd5b"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          35,
+          38,
+          40
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": false,
+      "scientific_reference_approval": false,
+      "printed_equation_number": "1",
+      "printed_formula_count": 1,
+      "root_primary_transcription": "I_dir=I*cos(theta)",
+      "scientific_scope_findings": [
+        "I directnormal W/m²,theta incidenceangle; projectedfluxneeds illuminatedface/shading/daytime convention toavoidnegativebackface values. No explicit clampinprintedline, actualfacealgorithmunknown. Generic studentsummaries not claimed completeboundarydefinition."
+      ],
+      "original_native_quote_replaced": false
+    },
+    {
+      "matrix_visual_index": 26,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 38,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "edd3aaf7f178be78d99740b2fc303664f4528270fbb1d5568b390cdaa6773121",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b36"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\003\\record.json",
+        "actual_page_record_sha256": "0dbc8c85f35191a9baa25c1f33298eea3bc96f2dc24bcd68dabbb92c3fac4267",
+        "original_durable_handle": "run_e9dbc39d28e74f15bf0b25cc23e7f5eb",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{c}{{I_{\\mathrm{dif}}=\\displaystyle\\frac{1}{2}I_{\\mathrm{dif}\\mathrm{WRF}}[1+\\cos(\\beta)]M_{1}M_{2}}}\\ {{{}}}\\ {{M_{1}=1+F\\sin^{3}(0.5\\beta)}}\\ {{{}M_{2}=1-F\\cos^{2}(\\theta)\\sin^{3}(z)}}\\ {{{}}}\\ {{F=1-\\displaystyle\\left(\\frac{I_{\\mathrm{dif}\\mathrm{WRF}}}{I+I_{\\mathrm{dif}\\mathrm{WRF}}}\\right)^{2}}}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 2
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "e54bd32f12f99c2ef5642dee67b99a5b22c3adb60b69c2fdc3cf893080b6d31e",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-003.png",
+            "sha256": "0f93a898de4f4b41aa8aefdd94798b0f4dd7f0a76545292b097f124affaafd5b"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          35,
+          38,
+          40
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": false,
+      "scientific_reference_approval": false,
+      "printed_equation_number": "2–5",
+      "printed_formula_count": 4,
+      "root_primary_transcription": "I_dif=.5*I_difWRF*(1+cos(beta))*M1*M2; M1=1+F*sin(0.5*beta)^3; M2=1-F*cos(theta)^2*sin(z)^3; F=1-(I_difWRF/(I+I_difWRF))^2",
+      "scientific_scope_findings": [
+        "Allfourphysicalnumberedexpressions retained includingM2minus. Forbeta0/thetaz45°/F.5, factor<1 versus horizontal input; printedline alonedoesnotreturninputDHIforhorizontalplane. UnderI=DHI=0, F0/0 undefined; no suppliednightbranch, not inferredactualcrash. InputsIdefinedDNI whilehorizontalGHIrelation/units/direct-vs-horizontal distinction need explicitnormalization. Originalauthorcode unavailable, no silently correctednamed-modelformula."
+      ],
+      "original_native_quote_replaced": false
+    },
+    {
+      "matrix_visual_index": 27,
+      "original_visual_item": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 40,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "28264eacd185c3a3227ccc7ea9383e1c9e00870e181d617660fd8cba539abedd",
+        "associated_frozen_original_block_ids": [
+          "paper_964b88669cfe422e7aef:b38"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\003\\record.json",
+        "actual_page_record_sha256": "0dbc8c85f35191a9baa25c1f33298eea3bc96f2dc24bcd68dabbb92c3fac4267",
+        "original_durable_handle": "run_e9dbc39d28e74f15bf0b25cc23e7f5eb",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nQ_{r}^{k}=-(1-\\alpha_{k})(I_{\\mathrm{dir}}+I_{\\mathrm{dif}})+\\alpha_{k}\\sum_{j=1}^{N}Q_{r}^{j}\n$$",
+        "text_format": "latex",
+        "page_idx": 2
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-urb-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "e54bd32f12f99c2ef5642dee67b99a5b22c3adb60b69c2fdc3cf893080b6d31e",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-003.png",
+            "sha256": "0f93a898de4f4b41aa8aefdd94798b0f4dd7f0a76545292b097f124affaafd5b"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          35,
+          38,
+          40
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": false,
+      "scientific_reference_approval": false,
+      "printed_equation_number": "6",
+      "printed_formula_count": 1,
+      "root_primary_transcription": "Q_r^k=-(1-alpha_k)*(I_dir+I_dif)+alpha_k*sum(j=1..N,Q_r^j)",
+      "scientific_scope_findings": [
+        "Printedview-factor-basedclaim hasno explicitgeometricviewweightsorareas. Literalconditionaltwoequalfaces alpha=.5 andincidentS100 gives sumQ=-100+sumQ, impossible; actualsolvermayhavemissingweights/signconvention, not executedcodefailure. Negativeleadingabsorption maybesignconvention notbyitselfwrong. No fabricatedconservationtestforactualmesh."
+      ],
+      "original_native_quote_replaced": false
+    }
+  ],
+  "exact_declared_arithmetic": {
+    "printed_numbered_equations": 6,
+    "parser_equation_blocks": 3,
+    "linear_mesh_refinement_tree_exact": "8",
+    "linear_mesh_refinement_other_exact": "8",
+    "conditional_surface_cell_ratio_exact": "64",
+    "G3_G4_reported_gridpoint_counts": [
+      400,
+      3600
+    ],
+    "G4_to_G3_gridpoint_ratio_exact": "9",
+    "M2_horizontal_example_theta_z_45_F_half": 0.9116116523516815,
+    "literal_two_face_equation_sum_rhs_constant_exact": "-100",
+    "conditional_parameters_for_two_face_test": {
+      "N": 2,
+      "both_alpha": "0.5",
+      "each_I_dir_plus_I_dif": "100",
+      "all_j_terms_including_self_as_printed": true
+    },
+    "no_actual_author_solver_run": true
+  },
+  "method_and_external_validity_qualifications": [
+    "Fullproof-of-conceptboundary explicitconclusion: extensivefuturevalidationrequired. OneSingaporeToaPayoh1.334N103.856E withWRF23–24Aug2017chosenno-rain,firstdayspinupdiscarded; no independentmeasuredirradiance,forecastleadtime/skillbaseline/errors/uncertainty oryear-roundsampling.",
+    "HistoricalWRF3.9/OpenFOAM5.0portedv1612 choices/NCEP-FNL forcings/5minradiation/48vertical10PBLlevels/fivephysicsoptions areauthorsreportedconfiguration, not validatedcurrentsoftwarefacts. Fourgrids27/9/3/1km andresolutionfigures donotbythemselvesverifyNWP accuracy.",
+    "Bothmeshlinearresolutionsrefinedby8; surfacecellcountcouldscale64conditional2Darea, actualmeshcountsnotprovided. Less1minute64processors for6AM–6PM claimedsolarcalculatoronly, notmeasuredfullWRF/preprocessforecastlatency orhardwareindependentbenchmark.",
+    "Buildingcolorbounds/type/scale/heightmanual; maximumsilhouette notsegmentationgold. Treeextrusion/revolution andalgebraictransmission noempiricalleaf/seasonalvalidation; nospecular/participatingmedium/currentactualsolverprovided.",
+    "Forecastnumbers20%by2027 andcost4times2010–2017 remainhistoricalcitedclaims, not verifiedmodernfacts. RadiationW/m² differsPV powerW/kW; no demonstratedelectricalyieldmodel/comparator forurbanPVdeployment.",
+    "Exactauthorrepositoryweb/metadataHTTP200 currentlyexistsbutsize0; actualcommitendpointHTTP409 Git Repository is empty. No current authorcodecommit toinspect/reproduce; doesnotproveoriginal2018code neverexisted. Failedtreehelperretainedbeforeanysourcefileswritten; no replacementrepositoryornewmodelinvented."
+  ],
+  "new_model_calls": 0,
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false,
+  "actual_author_repository_observation": {
+    "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\urb-original-repository-observation-v18\\actual-empty-repository-context.json",
+    "sha256": "e7f5fcb39bfd4eebf85266ba4d5c8c2b0137a123dcaff750437f63f4bc8bb805",
+    "entire_record": {
+      "observed_at_utc": "2026-10-11T09:53:21.211423+00:00",
+      "requested_url": "https://api.github.com/repos/venugopalansgr/urb-solar/commits/master",
+      "actual_http_status": 409,
+      "response_body_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\urb-original-repository-observation-v18\\actual-commit-endpoint-409.raw",
+      "response_body_sha256": "0ee7ecbdc5ea4744e325f2eac6e29ee99a41579cea52a07d7ecf6355cd805722",
+      "entire_response": {
+        "message": "Git Repository is empty.",
+        "documentation_url": "https://docs.github.com/rest/commits/commits#get-a-commit",
+        "status": "409"
+      },
+      "repository_metadata_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\urb-original-repository-observation-v18\\repository_metadata.raw",
+      "repository_metadata_sha256": "b4599b50a0ea4bca3b2bce20fb4c539706d49b408636f8928c68ee3b12f51a28",
+      "original_failed_tree_inspection_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\read-urb-author-repository-tree-v18.py",
+      "original_failed_tree_inspection_sha256": "b8aae072d5d4c1c0ad9f175323444ed35e675c1ba371dd018dbf7aa4991c087b",
+      "failed_before_any_commit_tree_or_source_files_written": true,
+      "repo_page_and_metadata_HTTP200_does_not_prove_code_publication": true,
+      "size": 0,
+      "no_current_commit_available": true,
+      "original_code_nonexistence_at_publication_not_inferred": true,
+      "actual_author_solver_not_executed_or_reproduced": true,
+      "new_model_requests": 0
+    }
+  }
+}

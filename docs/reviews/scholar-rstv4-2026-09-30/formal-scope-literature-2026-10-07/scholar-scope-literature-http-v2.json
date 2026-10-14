@@ -1,0 +1,1180 @@
+{
+  "status": "PASS_SHIPPED_SCOPE_QUERY_HANDLER_AND_EXACT_PAPER",
+  "url": "http://127.0.0.1:58432/?overview_state=original-position&view=all&scope_kind=topic&scope_field_id=field_2d25f31c2f6f4f01a69332408f6c9e7c&scope_object_id=topic_738405b70b574a248971a315bf333706",
+  "requests": [
+    {
+      "path": "/api/catalog/research-overview",
+      "status": 200,
+      "data": {
+        "fields": [
+          {
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "normalized_name": "审核恢复软件 field",
+            "name": "审核恢复软件 Field",
+            "description": null,
+            "created_at": "2026-10-06T00:57:19.221513+00:00",
+            "updated_at": "2026-10-06T00:57:19.221513+00:00",
+            "metadata_digest": "a94102e6b1d5bbe1f5cd243f9b602e9a3bbc64cb972973685c8f258be893e34a"
+          }
+        ],
+        "topics": [
+          {
+            "topic_id": "topic_738405b70b574a248971a315bf333706",
+            "normalized_name": "审核恢复软件 topic",
+            "name": "审核恢复软件 Topic",
+            "description": null,
+            "created_at": "2026-10-06T00:57:19.234531+00:00",
+            "updated_at": "2026-10-06T00:57:19.234531+00:00",
+            "metadata_digest": "3b3dc7e9476c1a077c20ab0dba804440c5bc763e96df65c3fd3a47c91ec9681f"
+          }
+        ],
+        "field_topics": [
+          {
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "topic_id": "topic_738405b70b574a248971a315bf333706"
+          }
+        ],
+        "tracks": [],
+        "questions": [],
+        "manuscripts": [],
+        "manuscript_questions": [],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "topic_id": "topic_738405b70b574a248971a315bf333706",
+            "track_id": null,
+            "name": "审核恢复软件 Collection",
+            "status": "PAUSED",
+            "updated_at": "2026-10-07T05:15:07.725647+00:00"
+          }
+        ],
+        "collection_jobs": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "status": "READY",
+            "count": 1,
+            "latest_job_at": "2026-10-06T00:57:19.640928+00:00"
+          },
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "status": "SUCCEEDED",
+            "count": 6,
+            "latest_job_at": "2026-10-07T05:15:07.318968+00:00"
+          }
+        ],
+        "workspace_id": "de75ee3f683bb6eed2c80b2ce44033456c93e6277712d714484aba5e528a1e33",
+        "literature_counts": [
+          {
+            "kind": "field",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "object_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "paper_count": 1,
+            "excluded_count": 0,
+            "unavailable_count": 0
+          },
+          {
+            "kind": "topic",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "object_id": "topic_738405b70b574a248971a315bf333706",
+            "paper_count": 1,
+            "excluded_count": 0,
+            "unavailable_count": 0
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/papers/query",
+      "body": {
+        "scope": {
+          "kind": "topic",
+          "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+          "object_id": "topic_738405b70b574a248971a315bf333706",
+          "include_excluded": false
+        },
+        "filter": null,
+        "sorts": [
+          {
+            "field": "updated_at",
+            "direction": "desc"
+          }
+        ],
+        "page": 1,
+        "page_size": 50
+      },
+      "status": 200,
+      "data": {
+        "items": [
+          {
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "published_year": null,
+            "doi": "10.1234/corrected",
+            "created_at": "2026-10-06T00:57:19.278039+00:00",
+            "updated_at": "2026-10-06T00:57:19.481197+00:00",
+            "abstract": null,
+            "pdf_count": 1,
+            "verified_count": 1,
+            "review_count": 0,
+            "parse_count": 1,
+            "reference_count": 6,
+            "brief_count": 1,
+            "skeleton_count": 1,
+            "human_count": 0,
+            "collection_count": 1,
+            "source": "Local PDF",
+            "authors": "",
+            "pdf_status": "VERIFIED",
+            "parse_status": "PARSED",
+            "brief_status": "AVAILABLE",
+            "skeleton_status": "AVAILABLE",
+            "review_status": "CLEAR",
+            "scope_association": {
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "excluded": false,
+              "reasons": [
+                {
+                  "kind": "collection",
+                  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                  "name": "审核恢复软件 Collection",
+                  "discovery_kind": "SEED",
+                  "membership_status": "DISCOVERED",
+                  "discovered_from_paper_id": null,
+                  "screening": {
+                    "assessment_id": "assessment_75043f03d143fc18db565266cdf03ad2",
+                    "category": "UNKNOWN",
+                    "context_sha256": "57e17e8982e1ba3619f367dc1f9946e13be52791ca0aa0ff743c80d600bbd438"
+                  },
+                  "association_status": "CONFIRMED",
+                  "excluded": false,
+                  "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+                  "track_id": null,
+                  "topic_id": "topic_738405b70b574a248971a315bf333706"
+                }
+              ],
+              "association_status": "CONFIRMED"
+            }
+          }
+        ],
+        "total": 1,
+        "page": 1,
+        "page_size": 50,
+        "has_more": false,
+        "scope": {
+          "scope": {
+            "kind": "topic",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "object_id": "topic_738405b70b574a248971a315bf333706",
+            "include_excluded": false
+          },
+          "title": "审核恢复软件 Topic",
+          "excluded_count": 0,
+          "unavailable_sources": [],
+          "scientific_approval": false,
+          "paper_count": 1
+        }
+      }
+    },
+    {
+      "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "status": 200,
+      "data": {
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "canonical_key": "doi:10.1234/corrected",
+        "doi": "10.1234/corrected",
+        "normalized_title": "software review identity title",
+        "title": "Software review identity title",
+        "published_year": null,
+        "abstract": null,
+        "landing_url": null,
+        "pdf_url": null,
+        "created_at": "2026-10-06T00:57:19.278039+00:00",
+        "updated_at": "2026-10-06T00:57:19.481197+00:00",
+        "authors": [],
+        "catalog_status": "ACTIVE",
+        "files": [
+          {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "size_bytes": 1827,
+            "mime_type": "application/pdf",
+            "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+            "acquisition_method": "SOFTWARE_FIXTURE",
+            "source_url": null,
+            "identity_status": "VERIFIED",
+            "created_at": "2026-10-06T00:57:19.326735+00:00",
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          }
+        ],
+        "sources": [],
+        "parse_runs": [
+          {
+            "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "parser_name": "MinerU/magic-pdf",
+            "parser_version": "1.2.2",
+            "config_digest": "034e95237d3586abed623f98328a6a4e48460bdd73daeddc754377949066bb89",
+            "status": "SUCCEEDED",
+            "started_at": "2026-10-06T00:58:45.547170+00:00",
+            "completed_at": "2026-10-06T00:58:45.547170+00:00",
+            "artifact_manifest": {
+              "artifacts_complete": true,
+              "content_list_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\mineru-attempts\\attempt-fe28bf201c514fc7bdd11cef00a567ae\\out\\source\\source_content_list.json",
+              "markdown_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\mineru-attempts\\attempt-fe28bf201c514fc7bdd11cef00a567ae\\out\\source\\source.md",
+              "publication": {
+                "output_revision_sha256": "42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2",
+                "parser_configuration": {
+                  "bridge": "v4",
+                  "method": "auto"
+                },
+                "parser_configuration_sha256": "c210cb74e63e65fd6ccead262791af4126066eae8fe2479341c7447c2b951f6a",
+                "publication_configuration_sha256": "034e95237d3586abed623f98328a6a4e48460bdd73daeddc754377949066bb89"
+              },
+              "quality": {
+                "body_blocks": 3,
+                "body_pages": [
+                  1
+                ],
+                "body_text_chars": 204,
+                "equation_blocks": 0,
+                "figure_caption_blocks": 0,
+                "page_number_basis": "one_based_from_mineru_page_idx",
+                "prose_text_chars": 204,
+                "raw_text_chars": 720,
+                "reference_entries": 6,
+                "reference_heading_found": true,
+                "reference_page_alignment": {
+                  "aligned": 6,
+                  "ambiguous": 0,
+                  "corrected": 0,
+                  "method": "pdftotext_word_overlap",
+                  "missing_source_numbered_references": [],
+                  "numbering_checked": true
+                },
+                "table_blocks": 0
+              },
+              "requested_output_dir": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\parse",
+              "review_correction_action_ids": [
+                "review_action_377782aa4546dafd80beff33918059df"
+              ],
+              "source_pdf_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf"
+            }
+          }
+        ],
+        "references": [
+          {
+            "reference_entry_id": "reference_0a9ac121df9571d6d95b9868b284cde1",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[1] Reference author 1. Distinct software citation experiment validation 1. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "49d63073f2a58fd0871aafc41ef98b631fdb296452fee545d7d2a4b0f206498a",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1
+            }
+          },
+          {
+            "reference_entry_id": "reference_115ef3ba8ee865f00cd8f8e7f4653d6f",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[2] Reference author 2. Distinct software citation experiment validation 2. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "55527d36ae7a5d42abd26e91a9d8944a8f68bb490d2285e7acd86ac5fce21e16",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1
+            }
+          },
+          {
+            "reference_entry_id": "reference_bec01c96e9be408bfdd2c50c595e4e24",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[3] Reference author 3. Distinct software citation experiment validation 3. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "dd01e80da17eb26054e955a73437640a5a33160549d28febaf6eaa1091a0bcdf",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1
+            }
+          },
+          {
+            "reference_entry_id": "reference_96886601bf6663ef4e7b1bfc0aa35ae7",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[4] Reference author 4. Distinct software citation experiment validation 4. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "ae5c4c54d6ce89ba62afe08798ca8cd695222e1d69b0da91552ebf1d59382124",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1
+            }
+          },
+          {
+            "reference_entry_id": "reference_b65de6a260a94c819d27b73eeedcf195",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[5] Reference author 5. Distinct software citation experiment validation 5. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "e87b6b2ea6cd9e7c5697b8996ca74022159849969addf90de23972cac713f4ee",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1
+            }
+          },
+          {
+            "reference_entry_id": "reference_617af6de4baf3633df9bda3f75afb768",
+            "citing_paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "raw_text": "[6] Reference author 6. Distinct software citation experiment validation 6. 2026.",
+            "page_number": 2,
+            "target_paper_id": null,
+            "resolution_status": "UNRESOLVED",
+            "content_digest": "acb39d5373aad8293b824dec0dc67477c7c13f7acfd4513823537c52dd735d9f",
+            "created_at": "2026-10-06T00:58:45.547170+00:00",
+            "location": {
+              "source": "mineru_content_list",
+              "content_index": 4,
+              "page_idx": 1,
+              "mineru_page_number": 2,
+              "page_alignment": "pdftotext_word_overlap",
+              "page_alignment_score": 1
+            }
+          }
+        ],
+        "assessments": [
+          {
+            "assessment_id": "assessment_3f87936d52e6a8d7a1f21d09ac68a9cc",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "track_id": null,
+            "assessment_type": "CONTENT",
+            "status": "COMPLETED",
+            "rule_version": "assessment-v1",
+            "model_tier": "standard",
+            "model_name": "gemini-3.7-flash",
+            "prompt_version": "assessment-v1",
+            "input_digest": "d923ddcb8b86361c4a4e5ef5b619efa73bdfc8f17ea7b37aa053f465247beb07",
+            "created_at": "2026-10-07T05:15:07.309946+00:00",
+            "result": {
+              "contradictions": [],
+              "contribution": "Presents a software review centered on source, ownership, and exact reference preservation [DOI 10.1234/corrected].",
+              "evidence": "Limited textual assertions regarding software fixtures preserving source, ownership, and references [DOI 10.1234/corrected].",
+              "limitations": "The provided text blocks are extremely sparse and lack empirical validation, code details, or quantitative performance metrics.",
+              "reusable_methods_data": "Software fixture body mechanism for preserving source, ownership, and exact references."
+            },
+            "evidence": []
+          },
+          {
+            "assessment_id": "assessment_d31047d18e6be0cad662f078a0a14566",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "track_id": null,
+            "assessment_type": "QUICK_READ",
+            "status": "COMPLETED",
+            "rule_version": "quick-read-v1",
+            "model_tier": "light",
+            "model_name": "gemini-flash-lite",
+            "prompt_version": "quick-read-v1",
+            "input_digest": "b96bda041ed2962232cf2e42c5e04f4427a65acd64eeb752d75224314f91f550",
+            "created_at": "2026-10-07T05:13:16.272100+00:00",
+            "result": {
+              "author_contribution": "",
+              "deep_read_reasons": [],
+              "evidence_quotes": [
+                "Software review identity title",
+                "DOI 10.1234/corrected",
+                "serves source, ownership and exact references."
+              ],
+              "limitations": "",
+              "materials": "Software review text and software fixture body",
+              "method": "",
+              "question": "",
+              "results": ""
+            },
+            "evidence": [
+              "Software review identity title",
+              "DOI 10.1234/corrected",
+              "serves source, ownership and exact references."
+            ]
+          },
+          {
+            "assessment_id": "assessment_75043f03d143fc18db565266cdf03ad2",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "track_id": null,
+            "assessment_type": "SCREEN",
+            "status": "COMPLETED",
+            "rule_version": "screen-v1-scope-1",
+            "model_tier": "light",
+            "model_name": "gemini-flash-lite",
+            "prompt_version": "screen-v1",
+            "input_digest": "afb34bc3a53ca95046c1463b5d1a5a31eeefcae867db2e35c533efc0665a1bcb",
+            "created_at": "2026-10-07T05:13:10.400655+00:00",
+            "result": {
+              "category": "UNKNOWN",
+              "evidence_quotes": [],
+              "rationale": "Insufficient information is provided in the title and the scope is empty, preventing a determination of relevance."
+            },
+            "evidence": []
+          }
+        ],
+        "skeletons": [
+          {
+            "skeleton_id": "skeleton_ad1dc385a70f2dd67e89eb1ebec075cd",
+            "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+            "version": 1,
+            "extractor_model": "gemini-3.7-flash",
+            "prompt_version": "paper-skeleton-v1",
+            "content_digest": "9357201f0315c5c7e9a7ce95c9a88fee0661a6d49543ac28d9b31b023686c574",
+            "created_at": "2026-10-07T05:15:01.792520+00:00"
+          }
+        ],
+        "processing": [
+          {
+            "job_id": "job_d433dd4d7efa82eb5cb27880a16defc6",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "ASSESS",
+            "queue_class": "MODEL_ASSESS",
+            "status": "SUCCEEDED",
+            "priority": 40,
+            "idempotency_key": "a00da00bc0ccad41bd5e0dc9a6e2ab65bdbf58c1e5e70cfe0df10c2dcc86977e",
+            "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"skeleton_run_id\": \"skeleton_run_67ad0f965f683342e074662185afc80a\"}",
+            "input_digest": "d923ddcb8b86361c4a4e5ef5b619efa73bdfc8f17ea7b37aa053f465247beb07",
+            "rule_version": "assessment-v1",
+            "attempts": 1,
+            "available_at": "2026-10-07T05:15:01.808783+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 1,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"assessment\": {\"contradictions\": [], \"contribution\": \"Presents a software review centered on source, ownership, and exact reference preservation [DOI 10.1234/corrected].\", \"evidence\": \"Limited textual assertions regarding software fixtures preserving source, ownership, and references [DOI 10.1234/corrected].\", \"limitations\": \"The provided text blocks are extremely sparse and lack empirical validation, code details, or quantitative performance metrics.\", \"reusable_methods_data\": \"Software fixture body mechanism for preserving source, ownership, and exact references.\"}, \"contract\": {\"actual_model\": \"gemini-3.7-flash\", \"estimated_input_tokens\": 100, \"prompt_version\": \"assessment-v1\", \"receipt_id\": \"acquisition-call-d4d0ddce13904e11bc79fbeb0a70e6e7\", \"status\": \"SUCCESS\", \"task\": \"assessment\", \"tier\": \"standard\", \"usage\": {\"completion_tokens\": 142, \"prompt_tokens\": 186, \"total_tokens\": 328}}}",
+            "created_at": "2026-10-07T05:15:01.808783+00:00",
+            "updated_at": "2026-10-07T05:15:07.318968+00:00"
+          },
+          {
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "SKELETON",
+            "queue_class": "MODEL_SKELETON",
+            "status": "SUCCEEDED",
+            "priority": 200,
+            "idempotency_key": "actual-deep-read-native-v1",
+            "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit software document: verify full four-layer extraction and actual model receipts\", \"request\": {\"idempotency_key\": \"actual-deep-read-native-v1\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit software document: verify full four-layer extraction and actual model receipts\"}, \"user_requested\": true}",
+            "input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+            "rule_version": "skeleton-v1",
+            "attempts": 1,
+            "available_at": "2026-10-07T05:10:11.521274+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 1,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"skeleton_id\": \"skeleton_ad1dc385a70f2dd67e89eb1ebec075cd\", \"skeleton_run_id\": \"skeleton_run_67ad0f965f683342e074662185afc80a\", \"units\": 3}",
+            "created_at": "2026-10-07T05:10:11.521274+00:00",
+            "updated_at": "2026-10-07T05:15:01.808783+00:00"
+          },
+          {
+            "job_id": "job_2193b0167d8273f30de80f71b50a5b92",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "QUICK_READ",
+            "queue_class": "MODEL_READ",
+            "status": "SUCCEEDED",
+            "priority": 70,
+            "idempotency_key": "a7957e53ed240e1107adcbe8dc542109a1fb926aa97bd31bb6edf6fd210fe823",
+            "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\"}",
+            "input_digest": "b96bda041ed2962232cf2e42c5e04f4427a65acd64eeb752d75224314f91f550",
+            "rule_version": "quick-read-v1",
+            "attempts": 1,
+            "available_at": "2026-10-06T00:58:45.550170+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 1,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"card\": {\"author_contribution\": \"\", \"deep_read_reasons\": [], \"evidence_quotes\": [\"Software review identity title\", \"DOI 10.1234/corrected\", \"serves source, ownership and exact references.\"], \"limitations\": \"\", \"materials\": \"Software review text and software fixture body\", \"method\": \"\", \"question\": \"\", \"results\": \"\"}, \"contract\": {\"actual_model\": \"gemini-flash-lite\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-f00b5280b41e4b5fbf0216cb7ea6a243\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"usage\": {\"completion_tokens\": 85, \"prompt_tokens\": 220, \"total_tokens\": 306}}}",
+            "created_at": "2026-10-06T00:58:45.550170+00:00",
+            "updated_at": "2026-10-07T05:13:16.281215+00:00"
+          },
+          {
+            "job_id": "job_3e2ae537ca5bf4d9735deeb7cb972065",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "PARSE_PDF",
+            "queue_class": "PARSER",
+            "status": "SUCCEEDED",
+            "priority": 80,
+            "idempotency_key": "16e9540822710a648e842d64a394577a4fafaa092f5736256f83e1671e030c26",
+            "input_json": "{\"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\"}",
+            "input_digest": "dc21525612f70da50616658f58cc661954992ebd1ded588c660b54512aacb74f",
+            "rule_version": "parser-v1",
+            "attempts": 2,
+            "available_at": "2026-10-06T00:57:21.687917+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 2,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"blocks\": 3, \"paper_version_id\": \"paper_version_ec792722735b1f9b62bbdd3810d2282b\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"references\": 6}",
+            "created_at": "2026-10-06T00:57:19.652441+00:00",
+            "updated_at": "2026-10-06T00:58:45.559685+00:00"
+          },
+          {
+            "job_id": "job_ec0c6c3383dca770493ece39af6db184",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "SCREEN",
+            "queue_class": "MODEL_SCREEN",
+            "status": "SUCCEEDED",
+            "priority": 60,
+            "idempotency_key": "d50380edccd2b7df87bb14d3a49c70358f58b74a50e8c7524993354485af1ab8",
+            "input_json": "{\"scope_version\": 1}",
+            "input_digest": "afb34bc3a53ca95046c1463b5d1a5a31eeefcae867db2e35c533efc0665a1bcb",
+            "rule_version": "screen-v1-scope-1",
+            "attempts": 1,
+            "available_at": "2026-10-06T00:57:19.287549+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 1,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"assessment\": {\"category\": \"UNKNOWN\", \"evidence_quotes\": [], \"rationale\": \"Insufficient information is provided in the title and the scope is empty, preventing a determination of relevance.\"}, \"contract\": {\"actual_model\": \"gemini-flash-lite\", \"estimated_input_tokens\": 18, \"prompt_version\": \"screen-v1\", \"receipt_id\": \"acquisition-call-7c16aeafe48547dd99b0bbde03d15737\", \"status\": \"SUCCESS\", \"task\": \"screen\", \"tier\": \"light\", \"usage\": {\"completion_tokens\": 46, \"prompt_tokens\": 116, \"total_tokens\": 163}}, \"screening_input\": {\"collection\": {\"collection_id\": \"collection_d016024afda6fbf0ce956023f80306a8\", \"field_id\": \"field_2d25f31c2f6f4f01a69332408f6c9e7c\", \"scope\": {}, \"scope_version\": 1, \"topic_id\": \"topic_738405b70b574a248971a315bf333706\", \"track_id\": null}, \"paper\": {\"abstract\": null, \"authors\": [], \"doi\": \"10.1234/corrected\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"published_year\": null, \"title\": \"Software review identity title\"}}}",
+            "created_at": "2026-10-06T00:57:19.287549+00:00",
+            "updated_at": "2026-10-07T05:13:10.414793+00:00"
+          },
+          {
+            "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "job_type": "LOCATE_PDF",
+            "queue_class": "NETWORK",
+            "status": "READY",
+            "priority": 50,
+            "idempotency_key": "e914ff82d122a9759a14b28bebb1dc57a8d02a2897dc52f7c6bd76c48371a091",
+            "input_json": "{\"doi\": \"10.1234/original\"}",
+            "input_digest": "bf2e5bc8ae8039be23aa9996bba0c5217b9de54e5335d7f89569bd03b4a18dd4",
+            "rule_version": "fulltext-v1",
+            "attempts": 1,
+            "available_at": "2026-10-06T00:57:19.640928+00:00",
+            "lease_owner": null,
+            "lease_expires_at": null,
+            "fencing_token": 1,
+            "last_error_code": null,
+            "last_error_detail": null,
+            "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\"}}",
+            "created_at": "2026-10-06T00:57:19.287549+00:00",
+            "updated_at": "2026-10-06T00:57:19.640928+00:00"
+          }
+        ],
+        "model_calls": [
+          {
+            "call_id": "acquisition-call-7c16aeafe48547dd99b0bbde03d15737",
+            "started_at": "2026-10-07T05:12:20.858376+00:00",
+            "job_id": "job_ec0c6c3383dca770493ece39af6db184",
+            "fencing_token": 1,
+            "task": "screen",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "job_input_digest": "afb34bc3a53ca95046c1463b5d1a5a31eeefcae867db2e35c533efc0665a1bcb",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "screening_context": {
+                "collection": {
+                  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                  "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+                  "scope": {},
+                  "scope_version": 1,
+                  "topic_id": "topic_738405b70b574a248971a315bf333706",
+                  "track_id": null
+                },
+                "paper": {
+                  "abstract": null,
+                  "authors": [],
+                  "doi": "10.1234/corrected",
+                  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                  "published_year": null,
+                  "title": "Software review identity title"
+                }
+              }
+            },
+            "contract": {
+              "actual_model": "gemini-flash-lite",
+              "estimated_input_tokens": 18,
+              "prompt_version": "screen-v1",
+              "receipt_id": "acquisition-call-7c16aeafe48547dd99b0bbde03d15737",
+              "status": "SUCCESS",
+              "task": "screen",
+              "tier": "light",
+              "usage": {
+                "completion_tokens": 46,
+                "prompt_tokens": 116,
+                "total_tokens": 163
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:13:10.387626+00:00"
+          },
+          {
+            "call_id": "acquisition-call-f00b5280b41e4b5fbf0216cb7ea6a243",
+            "started_at": "2026-10-07T05:13:10.475883+00:00",
+            "job_id": "job_2193b0167d8273f30de80f71b50a5b92",
+            "fencing_token": 1,
+            "task": "quick_read",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "b96bda041ed2962232cf2e42c5e04f4427a65acd64eeb752d75224314f91f550",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-flash-lite",
+              "estimated_input_tokens": 117,
+              "prompt_version": "quick-read-v1",
+              "receipt_id": "acquisition-call-f00b5280b41e4b5fbf0216cb7ea6a243",
+              "status": "SUCCESS",
+              "task": "quick_read",
+              "tier": "light",
+              "usage": {
+                "completion_tokens": 85,
+                "prompt_tokens": 220,
+                "total_tokens": 306
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:13:16.257446+00:00"
+          },
+          {
+            "call_id": "acquisition-call-d5c841b5e8df45eb8653a8aef56be990",
+            "started_at": "2026-10-07T05:13:16.343326+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_1",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 11,
+              "prompt_version": "skeleton-l1-v1",
+              "receipt_id": "acquisition-call-d5c841b5e8df45eb8653a8aef56be990",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_1",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 56,
+                "prompt_tokens": 98,
+                "total_tokens": 154
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:13:33.916258+00:00"
+          },
+          {
+            "call_id": "acquisition-call-6a45c8d35a044079aa963413b8e93919",
+            "started_at": "2026-10-07T05:13:33.925271+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_2",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 66,
+              "prompt_version": "skeleton-l2-v1",
+              "receipt_id": "acquisition-call-6a45c8d35a044079aa963413b8e93919",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_2",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 51,
+                "prompt_tokens": 150,
+                "total_tokens": 201
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:07.342904+00:00"
+          },
+          {
+            "call_id": "acquisition-call-20282769bd094da68908c0a4f8fafbfa",
+            "started_at": "2026-10-07T05:14:07.356350+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_3",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 115,
+              "prompt_version": "skeleton-l3-v1",
+              "receipt_id": "acquisition-call-20282769bd094da68908c0a4f8fafbfa",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_3",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 95,
+                "prompt_tokens": 198,
+                "total_tokens": 293
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:11.353242+00:00"
+          },
+          {
+            "call_id": "acquisition-call-95b77c0a2484432e9cb33e4fd578ebc5",
+            "started_at": "2026-10-07T05:14:11.367283+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_4",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 213,
+              "prompt_version": "skeleton-l4-v1",
+              "receipt_id": "acquisition-call-95b77c0a2484432e9cb33e4fd578ebc5",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_4",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 46,
+                "prompt_tokens": 299,
+                "total_tokens": 346
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:18.460335+00:00"
+          },
+          {
+            "call_id": "acquisition-call-dfa0f14f14394381a3f078210a101c73",
+            "started_at": "2026-10-07T05:14:18.471361+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_1",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 9,
+              "prompt_version": "skeleton-l1-v1",
+              "receipt_id": "acquisition-call-dfa0f14f14394381a3f078210a101c73",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_1",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 25,
+                "prompt_tokens": 95,
+                "total_tokens": 120
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:23.234125+00:00"
+          },
+          {
+            "call_id": "acquisition-call-d655d5f0085840b5945d5f342f67f100",
+            "started_at": "2026-10-07T05:14:23.244163+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_2",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 35,
+              "prompt_version": "skeleton-l2-v1",
+              "receipt_id": "acquisition-call-d655d5f0085840b5945d5f342f67f100",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_2",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 14,
+                "prompt_tokens": 119,
+                "total_tokens": 134
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:28.085347+00:00"
+          },
+          {
+            "call_id": "acquisition-call-2fde4670eb004b8f93864f6d1ac6d8c9",
+            "started_at": "2026-10-07T05:14:28.094432+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_3",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 51,
+              "prompt_version": "skeleton-l3-v1",
+              "receipt_id": "acquisition-call-2fde4670eb004b8f93864f6d1ac6d8c9",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_3",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 90,
+                "prompt_tokens": 134,
+                "total_tokens": 224
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:31.806757+00:00"
+          },
+          {
+            "call_id": "acquisition-call-62aecfd12e9245b69c94ca383d71443d",
+            "started_at": "2026-10-07T05:14:31.817355+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_4",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 144,
+              "prompt_version": "skeleton-l4-v1",
+              "receipt_id": "acquisition-call-62aecfd12e9245b69c94ca383d71443d",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_4",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 11,
+                "prompt_tokens": 230,
+                "total_tokens": 242
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:38.301610+00:00"
+          },
+          {
+            "call_id": "acquisition-call-454fd8b95d12465398af5678685a2065",
+            "started_at": "2026-10-07T05:14:38.313121+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_1",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 42,
+              "prompt_version": "skeleton-l1-v1",
+              "receipt_id": "acquisition-call-454fd8b95d12465398af5678685a2065",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_1",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 92,
+                "prompt_tokens": 128,
+                "total_tokens": 221
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:44.287569+00:00"
+          },
+          {
+            "call_id": "acquisition-call-d1c3a4872a5c483191b332ed17c6d7bc",
+            "started_at": "2026-10-07T05:14:44.298159+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_2",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 115,
+              "prompt_version": "skeleton-l2-v1",
+              "receipt_id": "acquisition-call-d1c3a4872a5c483191b332ed17c6d7bc",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_2",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 118,
+                "prompt_tokens": 199,
+                "total_tokens": 317
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:51.361406+00:00"
+          },
+          {
+            "call_id": "acquisition-call-6ff33d2ca75a4dd59b93a9e9e3c2937a",
+            "started_at": "2026-10-07T05:14:51.371699+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_3",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 216,
+              "prompt_version": "skeleton-l3-v1",
+              "receipt_id": "acquisition-call-6ff33d2ca75a4dd59b93a9e9e3c2937a",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_3",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 127,
+                "prompt_tokens": 299,
+                "total_tokens": 426
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:14:55.202897+00:00"
+          },
+          {
+            "call_id": "acquisition-call-9338ae572b924b459287aca66ae11e68",
+            "started_at": "2026-10-07T05:14:55.213714+00:00",
+            "job_id": "job_b29d97ae1d5b924c5bc226df7d46deb3",
+            "fencing_token": 1,
+            "task": "skeleton_layer_4",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d115b022d3bdf3c355f1dc9d4dd5a95cde869156855e0cb96a595f6ed2fa786a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 346,
+              "prompt_version": "skeleton-l4-v1",
+              "receipt_id": "acquisition-call-9338ae572b924b459287aca66ae11e68",
+              "status": "SUCCESS",
+              "task": "skeleton_layer_4",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 12,
+                "prompt_tokens": 433,
+                "total_tokens": 446
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:15:01.784982+00:00"
+          },
+          {
+            "call_id": "acquisition-call-d4d0ddce13904e11bc79fbeb0a70e6e7",
+            "started_at": "2026-10-07T05:15:01.896909+00:00",
+            "job_id": "job_d433dd4d7efa82eb5cb27880a16defc6",
+            "fencing_token": 1,
+            "task": "assessment",
+            "status": "RETURNED",
+            "source": {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "job_input_digest": "d923ddcb8b86361c4a4e5ef5b619efa73bdfc8f17ea7b37aa053f465247beb07",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+              "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+            },
+            "contract": {
+              "actual_model": "gemini-3.7-flash",
+              "estimated_input_tokens": 100,
+              "prompt_version": "assessment-v1",
+              "receipt_id": "acquisition-call-d4d0ddce13904e11bc79fbeb0a70e6e7",
+              "status": "SUCCESS",
+              "task": "assessment",
+              "tier": "standard",
+              "usage": {
+                "completion_tokens": 142,
+                "prompt_tokens": 186,
+                "total_tokens": 328
+              }
+            },
+            "error_type": null,
+            "completed_at": "2026-10-07T05:15:07.296498+00:00"
+          }
+        ],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "name": "审核恢复软件 Collection",
+            "status": "PAUSED",
+            "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+            "topic_id": "topic_738405b70b574a248971a315bf333706",
+            "track_id": null
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/papers/query",
+      "body": {
+        "scope": {
+          "kind": "topic",
+          "field_id": "missing",
+          "object_id": "topic_738405b70b574a248971a315bf333706"
+        }
+      },
+      "status": 404,
+      "data": {
+        "detail": "Unknown Field"
+      }
+    },
+    {
+      "path": "/api/catalog/papers/query",
+      "body": {},
+      "status": 200,
+      "data": {
+        "items": [
+          {
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "published_year": null,
+            "doi": "10.1234/corrected",
+            "created_at": "2026-10-06T00:57:19.278039+00:00",
+            "updated_at": "2026-10-06T00:57:19.481197+00:00",
+            "abstract": null,
+            "pdf_count": 1,
+            "verified_count": 1,
+            "review_count": 0,
+            "parse_count": 1,
+            "reference_count": 6,
+            "brief_count": 1,
+            "skeleton_count": 1,
+            "human_count": 0,
+            "collection_count": 1,
+            "source": "Local PDF",
+            "authors": "",
+            "pdf_status": "VERIFIED",
+            "parse_status": "PARSED",
+            "brief_status": "AVAILABLE",
+            "skeleton_status": "AVAILABLE",
+            "review_status": "CLEAR"
+          }
+        ],
+        "total": 1,
+        "page": 1,
+        "page_size": 50,
+        "has_more": false
+      }
+    }
+  ],
+  "browser_verified": false,
+  "scientific_approval": false
+}

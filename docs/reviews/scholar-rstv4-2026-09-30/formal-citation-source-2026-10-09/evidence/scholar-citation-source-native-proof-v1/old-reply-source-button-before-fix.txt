@@ -1,0 +1,4 @@
+Browser tab: 1479455140, Title: "Pepper Writing Studio", URL: "http://127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&object=thought_author_1".
+The following is a diff from the previous accessibility tree with ~ and + representing changed and added elements, respectively. Removed elements are summarized by ID range.
+Removed element IDs: 253-260, 269-276
+The focused UI element is 135 button 📚 evidence_3a2639ee8b5e432aafd7e3743c825f33

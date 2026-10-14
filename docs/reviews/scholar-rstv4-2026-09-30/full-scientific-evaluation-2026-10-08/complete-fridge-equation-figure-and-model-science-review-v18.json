@@ -1,0 +1,1713 @@
+{
+  "status": "COMPLETE_ALL_ORIGINAL_PAGES_IMAGES_AND_EQUATIONS_PRIOR_TABLES_RETAINED",
+  "full_original_benchmark_scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_ad7ea2de394ae32d2ed2",
+    "complete_original_pages": 7,
+    "complete_parser_image_items": 5,
+    "newly_completed_equation_blocks": 1,
+    "newly_completed_printed_equations": 1,
+    "new_parser_tables": 0,
+    "prior_tables_retained_without_recount": 3
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Sun-Powered Refrigerator_ Design, Testing, and Limitations.pdf",
+  "original_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\Sun-Powered Refrigerator_ Design, Testing, and Limitations_content_list.json",
+  "original_parser_sha256": "50d6e4327af5fb6c4b301dfec4bb504a731aebc48a50e2cdaff41021b8642891",
+  "original_matrix_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-original-visual-review-matrix-v2.json",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "original_page_freeze_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\freeze.json",
+  "original_page_freeze_sha256": "e8e9ed2454e4f221b747dbc344104ea82844d665ee8feda5f86ee45fbbb8b437",
+  "additional_render_lineage_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\render-lineage.json",
+  "additional_render_lineage_sha256": "ce01ebd57fb8a80e38a5fcce06b03091f14973e1ae50b5d90f70be9d6f2d2ca0",
+  "additional_render_lineage": {
+    "paper_id": "paper_ad7ea2de394ae32d2ed2",
+    "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Sun-Powered Refrigerator_ Design, Testing, and Limitations.pdf",
+    "original_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+    "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\Sun-Powered Refrigerator_ Design, Testing, and Limitations_content_list.json",
+    "original_parser_sha256": "50d6e4327af5fb6c4b301dfec4bb504a731aebc48a50e2cdaff41021b8642891",
+    "corpus_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.rstv4-local\\skeleton-optimization\\corpus-v2-fresh-test\\paper_ad7ea2de394ae32d2ed2.json",
+    "corpus_sha256": "ebb4a80538b5797e9e9fdbb9e469484a85e30e06b49d891902fad7aa89b3fbbc",
+    "pages": [
+      {
+        "actual_pdf_page": 1,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-001-180dpi.png",
+        "sha256": "02e91a5471f6118304ff7bbf7c5d2d552b562c265357dda8943b7032895a8cd9",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-002-180dpi.png",
+        "sha256": "6c6d3b6d3f822e4c40d7e293cd7dbcc784287549797ec41731e601a247bc7dd8",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "12f7e0519ffc0a6336cece4996229c7cd3f9b5fb9f24728877d5102672d860f0",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "c4606f991ab39def02038a79248f6f5df7d96612ac48dbdf06ae071c71005167",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-005-180dpi.png",
+        "sha256": "493a81281fac1763be55106435aa9514428dba5913b84d11bfbb147d48a3b56c",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 6,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-006-180dpi.png",
+        "sha256": "a487afe0869ae55afac676a3ea1dc6d3ef3a4c8d167aa736b37384daedd6149f",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 7,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-007-180dpi.png",
+        "sha256": "1a2badca6428ca4238e7cc695a209e55749823b4a975c3b73f4caa382817f777",
+        "dpi": 180
+      }
+    ],
+    "original_text_layer_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-pdf-text-layer.txt",
+    "original_text_layer_sha256": "3ae2859d4bf00ef21461498cc637e1f5b6884a0f5321ce4f2e41203eedeb7e11"
+  },
+  "all_original_page_records": [
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 1,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-001.png",
+          "sha256": "c409463f88986ce723eac176a08dea9346f95402a602c95338db8a263fa317a3"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 2,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-002.png",
+          "sha256": "9dfcabfd08909f51dcbd6d31516f1c6735602606be73f650976a5b9f466e5a8a"
+        },
+        {
+          "id": "crop-19",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\912a114a9edcd7e75bae7e5255c8c2d17a34c665bf8736282f3c2c9dbad483a2.jpg",
+          "sha256": "5dfa0edb4c90f7b38337cfb2684f2f1f6e669bef3a626e262acd6ed5add5a101"
+        },
+        {
+          "id": "crop-21",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\2a83c6d52c7d058bfa2322c902ce9345e9c049b0923b8f47a6b3d57241d010f5.jpg",
+          "sha256": "900102939d5fa3a36c2a841316ab6c043ff2da5b9f7a348fd550b6b11631e740"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        19,
+        21
+      ]
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 3,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-003.png",
+          "sha256": "c1c725cb9dc739e38add4d9cf7ce25d44b7a5f66aa7288834614b5bbbe7c0790"
+        },
+        {
+          "id": "crop-25",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\465e8180eedb3691784e6a879189c37a6304cc3050f8b0df61eb353f4cdb91a7.jpg",
+          "sha256": "ede5746c73953d83cdedce0f7d41a1565794d38f2371fe68291075f59b271632"
+        },
+        {
+          "id": "crop-33",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\4ceea3f2ea7244086c6c1e65f75c55beb31f509c8980bc3f623a082542948744.jpg",
+          "sha256": "775007bf1e1fded11ce597506d5655597bfcf17a56fd6d702aaf3453384091e6"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        25,
+        31,
+        33
+      ]
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 4,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-004.png",
+          "sha256": "40c9df346ec3319031f71fc216e20f3297f81e04c7dcd6b03d2846cf0544be71"
+        },
+        {
+          "id": "crop-36",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\df8ede449c5755571f8454d49294568292b1299226bf8c3ae5e69a9611a08e27.jpg",
+          "sha256": "41e1dcecfc66f90b99a53f750a06feee8aac82448e4eee8eff851ba0a781cedc"
+        },
+        {
+          "id": "crop-40",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\7095b455fe47ef2891ce99199bca444ebf546468db6139727c94fc19baedef40.jpg",
+          "sha256": "6a2e12aca66b5eb4b50625184c5675c72d6c713a03fda161f07a8ab43cf3d909"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        36,
+        40
+      ]
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 5,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-005.png",
+          "sha256": "8ac89e86f7b64bd3217b7b76dbe0407b124787452467265f24c487854138df14"
+        },
+        {
+          "id": "crop-44",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\389cfbb652127ceff4c2dca4446f9eafde2afeb569f9444a48ec7cb8244980d8.jpg",
+          "sha256": "1c6ea700a947c88989ee081296c22cefa664cfb9ce0a761abfa0b66f96591127"
+        },
+        {
+          "id": "crop-46",
+          "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\3d8e4a37069ac15373b9dace1aa8f3838bcaee0dbcbf9a7544242282d72b53b9.jpg",
+          "sha256": "b07f829b820425cd4e6c5fe8bba1944da89e4420935b74b47502e2c640053741"
+        }
+      ],
+      "raw_parser_visual_content_indices": [
+        44,
+        46
+      ]
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 6,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-006.png",
+          "sha256": "f97c556b20f591c0bf8ba393d9c352ad6476484945fd193d9d95d9190e47798f"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "actual_pdf_page": 7,
+      "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-007.png",
+          "sha256": "a09f3ec8b266b153fbc4f0cb7f15f7d688eab83ca968fbf404c2c901dd8f14cc"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    }
+  ],
+  "original_pdf_text_layer_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-pdf-text-layer.txt",
+  "original_pdf_text_layer_sha256": "3ae2859d4bf00ef21461498cc637e1f5b6884a0f5321ce4f2e41203eedeb7e11",
+  "plots": [
+    {
+      "matrix_visual_index": 35,
+      "original_visual_item": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 2,
+        "raw_parser_content_index": 21,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "b6060cdf3b0110371f203f8ab692404105cf0f6864127f61ed630ab7bc9a3b90",
+        "associated_frozen_original_block_ids": [
+          "paper_ad7ea2de394ae32d2ed2:b19"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\2a83c6d52c7d058bfa2322c902ce9345e9c049b0923b8f47a6b3d57241d010f5.jpg",
+        "actual_original_crop_sha256": "900102939d5fa3a36c2a841316ab6c043ff2da5b9f7a348fd550b6b11631e740",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\002\\record.json",
+        "actual_page_record_sha256": "fd74b6a9ecd16dbe40b5086f2b9f125e19ec01b546cefa3e58fa0ce51a9157d7",
+        "original_durable_handle": "run_23c5cb73ce5d40d08c03805b8cc7b6bd",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images/2a83c6d52c7d058bfa2322c902ce9345e9c049b0923b8f47a6b3d57241d010f5.jpg",
+        "img_caption": [
+          "Figure 1. Prototype with folded (a) and unfolded (b) PV panel "
+        ],
+        "img_footnote": [],
+        "page_idx": 1
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-002-180dpi.png",
+        "sha256": "6c6d3b6d3f822e4c40d7e293cd7dbcc784287549797ec41731e601a247bc7dd8",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 2,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-002.png",
+            "sha256": "9dfcabfd08909f51dcbd6d31516f1c6735602606be73f650976a5b9f466e5a8a"
+          },
+          {
+            "id": "crop-19",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\912a114a9edcd7e75bae7e5255c8c2d17a34c665bf8736282f3c2c9dbad483a2.jpg",
+            "sha256": "5dfa0edb4c90f7b38337cfb2684f2f1f6e669bef3a626e262acd6ed5add5a101"
+          },
+          {
+            "id": "crop-21",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\2a83c6d52c7d058bfa2322c902ce9345e9c049b0923b8f47a6b3d57241d010f5.jpg",
+            "sha256": "900102939d5fa3a36c2a841316ab6c043ff2da5b9f7a348fd550b6b11631e740"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          19,
+          21
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Figure1",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Complete folded/unfolded PVroof prototype photos; fourfoldablemodules/160W authorconfiguration. Portabilityclaim not measuredtransportergonomics; totaldeclaredcomponentmass75.02kg excludesmounting/cabling. Physical prototypephotos do notmean testsoutdoorPV ratherthanDCemulator."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 38,
+      "original_visual_item": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 33,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "885d4dfcbbe53fb5d19dc7f2af3808d01aaf8abaa660b2936e952b92c1f6e9be",
+        "associated_frozen_original_block_ids": [
+          "paper_ad7ea2de394ae32d2ed2:b29"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\4ceea3f2ea7244086c6c1e65f75c55beb31f509c8980bc3f623a082542948744.jpg",
+        "actual_original_crop_sha256": "775007bf1e1fded11ce597506d5655597bfcf17a56fd6d702aaf3453384091e6",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\003\\record.json",
+        "actual_page_record_sha256": "3b54b49828b22feaf313f09901300ea22e7ad2eec15083d3021704196725fa3d",
+        "original_durable_handle": "run_db4f947bffc143fcbc2fccb724af1555",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images/4ceea3f2ea7244086c6c1e65f75c55beb31f509c8980bc3f623a082542948744.jpg",
+        "img_caption": [
+          "Figure 2. Schematic of the testing device "
+        ],
+        "img_footnote": [],
+        "page_idx": 2
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "12f7e0519ffc0a6336cece4996229c7cd3f9b5fb9f24728877d5102672d860f0",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-003.png",
+            "sha256": "c1c725cb9dc739e38add4d9cf7ce25d44b7a5f66aa7288834614b5bbbe7c0790"
+          },
+          {
+            "id": "crop-25",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\465e8180eedb3691784e6a879189c37a6304cc3050f8b0df61eb353f4cdb91a7.jpg",
+            "sha256": "ede5746c73953d83cdedce0f7d41a1565794d38f2371fe68291075f59b271632"
+          },
+          {
+            "id": "crop-33",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\4ceea3f2ea7244086c6c1e65f75c55beb31f509c8980bc3f623a082542948744.jpg",
+            "sha256": "775007bf1e1fded11ce597506d5655597bfcf17a56fd6d702aaf3453384091e6"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          25,
+          31,
+          33
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Figure2",
+      "complete_visible_panel_count": 1,
+      "scientific_scope_findings": [
+        "Fulltesting schematic PC/Labview single-diodePVmodel controlsDCsupply→chargecontroller→VCR andbidirectionalbattery. Lab DCinput simulatesPV, not independentrealPVoutdoorenergyrecord. Artificialtemperature profile/initialprecooledemptybox andfullychargedbattery materiallyconditionclaims."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 39,
+      "original_visual_item": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 4,
+        "raw_parser_content_index": 36,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "d49abf1e0bac4567584dbfa45e856cbaed12f15fde397b0c083c997a22437af5",
+        "associated_frozen_original_block_ids": [
+          "paper_ad7ea2de394ae32d2ed2:b32"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\df8ede449c5755571f8454d49294568292b1299226bf8c3ae5e69a9611a08e27.jpg",
+        "actual_original_crop_sha256": "41e1dcecfc66f90b99a53f750a06feee8aac82448e4eee8eff851ba0a781cedc",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\004\\record.json",
+        "actual_page_record_sha256": "35756a5945ba0d9a06bdc35486cd0f8bc7cc599abd7f8a6ec8a4ec04481dea5b",
+        "original_durable_handle": "run_90ad8b24943443e288e59ba4512306ed",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images/df8ede449c5755571f8454d49294568292b1299226bf8c3ae5e69a9611a08e27.jpg",
+        "img_caption": [
+          "Figure 3 shows the internal and external air temperatures measured during the tests. ",
+          "Figure 3. Temperature measurements during the experimental tests at $+4^{\\circ}\\mathrm{C}$ (a), $0^{\\circ}\\mathrm{C}$ (b), $-10^{\\circ}\\mathrm{C}$ (c) and $-20^{\\circ}\\mathrm{C}$ (d) "
+        ],
+        "img_footnote": [],
+        "page_idx": 3
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "c4606f991ab39def02038a79248f6f5df7d96612ac48dbdf06ae071c71005167",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 4,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-004.png",
+            "sha256": "40c9df346ec3319031f71fc216e20f3297f81e04c7dcd6b03d2846cf0544be71"
+          },
+          {
+            "id": "crop-36",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\df8ede449c5755571f8454d49294568292b1299226bf8c3ae5e69a9611a08e27.jpg",
+            "sha256": "41e1dcecfc66f90b99a53f750a06feee8aac82448e4eee8eff851ba0a781cedc"
+          },
+          {
+            "id": "crop-40",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\7095b455fe47ef2891ce99199bca444ebf546468db6139727c94fc19baedef40.jpg",
+            "sha256": "6a2e12aca66b5eb4b50625184c5675c72d6c713a03fda161f07a8ab43cf3d909"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          36,
+          40
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Figure3",
+      "complete_visible_panel_count": 4,
+      "scientific_scope_findings": [
+        "Allfourtemperaturegraphs +4/0/−10/−20caption,blueTi/blackTe,17:00→17:00time, y−25..35°C. Te30day/decreasesnight matcheslabheater schedule. Fig3(a)Ti sawtooth visiblyaround0..5°C, fallsbelow3°C lowerbound implied +4±1; Fig3(b)also fallsbelow−1°C expected0±1. Qualitativeprimaryplot/prose discrepancy retained, no guessedexacttrace/calibration correction. ±.1°Csensor accuracy alonecannotexplainmulti-degreevisualdifference; no producttemperatures/loadedboxclinicaltesting."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 40,
+      "original_visual_item": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 4,
+        "raw_parser_content_index": 40,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "090dc659cf40a9222402f940a5cf638721d33c524af982532ad1f020bbfa6cca",
+        "associated_frozen_original_block_ids": [
+          "paper_ad7ea2de394ae32d2ed2:b36"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\7095b455fe47ef2891ce99199bca444ebf546468db6139727c94fc19baedef40.jpg",
+        "actual_original_crop_sha256": "6a2e12aca66b5eb4b50625184c5675c72d6c713a03fda161f07a8ab43cf3d909",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\004\\record.json",
+        "actual_page_record_sha256": "35756a5945ba0d9a06bdc35486cd0f8bc7cc599abd7f8a6ec8a4ec04481dea5b",
+        "original_durable_handle": "run_90ad8b24943443e288e59ba4512306ed",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images/7095b455fe47ef2891ce99199bca444ebf546468db6139727c94fc19baedef40.jpg",
+        "img_caption": [
+          "Figure 4. Cumulative electric energy during the experimental tests at $+4^{\\circ}\\mathrm{C}$ (a) and $-20^{\\circ}\\mathrm{C}$ (b) "
+        ],
+        "img_footnote": [],
+        "page_idx": 3
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 4,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-004-180dpi.png",
+        "sha256": "c4606f991ab39def02038a79248f6f5df7d96612ac48dbdf06ae071c71005167",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 4,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-004.png",
+            "sha256": "40c9df346ec3319031f71fc216e20f3297f81e04c7dcd6b03d2846cf0544be71"
+          },
+          {
+            "id": "crop-36",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\df8ede449c5755571f8454d49294568292b1299226bf8c3ae5e69a9611a08e27.jpg",
+            "sha256": "41e1dcecfc66f90b99a53f750a06feee8aac82448e4eee8eff851ba0a781cedc"
+          },
+          {
+            "id": "crop-40",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\7095b455fe47ef2891ce99199bca444ebf546468db6139727c94fc19baedef40.jpg",
+            "sha256": "6a2e12aca66b5eb4b50625184c5675c72d6c713a03fda161f07a8ab43cf3d909"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          36,
+          40
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Figure4",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "Alltwo cumulativeplots +4 and−20,redEPV/blueERef,17→17one-dayclock,y0/250/500/750Wh. EPVflatnight thenrisesday, bothendpoint nearTable3 butnoexactunprintedcoordinates claimed. DailyEPV>load insufficientaloneprovebatterysustainability: conversion/charginglosses andinitialfinalactualstoredenergyneeded. SamesourceTable3energy diffs5/7/12/23Wh retained, notzero loss."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    },
+    {
+      "matrix_visual_index": 41,
+      "original_visual_item": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 5,
+        "raw_parser_content_index": 44,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "efbebe190ef8ca1b368fdff36b37a9a5d1989207914d3fa263c55dbcbb5b89f6",
+        "associated_frozen_original_block_ids": [
+          "paper_ad7ea2de394ae32d2ed2:b39"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\389cfbb652127ceff4c2dca4446f9eafde2afeb569f9444a48ec7cb8244980d8.jpg",
+        "actual_original_crop_sha256": "1c6ea700a947c88989ee081296c22cefa664cfb9ce0a761abfa0b66f96591127",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\005\\record.json",
+        "actual_page_record_sha256": "e626aa4bbc882756b1b23abc5e04dade2348adccdb70f3334ae2fb5fc1c5f465",
+        "original_durable_handle": "run_eb00fa8f703e43b49721b6a25dbd6312",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images/389cfbb652127ceff4c2dca4446f9eafde2afeb569f9444a48ec7cb8244980d8.jpg",
+        "img_caption": [
+          "Figure 5. SOC of the battery during the experimental tests at $+4^{\\circ}\\mathrm{C}$ (a) and $-20^{\\circ}\\mathrm{C}$ (b) "
+        ],
+        "img_footnote": [],
+        "page_idx": 4
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-005-180dpi.png",
+        "sha256": "493a81281fac1763be55106435aa9514428dba5913b84d11bfbb147d48a3b56c",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-005.png",
+            "sha256": "8ac89e86f7b64bd3217b7b76dbe0407b124787452467265f24c487854138df14"
+          },
+          {
+            "id": "crop-44",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\389cfbb652127ceff4c2dca4446f9eafde2afeb569f9444a48ec7cb8244980d8.jpg",
+            "sha256": "1c6ea700a947c88989ee081296c22cefa664cfb9ce0a761abfa0b66f96591127"
+          },
+          {
+            "id": "crop-46",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\3d8e4a37069ac15373b9dace1aa8f3838bcaee0dbcbf9a7544242282d72b53b9.jpg",
+            "sha256": "b07f829b820425cd4e6c5fe8bba1944da89e4420935b74b47502e2c640053741"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          44,
+          46
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": true,
+      "scientific_reference_approval": false,
+      "printed_figure_label": "Figure5",
+      "complete_visible_panel_count": 2,
+      "scientific_scope_findings": [
+        "FulltwoSOCgraphs y0..100%/17→17; caption(a)+4°C(b)−20°C. Panel(a)minimum visiblybetween80%and90%,aroundmid80s, notbody/Table3reported93%; (b)around78%compatiblebody/table. No preciseunprintedminimumdigitized. Possiblemislabeling/reused−10trace requiresauthorrawdata, not silentlyrelabeled. Endnear100%qualitative, SOCmeasurementmethod/calibration/uncertaintynotreported."
+      ],
+      "exact_unprinted_numeric_data_invented": false
+    }
+  ],
+  "equations": [
+    {
+      "matrix_visual_index": 37,
+      "original_visual_item": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 31,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "47e9f62de88b21f503cb7c1bf1d980873bff3f7d1a36eb2164b40f38e546ae5e",
+        "associated_frozen_original_block_ids": [
+          "paper_ad7ea2de394ae32d2ed2:b27"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\003\\record.json",
+        "actual_page_record_sha256": "3b54b49828b22feaf313f09901300ea22e7ad2eec15083d3021704196725fa3d",
+        "original_durable_handle": "run_db4f947bffc143fcbc2fccb724af1555",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nI_{P V}=I_{p h}-I_{s a t}\\left(e^{\\frac{V_{P V}+I_{P V}\\cdot R_{s}}{\\eta\\cdot V_{t}}}-1\\right)-\\frac{V_{P V}+I_{P V}\\cdot R_{s}}{R_{h}}\n$$",
+        "text_format": "latex",
+        "page_idx": 2
+      },
+      "entire_original_page_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-fridge-primary-page-reading-v18\\original-page-003-180dpi.png",
+        "sha256": "12f7e0519ffc0a6336cece4996229c7cd3f9b5fb9f24728877d5102672d860f0",
+        "dpi": 180
+      },
+      "original_page_attempt_and_attachments": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-003.png",
+            "sha256": "c1c725cb9dc739e38add4d9cf7ce25d44b7a5f66aa7288834614b5bbbe7c0790"
+          },
+          {
+            "id": "crop-25",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\465e8180eedb3691784e6a879189c37a6304cc3050f8b0df61eb353f4cdb91a7.jpg",
+            "sha256": "ede5746c73953d83cdedce0f7d41a1565794d38f2371fe68291075f59b271632"
+          },
+          {
+            "id": "crop-33",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\4ceea3f2ea7244086c6c1e65f75c55beb31f509c8980bc3f623a082542948744.jpg",
+            "sha256": "775007bf1e1fded11ce597506d5655597bfcf17a56fd6d702aaf3453384091e6"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          25,
+          31,
+          33
+        ]
+      },
+      "entire_available_original_crop_directly_viewed": false,
+      "scientific_reference_approval": false,
+      "printed_equation_number": "1",
+      "printed_formula_count": 1,
+      "root_primary_transcription": "I_PV=I_ph-I_sat*(exp((V_PV+I_PV*R_s)/(eta*V_t))-1)-(V_PV+I_PV*R_s)/R_h",
+      "scientific_scope_findings": [
+        "Originalimplicitcurrentequation dimensionsexponentvoltage/voltage andcurrentterms amperes. Vt explicitlyPV-cell thermalvoltage butVpv modulevoltage; seriescellcount/effectiveaggregateVt notexplicit, parameterfitting/datasheet aloneunreported. Cannotnumericallyreproduceactualemulatorfromprintedlinewithoutcellcount/ideality/temperature/resistances/photocurrent/saturationcurrent/timeinput. Bothactualstudents genericdescription notvalidationorcompleteparameterrecovery."
+      ],
+      "original_native_quote_replaced": false
+    }
+  ],
+  "exact_declared_arithmetic": {
+    "printed_numbered_equations": 1,
+    "parser_equation_blocks": 1,
+    "nominal_battery_Wh_exact": 1200,
+    "nominal_50percentDOD_Wh_exact": 600,
+    "printed_worst_daily_load_Wh": 608,
+    "conditional_50percentDOD_autonomy_hours_exact": "450/19",
+    "conditional_100percentDOD_autonomy_hours_exact": "900/19",
+    "nominal_MPP_voltage_times_current_W_exact": "4004/25",
+    "printed_nominal_panel_W": 160,
+    "declared_component_mass_kg_exact": "3751/50",
+    "PV_minus_load_Wh": [
+      5,
+      7,
+      12,
+      23
+    ],
+    "at_declared_maximum_regulator_efficiency_residual_Wh_exact": [
+      "21/25",
+      "48/25",
+      "193/50",
+      "519/50"
+    ],
+    "conditional_emission_savings_g_exact": [
+      "67193/1000",
+      "81757/1000",
+      "26149/200",
+      "25156/125"
+    ],
+    "original_printed_emission_savings_g": [
+      67,
+      81,
+      130,
+      201
+    ],
+    "no_actual_PV_battery_or_medical_reproduction": true
+  },
+  "method_and_external_validity_qualifications": [
+    "Fourdifferentsetpoints−20/−10/0/+4°C arefourconditions, no declaredreplicates/inferentialerrorbars/rawseries. All24hstarts17fullychargedandprecooledempty, simulatesoneJulyFiscianodayviaDCsupply/singlediodemodel/PVGIS-SARAH andheater30±.5day/nightoff. Emptyboxlowerthermalmass mayworstcycling butexcludesloadedpulldown/dooropening/product-temperature/fieldclimate loads, notallglobalworstconditions.",
+    "Table1refrigeratormode+2..+12 vs0°Ctestedrequiresoperatingmodeexplanation. Abstract+2..−20 phrasing notcontinuousvalidatedentirerange. Clinicalefficacy/vaccineapprovalnotestablishedbyemptyairboxexperiment, historicalstoragecitationnotcurrentclinicalguidance.",
+    "Fig3test+4°C actualtracebelowdeclared3°C lowerband andFig5best-caseSOCnot93% areprimaryinternalinconsistencies; body-faithfulstudentsnotindependent scientificsupport. Do notinventcorrectedtestlabels/rawtrace.",
+    "12V*100Ah=1200Whnominal;50%DOD600Wh versusworstdeclared608Wh/day; literalconstantnominal/no-lossautonomy~23.684h and100%DOD~47.368h. Realvoltage/rate/temperature/SOCestimation/measurementuncertainty canchangeenergy, so nominalconditionaltensionnotactualfalsifiedbatteryendurance. No reported2dayPV-offexperiment.",
+    "Maximum98%chargerconversion differentactualefficiency. EPVsurpluscanallowload+someconversionlossbutfullrechargebatterylooprequiresactuallosses/SOCmethod, unavailable. PVproductionvarieswithdemand/controllercurtailment, notclaimdatasheet160Wcontinuousor631Whalreadypureavailableinsolation.",
+    "331gCO2e/kWhItalianmix historicfactor yields203/247/395/608Wh*331/1000 =67.193/81.757/130.745/201.248g; printed67/81/130/201 appearsintegertruncationnotnearestroundforall, do not overwrite. Operationaldisplacedelectricity savings notnetLCAzeroenvironmentalimpact; noPV/battery/refrigerantleakageinventory orgrid-counterfactualmeasured.",
+    "Julyhighthermal-load alsohighsolarresource explicitlyadmitted; furtherclimatetestsrequired. >2low-solardaysproblem andPCM proposedfuture remedy notperformedvalidatedexperiment, cannotclaim testedPCMextendsautonomy/reducesbattery. Batterythermal-safetygeneralclaim notsupportedbytemperatureinstrumentationonthesebatteries.",
+    "Threeprevious52entrytable objects retained exactly includingliteralambiguouscomponentregions inTable2. Lead-acid cellchemistry printedaboveBatteryrule,12/24 batteryvoltagegroupambiguity; do not silently changeparenttranscriptionorclaimstudentwrongfromunresolvedtypographicgrouping."
+  ],
+  "new_model_calls": 0,
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false,
+  "prior_complete_three_table_review": {
+    "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-refrigerator-table-pixel-review-v5.json",
+    "sha256": "bd9de2d12aa02c98c5cfe99f142bac75bafe53a554dc9cd5ef5ae69c5ee1e014",
+    "entire_prior_review_preserved": {
+      "status": "COMPLETE_DIRECT_REFRIGERATOR_TABLE_PIXEL_REVIEW_WITH_SCOPE_QUALIFICATIONS",
+      "full_original_benchmark_scope": {
+        "papers": 10,
+        "windows": 126,
+        "fixed_program_cases": 252,
+        "whole_candidates": 20
+      },
+      "scientific_review_scope": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "all_original_paper_tables": 3,
+        "complete_tables_directly_viewed": 3,
+        "value_entries": 52,
+        "numeric_value_entries": 50,
+        "textual_value_entries": 2,
+        "original_printed_values_never_overwritten": true
+      },
+      "source_inventory_sha256": "1da203879a8ff932cc98bac6843182e9545c6fe88f45bbdddc2f7daf6b02dacc",
+      "visual_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+      "tables": [
+        {
+          "index": 6,
+          "page": 2,
+          "label": "Table 1. Refrigerator characteristics",
+          "value_entries": 10,
+          "numeric_value_entries": 10,
+          "rows": [
+            [
+              "Parameter",
+              "Value"
+            ],
+            [
+              "Operating voltage",
+              "12 V/24 V"
+            ],
+            [
+              "Compressor nominal power",
+              "89 W @ 0°C & 3000 rpm"
+            ],
+            [
+              "Cooling volume",
+              "166 L"
+            ],
+            [
+              "Operating temperature",
+              "+2°C–+12°C (Refrigerator); -20°C–-10°C (Freezer)"
+            ],
+            [
+              "Voltage supply range",
+              "10 V–17 V/17 V–31.5 V"
+            ],
+            [
+              "Environmental operating temperature",
+              "+10°C–+43°C"
+            ],
+            [
+              "Dimensions",
+              "872×917×709 mm"
+            ],
+            [
+              "Insulated walls thickness",
+              "11 cm"
+            ],
+            [
+              "Weight",
+              "47 kg"
+            ],
+            [
+              "Refrigerant",
+              "R290 (60 g)"
+            ]
+          ],
+          "findings": [
+            "Raw parser splits environmental operating temperature into two rows. Auxiliary structured rows preserve all ten complete parameters and values; numeric-token regex differences for dimensions do not establish lost values."
+          ],
+          "whole_original_page_directly_viewed": {
+            "paper_id": "paper_ad7ea2de394ae32d2ed2",
+            "actual_pdf_page": 2,
+            "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+            "attachments": [
+              {
+                "id": "page",
+                "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-002.png",
+                "sha256": "9dfcabfd08909f51dcbd6d31516f1c6735602606be73f650976a5b9f466e5a8a"
+              },
+              {
+                "id": "crop-19",
+                "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\912a114a9edcd7e75bae7e5255c8c2d17a34c665bf8736282f3c2c9dbad483a2.jpg",
+                "sha256": "5dfa0edb4c90f7b38337cfb2684f2f1f6e669bef3a626e262acd6ed5add5a101"
+              },
+              {
+                "id": "crop-21",
+                "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\2a83c6d52c7d058bfa2322c902ce9345e9c049b0923b8f47a6b3d57241d010f5.jpg",
+                "sha256": "900102939d5fa3a36c2a841316ab6c043ff2da5b9f7a348fd550b6b11631e740"
+              }
+            ],
+            "raw_parser_visual_content_indices": [
+              19,
+              21
+            ]
+          },
+          "entire_original_crop_directly_viewed": {
+            "paper_id": "paper_ad7ea2de394ae32d2ed2",
+            "actual_pdf_page": 2,
+            "raw_parser_content_index": 19,
+            "raw_visual_type": "table",
+            "raw_parser_item_sha256": "ec9717f07010a3fdf045fe7050c9ff4dd37ed2c90efd0199a1db778625c998f0",
+            "associated_frozen_original_block_ids": [
+              "paper_ad7ea2de394ae32d2ed2:b17"
+            ],
+            "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\912a114a9edcd7e75bae7e5255c8c2d17a34c665bf8736282f3c2c9dbad483a2.jpg",
+            "actual_original_crop_sha256": "5dfa0edb4c90f7b38337cfb2684f2f1f6e669bef3a626e262acd6ed5add5a101",
+            "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\002\\record.json",
+            "actual_page_record_sha256": "fd74b6a9ecd16dbe40b5086f2b9f125e19ec01b546cefa3e58fa0ce51a9157d7",
+            "original_durable_handle": "run_23c5cb73ce5d40d08c03805b8cc7b6bd",
+            "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+            "matched_auxiliary_visual_item_indices": [
+              0
+            ],
+            "scientific_fidelity_verified": false,
+            "scientific_reference_approved": false,
+            "benchmark_grade_created": false
+          },
+          "original_parser_html": "\n\n<html><body><table><tr><td>Parameter</td><td>Value</td></tr><tr><td>Operatingvoltage</td><td>12V/24V</td></tr><tr><td>Compressornominalpower</td><td>89 W@0°C&3000 rpm</td></tr><tr><td>Cooling volume</td><td>166 L</td></tr><tr><td>Operating temperature</td><td>+2°C -+12°C (Refrigerator) -20°C--10°C(Freezer)</td></tr><tr><td>Voltagesupplyrange</td><td>10V-17V/17V-31.5V</td></tr><tr><td>Environmental operating</td><td></td></tr><tr><td>temperature</td><td>+10°C-+43°C</td></tr><tr><td>Dimensions</td><td>872x917×709mm</td></tr><tr><td>Insulatedwalls thickness</td><td>11cm</td></tr><tr><td>Weight</td><td>47kg</td></tr><tr><td>Refrigerant</td><td>R290 (60 g)</td></tr></table></body></html>\n\n",
+          "original_parser_rows": [
+            [
+              "Parameter",
+              "Value"
+            ],
+            [
+              "Operatingvoltage",
+              "12V/24V"
+            ],
+            [
+              "Compressornominalpower",
+              "89 W@0°C&3000 rpm"
+            ],
+            [
+              "Cooling volume",
+              "166 L"
+            ],
+            [
+              "Operating temperature",
+              "+2°C -+12°C (Refrigerator) -20°C--10°C(Freezer)"
+            ],
+            [
+              "Voltagesupplyrange",
+              "10V-17V/17V-31.5V"
+            ],
+            [
+              "Environmental operating",
+              ""
+            ],
+            [
+              "temperature",
+              "+10°C-+43°C"
+            ],
+            [
+              "Dimensions",
+              "872x917×709mm"
+            ],
+            [
+              "Insulatedwalls thickness",
+              "11cm"
+            ],
+            [
+              "Weight",
+              "47kg"
+            ],
+            [
+              "Refrigerant",
+              "R290 (60 g)"
+            ]
+          ],
+          "original_parser_caption_and_footnotes": {
+            "captions": [
+              "Table 1. Refrigerator characteristics "
+            ],
+            "footnotes": []
+          },
+          "original_auxiliary_structured_and_flat_observations": [
+            {
+              "item_index": 0,
+              "table": {
+                "kind": "TABLE",
+                "visible_label": "Table 1",
+                "location": "TOP",
+                "observed_in_payload_ids": [
+                  "page",
+                  "crop-19"
+                ],
+                "exact_visible_text": "Table 1. Refrigerator characteristics\nParameter Value\nOperating voltage 12 V/24 V\nCompressor nominal power 89 W @ 0°C & 3000 rpm\nCooling volume 166 L\nOperating temperature +2°C - +12°C (Refrigerator)\n-20°C - -10°C (Freezer)\nVoltage supply range 10 V - 17 V/17 V - 31.5 V\nEnvironmental operating\ntemperature\n+10°C - +43°C\nDimensions 872x917x709 mm\nInsulated walls thickness 11 cm\nWeight 47 kg\nRefrigerant R290 (60 g)",
+                "table_rows": [
+                  [
+                    "Parameter",
+                    "Value"
+                  ],
+                  [
+                    "Operating voltage",
+                    "12 V/24 V"
+                  ],
+                  [
+                    "Compressor nominal power",
+                    "89 W @ 0°C & 3000 rpm"
+                  ],
+                  [
+                    "Cooling volume",
+                    "166 L"
+                  ],
+                  [
+                    "Operating temperature",
+                    "+2°C – +12°C (Refrigerator)\n-20°C – -10°C (Freezer)"
+                  ],
+                  [
+                    "Voltage supply range",
+                    "10 V – 17 V/17 V – 31.5 V"
+                  ],
+                  [
+                    "Environmental operating\ntemperature",
+                    "+10°C – +43°C"
+                  ],
+                  [
+                    "Dimensions",
+                    "872×917×709 mm"
+                  ],
+                  [
+                    "Insulated walls thickness",
+                    "11 cm"
+                  ],
+                  [
+                    "Weight",
+                    "47 kg"
+                  ],
+                  [
+                    "Refrigerant",
+                    "R290 (60 g)"
+                  ]
+                ],
+                "equations": [],
+                "visible_relationships": [
+                  "Table 1 is referenced in the text on the upper right of the page and summarizes the specifications of the base refrigerator."
+                ],
+                "conditions_and_footnotes": [],
+                "uncertainty": []
+              }
+            }
+          ],
+          "root_review_kind": "COMPLETE_PIXEL_TRANSCRIPTION_WITH_ORIGINAL_SCIENTIFIC_SCOPE_QUALIFICATIONS"
+        },
+        {
+          "index": 7,
+          "page": 3,
+          "label": "Table 2. PV panel, charge regulator and battery characteristics",
+          "value_entries": 21,
+          "numeric_value_entries": 19,
+          "rows": [
+            [
+              "Literal printed component region",
+              "Parameter",
+              "Value"
+            ],
+            [
+              "Photovoltaic panel",
+              "Nominal power",
+              "160 W"
+            ],
+            [
+              "Photovoltaic panel",
+              "Open circuit voltage",
+              "21.4 V"
+            ],
+            [
+              "Photovoltaic panel",
+              "Short circuit current",
+              "9.6 A"
+            ],
+            [
+              "Photovoltaic panel",
+              "Maximum power voltage",
+              "18.2 V"
+            ],
+            [
+              "Photovoltaic panel",
+              "Maximum power current",
+              "8.8 A"
+            ],
+            [
+              "Photovoltaic panel",
+              "Cell type",
+              "Monocrystalline silicon"
+            ],
+            [
+              "Photovoltaic panel",
+              "Weight",
+              "5.6 kg"
+            ],
+            [
+              "Photovoltaic panel",
+              "Unfolded dimensions",
+              "157×68×2.5 cm"
+            ],
+            [
+              "Photovoltaic panel",
+              "Folded dimensions",
+              "42×68×2.5 cm"
+            ],
+            [
+              "Photovoltaic panel region ABOVE printed Battery rule",
+              "Cell chemistry",
+              "Lead-acid"
+            ],
+            [
+              "Battery",
+              "Capacity",
+              "100 Ah"
+            ],
+            [
+              "Battery",
+              "Nominal voltage",
+              "12 V"
+            ],
+            [
+              "Battery",
+              "Weight",
+              "21.92 kg"
+            ],
+            [
+              "Battery",
+              "Dimensions",
+              "353×175×190 mm"
+            ],
+            [
+              "Battery",
+              "Battery voltage",
+              "12 V/24 V"
+            ],
+            [
+              "Solar charge regulator",
+              "Nominal charge current",
+              "10 A"
+            ],
+            [
+              "Solar charge regulator",
+              "Max short circuit current",
+              "13 A"
+            ],
+            [
+              "Solar charge regulator",
+              "Maximum conversion efficiency",
+              "98%"
+            ],
+            [
+              "Solar charge regulator",
+              "Maximum PV open circuit voltage",
+              "75 V"
+            ],
+            [
+              "Solar charge regulator",
+              "Dimensions",
+              "10×11.3×4 cm"
+            ],
+            [
+              "Solar charge regulator",
+              "Weight",
+              "0.5 kg"
+            ]
+          ],
+          "findings": [
+            "Raw parser splits maximum power current, displaces Monocrystalline silicon over multiple rows, and merges unfolded/folded dimension labels.",
+            "Raw parser merges battery dimensions and battery voltage across component regions, and splits/merges regulator current, efficiency, dimensions and weight.",
+            "IMPORTANT PRIMARY-TABLE AMBIGUITY: Cell chemistry / Lead-acid is printed above the Battery horizontal rule in the Photovoltaic panel region. The full page-2 prose explicitly says the battery is 12 V, 100 Ah lead-acid. Auxiliary Photovoltaic panel/Cell chemistry/Lead-acid reproduces the printed grouping; it is not by itself an auxiliary hallucination. Literal grouping and contextual component identity require separate records. No silent movement of this row is approved.",
+            "All 21 values including both textual entries are present in the auxiliary structured rows. This does not resolve the original-table component ambiguity."
+          ],
+          "whole_original_page_directly_viewed": {
+            "paper_id": "paper_ad7ea2de394ae32d2ed2",
+            "actual_pdf_page": 3,
+            "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+            "attachments": [
+              {
+                "id": "page",
+                "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-003.png",
+                "sha256": "c1c725cb9dc739e38add4d9cf7ce25d44b7a5f66aa7288834614b5bbbe7c0790"
+              },
+              {
+                "id": "crop-25",
+                "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\465e8180eedb3691784e6a879189c37a6304cc3050f8b0df61eb353f4cdb91a7.jpg",
+                "sha256": "ede5746c73953d83cdedce0f7d41a1565794d38f2371fe68291075f59b271632"
+              },
+              {
+                "id": "crop-33",
+                "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\4ceea3f2ea7244086c6c1e65f75c55beb31f509c8980bc3f623a082542948744.jpg",
+                "sha256": "775007bf1e1fded11ce597506d5655597bfcf17a56fd6d702aaf3453384091e6"
+              }
+            ],
+            "raw_parser_visual_content_indices": [
+              25,
+              31,
+              33
+            ]
+          },
+          "entire_original_crop_directly_viewed": {
+            "paper_id": "paper_ad7ea2de394ae32d2ed2",
+            "actual_pdf_page": 3,
+            "raw_parser_content_index": 25,
+            "raw_visual_type": "table",
+            "raw_parser_item_sha256": "429af1022ab22819a4a142578d9500dd912d62447b44297c208479e7d8f69883",
+            "associated_frozen_original_block_ids": [
+              "paper_ad7ea2de394ae32d2ed2:b22"
+            ],
+            "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\465e8180eedb3691784e6a879189c37a6304cc3050f8b0df61eb353f4cdb91a7.jpg",
+            "actual_original_crop_sha256": "ede5746c73953d83cdedce0f7d41a1565794d38f2371fe68291075f59b271632",
+            "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\003\\record.json",
+            "actual_page_record_sha256": "3b54b49828b22feaf313f09901300ea22e7ad2eec15083d3021704196725fa3d",
+            "original_durable_handle": "run_db4f947bffc143fcbc2fccb724af1555",
+            "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+            "matched_auxiliary_visual_item_indices": [
+              0
+            ],
+            "scientific_fidelity_verified": false,
+            "scientific_reference_approved": false,
+            "benchmark_grade_created": false
+          },
+          "original_parser_html": "\n\n<html><body><table><tr><td>Component</td><td>Parameter</td><td>Value</td></tr><tr><td rowspan=\"9\">Photovoltaic panel</td><td>Nominal power</td><td>160 W</td></tr><tr><td>Open circuit voltage</td><td>21.4 V</td></tr><tr><td>Short circuit current</td><td>9.6 A</td></tr><tr><td>Maximum power voltage</td><td>18.2 V</td></tr><tr><td>Maximum power</td><td>8.8 A</td></tr><tr><td>current</td><td>Monocrystalline</td></tr><tr><td>Cell type</td><td>silicon</td></tr><tr><td>Weight</td><td>5.6 kg</td></tr><tr><td>Unfolded dimensions Folded dimensions</td><td>157x68x2.5cm</td></tr><tr><td></td><td></td><td>42x68x2.5cm</td></tr><tr><td rowspan=\"5\">Battery</td><td>Cell chemistry</td><td>Lead-acid</td></tr><tr><td>Capacity</td><td>100 Ah</td></tr><tr><td>Nominal voltage</td><td>12V</td></tr><tr><td>Weight</td><td>21.92 kg</td></tr><tr><td>Dimensions Battery voltage</td><td>353x175x190mm 12 V/24 V</td></tr><tr><td rowspan=\"6\">Solar charge regulator</td><td>Nominal charge</td><td>10A</td></tr><tr><td>current Max short circuit</td><td></td></tr><tr><td>current Maximum conversion</td><td>13 A</td></tr><tr><td>efficiency</td><td>98%</td></tr><tr><td>Maximum PV open circuit voltage</td><td>75V</td></tr><tr><td>Dimensions Weight</td><td>10x11.3x4 cm 0.5kg</td></tr></table></body></html>\n\n",
+          "original_parser_rows": [
+            [
+              "Component",
+              "Parameter",
+              "Value"
+            ],
+            [
+              "Photovoltaic panel",
+              "Nominal power",
+              "160 W"
+            ],
+            [
+              "Open circuit voltage",
+              "21.4 V"
+            ],
+            [
+              "Short circuit current",
+              "9.6 A"
+            ],
+            [
+              "Maximum power voltage",
+              "18.2 V"
+            ],
+            [
+              "Maximum power",
+              "8.8 A"
+            ],
+            [
+              "current",
+              "Monocrystalline"
+            ],
+            [
+              "Cell type",
+              "silicon"
+            ],
+            [
+              "Weight",
+              "5.6 kg"
+            ],
+            [
+              "Unfolded dimensions Folded dimensions",
+              "157x68x2.5cm"
+            ],
+            [
+              "",
+              "",
+              "42x68x2.5cm"
+            ],
+            [
+              "Battery",
+              "Cell chemistry",
+              "Lead-acid"
+            ],
+            [
+              "Capacity",
+              "100 Ah"
+            ],
+            [
+              "Nominal voltage",
+              "12V"
+            ],
+            [
+              "Weight",
+              "21.92 kg"
+            ],
+            [
+              "Dimensions Battery voltage",
+              "353x175x190mm 12 V/24 V"
+            ],
+            [
+              "Solar charge regulator",
+              "Nominal charge",
+              "10A"
+            ],
+            [
+              "current Max short circuit",
+              ""
+            ],
+            [
+              "current Maximum conversion",
+              "13 A"
+            ],
+            [
+              "efficiency",
+              "98%"
+            ],
+            [
+              "Maximum PV open circuit voltage",
+              "75V"
+            ],
+            [
+              "Dimensions Weight",
+              "10x11.3x4 cm 0.5kg"
+            ]
+          ],
+          "original_parser_caption_and_footnotes": {
+            "captions": [
+              "Table 2. PV panel, charge regulator and battery characteristics "
+            ],
+            "footnotes": []
+          },
+          "original_auxiliary_structured_and_flat_observations": [
+            {
+              "item_index": 0,
+              "table": {
+                "kind": "TABLE",
+                "visible_label": "Table 2. PV panel, charge regulator and battery characteristics",
+                "location": "TOP",
+                "observed_in_payload_ids": [
+                  "page",
+                  "crop-25"
+                ],
+                "exact_visible_text": "Table 2. PV panel, charge regulator and battery characteristics\nComponent Parameter Value\nPhotovoltaic panel Nominal power 160 W\nOpen circuit voltage 21.4 V\nShort circuit current 9.6 A\nMaximum power voltage 18.2 V\nMaximum power current 8.8 A\nCell type Monocrystalline silicon\nWeight 5.6 kg\nUnfolded dimensions 157x68x2.5 cm\nFolded dimensions 42x68x2.5 cm\nCell chemistry Lead-acid\nBattery Capacity 100 Ah\nNominal voltage 12 V\nWeight 21.92 kg\nDimensions 353x175x190 mm\nBattery voltage 12 V/24 V\nSolar charge regulator Nominal charge current 10 A\nMax short circuit current 13 A\nMaximum conversion efficiency 98%\nMaximum PV open circuit voltage 75 V\nDimensions 10x11.3x4 cm\nWeight 0.5 kg",
+                "table_rows": [
+                  [
+                    "Component",
+                    "Parameter",
+                    "Value"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Nominal power",
+                    "160 W"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Open circuit voltage",
+                    "21.4 V"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Short circuit current",
+                    "9.6 A"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Maximum power voltage",
+                    "18.2 V"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Maximum power current",
+                    "8.8 A"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Cell type",
+                    "Monocrystalline silicon"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Weight",
+                    "5.6 kg"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Unfolded dimensions",
+                    "157×68×2.5 cm"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Folded dimensions",
+                    "42×68×2.5 cm"
+                  ],
+                  [
+                    "Photovoltaic panel",
+                    "Cell chemistry",
+                    "Lead-acid"
+                  ],
+                  [
+                    "Battery",
+                    "Capacity",
+                    "100 Ah"
+                  ],
+                  [
+                    "Battery",
+                    "Nominal voltage",
+                    "12 V"
+                  ],
+                  [
+                    "Battery",
+                    "Weight",
+                    "21.92 kg"
+                  ],
+                  [
+                    "Battery",
+                    "Dimensions",
+                    "353×175×190 mm"
+                  ],
+                  [
+                    "Battery",
+                    "Battery voltage",
+                    "12 V/24 V"
+                  ],
+                  [
+                    "Solar charge regulator",
+                    "Nominal charge current",
+                    "10 A"
+                  ],
+                  [
+                    "Solar charge regulator",
+                    "Max short circuit current",
+                    "13 A"
+                  ],
+                  [
+                    "Solar charge regulator",
+                    "Maximum conversion efficiency",
+                    "98%"
+                  ],
+                  [
+                    "Solar charge regulator",
+                    "Maximum PV open circuit voltage",
+                    "75 V"
+                  ],
+                  [
+                    "Solar charge regulator",
+                    "Dimensions",
+                    "10×11.3×4 cm"
+                  ],
+                  [
+                    "Solar charge regulator",
+                    "Weight",
+                    "0.5 kg"
+                  ]
+                ],
+                "equations": [],
+                "visible_relationships": [],
+                "conditions_and_footnotes": [],
+                "uncertainty": []
+              }
+            }
+          ],
+          "root_review_kind": "COMPLETE_PIXEL_TRANSCRIPTION_WITH_ORIGINAL_SCIENTIFIC_SCOPE_QUALIFICATIONS"
+        },
+        {
+          "index": 8,
+          "page": 5,
+          "label": "Table 3. Summary of the results",
+          "value_entries": 21,
+          "numeric_value_entries": 21,
+          "rows": [
+            [
+              "Parameter",
+              "Test #1",
+              "Test #2",
+              "Test #3",
+              "Test #4"
+            ],
+            [
+              "Tset-point [°C]",
+              "+4°C",
+              "0°C",
+              "-10°C",
+              "-20°C"
+            ],
+            [
+              "Eel,PV [Wh]",
+              "208",
+              "254",
+              "407",
+              "631"
+            ],
+            [
+              "Eel,Ref [Wh]",
+              "203",
+              "247",
+              "395",
+              "608"
+            ],
+            [
+              "End-of-test SOC [%]",
+              {
+                "value": "100",
+                "spans_test_columns": [
+                  1,
+                  2,
+                  3,
+                  4
+                ]
+              }
+            ],
+            [
+              "SOCmin [%]",
+              "93",
+              "91",
+              "86",
+              "78"
+            ],
+            [
+              "Emission savings [gCO2,e]",
+              "67",
+              "81",
+              "130",
+              "201"
+            ]
+          ],
+          "findings": [
+            "Raw parser corrupts Test #1 and omits #4 from the header.",
+            "The single centered End-of-test SOC value 100 is shared across all four tests; full-page prose also says fully recharged after 24 hours in each test. Raw HTML supplies one blank then colspan=3; auxiliary rectangular rows put 100 in Test #1 and three blanks. Neither encodes the correct common scope. Do not convert blanks to missing or zero test results.",
+            "All twenty individual test numbers plus the one common SOC value directly match the pixels. Row/column scope remains material even when the numeric multiset agrees."
+          ],
+          "whole_original_page_directly_viewed": {
+            "paper_id": "paper_ad7ea2de394ae32d2ed2",
+            "actual_pdf_page": 5,
+            "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+            "attachments": [
+              {
+                "id": "page",
+                "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-005.png",
+                "sha256": "8ac89e86f7b64bd3217b7b76dbe0407b124787452467265f24c487854138df14"
+              },
+              {
+                "id": "crop-44",
+                "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\389cfbb652127ceff4c2dca4446f9eafde2afeb569f9444a48ec7cb8244980d8.jpg",
+                "sha256": "1c6ea700a947c88989ee081296c22cefa664cfb9ce0a761abfa0b66f96591127"
+              },
+              {
+                "id": "crop-46",
+                "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\3d8e4a37069ac15373b9dace1aa8f3838bcaee0dbcbf9a7544242282d72b53b9.jpg",
+                "sha256": "b07f829b820425cd4e6c5fe8bba1944da89e4420935b74b47502e2c640053741"
+              }
+            ],
+            "raw_parser_visual_content_indices": [
+              44,
+              46
+            ]
+          },
+          "entire_original_crop_directly_viewed": {
+            "paper_id": "paper_ad7ea2de394ae32d2ed2",
+            "actual_pdf_page": 5,
+            "raw_parser_content_index": 46,
+            "raw_visual_type": "table",
+            "raw_parser_item_sha256": "2ec7dc546e6ecee76799f6f0b8364f2b1d68a887cf0c9652c68db5069c0f9435",
+            "associated_frozen_original_block_ids": [
+              "paper_ad7ea2de394ae32d2ed2:b41"
+            ],
+            "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\3d8e4a37069ac15373b9dace1aa8f3838bcaee0dbcbf9a7544242282d72b53b9.jpg",
+            "actual_original_crop_sha256": "b07f829b820425cd4e6c5fe8bba1944da89e4420935b74b47502e2c640053741",
+            "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_ad7ea2de394ae32d2ed2\\005\\record.json",
+            "actual_page_record_sha256": "e626aa4bbc882756b1b23abc5e04dade2348adccdb70f3334ae2fb5fc1c5f465",
+            "original_durable_handle": "run_eb00fa8f703e43b49721b6a25dbd6312",
+            "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+            "matched_auxiliary_visual_item_indices": [
+              1
+            ],
+            "scientific_fidelity_verified": false,
+            "scientific_reference_approved": false,
+            "benchmark_grade_created": false
+          },
+          "original_parser_html": "\n\n<html><body><table><tr><td>Parameter</td><td>Test I#</td><td>Test #2</td><td>Test #3</td><td>Test #</td></tr><tr><td>Tset-point [°C]</td><td>+4°℃</td><td>0°C</td><td>-10°C</td><td>-20°C</td></tr><tr><td>Eel,Pv [Wh]</td><td>208</td><td>254</td><td>407</td><td>631</td></tr><tr><td>Eel,Ref [Wh]</td><td>203</td><td>247</td><td>395</td><td>608</td></tr><tr><td>End-of-test SOC [%]</td><td></td><td colspan=\"3\">100</td></tr><tr><td>SOCmin [%]</td><td>93</td><td>91</td><td>86</td><td>78</td></tr><tr><td>Emissionsavings [gco2,e]</td><td>67</td><td>81</td><td>130</td><td>201</td></tr></table></body></html>\n\n",
+          "original_parser_rows": [
+            [
+              "Parameter",
+              "Test I#",
+              "Test #2",
+              "Test #3",
+              "Test #"
+            ],
+            [
+              "Tset-point [°C]",
+              "+4°℃",
+              "0°C",
+              "-10°C",
+              "-20°C"
+            ],
+            [
+              "Eel,Pv [Wh]",
+              "208",
+              "254",
+              "407",
+              "631"
+            ],
+            [
+              "Eel,Ref [Wh]",
+              "203",
+              "247",
+              "395",
+              "608"
+            ],
+            [
+              "End-of-test SOC [%]",
+              "",
+              "100"
+            ],
+            [
+              "SOCmin [%]",
+              "93",
+              "91",
+              "86",
+              "78"
+            ],
+            [
+              "Emissionsavings [gco2,e]",
+              "67",
+              "81",
+              "130",
+              "201"
+            ]
+          ],
+          "original_parser_caption_and_footnotes": {
+            "captions": [
+              "Table 3. Summary of the results "
+            ],
+            "footnotes": []
+          },
+          "original_auxiliary_structured_and_flat_observations": [
+            {
+              "item_index": 1,
+              "table": {
+                "kind": "TABLE",
+                "visible_label": "Table 3. Summary of the results",
+                "location": "MIDDLE",
+                "observed_in_payload_ids": [
+                  "page",
+                  "crop-46"
+                ],
+                "exact_visible_text": "Table 3. Summary of the results\nParameter Test #1 Test #2 Test #3 Test #4\nTset-point [°C] +4°C 0°C -10°C -20°C\nEel,PV [Wh] 208 254 407 631\nEel,Ref [Wh] 203 247 395 608\nEnd-of-test SOC [%] 100\nSOCmin [%] 93 91 86 78\nEmission savings [gCO2,e] 67 81 130 201",
+                "table_rows": [
+                  [
+                    "Parameter",
+                    "Test\n#1",
+                    "Test\n#2",
+                    "Test\n#3",
+                    "Test\n#4"
+                  ],
+                  [
+                    "Tset-point [°C]",
+                    "+4°C",
+                    "0°C",
+                    "-10°C",
+                    "-20°C"
+                  ],
+                  [
+                    "Eel,PV [Wh]",
+                    "208",
+                    "254",
+                    "407",
+                    "631"
+                  ],
+                  [
+                    "Eel,Ref [Wh]",
+                    "203",
+                    "247",
+                    "395",
+                    "608"
+                  ],
+                  [
+                    "End-of-test SOC [%]",
+                    "100",
+                    "",
+                    "",
+                    ""
+                  ],
+                  [
+                    "SOCmin [%]",
+                    "93",
+                    "91",
+                    "86",
+                    "78"
+                  ],
+                  [
+                    "Emission savings\n[gCO2,e]",
+                    "67",
+                    "81",
+                    "130",
+                    "201"
+                  ]
+                ],
+                "equations": [],
+                "visible_relationships": [],
+                "conditions_and_footnotes": [],
+                "uncertainty": []
+              }
+            }
+          ],
+          "root_review_kind": "COMPLETE_PIXEL_TRANSCRIPTION_WITH_ORIGINAL_SCIENTIFIC_SCOPE_QUALIFICATIONS"
+        }
+      ],
+      "supplementary_exact_emissions_arithmetic": [
+        {
+          "test": 1,
+          "original_published_savings_g": "67",
+          "stated_original_factor_g_per_kWh": "331",
+          "exact_consumed_energy_times_factor_g": "67.193",
+          "exact_PV_energy_times_factor_g": "68.848",
+          "published_minus_exact_consumed_energy_g": "-0.193",
+          "floor_of_consumed_energy_product_matches_displayed": true,
+          "rounding_or_truncation_rule_stated_in_selected_page": false,
+          "new_tolerance_or_scientific_error_verdict_inferred": false
+        },
+        {
+          "test": 2,
+          "original_published_savings_g": "81",
+          "stated_original_factor_g_per_kWh": "331",
+          "exact_consumed_energy_times_factor_g": "81.757",
+          "exact_PV_energy_times_factor_g": "84.074",
+          "published_minus_exact_consumed_energy_g": "-0.757",
+          "floor_of_consumed_energy_product_matches_displayed": true,
+          "rounding_or_truncation_rule_stated_in_selected_page": false,
+          "new_tolerance_or_scientific_error_verdict_inferred": false
+        },
+        {
+          "test": 3,
+          "original_published_savings_g": "130",
+          "stated_original_factor_g_per_kWh": "331",
+          "exact_consumed_energy_times_factor_g": "130.745",
+          "exact_PV_energy_times_factor_g": "134.717",
+          "published_minus_exact_consumed_energy_g": "-0.745",
+          "floor_of_consumed_energy_product_matches_displayed": true,
+          "rounding_or_truncation_rule_stated_in_selected_page": false,
+          "new_tolerance_or_scientific_error_verdict_inferred": false
+        },
+        {
+          "test": 4,
+          "original_published_savings_g": "201",
+          "stated_original_factor_g_per_kWh": "331",
+          "exact_consumed_energy_times_factor_g": "201.248",
+          "exact_PV_energy_times_factor_g": "208.861",
+          "published_minus_exact_consumed_energy_g": "-0.248",
+          "floor_of_consumed_energy_product_matches_displayed": true,
+          "rounding_or_truncation_rule_stated_in_selected_page": false,
+          "new_tolerance_or_scientific_error_verdict_inferred": false
+        }
+      ],
+      "original_331_factor_and_context_full_page_directly_viewed": {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "c8c65430f4787b7e864c4291a971d53eae1b1a5f97229f11cd78a4eaf08544fc",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_ad7ea2de394ae32d2ed2-page-005.png",
+            "sha256": "8ac89e86f7b64bd3217b7b76dbe0407b124787452467265f24c487854138df14"
+          },
+          {
+            "id": "crop-44",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\389cfbb652127ceff4c2dca4446f9eafde2afeb569f9444a48ec7cb8244980d8.jpg",
+            "sha256": "1c6ea700a947c88989ee081296c22cefa664cfb9ce0a761abfa0b66f96591127"
+          },
+          {
+            "id": "crop-46",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Sun-Powered Refrigerator_ Design, Testing, and Limitations\\images\\3d8e4a37069ac15373b9dace1aa8f3838bcaee0dbcbf9a7544242282d72b53b9.jpg",
+            "sha256": "b07f829b820425cd4e6c5fe8bba1944da89e4420935b74b47502e2c640053741"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          44,
+          46
+        ]
+      },
+      "other_tables_or_plots_verified_by_this_review": false,
+      "expert_gold_or_scientific_reference_approval": false,
+      "original_grades_replaced": false,
+      "new_model_calls": 0,
+      "full_scientific_evaluation_complete": false
+    }
+  }
+}

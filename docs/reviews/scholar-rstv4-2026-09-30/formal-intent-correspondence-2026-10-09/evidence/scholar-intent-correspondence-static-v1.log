@@ -1,0 +1,149 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio_correspondence.py', 'src/rstv4/studio.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_templates.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_correspondence.py', 'tests/test_studio_templates.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\studio.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import csv
+ 4 | | import difflib
+ 5 | | import hashlib
+ 6 | | import io
+ 7 | | import json
+ 8 | | import mimetypes
+ 9 | | import os
+10 | | import re
+11 | | import shutil
+12 | | import subprocess
+13 | | import tempfile
+14 | | import threading
+15 | | import xml.etree.ElementTree as ET
+16 | | import zipfile
+17 | | from collections.abc import Callable
+18 | | from concurrent.futures import ThreadPoolExecutor
+19 | | from contextlib import nullcontext
+20 | | from datetime import UTC, datetime
+21 | | from functools import partial
+22 | | from pathlib import Path
+23 | | from typing import Any
+24 | |
+25 | | from . import studio_response_checks as response_checks
+26 | | from .database import initialize_catalog, transaction
+27 | | from .manuscript_scientific_review import (
+28 | |     scientific_binding_stamp,
+29 | |     scientific_generation_is_stale,
+30 | | )
+31 | | from .model_gateway import GatewayDeferredError, UnlimitedLLMGateway
+32 | | from .models import SubmissionEventInput, new_id
+33 | | from .service import NotFoundError, RevisionConflictError, RSTV4Error
+34 | | from .studio_change_links import list_changes, original_ids, record_initial, set_links
+35 | | from .studio_context import (
+36 | |     bound_quote,
+37 | |     citation_ids,
+38 | |     structure_object,
+39 | | )
+40 | | from .studio_correspondence import (
+41 | |     has_correspondence,
+42 | |     realization_document,
+43 | |     unresolved as unresolved_correspondence,
+44 | |     validate as validate_correspondence,
+45 | |     validate_origins as validate_correspondence_origins,
+46 | | )
+47 | | from .studio_delivery import file_inventory, list_packages, package_content
+48 | | from .studio_discussions import verify_projection
+49 | | from .studio_read_views import (
+50 | |     document_revision as read_document_revision,
+51 | | )
+52 | | from .studio_read_views import (
+53 | |     generated_markdown,
+54 | |     verified_artifact_bytes,
+55 | | )
+56 | | from .studio_read_views import (
+57 | |     generated_version as read_generated_version,
+58 | | )
+59 | | from .studio_read_views import (
+60 | |     search_sources as read_sources,
+61 | | )
+62 | | from .studio_realization import OUTPUT_SCHEMA
+63 | | from .studio_realization import validate as validate_realization
+64 | | from .studio_revision_mapping import write_mapping
+65 | | from .studio_rounds import baseline_text, content_digest
+66 | | from .studio_rounds import resolve as resolve_review_round
+67 | | from .studio_rounds import version as review_baseline_version
+68 | | from .studio_structure import (
+69 | |     argument_context,
+70 | |     paragraph_group,
+71 | |     section_levels,
+72 | |     section_titles,
+73 | |     validate_argument_relations,
+74 | |     validate_groups,
+75 | | )
+76 | | from .studio_suggestions import MODEL_FORMAT, preview_change
+77 | | from .studio_suggestions import apply as apply_suggestion
+78 | | from .studio_suggestions import normalize as normalize_suggestions
+79 | | from .studio_templates import apply_structure, empty_sections, template_preview
+80 | | from .track_first import TrackFirstService
+   | |__________________________________________^
+81 |
+82 |   WORKFLOW_STAGES = (
+   |
+help: Organize imports
+   |
+34 | from .studio_change_links import list_changes, original_ids, record_initial, set_links
+   - from .studio_context import (
+35 + from .studio_context import (
+36 |     bound_quote,
+37 |     citation_ids,
+   -     structure_object,
+   - )
+   - from .studio_correspondence import (
+   -     has_correspondence,
+   -     realization_document,
+   -     unresolved as unresolved_correspondence,
+   -     validate as validate_correspondence,
+   -     validate_origins as validate_correspondence_origins,
+   - )
+38 +     structure_object,
+39 + )
+40 + from .studio_correspondence import (
+41 +     has_correspondence,
+42 +     realization_document,
+43 + )
+44 + from .studio_correspondence import (
+45 +     unresolved as unresolved_correspondence,
+46 + )
+47 + from .studio_correspondence import (
+48 +     validate as validate_correspondence,
+49 + )
+50 + from .studio_correspondence import (
+51 +     validate_origins as validate_correspondence_origins,
+52 + )
+53 | from .studio_delivery import file_inventory, list_packages, package_content
+--------------------------------------------------------------------------------
+73 | from .studio_rounds import version as review_baseline_version
+   - from .studio_structure import (
+   -     argument_context,
+   -     paragraph_group,
+   -     section_levels,
+   -     section_titles,
+   -     validate_argument_relations,
+   -     validate_groups,
+   - )
+74 + from .studio_structure import (
+75 +     argument_context,
+76 +     paragraph_group,
+77 +     section_levels,
+78 +     section_titles,
+79 +     validate_argument_relations,
+80 +     validate_groups,
+81 + )
+82 | from .studio_suggestions import MODEL_FORMAT, preview_change
+83 | from .studio_suggestions import apply as apply_suggestion
+   - from .studio_suggestions import normalize as normalize_suggestions
+   - from .studio_templates import apply_structure, empty_sections, template_preview
+84 + from .studio_suggestions import normalize as normalize_suggestions
+85 + from .studio_templates import apply_structure, empty_sections, template_preview
+86 | from .track_first import TrackFirstService
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

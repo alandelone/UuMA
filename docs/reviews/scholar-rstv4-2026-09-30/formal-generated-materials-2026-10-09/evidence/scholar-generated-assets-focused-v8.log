@@ -1,0 +1,39 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_materials.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_generated_assets.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_studio_generated_assets.py:3:1
+   |
+ 1 |   """Full material-output contracts; all data and the model are declared software fixtures."""
+ 2 |
+ 3 | / import hashlib
+ 4 | | import json
+ 5 | | import shutil
+ 6 | | import sqlite3
+ 7 | | import subprocess
+ 8 | | import tempfile
+ 9 | | import zipfile
+10 | | import xml.etree.ElementTree as ET
+11 | | from copy import deepcopy
+12 | | from io import BytesIO
+13 | | from pathlib import Path
+14 | |
+15 | | import pytest
+16 | | from openpyxl import Workbook
+17 | | from PIL import Image
+18 | | from pypdf import PdfReader
+19 | | from test_writing_studio import complete_document, create_studio, wait_for_job
+20 | |
+21 | | from rstv4.service import RSTV4Error
+22 | | from rstv4.studio import DocumentValidationError
+23 | | from rstv4.studio_materials import checked_svg, representation
+   | |______________________________________________________________^
+help: Organize imports
+   |
+8  | import tempfile
+9  + import xml.etree.ElementTree as ET
+10 | import zipfile
+   - import xml.etree.ElementTree as ET
+11 | from copy import deepcopy
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

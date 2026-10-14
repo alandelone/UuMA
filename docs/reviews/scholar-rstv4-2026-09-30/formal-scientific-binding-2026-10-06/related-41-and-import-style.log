@@ -1,0 +1,48 @@
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_manuscript_scientific_review.py', 'tests/test_source_review_withdrawal.py', 'tests/test_studio_context.py', 'tests/test_studio_revision_contracts.py', 'tests/test_research_hierarchy.py', '-q']
+.........................................                                [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+41 passed, 1 warning in 23.09s
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/manuscript_scientific_review.py', 'src/rstv4/approval.py', 'src/rstv4/studio.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'tests/test_manuscript_scientific_review.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_manuscript_scientific_review.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import json
+ 4 | | import sqlite3
+ 5 | | from contextlib import closing
+ 6 | | from pathlib import Path
+ 7 | |
+ 8 | | import pytest
+ 9 | | from fastapi.testclient import TestClient
+10 | | from test_catalog_review_workflow import state
+11 | | from test_source_review_withdrawal import dependencies
+12 | | from test_writing_studio import complete_document, create_studio, wait_for_job
+13 | |
+14 | | from rstv4.approval import capture_user_approval
+15 | | from rstv4.catalog_web import create_app
+16 | | from rstv4.manuscript_scientific_review import (
+17 | |     ManuscriptScientificReview,
+18 | |     ScientificBindingReviewInput,
+19 | |     scientific_binding_stamp,
+20 | | )
+21 | | from rstv4.service import RSTV4Error, RevisionConflictError
+22 | | from rstv4.studio import StudioService
+   | |______________________________________^
+help: Organize imports
+   |
+20 | )
+   - from rstv4.service import RSTV4Error, RevisionConflictError
+21 + from rstv4.service import RevisionConflictError, RSTV4Error
+22 | from rstv4.studio import StudioService
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

@@ -1,0 +1,150 @@
+F........................................................                [100%]
+================================== FAILURES ===================================
+_____ test_all_six_original_materials_appear_in_frozen_view_and_real_pdf ______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-986/test_all_six_original_material0')
+
+    def test_all_six_original_materials_appear_in_frozen_view_and_real_pdf(tmp_path):
+        service, _, ms = create_studio(tmp_path)
+        doc = complete_document(service.get_workspace(ms))
+        assets, files = six_materials(service, ms)
+        paragraph = doc["sections"][0]["paragraphs"][0]
+        paragraph["asset_ids"] = [a["asset_id"] for a in assets]
+        service.save_document(
+            ms, base_revision=0, operation_id="six-materials", document=doc
+        )
+        captured = []
+    
+        def realize(task, payload):
+            captured.append(deepcopy(payload))
+            thought = payload["intents"][0]["thoughts"][0]
+            return {
+                "paragraph": thought["text"],
+                "sentence_mappings": [{"sentence": 0, "thought_ids": [thought["id"]]}],
+                "_contract": {"actual_model": "TEST_FIXTURE_MATERIALS", "task": task},
+            }
+    
+        service.gateway.analyze = realize
+        try:
+            job = wait_for_job(
+                service, service.create_job(ms, "GENERATE", input_revision=1)
+            )
+            assert job["status"] == "SUCCEEDED", job
+            version = service.get_generated_version(
+                ms, job["result"]["generated_version_id"]
+            )
+            generated = json.loads(
+                Path(
+                    next(
+                        a["storage_path"]
+                        for a in version["artifacts"]
+                        if a["artifact_kind"] == "GENERATED_JSON"
+                    )
+                ).read_text(encoding="utf-8")
+            )
+            rendered = generated["sections"][0]["paragraphs"][0]
+            assert rendered.get("asset_ids") == paragraph["asset_ids"], (
+                "Original material IDs must reach output"
+            )
+            assert [a["asset_id"] for a in rendered["assets"]] == paragraph["asset_ids"]
+            assert captured[0]["assets"] == rendered["assets"]
+            assert [a["sha256"] for a in rendered["assets"]] == [
+                hashlib.sha256(raw).hexdigest() for _, _, raw in files
+            ]
+            block = next(
+                b
+                for b in version["blocks"]
+                if b["kind"] == "paragraph" and b["object_id"] == paragraph["id"]
+            )
+            assert block["assets"] == rendered["assets"]
+            pdf = Path(
+                next(
+                    a["storage_path"]
+                    for a in version["artifacts"]
+                    if a["artifact_kind"] == "PDF"
+                )
+            )
+            text = "\n".join(page.extract_text() or "" for page in PdfReader(pdf).pages)
+            assert all(
+                label in text
+                for label in [
+                    "CSV_ROW_10",
+                    "XLSX_ROW_10",
+                    "MD_ROW_10",
+                    "SECOND_SHEET_ORIGINAL",
+                ]
+            )
+            tex = Path(
+                next(
+                    a["storage_path"]
+                    for a in version["artifacts"]
+                    if a["artifact_kind"] == "TEX"
+                )
+            ).read_text(encoding="utf-8")
+            assert tex.count(r"\includegraphics") == 3
+            assert service.get_workspace(ms)["document"] == doc
+            source_bytes = Path(assets[0]["storage_path"]).read_bytes()
+            Path(assets[0]["storage_path"]).write_bytes(b"X" + source_bytes[1:])
+            try:
+                assert service.get_generated_version(ms, version["generated_version_id"])
+                assert (
+                    service.generated_material_content(
+                        ms, version["generated_version_id"], assets[0]["asset_id"], "source"
+                    )[0]
+                    == source_bytes
+                )
+                with pytest.raises(DocumentValidationError):
+                    service.create_job(ms, "GENERATE", input_revision=1)
+            finally:
+                Path(assets[0]["storage_path"]).write_bytes(source_bytes)
+            rendered_path = pdf.parent / rendered["assets"][0]["render_file"]
+            frozen_bytes = rendered_path.read_bytes()
+            rendered_path.write_bytes(b"X" + frozen_bytes[1:])
+            try:
+                with pytest.raises(RSTV4Error, match="integrity"):
+                    service.get_generated_version(ms, version["generated_version_id"])
+            finally:
+                rendered_path.write_bytes(frozen_bytes)
+>           service.set_stage(
+                ms,
+                "FINALIZATION_SUBMISSION",
+                expected_revision=1,
+                reason="Software material delivery",
+            )
+
+tests\test_studio_generated_assets.py:180: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.studio.StudioService object at 0x000002941B571010>
+manuscript_id = 'manuscript_30f1d7460a4b492288497dbf93758dfc'
+stage = 'FINALIZATION_SUBMISSION'
+
+    def set_stage(
+        self,
+        manuscript_id: str,
+        stage: str,
+        *,
+        expected_revision: int,
+        reason: str,
+    ) -> dict[str, Any]:
+        if stage not in WORKFLOW_STAGES:
+            raise ValueError(f"Unknown workflow stage: {stage}")
+        next_revision = expected_revision + 1
+        timestamp = _now()
+        with transaction(self.db_path) as conn:
+            manuscript = conn.execute(
+                "SELECT * FROM manuscripts WHERE manuscript_id=?", (manuscript_id,),
+            ).fetchone()
+            if manuscript is None:
+                raise NotFoundError(f"Unknown manuscript: {manuscript_id}")
+            current = manuscript["workflow_stage"] or "PLANNING"
+            if stage != current and stage not in _ALLOWED_TRANSITIONS[current]:
+                raise ValueError(f"Cannot move manuscript from {current} to {stage}")
+            if manuscript["revision"] != expected_revision:
+>               raise RevisionConflictError("Manuscript revision changed")
+E               rstv4.service.RevisionConflictError: Manuscript revision changed
+
+src\rstv4\studio.py:746: RevisionConflictError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_generated_assets.py::test_all_six_original_materials_appear_in_frozen_view_and_real_pdf
+1 failed, 56 passed in 35.45s

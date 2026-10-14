@@ -1,0 +1,247 @@
+{
+  "whole_cases": [
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_95eebae164cc42fd6005\\baseline\\record.json",
+      "record_digest": "119faa20d6e85e72b0b17e5c06073f511c97c12a28b004ee92783bd2e2a2b7d2",
+      "error": "Bounded partition output contract exhausted: Incomplete original reconstruction cannot certify a supported whole-paper argument"
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_95eebae164cc42fd6005\\optimized\\record.json",
+      "record_digest": "990271f18f71687b4503fa30e0314d9981adb567b579d6fb68c1c72b4d5352c3",
+      "error": "Durable inference run_5470ee1a746d4820b54de0d333322d11 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_964b88669cfe422e7aef\\baseline\\record.json",
+      "record_digest": "4c287693f0044993ed2af8f1ed934ec2e1521b96c38d833be6c3a82e18838dc2",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_964b88669cfe422e7aef\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 5,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 60,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_964b88669cfe422e7aef\\optimized\\record.json",
+      "record_digest": "cbe1e40a1ee200e1712a736870ec33c2ce6af3aa5db164ef4da2583f052bde9d",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_964b88669cfe422e7aef\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 3,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 60,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\baseline\\record.json",
+      "record_digest": "fc94d0305d3182ba8d8023ffe06e8a963d199d4af046bba6a4a55d03ec1bfa47",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 5,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 57,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\optimized\\record.json",
+      "record_digest": "11f61f49bead94118c3a1f519a9bdfa7956f6a97b18c14fda9b7c152c23f8e18",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-lossless-recovery-v5\\paper_ad7ea2de394ae32d2ed2\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 13,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 57,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_19f55daa7f17ede2858b\\baseline\\record.json",
+      "record_digest": "532079e8e46160ed2e60c6208c77bac2b4766875a585dfb60b5325843c546302",
+      "error": "Durable inference run_37ff8a7b588e410385849ca39d060d50 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro: cooldown"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_19f55daa7f17ede2858b\\optimized\\record.json",
+      "record_digest": "8e1c001582f1cecaf48a663848cb6720c26acee6827331181a7af90e4ad18db0",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_19f55daa7f17ede2858b\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 28,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 164,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_b637a4adf835d6357900\\baseline\\record.json",
+      "record_digest": "56d758e4ac2345a4be7633d3e47959411403fea8cf36c753ab36ceef06343e34",
+      "error": "Bounded partition output contract exhausted: Expecting value: line 1 column 1 (char 0)"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_b637a4adf835d6357900\\optimized\\record.json",
+      "record_digest": "3b220addaec56397af39451707c3f4c4262692ce47f607c95551d5cc71fd5e8e",
+      "error": "Bounded partition output contract exhausted: Failed to parse field actual_argument_link_verdicts: 1 validation error for EveryActualClosedWholeArgumentLink\nq2.verdict\n  Field required [type=missing, input_value={'source_id': 'c60', 'tar...parameters and counts.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\n\nAdapter UniqueKeyJSONAdapter failed to parse the LM response. \n\nLM Response: ```json\n{\n  \"scientific_argument_aspects\": {\n    \"research_problem\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\n        \"c2\"\n      ],\n      \"source_span_ids\": [\n        \"paper_b637a4adf835d6357900:b2:s1\"\n      ],\n      \"rationale\": \"The research problem of designing an off-grid photovoltaic solar carport to supply energy to electric cars is explicitly stated in the text and covered completely.\"\n    },\n    \"objective\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\n        \"c3\"\n      ],\n      \"source_span_ids\": [\n        \"paper_b637a4adf835d6357900:b2:s2\"\n      ],\n      \"rationale\": \"The objective covers sizing the off-grid solar carport system, determining solar panels, system voltage, batteries, charge regulator, and inverter size.\"\n    },\n    \"method_design\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\n        \"c5\",\n        \"c6\"\n      ],\n      \"source_span_ids\": [\n        \"paper_b637a4adf835d6357900:b2:s4\",\n        \"paper_b637a4adf835d6357900:b2:s5\"\n      ],\n      \"rationale\": \"The method design details the available parking area of 165 m^2, the installation of 102 solar panels, annual energy production of 42150 KWh determined by SAM, and 0.5% annual performance decrease.\"\n    },\n    \"data_and_conditions\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\n        \"c7\"\n      ],\n      \"source_span_ids\": [\n        \"paper_b637a4adf835d6357900:b2:s6\"\n      ],\n      \"rationale\": \"Data and conditions report a daily energy demand of 65 KWh, 40 batteries with 220 Ah capacity each, 4 inverters of 25 KW power rating, and 17 charge controllers.\"\n    },\n    \"quantitative_results\": {\n      \"coverage\": \"COMPLETE\",\n      \"actual_atom_ids\": [\n        \"c9\"\n      ],\n      \"source_span_ids\": [\n        \"paper_b637a4adf835d6357900:b2:s8\"\n      ],\n      \"rationale\": \"Quantitative economic results include a capital investment cost of 661045.36 MAD, life cycle cost of 1460022.64 MAD, levelized cost of energy of 1.60 MAD/KWh, and a payback period of 10.5 years.\"\n    },\n    \"comparison_and_uncertainty\": {\n      \"coverage\": \"NOT_APPLICABLE\",\n    "
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\baseline\\record.json",
+      "record_digest": "1b7605e731228b57bb76c00e25edfbec21ffc2b6a21652b2795f2024a2b4b0c1",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\baseline\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 13,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 143,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\optimized\\record.json",
+      "record_digest": "dd1838697d67c3086600a9e9e91caecfff2f5886cf455f42bce71aa033184a6d",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_2f81cb801401904d4767\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 20,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 143,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_6dc9f2bdd81d9dcf4a46\\baseline\\record.json",
+      "record_digest": "e0ab6fad349b9d056c241e855b8bbc003ca6261c631581c3bbfcd816533a3ed0",
+      "error": "Bounded partition output contract exhausted: Failed to parse field actual_argument_link_verdicts: 45 validation errors for EveryActualClosedWholeArgumentLink\nq0.source_id\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...putational efficiency.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq0.target_id\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...putational efficiency.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq0.relation\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...putational efficiency.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq0.source_span_ids\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...putational efficiency.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq0.target_span_ids\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...putational efficiency.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq1.source_id\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...ispatching strategies.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq1.target_id\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...ispatching strategies.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq1.relation\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...ispatching strategies.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq1.source_span_ids\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...ispatching strategies.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq1.target_span_ids\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ...ispatching strategies.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq2.source_id\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ... by 60-65% on average.'}, input_type=dict]\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\nq2.target_id\n  Field required [type=missing, input_value={'verdict': 'SUPPORTED', ... by 60-65% on average.'},"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\record.json",
+      "record_digest": "e763d01bb6b8aadefd698c9fa88b039f81e0bfed6e27330c5183ce9deebb167a",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_6dc9f2bdd81d9dcf4a46\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 12,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 111,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_603603415f45919cbdc8\\baseline\\record.json",
+      "record_digest": "af9f57c8563eda6f0a8b0be77ed4dbfb2a6fb619184f3ebe28c4aca12d8f1d54",
+      "error": "Durable inference run_7d1c24cc7f2b45729b13077aba2dfa28 failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro: cooldown"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_603603415f45919cbdc8\\optimized\\record.json",
+      "record_digest": "e7054fe0bb5f0b130d9ce87e5e4fa6f29f6287736a40bdf10e966234960567ea",
+      "error": "Bounded partition output contract exhausted: Complete scientific argument coverage needs actual candidate and source evidence"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_fb88f52bf6ea0323e952\\baseline\\record.json",
+      "record_digest": "e13ea324eadc9aab73780cb0491a3460ba3b8ef7194bfd7c504b0ba35144b584",
+      "error": "Durable inference run_14051c4300c845feaf9e114d1841b16d failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_fb88f52bf6ea0323e952\\optimized\\record.json",
+      "record_digest": "86a232e12a5db422e0a65388f9525c0742b09dc8f390920354666acdebe99b95",
+      "error": "Durable inference run_c03e6af8a7e14f018249b593a70993ae failed: All routes for profile 'thinking' failed: gemini_web/gemini-3.1-pro (502): response contained no final text or valid tool call"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "baseline",
+      "status": "WHOLE_PAPER_EVALUATION_PROTOCOL_FAILURE",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_75abf75ded7b6df0c2b5\\baseline\\record.json",
+      "record_digest": "40ece1db3aff0fa87c7ca8fe26ce5b5f11ee074281cb76b554d40402cb407d08",
+      "error": "Bounded partition output contract exhausted: Complete scientific argument coverage needs actual candidate and source evidence"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "program": "optimized",
+      "status": "WHOLE_PAPER_SCIENTIFIC_ARGUMENT_PENDING_INDEPENDENT_AUDIT",
+      "record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_75abf75ded7b6df0c2b5\\optimized\\record.json",
+      "record_digest": "093712dfbcb9bd40ff964370622e4bee43a29b775ab8eee76993ec5ba1386343",
+      "error": null,
+      "audited": true,
+      "audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-whole-closed-evidence-recovery-v6\\paper_75abf75ded7b6df0c2b5\\optimized\\independent-audit-v1\\report.json",
+      "overall_verdict": "SUPPORTED",
+      "actual_argument_links_assessed": 10,
+      "exact_reconstruction": {
+        "fully_reconstructed_original_blocks": 145,
+        "original_block_coverage": 1.0,
+        "overlapping_segments": 0
+      }
+    }
+  ],
+  "scientific_labels_changed": false,
+  "model_calls": 0
+}

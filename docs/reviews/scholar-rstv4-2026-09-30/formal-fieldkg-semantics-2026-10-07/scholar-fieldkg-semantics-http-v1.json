@@ -1,0 +1,143 @@
+{
+  "status": "PASS_ACTUAL_HTTP_SEMANTIC_LIFECYCLE",
+  "requests": [
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-runs",
+      "status": 201
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-runs",
+      "status": 201
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/semantic-runs/semantic_run_6acb8baafa005a69ebddc8ba8ea1bc9e/advance",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_00914c6833eb86da95bfad0b3fc259be/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_00914c6833eb86da95bfad0b3fc259be/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_7d511dcd559cae1e84ddc5d4d6012ae7/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_7d511dcd559cae1e84ddc5d4d6012ae7/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_7ecd7e3848abf0f70b6f086a6a63423f/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_7ecd7e3848abf0f70b6f086a6a63423f/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_cc16bc284c2da190978247cb71d93c0f/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_cc16bc284c2da190978247cb71d93c0f/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_d07c635ac262b0e5553dc3acbf5a3e5b/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_d07c635ac262b0e5553dc3acbf5a3e5b/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_d628fede39e291d27da4823433ac165b/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_d628fede39e291d27da4823433ac165b/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_ee4ffa906994b09ad2139c16123f3956/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-semantic-objects/semantic_ee4ffa906994b09ad2139c16123f3956/review",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fieldkg-actions",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/fields/field_6242993287f547549daa4ded97914f3c/workspace?snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "path": "/api/research/discussion/context",
+      "status": 404
+    }
+  ],
+  "actual_http_requests": 31,
+  "semantic_kinds": [
+    "IDEA_MERGER",
+    "CONCEPT",
+    "METHOD",
+    "DEBATE",
+    "REPORTED_GAP",
+    "COUNTEREVIDENCE",
+    "FINDING"
+  ],
+  "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+  "model_is_explicit_software_fixture": true,
+  "scientific_approval": false,
+  "browser_verified": false
+}

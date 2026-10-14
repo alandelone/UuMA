@@ -1,0 +1,252 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Source hierarchy native acceptance Ω — software fixture · RSTV4
+  - status: 已自动保存
+  - button [disabled]:
+  - button:
+  - button:
+    - text: Generate
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+  - alert:
+    - generic: 已插入所选空结构，原思想、引用和编号保持。
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: Source hierarchy native acceptance Ω — software fixture
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - generic: 1 / 10
+    - generic: Software_Test
+    - blockquote: Source Alpha Ω
+    - paragraph: Source hierarchy software fixture
+    - button: ←
+    - button: →
+    - button: ＋ 预览完整模板
+    - button:
+      - text: 拖入模板
+    - paragraph: 放到整篇入口，或章节、段落、Intent 后方；先预览，确认后再采用。
+  - generic "结构选择与移动":
+    - button: 多选／分组
+    - status
+  - textbox: Source hierarchy native acceptance Ω — software fixture
+  - textbox:
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+  - button: SECTION 1
+  - button:
+  - button [expanded]:
+  - textbox: Original author root Ω
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Motivation
+  - generic: •••
+  - button: GROUP
+  - button:
+  - button [expanded]:
+  - textbox:
+    - /placeholder: 段落组用途可以暂时未定
+    - text: Original author group Ω
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+      - text: Original author purpose Ω
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original author organization
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Original author intent
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: AUTHOR original wording Ω with its selected software citation.
+    - button:
+      - generic: "1"
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: ∑
+    - textbox:
+      - /placeholder: LaTeX：E = mc^2
+      - text: x=1
+    - textbox:
+      - /placeholder: 公式说明（可选）
+      - text: Original author formula
+    - button:
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+    - figure:
+      - table:
+        - rowgroup:
+          - row:
+            - cell: x
+            - cell: "y"
+          - row:
+            - cell: "1"
+            - cell: "2"
+      - link:
+        - /url: http://127.0.0.1:8878/api/assets/asset_995ed7847a3546ff94c7abbd6a0ef352/content
+        - text: author-software-table.csv
+      - generic: READY
+  - article:
+    - button: P2
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+      - text: Original author purpose Ω
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original author organization
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Original author intent
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: AUTHOR second original wording stays independent.
+    - button:
+      - generic: "1"
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: ∑
+    - textbox:
+      - /placeholder: LaTeX：E = mc^2
+      - text: x=1
+    - textbox:
+      - /placeholder: 公式说明（可选）
+      - text: Original author formula
+    - button:
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+    - figure:
+      - table:
+        - rowgroup:
+          - row:
+            - cell: x
+            - cell: "y"
+          - row:
+            - cell: "1"
+            - cell: "2"
+      - link:
+        - /url: http://127.0.0.1:8878/api/assets/asset_995ed7847a3546ff94c7abbd6a0ef352/content
+        - text: author-software-table.csv
+      - generic: READY
+  - button:
+    - text: 组内段落
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button:
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox:
+      - /placeholder: 找资料、依据、反证…
+    - article:
+      - button:
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Synthetic hierarchy software fixture
+        - generic: Synthetic source only
+      - generic: Source hierarchy software fixture
+      - generic: 原文不可用
+  - status
+  - button:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Source hierarchy native acceptance Ω — software fixture
+- dialog "采用模板结构":
+  - heading "采用模板结构" [level=2]
+  - paragraph: 整篇论文 · 模板提供空槽，思想由作者填写。
+  - paragraph: Source hierarchy software fixture · Paper v1 / Skeleton v1
+  - generic "完整模板与部分采用":
+    - heading "Source Alpha Ω" [level=3]
+    - generic: Source Alpha Ω · 原文第 1 页
+    - 'checkbox "Paragraph 1 → Intent: Section_Context → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 1 → Intent: Section_Context → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - 'checkbox "Paragraph 2 → Intent: Software_Claim → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 2 → Intent: Software_Claim → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - heading "Repeated source heading" [level=3]
+    - generic: Source Alpha Ω / Repeated source heading · 原文第 2 页
+    - 'checkbox "Paragraph 1 → Intent: Section_Context → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 1 → Intent: Section_Context → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - 'checkbox "Paragraph 2 → Intent: Software_Claim → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 2 → Intent: Software_Claim → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - heading "Source Detail Ω" [level=3]
+    - generic: Source Alpha Ω / Repeated source heading / Source Detail Ω · 原文第 3 页
+    - 'checkbox "Paragraph 1 → Intent: Section_Context → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 1 → Intent: Section_Context → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - 'checkbox "Paragraph 2 → Intent: Software_Claim → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 2 → Intent: Software_Claim → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - heading "Repeated source heading" [level=3]
+    - generic: Source Alpha Ω / Repeated source heading · 原文第 4 页
+    - 'checkbox "Paragraph 1 → Intent: Section_Context → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 1 → Intent: Section_Context → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - 'checkbox "Paragraph 2 → Intent: Software_Claim → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 2 → Intent: Software_Claim → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - heading "Source Omega Ω" [level=3]
+    - generic: Source Omega Ω · 原文第 5 页
+    - 'checkbox "Paragraph 1 → Intent: Section_Context → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 1 → Intent: Section_Context → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+    - 'checkbox "Paragraph 2 → Intent: Software_Claim → 空思想槽 作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}" [checked]'
+    - text: "Paragraph 2 → Intent: Software_Claim → 空思想槽"
+    - generic: "作用：Software_Test · L2：{\"discourse_relation\":\"Context\",\"software_only\":true}"
+  - paragraph: 部分采用会保留所选内容的上级章节，按原文章节层级创建空结构。
+  - text: 采用范围
+  - combobox "模板采用范围":
+    - option "整篇论文" [selected]
+    - option "章节 1：Original author root Ω"
+    - option "章节 1：Original author root Ω / 段落 1"
+    - option "章节 1：Original author root Ω / 段落 1 / Intent 1：Original author intent"
+    - option "章节 1：Original author root Ω / 段落 2"
+    - option "章节 1：Original author root Ω / 段落 2 / Intent 1：Original author intent"
+  - text: 采用方式
+  - combobox "模板采用方式":
+    - option "插入空结构（默认）"
+    - option "替换结构，保留原内容到待安置" [selected]
+  - checkbox "我确认替换所选结构；原思想、引用和编号保留到待安置，由我重新放置。"
+  - text: 我确认替换所选结构；原思想、引用和编号保留到待安置，由我重新放置。
+  - paragraph: 已选择 10 个单元。段落目的与组织范式留待作者填写。
+  - button "取消" [active]
+  - button "确认替换并保留原内容" [disabled]
+  - button "Close":
+    - generic: Close

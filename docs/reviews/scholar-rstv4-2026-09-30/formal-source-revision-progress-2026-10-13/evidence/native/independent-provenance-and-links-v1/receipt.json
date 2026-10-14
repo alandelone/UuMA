@@ -1,0 +1,62 @@
+{
+  "status": "PASS_G09_NATIVE_PROVENANCE_POSTLINK_REVERSAL_SUBCASES",
+  "all109_tables_audited": true,
+  "all_original205_comments_exact": true,
+  "new_opinion_original_edited_raw_batch_order_separate": true,
+  "original_author_documents_operations_changes_models_jobs_versions_artifacts_exact": true,
+  "two_fixed_round_baselines_exact": true,
+  "new_link_events": [
+    {
+      "event_id": "change_link_event_f5db43be4361454686c08d4984b42e49",
+      "request_id": "167ef095-93d6-46c0-8398-82ee61b374f6",
+      "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+      "base_link_revision": 0,
+      "resulting_link_revision": 1,
+      "before_comment_ids_json": "[]",
+      "after_comment_ids_json": "[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\",\"comment_f7969d2589c14c6a9e3d1c923bd1b381\"]",
+      "reverses_event_id": null,
+      "request_json": "{\"change_id\":\"change_ee83003b4ee34353abed917e48f9d338\",\"comment_ids\":[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\",\"comment_f7969d2589c14c6a9e3d1c923bd1b381\"],\"expected_link_revision\":0,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":null}",
+      "created_at": "2026-10-13T03:56:44.363625+00:00"
+    },
+    {
+      "event_id": "change_link_event_2bb7e2b41c904166914ed1a680e28080",
+      "request_id": "bdfdaeb8-5cfa-4a43-b3fd-17e4185b0d87",
+      "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+      "base_link_revision": 1,
+      "resulting_link_revision": 2,
+      "before_comment_ids_json": "[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\",\"comment_f7969d2589c14c6a9e3d1c923bd1b381\"]",
+      "after_comment_ids_json": "[]",
+      "reverses_event_id": "change_link_event_f5db43be4361454686c08d4984b42e49",
+      "request_json": "{\"change_id\":\"change_ee83003b4ee34353abed917e48f9d338\",\"comment_ids\":[],\"expected_link_revision\":1,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":\"change_link_event_f5db43be4361454686c08d4984b42e49\"}",
+      "created_at": "2026-10-13T03:57:09.035384+00:00"
+    },
+    {
+      "event_id": "change_link_event_32f329aba43b4848b916859fa82b64fc",
+      "request_id": "755315d5-11fd-40a0-8636-5bff45c079de",
+      "change_id": "change_ee83003b4ee34353abed917e48f9d338",
+      "base_link_revision": 2,
+      "resulting_link_revision": 3,
+      "before_comment_ids_json": "[]",
+      "after_comment_ids_json": "[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\"]",
+      "reverses_event_id": null,
+      "request_json": "{\"change_id\":\"change_ee83003b4ee34353abed917e48f9d338\",\"comment_ids\":[\"comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1\"],\"expected_link_revision\":2,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":null}",
+      "created_at": "2026-10-13T03:57:31.628869+00:00"
+    },
+    {
+      "event_id": "change_link_event_f4cb6c9cfd894cf883c36e8d0f97754e",
+      "request_id": "9b97b2e3-14c3-4357-b38b-8d40583bb8db",
+      "change_id": "change_b4d65900fbe541aeb4d597de70681d46",
+      "base_link_revision": 0,
+      "resulting_link_revision": 1,
+      "before_comment_ids_json": "[]",
+      "after_comment_ids_json": "[\"comment_8ecd722c5ea041858723009b72fc4cce\"]",
+      "reverses_event_id": null,
+      "request_json": "{\"change_id\":\"change_b4d65900fbe541aeb4d597de70681d46\",\"comment_ids\":[\"comment_8ecd722c5ea041858723009b72fc4cce\"],\"expected_link_revision\":0,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"reverses_event_id\":null}",
+      "created_at": "2026-10-13T03:58:03.269963+00:00"
+    }
+  ],
+  "beta_initial_context_still_empty": true,
+  "alpha_initial_context_still_empty": true,
+  "g09_complete": false,
+  "overall11_complete": false
+}

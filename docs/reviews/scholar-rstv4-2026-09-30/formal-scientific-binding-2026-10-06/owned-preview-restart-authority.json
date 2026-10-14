@@ -1,0 +1,48 @@
+{
+    "processes":  [
+                      {
+                          "ProcessId":  36384,
+                          "ParentProcessId":  29452,
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-overview-server.py --root C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h --port 8885 "
+                      },
+                      {
+                          "ProcessId":  50068,
+                          "ParentProcessId":  29452,
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-ui-fixes-services.py studio "
+                      },
+                      {
+                          "ProcessId":  536,
+                          "ParentProcessId":  36384,
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-overview-server.py --root C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h --port 8885 "
+                      },
+                      {
+                          "ProcessId":  38624,
+                          "ParentProcessId":  50068,
+                          "CommandLine":  "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" -u C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-ui-fixes-services.py studio "
+                      }
+                  ],
+    "listeners":  [
+                      {
+                          "LocalPort":  8885,
+                          "OwningProcess":  536
+                      },
+                      {
+                          "LocalPort":  8874,
+                          "OwningProcess":  38624
+                      }
+                  ],
+    "consoleCompanions":  [
+                              {
+                                  "ProcessId":  48556,
+                                  "ParentProcessId":  36384,
+                                  "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+                                  "ExecutablePath":  "C:\\Windows\\system32\\conhost.exe"
+                              },
+                              {
+                                  "ProcessId":  19804,
+                                  "ParentProcessId":  50068,
+                                  "CommandLine":  "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+                                  "ExecutablePath":  "C:\\Windows\\system32\\conhost.exe"
+                              }
+                          ]
+}

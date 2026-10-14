@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "document_type": "APPROVED_DESIGN_DEFAULTS",
+  "date": "2026-10-13",
+  "timezone": "Asia/Kuala_Lumpur",
+  "policy_acceptance_file": "../reviews/honc-architecture-2026-10-13/policy-acceptance.json",
+  "accepted_decision_ids": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "runtime_applied": true,
+  "policies": {
+    "default_reminder_count": 1,
+    "importance_does_not_change_count": true,
+    "body_followup_enabled": false,
+    "nightly_unchecked_habit_chase_enabled": false,
+    "wake_fallback_time": "08:00",
+    "advance_explicit_wake_or_day_start": true,
+    "bedtime_fallback_time": "21:30",
+    "advance_explicit_bedtime": true,
+    "share_anchor_and_fallback_occurrence_quota": true,
+    "suppress_when_complete": true,
+    "missed_window_policy": "expire",
+    "fixed_point_grace_minutes": 30,
+    "window_start_inclusive": true,
+    "window_end_exclusive": true,
+    "group_simultaneous": true,
+    "grouping_scope": [
+      "owner",
+      "bound_delivery_target",
+      "original_due_at"
+    ],
+    "group_order": [
+      "importance_desc",
+      "habit_id_asc",
+      "instance_id_asc"
+    ],
+    "unknown_delivery_action": "lookup_only_no_automatic_resend"
+  },
+  "runtime_evidence_file": "../reviews/honc-architecture-2026-10-13/live-data-audit-v1.json",
+  "runtime_applied_at": "2026-10-14T03:32:17.985Z"
+}

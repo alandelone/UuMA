@@ -1,0 +1,9 @@
+{
+  "pdf_sha256": "c5c4aa8679b430aa3bab7b61e71da71704e1aefacf679502e9b36f15af04b060",
+  "visual_result": "FAIL_TABLE_RIGHT_EDGE",
+  "sources": {
+    "src/rstv4/studio_materials.py": "5a648526d1f54069952eb3f4bc2b49a0ac76158184f3f27982dc73cf42ac104d",
+    "tests/test_studio_generated_assets.py": "67ea3b39b68555f72a376e8115a577e36f4f01c1892abf2096626729285839e9"
+  },
+  "all11_complete": false
+}

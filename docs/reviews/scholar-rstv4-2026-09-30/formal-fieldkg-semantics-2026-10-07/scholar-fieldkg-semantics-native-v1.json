@@ -1,0 +1,11 @@
+{
+  "status": "PASS_ACTUAL_HTTP_SEMANTIC_REVIEW_FREEZE_AND_CHAT_SOFTWARE_FIXTURE",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-semantic-z_i0zcqj",
+  "gateway_invocations": 1,
+  "model_is_explicit_software_fixture": true,
+  "real_model_calls": 0,
+  "scientific_tables_unchanged": true,
+  "scientific_approval": false,
+  "browser_verified": false,
+  "database_sha256": "e98b6d02b6ad957b3096812a4d8f4cd5ffb9b81360aed85d9e1a894a7310e135"
+}

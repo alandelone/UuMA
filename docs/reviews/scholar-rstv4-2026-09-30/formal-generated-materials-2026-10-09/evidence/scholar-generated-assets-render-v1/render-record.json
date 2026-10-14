@@ -1,0 +1,12 @@
+{
+  "pdf": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\sc-material-focused-0zc06zm0\\test_all_six_original_material0\\data\\writing-studio\\manuscript_cf9eb2603b5440aa8dc306464b1dda37\\generated\\studio_job_f35a4f54e5ac4ebabb53b48a172e6097\\manuscript.pdf",
+  "sha256": "d45a1ae30451cb07f45a33cd2e7069447faba00d0fdc19a830782ba2d9065d71",
+  "renderer": "C:\\Users\\Alandelone\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.EXE",
+  "pages": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-render-v1\\page-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-render-v1\\page-2.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-render-v1\\page-3.png"
+  ],
+  "read_only": true,
+  "scientific_acceptance": false
+}

@@ -1,0 +1,68 @@
+CHECK pytest exit=1
+...................................F.................................... [ 77%]
+.....................                                                    [100%]
+================================== FAILURES ===================================
+_______ test_adoption_record_failure_rolls_back_document_and_operation ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-966/test_adoption_record_failure_r0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001FF529FA810>
+
+    def test_adoption_record_failure_rolls_back_document_and_operation(tmp_path, monkeypatch):
+        service, manuscript_id, _, _, request = fixture(tmp_path)
+        save = service.save_document
+    
+        def interrupted(*args, **kwargs):
+            saved = save(*args, **kwargs)
+            assert saved["document_revision"] == 2
+            raise RuntimeError("software fixture failure after document writes")
+    
+        monkeypatch.setattr(service, "save_document", interrupted)
+        before = service.db_path.read_bytes()
+        with pytest.raises(RuntimeError, match="after document writes"):
+            service.apply_template(manuscript_id, request)
+>       assert service.db_path.read_bytes() == before
+E       AssertionError: assert b'SQLite form...0\x00\x00\x00' == b'SQLite form...0\x00\x00\x00'
+E         
+E         At index 12292 diff: b'\x01' != b'\x00'
+E         Use -v to get more diff
+
+tests\test_studio_templates.py:177: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_templates.py::test_adoption_record_failure_rolls_back_document_and_operation
+1 failed, 92 passed in 46.37s
+
+
+CHECK correspondence-unit exit=0
+PASS arbitrary nested same-label target retains canonical author data and fixed source
+PASS all-original context choices and distinct Intent references remain independent
+PASS leaving formula and asset placement pending does not invent a target
+PASS legacy flat fixed paragraph source is inherited without rewriting the slot
+PASS every reviewed source, target, parent, group and edge change invalidates confirmation
+PASS repeated/foreign/unplaced/self destinations fail without writes
+PASS explicitly cancelling and undo/redo preserve exact documents
+PASS deleting a target releases its mapping but never deletes original author content
+PASS template replacement releases references to canonical original bank
+9 author correspondence contracts passed; no browser or real model used.
+
+
+CHECK placement-unit exit=0
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.
+
+
+CHECK blocks-unit exit=0
+17 controlled movement/group/association cases passed; no browser used.
+
+
+CHECK tsc exit=0
+
+
+CHECK oxlint exit=0
+
+

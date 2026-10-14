@@ -1,0 +1,50 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-native-v1.py']
+C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+  from starlette.testclient import TestClient as TestClient  # noqa
+Actual existing-paper controller select passed 5 semantic HTTP requests.
+Actual existing-paper controller progress passed 2 semantic HTTP requests.
+{"status": "PASS_ACTUAL_CATALOG_SELECTION_SCOPE_SCREEN_AND_FILE_REUSE", "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-select-h2dpn_sx", "actual_http_requests": 10, "original_paper_and_file_rows_unchanged": true, "collection_paused": true, "real_model_calls": 0, "software_screen_calls": 1, "parser_executed": false, "scientific_approval": false, "browser_verified": false}
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-packaging-v1.py']
+Processing c:\users\alandelone\codespace_local\rstv4
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: rstv4
+  Building wheel for rstv4 (pyproject.toml): started
+  Building wheel for rstv4 (pyproject.toml): finished with status 'done'
+  Created wheel for rstv4: filename=rstv4-0.1.0-py3-none-any.whl size=757204 sha256=79ece3956159bfed17c663fb6068e06b8b28e4d64dd4cd12d6b872cbb9e6177e
+  Stored in directory: C:\Users\Alandelone\AppData\Local\Temp\pip-ephem-wheel-cache-l6b7muvb\wheels\57\5b\b7\cdc8935af193549c01f6b49d5e722b77f2010cd2f1e0e0ba84
+Successfully built rstv4
+
+Actual distribution includes the exact Catalog HTML and all six shipped JavaScript files.
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-full-v2.py']
+Verify -m ruff check src/rstv4/manuscript_scientific_review.py src/rstv4/approval.py src/rstv4/studio.py src/rstv4/catalog_web.py src/rstv4/database.py src/rstv4/models.py src/rstv4/acquisition.py src/rstv4/acquisition_worker.py src/rstv4/collection_web.py src/rstv4/collection_inputs.py tests/test_manuscript_scientific_review.py tests/test_catalog_paper_selection.py
+Result 0
+Verify --check C:\Users\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-existing-paper-full-inline-v2.js
+Result 0
+Verify tests/catalog_scientific_review.mjs
+Result 0
+Verify --check src/rstv4/catalog_scientific_review.js
+Result 0
+Verify tests/catalog_review_workflow.mjs
+Result 0
+Verify --check src/rstv4/catalog_review_workflow.js
+Result 0
+Verify tests/catalog_collections.mjs
+Result 0
+Verify --check src/rstv4/catalog_collections.js
+Result 0
+Verify tests/catalog_research_workspaces.mjs
+Result 0
+Verify --check src/rstv4/catalog_research_workspaces.js
+Result 0
+Verify tests/catalog_research_overview.mjs
+Result 0
+Verify --check src/rstv4/catalog_research_overview.js
+Result 0
+Verify tests/catalog_existing_papers.mjs
+Result 0
+Verify diff --check
+Result 0
+Verify -X utf8 -m pytest tests -q --basetemp C:\Users\Alandelone\AppData\Local\Temp\scui-full-_denxied
+Result 0
+{"status": "PASS", "seconds": 386.96900000000096, "changed_during_verification": [], "log_sha256": "86e8d3523c6b319bc44bcfc11af65524c2b59b2a4cfd144ad7d88fcdbe12adb0"}

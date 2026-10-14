@@ -1,0 +1,31 @@
+{
+  "status": "NATIVE_ZIP_AND_PDF_DOWNLOAD_PASS_OVERALL_INCOMPLETE",
+  "overall_complete": false,
+  "g09_complete": false,
+  "all118_all11_scope_retained": true,
+  "user_resumed_download_testing": true,
+  "download_testing_paused": false,
+  "scientific_acceptance": false,
+  "files": {
+    "acceptance.md": "95cbceea5da924d74eff37a949f7c61087af49e2b4479c01eb9c16971818d5d3",
+    "evidence\\audit.json": "ebba336cea7ee3f5761674d9b4fc0c6f7634dc742342993a9093ff318c058667",
+    "evidence\\clean-manuscript.pdf": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+    "evidence\\downloads-final-dom.md": "218a96d06086f21b32df9d9638817c7fcd744ba878153ae3ba5968c6d8f92dc6",
+    "evidence\\files-before-zip.json": "8a1697eb5d88f0865eb2db67c4c89c4e327b4471bd812b3c0b54b91f620ec33d",
+    "evidence\\manuscript.pdf": "fa294a1fe284baeb7fc3c52a434d4476204e95b9b80067bfcb0f7549fea2f1cb",
+    "evidence\\package-api-before.json": "a92a1e2c769ee2f0749d815a731efdb1a88db0ab248790ca76e7d84962097591",
+    "evidence\\package-download-view.png": "a0382b5eff1238e78c515a959d2c152b351bdac93857c4379c32dac47a5f2491",
+    "evidence\\pdf-before-dom.md": "755b5cdecbc8081e413e9b9d1e1130f26fb9515f08081dba3f3f366392b1f779",
+    "evidence\\pdf-download-event-failure.txt": "d7e7284fecc2a9dd2eff36d31d97bf786b9d4851b537611072d9e86868ee9ad4",
+    "evidence\\pdf-native-complete.png": "856ad573a24e1af9035a1142f5296e41714e5fbd43e86776a0c206dae27b49af",
+    "evidence\\pdf-native-download-tree.txt": "c0bf6d067eefe4b428f0b010867bc1414b2e91c46b2c43865a217fa8bc66436b",
+    "evidence\\scholar-download-retry-audit-20261009-v1.py": "49654dd0c17be2bff9640a571d1007c7948f942beb5d717126de82d6885d341e",
+    "evidence\\scholar-download-retry-handoff-20261009-v1.py": "8fe1a1489df10246c760d704fb8b1795f0e29e791cd309d192c08240e69a161d",
+    "evidence\\scholar-download-retry-seal-20261009-v1.py": "1140c2361f1a8247f162c765c914e9b2aa1566789d3bea9acd170d7474a6985f",
+    "evidence\\submission_package_462feff00b234357a635a3e63254aff4 (1).zip": "c8690ba64bb08dbe3935cc2751ae52e15a983842d718c137938609a1bd5a94c4",
+    "evidence\\zip-and-individual-files-dom.md": "3f1d163120c57e01ebdf45610d1ca93fd3aecae175d010aec6d61c6ab5c74a7e",
+    "evidence\\zip-before-dom.md": "38f58939ef7f70f197caae737f2ea223b593146b23bee1e93bba8e7ba082161d",
+    "evidence\\zip-download-file-candidates.json": "0a84c24768525dfdeb24579e93dfe1d6f68542771c6f384d5f58da41d9df27fd",
+    "evidence\\zip-inner-manifest.json": "5f390dd9a92721d0171cd2e8d60cfe4d0139b329f1cfcbfb45e09967be0368bb"
+  }
+}

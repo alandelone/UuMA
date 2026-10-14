@@ -1,0 +1,15 @@
+original-jpeg.jpeg
+original-svg.svg
+original-csv.csv
+Item Value Condition
+CSV_ROW_1 1 scope_1
+CSV_ROW_2 2 scope_2
+CSV_ROW_3 3 scope_3
+CSV_ROW_4 4 scope_4
+CSV_ROW_5 5 scope_5
+CSV_ROW_6 6 scope_6
+CSV_ROW_7 7 scope_7
+CSV_ROW_8 8 scope_8
+CSV_ROW_9 9 scope_9
+CSV_ROW_10 10 scope_10
+2

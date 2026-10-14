@@ -1,0 +1,10 @@
+{
+  "status": "PASS_NATIVE_5000001_BYTE_REJECTED_INPUT_RETAINED",
+  "value": "@article{evidence_6b169de2b78d452f919391b00916f2c8,\n  title = {Other selected source},\n  author = {Fixture Author},\n  year = {2026},\n  doi = {10.1234/other}\n}\n\n@article{evidence_b5348fa59b3948ae9540b75a33ca9bd9,\n  title = {Refreshed live catalog title - software},\n  author = {Fixture Author},\n  year = {2026}\n}\n",
+  "network": {
+    "cursor": 73,
+    "events": [],
+    "hasMore": false,
+    "truncated": false
+  }
+}

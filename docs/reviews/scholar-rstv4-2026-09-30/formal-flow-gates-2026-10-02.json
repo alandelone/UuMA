@@ -1,0 +1,98 @@
+{
+  "date": "2026-10-02",
+  "isolated_root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y",
+  "production_data_changed": false,
+  "model_generation_exercised": false,
+  "frontend_exercised": false,
+  "upstream_supersession": {
+    "dependants": [
+      {
+        "node_id": "claim_bb84d9ba73be4451a3b4222d941427e2",
+        "node_type": "claim",
+        "status": "STALE",
+        "statement": "Isolated claim 6644ada96ea349dd90e002aa8879f948",
+        "revision": 2
+      },
+      {
+        "node_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+        "node_type": "claim",
+        "status": "STALE",
+        "statement": "Isolated claim d8de1260d07540f7a0a2c849fb43b3d0",
+        "revision": 2
+      }
+    ],
+    "needs_scientific_review": 1,
+    "bindings_and_history_preserved": true
+  },
+  "old_experiment": {
+    "refused": true,
+    "reason": "The experiment method is no longer approved in this track",
+    "run_count_after_refusal": 0
+  },
+  "new_approved_experiment": {
+    "run_id": "run_d79366ed2ce545f08eddb3aee9b5014f",
+    "plan_id": "experiment_plan_03a8d64eab544aca93b8a4f804e15364",
+    "exit_code": 0,
+    "duration_seconds": 0.03,
+    "metrics": {},
+    "stdout_preview": "ISOLATED_ACCEPTANCE_ONLY\n",
+    "stderr_preview": ""
+  },
+  "real_http_stage_checks": [
+    {
+      "from": "DRAFTING",
+      "requested": "WHOLE_PAPER_REVIEW",
+      "http_status": 422,
+      "response": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "retained_stage": "DRAFTING"
+    },
+    {
+      "from": "WHOLE_PAPER_REVIEW",
+      "requested": "FINALIZATION_SUBMISSION",
+      "http_status": 422,
+      "response": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "retained_stage": "WHOLE_PAPER_REVIEW"
+    },
+    {
+      "from": "FINALIZATION_SUBMISSION",
+      "requested": "REVISION",
+      "http_status": 422,
+      "response": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "retained_stage": "FINALIZATION_SUBMISSION"
+    },
+    {
+      "from": "FINALIZATION_SUBMISSION",
+      "requested": "PUBLICATION",
+      "http_status": 422,
+      "response": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "retained_stage": "FINALIZATION_SUBMISSION"
+    }
+  ],
+  "owned_http_service_stopped": true,
+  "formal_product_code_changed": true,
+  "source_sha256": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\track_first.py": "18f3ae31ab30c857cbfc3c0f8213a4f4119bd2b2f5f01f81b95faf194b7fd965",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": "4ce44bb87d76da15ad0f647fdca3ccbed417fab0391f8c4f6431a8210f811d80",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_scholar_acceptance_contracts.py": "1b1ea4d4a6fd80f7051934947ab78d05e8b5734ca2a2167c1a08b7b9231ba569"
+  },
+  "verification": {
+    "focused_related_tests": 26,
+    "final_acceptance_contracts": 12,
+    "standard_regression_passed": 119,
+    "standard_optional_modules_skipped": 7,
+    "optimization_environment_regression_passed": 179,
+    "existing_regression_warnings": 2
+  }
+}

@@ -1,0 +1,16 @@
+[
+  {
+    "method": "Network.requestWillBeSent",
+    "requestId": "81388.54",
+    "url": "http://127.0.0.1:8874/api/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/packages/submission_package_d9568167d148448f949f1bd4e1d9169b/download"
+  },
+  {
+    "method": "Network.loadingFailed",
+    "requestId": "81388.54",
+    "error": "net::ERR_FAILED",
+    "corsError": {
+      "corsError": "MissingAllowOriginHeader",
+      "failedParameter": ""
+    }
+  }
+]

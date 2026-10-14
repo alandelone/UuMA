@@ -1,0 +1,16 @@
+{
+  "status": "PASS_CURRENT_NATIVE_GENERATION_INPUT_READY",
+  "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+  "revision": 62,
+  "paragraphs": 11,
+  "thoughts": 12,
+  "original_alpha_exact": true,
+  "original_beta_text_and_three_candidates_exact": true,
+  "beta_original_two_selected_explicit_decision": true,
+  "all_old_sections_paragraphs_groups_retained": true,
+  "all_original205_plus_A206_reply_exact": true,
+  "model_calls": 16,
+  "jobs": 6,
+  "database_sha256": "358b1702263fd1a2dc956f4cf78d42fd6bb822ac15a4f56303b6347dd05f9e74",
+  "overall11_complete": false
+}

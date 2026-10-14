@@ -1,0 +1,772 @@
+.FF............FFFFFFF...........................................        [100%]
+================================== FAILURES ===================================
+_ test_partial_adoption_preserves_ancestors_repeated_titles_and_source_locations _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_partial_adoption_preserve0')
+
+    def test_partial_adoption_preserves_ancestors_repeated_titles_and_source_locations(tmp_path):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDD96C0>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+___________ test_nested_section_target_attaches_only_template_roots ___________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_nested_section_target_att0')
+
+    def test_nested_section_target_attaches_only_template_roots(tmp_path):
+>       _, _, original, preview, *_ = published_fixture(tmp_path)
+                                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:118: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDDAC50>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_ test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[cycle] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_tampered_outline_or_parse0')
+defect = 'cycle'
+
+    @pytest.mark.parametrize("defect", ["cycle", "foreign_parse", "digest", "block", "unit_order", "missing_heading_level"])
+    def test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision(tmp_path, defect):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDD9120>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_ test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[foreign_parse] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_tampered_outline_or_parse1')
+defect = 'foreign_parse'
+
+    @pytest.mark.parametrize("defect", ["cycle", "foreign_parse", "digest", "block", "unit_order", "missing_heading_level"])
+    def test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision(tmp_path, defect):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDDBC40>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_ test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[digest] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_tampered_outline_or_parse2')
+defect = 'digest'
+
+    @pytest.mark.parametrize("defect", ["cycle", "foreign_parse", "digest", "block", "unit_order", "missing_heading_level"])
+    def test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision(tmp_path, defect):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDDAA70>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_ test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[block] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_tampered_outline_or_parse3')
+defect = 'block'
+
+    @pytest.mark.parametrize("defect", ["cycle", "foreign_parse", "digest", "block", "unit_order", "missing_heading_level"])
+    def test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision(tmp_path, defect):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BEF4310>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_ test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[unit_order] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_tampered_outline_or_parse4')
+defect = 'unit_order'
+
+    @pytest.mark.parametrize("defect", ["cycle", "foreign_parse", "digest", "block", "unit_order", "missing_heading_level"])
+    def test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision(tmp_path, defect):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDD9210>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_ test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[missing_heading_level] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_tampered_outline_or_parse5')
+defect = 'missing_heading_level'
+
+    @pytest.mark.parametrize("defect", ["cycle", "foreign_parse", "digest", "block", "unit_order", "missing_heading_level"])
+    def test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision(tmp_path, defect):
+>       service, manuscript_id, original, preview, _, db, _, _, _ = published_fixture(tmp_path)
+                                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:162: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDDBA60>
+parse_run_id = 'parse_run_7dac15e54d915dd51545fa5bfd105e35'
+units = [{'block_id': 'block_202caf4ac33d3bd37e6bd12469685051', 'content_digest': '15199936a6732ab015cc6224c1ba787b3dd358aef42...5ba74c1fb07b569effce96ce9dd1a8cb107ba2', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+_____ test_unsectioned_prefix_is_explicit_root_and_not_guessed_from_title _____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-961/test_unsectioned_prefix_is_exp0')
+
+    def test_unsectioned_prefix_is_explicit_root_and_not_guessed_from_title(tmp_path):
+>       *_, preview, acquisition, db, parsed, units, published = published_fixture(tmp_path, prefix=True)
+                                                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_source_outline.py:186: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_skeleton_source_outline.py:61: in published_fixture
+    preview = service.preview_template(manuscript_id, published["skeleton_id"])
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio.py:472: in preview_template
+    return template_preview(conn, manuscript_id, skeleton_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\studio_templates.py:16: in template_preview
+    source = skeleton_source(conn, skeleton_id)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\research_views.py:66: in skeleton_source
+    outline = read_source_outline(conn, result)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+src\rstv4\skeleton_outline.py:113: in read_source_outline
+    if build_source_outline(conn, row["parse_run_id"], units) != outline:
+       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000001DA4BDDAE30>
+parse_run_id = 'parse_run_3b29c293b8f353fa267b33fa3d0e359a'
+units = [{'block_id': 'block_43fef53acdbcb67534437aa29245fb94', 'content_digest': '1d270cb48f8fc8916c8fcb10a10630500afea07a4b8...9f1af12d93d927013c7b0e7503aca9840c0b9d', 'layer1': {'triplets': []}, 'layer2': {'discourse_relation': 'Context'}, ...}]
+
+    def build_source_outline(
+        conn: sqlite3.Connection, parse_run_id: str, units: list[dict[str, Any]],
+    ) -> dict | None:
+        blocks = [dict(row) for row in conn.execute(
+            "SELECT * FROM document_blocks WHERE parse_run_id=? ORDER BY sequence", (parse_run_id,),
+        )]
+        headings = [block for block in blocks if block["block_type"] == "HEADING"]
+        if not any("heading_level" in json.loads(b["location_json"]) for b in headings):
+            return None  # Legacy parses retain their exact flat source identity.
+        parse = conn.execute(
+            "SELECT file_version_id FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+            (parse_run_id,),
+        ).fetchone()
+        if parse is None:
+            raise ValueError("Source outline requires a completed parse")
+        sections: list[dict] = []
+        stack: list[dict] = []
+        membership: dict[str, str | None] = {}
+        for block in blocks:
+            if block["block_type"] == "HEADING":
+                location = json.loads(block["location_json"])
+                level = location.get("heading_level")
+                if type(level) is not int or not 1 <= level <= 5:
+                    raise ValueError("Source headings require explicit integer levels from one to five")
+                if level > len(stack) + 1:
+                    raise ValueError("Source heading level skips its explicit parent")
+                stack = stack[:level - 1]
+                section = {
+                    "source_section_id": block["block_id"],
+                    "parent_source_section_id": stack[-1]["source_section_id"] if stack else None,
+                    "title": block["text"], "depth": level - 1,
+                    "source_path": [s["title"] for s in stack] + [block["text"]],
+                    "heading_location": location, "page_number": block["page_number"],
+                    "heading_content_digest": block["content_digest"],
+                }
+                sections.append(section)
+                stack.append(section)
+            membership[block["block_id"]] = stack[-1]["source_section_id"] if stack else None
+        by_id = {block["block_id"]: block for block in blocks}
+        assignments = []
+        previous = -1
+        for index, unit in enumerate(units):
+            block = by_id.get(unit.get("block_id"))
+            if block is None or block["sequence"] <= previous:
+                raise ValueError("Outline units must use distinct source blocks in their parse reading order")
+            if (unit["raw_text"] != block["text"]
+                    or unit.get("page_number") != block["page_number"]
+                    or unit.get("section") != block["section"]):
+>               raise ValueError("Outline unit text and location must match its exact parse block")
+E               ValueError: Outline unit text and location must match its exact parse block
+
+src\rstv4\skeleton_outline.py:70: ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_skeleton_source_outline.py::test_partial_adoption_preserves_ancestors_repeated_titles_and_source_locations
+FAILED tests/test_skeleton_source_outline.py::test_nested_section_target_attaches_only_template_roots
+FAILED tests/test_skeleton_source_outline.py::test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[cycle]
+FAILED tests/test_skeleton_source_outline.py::test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[foreign_parse]
+FAILED tests/test_skeleton_source_outline.py::test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[digest]
+FAILED tests/test_skeleton_source_outline.py::test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[block]
+FAILED tests/test_skeleton_source_outline.py::test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[unit_order]
+FAILED tests/test_skeleton_source_outline.py::test_tampered_outline_or_parse_blocks_new_adoption_and_preserves_author_revision[missing_heading_level]
+FAILED tests/test_skeleton_source_outline.py::test_unsectioned_prefix_is_explicit_root_and_not_guessed_from_title
+9 failed, 56 passed in 28.14s

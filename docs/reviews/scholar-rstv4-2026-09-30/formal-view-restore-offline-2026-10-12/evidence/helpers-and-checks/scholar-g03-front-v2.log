@@ -1,0 +1,3 @@
+RUN ['node', 'node_modules/typescript/bin/tsc', '--noEmit']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd', '--type-aware', '--deny-warnings', 'app/page.tsx', 'lib/studio-view-state.ts', 'lib/studio-types.ts', 'lib/studio-downloads.ts', 'components/studio-source-context.tsx', 'components/studio-workspace.tsx']
+components/studio-workspace.tsx:2094:84: error jsx-a11y(prefer-tag-over-role): Prefer `output` over `role` attribute `status`. help: Replace HTML elements with `role` attribute `status` to corresponding semantic HTML tag `output`.

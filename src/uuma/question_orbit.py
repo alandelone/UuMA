@@ -350,11 +350,17 @@ class QuestionOrbitService:
 
     def get(self, orbit_id: str) -> dict[str, Any]:
         orbit = self.knowledge._require("question_orbits", orbit_id)
+        with self.store.connect() as conn:
+            cycle_row = conn.execute(
+                "SELECT record_json FROM orbit_cycles WHERE orbit_id = ? "
+                "ORDER BY updated_sequence DESC LIMIT 1", (orbit_id,),
+            ).fetchone()
         return {
             "orbit": orbit,
             "research_run": self.knowledge._require("research_runs", orbit["research_run_id"]),
             "frontier": self.frontier(orbit_id)["records"],
             "budget": self.BUDGETS[orbit["budget_tier"]],
+            "current_cycle": json.loads(cycle_row["record_json"]) if cycle_row else None,
         }
 
     def list(self, status: str | None = None, limit: int = 100) -> dict[str, Any]:
@@ -448,10 +454,25 @@ class QuestionOrbitService:
                 "ACTIVE": {"PAUSED", "COMPLETED", "STOPPED", "BUDGET_EXHAUSTED", "BLOCKED", "FAILED"},
                 "PAUSED": {"QUEUED", "STOPPED"},
                 "BLOCKED": {"QUEUED", "STOPPED"},
+                "FAILED": {"QUEUED", "STOPPED"},
             }
             if status.value not in allowed.get(before["status"], set()):
                 raise ValueError(f"Invalid orbit transition: {before['status']} -> {status.value}")
             now = datetime.now(UTC)
+            if status == OrbitStatus.QUEUED and before["status"] == "PAUSED":
+                rows = conn.execute(
+                    "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? AND status = 'OPEN'",
+                    (orbit_id,),
+                ).fetchall()
+                for row in rows:
+                    frontier_before = json.loads(row["record_json"])
+                    if frontier_before.get("no_source_attempts", 0):
+                        self._update(
+                            conn, "orbit_frontier", frontier_before,
+                            frontier_before | {"no_source_attempts": 0,
+                                               "updated_at": now.isoformat()},
+                            "ORBIT_FRONTIER_RETRY_REQUESTED", actor_id,
+                        )
             if status in {OrbitStatus.PAUSED, OrbitStatus.STOPPED}:
                 cycle_rows = conn.execute(
                     "SELECT record_json FROM orbit_cycles "

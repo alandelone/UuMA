@@ -1,0 +1,9 @@
+Processing c:\users\alandelone\codespace_local\rstv4
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: rstv4
+  Building wheel for rstv4 (pyproject.toml): started
+  Building wheel for rstv4 (pyproject.toml): finished with status 'done'
+  Created wheel for rstv4: filename=rstv4-0.1.0-py3-none-any.whl size=757204 sha256=79ece3956159bfed17c663fb6068e06b8b28e4d64dd4cd12d6b872cbb9e6177e
+  Stored in directory: C:\Users\Alandelone\AppData\Local\Temp\pip-ephem-wheel-cache-l6b7muvb\wheels\57\5b\b7\cdc8935af193549c01f6b49d5e722b77f2010cd2f1e0e0ba84
+Successfully built rstv4

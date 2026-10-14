@@ -1,0 +1,1069 @@
+{
+  "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+  "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+  "version": 5,
+  "content": "# Fixed citation source - software acceptance\n\n## Other software source\n\nG09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted.\n\n### Introduction\n\nBeta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8].\n\nFirst source [@evidence_6b169de2b78d452f919391b00916f2c8]. Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]. Repeat [@evidence_6b169de2b78d452f919391b00916f2c8]. G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.\n\nG09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted.\n\n### Software source section 1\n\nG09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted.\n\n### Software source section 3\n\nG09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.\n\n### Software source section 1\n\nG09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted.\n\n### Software source section 2\n\nG09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted.\n\n### Software source section 3\n\nG09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted.\n\n### New section\n\nG09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted.\n\nG09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted.\n",
+  "input_revision": 62,
+  "structure_mapping_available": true,
+  "blocks": [
+    {
+      "kind": "title",
+      "object_id": "title",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:title",
+      "text": "Fixed citation source - software acceptance",
+      "display_text": "Fixed citation source - software acceptance",
+      "label": "Fixed citation source - software acceptance"
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_869a4f8d019a4f778b69f7adfe2086db",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_869a4f8d019a4f778b69f7adfe2086db",
+      "text": "Other software source",
+      "display_text": "Other software source",
+      "label": "Other software source"
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_529edffdcc9b4266b4920fcb8f6dc48f",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_529edffdcc9b4266b4920fcb8f6dc48f",
+      "text": "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "Other software source / 段落 1",
+      "section_id": "section_869a4f8d019a4f778b69f7adfe2086db",
+      "thought_ids": [
+        "thought_8feab45ae41b428da86ac04323b0fc41"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_949af22a4dd84679ba120bc5a8ed746f",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_949af22a4dd84679ba120bc5a8ed746f",
+      "text": "Introduction",
+      "display_text": "Introduction",
+      "label": "Introduction",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "text": "Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8].",
+      "display_text": "Beta software paragraph cites original page 1 [1] and additional source [2].",
+      "label": "Introduction / 段落 1",
+      "section_id": "section_949af22a4dd84679ba120bc5a8ed746f",
+      "thought_ids": [
+        "thought_009a96629cb14586b44697b3ec73f2bc"
+      ],
+      "formulas": [],
+      "group_id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce"
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_e197b886c810436a823c7171839afac2",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_e197b886c810436a823c7171839afac2",
+      "text": "First source [@evidence_6b169de2b78d452f919391b00916f2c8]. Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]. Repeat [@evidence_6b169de2b78d452f919391b00916f2c8]. G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.",
+      "display_text": "First source [2]. Next [1]. Repeat [2]. G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.",
+      "label": "Introduction / 段落 2",
+      "section_id": "section_949af22a4dd84679ba120bc5a8ed746f",
+      "thought_ids": [
+        "thought_author_1",
+        "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+      ],
+      "formulas": [],
+      "group_id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce"
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_d7c5a071db9f4c2f97b09c88fdd76912",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_d7c5a071db9f4c2f97b09c88fdd76912",
+      "text": "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "Introduction / 段落 3",
+      "section_id": "section_949af22a4dd84679ba120bc5a8ed746f",
+      "thought_ids": [
+        "thought_d9339400f0c34bf3a1e1a5084fca8535"
+      ],
+      "formulas": [],
+      "group_id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce"
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_d1caf2b4f21d4d2e989f1733809f01be",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_d1caf2b4f21d4d2e989f1733809f01be",
+      "text": "Software source section 1",
+      "display_text": "Software source section 1",
+      "label": "Software source section 1",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_2c105662a8c9486887b271348cc73b76",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_2c105662a8c9486887b271348cc73b76",
+      "text": "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "Software source section 1 / 段落 1",
+      "section_id": "section_d1caf2b4f21d4d2e989f1733809f01be",
+      "thought_ids": [
+        "thought_65c89c466a7e4933902c6d99398cf602"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_5bd6e1071e4e45608866aa054e36aab7",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_5bd6e1071e4e45608866aa054e36aab7",
+      "text": "Software source section 3",
+      "display_text": "Software source section 3",
+      "label": "Software source section 3",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_612b0d79cd9e4bcfbb5ecaf7dfec12c4",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_612b0d79cd9e4bcfbb5ecaf7dfec12c4",
+      "text": "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "Software source section 3 / 段落 1",
+      "section_id": "section_5bd6e1071e4e45608866aa054e36aab7",
+      "thought_ids": [
+        "thought_e4206c1b37cc443a8c89978f568d68bc"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_2cd811105b324b33a04670374c0a8f5a",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_2cd811105b324b33a04670374c0a8f5a",
+      "text": "Software source section 1",
+      "display_text": "Software source section 1",
+      "label": "Software source section 1",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_9f410814efd0438d807d125e47dfcf9c",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_9f410814efd0438d807d125e47dfcf9c",
+      "text": "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted.",
+      "display_text": "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted.",
+      "label": "Software source section 1 / 段落 1",
+      "section_id": "section_2cd811105b324b33a04670374c0a8f5a",
+      "thought_ids": [
+        "thought_284f9194e4ad42bc97e74a47b50c0947"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_7b087e9c76354840b87f75595f64a789",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_7b087e9c76354840b87f75595f64a789",
+      "text": "Software source section 2",
+      "display_text": "Software source section 2",
+      "label": "Software source section 2",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_d3fb7e5f34aa46d9aa1b4a0ac756d3ce",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_d3fb7e5f34aa46d9aa1b4a0ac756d3ce",
+      "text": "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "Software source section 2 / 段落 1",
+      "section_id": "section_7b087e9c76354840b87f75595f64a789",
+      "thought_ids": [
+        "thought_6241bba238094788921c63c05ca391bd"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_dc8ab7a6d7114e57bb14e6897a11b56d",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_dc8ab7a6d7114e57bb14e6897a11b56d",
+      "text": "Software source section 3",
+      "display_text": "Software source section 3",
+      "label": "Software source section 3",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_be8877110de546f39c6c7b0d685a53bd",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_be8877110de546f39c6c7b0d685a53bd",
+      "text": "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "Software source section 3 / 段落 1",
+      "section_id": "section_dc8ab7a6d7114e57bb14e6897a11b56d",
+      "thought_ids": [
+        "thought_57dc5c5c3f23424a9c3ef92df6abe94b"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "heading",
+      "object_id": "section_479fdf4da2d64226995ff22eab90178f",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:section_479fdf4da2d64226995ff22eab90178f",
+      "text": "New section",
+      "display_text": "New section",
+      "label": "New section",
+      "heading_level": 3
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_a9859ce2b7204bd0aa5662d42cc59b63",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_a9859ce2b7204bd0aa5662d42cc59b63",
+      "text": "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "display_text": "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "label": "New section / 段落 1",
+      "section_id": "section_479fdf4da2d64226995ff22eab90178f",
+      "thought_ids": [
+        "thought_746d6d977b5d49bc9b1ee07ca0a1c8d1"
+      ],
+      "formulas": []
+    },
+    {
+      "kind": "paragraph",
+      "object_id": "paragraph_a5605d41730d4f99a82fe9acba279770",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_a5605d41730d4f99a82fe9acba279770",
+      "text": "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted.",
+      "display_text": "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted.",
+      "label": "New section / 段落 2",
+      "section_id": "section_479fdf4da2d64226995ff22eab90178f",
+      "thought_ids": [
+        "thought_eec81dfb504c445f85eaddcb74a87c68"
+      ],
+      "formulas": [],
+      "group_id": "paragraph_group_9e395ea0aac94f9abd25663ff7f1f221"
+    }
+  ],
+  "realizations": [
+    {
+      "paragraph_id": "paragraph_529edffdcc9b4266b4920fcb8f6dc48f",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_8feab45ae41b428da86ac04323b0fc41"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_dc91472584a441588e17ce39fd01c41f"
+    },
+    {
+      "paragraph_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_009a96629cb14586b44697b3ec73f2bc"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 158,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8]."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_7f126b3f786a4dd7a1fbd64ed7ddde49"
+    },
+    {
+      "paragraph_id": "paragraph_e197b886c810436a823c7171839afac2",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        },
+        {
+          "sentence": 1,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        },
+        {
+          "sentence": 2,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        },
+        {
+          "sentence": 3,
+          "thought_ids": [
+            "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 58,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "First source [@evidence_6b169de2b78d452f919391b00916f2c8]."
+        },
+        {
+          "end": 109,
+          "offset_unit": "unicode_codepoint",
+          "start": 59,
+          "text": "Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]."
+        },
+        {
+          "end": 162,
+          "offset_unit": "unicode_codepoint",
+          "start": 110,
+          "text": "Repeat [@evidence_6b169de2b78d452f919391b00916f2c8]."
+        },
+        {
+          "end": 270,
+          "offset_unit": "unicode_codepoint",
+          "start": 163,
+          "text": "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_037abea47771455396c116ad4285063d"
+    },
+    {
+      "paragraph_id": "paragraph_d7c5a071db9f4c2f97b09c88fdd76912",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_d9339400f0c34bf3a1e1a5084fca8535"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_624f0e0d73954641a7045022735d5c2a"
+    },
+    {
+      "paragraph_id": "paragraph_2c105662a8c9486887b271348cc73b76",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_65c89c466a7e4933902c6d99398cf602"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_611372fdd7ca49198d9244b3a78457da"
+    },
+    {
+      "paragraph_id": "paragraph_612b0d79cd9e4bcfbb5ecaf7dfec12c4",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_e4206c1b37cc443a8c89978f568d68bc"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_96465c7707b3480c99e01f1ff9158a94"
+    },
+    {
+      "paragraph_id": "paragraph_9f410814efd0438d807d125e47dfcf9c",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_284f9194e4ad42bc97e74a47b50c0947"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 143,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_9b95a5b1fc6d448599029c8759df3afc"
+    },
+    {
+      "paragraph_id": "paragraph_d3fb7e5f34aa46d9aa1b4a0ac756d3ce",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_6241bba238094788921c63c05ca391bd"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_9234ec1407104dd1b4cf0485449d5eb7"
+    },
+    {
+      "paragraph_id": "paragraph_be8877110de546f39c6c7b0d685a53bd",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_57dc5c5c3f23424a9c3ef92df6abe94b"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_a3f8111741ef476c857fd1695f0d98b3"
+    },
+    {
+      "paragraph_id": "paragraph_a9859ce2b7204bd0aa5662d42cc59b63",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_746d6d977b5d49bc9b1ee07ca0a1c8d1"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 128,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_3e79a1f4550d4aa3b1e55abe6c706187"
+    },
+    {
+      "paragraph_id": "paragraph_a5605d41730d4f99a82fe9acba279770",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_eec81dfb504c445f85eaddcb74a87c68"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 140,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_f9b1f26fd75a44189a3cf092dadb3eaa"
+    }
+  ],
+  "references": [
+    {
+      "authors": [
+        "Fixture Author"
+      ],
+      "citation_index": 1,
+      "confidence": 0.8,
+      "content_digest": "ab40e7c12d84550949ae0b056004db888bc7058b97806672b6976f787fa0502b",
+      "created_at": "2026-10-09T10:14:32.100723+00:00",
+      "doi": null,
+      "evidence_id": "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+      "excerpt": "Original software source body 1.",
+      "experiment_run_id": null,
+      "extractor_model": "TEST_FIXTURE_SOURCE",
+      "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+      "landing_url": null,
+      "location": {
+        "page": 1,
+        "section": "Software source section 1",
+        "sequence": 0,
+        "skeleton_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "unit_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+        "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+      },
+      "paper_id": "existing",
+      "paper_version_id": null,
+      "pdf_url": null,
+      "prompt_version": "1",
+      "published_year": 2026,
+      "reference_snapshot_source": "generation_input",
+      "relation": "SUPPORTS",
+      "scope_kind": "TRACK",
+      "source_context": {
+        "available": true,
+        "content_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+        "context_sha256": "39c72a32140b85f56290231cf016b22713be1e3bb93a068b84f1f5017470e27e",
+        "file_version": {
+          "file_version_id": "existing-file",
+          "mime_type": "application/pdf",
+          "paper_id": "existing",
+          "sha256": "c74a420d8072b452157bc9891e02f23ff0f98b9f8f09e6aac7d67c0c2c4107bb",
+          "size_bytes": 1586
+        },
+        "file_version_id": "existing-file",
+        "full_text_available": true,
+        "full_text_reason": null,
+        "paper_id": "existing",
+        "paper_version": 1,
+        "paper_version_id": "paper_version_3183ca0311a8c0db58d34c4b6bae3f36",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "parsed_blocks": [
+          {
+            "block_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+            "block_type": "HEADING",
+            "content_digest": "52227d912f694114c6809c243ce385aafc5f1259f7ee74e79e0aa6714c6d1fc6",
+            "location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 1,
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "section": "Software source section 1",
+            "sequence": 0,
+            "text": "Software source section 1"
+          },
+          {
+            "block_id": "block_6d9ebf9766974ccea19582b64e424666",
+            "block_type": "TEXT",
+            "content_digest": "20a4b5e659f09feed966e96fb9d2873702bf54891ad42731d21236b4867ea52d",
+            "location": {
+              "bbox": [
+                72,
+                120,
+                420,
+                140
+              ]
+            },
+            "page_number": 1,
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "section": "Software source section 1",
+            "sequence": 1,
+            "text": "Original software source body 1."
+          },
+          {
+            "block_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+            "block_type": "HEADING",
+            "content_digest": "b64a2f1fab2c50981bab8a9ae922f5080af33ffece7a8c9cf5bae2df6e10e9e8",
+            "location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 2,
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "section": "Software source section 2",
+            "sequence": 2,
+            "text": "Software source section 2"
+          },
+          {
+            "block_id": "block_05581081eefc44e6c94cf94974dbc25d",
+            "block_type": "TEXT",
+            "content_digest": "65de7187c79171e9918973670febfcea37d352cdade6a5f4ba2ba06f062258d7",
+            "location": {
+              "bbox": [
+                72,
+                120,
+                420,
+                140
+              ]
+            },
+            "page_number": 2,
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "section": "Software source section 2",
+            "sequence": 3,
+            "text": "Original software source body 2."
+          },
+          {
+            "block_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+            "block_type": "HEADING",
+            "content_digest": "c26c4495847c4c8d04ae76be217c4f554d7e27f3b05d6fb2910d3b6c797203a1",
+            "location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 3,
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "section": "Software source section 3",
+            "sequence": 4,
+            "text": "Software source section 3"
+          },
+          {
+            "block_id": "block_8cb84be18a9fc40ade8cc1a8ff546041",
+            "block_type": "TEXT",
+            "content_digest": "3207ebcc6cf1d1f3af7d448959515536ed662b2d2dba09bb8fc8dcad2bef8645",
+            "location": {
+              "bbox": [
+                72,
+                120,
+                420,
+                140
+              ]
+            },
+            "page_number": 3,
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "section": "Software source section 3",
+            "sequence": 5,
+            "text": "Original software source body 3."
+          }
+        ],
+        "parsed_digest": "c89c3ab2ed0f7bdd73e9c4900e5ddf7f537b9980efa24a91f70357544abb612d",
+        "pdf_digest": "c74a420d8072b452157bc9891e02f23ff0f98b9f8f09e6aac7d67c0c2c4107bb",
+        "schema_version": 1,
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "source_outline": {
+          "file_version_id": "existing-file",
+          "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+          "schema_version": 1,
+          "sections": [
+            {
+              "depth": 0,
+              "heading_content_digest": "52227d912f694114c6809c243ce385aafc5f1259f7ee74e79e0aa6714c6d1fc6",
+              "heading_location": {
+                "bbox": [
+                  72,
+                  90,
+                  420,
+                  110
+                ],
+                "heading_level": 1
+              },
+              "page_number": 1,
+              "parent_source_section_id": null,
+              "source_path": [
+                "Software source section 1"
+              ],
+              "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+              "title": "Software source section 1"
+            },
+            {
+              "depth": 0,
+              "heading_content_digest": "b64a2f1fab2c50981bab8a9ae922f5080af33ffece7a8c9cf5bae2df6e10e9e8",
+              "heading_location": {
+                "bbox": [
+                  72,
+                  90,
+                  420,
+                  110
+                ],
+                "heading_level": 1
+              },
+              "page_number": 2,
+              "parent_source_section_id": null,
+              "source_path": [
+                "Software source section 2"
+              ],
+              "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+              "title": "Software source section 2"
+            },
+            {
+              "depth": 0,
+              "heading_content_digest": "c26c4495847c4c8d04ae76be217c4f554d7e27f3b05d6fb2910d3b6c797203a1",
+              "heading_location": {
+                "bbox": [
+                  72,
+                  90,
+                  420,
+                  110
+                ],
+                "heading_level": 1
+              },
+              "page_number": 3,
+              "parent_source_section_id": null,
+              "source_path": [
+                "Software source section 3"
+              ],
+              "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+              "title": "Software source section 3"
+            }
+          ],
+          "unit_assignments": [
+            {
+              "block_content_digest": "20a4b5e659f09feed966e96fb9d2873702bf54891ad42731d21236b4867ea52d",
+              "block_id": "block_6d9ebf9766974ccea19582b64e424666",
+              "seq_idx": 0,
+              "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0"
+            },
+            {
+              "block_content_digest": "65de7187c79171e9918973670febfcea37d352cdade6a5f4ba2ba06f062258d7",
+              "block_id": "block_05581081eefc44e6c94cf94974dbc25d",
+              "seq_idx": 1,
+              "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20"
+            },
+            {
+              "block_content_digest": "3207ebcc6cf1d1f3af7d448959515536ed662b2d2dba09bb8fc8dcad2bef8645",
+              "block_id": "block_8cb84be18a9fc40ade8cc1a8ff546041",
+              "seq_idx": 2,
+              "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0"
+            }
+          ]
+        },
+        "unit": {
+          "content_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+          "layer1": {
+            "triplets": []
+          },
+          "layer2": {},
+          "layer3": {
+            "intent": "Software_Test"
+          },
+          "layer4": "Software_Test",
+          "page_idx": 1,
+          "raw_text": "Original software source body 1.",
+          "section": "Software source section 1",
+          "seq_idx": 0,
+          "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+          "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+        },
+        "units": [
+          {
+            "content_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+            "layer1": {
+              "triplets": []
+            },
+            "layer2": {},
+            "layer3": {
+              "intent": "Software_Test"
+            },
+            "layer4": "Software_Test",
+            "page_idx": 1,
+            "raw_text": "Original software source body 1.",
+            "section": "Software source section 1",
+            "seq_idx": 0,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+          },
+          {
+            "content_digest": "e0bac981d5b60cfabde835eb17e8a43ed5122a04e25d5b3930e11169b2650df5",
+            "layer1": {
+              "triplets": []
+            },
+            "layer2": {},
+            "layer3": {
+              "intent": "Software_Test"
+            },
+            "layer4": "Software_Test",
+            "page_idx": 2,
+            "raw_text": "Original software source body 2.",
+            "section": "Software source section 2",
+            "seq_idx": 1,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+          },
+          {
+            "content_digest": "1152bfaccf9640e19582e0ac5fb1fa231b30dab1c942cf8328dc4f8379105333",
+            "layer1": {
+              "triplets": []
+            },
+            "layer2": {},
+            "layer3": {
+              "intent": "Software_Test"
+            },
+            "layer4": "Software_Test",
+            "page_idx": 3,
+            "raw_text": "Original software source body 3.",
+            "section": "Software source section 3",
+            "seq_idx": 2,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+          }
+        ],
+        "version": 1
+      },
+      "source_snapshot_available": true,
+      "statement": "Original software source body 1.",
+      "title": "Refreshed live catalog title - software",
+      "track_id": "track_8fc0672591694b79bb747470d402772d"
+    },
+    {
+      "authors": [
+        "Fixture Author"
+      ],
+      "citation_index": 2,
+      "confidence": 0.9,
+      "content_digest": "795f31789f6c1f5700c4f0842cc1ee1a8728e218084f19b8df1e5aaf3b397c71",
+      "created_at": "2026-10-09T10:42:34.310867+00:00",
+      "doi": "10.1234/other",
+      "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+      "excerpt": "New original software source body.",
+      "experiment_run_id": null,
+      "extractor_model": "TEST_FIXTURE_SOURCE_NATIVE",
+      "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+      "landing_url": null,
+      "location": {
+        "page": 1,
+        "section": "Other software source",
+        "sequence": 0,
+        "skeleton_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+        "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+        "unit_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450",
+        "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+      },
+      "paper_id": "other",
+      "paper_version_id": null,
+      "pdf_url": null,
+      "prompt_version": "1",
+      "published_year": 2026,
+      "reference_snapshot_source": "generation_input",
+      "relation": "SUPPORTS",
+      "scope_kind": "TRACK",
+      "source_context": {
+        "available": true,
+        "content_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+        "context_sha256": "a81c38d1c21a5e3cdb5d93e9eb065c1462968bf47d8132e3a82ebe9d08f49f2a",
+        "file_version": {
+          "file_version_id": "software-native-other-file",
+          "mime_type": "application/pdf",
+          "paper_id": "other",
+          "sha256": "d7fe4a2e21964adb7b9d685cc9c0dc639239b686894978b552c2397be638f7e9",
+          "size_bytes": 731
+        },
+        "file_version_id": "software-native-other-file",
+        "full_text_available": true,
+        "full_text_reason": null,
+        "paper_id": "other",
+        "paper_version": 1,
+        "paper_version_id": "paper_version_db977494b25f25023cb1c71b98ae7814",
+        "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+        "parsed_blocks": [
+          {
+            "block_id": "block_48471b35baf012c4343ebf7094b5708e",
+            "block_type": "TEXT",
+            "content_digest": "6101be811f067e87b87315caa2e9edffb7c745d643de3ec1ec8ea14ed73dfcfa",
+            "location": {
+              "bbox": [
+                72,
+                120,
+                420,
+                140
+              ]
+            },
+            "page_number": 1,
+            "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+            "section": "Other software source",
+            "sequence": 0,
+            "text": "New original software source body."
+          }
+        ],
+        "parsed_digest": "d5df6e8dfff67e808c00be3a8084b8daac70cdf3280771eb6a2b95d1fda76f10",
+        "pdf_digest": "d7fe4a2e21964adb7b9d685cc9c0dc639239b686894978b552c2397be638f7e9",
+        "schema_version": 1,
+        "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+        "unit": {
+          "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450",
+          "layer1": {
+            "triplets": []
+          },
+          "layer2": {},
+          "layer3": {
+            "intent": "Software_Test"
+          },
+          "layer4": "Software_Test",
+          "page_idx": 1,
+          "raw_text": "New original software source body.",
+          "section": "Other software source",
+          "seq_idx": 0,
+          "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+          "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+        },
+        "units": [
+          {
+            "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450",
+            "layer1": {
+              "triplets": []
+            },
+            "layer2": {},
+            "layer3": {
+              "intent": "Software_Test"
+            },
+            "layer4": "Software_Test",
+            "page_idx": 1,
+            "raw_text": "New original software source body.",
+            "section": "Other software source",
+            "seq_idx": 0,
+            "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+            "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+          }
+        ],
+        "version": 1
+      },
+      "source_snapshot_available": true,
+      "statement": "New original software source body.",
+      "title": "Other selected source",
+      "track_id": "track_8fc0672591694b79bb747470d402772d"
+    }
+  ],
+  "citation_style": "numeric_first_use",
+  "artifacts": [
+    {
+      "artifact_id": "artifact_f3abca7bf9254db28445818cfb5816c9",
+      "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 62,
+      "artifact_kind": "MARKDOWN",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.md",
+      "sha256": "5380a3f1f65aa6d5405c63b729bf9893b279423e7a9a9e60f69c58f184a25534",
+      "size_bytes": 1930,
+      "created_at": "2026-10-13T04:55:04.494031+00:00"
+    },
+    {
+      "artifact_id": "artifact_d56ccca8e4c243179e25da7e884abfcc",
+      "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 62,
+      "artifact_kind": "GENERATED_JSON",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\generated.json",
+      "sha256": "3ed11e3d8c02ab5c93056e307863616e08af8e167c7f414687f15afbb038b433",
+      "size_bytes": 23567,
+      "created_at": "2026-10-13T04:55:04.498038+00:00"
+    },
+    {
+      "artifact_id": "artifact_23999011d53c4a8a9dd92f3d744e147b",
+      "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 62,
+      "artifact_kind": "TEX",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.tex",
+      "sha256": "362e332ce7710f74d812c8509017431965686d808cb46492758da20a02481fdd",
+      "size_bytes": 2320,
+      "created_at": "2026-10-13T04:55:04.498038+00:00"
+    },
+    {
+      "artifact_id": "artifact_2e2aedfcd2f7498aa50b820e242b5b84",
+      "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 62,
+      "artifact_kind": "BIB",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\references.bib",
+      "sha256": "f524812653e997389a89270353f276fc2f096696db5d2beccf447dc043336edb",
+      "size_bytes": 324,
+      "created_at": "2026-10-13T04:55:04.498038+00:00"
+    },
+    {
+      "artifact_id": "artifact_aa2b869969bd4edc93242cedbae5fe2d",
+      "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 62,
+      "artifact_kind": "PDF",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.pdf",
+      "sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+      "size_bytes": 13830,
+      "created_at": "2026-10-13T04:55:04.498038+00:00"
+    }
+  ]
+}

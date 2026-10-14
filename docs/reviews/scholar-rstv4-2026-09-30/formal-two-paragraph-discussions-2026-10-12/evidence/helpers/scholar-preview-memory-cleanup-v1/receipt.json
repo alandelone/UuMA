@@ -1,0 +1,118 @@
+{
+  "status": "PASS_OWNED_IDLE_PREVIEWS_STOPPED",
+  "stopped_or_parent_exited_process_ids": [
+    34824,
+    39364,
+    41200,
+    46628,
+    57404,
+    59032,
+    65924,
+    83600,
+    84508,
+    85088,
+    88324,
+    90836,
+    93868,
+    96084,
+    97464,
+    98300,
+    100000
+  ],
+  "stop_actions": [
+    {
+      "pid": 59032,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 88324,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 90836,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 39364,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 46628,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 34824,
+      "state": "STOPPED_VERIFIED_IDENTITY"
+    },
+    {
+      "pid": 85088,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 41200,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 93868,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 96084,
+      "state": "STOPPED_VERIFIED_IDENTITY"
+    },
+    {
+      "pid": 98300,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 84508,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 97464,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 65924,
+      "state": "STOPPED_VERIFIED_IDENTITY"
+    },
+    {
+      "pid": 83600,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 57404,
+      "state": "ALREADY_EXITED"
+    },
+    {
+      "pid": 100000,
+      "state": "ALREADY_EXITED"
+    }
+  ],
+  "stopped_node_count": 9,
+  "closed_preview_ports": [
+    3000,
+    3004,
+    3005,
+    3006,
+    3007
+  ],
+  "removed_process_working_set_bytes_at_initial_inventory": 488730624,
+  "removed_node_working_set_bytes_at_initial_inventory": 438202368,
+  "remaining_node_count": 38,
+  "current3008_8881_and_material8880_same_identity": true,
+  "current_native109tables_exact": true,
+  "old_native_database_bytes_exact": true,
+  "retained_database_sha256": {
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\fieldkg-software-source-v1.db": "96fd1b07677c605961e853f7eaf5ddea8d0e70c87d3050cbf6e08c80e1f7cfc1",
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h\\data\\catalog.db": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-source-hierarchy-native-vrh2ab3g\\template-software-fixture-v1.db": "4b7400618e781f7e7ac3fff9ada22a91533be3d57a6bf2d5f96e6d0d84693f8a",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-source-hierarchy-native-vrh2ab3g\\data\\catalog.db": "36ed83a0bfc4ab29bde00c78d2492dba720d4c8362525b6e68b4b6d404395179",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-correspondence-native-u49yxqpe\\template-software-fixture-v1.db": "4b7400618e781f7e7ac3fff9ada22a91533be3d57a6bf2d5f96e6d0d84693f8a",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-correspondence-native-u49yxqpe\\data\\catalog.db": "d9fb5dc792d62ae433608acdfe41b36dba5efc5f9d69401fdd4f5b40821e1dbc",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\template-software-fixture-v1.db": "4b7400618e781f7e7ac3fff9ada22a91533be3d57a6bf2d5f96e6d0d84693f8a",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\catalog.db": "1540befe83e660f264590d7db2ee1b2b484b9656c3c51b5085d7b0e85a366c6d"
+  },
+  "no_files_or_directories_deleted": true,
+  "all_other_before_node_processes_preserved": true
+}

@@ -1,0 +1,28 @@
+{
+  "AGENTS.md": {
+    "sha256": "8192352fd8def00c32806198efb62ebcd0a9bc5901917cc88da6709e2ad3d91a",
+    "logical_chars": 3093
+  },
+  "mission_status.json": {
+    "sha256": "59236a9cf52d80205e620cc971befdd1d974224e62718d8c20a9215a6ec5ea3e",
+    "logical_chars": 465
+  },
+  "active-session/HANDOFF.md": {
+    "sha256": "1d3c8b245e5721c835be7c12ef4749b744cdfe33bc8f96d5fe30bead2329c0c3",
+    "logical_chars": 718672
+  },
+  "stage-gates/04-verification-report.md": {
+    "sha256": "394f86892f07b89ccac55657a50f7b5bacd968655c06d12badfe89873acf4801",
+    "logical_chars": 121899
+  },
+  "rules/session-lifecycle.md": {
+    "sha256": "929763957b34c5f41f9f03f651e45b99dea5068f95ce45be7c5366dd93f65978",
+    "logical_chars": 3011
+  },
+  "previous_goal_turn": "PROGRESS",
+  "current401_source_files_exact": true,
+  "original_requirement_count": 118,
+  "original_group_count": 11,
+  "goal_still_incomplete": true,
+  "recorded_failed_real_native_reply_preserved": true
+}

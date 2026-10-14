@@ -1,0 +1,39 @@
+['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/fieldkg_semantics.py', 'src/rstv4/catalog_web.py', 'src/rstv4/research_context.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/research_views.py', 'tests/test_fieldkg_semantics.py']
+All checks passed!
+['node', '--check', 'src/rstv4/catalog_research_workspaces.js']
+['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'pytest', '-q', 'tests/test_fieldkg_semantics.py', 'tests/test_fieldkg_workspace.py', 'tests/test_track_scientific_workspace.py', 'tests/test_research_discussions.py', 'tests/test_skeleton_intent.py']
+........................................................................ [ 90%]
+........                                                                 [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+80 passed, 1 warning in 35.09s
+['node', 'tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS unclassified source Intent is shown as incomplete rather than empty success
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+PASS historical unit location focuses the exact source and rejects a different owner
+PASS concept and relationship locations preserve the real case sensitive graph keys
+PASS a frozen source cannot be highlighted in a different Living or Snapshot view
+PASS all semantic types have actual graph objects and separate category lists
+PASS semantic object source detail preserves exact quote, conditions, versions and model
+PASS semantic review uses its scoped endpoint and exact uncertain original request
+PASS semantic extraction confirmation retains exact Build and original request
+PASS late semantic continuation does not switch a newly selected work surface
+PASS frozen semantic graph uses only its captured source interpretations
+24 controlled workspace scenarios passed

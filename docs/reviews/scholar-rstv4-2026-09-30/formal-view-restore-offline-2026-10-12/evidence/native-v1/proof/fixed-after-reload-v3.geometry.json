@@ -1,0 +1,17 @@
+{
+  "artifactLinks": [
+    "/api/studio-files/artifacts/artifact_d1328b33a4154d3986cbd5be8b0f02f2",
+    "/api/studio-files/artifacts/artifact_7b0c5b8e344c427fb79a5de7ae07b2ef",
+    "/api/studio-files/artifacts/artifact_13c3e127a6924a148b803b3f599d449d",
+    "/api/studio-files/artifacts/artifact_72be87fbf6b04759ab5431968eb4e0d1",
+    "/api/studio-files/artifacts/artifact_4012958fd937410ea0620eca7bd11c73"
+  ],
+  "canvasScroll": 0,
+  "pageHeight": 1779,
+  "pageScrollY": 750,
+  "selectedAnchors": [
+    "manuscript_version_7c2addf4da0f48948f8444b623cbe42e:paragraph_e197b886c810436a823c7171839afac2"
+  ],
+  "url": "http://127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=0&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D&object=manuscript_version_7c2addf4da0f48948f8444b623cbe42e%3Aparagraph_e197b886c810436a823c7171839afac2&reading_version=manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+  "viewportHeight": 807
+}

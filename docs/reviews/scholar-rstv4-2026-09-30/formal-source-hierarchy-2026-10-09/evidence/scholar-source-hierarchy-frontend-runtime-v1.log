@@ -1,0 +1,8 @@
+
+> pepper-writing-studio@0.1.0 start
+> vinext start --port 3005 --hostname 127.0.0.1
+
+
+  vinext start  (port 3005)
+
+[vinext] Production server running at http://127.0.0.1:3005

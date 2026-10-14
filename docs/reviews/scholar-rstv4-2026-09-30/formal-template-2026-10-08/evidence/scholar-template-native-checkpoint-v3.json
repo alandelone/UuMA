@@ -1,0 +1,558 @@
+{
+  "status": "PASS_EXACT_8_NATIVE_SCOPE_MODE_CASES_AND_PRODUCTION_REPLACEMENT",
+  "revision": 27,
+  "exact_initial_document_restored": true,
+  "actual_chain": [
+    {
+      "base_revision": 9,
+      "resulting_revision": 10,
+      "operation_id": "template_1475d05b54094509b5ef69d30ec652c9",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_22952d69f0044535a4930d2528880d4f",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 10,
+      "resulting_revision": 11,
+      "operation_id": "operation_0836e4573fe0471ab82e81486146efdf",
+      "kind": "UNDO",
+      "change_id": "change_cefce4b9739a4c0c9afb577f216fc241",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 11,
+      "resulting_revision": 12,
+      "operation_id": "template_3af699266b9d48ea90d81be48759b03e",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_4f5c2e7a1ea8499fbee5a97778224c4c",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 12,
+      "resulting_revision": 13,
+      "operation_id": "operation_a1457d1517554b8aa9f1889c70769a14",
+      "kind": "UNDO",
+      "change_id": "change_28bf28cddb22402aaede6f47e7c7701b",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 13,
+      "resulting_revision": 14,
+      "operation_id": "template_7f62026b330c406091c05b9d09fa8aee",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_e83b1c57c9604fca9342e8e596e68cbb",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 14,
+      "resulting_revision": 15,
+      "operation_id": "operation_73e83c07dd1f4a16962b71a60b7985cb",
+      "kind": "UNDO",
+      "change_id": "change_f592e0a1ce9144589d0a7386db25b6ed",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 15,
+      "resulting_revision": 16,
+      "operation_id": "template_95f9bb99a2ff4d599d4c45849a123e69",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_b202c5a4a47f40939f14df8ff895ba09",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 16,
+      "resulting_revision": 17,
+      "operation_id": "operation_5143ee347e5b43a3b86560b22ae4ca78",
+      "kind": "UNDO",
+      "change_id": "change_f26ced9c7c0242baacbbed0770d3653a",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 17,
+      "resulting_revision": 18,
+      "operation_id": "template_9bc07f36854a4a9a95678db0faa38f6d",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_25e861a64ae9468ca72b6a0715547fb5",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 18,
+      "resulting_revision": 19,
+      "operation_id": "operation_ff7a3893779042bfb8ceacc5744a477f",
+      "kind": "UNDO",
+      "change_id": "change_f86c87aff98f4bba85d81a502834f0e4",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 19,
+      "resulting_revision": 20,
+      "operation_id": "template_fbdb14703e854dbe9c68100d78bb6479",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_8a40ce473b8d4ed5a39645f07fe7943e",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 20,
+      "resulting_revision": 21,
+      "operation_id": "operation_3093c7a925cf4dfab74826ae84c09d6f",
+      "kind": "UNDO",
+      "change_id": "change_1b7433c577b6466f9b39e1c537b9ddba",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 21,
+      "resulting_revision": 22,
+      "operation_id": "template_74cbdecb6aef40b7ba43f8ac0f4c090f",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_89124b01f64e4a6e8bce5f0ec9f22942",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 22,
+      "resulting_revision": 23,
+      "operation_id": "operation_295cfb32cfb24a59859c90ab322dd157",
+      "kind": "UNDO",
+      "change_id": "change_b3fc27807c804bcab9552fb71e1c3c27",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 23,
+      "resulting_revision": 24,
+      "operation_id": "template_5f495cededb44dd7827e005c8d177f0d",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_b7b48f53e69a4fb49162bb011966f8e4",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 24,
+      "resulting_revision": 25,
+      "operation_id": "operation_99ba907f77bb4bc4b04156d44f07e1bf",
+      "kind": "UNDO",
+      "change_id": "change_66fc710be43a45c7bf9b62ccbd1aa327",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    },
+    {
+      "base_revision": 25,
+      "resulting_revision": 26,
+      "operation_id": "template_bae5cca20a78445996772a5a78768fc2",
+      "kind": "ADOPT_TEMPLATE",
+      "change_id": "change_1c4afb2cb480443b8945f04f5676cd86",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": false
+    },
+    {
+      "base_revision": 26,
+      "resulting_revision": 27,
+      "operation_id": "operation_9fa3d19df37a467bbd9bca139c077091",
+      "kind": "UNDO",
+      "change_id": "change_e25513cb62ec4b4d832c3d096452f60f",
+      "exact_author_thoughts_citations_assets_formulas": true,
+      "compensating": true
+    }
+  ],
+  "requests": [
+    {
+      "base_revision": 1,
+      "comment_ids": [],
+      "mode": "INSERT",
+      "operation_id": "template_9d0708e862ee435eaf79499901c04889",
+      "replace_confirmed": false,
+      "scope_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "scope_type": "paper",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 3,
+      "comment_ids": [],
+      "mode": "REPLACE",
+      "operation_id": "template_e7f69182858c4fc992af4a4a7273394c",
+      "replace_confirmed": true,
+      "scope_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "scope_type": "paper",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 7,
+      "comment_ids": [],
+      "mode": "INSERT",
+      "operation_id": "template_54a9f8009998449f84d98ec6c86b4c9b",
+      "replace_confirmed": false,
+      "scope_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "scope_type": "paper",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 9,
+      "comment_ids": [],
+      "mode": "INSERT",
+      "operation_id": "template_1475d05b54094509b5ef69d30ec652c9",
+      "replace_confirmed": false,
+      "scope_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "scope_type": "paper",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 11,
+      "comment_ids": [],
+      "mode": "REPLACE",
+      "operation_id": "template_3af699266b9d48ea90d81be48759b03e",
+      "replace_confirmed": true,
+      "scope_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "scope_type": "paper",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 13,
+      "comment_ids": [],
+      "mode": "INSERT",
+      "operation_id": "template_7f62026b330c406091c05b9d09fa8aee",
+      "replace_confirmed": false,
+      "scope_id": "section_aeb09e1a56a64d07b9a5107aec548679",
+      "scope_type": "section",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 15,
+      "comment_ids": [],
+      "mode": "REPLACE",
+      "operation_id": "template_95f9bb99a2ff4d599d4c45849a123e69",
+      "replace_confirmed": true,
+      "scope_id": "section_aeb09e1a56a64d07b9a5107aec548679",
+      "scope_type": "section",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 17,
+      "comment_ids": [],
+      "mode": "INSERT",
+      "operation_id": "template_9bc07f36854a4a9a95678db0faa38f6d",
+      "replace_confirmed": false,
+      "scope_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+      "scope_type": "paragraph",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 19,
+      "comment_ids": [],
+      "mode": "REPLACE",
+      "operation_id": "template_fbdb14703e854dbe9c68100d78bb6479",
+      "replace_confirmed": true,
+      "scope_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+      "scope_type": "paragraph",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 21,
+      "comment_ids": [],
+      "mode": "INSERT",
+      "operation_id": "template_74cbdecb6aef40b7ba43f8ac0f4c090f",
+      "replace_confirmed": false,
+      "scope_id": "intent_10f7af5816f24150abedaee49fd78843",
+      "scope_type": "intent",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 23,
+      "comment_ids": [],
+      "mode": "REPLACE",
+      "operation_id": "template_5f495cededb44dd7827e005c8d177f0d",
+      "replace_confirmed": true,
+      "scope_id": "intent_10f7af5816f24150abedaee49fd78843",
+      "scope_type": "intent",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09",
+        "unit_b5a152c2527c0b924ec6b1e4c662af9f",
+        "unit_01c79df01e47e65eeb68a0aff1c4a359"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    },
+    {
+      "base_revision": 25,
+      "comment_ids": [],
+      "mode": "REPLACE",
+      "operation_id": "template_bae5cca20a78445996772a5a78768fc2",
+      "replace_confirmed": true,
+      "scope_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+      "scope_type": "paragraph",
+      "selected_unit_ids": [
+        "unit_1393ca80ec63a7c600dc3e676b18dd09"
+      ],
+      "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+    }
+  ],
+  "template_instances": 12,
+  "native_cases": 8,
+  "production_cases": 1,
+  "post_undo_http_replay": {
+    "document_revision": 27,
+    "document": {
+      "abstract": "",
+      "manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "schema_version": 1,
+      "sections": [
+        {
+          "block_order": [
+            "paragraph_group_7878379a2c7640cdb4c746172d425c4a"
+          ],
+          "id": "section_aeb09e1a56a64d07b9a5107aec548679",
+          "paragraph_groups": [
+            {
+              "id": "paragraph_group_7878379a2c7640cdb4c746172d425c4a",
+              "label": "Original author group",
+              "paragraph_ids": [
+                "paragraph_1822a4ff57c14641a5debb8644f9b302",
+                "paragraph_8f4c22abeb274217bed9f370862b28c5"
+              ]
+            }
+          ],
+          "paragraphs": [
+            {
+              "asset_ids": [
+                "asset_b4b2ed991eba4b0a958a7923fa8f368f"
+              ],
+              "formulas": [
+                {
+                  "caption": "Original author formula",
+                  "id": "formula_9f604d90e0f94946ae87b9c945991794",
+                  "latex": "x=1"
+                }
+              ],
+              "id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+              "intents": [
+                {
+                  "id": "intent_10f7af5816f24150abedaee49fd78843",
+                  "label": "Author intent",
+                  "thoughts": [
+                    {
+                      "citation_mode": "SELECTED",
+                      "citations": [
+                        {
+                          "evidence_id": "evidence_70cb4a2d578d4ba29c09b43012e93535",
+                          "selected": true
+                        }
+                      ],
+                      "id": "thought_31ab9ef212ef4af98cd48b0192905038",
+                      "text": "AUTHOR software thought Ω retains its exact wording and selected citation."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "Original custom organization",
+              "purpose": "Original author purpose"
+            },
+            {
+              "asset_ids": [
+                "asset_b4b2ed991eba4b0a958a7923fa8f368f"
+              ],
+              "formulas": [
+                {
+                  "caption": "Original author formula",
+                  "id": "formula_3b0b93a2cece4514b1f8bde6f3c31d1e",
+                  "latex": "x=1"
+                }
+              ],
+              "id": "paragraph_8f4c22abeb274217bed9f370862b28c5",
+              "intents": [
+                {
+                  "id": "intent_d3ffabdc712e44db8021e0dc1bf6db39",
+                  "label": "Author intent",
+                  "thoughts": [
+                    {
+                      "citation_mode": "SELECTED",
+                      "citations": [
+                        {
+                          "evidence_id": "evidence_70cb4a2d578d4ba29c09b43012e93535",
+                          "selected": true
+                        }
+                      ],
+                      "id": "thought_83e4debc24ae4b2987e58738b59b2365",
+                      "text": "AUTHOR second software thought stays separate."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "Original custom organization",
+              "purpose": "Original author purpose"
+            }
+          ],
+          "role": "Motivation",
+          "title": "Introduction"
+        }
+      ],
+      "title": "Template native acceptance — software fixture",
+      "venue": ""
+    },
+    "operation": {
+      "operation_id": "template_bae5cca20a78445996772a5a78768fc2",
+      "manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "base_revision": 25,
+      "resulting_revision": 26,
+      "operation_kind": "ADOPT_TEMPLATE",
+      "payload_json": "{\"comment_ids\":[],\"document\":{\"abstract\":\"\",\"manuscript_id\":\"manuscript_c9bd5a665e5143eebb0ac01fbd36f74f\",\"schema_version\":1,\"sections\":[{\"block_order\":[\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\"],\"id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"paragraph_groups\":[{\"id\":\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\",\"label\":\"Original author group\",\"paragraph_ids\":[\"paragraph_93a7a4fad7914cd886e33e9f0a73cd5d\",\"paragraph_8f4c22abeb274217bed9f370862b28c5\"]}],\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_93a7a4fad7914cd886e33e9f0a73cd5d\",\"intents\":[{\"id\":\"intent_d0ec39375d5f440ebd756b13232a302d\",\"label\":\"Research_Context\",\"thoughts\":[]}],\"logic\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"logical_relation\":\"Context\",\"paradigm\":\"\",\"purpose\":\"\",\"template_source\":{\"skeleton_id\":\"skeleton_ed31db92a461c9df4ca56415cb0b70b1\",\"source_sha256\":\"f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e\",\"unit_id\":\"unit_1393ca80ec63a7c600dc3e676b18dd09\"}},{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_3b0b93a2cece4514b1f8bde6f3c31d1e\",\"latex\":\"x=1\"}],\"id\":\"paragraph_8f4c22abeb274217bed9f370862b28c5\",\"intents\":[{\"id\":\"intent_d3ffabdc712e44db8021e0dc1bf6db39\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_83e4debc24ae4b2987e58738b59b2365\",\"text\":\"AUTHOR second software thought stays separate.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"},{\"id\":\"section_efe7608dde774cceaa43d0a9b31406f0\",\"paragraphs\":[{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_9f604d90e0f94946ae87b9c945991794\",\"latex\":\"x=1\"}],\"id\":\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"intents\":[{\"id\":\"intent_10f7af5816f24150abedaee49fd78843\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_31ab9ef212ef4af98cd48b0192905038\",\"text\":\"AUTHOR software thought Ω retains its exact wording and selected citation.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"}],\"placement_status\":\"UNPLACED\",\"role\":\"\",\"title\":\"待安置的原内容\"}],\"title\":\"Template native acceptance — software fixture\",\"venue\":\"\"}}",
+      "inverse_json": "{\"document\":{\"abstract\":\"\",\"manuscript_id\":\"manuscript_c9bd5a665e5143eebb0ac01fbd36f74f\",\"schema_version\":1,\"sections\":[{\"block_order\":[\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\"],\"id\":\"section_aeb09e1a56a64d07b9a5107aec548679\",\"paragraph_groups\":[{\"id\":\"paragraph_group_7878379a2c7640cdb4c746172d425c4a\",\"label\":\"Original author group\",\"paragraph_ids\":[\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"paragraph_8f4c22abeb274217bed9f370862b28c5\"]}],\"paragraphs\":[{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_9f604d90e0f94946ae87b9c945991794\",\"latex\":\"x=1\"}],\"id\":\"paragraph_1822a4ff57c14641a5debb8644f9b302\",\"intents\":[{\"id\":\"intent_10f7af5816f24150abedaee49fd78843\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_31ab9ef212ef4af98cd48b0192905038\",\"text\":\"AUTHOR software thought Ω retains its exact wording and selected citation.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"},{\"asset_ids\":[\"asset_b4b2ed991eba4b0a958a7923fa8f368f\"],\"formulas\":[{\"caption\":\"Original author formula\",\"id\":\"formula_3b0b93a2cece4514b1f8bde6f3c31d1e\",\"latex\":\"x=1\"}],\"id\":\"paragraph_8f4c22abeb274217bed9f370862b28c5\",\"intents\":[{\"id\":\"intent_d3ffabdc712e44db8021e0dc1bf6db39\",\"label\":\"Author intent\",\"thoughts\":[{\"citation_mode\":\"SELECTED\",\"citations\":[{\"evidence_id\":\"evidence_70cb4a2d578d4ba29c09b43012e93535\",\"selected\":true}],\"id\":\"thought_83e4debc24ae4b2987e58738b59b2365\",\"text\":\"AUTHOR second software thought stays separate.\"}]}],\"paradigm\":\"Original custom organization\",\"purpose\":\"Original author purpose\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Template native acceptance — software fixture\",\"venue\":\"\"}}",
+      "created_at": "2026-10-08T08:39:19.673200+00:00"
+    },
+    "idempotent_replay": true,
+    "saved_at": "2026-10-08T08:40:19.040118+00:00",
+    "template_instance": {
+      "template_instance_id": "template_instance_f06501db346a4e3ab8fcb25dfc4c9699",
+      "manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+      "source_skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+      "source_version": "1",
+      "created_at": "2026-10-08T08:39:19.673702+00:00",
+      "updated_at": "2026-10-08T08:39:19.673702+00:00",
+      "adopted": {
+        "operation_id": "template_bae5cca20a78445996772a5a78768fc2",
+        "request": {
+          "base_revision": 25,
+          "comment_ids": [],
+          "mode": "REPLACE",
+          "operation_id": "template_bae5cca20a78445996772a5a78768fc2",
+          "replace_confirmed": true,
+          "scope_id": "paragraph_1822a4ff57c14641a5debb8644f9b302",
+          "scope_type": "paragraph",
+          "selected_unit_ids": [
+            "unit_1393ca80ec63a7c600dc3e676b18dd09"
+          ],
+          "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+          "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e"
+        },
+        "resulting_revision": 26,
+        "source": {
+          "author_text_copied": false,
+          "paper_id": "paper_243486e2f803498a6cea78e38df8aa1f",
+          "paper_version": 1,
+          "sections": [
+            {
+              "paragraphs": [
+                {
+                  "intent": "Research_Context",
+                  "logic": {
+                    "discourse_relation": "Context",
+                    "software_only": true
+                  },
+                  "role": "Software_Test",
+                  "unit_id": "unit_1393ca80ec63a7c600dc3e676b18dd09"
+                },
+                {
+                  "intent": "Boundary_Condition",
+                  "logic": {
+                    "discourse_relation": "Context",
+                    "software_only": true
+                  },
+                  "role": "Software_Test",
+                  "unit_id": "unit_b5a152c2527c0b924ec6b1e4c662af9f"
+                }
+              ],
+              "title": "Structure Alpha"
+            },
+            {
+              "paragraphs": [
+                {
+                  "intent": "",
+                  "logic": {
+                    "discourse_relation": "Context",
+                    "software_only": true
+                  },
+                  "role": "Software_Test",
+                  "unit_id": "unit_01c79df01e47e65eeb68a0aff1c4a359"
+                }
+              ],
+              "title": "Structure Beta"
+            }
+          ],
+          "skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+          "skeleton_version": 1,
+          "source_sha256": "f04d0b031b6e530eb292ee8725438484e6170b32580fdb973ca46c3833c63a0e",
+          "title": "Software-only template source"
+        }
+      }
+    }
+  },
+  "post_undo_retry_entire_database_byte_equal": true,
+  "old_rows_preserved": true,
+  "changed_tables": [
+    "manuscripts",
+    "studio_change_link_state",
+    "studio_changes",
+    "studio_documents",
+    "studio_operations",
+    "studio_sample_candidates",
+    "studio_template_instances"
+  ],
+  "global_model_tables_unchanged": true,
+  "native_generation_jobs_added": 0,
+  "golden_bytes_unchanged": true
+}

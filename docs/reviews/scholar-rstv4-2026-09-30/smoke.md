@@ -1,0 +1,6 @@
+
+
+2026-10-09 sealed explicit author Intent correspondence software batch: C:\Users\Alandelone\CodeSpace_Local\UuMA\docs\reviews\scholar-rstv4-2026-09-30\formal-intent-correspondence-2026-10-09. Final1042PASS/20warnings,23backend checks+15frontend checks; actualnative11opsr8→19, one software generation/two fixturecalls/five realcompiler artifacts, finalsource fixed-version read verified. All109tables/unrelated稿件 exact; originalbank/group/source/edges/CSV intact. Parent206sealed files verified. All118/all11overallINCOMPLETE; G08INCOMPLETE; downloadsPAUSED; no actualscience/model/approval claim. Next audit all118 and continue remaining real-source/complete workflow requirements, preserve native tabs and unrelated scientific workers.
+
+
+2026-10-09 user expressly resumed ZIP/PDF download tests after their IDM setting change. RealChrome-click PDF13498/ZIP20724/packagePDF8144 bytes verified exact; ZIP16 entries CRC+original hashes+fixed versions PASS; prior0Bzip remains. No code/model/science/permission/upload/delete action. Original118/all11 objective remainsACTIVE/incomplete. Former download pause superseded ONLY for download testing; former reports preserved. Formal evidence: C:\Users\Alandelone\CodeSpace_Local\UuMA\docs\reviews\scholar-rstv4-2026-09-30\formal-download-retry-2026-10-09\acceptance.md.

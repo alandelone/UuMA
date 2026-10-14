@@ -1,0 +1,116 @@
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/research_discussions.py', 'tests/test_studio_shared_discussions.py']
+All checks passed!
+Exit: 0
+CHECK ['node_modules/typescript/bin/tsc', '--noEmit']
+Exit: 0
+CHECK ['node_modules/oxlint/bin/oxlint', 'components/studio-workspace.tsx', 'lib/shared-discussion.ts']
+Exit: 0
+CHECK ['tests/unit/catalog-research-chat.mjs']
+PASS click binds the real selected object
+PASS new source cannot silently rebind nonempty question
+PASS a slow old click cannot overwrite the newer choice
+PASS pin keeps the original scope across navigation
+PASS UTF16 emoji selection remains exact
+PASS a mismatched quote cannot attach to another version
+PASS removing selection keeps original question and object
+PASS local draft restores its own immutable source
+PASS storage failure keeps draft and permits explicit send
+PASS uncertain result reconciles original ID without another model submission
+PASS failed reply retains actual failure and author receipt
+PASS persisted RUNNING does not prove a live worker
+PASS cross-scope sources require explicit choice
+PASS deleted original remains a historical fixed source
+PASS restoring an uncertain request performs no new POST
+PASS annotation retry preserves the exact original request
+PASS leaving invalidates an outstanding source read
+PASS rejected stale source retains question for explicit comparison
+PASS followup explicitly carries the last actual reply as parent
+PASS starting a new discussion retains question and fixed selection
+PASS changing source starts its own discussion and preserves old continuation draft
+PASS restored continuation retains the exact chosen reply and history
+PASS old response cannot replace the newly selected source or its question
+PASS continuing a chosen historical branch never replaces a protected draft
+PASS failed turn can be followed up without inventing an assistant reply
+PASS historical call lookup is read only and leaves current question intact
+PASS saving an annotation preserves an unsent question and continuation
+PASS Studio generated selection freezes its own revision and version through followup
+PASS source navigation carries verified ID, owner and exact extra-source index
+PASS a deep link reads a historical source without a default current binding
+PASS all four destinations preserve opaque owner and source reference without copying source text
+PASS malformed or oversized source links are not activated
+PASS return link preserves the original workspace only on configured application origins
+PASS an unavailable extra source never navigates to a neighboring source
+PASS an extra historical source can inspect the actual original discussion owner
+35 controlled discussion state checks passed; fixture model, no browser claim.
+Exit: 0
+CHECK ['tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+PASS historical unit location focuses the exact source and rejects a different owner
+PASS concept and relationship locations preserve the real case sensitive graph keys
+PASS a frozen source cannot be highlighted in a different Living or Snapshot view
+17 controlled workspace scenarios passed
+Exit: 0
+CHECK ['--check', 'src/rstv4/catalog_research_chat.js']
+Exit: 0
+CHECK ['--check', 'src/rstv4/catalog_research_workspaces.js']
+Exit: 0
+CHECK ['--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-discussion-navigation-inline-v2.js']
+Exit: 0
+CHECK ['node_modules/vinext/dist/cli.js', 'build']
+
+  vinext build  (Vite 8.3.0)
+
+[1/5] analyze client references...
+transforming...
+✓ 249 modules transformed.
+rendering chunks...
+✓ built in 512ms
+[2/5] analyze server references...
+transforming...
+✓ 361 modules transformed.
+rendering chunks...
+✓ built in 386ms
+[3/5] build rsc environment...
+transforming...
+✓ 241 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 392ms
+[4/5] build client environment...
+transforming...
+✓ 2154 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 1.02s
+[5/5] build ssr environment...
+transforming...
+✓ 364 modules transformed.
+rendering chunks...
+computing gzip size...
+✓ built in 318ms
+[0m
+  Route (app)
+  ─ ? /
+
+  ? Unknown
+
+  ? Some routes could not be classified. vinext currently uses static analysis
+    and cannot detect dynamic API usage (headers(), cookies(), etc.) at build time.
+    Automatic classification will be improved in a future release.
+
+  Build complete. Run `vinext start` to start the production server.
+
+Exit: 0

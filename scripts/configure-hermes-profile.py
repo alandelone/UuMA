@@ -29,6 +29,15 @@ BRAINSTORMER_WORKER_TOOLS = (
     "brainstormer_propose_project_topic",
 )
 
+YONC_WORKER_TOOLS = (
+    "register_direct_run", "get_assignment", "report_progress", "block_run", "submit_result",
+    "yonc_get_colleague_capabilities",
+)
+
+HONC_WORKER_TOOLS = (
+    "register_direct_run", "get_assignment", "report_progress", "block_run", "submit_result",
+)
+
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser()
@@ -95,7 +104,8 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
         lab_root = Path(args.data_dir) / "forge-lab-bot"
         environment.update(
             {
-                "LAB_DATABASE_PATH": str(lab_root / "lab.db"),
+                # Persist the physical path before child processes leave a packaged-app context.
+                "LAB_DATABASE_PATH": str((lab_root / "lab.db").resolve()),
                 "ESCHEMATIC_ROOT": args.eschematic_root,
                 "ESCHEMATIC_PYTHON": args.eschematic_python,
                 "ESCHEMATIC_DATA_DIR": str(lab_root / "eschematic" / "data"),
@@ -104,8 +114,15 @@ def server(args: argparse.Namespace, module: str) -> CommentedMap:
             }
         )
     if module == "uuma.mcp_knowledge" or args.agent_id == "wisdom-oldman":
+        knowledge_database = Path(args.data_dir) / "wisdom.db"
+        knowledge_data_dir = (
+            knowledge_database.resolve().parent if knowledge_database.is_file()
+            else Path(args.data_dir).resolve()
+        )
         environment.update(
             {
+                # Hermes runs outside Codex's Windows packaged-app filesystem redirect.
+                "UUMA_KNOWLEDGE_DATA_DIR": str(knowledge_data_dir),
                 "UUMA_KAG_BRIDGE_URL": args.kag_bridge_url,
                 "UUMA_KAG_AUTO_RECOVER": args.kag_auto_recover,
                 "UUMA_KAG_IDLE_SECONDS": str(args.kag_idle_seconds),
@@ -258,7 +275,29 @@ def main() -> None:
             )
             # A narrow direct schema is more reliable than repeated failed tool_search calls.
             map_at(map_at(config, "tools"), "tool_search")["enabled"] = "off"
+        if args.agent_id == "honc":
+            map_at(mcp_servers["uuma-worker"], "tools")["include"] = CommentedSeq(HONC_WORKER_TOOLS)
+            map_at(map_at(config, "tools"), "tool_search")["enabled"] = "off"
+            mcp_servers["honc-execution"] = server(args, "uuma.honc.mcp")
+            life_config = config.get("honc_life", {}).get("runtime_config")
+            if life_config:
+                mcp_servers["honc-execution"]["args"].extend(["--life-config", life_config])
+                from uuma.honc.life_setup import HONC_TOOLS
+                map_at(mcp_servers["honc-execution"], "tools")["include"] = CommentedSeq(HONC_TOOLS)
+                for server_name in ("honc-execution", "uuma-worker"):
+                    map_at(mcp_servers[server_name], "tools").update(resources=False, prompts=False)
+                for toolsets in map_at(config, "platform_toolsets").values():
+                    if isinstance(toolsets, list):
+                        toolsets[:] = [value for value in toolsets
+                                       if value not in {"cronjob", "connections", "file", "kanban"}]
+            for name in list(mcp_servers):
+                if name not in {"uuma-worker", "honc-execution"}:
+                    mcp_servers.pop(name, None)
+        else:
+            mcp_servers.pop("honc-execution", None)
         if args.agent_id == "yonc":
+            map_at(mcp_servers["uuma-worker"], "tools")["include"] = CommentedSeq(YONC_WORKER_TOOLS)
+            map_at(map_at(config, "tools"), "tool_search")["enabled"] = "off"
             mcp_servers["yonc-project"] = yonc_server(args)
             for name in list(mcp_servers):
                 if name not in {"uuma-worker", "yonc-project"}:
@@ -296,7 +335,7 @@ def main() -> None:
             enabled.append("uuma_control_guard")
         guard = map_at(entries, "uuma_control_guard")
         guard["mcp_allowlist"] = CommentedSeq(["uuma-control"])
-    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc"}:
+    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc", "honc"}:
         if "uuma_control_guard" not in enabled:
             enabled.append("uuma_control_guard")
         guard = map_at(entries, "uuma_control_guard")
@@ -305,6 +344,8 @@ def main() -> None:
             if args.agent_id == "wisdom-oldman"
             else ["uuma-worker", "rstv4-worker"]
             if args.agent_id == "scholar"
+            else ["uuma-worker", "honc-execution"]
+            if args.agent_id == "honc"
             else ["uuma-worker", "yonc-project"]
             if args.agent_id == "yonc"
             else ["uuma-worker"]

@@ -1,0 +1,199 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-scientific-binding-2026-10-06-tz7dk6uz",
+  "port": 59890,
+  "pid": 49028,
+  "controller_source": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_scientific_review.js",
+  "synthetic_approved_nodes": true,
+  "simulated_user_boundary": true,
+  "actual_scientific_approval": false,
+  "browser_verified": false,
+  "proposal": {
+    "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+    "request_id": "actual-http-scientific-binding-fixture",
+    "manuscript_id": "ms",
+    "track_id": "track",
+    "expected_revision": 2,
+    "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+    "created_at": "2026-10-06T09:29:27.436499+00:00",
+    "request": {
+      "evidence_ids": [],
+      "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+      "expected_revision": 2,
+      "manuscript_id": "ms",
+      "node_ids": [
+        "untouched"
+      ],
+      "reason": "Explicit isolated software review: replace the complete current binding set",
+      "request_id": "actual-http-scientific-binding-fixture",
+      "section_map": {
+        "section_c92025b23a354149b6c0684d2ad16525": [
+          "untouched"
+        ]
+      }
+    },
+    "context": {
+      "author_structure": {
+        "revision": 1,
+        "sections": [
+          {
+            "id": "section_c92025b23a354149b6c0684d2ad16525",
+            "title": "Introduction"
+          }
+        ]
+      },
+      "bindings": {
+        "evidence": [
+          {
+            "evidence_digest": "evidence-sha",
+            "evidence_id": "evidence",
+            "manuscript_id": "ms"
+          }
+        ],
+        "nodes": [
+          {
+            "manuscript_id": "ms",
+            "node_id": "child",
+            "node_revision": 1,
+            "section": null
+          }
+        ]
+      },
+      "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+      "edges": [
+        {
+          "created_at": "now",
+          "edge_id": "edge",
+          "relation": "MOTIVATES",
+          "source_node_id": "root",
+          "target_node_id": "child",
+          "track_id": "track"
+        }
+      ],
+      "evidence": [
+        {
+          "confidence": 1,
+          "content_digest": "evidence-sha",
+          "created_at": "now",
+          "evidence_id": "evidence",
+          "excerpt": "Exact fixture source",
+          "experiment_run_id": null,
+          "extractor_model": "fixture",
+          "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+          "location_json": "{}",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+          "prompt_version": "fixture",
+          "relation": "SUPPORTS",
+          "scope_kind": "FIELDKG",
+          "source_available": false,
+          "statement": "Software fixture evidence",
+          "track_id": null
+        }
+      ],
+      "manuscript": {
+        "blocker": null,
+        "created_at": "now",
+        "manuscript_id": "ms",
+        "needs_scientific_review": 1,
+        "next_step": null,
+        "research_type": "conceptual_framework",
+        "revision": 2,
+        "scope": null,
+        "title": "Software MS",
+        "track_id": "track",
+        "updated_at": "2026-10-06T09:29:27.303391+00:00",
+        "workflow_stage": "DRAFTING",
+        "writing_status": "DRAFTING"
+      },
+      "node_evidence": [
+        {
+          "evidence_id": "evidence",
+          "node_id": "root"
+        }
+      ],
+      "nodes": [
+        {
+          "created_at": "now",
+          "node_id": "child",
+          "node_type": "method",
+          "payload_json": "{}",
+          "rationale": "Software fixture",
+          "revision": 2,
+          "statement": "child",
+          "status": "STALE",
+          "track_id": "track",
+          "updated_at": "2026-10-06T09:29:27.303391+00:00"
+        },
+        {
+          "created_at": "now",
+          "node_id": "root",
+          "node_type": "claim",
+          "payload_json": "{}",
+          "rationale": "Software fixture",
+          "revision": 2,
+          "statement": "root",
+          "status": "STALE",
+          "track_id": "track",
+          "updated_at": "2026-10-06T09:29:27.303391+00:00"
+        },
+        {
+          "created_at": "now",
+          "node_id": "untouched",
+          "node_type": "claim",
+          "payload_json": "{}",
+          "rationale": "Software fixture",
+          "revision": 1,
+          "statement": "untouched",
+          "status": "APPROVED",
+          "track_id": "track",
+          "updated_at": "now"
+        }
+      ],
+      "proposed_bindings": {
+        "evidence": [],
+        "nodes": [
+          {
+            "manuscript_id": "ms",
+            "node_id": "untouched",
+            "node_revision": 1,
+            "section": "section_c92025b23a354149b6c0684d2ad16525"
+          }
+        ]
+      },
+      "track": {
+        "created_at": "now",
+        "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+        "mapping_status": "MAPPED",
+        "primary_topic_id": "topic",
+        "research_type": "conceptual_framework",
+        "revision": 1,
+        "scope": null,
+        "status": "ACTIVE",
+        "title": "Software Track",
+        "track_id": "track",
+        "updated_at": "now"
+      }
+    },
+    "status": "PROPOSED",
+    "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+    "event": null,
+    "grant_available": false
+  },
+  "original_bindings": {
+    "nodes": [
+      {
+        "manuscript_id": "ms",
+        "node_id": "child",
+        "section": null,
+        "node_revision": 1
+      }
+    ],
+    "evidence": [
+      {
+        "manuscript_id": "ms",
+        "evidence_id": "evidence",
+        "evidence_digest": "evidence-sha"
+      }
+    ]
+  }
+}

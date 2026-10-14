@@ -1,0 +1,368 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio\\review-read-recovery-v2.config.ts"
+    ],
+    "configFile": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio\\review-read-recovery-v2.config.ts",
+    "rootDir": "C:/Users/Alandelone/CodeSpace_Local/writing-studio/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-native-import-v1/comments-read-recovery-v1/e2e-v2/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Alandelone/CodeSpace_Local/writing-studio/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "review-read-recovery.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v2\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "review-read-recovery.spec.ts",
+      "file": "review-read-recovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Revision comments and rounds read recovery",
+          "file": "review-read-recovery.spec.ts",
+          "line": 137,
+          "column": 6,
+          "specs": [
+            {
+              "title": "cold comments failure cannot masquerade as empty or permit round creation; retry reads only",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 652,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:38.134Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-09ad3fa715eceaf920ee",
+              "file": "review-read-recovery.spec.ts",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "cold rounds failure cannot masquerade as empty or permit round creation; retry reads only",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 550,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:38.959Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-e501dc100aaa9edc4d0c",
+              "file": "review-read-recovery.spec.ts",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "successful empty reads display a genuine empty state",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 392,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:39.515Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-2728a369a87e9878fa44",
+              "file": "review-read-recovery.spec.ts",
+              "line": 155,
+              "column": 3
+            },
+            {
+              "title": "warm failure retains opinions, current round, local input and preview; retry does not write",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 648,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:39.914Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-f7b0662a937722273b20",
+              "file": "review-read-recovery.spec.ts",
+              "line": 164,
+              "column": 3
+            },
+            {
+              "title": "acknowledged round creation followed by failed reload never repeats create POST",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 878,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:40.568Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-e2e4e2802ff2f61ed944",
+              "file": "review-read-recovery.spec.ts",
+              "line": 181,
+              "column": 3
+            },
+            {
+              "title": "acknowledged import followed by failed reload retries GET without duplicate import",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 661,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:41.452Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-b95f7a0bbf9990d63279",
+              "file": "review-read-recovery.spec.ts",
+              "line": 195,
+              "column": 3
+            },
+            {
+              "title": "late older empty response cannot replace a newer successful read",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 661,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:42.119Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-778b01960890bb434452",
+              "file": "review-read-recovery.spec.ts",
+              "line": 211,
+              "column": 5
+            },
+            {
+              "title": "late older failure response cannot replace a newer successful read",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 627,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:42.785Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-e8627e0f3240ea25e40f",
+              "file": "review-read-recovery.spec.ts",
+              "line": 211,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T03:13:37.804Z",
+    "duration": 5840.973,
+    "expected": 8,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-plan-browser-1esahmsn",
+  "port": 63715,
+  "track_id": "track_225d5e1435e744eea1f9741f02a71eba",
+  "project_id": "project_6d64ffb6bd934bc2b3a9279207cb71af",
+  "method_id": "method_09f1e44ca70a4d489e6975d0799d52db",
+  "software_approval_fixture": true,
+  "scientific_approval": false,
+  "source_script_sha256": "5eddf160b1e2d8ac347886122b91a8caada3b32547f5651bfc85cf0461b443ae",
+  "browser_workflow_verified": true,
+  "run_id": "run_3dc40e793a8d44a6ad671c639ac3b2a7",
+  "actual_counts": {
+    "projects": 2,
+    "experiment_plans": 1,
+    "pipeline_runs": 1,
+    "evidence": 1,
+    "acquisition_model_call_events": 0,
+    "studio_model_calls": 0
+  },
+  "project_metadata": {
+    "data_description": "输入值 7",
+    "goals": "保留目标与归属",
+    "implementation": {},
+    "location": "独立测试目录",
+    "requirements": {},
+    "system_design": {},
+    "time": "2026-10-08",
+    "validation": {}
+  },
+  "draft_refresh_verified": true,
+  "claim_remains_proposed": true
+}

@@ -1,0 +1,810 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-14T03:38:11.101Z",
+  "status": "PASS_WITH_RECOVERED_TOOL_VALIDATION_ERRORS",
+  "production_model": {
+    "default": "gemini-3.8-flash",
+    "provider": "antigravity-oauth"
+  },
+  "production_model_changed": false,
+  "real_model_calls": true,
+  "fixture_model_substitution": false,
+  "live_personal_writes": 0,
+  "real_notifications_sent": 0,
+  "case_count": 8,
+  "passed_cases": 8,
+  "cases": [
+    {
+      "id": "body-positive",
+      "message": "今天状态很好，精神不错，帮我记录身体状态。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 81.672,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 0,
+        "body": 1,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {
+        "body": 1
+      },
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\body-positive.stdout",
+      "final_reply": "已记录今天的身体状态：状态很好，精神不错。\n\n日期：2026-10-14\n记录编号：body_cc43f298452748b48f1b96b8042e97f6",
+      "tokens": {
+        "input": 35025,
+        "output": 6987,
+        "total": 158509,
+        "cache_read": 116497,
+        "cache_write": 0
+      },
+      "model_api_calls": 4,
+      "api_call_log": [
+        "[20261014_112804_4b7e83] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35025 out=1257 total=36282 latency=13.3s id=72562346-37cf-463f-9288-7189b8c9040b\r",
+        "[20261014_112804_4b7e83] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35246 out=3197 total=38443 latency=31.7s cache=35246/35246 (100%) id=72562346-37cf-463f-9288-7189b8c9040b\r",
+        "[20261014_112804_4b7e83] agent.conversation_loop: API call #3: model=gemini-3.8-flash provider=antigravity-oauth in=38532 out=1953 total=40485 latency=19.0s cache=38532/38532 (100%) id=72562346-37cf-463f-9288-7189b8c9040b\r",
+        "[20261014_112804_4b7e83] agent.conversation_loop: API call #4: model=gemini-3.8-flash provider=antigravity-oauth in=42719 out=580 total=43299 latency=10.3s cache=42719/42719 (100%) id=72562346-37cf-463f-9288-7189b8c9040b\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_record_body",
+          "input": {
+            "request": {
+              "request_ref": "request_705b08587c194491912781d0bc5527d0",
+              "source_quote": "今天状态很好，精神不错，帮我记录身体状态。",
+              "observations": [
+                {
+                  "description": "状态很好，精神不错"
+                }
+              ],
+              "time": {
+                "occurred_date": "2026-10-14",
+                "precision": "date",
+                "time_text": "今天"
+              }
+            },
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 2,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "negative-plan",
+      "message": "我还没运动，计划明天再做。只是告诉你计划，不要记成完成。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 45.953,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 0,
+        "body": 0,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {},
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\negative-plan.stdout",
+      "final_reply": "收到，明白这是明天的计划。今天不会将运动记为完成或打卡，明天执行后随时告诉我。",
+      "tokens": {
+        "input": 35036,
+        "output": 5035,
+        "total": 75316,
+        "cache_read": 35245,
+        "cache_write": 0
+      },
+      "model_api_calls": 2,
+      "api_call_log": [
+        "[20261014_112925_a9fe0e] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35036 out=1674 total=36710 latency=16.1s id=dd1bb8a4-d82c-48ab-84d4-e9b53873f587\r",
+        "[20261014_112925_a9fe0e] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35245 out=3361 total=38606 latency=23.0s cache=35245/35245 (100%) id=dd1bb8a4-d82c-48ab-84d4-e9b53873f587\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "habit_name": "运动",
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 1,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "diary",
+      "message": "记一下今天的日记：今天读完一章，心情平静。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 43.657,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 1,
+        "body": 0,
+        "diary": 1,
+        "anchor": 0
+      },
+      "expected_delta": {
+        "diary": 1,
+        "habit": 1
+      },
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\diary.stdout",
+      "final_reply": "今天的日记已记录：\n\n内容：今天读完一章，心情平静。\n日期：2026-10-14\n日记习惯打卡已同步完成。",
+      "tokens": {
+        "input": 35180,
+        "output": 3403,
+        "total": 149472,
+        "cache_read": 110889,
+        "cache_write": 0
+      },
+      "model_api_calls": 4,
+      "api_call_log": [
+        "[20261014_113011_911812] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35180 out=778 total=35958 latency=9.9s id=e4cfa4cf-9a33-45c7-9be1-a106afa4f65b\r",
+        "[20261014_113011_911812] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35204 out=1237 total=36441 latency=13.9s cache=35204/35204 (100%) id=e4cfa4cf-9a33-45c7-9be1-a106afa4f65b\r",
+        "[20261014_113011_911812] agent.conversation_loop: API call #3: model=gemini-3.8-flash provider=antigravity-oauth in=37777 out=976 total=38753 latency=8.0s cache=37777/37777 (100%) id=e4cfa4cf-9a33-45c7-9be1-a106afa4f65b\r",
+        "[20261014_113011_911812] agent.conversation_loop: API call #4: model=gemini-3.8-flash provider=antigravity-oauth in=37908 out=412 total=38320 latency=4.9s cache=37908/37908 (100%) id=e4cfa4cf-9a33-45c7-9be1-a106afa4f65b\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_save_diary",
+          "input": {
+            "request": {
+              "request_ref": "request_87425469c84249d8be6d4d96e7c5af39",
+              "source_quote": "记一下今天的日记：今天读完一章，心情平静。",
+              "content": "今天读完一章，心情平静。",
+              "diary_date": "2026-10-14"
+            },
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 2,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "legacy-quantity",
+      "message": "今天锻体tod做了20，单位我没有提供，先保留未知。记录今天上午九点那次。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 99.406,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 1,
+        "body": 0,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {
+        "habit": 1
+      },
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\legacy-quantity.stdout",
+      "final_reply": "已记录。\n\n习惯：锻体tod\n发生时间：2026-10-14 09:00（已绑定上午九点实例）\n数值：20（单位保留未知）\n状态：已完成",
+      "tokens": {
+        "input": 35054,
+        "output": 10128,
+        "total": 125635,
+        "cache_read": 80453,
+        "cache_write": 0
+      },
+      "model_api_calls": 3,
+      "api_call_log": [
+        "[20261014_113054_90fe4c] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35054 out=3809 total=38863 latency=29.8s id=c098d67f-5b7b-40fe-84ed-8e96f5560733\r",
+        "[20261014_113054_90fe4c] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35668 out=3709 total=39377 latency=36.1s cache=35668/35668 (100%) id=c098d67f-5b7b-40fe-84ed-8e96f5560733\r",
+        "[20261014_113054_90fe4c] agent.conversation_loop: API call #3: model=gemini-3.8-flash provider=antigravity-oauth in=44785 out=2610 total=47395 latency=28.6s cache=44785/44785 (100%) id=c098d67f-5b7b-40fe-84ed-8e96f5560733\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "skill_view",
+          "input": {
+            "name": "honc-checkin"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "habit_name": "锻体tod",
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_record_habit",
+          "input": {
+            "request": {
+              "request_ref": "request_1d4eed88c2e24a6298d248a8d01478b2",
+              "entries": [
+                {
+                  "habit_id": "habit_definition_2ae0e2c666f5457aaddcfd55e0180636",
+                  "habit_revision": 1,
+                  "instance_id": "instance_31208b6dbb551b2aad96e3838f102fe448bc3b53e6b745e282a301b1c37613bd",
+                  "outcome": "completed",
+                  "source_quote": "今天锻体tod做了20，单位我没有提供，先保留未知。记录今天上午九点那次。",
+                  "value": 20,
+                  "time": {
+                    "occurred_at": "2026-10-14T09:00:00+08:00",
+                    "precision": "exact"
+                  }
+                }
+              ]
+            },
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 3,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "ambiguous",
+      "message": "帮我把那个习惯打卡。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 57.219,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 0,
+        "body": 0,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {},
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\ambiguous.stdout",
+      "final_reply": "请问你想打卡哪一个习惯？\n\n当前配置中的活跃习惯包括：\n  1. 晨仪:💊（别名：晨仪、服药、营养素）\n  2. eat_bh（别名：吃饭习惯、早餐、午餐、晚餐）\n  3. 锻体tod（别名：锻炼、运动、训练）\n  4. 泡脚（别名：足浴）\n  5. 睡前15（别名：睡前保养、保养）\n  6. OffJobBh（别名：微习惯、断水、PC练习、腹式呼吸）\n  7. FullRest（别名：深度休息）\n  8. Dairy（别名：日记）\n\n请告诉我具体要记录的习惯名称或别名。",
+      "tokens": {
+        "input": 35027,
+        "output": 6772,
+        "total": 77099,
+        "cache_read": 35300,
+        "cache_write": 0
+      },
+      "model_api_calls": 2,
+      "api_call_log": [
+        "[20261014_113234_d5033a] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35027 out=2140 total=37167 latency=19.9s id=163d05b9-1adc-450b-8c33-b8770fe93baa\r",
+        "[20261014_113234_d5033a] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35300 out=4632 total=39932 latency=32.3s cache=35300/35300 (100%) id=163d05b9-1adc-450b-8c33-b8770fe93baa\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 1,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "history",
+      "message": "查看今天的身体状态和日记记录。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 46.703,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 0,
+        "body": 0,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {},
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\history.stdout",
+      "final_reply": "今天（2026-10-14）的身体状态与日记记录如下：\n\n身体状态：\n  描述：状态很好，精神不错\n  时间：今天（2026-10-14）\n  记录ID：body_cc43f298452748b48f1b96b8042e97f6\n\n日记记录：\n  内容：今天读完一章，心情平静。\n  日期：2026-10-14\n  记录ID：diary_242141bac41d458f8d0cb3641289d309",
+      "tokens": {
+        "input": 77478,
+        "output": 6139,
+        "total": 83617,
+        "cache_read": 0,
+        "cache_write": 0
+      },
+      "model_api_calls": 2,
+      "api_call_log": [
+        "[20261014_113331_c056f2] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=34941 out=3529 total=38470 latency=24.3s id=57cef262-b694-4b80-b64c-b8ef4794cd48\r",
+        "[20261014_113331_c056f2] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=42537 out=2610 total=45147 latency=17.4s id=57cef262-b694-4b80-b64c-b8ef4794cd48\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_get_life_history",
+          "input": {
+            "kinds": [
+              "body",
+              "diary"
+            ],
+            "start_date": "2026-10-14",
+            "end_date": "2026-10-14",
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 2,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "mixed-plan",
+      "message": "今天有点累，计划明天运动。先记今天身体状态，不要把计划记成完成。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 45.922,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 0,
+        "body": 1,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {
+        "body": 1
+      },
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\mixed-plan.stdout",
+      "final_reply": "已记录今天的身体状态（有点累）。\n\n明天的运动计划已收到，未计入任何完成记录。今天请多休息。",
+      "tokens": {
+        "input": 35054,
+        "output": 4840,
+        "total": 152479,
+        "cache_read": 112585,
+        "cache_write": 0
+      },
+      "model_api_calls": 4,
+      "api_call_log": [
+        "[20261014_113418_88d1b1] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35054 out=1377 total=36431 latency=13.1s id=a21bb524-4f70-49b6-b548-e65c0fa4f4b6\r",
+        "[20261014_113418_88d1b1] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35349 out=1492 total=36841 latency=11.0s cache=35349/35349 (100%) id=a21bb524-4f70-49b6-b548-e65c0fa4f4b6\r",
+        "[20261014_113418_88d1b1] agent.conversation_loop: API call #3: model=gemini-3.8-flash provider=antigravity-oauth in=38493 out=1491 total=39984 latency=11.2s cache=38493/38493 (100%) id=a21bb524-4f70-49b6-b548-e65c0fa4f4b6\r",
+        "[20261014_113418_88d1b1] agent.conversation_loop: API call #4: model=gemini-3.8-flash provider=antigravity-oauth in=38743 out=480 total=39223 latency=5.7s cache=38743/38743 (100%) id=a21bb524-4f70-49b6-b548-e65c0fa4f4b6\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_record_body",
+          "input": {
+            "request": {
+              "request_ref": "request_2540df29c8a642dabf353c77467b853e",
+              "source_quote": "今天有点累",
+              "observations": [
+                {
+                  "description": "有点累"
+                }
+              ],
+              "time": {
+                "occurred_date": "2026-10-14",
+                "time_text": "今天",
+                "precision": "date"
+              }
+            },
+            "context_ref": "[host capability omitted]"
+          }
+        }
+      ],
+      "tool_errors": [],
+      "tool_result_count": 2,
+      "semantic_review": {
+        "passed": true
+      }
+    },
+    {
+      "id": "partial-domain",
+      "message": "今天有点累，请记录身体；另外给不存在的习惯「星际跳跃」打卡。",
+      "returncode": 0,
+      "timed_out": false,
+      "elapsed_seconds": 91.906,
+      "actual_delta": {
+        "habit_definition": 0,
+        "habit": 0,
+        "body": 1,
+        "diary": 0,
+        "anchor": 0
+      },
+      "expected_delta": {
+        "body": 1
+      },
+      "records_match": true,
+      "raw_transcript_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\partial-domain.stdout",
+      "final_reply": "已记录身体状态：\n- 描述：有点累\n- 时间：今天（2026-10-14）\n- 状态：已记录 (APPLIED)\n\n关于习惯打卡：\n- 未在系统中找到习惯「星际跳跃」。\n- 系统不会自动创建不存在的习惯，未执行打卡操作。",
+      "tokens": {
+        "input": 35114,
+        "output": 7864,
+        "total": 244115,
+        "cache_read": 201137,
+        "cache_write": 0
+      },
+      "model_api_calls": 6,
+      "api_call_log": [
+        "[20261014_113504_e156b6] agent.conversation_loop: API call #1: model=gemini-3.8-flash provider=antigravity-oauth in=35114 out=2409 total=37523 latency=21.5s id=b4c74484-b559-4286-9470-539d994dd485\r",
+        "[20261014_113504_e156b6] agent.conversation_loop: API call #2: model=gemini-3.8-flash provider=antigravity-oauth in=35487 out=1815 total=37302 latency=14.8s cache=35487/35487 (100%) id=b4c74484-b559-4286-9470-539d994dd485\r",
+        "[20261014_113504_e156b6] agent.conversation_loop: API call #3: model=gemini-3.8-flash provider=antigravity-oauth in=38550 out=2182 total=40732 latency=17.4s cache=38550/38550 (100%) id=b4c74484-b559-4286-9470-539d994dd485\r",
+        "[20261014_113504_e156b6] agent.conversation_loop: API call #4: model=gemini-3.8-flash provider=antigravity-oauth in=41317 out=777 total=42094 latency=16.0s cache=41317/41317 (100%) id=b4c74484-b559-4286-9470-539d994dd485\r",
+        "[20261014_113504_e156b6] agent.conversation_loop: API call #5: model=gemini-3.8-flash provider=antigravity-oauth in=42185 out=296 total=42481 latency=8.5s cache=42185/42185 (100%) id=b4c74484-b559-4286-9470-539d994dd485\r",
+        "[20261014_113504_e156b6] agent.conversation_loop: API call #6: model=gemini-3.8-flash provider=antigravity-oauth in=43598 out=385 total=43983 latency=6.6s cache=43598/43598 (100%) id=b4c74484-b559-4286-9470-539d994dd485\r"
+      ],
+      "tool_calls": [
+        {
+          "name": "mcp__honc_execution__honc_get_life_context",
+          "input": {
+            "habit_name": "星际跳跃",
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__honc_execution__honc_record_body",
+          "input": {
+            "request": {
+              "request_ref": "request_1aced2de044c45ef818964b7bf37cb94",
+              "source_quote": "今天有点累",
+              "observations": [
+                {
+                  "description": "有点累"
+                }
+              ],
+              "time": {
+                "occurred_date": "2026-10-14",
+                "time_text": "今天",
+                "precision": "date"
+              }
+            },
+            "context_ref": "[host capability omitted]"
+          }
+        },
+        {
+          "name": "mcp__uuma_worker__submit_result",
+          "input": {
+            "result_json": "{\"run_id\": \"run_61a56f1cd75d499c9e11ac3643a35c1e\", \"task_id\": \"task_ac4f51e2a7ab4a8d8b255ed4d752bd49\", \"agent_id\": \"honc\", \"status\": \"completed\", \"summary\": \"已记录身体状态（有点累）；未找到习惯「星际跳跃」，未创建亦未打卡。\"}"
+          }
+        },
+        {
+          "name": "mcp__uuma_worker__submit_result",
+          "input": {
+            "result_json": "{\"run_id\": \"run_61a56f1cd75d499c9e11ac3643a35c1e\", \"task_id\": \"task_ac4f51e2a7ab4a8d8b255ed4d752bd49\", \"agent_id\": \"honc\", \"outcome\": \"success\", \"summary\": \"已记录身体状态（有点累）；未找到习惯「星际跳跃」，未创建亦未打卡。\"}"
+          }
+        },
+        {
+          "name": "mcp__uuma_worker__submit_result",
+          "input": {
+            "result_json": "{\"run_id\": \"run_61a56f1cd75d499c9e11ac3643a35c1e\", \"task_id\": \"task_ac4f51e2a7ab4a8d8b255ed4d752bd49\", \"agent_id\": \"honc\", \"outcome\": \"COMPLETED\", \"summary\": \"已记录身体状态（有点累）；未找到习惯「星际跳跃」，未创建亦未打卡。\"}"
+          }
+        }
+      ],
+      "tool_errors": [
+        {
+          "name": "mcp__uuma_worker__submit_result",
+          "output": "{\"error\": \"Error executing tool submit_result: 2 validation errors for ResultContract\\nstatus\\n  Extra inputs are not permitted [type=extra_forbidden, input_value='completed', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.13/v/extra_forbidden\\noutcome\\n  Field required [type=missing, input_value={'run_id': 'run_61a56f1cd...创建亦未打卡。'}, input_type=dict]\\n    For further information visit https://errors.pydantic.dev/2.13/v/missing\"}"
+        },
+        {
+          "name": "mcp__uuma_worker__submit_result",
+          "output": "{\"error\": \"Error executing tool submit_result: 1 validation error for ResultContract\\noutcome\\n  Input should be 'COMPLETED', 'FAILED', 'PARTIAL', 'NEEDS_REVIEW' or 'CANCELLED' [type=enum, input_value='success', input_type=str]\\n    For further information visit https://errors.pydantic.dev/2.13/v/enum\"}"
+        }
+      ],
+      "tool_result_count": 5,
+      "semantic_review": {
+        "passed": true
+      }
+    }
+  ],
+  "actual_facts": [
+    {
+      "object_id": "body_cc43f298452748b48f1b96b8042e97f6",
+      "kind": "body",
+      "operation_id": "operation_9633acd9c9cd4faa9836384f62c8f9a0",
+      "source_ref": "source_e778dbb99c2744bab86dfc3f733f7577",
+      "raw_content": "今天状态很好，精神不错，帮我记录身体状态。",
+      "payload": {
+        "observations": [
+          {
+            "body_part": null,
+            "change_text": null,
+            "description": "状态很好，精神不错",
+            "reported_score": null,
+            "score_scale": null,
+            "severity_text": null
+          }
+        ],
+        "related_record_ids": [],
+        "source_quote": "今天状态很好，精神不错，帮我记录身体状态。",
+        "time": {
+          "occurred_at": null,
+          "occurred_date": "2026-10-14",
+          "precision": "date",
+          "time_text": "今天"
+        }
+      }
+    },
+    {
+      "object_id": "diary_242141bac41d458f8d0cb3641289d309",
+      "kind": "diary",
+      "operation_id": "operation_84bacf73b3ca4c5fb0c45a2ec1d6d60b",
+      "source_ref": "source_c5a2df4631e9475fbab3993533912f15",
+      "raw_content": "记一下今天的日记：今天读完一章，心情平静。",
+      "payload": {
+        "content": "今天读完一章，心情平静。",
+        "diary_date": "2026-10-14",
+        "linked_record_ids": [],
+        "source_quote": "记一下今天的日记：今天读完一章，心情平静。",
+        "time": {
+          "occurred_at": null,
+          "occurred_date": "2026-10-14",
+          "precision": "date",
+          "time_text": null
+        }
+      }
+    },
+    {
+      "object_id": "habit_e822ed2a1f22426f9f6bdf01fcc093dc",
+      "kind": "habit",
+      "operation_id": "operation_84bacf73b3ca4c5fb0c45a2ec1d6d60b",
+      "source_ref": "source_c5a2df4631e9475fbab3993533912f15",
+      "raw_content": "记一下今天的日记：今天读完一章，心情平静。",
+      "payload": {
+        "definition_snapshot": {
+          "aliases": [
+            "日记",
+            "diary",
+            "journal"
+          ],
+          "description": "Record Daily",
+          "legacy_property_type": "rich_text",
+          "name": "Dairy",
+          "record_type": "text",
+          "selection_options": [],
+          "semantic_role": "diary",
+          "target_period": "day",
+          "target_value": null,
+          "unit": null
+        },
+        "diary_record_id": "diary_242141bac41d458f8d0cb3641289d309",
+        "habit_id": "habit_definition_f22c035e85cd4c358dcc3ee16acf119d",
+        "habit_revision": 1,
+        "instance_id": "instance_574aa3e1b0dede94b29ecae4a8f6e404c711d2a3c9a4ae2280f7497d3f6afb33",
+        "outcome": "completed",
+        "reason": null,
+        "selection_values": null,
+        "source_quote": "记一下今天的日记：今天读完一章，心情平静。",
+        "text": "今天读完一章，心情平静。",
+        "time": {
+          "occurred_at": null,
+          "occurred_date": "2026-10-14",
+          "precision": "date",
+          "time_text": null
+        },
+        "unit": null,
+        "value": null
+      }
+    },
+    {
+      "object_id": "habit_f031a62d193449fea401f7e89d8fac56",
+      "kind": "habit",
+      "operation_id": "operation_3a3a977cd2e84518b491b688db6c5ef2",
+      "source_ref": "source_9626438d97ef4ab5aaa97482d1e1050c",
+      "raw_content": "今天锻体tod做了20，单位我没有提供，先保留未知。记录今天上午九点那次。",
+      "payload": {
+        "definition_snapshot": {
+          "aliases": [
+            "锻炼",
+            "运动",
+            "训练"
+          ],
+          "description": "what type? (where are u today ?) >> remind later to start",
+          "legacy_property_type": "number",
+          "name": "锻体tod",
+          "record_type": "number",
+          "selection_options": [],
+          "semantic_role": "habit",
+          "target_period": "day",
+          "target_value": null,
+          "unit": null
+        },
+        "habit_id": "habit_definition_2ae0e2c666f5457aaddcfd55e0180636",
+        "habit_revision": 1,
+        "instance_id": "instance_31208b6dbb551b2aad96e3838f102fe448bc3b53e6b745e282a301b1c37613bd",
+        "outcome": "completed",
+        "reason": null,
+        "selection_values": null,
+        "source_quote": "今天锻体tod做了20，单位我没有提供，先保留未知。记录今天上午九点那次。",
+        "text": null,
+        "time": {
+          "occurred_at": "2026-10-14T09:00:00+08:00",
+          "occurred_date": null,
+          "precision": "exact",
+          "time_text": null
+        },
+        "unit": null,
+        "value": 20
+      }
+    },
+    {
+      "object_id": "body_348f65fb697f469aa1242ff2df24a6bb",
+      "kind": "body",
+      "operation_id": "operation_c65af2d9b5a74b9890cf9dfb95b4099d",
+      "source_ref": "source_8de10d9d94934afd838f812e33e4381f",
+      "raw_content": "今天有点累，计划明天运动。先记今天身体状态，不要把计划记成完成。",
+      "payload": {
+        "observations": [
+          {
+            "body_part": null,
+            "change_text": null,
+            "description": "有点累",
+            "reported_score": null,
+            "score_scale": null,
+            "severity_text": null
+          }
+        ],
+        "related_record_ids": [],
+        "source_quote": "今天有点累",
+        "time": {
+          "occurred_at": null,
+          "occurred_date": "2026-10-14",
+          "precision": "date",
+          "time_text": "今天"
+        }
+      }
+    },
+    {
+      "object_id": "body_eb6f8e9cfc8349d69e1c70c71ccfe3ce",
+      "kind": "body",
+      "operation_id": "operation_0b02d56189f04fb28badcc7d1db9f015",
+      "source_ref": "source_8b850860efab44c8a3cd37db4fcb7ae7",
+      "raw_content": "今天有点累，请记录身体；另外给不存在的习惯「星际跳跃」打卡。",
+      "payload": {
+        "observations": [
+          {
+            "body_part": null,
+            "change_text": null,
+            "description": "有点累",
+            "reported_score": null,
+            "score_scale": null,
+            "severity_text": null
+          }
+        ],
+        "related_record_ids": [],
+        "source_quote": "今天有点累",
+        "time": {
+          "occurred_at": null,
+          "occurred_date": "2026-10-14",
+          "precision": "date",
+          "time_text": "今天"
+        }
+      }
+    }
+  ],
+  "actual_direct_runs": [
+    {
+      "run_id": "run_73f8a11b6a3741baac35eca2441a34af",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_09e918170c1a40e1a839369aa70a16d4",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_05b4fd1104024cb3a2558c1dbfbf03a0",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_c27c6ecc8e544790a3b4b2403780bbe2",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_6d4954a253544764ad0d62f04251a3f6",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_0b1ee32f61b24b8a9ce03092ae9b9209",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_225be471b35f45649188b5ab4108b3ea",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    },
+    {
+      "run_id": "run_61a56f1cd75d499c9e11ac3643a35c1e",
+      "agent_id": "honc",
+      "status": "REVIEW",
+      "source": "direct",
+      "execution_class": "INTERACTIVE"
+    }
+  ],
+  "source_sha256": {
+    "src/uuma/honc/conversation.py": "1fe66af326193a78f34361c8cf8815e69e8fa076111d297eb4bb891375b9c7a9",
+    "src/uuma/honc/graph_client.py": "cd1ef71435ffaa228562b4f8d5ba6388de2baebce5d0bdb90b028a4d93d2c0c6",
+    "src/uuma/honc/life_context.py": "73127af65fc1b7a0c138d4d9050447ebf4fda8d089c64a69f7dfc36c2c2d1348",
+    "src/uuma/honc/life_history.py": "a63a619549b0fbefc2bac6a980d08de253e83596b7e46dac8de00d5b94970188",
+    "src/uuma/honc/life_mcp.py": "990f5d8857e0c485b251fc07c9209a5eb5e62caa8a24e0aea00b14138880731f",
+    "src/uuma/honc/life_migration.py": "919868ab97aa102fd48fbb7dfbb62047655167f17a12cb529954a43e99a763fe",
+    "src/uuma/honc/life_models.py": "813de45113916fef88a7ea5bc1a987cbbb8be414346150d986f005928b7275ba",
+    "src/uuma/honc/life_service.py": "a32ebd4f80e9c7f39960218d3bd70236d6f01f2e13bc4643d79b1b0feb2ddbef",
+    "src/uuma/honc/life_setup.py": "610bd6dda7afcb63424e1fd327042f42cf715ef489a3642c7fe948bf3ebba1e0",
+    "src/uuma/honc/life_store.py": "2cf65f78ec42bf8eb0ca12151bab6ff3066658ece395e97c2bc7c1091b93547e",
+    "src/uuma/honc/mcp.py": "f56cfcb6c0ed6c465c5e412d27277ba840d0150304f5a905733c00d3595594ba",
+    "src/uuma/honc/models.py": "890f01f735fe0d5823e95ce77d98d14b86ba9d550a8fbbaf7d308c0260d3772f",
+    "src/uuma/honc/native_reminders.py": "b4d115c14cba98c4d1961239b4e29f739467b69c7d4e57bfcd8bb6a024985908",
+    "src/uuma/honc/reminder_policy.py": "330f01fb54ea817d3f49d89a293d67ec4e716617c295deb1bf0682b9fd0f3dbe",
+    "src/uuma/honc/reminder_runtime.py": "13e4602d4e236c7e1175b2d2a114a0fbe293a333cc22ff14a015cffe07148fd0",
+    "src/uuma/honc/service.py": "363f4b03e39b3207904f22b0e1f1957239f83948a3f08e0b331a4b97b07253ab",
+    "src/uuma/honc/store.py": "ab48dcde4af495dba95196f4a40f033c9cd3241da4a6431561a0e82fb968c2dd",
+    "src/uuma/honc/__init__.py": "789536de4ed82217f962042b29c47886d2c2278f15285ff267abdea73d182875",
+    "integrations/hermes/honc_life/plugin.yaml": "8f4526fd77c9ce625d7d75be3f0e33aa6b07633414a1e93e5da487c8d47d5ef9",
+    "integrations/hermes/honc_life/__init__.py": "6750ab39745ba3464aba5cb5377aee89efdcb2a57c78dd57c797b6fb0cad3e9c",
+    "profiles/honc/SOUL.md": "f6973c421413d0d5590f6c6775749b4fa70c17ad2ed7a2dca23e725cd6952b41",
+    "profiles/honc/skills/honc-body-tracker/SKILL.md": "ff120d260f158ab3bbd67ec09519bdb99aa2d575d2d492cac443e2e9d310fa82",
+    "profiles/honc/skills/honc-checkin/SKILL.md": "ab2e25a1411997067f0da3714477efb0557fd9be429245448f4d322b383a3546",
+    "profiles/honc/skills/honc-daily-execution/SKILL.md": "64a96716c071bc4b51e5021f0a94fb1450388549ef5849d562494a077adca0dd",
+    "profiles/honc/skills/honc-diary/SKILL.md": "bd303b0d10899caea8212037dbd7ee8cf6db04148e4617469aaf39450d831b70",
+    "profiles/honc/skills/honc-focus/SKILL.md": "9b5c1f1715ab2574eb9b8ed68bf41a0f14a50cd47c19d3f70ddafee9e8fd64dd",
+    "profiles/honc/skills/honc-life-history/SKILL.md": "752f27a2382b50d053dcb298f63e00f51a1df7698b66cc865b1794ab61c41ca2",
+    "profiles/honc/skills/honc-life-settings/SKILL.md": "11ff67886e137041cdd0a52e3693e57a42978260f8ee7c10ce0260a51a63fee5",
+    "profiles/honc/skills/honc-tracing/SKILL.md": "7e5d7563c30c6b86fcdc139d625257cd093476effd52961025015b45f6410418",
+    "profiles/honc/skills/honc-wake-bedtime/SKILL.md": "b77ca9010d0e616344aec4831c3b0977c11ca366ef16748430a2183ba17a8f31"
+  },
+  "review_notes": [
+    "All eight exit codes, durable deltas, source words, operation IDs and final replies were checked.",
+    "Partial-domain scenario recovered from two worker result-contract validation errors; body fact was committed once and missing habit was never created.",
+    "Unknown exercise unit remained null; the requested 09:00 occurrence was selected without a redundant confirmation.",
+    "Original failed runs remain under .uuma-local/honc-model-eval; provider executable temporarily missing was not counted as passing. The existing provider executable was resolved explicitly for this final isolated run.",
+    "No stronger-model fallback was used; live Telegram delivery was not simulated as a real user notification."
+  ],
+  "transport": "Actual Hermes CLI oneshot turns with authenticated local profile, real existing model/provider and isolated owner/database; not live incoming Telegram messages."
+}

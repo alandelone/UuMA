@@ -1,0 +1,2541 @@
+{
+  "status": "COMPLETE_FIVE_ORIGINAL_PHS_INPUT_LITERATURE_AND_DEFINITION_TABLE_REVIEWS",
+  "full_original_benchmark_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_19f55daa7f17ede2858b",
+    "complete_tables": 5,
+    "table_value_entries": 236,
+    "numeric_value_cells": 112,
+    "textual_value_entries": 119,
+    "original_structural_dash_marker_cells": 5,
+    "bibliographic_system_row_identities_separately_checked": 13,
+    "definition_value_entries": 70,
+    "keyword_footnote_definitions_separately_checked": 14
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+  "original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh_content_list.json",
+  "original_parser_sha256": "ea76e04f4cc4f5cfac1d86b8f51257d81a3208e0f393430a6f4ba959f35e2920",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "additional_render_lineage_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\render-lineage.json",
+  "additional_render_lineage_sha256": "8cca3d4d0d4e46bf3d9d70dc426ae19a50a2716ff1f7ee358120ae4567713676",
+  "tables": [
+    {
+      "matrix_index": 9,
+      "page": 2,
+      "label": "Nomenclature",
+      "caption": "Nomenclature",
+      "definition_groups": {
+        "left_variables": [
+          [
+            "C_A_cap",
+            "Annualised capital cost ($)"
+          ],
+          [
+            "C_A_rep",
+            "Annualised replacement cost ($)"
+          ],
+          [
+            "C_A_O&M",
+            "Annualised operation and maintenance costs ($)"
+          ],
+          [
+            "E_s",
+            "Total energy served (kWh)"
+          ],
+          [
+            "E_batt",
+            "Battery capacity (kWh)"
+          ],
+          [
+            "E_Batt,max",
+            "Maximum battery capacity (kWh)"
+          ],
+          [
+            "E_Batt,min",
+            "Minimum battery capacity (kWh)"
+          ],
+          [
+            "E_PHS,max",
+            "Maximum pump-hydro storage capacity (kWh)"
+          ],
+          [
+            "E_PHS,min",
+            "Minimum pump0hydro storage capacity (kWh)"
+          ],
+          [
+            "E_T",
+            "Total energy generation (kWh)"
+          ],
+          [
+            "F_C",
+            "Fuel consumption rate of diesel generator (l/h)"
+          ],
+          [
+            "F_1",
+            "Fuel curve intercept coefficient (l/h/kW_rated)"
+          ],
+          [
+            "F_2",
+            "Fuel curve slope (l/h/kW_output)"
+          ],
+          [
+            "f",
+            "Annual inflation rate (%)"
+          ],
+          [
+            "D_F",
+            "De-rating factor (%)"
+          ],
+          [
+            "g",
+            "Acceleration due to gravity (m/s²)"
+          ],
+          [
+            "G",
+            "Solar irradiation (kW/m²)"
+          ],
+          [
+            "G_S",
+            "Reference solar irradiation (1 kW/m²)"
+          ],
+          [
+            "G_NOCT",
+            "Solar irradiation (kW/m²) at NOCT"
+          ],
+          [
+            "h",
+            "Net water head (m)"
+          ],
+          [
+            "i",
+            "Real annual interest rate (%)"
+          ],
+          [
+            "Â over italic i (visible glyph)",
+            "Nominal interest rate (%)"
+          ],
+          [
+            "LPSP_Desired",
+            "Desired LPSP (%)"
+          ],
+          [
+            "n",
+            "Project’s lifetime in years"
+          ],
+          [
+            "N",
+            "Number of values"
+          ],
+          [
+            "N_Batt",
+            "Number of batteries"
+          ],
+          [
+            "N_DG",
+            "Number of diesel generator"
+          ],
+          [
+            "N_inv",
+            "Number of inverters"
+          ],
+          [
+            "N_PHS",
+            "Number of pump-hydro storage"
+          ],
+          [
+            "N_PV",
+            "Number of PV module"
+          ],
+          [
+            "P_D",
+            "Electrical output from generator (kW)"
+          ],
+          [
+            "P_in",
+            "DC power input to inverter (kW)"
+          ],
+          [
+            "P_P",
+            "Power input to pump (kW)"
+          ],
+          [
+            "P_T",
+            "Power delivered by turbine (kW)"
+          ],
+          [
+            "P_PV",
+            "Power generated by PV (kW)"
+          ],
+          [
+            "P_PV_rated",
+            "Rated capacity of PV array (kW)"
+          ]
+        ],
+        "right_variables": [
+          [
+            "P_out",
+            "AC output power (kW)"
+          ],
+          [
+            "Q_P",
+            "Water flow rate to reservoir (m³/s)"
+          ],
+          [
+            "Q_T",
+            "Water flow rate from reservoir (m³/s)"
+          ],
+          [
+            "R_D",
+            "Rated capacity of diesel generator (kW)"
+          ],
+          [
+            "T_amb",
+            "Ambient temperature (°C)"
+          ],
+          [
+            "T_PV",
+            "PV cell temperature (°C)"
+          ],
+          [
+            "T_PV,NOCT",
+            "PV cell temperature under standard test condition (25 °C)"
+          ],
+          [
+            "T_amb,NOCT",
+            "Atmospheric temperature at NOCT (°C)"
+          ],
+          [
+            "T_PV,NOCT",
+            "Nominal operating cell temperature (°C)"
+          ],
+          [
+            "U_L",
+            "Coefficient of heat transfer to surroundings (kW/m² °C)"
+          ]
+        ],
+        "Greek symbols": [
+          [
+            "τ",
+            "Solar transmittance (%)"
+          ],
+          [
+            "α",
+            "Solar absorptance (%)"
+          ],
+          [
+            "σ",
+            "Self-discharge rate"
+          ],
+          [
+            "τα",
+            "Effective transmittance-absorptance of PV array"
+          ],
+          [
+            "α_p",
+            "Temperature coefficient of power"
+          ],
+          [
+            "η_inv",
+            "Efficiency of battery (%)"
+          ],
+          [
+            "η_inv",
+            "Efficiency of inverter (%)"
+          ],
+          [
+            "η_PV",
+            "PV panel efficiency (%)"
+          ],
+          [
+            "η_P",
+            "Pump efficiency (%)"
+          ],
+          [
+            "η_T",
+            "Turbine efficiency (%)"
+          ]
+        ],
+        "Abbreviations": [
+          [
+            "AC",
+            "Alternative current (A)"
+          ],
+          [
+            "COE",
+            "Cost of Energy ($/kWh)"
+          ],
+          [
+            "CRF",
+            "Capital recovery factor"
+          ],
+          [
+            "DC",
+            "Direct current (A)"
+          ],
+          [
+            "DF",
+            "Duty Factor (kWh/start-stop/yr)"
+          ],
+          [
+            "EE",
+            "Excess Energy (kWh)"
+          ],
+          [
+            "GA",
+            "Genetic Algorithm"
+          ],
+          [
+            "HOMER",
+            "Hybrid Optimization Model for Electric Renewables"
+          ],
+          [
+            "LPSP",
+            "Loss of power supply probability"
+          ],
+          [
+            "NOCT",
+            "Nominal Operating Cell Temperature (°C)"
+          ],
+          [
+            "NPC",
+            "Net Present Cost ($)"
+          ],
+          [
+            "PV",
+            "Photo-voltaic"
+          ],
+          [
+            "RF",
+            "Renewable Fraction (%)"
+          ],
+          [
+            "SMES",
+            "Superconducting magnetic energy storage"
+          ]
+        ]
+      },
+      "value_entries": 70,
+      "numeric_value_cells": 0,
+      "textual_value_entries": 70,
+      "original_structural_dash_marker_cells": 0,
+      "scientific_scope_findings": [
+        "Every visible definition, unit, group and symbol checked. The definition field is one value entry per symbol, not two counts for symbol and meaning. Numerical constants within definitions and unit exponents are not separate numerical cells.",
+        "Original T_PV,NOCT appears twice with different meanings: standard-test PV temperature (25 °C), and nominal operating cell temperature. Original η_inv appears twice for battery and inverter efficiency. These ambiguities already exist in the primary page; do not invent η_batt or T_STC as a corrected literal quote.",
+        "Original nominal-interest symbol displays an Â-like glyph over italic i, and the minimum-PHS definition visibly spells pump0hydro. Reading notation is declared, not a new exact-native quotation.",
+        "Water-flow units are m³/s, heat transfer kW/m² °C, irradiation kW/m², stored/served/generated energy kWh, power kW. Raw parser m?/s and displaced T_NOCT/U_L rows do not faithfully establish these associations.",
+        "F_1 definition is l/h/kW_rated here while Table4 lists actual intercept quantities in L/h. DF duty factor and D_F PV de-rating are different quantities, not interchangeable symbols.",
+        "HOMER expansion here differs from the Table2 keyword expansion. Preserve both original definitions. No same-crop auxiliary table was retained for this nomenclature; absence is not a verified failed observation."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 2,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-002.png",
+            "sha256": "e17fe5201447ed21a3d1a2c2e2166a4164d9578818bb288740b7013acf9400e4"
+          },
+          {
+            "id": "crop-11",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\ad60c962a8a26ae1affad0e53ca289216ce47556f48e4601b7956bc2058a62ee.jpg",
+            "sha256": "ba76222bcf749f25a12039eb9c12bbcc76e72493d358e299b35ca8d62a03eaa8"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          11
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 2,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-002-180dpi.png",
+        "sha256": "53b4662e035583ab278db4da64a26c7685c9bf0c440530aaac4705fac1e36a1b",
+        "dpi": 180
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 2,
+        "raw_parser_content_index": 11,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "14f89748aacc59e8668bffc222915a5939dc8442182f8e5a7eec817a2a77ecce",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b11"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\ad60c962a8a26ae1affad0e53ca289216ce47556f48e4601b7956bc2058a62ee.jpg",
+        "actual_original_crop_sha256": "ba76222bcf749f25a12039eb9c12bbcc76e72493d358e299b35ca8d62a03eaa8",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\002\\record.json",
+        "actual_page_record_sha256": "18581051cdfec5b339121001bd865716e6eec203bf3b326c3113eec3d2594a94",
+        "original_durable_handle": "run_cef854529fea4f34ac99c71e0fd3c565",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 2,
+          "raw_parser_content_index": 11,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "14f89748aacc59e8668bffc222915a5939dc8442182f8e5a7eec817a2a77ecce",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b11"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\ad60c962a8a26ae1affad0e53ca289216ce47556f48e4601b7956bc2058a62ee.jpg",
+          "actual_original_crop_sha256": "ba76222bcf749f25a12039eb9c12bbcc76e72493d358e299b35ca8d62a03eaa8",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\002\\record.json",
+          "actual_page_record_sha256": "18581051cdfec5b339121001bd865716e6eec203bf3b326c3113eec3d2594a94",
+          "original_durable_handle": "run_cef854529fea4f34ac99c71e0fd3c565",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td colspan=\"2\">Nomenclature</td><td>Pout</td><td>AC output power (kW)</td></tr><tr><td></td><td>Annualised capital cost ($)</td><td>QP</td><td>Water flow rate to reservoir (m?/s)</td></tr><tr><td>CA_cap</td><td></td><td>QT</td><td>Water flow rate from reservoir (m?/s)</td></tr><tr><td>CA_rep</td><td>Annualised replacement cost ($)</td><td>RD</td><td>Rated capacity of diesel generator (kW)</td></tr><tr><td>CA_O&M</td><td>Annualised operation and maintenance costs ($)</td><td>Tamb</td><td>Ambient temperature (°C)</td></tr><tr><td>Es</td><td>Total energy served (kWh)</td><td>Tpv</td><td>PV cell temperature (°C)</td></tr><tr><td>Ebatt</td><td>Battery capacity (kWh)</td><td>Tpv,NOCT</td><td>PV cell temperature under standard test condition (25 °C)</td></tr><tr><td>EBatt,max</td><td>Maximum battery capacity (kWh)</td><td></td><td>Tamb,NocT Atmospheric temperature at NOCT (°C)</td></tr><tr><td>EBatt,min</td><td>Minimum battery capacity (kWh)</td><td>UL</td><td>Tpv,NocT Nominal operating cell temperature (°C)</td></tr><tr><td>EPHS,max</td><td>Maximum pump-hydro storage capacity (kWh)</td><td></td><td>Coefficient of heat transfer to surroundings (kW/m2 °C)</td></tr><tr><td>EPHS,min ET</td><td>Minimum pumpohydro storage capacity (kWh)</td><td>Greek symbols</td><td></td></tr><tr><td>Fc</td><td>Total energy generation (kWh)</td><td>T</td><td>Solar transmittance (%)</td></tr><tr><td>F1</td><td>Fuel consumption rate of diesel generator (l/h) Fuel curve intercept coefficient (l/h/kWrated)</td><td>α</td><td>Solar absorptance (%)</td></tr><tr><td>F2</td><td>Fuel curve slope (l/h/kWoutput)</td><td></td><td>Self-discharge rate</td></tr><tr><td>f</td><td>Annual inflation rate (%)</td><td>02</td><td>Effective transmittance-absorptance of PV array</td></tr><tr><td>DF</td><td>De-rating factor (%)</td><td>αp</td><td>Temperature coefficient of power</td></tr><tr><td>g</td><td>Acceleration due to gravity (m/s2)</td><td>Minv</td><td>Efficiency ofbattery(%)</td></tr><tr><td>G</td><td>Solar irradiation (kW/m²)</td><td>Minv</td><td>Efficiency of inverter (%)</td></tr><tr><td>Gs</td><td>Reference solar irradiation (1 kW/m2)</td><td>NpV</td><td>PV panel efficiency (%)</td></tr><tr><td>GNOCT</td><td>Solar irradiation (kW/m²) at NOCT</td><td>np</td><td>Pump efficiency (%)</td></tr><tr><td>h</td><td>Net water head (m)</td><td>nT</td><td>Turbine efficiency (%)</td></tr><tr><td>i</td><td>Real annual interest rate (%)</td><td>Abbreviations</td><td></td></tr><tr><td>A i</td><td></td><td>AC</td><td>Alternative current (A)</td></tr><tr><td></td><td>Nominal interest rate (%)</td><td></td><td></td></tr><tr><td></td><td>LPSPDesired Desired LPSP (%)</td><td>COE</td><td>Cost of Energy ($/kWh) Capital recovery factor</td></tr><tr><td>n</td><td>Project's lifetime in years</td><td>CRF DC</td><td>Direct current (A)</td></tr><tr><td>N</td><td>Number of values</td><td>DF</td><td></td></tr><tr><td>NBatt</td><td>Number of batteries</td><td>EE</td><td>Duty Factor (kWh/start-stop/yr) Excess Energy (kWh)</td></tr><tr><td>NDG</td><td>Number of diesel generator</td><td>GA</td><td>Genetic Algorithm</td></tr><tr><td>Ninv</td><td>Number of inverters</td><td>HOMER</td><td>Hybrid Optimization Model for ElectricRenewables</td></tr><tr><td>NPHS</td><td>Number of pump-hydro storage</td><td>LPSP</td><td>Loss of power supply probability</td></tr><tr><td>Npv</td><td>Number of PV module</td><td>NOCT</td><td>Nominal Operating Cell Temperature (°C)</td></tr><tr><td>PD</td><td>Electrical output from generator (kW)</td><td>NPC</td><td></td></tr><tr><td>Pin</td><td>DC power input to inverter (kW)</td><td>PV</td><td>Net Present Cost ($) Photo-voltaic</td></tr><tr><td>Pp</td><td>Power input to pump (kW)</td><td>RF</td><td>Renewable Fraction (%)</td></tr><tr><td>PT</td><td>Power delivered by turbine (kW)</td><td>SMES</td><td></td></tr><tr><td>Ppv</td><td>Power generated by PV (kW)</td><td></td><td>Superconducting magnetic energy storage</td></tr><tr><td>PpV_rated</td><td>Rated capacity of PV array (kW)</td><td></td><td></td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Nomenclature",
+            "Pout",
+            "AC output power (kW)"
+          ],
+          [
+            "",
+            "Annualised capital cost ($)",
+            "QP",
+            "Water flow rate to reservoir (m?/s)"
+          ],
+          [
+            "CA_cap",
+            "",
+            "QT",
+            "Water flow rate from reservoir (m?/s)"
+          ],
+          [
+            "CA_rep",
+            "Annualised replacement cost ($)",
+            "RD",
+            "Rated capacity of diesel generator (kW)"
+          ],
+          [
+            "CA_O&M",
+            "Annualised operation and maintenance costs ($)",
+            "Tamb",
+            "Ambient temperature (°C)"
+          ],
+          [
+            "Es",
+            "Total energy served (kWh)",
+            "Tpv",
+            "PV cell temperature (°C)"
+          ],
+          [
+            "Ebatt",
+            "Battery capacity (kWh)",
+            "Tpv,NOCT",
+            "PV cell temperature under standard test condition (25 °C)"
+          ],
+          [
+            "EBatt,max",
+            "Maximum battery capacity (kWh)",
+            "",
+            "Tamb,NocT Atmospheric temperature at NOCT (°C)"
+          ],
+          [
+            "EBatt,min",
+            "Minimum battery capacity (kWh)",
+            "UL",
+            "Tpv,NocT Nominal operating cell temperature (°C)"
+          ],
+          [
+            "EPHS,max",
+            "Maximum pump-hydro storage capacity (kWh)",
+            "",
+            "Coefficient of heat transfer to surroundings (kW/m2 °C)"
+          ],
+          [
+            "EPHS,min ET",
+            "Minimum pumpohydro storage capacity (kWh)",
+            "Greek symbols",
+            ""
+          ],
+          [
+            "Fc",
+            "Total energy generation (kWh)",
+            "T",
+            "Solar transmittance (%)"
+          ],
+          [
+            "F1",
+            "Fuel consumption rate of diesel generator (l/h) Fuel curve intercept coefficient (l/h/kWrated)",
+            "α",
+            "Solar absorptance (%)"
+          ],
+          [
+            "F2",
+            "Fuel curve slope (l/h/kWoutput)",
+            "",
+            "Self-discharge rate"
+          ],
+          [
+            "f",
+            "Annual inflation rate (%)",
+            "02",
+            "Effective transmittance-absorptance of PV array"
+          ],
+          [
+            "DF",
+            "De-rating factor (%)",
+            "αp",
+            "Temperature coefficient of power"
+          ],
+          [
+            "g",
+            "Acceleration due to gravity (m/s2)",
+            "Minv",
+            "Efficiency ofbattery(%)"
+          ],
+          [
+            "G",
+            "Solar irradiation (kW/m²)",
+            "Minv",
+            "Efficiency of inverter (%)"
+          ],
+          [
+            "Gs",
+            "Reference solar irradiation (1 kW/m2)",
+            "NpV",
+            "PV panel efficiency (%)"
+          ],
+          [
+            "GNOCT",
+            "Solar irradiation (kW/m²) at NOCT",
+            "np",
+            "Pump efficiency (%)"
+          ],
+          [
+            "h",
+            "Net water head (m)",
+            "nT",
+            "Turbine efficiency (%)"
+          ],
+          [
+            "i",
+            "Real annual interest rate (%)",
+            "Abbreviations",
+            ""
+          ],
+          [
+            "A i",
+            "",
+            "AC",
+            "Alternative current (A)"
+          ],
+          [
+            "",
+            "Nominal interest rate (%)",
+            "",
+            ""
+          ],
+          [
+            "",
+            "LPSPDesired Desired LPSP (%)",
+            "COE",
+            "Cost of Energy ($/kWh) Capital recovery factor"
+          ],
+          [
+            "n",
+            "Project's lifetime in years",
+            "CRF DC",
+            "Direct current (A)"
+          ],
+          [
+            "N",
+            "Number of values",
+            "DF",
+            ""
+          ],
+          [
+            "NBatt",
+            "Number of batteries",
+            "EE",
+            "Duty Factor (kWh/start-stop/yr) Excess Energy (kWh)"
+          ],
+          [
+            "NDG",
+            "Number of diesel generator",
+            "GA",
+            "Genetic Algorithm"
+          ],
+          [
+            "Ninv",
+            "Number of inverters",
+            "HOMER",
+            "Hybrid Optimization Model for ElectricRenewables"
+          ],
+          [
+            "NPHS",
+            "Number of pump-hydro storage",
+            "LPSP",
+            "Loss of power supply probability"
+          ],
+          [
+            "Npv",
+            "Number of PV module",
+            "NOCT",
+            "Nominal Operating Cell Temperature (°C)"
+          ],
+          [
+            "PD",
+            "Electrical output from generator (kW)",
+            "NPC",
+            ""
+          ],
+          [
+            "Pin",
+            "DC power input to inverter (kW)",
+            "PV",
+            "Net Present Cost ($) Photo-voltaic"
+          ],
+          [
+            "Pp",
+            "Power input to pump (kW)",
+            "RF",
+            "Renewable Fraction (%)"
+          ],
+          [
+            "PT",
+            "Power delivered by turbine (kW)",
+            "SMES",
+            ""
+          ],
+          [
+            "Ppv",
+            "Power generated by PV (kW)",
+            "",
+            "Superconducting magnetic energy storage"
+          ],
+          [
+            "PpV_rated",
+            "Rated capacity of PV array (kW)",
+            "",
+            ""
+          ]
+        ],
+        "original_parser_captions": [],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": []
+      },
+      "reading_notation_is_not_exact_native_text_or_gold": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 10,
+      "page": 3,
+      "label": "Table 1",
+      "caption": "Techno-economic characteristics of different storage options [25–27].",
+      "columns": [
+        "Parameters",
+        "PHS",
+        "Flywheel",
+        "Compressed air",
+        "Lead acid",
+        "Li-ion",
+        "VRF",
+        "Supercapacitor",
+        "SMES"
+      ],
+      "column_group_membership": {
+        "Mechanical storage": [
+          "PHS",
+          "Flywheel",
+          "Compressed air"
+        ],
+        "Chemical storage": [
+          "Lead acid",
+          "Li-ion",
+          "VRF"
+        ],
+        "Electrical storage": [
+          "Supercapacitor",
+          "SMES"
+        ]
+      },
+      "rows": [
+        [
+          "Energy density (Wh/kg)",
+          "0.5–1.5",
+          "10–30",
+          "30–60",
+          "24–45",
+          "75–200",
+          "10–30",
+          "2.5–15",
+          "0.5–5"
+        ],
+        [
+          "Power density (W/kg)",
+          "–",
+          "400–1500",
+          "–",
+          "180",
+          "500–2000",
+          "166",
+          "500–5000",
+          "500–2000"
+        ],
+        [
+          "Energy efficiency (%)",
+          "65–87",
+          "85–95",
+          "50–89",
+          "70–80",
+          "85–90",
+          "85–90",
+          "90–95",
+          "95–98"
+        ],
+        [
+          "Lifetime (yr)",
+          "40–60",
+          "~15",
+          "20–60",
+          "3–12",
+          "15–20",
+          ">20",
+          ">20",
+          ">20"
+        ],
+        [
+          "Lifecycle",
+          "–",
+          "20,000+",
+          "–",
+          "1500",
+          "1000–20,000",
+          "10,000",
+          ">100,000",
+          ">100,000"
+        ],
+        [
+          "Discharge time",
+          "1–24 h",
+          "ms–15 min",
+          "1–24 h",
+          "s–h",
+          "min–h",
+          "s–10 h",
+          "ms–h",
+          "ms–8 s"
+        ],
+        [
+          "Technological development",
+          "Mature",
+          "Commercial",
+          "Developed",
+          "Commercial",
+          "Demonstration",
+          "Demonstration",
+          "Developed",
+          "Demonstration"
+        ],
+        [
+          "Capital cost ($/kW)",
+          "600–2000",
+          "250–350",
+          "400–800",
+          "300–600",
+          "600–2500",
+          "600–1500",
+          "100–300",
+          "200–300"
+        ]
+      ],
+      "value_entries": 64,
+      "numeric_value_cells": 49,
+      "textual_value_entries": 11,
+      "original_structural_dash_marker_cells": 4,
+      "scientific_scope_findings": [
+        "All eight parameter rows × eight storage categories checked. Intervals, approximate ~15, lower limits >20 or >100000, and 20000+ retain their meanings; endpoints do not count as two value cells.",
+        "Original lead-acid energy density is 24–45 Wh/kg. Raw parser 2445 loses the interval delimiter and is a primary-pixel-confirmed extraction error. Auxiliary 24-45 preserves the quantity.",
+        "Four original dash cells for PHS/compressed-air power density and lifecycle remain unspecified, not zero. Lifecycle is a different dimension from service lifetime in years.",
+        "Discharge-time entries keep milliseconds, seconds, minutes and hours, including unit-only s–h/min–h/ms–h. Capital costs are per power kW, not per stored-energy kWh. Development stages are qualitative literal values.",
+        "This cited literature summary is not the measured efficiency or lifetime of the specific Bangladesh design. No inference that all PHS has exactly70% efficiency or all batteries match the chosen6.91kWh model."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-003.png",
+            "sha256": "ffd0c44729061b439c34e6dd9bc29c9765b48f0e7770d65c0fcbfc8fa17edee6"
+          },
+          {
+            "id": "crop-22",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\dc667da0afe25cac640c1a1ae1ca8faf12bc5c94bda9fe6f241fc2176da1d0eb.jpg",
+            "sha256": "ad4c63537e59462cfa8893a0b53e0c31329d9e9813c2abaf5b0795d9ed74e43c"
+          },
+          {
+            "id": "crop-26",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\114eae1f8bec0277a5e79ee675a67bfb05313e166bf595cc49871e54b3e18a7a.jpg",
+            "sha256": "bb9488bdf3b42e9667eea903ab346842b82f31596f4ac5afa81e386cd24ee0fa"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          22,
+          26
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-003-180dpi.png",
+        "sha256": "6613744cf2f325d039df7176e9ebbd456cb6f9120a3010029eece70b8c7b9d4d",
+        "dpi": 180
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 22,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "fc77d11c6212c2082fa07faab226b8fb5d01f04b13295a0f60dec1cb6ab721a0",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b20"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\dc667da0afe25cac640c1a1ae1ca8faf12bc5c94bda9fe6f241fc2176da1d0eb.jpg",
+        "actual_original_crop_sha256": "ad4c63537e59462cfa8893a0b53e0c31329d9e9813c2abaf5b0795d9ed74e43c",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\003\\record.json",
+        "actual_page_record_sha256": "0ed04e6a8e3352385677218b8b966d2d5b3abce749ee4b15510dbe4ad3aa1bf9",
+        "original_durable_handle": "run_5f86e407159240bfa4d984eb39aecb8a",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 3,
+          "raw_parser_content_index": 22,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "fc77d11c6212c2082fa07faab226b8fb5d01f04b13295a0f60dec1cb6ab721a0",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b20"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\dc667da0afe25cac640c1a1ae1ca8faf12bc5c94bda9fe6f241fc2176da1d0eb.jpg",
+          "actual_original_crop_sha256": "ad4c63537e59462cfa8893a0b53e0c31329d9e9813c2abaf5b0795d9ed74e43c",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\003\\record.json",
+          "actual_page_record_sha256": "0ed04e6a8e3352385677218b8b966d2d5b3abce749ee4b15510dbe4ad3aa1bf9",
+          "original_durable_handle": "run_5f86e407159240bfa4d984eb39aecb8a",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Parameters</td><td colspan=\"3\">Mechanical storage</td><td colspan=\"3\">Chemicalstorage</td><td colspan=\"2\">Electricalstorage</td></tr><tr><td></td><td>PHS</td><td>Flywheel</td><td>Compressed air</td><td>Lead acid</td><td>Li-ion</td><td>VRF</td><td>Supercapacitor</td><td>SMES</td></tr><tr><td>Energy density(Wh/kg)</td><td>0.5-1.5</td><td>10-30</td><td>30-60</td><td>2445</td><td>75-200</td><td>10-30</td><td>2.5-15</td><td>0.5-5</td></tr><tr><td>Power density(W/kg)</td><td>一</td><td>400-1500</td><td>一</td><td>180</td><td>500-2000</td><td>166</td><td>500-5000</td><td>500-2000</td></tr><tr><td>Energy efficiency (%)</td><td>65-87</td><td>85-95</td><td>50-89</td><td>70-80</td><td>85-90</td><td>85-90</td><td>90-95</td><td>95-98</td></tr><tr><td>Lifetime (yr)</td><td>40-60</td><td>~15</td><td>20-60</td><td>3-12</td><td>15-20</td><td>>20</td><td>>20</td><td>>20</td></tr><tr><td>Lifecycle</td><td>一</td><td>20,000+</td><td>一</td><td>1500</td><td>1000-20,000</td><td>10,000</td><td>>100,000</td><td>>100,000</td></tr><tr><td>Discharge time</td><td>1-24 h</td><td>ms-15min</td><td>1-24h</td><td>s-h</td><td>min-h</td><td>s-10 h</td><td>ms-h</td><td>ms-8s</td></tr><tr><td>Technologicaldevelopment</td><td>Mature</td><td>Commercial</td><td>Developed</td><td>Commercial</td><td>Demonstration</td><td>Demonstration</td><td>Developed</td><td>Demonstration</td></tr><tr><td>Capital cost ($/kW)</td><td>600-2000</td><td>250-350</td><td>400-800</td><td>300-600</td><td>600-2500</td><td>600-1500</td><td>100-300</td><td>200-300</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Parameters",
+            "Mechanical storage",
+            "Chemicalstorage",
+            "Electricalstorage"
+          ],
+          [
+            "",
+            "PHS",
+            "Flywheel",
+            "Compressed air",
+            "Lead acid",
+            "Li-ion",
+            "VRF",
+            "Supercapacitor",
+            "SMES"
+          ],
+          [
+            "Energy density(Wh/kg)",
+            "0.5-1.5",
+            "10-30",
+            "30-60",
+            "2445",
+            "75-200",
+            "10-30",
+            "2.5-15",
+            "0.5-5"
+          ],
+          [
+            "Power density(W/kg)",
+            "一",
+            "400-1500",
+            "一",
+            "180",
+            "500-2000",
+            "166",
+            "500-5000",
+            "500-2000"
+          ],
+          [
+            "Energy efficiency (%)",
+            "65-87",
+            "85-95",
+            "50-89",
+            "70-80",
+            "85-90",
+            "85-90",
+            "90-95",
+            "95-98"
+          ],
+          [
+            "Lifetime (yr)",
+            "40-60",
+            "~15",
+            "20-60",
+            "3-12",
+            "15-20",
+            ">20",
+            ">20",
+            ">20"
+          ],
+          [
+            "Lifecycle",
+            "一",
+            "20,000+",
+            "一",
+            "1500",
+            "1000-20,000",
+            "10,000",
+            ">100,000",
+            ">100,000"
+          ],
+          [
+            "Discharge time",
+            "1-24 h",
+            "ms-15min",
+            "1-24h",
+            "s-h",
+            "min-h",
+            "s-10 h",
+            "ms-h",
+            "ms-8s"
+          ],
+          [
+            "Technologicaldevelopment",
+            "Mature",
+            "Commercial",
+            "Developed",
+            "Commercial",
+            "Demonstration",
+            "Demonstration",
+            "Developed",
+            "Demonstration"
+          ],
+          [
+            "Capital cost ($/kW)",
+            "600-2000",
+            "250-350",
+            "400-800",
+            "300-600",
+            "600-2500",
+            "600-1500",
+            "100-300",
+            "200-300"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 1 Techno-economic characteristics of different storage options [25–27]. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 1",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-22"
+              ],
+              "exact_visible_text": "Table 1\nTechno-economic characteristics of different storage options [25-27].\nParameters Mechanical storage Chemical storage Electrical storage\nPHS Flywheel Compressed air Lead acid Li-ion VRF Supercapacitor SMES\nEnergy density (Wh/kg) 0.5-1.5 10-30 30-60 24-45 75-200 10-30 2.5-15 0.5-5\nPower density (W/kg) - 400-1500 - 180 500-2000 166 500-5000 500-2000\nEnergy efficiency (%) 65-87 85-95 50-89 70-80 85-90 85-90 90-95 95-98\nLifetime (yr) 40-60 ~15 20-60 3-12 15-20 >20 >20 >20\nLifecycle - 20,000+ - 1500 1000-20,000 10,000 >100,000 >100,000\nDischarge time 1-24 h ms-15 min 1-24 h s-h min-h s-10 h ms-h ms-8 s\nTechnological development Mature Commercial Developed Commercial Demonstration Demonstration Developed Demonstration\nCapital cost ($/kW) 600-2000 250-350 400-800 300-600 600-2500 600-1500 100-300 200-300",
+              "table_rows": [
+                [
+                  "Parameters",
+                  "Mechanical storage",
+                  "",
+                  "",
+                  "Chemical storage",
+                  "",
+                  "",
+                  "Electrical storage",
+                  ""
+                ],
+                [
+                  "",
+                  "PHS",
+                  "Flywheel",
+                  "Compressed air",
+                  "Lead acid",
+                  "Li-ion",
+                  "VRF",
+                  "Supercapacitor",
+                  "SMES"
+                ],
+                [
+                  "Energy density (Wh/kg)",
+                  "0.5-1.5",
+                  "10-30",
+                  "30-60",
+                  "24-45",
+                  "75-200",
+                  "10-30",
+                  "2.5-15",
+                  "0.5-5"
+                ],
+                [
+                  "Power density (W/kg)",
+                  "-",
+                  "400-1500",
+                  "-",
+                  "180",
+                  "500-2000",
+                  "166",
+                  "500-5000",
+                  "500-2000"
+                ],
+                [
+                  "Energy efficiency (%)",
+                  "65-87",
+                  "85-95",
+                  "50-89",
+                  "70-80",
+                  "85-90",
+                  "85-90",
+                  "90-95",
+                  "95-98"
+                ],
+                [
+                  "Lifetime (yr)",
+                  "40-60",
+                  "~15",
+                  "20-60",
+                  "3-12",
+                  "15-20",
+                  ">20",
+                  ">20",
+                  ">20"
+                ],
+                [
+                  "Lifecycle",
+                  "-",
+                  "20,000+",
+                  "-",
+                  "1500",
+                  "1000-20,000",
+                  "10,000",
+                  ">100,000",
+                  ">100,000"
+                ],
+                [
+                  "Discharge time",
+                  "1-24 h",
+                  "ms-15 min",
+                  "1-24 h",
+                  "s-h",
+                  "min-h",
+                  "s-10 h",
+                  "ms-h",
+                  "ms-8 s"
+                ],
+                [
+                  "Technological development",
+                  "Mature",
+                  "Commercial",
+                  "Developed",
+                  "Commercial",
+                  "Demonstration",
+                  "Demonstration",
+                  "Developed",
+                  "Demonstration"
+                ],
+                [
+                  "Capital cost ($/kW)",
+                  "600-2000",
+                  "250-350",
+                  "400-800",
+                  "300-600",
+                  "600-2500",
+                  "600-1500",
+                  "100-300",
+                  "200-300"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {
+              "2445": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {
+              "24": 1,
+              "45": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "1": 1,
+              "25": 1,
+              "27": 1
+            },
+            "parser_row_lengths": [
+              4,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9
+            ],
+            "auxiliary_row_lengths": [
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9,
+              9
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "reading_notation_is_not_exact_native_text_or_gold": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 11,
+      "page": 3,
+      "label": "Table 2",
+      "caption": "Summary of PHS-based HESs.",
+      "columns": [
+        "Hybrid energy system",
+        "Off-grid/grid-connected",
+        "Method",
+        "Evaluation criteria"
+      ],
+      "rows": [
+        [
+          "PV/Wind/Diesel/PHS/FC/Battery [28]",
+          "Off-grid",
+          "HOMER",
+          "COE, NPC, emissions, EE, RF"
+        ],
+        [
+          "Wind/PHS [29]",
+          "Off-grid",
+          "HOMER",
+          "COE"
+        ],
+        [
+          "PV/Battery/PHS [30]",
+          "Off-grid",
+          "PSO",
+          "LCOE, reliability"
+        ],
+        [
+          "PV/Wind/PHS [31]",
+          "Off-grid",
+          "GA",
+          "LCOE, reliability"
+        ],
+        [
+          "PV/Wind/PHS [32]",
+          "Off-grid",
+          "GA, HOMER",
+          "Sensitivity analysis, COE, reliability"
+        ],
+        [
+          "PV/Wind/PHS [22]",
+          "Off-grid",
+          "PSO, GA, SA",
+          "COE, reliability"
+        ],
+        [
+          "Wind/PHS [33]",
+          "Grid-connected",
+          "EA",
+          "NPC, IRR, PP"
+        ],
+        [
+          "PV/Wind/Battery/PHS [20]",
+          "Grid-connected",
+          "NSGA-II",
+          "Cost analysis, CO₂ emissions"
+        ],
+        [
+          "PV/Wind/PHS [34]",
+          "Grid-connected",
+          "–",
+          "LCI, CO₂ price"
+        ],
+        [
+          "PV/Wind/PHS [35]",
+          "Grid-connected",
+          "Direct Multi-search",
+          "Cost analysis, CO₂ emissions, RF"
+        ],
+        [
+          "PV/Wind/PHS [36]",
+          "Off-grid",
+          "Fmincon",
+          "Cost analysis"
+        ],
+        [
+          "PV/Diesel/PHS [37]",
+          "Off-grid",
+          "Fmincon",
+          "Cost analysis"
+        ],
+        [
+          "PV/Wind/PHS [38]",
+          "Off-grid",
+          "Demand Response",
+          "Cost analysis, EE"
+        ]
+      ],
+      "complete_keyword_footnote_definitions": [
+        [
+          "COE",
+          "Cost of energy"
+        ],
+        [
+          "EE",
+          "Excess energy"
+        ],
+        [
+          "EA",
+          "Evolutionary algorithm"
+        ],
+        [
+          "GA",
+          "Genetic algorithm"
+        ],
+        [
+          "HOMER",
+          "Hybrid optimization of multiple energy resources"
+        ],
+        [
+          "IRR",
+          "Internal rate of return"
+        ],
+        [
+          "LCOE",
+          "Levelized cost of energy"
+        ],
+        [
+          "LCI",
+          "Local consumption index"
+        ],
+        [
+          "NPC",
+          "Net present cost"
+        ],
+        [
+          "NSGA-II",
+          "Non-dominated sorting genetic algorithm II"
+        ],
+        [
+          "PHS",
+          "Pump hydro storage"
+        ],
+        [
+          "PSO",
+          "Particle swarm optimisation"
+        ],
+        [
+          "RF",
+          "Renewable fraction"
+        ],
+        [
+          "SA",
+          "Simulated annealing"
+        ]
+      ],
+      "value_entries": 39,
+      "numeric_value_cells": 0,
+      "textual_value_entries": 38,
+      "original_structural_dash_marker_cells": 1,
+      "bibliographic_system_row_identities_checked_separately": 13,
+      "scientific_scope_findings": [
+        "All13 cited system identities and three associated fields per row checked. Citation numbers and CO₂ subscripts do not count as quantitative results. Complete keyword footnote checked on full original page3.",
+        "Raw [28] is detached into Wind/PHS[29] row; original [28] belongs to the preceding PV/Wind/Diesel/PHS/FC/Battery row. This is not an additional study or alternate configuration.",
+        "Original studies[32] and[22] are Off-grid, not raw P8-HO. Study[31] method is GA, not an original blank. Study[34] method is genuinely an original dash and stays unspecified.",
+        "Method labels PSO/GA/SA/EA/NSGA-II/HOMER/Fmincon/Direct Multi-search/Demand Response and economic/reliability/emission criteria retain their distinct associations. Auxiliary rows agree in those fields; its flat caption HESSs differs from original HESs.",
+        "The keyword footnote does not define PP despite PP in the study[33] criteria. No new definition inferred. The table describes prior literature; it does not report the present paper’s experimental outcome or prove comparative algorithm accuracy."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 3,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-003.png",
+            "sha256": "ffd0c44729061b439c34e6dd9bc29c9765b48f0e7770d65c0fcbfc8fa17edee6"
+          },
+          {
+            "id": "crop-22",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\dc667da0afe25cac640c1a1ae1ca8faf12bc5c94bda9fe6f241fc2176da1d0eb.jpg",
+            "sha256": "ad4c63537e59462cfa8893a0b53e0c31329d9e9813c2abaf5b0795d9ed74e43c"
+          },
+          {
+            "id": "crop-26",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\114eae1f8bec0277a5e79ee675a67bfb05313e166bf595cc49871e54b3e18a7a.jpg",
+            "sha256": "bb9488bdf3b42e9667eea903ab346842b82f31596f4ac5afa81e386cd24ee0fa"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          22,
+          26
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 3,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-003-180dpi.png",
+        "sha256": "6613744cf2f325d039df7176e9ebbd456cb6f9120a3010029eece70b8c7b9d4d",
+        "dpi": 180
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 3,
+        "raw_parser_content_index": 26,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "9623ca207048702ff986f1422c7a9fb4bb87894e565b21fc8bafdff0d58208f2",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b23"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\114eae1f8bec0277a5e79ee675a67bfb05313e166bf595cc49871e54b3e18a7a.jpg",
+        "actual_original_crop_sha256": "bb9488bdf3b42e9667eea903ab346842b82f31596f4ac5afa81e386cd24ee0fa",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\003\\record.json",
+        "actual_page_record_sha256": "0ed04e6a8e3352385677218b8b966d2d5b3abce749ee4b15510dbe4ad3aa1bf9",
+        "original_durable_handle": "run_5f86e407159240bfa4d984eb39aecb8a",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 3,
+          "raw_parser_content_index": 26,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "9623ca207048702ff986f1422c7a9fb4bb87894e565b21fc8bafdff0d58208f2",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b23"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\114eae1f8bec0277a5e79ee675a67bfb05313e166bf595cc49871e54b3e18a7a.jpg",
+          "actual_original_crop_sha256": "bb9488bdf3b42e9667eea903ab346842b82f31596f4ac5afa81e386cd24ee0fa",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\003\\record.json",
+          "actual_page_record_sha256": "0ed04e6a8e3352385677218b8b966d2d5b3abce749ee4b15510dbe4ad3aa1bf9",
+          "original_durable_handle": "run_5f86e407159240bfa4d984eb39aecb8a",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            1
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Hybrid energy system</td><td>Off-grid/grid- connected</td><td>Method</td><td>Evaluation criteria</td></tr><tr><td>PV/Wind/Diesel/ PHS/FC/Battery</td><td>Off-grid</td><td>HOMER</td><td>COE,NPC, emissions, EE,RF</td></tr><tr><td>[28] Wind/PHS[29]</td><td>Off-grid</td><td>HOMER</td><td>COE</td></tr><tr><td>PV/Battery/PHS [30]</td><td>Off-grid</td><td>PSO</td><td>LCOE,reliability</td></tr><tr><td>PV/Wind/PHS [31]</td><td>Off-grid</td><td></td><td>LCOE,reliability</td></tr><tr><td>PV/Wind/PHS[32]</td><td>P8-HO</td><td>GA,HOMER</td><td>Sensitivity analysis, COE,reliability</td></tr><tr><td>PV/Wind/PHS [22]</td><td>P8-HO</td><td>PSO,GA,SA</td><td>COE,reliability</td></tr><tr><td>Wind/PHS[33]</td><td>Grid-connected</td><td>EA</td><td>NPC, IRR, PP</td></tr><tr><td>PV/Wind/Battery/ PHS [20]</td><td>Grid-connected</td><td>NSGA-II</td><td>Cost analysis, CO2 emissions</td></tr><tr><td>PV/Wind/PHS [34]</td><td>Grid-connected</td><td></td><td>LCI, CO2 price</td></tr><tr><td>PV/Wind/PHS[35]</td><td>Grid-connected</td><td>Direct Multi- search</td><td>Cost analysis, CO2 emissions, RF</td></tr><tr><td>PV/Wind/PHS [36]</td><td>Off-grid</td><td>Fmincon</td><td>Cost analysis</td></tr><tr><td>PV/Diesel/PHS[37]</td><td>Off-grid</td><td>Fmincon</td><td>Cost analysis</td></tr><tr><td>PV/Wind/PHS [38]</td><td>Off-grid</td><td>Demand</td><td>Cost analysis, EE</td></tr><tr><td></td><td></td><td>Response</td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Hybrid energy system",
+            "Off-grid/grid- connected",
+            "Method",
+            "Evaluation criteria"
+          ],
+          [
+            "PV/Wind/Diesel/ PHS/FC/Battery",
+            "Off-grid",
+            "HOMER",
+            "COE,NPC, emissions, EE,RF"
+          ],
+          [
+            "[28] Wind/PHS[29]",
+            "Off-grid",
+            "HOMER",
+            "COE"
+          ],
+          [
+            "PV/Battery/PHS [30]",
+            "Off-grid",
+            "PSO",
+            "LCOE,reliability"
+          ],
+          [
+            "PV/Wind/PHS [31]",
+            "Off-grid",
+            "",
+            "LCOE,reliability"
+          ],
+          [
+            "PV/Wind/PHS[32]",
+            "P8-HO",
+            "GA,HOMER",
+            "Sensitivity analysis, COE,reliability"
+          ],
+          [
+            "PV/Wind/PHS [22]",
+            "P8-HO",
+            "PSO,GA,SA",
+            "COE,reliability"
+          ],
+          [
+            "Wind/PHS[33]",
+            "Grid-connected",
+            "EA",
+            "NPC, IRR, PP"
+          ],
+          [
+            "PV/Wind/Battery/ PHS [20]",
+            "Grid-connected",
+            "NSGA-II",
+            "Cost analysis, CO2 emissions"
+          ],
+          [
+            "PV/Wind/PHS [34]",
+            "Grid-connected",
+            "",
+            "LCI, CO2 price"
+          ],
+          [
+            "PV/Wind/PHS[35]",
+            "Grid-connected",
+            "Direct Multi- search",
+            "Cost analysis, CO2 emissions, RF"
+          ],
+          [
+            "PV/Wind/PHS [36]",
+            "Off-grid",
+            "Fmincon",
+            "Cost analysis"
+          ],
+          [
+            "PV/Diesel/PHS[37]",
+            "Off-grid",
+            "Fmincon",
+            "Cost analysis"
+          ],
+          [
+            "PV/Wind/PHS [38]",
+            "Off-grid",
+            "Demand",
+            "Cost analysis, EE"
+          ],
+          [
+            "",
+            "",
+            "Response",
+            ""
+          ],
+          [
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 2 Summary of PHS-based HESs. "
+        ],
+        "original_parser_footnotes": [
+          "Keywords: COE: Cost of energy; EE: Excess energy; EA: Evolutionary algorithm; GA: Genetic algorithm; HOMER: Hybrid optimization of multiple energy re­ sources; IRR: Internal rate of return; LCOE: Levelized cost of energy; LCI: Local consumption index; NPC: Net present cost; NSGA-II: Non-dominated sorting genetic algorithm II; PHS: Pump hydro storage; PSO: Particle swarm optimisa­ tion; RF: Renewable fraction; SA: Simulated annealing. "
+        ],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 1,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 2",
+              "location": "MIDDLE",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-26"
+              ],
+              "exact_visible_text": "Table 2\nSummary of PHS-based HESSs.\nHybrid energy system Off-grid/grid-connected Method Evaluation criteria\nPV/Wind/Diesel/PHS/FC/Battery [28] Off-grid HOMER COE, NPC, emissions, EE, RF\nWind/PHS [29] Off-grid HOMER COE\nPV/Battery/PHS [30] Off-grid PSO LCOE, reliability\nPV/Wind/PHS [31] Off-grid GA LCOE, reliability\nPV/Wind/PHS [32] Off-grid GA, HOMER Sensitivity analysis, COE, reliability\nPV/Wind/PHS [22] Off-grid PSO, GA, SA COE, reliability\nWind/PHS [33] Grid-connected EA NPC, IRR, PP\nPV/Wind/Battery/PHS [20] Grid-connected NSGA-II Cost analysis, CO2 emissions\nPV/Wind/PHS [34] Grid-connected - LCI, CO2 price\nPV/Wind/PHS [35] Grid-connected Direct Multi-search Cost analysis, CO2 emissions, RF\nPV/Wind/PHS [36] Off-grid Fmincon Cost analysis\nPV/Diesel/PHS [37] Off-grid Fmincon Cost analysis\nPV/Wind/PHS [38] Off-grid Demand Response Cost analysis, EE",
+              "table_rows": [
+                [
+                  "Hybrid energy system",
+                  "Off-grid/grid-connected",
+                  "Method",
+                  "Evaluation criteria"
+                ],
+                [
+                  "PV/Wind/Diesel/ PHS/FC/Battery [28]",
+                  "Off-grid",
+                  "HOMER",
+                  "COE, NPC, emissions, EE, RF"
+                ],
+                [
+                  "Wind/PHS [29]",
+                  "Off-grid",
+                  "HOMER",
+                  "COE"
+                ],
+                [
+                  "PV/Battery/PHS [30]",
+                  "Off-grid",
+                  "PSO",
+                  "LCOE, reliability"
+                ],
+                [
+                  "PV/Wind/PHS [31]",
+                  "Off-grid",
+                  "GA",
+                  "LCOE, reliability"
+                ],
+                [
+                  "PV/Wind/PHS [32]",
+                  "Off-grid",
+                  "GA, HOMER",
+                  "Sensitivity analysis, COE, reliability"
+                ],
+                [
+                  "PV/Wind/PHS [22]",
+                  "Off-grid",
+                  "PSO, GA, SA",
+                  "COE, reliability"
+                ],
+                [
+                  "Wind/PHS [33]",
+                  "Grid-connected",
+                  "EA",
+                  "NPC, IRR, PP"
+                ],
+                [
+                  "PV/Wind/Battery/ PHS [20]",
+                  "Grid-connected",
+                  "NSGA-II",
+                  "Cost analysis, CO2 emissions"
+                ],
+                [
+                  "PV/Wind/PHS [34]",
+                  "Grid-connected",
+                  "-",
+                  "LCI, CO2 price"
+                ],
+                [
+                  "PV/Wind/PHS [35]",
+                  "Grid-connected",
+                  "Direct Multi-search",
+                  "Cost analysis, CO2 emissions, RF"
+                ],
+                [
+                  "PV/Wind/PHS [36]",
+                  "Off-grid",
+                  "Fmincon",
+                  "Cost analysis"
+                ],
+                [
+                  "PV/Diesel/PHS [37]",
+                  "Off-grid",
+                  "Fmincon",
+                  "Cost analysis"
+                ],
+                [
+                  "PV/Wind/PHS [38]",
+                  "Off-grid",
+                  "Demand Response",
+                  "Cost analysis, EE"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 1,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "2": 1
+            },
+            "parser_row_lengths": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "auxiliary_row_lengths": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "reading_notation_is_not_exact_native_text_or_gold": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 13,
+      "page": 5,
+      "label": "Table 4",
+      "caption": "Technical characteristics of hardware components [65,67–69].",
+      "columns": [
+        "Component",
+        "Characteristic",
+        "Value"
+      ],
+      "rows": [
+        [
+          "PV module",
+          "Nominal power (P_PV)",
+          "327 W"
+        ],
+        [
+          "PV module",
+          "Panel efficiency (η_PV)",
+          "21.4%"
+        ],
+        [
+          "PV module",
+          "Rated voltage (V_mpp)",
+          "54.7 V"
+        ],
+        [
+          "PV module",
+          "Rated current (I_mpp)",
+          "5.98 A"
+        ],
+        [
+          "PV module",
+          "Open-circuit voltage (Ioc)",
+          "64.9 V"
+        ],
+        [
+          "PV module",
+          "Short-circuit current (Isc)",
+          "6.46 A"
+        ],
+        [
+          "PV module",
+          "Power temperature coefficient (α_p)",
+          "−0.35%/°C"
+        ],
+        [
+          "PV module",
+          "NOCT",
+          "45 °C ± 2 °C"
+        ],
+        [
+          "Diesel generator (Type 1)",
+          "Rated capacity (R_D)",
+          "50 kW"
+        ],
+        [
+          "Diesel generator (Type 1)",
+          "Fuel curve intercept coefficient (F_1)",
+          "1.65L/h"
+        ],
+        [
+          "Diesel generator (Type 1)",
+          "Fuel curve slope (F_2)",
+          "0.267 L/h/kW"
+        ],
+        [
+          "Diesel generator (Type 2)",
+          "Rated capacity (R_D)",
+          "100 kW"
+        ],
+        [
+          "Diesel generator (Type 2)",
+          "Fuel curve intercept coefficient (F_1)",
+          "5.75L/h"
+        ],
+        [
+          "Diesel generator (Type 2)",
+          "Fuel curve slope (F_2)",
+          "0.278 L/h/kW"
+        ],
+        [
+          "Battery",
+          "Nominal capacity (C_B)",
+          "6.91 kWh"
+        ],
+        [
+          "Battery",
+          "Nominal voltage (V_B)",
+          "6 V"
+        ],
+        [
+          "Battery",
+          "Round-trip efficiency (η_RT)",
+          "80%"
+        ],
+        [
+          "Battery",
+          "Maximum charge current (I_cc)",
+          "279 A"
+        ],
+        [
+          "Battery",
+          "Maximum discharge current (I_dc)",
+          "279 A"
+        ],
+        [
+          "Battery",
+          "DoD",
+          "80%"
+        ],
+        [
+          "Pump-hydro",
+          "Nominal capacity (P_PHS)",
+          "22 kW"
+        ],
+        [
+          "Pump-hydro",
+          "Net head (h)",
+          "30 m"
+        ],
+        [
+          "Pump-hydro",
+          "Round-trip efficiency (η_PHS)",
+          "70%"
+        ],
+        [
+          "Pump-hydro",
+          "Reservoir capacity (R_c)",
+          "4,280 m³"
+        ],
+        [
+          "Inverter",
+          "Rated power (P_inv)",
+          "1 kW"
+        ],
+        [
+          "Inverter",
+          "Conversion efficiency (η_inv)",
+          "95%"
+        ]
+      ],
+      "value_entries": 26,
+      "numeric_value_cells": 26,
+      "textual_value_entries": 0,
+      "original_structural_dash_marker_cells": 0,
+      "scientific_scope_findings": [
+        "All26 complete hardware values checked with six separate component boundaries. The ±2°C uncertainty is part of one NOCT cell, not a second parameter. Negative temperature coefficient remains negative.",
+        "Raw rowspan attaches Type1 fuel slope0.267 to Type2, Type2 fuel slope0.278 to Battery, and Battery roundtrip80%/charge279A/discharge279A/DoD80% to Pump-hydro. Direct primary pixels establish the correct full component boundaries; structured auxiliary preserves them.",
+        "Original open-circuit-voltage symbol is Ioc even though the row says voltage and uses V. Preserve this primary symbol inconsistency without silently converting it into Voc.",
+        "Type1 and Type2 are50kW/100kW generator specifications with different intercepts and slopes. Do not assume that two50kW units have the same fuel curve as one100kW unit.",
+        "PHS22kW is nominal power, reservoir4280m³ volume and30m head; battery6.91kWh is energy. Neither PHS22kW nor inverter1kW is the optimized system energy capacity in Table6.",
+        "PV54.7V ×5.98A =327.106W; printed nominal power327W remains alongside exact0.106W product residual. No tolerance or unprinted rounding rule inferred."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 5,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-005.png",
+            "sha256": "b64a6301bcf0561b084938fa3de35571e16b58b5fae570910e6ef41d3afe86a5"
+          },
+          {
+            "id": "crop-41",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\bf2125615f3d361d26fcb74d1c53f2d3ff3c8bb2e7b56037d393599e90fc8dd8.jpg",
+            "sha256": "826aab1c0614b44e54b948564cc2b11d3776b975ff7f48eb8109a08003a1488b"
+          },
+          {
+            "id": "crop-42",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\333e34efa7c1509f256537b24a99bc4b95d9aab241db816d2ee221307be0621a.jpg",
+            "sha256": "2d3819f93c793c5231fcc4b96a06fdd3c838ada9058d745b9007a0a479dd49da"
+          },
+          {
+            "id": "crop-47",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\55e6f4bed7bece40464c4745a3755932563e5cf8f1df86ce64cd8e16c0b176ca.jpg",
+            "sha256": "cb06dbb3630cafa8f8803eb2a7b0420b4c6e086baf629db4be6c96086b6e7419"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          41,
+          42,
+          47
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 5,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-005-180dpi.png",
+        "sha256": "feaa63f42fd977eacc1ed5dd169dcb47052f78146744cd6aad3604bdc16078bc",
+        "dpi": 180
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 5,
+        "raw_parser_content_index": 47,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "80232875914a552fcb50d4fdb382c2e9b61ed50e94a7a2435ffda9a2969f78ff",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b41"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\55e6f4bed7bece40464c4745a3755932563e5cf8f1df86ce64cd8e16c0b176ca.jpg",
+        "actual_original_crop_sha256": "cb06dbb3630cafa8f8803eb2a7b0420b4c6e086baf629db4be6c96086b6e7419",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\005\\record.json",
+        "actual_page_record_sha256": "71e9e5c4250658ec85c44f5f16eede3dacee8891254e59df80b2631a19fe76b0",
+        "original_durable_handle": "run_e74046dcdf9042919201f493df60c582",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 5,
+          "raw_parser_content_index": 47,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "80232875914a552fcb50d4fdb382c2e9b61ed50e94a7a2435ffda9a2969f78ff",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b41"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\55e6f4bed7bece40464c4745a3755932563e5cf8f1df86ce64cd8e16c0b176ca.jpg",
+          "actual_original_crop_sha256": "cb06dbb3630cafa8f8803eb2a7b0420b4c6e086baf629db4be6c96086b6e7419",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\005\\record.json",
+          "actual_page_record_sha256": "71e9e5c4250658ec85c44f5f16eede3dacee8891254e59df80b2631a19fe76b0",
+          "original_durable_handle": "run_e74046dcdf9042919201f493df60c582",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            2
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Component</td><td>Characteristic</td><td>Value</td></tr><tr><td>PV module</td><td>Nominal power (Ppv)</td><td>327W</td></tr><tr><td rowspan=\"9\"></td><td>Panel efficiency (mpv)</td><td>21.4%</td></tr><tr><td>Rated voltage (Vmpp)</td><td>54.7V</td></tr><tr><td>Rated current (Impp)</td><td>5.98 A</td></tr><tr><td>Open-circuit voltage (Ioc)</td><td>64.9 V</td></tr><tr><td>Short-circuit current (Isc)</td><td>6.46 A</td></tr><tr><td>Power temperature coefficient(αp)</td><td>-0.35%/℃</td></tr><tr><td>NOCT</td><td>45°℃±2°℃</td></tr><tr><td>Diesel generator (Type 1) Rated capacity (Rp)</td><td>50kW</td></tr><tr><td>Fuel curve intercept coefficient (F1)</td><td>1.65L/h</td></tr><tr><td rowspan=\"3\">Diesel generator (Type 2)</td><td>Fuel curve slope (F2)</td><td>0.267L/h/kW</td></tr><tr><td>Rated capacity (Rp)</td><td>100 kW</td></tr><tr><td>Fuel curve intercept coefficient (F1)</td><td>5.75L/h</td></tr><tr><td rowspan=\"3\">Battery</td><td>Fuel curve slope (F2)</td><td>0.278 L/h/kW</td></tr><tr><td>Nominal capacity (CB)</td><td>6.91 kWh</td></tr><tr><td>Nominal voltage (VB)</td><td>6V</td></tr><tr><td rowspan=\"8\">Pump-hydro</td><td>Round-trip efficiency (mRT)</td><td>80%</td></tr><tr><td>Maximum charge current (Iec)</td><td>279 A</td></tr><tr><td>Maximum discharge current (Iac)</td><td>279 A</td></tr><tr><td>DoD</td><td>80%</td></tr><tr><td>Nominal capacity (PpHs)</td><td>22 kW</td></tr><tr><td>Net head (h)</td><td>30m</td></tr><tr><td>Round-trip efficiency(mpHs)</td><td>70%</td></tr><tr><td>Reservoir capacity (Rc)</td><td>4,280 m3</td></tr><tr><td rowspan=\"2\">Inverter</td><td>Rated power (Pinv)</td><td>1 kW</td></tr><tr><td>Conversion efficiency (minv)</td><td>95%</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Component",
+            "Characteristic",
+            "Value"
+          ],
+          [
+            "PV module",
+            "Nominal power (Ppv)",
+            "327W"
+          ],
+          [
+            "",
+            "Panel efficiency (mpv)",
+            "21.4%"
+          ],
+          [
+            "Rated voltage (Vmpp)",
+            "54.7V"
+          ],
+          [
+            "Rated current (Impp)",
+            "5.98 A"
+          ],
+          [
+            "Open-circuit voltage (Ioc)",
+            "64.9 V"
+          ],
+          [
+            "Short-circuit current (Isc)",
+            "6.46 A"
+          ],
+          [
+            "Power temperature coefficient(αp)",
+            "-0.35%/℃"
+          ],
+          [
+            "NOCT",
+            "45°℃±2°℃"
+          ],
+          [
+            "Diesel generator (Type 1) Rated capacity (Rp)",
+            "50kW"
+          ],
+          [
+            "Fuel curve intercept coefficient (F1)",
+            "1.65L/h"
+          ],
+          [
+            "Diesel generator (Type 2)",
+            "Fuel curve slope (F2)",
+            "0.267L/h/kW"
+          ],
+          [
+            "Rated capacity (Rp)",
+            "100 kW"
+          ],
+          [
+            "Fuel curve intercept coefficient (F1)",
+            "5.75L/h"
+          ],
+          [
+            "Battery",
+            "Fuel curve slope (F2)",
+            "0.278 L/h/kW"
+          ],
+          [
+            "Nominal capacity (CB)",
+            "6.91 kWh"
+          ],
+          [
+            "Nominal voltage (VB)",
+            "6V"
+          ],
+          [
+            "Pump-hydro",
+            "Round-trip efficiency (mRT)",
+            "80%"
+          ],
+          [
+            "Maximum charge current (Iec)",
+            "279 A"
+          ],
+          [
+            "Maximum discharge current (Iac)",
+            "279 A"
+          ],
+          [
+            "DoD",
+            "80%"
+          ],
+          [
+            "Nominal capacity (PpHs)",
+            "22 kW"
+          ],
+          [
+            "Net head (h)",
+            "30m"
+          ],
+          [
+            "Round-trip efficiency(mpHs)",
+            "70%"
+          ],
+          [
+            "Reservoir capacity (Rc)",
+            "4,280 m3"
+          ],
+          [
+            "Inverter",
+            "Rated power (Pinv)",
+            "1 kW"
+          ],
+          [
+            "Conversion efficiency (minv)",
+            "95%"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 4 Technical characteristics of hardware components [65,67–69]. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 2,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 4\nTechnical characteristics of hardware components [65,67-69].",
+              "location": "MIDDLE",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-47"
+              ],
+              "exact_visible_text": "Table 4\nTechnical characteristics of hardware components [65,67-69].\nComponent\nCharacteristic\nValue\nPV module\nNominal power (P_PV)\n327 W\nPanel efficiency (\\eta_PV)\n21.4%\nRated voltage (V_mpp)\n54.7 V\nRated current (I_mpp)\n5.98 A\nOpen-circuit voltage (I_oc)\n64.9 V\nShort-circuit current (I_sc)\n6.46 A\nPower temperature coefficient (\\alpha_p)\n-0.35%/°C\nNOCT\n45 °C \\pm 2 °C\nDiesel generator (Type 1)\nRated capacity (R_D)\n50 kW\nFuel curve intercept coefficient (F_1)\n1.65L/h\nFuel curve slope (F_2)\n0.267 L/h/kW\nDiesel generator (Type 2)\nRated capacity (R_D)\n100 kW\nFuel curve intercept coefficient (F_1)\n5.75L/h\nFuel curve slope (F_2)\n0.278 L/h/kW\nBattery\nNominal capacity (C_B)\n6.91 kWh\nNominal voltage (V_B)\n6 V\nRound-trip efficiency (\\eta_RT)\n80%\nMaximum charge current (I_cc)\n279 A\nMaximum discharge current (I_dc)\n279 A\nDoD\n80%\nPump-hydro\nNominal capacity (P_PHS)\n22 kW\nNet head (h)\n30 m\nRound-trip efficiency (\\eta_PHS)\n70%\nReservoir capacity (R_c)\n4,280 m^3\nInverter\nRated power (P_inv)\n1 kW\nConversion efficiency (\\eta_inv)\n95%",
+              "table_rows": [
+                [
+                  "Component",
+                  "Characteristic",
+                  "Value"
+                ],
+                [
+                  "PV module",
+                  "Nominal power (PPV)\nPanel efficiency (ηPV)\nRated voltage (Vmpp)\nRated current (Impp)\nOpen-circuit voltage (Ioc)\nShort-circuit current (Isc)\nPower temperature coefficient (αp)\nNOCT",
+                  "327 W\n21.4%\n54.7 V\n5.98 A\n64.9 V\n6.46 A\n-0.35%/°C\n45 °C ± 2 °C"
+                ],
+                [
+                  "Diesel generator (Type 1)",
+                  "Rated capacity (RD)\nFuel curve intercept coefficient (F1)\nFuel curve slope (F2)",
+                  "50 kW\n1.65L/h\n0.267 L/h/kW"
+                ],
+                [
+                  "Diesel generator (Type 2)",
+                  "Rated capacity (RD)\nFuel curve intercept coefficient (F1)\nFuel curve slope (F2)",
+                  "100 kW\n5.75L/h\n0.278 L/h/kW"
+                ],
+                [
+                  "Battery",
+                  "Nominal capacity (CB)\nNominal voltage (VB)\nRound-trip efficiency (ηRT)\nMaximum charge current (Icc)\nMaximum discharge current (Idc)\nDoD",
+                  "6.91 kWh\n6 V\n80%\n279 A\n279 A\n80%"
+                ],
+                [
+                  "Pump-hydro",
+                  "Nominal capacity (PPHS)\nNet head (h)\nRound-trip efficiency (ηPHS)\nReservoir capacity (Rc)",
+                  "22 kW\n30 m\n70%\n4,280 m³"
+                ],
+                [
+                  "Inverter",
+                  "Rated power (Pinv)\nConversion efficiency (ηinv)",
+                  "1 kW\n95%"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 2,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "4": 1,
+              "65,67": 1,
+              "69": 1,
+              "3": 1
+            },
+            "parser_row_lengths": [
+              3,
+              3,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              2,
+              2,
+              3,
+              2,
+              2,
+              3,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              2,
+              3,
+              2
+            ],
+            "auxiliary_row_lengths": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "reading_notation_is_not_exact_native_text_or_gold": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 14,
+      "page": 8,
+      "label": "Table 5",
+      "caption": "Data related to costs, technical data, and lifetimes of different components used for optimization input parameters.",
+      "columns": [
+        "Type of component",
+        "Description",
+        "Capital cost ($)",
+        "Replacement cost ($)",
+        "O&M cost ($/yr)",
+        "Lifetime (yrs)",
+        "N_i,min",
+        "N_i,max"
+      ],
+      "rows": [
+        [
+          "PV module [75]",
+          "327 W",
+          "1300/kW",
+          "0",
+          "20",
+          "25",
+          "1",
+          "1000"
+        ],
+        [
+          "Diesel generator [1]",
+          "50/100 kW",
+          "370/kW",
+          "296/kW",
+          "0.05/h",
+          "15,000 h",
+          "1",
+          "10"
+        ],
+        [
+          "PHS [28,65]",
+          "22 kW",
+          "1000/kW",
+          "1000/kW",
+          "100",
+          "25",
+          "1",
+          "5"
+        ],
+        [
+          "Battery [76]",
+          "6.91 kWh",
+          "1100/unit",
+          "1000/unit",
+          "10",
+          "15",
+          "1",
+          "200"
+        ],
+        [
+          "Inverter [69]",
+          "1 kW",
+          "800/unit",
+          "750/unit",
+          "20",
+          "15",
+          "1",
+          "200"
+        ],
+        [
+          "Nominal interest rate",
+          "",
+          "10%",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ],
+        [
+          "Inflation rate",
+          "",
+          "2%",
+          "",
+          "",
+          "",
+          "",
+          ""
+        ]
+      ],
+      "value_entries": 37,
+      "numeric_value_cells": 37,
+      "textual_value_entries": 0,
+      "original_structural_dash_marker_cells": 0,
+      "scientific_scope_findings": [
+        "All35 component-field entries and two interest/inflation rates checked. 50/100kW is one alternative-rating cell, not50 divided by100, and15000h lifetime is operating hours despite the years header.",
+        "Capital/replacement entries distinguish per-kW from per-unit amounts. PV replacement is explicitly zero; structurally empty rate-row fields are not numeric zeros or unspecified dash markers.",
+        "Diesel O&M is0.05/h, not0.05 per calendar year despite the column header. Keep original cell-specific units, no conversion without annual operating hours.",
+        "Nominal10% and inflation2% appear in the monetary column by original layout but are financial rates, not capital prices. Component search bounds are unit-count decisionsN_i, not prices or kW capacities.",
+        "Raw parser lowercasekw versus originalkW is preserved in comparison; otherwise the complete numeric and alternative fields agree with primary and auxiliary.",
+        "The same full page8 states diesel initial capital$3700 for the design whose generator is100kW. Table5 at370/kW implies37000 for100kW. Exact difference−33300 retained as a primary cross-statement inconsistency; no published price replaced. This is separate from annualized capital in Table7."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-008.png",
+            "sha256": "7f7003580abab6ba3b21bfab731c71ca7fa674d8ed9ef75d9a2aa67dd800ca02"
+          },
+          {
+            "id": "crop-98",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\e1ade19bd58fa180d8bf2e05e04997e02656cee8843e780c1dfd491cfa029152.jpg",
+            "sha256": "f5f2a8022adaeea56aca269b2dd1e3ff4c94f96647402e0b7dd43b3d67de41fe"
+          },
+          {
+            "id": "crop-112",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\c4291b74dc1e6ef5583e2c3996ff60a6b2f4e4d5c8967e18c7a5185d39351b7b.jpg",
+            "sha256": "5fa9b30ba9c9616d64d5deff4925a6b8018b29455256c3557eb01ed1d9d16a77"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          98,
+          99,
+          101,
+          112
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 8,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-phs-input-page-reading-v10\\original-page-008-180dpi.png",
+        "sha256": "ff4b6b055890ee732378fb9d59442202a0da873a0a708ef519bb00b7337947b1",
+        "dpi": 180
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 8,
+        "raw_parser_content_index": 98,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "62bbc697d5a36acd23314bfa35e1d534e893b920ce5ba72ea45991893bd15bf4",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b89"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\e1ade19bd58fa180d8bf2e05e04997e02656cee8843e780c1dfd491cfa029152.jpg",
+        "actual_original_crop_sha256": "f5f2a8022adaeea56aca269b2dd1e3ff4c94f96647402e0b7dd43b3d67de41fe",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\008\\record.json",
+        "actual_page_record_sha256": "7e5d0cd8f95baf7fd386588de91a9e9f6a85bcfbef98cae6fbe3f973716f98b7",
+        "original_durable_handle": "run_68cb320b4acb43839616b1f421e49bf5",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 8,
+          "raw_parser_content_index": 98,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "62bbc697d5a36acd23314bfa35e1d534e893b920ce5ba72ea45991893bd15bf4",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b89"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\e1ade19bd58fa180d8bf2e05e04997e02656cee8843e780c1dfd491cfa029152.jpg",
+          "actual_original_crop_sha256": "f5f2a8022adaeea56aca269b2dd1e3ff4c94f96647402e0b7dd43b3d67de41fe",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\008\\record.json",
+          "actual_page_record_sha256": "7e5d0cd8f95baf7fd386588de91a9e9f6a85bcfbef98cae6fbe3f973716f98b7",
+          "original_durable_handle": "run_68cb320b4acb43839616b1f421e49bf5",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Typeofcomponent</td><td>Description</td><td>Capital cost ($)</td><td>Replacement cost ($)</td><td>O&Mcost($/yr)</td><td>Lifetime (yrs)</td><td>Ni, min</td><td>Ni, max</td></tr><tr><td>PVmodule[75]</td><td>327W</td><td>1300/kW</td><td>0</td><td>20</td><td>25</td><td>1</td><td>1000</td></tr><tr><td>Dieselgenerator [1]</td><td>50/100kW</td><td>370/kW</td><td>296/kW</td><td>0.05/h</td><td>15,000 h</td><td>1</td><td>10</td></tr><tr><td>PHS [28,65]</td><td>22kW</td><td>1000/kw</td><td>1000/kW</td><td>100</td><td>25</td><td>1</td><td>5</td></tr><tr><td>Battery [76]</td><td>6.91kWh</td><td>1100/unit</td><td>1000/unit</td><td>10</td><td>15</td><td>1</td><td>200</td></tr><tr><td>Inverter [69]</td><td>1 kW</td><td>800/unit</td><td>750/unit</td><td>20</td><td>15</td><td>1</td><td>200</td></tr><tr><td>Nominalinterestrate</td><td></td><td>10%</td><td></td><td></td><td></td><td></td><td></td></tr><tr><td>Inflationrate</td><td></td><td>2%</td><td></td><td></td><td></td><td></td><td></td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Typeofcomponent",
+            "Description",
+            "Capital cost ($)",
+            "Replacement cost ($)",
+            "O&Mcost($/yr)",
+            "Lifetime (yrs)",
+            "Ni, min",
+            "Ni, max"
+          ],
+          [
+            "PVmodule[75]",
+            "327W",
+            "1300/kW",
+            "0",
+            "20",
+            "25",
+            "1",
+            "1000"
+          ],
+          [
+            "Dieselgenerator [1]",
+            "50/100kW",
+            "370/kW",
+            "296/kW",
+            "0.05/h",
+            "15,000 h",
+            "1",
+            "10"
+          ],
+          [
+            "PHS [28,65]",
+            "22kW",
+            "1000/kw",
+            "1000/kW",
+            "100",
+            "25",
+            "1",
+            "5"
+          ],
+          [
+            "Battery [76]",
+            "6.91kWh",
+            "1100/unit",
+            "1000/unit",
+            "10",
+            "15",
+            "1",
+            "200"
+          ],
+          [
+            "Inverter [69]",
+            "1 kW",
+            "800/unit",
+            "750/unit",
+            "20",
+            "15",
+            "1",
+            "200"
+          ],
+          [
+            "Nominalinterestrate",
+            "",
+            "10%",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "Inflationrate",
+            "",
+            "2%",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 5 Data related to costs, technical data, and lifetimes of different components used for optimization input parameters. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 5",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-98"
+              ],
+              "exact_visible_text": "Table 5\nData related to costs, technical data, and lifetimes of different components used for optimization input parameters.\nType of component\nDescription\nCapital cost ($)\nReplacement cost ($)\nO&M cost ($/yr)\nLifetime (yrs)\nNi, min\nNi, max\nPV module [75]\n327 W\n1300/kW\n0\n20\n25\n1\n1000\nDiesel generator [1]\n50/100 kW\n370/kW\n296/kW\n0.05/h\n15,000 h\n1\n10\nPHS [28,65]\n22 kW\n1000/kW\n1000/kW\n100\n25\n1\n5\nBattery [76]\n6.91 kWh\n1100/unit\n1000/unit\n10\n15\n1\n200\nInverter [69]\n1 kW\n800/unit\n750/unit\n20\n15\n1\n200\nNominal interest rate\n10%\nInflation rate\n2%",
+              "table_rows": [
+                [
+                  "Type of component",
+                  "Description",
+                  "Capital cost ($)",
+                  "Replacement cost ($)",
+                  "O&M cost ($/yr)",
+                  "Lifetime (yrs)",
+                  "Ni, min",
+                  "Ni, max"
+                ],
+                [
+                  "PV module [75]",
+                  "327 W",
+                  "1300/kW",
+                  "0",
+                  "20",
+                  "25",
+                  "1",
+                  "1000"
+                ],
+                [
+                  "Diesel generator [1]",
+                  "50/100 kW",
+                  "370/kW",
+                  "296/kW",
+                  "0.05/h",
+                  "15,000 h",
+                  "1",
+                  "10"
+                ],
+                [
+                  "PHS [28,65]",
+                  "22 kW",
+                  "1000/kW",
+                  "1000/kW",
+                  "100",
+                  "25",
+                  "1",
+                  "5"
+                ],
+                [
+                  "Battery [76]",
+                  "6.91 kWh",
+                  "1100/unit",
+                  "1000/unit",
+                  "10",
+                  "15",
+                  "1",
+                  "200"
+                ],
+                [
+                  "Inverter [69]",
+                  "1 kW",
+                  "800/unit",
+                  "750/unit",
+                  "20",
+                  "15",
+                  "1",
+                  "200"
+                ],
+                [
+                  "Nominal interest rate",
+                  "",
+                  "10%",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ],
+                [
+                  "Inflation rate",
+                  "",
+                  "2%",
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "5": 1
+            },
+            "parser_row_lengths": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "auxiliary_row_lengths": [
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8,
+              8
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "reading_notation_is_not_exact_native_text_or_gold": true,
+      "expert_gold_or_scientific_reference_approval": false
+    }
+  ],
+  "exact_supplementary_arithmetic": {
+    "rated_PV_voltage_times_current_W": "327.106",
+    "displayed_nominal_power_W": "327",
+    "product_minus_printed_power_W": "0.106",
+    "table5_generator_capital_370USD_per_kW_for_page8_100kW_generator_USD": "37000",
+    "same_page8_prose_generator_capital_USD": "3700",
+    "prose_minus_table5_implied_capital_USD": "-33300",
+    "new_tolerance_or_unstated_rounding_rule_inferred": false,
+    "original_displayed_values_replaced": false
+  },
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "expert_gold_or_scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false
+}

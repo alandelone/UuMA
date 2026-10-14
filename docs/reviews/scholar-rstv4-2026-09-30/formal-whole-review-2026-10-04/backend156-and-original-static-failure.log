@@ -1,0 +1,31 @@
+
+CHECK ['-m', 'pytest', 'tests/test_writing_studio.py', 'tests/test_studio_revision_contracts.py', 'tests/test_studio_context.py', 'tests/test_studio_suggestions.py', 'tests/test_studio_structure.py', 'tests/test_studio_rounds.py', 'tests/test_studio_realization.py', 'tests/test_studio_change_links.py', 'tests/test_studio_revision_mapping.py', 'tests/test_studio_delivery.py', 'tests/test_studio_review_provenance.py', '-q']
+........................................................................ [ 46%]
+........................................................................ [ 92%]
+............                                                             [100%]
+============================== warnings summary ===============================
+.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+156 passed, 1 warning in 138.03s (0:02:18)
+
+Exit: 0
+
+CHECK ['-m', 'ruff', 'check', '../RSTV4/src/rstv4/studio.py', '../RSTV4/src/rstv4/studio_structure.py', '../RSTV4/src/rstv4/studio_context.py', '../RSTV4/src/rstv4/studio_suggestions.py', '../RSTV4/src/rstv4/studio_api.py', '../RSTV4/src/rstv4/studio_rounds.py', '../RSTV4/src/rstv4/studio_realization.py', '../RSTV4/src/rstv4/studio_change_links.py', '../RSTV4/src/rstv4/studio_revision_mapping.py', '../RSTV4/src/rstv4/studio_delivery.py', '../RSTV4/src/rstv4/database.py', '../RSTV4/tests/test_studio_structure.py', '../RSTV4/tests/test_studio_rounds.py', '../RSTV4/tests/test_studio_realization.py', '../RSTV4/tests/test_studio_change_links.py', '../RSTV4/tests/test_studio_revision_mapping.py', '../RSTV4/tests/test_studio_delivery.py', '../RSTV4/tests/test_studio_review_provenance.py']
+RUF059 Unpacked variable `manuscript_id` is never used
+   --> C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_review_provenance.py:101:24
+    |
+100 | def test_review_refuses_other_manuscript_generated_version_before_call_or_job_write(tmp_path):
+101 |     service, track_id, manuscript_id, _, version_id = generated_fixture(tmp_path)
+    |                        ^^^^^^^^^^^^^
+102 |     other = service.create_manuscript(track_id, "Other review owner")["manuscript"]["manuscript_id"]
+103 |     with pytest.raises(NotFoundError, match="belong"):
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 1 error.
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).
+
+Exit: 1

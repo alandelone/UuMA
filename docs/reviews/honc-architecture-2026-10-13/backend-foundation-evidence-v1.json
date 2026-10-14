@@ -1,0 +1,191 @@
+{
+  "schema_version": 1,
+  "artifact_type": "TESTED_BACKEND_COMPONENTS_NOT_LIVE_ACCEPTANCE",
+  "generated_at": "2026-10-13T06:28:50.898469+00:00",
+  "test_result": {
+    "name": "pytest",
+    "errors": "0",
+    "failures": "0",
+    "skipped": "0",
+    "tests": "126",
+    "time": "11.576",
+    "timestamp": "2026-10-13T14:27:42.683016+08:00",
+    "hostname": "小钢炮"
+  },
+  "test_command": "pytest tests/test_honc_ledger.py tests/test_honc_conversation.py tests/test_honc_mcp.py tests/test_honc_profile_config.py tests/test_honc_life_models.py tests/test_honc_reminder_policy.py tests/test_honc_life_service.py tests/test_honc_life_mcp.py -q --junitxml=docs/reviews/honc-architecture-2026-10-13/backend-foundation-tests-v1.xml",
+  "ruff": {
+    "result": "PASS",
+    "scope": [
+      "src/uuma/honc/life_models.py",
+      "src/uuma/honc/reminder_policy.py",
+      "src/uuma/honc/life_store.py",
+      "src/uuma/honc/life_service.py",
+      "src/uuma/honc/life_mcp.py",
+      "tests/test_honc_life_models.py",
+      "tests/test_honc_reminder_policy.py",
+      "tests/test_honc_life_service.py",
+      "tests/test_honc_life_mcp.py"
+    ]
+  },
+  "component_sources": [
+    "src/uuma/honc/life_models.py",
+    "src/uuma/honc/reminder_policy.py",
+    "src/uuma/honc/life_store.py",
+    "src/uuma/honc/life_service.py",
+    "src/uuma/honc/life_mcp.py"
+  ],
+  "registered_offline_tools": [
+    "honc_get_life_context",
+    "honc_configure_habit",
+    "honc_update_life_settings",
+    "honc_record_habit",
+    "honc_record_body",
+    "honc_save_diary",
+    "honc_correct_life_record",
+    "honc_get_life_operation",
+    "honc_get_life_history"
+  ],
+  "effective_default_settings": {
+    "revision": 1,
+    "timezone": "Asia/Kuala_Lumpur",
+    "wake_fallback_time": "08:00",
+    "bedtime_fallback_time": "21:30",
+    "default_reminder_count": 1,
+    "default_importance": "normal",
+    "fixed_point_grace_minutes": 30,
+    "suppress_when_complete": true,
+    "group_simultaneous": true,
+    "advance_explicit_wake_or_day_start": true,
+    "advance_explicit_bedtime": true,
+    "missed_window_policy": "expire",
+    "body_followup_enabled": false,
+    "nightly_unchecked_habit_chase_enabled": false,
+    "importance_does_not_change_count": true
+  },
+  "validated_design_defaults": true,
+  "fixed_point_grace_minimum": 1,
+  "new_feature_flags_still_false": 13,
+  "cross_component_reminder_cases_still_unexecuted": 21,
+  "live_runtime_applied": false,
+  "production_notifications_sent": 0,
+  "production_data_migrated": false,
+  "live_profile_or_skill_changed": false,
+  "hermes_adapter_authentication_verified": false,
+  "model_eval_executed": false,
+  "changes_mission_gate": false,
+  "local_links_checked": [
+    {
+      "document": "docs/reviews/honc-architecture-2026-10-13/backend-foundation-v1.zh-CN.md",
+      "target": "../../plans/honc-life-backend-foundation-v1.zh-CN.md"
+    },
+    {
+      "document": "docs/plans/honc-life-backend-foundation-v1.zh-CN.md",
+      "target": "honc-agent-tool-architecture-2026-10-13.zh-CN.md"
+    },
+    {
+      "document": "docs/plans/honc-life-backend-foundation-v1.zh-CN.md",
+      "target": "honc-life-tool-contracts-v1.zh-CN.md"
+    },
+    {
+      "document": "docs/plans/honc-life-backend-foundation-v1.zh-CN.md",
+      "target": "../reviews/honc-architecture-2026-10-13/backend-foundation-v1.zh-CN.md"
+    },
+    {
+      "document": "docs/agents/honc.md",
+      "target": "../plans/honc-habits-body-tracker-discussion-2026-10-13.zh-CN.md"
+    },
+    {
+      "document": "docs/agents/honc.md",
+      "target": "../plans/honc-agent-tool-architecture-2026-10-13.zh-CN.md"
+    },
+    {
+      "document": "docs/agents/honc.md",
+      "target": "../reviews/honc-architecture-2026-10-13/user-review.md"
+    },
+    {
+      "document": "docs/agents/honc.md",
+      "target": "../reviews/honc-architecture-2026-10-13/backend-foundation-v1.zh-CN.md"
+    },
+    {
+      "document": "docs/agents/honc.md",
+      "target": "../plans/honc-life-backend-foundation-v1.zh-CN.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-habits-body-tracker-discussion-2026-10-13.zh-CN.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/reviews/honc-architecture-2026-10-13/user-review.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-agent-tool-architecture-2026-10-13.zh-CN.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-life-tool-contracts-v1.zh-CN.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-life-runtime-manual-v1.zh-CN.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-life-feature-contract-v1.json"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/reviews/honc-architecture-2026-10-13/policy-acceptance.json"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-reminder-policy-contract-v1.zh-CN.md"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/plans/honc-reminder-policy-defaults-v1.json"
+    },
+    {
+      "document": "repomemory/honc-habits-body-tracker-2026-10-13.md",
+      "target": "../docs/reviews/honc-architecture-2026-10-13/backend-foundation-v1.zh-CN.md"
+    }
+  ],
+  "verification_limits": [
+    "Pure reminder decisions are not atomic reservations or delivery receipts.",
+    "Trusted adapter must authenticate sources and verify grants; it is not integrated.",
+    "Unverified occurrence IDs are rejected; diary habit binding is pending.",
+    "Historical inactive-habit backfill and restoration of void records are pending.",
+    "History uses provisional offset pagination rather than a stable snapshot cursor.",
+    "One atomic operation per source/domain; arbitrary model-generated refs are forbidden.",
+    "Source-body wording checks do not replace complete score/scale semantic or model Eval."
+  ],
+  "historical_failures": [
+    "Initial expected missing-module collection error before implementation.",
+    "Ruff findings corrected without weakening behavioral assertions.",
+    "A transient progress.md OSError in the lifecycle wrapper prevented one formatter launch; a later wrapped retry passed.",
+    "A diagnostic print hit PowerShell GBK encoding; later document reads explicitly used UTF-8."
+  ],
+  "sha256": {
+    "src/uuma/honc/life_models.py": "1adc2b03cb44c927867835a639cd8b3e39388a3a72b65ae0f764e36c216937c8",
+    "src/uuma/honc/reminder_policy.py": "b79c2611138a43e53a55df2043143de53bc54c50f4979fbf82101ae17ce48af6",
+    "src/uuma/honc/life_store.py": "80ead9bfd56ea04187491eeab43169a9713b3da3945945bb6aa6d24f09c28f3e",
+    "src/uuma/honc/life_service.py": "729eda9f9de858d845a721cf2f7aec13f95637f7a1728cd5b3c8c09c6f6aa08e",
+    "src/uuma/honc/life_mcp.py": "16e3f6ecbe93984608368aeb2e0d0557dc757887318b2862b78f9f513267c6bf",
+    "tests/test_honc_ledger.py": "aabf3192721b240d460d08f0a6f1a6c111b6192b9583d548b623dffba3b2785e",
+    "tests/test_honc_conversation.py": "a9d69c472d8dae7439343e221a64fd42549234f7ddaf512e9051e679880bce3f",
+    "tests/test_honc_mcp.py": "94357441ca95b5785f26c28860c50d319bf3f4d53f8cd2a1fb5c9b64cf63af99",
+    "tests/test_honc_profile_config.py": "0c9cf08f5af67ffb46e86efba317b7a8195e8fadf5d26b64b347c544991dc189",
+    "tests/test_honc_life_models.py": "9ea4f9f4530f0602d1051eb6f80670f8a29f15f46c9aae4f81d47cbfa9edf670",
+    "tests/test_honc_reminder_policy.py": "0ece5703ac04d0118f9e24a01b40f4bfafb3e4037436a0adbb15c67ba837240c",
+    "tests/test_honc_life_service.py": "c11b1bb7bc1e2b870b40e0c3df6926762caaa7e32469139a3630befa22994976",
+    "tests/test_honc_life_mcp.py": "a78b09e69ab1da22250489e671e550340ce041240c15ecdf98291a429fab62d4",
+    "docs/reviews/honc-architecture-2026-10-13/backend-foundation-v1.zh-CN.md": "9f62337f210158ecef5b58078c2082b80d9271632636ead40edbaf9cb700465d",
+    "docs/plans/honc-life-backend-foundation-v1.zh-CN.md": "09eb83074d45e72de4259002756a144f6f3f784537be4be6a0a4f272c7540ef5",
+    "docs/agents/honc.md": "3663dd2ff91175e124c1f03c96b3b6415a60f9b7c77312a7a826c3b05ced2f54",
+    "repomemory/honc-habits-body-tracker-2026-10-13.md": "6a1c36cad054c4dec2701ab2a1dad5c282fbc4a5d544049f5df2e4e0fb2245b0",
+    "docs/plans/honc-reminder-policy.schema.json": "8b9b9828fb177ccf39f78110a1f4669f7b903fab8ef36803713cf5f8a4e3dac2",
+    "docs/reviews/honc-architecture-2026-10-13/backend-foundation-tests-v1.xml": "8b4477a071be453e90cf7f5007e7fafe4c173805bd2f738d85fcff80ae448840",
+    "docs/reviews/honc-architecture-2026-10-13/backend-foundation-tool-schemas-v1.json": "b30f5060a2e5b84a27713eb2eef8bb4ef4e8d97a9eb05a328f173c5376e1e3f6"
+  }
+}

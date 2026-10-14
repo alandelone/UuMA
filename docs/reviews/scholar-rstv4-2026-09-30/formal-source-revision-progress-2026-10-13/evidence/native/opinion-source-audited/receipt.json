@@ -1,0 +1,27 @@
+{
+  "status": "PASS_G09_READONLY_SNAPSHOT",
+  "phase": "opinion-source-audited",
+  "database_sha256": "ad1227b45331f243d47ce826923e95039ca3184dff8656332cf1aa7f9be6b9ab",
+  "all_original205_comments_exact": true,
+  "author_operations_changes_models_jobs_artifacts_rounds_exact": true,
+  "all20_artifact_bytes_exact": true,
+  "new_comment": {
+    "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+    "review_round_id": "review_round_b51564f0224e499081e58f341103b336",
+    "source": "PASTED",
+    "reviewer": null,
+    "original_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.",
+    "edited_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.\nG09 author preview note: this second-round opinion is a software fixture, not an external review.",
+    "author_decision": null,
+    "response_text": null,
+    "status": "PENDING",
+    "archived_at": null,
+    "import_metadata_json": "{\"comment_number\":206,\"import_batch_id\":\"comment_import_3c39a6fab1d7498a92deba6e55d2fb28\",\"original_index\":0,\"original_text\":\"G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\\nPreserve every source and condition; link only the actual author change that answers this software request.\\nNo external reviewer or scientific judgment is asserted.\",\"raw_import_text\":\"G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\\nPreserve every source and condition; link only the actual author change that answers this software request.\\nNo external reviewer or scientific judgment is asserted.\"}",
+    "created_at": "2026-10-13T03:45:27.649261+00:00",
+    "updated_at": "2026-10-13T03:45:27.649261+00:00"
+  },
+  "changed_tables": [
+    "review_comments"
+  ],
+  "overall11_complete": false
+}

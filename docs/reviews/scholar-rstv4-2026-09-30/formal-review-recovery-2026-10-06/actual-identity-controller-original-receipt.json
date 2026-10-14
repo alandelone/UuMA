@@ -1,0 +1,739 @@
+{
+  "status": "PASS_SHIPPED_EXPLICIT_REVIEW_CONTROLLER_WITH_REAL_HTTP",
+  "phase": "identity",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn",
+  "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+  "receipt": {
+    "action_id": "review_action_a5c30fbfba7904b1a193c25df4f41958",
+    "request_id": "actual-review-identity-v1",
+    "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "action_kind": "APPROVE_IDENTITY",
+    "reviewer_label": "Alandelone",
+    "reason": "Explicit identity review of owned software fixture; no scientific approval",
+    "supersedes_action_id": null,
+    "created_at": "2026-10-06T00:57:19.640928+00:00",
+    "request": {
+      "action": "APPROVE_IDENTITY",
+      "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "expected_context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+      "reason": "Explicit identity review of owned software fixture; no scientific approval",
+      "reference_selections": [],
+      "request_id": "actual-review-identity-v1"
+    },
+    "context": {
+      "blocked_jobs": [
+        {
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "fencing_token": 1,
+          "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+          "job_type": "LOCATE_PDF",
+          "review_kind": "PDF_IDENTITY",
+          "status": "NEEDS_HUMAN",
+          "updated_at": "2026-10-06T00:57:19.355883+00:00"
+        }
+      ],
+      "candidate": null,
+      "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "collections": [
+        {
+          "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+          "name": "审核恢复软件 Collection",
+          "revision": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+      "file": {
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "identity_status": "NEEDS_REVIEW",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "size_bytes": 1827,
+        "validation": {
+          "doi_match": false,
+          "evidence_source": "pdf_text_and_raw_bytes",
+          "identity_status": "NEEDS_REVIEW",
+          "technical_pdf_valid": true,
+          "title_token_ratio": 0.333
+        }
+      },
+      "findings": [],
+      "integrity_verified": true,
+      "job": null,
+      "kind": "PDF_IDENTITY",
+      "last_action_id": null,
+      "latest_annotations": {
+        "DOI": {
+          "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+          "canonical_key_after": "doi:10.1234/corrected",
+          "canonical_key_before": "doi:10.1234/original",
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "comment": "",
+          "created_at": "2026-10-06T00:57:19.481197+00:00",
+          "decision": "FOUND",
+          "field_name": "DOI",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "page_number": 1,
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "reviewer_label": "Alandelone",
+          "selected_text": "10.1234/corrected",
+          "submission_id": "native-source-DOI",
+          "supersedes_annotation_id": null,
+          "value_after": "10.1234/corrected",
+          "value_before": "10.1234/original",
+          "word_end": 5,
+          "word_start": 5
+        },
+        "TITLE": {
+          "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+          "canonical_key_after": null,
+          "canonical_key_before": null,
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "comment": "",
+          "created_at": "2026-10-06T00:57:19.437627+00:00",
+          "decision": "FOUND",
+          "field_name": "TITLE",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "page_number": 1,
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "reviewer_label": "Alandelone",
+          "selected_text": "Software review identity title",
+          "submission_id": "native-source-TITLE",
+          "supersedes_annotation_id": null,
+          "value_after": "Software review identity title",
+          "value_before": "Wrong catalogue identity",
+          "word_end": 3,
+          "word_start": 0
+        }
+      },
+      "paper": {
+        "canonical_key": "doi:10.1234/corrected",
+        "doi": "10.1234/corrected",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "title": "Software review identity title",
+        "updated_at": "2026-10-06T00:57:19.481197+00:00"
+      },
+      "quarantined": false,
+      "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+    },
+    "result": {
+      "parse_jobs": [
+        "job_3e2ae537ca5bf4d9735deeb7cb972065"
+      ],
+      "resumed_jobs": [
+        "job_ce6c4d42d5f07ead8f5bd6d21189427c"
+      ],
+      "status": "APPROVED_IDENTITY",
+      "validation": {
+        "doi_match": true,
+        "evidence_source": "pdf_text_and_raw_bytes",
+        "identity_status": "VERIFIED",
+        "technical_pdf_valid": true,
+        "title_token_ratio": 1
+      }
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1",
+        "kind": "PDF_IDENTITY",
+        "file": {
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "size_bytes": 1827,
+          "identity_status": "NEEDS_REVIEW",
+          "validation": {
+            "doi_match": false,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "NEEDS_REVIEW",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 0.333
+          }
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "canonical_key": "doi:10.1234/corrected",
+          "updated_at": "2026-10-06T00:57:19.481197+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {
+          "DOI": {
+            "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+            "submission_id": "native-source-DOI",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "DOI",
+            "decision": "FOUND",
+            "selected_text": "10.1234/corrected",
+            "page_number": 1,
+            "word_start": 5,
+            "word_end": 5,
+            "comment": "",
+            "value_before": "10.1234/original",
+            "value_after": "10.1234/corrected",
+            "canonical_key_before": "doi:10.1234/original",
+            "canonical_key_after": "doi:10.1234/corrected",
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "TITLE": {
+            "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+            "submission_id": "native-source-TITLE",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "TITLE",
+            "decision": "FOUND",
+            "selected_text": "Software review identity title",
+            "page_number": 1,
+            "word_start": 0,
+            "word_end": 3,
+            "comment": "",
+            "value_before": "Wrong catalogue identity",
+            "value_after": "Software review identity title",
+            "canonical_key_before": null,
+            "canonical_key_after": null,
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.437627+00:00"
+          }
+        },
+        "findings": [],
+        "blocked_jobs": [
+          {
+            "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "job_type": "LOCATE_PDF",
+            "status": "NEEDS_HUMAN",
+            "fencing_token": 1,
+            "updated_at": "2026-10-06T00:57:19.355883+00:00",
+            "review_kind": "PDF_IDENTITY"
+          }
+        ],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "name": "审核恢复软件 Collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": null,
+        "job": null,
+        "last_action_id": null,
+        "context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+        "history": [],
+        "allowed_actions": [
+          "APPROVE_IDENTITY"
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_a5c30fbfba7904b1a193c25df4f41958",
+        "request_id": "actual-review-identity-v1",
+        "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "action_kind": "APPROVE_IDENTITY",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit identity review of owned software fixture; no scientific approval",
+        "supersedes_action_id": null,
+        "created_at": "2026-10-06T00:57:19.640928+00:00",
+        "request": {
+          "action": "APPROVE_IDENTITY",
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "expected_context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+          "reason": "Explicit identity review of owned software fixture; no scientific approval",
+          "reference_selections": [],
+          "request_id": "actual-review-identity-v1"
+        },
+        "context": {
+          "blocked_jobs": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "fencing_token": 1,
+              "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+              "job_type": "LOCATE_PDF",
+              "review_kind": "PDF_IDENTITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T00:57:19.355883+00:00"
+            }
+          ],
+          "candidate": null,
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "collections": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "name": "审核恢复软件 Collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+          "file": {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "identity_status": "NEEDS_REVIEW",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "size_bytes": 1827,
+            "validation": {
+              "doi_match": false,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "NEEDS_REVIEW",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 0.333
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": null,
+          "kind": "PDF_IDENTITY",
+          "last_action_id": null,
+          "latest_annotations": {
+            "DOI": {
+              "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+              "canonical_key_after": "doi:10.1234/corrected",
+              "canonical_key_before": "doi:10.1234/original",
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.481197+00:00",
+              "decision": "FOUND",
+              "field_name": "DOI",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "10.1234/corrected",
+              "submission_id": "native-source-DOI",
+              "supersedes_annotation_id": null,
+              "value_after": "10.1234/corrected",
+              "value_before": "10.1234/original",
+              "word_end": 5,
+              "word_start": 5
+            },
+            "TITLE": {
+              "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+              "canonical_key_after": null,
+              "canonical_key_before": null,
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.437627+00:00",
+              "decision": "FOUND",
+              "field_name": "TITLE",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "Software review identity title",
+              "submission_id": "native-source-TITLE",
+              "supersedes_annotation_id": null,
+              "value_after": "Software review identity title",
+              "value_before": "Wrong catalogue identity",
+              "word_end": 3,
+              "word_start": 0
+            }
+          },
+          "paper": {
+            "canonical_key": "doi:10.1234/corrected",
+            "doi": "10.1234/corrected",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "quarantined": false,
+          "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+        },
+        "result": {
+          "parse_jobs": [
+            "job_3e2ae537ca5bf4d9735deeb7cb972065"
+          ],
+          "resumed_jobs": [
+            "job_ce6c4d42d5f07ead8f5bd6d21189427c"
+          ],
+          "status": "APPROVED_IDENTITY",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1",
+        "kind": "PDF_IDENTITY",
+        "file": {
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "size_bytes": 1827,
+          "identity_status": "VERIFIED",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "canonical_key": "doi:10.1234/corrected",
+          "updated_at": "2026-10-06T00:57:19.481197+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {
+          "DOI": {
+            "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+            "submission_id": "native-source-DOI",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "DOI",
+            "decision": "FOUND",
+            "selected_text": "10.1234/corrected",
+            "page_number": 1,
+            "word_start": 5,
+            "word_end": 5,
+            "comment": "",
+            "value_before": "10.1234/original",
+            "value_after": "10.1234/corrected",
+            "canonical_key_before": "doi:10.1234/original",
+            "canonical_key_after": "doi:10.1234/corrected",
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "TITLE": {
+            "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+            "submission_id": "native-source-TITLE",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "field_name": "TITLE",
+            "decision": "FOUND",
+            "selected_text": "Software review identity title",
+            "page_number": 1,
+            "word_start": 0,
+            "word_end": 3,
+            "comment": "",
+            "value_before": "Wrong catalogue identity",
+            "value_after": "Software review identity title",
+            "canonical_key_before": null,
+            "canonical_key_after": null,
+            "reviewer_label": "Alandelone",
+            "supersedes_annotation_id": null,
+            "created_at": "2026-10-06T00:57:19.437627+00:00"
+          }
+        },
+        "findings": [],
+        "blocked_jobs": [],
+        "collections": [
+          {
+            "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+            "name": "审核恢复软件 Collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": null,
+        "job": null,
+        "last_action_id": "review_action_a5c30fbfba7904b1a193c25df4f41958",
+        "context_sha256": "464ca84425ff2d349b8a284ae45dd1ccd2b9dff8a7a9519bf6427e72dc08d53b",
+        "history": [
+          {
+            "action_id": "review_action_a5c30fbfba7904b1a193c25df4f41958",
+            "request_id": "actual-review-identity-v1",
+            "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "action_kind": "APPROVE_IDENTITY",
+            "reviewer_label": "Alandelone",
+            "reason": "Explicit identity review of owned software fixture; no scientific approval",
+            "supersedes_action_id": null,
+            "created_at": "2026-10-06T00:57:19.640928+00:00",
+            "request": {
+              "action": "APPROVE_IDENTITY",
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "expected_context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+              "reason": "Explicit identity review of owned software fixture; no scientific approval",
+              "reference_selections": [],
+              "request_id": "actual-review-identity-v1"
+            },
+            "context": {
+              "blocked_jobs": [
+                {
+                  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                  "fencing_token": 1,
+                  "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+                  "job_type": "LOCATE_PDF",
+                  "review_kind": "PDF_IDENTITY",
+                  "status": "NEEDS_HUMAN",
+                  "updated_at": "2026-10-06T00:57:19.355883+00:00"
+                }
+              ],
+              "candidate": null,
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "collections": [
+                {
+                  "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+                  "name": "审核恢复软件 Collection",
+                  "revision": 1,
+                  "status": "ACTIVE"
+                }
+              ],
+              "context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+              "file": {
+                "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                "identity_status": "NEEDS_REVIEW",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+                "size_bytes": 1827,
+                "validation": {
+                  "doi_match": false,
+                  "evidence_source": "pdf_text_and_raw_bytes",
+                  "identity_status": "NEEDS_REVIEW",
+                  "technical_pdf_valid": true,
+                  "title_token_ratio": 0.333
+                }
+              },
+              "findings": [],
+              "integrity_verified": true,
+              "job": null,
+              "kind": "PDF_IDENTITY",
+              "last_action_id": null,
+              "latest_annotations": {
+                "DOI": {
+                  "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+                  "canonical_key_after": "doi:10.1234/corrected",
+                  "canonical_key_before": "doi:10.1234/original",
+                  "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "comment": "",
+                  "created_at": "2026-10-06T00:57:19.481197+00:00",
+                  "decision": "FOUND",
+                  "field_name": "DOI",
+                  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "page_number": 1,
+                  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                  "reviewer_label": "Alandelone",
+                  "selected_text": "10.1234/corrected",
+                  "submission_id": "native-source-DOI",
+                  "supersedes_annotation_id": null,
+                  "value_after": "10.1234/corrected",
+                  "value_before": "10.1234/original",
+                  "word_end": 5,
+                  "word_start": 5
+                },
+                "TITLE": {
+                  "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+                  "canonical_key_after": null,
+                  "canonical_key_before": null,
+                  "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "comment": "",
+                  "created_at": "2026-10-06T00:57:19.437627+00:00",
+                  "decision": "FOUND",
+                  "field_name": "TITLE",
+                  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+                  "page_number": 1,
+                  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                  "reviewer_label": "Alandelone",
+                  "selected_text": "Software review identity title",
+                  "submission_id": "native-source-TITLE",
+                  "supersedes_annotation_id": null,
+                  "value_after": "Software review identity title",
+                  "value_before": "Wrong catalogue identity",
+                  "word_end": 3,
+                  "word_start": 0
+                }
+              },
+              "paper": {
+                "canonical_key": "doi:10.1234/corrected",
+                "doi": "10.1234/corrected",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "title": "Software review identity title",
+                "updated_at": "2026-10-06T00:57:19.481197+00:00"
+              },
+              "quarantined": false,
+              "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+            },
+            "result": {
+              "parse_jobs": [
+                "job_3e2ae537ca5bf4d9735deeb7cb972065"
+              ],
+              "resumed_jobs": [
+                "job_ce6c4d42d5f07ead8f5bd6d21189427c"
+              ],
+              "status": "APPROVED_IDENTITY",
+              "validation": {
+                "doi_match": true,
+                "evidence_source": "pdf_text_and_raw_bytes",
+                "identity_status": "VERIFIED",
+                "technical_pdf_valid": true,
+                "title_token_ratio": 1
+              }
+            }
+          }
+        ],
+        "allowed_actions": []
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_a5c30fbfba7904b1a193c25df4f41958",
+        "request_id": "actual-review-identity-v1",
+        "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "action_kind": "APPROVE_IDENTITY",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit identity review of owned software fixture; no scientific approval",
+        "supersedes_action_id": null,
+        "created_at": "2026-10-06T00:57:19.640928+00:00",
+        "request": {
+          "action": "APPROVE_IDENTITY",
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "expected_context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+          "reason": "Explicit identity review of owned software fixture; no scientific approval",
+          "reference_selections": [],
+          "request_id": "actual-review-identity-v1"
+        },
+        "context": {
+          "blocked_jobs": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "fencing_token": 1,
+              "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+              "job_type": "LOCATE_PDF",
+              "review_kind": "PDF_IDENTITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T00:57:19.355883+00:00"
+            }
+          ],
+          "candidate": null,
+          "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "collections": [
+            {
+              "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+              "name": "审核恢复软件 Collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "e33aa8de78fd9ccba38c39af0e9de9f0222210d68db586925a52872c71b22834",
+          "file": {
+            "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+            "identity_status": "NEEDS_REVIEW",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+            "size_bytes": 1827,
+            "validation": {
+              "doi_match": false,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "NEEDS_REVIEW",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 0.333
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": null,
+          "kind": "PDF_IDENTITY",
+          "last_action_id": null,
+          "latest_annotations": {
+            "DOI": {
+              "annotation_id": "review_annotation_54c52094e83149309576aecf4073ce04",
+              "canonical_key_after": "doi:10.1234/corrected",
+              "canonical_key_before": "doi:10.1234/original",
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.481197+00:00",
+              "decision": "FOUND",
+              "field_name": "DOI",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "10.1234/corrected",
+              "submission_id": "native-source-DOI",
+              "supersedes_annotation_id": null,
+              "value_after": "10.1234/corrected",
+              "value_before": "10.1234/original",
+              "word_end": 5,
+              "word_start": 5
+            },
+            "TITLE": {
+              "annotation_id": "review_annotation_ba982a60b9024d4486e15bd74e05426d",
+              "canonical_key_after": null,
+              "canonical_key_before": null,
+              "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "comment": "",
+              "created_at": "2026-10-06T00:57:19.437627+00:00",
+              "decision": "FOUND",
+              "field_name": "TITLE",
+              "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+              "page_number": 1,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "reviewer_label": "Alandelone",
+              "selected_text": "Software review identity title",
+              "submission_id": "native-source-TITLE",
+              "supersedes_annotation_id": null,
+              "value_after": "Software review identity title",
+              "value_before": "Wrong catalogue identity",
+              "word_end": 3,
+              "word_start": 0
+            }
+          },
+          "paper": {
+            "canonical_key": "doi:10.1234/corrected",
+            "doi": "10.1234/corrected",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T00:57:19.481197+00:00"
+          },
+          "quarantined": false,
+          "workspace_id": "1da3073ad88d1e36974ea0cb02024baff3a12ce4dc2e9e46ce115993c3dc1ac1"
+        },
+        "result": {
+          "parse_jobs": [
+            "job_3e2ae537ca5bf4d9735deeb7cb972065"
+          ],
+          "resumed_jobs": [
+            "job_ce6c4d42d5f07ead8f5bd6d21189427c"
+          ],
+          "status": "APPROVED_IDENTITY",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        }
+      }
+    }
+  ],
+  "browser_verified": false,
+  "scientific_approval": false
+}

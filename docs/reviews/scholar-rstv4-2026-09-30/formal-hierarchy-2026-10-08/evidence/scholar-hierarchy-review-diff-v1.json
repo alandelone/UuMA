@@ -1,0 +1,79 @@
+{
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": {
+    "before_sha256": "3e0ce280ef1e453c0d7c583c636757feaeaad534f9b96b25a532d7e039f1d14e",
+    "after_sha256": "89e638566abcc7c968a48de8d7e9b62898139ac8dba0faf0ad4869a4ee4009f9",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\RSTV4\\src\\rstv4\\studio.py"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_structure.py": {
+    "before_sha256": "5ddf095f5e3c16b01a5d2f4028b350c55e2a662ddc45c904878628b4e5db55f3",
+    "after_sha256": "6231de52ef24f604cd7b657910ad98516f5984f7f469aa97237eb5fe927bbfaa",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\RSTV4\\src\\rstv4\\studio_structure.py"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_context.py": {
+    "before_sha256": "f7700d0d3691b9fdbe08958e364fc8eec0dd307b14b9c34d4da2587f63cf2256",
+    "after_sha256": "1417c60265d44a093dfc8ef8dec531da5494d75fa4c0d3a57fc1f375efe7aaee",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\RSTV4\\src\\rstv4\\studio_context.py"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_templates.py": {
+    "before_sha256": "f0368a0b50fba395c91646af40f11c63b24e84d43e9797a86b3353519183f778",
+    "after_sha256": "99f9bf2b373d7a3185cc037737187eace8b9fed0799e9d1f75d6c676bff2d89d",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\RSTV4\\src\\rstv4\\studio_templates.py"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_read_views.py": {
+    "before_sha256": "f4262e874414c96252e324211a6a49892e17fa31591e0207336814f396a2fbf1",
+    "after_sha256": "ebf6d23c18cec1bb1de377fadf5a0ea1e4a1fe2ca15082e8795a840e7195dfbe",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\RSTV4\\src\\rstv4\\studio_read_views.py"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_studio_hierarchy.py": {
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "bdd37b6bf084881e1d94fc52be2da8120310f830776ca323f50f449361f9a8fa",
+    "new_file": true,
+    "changed": true,
+    "before_path": null
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-blocks.ts": {
+    "before_sha256": "f7812f4f82eb5903c78bda1c4f8729bc10f3075ae95c49ac58106a23d076f417",
+    "after_sha256": "229b32783129a621e27ba04312fec72a54939f6cd85b2496d2de8b4afa6bca3b",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\writing-studio\\lib\\studio-blocks.ts"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts": {
+    "before_sha256": "c69fcec0f1ed8feede359e7e6a258f7e54cf5d3940fcfa04596af7bd539a9d38",
+    "after_sha256": "e1acf979af4dffe9bbb0662c812cdb7f51ada8dc83324244de36de8eb6f52710",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\writing-studio\\lib\\studio-types.ts"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx": {
+    "before_sha256": "360bce717106f2c139dc4d15f1c0effbad6320a3feaceff77127a0a0aa051e6f",
+    "after_sha256": "0e37669217e4a045970dd666f4ae25484f622894cc6d96d0cdd75a8cc3f7c68e",
+    "new_file": false,
+    "changed": true,
+    "before_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-hierarchy-before-v1\\writing-studio\\components\\studio-workspace.tsx"
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-argument-relations.tsx": {
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "05e717b48801b23081fdce9ee3f9af18df97519cfb53f514b5856105f49ac72c",
+    "new_file": true,
+    "changed": true,
+    "before_path": null
+  },
+  "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-hierarchy.cjs": {
+    "before_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "after_sha256": "b564a5c1072ae697adc111837170fe51f12aae01b88b35b855a92486285d2ecd",
+    "new_file": true,
+    "changed": true,
+    "before_path": null
+  }
+}

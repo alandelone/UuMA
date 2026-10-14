@@ -1,0 +1,47 @@
+{
+  "status": "PASS_CURRENT_CONVERSATION_LEGACY_RETRY_AND_PUBLISHED_BYTES",
+  "new_jobs": 0,
+  "new_model_calls": 0,
+  "browser_verified": false,
+  "counts": {
+    "research_discussion_jobs": 2,
+    "research_discussion_messages": 4,
+    "research_discussion_annotations": 1
+  },
+  "database_sha256": "68a3f9cb313cd11998abf31eec6da25e2481bcf7346ee6ad80b76de4a262b58c",
+  "legacy_retry_verified": true,
+  "source_context_sha256": "a7f2e1c95f1479e618d200269c85bf0940295ac2b000cba4d105ca1ce8f647af",
+  "actual_contract": {
+    "actual_model": "gemini-3.7-flash",
+    "estimated_input_tokens": 3071,
+    "prompt_version": "research-chat-v2-fixed-conversation",
+    "status": "SUCCESS",
+    "task": "research_chat",
+    "tier": "standard",
+    "usage": {
+      "completion_tokens": 62,
+      "prompt_tokens": 3422,
+      "total_tokens": 3484
+    }
+  },
+  "original_contract": {
+    "actual_model": "gemini-3.7-flash",
+    "estimated_input_tokens": 926,
+    "prompt_version": "research-chat-v1-fixed-sources",
+    "status": "SUCCESS",
+    "task": "research_chat",
+    "tier": "standard",
+    "usage": {
+      "completion_tokens": 72,
+      "prompt_tokens": 1162,
+      "total_tokens": 1234
+    }
+  },
+  "published_sha256": {
+    "catalog_web.html": "cf15e960fa3da9bfa62fb94bf6e5777e0262e5ab5cf51cc1a274401dff55c6ed",
+    "catalog_research_chat.js": "5add9f43c536fc4ab6f6f8e757351813018a34bf2b75b280b607ed815b02a41c",
+    "catalog_research_workspaces.js": "a73b645d4f06a60763dc388c4c4a225ae4b4dda56551b18093b8a9504b0068f5"
+  },
+  "historical_source_state": "CURRENT",
+  "historical_chain_messages": 4
+}

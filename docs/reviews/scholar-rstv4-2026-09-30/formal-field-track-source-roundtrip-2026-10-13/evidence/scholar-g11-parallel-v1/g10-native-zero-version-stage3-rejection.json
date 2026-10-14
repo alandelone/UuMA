@@ -1,0 +1,215 @@
+{
+  "status": "PASS_ACTUAL_ZERO_VERSION_STAGE3_REJECTION_PERSISTED_BYTES_UNCHANGED",
+  "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+  "owner_track": "track_cd1adda6220f47b787f409e983c00947",
+  "method": "POST",
+  "endpoint": "http://127.0.0.1:8886/api/manuscripts/manuscript_14aef3be6a534016bf456a15dc865892/stage",
+  "request": {
+    "stage": "WHOLE_PAPER_REVIEW",
+    "expected_revision": 1,
+    "reason": "G11 isolated software acceptance: reject advancement without a successful generated version."
+  },
+  "response_status": 422,
+  "response": {
+    "error": "studio_error",
+    "detail": "A successful generated version is required before advancing this stage"
+  },
+  "before_workspace": {
+    "manuscript": {
+      "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+      "track_id": "track_cd1adda6220f47b787f409e983c00947",
+      "title": "G10 source roundtrip software acceptance — no scientific claim",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "DRAFTING",
+      "needs_scientific_review": 0,
+      "blocker": null,
+      "next_step": null,
+      "revision": 1,
+      "created_at": "2026-10-13T05:39:34.031761+00:00",
+      "updated_at": "2026-10-13T05:41:03.705363+00:00",
+      "workflow_stage": "DRAFTING",
+      "projects": [],
+      "nodes": [],
+      "evidence": [],
+      "versions": [],
+      "history": [
+        {
+          "history_id": "history_871cf85549f2459d8f0ddbe19b46d6e4",
+          "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+          "status": "PLANNING",
+          "blocker": null,
+          "next_step": null,
+          "reason": "Created",
+          "revision": 1,
+          "created_at": "2026-10-13T05:39:34.031761+00:00"
+        }
+      ],
+      "submissions": []
+    },
+    "workflow_stage": "DRAFTING",
+    "document_revision": 2,
+    "document": {
+      "abstract": "",
+      "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+      "schema_version": 1,
+      "sections": [
+        {
+          "id": "section_dc7bd5dd6cd64ce09ab3d235b6459408",
+          "paragraphs": [
+            {
+              "asset_ids": [],
+              "formulas": [],
+              "id": "paragraph_c6d7ff91b4c34189877f474aab2a504f",
+              "intents": [
+                {
+                  "id": "intent_2ba11c11f92440299a0d2a265f57d9f7",
+                  "label": "Research Context",
+                  "thoughts": [
+                    {
+                      "citation_mode": "PENDING",
+                      "citations": [
+                        {
+                          "evidence_id": "evidence_a6ebbc126275f8d012c2d65da2946832",
+                          "selected": false,
+                          "statement": "A larger trial reports strong validation under dry conditions.",
+                          "title": "Second located source"
+                        }
+                      ],
+                      "id": "thought_0face25a110649c8a6ba51a69d0ebc91",
+                      "text": "G10 software source roundtrip only: retain the original source and its recorded conditions; no scientific claim is asserted."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "",
+              "purpose": ""
+            }
+          ],
+          "role": "Motivation",
+          "title": "Introduction"
+        }
+      ],
+      "title": "G10 source roundtrip software acceptance — no scientific claim",
+      "venue": ""
+    },
+    "active_generated_version_id": null,
+    "last_generated_revision": null,
+    "generated_is_stale": false,
+    "assets": [],
+    "latest_job": null,
+    "artifacts": [],
+    "findings": [],
+    "template_instances": []
+  },
+  "after_workspace": {
+    "manuscript": {
+      "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+      "track_id": "track_cd1adda6220f47b787f409e983c00947",
+      "title": "G10 source roundtrip software acceptance — no scientific claim",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "DRAFTING",
+      "needs_scientific_review": 0,
+      "blocker": null,
+      "next_step": null,
+      "revision": 1,
+      "created_at": "2026-10-13T05:39:34.031761+00:00",
+      "updated_at": "2026-10-13T05:41:03.705363+00:00",
+      "workflow_stage": "DRAFTING",
+      "projects": [],
+      "nodes": [],
+      "evidence": [],
+      "versions": [],
+      "history": [
+        {
+          "history_id": "history_871cf85549f2459d8f0ddbe19b46d6e4",
+          "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+          "status": "PLANNING",
+          "blocker": null,
+          "next_step": null,
+          "reason": "Created",
+          "revision": 1,
+          "created_at": "2026-10-13T05:39:34.031761+00:00"
+        }
+      ],
+      "submissions": []
+    },
+    "workflow_stage": "DRAFTING",
+    "document_revision": 2,
+    "document": {
+      "abstract": "",
+      "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892",
+      "schema_version": 1,
+      "sections": [
+        {
+          "id": "section_dc7bd5dd6cd64ce09ab3d235b6459408",
+          "paragraphs": [
+            {
+              "asset_ids": [],
+              "formulas": [],
+              "id": "paragraph_c6d7ff91b4c34189877f474aab2a504f",
+              "intents": [
+                {
+                  "id": "intent_2ba11c11f92440299a0d2a265f57d9f7",
+                  "label": "Research Context",
+                  "thoughts": [
+                    {
+                      "citation_mode": "PENDING",
+                      "citations": [
+                        {
+                          "evidence_id": "evidence_a6ebbc126275f8d012c2d65da2946832",
+                          "selected": false,
+                          "statement": "A larger trial reports strong validation under dry conditions.",
+                          "title": "Second located source"
+                        }
+                      ],
+                      "id": "thought_0face25a110649c8a6ba51a69d0ebc91",
+                      "text": "G10 software source roundtrip only: retain the original source and its recorded conditions; no scientific claim is asserted."
+                    }
+                  ]
+                }
+              ],
+              "paradigm": "",
+              "purpose": ""
+            }
+          ],
+          "role": "Motivation",
+          "title": "Introduction"
+        }
+      ],
+      "title": "G10 source roundtrip software acceptance — no scientific claim",
+      "venue": ""
+    },
+    "active_generated_version_id": null,
+    "last_generated_revision": null,
+    "generated_is_stale": false,
+    "assets": [],
+    "latest_job": null,
+    "artifacts": [],
+    "findings": [],
+    "template_instances": []
+  },
+  "persistent_before": {
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g10-existing-copy-0v_dpup3/data/catalog.db": {
+      "size": 1482752,
+      "sha256": "48ad81d1c1830a0dd289b49ea71669aa229681f2cf4a626f24d98a22a25487b7"
+    },
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g10-existing-copy-0v_dpup3/data/catalog.db-wal": {
+      "absent": true
+    }
+  },
+  "persistent_after": {
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g10-existing-copy-0v_dpup3/data/catalog.db": {
+      "size": 1482752,
+      "sha256": "48ad81d1c1830a0dd289b49ea71669aa229681f2cf4a626f24d98a22a25487b7"
+    },
+    "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g10-existing-copy-0v_dpup3/data/catalog.db-wal": {
+      "absent": true
+    }
+  },
+  "sqlite_shm_excluded_reason": "Coordination shared-memory file is not the persisted database/WAL payload; full DB and WAL bytes compared.",
+  "native_current_stage": "DRAFTING",
+  "legacy_publication_not_claimed": true,
+  "scientific_approval": false
+}

@@ -1,0 +1,43 @@
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/research_views.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/catalog_web.py', 'tests/test_fieldkg_workspace.py']
+All checks passed!
+Exit: 0
+CHECK ['tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+12 controlled workspace scenarios passed
+Exit: 0
+CHECK ['tests/catalog_research_overview.mjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed
+Exit: 0
+CHECK ['tests/unit/catalog-return.mjs']
+11 Catalog return origin/context cases passed
+Exit: 0
+CHECK ['-e', "const fs=require('fs'),vm=require('vm');for(const m of fs.readFileSync('src/rstv4/catalog_web.html','utf8').matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/g)){new vm.Script(m[1]);}console.log('Shipped Catalog inline scripts parse');"]
+Shipped Catalog inline scripts parse
+Exit: 0
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\typescript\\bin\\tsc', '--noEmit']
+Exit: 0
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\oxlint\\bin\\oxlint', 'C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_research_workspaces.js', 'C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_research_workspaces.mjs']
+C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/catalog_research_workspaces.js:139:11: error eslint(prefer-const): `record` is never reassigned. help: Use `const` instead.
+Exit: 1

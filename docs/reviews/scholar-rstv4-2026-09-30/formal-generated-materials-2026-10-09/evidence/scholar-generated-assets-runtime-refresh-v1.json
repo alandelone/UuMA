@@ -1,0 +1,35 @@
+{
+  "status": "PASS_FINAL_MATERIAL_BACKEND_READY",
+  "prior_owned": {
+    "Processes": [
+      {
+        "ProcessId": 100156,
+        "ParentProcessId": 52292,
+        "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-v1.py serve",
+        "ExecutablePath": "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "CreationDate": "/Date(1791533232775)/"
+      },
+      {
+        "ProcessId": 52292,
+        "ParentProcessId": 26788,
+        "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-v1.py serve",
+        "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "CreationDate": "/Date(1791533232755)/"
+      }
+    ],
+    "Listener": [
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8880,
+        "OwningProcess": 100156
+      }
+    ]
+  },
+  "new_backend_root_pid": 96652,
+  "all109tables_exact": true,
+  "only_owned8880_replaced": true,
+  "other_runtimes_preserved": true,
+  "no_prior_native_material_job": true,
+  "actual_models": 0,
+  "scientific_acceptance": false
+}

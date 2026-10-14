@@ -1,0 +1,15 @@
+CHECK scholar-database-startup-fixed-baseline-v1.py
+{"root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h", "database_sha256": "83e4de6f6d682a06cd73b7239b130f2cbc0117b657c75bba4ee256f381d27f13", "schema_sha256": "fa2d0a828367321b9462a5ffdd6dbd012fb5e3aa22efee45d31b523b0b6a6169", "schema_versions": [["catalog", 5, "2026-10-05 10:55:05"]], "previous_batch_byte_equality_failed": true, "previous_batch_database_sha256": "205aca1887914761337a824244e9edf87c2e820a30fec8e842f632258f66b8f3"}
+Exit: 0
+CHECK scholar-discussion-navigation-runtime-v3.py
+Isolated Catalog identity and listener verified.
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":31512},{"LocalAddress":"0.0.0.0","LocalPort":3000,"OwningProcess":18892}]
+Verified roots: Studio 6000, frontend 18892
+Owned isolated services loaded: Catalog 54256, Studio 55324, frontend 53416.
+Exit: 0
+CHECK scholar-discussion-navigation-final-v2.py
+Isolated Catalog identity and listener verified.
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":55468},{"LocalAddress":"0.0.0.0","LocalPort":3000,"OwningProcess":53416}]
+Verified roots: Studio 55324, frontend 53416
+{"status": "PASS_CURRENT_DISCUSSION_NAVIGATION_AND_ALL_RETRIES", "new_jobs": 0, "new_model_calls": 0, "browser_verified": false, "counts": {"research_discussion_jobs": 4, "research_discussion_messages": 8, "research_discussion_annotations": 2, "studio_model_calls": 6}, "database_sha256": "83e4de6f6d682a06cd73b7239b130f2cbc0117b657c75bba4ee256f381d27f13", "legacy_retry_verified": true, "studio_origin_verified": true, "source_context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c", "historical_chain_messages": 4, "published_sha256": {"catalog_web.html": "a4927128942ab65f9a602231b072082bd54457d9b34b484dbaa812abd77e46e1", "catalog_research_chat.js": "52d65e54fe12914e7fc8649aabb2923f5f52067b4e2fba5dc10952c9143bb8ec", "catalog_research_workspaces.js": "58d4048e71c83367be91f9e1d974d2c6d46cd7f9078b8d3b285432e71d2367fc"}, "compiled_assets_sha256": {"/_next/static/chunks/index-CqEz6SQH.js": "55db9b7c8ef2aad2971ea1fcb016d4b56bc37c822ccea5b2e1d4f477c3d6b734", "/_next/static/chunks/layout-segment-context-Bq25zaEn.js": "3144dfd87d9aeae7b6bf27af23b56fff0c10dfe5f1e95cf8226cd8ab5534b063", "/_next/static/chunks/vinext-COz0iOXN.js": "7a9e43bbb27a551c3158d04a1f4205a6f7d265a37a84ecf33210662fe029cc65", "/_next/static/css/index.CU_wJ0Vv.css": "18fc26ac9066562768451d5d0b0bd216210595dcbd8743f4dd2b96acbe7175d4", "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021", "/_next/static/chunks/page-Dg-zDnJZ.js": "397bc957973b5faebcf21b1c3478a392ce260d3f9a1e753fb97634d54c6c3046", "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077"}, "original_database_bytes_unchanged_since_previous_batch": false, "previous_batch_byte_equality_failed_and_preserved": true, "fixed_startup_all_tables_and_bytes_unchanged": true, "all_tables_verified": 96, "exact_previous_discussion_receipts_unchanged": true}
+Exit: 0

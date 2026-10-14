@@ -1,0 +1,29 @@
+{
+  "status": "PASS_EXACT_BROWSER_URL_HTTP_BYTES_AND_CORS_BROWSER_DOWNLOAD_STILL_FAILED",
+  "responses": {
+    "zip": {
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/packages/submission_package_462feff00b234357a635a3e63254aff4/download",
+      "status": 200,
+      "bytes": 20724,
+      "sha256": "c8690ba64bb08dbe3935cc2751ae52e15a983842d718c137938609a1bd5a94c4",
+      "access-control-allow-origin": "http://127.0.0.1:3004",
+      "content-type": "application/zip",
+      "browser_verified": false,
+      "browser_request_id": "81032.53"
+    },
+    "pdf": {
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/packages/submission_package_462feff00b234357a635a3e63254aff4/files/clean-manuscript.pdf",
+      "status": 200,
+      "bytes": 8144,
+      "sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "access-control-allow-origin": "http://127.0.0.1:3004",
+      "content-type": "application/pdf",
+      "browser_verified": false,
+      "browser_request_id": "81032.54"
+    }
+  },
+  "database_bytes_unchanged": true,
+  "pdf_equals_zip_member": true,
+  "browser_download_passed": false,
+  "browser_security_changed": false
+}

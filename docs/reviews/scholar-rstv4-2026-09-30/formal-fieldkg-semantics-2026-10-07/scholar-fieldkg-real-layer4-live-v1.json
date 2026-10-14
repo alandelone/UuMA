@@ -1,0 +1,9 @@
+{
+  "observed_at": "2026-10-07T15:55:03.679Z",
+  "id": "run_87e6d8896d7847ef86ec8f8cc2ff555c",
+  "status": "running",
+  "attempts": 1,
+  "model": "gemini-3.8-flash",
+  "all_source_blocks_completed": false,
+  "scientific_approval": false
+}

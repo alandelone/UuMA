@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-03",
+  "read_only": true,
+  "browser_runtime_verified": false,
+  "fixture_model_substitution": true,
+  "real_compiler_at_seeding": true,
+  "manuscripts": {
+    "revision": {
+      "document_revision": 6,
+      "original_generated_revision": 1,
+      "generated_version_id": "manuscript_version_c9bb80ad2d3c4a7ca448e3f009867a3d",
+      "generated_version": 1,
+      "structure_mapping_available": true,
+      "blocks": 3,
+      "paragraph_ids_match_actual_revision": true,
+      "workspace_unchanged": true,
+      "generated_content_sha256": "344cc9604c554b609e8c0a16734be4e0c903cc0702846dd5b48d27e31b9a8d02",
+      "open_findings": [],
+      "generated_is_stale": true,
+      "citation_style": "legacy",
+      "artifact_count": 5,
+      "artifacts_bound_to_original_job_and_revision": true
+    },
+    "reading": {
+      "document_revision": 5,
+      "original_generated_revision": 1,
+      "generated_version_id": "manuscript_version_6682455bbbad469caead929b36b0c1bd",
+      "generated_version": 1,
+      "structure_mapping_available": true,
+      "blocks": 3,
+      "paragraph_ids_match_actual_revision": true,
+      "workspace_unchanged": true,
+      "generated_content_sha256": "56ff33575419eaa903615cfea1d302c2eb36135a31c1e42e5e10e75c347d6801",
+      "open_findings": [
+        "finding_done_fixture"
+      ],
+      "generated_is_stale": true,
+      "citation_style": "legacy",
+      "artifact_count": 5,
+      "artifacts_bound_to_original_job_and_revision": true
+    }
+  },
+  "frontend_http_status": 200
+}

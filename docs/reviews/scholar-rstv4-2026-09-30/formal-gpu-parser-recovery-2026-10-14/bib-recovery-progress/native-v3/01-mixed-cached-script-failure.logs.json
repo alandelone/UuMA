@@ -1,0 +1,8 @@
+[
+  {
+    "level": "error",
+    "message": "TypeError: CatalogCollections.createBibFileReader is not a function\n    at http://127.0.0.1:8891/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223a46f7cabce119f72a8b83d44211676d5d389a7fa58b0a2f2f799528bdd4d719%22%7D&view=collect:1057:46\n    at http://127.0.0.1:8891/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223a46f7cabce119f72a8b83d44211676d5d389a7fa58b0a2f2f799528bdd4d719%22%7D&view=collect:1826:7",
+    "timestamp": "2026-10-14T03:28:25.462Z",
+    "url": "http://127.0.0.1:8891/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223a46f7cabce119f72a8b83d44211676d5d389a7fa58b0a2f2f799528bdd4d719%22%7D&view=collect"
+  }
+]

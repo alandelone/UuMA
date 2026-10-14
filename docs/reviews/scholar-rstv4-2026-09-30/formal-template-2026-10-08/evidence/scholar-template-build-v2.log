@@ -1,0 +1,30 @@
+
+> pepper-writing-studio@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.3.0)
+
+[1/5] analyze client references...
+transforming...
+✓ 249 modules transformed.
+rendering chunks...
+✓ built in 3.09s
+[33m[PLUGIN_TIMINGS] [0mPlugin hooks ran for 3.1s of this 3.1s build (99%).
+The slowest hooks, timed inside each callback (the wait before a callback starts is excluded, the time it awaits is included):
+  - vinext:google-fonts transform (82%, 2.5s, 2 calls)
+Additional hook time came from the hooks below and from hooks under 1s.
+5 hooks are listed without a time. Their calls overlapped, so the time inside one call includes work from other calls. To find their cost, profile the build with `node --cpu-prof`:
+  - rsc:virtual-client-package resolveId (844 calls)
+  - vinext:og-inline-fetch-assets resolveId (876 calls)
+  - alias resolveId (944 calls)
+  … and 2 more
+See https://rolldown.rs/reference/InputOptions.checks#plugintimings for more details.
+
+[2/5] analyze server references...
+transforming...
+✓ 363 modules transformed.
+rendering chunks...
+✓ built in 409ms
+[3/5] build rsc environment...
+transforming...

@@ -1,0 +1,85 @@
+{
+  "status": "THREE_FAILED_AUXILIARY_PAGES_INDEPENDENTLY_INSPECTED_WITH_ORIGINAL_FAILURES_RETAINED",
+  "reviewer": "Current agent, direct complete original rendered-page visual inspection",
+  "page_reviews": [
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "actual_pdf_page": 9,
+      "directly_observed_scientific_items": [
+        "Table 6",
+        "Table 7",
+        "Fig. 7",
+        "Fig. 8"
+      ],
+      "verified_source_observations": [
+        "Table 6 labels six HES configurations with COE in $/kWh and NPC in $; the PV/Diesel/PHS column gives COE 0.27 and NPC 595,123.",
+        "Fig. 7 plots component costs, including capital, operating, replacement, salvage and resource costs, on a Cost ($) axis.",
+        "Fig. 8 has a left Power (kW) axis marked 0 through 48 and a distinct right Load demand (kW) axis marked 0 through 40. Do not compare bar and line heights as if they shared the same scale."
+      ],
+      "all_table_cells_or_quantitative_plot_values_independently_reviewed": false,
+      "original_raw_failure_reason": "Malformed unquoted/truncated field names in the two plot objects; preserve the original response and contract failure.",
+      "original_render_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-009.png",
+      "original_render_sha256": "79beb0020eea527dc05ce79c14b4e80330f0a64f960855ffb5c1e9182c14f498",
+      "original_source_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+      "original_source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+      "original_auxiliary_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+      "original_auxiliary_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+      "original_auxiliary_response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\response.json",
+      "original_auxiliary_response_sha256": "ff856951d29416ff41d830f779bc2d70a3c0f3a31ec71b79d691e87c16e90ddf",
+      "scientific_reference_approved": false,
+      "original_model_output_or_failure_rewritten": false
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "actual_pdf_page": 1,
+      "directly_observed_scientific_items": [
+        "Fig. 1"
+      ],
+      "verified_source_observations": [
+        "The flowchart connects Get Image to Extract Outline with Color rules, Extract Outline to Clustering with K-Means, Clustering to 2D Footprint with Concave hull and Alpha shape, and 2D Footprint to 3D Geometry with Extrusion.",
+        "The four directional workflow relationships in the raw auxiliary response agree with the visible arrows; this does not validate other paper statements."
+      ],
+      "all_table_cells_or_quantitative_plot_values_independently_reviewed": false,
+      "original_raw_failure_reason": "The raw response uses an unquoted _visible_label key. Its scientific workflow text remains available, but the original strict JSON failure remains.",
+      "original_render_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_964b88669cfe422e7aef-page-001.png",
+      "original_render_sha256": "9bce0469a0e0888ab64759487da704ce052344172b011535d34840922afd0994",
+      "original_source_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\URB-Solar_ An Open-Source Tool for Solar Power Prediction in Urban Areas.pdf",
+      "original_source_pdf_sha256": "e030350b682bb046b73cb041afaa454e9e6bd7e87fd81dc0ad86e0e872f9db46",
+      "original_auxiliary_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\001\\record.json",
+      "original_auxiliary_record_sha256": "ff68cfed5c846a166aa12ab4aef9b00c0ce1c3adb9414979c06045ac17cd7030",
+      "original_auxiliary_response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_964b88669cfe422e7aef\\001\\response.json",
+      "original_auxiliary_response_sha256": "c50547220d4db3d21b461707680de582d9e0a4baecd27d1ff6f03794008c55ce",
+      "scientific_reference_approved": false,
+      "original_model_output_or_failure_rewritten": false
+    },
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "actual_pdf_page": 15,
+      "directly_observed_scientific_items": [
+        "Fig. A.4"
+      ],
+      "verified_source_observations": [
+        "The caption explicitly qualifies the depicted system as battery and P2H2P only for a representative day of the year.",
+        "Four aligned panels show power supply, battery and hydrogen state of charge, electrolyzer/fuel cell power, and battery charging/discharging.",
+        "The raw auxiliary response transcribes the visible labels and caption but gives an empty visible_relationships list; quantitative and temporal plot fidelity remains unverified."
+      ],
+      "all_table_cells_or_quantitative_plot_values_independently_reviewed": false,
+      "original_raw_failure_reason": "The raw output uses observed_id rather than the required observed_in_payload_ids field. Original failure is retained.",
+      "original_render_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_95eebae164cc42fd6005-page-015.png",
+      "original_render_sha256": "711ba53e0dd5bab1389f0139e6aae1fa0475104e5a04cb5fe5a507c998e8e214",
+      "original_source_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Model-based techno-economic evaluation of power-to-hydrogen-to-power for the electrification of isolated African off-grid communities.pdf",
+      "original_source_pdf_sha256": "0e92080c54611eef61143d87ca183766f31ad43ee00c3ab6b6f54bc81937ef9e",
+      "original_auxiliary_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\015\\record.json",
+      "original_auxiliary_record_sha256": "f5e8638badf27d8e33f1e50debd582ffcd496fc419ba6765b56a5a2e3a5fbf36",
+      "original_auxiliary_response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_95eebae164cc42fd6005\\015\\response.json",
+      "original_auxiliary_response_sha256": "dc4f4a05d690488415bf442937c3bb015ef33a72c0162b428e5609178c974bfb",
+      "scientific_reference_approved": false,
+      "original_model_output_or_failure_rewritten": false
+    }
+  ],
+  "review_scope_is_explicit_and_not_full_visual_scientific_qualification": true,
+  "expert_gold": false,
+  "new_remote_model_calls": 0,
+  "benchmark_grades_created": 0,
+  "full_goal_complete": false
+}

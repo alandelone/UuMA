@@ -1,0 +1,15 @@
+{
+  "status": "PASS_G02_TYPED_NATIVE_STATE",
+  "phase": "reopened-final",
+  "document_revision": 13,
+  "source_suggestion_id": "suggestion_4659f289a61447a0b21153e81a8b615b",
+  "source_agent_message_id": "research_message_6c62a0e6fc3b40878522e500dca1d861",
+  "source_decision_id": "suggestion_decision_4eec3b65-bfaa-4d6c-84f7-07e710b0997b",
+  "source_full_adoption_adds_only_unselected_candidate": true,
+  "old_selected_citations_and_all_author_text_exact": true,
+  "source_primary_v3_additional_v1_exact": true,
+  "wording_explicitly_rejected_without_document_change": true,
+  "all_original_and_partial_records_exact": true,
+  "all20artifact_bytes_exact": true,
+  "database_read_only_bytes_preserved": true
+}

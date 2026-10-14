@@ -1,0 +1,23 @@
+{
+  "mode": "online",
+  "chain": [
+    {
+      "ProcessId": 118472,
+      "ParentProcessId": 94924,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g02-typed-native-server-v1.py",
+      "CreationDate": "/Date(1791779170556)/"
+    },
+    {
+      "ProcessId": 94924,
+      "ParentProcessId": 108180,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g02-typed-native-server-v1.py",
+      "CreationDate": "/Date(1791779170536)/"
+    }
+  ],
+  "port": 8881,
+  "status": "PASS",
+  "all109tables_exact": true,
+  "database_bytes_exact": true,
+  "frontend_unchanged": true,
+  "no_new_model_calls": true
+}

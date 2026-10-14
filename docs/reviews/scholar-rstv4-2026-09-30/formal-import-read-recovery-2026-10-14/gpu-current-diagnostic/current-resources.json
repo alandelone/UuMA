@@ -1,0 +1,29 @@
+{
+  "observed_at": "2026-10-14T02:17:10.923Z",
+  "physical_total_bytes": 34088050688,
+  "physical_available_bytes": 15240200192,
+  "nvidia": {
+    "file": "C:/Windows/System32/nvidia-smi.exe",
+    "args": [
+      "--query-gpu=name,driver_version,memory.total,memory.used,memory.free,utilization.gpu",
+      "--format=csv,noheader,nounits"
+    ],
+    "exit_code": 255,
+    "error": "Command failed: C:/Windows/System32/nvidia-smi.exe --query-gpu=name,driver_version,memory.total,memory.used,memory.free,utilization.gpu --format=csv,noheader,nounits\n",
+    "stdout": "Failed to initialize NVML: Unknown Error\r\n",
+    "stderr": ""
+  },
+  "windows_memory": {
+    "file": "C:/Windows/System32/WindowsPowerShell/v1.0/powershell.exe",
+    "args": [
+      "-NoProfile",
+      "-NonInteractive",
+      "-Command",
+      "Get-CimInstance Win32_PerfFormattedData_PerfOS_Memory | Select-Object AvailableMBytes,CommittedBytes,CommitLimit,PercentCommittedBytesInUse | ConvertTo-Json -Compress"
+    ],
+    "exit_code": 0,
+    "error": null,
+    "stdout": "{\"AvailableMBytes\":14311,\"CommittedBytes\":31269433344,\"CommitLimit\":39398174720,\"PercentCommittedBytesInUse\":79}\r\n",
+    "stderr": ""
+  }
+}

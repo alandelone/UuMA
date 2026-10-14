@@ -1,0 +1,14 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/source_review.py', 'src/rstv4/catalog_review_workflow.py', 'src/rstv4/track_first.py', 'src/rstv4/research_views.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'tests/test_source_review_withdrawal.py']
+RUF059 Unpacked variable `service` is never used
+   --> tests\test_source_review_withdrawal.py:104:5
+    |
+103 | def test_withdrawn_parse_cannot_be_consumed_by_worker(tmp_path: Path):
+104 |     service,_,_,file,published=dependencies(tmp_path)
+    |     ^^^^^^^
+105 |     with TestClient(create_app(tmp_path)) as client:
+106 |         assert act(client,file['file_version_id'],'REOPEN_IDENTITY','worker-source-reopen').status_code==201
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 3 errors (2 fixed, 1 remaining).
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

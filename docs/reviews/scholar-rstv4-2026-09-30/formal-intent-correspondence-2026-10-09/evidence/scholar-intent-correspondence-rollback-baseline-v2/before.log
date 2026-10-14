@@ -1,0 +1,49 @@
+ACTUAL_STUDIO_SOURCE C:\Users\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-intent-correspondence-rollback-baseline-v2\old-src\rstv4\studio.py 89e638566abcc7c968a48de8d7e9b62898139ac8dba0faf0ad4869a4ee4009f9
+F                                                                        [100%]
+================================== FAILURES ===================================
+_______ test_adoption_record_failure_rolls_back_document_and_operation ________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-969/test_adoption_record_failure_r0')
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x0000021DFF31E350>
+
+    def test_adoption_record_failure_rolls_back_document_and_operation(tmp_path, monkeypatch):
+        service, manuscript_id, _, _, request = fixture(tmp_path)
+        save = service.save_document
+    
+        def interrupted(*args, **kwargs):
+            saved = save(*args, **kwargs)
+            assert saved["document_revision"] == 2
+            raise RuntimeError("software fixture failure after document writes")
+    
+        monkeypatch.setattr(service, "save_document", interrupted)
+>       before = service.db_path.read_bytes()
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\RSTV4\tests\test_studio_templates.py:174: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+.tmp\scholar-intent-correspondence-rollback-baseline-v2.py:56: in recording_read
+    captures.append((raw,snapshot(path)))
+                         ^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-969/test_adoption_record_failure_r0/data/catalog.db')
+
+    def snapshot(path):
+        with sqlite3.connect(path.as_uri()+'?mode=ro',uri=True) as conn:
+            tables = [r[0] for r in conn.execute("SELECT name FROM sqlite_master WHERE type='table' ORDER BY name")]
+            rows = {name: sorted([repr(tuple(row)) for row in conn.execute('SELECT * FROM "'+name.replace('"','""')+'"')]) for name in tables}
+            params = {key:conn.execute('PRAGMA '+key).fetchone()[0] for key in ['page_size','page_count','freelist_count','schema_version']}
+>           page4 = [tuple(row) for row in conn.execute("SELECT name,pageno,pagetype,ncell FROM dbstat WHERE pageno=4")]
+                                           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           sqlite3.OperationalError: no such table: dbstat
+
+.tmp\scholar-intent-correspondence-rollback-baseline-v2.py:47: OperationalError
+=========================== short test summary info ===========================
+FAILED ..\RSTV4\tests\test_studio_templates.py::test_adoption_record_failure_rolls_back_document_and_operation
+1 failed in 1.25s
+
+Traceback (most recent call last):
+  File "C:\Users\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-intent-correspondence-rollback-baseline-v2.py", line 67, in <module>
+    assert len(captures) == 2
+           ^^^^^^^^^^^^^^^^^^
+AssertionError

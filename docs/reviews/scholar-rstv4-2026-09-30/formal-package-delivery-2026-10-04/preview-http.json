@@ -1,0 +1,7 @@
+{
+  "status": 200,
+  "url": "http://127.0.0.1:3000/?manuscript=manuscript_bd7568923be94a2c8510d176010e4cca",
+  "html_size_bytes": 18234,
+  "html_sha256": "915248f5569732d19ddd0528b7a5fe4ba6c16209131d93540dcf165f64521f47",
+  "browser_runtime_verified": false
+}

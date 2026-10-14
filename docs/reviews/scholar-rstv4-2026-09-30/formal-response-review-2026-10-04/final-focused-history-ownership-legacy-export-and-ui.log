@@ -1,0 +1,44 @@
+CHECK ['-m', 'pytest', 'tests/test_studio_response_checks.py::test_archived_history_is_owned_and_readable_without_current_pdf', 'tests/test_studio_response_checks.py::test_owned_api_strict_unicode_selection_and_historical_retry', 'tests/test_studio_response_checks.py::test_legacy_resolved_is_exported_as_unverified_and_packaging_rejects_midflight_reply_change', '-q']
+...                                                                      [100%]
+============================== warnings summary ===============================
+.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+3 passed, 1 warning in 19.62s
+Exit: 0
+CHECK ['tests/unit/studio-response-review.cjs']
+PASS Serialized saves retain newer keystrokes and advance the actual CAS basis
+PASS Conflicting page edits require an explicit comparison before replacing the reply
+PASS Unmount restores drafts, review waits for save, and an uncertain submit retries its original decision
+PASS Archived opinions expose review history without modifying their reply
+PASS Actual dialog retains Unicode selection offsets and rejects retained evidence
+Exit: 0
+CHECK ['-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-response-static-v6.py']
+
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_suggestions.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_rounds.py', 'src/rstv4/studio_realization.py', 'src/rstv4/studio_change_links.py', 'src/rstv4/studio_revision_mapping.py', 'src/rstv4/studio_delivery.py', 'src/rstv4/studio_response_checks.py', 'src/rstv4/database.py', 'tests/test_studio_response_checks.py']
+All checks passed!
+
+Exit: 0
+
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\typescript\\bin\\tsc', '--noEmit']
+
+Exit: 0
+
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\oxlint\\bin\\oxlint', 'components/studio-workspace.tsx', 'components/studio-review-rounds.tsx', 'components/studio-block-controls.tsx', 'components/studio-change-history.tsx', 'components/studio-package-downloads.tsx', 'components/studio-response-review.tsx', 'lib/studio-api.ts', 'lib/studio-types.ts', 'lib/studio-blocks.ts']
+
+Exit: 0
+
+CHECK ['diff', '--check', '--', 'src/rstv4/studio.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_suggestions.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_rounds.py', 'src/rstv4/studio_realization.py', 'src/rstv4/studio_change_links.py', 'src/rstv4/studio_revision_mapping.py', 'src/rstv4/studio_delivery.py', 'src/rstv4/studio_response_checks.py', 'src/rstv4/database.py', 'tests/test_studio_response_checks.py']
+warning: in the working copy of 'src/rstv4/database.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+
+Exit: 0
+
+CHECK ['diff', '--check', '--', 'components/studio-workspace.tsx', 'components/studio-review-rounds.tsx', 'components/studio-block-controls.tsx', 'components/studio-change-history.tsx', 'components/studio-package-downloads.tsx', 'components/studio-response-review.tsx', 'lib/studio-api.ts', 'lib/studio-types.ts', 'lib/studio-blocks.ts']
+
+Exit: 0
+
+Exit: 0

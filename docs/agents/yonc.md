@@ -1,10 +1,10 @@
 # Yonc
 
-Status: consolidated product design; new management capabilities require implementation review  
+Status: colleague capability lookup implemented; broader management lifecycle remains proposed\
 Agent type: customized persistent Hermes profile  
 Primary role: project management across the user's Graph Project System  
 Parent: Hermes Orchestrator for Agent execution and coordination  
-Latest product clarification: user discussion in this UuMA task, 2026-09-26  
+Latest product clarification: user discussion in this UuMA task, 2026-09-30\
 Sources: existing Yonc design and integration documents; see section 22
 
 ## 1. Mission
@@ -40,15 +40,19 @@ project ownership. It records product intent, inherited contracts, and proposed 
   for user acceptance. Management must have durable sources beyond conversation alone.
 - **Existing contract:** the Yonc backend owns project data; UuMA owns Agent task/run control;
   accepted graph changes require validated authorization and preserve history.
-- **Proposed design:** the management records, capability view, assignment lifecycle, and Telegram
+- **Implemented on 2026-09-30:** read-only colleague capability lookup, sourced role cards,
+  a full-role reference skill, and automatic colleague context in the Yonc guard. Section 23
+  distinguishes this capability awareness from assignment execution.
+- **Proposed design:** the management records, assignment lifecycle, and Telegram
   review workflow below describe how to deliver that intent. Their schemas and interfaces are not
   claimed to exist today.
 - **Open clarification:** the user's final sentence about where all management information should
   live was unfinished. Section 10 proposes storage in the Graph Project System; the exact review
   surface and storage arrangement remain open.
 
-The existing profile and 2026-09-21 integration contract describe restricted Worker and project
-tools. This documentation change does not deploy broader permissions or verify live functionality.
+The profile and 2026-09-21 integration contract retain restricted Worker and project tools.
+The new colleague lookup adds read access to registered roles and aggregate workload, with no
+task dispatch or project-write authority. Deployment evidence is recorded in the verification gate.
 
 ## 3. Position under Hermes and UuMA
 
@@ -137,7 +141,7 @@ overlap, and action quality with reasons; insufficient information is a valid fi
 
 Yonc needs a maintained capability view supported by sources. Role documents explain ownership;
 current UuMA capability and availability records determine what can actually be requested.
-The following is a design map, not proof that every capability is currently deployed.
+The following role map is supplied to Yonc; it is not proof that every described feature is deployed.
 
 | Colleague or system | Work Yonc may propose | Ownership retained there |
 | --- | --- | --- |
@@ -151,9 +155,11 @@ The following is a design map, not proof that every capability is currently depl
 eSchematic is a domain authority; CopyCat is an Orchestrator-controlled service. Neither should be
 invented as an available worker simply because its name appears in a document.
 
-A proposed capability entry records identity, role source, version or observation time,
-supported work, required inputs, expected outputs, restrictions, availability, and uncertainty.
-Yonc should refresh relevant entries before proposing an assignment and again at dispatch.
+The implemented lookup records identity, definition digest, role source digests, observation time,
+supported work, required inputs, expected outputs, restrictions, registration and aggregate active
+Run counts. Runtime readiness is explicitly `NOT_CHECKED`; enabled registration is not an online
+check. Yonc refreshes relevant entries before proposing an assignment. Orchestrator must validate
+capability, readiness and permission again before dispatch.
 
 ## 9. Work allocation proposals
 
@@ -319,7 +325,8 @@ permissions or treat a remembered intention as a new approval.
 
 ## 20. Proposed acceptance scenarios
 
-These are future verification criteria, not tests passed by this documentation change.
+These are broader management acceptance criteria. Section 23 and the verification gate record
+the implemented subset; capability lookup alone does not satisfy the full assignment lifecycle.
 
 - **YC-01:** Yonc reads an existing project and saves a useful decomposition draft; accepted graph
   state and Agent queues remain unchanged until the relevant approval.
@@ -343,7 +350,8 @@ These are future verification criteria, not tests passed by this documentation c
 - Confirm the unfinished requirement about where all management information should live and
   which UI should present it; the proposed default is the Graph Project System.
 - Map actual Canvas, List, Timeline, detail forms, database fields, and semantic tools to this role.
-- Define capability discovery and refresh through a restricted interface usable by Yonc.
+- Add service-readiness checks where needed; the restricted capability lookup is implemented,
+  while enabled registration and active Run counts do not establish runtime availability.
 - Define the persisted assignment model, partial acceptance, and dispatch handoff contract.
 - Design trusted Telegram authorization in coordination with the existing UI approval contract.
 - Choose proactive planning triggers, budgets, notification rules, and portfolio review cadence.
@@ -378,3 +386,29 @@ The latest explicit user requirements govern product intent where they extend ol
 Existing execution and authorization contracts continue to govern deployed behavior until revised
 and verified. Earlier design descriptions of Yonc as a dispatcher are interpreted through the
 later division of project planning and Orchestrator-controlled execution.
+
+## 23. Implemented colleague awareness
+
+Yonc receives three complementary sources for work allocation:
+
+1. Its SOUL includes the colleague role map so the basic responsibilities are always present.
+2. The `yonc-colleagues` skill supplies work/input/output/boundary guidance and twelve complete
+   source documents, copied from the agent archive and profile instructions at deployment. The
+   reference manifest records original locators, digests and deployment time.
+3. `yonc_get_colleague_capabilities(agent_id="", capability="")` reads the current UuMA registry
+   and aggregate active Run states. The guard obtains this receipt before Yonc reasons on a new
+   turn; Yonc can refresh it before a concrete proposal. Queries are restricted to the Yonc
+   standard Worker identity and expose neither task contents nor dispatch operations.
+
+The lookup does not bootstrap defaults, re-enable a disabled colleague or route work. Unknown
+registrations, missing role documents and lookup failure remain explicit. eSchematic and CopyCat
+are supporting systems, rather than invented registered workers.
+
+The targeted installer `scripts/deploy-yonc-profile.py` backs up the existing profile, preserves
+its model and project endpoint, installs these two reviewed Yonc skills and the current guard,
+and moves unrelated inherited skills to a recoverable quarantine. `scripts/deploy-hermes.ps1`
+also invokes it when an existing Yonc profile is present.
+
+This enables sourced assignment proposals with bounded inputs, deliverables and acceptance
+criteria. Dedicated persisted assignment records, accepted-assignment dispatch and trusted
+Telegram project authorization remain open implementation work under sections 10-13 and 21.

@@ -1,0 +1,77 @@
+Browser tab: 1479455140, Title: "Pepper Writing Studio", URL: "http://127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D".
+1 AXWebArea Pepper Writing Studio, URL: 127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D
+	2 container
+		3 text WRITING STUDIO Fixed citation source - software acceptance  · RSTV4
+		4 text 已自动保存
+		5 button 撤销
+		6 button (disabled) 重做
+		7 button Done
+		8 container 稿件视图
+			9 button 返回 Track
+			10 container Paper workflow stage
+				11 text 1 Planning 2 Drafting 3 全文检查 4 定稿／投稿 5 Revision 6 Publication
+			12 container 稿件内容视图
+				13 button 🧩 结构
+				14 button 📄 成文
+				15 button ✍️ Revision
+			16 container 面板显示
+				17 button 显示或隐藏左侧样本
+				18 button 显示或隐藏右侧资料
+		19 container
+			20 button 修改原始结构
+			21 button 🔎 全文检查
+			22 button 进入定稿 →
+			23 text 正在读取此成文版本的段落与来源…
+			24 text # Fixed citation source - software acceptance
+
+## Introduction
+
+Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8].
+
+First source [@evidence_6b169de2b78d452f919391b00916f2c8]. Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]. Repeat [@evidence_6b169de2b78d452f919391b00916f2c8].
+
+		25 text FieldKG / Evidence
+		26 text 真实资料
+		27 text field (settable) base-ui-_r_4_
+		28 text 当前筛选没有真实 FieldKG 资料。
+		29 button (expanded) 与 Agent 讨论 0 条 · Fixed citation source - software acceptance, Secondary Actions: Collapse
+			30 text 与 Agent 讨论
+			31 text 0
+			32 text  条 · 
+			33 text Fixed citation source - software acceptance
+		34 container studio-discussion-body
+			35 button 整篇历史
+			36 button (disabled) 当前对象 · 此版本
+			37 text 讨论会固定到当前对象与版本；点击文字不会自动发送。
+			38 container
+				39 text 当前选择： Fixed citation source - software acceptance 草稿对象： Introduction / 段落 2  ·  成文 v3 · 结构 r10 草稿引用： Beta software paragraph cites original page 1 [2] and additional source [1].
+				40 button 移除草稿选区（保留对象）
+				41 button 将草稿绑定到当前对象／选区
+				42 container studio-discussion-pin-label
+					43 checkbox Description: 固定当前讨论对象, Value: 0, ID: base-ui-_r_1_
+					44 text 固定当前讨论对象
+			45 container 比较新选对象与原草稿
+				46 container
+					47 text 新选： Fixed citation source - software acceptance  ·  结构 r11 。当前问题仍绑定原对象。
+				48 button 保留并固定原对象
+				49 button 改用新对象并保留问题
+				50 button 加入比较来源
+			51 button (collapsed) 固定对象的完整原文与版本, Secondary Actions: Expand
+				52 text 固定对象的完整原文与版本
+			53 container studio-discussion-cross-label
+				54 checkbox Description: 明确允许比较不同研究范围的固定来源, Value: 0, ID: base-ui-_r_5_
+				55 text 明确允许比较不同研究范围的固定来源
+			56 container 本轮讨论的历史上下文
+				57 container
+					58 text 继续这段讨论 ·  2  条历史消息 
+					59 button 开始新讨论
+				60 button (collapsed) 本轮会带入的问题、回复与固定来源, Secondary Actions: Expand
+					61 text 本轮会带入的问题、回复与固定来源
+			62 text 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+			63 text entry area (settable) 讨论草稿
+			64 text entry area (settable) 当前讨论的 annotation
+			65 button (disabled) 发送讨论
+			66 button (disabled) 保存讨论批注
+			67 button 更新讨论历史
+
+The focused UI element is 1 AXWebArea Pepper Writing Studio, URL: 127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D

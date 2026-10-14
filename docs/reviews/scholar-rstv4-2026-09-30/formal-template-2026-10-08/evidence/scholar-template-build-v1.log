@@ -1,0 +1,46 @@
+
+> pepper-writing-studio@0.1.0 build
+> vinext build
+
+
+  vinext build  (Vite 8.3.0)
+
+[1/5] analyze client references...
+transforming...
+✓ 249 modules transformed.
+rendering chunks...
+✓ built in 1.72s
+[2/5] analyze server references...
+transforming...
+✓ 362 modules transformed.
+✗ Build failed in 390ms
+Build failed with 1 error:
+
+[31m[UNRESOLVED_IMPORT] [0mCould not resolve '../../RSTV4/src/rstv4/catalog_research_chat.js' in ../../../../../Alandelone/AppData/Local/Temp/scui-template-build-3fzavlh_/lib/shared-discussion.ts
+   [38;5;246m╭[0m[38;5;246m─[0m[38;5;246m[[0m ../../../../../Alandelone/AppData/Local/Temp/scui-template-build-3fzavlh_/lib/shared-discussion.ts:1:8 [38;5;246m][0m
+   [38;5;246m│[0m
+ [38;5;246m1 │[0m [38;5;249mi[0m[38;5;249mm[0m[38;5;249mp[0m[38;5;249mo[0m[38;5;249mr[0m[38;5;249mt[0m[38;5;249m [0m"../../RSTV4/src/rstv4/catalog_research_chat.js"[38;5;249m;[0m
+ [38;5;240m  │[0m        ────────────────────────┬───────────────────────  
+ [38;5;240m  │[0m                                ╰───────────────────────── Module not found.
+ [38;5;240m  │[0m 
+ [38;5;240m  │[0m [38;5;115mHelp[0m: '../../../../../Alandelone/AppData/Local/Temp/scui-template-build-3fzavlh_/lib/shared-discussion.ts' is imported by the following path:
+ [38;5;240m  │[0m         - ../../../../../Alandelone/AppData/Local/Temp/scui-template-build-3fzavlh_/lib/shared-discussion.ts
+ [38;5;240m  │[0m         - ../../../../../Alandelone/AppData/Local/Temp/scui-template-build-3fzavlh_/components/studio-workspace.tsx
+ [38;5;240m  │[0m         - app/page.tsx
+ [38;5;240m  │[0m         - \0virtual:vite-rsc/client-references
+ [38;5;240m  │[0m         - ../../../../../Alandelone/CodeSpace_Local/writing-studio/node_modules/vinext/dist/server/app-ssr-entry.js
+ [38;5;240m  │[0m         - \0virtual:vinext-app-ssr-entry
+[38;5;246m───╯[0m
+
+    at aggregateBindingErrorsIntoJsError (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/rolldown/dist/shared/error-CGhV1ebk.mjs:48:18)
+    at unwrapBindingResult (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/rolldown/dist/shared/error-CGhV1ebk.mjs:18:128)
+    at #build (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/rolldown/dist/shared/rolldown-Ld3ZGGCt.mjs:133:34)
+    at async buildEnvironment (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/vite/dist/node/chunks/node.js:34082:66)
+    at async Object.build (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/vite/dist/node/chunks/node.js:34503:19)
+    at async buildApp (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/@vitejs/plugin-rsc/dist/plugin-Cbs9j6lP.js:728:3)
+    at async BasicMinimalPluginContext.handler (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/@vitejs/plugin-rsc/dist/plugin-Cbs9j6lP.js:855:43)
+    at async Object.buildApp (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/vite/dist/node/chunks/node.js:34497:5)
+    at async file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/vinext/dist/cli.js:336:4
+    at async buildApp (file:///C:/Users/Alandelone/CodeSpace_Local/writing-studio/node_modules/vinext/dist/cli.js:333:2) {
+  errors: [Getter/Setter]
+}

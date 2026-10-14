@@ -1,0 +1,265 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8885/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "知识图谱":
+      - generic: 知识图谱
+      - generic: ⌄
+  - region "所选 FieldKG 或 Track":
+    - paragraph: FieldKG · Living
+    - heading "Energy" [level=1]
+    - paragraph
+    - button "从已保存 Skeleton 创建 Build"
+    - status: 当前 Field 的权威记录；Living 更新不会自动更换 Track 已采用的 Snapshot。
+    - navigation "FieldKG 版本":
+      - link "Living":
+        - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c
+      - link "Snapshot v1":
+        - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c&snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca
+    - heading "来源复核记录" [level=2]
+    - paragraph: 没有来源撤回记录。
+    - heading "图谱" [level=2]
+    - group "当前范围的来源、概念、候选与证据关系；相同对象也可在下方列表选择":
+      - button "paper Second located source"
+      - button "unit A larger trial reports strong validation under dry conditions."
+      - button "concept peer trading"
+      - button "concept rural microgrids"
+      - button "paper Rural peer trading"
+      - button "unit Few studies validate peer trading in isolated rural microgrids."
+      - button "candidate Few studies validate peer trading in isolated rural microgrids."
+      - button "candidate A larger trial reports strong validation under dry conditions."
+      - button "evidence Few studies validate peer trading in isolated rural microgrids."
+      - button "evidence A larger trial reports strong validation under dry conditions."
+      - button "gap Few studies validate peer trading in isolated rural microgrids."
+      - button "semantic Software fixture interpretation IDEA_MERGER"
+      - button "semantic Software fixture interpretation CONCEPT"
+      - button "semantic Software fixture interpretation METHOD"
+      - button "semantic Software fixture interpretation DEBATE" [pressed]
+      - button "semantic Software fixture interpretation REPORTED_GAP"
+      - button "semantic Software fixture interpretation COUNTEREVIDENCE"
+      - button "semantic Software fixture interpretation FINDING"
+    - heading "对象与来源列表" [level=2]
+    - heading "Papers" [level=2]
+    - button "paper Second located source"
+    - button "paper Rural peer trading"
+    - heading "Concepts" [level=2]
+    - button "concept peer trading"
+    - button "concept rural microgrids"
+    - heading "原文单元" [level=2]
+    - button "unit A larger trial reports strong validation under dry conditions."
+    - button "unit Few studies validate peer trading in isolated rural microgrids."
+    - heading "Evidence Candidates" [level=2]
+    - button "candidate Few studies validate peer trading in isolated rural microgrids."
+    - button "candidate A larger trial reports strong validation under dry conditions."
+    - heading "Candidate Gaps" [level=2]
+    - button "gap Few studies validate peer trading in isolated rural microgrids."
+    - heading "已接受 Evidence" [level=2]
+    - button "evidence Few studies validate peer trading in isolated rural microgrids."
+    - button "evidence A larger trial reports strong validation under dry conditions."
+    - heading "来源版本" [level=2]
+    - article:
+      - paragraph:
+        - strong: Second located source
+        - text: · Paper v1 · Skeleton v1
+      - paragraph:
+        - text: 文件版本：未知 · 解析版本：未知
+        - text: 原文摘要：未知 · PDF 摘要：未知
+        - text: 模型：legacy-paperpool-mincer · 契约：legacy
+      - link "回查目录论文":
+        - /url: /?view=all&paper=paper_e39aa6305f4b4b7f4f78100995e929e6
+    - article:
+      - paragraph:
+        - strong: Rural peer trading
+        - text: · Paper v1 · Skeleton v1
+      - paragraph:
+        - text: 文件版本：未知 · 解析版本：未知
+        - text: 原文摘要：未知 · PDF 摘要：未知
+        - text: 模型：legacy-paperpool-mincer · 契约：legacy
+      - link "回查目录论文":
+        - /url: /?view=all&paper=paper_2ba95ce8cef04bdb0bc1ae78411ed011
+    - heading "Methods（来源 Intent）" [level=2]
+    - paragraph: 未记录带 Method Intent 的来源单元。
+    - heading "Concepts（语义解释）" [level=2]
+    - button "semantic Software fixture interpretation CONCEPT"
+    - heading "Methods（语义解释）" [level=2]
+    - button "semantic Software fixture interpretation METHOD"
+    - heading "Findings" [level=2]
+    - button "semantic Software fixture interpretation FINDING"
+    - heading "Reported Gaps" [level=2]
+    - button "semantic Software fixture interpretation REPORTED_GAP"
+    - heading "Counterevidence" [level=2]
+    - button "semantic Software fixture interpretation COUNTEREVIDENCE"
+    - heading "Debates" [level=2]
+    - button "semantic Software fixture interpretation DEBATE" [pressed]
+    - heading "Idea Mergers" [level=2]
+    - button "semantic Software fixture interpretation IDEA_MERGER"
+    - heading "关系 / Citation Network" [level=2]
+    - button "Second located source → 原文 → A larger trial reports strong validation under dry conditions."
+    - button "peer trading → has limited validation in → rural microgrids"
+    - button "Rural peer trading → 原文 → Few studies validate peer trading in isolated rural microgrids."
+    - button "peer trading → has limited validation in → rural microgrids"
+    - button "Few studies validate peer trading in isolated rural microgrids. → CONTEXTUALIZES → Few studies validate peer trading in isolated rural microgrids."
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → A larger trial reports strong validation under dry conditions."
+    - button "Few studies validate peer trading in isolated rural microgrids. → 候选依据 → Few studies validate peer trading in isolated rural microgrids."
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → Software fixture interpretation IDEA_MERGER"
+    - button "Few studies validate peer trading in isolated rural microgrids. → SUPPORTS → Software fixture interpretation IDEA_MERGER"
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → Software fixture interpretation CONCEPT"
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → Software fixture interpretation METHOD"
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → Software fixture interpretation DEBATE"
+    - button "Few studies validate peer trading in isolated rural microgrids. → CONTRADICTS → Software fixture interpretation DEBATE"
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → Software fixture interpretation REPORTED_GAP"
+    - button "A larger trial reports strong validation under dry conditions. → CONTRADICTS → Software fixture interpretation COUNTEREVIDENCE"
+    - button "A larger trial reports strong validation under dry conditions. → SUPPORTS → Software fixture interpretation FINDING"
+    - heading "语义提取与来源解释" [level=2]
+    - paragraph: 创建真实 Build 后开始提取。
+    - heading "Build / Pipeline" [level=2]
+    - article:
+      - heading "fieldkg_build_4da71ed0abd44097be4794e31d1878dd" [level=3]
+      - paragraph:
+        - generic: SEALED
+        - text: · revision 5 · 2026年10月7日 23:49
+      - list:
+        - strong: 采集
+        - generic: 未记录此步产物
+        - strong: 下载
+        - generic: 文件获取状态未知
+        - strong: 解析
+        - generic: 复用原文结构；独立解析运行可能未知
+        - strong: Skeleton
+        - generic: 2 个固定 Skeleton
+        - strong: Forge
+        - generic: 来源三元组可回查；Forge 运行未记录
+        - strong: Evidence
+        - generic: 2 个机器候选
+        - strong: Gaps
+        - generic: 1 个候选 Gap
+        - strong: 待审阅
+        - generic: 已明确进入审阅
+        - strong: 密封
+        - generic: 已有固定快照
+      - paragraph: IMPORTED ；IMPORTED
+    - heading "查询投影" [level=2]
+    - paragraph: 实时服务健康：尚未探测。权威资料仍在 RSTV4。
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSemanticObject ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: Evidence ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: Evidence ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: CandidateGap ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - paragraph:
+      - text: FieldKGSnapshot ·
+      - generic: PENDING
+      - text: · 重试 0 ·
+    - heading "该 Field 的 Tracks" [level=2]
+    - link "Track":
+      - /url: http://127.0.0.1:8885/?view=track&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c&track=track_cd1adda6220f47b787f409e983c00947
+    - complementary "来源详情":
+      - button "关闭研究来源详情" [active]: 关闭
+      - heading "Software fixture interpretation DEBATE" [level=2]
+      - paragraph:
+        - generic: ACCEPTED
+        - text: · semantic
+      - paragraph:
+        - text: DEBATE · 来源解释
+        - generic: ACCEPTED
+        - text: 。审阅语义记录不会批准 Track 的科研决定。
+      - paragraph: 解释理由：Software controls only, not a scientific quality judgment
+      - paragraph: 条件：未记录
+      - heading "SUPPORTS · 原位置" [level=3]
+      - blockquote: A larger trial reports strong validation under dry conditions.
+      - paragraph: 原限定：未记录
+      - generic: "{ \"page_idx\": 3, \"section\": \"Introduction\", \"seq_idx\": 1, \"offset_unit\": \"unicode_codepoint\", \"start\": 0, \"end\": 62 }"
+      - paragraph:
+        - strong: Second located source
+        - text: · Paper v1 · Skeleton v1
+      - paragraph:
+        - text: 文件版本：未知 · 解析版本：未知
+        - text: 原文摘要：未知 · PDF 摘要：未知
+        - text: 模型：legacy-paperpool-mincer · 契约：legacy
+      - link "回查目录论文":
+        - /url: /?view=all&paper=paper_e39aa6305f4b4b7f4f78100995e929e6
+      - button "查看完整原文单元并带入 Chat"
+      - heading "CONTRADICTS · 原位置" [level=3]
+      - blockquote: Few studies validate peer trading in isolated rural microgrids.
+      - paragraph: 原限定：未记录
+      - generic: "{ \"page_idx\": 3, \"section\": \"Introduction\", \"seq_idx\": 1, \"offset_unit\": \"unicode_codepoint\", \"start\": 0, \"end\": 63 }"
+      - paragraph:
+        - strong: Rural peer trading
+        - text: · Paper v1 · Skeleton v1
+      - paragraph:
+        - text: 文件版本：未知 · 解析版本：未知
+        - text: 原文摘要：未知 · PDF 摘要：未知
+        - text: 模型：legacy-paperpool-mincer · 契约：legacy
+      - link "回查目录论文":
+        - /url: /?view=all&paper=paper_2ba95ce8cef04bdb0bc1ae78411ed011
+      - button "查看完整原文单元并带入 Chat"
+      - generic "实际提取模型与原契约"
+- complementary "统一研究讨论":
+  - button "Chat · Energy / DEBATE" [expanded]
+  - region "研究讨论":
+    - strong: 研究讨论
+    - button "收起"
+    - status: 已选此对象。可拖选下方原文，或直接提问。
+    - generic: FIELDKG / semantic · Energy / DEBATE
+    - checkbox "固定当前对象"
+    - text: 固定当前对象
+    - generic "原文与版本 · 可拖选文字"
+    - checkbox "明确允许比较不同研究范围的所选来源"
+    - text: 明确允许比较不同研究范围的所选来源
+    - paragraph: 下一条问题将开始新讨论。
+    - text: 问题
+    - textbox "问题":
+      - /placeholder: 针对上方固定对象提问
+    - text: 讨论批注
+    - textbox "讨论批注":
+      - /placeholder: 保留原对象、原文和版本
+    - button "保存讨论批注"
+    - button "发送问题"
+    - region "当前研究范围的讨论历史":
+      - strong: 讨论与批注历史
+      - checkbox "只看当前对象"
+      - text: 只看当前对象
+      - button "更新历史"
+      - paragraph: 此研究范围尚无讨论或批注。

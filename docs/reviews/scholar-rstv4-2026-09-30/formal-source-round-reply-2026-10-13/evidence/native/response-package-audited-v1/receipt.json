@@ -1,0 +1,21 @@
+{
+  "status": "PASS_G09_NATIVE_GENERATION_REPLY_RECHECK_AND_PACKAGE_SUBCASES",
+  "package_id": "submission_package_9ed351f308a34c08909b5933c99c9c24",
+  "fixed_round": 2,
+  "fixed_baseline_version": 3,
+  "target_version": 5,
+  "author_revision": 62,
+  "checks": 2,
+  "first_check_exact_after_stale_and_recheck": true,
+  "final_verification": "CURRENT",
+  "original205_opinions_unchanged": true,
+  "new_remote_calls": 0,
+  "all_old_sources_artifacts_history_exact": true,
+  "files": 16,
+  "archive_sha256": "42cca3508fdba2b6bd39527bbc4820514b2bd4c73415cd677a8a76f39634484c",
+  "actual_same_origin_archive_bytes_verified": true,
+  "browser_download_completed": false,
+  "native_final_pdf_open_blocked_by_client": true,
+  "actual_final_pdf_locally_rendered_two_pages": true,
+  "overall11_complete": false
+}

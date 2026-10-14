@@ -1,0 +1,366 @@
+"""Scientific table annotation from original PDF, before parsed-cell association."""
+from __future__ import annotations
+
+import copy
+import re
+import unicodedata
+from pathlib import Path
+from typing import Literal
+
+import dspy
+from dspy.utils.exceptions import AdapterParseError
+from pydantic import BaseModel, ConfigDict, Field, create_model
+
+from rstv4.skeleton_contract import Intent, SourceContractError, digest
+from rstv4.skeleton_dspy import ReceiptLM, json_text, write_json
+from rstv4.skeleton_mapped_review import UniqueKeyJSONAdapter
+from rstv4.skeleton_pdf_footnote_anchors_v1 import verify_footnote_anchor_ledger
+from rstv4.skeleton_pdf_numeric_source_v1 import (
+    native_value_projection,
+    validate_literal_scientific_evidence,
+    verify_native_value_ledger,
+)
+from rstv4.skeleton_scientific_table_reference_v8 import indexed_original_pdf_lines
+
+PDF_TABLE_SCIENCE_VERSION = "source-only-original-pdf-per-condition-qualified-proposition-fragments-v5"
+PDF_SCIENCE_CONTRACT = """
+Extract the complete scientific content of the identified original PDF table, solely
+from actual original_pdf_lines and target_table_line_ids. All lines are exact original
+text preserving physical columns, whitespace, wrapped continuations and footnotes.
+The full original pages are supplied as neighboring context. Extract ONLY the target
+table. Parsed HTML and historical model interpretations are deliberately unavailable
+at this scientific stage. No learner output, grade or desired scientific answer exists.
+
+Read the parameter, stated unit and technology column in the ORIGINAL layout. A row
+may continue across several physical lines; a continuation retains its original row
+and column until the original PDF starts the next parameter. Preserve every material
+value, cited source, baseline, modality, condition, comparison, inequality and footnote.
+Do not silently assign missing units. Keep cell versus system efficiency distinct.
+Footnote conditions belong in qualifications of all affected actual assertions.
+Use independent scientific propositions, not a generic table description. Never guess
+ambiguous scientific scope: explicitly retain it in unresolved_fields and coverage.
+
+Each claim declares unique actual pdf_evidence_line_ids supporting all its scientific
+fields. Do not reproduce quotes or calculate offsets. Code resolves ONLY source
+geometry; it never rewrites scientific statements, qualifications or intent. Use unique
+claim aliases r1,r2,... . Do not generate a per-claim block_id: the identified
+target_block_id is bound separately as source geometry, never scientific interpretation. An actual line may support
+multiple claims. Include original header/unit/footnote lines needed by each claim.
+
+line_coverage requires ONLY every ID in required_nonblank_line_coverage_ids exactly
+once. target_table_line_ids includes the complete original range and blank spacing;
+those blank lines stay in source context but must NOT be added as coverage keys. Each value has
+only disposition and rationale. SCIENTIFIC_DATA includes actual quantities, properties,
+conditions and scientific footnotes, and must support an actual extracted assertion.
+HEADER_OR_STRUCTURE and BIBLIOGRAPHIC_METADATA describe only actual nonassertive source.
+UNRESOLVED is explicit incomplete scientific interpretation. Every disposition must
+be source justified. Complete source coverage is mandatory. Do not clear an ambiguity
+by inventing an assertion or marking substantive science as structure.
+
+
+original_pdf_footnote_anchors is verified ORIGINAL PDF glyph/font/word/definition
+geometry, not a scientific model interpretation. Bind each scientific condition through
+its actual superscript anchor word and complete definition. Respect the definition's
+explicit technology scope. Do not attach a footnote merely because it mentions the same
+quantity or unit as a different parameter. A parameter-row anchor applies to all
+affected actual source values and technologies, subject to stated definition scope.
+
+For every affected claim, footnote_qualifications uses actual original DEFINITION
+FRAGMENT IDs, not marker letters. original_pdf_condition_scope_candidate is an actual
+independently reviewed source-only candidate, not expert gold. Read its exact scientific
+condition and proof against the full original PDF. For a used condition, echo its
+condition_statement EXACTLY in qualification; retain your source-specific
+applicability_rationale. qualified_statement_fragment selects one exact unique substring
+of your own statement identifying ONLY the proposition qualified by that condition.
+Include the original anchor fragment term, using the actual source term in the statement.
+Do not let a cold condition qualify a neighboring category through an entire combined
+statement. Each condition may qualify only a technology listed in the source candidate;
+retain condition and technology ambiguity in unresolved_fields when original source
+contradicts or cannot support that candidate. Do not repair a source candidate silently.
+Independent scientific review must recheck every selected condition against original
+PDF, specific proposition fragment and technology. Code never creates or adds conditions.
+
+Every actual original condition fragment must qualify at least one affected assertion.
+Select its original anchor line, footer marker and ALL full definition lines, even when
+only one part of a compound definition applies. Do not duplicate footnote conditions in
+ordinary qualifications. Source locations, fixed source-condition text and aggregate
+numeric coverage never certify scientific meaning.
+
+Distinguish the row Unit column from units explicitly written next to individual values.
+A missing row unit does not erase an explicit value unit; a neighbor's row or value unit
+does not supply an unstated unit. Read actual physical column, cell versus system basis
+and individual value evidence separately. Keep complete original stated units in the
+statement or ordinary qualifications, and retain true missing units explicitly.
+
+original_pdf_native_column_values contains ONLY actual native PDF header and numeric
+token locations, independently replayed against the original PDF. These are original
+source quantities, NOT desired interpretations or learner outputs. Every claim has
+source_technology_header_id identifying one actual original scientific column. State
+that original header name exactly (e.g. use the actual supplied header, not an alias).
+Use independent scientific propositions for each technology/parameter; do not merge
+different technologies in one statement or generalize a unit across columns. Keep
+original row identity, units, missing units, inequality, citation and scientific scope.
+
+Preserve original lexical numbers, including decimal/thousands punctuation and
+citation years, without conversion. Every number in a scientific statement, ordinary
+qualification or footnote qualification must occur in its selected actual PDF lines.
+Select its actual header line and ALL wrapped source lines supporting every value.
+Every original native numeric token, including cited years and formula numbers, must
+be retained in an actual statement/ordinary qualification of its original technology
+column with its actual source line selected. Code derives numeric coverage solely from
+your source-column/line declarations and unchanged scientific text; it never inserts
+values or scientific fields. Footnote numeric conditions cannot stand in for omitted
+body quantities. Complete quantity coverage does NOT prove correct row, unit or scope;
+independently review those meanings from full original layout and footnote definitions.
+"""
+
+
+class PDFFootnoteQualification(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    qualification: str = Field(min_length=1)
+    applicability_rationale: str = Field(min_length=1)
+    qualified_statement_fragment: str = Field(min_length=1)
+
+
+class PDFScientificClaim(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    reference_id: str = Field(min_length=1)
+    statement: str = Field(min_length=1)
+    qualifications: list[str]
+    footnote_qualifications: dict[str, PDFFootnoteQualification]
+    intent: Intent
+    source_technology_header_id: str = Field(min_length=1)
+    pdf_evidence_line_ids: list[str] = Field(min_length=1)
+
+
+class PDFLineDecision(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    disposition: Literal["SCIENTIFIC_DATA", "HEADER_OR_STRUCTURE", "BIBLIOGRAPHIC_METADATA", "UNRESOLVED"]
+    rationale: str = Field(min_length=1)
+
+
+class PDFTableAnnotation(dspy.Signature):
+    original_pdf_lines: str = dspy.InputField()
+    original_pdf_source_lineage: str = dspy.InputField()
+    original_pdf_footnote_anchors: str = dspy.InputField()
+    original_pdf_native_column_values: str = dspy.InputField()
+    original_pdf_definition_fragments: str = dspy.InputField()
+    original_pdf_condition_scope_candidate: str = dspy.InputField()
+    target_table_line_ids: str = dspy.InputField()
+    required_nonblank_line_coverage_ids: str = dspy.InputField()
+    target_block_id: str = dspy.InputField()
+    scientific_interpretation_contract: str = dspy.InputField()
+    repair_feedback: str = dspy.InputField()
+    claims: list[PDFScientificClaim] = dspy.OutputField()
+    line_coverage: dict[str, PDFLineDecision] = dspy.OutputField()
+    contains_scientific_data: bool = dspy.OutputField()
+    unresolved_fields: list[str] = dspy.OutputField()
+
+
+class PDFTableReview(PDFTableAnnotation):
+    draft_scientific_annotation: str = dspy.InputField()
+    corrections: list[str] = dspy.OutputField()
+
+
+PDFTableAnnotation = PDFTableAnnotation.with_instructions(PDF_SCIENCE_CONTRACT)
+PDFTableReview = PDFTableReview.with_instructions(
+    PDF_SCIENCE_CONTRACT + "\nIndependently re-read every target line and physical column. "
+    "Correct unsupported scope, omitted values or footnotes using only the original PDF. "
+    "Return a complete replacement scientific annotation and source-justified corrections. "
+    "The draft is a candidate, never an authority.")
+
+
+def target_line_domain(pdf_context: dict, target_ids: list[str]) -> dict[str, dict]:
+    lines = indexed_original_pdf_lines(pdf_context["layout_text"])
+    actual_ids = [line["line_id"] for line in lines]
+    if (not target_ids or len(target_ids) != len(set(target_ids))
+            or not set(target_ids).issubset(actual_ids)):
+        raise SourceContractError("Original PDF table requires unique actual target line IDs")
+    positions = [actual_ids.index(key) for key in target_ids]
+    if positions != list(range(positions[0], positions[-1] + 1)):
+        raise SourceContractError("Original PDF table target must retain its entire consecutive source range")
+    return {line["line_id"]: line for line in lines if line["line_id"] in target_ids}
+
+
+def complete_line_schema(pdf_context: dict, target_ids: list[str]) -> type[BaseModel]:
+    return create_model("AllActualNonblankPDFTableLines", __config__=ConfigDict(extra="forbid"),
+        **{key: (PDFLineDecision, Field(description=line["text"]))
+           for key, line in target_line_domain(pdf_context, target_ids).items() if line["text"].strip()})
+
+
+def source_values(pdf_context: dict, target_ids: list[str], block_id: str, footnote_ledger: dict, native_value_ledger: dict, definition_fragments: dict, reviewed_scope: dict) -> dict:
+    domain = target_line_domain(pdf_context, target_ids)
+    verify_footnote_anchor_ledger(pdf_context, target_ids, footnote_ledger)
+    verify_native_value_ledger(pdf_context, target_ids, footnote_ledger, native_value_ledger)
+    return {"original_pdf_lines": json_text([{key: line[key] for key in ("line_id", "text")}
+                                             for line in indexed_original_pdf_lines(pdf_context["layout_text"])]),
+            "original_pdf_source_lineage": json_text({key: value for key, value in pdf_context.items()
+                                                       if key not in {"layout_text", "indexed_layout_lines"}}),
+            "original_pdf_footnote_anchors": json_text(footnote_ledger),
+            "original_pdf_native_column_values": json_text(native_value_projection(native_value_ledger)),
+            "original_pdf_definition_fragments": json_text(definition_fragments),
+            "original_pdf_condition_scope_candidate": json_text(reviewed_scope),
+            "target_table_line_ids": json_text(target_ids), "target_block_id": block_id,
+            "required_nonblank_line_coverage_ids": json_text([key for key, line in domain.items() if line["text"].strip()]),
+            "scientific_interpretation_contract": PDF_SCIENCE_CONTRACT}
+
+
+
+def validate_condition_qualifications(claim: dict, footnotes: dict, definition_fragments: dict,
+                                      reviewed_scope: dict) -> list[dict]:
+    fragments = {item["fragment_id"]: item for item in definition_fragments["fragments"]}
+    scopes = reviewed_scope["condition_scopes"]
+    if (set(scopes) != set(fragments) or reviewed_scope["source_scope_protocol_eligible"] is not True
+            or reviewed_scope["unresolved_fields"]):
+        raise SourceContractError("Complete eligible original condition-scope candidate required")
+    evidence = []
+    for fragment_id, raw in claim["footnote_qualifications"].items():
+        if fragment_id not in fragments:
+            raise SourceContractError("Scientific condition declares foreign original definition fragment")
+        condition = PDFFootnoteQualification.model_validate(raw).model_dump()
+        actual = fragments[fragment_id]
+        scope = scopes[fragment_id]
+        if scope["resolution"] != "RESOLVED" or claim["source_technology_header_id"] not in scope["applicable_technology_header_ids"]:
+            raise SourceContractError("Scientific condition lacks resolved original technology scope: " + fragment_id)
+        if condition["qualification"] != scope["condition_statement"]:
+            raise SourceContractError("Scientific condition text differs from unchanged reviewed source: " + fragment_id)
+        fragment = condition["qualified_statement_fragment"]
+        if claim["statement"].count(fragment) != 1:
+            raise SourceContractError("Qualified proposition fragment must occur exactly once in unchanged statement: " + fragment_id)
+        anchor_words = re.findall(r"\w+", unicodedata.normalize("NFKC", scope["anchor_prefix_fragment"]).casefold())
+        selected_words = re.findall(r"\w+", unicodedata.normalize("NFKC", fragment).casefold())
+        if not anchor_words or not all(word in selected_words for word in anchor_words):
+            raise SourceContractError("Qualified proposition lacks its actual pre-marker source term: " + fragment_id)
+        marker = actual["marker"]
+        if marker not in footnotes:
+            raise SourceContractError("Condition fragment has foreign actual source marker: " + fragment_id)
+        note = footnotes[marker]
+        needed = {note["anchor_line_id"], note["marker_line_id"], *[line["line_id"] for line in note["definition_lines"]]}
+        selected = claim["pdf_evidence_line_ids"]
+        if not needed.issubset(selected):
+            raise SourceContractError("Scientific condition lacks actual anchor/complete definition: " + json_text({
+                "reference_id": claim["reference_id"], "condition_fragment_id": fragment_id,
+                "selected_pdf_line_ids": selected, "required_source_line_ids": sorted(needed),
+                "missing_source_line_ids": sorted(needed - set(selected))}))
+        evidence.append({"reference_id": claim["reference_id"], "actual_condition_fragment_id": fragment_id,
+            "actual_marker": marker, "model_declared_qualified_fragment": fragment,
+            "statement_fragment_start": claim["statement"].index(fragment),
+            "statement_fragment_end": claim["statement"].index(fragment) + len(fragment),
+            "scientific_fields_changed": False})
+    return evidence
+
+
+def validate_pdf_science(output: dict, pdf_context: dict, target_ids: list[str], block_id: str, footnote_ledger: dict, native_value_ledger: dict, definition_fragments: dict, reviewed_scope: dict) -> dict:
+    domain = target_line_domain(pdf_context, target_ids)
+    footnotes = {item["marker"]: item for item in verify_footnote_anchor_ledger(pdf_context, target_ids, footnote_ledger)}
+    footnote_links = {item["fragment_id"]: [] for item in definition_fragments["fragments"]}
+    condition_statement_fragment_resolutions = []
+    verify_native_value_ledger(pdf_context, target_ids, footnote_ledger, native_value_ledger)
+    required = {key for key, line in domain.items() if line["text"].strip()}
+    if set(output["line_coverage"]) != required:
+        raise SourceContractError("Every nonblank original PDF table line must have exactly one disposition")
+    claims, locators, ids = [], [], set()
+    source_block_resolutions = []
+    links = {key: [] for key in required}
+    for raw in output["claims"]:
+        scientific_claim = PDFScientificClaim.model_validate(raw).model_dump()
+        claim = {**scientific_claim, "block_id": block_id}
+        source_block_resolutions.append({"reference_id": claim["reference_id"],
+            "actual_target_block_id": block_id, "source_identity_generated_by_model": False,
+            "scientific_fields_changed": False})
+        alias = claim["reference_id"]
+        selected = claim["pdf_evidence_line_ids"]
+        if alias in ids:
+            raise SourceContractError("Original PDF scientific claim ID duplicated: " + alias)
+        ids.add(alias)
+        condition_links = validate_condition_qualifications(claim, footnotes, definition_fragments, reviewed_scope)
+        condition_statement_fragment_resolutions.extend(condition_links)
+        for condition_link in condition_links:
+            footnote_links[condition_link["actual_condition_fragment_id"]].append(alias)
+        if len(selected) != len(set(selected)) or not set(selected).issubset(required):
+            raise SourceContractError("Original PDF scientific evidence must be unique nonblank target lines")
+        for key in selected:
+            links[key].append(alias)
+        claims.append(claim)
+        locators.append({"reference_id": alias, "pdf_evidence_locations": [
+            {"line_id": key, "quote": domain[key]["text"], "start": domain[key]["start"], "end": domain[key]["end"],
+             "original_pdf_layout_digest": digest(pdf_context["layout_text"])} for key in selected],
+            "model_scientific_fields_changed": False})
+    if any(not aliases for aliases in footnote_links.values()):
+        raise SourceContractError("Actual scientific PDF footnote lacks affected assertion qualification: " + json_text([marker for marker, aliases in footnote_links.items() if not aliases]))
+    numerical_proof = validate_literal_scientific_evidence(claims, pdf_context, native_value_ledger)
+    coverage, unresolved = [], []
+    for key, raw in output["line_coverage"].items():
+        decision = PDFLineDecision.model_validate(raw).model_dump()
+        if decision["disposition"] == "SCIENTIFIC_DATA" and not links[key]:
+            raise SourceContractError("Actual scientific PDF line lacks extracted claim support: " + key)
+        if decision["disposition"] == "UNRESOLVED":
+            unresolved.append(key)
+            if links[key]:
+                raise SourceContractError("Unresolved PDF scientific line cannot be claimed as resolved support")
+        coverage.append({"line_id": key, **decision,
+                         "reference_ids": links[key] if decision["disposition"] == "SCIENTIFIC_DATA" else []})
+    contains = output["contains_scientific_data"]
+    if not isinstance(contains, bool) or contains != bool(claims):
+        raise SourceContractError("Original PDF scientific presence must agree with actual extracted assertions")
+    if not claims:
+        raise SourceContractError("This actual technical table requires scientific extraction, not zero-claim structure")
+    if unresolved and not output["unresolved_fields"]:
+        raise SourceContractError("Unresolved scientific PDF lines require explicit scientific omissions")
+    return {"claims": claims, "line_coverage": coverage, "source_block_identity_resolutions": source_block_resolutions, "native_numeric_source_proof": numerical_proof, "model_declared_footnote_qualification_links": footnote_links, "condition_statement_fragment_resolutions": condition_statement_fragment_resolutions, "source_line_locator_resolutions": locators,
+            "contains_scientific_data": contains, "unresolved_fields": list(output["unresolved_fields"]),
+            "pdf_scientific_coverage_eligible": not unresolved and not output["unresolved_fields"],
+            "parsed_cell_association_complete": False, "full_source_comparison_complete": False,
+            **({"corrections": copy.deepcopy(output["corrections"])} if "corrections" in output else {})}
+
+
+class OriginalPDFTableScienceBuilder:
+    def __init__(self, output: Path, *, actual_model: str) -> None:
+        self.output = output
+        self.lm = ReceiptLM("thinking", output / "teacher-lm", max_tokens=24000,
+                            required_actual_model=actual_model)
+
+    def annotate(self, pdf_context: dict, target_ids: list[str], block_id: str, footnote_ledger: dict, native_value_ledger: dict, definition_fragments: dict, reviewed_scope: dict) -> dict:
+        values = source_values(pdf_context, target_ids, block_id, footnote_ledger, native_value_ledger, definition_fragments, reviewed_scope)
+        schema = complete_line_schema(pdf_context, target_ids)
+        signatures = {"PDF_ANNOTATION": PDFTableAnnotation.with_updated_fields("line_coverage", type_=schema),
+                      "PDF_INDEPENDENT_REVIEW": PDFTableReview.with_updated_fields("line_coverage", type_=schema)}
+        key = digest({"version": PDF_TABLE_SCIENCE_VERSION, "inputs": values})
+        record_path = self.output / "records" / (key + ".json")
+        if record_path.exists():
+            raise SourceContractError("Original PDF science probe already completed; audit existing evidence")
+        stages = {}
+        for name, signature in signatures.items():
+            base = dict(values)
+            if name == "PDF_INDEPENDENT_REVIEW":
+                base["draft_scientific_annotation"] = json_text(stages["PDF_ANNOTATION"]["model_output"])
+            predictor, failures, attempts = dspy.Predict(signature), [], []
+            for number in range(3):
+                actual = {**base, "repair_feedback": "\n".join(failures)}
+                raw = None
+                try:
+                    with dspy.context(lm=self.lm, adapter=UniqueKeyJSONAdapter()):
+                        result = predictor(**actual)
+                    raw = {"claims": [claim.model_dump() for claim in result.claims],
+                           "line_coverage": result.line_coverage.model_dump(),
+                           "contains_scientific_data": result.contains_scientific_data,
+                           "unresolved_fields": list(result.unresolved_fields),
+                           **({"corrections": list(result.corrections)} if name == "PDF_INDEPENDENT_REVIEW" else {})}
+                    validated = validate_pdf_science(raw, pdf_context, target_ids, block_id, footnote_ledger, native_value_ledger, definition_fragments, reviewed_scope)
+                    stages[name] = {"inputs": actual, "inputs_digest": digest(actual), "model_output": raw,
+                                    "validated": validated, "rejected_attempts": attempts}
+                    write_json(self.output / "stages" / key / (name + ".json"), stages[name])
+                    break
+                except (AdapterParseError, SourceContractError, ValueError, TypeError) as error:
+                    message = str(error)[:2500]
+                    attempts.append({"number": number + 1, "inputs": actual, "inputs_digest": digest(actual),
+                                     "model_output": raw, "protocol_error": message})
+                    failures.append(message)
+                    write_json(self.output / "failures" / (key + "-" + name + ".json"), {"attempts": attempts})
+            else:
+                raise SourceContractError("Original PDF science own-protocol stage exhausted: " + failures[-1])
+        record = {"version": PDF_TABLE_SCIENCE_VERSION, "input_digest": key, "inputs": values, "stages": stages,
+                  "reviewed": stages["PDF_INDEPENDENT_REVIEW"]["validated"], "candidate_access": False,
+                  "status": "ORIGINAL_PDF_SCIENCE_CANDIDATE_PENDING_PARSED_CELL_ASSOCIATION_AND_AUDIT"}
+        write_json(record_path, record)
+        return record

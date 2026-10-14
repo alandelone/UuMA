@@ -1,0 +1,90 @@
+{
+  "checked_at": "2026-10-14T03:37:28.833895+00:00",
+  "gateway": {
+    "gateway_state": "running",
+    "answering_pid": 11784,
+    "active_agents": 0,
+    "served_profiles": [
+      "default",
+      "brainstormer",
+      "forge-lab-bot",
+      "honc",
+      "scholar",
+      "wisdom-oldman",
+      "yonc"
+    ],
+    "platforms": {
+      "telegram": {
+        "state": "connected",
+        "error_code": null,
+        "error_message": null,
+        "updated_at": "2026-10-14T03:17:16.689174+00:00",
+        "writer_pid": 11784,
+        "writer_start_time": 179194777789,
+        "needs_attention": false,
+        "retrying_since": null
+      },
+      "brainstormer:telegram": {
+        "state": "connected",
+        "error_code": null,
+        "error_message": null,
+        "needs_attention": false,
+        "retrying_since": null,
+        "updated_at": "2026-10-14T03:17:28.508337+00:00",
+        "writer_pid": 11784,
+        "writer_start_time": 179194777789
+      },
+      "honc:telegram": {
+        "state": "connected",
+        "error_code": null,
+        "error_message": null,
+        "needs_attention": false,
+        "retrying_since": null,
+        "updated_at": "2026-10-14T03:17:40.590881+00:00",
+        "writer_pid": 11784,
+        "writer_start_time": 179194777789
+      },
+      "scholar:telegram": {
+        "state": "connected",
+        "error_code": null,
+        "error_message": null,
+        "needs_attention": false,
+        "retrying_since": null,
+        "updated_at": "2026-10-14T03:17:52.570003+00:00",
+        "writer_pid": 11784,
+        "writer_start_time": 179194777789
+      },
+      "wisdom-oldman:telegram": {
+        "state": "connected",
+        "error_code": null,
+        "error_message": null,
+        "needs_attention": false,
+        "retrying_since": null,
+        "updated_at": "2026-10-14T03:18:04.542143+00:00",
+        "writer_pid": 11784,
+        "writer_start_time": 179194777789
+      },
+      "yonc:telegram": {
+        "state": "connected",
+        "error_code": null,
+        "error_message": null,
+        "needs_attention": false,
+        "retrying_since": null,
+        "updated_at": "2026-10-14T03:18:16.691866+00:00",
+        "writer_pid": 11784,
+        "writer_start_time": 179194777789
+      }
+    }
+  },
+  "job": {
+    "id": "3381ec71b9d2",
+    "name": "honc-life-semantic-tick-v1",
+    "enabled": true,
+    "state": "scheduled",
+    "last_run_at": "2026-10-14T11:37:20.131084+08:00",
+    "last_status": "ok",
+    "last_error": null,
+    "next_run_at": "2026-10-14T11:38:20.131084+08:00"
+  },
+  "verification_scope": "Official live control socket and existing native honc job; does not assert a test Telegram notification was sent."
+}

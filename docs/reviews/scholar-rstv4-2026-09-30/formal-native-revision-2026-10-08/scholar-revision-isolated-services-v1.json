@@ -1,0 +1,21 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-revision-native-p48co4i6",
+  "golden_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+  "golden_database_sha256": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+  "manuscripts": {
+    "revision": "manuscript_3a132decd09349b99b186a5c44dc191d",
+    "reading": "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11"
+  },
+  "studio_port": 8877,
+  "frontend_port": 3004,
+  "fixture_clone": true,
+  "scientific_approval": false,
+  "owned_processes": {
+    "studio": 63780,
+    "frontend": 75360
+  },
+  "ready": [
+    "frontend",
+    "studio"
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "status": "PASS_FINAL_SOURCE_BUILD_AND_OWNED_RUNTIME",
+  "observed": {
+    "Processes": [
+      {
+        "ProcessId": 32792,
+        "ParentProcessId": 84464,
+        "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+        "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "CreationDate": "/Date(1791452487959)/"
+      },
+      {
+        "ProcessId": 35492,
+        "ParentProcessId": 32792,
+        "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+        "CreationDate": "/Date(1791452487963)/"
+      },
+      {
+        "ProcessId": 84340,
+        "ParentProcessId": 32792,
+        "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+        "ExecutablePath": "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "CreationDate": "/Date(1791452487977)/"
+      },
+      {
+        "ProcessId": 83900,
+        "ParentProcessId": 36944,
+        "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Windows\\SYSTEM32\\cmd.exe",
+        "CreationDate": "/Date(1791453465610)/"
+      },
+      {
+        "ProcessId": 89776,
+        "ParentProcessId": 83900,
+        "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+        "CreationDate": "/Date(1791453465616)/"
+      },
+      {
+        "ProcessId": 88032,
+        "ParentProcessId": 83900,
+        "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+        "CreationDate": "/Date(1791453465713)/"
+      },
+      {
+        "ProcessId": 88700,
+        "ParentProcessId": 88032,
+        "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Windows\\system32\\cmd.exe",
+        "CreationDate": "/Date(1791453465851)/"
+      },
+      {
+        "ProcessId": 65640,
+        "ParentProcessId": 88700,
+        "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-hierarchy-build-ty6ek0rr\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+        "CreationDate": "/Date(1791453465873)/"
+      }
+    ],
+    "Listeners": [
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8877,
+        "OwningProcess": 84340,
+        "verified_ancestry": [
+          84340,
+          32792
+        ]
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 3004,
+        "OwningProcess": 65640,
+        "verified_ancestry": [
+          65640,
+          88700,
+          88032,
+          83900
+        ]
+      }
+    ]
+  },
+  "production_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-hierarchy-build-ty6ek0rr\\writing-studio",
+  "backend_launch_pid": 32792,
+  "frontend_launch_pid": 83900,
+  "native_revision": 49,
+  "original_clone_revision": 9,
+  "final_source_matches_full_tests_and_build": true,
+  "read_only_database_bytes_unchanged": true,
+  "original_database_and_dist_unchanged": true,
+  "browser_upload_permission_answer_received": false,
+  "overall_11_groups_complete": false
+}

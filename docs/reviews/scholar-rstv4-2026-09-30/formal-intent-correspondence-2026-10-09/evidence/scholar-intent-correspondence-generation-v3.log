@@ -1,0 +1,123 @@
+.......................F..                                               [100%]
+================================== FAILURES ===================================
+_____ test_mapped_generated_read_rejects_tampered_frozen_context[formula] _____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-979/test_mapped_generated_read_rej2')
+tamper = 'formula'
+
+    @pytest.mark.parametrize("tamper", ["author_bank", "output_context", "formula", "asset", "call_context"])
+    def test_mapped_generated_read_rejects_tampered_frozen_context(tmp_path, tamper):
+        from test_writing_studio import wait_for_job
+        from rstv4.service import RSTV4Error
+    
+        service, manuscript_id, _, mapped, _, _ = mapped_fixture(tmp_path)
+        service.save_document(manuscript_id, base_revision=3, operation_id="map-tamper-test", document=mapped)
+        service.gateway.analyze = lambda task, payload: {
+            "paragraph": " ".join(t["text"] for i in payload["intents"] for t in i["thoughts"]),
+            "sentence_mappings": [{"sentence": 0, "thought_ids": [t["id"] for i in payload["intents"] for t in i["thoughts"]]}]}
+        service._compile_artifacts = lambda job, generated: []
+        try:
+            job = wait_for_job(service, service.create_job(manuscript_id, "GENERATE", input_revision=4))
+            assert job["status"] == "SUCCEEDED", job
+            version_id = job["result"]["generated_version_id"]
+            assert service.get_generated_version(manuscript_id, version_id)
+            with sqlite3.connect(service.db_path) as conn, conn:
+                inputs = json.loads(conn.execute("SELECT inputs_json FROM manuscript_versions WHERE manuscript_version_id=?", (version_id,)).fetchone()[0])
+                paragraph = inputs["generated"]["sections"][0]["paragraphs"][0]
+                if tamper == "author_bank":
+                    inputs["generated"]["author_source_sections"][0]["title"] = "Forged original"
+                elif tamper == "output_context":
+                    paragraph["author_contexts"][0]["source_paragraph"]["purpose"] = "Forged original"
+                elif tamper == "formula":
+                    paragraph["formulas"][0]["caption"] = "Forged original"
+                elif tamper == "asset":
+                    paragraph["asset_ids"] = []
+                else:
+                    call_id = paragraph["model_call_id"]
+                    request = json.loads(conn.execute("SELECT input_json FROM studio_model_calls WHERE call_id=?", (call_id,)).fetchone()[0])
+                    request["author_contexts"][0]["source_group"]["label"] = "Forged original"
+                    raw = json.dumps(request, ensure_ascii=False)
+                    conn.execute("UPDATE studio_model_calls SET input_json=?,input_sha256=? WHERE call_id=?", (raw, hashlib.sha256(raw.encode('utf-8')).hexdigest(), call_id))
+                if tamper != "call_context":
+                    conn.execute("UPDATE manuscript_versions SET inputs_json=? WHERE manuscript_version_id=?", (json.dumps(inputs), version_id))
+            with pytest.raises(RSTV4Error, match="original"):
+>               service.get_generated_version(manuscript_id, version_id)
+
+tests\test_studio_correspondence.py:289: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\rstv4\studio.py:332: in get_generated_version
+    return read_generated_version(conn, self.storage_root, manuscript_id, version_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x000002675B9FB6A0>
+storage_root = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-979/test_mapped_generated_read_rej2/data/writing-studio')
+manuscript_id = 'manuscript_ff63aae5d86f4b48a0148e7c1b74f7bc'
+version_id = 'manuscript_version_838ff8e5f4304087b34ddca4fe0a1746'
+
+    def generated_version(conn: sqlite3.Connection, storage_root: Path, manuscript_id: str, version_id: str) -> dict:
+        row = conn.execute("SELECT * FROM manuscript_versions WHERE manuscript_id=? AND manuscript_version_id=?", (manuscript_id, version_id)).fetchone()
+        if row is None:
+            raise NotFoundError("The generated version does not belong to this manuscript")
+        version = dict(row)
+        inputs = json.loads(version["inputs_json"])
+        artifacts = conn.execute("SELECT * FROM studio_artifacts WHERE manuscript_id=? AND job_id=?", (manuscript_id, inputs.get("job_id"))).fetchall()
+        generated = inputs.get("generated")
+        by_kind = {item["artifact_kind"]: item for item in artifacts}
+        if generated is None and "GENERATED_JSON" in by_kind:
+            generated = json.loads(verified_artifact_bytes(storage_root, by_kind["GENERATED_JSON"]))
+        if generated is not None and (generated_markdown(generated) != version["content"] or generated["input_revision"] != inputs.get("studio_revision")):
+>           raise RSTV4Error("Generated structure does not match its immutable version")
+E           rstv4.service.RSTV4Error: Generated structure does not match its immutable version
+
+src\rstv4\studio_read_views.py:75: RSTV4Error
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-979/test_mapped_generated_read_rej2')
+tamper = 'formula'
+
+    @pytest.mark.parametrize("tamper", ["author_bank", "output_context", "formula", "asset", "call_context"])
+    def test_mapped_generated_read_rejects_tampered_frozen_context(tmp_path, tamper):
+        from test_writing_studio import wait_for_job
+        from rstv4.service import RSTV4Error
+    
+        service, manuscript_id, _, mapped, _, _ = mapped_fixture(tmp_path)
+        service.save_document(manuscript_id, base_revision=3, operation_id="map-tamper-test", document=mapped)
+        service.gateway.analyze = lambda task, payload: {
+            "paragraph": " ".join(t["text"] for i in payload["intents"] for t in i["thoughts"]),
+            "sentence_mappings": [{"sentence": 0, "thought_ids": [t["id"] for i in payload["intents"] for t in i["thoughts"]]}]}
+        service._compile_artifacts = lambda job, generated: []
+        try:
+            job = wait_for_job(service, service.create_job(manuscript_id, "GENERATE", input_revision=4))
+            assert job["status"] == "SUCCEEDED", job
+            version_id = job["result"]["generated_version_id"]
+            assert service.get_generated_version(manuscript_id, version_id)
+            with sqlite3.connect(service.db_path) as conn, conn:
+                inputs = json.loads(conn.execute("SELECT inputs_json FROM manuscript_versions WHERE manuscript_version_id=?", (version_id,)).fetchone()[0])
+                paragraph = inputs["generated"]["sections"][0]["paragraphs"][0]
+                if tamper == "author_bank":
+                    inputs["generated"]["author_source_sections"][0]["title"] = "Forged original"
+                elif tamper == "output_context":
+                    paragraph["author_contexts"][0]["source_paragraph"]["purpose"] = "Forged original"
+                elif tamper == "formula":
+                    paragraph["formulas"][0]["caption"] = "Forged original"
+                elif tamper == "asset":
+                    paragraph["asset_ids"] = []
+                else:
+                    call_id = paragraph["model_call_id"]
+                    request = json.loads(conn.execute("SELECT input_json FROM studio_model_calls WHERE call_id=?", (call_id,)).fetchone()[0])
+                    request["author_contexts"][0]["source_group"]["label"] = "Forged original"
+                    raw = json.dumps(request, ensure_ascii=False)
+                    conn.execute("UPDATE studio_model_calls SET input_json=?,input_sha256=? WHERE call_id=?", (raw, hashlib.sha256(raw.encode('utf-8')).hexdigest(), call_id))
+                if tamper != "call_context":
+                    conn.execute("UPDATE manuscript_versions SET inputs_json=? WHERE manuscript_version_id=?", (json.dumps(inputs), version_id))
+>           with pytest.raises(RSTV4Error, match="original"):
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'original'
+E             Actual message: 'Generated structure does not match its immutable version'
+
+tests\test_studio_correspondence.py:288: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_correspondence.py::test_mapped_generated_read_rejects_tampered_frozen_context[formula]
+1 failed, 25 passed in 10.83s

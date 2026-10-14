@@ -1,0 +1,14 @@
+CHECK studio-response-review.cjs
+PASS Serialized saves retain newer keystrokes and advance the actual CAS basis
+PASS Conflicting page edits require an explicit comparison before replacing the reply
+PASS Unmount restores drafts, review waits for save, and an uncertain submit retries its original decision
+PASS Archived opinions expose review history without modifying their reply
+PASS Actual dialog retains Unicode selection offsets and rejects retained evidence
+Exit: 0
+CHECK studio-structure.cjs
+17 controlled movement/group/association cases passed; no browser used.
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+Exit: 0
+CHECK studio-block-controls.cjs
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+Exit: 0

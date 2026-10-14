@@ -1,0 +1,524 @@
+{
+  "alerts": [
+    "本批已导入 100 条。1 条未选意见仍保留；可继续选择导入或取消预览，原始全文不会被截断。"
+  ],
+  "confirm": [
+    {
+      "disabled": true,
+      "text": "✓ 确认导入 0 条"
+    }
+  ],
+  "input": "G07 corrected software opinion 101: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request.\nG07 CORRECTED LAST 101 — retain until explicitly selected.",
+  "outputs": [
+    "已自动保存",
+    "预览 101 条，已选 0 条。每批最多 100 条。",
+    "新选对象已列在下面；当前问题仍绑定原对象，请明确选择。"
+  ],
+  "rows": [
+    {
+      "disabled": true,
+      "label": "编辑意见 1",
+      "value": "G07 corrected software opinion 001: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 2",
+      "value": "G07 corrected software opinion 002: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 3",
+      "value": "G07 corrected software opinion 003: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 4",
+      "value": "G07 corrected software opinion 004: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 5",
+      "value": "G07 corrected software opinion 005: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 6",
+      "value": "G07 corrected software opinion 006: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 7",
+      "value": "G07 corrected software opinion 007: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 8",
+      "value": "G07 corrected software opinion 008: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 9",
+      "value": "G07 corrected software opinion 009: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 10",
+      "value": "G07 corrected software opinion 010: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 11",
+      "value": "G07 corrected software opinion 011: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 12",
+      "value": "G07 corrected software opinion 012: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 13",
+      "value": "G07 corrected software opinion 013: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 14",
+      "value": "G07 corrected software opinion 014: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 15",
+      "value": "G07 corrected software opinion 015: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 16",
+      "value": "G07 corrected software opinion 016: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 17",
+      "value": "G07 corrected software opinion 017: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 18",
+      "value": "G07 corrected software opinion 018: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 19",
+      "value": "G07 corrected software opinion 019: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 20",
+      "value": "G07 corrected software opinion 020: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 21",
+      "value": "G07 corrected software opinion 021: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 22",
+      "value": "G07 corrected software opinion 022: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 23",
+      "value": "G07 corrected software opinion 023: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 24",
+      "value": "G07 corrected software opinion 024: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 25",
+      "value": "G07 corrected software opinion 025: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 26",
+      "value": "G07 corrected software opinion 026: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 27",
+      "value": "G07 corrected software opinion 027: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 28",
+      "value": "G07 corrected software opinion 028: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 29",
+      "value": "G07 corrected software opinion 029: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 30",
+      "value": "G07 corrected software opinion 030: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 31",
+      "value": "G07 corrected software opinion 031: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 32",
+      "value": "G07 corrected software opinion 032: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 33",
+      "value": "G07 corrected software opinion 033: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 34",
+      "value": "G07 corrected software opinion 034: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 35",
+      "value": "G07 corrected software opinion 035: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 36",
+      "value": "G07 corrected software opinion 036: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 37",
+      "value": "G07 corrected software opinion 037: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 38",
+      "value": "G07 corrected software opinion 038: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 39",
+      "value": "G07 corrected software opinion 039: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 40",
+      "value": "G07 corrected software opinion 040: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 41",
+      "value": "G07 corrected software opinion 041: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 42",
+      "value": "G07 corrected software opinion 042: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 43",
+      "value": "G07 corrected software opinion 043: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 44",
+      "value": "G07 corrected software opinion 044: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 45",
+      "value": "G07 corrected software opinion 045: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 46",
+      "value": "G07 corrected software opinion 046: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 47",
+      "value": "G07 corrected software opinion 047: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 48",
+      "value": "G07 corrected software opinion 048: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 49",
+      "value": "G07 corrected software opinion 049: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 50",
+      "value": "G07 corrected software opinion 050: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 51",
+      "value": "G07 corrected software opinion 051: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 52",
+      "value": "G07 corrected software opinion 052: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 53",
+      "value": "G07 corrected software opinion 053: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 54",
+      "value": "G07 corrected software opinion 054: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 55",
+      "value": "G07 corrected software opinion 055: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 56",
+      "value": "G07 corrected software opinion 056: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 57",
+      "value": "G07 corrected software opinion 057: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 58",
+      "value": "G07 corrected software opinion 058: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 59",
+      "value": "G07 corrected software opinion 059: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 60",
+      "value": "G07 corrected software opinion 060: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 61",
+      "value": "G07 corrected software opinion 061: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 62",
+      "value": "G07 corrected software opinion 062: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 63",
+      "value": "G07 corrected software opinion 063: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 64",
+      "value": "G07 corrected software opinion 064: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 65",
+      "value": "G07 corrected software opinion 065: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 66",
+      "value": "G07 corrected software opinion 066: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 67",
+      "value": "G07 corrected software opinion 067: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 68",
+      "value": "G07 corrected software opinion 068: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 69",
+      "value": "G07 corrected software opinion 069: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 70",
+      "value": "G07 corrected software opinion 070: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 71",
+      "value": "G07 corrected software opinion 071: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 72",
+      "value": "G07 corrected software opinion 072: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 73",
+      "value": "G07 corrected software opinion 073: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 74",
+      "value": "G07 corrected software opinion 074: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 75",
+      "value": "G07 corrected software opinion 075: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 76",
+      "value": "G07 corrected software opinion 076: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 77",
+      "value": "G07 corrected software opinion 077: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 78",
+      "value": "G07 corrected software opinion 078: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 79",
+      "value": "G07 corrected software opinion 079: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 80",
+      "value": "G07 corrected software opinion 080: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 81",
+      "value": "G07 corrected software opinion 081: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 82",
+      "value": "G07 corrected software opinion 082: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 83",
+      "value": "G07 corrected software opinion 083: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 84",
+      "value": "G07 corrected software opinion 084: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 85",
+      "value": "G07 corrected software opinion 085: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 86",
+      "value": "G07 corrected software opinion 086: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 87",
+      "value": "G07 corrected software opinion 087: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 88",
+      "value": "G07 corrected software opinion 088: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 89",
+      "value": "G07 corrected software opinion 089: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 90",
+      "value": "G07 corrected software opinion 090: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 91",
+      "value": "G07 corrected software opinion 091: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 92",
+      "value": "G07 corrected software opinion 092: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 93",
+      "value": "G07 corrected software opinion 093: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 94",
+      "value": "G07 corrected software opinion 094: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 95",
+      "value": "G07 corrected software opinion 095: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 96",
+      "value": "G07 corrected software opinion 096: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 97",
+      "value": "G07 corrected software opinion 097: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 98",
+      "value": "G07 corrected software opinion 098: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 99",
+      "value": "G07 corrected software opinion 099: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": true,
+      "label": "编辑意见 100",
+      "value": "G07 corrected software opinion 100: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request."
+    },
+    {
+      "disabled": false,
+      "label": "编辑意见 101",
+      "value": "G07 corrected software opinion 101: retain the original item through partial import.\nThis line belongs to the same opinion; no scientific request.\nG07 CORRECTED LAST 101 — retain until explicitly selected."
+    }
+  ]
+}

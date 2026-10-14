@@ -1,0 +1,2557 @@
+{
+  "status": "PASS_SHIPPED_WITHDRAWAL_REAPPROVAL_CONTROLLER_REAL_HTTP",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-source-withdrawal-2026-10-06-eyfj15cw",
+  "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+  "reopened": {
+    "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+    "request_id": "actual-withdrawal-native-1",
+    "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "action_kind": "REOPEN_IDENTITY",
+    "reviewer_label": "Alandelone",
+    "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+    "supersedes_action_id": null,
+    "created_at": "2026-10-06T04:34:44.333985+00:00",
+    "request": {
+      "action": "REOPEN_IDENTITY",
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "expected_context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+      "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+      "reference_selections": [],
+      "request_id": "actual-withdrawal-native-1"
+    },
+    "context": {
+      "blocked_jobs": [],
+      "candidate": null,
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "collections": [
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "name": "Fixture collection",
+          "revision": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+      "file": {
+        "created_at": "2026-10-06T04:34:39.018058+00:00",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "identity_status": "VERIFIED",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+        "size_bytes": 1826,
+        "validation": {
+          "doi_match": true,
+          "evidence_source": "pdf_text_and_raw_bytes",
+          "identity_status": "VERIFIED",
+          "technical_pdf_valid": true,
+          "title_token_ratio": 1
+        }
+      },
+      "findings": [],
+      "integrity_verified": true,
+      "job": null,
+      "kind": "PDF_IDENTITY",
+      "last_action_id": null,
+      "latest_annotations": {},
+      "paper": {
+        "canonical_key": "doi:10.1234/original",
+        "doi": "10.1234/original",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "title": "Software review identity title",
+        "updated_at": "2026-10-06T04:34:38.981732+00:00"
+      },
+      "quarantined": false,
+      "source_impact": {
+        "evidence_ids": [
+          "evidence"
+        ],
+        "jobs": [
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T04:34:39.018058+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T04:34:39.018058+00:00",
+            "fencing_token": 0,
+            "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+            "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+            "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+            "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_type": "PARSE_PDF",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 80,
+            "queue_class": "PARSER",
+            "result_json": null,
+            "rule_version": "parser-v1",
+            "status": "READY",
+            "updated_at": "2026-10-06T04:34:39.018058+00:00"
+          },
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T04:34:39.029076+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T04:34:39.029076+00:00",
+            "fencing_token": 0,
+            "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+            "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+            "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+            "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+            "job_type": "QUICK_READ",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 70,
+            "queue_class": "MODEL_READ",
+            "result_json": null,
+            "rule_version": "quick-read-v1",
+            "status": "READY",
+            "updated_at": "2026-10-06T04:34:39.029076+00:00"
+          }
+        ],
+        "manuscripts": [
+          {
+            "blocker": null,
+            "created_at": "now",
+            "manuscript_id": "ms",
+            "needs_scientific_review": 0,
+            "next_step": null,
+            "research_type": "conceptual_framework",
+            "revision": 1,
+            "scope": null,
+            "title": "Software MS",
+            "track_id": "track",
+            "updated_at": "now",
+            "workflow_stage": "PLANNING",
+            "writing_status": "DRAFTING"
+          }
+        ],
+        "nodes": [
+          {
+            "created_at": "now",
+            "node_id": "child",
+            "node_type": "method",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 1,
+            "statement": "child",
+            "status": "APPROVED",
+            "track_id": "track",
+            "updated_at": "now"
+          },
+          {
+            "created_at": "now",
+            "node_id": "root",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 1,
+            "statement": "root",
+            "status": "APPROVED",
+            "track_id": "track",
+            "updated_at": "now"
+          }
+        ],
+        "paper_version_ids": [
+          "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+        ],
+        "snapshots": []
+      },
+      "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+    },
+    "result": {
+      "affected_manuscripts": [
+        "ms"
+      ],
+      "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "invalidated_nodes": [
+        "child",
+        "root"
+      ],
+      "retained_evidence": [
+        "evidence"
+      ],
+      "retained_paper_versions": [
+        "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+      ],
+      "retained_snapshots": [],
+      "scientific_approval_restored": false,
+      "status": "IDENTITY_REOPENED",
+      "stopped_jobs": [
+        "job_045ee416f89c207f63a17371e7d46ddb",
+        "job_daa1702223be8e9d63800079a80e4f32"
+      ]
+    }
+  },
+  "approved": {
+    "action_id": "review_action_bacc701fcc88032b776a266e9f033804",
+    "request_id": "actual-withdrawal-native-2",
+    "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "action_kind": "APPROVE_IDENTITY",
+    "reviewer_label": "Alandelone",
+    "reason": "Explicit software file identity recheck; no scientific restoration",
+    "supersedes_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+    "created_at": "2026-10-06T04:34:44.398386+00:00",
+    "request": {
+      "action": "APPROVE_IDENTITY",
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "expected_context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+      "reason": "Explicit software file identity recheck; no scientific restoration",
+      "reference_selections": [],
+      "request_id": "actual-withdrawal-native-2"
+    },
+    "context": {
+      "blocked_jobs": [
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "fencing_token": 1,
+          "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+          "job_type": "PARSE_PDF",
+          "review_kind": "PDF_IDENTITY",
+          "status": "NEEDS_HUMAN",
+          "updated_at": "2026-10-06T04:34:44.333985+00:00"
+        },
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "fencing_token": 1,
+          "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+          "job_type": "QUICK_READ",
+          "review_kind": "PDF_IDENTITY",
+          "status": "NEEDS_HUMAN",
+          "updated_at": "2026-10-06T04:34:44.333985+00:00"
+        }
+      ],
+      "candidate": null,
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "collections": [
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "name": "Fixture collection",
+          "revision": 1,
+          "status": "ACTIVE"
+        }
+      ],
+      "context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+      "file": {
+        "created_at": "2026-10-06T04:34:39.018058+00:00",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "identity_status": "NEEDS_REVIEW",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+        "size_bytes": 1826,
+        "validation": {
+          "doi_match": true,
+          "evidence_source": "pdf_text_and_raw_bytes",
+          "identity_status": "VERIFIED",
+          "technical_pdf_valid": true,
+          "title_token_ratio": 1
+        }
+      },
+      "findings": [],
+      "integrity_verified": true,
+      "job": null,
+      "kind": "PDF_IDENTITY",
+      "last_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+      "latest_annotations": {},
+      "paper": {
+        "canonical_key": "doi:10.1234/original",
+        "doi": "10.1234/original",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "title": "Software review identity title",
+        "updated_at": "2026-10-06T04:34:38.981732+00:00"
+      },
+      "quarantined": false,
+      "source_impact": {
+        "evidence_ids": [
+          "evidence"
+        ],
+        "jobs": [
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T04:34:39.018058+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T04:34:39.018058+00:00",
+            "fencing_token": 1,
+            "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+            "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+            "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+            "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_type": "PARSE_PDF",
+            "last_error_code": "SOURCE_REVIEW_REOPENED",
+            "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 80,
+            "queue_class": "PARSER",
+            "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+            "rule_version": "parser-v1",
+            "status": "NEEDS_HUMAN",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          },
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T04:34:39.029076+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T04:34:39.029076+00:00",
+            "fencing_token": 1,
+            "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+            "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+            "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+            "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+            "job_type": "QUICK_READ",
+            "last_error_code": "SOURCE_REVIEW_REOPENED",
+            "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 70,
+            "queue_class": "MODEL_READ",
+            "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+            "rule_version": "quick-read-v1",
+            "status": "NEEDS_HUMAN",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          }
+        ],
+        "manuscripts": [
+          {
+            "blocker": null,
+            "created_at": "now",
+            "manuscript_id": "ms",
+            "needs_scientific_review": 1,
+            "next_step": null,
+            "research_type": "conceptual_framework",
+            "revision": 2,
+            "scope": null,
+            "title": "Software MS",
+            "track_id": "track",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00",
+            "workflow_stage": "PLANNING",
+            "writing_status": "DRAFTING"
+          }
+        ],
+        "nodes": [
+          {
+            "created_at": "now",
+            "node_id": "child",
+            "node_type": "method",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "child",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          },
+          {
+            "created_at": "now",
+            "node_id": "root",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "root",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          }
+        ],
+        "paper_version_ids": [
+          "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+        ],
+        "snapshots": []
+      },
+      "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+    },
+    "result": {
+      "parse_jobs": [
+        "job_045ee416f89c207f63a17371e7d46ddb"
+      ],
+      "resumed_jobs": [
+        "job_045ee416f89c207f63a17371e7d46ddb",
+        "job_daa1702223be8e9d63800079a80e4f32"
+      ],
+      "status": "APPROVED_IDENTITY",
+      "validation": {
+        "doi_match": true,
+        "evidence_source": "pdf_text_and_raw_bytes",
+        "identity_status": "VERIFIED",
+        "technical_pdf_valid": true,
+        "title_token_ratio": 1
+      }
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08",
+        "kind": "PDF_IDENTITY",
+        "file": {
+          "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+          "size_bytes": 1826,
+          "identity_status": "VERIFIED",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          },
+          "created_at": "2026-10-06T04:34:39.018058+00:00"
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/original",
+          "canonical_key": "doi:10.1234/original",
+          "updated_at": "2026-10-06T04:34:38.981732+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {},
+        "findings": [],
+        "blocked_jobs": [],
+        "collections": [
+          {
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "name": "Fixture collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": null,
+        "job": null,
+        "last_action_id": null,
+        "source_impact": {
+          "paper_version_ids": [
+            "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+          ],
+          "evidence_ids": [
+            "evidence"
+          ],
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "APPROVED",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "APPROVED",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now"
+            }
+          ],
+          "manuscripts": [
+            {
+              "manuscript_id": "ms",
+              "track_id": "track",
+              "title": "Software MS",
+              "scope": null,
+              "research_type": "conceptual_framework",
+              "writing_status": "DRAFTING",
+              "needs_scientific_review": 0,
+              "blocker": null,
+              "next_step": null,
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now",
+              "workflow_stage": "PLANNING"
+            }
+          ],
+          "snapshots": [],
+          "jobs": [
+            {
+              "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "job_type": "PARSE_PDF",
+              "queue_class": "PARSER",
+              "status": "READY",
+              "priority": 80,
+              "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+              "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+              "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+              "rule_version": "parser-v1",
+              "attempts": 0,
+              "available_at": "2026-10-06T04:34:39.018058+00:00",
+              "lease_owner": null,
+              "lease_expires_at": null,
+              "fencing_token": 0,
+              "last_error_code": null,
+              "last_error_detail": null,
+              "result_json": null,
+              "created_at": "2026-10-06T04:34:39.018058+00:00",
+              "updated_at": "2026-10-06T04:34:39.018058+00:00"
+            },
+            {
+              "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "job_type": "QUICK_READ",
+              "queue_class": "MODEL_READ",
+              "status": "READY",
+              "priority": 70,
+              "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+              "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+              "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+              "rule_version": "quick-read-v1",
+              "attempts": 0,
+              "available_at": "2026-10-06T04:34:39.029076+00:00",
+              "lease_owner": null,
+              "lease_expires_at": null,
+              "fencing_token": 0,
+              "last_error_code": null,
+              "last_error_detail": null,
+              "result_json": null,
+              "created_at": "2026-10-06T04:34:39.029076+00:00",
+              "updated_at": "2026-10-06T04:34:39.029076+00:00"
+            }
+          ]
+        },
+        "context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+        "history": [],
+        "allowed_actions": [
+          "REOPEN_IDENTITY"
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+        "request_id": "actual-withdrawal-native-1",
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "action_kind": "REOPEN_IDENTITY",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+        "supersedes_action_id": null,
+        "created_at": "2026-10-06T04:34:44.333985+00:00",
+        "request": {
+          "action": "REOPEN_IDENTITY",
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "expected_context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+          "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+          "reference_selections": [],
+          "request_id": "actual-withdrawal-native-1"
+        },
+        "context": {
+          "blocked_jobs": [],
+          "candidate": null,
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "collections": [
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "name": "Fixture collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+          "file": {
+            "created_at": "2026-10-06T04:34:39.018058+00:00",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "identity_status": "VERIFIED",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+            "size_bytes": 1826,
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": null,
+          "kind": "PDF_IDENTITY",
+          "last_action_id": null,
+          "latest_annotations": {},
+          "paper": {
+            "canonical_key": "doi:10.1234/original",
+            "doi": "10.1234/original",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T04:34:38.981732+00:00"
+          },
+          "quarantined": false,
+          "source_impact": {
+            "evidence_ids": [
+              "evidence"
+            ],
+            "jobs": [
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.018058+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "fencing_token": 0,
+                "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_type": "PARSE_PDF",
+                "last_error_code": null,
+                "last_error_detail": null,
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 80,
+                "queue_class": "PARSER",
+                "result_json": null,
+                "rule_version": "parser-v1",
+                "status": "READY",
+                "updated_at": "2026-10-06T04:34:39.018058+00:00"
+              },
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.029076+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.029076+00:00",
+                "fencing_token": 0,
+                "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                "job_type": "QUICK_READ",
+                "last_error_code": null,
+                "last_error_detail": null,
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 70,
+                "queue_class": "MODEL_READ",
+                "result_json": null,
+                "rule_version": "quick-read-v1",
+                "status": "READY",
+                "updated_at": "2026-10-06T04:34:39.029076+00:00"
+              }
+            ],
+            "manuscripts": [
+              {
+                "blocker": null,
+                "created_at": "now",
+                "manuscript_id": "ms",
+                "needs_scientific_review": 0,
+                "next_step": null,
+                "research_type": "conceptual_framework",
+                "revision": 1,
+                "scope": null,
+                "title": "Software MS",
+                "track_id": "track",
+                "updated_at": "now",
+                "workflow_stage": "PLANNING",
+                "writing_status": "DRAFTING"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "child",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "root",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              }
+            ],
+            "paper_version_ids": [
+              "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+            ],
+            "snapshots": []
+          },
+          "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+        },
+        "result": {
+          "affected_manuscripts": [
+            "ms"
+          ],
+          "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "invalidated_nodes": [
+            "child",
+            "root"
+          ],
+          "retained_evidence": [
+            "evidence"
+          ],
+          "retained_paper_versions": [
+            "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+          ],
+          "retained_snapshots": [],
+          "scientific_approval_restored": false,
+          "status": "IDENTITY_REOPENED",
+          "stopped_jobs": [
+            "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_daa1702223be8e9d63800079a80e4f32"
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08",
+        "kind": "PDF_IDENTITY",
+        "file": {
+          "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+          "size_bytes": 1826,
+          "identity_status": "NEEDS_REVIEW",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          },
+          "created_at": "2026-10-06T04:34:39.018058+00:00"
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/original",
+          "canonical_key": "doi:10.1234/original",
+          "updated_at": "2026-10-06T04:34:38.981732+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {},
+        "findings": [],
+        "blocked_jobs": [
+          {
+            "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "job_type": "PARSE_PDF",
+            "status": "NEEDS_HUMAN",
+            "fencing_token": 1,
+            "updated_at": "2026-10-06T04:34:44.333985+00:00",
+            "review_kind": "PDF_IDENTITY"
+          },
+          {
+            "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "job_type": "QUICK_READ",
+            "status": "NEEDS_HUMAN",
+            "fencing_token": 1,
+            "updated_at": "2026-10-06T04:34:44.333985+00:00",
+            "review_kind": "PDF_IDENTITY"
+          }
+        ],
+        "collections": [
+          {
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "name": "Fixture collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": null,
+        "job": null,
+        "last_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+        "source_impact": {
+          "paper_version_ids": [
+            "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+          ],
+          "evidence_ids": [
+            "evidence"
+          ],
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "STALE",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "STALE",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            }
+          ],
+          "manuscripts": [
+            {
+              "manuscript_id": "ms",
+              "track_id": "track",
+              "title": "Software MS",
+              "scope": null,
+              "research_type": "conceptual_framework",
+              "writing_status": "DRAFTING",
+              "needs_scientific_review": 1,
+              "blocker": null,
+              "next_step": null,
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00",
+              "workflow_stage": "PLANNING"
+            }
+          ],
+          "snapshots": [],
+          "jobs": [
+            {
+              "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "job_type": "PARSE_PDF",
+              "queue_class": "PARSER",
+              "status": "NEEDS_HUMAN",
+              "priority": 80,
+              "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+              "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+              "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+              "rule_version": "parser-v1",
+              "attempts": 0,
+              "available_at": "2026-10-06T04:34:39.018058+00:00",
+              "lease_owner": null,
+              "lease_expires_at": null,
+              "fencing_token": 1,
+              "last_error_code": "SOURCE_REVIEW_REOPENED",
+              "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+              "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+              "created_at": "2026-10-06T04:34:39.018058+00:00",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            },
+            {
+              "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "job_type": "QUICK_READ",
+              "queue_class": "MODEL_READ",
+              "status": "NEEDS_HUMAN",
+              "priority": 70,
+              "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+              "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+              "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+              "rule_version": "quick-read-v1",
+              "attempts": 0,
+              "available_at": "2026-10-06T04:34:39.029076+00:00",
+              "lease_owner": null,
+              "lease_expires_at": null,
+              "fencing_token": 1,
+              "last_error_code": "SOURCE_REVIEW_REOPENED",
+              "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+              "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+              "created_at": "2026-10-06T04:34:39.029076+00:00",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            }
+          ]
+        },
+        "context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+        "history": [
+          {
+            "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+            "request_id": "actual-withdrawal-native-1",
+            "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "action_kind": "REOPEN_IDENTITY",
+            "reviewer_label": "Alandelone",
+            "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+            "supersedes_action_id": null,
+            "created_at": "2026-10-06T04:34:44.333985+00:00",
+            "request": {
+              "action": "REOPEN_IDENTITY",
+              "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "expected_context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+              "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+              "reference_selections": [],
+              "request_id": "actual-withdrawal-native-1"
+            },
+            "context": {
+              "blocked_jobs": [],
+              "candidate": null,
+              "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "collections": [
+                {
+                  "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                  "name": "Fixture collection",
+                  "revision": 1,
+                  "status": "ACTIVE"
+                }
+              ],
+              "context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+              "file": {
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+                "identity_status": "VERIFIED",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+                "size_bytes": 1826,
+                "validation": {
+                  "doi_match": true,
+                  "evidence_source": "pdf_text_and_raw_bytes",
+                  "identity_status": "VERIFIED",
+                  "technical_pdf_valid": true,
+                  "title_token_ratio": 1
+                }
+              },
+              "findings": [],
+              "integrity_verified": true,
+              "job": null,
+              "kind": "PDF_IDENTITY",
+              "last_action_id": null,
+              "latest_annotations": {},
+              "paper": {
+                "canonical_key": "doi:10.1234/original",
+                "doi": "10.1234/original",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "title": "Software review identity title",
+                "updated_at": "2026-10-06T04:34:38.981732+00:00"
+              },
+              "quarantined": false,
+              "source_impact": {
+                "evidence_ids": [
+                  "evidence"
+                ],
+                "jobs": [
+                  {
+                    "attempts": 0,
+                    "available_at": "2026-10-06T04:34:39.018058+00:00",
+                    "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                    "created_at": "2026-10-06T04:34:39.018058+00:00",
+                    "fencing_token": 0,
+                    "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                    "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                    "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                    "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                    "job_type": "PARSE_PDF",
+                    "last_error_code": null,
+                    "last_error_detail": null,
+                    "lease_expires_at": null,
+                    "lease_owner": null,
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "priority": 80,
+                    "queue_class": "PARSER",
+                    "result_json": null,
+                    "rule_version": "parser-v1",
+                    "status": "READY",
+                    "updated_at": "2026-10-06T04:34:39.018058+00:00"
+                  },
+                  {
+                    "attempts": 0,
+                    "available_at": "2026-10-06T04:34:39.029076+00:00",
+                    "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                    "created_at": "2026-10-06T04:34:39.029076+00:00",
+                    "fencing_token": 0,
+                    "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                    "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                    "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                    "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                    "job_type": "QUICK_READ",
+                    "last_error_code": null,
+                    "last_error_detail": null,
+                    "lease_expires_at": null,
+                    "lease_owner": null,
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "priority": 70,
+                    "queue_class": "MODEL_READ",
+                    "result_json": null,
+                    "rule_version": "quick-read-v1",
+                    "status": "READY",
+                    "updated_at": "2026-10-06T04:34:39.029076+00:00"
+                  }
+                ],
+                "manuscripts": [
+                  {
+                    "blocker": null,
+                    "created_at": "now",
+                    "manuscript_id": "ms",
+                    "needs_scientific_review": 0,
+                    "next_step": null,
+                    "research_type": "conceptual_framework",
+                    "revision": 1,
+                    "scope": null,
+                    "title": "Software MS",
+                    "track_id": "track",
+                    "updated_at": "now",
+                    "workflow_stage": "PLANNING",
+                    "writing_status": "DRAFTING"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "created_at": "now",
+                    "node_id": "child",
+                    "node_type": "method",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "child",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "root",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "root",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  }
+                ],
+                "paper_version_ids": [
+                  "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+                ],
+                "snapshots": []
+              },
+              "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+            },
+            "result": {
+              "affected_manuscripts": [
+                "ms"
+              ],
+              "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "invalidated_nodes": [
+                "child",
+                "root"
+              ],
+              "retained_evidence": [
+                "evidence"
+              ],
+              "retained_paper_versions": [
+                "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+              ],
+              "retained_snapshots": [],
+              "scientific_approval_restored": false,
+              "status": "IDENTITY_REOPENED",
+              "stopped_jobs": [
+                "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_daa1702223be8e9d63800079a80e4f32"
+              ]
+            }
+          }
+        ],
+        "allowed_actions": [
+          "APPROVE_IDENTITY"
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/tracks/track/workspace",
+      "status": 200,
+      "body": {
+        "track": {
+          "track_id": "track",
+          "field_id": "field_00f5d7ee29ff4b6482a3f6758a6069f0",
+          "primary_topic_id": "topic",
+          "title": "Software Track",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "status": "ACTIVE",
+          "mapping_status": "MAPPED",
+          "revision": 1,
+          "created_at": "now",
+          "updated_at": "now",
+          "metadata_digest": "0b1adc5dee7deefbc33fe01968fb3ae550e2f0322d1cd72c75ba09c5055ecbd3"
+        },
+        "adoptions": [],
+        "nodes": [
+          {
+            "node_id": "child",
+            "track_id": "track",
+            "node_type": "method",
+            "status": "STALE",
+            "statement": "child",
+            "rationale": "Software fixture",
+            "payload": {},
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          },
+          {
+            "node_id": "root",
+            "track_id": "track",
+            "node_type": "claim",
+            "status": "STALE",
+            "statement": "root",
+            "rationale": "Software fixture",
+            "payload": {},
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          },
+          {
+            "node_id": "untouched",
+            "track_id": "track",
+            "node_type": "claim",
+            "status": "APPROVED",
+            "statement": "untouched",
+            "rationale": "Software fixture",
+            "payload": {},
+            "revision": 1,
+            "created_at": "now",
+            "updated_at": "now"
+          }
+        ],
+        "milestones": [],
+        "context_sha256": "36f9162f99cfe8db06873fe2d269437ba52b701ae4683007e49bee63da2b18e1",
+        "field": {
+          "field_id": "field_00f5d7ee29ff4b6482a3f6758a6069f0",
+          "normalized_name": "software review fixture",
+          "name": "Software review fixture",
+          "description": null,
+          "created_at": "2026-10-06T04:34:38.948868+00:00",
+          "updated_at": "2026-10-06T04:34:38.948868+00:00"
+        },
+        "topics": [],
+        "edges": [
+          {
+            "edge_id": "edge",
+            "track_id": "track",
+            "source_node_id": "root",
+            "target_node_id": "child",
+            "relation": "MOTIVATES",
+            "created_at": "now"
+          }
+        ],
+        "decisions": [],
+        "projects": [],
+        "plans": [],
+        "runs": [],
+        "evidence": [
+          {
+            "evidence_id": "evidence",
+            "scope_kind": "FIELDKG",
+            "field_id": "field_00f5d7ee29ff4b6482a3f6758a6069f0",
+            "track_id": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+            "experiment_run_id": null,
+            "statement": "Software fixture evidence",
+            "excerpt": "Exact fixture source",
+            "location": {},
+            "relation": "SUPPORTS",
+            "confidence": 1,
+            "extractor_model": "fixture",
+            "prompt_version": "fixture",
+            "content_digest": "evidence-sha",
+            "created_at": "now"
+          }
+        ],
+        "node_evidence": [
+          {
+            "node_id": "root",
+            "evidence_id": "evidence"
+          }
+        ],
+        "adopted_snapshots": [],
+        "available_snapshots": [],
+        "manuscripts": [
+          {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 1,
+            "blocker": null,
+            "next_step": null,
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00",
+            "workflow_stage": "PLANNING"
+          }
+        ],
+        "manuscript_projects": [],
+        "submission_events": [],
+        "source_reviews": [
+          {
+            "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+            "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+            "created_at": "2026-10-06T04:34:44.333985+00:00",
+            "current_file_status": "NEEDS_REVIEW",
+            "impact": {
+              "affected_manuscripts": [
+                "ms"
+              ],
+              "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "invalidated_nodes": [
+                "child",
+                "root"
+              ],
+              "retained_evidence": [
+                "evidence"
+              ],
+              "retained_paper_versions": [
+                "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+              ],
+              "retained_snapshots": [],
+              "scientific_approval_restored": false,
+              "status": "IDENTITY_REOPENED",
+              "stopped_jobs": [
+                "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_daa1702223be8e9d63800079a80e4f32"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_bacc701fcc88032b776a266e9f033804",
+        "request_id": "actual-withdrawal-native-2",
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "action_kind": "APPROVE_IDENTITY",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit software file identity recheck; no scientific restoration",
+        "supersedes_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+        "created_at": "2026-10-06T04:34:44.398386+00:00",
+        "request": {
+          "action": "APPROVE_IDENTITY",
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "expected_context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+          "reason": "Explicit software file identity recheck; no scientific restoration",
+          "reference_selections": [],
+          "request_id": "actual-withdrawal-native-2"
+        },
+        "context": {
+          "blocked_jobs": [
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "fencing_token": 1,
+              "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+              "job_type": "PARSE_PDF",
+              "review_kind": "PDF_IDENTITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            },
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "fencing_token": 1,
+              "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+              "job_type": "QUICK_READ",
+              "review_kind": "PDF_IDENTITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            }
+          ],
+          "candidate": null,
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "collections": [
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "name": "Fixture collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+          "file": {
+            "created_at": "2026-10-06T04:34:39.018058+00:00",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "identity_status": "NEEDS_REVIEW",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+            "size_bytes": 1826,
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": null,
+          "kind": "PDF_IDENTITY",
+          "last_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+          "latest_annotations": {},
+          "paper": {
+            "canonical_key": "doi:10.1234/original",
+            "doi": "10.1234/original",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T04:34:38.981732+00:00"
+          },
+          "quarantined": false,
+          "source_impact": {
+            "evidence_ids": [
+              "evidence"
+            ],
+            "jobs": [
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.018058+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "fencing_token": 1,
+                "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_type": "PARSE_PDF",
+                "last_error_code": "SOURCE_REVIEW_REOPENED",
+                "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 80,
+                "queue_class": "PARSER",
+                "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+                "rule_version": "parser-v1",
+                "status": "NEEDS_HUMAN",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              },
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.029076+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.029076+00:00",
+                "fencing_token": 1,
+                "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                "job_type": "QUICK_READ",
+                "last_error_code": "SOURCE_REVIEW_REOPENED",
+                "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 70,
+                "queue_class": "MODEL_READ",
+                "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+                "rule_version": "quick-read-v1",
+                "status": "NEEDS_HUMAN",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              }
+            ],
+            "manuscripts": [
+              {
+                "blocker": null,
+                "created_at": "now",
+                "manuscript_id": "ms",
+                "needs_scientific_review": 1,
+                "next_step": null,
+                "research_type": "conceptual_framework",
+                "revision": 2,
+                "scope": null,
+                "title": "Software MS",
+                "track_id": "track",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00",
+                "workflow_stage": "PLANNING",
+                "writing_status": "DRAFTING"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "child",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "root",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              }
+            ],
+            "paper_version_ids": [
+              "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+            ],
+            "snapshots": []
+          },
+          "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+        },
+        "result": {
+          "parse_jobs": [
+            "job_045ee416f89c207f63a17371e7d46ddb"
+          ],
+          "resumed_jobs": [
+            "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_daa1702223be8e9d63800079a80e4f32"
+          ],
+          "status": "APPROVED_IDENTITY",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        }
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/workflow",
+      "status": 200,
+      "body": {
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08",
+        "kind": "PDF_IDENTITY",
+        "file": {
+          "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+          "size_bytes": 1826,
+          "identity_status": "VERIFIED",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          },
+          "created_at": "2026-10-06T04:34:39.018058+00:00"
+        },
+        "paper": {
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "title": "Software review identity title",
+          "doi": "10.1234/original",
+          "canonical_key": "doi:10.1234/original",
+          "updated_at": "2026-10-06T04:34:38.981732+00:00"
+        },
+        "integrity_verified": true,
+        "quarantined": false,
+        "latest_annotations": {},
+        "findings": [],
+        "blocked_jobs": [],
+        "collections": [
+          {
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "name": "Fixture collection",
+            "status": "ACTIVE",
+            "revision": 1
+          }
+        ],
+        "candidate": null,
+        "job": null,
+        "last_action_id": "review_action_bacc701fcc88032b776a266e9f033804",
+        "source_impact": {
+          "paper_version_ids": [
+            "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+          ],
+          "evidence_ids": [
+            "evidence"
+          ],
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "STALE",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "STALE",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            }
+          ],
+          "manuscripts": [
+            {
+              "manuscript_id": "ms",
+              "track_id": "track",
+              "title": "Software MS",
+              "scope": null,
+              "research_type": "conceptual_framework",
+              "writing_status": "DRAFTING",
+              "needs_scientific_review": 1,
+              "blocker": null,
+              "next_step": null,
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00",
+              "workflow_stage": "PLANNING"
+            }
+          ],
+          "snapshots": [],
+          "jobs": [
+            {
+              "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "job_type": "PARSE_PDF",
+              "queue_class": "PARSER",
+              "status": "READY",
+              "priority": 80,
+              "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+              "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+              "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+              "rule_version": "parser-v1",
+              "attempts": 0,
+              "available_at": "2026-10-06T04:34:44.398386+00:00",
+              "lease_owner": null,
+              "lease_expires_at": null,
+              "fencing_token": 1,
+              "last_error_code": null,
+              "last_error_detail": null,
+              "result_json": "{}",
+              "created_at": "2026-10-06T04:34:39.018058+00:00",
+              "updated_at": "2026-10-06T04:34:44.398386+00:00"
+            },
+            {
+              "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "job_type": "QUICK_READ",
+              "queue_class": "MODEL_READ",
+              "status": "READY",
+              "priority": 70,
+              "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+              "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+              "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+              "rule_version": "quick-read-v1",
+              "attempts": 0,
+              "available_at": "2026-10-06T04:34:44.398386+00:00",
+              "lease_owner": null,
+              "lease_expires_at": null,
+              "fencing_token": 1,
+              "last_error_code": null,
+              "last_error_detail": null,
+              "result_json": "{}",
+              "created_at": "2026-10-06T04:34:39.029076+00:00",
+              "updated_at": "2026-10-06T04:34:44.398386+00:00"
+            }
+          ]
+        },
+        "context_sha256": "fa93d1c966822922fd27a727cd3253375a6aeaba83bdfac45ad6c74b473315c1",
+        "history": [
+          {
+            "action_id": "review_action_bacc701fcc88032b776a266e9f033804",
+            "request_id": "actual-withdrawal-native-2",
+            "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "action_kind": "APPROVE_IDENTITY",
+            "reviewer_label": "Alandelone",
+            "reason": "Explicit software file identity recheck; no scientific restoration",
+            "supersedes_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+            "created_at": "2026-10-06T04:34:44.398386+00:00",
+            "request": {
+              "action": "APPROVE_IDENTITY",
+              "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "expected_context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+              "reason": "Explicit software file identity recheck; no scientific restoration",
+              "reference_selections": [],
+              "request_id": "actual-withdrawal-native-2"
+            },
+            "context": {
+              "blocked_jobs": [
+                {
+                  "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                  "fencing_token": 1,
+                  "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                  "job_type": "PARSE_PDF",
+                  "review_kind": "PDF_IDENTITY",
+                  "status": "NEEDS_HUMAN",
+                  "updated_at": "2026-10-06T04:34:44.333985+00:00"
+                },
+                {
+                  "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                  "fencing_token": 1,
+                  "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                  "job_type": "QUICK_READ",
+                  "review_kind": "PDF_IDENTITY",
+                  "status": "NEEDS_HUMAN",
+                  "updated_at": "2026-10-06T04:34:44.333985+00:00"
+                }
+              ],
+              "candidate": null,
+              "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "collections": [
+                {
+                  "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                  "name": "Fixture collection",
+                  "revision": 1,
+                  "status": "ACTIVE"
+                }
+              ],
+              "context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+              "file": {
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+                "identity_status": "NEEDS_REVIEW",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+                "size_bytes": 1826,
+                "validation": {
+                  "doi_match": true,
+                  "evidence_source": "pdf_text_and_raw_bytes",
+                  "identity_status": "VERIFIED",
+                  "technical_pdf_valid": true,
+                  "title_token_ratio": 1
+                }
+              },
+              "findings": [],
+              "integrity_verified": true,
+              "job": null,
+              "kind": "PDF_IDENTITY",
+              "last_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+              "latest_annotations": {},
+              "paper": {
+                "canonical_key": "doi:10.1234/original",
+                "doi": "10.1234/original",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "title": "Software review identity title",
+                "updated_at": "2026-10-06T04:34:38.981732+00:00"
+              },
+              "quarantined": false,
+              "source_impact": {
+                "evidence_ids": [
+                  "evidence"
+                ],
+                "jobs": [
+                  {
+                    "attempts": 0,
+                    "available_at": "2026-10-06T04:34:39.018058+00:00",
+                    "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                    "created_at": "2026-10-06T04:34:39.018058+00:00",
+                    "fencing_token": 1,
+                    "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                    "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                    "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                    "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                    "job_type": "PARSE_PDF",
+                    "last_error_code": "SOURCE_REVIEW_REOPENED",
+                    "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+                    "lease_expires_at": null,
+                    "lease_owner": null,
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "priority": 80,
+                    "queue_class": "PARSER",
+                    "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+                    "rule_version": "parser-v1",
+                    "status": "NEEDS_HUMAN",
+                    "updated_at": "2026-10-06T04:34:44.333985+00:00"
+                  },
+                  {
+                    "attempts": 0,
+                    "available_at": "2026-10-06T04:34:39.029076+00:00",
+                    "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                    "created_at": "2026-10-06T04:34:39.029076+00:00",
+                    "fencing_token": 1,
+                    "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                    "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                    "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                    "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                    "job_type": "QUICK_READ",
+                    "last_error_code": "SOURCE_REVIEW_REOPENED",
+                    "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+                    "lease_expires_at": null,
+                    "lease_owner": null,
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "priority": 70,
+                    "queue_class": "MODEL_READ",
+                    "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+                    "rule_version": "quick-read-v1",
+                    "status": "NEEDS_HUMAN",
+                    "updated_at": "2026-10-06T04:34:44.333985+00:00"
+                  }
+                ],
+                "manuscripts": [
+                  {
+                    "blocker": null,
+                    "created_at": "now",
+                    "manuscript_id": "ms",
+                    "needs_scientific_review": 1,
+                    "next_step": null,
+                    "research_type": "conceptual_framework",
+                    "revision": 2,
+                    "scope": null,
+                    "title": "Software MS",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T04:34:44.333985+00:00",
+                    "workflow_stage": "PLANNING",
+                    "writing_status": "DRAFTING"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "created_at": "now",
+                    "node_id": "child",
+                    "node_type": "method",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "child",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T04:34:44.333985+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "root",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "root",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T04:34:44.333985+00:00"
+                  }
+                ],
+                "paper_version_ids": [
+                  "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+                ],
+                "snapshots": []
+              },
+              "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+            },
+            "result": {
+              "parse_jobs": [
+                "job_045ee416f89c207f63a17371e7d46ddb"
+              ],
+              "resumed_jobs": [
+                "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_daa1702223be8e9d63800079a80e4f32"
+              ],
+              "status": "APPROVED_IDENTITY",
+              "validation": {
+                "doi_match": true,
+                "evidence_source": "pdf_text_and_raw_bytes",
+                "identity_status": "VERIFIED",
+                "technical_pdf_valid": true,
+                "title_token_ratio": 1
+              }
+            }
+          },
+          {
+            "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+            "request_id": "actual-withdrawal-native-1",
+            "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "action_kind": "REOPEN_IDENTITY",
+            "reviewer_label": "Alandelone",
+            "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+            "supersedes_action_id": null,
+            "created_at": "2026-10-06T04:34:44.333985+00:00",
+            "request": {
+              "action": "REOPEN_IDENTITY",
+              "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "expected_context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+              "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+              "reference_selections": [],
+              "request_id": "actual-withdrawal-native-1"
+            },
+            "context": {
+              "blocked_jobs": [],
+              "candidate": null,
+              "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "collections": [
+                {
+                  "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                  "name": "Fixture collection",
+                  "revision": 1,
+                  "status": "ACTIVE"
+                }
+              ],
+              "context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+              "file": {
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+                "identity_status": "VERIFIED",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+                "size_bytes": 1826,
+                "validation": {
+                  "doi_match": true,
+                  "evidence_source": "pdf_text_and_raw_bytes",
+                  "identity_status": "VERIFIED",
+                  "technical_pdf_valid": true,
+                  "title_token_ratio": 1
+                }
+              },
+              "findings": [],
+              "integrity_verified": true,
+              "job": null,
+              "kind": "PDF_IDENTITY",
+              "last_action_id": null,
+              "latest_annotations": {},
+              "paper": {
+                "canonical_key": "doi:10.1234/original",
+                "doi": "10.1234/original",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "title": "Software review identity title",
+                "updated_at": "2026-10-06T04:34:38.981732+00:00"
+              },
+              "quarantined": false,
+              "source_impact": {
+                "evidence_ids": [
+                  "evidence"
+                ],
+                "jobs": [
+                  {
+                    "attempts": 0,
+                    "available_at": "2026-10-06T04:34:39.018058+00:00",
+                    "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                    "created_at": "2026-10-06T04:34:39.018058+00:00",
+                    "fencing_token": 0,
+                    "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                    "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                    "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                    "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                    "job_type": "PARSE_PDF",
+                    "last_error_code": null,
+                    "last_error_detail": null,
+                    "lease_expires_at": null,
+                    "lease_owner": null,
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "priority": 80,
+                    "queue_class": "PARSER",
+                    "result_json": null,
+                    "rule_version": "parser-v1",
+                    "status": "READY",
+                    "updated_at": "2026-10-06T04:34:39.018058+00:00"
+                  },
+                  {
+                    "attempts": 0,
+                    "available_at": "2026-10-06T04:34:39.029076+00:00",
+                    "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                    "created_at": "2026-10-06T04:34:39.029076+00:00",
+                    "fencing_token": 0,
+                    "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                    "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                    "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                    "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                    "job_type": "QUICK_READ",
+                    "last_error_code": null,
+                    "last_error_detail": null,
+                    "lease_expires_at": null,
+                    "lease_owner": null,
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "priority": 70,
+                    "queue_class": "MODEL_READ",
+                    "result_json": null,
+                    "rule_version": "quick-read-v1",
+                    "status": "READY",
+                    "updated_at": "2026-10-06T04:34:39.029076+00:00"
+                  }
+                ],
+                "manuscripts": [
+                  {
+                    "blocker": null,
+                    "created_at": "now",
+                    "manuscript_id": "ms",
+                    "needs_scientific_review": 0,
+                    "next_step": null,
+                    "research_type": "conceptual_framework",
+                    "revision": 1,
+                    "scope": null,
+                    "title": "Software MS",
+                    "track_id": "track",
+                    "updated_at": "now",
+                    "workflow_stage": "PLANNING",
+                    "writing_status": "DRAFTING"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "created_at": "now",
+                    "node_id": "child",
+                    "node_type": "method",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "child",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "root",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "root",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  }
+                ],
+                "paper_version_ids": [
+                  "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+                ],
+                "snapshots": []
+              },
+              "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+            },
+            "result": {
+              "affected_manuscripts": [
+                "ms"
+              ],
+              "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "invalidated_nodes": [
+                "child",
+                "root"
+              ],
+              "retained_evidence": [
+                "evidence"
+              ],
+              "retained_paper_versions": [
+                "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+              ],
+              "retained_snapshots": [],
+              "scientific_approval_restored": false,
+              "status": "IDENTITY_REOPENED",
+              "stopped_jobs": [
+                "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_daa1702223be8e9d63800079a80e4f32"
+              ]
+            }
+          }
+        ],
+        "allowed_actions": [
+          "REOPEN_IDENTITY"
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/tracks/track/workspace",
+      "status": 200,
+      "body": {
+        "track": {
+          "track_id": "track",
+          "field_id": "field_00f5d7ee29ff4b6482a3f6758a6069f0",
+          "primary_topic_id": "topic",
+          "title": "Software Track",
+          "scope": null,
+          "research_type": "conceptual_framework",
+          "status": "ACTIVE",
+          "mapping_status": "MAPPED",
+          "revision": 1,
+          "created_at": "now",
+          "updated_at": "now",
+          "metadata_digest": "0b1adc5dee7deefbc33fe01968fb3ae550e2f0322d1cd72c75ba09c5055ecbd3"
+        },
+        "adoptions": [],
+        "nodes": [
+          {
+            "node_id": "child",
+            "track_id": "track",
+            "node_type": "method",
+            "status": "STALE",
+            "statement": "child",
+            "rationale": "Software fixture",
+            "payload": {},
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          },
+          {
+            "node_id": "root",
+            "track_id": "track",
+            "node_type": "claim",
+            "status": "STALE",
+            "statement": "root",
+            "rationale": "Software fixture",
+            "payload": {},
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00"
+          },
+          {
+            "node_id": "untouched",
+            "track_id": "track",
+            "node_type": "claim",
+            "status": "APPROVED",
+            "statement": "untouched",
+            "rationale": "Software fixture",
+            "payload": {},
+            "revision": 1,
+            "created_at": "now",
+            "updated_at": "now"
+          }
+        ],
+        "milestones": [],
+        "context_sha256": "36f9162f99cfe8db06873fe2d269437ba52b701ae4683007e49bee63da2b18e1",
+        "field": {
+          "field_id": "field_00f5d7ee29ff4b6482a3f6758a6069f0",
+          "normalized_name": "software review fixture",
+          "name": "Software review fixture",
+          "description": null,
+          "created_at": "2026-10-06T04:34:38.948868+00:00",
+          "updated_at": "2026-10-06T04:34:38.948868+00:00"
+        },
+        "topics": [],
+        "edges": [
+          {
+            "edge_id": "edge",
+            "track_id": "track",
+            "source_node_id": "root",
+            "target_node_id": "child",
+            "relation": "MOTIVATES",
+            "created_at": "now"
+          }
+        ],
+        "decisions": [],
+        "projects": [],
+        "plans": [],
+        "runs": [],
+        "evidence": [
+          {
+            "evidence_id": "evidence",
+            "scope_kind": "FIELDKG",
+            "field_id": "field_00f5d7ee29ff4b6482a3f6758a6069f0",
+            "track_id": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+            "experiment_run_id": null,
+            "statement": "Software fixture evidence",
+            "excerpt": "Exact fixture source",
+            "location": {},
+            "relation": "SUPPORTS",
+            "confidence": 1,
+            "extractor_model": "fixture",
+            "prompt_version": "fixture",
+            "content_digest": "evidence-sha",
+            "created_at": "now"
+          }
+        ],
+        "node_evidence": [
+          {
+            "node_id": "root",
+            "evidence_id": "evidence"
+          }
+        ],
+        "adopted_snapshots": [],
+        "available_snapshots": [],
+        "manuscripts": [
+          {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 1,
+            "blocker": null,
+            "next_step": null,
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T04:34:44.333985+00:00",
+            "workflow_stage": "PLANNING"
+          }
+        ],
+        "manuscript_projects": [],
+        "submission_events": [],
+        "source_reviews": [
+          {
+            "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+            "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+            "created_at": "2026-10-06T04:34:44.333985+00:00",
+            "current_file_status": "VERIFIED",
+            "impact": {
+              "affected_manuscripts": [
+                "ms"
+              ],
+              "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+              "invalidated_nodes": [
+                "child",
+                "root"
+              ],
+              "retained_evidence": [
+                "evidence"
+              ],
+              "retained_paper_versions": [
+                "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+              ],
+              "retained_snapshots": [],
+              "scientific_approval_restored": false,
+              "status": "IDENTITY_REOPENED",
+              "stopped_jobs": [
+                "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_daa1702223be8e9d63800079a80e4f32"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+        "request_id": "actual-withdrawal-native-1",
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "action_kind": "REOPEN_IDENTITY",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+        "supersedes_action_id": null,
+        "created_at": "2026-10-06T04:34:44.333985+00:00",
+        "request": {
+          "action": "REOPEN_IDENTITY",
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "expected_context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+          "reason": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+          "reference_selections": [],
+          "request_id": "actual-withdrawal-native-1"
+        },
+        "context": {
+          "blocked_jobs": [],
+          "candidate": null,
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "collections": [
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "name": "Fixture collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "e8e33b38ab61054e9de2c6a4ea27a6485e8e820a84baed5e2494832c29158594",
+          "file": {
+            "created_at": "2026-10-06T04:34:39.018058+00:00",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "identity_status": "VERIFIED",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+            "size_bytes": 1826,
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": null,
+          "kind": "PDF_IDENTITY",
+          "last_action_id": null,
+          "latest_annotations": {},
+          "paper": {
+            "canonical_key": "doi:10.1234/original",
+            "doi": "10.1234/original",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T04:34:38.981732+00:00"
+          },
+          "quarantined": false,
+          "source_impact": {
+            "evidence_ids": [
+              "evidence"
+            ],
+            "jobs": [
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.018058+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "fencing_token": 0,
+                "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_type": "PARSE_PDF",
+                "last_error_code": null,
+                "last_error_detail": null,
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 80,
+                "queue_class": "PARSER",
+                "result_json": null,
+                "rule_version": "parser-v1",
+                "status": "READY",
+                "updated_at": "2026-10-06T04:34:39.018058+00:00"
+              },
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.029076+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.029076+00:00",
+                "fencing_token": 0,
+                "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                "job_type": "QUICK_READ",
+                "last_error_code": null,
+                "last_error_detail": null,
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 70,
+                "queue_class": "MODEL_READ",
+                "result_json": null,
+                "rule_version": "quick-read-v1",
+                "status": "READY",
+                "updated_at": "2026-10-06T04:34:39.029076+00:00"
+              }
+            ],
+            "manuscripts": [
+              {
+                "blocker": null,
+                "created_at": "now",
+                "manuscript_id": "ms",
+                "needs_scientific_review": 0,
+                "next_step": null,
+                "research_type": "conceptual_framework",
+                "revision": 1,
+                "scope": null,
+                "title": "Software MS",
+                "track_id": "track",
+                "updated_at": "now",
+                "workflow_stage": "PLANNING",
+                "writing_status": "DRAFTING"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "child",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "root",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              }
+            ],
+            "paper_version_ids": [
+              "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+            ],
+            "snapshots": []
+          },
+          "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+        },
+        "result": {
+          "affected_manuscripts": [
+            "ms"
+          ],
+          "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "invalidated_nodes": [
+            "child",
+            "root"
+          ],
+          "retained_evidence": [
+            "evidence"
+          ],
+          "retained_paper_versions": [
+            "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+          ],
+          "retained_snapshots": [],
+          "scientific_approval_restored": false,
+          "status": "IDENTITY_REOPENED",
+          "stopped_jobs": [
+            "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_daa1702223be8e9d63800079a80e4f32"
+          ]
+        }
+      }
+    },
+    {
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/actions",
+      "status": 201,
+      "body": {
+        "action_id": "review_action_bacc701fcc88032b776a266e9f033804",
+        "request_id": "actual-withdrawal-native-2",
+        "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "action_kind": "APPROVE_IDENTITY",
+        "reviewer_label": "Alandelone",
+        "reason": "Explicit software file identity recheck; no scientific restoration",
+        "supersedes_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+        "created_at": "2026-10-06T04:34:44.398386+00:00",
+        "request": {
+          "action": "APPROVE_IDENTITY",
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "expected_context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+          "reason": "Explicit software file identity recheck; no scientific restoration",
+          "reference_selections": [],
+          "request_id": "actual-withdrawal-native-2"
+        },
+        "context": {
+          "blocked_jobs": [
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "fencing_token": 1,
+              "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+              "job_type": "PARSE_PDF",
+              "review_kind": "PDF_IDENTITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            },
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "fencing_token": 1,
+              "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+              "job_type": "QUICK_READ",
+              "review_kind": "PDF_IDENTITY",
+              "status": "NEEDS_HUMAN",
+              "updated_at": "2026-10-06T04:34:44.333985+00:00"
+            }
+          ],
+          "candidate": null,
+          "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+          "collections": [
+            {
+              "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+              "name": "Fixture collection",
+              "revision": 1,
+              "status": "ACTIVE"
+            }
+          ],
+          "context_sha256": "7bb4da568d01911437a054aa6cf947bfd6bb500747b74c7d7d113acafc4aa440",
+          "file": {
+            "created_at": "2026-10-06T04:34:39.018058+00:00",
+            "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+            "identity_status": "NEEDS_REVIEW",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+            "size_bytes": 1826,
+            "validation": {
+              "doi_match": true,
+              "evidence_source": "pdf_text_and_raw_bytes",
+              "identity_status": "VERIFIED",
+              "technical_pdf_valid": true,
+              "title_token_ratio": 1
+            }
+          },
+          "findings": [],
+          "integrity_verified": true,
+          "job": null,
+          "kind": "PDF_IDENTITY",
+          "last_action_id": "review_action_ea9b8b758a9055eb339d9f5d04d6b7fe",
+          "latest_annotations": {},
+          "paper": {
+            "canonical_key": "doi:10.1234/original",
+            "doi": "10.1234/original",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "title": "Software review identity title",
+            "updated_at": "2026-10-06T04:34:38.981732+00:00"
+          },
+          "quarantined": false,
+          "source_impact": {
+            "evidence_ids": [
+              "evidence"
+            ],
+            "jobs": [
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.018058+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.018058+00:00",
+                "fencing_token": 1,
+                "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+                "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+                "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+                "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+                "job_type": "PARSE_PDF",
+                "last_error_code": "SOURCE_REVIEW_REOPENED",
+                "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 80,
+                "queue_class": "PARSER",
+                "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+                "rule_version": "parser-v1",
+                "status": "NEEDS_HUMAN",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              },
+              {
+                "attempts": 0,
+                "available_at": "2026-10-06T04:34:39.029076+00:00",
+                "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+                "created_at": "2026-10-06T04:34:39.029076+00:00",
+                "fencing_token": 1,
+                "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+                "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+                "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+                "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+                "job_type": "QUICK_READ",
+                "last_error_code": "SOURCE_REVIEW_REOPENED",
+                "last_error_detail": "Explicit software fixture: withdraw file identity, retain frozen artifacts",
+                "lease_expires_at": null,
+                "lease_owner": null,
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "priority": 70,
+                "queue_class": "MODEL_READ",
+                "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_ea9b8b758a9055eb339d9f5d04d6b7fe\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+                "rule_version": "quick-read-v1",
+                "status": "NEEDS_HUMAN",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              }
+            ],
+            "manuscripts": [
+              {
+                "blocker": null,
+                "created_at": "now",
+                "manuscript_id": "ms",
+                "needs_scientific_review": 1,
+                "next_step": null,
+                "research_type": "conceptual_framework",
+                "revision": 2,
+                "scope": null,
+                "title": "Software MS",
+                "track_id": "track",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00",
+                "workflow_stage": "PLANNING",
+                "writing_status": "DRAFTING"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "child",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "root",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T04:34:44.333985+00:00"
+              }
+            ],
+            "paper_version_ids": [
+              "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+            ],
+            "snapshots": []
+          },
+          "workspace_id": "a080e081b3faac3a4e79a576f8addcf0ff6aab0ba84b1d6ba52d4ba998e7cc08"
+        },
+        "result": {
+          "parse_jobs": [
+            "job_045ee416f89c207f63a17371e7d46ddb"
+          ],
+          "resumed_jobs": [
+            "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_daa1702223be8e9d63800079a80e4f32"
+          ],
+          "status": "APPROVED_IDENTITY",
+          "validation": {
+            "doi_match": true,
+            "evidence_source": "pdf_text_and_raw_bytes",
+            "identity_status": "VERIFIED",
+            "technical_pdf_valid": true,
+            "title_token_ratio": 1
+          }
+        }
+      }
+    }
+  ],
+  "browser_verified": false,
+  "scientific_state_fixture": true,
+  "scientific_approval": false
+}

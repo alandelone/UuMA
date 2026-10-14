@@ -1,0 +1,31 @@
+{
+  "status": "PASS_G09_BASELINE",
+  "author_a_revision": 40,
+  "author_b_revision": 2,
+  "model_calls": 16,
+  "comments": 205,
+  "rounds": [
+    {
+      "review_round_id": "review_round_16b039af771747eb899cc0939c271cd4",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "round_number": 1,
+      "baseline_artifact_id": "artifact_5ad74027523a436d84b228bbbf6f0ae2",
+      "venue": "G06 software acceptance — no external reviewer",
+      "status": "ACTIVE",
+      "created_at": "2026-10-12T07:25:07.678868+00:00"
+    }
+  ],
+  "baselines": [
+    {
+      "review_round_id": "review_round_16b039af771747eb899cc0939c271cd4",
+      "baseline_manuscript_version_id": "manuscript_version_2feb293fad7e4e6591d4217cd322d9d9",
+      "content_sha256": "49407fbbe18b6a7730a0b1486b6961744fdc9feda5f3f4e99a332e6ab7d96ab8",
+      "created_at": "2026-10-12T07:25:07.678868+00:00"
+    }
+  ],
+  "all_original_rows_protected": true,
+  "database_bytes_preserved_by_audit": true,
+  "database_sha256": "5917553d45c29c45a5105f06d1cc6b96e8856882e9c5e24384141b448429c332",
+  "original20_artifacts_exact": true,
+  "overall11_complete": false
+}

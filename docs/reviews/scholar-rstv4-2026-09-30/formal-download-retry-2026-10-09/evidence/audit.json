@@ -1,0 +1,125 @@
+{
+  "status": "PASS_BROWSER_DOWNLOAD_FILES_EXACT",
+  "user_resumed_download_testing": true,
+  "generated_pdf": {
+    "path": "C:\\Users\\Alandelone\\Downloads\\manuscript.pdf",
+    "bytes": 13498,
+    "sha256": "fa294a1fe284baeb7fc3c52a434d4476204e95b9b80067bfcb0f7549fea2f1cb"
+  },
+  "downloaded_zip": {
+    "path": "C:\\Users\\Alandelone\\Downloads\\submission_package_462feff00b234357a635a3e63254aff4 (1).zip",
+    "bytes": 20724,
+    "sha256": "c8690ba64bb08dbe3935cc2751ae52e15a983842d718c137938609a1bd5a94c4"
+  },
+  "package_pdf": {
+    "path": "C:\\Users\\Alandelone\\Downloads\\clean-manuscript.pdf",
+    "bytes": 8144,
+    "sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754"
+  },
+  "zip_entries": [
+    {
+      "name": "author-structure.json",
+      "bytes": 875,
+      "sha256": "89f36494af08ae46283ae171b687f38ee6eb8abbe1fe42b723be1f4a825fd016",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "change-location-map.csv",
+      "bytes": 1270,
+      "sha256": "a7ba25d25aa1c2859d768d57331eb367af99747e83ea8bc9a965d81988887afe",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "change-realization-map.json",
+      "bytes": 13345,
+      "sha256": "cf802d259688a5ad3cc316137d07cfc69527b2610853b36468d47606e80f73c3",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "clean-manuscript.md",
+      "bytes": 199,
+      "sha256": "134286899f172c33289bfecf2a45d88996d01f66dcbeafee19ed4efca0d26887",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "clean-manuscript.pdf",
+      "bytes": 8144,
+      "sha256": "8a2b53a55ddab052ec0625475cefbb1c21b1f0229cf70057956bbaecd6e0d754",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "clean-manuscript.tex",
+      "bytes": 458,
+      "sha256": "97328b054be8dae896c82983d52cca25128a56f07dee56a8cbaa6e4d24b401a8",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "comment-change-map.csv",
+      "bytes": 393,
+      "sha256": "16facb9b12204dd3de53ae779c8618e03a507f53c4d6e4c56107d21f3a6f3636",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "final-compiled-layout.xhtml",
+      "bytes": 4846,
+      "sha256": "a48ffc619e3ab64b4b485f2ac84f06405056782da82429e5db29be6e560633f1",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "generated.json",
+      "bytes": 1326,
+      "sha256": "e38186f7223242eaf092e2d35e04ea912c15706aefb01496a2635baba50455be",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "generation-model-calls.json",
+      "bytes": 2641,
+      "sha256": "5c1f65bceee1e8f7971320c78ad59eaa9f3b0197fe314e100444da72f960b0ee",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "manifest.json",
+      "bytes": 3024,
+      "sha256": "e078a9c74cf8425560094638876755dd7c3addc56a0553c8d2117bc7a0343e68",
+      "original_packaging_digest_verified": false
+    },
+    {
+      "name": "marked-comparison.md",
+      "bytes": 407,
+      "sha256": "84bcec77b53fbbc186c957a19d65911448cf2a5221e137170b0fdc9bdb306f89",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "references.bib",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "response-review-history.json",
+      "bytes": 19325,
+      "sha256": "6013449842965cb182f80e9d3bd15206ab130de739b50935c488ae8aaacef47e",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "response-to-reviewers.md",
+      "bytes": 268,
+      "sha256": "bf3e3fc19e57fa2d0a70ae7203045f86d7edb5e093d428191540486f07d24c7e",
+      "original_packaging_digest_verified": true
+    },
+    {
+      "name": "unresolved-comments.json",
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+      "original_packaging_digest_verified": true
+    }
+  ],
+  "zip_crc_all_passed": true,
+  "fixed_packaged_versions_exact": true,
+  "old_zero_byte_failed_file_preserved": true,
+  "idm_popup_press_required_this_retry": false,
+  "browser_download_event_observation_timed_out_but_actual_file_and_native_ui_prove_pdf": true,
+  "files_were_saved_by_real_browser_clicks_not_shell_download": true,
+  "scientific_acceptance": false,
+  "all118_all11_overall_complete": false
+}

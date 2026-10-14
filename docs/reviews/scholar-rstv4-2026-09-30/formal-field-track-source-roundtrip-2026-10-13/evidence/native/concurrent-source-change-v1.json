@@ -1,0 +1,10 @@
+{
+  "src\\rstv4\\model_gateway.py": {
+    "expected": "3aa4a60092f33765129e1773ff2c5340daad2adeffd39b85c18c4a436cb6941b",
+    "actual": "c8ebb9bc46e8e34a7dd54faa19497e14e135cf7ba8f1f38c880ff7d2f99a8d85"
+  },
+  "src\\rstv4\\skeleton_dspy.py": {
+    "expected": "4be95fe4b00f9fda792adfdb61d28827fba4f3c7dc5490e7b47fb537209c83c6",
+    "actual": "c69e8d6d674e07a4636ce2a97039c71a12615f0a65489f019e13591b9f9422c7"
+  }
+}

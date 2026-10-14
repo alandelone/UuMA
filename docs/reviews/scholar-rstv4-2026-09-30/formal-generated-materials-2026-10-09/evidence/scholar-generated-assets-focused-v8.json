@@ -1,0 +1,22 @@
+{
+  "status": "FAIL",
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src/rstv4/studio.py",
+        "src/rstv4/studio_materials.py",
+        "src/rstv4/studio_api.py",
+        "src/rstv4/studio_context.py",
+        "src/rstv4/studio_read_views.py",
+        "tests/test_studio_generated_assets.py"
+      ],
+      "exit_code": 1
+    }
+  ],
+  "fixture_base": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\sc-material-focused-6s8igicg",
+  "material_receipts": []
+}

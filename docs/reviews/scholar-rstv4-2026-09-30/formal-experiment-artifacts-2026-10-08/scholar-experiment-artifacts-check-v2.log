@@ -1,0 +1,31 @@
+COMMAND ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/experiment.py', 'src/rstv4/track_first.py', 'src/rstv4/catalog_web.py', 'tests/test_experiment_artifact_trace.py']
+All checks passed!
+
+EXIT 0
+COMMAND ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'pytest', '-q', 'tests/test_experiment_artifact_trace.py', 'tests/test_track_first_fieldkg.py']
+..............                                                           [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+14 passed, 2 warnings in 7.35s
+
+EXIT 0
+COMMAND ['node', '--check', 'src/rstv4/catalog_research_workspaces.js']
+C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\catalog_research_workspaces.js:217
+    function runHtml(run) { return `<details><summary>${esc(run.operation)} · ${esc(run.status)} · ${dates(run.updated_at)}</summary><p>执行目录：${esc(run.detail.cwd||'旧记录未保存')}</p><details><summary>输入与环境记录</summary><pre>${esc(JSON.stringify({inputs:run.detail.inputs||[],environment:run.detail.environment||null,changed_inputs:run.detail.changed_inputs||[]},null,2))}</pre></details><details><summary>完整执行输出</summary><pre>${esc(run.detail.stdout??run.detail.stdout_preview??'旧记录未保存')}</pre><pre>${esc(run.detail.stderr??run.detail.stderr_preview??'')}</pre></details>${(run.detail.artifacts||[]).map((artifact,index)=>`<p><a href="/api/catalog/tracks/${encodeURIComponent(data.track.track_id)}/runs/${encodeURIComponent(run.run_id)}/artifacts/${index}">下载原产物 ${esc(artifact.relative_path)}</a> · ${esc(artifact.sha256)} · ${artifact.size} bytes</p>`; }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  ^^^^^^^^^^^^
+
+SyntaxError: missing ) after argument list
+    at wrapSafe (node:internal/modules/cjs/loader:1804:18)
+    at checkSyntax (node:internal/main/check_syntax:76:3)
+
+Node.js v24.19.0
+
+EXIT 1

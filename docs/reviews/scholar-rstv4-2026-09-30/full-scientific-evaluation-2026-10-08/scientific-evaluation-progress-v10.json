@@ -1,0 +1,95 @@
+{
+  "updated_at_utc": "2026-10-09T15:23:55.339733+00:00",
+  "scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "actual_atomic_report_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\atomic-report-v8.json",
+  "actual_atomic_report_sha256": "71c275f0e4d3361c060ab76cd358f0df655de1c1e63c24fb7f0e86a44f68b563",
+  "actual_whole_target_report_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\scientific-target-assurance-report-v5.json",
+  "actual_whole_target_report_sha256": "29a4ed752117aeb42070e32ac1d78f0091f09c1f9201a5816d4736efd45820a2",
+  "protocol_audited_case_counts": {
+    "AUDITED_AI_SCIENTIFIC_COMPARISON": 148,
+    "SOURCE_REFERENCE_UNACCEPTED": 79,
+    "AUDITED_UNRESOLVED_SCIENCE": 11,
+    "ORIGINAL_EXTRACTION_CONTRACT_FAILURE": 8,
+    "EVALUATION_CONTRACT_FAILURE": 6
+  },
+  "protocol_qualified_source_windows": 86,
+  "protocol_pass_does_not_establish_primary_scientific_support": true,
+  "primary_location_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\native-primary-location-and-complete-load-table-review-v4.json",
+  "primary_location_review_sha256": "4b06697aa3ca41fdeec596b803560ac114ff8eeadd22899864949d6322a3e8b4",
+  "source_native_claims_review_indexed": 1845,
+  "short_excerpt_review_priorities": 124,
+  "direct_primary_location_failures": 9,
+  "visual_progress_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\visual-evidence-progress-v2.json",
+  "visual_progress_sha256": "1837aec519cfcad448220a423192e7ad977b264ccf679d71d380f90d3b7c392b",
+  "original_visual_matrix_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-original-visual-review-matrix-v2.json",
+  "original_visual_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "complete_battery_table_pixel_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-battery-table-pixel-review-v3.json",
+  "complete_battery_table_pixel_review_sha256": "92ace9b1655ec25f17a65c4e3fc67cea09d2b13fa46052f7db18a5dda04f4293",
+  "all_original_pixel_attempts": 150,
+  "complete_tables_directly_reviewed_this_continuation": 8,
+  "table_value_cells_directly_checked_this_continuation": 214,
+  "original_source_status": {
+    "visited": 4,
+    "declared": 4,
+    "complete_pending_audit": 3,
+    "unaccepted": 1,
+    "original_scope_windows": 126,
+    "new_atomic_source_model_calls": 0,
+    "full_goal_complete": false
+  },
+  "incremental_strict_endpoint_sources": 3,
+  "original_grade_status": {
+    "completed_cases": 8,
+    "declared_cases": 8,
+    "protocol_complete_pending_audit": 8,
+    "evaluation_contract_failures": 0
+  },
+  "finite_dependent_coordinator_status": {
+    "phase": "report-scientific-target-assurance-v5.py",
+    "full_goal_complete": false
+  },
+  "all_original_scientific_verdicts_and_failures_retained": true,
+  "expert_gold": false,
+  "selected_primary_fidelity_plan_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all126-selected-primary-fidelity-v1-plan.json",
+  "selected_primary_fidelity_declared_claims": 1967,
+  "selected_primary_fidelity_partitions": 284,
+  "actual_selected_primary_fidelity_status": {
+    "completed_partitions": 73,
+    "declared_partitions": 284,
+    "completed_claim_attempts": 514,
+    "declared_claims": 1967,
+    "partition_status_counts": {
+      "SELECTED_PRIMARY_FIDELITY_PENDING_INDEPENDENT_AUDIT": 73
+    },
+    "full_goal_complete": false
+  },
+  "actual_selected_primary_fidelity_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scientific-evaluation-progress-v10-primary-audit-snapshots\\88cd6dbdd28e72f58b38bffc2448e8995ac959e3a94b3b5f60e769f4c11f317b.json",
+  "actual_selected_primary_fidelity_live_audit_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all126-selected-primary-fidelity-v1\\incremental-audit-status-v1.json",
+  "actual_selected_primary_fidelity_audit_sha256": "88cd6dbdd28e72f58b38bffc2448e8995ac959e3a94b3b5f60e769f4c11f317b",
+  "actual_selected_primary_fidelity_audited_claims": 514,
+  "actual_selected_primary_fidelity_support_status_counts": {
+    "FULL_ASSERTION_ESTABLISHED": 114,
+    "NOT_ESTABLISHED": 325,
+    "PARTIALLY_ESTABLISHED": 75
+  },
+  "full_scientific_evaluation_complete": false,
+  "optimization_gain_proven": false,
+  "model_calls": 0,
+  "table_value_entries_directly_checked_this_continuation": 223,
+  "table_textual_value_entries_directly_checked": 2,
+  "table_conditional_markers_directly_checked": 6,
+  "table_unresolved_original_numeric_literals": 1,
+  "actual_direct_model_full_support_semantic_counterexamples": 2,
+  "selected_primary_semantic_interpretation_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\primary-fidelity-scientific-interpretation-v10.json",
+  "selected_primary_semantic_interpretation_sha256": "ab21c43ba18b88ca693a9363c1d2c6e02f763da3077dab630118c257cf685613",
+  "complete_refrigerator_table_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-refrigerator-table-pixel-review-v5.json",
+  "complete_refrigerator_table_review_sha256": "bd9de2d12aa02c98c5cfe99f142bac75bafe53a554dc9cd5ef5ae69c5ee1e014",
+  "complete_future_scenario_table_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-future-scenario-table-pixel-review-v6.json",
+  "complete_future_scenario_table_review_sha256": "0026bd085ae5879bacced46ef9c319048130a09793f71d1682718bb5dcef852f"
+}

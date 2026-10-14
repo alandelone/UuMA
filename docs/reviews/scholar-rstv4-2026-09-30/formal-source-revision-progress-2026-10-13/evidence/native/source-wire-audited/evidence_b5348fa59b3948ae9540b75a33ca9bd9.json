@@ -1,0 +1,320 @@
+{
+  "evidence_id": "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+  "statement": "Original software source body 1.",
+  "excerpt": "Original software source body 1.",
+  "relation": "SUPPORTS",
+  "confidence": 0.8,
+  "paper_id": "existing",
+  "paper_version_id": null,
+  "title": "Refreshed live catalog title - software",
+  "published_year": 2026,
+  "doi": null,
+  "landing_url": null,
+  "pdf_url": null,
+  "location": {
+    "page": 1,
+    "section": "Software source section 1",
+    "sequence": 0,
+    "skeleton_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+    "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+    "unit_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+    "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+  },
+  "authors": [
+    "Fixture Author"
+  ],
+  "source_context": {
+    "paper_id": "existing",
+    "paper_version_id": "paper_version_3183ca0311a8c0db58d34c4b6bae3f36",
+    "paper_version": 1,
+    "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+    "version": 1,
+    "content_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+    "pdf_digest": "c74a420d8072b452157bc9891e02f23ff0f98b9f8f09e6aac7d67c0c2c4107bb",
+    "parsed_digest": "c89c3ab2ed0f7bdd73e9c4900e5ddf7f537b9980efa24a91f70357544abb612d",
+    "file_version_id": "existing-file",
+    "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+    "units": [
+      {
+        "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2",
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "seq_idx": 0,
+        "page_idx": 1,
+        "section": "Software source section 1",
+        "raw_text": "Original software source body 1.",
+        "layer1": {
+          "triplets": []
+        },
+        "layer2": {},
+        "layer3": {
+          "intent": "Software_Test"
+        },
+        "layer4": "Software_Test",
+        "content_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154"
+      },
+      {
+        "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87",
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "seq_idx": 1,
+        "page_idx": 2,
+        "section": "Software source section 2",
+        "raw_text": "Original software source body 2.",
+        "layer1": {
+          "triplets": []
+        },
+        "layer2": {},
+        "layer3": {
+          "intent": "Software_Test"
+        },
+        "layer4": "Software_Test",
+        "content_digest": "e0bac981d5b60cfabde835eb17e8a43ed5122a04e25d5b3930e11169b2650df5"
+      },
+      {
+        "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a",
+        "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+        "seq_idx": 2,
+        "page_idx": 3,
+        "section": "Software source section 3",
+        "raw_text": "Original software source body 3.",
+        "layer1": {
+          "triplets": []
+        },
+        "layer2": {},
+        "layer3": {
+          "intent": "Software_Test"
+        },
+        "layer4": "Software_Test",
+        "content_digest": "1152bfaccf9640e19582e0ac5fb1fa231b30dab1c942cf8328dc4f8379105333"
+      }
+    ],
+    "available": true,
+    "schema_version": 1,
+    "unit": {
+      "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2",
+      "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+      "seq_idx": 0,
+      "page_idx": 1,
+      "section": "Software source section 1",
+      "raw_text": "Original software source body 1.",
+      "layer1": {
+        "triplets": []
+      },
+      "layer2": {},
+      "layer3": {
+        "intent": "Software_Test"
+      },
+      "layer4": "Software_Test",
+      "content_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154"
+    },
+    "file_version": {
+      "file_version_id": "existing-file",
+      "paper_id": "existing",
+      "sha256": "c74a420d8072b452157bc9891e02f23ff0f98b9f8f09e6aac7d67c0c2c4107bb",
+      "size_bytes": 1586,
+      "mime_type": "application/pdf"
+    },
+    "parsed_blocks": [
+      {
+        "block_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "sequence": 0,
+        "page_number": 1,
+        "section": "Software source section 1",
+        "block_type": "HEADING",
+        "text": "Software source section 1",
+        "location": {
+          "heading_level": 1,
+          "bbox": [
+            72,
+            90,
+            420,
+            110
+          ]
+        },
+        "content_digest": "52227d912f694114c6809c243ce385aafc5f1259f7ee74e79e0aa6714c6d1fc6"
+      },
+      {
+        "block_id": "block_6d9ebf9766974ccea19582b64e424666",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "sequence": 1,
+        "page_number": 1,
+        "section": "Software source section 1",
+        "block_type": "TEXT",
+        "text": "Original software source body 1.",
+        "location": {
+          "bbox": [
+            72,
+            120,
+            420,
+            140
+          ]
+        },
+        "content_digest": "20a4b5e659f09feed966e96fb9d2873702bf54891ad42731d21236b4867ea52d"
+      },
+      {
+        "block_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "sequence": 2,
+        "page_number": 2,
+        "section": "Software source section 2",
+        "block_type": "HEADING",
+        "text": "Software source section 2",
+        "location": {
+          "heading_level": 1,
+          "bbox": [
+            72,
+            90,
+            420,
+            110
+          ]
+        },
+        "content_digest": "b64a2f1fab2c50981bab8a9ae922f5080af33ffece7a8c9cf5bae2df6e10e9e8"
+      },
+      {
+        "block_id": "block_05581081eefc44e6c94cf94974dbc25d",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "sequence": 3,
+        "page_number": 2,
+        "section": "Software source section 2",
+        "block_type": "TEXT",
+        "text": "Original software source body 2.",
+        "location": {
+          "bbox": [
+            72,
+            120,
+            420,
+            140
+          ]
+        },
+        "content_digest": "65de7187c79171e9918973670febfcea37d352cdade6a5f4ba2ba06f062258d7"
+      },
+      {
+        "block_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "sequence": 4,
+        "page_number": 3,
+        "section": "Software source section 3",
+        "block_type": "HEADING",
+        "text": "Software source section 3",
+        "location": {
+          "heading_level": 1,
+          "bbox": [
+            72,
+            90,
+            420,
+            110
+          ]
+        },
+        "content_digest": "c26c4495847c4c8d04ae76be217c4f554d7e27f3b05d6fb2910d3b6c797203a1"
+      },
+      {
+        "block_id": "block_8cb84be18a9fc40ade8cc1a8ff546041",
+        "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+        "sequence": 5,
+        "page_number": 3,
+        "section": "Software source section 3",
+        "block_type": "TEXT",
+        "text": "Original software source body 3.",
+        "location": {
+          "bbox": [
+            72,
+            120,
+            420,
+            140
+          ]
+        },
+        "content_digest": "3207ebcc6cf1d1f3af7d448959515536ed662b2d2dba09bb8fc8dcad2bef8645"
+      }
+    ],
+    "full_text_available": true,
+    "full_text_reason": null,
+    "source_outline": {
+      "file_version_id": "existing-file",
+      "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+      "schema_version": 1,
+      "sections": [
+        {
+          "depth": 0,
+          "heading_content_digest": "52227d912f694114c6809c243ce385aafc5f1259f7ee74e79e0aa6714c6d1fc6",
+          "heading_location": {
+            "bbox": [
+              72,
+              90,
+              420,
+              110
+            ],
+            "heading_level": 1
+          },
+          "page_number": 1,
+          "parent_source_section_id": null,
+          "source_path": [
+            "Software source section 1"
+          ],
+          "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+          "title": "Software source section 1"
+        },
+        {
+          "depth": 0,
+          "heading_content_digest": "b64a2f1fab2c50981bab8a9ae922f5080af33ffece7a8c9cf5bae2df6e10e9e8",
+          "heading_location": {
+            "bbox": [
+              72,
+              90,
+              420,
+              110
+            ],
+            "heading_level": 1
+          },
+          "page_number": 2,
+          "parent_source_section_id": null,
+          "source_path": [
+            "Software source section 2"
+          ],
+          "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+          "title": "Software source section 2"
+        },
+        {
+          "depth": 0,
+          "heading_content_digest": "c26c4495847c4c8d04ae76be217c4f554d7e27f3b05d6fb2910d3b6c797203a1",
+          "heading_location": {
+            "bbox": [
+              72,
+              90,
+              420,
+              110
+            ],
+            "heading_level": 1
+          },
+          "page_number": 3,
+          "parent_source_section_id": null,
+          "source_path": [
+            "Software source section 3"
+          ],
+          "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+          "title": "Software source section 3"
+        }
+      ],
+      "unit_assignments": [
+        {
+          "block_content_digest": "20a4b5e659f09feed966e96fb9d2873702bf54891ad42731d21236b4867ea52d",
+          "block_id": "block_6d9ebf9766974ccea19582b64e424666",
+          "seq_idx": 0,
+          "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0"
+        },
+        {
+          "block_content_digest": "65de7187c79171e9918973670febfcea37d352cdade6a5f4ba2ba06f062258d7",
+          "block_id": "block_05581081eefc44e6c94cf94974dbc25d",
+          "seq_idx": 1,
+          "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20"
+        },
+        {
+          "block_content_digest": "3207ebcc6cf1d1f3af7d448959515536ed662b2d2dba09bb8fc8dcad2bef8645",
+          "block_id": "block_8cb84be18a9fc40ade8cc1a8ff546041",
+          "seq_idx": 2,
+          "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0"
+        }
+      ]
+    },
+    "context_sha256": "39c72a32140b85f56290231cf016b22713be1e3bb93a068b84f1f5017470e27e"
+  }
+}

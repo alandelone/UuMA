@@ -1,0 +1,56 @@
+{
+  "status": "PASS_G07_DUPLICATE-CANCEL",
+  "review_comments": [
+    {
+      "comment_id": "comment_f7969d2589c14c6a9e3d1c923bd1b381",
+      "review_round_id": "review_round_16b039af771747eb899cc0939c271cd4",
+      "source": "PASTED",
+      "reviewer": null,
+      "original_text": "G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.",
+      "edited_text": "G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.",
+      "author_decision": null,
+      "response_text": null,
+      "status": "PENDING",
+      "archived_at": null,
+      "import_metadata_json": "{\"comment_number\":1,\"import_batch_id\":\"comment_import_9ade0bc310b540ab8530380b14b29739\",\"original_index\":0,\"original_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\",\"raw_import_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\\n\\nG06 B software comment: keep independent context and stable number when comment A is archived and restored.\"}",
+      "created_at": "2026-10-12T07:26:02.810065+00:00",
+      "updated_at": "2026-10-12T07:34:57.910742+00:00"
+    },
+    {
+      "comment_id": "comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1",
+      "review_round_id": "review_round_16b039af771747eb899cc0939c271cd4",
+      "source": "PASTED",
+      "reviewer": null,
+      "original_text": "G06 B software comment: keep independent context and stable number when comment A is archived and restored.",
+      "edited_text": "G06 B software comment: keep independent context and stable number when comment A is archived and restored.",
+      "author_decision": null,
+      "response_text": null,
+      "status": "PENDING",
+      "archived_at": null,
+      "import_metadata_json": "{\"comment_number\":2,\"import_batch_id\":\"comment_import_9ade0bc310b540ab8530380b14b29739\",\"original_index\":1,\"original_text\":\"G06 B software comment: keep independent context and stable number when comment A is archived and restored.\",\"raw_import_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\\n\\nG06 B software comment: keep independent context and stable number when comment A is archived and restored.\"}",
+      "created_at": "2026-10-12T07:26:02.810065+00:00",
+      "updated_at": "2026-10-12T07:26:02.810065+00:00"
+    },
+    {
+      "comment_id": "comment_6821f9cff55d4b35b124f3f676e064f0",
+      "review_round_id": "review_round_16b039af771747eb899cc0939c271cd4",
+      "source": "SINGLE",
+      "reviewer": null,
+      "original_text": "G07 single software comment: preserve this entire block as one original opinion.\n\nSecond paragraph belongs to the same single comment.\nKeep this line break; no scientific request.",
+      "edited_text": "G07 single software comment: preserve this entire block as one original opinion.\n\nSecond paragraph belongs to the same single comment.\nKeep this line break; no scientific request.",
+      "author_decision": null,
+      "response_text": null,
+      "status": "PENDING",
+      "archived_at": null,
+      "import_metadata_json": "{\"comment_number\":3,\"import_batch_id\":\"comment_import_8c101ff1e3c2489881fd3608872a9166\",\"original_index\":0,\"original_text\":\"G07 single software comment: preserve this entire block as one original opinion.\\n\\nSecond paragraph belongs to the same single comment.\\nKeep this line break; no scientific request.\",\"raw_import_text\":\"G07 single software comment: preserve this entire block as one original opinion.\\n\\nSecond paragraph belongs to the same single comment.\\nKeep this line break; no scientific request.\"}",
+      "created_at": "2026-10-12T07:46:12.346493+00:00",
+      "updated_at": "2026-10-12T07:46:12.346493+00:00"
+    }
+  ],
+  "new_model_calls": 0,
+  "new_generation_jobs": 0,
+  "new_author_operations": 0,
+  "original_all_application_rows_exact": true,
+  "original20_artifact_sha_exact": true,
+  "read_only_database_bytes_preserved": true
+}

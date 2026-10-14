@@ -1,0 +1,128 @@
+{
+  "status": "READY",
+  "production_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-template-mapping-build-1j5ul2e5\\writing-studio",
+  "before_listener": {
+    "LocalAddress": "127.0.0.1",
+    "LocalPort": 3004,
+    "OwningProcess": 65640,
+    "verified_ancestry": [
+      65640,
+      88700,
+      88032,
+      83900
+    ]
+  },
+  "before_process": {
+    "ProcessId": 65640,
+    "ParentProcessId": 88700,
+    "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-hierarchy-build-ty6ek0rr\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3004 --hostname 127.0.0.1",
+    "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+    "CreationDate": "/Date(1791453465873)/"
+  },
+  "backend_launch_pid": 32792,
+  "before_observed": {
+    "Processes": [
+      {
+        "ProcessId": 32792,
+        "ParentProcessId": 84464,
+        "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+        "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "CreationDate": "/Date(1791452487959)/"
+      },
+      {
+        "ProcessId": 35492,
+        "ParentProcessId": 32792,
+        "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+        "CreationDate": "/Date(1791452487963)/"
+      },
+      {
+        "ProcessId": 84340,
+        "ParentProcessId": 32792,
+        "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+        "ExecutablePath": "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "CreationDate": "/Date(1791452487977)/"
+      },
+      {
+        "ProcessId": 83900,
+        "ParentProcessId": 36944,
+        "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Windows\\SYSTEM32\\cmd.exe",
+        "CreationDate": "/Date(1791453465610)/"
+      },
+      {
+        "ProcessId": 89776,
+        "ParentProcessId": 83900,
+        "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+        "CreationDate": "/Date(1791453465616)/"
+      },
+      {
+        "ProcessId": 88032,
+        "ParentProcessId": 83900,
+        "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+        "CreationDate": "/Date(1791453465713)/"
+      },
+      {
+        "ProcessId": 88700,
+        "ParentProcessId": 88032,
+        "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Windows\\system32\\cmd.exe",
+        "CreationDate": "/Date(1791453465851)/"
+      },
+      {
+        "ProcessId": 65640,
+        "ParentProcessId": 88700,
+        "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-hierarchy-build-ty6ek0rr\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3004 --hostname 127.0.0.1",
+        "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+        "CreationDate": "/Date(1791453465873)/"
+      }
+    ],
+    "Listeners": [
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8877,
+        "OwningProcess": 84340,
+        "verified_ancestry": [
+          84340,
+          32792
+        ]
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 3004,
+        "OwningProcess": 65640,
+        "verified_ancestry": [
+          65640,
+          88700,
+          88032,
+          83900
+        ]
+      }
+    ]
+  },
+  "frontend_launch_pid": 82240,
+  "command": [
+    "cmd.exe",
+    "/c",
+    "npm.cmd",
+    "run",
+    "start",
+    "--",
+    "--port",
+    "3004",
+    "--hostname",
+    "127.0.0.1"
+  ],
+  "served_assets_sha256": {
+    "/_next/static/chunks/index-C9gBSpNx.js": "6b7308252adcd02666473d78358d6a9e62c55181ac2467560ae67dff9c099c60",
+    "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "/_next/static/chunks/layout-segment-context-CKA7jWtE.js": "963d9413f795dabc28fb8a537637116f3dcf9a65f341f7a9054fe819d2faa5cc",
+    "/_next/static/chunks/page-BMxikRLM.js": "059d9ede8f4b8e7606343ec642ca81222b86fffe70e1168e88e3178c7e9dac9c",
+    "/_next/static/chunks/vinext-DKYKsrTN.js": "3b6dd77797689e8b5be19a8044dc36511566e05b905d2a3fe6e7fbddd2d71540",
+    "/_next/static/css/index.BS2HDOZm.css": "8f5095e2ff46241c3160dcbcb47622a2a197a4f0c0492b4cd6589e25fadc0c7b"
+  },
+  "backend_and_database_unchanged": true
+}

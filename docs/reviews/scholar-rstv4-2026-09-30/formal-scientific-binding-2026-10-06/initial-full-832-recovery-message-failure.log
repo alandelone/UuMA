@@ -1,0 +1,350 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/manuscript_scientific_review.py', 'src/rstv4/approval.py', 'src/rstv4/studio.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'tests/test_manuscript_scientific_review.py']
+All checks passed!
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-scientific-binding-inline-v1.js']
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_scientific_review.js']
+RUN ['node', 'tests/catalog_review_workflow.mjs']
+8 controlled explicit review workflow checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_review_workflow.js']
+RUN ['node', 'tests/catalog_collections.mjs']
+9 controlled Collection request checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_collections.js']
+RUN ['node', 'tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+PASS historical unit location focuses the exact source and rejects a different owner
+PASS concept and relationship locations preserve the real case sensitive graph keys
+PASS a frozen source cannot be highlighted in a different Living or Snapshot view
+17 controlled workspace scenarios passed
+RUN ['node', '--check', 'src/rstv4/catalog_research_workspaces.js']
+RUN ['node', 'tests/catalog_research_overview.mjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed
+RUN ['node', '--check', 'src/rstv4/catalog_research_overview.js']
+RUN ['git', 'diff', '--check']
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-current-ui.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-ui-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-workflow-view-v3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/research-overview-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pyproject.toml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/probe_chrome_acquisition_live.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition_worker.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/approval.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_annotations.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_review.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/database.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/model_gateway.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/paperpool_evaluation.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/parser_quality.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/track_first.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests', '-q']
+........................................................................ [  8%]
+........................................................................ [ 17%]
+..............................F......................................... [ 25%]
+........................................................................ [ 34%]
+........................................................................ [ 43%]
+........................................................................ [ 51%]
+........................................................................ [ 60%]
+........................................................................ [ 69%]
+........................................................................ [ 77%]
+........................................................................ [ 86%]
+........................................................................ [ 95%]
+.........................................                                [100%]
+================================== FAILURES ===================================
+_ test_successful_generation_allows_stages_and_return_but_stale_output_cannot_finalize _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-878/test_successful_generation_all0')
+
+    def test_successful_generation_allows_stages_and_return_but_stale_output_cannot_finalize(
+        tmp_path: Path,
+    ) -> None:
+        service = StudioService(tmp_path)
+        track_id = make_track(service.track_service)
+        manuscript_id = service.create_manuscript(track_id, "Stage contract")["manuscript"][
+            "manuscript_id"
+        ]
+        document = service.get_workspace(manuscript_id)["document"]
+        document["sections"][0]["paragraphs"][0]["intents"][0]["thoughts"] = [
+            {
+                "id": "thought_contract",
+                "text": "Author-approved test thought.",
+                "citation_mode": "NONE",
+                "citations": [],
+            }
+        ]
+        service.gateway.analyze = lambda task, payload: {
+            "paragraph": "Author-approved test thought.",
+            "sentence_mappings": [{"sentence": 0, "thought_ids": ["thought_contract"]}],
+        }
+        # Isolate the stage contract. Real model/LaTeX acceptance is a separate required run.
+        service._compile_artifacts = lambda job, generated: []
+    
+        def generate(revision: int, expected_status: str = "SUCCEEDED") -> None:
+            job = service.create_job(manuscript_id, "GENERATE", input_revision=revision)
+            deadline = time.monotonic() + 5
+            while job["status"] not in {"SUCCEEDED", "FAILED"} and time.monotonic() < deadline:
+                time.sleep(0.02)
+                job = service.get_job(job["job_id"])
+            assert job["status"] == expected_status, job
+    
+        def stage(target: str) -> None:
+            current = service.get_workspace(manuscript_id)["manuscript"]
+            service.set_stage(
+                manuscript_id, target, expected_revision=current["revision"], reason="Fixture action"
+            )
+    
+        try:
+            service.save_document(
+                manuscript_id, base_revision=0, operation_id="acceptance-input-1", document=document
+            )
+            successful_compiler = service._compile_artifacts
+    
+            def failed_compiler(job: dict, generated: dict) -> list:
+                raise RuntimeError("Isolated compilation failure")
+    
+            service._compile_artifacts = failed_compiler
+            generate(1, "FAILED")
+            failed = service.get_workspace(manuscript_id)
+            assert failed["workflow_stage"] == "DRAFTING"
+            assert failed["active_generated_version_id"] is None
+            with pytest.raises(RSTV4Error, match="successful generated version"):
+                stage("WHOLE_PAPER_REVIEW")
+            service._compile_artifacts = successful_compiler
+            generate(1)
+            stage("DRAFTING")
+            stage("WHOLE_PAPER_REVIEW")
+            prior_version = service.get_workspace(manuscript_id)["active_generated_version_id"]
+            revised = copy.deepcopy(document)
+            revised["abstract"] = "New author input"
+            service.save_document(
+                manuscript_id, base_revision=1, operation_id="acceptance-input-2", document=revised
+            )
+            with pytest.raises(RSTV4Error, match="Regenerate"):
+                stage("FINALIZATION_SUBMISSION")
+            assert service.get_workspace(manuscript_id)["active_generated_version_id"] == prior_version
+            generate(2)
+            with sqlite3.connect(service.db_path) as conn:
+                conn.execute(
+                    "UPDATE manuscripts SET needs_scientific_review=1 WHERE manuscript_id=?",
+                    (manuscript_id,),
+                )
+            with pytest.raises(RSTV4Error, match="scientific dependencies"):
+>               stage("FINALIZATION_SUBMISSION")
+
+tests\test_scholar_acceptance_contracts.py:355: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+tests\test_scholar_acceptance_contracts.py:315: in stage
+    service.set_stage(
+src\rstv4\studio.py:636: in set_stage
+    self._require_successful_version(
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x00000193FEE84130>
+manuscript_id = 'manuscript_b05bb7461e364ed7a933565abce084fd'
+
+    @staticmethod
+    def _require_successful_version(
+        conn: Any, manuscript_id: str, *, require_current: bool,
+    ) -> None:
+        studio = conn.execute(
+            "SELECT * FROM studio_documents WHERE manuscript_id=?", (manuscript_id,),
+        ).fetchone()
+        version = None
+        if studio is not None and studio["active_generated_version_id"]:
+            version = conn.execute(
+                "SELECT * FROM manuscript_versions "
+                "WHERE manuscript_version_id=? AND manuscript_id=?",
+                (studio["active_generated_version_id"], manuscript_id),
+            ).fetchone()
+        if version is not None:
+            provenance = json.loads(version["inputs_json"])
+            job = conn.execute(
+                "SELECT * FROM studio_jobs WHERE job_id=? AND manuscript_id=?",
+                (provenance.get("job_id"), manuscript_id),
+            ).fetchone()
+            if (
+                job is not None and job["job_kind"] == "GENERATE" and job["status"] == "SUCCEEDED"
+                and job["input_revision"] == studio["last_generated_revision"]
+                and provenance.get("studio_revision") == studio["last_generated_revision"]
+            ):
+                if require_current and studio["last_generated_revision"] != studio["revision"]:
+                    raise RSTV4Error("Regenerate the manuscript before advancing this stage")
+                if require_current and scientific_generation_is_stale(conn, manuscript_id, studio["active_generated_version_id"]):
+>                   raise RSTV4Error("Regenerate after the manuscript's scientific binding review")
+E                   rstv4.service.RSTV4Error: Regenerate after the manuscript's scientific binding review
+
+src\rstv4\studio.py:699: RSTV4Error
+
+During handling of the above exception, another exception occurred:
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-878/test_successful_generation_all0')
+
+    def test_successful_generation_allows_stages_and_return_but_stale_output_cannot_finalize(
+        tmp_path: Path,
+    ) -> None:
+        service = StudioService(tmp_path)
+        track_id = make_track(service.track_service)
+        manuscript_id = service.create_manuscript(track_id, "Stage contract")["manuscript"][
+            "manuscript_id"
+        ]
+        document = service.get_workspace(manuscript_id)["document"]
+        document["sections"][0]["paragraphs"][0]["intents"][0]["thoughts"] = [
+            {
+                "id": "thought_contract",
+                "text": "Author-approved test thought.",
+                "citation_mode": "NONE",
+                "citations": [],
+            }
+        ]
+        service.gateway.analyze = lambda task, payload: {
+            "paragraph": "Author-approved test thought.",
+            "sentence_mappings": [{"sentence": 0, "thought_ids": ["thought_contract"]}],
+        }
+        # Isolate the stage contract. Real model/LaTeX acceptance is a separate required run.
+        service._compile_artifacts = lambda job, generated: []
+    
+        def generate(revision: int, expected_status: str = "SUCCEEDED") -> None:
+            job = service.create_job(manuscript_id, "GENERATE", input_revision=revision)
+            deadline = time.monotonic() + 5
+            while job["status"] not in {"SUCCEEDED", "FAILED"} and time.monotonic() < deadline:
+                time.sleep(0.02)
+                job = service.get_job(job["job_id"])
+            assert job["status"] == expected_status, job
+    
+        def stage(target: str) -> None:
+            current = service.get_workspace(manuscript_id)["manuscript"]
+            service.set_stage(
+                manuscript_id, target, expected_revision=current["revision"], reason="Fixture action"
+            )
+    
+        try:
+            service.save_document(
+                manuscript_id, base_revision=0, operation_id="acceptance-input-1", document=document
+            )
+            successful_compiler = service._compile_artifacts
+    
+            def failed_compiler(job: dict, generated: dict) -> list:
+                raise RuntimeError("Isolated compilation failure")
+    
+            service._compile_artifacts = failed_compiler
+            generate(1, "FAILED")
+            failed = service.get_workspace(manuscript_id)
+            assert failed["workflow_stage"] == "DRAFTING"
+            assert failed["active_generated_version_id"] is None
+            with pytest.raises(RSTV4Error, match="successful generated version"):
+                stage("WHOLE_PAPER_REVIEW")
+            service._compile_artifacts = successful_compiler
+            generate(1)
+            stage("DRAFTING")
+            stage("WHOLE_PAPER_REVIEW")
+            prior_version = service.get_workspace(manuscript_id)["active_generated_version_id"]
+            revised = copy.deepcopy(document)
+            revised["abstract"] = "New author input"
+            service.save_document(
+                manuscript_id, base_revision=1, operation_id="acceptance-input-2", document=revised
+            )
+            with pytest.raises(RSTV4Error, match="Regenerate"):
+                stage("FINALIZATION_SUBMISSION")
+            assert service.get_workspace(manuscript_id)["active_generated_version_id"] == prior_version
+            generate(2)
+            with sqlite3.connect(service.db_path) as conn:
+                conn.execute(
+                    "UPDATE manuscripts SET needs_scientific_review=1 WHERE manuscript_id=?",
+                    (manuscript_id,),
+                )
+>           with pytest.raises(RSTV4Error, match="scientific dependencies"):
+E           AssertionError: Regex pattern did not match.
+E             Expected regex: 'scientific dependencies'
+E             Actual message: "Regenerate after the manuscript's scientific binding review"
+
+tests\test_scholar_acceptance_contracts.py:354: AssertionError
+============================== warnings summary ===============================
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_context_reference.py:67: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**inputs, repair_feedback=feedback)
+
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\anaconda3\Lib\site-packages\pydantic\_internal\_generate_schema.py:1463: UserWarning: Item 'summary' on TypedDict class 'ChatCompletionReasoningItem' is using the `ReadOnly` qualifier. Pydantic will not protect items from any mutation on dictionary instances.
+    warnings.warn(
+
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_graph_reference.py:281: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_lossless_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph_v2.py:363: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:246: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:347: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_verified_reference.py:147: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_scholar_acceptance_contracts.py::test_successful_generation_allows_stages_and_return_but_stale_output_cannot_finalize
+1 failed, 832 passed, 20 warnings in 335.98s (0:05:35)

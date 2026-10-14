@@ -1,0 +1,99 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio_materials.py', 'src/rstv4/studio_correspondence.py', 'src/rstv4/studio.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_templates.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_generated_assets.py', 'tests/test_studio_correspondence.py', 'tests/test_studio_templates.py']
+All checks passed!
+RUN ['node', 'node_modules/typescript/bin/tsc', '--noEmit']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd', '--type-aware', '--deny-warnings', 'lib/studio-correspondence.ts', 'lib/studio-blocks.ts', 'lib/studio-types.ts', 'components/studio-intent-correspondence.tsx', 'components/studio-workspace.tsx']
+RUN ['git', 'diff', '--check']
+RUN ['node', 'tests/unit/studio-correspondence.cjs']
+PASS arbitrary nested same-label target retains canonical author data and fixed source
+PASS all-original context choices and distinct Intent references remain independent
+PASS leaving formula and asset placement pending does not invent a target
+PASS legacy flat fixed paragraph source is inherited without rewriting the slot
+PASS every reviewed source, target, parent, group and edge change invalidates confirmation
+PASS repeated/foreign/unplaced/self destinations fail without writes
+PASS explicitly cancelling and undo/redo preserve exact documents
+PASS deleting a target releases its mapping but never deletes original author content
+PASS template replacement releases references to canonical original bank
+9 author correspondence contracts passed; no browser or real model used.
+RUN ['node', 'tests/unit/studio-template-placement.cjs']
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-blocks.cjs']
+17 controlled movement/group/association cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-block-controls.cjs']
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+RUN ['node', 'tests/unit/studio-structure.cjs']
+17 controlled movement/group/association cases passed; no browser used.
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+RUN ['node', 'tests/unit/studio-hierarchy.cjs']
+7 hierarchy/tree/argument preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-undo-history.cjs']
+PASS full author snapshots survive storage round trip, including citations, assets, formula and relations
+PASS server key order changes do not erase a semantically equal stack
+PASS foreign manuscript, changed revision and changed author word or array ordering are rejected
+PASS unreadable or malformed stacks and foreign snapshot stay unusable without mutating the saved raw
+PASS history is bounded to the most recent 100 complete operations
+PASS undo and redo stacks can each resume after a different saved revision
+6 durable undo storage binding and preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-discussion-history.cjs']
+PASS current object excludes another revision and another kind with the same ID
+PASS generated filter distinguishes two versions with the same author revision
+PASS legacy author context preserves exact ID revision Unicode quote and annotation
+PASS another manuscript cannot supply the legacy binding
+PASS legacy generated context uses its verified immutable version and anchor
+PASS damaged generated object cannot be redirected to a neighboring anchor
+6 controlled Studio history helper checks passed
+RUN ['node', 'tests/unit/studio-response-review.cjs']
+PASS Serialized saves retain newer keystrokes and advance the actual CAS basis
+PASS Conflicting page edits require an explicit comparison before replacing the reply
+PASS Unmount restores drafts, review waits for save, and an uncertain submit retries its original decision
+PASS Archived opinions expose review history without modifying their reply
+PASS Actual dialog retains Unicode selection offsets and rejects retained evidence
+RUN ['node', 'tests/unit/catalog-return.mjs']
+11 Catalog return origin/context cases passed
+RUN ['node', 'tests/unit/catalog-research-chat.mjs']
+PASS click binds the real selected object
+PASS new source cannot silently rebind nonempty question
+PASS a slow old click cannot overwrite the newer choice
+PASS pin keeps the original scope across navigation
+PASS UTF16 emoji selection remains exact
+PASS a mismatched quote cannot attach to another version
+PASS removing selection keeps original question and object
+PASS local draft restores its own immutable source
+PASS storage failure keeps draft and permits explicit send
+PASS uncertain result reconciles original ID without another model submission
+PASS failed reply retains actual failure and author receipt
+PASS persisted RUNNING does not prove a live worker
+PASS cross-scope sources require explicit choice
+PASS deleted original remains a historical fixed source
+PASS restoring an uncertain request performs no new POST
+PASS annotation retry preserves the exact original request
+PASS leaving invalidates an outstanding source read
+PASS rejected stale source retains question for explicit comparison
+PASS followup explicitly carries the last actual reply as parent
+PASS starting a new discussion retains question and fixed selection
+PASS changing source starts its own discussion and preserves old continuation draft
+PASS restored continuation retains the exact chosen reply and history
+PASS old response cannot replace the newly selected source or its question
+PASS continuing a chosen historical branch never replaces a protected draft
+PASS failed turn can be followed up without inventing an assistant reply
+PASS historical call lookup is read only and leaves current question intact
+PASS saving an annotation preserves an unsent question and continuation
+PASS Studio generated selection freezes its own revision and version through followup
+PASS source navigation carries verified ID, owner and exact extra-source index
+PASS a deep link reads a historical source without a default current binding
+PASS all four destinations preserve opaque owner and source reference without copying source text
+PASS malformed or oversized source links are not activated
+PASS return link preserves the original workspace only on configured application origins
+PASS an unavailable extra source never navigates to a neighboring source
+PASS an extra historical source can inspect the actual original discussion owner
+PASS closing original source removes only source references and retains workspace and return path
+PASS view history can follow current object without rebinding a protected draft
+PASS late history for the previous selected view cannot replace the new view
+PASS failed new history view shows no previous objects while retaining the draft
+39 controlled discussion state checks passed; fixture model, no browser claim.

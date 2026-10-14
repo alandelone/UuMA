@@ -1,0 +1,145 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - article:
+    - button "修改原始结构":
+      - text: 修改原始结构
+    - button "🔎 全文检查"
+    - link "Markdown":
+      - /url: /api/studio-files/artifacts/artifact_5b694a79aff249278af78067de0f4b0d
+    - link "成文与来源记录":
+      - /url: /api/studio-files/artifacts/artifact_dfbe848f0e8c462c94e364dcf1e79e65
+    - link "LaTeX":
+      - /url: /api/studio-files/artifacts/artifact_89d3f80f6aed4695b048ef58fd439b68
+    - link "参考文献":
+      - /url: /api/studio-files/artifacts/artifact_cd0863e680fe4bd7b0e197555e7d5765
+    - link "📎 PDF":
+      - /url: /api/studio-files/artifacts/artifact_35b9305bb4524c8c84456247c7ae43b9
+    - button "进入定稿 →"
+    - heading "Fixed citation source - software acceptance" [level=1]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - heading "Introduction" [level=2]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - paragraph:
+      - text: First source
+      - button "打开引用 1 的来源": "[1]"
+      - text: . Next
+      - button "打开引用 2 的来源": "[2]"
+      - text: . Repeat
+      - button "打开引用 1 的来源": "[1]"
+      - text: .
+    - button "💬 讨论此段"
+    - button "讨论选区"
+    - button "修改此段原始结构"
+    - region "此版本的固定参考文献":
+      - heading "References" [level=2]
+      - list:
+        - button "打开引用 1 的来源": "[1]"
+        - text: Fixture Author (2026). Catalog selected source
+        - button "打开引用 2 的来源": "[2]"
+        - text: Fixture Author (2026). Catalog selected source
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - region "此生成版本的固定引用来源":
+      - strong: "[1] Catalog selected source"
+      - button "关闭来源"
+      - paragraph: Fixture Author 2026
+      - paragraph: Original software source body 2.
+      - blockquote: Original software source body 2.
+      - text: 此版本的来源快照
+      - paragraph: 固定于成文 v1
+      - generic "固定原文与上下文":
+        - paragraph: 出处：第 2 页 · Software source section 2 · 原文单元 2
+        - paragraph: 论文版本 1 · 解析版本已固定 · Skeleton 版本 1
+        - generic "原文单元与前后文"
+        - generic "相邻原文单元":
+          - generic: 第 1 页 · Software source section 1
+          - blockquote: Original software source body 1.
+        - generic "引用原文单元":
+          - generic: 第 2 页 · Software source section 2
+          - blockquote: Original software source body 2.
+        - generic "相邻原文单元":
+          - generic: 第 3 页 · Software source section 3
+          - blockquote: Original software source body 3.
+        - generic "此解析版本的完整文字"
+        - generic "查看精确版本与位置记录"
+        - link "查看此版本原始 PDF ↗":
+          - /url: /api/studio-files/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_7ea00b67724045db8db687b46beb1530/sources/evidence_3a2639ee8b5e432aafd7e3743c825f33/pdf#page=2
+    - article:
+      - button "将证据加入当前思想：Original software source body 2.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 2.
+        - generic: Original software source body 2.
+      - generic: Catalog selected source
+      - generic: 原文不可用
+    - article:
+      - button "将证据加入当前思想：Original software source body 1.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 1.
+        - generic: Original software source body 1.
+      - generic: Catalog selected source
+      - generic: 原文不可用
+  - status
+  - button "与 Agent 讨论 1 条 · Introduction / 段落 1 · 成文 v1" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 1 条 · Introduction / 段落 1 · 成文 v1
+  - button "整篇历史"
+  - button "当前对象 · 此版本"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: Annotation：Software acceptance only. Keep the original page 2 source fixed to generated v1.
+    - paragraph: "Check these original numbered citations after regeneration: preserve the original source and version."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - generic: 当前选择：Introduction / 段落 1 · 成文 v1
+  - blockquote: First source [1]. Next [2]. Repeat [1].
+  - strong: 草稿对象：Introduction / 段落 1 · 成文 v1 · 结构 r1
+  - blockquote: 草稿引用：First source [1]. Next [2]. Repeat [1].
+  - button "移除草稿选区（保留对象）" [disabled]
+  - button "将草稿绑定到当前对象／选区" [disabled]
+  - checkbox "固定当前讨论对象" [disabled]
+  - checkbox [disabled]
+  - text: 固定当前讨论对象
+  - generic "固定对象的完整原文与版本"
+  - status: 原问题已保存，正在生成回复…
+  - textbox "讨论草稿" [disabled]:
+    - /placeholder: 讨论：Introduction / 段落 1
+    - text: "Check these original numbered citations after regeneration: preserve the original source and version."
+  - textbox "当前讨论的 annotation" [disabled]:
+    - /placeholder: Annotation（可选）
+    - text: Software acceptance only. Keep the original page 2 source fixed to generated v1.
+  - button "发送讨论" [disabled]:
+  - button "保存讨论批注" [disabled]
+  - button "核对原提交"
+  - button "更新讨论历史"
+  - paragraph: 回复状态：QUEUED · 实际模型：未记录 · 契约：未记录

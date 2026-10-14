@@ -1,0 +1,57 @@
+{
+  "status": "APPLIED_EXACT_REVERSIBLE_BIB_READ_REPAIR",
+  "changes": [
+    {
+      "relative": "src/rstv4/catalog_collections.js",
+      "before_sha256": "bac17e0029462a1901ac17be7537c84fbe48b378f36815ff0b83dcf7f547d7ff",
+      "after_sha256": "4373f00cea3df782c69d2944786a2c8e8d2f8788a6032c4173f95f6cc6ba101c",
+      "crlf": false,
+      "replacements": [
+        {
+          "old": "  root.CatalogCollections={createController,createPaperPicker,createProgressController,createDeepReadController};",
+          "new": "  function createBibFileReader({onContent,onState=()=>{}}){\n    let generation=0,pending=false;\n    const state=()=>({pending});\n    function publish(message){onState({pending,message});}\n    function cancel(){\n      generation++;\n      if(pending){pending=false;publish('已取消上次文件读取；当前输入保留。');}\n    }\n    async function read(file){\n      const token=++generation;\n      if(!file){pending=false;publish('当前输入保留；请选择 .bib 文件。');return false;}\n      if(file.size>5_000_000){pending=false;publish('文件超过本版 5 MB 预览上限；请改用较小的 .bib 文件。');return false;}\n      pending=true;publish(`正在从本机读取 ${file.name}…`);\n      try{\n        const content=await file.text();\n        if(token!==generation)return false;\n        onContent(content);\n        pending=false;publish(`已读入 ${file.name}；文件没有上传。`);\n        return true;\n      }catch(error){\n        if(token!==generation)return false;\n        pending=false;publish(`无法读取文件：${error instanceof Error?error.message:String(error)}`);\n        return false;\n      }\n    }\n    return {read,cancel,state};\n  }\n  root.CatalogCollections={createBibFileReader,createController,createPaperPicker,createProgressController,createDeepReadController};"
+        }
+      ]
+    },
+    {
+      "relative": "src/rstv4/catalog_web.html",
+      "before_sha256": "7d032fb4aa9318b549a718b75f9ccf7e9bcbd7c21e9275c01a63c0dc59a8312e",
+      "after_sha256": "41a91f06c4c13f098269937a31f992f4d52472ce596ed051843d137e4340b348",
+      "crlf": false,
+      "replacements": [
+        {
+          "old": "      function setView(next,syncUrl=true){\n        paperQueryToken++;",
+          "new": "      function setView(next,syncUrl=true){\n        if(view==='collect'&&next!=='collect')bibFileReader.cancel();\n        paperQueryToken++;"
+        },
+        {
+          "old": "        collectController.begin();\n        collectReturnView=",
+          "new": "        bibFileReader.cancel();\n        collectController.begin();\n        collectReturnView="
+        },
+        {
+          "old": "          $('collect-start').disabled=state.pending||Boolean(state.storageProblem)||Boolean(collectPaperPicker.state().storageProblem)||!collectScope?.fieldId||!(collectScope?.topicId||collectScope?.trackId);\n          $('collect-check').disabled=state.pending;$('collect-back').disabled=state.pending;\n          for(const input of document.querySelectorAll('[data-collect-input],#collect-bib-file'))input.disabled=state.pending;",
+          "new": "          syncCollectAvailability(state);"
+        },
+        {
+          "old": "      function renderCollectPaperPicker(state){",
+          "new": "      function syncCollectAvailability(state=collectController.state()){\n        const reading=bibFileReader.state().pending;\n        $('collect-start').disabled=state.pending||reading||Boolean(state.storageProblem)||Boolean(collectPaperPicker.state().storageProblem)||!collectScope?.fieldId||!(collectScope?.topicId||collectScope?.trackId);\n        $('collect-check').disabled=state.pending||reading;$('collect-back').disabled=state.pending;\n        for(const input of document.querySelectorAll('[data-collect-input],#collect-bib-file'))input.disabled=state.pending;\n      }\n      const bibFileReader=CatalogCollections.createBibFileReader({\n        onContent:content=>{$('collect-bibtex').value=content;updateCollectPreview();},\n        onState:state=>{$('collect-file-note').textContent=state.message;syncCollectAvailability();}\n      });\n      function renderCollectPaperPicker(state){"
+        },
+        {
+          "old": "      async function checkCollectInput(){\n        const summary=",
+          "new": "      async function checkCollectInput(){\n        if(bibFileReader.state().pending)return;\n        const summary="
+        },
+        {
+          "old": "        if(t.id==='collect-start'){updateCollectPreview();collectController.start().catch(()=>{});}",
+          "new": "        if(t.id==='collect-start'&&!bibFileReader.state().pending){updateCollectPreview();collectController.start().catch(()=>{});}"
+        },
+        {
+          "old": "        if(event.target.dataset.collectInput!==undefined){\n          updateCollectPreview();",
+          "new": "        if(event.target.dataset.collectInput!==undefined){\n          if(event.target.id==='collect-bibtex')bibFileReader.cancel();\n          updateCollectPreview();"
+        },
+        {
+          "old": "        if(t.id==='collect-bib-file'&&t.files?.[0]){\n          const file=t.files[0];\n          if(file.size>5_000_000){$('collect-file-note').textContent='文件超过本版 5 MB 预览上限；请改用较小的 .bib 文件。';return;}\n          file.text().then(content=>{$('collect-bibtex').value=content;\n            $('collect-file-note').textContent=`已读入 ${file.name}；文件没有上传。`;updateCollectPreview();\n          }).catch(error=>{$('collect-file-note').textContent=`无法读取文件：${errorText(error)}`;});\n        }",
+          "new": "        if(t.id==='collect-bib-file'){\n          const file=t.files?.[0];t.value='';\n          if(!collectController.state().pending)void bibFileReader.read(file);\n        }"
+        }
+      ]
+    }
+  ]
+}

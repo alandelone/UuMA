@@ -1,0 +1,99 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Source hierarchy native acceptance Ω — software fixture · RSTV4
+  - status: 已自动保存
+  - button "撤销":
+  - button "重做":
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - article:
+    - button "修改原始结构":
+      - text: 修改原始结构
+    - button "🔎 全文检查"
+    - link "Markdown":
+      - /url: /api/studio-files/artifacts/artifact_a3cbe9161d1d439c924f5de89a5d635a
+    - link "成文与来源记录":
+      - /url: /api/studio-files/artifacts/artifact_c0b8ba8f086248e69c57cfb0bcc84bc2
+    - link "LaTeX":
+      - /url: /api/studio-files/artifacts/artifact_4dd7b51570a04a84b9a802ff3837130f
+    - link "参考文献":
+      - /url: /api/studio-files/artifacts/artifact_9f622f7cc7ee4806aa9dd2124ace6880
+    - link "📎 PDF":
+      - /url: /api/studio-files/artifacts/artifact_b31a32bb41134fcc87f77038ebdc4125
+    - button "进入定稿 →"
+    - heading "Source hierarchy native acceptance Ω — software fixture" [level=1]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - heading "Source Alpha Ω" [level=2]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - heading "Repeated source heading" [level=2]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - paragraph:
+      - text: AUTHOR second original wording stays independent.
+      - button "打开引用 1 的来源" [active]: "[1]"
+    - figure "Original author formula":
+      - code: x=1
+      - generic: Original author formula
+    - button "💬 讨论此段"
+    - button "讨论选区"
+    - button "修改此段原始结构"
+    - heading "Repeated source heading" [level=2]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - paragraph:
+      - text: AUTHOR original wording Ω with its selected software citation.
+      - button "打开引用 1 的来源": "[1]"
+    - figure "Original author formula":
+      - code: x=1
+      - generic: Original author formula
+    - button "💬 讨论此段"
+    - button "讨论选区"
+    - button "修改此段原始结构"
+    - region "此版本的固定参考文献":
+      - heading "References" [level=2]
+      - list:
+        - button "打开引用 1 的来源": "[1]"
+        - text: Software Fixture (2026). Source hierarchy software fixture
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - region "此生成版本的固定引用来源":
+      - strong: "[1] Source hierarchy software fixture"
+      - button "关闭来源"
+      - paragraph: Software Fixture 2026
+      - paragraph: Synthetic hierarchy software fixture
+      - blockquote: Synthetic source only
+      - paragraph: "位置：legacy: software fixture page 1"
+      - text: 此版本的来源快照
+    - article:
+      - button "将证据加入当前思想：Synthetic hierarchy software fixture":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Synthetic hierarchy software fixture
+        - generic: Synthetic source only
+      - generic: Source hierarchy software fixture
+      - generic: 原文不可用
+  - status
+  - button "与 Agent 讨论 0 条 · Repeated source heading · 成文 v1":
+    - text: 与 Agent 讨论
+    - text: 0 条 · Repeated source heading · 成文 v1

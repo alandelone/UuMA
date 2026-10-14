@@ -1,0 +1,24 @@
+[
+  {
+    "args": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exit_code": 0
+  },
+  {
+    "args": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd",
+      "--type-aware",
+      "--deny-warnings",
+      "app/page.tsx",
+      "lib/studio-view-state.ts",
+      "lib/studio-types.ts",
+      "lib/studio-downloads.ts",
+      "components/studio-source-context.tsx",
+      "components/studio-workspace.tsx"
+    ],
+    "exit_code": 1
+  }
+]

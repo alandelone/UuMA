@@ -1,0 +1,24 @@
+{
+  "mode": "adopt-catalog",
+  "chain": [
+    {
+      "ProcessId": 86264,
+      "ParentProcessId": 120976,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g03-catalog-server-v1.py",
+      "CreationDate": "/Date(1791778928202)/"
+    },
+    {
+      "ProcessId": 120976,
+      "ParentProcessId": 19388,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g03-catalog-server-v1.py",
+      "CreationDate": "/Date(1791778928172)/"
+    }
+  ],
+  "port": 8875,
+  "context_correction": "The prior startup succeeded; PowerShell serialized one listener as an integer. Adopt only that exact helper chain without launching another process.",
+  "status": "PASS",
+  "all109tables_exact": true,
+  "database_bytes_exact": true,
+  "frontend_unchanged": true,
+  "no_new_model_calls": true
+}

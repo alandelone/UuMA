@@ -22,9 +22,13 @@ research work.
 Use two stopping decisions:
 
 - Answer stop: current evidence supports a useful provisional answer.
-- Research stop: no worthwhile gap remains, or the user stops the research.
+- Research completion: no worthwhile gap remains in the agreed scope.
+- Execution suspension: user pause/stop, a configured budget limit or a concrete blocker, with
+  the reason and next action recorded. An empty search alone is not sufficient.
 
 Do not use missing data as a reason to withhold a useful current answer. Do not manufacture gaps to
 keep research running. Use QUICK (10 minutes, 10 sources, 50k model tokens), STANDARD (60 minutes,
-30 sources, 250k tokens; default), or DEEP (6 hours, 100 sources, 1M tokens), and persist actual use
-and the stop reason in the research run.
+30 sources, 250k tokens), or the user-approved automatic default DEEP (6 hours, 100 sources,
+1M tokens), retaining the configured search ceiling. Persist actual use and the stop reason.
+Do not reset usage on follow-ups or raise the budget yourself. Select useful permitted tools for
+the gap using `wisdom-evidence-research`; the budget name does not select ChatGPT Deep Research.

@@ -1,0 +1,42 @@
+
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_suggestions.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_rounds.py', 'src/rstv4/studio_realization.py', 'src/rstv4/studio_change_links.py', 'src/rstv4/studio_revision_mapping.py', 'src/rstv4/studio_delivery.py', 'src/rstv4/studio_response_checks.py', 'src/rstv4/database.py', 'tests/test_studio_response_checks.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_studio_response_checks.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import hashlib
+ 4 | | import json
+ 5 | | from concurrent.futures import ThreadPoolExecutor
+ 6 | | from copy import deepcopy
+ 7 | | from pathlib import Path
+ 8 | | from threading import Barrier
+ 9 | |
+10 | | import pytest
+11 | | from fastapi.testclient import TestClient
+12 | | from rstv4.database import transaction
+13 | | from rstv4.service import NotFoundError, RevisionConflictError
+14 | | from rstv4.studio_api import create_app
+15 | | from rstv4.studio_response_checks import validate_claims
+16 | | from test_studio_revision_mapping import package_fixture
+17 | | from test_writing_studio import wait_for_job
+   | |____________________________________________^
+help: Organize imports
+   |
+11 | from fastapi.testclient import TestClient
+12 + from test_studio_revision_mapping import package_fixture
+13 + from test_writing_studio import wait_for_job
+14 +
+15 | from rstv4.database import transaction
+16 | from rstv4.service import NotFoundError, RevisionConflictError
+17 | from rstv4.studio_api import create_app
+18 | from rstv4.studio_response_checks import validate_claims
+   - from test_studio_revision_mapping import package_fixture
+   - from test_writing_studio import wait_for_job
+19 |
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+
+Exit: 1

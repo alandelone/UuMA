@@ -1,0 +1,144 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/source_review.py', 'src/rstv4/catalog_review_workflow.py', 'src/rstv4/track_first.py', 'src/rstv4/research_views.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'tests/test_source_review_withdrawal.py']
+All checks passed!
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-source-withdrawal-inline-v2.js']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests', '-q']
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 26%]
+........................................................................ [ 34%]
+........................................................................ [ 43%]
+........................................................................ [ 52%]
+............................................................F........... [ 61%]
+........................................................................ [ 69%]
+........................................................................ [ 78%]
+........................................................................ [ 87%]
+........................................................................ [ 96%]
+...............................                                          [100%]
+================================== FAILURES ===================================
+____ test_native_replay_preserves_call_receipts_and_does_not_open_catalog _____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-865/test_native_replay_preserves_c0')
+
+    def test_native_replay_preserves_call_receipts_and_does_not_open_catalog(tmp_path: Path) -> None:
+        class Gateway:
+            def analyze(self, task: str, payload: dict) -> dict:
+                return {
+                    "role": "Method",
+                    "_contract": {"actual_model": "fixture-model", "prompt_version": task},
+                }
+    
+        blocks = [{
+            "block_id": "b1", "page_number": 3, "section": "Method", "text": "Located evidence.",
+        }]
+        original = copy.deepcopy(blocks)
+        journal = tmp_path / "calls.jsonl"
+>       first = replay_native_handler(blocks, RecordingGateway(Gateway(), journal))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_skeleton_quality.py:82: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\rstv4\skeleton_audit.py:112: in replay_native_handler
+    worker._handle_skeleton({"paper_id": "audit-only"}, {"parse_run_id": "audit-only"})
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition_worker.AcquisitionWorker object at 0x000001E0CEAD6D90>
+job = {'paper_id': 'audit-only'}, payload = {'parse_run_id': 'audit-only'}
+
+    def _handle_skeleton(
+        self, job: dict[str, Any], payload: dict[str, Any]
+    ) -> tuple[dict[str, Any], list[dict[str, Any]]]:
+        parse_run_id = payload.get("parse_run_id")
+        if not parse_run_id:
+            with transaction(self.service.db_path) as conn:
+                row = conn.execute(
+                    """SELECT pr.parse_run_id FROM parse_runs pr JOIN source_file_versions sf
+                       ON sf.file_version_id=pr.file_version_id WHERE sf.paper_id=?
+                       AND pr.status='SUCCEEDED' ORDER BY pr.completed_at DESC LIMIT 1""",
+                    (job["paper_id"],),
+                ).fetchone()
+            if row is None:
+                raise RuntimeError("Deep read requires a completed parse")
+            parse_run_id = row["parse_run_id"]
+        units = []
+        for block in self._parse_blocks(parse_run_id):
+            unit: dict[str, Any] = {
+                "block_id": block["block_id"], "page_number": block["page_number"],
+                "section": block["section"], "raw_text": block["text"],
+            }
+            for layer in range(1, 5):
+                task = f"skeleton_layer_{layer}"
+                result = self._gateway().analyze(
+                    task,
+                    {
+                        "raw_text": block["text"],
+                        **{
+                            f"layer{n}": unit[f"layer{n}"]
+                            for n in range(1, layer)
+                        },
+                    },
+                )
+                result.pop("_contract", None)
+                unit[f"layer{layer}"] = result
+            units.append(unit)
+        published = self.service.publish_skeleton_result(
+>           parse_run_id, units, model_name=None, job_id=job["job_id"], worker_id=self.worker_id,
+                                                         ^^^^^^^^^^^^^
+            fencing_token=job["fencing_token"],
+        )
+E       KeyError: 'job_id'
+
+src\rstv4\acquisition_worker.py:583: KeyError
+---------------------------- Captured stdout call -----------------------------
+skeleton_layer_1: SUCCESS (0.0s)
+skeleton_layer_2: SUCCESS (0.0s)
+skeleton_layer_3: SUCCESS (0.0s)
+skeleton_layer_4: SUCCESS (0.0s)
+============================== warnings summary ===============================
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_context_reference.py:67: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**inputs, repair_feedback=feedback)
+
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\anaconda3\Lib\site-packages\pydantic\_internal\_generate_schema.py:1463: UserWarning: Item 'summary' on TypedDict class 'ChatCompletionReasoningItem' is using the `ReadOnly` qualifier. Pydantic will not protect items from any mutation on dictionary instances.
+    warnings.warn(
+
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_graph_reference.py:281: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_lossless_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph_v2.py:363: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:246: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:347: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_verified_reference.py:147: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_skeleton_quality.py::test_native_replay_preserves_call_receipts_and_does_not_open_catalog
+1 failed, 822 passed, 20 warnings in 340.20s (0:05:40)

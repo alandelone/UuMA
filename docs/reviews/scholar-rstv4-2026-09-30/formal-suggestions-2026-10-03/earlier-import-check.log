@@ -1,0 +1,91 @@
+........................................................                 [100%]
+============================== warnings summary ===============================
+.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.rstv4-local\skeleton-optimization-env\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+56 passed, 1 warning in 37.54s
+
+Exit: 0
+I001 [*] Import block is un-sorted or un-formatted
+  --> C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\studio.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import csv
+ 4 | | import difflib
+ 5 | | import hashlib
+ 6 | | import io
+ 7 | | import json
+ 8 | | import mimetypes
+ 9 | | import os
+10 | | import re
+11 | | import shutil
+12 | | import subprocess
+13 | | import threading
+14 | | import xml.etree.ElementTree as ET
+15 | | import zipfile
+16 | | from concurrent.futures import ThreadPoolExecutor
+17 | | from contextlib import nullcontext
+18 | | from datetime import UTC, datetime
+19 | | from pathlib import Path
+20 | | from typing import Any
+21 | |
+22 | | from .database import initialize_catalog, transaction
+23 | | from .model_gateway import GatewayDeferredError, UnlimitedLLMGateway
+24 | | from .models import SubmissionEventInput, new_id
+25 | | from .service import NotFoundError, RevisionConflictError, RSTV4Error
+26 | | from .studio_context import (
+27 | |     bound_quote,
+28 | |     citation_ids,
+29 | |     generated_view,
+30 | |     legacy_bibliography,
+31 | |     structure_object,
+32 | | )
+33 | | from .studio_suggestions import MODEL_FORMAT, apply as apply_suggestion
+34 | | from .studio_suggestions import normalize as normalize_suggestions
+35 | | from .studio_suggestions import preview_change
+36 | | from .track_first import TrackFirstService
+   | |__________________________________________^
+37 |
+38 |   WORKFLOW_STAGES = (
+   |
+help: Organize imports
+   |
+32 | )
+   - from .studio_suggestions import MODEL_FORMAT, apply as apply_suggestion
+33 + from .studio_suggestions import MODEL_FORMAT, preview_change
+34 + from .studio_suggestions import apply as apply_suggestion
+35 | from .studio_suggestions import normalize as normalize_suggestions
+   - from .studio_suggestions import preview_change
+36 | from .track_first import TrackFirstService
+   |
+
+RUF059 Unpacked variable `service` is never used
+   --> C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_suggestions.py:210:5
+    |
+209 | def test_wording_changes_apply_only_exact_utf16_ranges_not_the_agent_reply(tmp_path: Path):
+210 |     service, manuscript_id, before, _ = fixture(tmp_path)
+    |     ^^^^^^^
+211 |     raw = {
+212 |         "kind": "WORDING",
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `service` is never used
+   --> C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_suggestions.py:246:5
+    |
+244 |     tmp_path: Path,
+245 | ):
+246 |     service, manuscript_id, before, evidence = fixture(tmp_path)
+    |     ^^^^^^^
+247 |     raw = {
+248 |         "kind": "SOURCE",
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 3 errors.
+[*] 1 fixable with the `--fix` option (2 hidden fixes can be enabled with the `--unsafe-fixes` option).
+
+Exit: 1

@@ -1,0 +1,134 @@
+{
+  "url": "http://127.0.0.1:8885/api/catalog/research/skeletons",
+  "method": "GET",
+  "at": "2026-10-13T05:32:24.571Z",
+  "status": 200,
+  "body": {
+    "sources": [
+      {
+        "skeleton_id": "skeleton_546102908142c9be5d615a2aabd0b7f4",
+        "paper_version_id": "paper_version_66642b18fccb52f96a78c3b5a2305a0d",
+        "version": 1,
+        "extractor_model": "legacy-paperpool-mincer",
+        "prompt_version": "legacy",
+        "content_digest": "06724df8ec7953d8423f90c0ee841b576c848988d579312fc24a87c95998f88c",
+        "created_at": "2026-10-07T15:49:58.832930+00:00",
+        "paper_id": "paper_e39aa6305f4b4b7f4f78100995e929e6",
+        "paper_version": 1,
+        "pdf_digest": null,
+        "parsed_digest": null,
+        "title": "Second located source",
+        "doi": "10.1000/second",
+        "file_version_id": null,
+        "parse_run_id": null,
+        "units": [
+          {
+            "unit_id": "unit_bfbf50d11381db335d7c5e82036b5d3e",
+            "skeleton_id": "skeleton_546102908142c9be5d615a2aabd0b7f4",
+            "seq_idx": 1,
+            "page_idx": 3,
+            "section": "Introduction",
+            "raw_text": "A larger trial reports strong validation under dry conditions.",
+            "layer1": {
+              "coref_resolved": "A larger trial reports strong validation under dry conditions.",
+              "atomic_sentences": [
+                "Peer trading has limited rural validation."
+              ],
+              "triplets": [
+                {
+                  "subject": "peer trading",
+                  "predicate": "has limited validation in",
+                  "object": "rural microgrids"
+                }
+              ]
+            },
+            "layer2": {
+              "discourse_relation": "Contrast",
+              "topic_continuity": "High"
+            },
+            "layer3": {
+              "intent": "Objective_Finding",
+              "confidence": 0.94,
+              "matched_paradigm": "CARS"
+            },
+            "layer4": "Problem_Gap",
+            "content_digest": "8bde90649215724635b136036ea700c2c56c4765557d049d9075d02eb5bdf144"
+          }
+        ],
+        "triplets": [
+          {
+            "triplet_id": "triplet_0fb5867cfde25111be202689281048c9",
+            "unit_id": "unit_bfbf50d11381db335d7c5e82036b5d3e",
+            "subject": "peer trading",
+            "predicate": "has limited validation in",
+            "object": "rural microgrids",
+            "content_digest": "6a67f8bc46fc1e3dd89645fd2df590517c613fd6dffaa43ef37eed28ca096135"
+          }
+        ],
+        "context_sha256": "97693af859e9c1959163cca692e0683341fb948debb4e14baf9b2a01ec0c973e"
+      },
+      {
+        "skeleton_id": "skeleton_c61b7e8a75d6b47b5b436037013c2de3",
+        "paper_version_id": "paper_version_cf985549bdd2a3b41c18a8cb76683a45",
+        "version": 1,
+        "extractor_model": "legacy-paperpool-mincer",
+        "prompt_version": "legacy",
+        "content_digest": "f77c205fa77eea0a99f3f6b8fc7dd586112f6b8bcb27a2d1616b6c5801b8110a",
+        "created_at": "2026-10-07T15:49:58.718562+00:00",
+        "paper_id": "paper_2ba95ce8cef04bdb0bc1ae78411ed011",
+        "paper_version": 1,
+        "pdf_digest": null,
+        "parsed_digest": null,
+        "title": "Rural peer trading",
+        "doi": "10.1000/rural",
+        "file_version_id": null,
+        "parse_run_id": null,
+        "units": [
+          {
+            "unit_id": "unit_6473925b79b0820d972dd9dedff763e0",
+            "skeleton_id": "skeleton_c61b7e8a75d6b47b5b436037013c2de3",
+            "seq_idx": 1,
+            "page_idx": 3,
+            "section": "Introduction",
+            "raw_text": "Few studies validate peer trading in isolated rural microgrids.",
+            "layer1": {
+              "coref_resolved": "Few studies validate peer trading in isolated rural microgrids.",
+              "atomic_sentences": [
+                "Peer trading has limited rural validation."
+              ],
+              "triplets": [
+                {
+                  "subject": "peer trading",
+                  "predicate": "has limited validation in",
+                  "object": "rural microgrids"
+                }
+              ]
+            },
+            "layer2": {
+              "discourse_relation": "Contrast",
+              "topic_continuity": "High"
+            },
+            "layer3": {
+              "intent": "Research_Gap",
+              "confidence": 0.94,
+              "matched_paradigm": "CARS"
+            },
+            "layer4": "Problem_Gap",
+            "content_digest": "7b8ee958dccfb02caeb4f285db143517e558379a0d2f94845a4fbe53bef2f0af"
+          }
+        ],
+        "triplets": [
+          {
+            "triplet_id": "triplet_15d5beb9743c7204b863adeb7bf20b0e",
+            "unit_id": "unit_6473925b79b0820d972dd9dedff763e0",
+            "subject": "peer trading",
+            "predicate": "has limited validation in",
+            "object": "rural microgrids",
+            "content_digest": "6a67f8bc46fc1e3dd89645fd2df590517c613fd6dffaa43ef37eed28ca096135"
+          }
+        ],
+        "context_sha256": "436a9af1d1a4c88050cec23f31fe7a731becb4c707c15bd129cbc1fb92d0b7d0"
+      }
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "status": "PASS_EXACT_FINAL_V5_PDF_RENDERED",
+  "pdf_sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+  "pdf_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.pdf",
+  "pages": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-current-generation-native-v1\\final-pdf-rendered-v1\\page-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-current-generation-native-v1\\final-pdf-rendered-v1\\page-2.png"
+  ],
+  "overall11_complete": false
+}

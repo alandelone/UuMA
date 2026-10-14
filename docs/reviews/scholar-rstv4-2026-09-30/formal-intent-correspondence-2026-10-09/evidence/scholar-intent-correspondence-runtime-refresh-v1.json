@@ -1,0 +1,64 @@
+{
+  "status": "PASS_FINAL_BACKEND_REFRESH",
+  "prior_root_terminal_proved": {
+    "Listeners": [],
+    "OriginalRoot": []
+  },
+  "new_backend_root_pid": 92312,
+  "observed": {
+    "Processes": [
+      {
+        "ProcessId": 99660,
+        "ParentProcessId": 92312,
+        "ExecutablePath": "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-intent-correspondence-native-prepare-v1.py serve",
+        "CreationDate": "/Date(1791529730985)/"
+      },
+      {
+        "ProcessId": 92312,
+        "ParentProcessId": 91272,
+        "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-intent-correspondence-native-prepare-v1.py serve",
+        "CreationDate": "/Date(1791529730970)/"
+      }
+    ],
+    "Listeners": [
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8879,
+        "OwningProcess": 99660
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8878,
+        "OwningProcess": 82492
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8877,
+        "OwningProcess": 84340
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 3006,
+        "OwningProcess": 96084
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 3005,
+        "OwningProcess": 34824
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 3004,
+        "OwningProcess": 88324
+      }
+    ]
+  },
+  "only_owned_8879_replaced": true,
+  "other_runtimes_preserved": true,
+  "all109tables_unchanged": true,
+  "fixed_revision": 19,
+  "final_immutable_version_read": true,
+  "scientific_acceptance": false
+}

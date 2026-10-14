@@ -1,0 +1,1 @@
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\oxlint.cmd', '--threads=1', 'components/studio-template-adoption.tsx', 'components/studio-workspace.tsx', 'lib/studio-api.ts', 'lib/studio-types.ts']

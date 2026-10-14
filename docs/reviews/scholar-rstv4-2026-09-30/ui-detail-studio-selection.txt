@@ -1,0 +1,76 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: UI detail audit · isolated fixture · RSTV4
+  - generic: 已自动保存
+  - button "撤销":
+  - button "重做":
+  - button "Generate":
+    - text: Generate
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: Introduction
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - paragraph: 这个层级暂时没有可追溯的相似样本。
+  - textbox "Paper title": UI detail audit · isolated fixture
+  - textbox "Abstract 可以现在写，也可以先留到结构完整后补。"
+  - button "SECTION 1" [active]
+  - button "拖动章节 Introduction":
+  - textbox: Introduction
+  - textbox "L4 role": Motivation
+  - generic "•••"
+  - article:
+    - button "P1"
+    - button "拖动段落 1":
+    - textbox "这个段落要完成什么？"
+    - textbox "范式：Funnel / MEAL / 自定义"
+    - generic "•••"
+    - button "INTENT"
+    - button "拖动 Intent Research Context":
+    - textbox "Intent 可以暂时未定": Research Context
+    - generic "•••"
+    - button "拖动思想块":
+    - textbox "写下你要表达的原子思想…": The author decides the central scientific claim.
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "添加章节":
+    - text: 添加章节
+  - status
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - paragraph: 当前筛选没有真实 FieldKG 资料。
+  - button "与 Agent 讨论 0 条 · Introduction":
+    - text: 与 Agent 讨论
+    - text: 0 条 · Introduction
+  - button "整篇历史"
+  - button "当前对象"
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - textbox "讨论：Introduction"
+  - button "发送讨论" [disabled]:

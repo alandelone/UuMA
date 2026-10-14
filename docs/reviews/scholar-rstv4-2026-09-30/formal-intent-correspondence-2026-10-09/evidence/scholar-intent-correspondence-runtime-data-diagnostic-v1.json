@@ -1,0 +1,100 @@
+[
+  {
+    "table": "studio_sample_candidates",
+    "before": 26,
+    "after": 36,
+    "added": [
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_be8e28744415821357e88491323ad529",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Section_Context\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Section_Context\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"Source Alpha Ω\",\"section\":\"Source Alpha Ω\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_be8e28744415821357e88491323ad529\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.173669+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_2e2b61e5ce3e4d68ed8c9d8162f89a9f",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Software_Claim\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Software_Claim\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"SOFTWARE_SOURCE_BODY_0_NEVER_AUTHOR_TEXT. This content is synthetic structural test material, without scientific claims.\",\"section\":\"Source Alpha Ω\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_2e2b61e5ce3e4d68ed8c9d8162f89a9f\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.173669+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_daf407f1dfd6161deb35e2ace3044a23",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Section_Context\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Section_Context\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"Repeated source heading\",\"section\":\"Repeated source heading\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_daf407f1dfd6161deb35e2ace3044a23\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.173669+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_715f039f533de9a20249e52538ec7341",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Software_Claim\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Software_Claim\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"SOFTWARE_SOURCE_BODY_1_NEVER_AUTHOR_TEXT. This content is synthetic structural test material, without scientific claims.\",\"section\":\"Repeated source heading\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_715f039f533de9a20249e52538ec7341\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.173669+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_911e45eadf7c6ddce83323b9da911cf1",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Section_Context\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Section_Context\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"Source Detail Ω\",\"section\":\"Source Detail Ω\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_911e45eadf7c6ddce83323b9da911cf1\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.173669+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_a6eb09191237876453bf5e88d527ad2a",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Software_Claim\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Software_Claim\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"SOFTWARE_SOURCE_BODY_2_NEVER_AUTHOR_TEXT. This content is synthetic structural test material, without scientific claims.\",\"section\":\"Source Detail Ω\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_a6eb09191237876453bf5e88d527ad2a\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.173669+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_f817154605e065194949112616933be2",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Section_Context\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Section_Context\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"Repeated source heading\",\"section\":\"Repeated source heading\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_f817154605e065194949112616933be2\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.174673+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_e72946e2ace77fbc410aa5f12330a875",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Software_Claim\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Software_Claim\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"SOFTWARE_SOURCE_BODY_3_NEVER_AUTHOR_TEXT. This content is synthetic structural test material, without scientific claims.\",\"section\":\"Repeated source heading\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_e72946e2ace77fbc410aa5f12330a875\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.174673+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_068285186756d601ef253a3ba67b3bf8",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Section_Context\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Section_Context\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"Source Omega Ω\",\"section\":\"Source Omega Ω\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_068285186756d601ef253a3ba67b3bf8\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.174673+00:00"
+      },
+      {
+        "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+        "anchor_id": "manuscript_version_cb7c9350100e4bb8ae8ec73198f28716:section_c467e427758e4ab19584fb2f1f6ba949",
+        "document_revision": 19,
+        "query_key": "3b0527819a63c76f755cdfdb2e9ef4d22683770c861ebe2a62599a218a8c18e8",
+        "candidate_id": "unit_83697d78507d372aae2af0546477cfbb",
+        "sample_json": "{\"layer\":\"generated_heading\",\"layer1\":{\"triplets\":[]},\"layer1_json\":\"{\\\"triplets\\\": []}\",\"layer2\":{\"discourse_relation\":\"Context\",\"software_only\":true},\"layer2_json\":\"{\\\"discourse_relation\\\": \\\"Context\\\", \\\"software_only\\\": true}\",\"layer3\":{\"intent\":\"Software_Claim\"},\"layer3_json\":\"{\\\"intent\\\": \\\"Software_Claim\\\"}\",\"layer4\":\"Software_Test\",\"paper_id\":\"paper_3fb59f0ecf884e5b89b55cb0bbcec2cf\",\"raw_text\":\"SOFTWARE_SOURCE_BODY_4_NEVER_AUTHOR_TEXT. This content is synthetic structural test material, without scientific claims.\",\"section\":\"Source Omega Ω\",\"skeleton_id\":\"skeleton_e3437eb301788bdbc563ac3a0d5af2cf\",\"title\":\"Source hierarchy software fixture\",\"unit_id\":\"unit_83697d78507d372aae2af0546477cfbb\",\"version\":1}",
+        "created_at": "2026-10-09T06:55:45.174673+00:00"
+      }
+    ],
+    "removed": []
+  }
+]

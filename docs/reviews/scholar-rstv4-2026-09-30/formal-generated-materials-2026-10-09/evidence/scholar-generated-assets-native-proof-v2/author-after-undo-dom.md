@@ -1,0 +1,193 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Six original material formats - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做":
+  - button "Generate":
+    - text: Generate
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+    - generic: 结构已变化 · 旧成文保留
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: Present all original software fixtures without rewriting their data — layout verification
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - paragraph: 这个层级暂时没有可追溯的相似样本。
+  - generic "结构选择与移动":
+    - button "多选／分组"
+    - status
+  - textbox "Paper title": Six original material formats - software acceptance
+  - textbox "作者摘要":
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+  - button "选择并设置 Original materials": SECTION 1
+  - button "拖动章节 Original materials":
+  - button "折叠 Original materials" [expanded]:
+  - textbox "章节标题": Original materials
+  - textbox "章节作用": Motivation
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Present all original software fixtures without rewriting their data": P1
+    - button "拖动段落 Present all original software fixtures without rewriting their data":
+    - button "折叠 Present all original software fixtures without rewriting their data" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+      - text: Present all original software fixtures without rewriting their data
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Author-defined original material sequence
+    - generic "段落操作": •••
+    - button "选择并设置 Original fixture placement": INTENT
+    - button "拖动 Intent Original fixture placement":
+    - button "折叠 Original fixture placement" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Original fixture placement
+    - generic "Intent 操作": •••
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: These six original software fixtures test material delivery only. No scientific result is asserted.
+    - button "选择引用":
+      - generic: "0"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+    - figure "original-png.png READY":
+      - img "original-png.png"
+      - link "original-png.png":
+        - /url: http://127.0.0.1:8880/api/assets/asset_ace1a6e97fc8494c927cfe7e5b4e0d4b/content
+      - generic: READY
+    - figure "original-jpeg.jpeg READY":
+      - img "original-jpeg.jpeg"
+      - link "original-jpeg.jpeg":
+        - /url: http://127.0.0.1:8880/api/assets/asset_c07454d78470406583d021c3ce074d21/content
+      - generic: READY
+    - figure "original-svg.svg READY":
+      - img "original-svg.svg"
+      - link "original-svg.svg":
+        - /url: http://127.0.0.1:8880/api/assets/asset_266ed66047a74b1aaab625bedc6305a8/content
+      - generic: READY
+    - figure "original-csv.csv READY":
+      - table:
+        - rowgroup:
+          - row "Item Value Condition":
+            - cell "Item"
+            - cell "Value"
+            - cell "Condition"
+          - row "CSV_ROW_1 1 scope_1":
+            - cell "CSV_ROW_1"
+            - cell "1"
+            - cell "scope_1"
+          - row "CSV_ROW_2 2 scope_2":
+            - cell "CSV_ROW_2"
+            - cell "2"
+            - cell "scope_2"
+          - row "CSV_ROW_3 3 scope_3":
+            - cell "CSV_ROW_3"
+            - cell "3"
+            - cell "scope_3"
+          - row "CSV_ROW_4 4 scope_4":
+            - cell "CSV_ROW_4"
+            - cell "4"
+            - cell "scope_4"
+          - row "CSV_ROW_5 5 scope_5":
+            - cell "CSV_ROW_5"
+            - cell "5"
+            - cell "scope_5"
+      - link "original-csv.csv":
+        - /url: http://127.0.0.1:8880/api/assets/asset_b6d450fed7d04f988e9779aaad80446f/content
+      - generic: READY
+    - figure "original-xlsx.xlsx READY":
+      - table:
+        - rowgroup:
+          - row "XLSX_ROW_1 1 scope_1":
+            - cell "XLSX_ROW_1"
+            - cell "1"
+            - cell "scope_1"
+          - row "XLSX_ROW_2 2 scope_2":
+            - cell "XLSX_ROW_2"
+            - cell "2"
+            - cell "scope_2"
+          - row "XLSX_ROW_3 3 scope_3":
+            - cell "XLSX_ROW_3"
+            - cell "3"
+            - cell "scope_3"
+          - row "XLSX_ROW_4 4 scope_4":
+            - cell "XLSX_ROW_4"
+            - cell "4"
+            - cell "scope_4"
+          - row "XLSX_ROW_5 5 scope_5":
+            - cell "XLSX_ROW_5"
+            - cell "5"
+            - cell "scope_5"
+          - row "XLSX_ROW_6 6 scope_6":
+            - cell "XLSX_ROW_6"
+            - cell "6"
+            - cell "scope_6"
+      - link "original-xlsx.xlsx":
+        - /url: http://127.0.0.1:8880/api/assets/asset_fdbbdb2b396442d68882200259647fd5/content
+      - generic: READY
+    - figure "original-markdown.md READY":
+      - table:
+        - rowgroup:
+          - row "Item Value Condition":
+            - cell "Item"
+            - cell "Value"
+            - cell "Condition"
+          - row "MD_ROW_1 1 scope_1":
+            - cell "MD_ROW_1"
+            - cell "1"
+            - cell "scope_1"
+          - row "MD_ROW_2 2 scope_2":
+            - cell "MD_ROW_2"
+            - cell "2"
+            - cell "scope_2"
+          - row "MD_ROW_3 3 scope_3":
+            - cell "MD_ROW_3"
+            - cell "3"
+            - cell "scope_3"
+          - row "MD_ROW_4 4 scope_4":
+            - cell "MD_ROW_4"
+            - cell "4"
+            - cell "scope_4"
+          - row "MD_ROW_5 5 scope_5":
+            - cell "MD_ROW_5"
+            - cell "5"
+            - cell "scope_5"
+      - link "original-markdown.md":
+        - /url: http://127.0.0.1:8880/api/assets/asset_f87909a1ca484ee497b16b2c3896b2ce/content
+      - generic: READY
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "添加章节":
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - paragraph: 当前筛选没有真实 FieldKG 资料。
+  - status
+  - button "与 Agent 讨论 0 条 · Present all original software fixtures without rewriting their data — layout verification":
+    - text: 与 Agent 讨论
+    - text: 0 条 · Present all original software fixtures without rewriting their data — layout verification

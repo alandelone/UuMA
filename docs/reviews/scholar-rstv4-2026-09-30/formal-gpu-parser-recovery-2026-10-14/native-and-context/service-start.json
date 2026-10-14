@@ -1,0 +1,8 @@
+{
+  "pid": 40736,
+  "port": 8887,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d",
+  "worker_started": false,
+  "language_models_denied": true,
+  "one_retry_target": "/api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6/jobs/job_76d39031d8cc329ec431e6a896a08f54/retry"
+}

@@ -1,0 +1,217 @@
+{
+  "cursor": 40,
+  "events": [
+    {
+      "sequence": 37,
+      "source": {
+        "tabId": 1479454337
+      },
+      "method": "Network.requestWillBeSent",
+      "params": {
+        "documentURL": "http://127.0.0.1:3004/?manuscript=manuscript_bd7568923be94a2c8510d176010e4cca&view=revision&left=0&right=0&chat=0&round=review_round_41ae32ad3c1f4392b35e9fdd4a752a30",
+        "frameId": "E7FB911E3F628817418B346F01381945",
+        "hasUserGesture": true,
+        "initiator": {
+          "stack": {
+            "callFrames": [
+              {
+                "columnNumber": 191650,
+                "functionName": "gm",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 194123,
+                "functionName": "downloadPackage",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 211558,
+                "functionName": "y",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 212976,
+                "functionName": "onClick",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 42382,
+                "functionName": "",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 44108,
+                "functionName": "onClick",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 42382,
+                "functionName": "",
+                "lineNumber": 4,
+                "scriptId": "6",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/page-TdBBO3B3.js"
+              },
+              {
+                "columnNumber": 125813,
+                "functionName": "yd",
+                "lineNumber": 7,
+                "scriptId": "8",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+              },
+              {
+                "columnNumber": 130807,
+                "functionName": "",
+                "lineNumber": 7,
+                "scriptId": "8",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+              },
+              {
+                "columnNumber": 15079,
+                "functionName": "_n",
+                "lineNumber": 7,
+                "scriptId": "8",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+              },
+              {
+                "columnNumber": 127040,
+                "functionName": "wd",
+                "lineNumber": 7,
+                "scriptId": "8",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+              },
+              {
+                "columnNumber": 28427,
+                "functionName": "up",
+                "lineNumber": 8,
+                "scriptId": "8",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+              },
+              {
+                "columnNumber": 28249,
+                "functionName": "cp",
+                "lineNumber": 8,
+                "scriptId": "8",
+                "url": "http://127.0.0.1:3004/_next/static/chunks/framework-A1pNZAzD.js"
+              }
+            ]
+          },
+          "type": "script"
+        },
+        "loaderId": "B47F69821140DFD254A7CF270C25FC64",
+        "redirectHasExtraInfo": false,
+        "request": {
+          "headers": {
+            "Referer": "http://127.0.0.1:3004/",
+            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+            "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+            "sec-ch-ua-mobile": "?0",
+            "sec-ch-ua-platform": "\"Windows\""
+          },
+          "initialPriority": "High",
+          "isSameSite": true,
+          "method": "GET",
+          "mixedContentType": "none",
+          "referrerPolicy": "strict-origin-when-cross-origin",
+          "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_bd7568923be94a2c8510d176010e4cca/packages/submission_package_462feff00b234357a635a3e63254aff4/download"
+        },
+        "requestId": "93112.53",
+        "timestamp": 248723.415777,
+        "type": "Fetch",
+        "wallTime": 1791502457.855989
+      }
+    },
+    {
+      "sequence": 38,
+      "source": {
+        "tabId": 1479454337
+      },
+      "method": "Network.requestWillBeSentExtraInfo",
+      "params": {
+        "associatedCookies": [],
+        "clientSecurityState": {
+          "initiatorIPAddressSpace": "Loopback",
+          "initiatorIsSecureContext": true,
+          "localNetworkAccessRequestPolicy": "PermissionBlock"
+        },
+        "connectTiming": {
+          "requestTime": 248723.420938
+        },
+        "headers": {
+          "Accept": "*/*",
+          "Accept-Encoding": "gzip, deflate, br, zstd",
+          "Accept-Language": "en-US,en;q=0.9,zh-CN;q=0.8,zh-TW;q=0.7,zh;q=0.6",
+          "Connection": "keep-alive",
+          "Host": "127.0.0.1:8877",
+          "Origin": "http://127.0.0.1:3004",
+          "Referer": "http://127.0.0.1:3004/",
+          "Sec-Fetch-Dest": "empty",
+          "Sec-Fetch-Mode": "cors",
+          "Sec-Fetch-Site": "same-site",
+          "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/154.0.0.0 Safari/537.36",
+          "sec-ch-ua": "\"Chromium\";v=\"154\", \"Google Chrome\";v=\"154\", \"Not A(Brand\";v=\"99\"",
+          "sec-ch-ua-mobile": "?0",
+          "sec-ch-ua-platform": "\"Windows\""
+        },
+        "requestId": "93112.53",
+        "siteHasCookieInOtherPartition": false
+      }
+    },
+    {
+      "sequence": 39,
+      "source": {
+        "tabId": 1479454337
+      },
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "blockedCookies": [],
+        "cookiePartitionKey": {
+          "hasCrossSiteAncestor": false,
+          "topLevelSite": "http://127.0.0.1"
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": [],
+        "headers": {
+          "Cache-Control": "no-cache",
+          "Connection": "close",
+          "Pragma": "no-cache"
+        },
+        "headersText": "HTTP/1.0 204 Intercepted by the IDM Advanced Integration\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close\r\n\r\n",
+        "requestId": "93112.53",
+        "resourceIPAddressSpace": "Loopback",
+        "statusCode": 204
+      }
+    },
+    {
+      "sequence": 40,
+      "source": {
+        "tabId": 1479454337
+      },
+      "method": "Network.loadingFailed",
+      "params": {
+        "canceled": false,
+        "corsErrorStatus": {
+          "corsError": "MissingAllowOriginHeader",
+          "failedParameter": ""
+        },
+        "errorText": "net::ERR_FAILED",
+        "requestId": "93112.53",
+        "timestamp": 248724.543222,
+        "type": "Fetch"
+      }
+    }
+  ],
+  "hasMore": false,
+  "truncated": false
+}

@@ -1,0 +1,83 @@
+{
+  "before_processes": [
+    {
+      "ProcessId": 82248,
+      "ParentProcessId": 83012,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+      "CreationDate": "/Date(1791444995033)/"
+    },
+    {
+      "ProcessId": 83352,
+      "ParentProcessId": 82248,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+      "CreationDate": "/Date(1791444995050)/"
+    },
+    {
+      "ProcessId": 35552,
+      "ParentProcessId": 78832,
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3004 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791448672440)/"
+    },
+    {
+      "ProcessId": 77500,
+      "ParentProcessId": 31968,
+      "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-template-build-hb6xzpgj\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3004 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791448672711)/"
+    }
+  ],
+  "before_listeners": [
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 8877,
+      "OwningProcess": 83352
+    },
+    {
+      "LocalAddress": "127.0.0.1",
+      "LocalPort": 3004,
+      "OwningProcess": 77500
+    }
+  ],
+  "before_database_sha256": "5dd48334cc5fee03e242b4069541ddba51d1ca2beea3fa7d8cd65a4c5291bb8e",
+  "backend_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-revision-native-p48co4i6",
+  "production_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-hierarchy-build-du0s0aim\\writing-studio",
+  "status": "READY",
+  "owned_services": {
+    "backend": {
+      "launch_pid": 32792,
+      "command": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py",
+        "serve"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA"
+    },
+    "frontend": {
+      "launch_pid": 61984,
+      "command": [
+        "cmd.exe",
+        "/c",
+        "npm.cmd",
+        "run",
+        "start",
+        "--",
+        "--port",
+        "3004",
+        "--hostname",
+        "127.0.0.1"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-hierarchy-build-du0s0aim\\writing-studio"
+    }
+  },
+  "golden_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-ui-fixes-2026-10-03-8pn_4t3h",
+  "golden_database_sha256": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+  "served_assets_sha256": {
+    "/_next/static/css/index.96ejn0I9.css": "1f076ac770ed3769023ccc9e49f48f9dd1f658ce390e35de58bd70104d292be3",
+    "/_next/static/chunks/page-DQWJBatR.js": "240264f117b3ddfaa4bf833f5882960d343a7be3ce2603af7e26b37f7513f38e",
+    "/_next/static/chunks/vinext-SmIDFE3X.js": "7faf2253f57974a9b15f0142120d1c0a5ad626cbb0a7eee98bb6a1827d0746dd",
+    "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "/_next/static/chunks/index-BZDD2jEs.js": "e3f35599f87ec3b3fed3bae76dbe6f562f8c5775207499bde4daa2fcc3c0d06d",
+    "/_next/static/chunks/layout-segment-context-CpqSwg1u.js": "f9473b7887ec4ebff07ad13d2a8dbde04390ec13b11f238f75c3c14f2eab1471"
+  },
+  "database_unchanged_by_refresh": true
+}

@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "tests/test_catalog_web.py",
+    "tests/test_catalog_paper_selection.py",
+    "tests/test_collection_workspace.py",
+    "-q"
+  ],
+  "exit_code": 0,
+  "seconds": 16.578000000008615
+}

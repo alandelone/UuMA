@@ -1,0 +1,45 @@
+{
+  "status": "FAIL",
+  "checks": [
+    {
+      "check": "pytest",
+      "exit_code": 1
+    },
+    {
+      "check": "correspondence-unit",
+      "exit_code": 0
+    },
+    {
+      "check": "placement-unit",
+      "exit_code": 0
+    },
+    {
+      "check": "blocks-unit",
+      "exit_code": 0
+    },
+    {
+      "check": "tsc",
+      "exit_code": 0
+    },
+    {
+      "check": "oxlint",
+      "exit_code": 1
+    }
+  ],
+  "seconds": 57.485,
+  "source_sha256": {
+    "RSTV4/src/rstv4/studio.py": "8aed14affc0f809d728b613ea8656b4877879b25ff6b33e7fe79f38b583b72b4",
+    "RSTV4/src/rstv4/studio_context.py": "d17c9caebc358c622f7f2e1e13ad4ae2fe13ba57464daaa73ef6e123cd3f7187",
+    "RSTV4/src/rstv4/studio_structure.py": "25008ebdf705f8ee958269f586c57ae02960ed9d6fe2aff712ba35f63d863204",
+    "RSTV4/src/rstv4/studio_templates.py": "785aafc9d8ea6fc85fa404302fed8eb31f85b3996b8ec191bcc7d77d55645d29",
+    "RSTV4/src/rstv4/studio_correspondence.py": "c5d996ea66626f9ad5d557df9a8ef9c7351ab0b9f4a1e526a2fad424e17f521f",
+    "RSTV4/tests/test_studio_correspondence.py": "9cb43b882b16c7ecc7e4e7fb84cb65f836ddc3ea8ca379b01b8fe5542c27e912",
+    "writing-studio/lib/studio-correspondence.ts": "3ea4a2d1b412173bc70f8993cd629ff100f3de138de60e36aa1db06ef5bd0f1f",
+    "writing-studio/lib/studio-blocks.ts": "2f85c924b655dd3aa99df727362d4cc12fbc43006c6311c563d065e2ff816d31",
+    "writing-studio/lib/studio-types.ts": "39069007ab333b5ddbc341e5858f184a794d6e4d633766774d413cb0cacfff73",
+    "writing-studio/components/studio-workspace.tsx": "9a4bc8fa7edfbecc340c37b5fe0dca93a4e53333b8cfa04b7a2e4bbaf361418c",
+    "writing-studio/components/studio-intent-correspondence.tsx": "9400e21c5e1ad5610add6fc3f07f504ca8591b0c6a21b3a3922298df04c6dc92",
+    "writing-studio/tests/unit/studio-correspondence.cjs": "3291753364707e6f2992379fe04a359af636756248e45fd475585b949619ae31"
+  },
+  "source_unchanged_while_running": true
+}

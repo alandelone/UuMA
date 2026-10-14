@@ -105,6 +105,10 @@ def test_wisdom_profile_enables_direct_run_guard(tmp_path) -> None:
     assert knowledge["env"]["UUMA_KAG_IDLE_SECONDS"] == "1800"
     assert knowledge["env"]["UUMA_QUESTION_ORBIT_ENABLED"] == "false"
     assert knowledge["env"]["UUMA_KAG_SECRETS_FILE"] == str(tmp_path / ".env")
+    assert knowledge["env"]["UUMA_KNOWLEDGE_DATA_DIR"] == str((tmp_path / "data").resolve())
+    worker = config["mcp_servers"]["uuma-worker"]
+    assert worker["env"]["UUMA_DATA_DIR"] == str(tmp_path / "data")
+    assert worker["env"]["UUMA_KNOWLEDGE_DATA_DIR"] == knowledge["env"]["UUMA_KNOWLEDGE_DATA_DIR"]
     assert knowledge["timeout"] == 480
     assert config["plugins"]["hook_callback_timeout"] == 450
 
@@ -153,6 +157,11 @@ def test_yonc_profile_has_only_worker_and_project_mcp(tmp_path) -> None:
     assert project["args"] == ["-m", "graph_app.mcp_project"]
     assert project["env"]["YONC_API_URL"] == "http://127.0.0.1:9876"
     assert "YONC_AGENT_COMMIT_TOKEN" not in project["env"]
+    assert set(config["mcp_servers"]["uuma-worker"]["tools"]["include"]) == {
+        "register_direct_run", "get_assignment", "report_progress", "block_run",
+        "submit_result", "yonc_get_colleague_capabilities",
+    }
+    assert config["tools"]["tool_search"]["enabled"] == "off"
 
 
 def test_unknown_worker_does_not_inherit_guard(tmp_path) -> None:

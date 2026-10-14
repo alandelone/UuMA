@@ -1,0 +1,20 @@
+import assert from 'node:assert/strict';
+import fs from 'node:fs';
+import vm from 'node:vm';
+const repo=new URL('../',import.meta.url);
+const fixture=JSON.parse(fs.readFileSync(new URL('.tmp/scholar-withdrawal-fixture-v1.json',repo),'utf8'));
+const out=new URL('.tmp/scholar-withdrawal-controller-native-v1.json',repo);assert.equal(fs.existsSync(out),false);
+const source=await(await fetch('http://127.0.0.1:8888/catalog-review-workflow.js')).text();
+assert.equal(source,fs.readFileSync(new URL('../RSTV4/src/rstv4/catalog_review_workflow.js',repo),'utf8'));
+const host=vm.createContext({});vm.runInContext(source,host);
+const requests=[],map=new Map();let key=0;
+const api=async(path,body)=>{const r=await fetch('http://127.0.0.1:8888'+path,body?{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body)}:{});const v=await r.json();requests.push({path,status:r.status,body:v});if(!r.ok){const e=Error(JSON.stringify(v));e.status=r.status;throw e;}return v;};
+const c=host.CatalogReviewWorkflow.createController({api,makeKey:()=>`actual-withdrawal-native-${++key}`,storage:{getItem:k=>map.get(k),setItem:(k,v)=>map.set(k,v)}});
+await c.load(fixture.file_version_id);c.setReason('Explicit software fixture: withdraw file identity, retain frozen artifacts');
+const reopened=await c.submit('REOPEN_IDENTITY');assert.equal(reopened.result.status,'IDENTITY_REOPENED');assert.deepEqual(reopened.result.invalidated_nodes,['child','root']);
+const stale=await api('/api/catalog/tracks/track/workspace');assert.equal(stale.manuscripts[0].needs_scientific_review,1);assert.ok(stale.source_reviews.length);
+c.setReason('Explicit software file identity recheck; no scientific restoration');const approved=await c.submit('APPROVE_IDENTITY');assert.equal(approved.result.status,'APPROVED_IDENTITY');
+const retained=await api('/api/catalog/tracks/track/workspace');assert.equal(retained.nodes.find(n=>n.node_id==='child').status,'STALE');assert.equal(retained.manuscripts[0].needs_scientific_review,1);
+for(const receipt of [reopened,approved]){const body={...receipt.request};delete body.case_id;assert.deepEqual(await api(`/api/catalog/review/cases/${fixture.file_version_id}/actions`,body),receipt);}
+fs.writeFileSync(out,JSON.stringify({status:'PASS_SHIPPED_WITHDRAWAL_REAPPROVAL_CONTROLLER_REAL_HTTP',root:fixture.root,file_version_id:fixture.file_version_id,reopened,approved,requests,browser_verified:false,scientific_state_fixture:true,scientific_approval:false},null,2),{flag:'wx'});
+console.log('Actual controller withdrew/rechecked software source, preserved artifacts and kept research stale.');

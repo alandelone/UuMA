@@ -1,0 +1,608 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "--config",
+      "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio\\review-read-recovery.config.ts"
+    ],
+    "configFile": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio\\review-read-recovery.config.ts",
+    "rootDir": "C:/Users/Alandelone/CodeSpace_Local/writing-studio/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": false,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-native-import-v1/comments-read-recovery-v1/e2e-v1/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/Users/Alandelone/CodeSpace_Local/writing-studio/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "review-read-recovery.spec.ts"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "list",
+        null
+      ],
+      [
+        "json",
+        {
+          "outputFile": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\results.json"
+        }
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "review-read-recovery.spec.ts",
+      "file": "review-read-recovery.spec.ts",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Revision comments and rounds read recovery",
+          "file": "review-read-recovery.spec.ts",
+          "line": 137,
+          "column": 6,
+          "specs": [
+            {
+              "title": "cold comments failure cannot masquerade as empty or permit round creation; retry reads only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 783,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:149:35",
+                        "location": {
+                          "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                          "column": 35,
+                          "line": 149
+                        },
+                        "snippet": "  147 |       expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);\n  148 |       await expectReadOnlyRetry(page, state, 3, true);\n> 149 |       await expect(opinion(page)).toBeVisible();\n      |                                   ^\n  150 |       await expect(roundPicker(page).locator('option')).toHaveCount(4);\n  151 |       await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');\n  152 |       expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                            "column": 35,
+                            "line": 149
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n\n  147 |       expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);\n  148 |       await expectReadOnlyRetry(page, state, 3, true);\n> 149 |       await expect(opinion(page)).toBeVisible();\n      |                                   ^\n  150 |       await expect(roundPicker(page).locator('option')).toHaveCount(4);\n  151 |       await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');\n  152 |       expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:149:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:12:54.215Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-f8975-d-creation-retry-reads-only\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                        "column": 35,
+                        "line": 149
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-09ad3fa715eceaf920ee",
+              "file": "review-read-recovery.spec.ts",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "cold rounds failure cannot masquerade as empty or permit round creation; retry reads only",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 692,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:149:35",
+                        "location": {
+                          "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                          "column": 35,
+                          "line": 149
+                        },
+                        "snippet": "  147 |       expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);\n  148 |       await expectReadOnlyRetry(page, state, 3, true);\n> 149 |       await expect(opinion(page)).toBeVisible();\n      |                                   ^\n  150 |       await expect(roundPicker(page).locator('option')).toHaveCount(4);\n  151 |       await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');\n  152 |       expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                            "column": 35,
+                            "line": 149
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n\n  147 |       expect(state.createPosts).toBe(0); expect(state.importPosts).toBe(0);\n  148 |       await expectReadOnlyRetry(page, state, 3, true);\n> 149 |       await expect(opinion(page)).toBeVisible();\n      |                                   ^\n  150 |       await expect(roundPicker(page).locator('option')).toHaveCount(4);\n  151 |       await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Local original preview stays available.');\n  152 |       expect(state.comments).toHaveLength(210); expect(state.rounds).toHaveLength(3);\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:149:35"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:12:55.892Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-b8458-d-creation-retry-reads-only\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                        "column": 35,
+                        "line": 149
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-e501dc100aaa9edc4d0c",
+              "file": "review-read-recovery.spec.ts",
+              "line": 140,
+              "column": 5
+            },
+            {
+              "title": "successful empty reads display a genuine empty state",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 499,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:12:57.282Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-2728a369a87e9878fa44",
+              "file": "review-read-recovery.spec.ts",
+              "line": 155,
+              "column": 3
+            },
+            {
+              "title": "warm failure retains opinions, current round, local input and preview; retry does not write",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 652,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:171:33",
+                        "location": {
+                          "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                          "column": 33,
+                          "line": 171
+                        },
+                        "snippet": "  169 |     state.failRead = 'rounds'; await retry(page).click(); await expectFailed(page);\n  170 |     await expect(readStatus(page)).toContainText('当前显示上次读取的数据');\n> 171 |     await expect(opinion(page)).toBeVisible();\n      |                                 ^\n  172 |     await expect(roundPicker(page)).toHaveValue(roundId(3));\n  173 |     await expect(page.getByRole('textbox', { name: '审稿意见输入', exact: true })).toHaveValue('Unsaved original import draft.');\n  174 |     await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Edited local preview with source preserved.');"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                            "column": 33,
+                            "line": 171
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n\n  169 |     state.failRead = 'rounds'; await retry(page).click(); await expectFailed(page);\n  170 |     await expect(readStatus(page)).toContainText('当前显示上次读取的数据');\n> 171 |     await expect(opinion(page)).toBeVisible();\n      |                                 ^\n  172 |     await expect(roundPicker(page)).toHaveValue(roundId(3));\n  173 |     await expect(page.getByRole('textbox', { name: '审稿意见输入', exact: true })).toHaveValue('Unsaved original import draft.');\n  174 |     await expect(page.getByRole('textbox', { name: '编辑意见 1', exact: true })).toHaveValue('Edited local preview with source preserved.');\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:171:33"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:12:57.970Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-c212b-review-retry-does-not-write\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-c212b-review-retry-does-not-write\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-c212b-review-retry-does-not-write\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                        "column": 33,
+                        "line": 171
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-f7b0662a937722273b20",
+              "file": "review-read-recovery.spec.ts",
+              "line": 164,
+              "column": 3
+            },
+            {
+              "title": "acknowledged round creation followed by failed reload never repeats create POST",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1011,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:12:59.139Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-e2e4e2802ff2f61ed944",
+              "file": "review-read-recovery.spec.ts",
+              "line": 181,
+              "column": 3
+            },
+            {
+              "title": "acknowledged import followed by failed reload retries GET without duplicate import",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 765,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('One acknowledged import, never replayed.', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('One acknowledged import, never replayed.', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">One acknowledged import, never replayed.</p> aka getByRole('paragraph').filter({ hasText: 'One acknowledged import,' })\n    2) <p class=\"whitespace-pre-wrap\">One acknowledged import, never replayed.</p> aka getByText('One acknowledged import,').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('One acknowledged import, never replayed.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('One acknowledged import, never replayed.', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('One acknowledged import, never replayed.', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('One acknowledged import, never replayed.', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">One acknowledged import, never replayed.</p> aka getByRole('paragraph').filter({ hasText: 'One acknowledged import,' })\n    2) <p class=\"whitespace-pre-wrap\">One acknowledged import, never replayed.</p> aka getByText('One acknowledged import,').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('One acknowledged import, never replayed.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('One acknowledged import, never replayed.', { exact: true })\u001b[22m\n\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:205:95",
+                        "location": {
+                          "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                          "column": 95,
+                          "line": 205
+                        },
+                        "snippet": "  203 |     await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toHaveCount(0);\n  204 |     await expectReadOnlyRetry(page, state);\n> 205 |     await expect(page.getByText('One acknowledged import, never replayed.', { exact: true })).toBeVisible();\n      |                                                                                               ^\n  206 |     expect(state.importPosts).toBe(1); expect(state.createPosts).toBe(0);\n  207 |     expect(state.comments.filter((r) => r.edited_text === 'One acknowledged import, never replayed.')).toHaveLength(1);\n  208 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                            "column": 95,
+                            "line": 205
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('One acknowledged import, never replayed.', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('One acknowledged import, never replayed.', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">One acknowledged import, never replayed.</p> aka getByRole('paragraph').filter({ hasText: 'One acknowledged import,' })\n    2) <p class=\"whitespace-pre-wrap\">One acknowledged import, never replayed.</p> aka getByText('One acknowledged import,').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('One acknowledged import, never replayed.', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('One acknowledged import, never replayed.', { exact: true })\u001b[22m\n\n\n  203 |     await expect(page.getByRole('button', { name: '✓ 确认导入 1 条', exact: true })).toHaveCount(0);\n  204 |     await expectReadOnlyRetry(page, state);\n> 205 |     await expect(page.getByText('One acknowledged import, never replayed.', { exact: true })).toBeVisible();\n      |                                                                                               ^\n  206 |     expect(state.importPosts).toBe(1); expect(state.createPosts).toBe(0);\n  207 |     expect(state.comments.filter((r) => r.edited_text === 'One acknowledged import, never replayed.')).toHaveLength(1);\n  208 |   });\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:205:95"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:00.336Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-c6597-ET-without-duplicate-import\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-c6597-ET-without-duplicate-import\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-c6597-ET-without-duplicate-import\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                        "column": 95,
+                        "line": 205
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-b95f7a0bbf9990d63279",
+              "file": "review-read-recovery.spec.ts",
+              "line": 195,
+              "column": 3
+            },
+            {
+              "title": "late older empty response cannot replace a newer successful read",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 779,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:219:54",
+                        "location": {
+                          "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                          "column": 54,
+                          "line": 219
+                        },
+                        "snippet": "  217 |       await page.getByRole('button', { name: '🧩 结构', exact: true }).click();\n  218 |       await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();\n> 219 |       await ready(page); await expect(opinion(page)).toBeVisible();\n      |                                                      ^\n  220 |       const held = state.held.splice(0);\n  221 |       await Promise.all(held.map((release) => release(stale)));\n  222 |       // Wait for response-triggered React work before asserting retained state."
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                            "column": 54,
+                            "line": 219
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n\n  217 |       await page.getByRole('button', { name: '🧩 结构', exact: true }).click();\n  218 |       await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();\n> 219 |       await ready(page); await expect(opinion(page)).toBeVisible();\n      |                                                      ^\n  220 |       const held = state.held.splice(0);\n  221 |       await Promise.all(held.map((release) => release(stale)));\n  222 |       // Wait for response-triggered React work before asserting retained state.\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:219:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:01.613Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-a6f19-ace-a-newer-successful-read\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                        "column": 54,
+                        "line": 219
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-778b01960890bb434452",
+              "file": "review-read-recovery.spec.ts",
+              "line": 210,
+              "column": 5
+            },
+            {
+              "title": "late older failure response cannot replace a newer successful read",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "",
+                  "projectName": "",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 745,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:219:54",
+                        "location": {
+                          "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                          "column": 54,
+                          "line": 219
+                        },
+                        "snippet": "  217 |       await page.getByRole('button', { name: '🧩 结构', exact: true }).click();\n  218 |       await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();\n> 219 |       await ready(page); await expect(opinion(page)).toBeVisible();\n      |                                                      ^\n  220 |       const held = state.held.splice(0);\n  221 |       await Promise.all(held.map((release) => release(stale)));\n  222 |       // Wait for response-triggered React work before asserting retained state."
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                            "column": 54,
+                            "line": 219
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator: getByText('Original software opinion A210', { exact: true })\nExpected: visible\nError: strict mode violation: getByText('Original software opinion A210', { exact: true }) resolved to 2 elements:\n    1) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByRole('paragraph').filter({ hasText: 'Original software opinion A210' })\n    2) <p class=\"whitespace-pre-wrap\">Original software opinion A210</p> aka getByText('Original software opinion A210').nth(1)\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" getByText('Original software opinion A210', { exact: true }) with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for getByText('Original software opinion A210', { exact: true })\u001b[22m\n\n\n  217 |       await page.getByRole('button', { name: '🧩 结构', exact: true }).click();\n  218 |       await page.getByRole('button', { name: '✍️ Revision', exact: true }).click();\n> 219 |       await ready(page); await expect(opinion(page)).toBeVisible();\n      |                                                      ^\n  220 |       const held = state.held.splice(0);\n  221 |       await Promise.all(held.map((release) => release(stale)));\n  222 |       // Wait for response-triggered React work before asserting retained state.\n    at C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts:219:54"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-10-14T03:13:03.091Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\\error-context.md"
+                        },
+                        {
+                          "name": "trace",
+                          "contentType": "application/zip",
+                          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\comments-read-recovery-v1\\e2e-v1\\test-results\\review-read-recovery-Revis-dad02-ace-a-newer-successful-read\\trace.zip"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+                        "column": 54,
+                        "line": 219
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "19c4d700ce411e9bd73a-e8627e0f3240ea25e40f",
+              "file": "review-read-recovery.spec.ts",
+              "line": 210,
+              "column": 5
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-14T03:12:53.875Z",
+    "duration": 10375.449,
+    "expected": 2,
+    "skipped": 0,
+    "unexpected": 6,
+    "flaky": 0
+  }
+}

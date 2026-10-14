@@ -1,0 +1,18 @@
+All checks passed!
+
+Exit: 0
+
+Exit: 0
+
+Exit: 0
+9 controlled result-state cases passed; no browser was used.
+
+Exit: 0
+warning: in the working copy of 'src/rstv4/database.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/model_gateway.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+
+Exit: 0
+
+Exit: 0

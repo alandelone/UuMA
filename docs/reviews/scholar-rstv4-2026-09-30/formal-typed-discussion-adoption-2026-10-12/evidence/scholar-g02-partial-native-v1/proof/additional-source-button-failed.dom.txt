@@ -1,0 +1,296 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销":
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+    - generic: 结构已变化 · 旧成文保留
+  - alert:
+    - generic: 原讨论没有保存这条引用的来源快照；无法回查原来源。
+  - article:
+    - generic: 当前显示旧生成快照；结构修改尚未重新生成。
+    - button "修改原始结构":
+      - text: 修改原始结构
+    - button "🔎 全文检查"
+    - link "Markdown":
+      - /url: /api/studio-files/artifacts/artifact_5ad74027523a436d84b228bbbf6f0ae2
+    - link "成文与来源记录":
+      - /url: /api/studio-files/artifacts/artifact_f4ee8b5f953149aa9121a569b02ee576
+    - link "LaTeX":
+      - /url: /api/studio-files/artifacts/artifact_eaffa9a0da7d41058f910d59dbf1a152
+    - link "参考文献":
+      - /url: /api/studio-files/artifacts/artifact_195566734c1d461ea9683fb07d8d0ca0
+    - link "📎 PDF":
+      - /url: /api/studio-files/artifacts/artifact_7477255312e6405988e21c626026e5ae
+    - button "进入定稿 →"
+    - heading "Fixed citation source - software acceptance" [level=1]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - heading "Introduction" [level=2]
+    - button "💬 讨论此节"
+    - button "讨论选区"
+    - paragraph:
+      - text: Beta software paragraph cites original page 1
+      - button "打开引用 1 的来源": "[1]"
+      - text: and additional source
+      - button "打开引用 2 的来源": "[2]"
+      - text: .
+    - button "💬 讨论此段"
+    - button "讨论选区"
+    - button "修改此段原始结构"
+    - paragraph:
+      - text: First source
+      - button "打开引用 2 的来源": "[2]"
+      - text: . Next
+      - button "打开引用 1 的来源": "[1]"
+      - text: . Repeat
+      - button "打开引用 2 的来源": "[2]"
+      - text: .
+    - button "💬 讨论此段"
+    - button "讨论选区"
+    - button "修改此段原始结构"
+    - region "此版本的固定参考文献":
+      - heading "References" [level=2]
+      - list:
+        - button "打开引用 1 的来源": "[1]"
+        - text: Fixture Author (2026). Refreshed live catalog title - software
+        - button "打开引用 2 的来源": "[2]"
+        - text: Fixture Author (2026). Other selected source · 10.1234/other
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - article:
+      - button "将证据加入当前思想：New original software source body.":
+        - generic: SUPPORTS
+        - generic: 90%
+        - strong: New original software source body.
+        - generic: New original software source body.
+      - generic: Other selected source
+      - generic: 原文不可用
+    - article:
+      - button "将证据加入当前思想：Original software source body 2.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 2.
+        - generic: Original software source body 2.
+      - generic: Refreshed live catalog title - software
+      - generic: 原文不可用
+    - article:
+      - button "将证据加入当前思想：Original software source body 1.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 1.
+        - generic: Original software source body 1.
+      - generic: Refreshed live catalog title - software
+      - generic: 原文不可用
+  - status
+  - button "与 Agent 讨论 15 条 · Introduction / 段落 1" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 15 条 · Introduction / 段落 1
+  - button "整篇历史"
+  - button "当前对象 · 此版本"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: Annotation：Software acceptance only. Keep the original page 2 source fixed to generated v1.
+    - paragraph: "Check these original numbered citations after regeneration: preserve the original source and version."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: verify original numbered citations [1] and [2] using generated v1 fixed sources."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: after generated v2, continue this original v1 quote and its original [1] page 2 source."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v1 / 结构 r1"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: "G01 ALPHA original discussion: preserve this first paragraph, exact selected text and generated v3 after reordering."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: "G01 BETA original discussion: preserve this second paragraph, exact original source and selected text when it moves to first position."
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: "G02 SOFTWARE PARTIAL: propose a paragraph purpose and an extra Intent for this original v3 Alpha object. I will adopt only the purpose, retain the original thought and sources, and leave the extra Intent unadopted."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: Software fixture proposes two structure changes for author comparison. No author change is applied by this reply. The original v3 paragraph, quote and sources stay fixed.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源": 📚 引用来源 1
+    - button "查看此回复的第 2 个引用来源": 📚 引用来源 2
+    - region "待作者审核的建议":
+      - paragraph: 结构建议
+      - paragraph: G02 software partial adoption
+      - paragraph: Select only the paragraph purpose. Keep the proposed extra Intent unadopted, and retain the original author thought and sources.
+      - button "比较与决定 · 2 项"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: "G02 SOFTWARE SOURCE: use the added original v1 page 2 evidence as an unselected source candidate for this original Beta v3 thought. Keep the two original selected citations and author text unchanged."
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button "定位原对象 · Introduction / 段落 2"
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - button "查看此回复的第 1 个引用来源" [active]: 📚 引用来源 1
+    - region "待作者审核的建议":
+      - paragraph: 来源候选
+      - paragraph: G02 software source candidate
+      - paragraph: Add this existing owned page 2 source as an unselected candidate. Keep both original selected sources and the original author text.
+      - button "比较与决定 · 1 项"
+  - article:
+    - generic: 你
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: "G02 SOFTWARE WORDING: propose replacing only the original word Check with Review for explicit author rejection. Retain all original thought text, citations, objects and versions when rejected."
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "查看原调用记录"
+  - article:
+    - generic: Scholar
+    - button "原对象 · 成文 v3 / 结构 r10"
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button "定位原对象 · Introduction / 段落 1"
+    - button "继续这段讨论"
+    - button "查看原调用记录"
+    - region "待作者审核的建议":
+      - paragraph: 措辞建议
+      - paragraph: G02 software wording rejection
+      - paragraph: Offer a five-character wording edit for explicit rejection. Preserve the original author thought when rejected.
+      - button "比较与决定 · 1 项"
+  - generic: 当前选择：Introduction / 段落 1
+  - blockquote: First source [1]. Next [2]. Repeat [1].
+  - strong: 草稿对象：Introduction / 段落 1 · 成文 v3 · 结构 r10
+  - generic: 对象已有新版本，当前仍引用历史原文。
+  - blockquote: 草稿引用：First source [1]. Next [2]. Repeat [1].
+  - button "移除草稿选区（保留对象）"
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - region "比较新选对象与原草稿":
+    - paragraph: 新选：Introduction / 段落 1 · 成文 v3 · 结构 r10。当前问题仍绑定原对象。
+    - button "保留并固定原对象"
+    - button "改用新对象并保留问题"
+    - button "加入比较来源"
+  - generic "固定对象的完整原文与版本"
+  - checkbox "明确允许比较不同研究范围的固定来源"
+  - checkbox
+  - text: 明确允许比较不同研究范围的固定来源
+  - region "本轮讨论的历史上下文":
+    - paragraph:
+      - text: 继续这段讨论 · 2 条历史消息
+      - button "开始新讨论"
+    - generic "本轮会带入的问题、回复与固定来源"
+  - status: 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：Introduction / 段落 1
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+  - button "发送讨论" [disabled]:
+  - button "保存讨论批注" [disabled]
+  - button "更新讨论历史"
+  - button "查看原讨论与调用记录"

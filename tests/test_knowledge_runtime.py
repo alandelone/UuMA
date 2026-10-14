@@ -117,6 +117,10 @@ def test_wisdom_rejects_pasted_api_error_before_graph_or_topic_work(monkeypatch)
 @pytest.mark.parametrize("message,intent,expected", [
     ("how is your progress?", "auto", "status"),
     ("how is your progress?", "research", "status"),
+    ("how is the progress?", "research", "status"),
+    ("How is the progress today?", "auto", "status"),
+    ("show me all topics", "auto", "status"),
+    ("全部主题列表", "auto", "status"),
     ("现在目前有什么 topic 在进行中的吗？", "auto", "status"),
     ("研究进度？", "auto", "status"),
     ("This page is wrong, why?", "auto", "auto"),

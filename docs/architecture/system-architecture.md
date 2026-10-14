@@ -31,6 +31,24 @@ Hermes default profile (Orchestrator)
 
 The Live Interface project is a client and remains outside this repository.
 
+## Agent research tools (2026-10-02 contract)
+
+Agents retain work ownership when invoking external tools. Wisdom-Oldman owns its topic, questions,
+research decisions and document; ChatGPT executes bounded chat, search or deep-research work through
+the bridge. Skills explain tool selection and use, a capability directory describes permitted and
+available tools, and an executor records requests and collects results for the research loop.
+Future sources join through the same capability/adapter boundary. Existing per-Agent permissions
+remain in force.
+
+An empty search result requires strategy and gap reassessment. It does not establish exhaustion of
+available routes or justify pausing a topic. User pause/stop, configured budget limits and concrete
+execution blockers retain their distinct meanings. Conversation reads durable progress and explains
+the cause and next action even when research or KAG is unavailable.
+
+The detailed normative contract and explicitly unimplemented portions are in
+[Agent research tools and continuous research](agent-research-tools.md). This architecture update
+does not claim the automatic Deep Research dispatcher or report recovery has been deployed.
+
 ## Truth and projections
 
 UuMA's immutable, hash-chained event stream is the control-plane record. Current tasks, Runs,
@@ -104,7 +122,7 @@ The ChatGPT Bridge is a separate local service and tool boundary. Orchestrator, 
 Wisdom-Oldman may use chat, search, and deep research; Forge-Lab-Bot may use lab-related search.
 Scholar and Yonc are excluded. The bridge owns browser interaction and account verification, while
 agents see only request, continuation, status, result, cancellation, and thread-list operations.
-Returned text remains external advice and cannot approve UuMA or Wisdom knowledge changes.
+Returned text is an external tool result and cannot approve UuMA or Wisdom knowledge changes.
 
 Risk classes:
 

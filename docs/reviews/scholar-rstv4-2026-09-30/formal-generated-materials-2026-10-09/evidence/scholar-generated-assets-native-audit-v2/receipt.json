@@ -1,0 +1,427 @@
+{
+  "status": "PASS_NATIVE_MATERIAL_DELIVERY_AND_INDEPENDENT_AUDIT",
+  "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+  "generated_version_id": "manuscript_version_9f842e3acfea471a8c2a48abc8f02817",
+  "author_revision": 1,
+  "stage": "FINALIZATION_SUBMISSION",
+  "job_ids": [
+    "studio_job_c4d6634f12034a008540da0a57a9b174",
+    "studio_job_64b2d43f10a64537b6a56f1fc69ca8aa"
+  ],
+  "declared_fixture_model_calls": 1,
+  "actual_remote_model_calls": 0,
+  "artifacts": [
+    {
+      "artifact_id": "artifact_3c885dd0436f4c1185a9097616ed279c",
+      "job_id": "studio_job_c4d6634f12034a008540da0a57a9b174",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "document_revision": 1,
+      "artifact_kind": "MARKDOWN",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\writing-studio\\manuscript_3c63372cb2ae406d977def5953d53b59\\generated\\studio_job_c4d6634f12034a008540da0a57a9b174\\manuscript.md",
+      "sha256": "bdd067d7d5d3dbc7c03734c903d90a28fd711e9a7bfe92c0330890f603ed6543",
+      "size_bytes": 2232,
+      "created_at": "2026-10-09T09:25:59.209704+00:00"
+    },
+    {
+      "artifact_id": "artifact_284b0a930dd4457791acd9bbe165c2b5",
+      "job_id": "studio_job_c4d6634f12034a008540da0a57a9b174",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "document_revision": 1,
+      "artifact_kind": "GENERATED_JSON",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\writing-studio\\manuscript_3c63372cb2ae406d977def5953d53b59\\generated\\studio_job_c4d6634f12034a008540da0a57a9b174\\generated.json",
+      "sha256": "15174ac14f21d220ebbddc53510275c2a62f96783ec958614c7f484d5852896b",
+      "size_bytes": 5271,
+      "created_at": "2026-10-09T09:25:59.209704+00:00"
+    },
+    {
+      "artifact_id": "artifact_44ea3bec98b64159ba98b7717f404873",
+      "job_id": "studio_job_c4d6634f12034a008540da0a57a9b174",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "document_revision": 1,
+      "artifact_kind": "TEX",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\writing-studio\\manuscript_3c63372cb2ae406d977def5953d53b59\\generated\\studio_job_c4d6634f12034a008540da0a57a9b174\\manuscript.tex",
+      "sha256": "4d66ad0c0618f55b9bab7b990e6b6aa0577fa4e0d2598fadfd8c072041175976",
+      "size_bytes": 3565,
+      "created_at": "2026-10-09T09:25:59.209704+00:00"
+    },
+    {
+      "artifact_id": "artifact_15ff83283cd8485383947342c260387d",
+      "job_id": "studio_job_c4d6634f12034a008540da0a57a9b174",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "document_revision": 1,
+      "artifact_kind": "BIB",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\writing-studio\\manuscript_3c63372cb2ae406d977def5953d53b59\\generated\\studio_job_c4d6634f12034a008540da0a57a9b174\\references.bib",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "size_bytes": 0,
+      "created_at": "2026-10-09T09:25:59.209704+00:00"
+    },
+    {
+      "artifact_id": "artifact_854ed6b440d34f38a7c819a42104b6d3",
+      "job_id": "studio_job_c4d6634f12034a008540da0a57a9b174",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "document_revision": 1,
+      "artifact_kind": "PDF",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\writing-studio\\manuscript_3c63372cb2ae406d977def5953d53b59\\generated\\studio_job_c4d6634f12034a008540da0a57a9b174\\manuscript.pdf",
+      "sha256": "c5c4aa8679b430aa3bab7b61e71da71704e1aefacf679502e9b36f15af04b060",
+      "size_bytes": 33347,
+      "created_at": "2026-10-09T09:25:59.215986+00:00"
+    }
+  ],
+  "materials": [
+    {
+      "asset_id": "asset_ace1a6e97fc8494c927cfe7e5b4e0d4b",
+      "filename": "original-png.png",
+      "media_type": "image/png",
+      "sha256": "dd5859df59f4ada1ed857563b087653a73364385e2f17819d2922597237ad444",
+      "size_bytes": 551,
+      "source_file": "material-asset_ace1a6e97fc8494c927cfe7e5b4e0d4b-source.png"
+    },
+    {
+      "asset_id": "asset_c07454d78470406583d021c3ce074d21",
+      "filename": "original-jpeg.jpeg",
+      "media_type": "image/jpeg",
+      "sha256": "04a86064f1768f17918b6e570eeb033d4f4c04397e56e71f57cac1f1daa98d61",
+      "size_bytes": 1429,
+      "source_file": "material-asset_c07454d78470406583d021c3ce074d21-source.jpg"
+    },
+    {
+      "asset_id": "asset_266ed66047a74b1aaab625bedc6305a8",
+      "filename": "original-svg.svg",
+      "media_type": "image/svg+xml",
+      "sha256": "c8ed891f2f970227c51052975aa94dfcdae9538b8ab74b42f5128d9a5f75f6f1",
+      "size_bytes": 166,
+      "source_file": "material-asset_266ed66047a74b1aaab625bedc6305a8-source.svg"
+    },
+    {
+      "asset_id": "asset_b6d450fed7d04f988e9779aaad80446f",
+      "filename": "original-csv.csv",
+      "media_type": "text/csv",
+      "sha256": "7e2417c1496e0b0e524441b53baa3ac83ca7d52a6fe78d547aa192cc516da9f1",
+      "size_bytes": 224,
+      "source_file": "material-asset_b6d450fed7d04f988e9779aaad80446f-source.csv"
+    },
+    {
+      "asset_id": "asset_fdbbdb2b396442d68882200259647fd5",
+      "filename": "original-xlsx.xlsx",
+      "media_type": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+      "sha256": "52bb41aa71b392c5df6b539513be0ca1114706b9a7b59801b0a1169c0c3865c0",
+      "size_bytes": 5560,
+      "source_file": "material-asset_fdbbdb2b396442d68882200259647fd5-source.xlsx"
+    },
+    {
+      "asset_id": "asset_f87909a1ca484ee497b16b2c3896b2ce",
+      "filename": "original-markdown.md",
+      "media_type": "text/markdown",
+      "sha256": "4f550b6dd894e8d3fc81e83c2cf8b492040a7efdeb654a1d94553d32eb476d6a",
+      "size_bytes": 316,
+      "source_file": "material-asset_f87909a1ca484ee497b16b2c3896b2ce-source.md"
+    }
+  ],
+  "full_tables": [
+    {
+      "title": "original-csv.csv",
+      "rows": [
+        [
+          "Item",
+          "Value",
+          "Condition"
+        ],
+        [
+          "CSV_ROW_1",
+          "1",
+          "scope_1"
+        ],
+        [
+          "CSV_ROW_2",
+          "2",
+          "scope_2"
+        ],
+        [
+          "CSV_ROW_3",
+          "3",
+          "scope_3"
+        ],
+        [
+          "CSV_ROW_4",
+          "4",
+          "scope_4"
+        ],
+        [
+          "CSV_ROW_5",
+          "5",
+          "scope_5"
+        ],
+        [
+          "CSV_ROW_6",
+          "6",
+          "scope_6"
+        ],
+        [
+          "CSV_ROW_7",
+          "7",
+          "scope_7"
+        ],
+        [
+          "CSV_ROW_8",
+          "8",
+          "scope_8"
+        ],
+        [
+          "CSV_ROW_9",
+          "9",
+          "scope_9"
+        ],
+        [
+          "CSV_ROW_10",
+          "10",
+          "scope_10"
+        ]
+      ]
+    },
+    {
+      "title": "Original first sheet",
+      "rows": [
+        [
+          "XLSX_ROW_1",
+          "1",
+          "scope_1"
+        ],
+        [
+          "XLSX_ROW_2",
+          "2",
+          "scope_2"
+        ],
+        [
+          "XLSX_ROW_3",
+          "3",
+          "scope_3"
+        ],
+        [
+          "XLSX_ROW_4",
+          "4",
+          "scope_4"
+        ],
+        [
+          "XLSX_ROW_5",
+          "5",
+          "scope_5"
+        ],
+        [
+          "XLSX_ROW_6",
+          "6",
+          "scope_6"
+        ],
+        [
+          "XLSX_ROW_7",
+          "7",
+          "scope_7"
+        ],
+        [
+          "XLSX_ROW_8",
+          "8",
+          "scope_8"
+        ],
+        [
+          "XLSX_ROW_9",
+          "9",
+          "scope_9"
+        ],
+        [
+          "XLSX_ROW_10",
+          "10",
+          "scope_10"
+        ]
+      ]
+    },
+    {
+      "title": "Original second sheet",
+      "rows": [
+        [
+          "SECOND_SHEET_ORIGINAL",
+          "7",
+          "Explicit condition"
+        ]
+      ]
+    },
+    {
+      "title": "original-markdown.md",
+      "rows": [
+        [
+          "Item",
+          "Value",
+          "Condition"
+        ],
+        [
+          "MD_ROW_1",
+          "1",
+          "scope_1"
+        ],
+        [
+          "MD_ROW_2",
+          "2",
+          "scope_2"
+        ],
+        [
+          "MD_ROW_3",
+          "3",
+          "scope_3"
+        ],
+        [
+          "MD_ROW_4",
+          "4",
+          "scope_4"
+        ],
+        [
+          "MD_ROW_5",
+          "5",
+          "scope_5"
+        ],
+        [
+          "MD_ROW_6",
+          "6",
+          "scope_6"
+        ],
+        [
+          "MD_ROW_7",
+          "7",
+          "scope_7"
+        ],
+        [
+          "MD_ROW_8",
+          "8",
+          "scope_8"
+        ],
+        [
+          "MD_ROW_9",
+          "9",
+          "scope_9"
+        ],
+        [
+          "MD_ROW_10",
+          "10",
+          "scope_10"
+        ]
+      ]
+    }
+  ],
+  "source_and_browser_rows_exact": true,
+  "all109tables_preserve_foreign_records": true,
+  "owned_row_diffs": [
+    {
+      "table": "manuscripts",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "changed_columns": [
+        "revision",
+        "updated_at",
+        "workflow_stage",
+        "writing_status"
+      ]
+    },
+    {
+      "table": "studio_documents",
+      "manuscript_id": "manuscript_3c63372cb2ae406d977def5953d53b59",
+      "changed_columns": [
+        "active_generated_version_id",
+        "last_generated_revision",
+        "updated_at"
+      ]
+    }
+  ],
+  "downloaded_pdf": "C:\\Users\\Alandelone\\Downloads\\manuscript (1).pdf",
+  "pdf_sha256": "c5c4aa8679b430aa3bab7b61e71da71704e1aefacf679502e9b36f15af04b060",
+  "downloaded_zip": "C:\\Users\\Alandelone\\Downloads\\submission_package_9b753556a5f847eb8a7061a0e7e5f589.zip",
+  "zip_sha256": "0e55b27f3b6450e4474399668f48cf73a984809314fe3d1183e515b425aff61b",
+  "zip_bytes": 61323,
+  "zip_files": 25,
+  "integrity_inventory_files": 24,
+  "package_id": "submission_package_9b753556a5f847eb8a7061a0e7e5f589",
+  "package_directory": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-generated-materials-native-dwd2wb0g\\data\\writing-studio\\manuscript_3c63372cb2ae406d977def5953d53b59\\packages\\studio_job_64b2d43f10a64537b6a56f1fc69ca8aa",
+  "independent_recompile_directory": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\sc-native-material-package-qjupg__t",
+  "independent_recompile_exit": 0,
+  "pdf_pages": [
+    {
+      "page": 1,
+      "material_labels": [],
+      "second_sheet": false,
+      "images": [
+        {
+          "name": "Im0.png",
+          "size": [
+            320,
+            160
+          ]
+        }
+      ]
+    },
+    {
+      "page": 2,
+      "material_labels": [
+        "CSV_ROW_1",
+        "CSV_ROW_2",
+        "CSV_ROW_3",
+        "CSV_ROW_4",
+        "CSV_ROW_5",
+        "CSV_ROW_6",
+        "CSV_ROW_7",
+        "CSV_ROW_8",
+        "CSV_ROW_9",
+        "CSV_ROW_10"
+      ],
+      "second_sheet": false,
+      "images": [
+        {
+          "name": "Im1.png",
+          "size": [
+            320,
+            160
+          ]
+        },
+        {
+          "name": "Im2.png",
+          "size": [
+            1800,
+            900
+          ]
+        }
+      ]
+    },
+    {
+      "page": 3,
+      "material_labels": [
+        "XLSX_ROW_1",
+        "XLSX_ROW_2",
+        "XLSX_ROW_3",
+        "XLSX_ROW_4",
+        "XLSX_ROW_5",
+        "XLSX_ROW_6",
+        "XLSX_ROW_7",
+        "XLSX_ROW_8",
+        "XLSX_ROW_9",
+        "XLSX_ROW_10",
+        "MD_ROW_1",
+        "MD_ROW_2",
+        "MD_ROW_3",
+        "MD_ROW_4",
+        "MD_ROW_5",
+        "MD_ROW_6",
+        "MD_ROW_7",
+        "MD_ROW_8",
+        "MD_ROW_9",
+        "MD_ROW_10"
+      ],
+      "second_sheet": true,
+      "images": []
+    }
+  ],
+  "rendered_pages": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-audit-v2\\render\\page-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-audit-v2\\render\\page-2.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-audit-v2\\render\\page-3.png"
+  ],
+  "renderer": "C:\\Users\\Alandelone\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\native\\poppler\\Library\\bin\\pdftoppm.EXE",
+  "pdf_visual_acceptance": "PENDING_ACTUAL_IMAGE_INSPECTION",
+  "scientific_acceptance": false,
+  "original118_complete": false,
+  "all11_complete": false,
+  "download_testing_resumed": true
+}

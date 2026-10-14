@@ -1,0 +1,34 @@
+{
+  "status": "PASS_G04_SERVE_ONLY_SOFTWARE_REVIEW_READY",
+  "chain": [
+    {
+      "ProcessId": 76012,
+      "ParentProcessId": 115132,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g04-native-server-v2.py",
+      "CreationDate": "/Date(1791789186452)/"
+    },
+    {
+      "ProcessId": 115132,
+      "ParentProcessId": 18872,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g04-native-server-v2.py",
+      "CreationDate": "/Date(1791789186426)/"
+    }
+  ],
+  "stops": [
+    {
+      "pid": 111872,
+      "state": "STOPPED_VERIFIED"
+    },
+    {
+      "pid": 116832,
+      "state": "ALREADY_EXITED"
+    }
+  ],
+  "port": 8881,
+  "all109tables_and_database_bytes_exact": true,
+  "frontend_exact_preserved": true,
+  "new_model_calls": 0,
+  "no_remote_fallback": true,
+  "no_seed_branch": true,
+  "no_other_processes_stopped": true
+}

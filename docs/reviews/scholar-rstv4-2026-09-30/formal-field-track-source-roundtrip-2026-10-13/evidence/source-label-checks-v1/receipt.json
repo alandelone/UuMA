@@ -1,0 +1,58 @@
+[
+  {
+    "name": "typecheck",
+    "exit_code": 0
+  },
+  {
+    "name": "lint",
+    "exit_code": 0
+  },
+  {
+    "name": "review-comment-preview",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-block-controls",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-blocks",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-correspondence",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-discussion-history",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-downloads",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-hierarchy",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-response-review",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-structure",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-template-placement",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-undo-history",
+    "exit_code": 0
+  },
+  {
+    "name": "studio-view-state",
+    "exit_code": 0
+  }
+]

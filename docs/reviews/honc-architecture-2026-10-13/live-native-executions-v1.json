@@ -1,0 +1,66 @@
+{
+  "observed_at": "2026-10-14T03:40:47.469Z",
+  "executions": [
+    {
+      "id": "4b6975b0c32f4fe6a14a6c1391ff5ea0",
+      "job_id": "3381ec71b9d2",
+      "status": "completed",
+      "source": "builtin",
+      "started_at": "2026-10-14T11:39:19.267931+08:00",
+      "finished_at": "2026-10-14T11:39:20.202404+08:00",
+      "error": null,
+      "delivery_outcome": "suppressed"
+    },
+    {
+      "id": "ac59cdaf42c64ce0a49c602137fec0a0",
+      "job_id": "3381ec71b9d2",
+      "status": "completed",
+      "source": "builtin",
+      "started_at": "2026-10-14T11:37:19.277034+08:00",
+      "finished_at": "2026-10-14T11:37:20.134893+08:00",
+      "error": null,
+      "delivery_outcome": "suppressed"
+    },
+    {
+      "id": "fc989d527e2c4dbfafcd924c745eec06",
+      "job_id": "3381ec71b9d2",
+      "status": "completed",
+      "source": "builtin",
+      "started_at": "2026-10-14T11:35:19.273950+08:00",
+      "finished_at": "2026-10-14T11:35:20.119329+08:00",
+      "error": null,
+      "delivery_outcome": "suppressed"
+    },
+    {
+      "id": "15fc103848dd44febdd03adc02561b09",
+      "job_id": "3381ec71b9d2",
+      "status": "completed",
+      "source": "builtin",
+      "started_at": "2026-10-14T11:33:19.376217+08:00",
+      "finished_at": "2026-10-14T11:33:20.436620+08:00",
+      "error": null,
+      "delivery_outcome": "suppressed"
+    },
+    {
+      "id": "9e9b8c2942fd4e439c324fdc29826e75",
+      "job_id": "3381ec71b9d2",
+      "status": "completed",
+      "source": "builtin",
+      "started_at": "2026-10-14T11:31:19.264930+08:00",
+      "finished_at": "2026-10-14T11:31:20.150121+08:00",
+      "error": null,
+      "delivery_outcome": "suppressed"
+    },
+    {
+      "id": "c815adb6c2854105871755256fc122b1",
+      "job_id": "3381ec71b9d2",
+      "status": "completed",
+      "source": "builtin",
+      "started_at": "2026-10-14T11:29:19.270053+08:00",
+      "finished_at": "2026-10-14T11:29:20.222709+08:00",
+      "error": null,
+      "delivery_outcome": "suppressed"
+    }
+  ],
+  "scope": "Actual silent outer ticks: completed with suppressed outer delivery is expected because business notifications use their own durable queue execution IDs. No real business notification was fabricated."
+}

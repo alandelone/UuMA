@@ -1,0 +1,183 @@
+All checks passed!
+F..FF.FF..............................                                   [100%]
+================================== FAILURES ===================================
+_ test_requested_deep_read_keeps_original_parse_across_new_publication_and_retry _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-910/test_requested_deep_read_keeps0')
+
+    def test_requested_deep_read_keeps_original_parse_across_new_publication_and_retry(tmp_path):
+        service,cid,db,_=setup(tmp_path)
+        first=parse(service,cid);job=request(service,cid)
+        assert json.loads(job['input_json'])['parse_run_id']==first['parse_run_id']
+        second=parse(service,cid,'Newly parsed source block')
+        assert request(service,cid)==job
+        worker=AcquisitionWorker(tmp_path,'model',model_gateway=FakeGateway(),worker_id='deep-source-test')
+>       completed=worker.run_once();assert completed['job_id']==job['job_id'] and completed['status']=='SUCCEEDED'
+                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert ('job_ba0fcc94...1d33ddc73f6ef' == 'job_a6cc39c8...6660729d0f757'
+E         
+E         - job_a6cc39c81f68d28d7476660729d0f757
+E         + job_ba0fcc941fce36986921d33ddc73f6ef)
+
+tests\test_acquisition_deep_read.py:48: AssertionError
+_____ test_skeleton_republication_keeps_all_original_runs_and_checkpoints _____
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-910/test_skeleton_republication_ke0')
+
+    def test_skeleton_republication_keeps_all_original_runs_and_checkpoints(tmp_path):
+        service,cid,db,_=setup(tmp_path);parsed=parse(service,cid)
+        first=service.publish_skeleton_result(parsed['parse_run_id'],units(),model_name='software-model-a')
+        tables=['skeleton_runs','skeleton_checkpoints','paper_skeletons','skeleton_units'];before=snapshot(db,tables)
+        changed=units();changed[0]['layer3']={'intent':'A different interpretation'}
+>       second=service.publish_skeleton_result(parsed['parse_run_id'],changed,model_name='software-model-b')
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests\test_acquisition_deep_read.py:76: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+self = <rstv4.acquisition.AcquisitionService object at 0x00000205BDCCE110>
+parse_run_id = 'parse_run_de03646cdda2a71d9a62307c12478ae5'
+units = [{'block_id': 'block', 'raw_text': 'Original source block', 'layer1': {'triplets': []}, 'layer2': {}, ...}]
+model_name = 'software-model-b', prompt_version = 'paper-skeleton-v1'
+context_builder_version = 'semantic-block-v1', job_id = None, worker_id = None
+fencing_token = None
+
+    def publish_skeleton_result(
+        self,
+        parse_run_id: str,
+        units: list[dict[str, Any]],
+        *,
+        model_name: str | None,
+        prompt_version: str = "paper-skeleton-v1",
+        context_builder_version: str = "semantic-block-v1",
+        job_id: str | None = None,
+        worker_id: str | None = None,
+        fencing_token: int | None = None,
+    ) -> dict[str, Any]:
+        """Atomically publish complete Layer 1-4 checkpoints and the FieldKG-compatible view."""
+        if not units or any(not all(f"layer{n}" in unit for n in range(1, 5)) for unit in units):
+            raise ValueError("Every published Skeleton unit must contain Layers 1-4")
+        timestamp = utc_now()
+        skeleton_run_id = stable_id(
+            "skeleton_run", parse_run_id, prompt_version, context_builder_version, model_name, digest(units)
+        )
+        with transaction(self.db_path) as conn:
+            conn.execute("BEGIN IMMEDIATE")
+            source = self._require_parse_source(conn, parse_run_id)
+            if job_id is not None:
+                assigned = conn.execute("SELECT * FROM acquisition_jobs WHERE job_id=?", (job_id,)).fetchone()
+                if assigned is None or assigned["paper_id"] != source["paper_id"] or assigned["job_type"] != "SKELETON":
+                    raise ValueError("Skeleton source does not belong to its task")
+                self._require_membership(conn, assigned["collection_id"], source["paper_id"])
+                self._require_publication_lease(conn, job_id, worker_id, fencing_token)
+            parse = conn.execute(
+                "SELECT * FROM parse_runs WHERE parse_run_id=? AND status='SUCCEEDED'",
+                (parse_run_id,),
+            ).fetchone()
+            if parse is None:
+                raise ValueError("Skeleton requires a completed parse run")
+            conn.execute(
+                """INSERT OR IGNORE INTO skeleton_runs VALUES(
+                   ?,?,'standard',?,?,?,'SUCCEEDED',?,?)""",
+                (
+                    skeleton_run_id,
+                    parse_run_id,
+                    model_name,
+                    prompt_version,
+                    context_builder_version,
+                    timestamp,
+                    timestamp,
+                ),
+            )
+            for unit in units:
+                section_key = str(unit.get("block_id") or unit.get("sequence"))
+                for layer in range(1, 5):
+                    output = unit[f"layer{layer}"]
+                    layer_contract = unit.get("layer_contracts", {}).get(str(layer), {})
+                    input_digest = digest(
+                        [unit.get("raw_text"), *[unit.get(f"layer{n}") for n in range(1, layer)]]
+                    )
+>                   conn.execute(
+                        """INSERT OR IGNORE INTO skeleton_checkpoints VALUES(
+                           ?,?,?,?,?,?,'SUCCEEDED',?,?,?)""",
+                        (
+                            stable_id(
+                                "checkpoint", skeleton_run_id, section_key, layer, input_digest
+                            ),
+                            skeleton_run_id,
+                            section_key,
+                            layer,
+                            input_digest,
+                            json.dumps(output, ensure_ascii=False, sort_keys=True),
+                            layer_contract.get("actual_model", model_name),
+                            layer_contract.get("prompt_version", f"skeleton-l{layer}-v1"),
+                            timestamp,
+                        ),
+                    )
+E                   sqlite3.IntegrityError: FOREIGN KEY constraint failed
+
+src\rstv4\acquisition.py:1781: IntegrityError
+_ test_each_layer_retains_exact_model_input_output_contract_and_parse_source __
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-910/test_each_layer_retains_exact_0')
+
+    def test_each_layer_retains_exact_model_input_output_contract_and_parse_source(tmp_path):
+        service,cid,db,_=setup(tmp_path);parsed=parse(service,cid);job=request(service,cid)
+        completed=AcquisitionWorker(tmp_path,'model',model_gateway=RecordedGateway(),worker_id='recorded-model').run_once()
+        assert completed['status']=='SUCCEEDED'
+>       calls=service.get_paper('existing')['model_calls'];assert len(calls)==4
+                                                           ^^^^^^^^^^^^^^^^^^^^
+E       AssertionError: assert 1 == 4
+E        +  where 1 = len([{'call_id': 'acquisition-call-f8febbc6dd134908a0d668ede6e536db', 'started_at': '2026-10-07T04:45:33.757667+00:00', 'job_id': 'job_ba0fcc941fce36986921d33ddc73f6ef', 'fencing_token': 1, ...}])
+
+tests\test_acquisition_deep_read.py:94: AssertionError
+____________ test_foreign_parse_is_rejected_before_any_model_call _____________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-910/test_foreign_parse_is_rejected0')
+
+    def test_foreign_parse_is_rejected_before_any_model_call(tmp_path):
+        service,cid,db,_=setup(tmp_path);parsed=parse(service,cid)
+        with transaction(db) as conn:
+            service._enqueue(conn,collection_id=cid,paper_id='other',job_type='SKELETON',queue_class='MODEL_SKELETON',payload={'parse_run_id':parsed['parse_run_id']},rule_version='foreign-source-test',priority=300)
+        class Never:
+            def analyze(self,*_):raise AssertionError('Must not call model for foreign source')
+        job=AcquisitionWorker(tmp_path,'model',model_gateway=Never(),worker_id='foreign-source-model').run_once()
+>       assert job['status']=='NEEDS_HUMAN'
+E       AssertionError: assert 'RETRY_WAIT' == 'NEEDS_HUMAN'
+E         
+E         - NEEDS_HUMAN
+E         + RETRY_WAIT
+
+tests\test_acquisition_deep_read.py:127: AssertionError
+__ test_source_change_during_model_retains_receipts_but_rejects_publication ___
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-910/test_source_change_during_mode0')
+
+    def test_source_change_during_model_retains_receipts_but_rejects_publication(tmp_path):
+        service,cid,db,pdf=setup(tmp_path);parse(service,cid);request(service,cid)
+        class Change(RecordedGateway):
+            def analyze(self,task,payload):
+                result=super().analyze(task,payload)
+                if task=='skeleton_layer_1':pdf.write_bytes(pdf.read_bytes()+b'changed')
+                return result
+        job=AcquisitionWorker(tmp_path,'model',model_gateway=Change(),worker_id='changed-source-model').run_once()
+>       assert job['status']=='RETRY_WAIT'
+E       AssertionError: assert 'SUCCEEDED' == 'RETRY_WAIT'
+E         
+E         - RETRY_WAIT
+E         + SUCCEEDED
+
+tests\test_acquisition_deep_read.py:140: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_acquisition_deep_read.py::test_requested_deep_read_keeps_original_parse_across_new_publication_and_retry
+FAILED tests/test_acquisition_deep_read.py::test_skeleton_republication_keeps_all_original_runs_and_checkpoints
+FAILED tests/test_acquisition_deep_read.py::test_each_layer_retains_exact_model_input_output_contract_and_parse_source
+FAILED tests/test_acquisition_deep_read.py::test_foreign_parse_is_rejected_before_any_model_call
+FAILED tests/test_acquisition_deep_read.py::test_source_change_during_model_retains_receipts_but_rejects_publication
+5 failed, 33 passed, 1 warning in 13.63s

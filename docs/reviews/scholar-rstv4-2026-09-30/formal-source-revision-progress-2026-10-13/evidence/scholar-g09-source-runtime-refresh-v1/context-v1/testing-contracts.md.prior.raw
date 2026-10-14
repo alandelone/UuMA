@@ -1,0 +1,202 @@
+# Testing and Recovery Contract
+
+## Deterministic tests
+
+- Tests must use `tmp_path`, in-memory substitutes, or versioned files under `test-fixtures/`.
+- Never point tests at `%LOCALAPPDATA%\UuMA`, Hermes `state.db`, live credentials, or network services.
+- Assertions should express an approved contract, including provenance, permissions, and event order.
+
+## Failure triage
+
+Physical database byte comparisons require a quiescent fixture. After a successful asynchronous
+discussion, drain that fixture's writer before freezing a baseline for rejected-request/read-only
+checks. Keep byte equality and model-call-count assertions intact; terminal receipt reads alone
+are not a blanket guarantee that every writer sharing the fixture has stopped.
+
+When an Agent repeats a failed approach, stop code edits and read `repomemory/findings.md`. Classify
+the failure as one of:
+
+1. **Missing context/dependency:** record the requirement and exact diagnostic in `findings.md`, then
+   add the durable instruction to the narrowest relevant file under `rules/`.
+2. **Incorrect assertion/contract:** compare the assertion with approved requirements and design.
+   Correct `stage-gates/03-execution-brief.md` before changing the test. Never weaken a valid safety
+   or behavior assertion for a green run.
+
+After the context fix, preserve the current diff, rerun the narrowest test, then the full suite. A
+Git restart is allowed only from a named, verified commit after unrelated work is preserved. This
+repository currently has no committed baseline, so `git reset --hard` and `git clean` are forbidden.
+
+## Bundled skill validator context
+
+`skill-creator/scripts/quick_validate.py` requires PyYAML (`import yaml`). Repository and bundled
+Python environments do not necessarily include it. If that dependency is missing, use a dedicated
+ignored validation environment such as `.uuma-local/skill-validation-venv` with PyYAML installed.
+Run the unchanged bundled validator there, with UTF-8 enabled on Windows. Do not change product
+dependencies, weaken the validator, or treat an import failure as a completed validation.
+
+
+2026-10-09 confirmed WAL baseline execution context: diagnostic-v4 preserves actual
+current before/after raw DB and WAL, all table records and observed MainThread-only state.
+Before rollback test freeze, WAL contained135992 bytes of earlier committed fixture work;
+after abort it was0 and mainDB differed4832bytes, while every actual table record remained
+exact. Privately frozen before-edit source kept its WAL pending and mainDB unchanged.
+The absent free pages disprove the earlier freelist hypothesis. Explicit successful
+wal_checkpoint(TRUNCATE) BEFORE freezing the current-source byte baseline gave(0,0,0),
+every record unchanged, and original unchanged post-write-fault/full-byte assertion PASS.
+No transaction, runtime or physical guard weakened. Primary behavior source:
+https://www.sqlite.org/wal.html (checkpoint moves earlier committed WAL into main file;
+last-connection close can checkpoint). Optional dbstat probe failure remains preserved.
+
+For a quiescent isolated rollback fixture in WAL mode, require completed pre-freeze
+checkpoint with busy0/all frames copied/truncated, verify every table record unchanged,
+and explicitly close the checkpoint connection. THEN freeze all raw DB bytes. Retain the
+exact post-fault byte and data/history assertions. Never manually delete WAL/SHM, checkpoint
+after freezing to make an assertion pass, touch live production databases, or omit earlier
+failed logs. This completes missing fixture execution context, not a weaker assertion.
+
+
+2026-10-09 correspondence generation execution contract correction BEFORE read-view repair:
+generation-v1 retained19passes/two failures. Actual generation+real artifact compiler succeeded,
+but immutable generated read compared populated referenced author Intents against raw empty
+template slots and rejected the original input. The reader must derive the same deterministic
+realization projection from the EXACT frozen author revision, preserving canonical author bank,
+fixed target source, original group/full contexts and relation conditions. Retain all original
+validated-call/hash/output/mapping guards; add exact original bank/context/formula/asset guards
+for mapped output. Tampering with frozen source/context/projection must remain rejected.
+The other new check incorrectly assumed a block_ids API field: comment_changes exposes actual
+before/after documents. Verify stable IDs by the existing changed-block calculation on those
+exact documents, plus unchanged association events through Undo/Redo/archive/restore. No guard
+or assertion scope is reduced. No real model, scientific acceptance or native download claim.
+
+
+2026-10-09 generation-v2 retained41passes/two fixture inspection failures. The actual
+generated read succeeded, including the unchanged validated-output guard. Physical schema
+PRAGMA proves studio_model_calls has started_at/completed_at, not created_at. list_comments
+returns studio_changes raw before_json/after_json, not before/after or block_ids. Prepare
+the added checks from these observed current fields, parse exact JSON and calculate stable
+changed endpoints. Preserve both failed logs, all original assertions and all118/all11 scope.
+
+
+2026-10-09 generation-v3:25PASS/one message-contract mismatch. Altering formula caption changes the rendered immutable Markdown, so the pre-existing immutable-version guard correctly rejects it before the new correspondence-context guard. Require the exact original immutable-version diagnostic for formula, and exact original-author-context diagnostic for other corruption variants. Retain exception/type and all content integrity assertions; no production change.
+
+
+2026-10-09 static-v2: all correspondence/type/lint/history/structure checks passed; existing
+response-review unit stopped at missing require('@/lib/studio-downloads'), before any behavior
+assertion. Actual current component imports only studioFileUrl from that module. Execute the
+unchanged shipped helper in the controlled unit loader, retaining every response/async/association
+assertion. This is an import dependency fix; do not trigger browser downloads, add download
+permissions, mock successful delivery, or run the paused native download test. Old test saved
+before repair. Full regression remains required after the narrow response-review check.
+
+
+2026-10-09 native independent audit context: audit-v1 stopped at studio_change_link_state.
+Physical diagnostic proves77prior rows plus11new rows, keyed by change_id, not manuscript_id;
+each newly saved operation records initial comment-link state even with no comment selected.
+Before altering the verifier require ALL77previous rows exact, each new row tied to an actual
+owned new change, no initial comment association, recorded_at_save origin and initial revision.
+Keep comparison of all109tables and every other manuscript, immutable payload/inverse and original
+source intact. Earlier diagnostic command used nonexistent studio_jobs.kind; real job_kind
+observed. Failed quote-escaped read command did not run; use saved helpers for multiline SQL.
+These are verifier execution-context fixes, not product edits or weakened acceptance.
+
+
+2026-10-09 after1041PASS native exact audit, final completion audit adds the original
+L2-condition corruption case. l2-before-v1 proves a real gap: mapped model-call input condition
+altered with a recomputed request hash still passed immutable generated read. Existing bank,
+context, formulas/assets and output guards all remain. Reader must recompute complete original
+argument_context from the fixed raw author revision plus same deterministic target projection,
+and require exact model input edges/endpoints/content/condition. Record before changing code,
+retain new failing test and run narrow then full final source. Native current valid result must
+remain readable; no rewrite of historical source, database schema or actual worker/approval.
+
+
+2026-10-09 runtime refresh diagnostics before continuation: workspace has no jobs field; actual
+studio_jobs.job_kind/status table was read instead. Verified own8879ancestry/commands before
+stopping; original child+root now both authoritative-terminal and port absent. Stopping the
+already-exited launch wrapper raised nonzero before relaunch; old3004/3005 remained untouched.
+Restore only the expected absent owned service, not on timeout. Prior quiescent snapshot
+comparison stopped relaunch: actual difference is10new ownMS/r19sample-candidate rows from
+post-audit generated heading/citation UI reads; ALLother109-table records exact, no removed
+cache rows, no new operation/model/job. Preserve original audit+screenshots in-v1, clone-v2,
+rerun complete independent109table/native-history/generation audit with final reader source,
+then require all current records EXACT before/after the service refresh. Keep each failed
+attempt; the original immutable snapshots and byte/record guards are never relaxed.
+
+
+2026-10-09 actual material focused-v1 generation fails because XeTeX image IO cannot find
+280-character original fixture path. Independent short-path probe kept every staged input byte
+and original artifact untouched, same XeTeX args/no-shell-escape,120-character paths compile0.
+This proves runtime path context, not invalid images or missing dependency. BEFORE compiler
+repair: when Windows complete input paths exceed240characters, compile in a newly owned short
+temporary directory with exact same input files; preserve compiler log/PDF and all five fixed
+output registrations at original immutable job location. No Windows security/path-policy
+change, fixture/assertion reduction, deletion/reset of user work, or substitution of content.
+Same original long-path test must pass, then full affected and complete suites and native QA.
+
+
+2026-10-09 materials focused-v3:56PASS/one stage CAS fixture mismatch. Actual manuscript revision0/stageWHOLE_PAPER_REVIEW and author document revision1 are distinct authority axes. Generated materials, complete tables, frozen-byte corruption/live-source isolation all preceding assertions passed. Before fixture correction require set_stage CAS against actual manuscript revision, keep original author input_revision1 for GENERATE/PACKAGE. Do not merge axes or weaken conflict/stage guards. Preserve failed log; narrow then affected/full suite.
+
+
+Correction to the preceding materials-v3 context note: the actual observed manuscript revision was2 (not the mistakenly written0), workflowWHOLE_PAPER_REVIEW; author document revision1. The requirement to read the separate actual manuscript CAS basis is unchanged. Original full assertions now8PASS in focused-v4, including independently recompiling the delivered package. No production stage/CAS guard altered.
+
+
+2026-10-09 materials visual QA-v1 inspected all3actual rendered pages. No missing image/table data, but a ten-row CSV table split with one final row isolated on next page. Before layout correction retain originalrendered3pages/hash; keep smallcomplete tables together with original title and use continuation title for genuinely multipage tables. Do not truncate, reorder, duplicate values or change original source. Rerender after change; narrow/affected/full tests remain required.
+
+
+2026-10-09 native materials independent audit-v1 stops before PDF/ZIP audit because verifier
+assumed Studio call status DONE. Exact owned call studio_model_call_5cae693a7b614e4c80c61637f4cafe01
+is VALIDATED, paragraph_realization, no error, actual completed timestamp and declared
+TEST_FIXTURE_MATERIALS_NATIVE. DONE is an unrelated scientific acquisition worker status;
+do not merge status axes. Before verifier correction require exactly VALIDATED plus actual
+contract/task/input/output/mapping provenance, one fixture call and zero remote models.
+Retain audit-v1 source/failure and all109table/byte/author/ZIP/fullcells guards. No product
+change, schema or scientific approval; real native GENERATE/PACKAGE both SUCCEEDED.
+
+
+2026-10-09 native downloaded PDF visual QA-v2: inspected all3real pages, SHA
+c5c4aa8679b430aa3bab7b61e71da71704e1aefacf679502e9b36f15af04b060.
+All30original table rows/secondSheet/3images are present, but compact table title lacks
+trailing paragraph break: title shares the table baseline, pushing table to the right;
+third-page Markdown extends beyond physical page edge. Fixed .9linewidth widths also
+omit cell padding/rule budget. Preserve this immutable v1/native25file ZIP and all3renders.
+BEFORE repair require original title above table, columns budget actual linewidth minus
+padding/rules, original complete ordered cells unchanged. Add independent Poppler word
+geometry to real-PDF integration test (all words within page margins and each table title
+above first row). Do not bless visible clipping from a text-only PASS, rewrite old version,
+truncate/reorder cells or weaken prior source/byte/schema/permission guards. Run narrow,
+full regression and native new immutable generation/download/independent compile/visual QA.
+
+
+2026-10-13 isolated preview restart receipt context BEFORE recovery-v2:
+Build receipt `before` fingerprints the ORIGINAL source workspace, including
+its original dist, to prove that isolated building did not mutate user work.
+It is NOT the isolated compiled output fingerprint. `dist_files` is the complete
+ACTUAL isolated output hash map. Require every original before hash unchanged,
+every copied non-dist source hash exact, every actual dist_files hash exact AND
+actual dist membership exact, plus current acceptance source vector before start.
+Do not omit either authority or reuse original BUILD_ID paths for the new dist.
+Preserve original failed helper/diagnostics. On confirmed absent owned runtime,
+start only the verified existing isolated preview and serve-only backend; no
+seeding/reset, old scientific/model rerun, remote fallback or broad process kill.
+Retain every raw database-byte/all-table/job/ownership assertion after recovery.
+Run narrow recovery then full affected deterministic suite after this context fix.
+
+
+## 2026-10-13 G09 native live Evidence source-reader gap
+
+Native current Studio evidence cards expose only excerpt/external URLs and display original
+unavailable despite exact skeleton_id/unit_id/digests/page/section/sequence and exact original
+PDF/parse records. Frozen generated-reference reader remains working. Keep the native failing
+DOM/screenshots in .tmp/scholar-g09-native-v2/proof/live-citation-reader-original-unavailable.*.
+Implement an on-demand manuscript-scoped Evidence original-source reader using the SAME strict
+freeze_source identity/excerpt/location/file guards. Return exact units, adjacent/full parsed
+text and versions; never guess the latest Paper/Skeleton/file or synthesize missing provenance.
+PDF opening must bind the reader's context digest, recheck original bytes and scope, and reject
+changed/foreign sources. No author/citation decisions, Gen, stage/schema/scientific approvals
+are implied by source reading. Preserve all old109 tables/20artifacts and new206comments/4link
+events. Source files backed up in .tmp/scholar-g09-source-reader-repair-v1/before.
+
+Windows search execution context: PowerShell does not expand glob path arguments to rg.
+Use an existing directory plus rg -g 'test_studio*' (or an exact known file), never pass
+research* or test_track_first*.py as a literal path. Prior failed searches were read-only.
+The actual read module is studio_read_views.py, not studio_read.py; use imported source names.

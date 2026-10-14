@@ -13,6 +13,11 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+$physicalDataDir = & $PythonExe -c 'from pathlib import Path; import sys; print(Path(sys.argv[1]).resolve(strict=True).parent.parent)' (Join-Path $DataDir "forge-lab-bot\lab.db")
+if ($LASTEXITCODE -ne 0 -or -not $physicalDataDir) {
+    throw "Cannot resolve the existing authoritative LAB_BOT database."
+}
+$DataDir = ([string]$physicalDataDir).Trim()
 
 function Get-RunnerProcesses {
     Get-CimInstance Win32_Process `

@@ -1,0 +1,209 @@
+{
+  "status": "NATIVE_GLOBAL_OVERVIEW_METADATA_AND_OWNED_MANUSCRIPTS_PASSED",
+  "browser_verified": false,
+  "scientific_approval": false,
+  "production_data_changed": false,
+  "parent_sha256": "9be2462cbff27bc02992f90ffe1ea69178d6bb08693e8ff329426464b7b3e1aa",
+  "parent_helper_sha256": "123fcadac0910174a02012250393f39bc83f67add685185153a085ad118b97c8",
+  "initial_failure": "Receipt-count expectation was 8; the explicit action list contains 9. Native HTTP mutations and the preceding 7 ZIP comparisons had already succeeded. No mutation was rerun.",
+  "request_receipts": [
+    {
+      "action_seq": 1,
+      "metadata_digest": "c0678bfde2d3a3bd36077df95521ab99ef81172829e6869f5bb6f07f519c377f",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.150489+00:00",
+        "description": "Software fixture only",
+        "field_id": "field_43a75d0b476147fdb548488e221891da",
+        "name": "验收软件 Field A",
+        "normalized_name": "验收软件 field a",
+        "updated_at": "2026-10-04T08:46:03.150489+00:00"
+      },
+      "object_id": "field_43a75d0b476147fdb548488e221891da",
+      "object_type": "field",
+      "operation": "CREATE_FIELD",
+      "request_id": "overview-native-field-1"
+    },
+    {
+      "action_seq": 2,
+      "metadata_digest": "ed48ce6b9628b7aa9db481ff439d22a0c0333faebba7be3adbfded545eae978b",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.159649+00:00",
+        "description": null,
+        "field_id": "field_f00213c418114952befc154e013d485b",
+        "name": "验收软件 Field B",
+        "normalized_name": "验收软件 field b",
+        "updated_at": "2026-10-04T08:46:03.159649+00:00"
+      },
+      "object_id": "field_f00213c418114952befc154e013d485b",
+      "object_type": "field",
+      "operation": "CREATE_FIELD",
+      "request_id": "overview-native-field-2"
+    },
+    {
+      "action_seq": 3,
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "metadata_digest": "5e6a12baa5e08b5a47679272d681af4b5393761427ad37e655edf2ac10724490",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.169026+00:00",
+        "description": null,
+        "name": "验收软件共享 Topic",
+        "normalized_name": "验收软件共享 topic",
+        "topic_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+        "updated_at": "2026-10-04T08:46:03.169026+00:00"
+      },
+      "object_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+      "object_type": "topic",
+      "operation": "CREATE_TOPIC",
+      "request_id": "overview-native-topic-1"
+    },
+    {
+      "action_seq": 4,
+      "field_id": "field_f00213c418114952befc154e013d485b",
+      "metadata_digest": "f7afb732138802ee77b38545fb07208c11bf4da33635cee6daac4e1311e4d450",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.169026+00:00",
+        "description": null,
+        "name": "验收软件共享 Topic",
+        "normalized_name": "验收软件共享 topic",
+        "topic_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+        "updated_at": "2026-10-04T08:46:03.169026+00:00"
+      },
+      "object_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+      "object_type": "topic",
+      "operation": "LINK_TOPIC",
+      "request_id": "overview-native-topic-link"
+    },
+    {
+      "action_seq": 5,
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "metadata_digest": "cbef333dd90c05eca451fe37d05081f9fa715a1a82342eadeee34628edaac19a",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.194373+00:00",
+        "field_id": "field_43a75d0b476147fdb548488e221891da",
+        "mapping_status": "MAPPED",
+        "primary_topic_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+        "research_type": "conceptual_framework",
+        "revision": 1,
+        "scope": "Software acceptance, no scientific claim",
+        "status": "ACTIVE",
+        "title": "验收软件 Track A",
+        "track_id": "track_d42b44fd0c344690a8e78ef18f186c04",
+        "updated_at": "2026-10-04T08:46:03.194373+00:00"
+      },
+      "object_id": "track_d42b44fd0c344690a8e78ef18f186c04",
+      "object_type": "track",
+      "operation": "CREATE_TRACK",
+      "request_id": "overview-native-track-1"
+    },
+    {
+      "action_seq": 6,
+      "field_id": "field_f00213c418114952befc154e013d485b",
+      "metadata_digest": "f67c9e06dd407df4fc27b6d32e079e217a476955f215f4ade391350899cbdd90",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.211229+00:00",
+        "field_id": "field_f00213c418114952befc154e013d485b",
+        "mapping_status": "MAPPED",
+        "primary_topic_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+        "research_type": "conceptual_framework",
+        "revision": 1,
+        "scope": "Software acceptance, no scientific claim",
+        "status": "ACTIVE",
+        "title": "验收软件 Track B",
+        "track_id": "track_7677a8ba3f054ce6b7e65d083847515c",
+        "updated_at": "2026-10-04T08:46:03.211229+00:00"
+      },
+      "object_id": "track_7677a8ba3f054ce6b7e65d083847515c",
+      "object_type": "track",
+      "operation": "CREATE_TRACK",
+      "request_id": "overview-native-track-2"
+    },
+    {
+      "action_seq": 7,
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "metadata_digest": "31d15b3db83c6a12f21e08b0e8687fbc31b63d12426f24042cfdf1e44b1bd544",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.150489+00:00",
+        "description": "Explicit metadata edit",
+        "field_id": "field_43a75d0b476147fdb548488e221891da",
+        "name": "验收软件 Field A 已修改",
+        "normalized_name": "验收软件 field a 已修改",
+        "updated_at": "2026-10-04T08:46:03.227256+00:00"
+      },
+      "object_id": "field_43a75d0b476147fdb548488e221891da",
+      "object_type": "field",
+      "operation": "EDIT_FIELD",
+      "request_id": "overview-native-field-edit"
+    },
+    {
+      "action_seq": 8,
+      "field_id": "field_f00213c418114952befc154e013d485b",
+      "metadata_digest": "5aa8e7c1589b4a92e86f4dce5bf29c2a79bdd58ad1ab5f972f3afde9f09787ee",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.169026+00:00",
+        "description": "Shared metadata, independent Tracks",
+        "name": "验收软件共享 Topic 已修改",
+        "normalized_name": "验收软件共享 topic 已修改",
+        "topic_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+        "updated_at": "2026-10-04T08:46:03.242906+00:00"
+      },
+      "object_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+      "object_type": "topic",
+      "operation": "EDIT_TOPIC",
+      "request_id": "overview-native-topic-edit"
+    },
+    {
+      "action_seq": 9,
+      "field_id": "field_43a75d0b476147fdb548488e221891da",
+      "metadata_digest": "ce08f40743be87418e469dd28ee0db19b2981dcc6c9924f12bad10cdb4e6434b",
+      "object": {
+        "created_at": "2026-10-04T08:46:03.194373+00:00",
+        "field_id": "field_43a75d0b476147fdb548488e221891da",
+        "mapping_status": "MAPPED",
+        "primary_topic_id": "topic_c8c43fd3d38d4c31a27e64ae7c534f31",
+        "research_type": "conceptual_framework",
+        "revision": 1,
+        "scope": "Software acceptance, no scientific claim",
+        "status": "ACTIVE",
+        "title": "验收软件 Track A 已修改",
+        "track_id": "track_d42b44fd0c344690a8e78ef18f186c04",
+        "updated_at": "2026-10-04T08:46:03.250749+00:00"
+      },
+      "object_id": "track_d42b44fd0c344690a8e78ef18f186c04",
+      "object_type": "track",
+      "operation": "EDIT_TRACK",
+      "request_id": "overview-native-track-edit"
+    }
+  ],
+  "track_ids": [
+    "track_d42b44fd0c344690a8e78ef18f186c04",
+    "track_7677a8ba3f054ce6b7e65d083847515c"
+  ],
+  "manuscript_ids": [
+    "manuscript_c95ad424899f416086944c223bff9f8b",
+    "manuscript_fe865055fe30456f899768e40f12110c",
+    "manuscript_fa8193397cab4ac39651a13979364786"
+  ],
+  "old_workspace_sha256": {
+    "manuscript_3a132decd09349b99b186a5c44dc191d": "986bcfc85c442fcc66a056a535abcf7f57a3a8c42bac47202979867ead2d6433",
+    "manuscript_6d6a4ed3c59a40f08be2d7e68da63b11": "3d5654416f3f9d9442aab9290cb4dc7bef85a44ddda7d625ecc23f0a2b33001d",
+    "manuscript_d6725ffb3d7c43f9b4035f8c21f8f70b": "8f555838dc6e52752d46184198befb728cd9e09fd2bd7b76abc5c0beac673d63",
+    "manuscript_cb7d936db4204d64a955b345d8eb8ce3": "5f71c3ebd4b8aba23ac47578de30ee83099825a10e6de7fb55f65fbabcb892bb",
+    "manuscript_bd7568923be94a2c8510d176010e4cca": "2d63006714afa35461b8dfeb94665fae85bec390904da9fd486f68c86ed7b8c3"
+  },
+  "workspace_id": "370b3ff4dfcf801b113c771469e50566163a4db0e991f694f0f8147e781e84a4",
+  "new_model_calls": 0,
+  "new_mutations_in_continuation": 0,
+  "old_package_zip_sha256": {
+    "submission_package_462feff00b234357a635a3e63254aff4": "c8690ba64bb08dbe3935cc2751ae52e15a983842d718c137938609a1bd5a94c4",
+    "submission_package_6892c7e2a640445384ba82d7784a9ba8": "db2a2dd40c1f6ebb2276059bd00f69fcbf4659f3f190e64a8513b93a8c39c1b0",
+    "submission_package_d9568167d148448f949f1bd4e1d9169b": "d9fb5b177e00790b19235eead1d5f6826ed01e01aa90e5ce6895fb14d7f36671",
+    "submission_package_0910bfb9aace4278a2096566f024b147": "2ac6159657b4b7b42a6ba6132bb1eb40ac291b33871f5ca3cadc0db81ebc2e72",
+    "submission_package_ad6fb128dc534109aa3f1a0b73bdea94": "dd3dbc1833ae7899ca2533335d62416cc8c8119089412532a84cff088f47b08a",
+    "submission_package_9ac83b66a3644e65bc0e4f9946c5c389": "0eee94a84e33f56af08264eec1d10e5959e23c606b8344854846acd0b20d8b3e",
+    "submission_package_303e2f3c684946fbb25c455e43badc65": "3b611a149d830cf4b499bf7414c916e470e06145b3483b99f47c6060d0374cd7"
+  },
+  "page_sha256": "4d78a053a2d1190538eeb1014608c7f2b670969fc9dde66ebff7742d5d7abf24",
+  "script_sha256": "feefe62d015c6c8b4a947319c41ff0ffb4e44fb31849974e8c0b95f89f315ed1",
+  "frontend_url": "http://127.0.0.1:3000/?manuscript=manuscript_c95ad424899f416086944c223bff9f8b&from=catalog&track=track_d42b44fd0c344690a8e78ef18f186c04&return=http%3A%2F%2F127.0.0.1%3A8885%2F%3Foverview_state%3D%257B%2522workspace%2522%253A%2B%2522370b3ff4dfcf801b113c771469e50566163a4db0e991f694f0f8147e781e84a4%2522%252C%2B%2522collapsed%2522%253A%2B%255B%255D%252C%2B%2522focus%2522%253A%2B%2522%2522%252C%2B%2522anchor%2522%253A%2B%2522%2522%252C%2B%2522offset%2522%253A%2B0%252C%2B%2522scroll%2522%253A%2B0%257D",
+  "frontend_status": 200
+}

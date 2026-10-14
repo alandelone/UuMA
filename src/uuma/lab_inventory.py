@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import re
 import sqlite3
 from datetime import UTC, datetime
 from pathlib import Path
@@ -1033,7 +1034,7 @@ class InventoryStore:
             rows = connection.execute(
                 f"""
                 SELECT source_key, order_id, ordered_at, status, supplier, category,
-                       product_name, variant, ordered_quantity, order_unit, identity_key,
+                       product_name, product_url, variant, ordered_quantity, order_unit, identity_key,
                        component_id, resolution_status, evidence_ref
                 FROM purchase_history_lines
                 {clause}
@@ -1043,6 +1044,120 @@ class InventoryStore:
                 (safe_limit,),
             ).fetchall()
         return [dict(row) for row in rows]
+
+    def search_purchase_history(
+        self, query: str = "", *, category: str = "", limit: int = 50, offset: int = 0
+    ) -> dict[str, Any]:
+        """Search staged order evidence, including resolved rows and original product links."""
+        safe_limit = max(1, min(int(limit), 500))
+        safe_offset = max(0, int(offset))
+        if len(query) > 200 or len(category) > 100:
+            raise InventoryError("Purchase search query or category is too long.")
+        groups = [part.strip() for part in query.split("|") if part.strip()]
+        if len(groups) > 5:
+            raise InventoryError("Purchase search supports at most five alternatives.")
+        searchable = (
+            "lower(coalesce(product_name, '') || ' ' || coalesce(variant, '') || ' ' || "
+            "coalesce(supplier, '') || ' ' || coalesce(order_id, '') || ' ' || "
+            "coalesce(product_url, ''))"
+        )
+        split_subwords = (
+            "电池", "保护板", "保护", "扩展板", "锂电池", "模块", "充电板", "充电",
+            "升压", "降压", "电源", "万用表", "太阳能", "控制板", "控制器", "储能",
+            "单片机", "平衡", "均衡", "放电", "驱动",
+        )
+        all_terms: list[str] = []
+        clauses: list[str] = []
+        parameters: list[Any] = []
+        if groups:
+            alternatives: list[str] = []
+            for group in groups:
+                raw_tokens = re.findall(r"[A-Za-z]+|\d+(?:\.\d+)?|[\u4e00-\u9fff]+", group)
+                terms: list[str] = []
+                for tok in raw_tokens:
+                    tok_lower = tok.lower()
+                    if tok_lower in {"g", "kg", "mm", "克", "毫米"}:
+                        continue
+                    if re.search(r"[\u4e00-\u9fff]", tok) and len(tok) > 2:
+                        found_sub = [sw for sw in split_subwords if sw in tok]
+                        if found_sub:
+                            terms.extend(found_sub)
+                        else:
+                            terms.append(tok_lower)
+                    else:
+                        terms.append(tok_lower)
+                terms = list(dict.fromkeys(terms))
+                if not terms:
+                    continue
+                if len(terms) > 12:
+                    raise InventoryError("Purchase search has too many terms.")
+                all_terms.extend(terms)
+                alternatives.append("(" + " AND ".join(
+                    f"instr({searchable}, ?) > 0" for _ in terms
+                ) + ")")
+                parameters.extend(terms)
+            if alternatives:
+                clauses.append("(" + " OR ".join(alternatives) + ")")
+        if category.strip():
+            clauses.append("instr(category, ?) > 0")
+            parameters.append(category.strip())
+        where = "WHERE " + " AND ".join(clauses) if clauses else ""
+        all_terms = list(dict.fromkeys(all_terms))
+        with self.connect() as connection:
+            total = connection.execute(
+                f"SELECT COUNT(*) FROM purchase_history_lines {where}", parameters
+            ).fetchone()[0]
+
+            if total > 0 or not all_terms:
+                rows = connection.execute(
+                    f"""
+                    SELECT source_key, order_id, ordered_at, status, supplier, category,
+                           product_name, product_url, variant, ordered_quantity, order_unit,
+                           component_id, resolution_status, evidence_ref
+                    FROM purchase_history_lines
+                    {where}
+                    ORDER BY ordered_at DESC, source_row ASC
+                    LIMIT ? OFFSET ?
+                    """,
+                    [*parameters, safe_limit, safe_offset],
+                ).fetchall()
+                match_mode = "exact"
+            else:
+                score_expr = " + ".join(f"(CASE WHEN instr({searchable}, ?) > 0 THEN 1 ELSE 0 END)" for _ in all_terms)
+                fallback_clauses = ["(" + " OR ".join(f"instr({searchable}, ?) > 0" for _ in all_terms) + ")"]
+                fb_params = list(all_terms)
+                if category.strip():
+                    fallback_clauses.append("instr(category, ?) > 0")
+                    fb_params.append(category.strip())
+                fallback_where = "WHERE " + " AND ".join(fallback_clauses)
+                total = connection.execute(
+                    f"SELECT COUNT(*) FROM purchase_history_lines {fallback_where}", fb_params
+                ).fetchone()[0]
+                rows = connection.execute(
+                    f"""
+                    SELECT source_key, order_id, ordered_at, status, supplier, category,
+                           product_name, product_url, variant, ordered_quantity, order_unit,
+                           component_id, resolution_status, evidence_ref,
+                           ({score_expr}) AS match_score
+                    FROM purchase_history_lines
+                    {fallback_where}
+                    ORDER BY match_score DESC, ordered_at DESC, source_row ASC
+                    LIMIT ? OFFSET ?
+                    """,
+                    [*all_terms, *fb_params, safe_limit, safe_offset],
+                ).fetchall()
+                match_mode = "partial"
+
+        return {
+            "query": query,
+            "category": category,
+            "total_count": total,
+            "count": len(rows),
+            "offset": safe_offset,
+            "has_more": safe_offset + len(rows) < total,
+            "match_mode": match_mode,
+            "rows": [dict(row) for row in rows],
+        }
 
     def resolve_purchase_history_line(
         self, source_key: str, component_id: str

@@ -1,0 +1,60 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "command": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "-m",
+        "ruff",
+        "check",
+        "src/rstv4/studio.py",
+        "src/rstv4/studio_materials.py",
+        "src/rstv4/studio_api.py",
+        "src/rstv4/studio_context.py",
+        "src/rstv4/studio_read_views.py",
+        "tests/test_studio_generated_assets.py"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd",
+        "--type-aware",
+        "--deny-warnings",
+        "lib/studio-types.ts",
+        "components/studio-workspace.tsx"
+      ],
+      "exit_code": 0
+    },
+    {
+      "command": [
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "-X",
+        "utf8",
+        "-m",
+        "pytest",
+        "-q",
+        "tests/test_studio_generated_assets.py",
+        "tests/test_studio_correspondence.py",
+        "tests/test_studio_context.py",
+        "tests/test_studio_delivery.py",
+        "tests/test_writing_studio.py",
+        "--basetemp",
+        "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\sc-material-focused-j9v88lj5"
+      ],
+      "exit_code": 0
+    }
+  ],
+  "fixture_base": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\sc-material-focused-j9v88lj5",
+  "material_receipts": [
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\sc-material-focused-j9v88lj5\\test_all_six_original_material0\\verified-material-receipt.json"
+  ]
+}

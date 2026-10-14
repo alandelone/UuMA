@@ -1,0 +1,61 @@
+{
+  "../../../../../../ALANDE~1/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/app/page.tsx": {
+    "file": "_next/static/chunks/page-Bk872bCj.js",
+    "name": "page",
+    "src": "../../../../../../ALANDE~1/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/app/page.tsx",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-A1pNZAzD.js"
+    ]
+  },
+  "../../../../../../ALANDE~1/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/virtual:vinext-app-browser-entry": {
+    "file": "_next/static/chunks/index-BcmfB3LY.js",
+    "name": "index",
+    "src": "../../../../../../ALANDE~1/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/virtual:vinext-app-browser-entry",
+    "isEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-A1pNZAzD.js",
+      "_vinext-BFhHyQkQ.js"
+    ],
+    "dynamicImports": [
+      "_vinext-BFhHyQkQ.js",
+      "../../../../../../ALANDE~1/AppData/Local/Temp/scui-hierarchy-build-ty6ek0rr/writing-studio/app/page.tsx",
+      "../../../../../CodeSpace_Local/writing-studio/node_modules/vinext/dist/shims/layout-segment-context.js"
+    ]
+  },
+  "../../../../../CodeSpace_Local/writing-studio/node_modules/vinext/dist/shims/layout-segment-context.js": {
+    "file": "_next/static/chunks/layout-segment-context-BLgeq7Ki.js",
+    "name": "layout-segment-context",
+    "src": "../../../../../CodeSpace_Local/writing-studio/node_modules/vinext/dist/shims/layout-segment-context.js",
+    "isDynamicEntry": true,
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-A1pNZAzD.js",
+      "_vinext-BFhHyQkQ.js"
+    ]
+  },
+  "_framework-A1pNZAzD.js": {
+    "file": "_next/static/chunks/framework-A1pNZAzD.js",
+    "name": "framework",
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js"
+    ]
+  },
+  "_rolldown-runtime-hePW80VL.js": {
+    "file": "_next/static/chunks/rolldown-runtime-hePW80VL.js",
+    "name": "rolldown-runtime"
+  },
+  "_vinext-BFhHyQkQ.js": {
+    "file": "_next/static/chunks/vinext-BFhHyQkQ.js",
+    "name": "vinext",
+    "imports": [
+      "_rolldown-runtime-hePW80VL.js",
+      "_framework-A1pNZAzD.js"
+    ],
+    "dynamicImports": [
+      "_vinext-BFhHyQkQ.js"
+    ]
+  }
+}

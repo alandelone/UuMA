@@ -1,0 +1,22 @@
+[
+  {
+    "pid": 5784,
+    "created": 1791947764.1792386,
+    "argv": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-bib-serve-v1.py"
+    ]
+  },
+  {
+    "pid": 42036,
+    "created": 1791947764.163169,
+    "argv": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-bib-serve-v1.py"
+    ]
+  }
+]

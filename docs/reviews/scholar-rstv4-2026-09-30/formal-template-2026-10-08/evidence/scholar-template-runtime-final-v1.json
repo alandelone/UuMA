@@ -1,0 +1,99 @@
+{
+  "status": "PASS_ACTUAL_OWNED_RUNTIME_AND_SOURCE_STABILITY",
+  "observed": {
+    "Processes": [
+      {
+        "ProcessId": 82248,
+        "ParentProcessId": 83012,
+        "ExecutablePath": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+        "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+        "CreationDate": "/Date(1791444995033)/"
+      },
+      {
+        "ProcessId": 77916,
+        "ParentProcessId": 82248,
+        "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+        "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate": "/Date(1791444995038)/"
+      },
+      {
+        "ProcessId": 83352,
+        "ParentProcessId": 82248,
+        "ExecutablePath": "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-revision-isolated-services-v1.py serve",
+        "CreationDate": "/Date(1791444995050)/"
+      },
+      {
+        "ProcessId": 35552,
+        "ParentProcessId": 78832,
+        "ExecutablePath": "C:\\Windows\\SYSTEM32\\cmd.exe",
+        "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3004 --hostname 127.0.0.1",
+        "CreationDate": "/Date(1791448672440)/"
+      },
+      {
+        "ProcessId": 82212,
+        "ParentProcessId": 35552,
+        "ExecutablePath": "C:\\Windows\\system32\\conhost.exe",
+        "CommandLine": "\\??\\C:\\Windows\\system32\\conhost.exe 0x4",
+        "CreationDate": "/Date(1791448672446)/"
+      },
+      {
+        "ProcessId": 83568,
+        "ParentProcessId": 35552,
+        "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+        "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3004 --hostname 127.0.0.1",
+        "CreationDate": "/Date(1791448672541)/"
+      },
+      {
+        "ProcessId": 31968,
+        "ParentProcessId": 83568,
+        "ExecutablePath": "C:\\Windows\\system32\\cmd.exe",
+        "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3004 --hostname 127.0.0.1",
+        "CreationDate": "/Date(1791448672680)/"
+      },
+      {
+        "ProcessId": 77500,
+        "ParentProcessId": 31968,
+        "ExecutablePath": "C:\\Program Files\\nodejs\\node.exe",
+        "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-template-build-hb6xzpgj\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3004 --hostname 127.0.0.1",
+        "CreationDate": "/Date(1791448672711)/"
+      }
+    ],
+    "Listeners": [
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 8877,
+        "OwningProcess": 83352,
+        "verified_ancestry": [
+          83352,
+          82248
+        ]
+      },
+      {
+        "LocalAddress": "127.0.0.1",
+        "LocalPort": 3004,
+        "OwningProcess": 77500,
+        "verified_ancestry": [
+          77500,
+          31968,
+          83568,
+          35552
+        ]
+      }
+    ]
+  },
+  "studio_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-revision-native-p48co4i6",
+  "source_import_root": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src",
+  "frontend_production_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-template-build-hb6xzpgj\\writing-studio",
+  "frontend_launch_pid": 35552,
+  "backend_launch_pid": 82248,
+  "native_manuscript_id": "manuscript_c9bd5a665e5143eebb0ac01fbd36f74f",
+  "template_skeleton_id": "skeleton_ed31db92a461c9df4ca56415cb0b70b1",
+  "native_revision": 27,
+  "original_clone_revision": 9,
+  "read_only_bytes_unchanged": true,
+  "final_source_matches_full_tests_and_review_snapshot": true,
+  "golden_bytes_unchanged": true,
+  "compiled_golden_port3000_unchanged": true,
+  "browser_upload_permission_answer_received": false
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS_NATIVE_BROWSER_ACTUAL_ZIP_AND_PDF_DOWNLOAD",
+  "zip": {
+    "path": "C:/Users/Alandelone/Downloads/submission_package_9ed351f308a34c08909b5933c99c9c24.zip",
+    "size": 59719,
+    "sha256": "42cca3508fdba2b6bd39527bbc4820514b2bd4c73415cd677a8a76f39634484c"
+  },
+  "pdf": {
+    "path": "C:/Users/Alandelone/Downloads/clean-manuscript (1).pdf",
+    "size": 13830,
+    "mtime": 1791868203752.6167,
+    "sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4"
+  },
+  "old_same_named_pdf_unchanged": true,
+  "idm_window_seen": false,
+  "overall11_complete": false
+}

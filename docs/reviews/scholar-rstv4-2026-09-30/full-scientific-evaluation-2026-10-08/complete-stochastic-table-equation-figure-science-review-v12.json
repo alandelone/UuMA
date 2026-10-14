@@ -1,0 +1,2474 @@
+{
+  "status": "COMPLETE_ALL_FOUR_TABLES_NINE_EQUATION_BLOCKS_23_PRINTED_FORMULAS_FIVE_FIGURE_SCOPES",
+  "full_original_benchmark_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+    "complete_tables": 4,
+    "table_value_entries": 78,
+    "numeric_value_cells": 78,
+    "complete_equation_blocks": 9,
+    "complete_printed_equations": 23,
+    "complete_additional_visible_figure_scopes": 5,
+    "all_original_paper_visual_items_retained": true
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+  "original_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies_content_list.json",
+  "original_parser_sha256": "46fb9985f53af6e7343a30ae9a832c09000743d507041385ee72048609ffd8eb",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "original_page_freeze_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\freeze.json",
+  "original_page_freeze_sha256": "e8e9ed2454e4f221b747dbc344104ea82844d665ee8feda5f86ee45fbbb8b437",
+  "additional_render_lineage_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\render-lineage.json",
+  "additional_render_lineage_sha256": "2ab59645920f4f677f1128a18f7f4671b86df5bede7765b9aa3b2ec4ea35cef3",
+  "additional_render_lineage": {
+    "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+    "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies.pdf",
+    "original_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+    "pages": [
+      {
+        "actual_pdf_page": 7,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-007-180dpi.png",
+        "sha256": "25470c4b40dda7cd38f50547f1f09310a620c5fa23976914620164e7a383cd17",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 8,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-008-180dpi.png",
+        "sha256": "b06ce23e341d530b398b86a8032f13660287e414366eee215e51e1a6917cae32",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 9,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-009-180dpi.png",
+        "sha256": "1620a64186f37b5bb5656a77738159615a7fcf4d0f83c7511648551185e3daca",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 10,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-010-180dpi.png",
+        "sha256": "9bd6cde7c099554ee1dfe0d12f7fa95280172c8485183051c3cb6805e896814c",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 11,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-011-180dpi.png",
+        "sha256": "93d712eedfc3932c50bd4eb56938dfdc5cf678aa62fb0e60a9e53e91809763be",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 13,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-013-180dpi.png",
+        "sha256": "ab163fca8538cf5e1e8cd382b9ae7f0d7ec890af554f2c4d5feb7a5eb124130a",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 14,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-014-180dpi.png",
+        "sha256": "2ee3bb9f667aa41666659ed6bd2712da51f345c07d01c5ba2ac8a42e49a27740",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 16,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-016-180dpi.png",
+        "sha256": "fa3a45e3a955180f6cee1557552ccd7f7f503b7a0ead9e800e4a6587ee215b0f",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 17,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-017-180dpi.png",
+        "sha256": "080230da70e86c48ab4af6f9e8c9b0d2a7b4534e1a6408e6688894e2108576b2",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 18,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-018-180dpi.png",
+        "sha256": "8bbde5e7c9037afe183266b4bea9cf0196f0b1b465496cd3bb42623797945aa8",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 19,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-019-180dpi.png",
+        "sha256": "901145303803c48529a234fca43685aea0cc7c82e90d6a9b257824747caab145",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 20,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-020-180dpi.png",
+        "sha256": "f3d743b89885394bec22ff31ec68ed2034fed03418622a7765a912f18e135f26",
+        "dpi": 180
+      },
+      {
+        "actual_pdf_page": 21,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-021-180dpi.png",
+        "sha256": "ffcbbc85f48e6d00500965bf70ea8eb08dc24949279219a72b90fca637d0b686",
+        "dpi": 180
+      }
+    ]
+  },
+  "tables": [
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 17,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-017.png",
+            "sha256": "6f99a128130d03d109e6afb8f92d87c3989cbe16269527dd7cd2068fddd543e6"
+          },
+          {
+            "id": "crop-98",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+            "sha256": "0ccb10586410fa5f34ac3ce330cd4913b72973e46877fbaf0b694a772359916a"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          98,
+          101
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 17,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-017-180dpi.png",
+        "sha256": "080230da70e86c48ab4af6f9e8c9b0d2a7b4534e1a6408e6688894e2108576b2",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "table",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+        "table_caption": [
+          "Table 1: Delivery time. "
+        ],
+        "table_footnote": [],
+        "table_body": "\n\n<html><body><table><tr><td>Case</td><td>+d (days)</td><td>50th percentile (days)</td><td>yz06 percentile (days)</td></tr><tr><td>A</td><td>1</td><td>1.5</td><td>3</td></tr><tr><td>B</td><td>2</td><td>3</td><td>6</td></tr></table></body></html>\n\n",
+        "page_idx": 16
+      },
+      "scientific_reference_approval": false,
+      "matrix_index": 32,
+      "printed_table_number": 1,
+      "headers": [
+        "Case",
+        "t_P + t_T (days)",
+        "50th percentile (days)",
+        "90th percentile (days)"
+      ],
+      "rows": [
+        [
+          "A",
+          "1",
+          "1.5",
+          "3"
+        ],
+        [
+          "B",
+          "2",
+          "3",
+          "6"
+        ]
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 17,
+        "raw_parser_content_index": 98,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "623aa24d666cb744e24ddc254c5cfb6f69678ad8b41faa848cbd39153ba39eba",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b89"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+        "actual_original_crop_sha256": "0ccb10586410fa5f34ac3ce330cd4913b72973e46877fbaf0b694a772359916a",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\017\\record.json",
+        "actual_page_record_sha256": "4add6c1d8fcfd5f1cbe8a3758697da94a4426d2c4ee20cf4436017bc86fe65a7",
+        "original_durable_handle": "run_cea17b3bf9a148d393dea15f2966b89f",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+          "actual_pdf_page": 17,
+          "raw_parser_content_index": 98,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "623aa24d666cb744e24ddc254c5cfb6f69678ad8b41faa848cbd39153ba39eba",
+          "associated_frozen_original_block_ids": [
+            "paper_6dc9f2bdd81d9dcf4a46:b89"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+          "actual_original_crop_sha256": "0ccb10586410fa5f34ac3ce330cd4913b72973e46877fbaf0b694a772359916a",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\017\\record.json",
+          "actual_page_record_sha256": "4add6c1d8fcfd5f1cbe8a3758697da94a4426d2c4ee20cf4436017bc86fe65a7",
+          "original_durable_handle": "run_cea17b3bf9a148d393dea15f2966b89f",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Case</td><td>+d (days)</td><td>50th percentile (days)</td><td>yz06 percentile (days)</td></tr><tr><td>A</td><td>1</td><td>1.5</td><td>3</td></tr><tr><td>B</td><td>2</td><td>3</td><td>6</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Case",
+            "+d (days)",
+            "50th percentile (days)",
+            "yz06 percentile (days)"
+          ],
+          [
+            "A",
+            "1",
+            "1.5",
+            "3"
+          ],
+          [
+            "B",
+            "2",
+            "3",
+            "6"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 1: Delivery time. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 1",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-98"
+              ],
+              "exact_visible_text": "Case t_P + t_T (days) 50^{th} percentile (days) 90^{th} percentile (days)\nA 1 1.5 3\nB 2 3 6\nTable 1: Delivery time.",
+              "table_rows": [
+                [
+                  "Case",
+                  "t_P + t_T (days)",
+                  "50^{th} percentile (days)",
+                  "90^{th} percentile (days)"
+                ],
+                [
+                  "A",
+                  "1",
+                  "1.5",
+                  "3"
+                ],
+                [
+                  "B",
+                  "2",
+                  "3",
+                  "6"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {
+              "90": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "1": 1
+            },
+            "parser_row_lengths": [
+              4,
+              4,
+              4
+            ],
+            "auxiliary_row_lengths": [
+              4,
+              4,
+              4
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "scientific_scope_findings": [
+        "The fixed procurement-plus-transport time, median and 90th percentile are distinct. The 90th percentile is neither a hard maximum nor a confidence interval. Case B doubles all three specified times.",
+        "Primary headers t_P+t_T and 90th are corrupted upstream to +d and yz06. All six body values are retained. Formula 6 labels time in hours while this table uses days; conversion requires 24 h/day.",
+        "Fuel order occurs at 20% remaining tank capacity; a fixed 80% capacity delivery is described. Weibull calibration is a modeling assumption, not an empirical upper-bound guarantee."
+      ],
+      "complete_original_footnotes": [],
+      "declared_reading_transcriptions_not_exact_native_quotes": true,
+      "numeric_value_cells": 6,
+      "row_identities_and_numeric_headers_excluded_from_value_count": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 18,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-018.png",
+            "sha256": "f8433482fbdb06b72f0c86e5401467fecbac0a06f53d122b773326ecbecdfab9"
+          },
+          {
+            "id": "crop-105",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\694077100df207ce935182dbc195a4e1616b39eb10ac5186c61ef089ae58d763.jpg",
+            "sha256": "823e3e499bea329dd5cb625ef2d745ae7dd3f803ed59d6e14d428cbeae0d198a"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          105
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 18,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-018-180dpi.png",
+        "sha256": "8bbde5e7c9037afe183266b4bea9cf0196f0b1b465496cd3bb42623797945aa8",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "table",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/694077100df207ce935182dbc195a4e1616b39eb10ac5186c61ef089ae58d763.jpg",
+        "table_caption": [
+          "Table 2: Cost parameters of the main components, calibrated with [8, 15, 47–51]. "
+        ],
+        "table_footnote": [
+          "\\*unit of measurement. "
+        ],
+        "table_body": "\n\n<html><body><table><tr><td>Asset</td><td>Po and UM*</td><td>& $/UM*)</td><td>β (-)</td><td>Maintenance ($/UM/y)</td></tr><tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr></table></body></html>\n\n",
+        "page_idx": 17
+      },
+      "scientific_reference_approval": false,
+      "matrix_index": 33,
+      "printed_table_number": 2,
+      "headers": [
+        "Asset",
+        "P_0 and UM*",
+        "alpha ($/UM*)",
+        "beta (-)",
+        "Maintenance ($/UM/y)"
+      ],
+      "rows": [
+        [
+          "PV",
+          "1 kW",
+          "800",
+          "1",
+          "16"
+        ],
+        [
+          "Battery",
+          "1 kWh",
+          "350",
+          "1",
+          "3"
+        ],
+        [
+          "Bat. conv.",
+          "1 kW",
+          "1258",
+          "0.5",
+          "2"
+        ],
+        [
+          "Inverter",
+          "1 kW",
+          "1887",
+          "0.5",
+          "2"
+        ],
+        [
+          "Fuel gen.",
+          "1 kW",
+          "1013",
+          "0.8",
+          "0.05$/kW/h"
+        ],
+        [
+          "Fuel tank",
+          "1 liter",
+          "52.2",
+          "0.45",
+          "0.15"
+        ]
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 18,
+        "raw_parser_content_index": 105,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "598f5cd01e9c1951bd2be3c8e88be04f7fbef75b90dc40c4f7136b6d3d3f9fe3",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b96"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\694077100df207ce935182dbc195a4e1616b39eb10ac5186c61ef089ae58d763.jpg",
+        "actual_original_crop_sha256": "823e3e499bea329dd5cb625ef2d745ae7dd3f803ed59d6e14d428cbeae0d198a",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\018\\record.json",
+        "actual_page_record_sha256": "3f5d0bf41ca44f33848eff267ff4421fe01fa8ce3af833dadf2f531bc93c9e35",
+        "original_durable_handle": "run_084117f7e602480486ed832171117b2c",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+          "actual_pdf_page": 18,
+          "raw_parser_content_index": 105,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "598f5cd01e9c1951bd2be3c8e88be04f7fbef75b90dc40c4f7136b6d3d3f9fe3",
+          "associated_frozen_original_block_ids": [
+            "paper_6dc9f2bdd81d9dcf4a46:b96"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\694077100df207ce935182dbc195a4e1616b39eb10ac5186c61ef089ae58d763.jpg",
+          "actual_original_crop_sha256": "823e3e499bea329dd5cb625ef2d745ae7dd3f803ed59d6e14d428cbeae0d198a",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\018\\record.json",
+          "actual_page_record_sha256": "3f5d0bf41ca44f33848eff267ff4421fe01fa8ce3af833dadf2f531bc93c9e35",
+          "original_durable_handle": "run_084117f7e602480486ed832171117b2c",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Asset</td><td>Po and UM*</td><td>& $/UM*)</td><td>β (-)</td><td>Maintenance ($/UM/y)</td></tr><tr><td>PV Battery Bat. conv.</td><td>1 kW 1 kWh 1 kW</td><td>800 350 1258</td><td>1 1 0.5</td><td>16 3 2</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Asset",
+            "Po and UM*",
+            "& $/UM*)",
+            "β (-)",
+            "Maintenance ($/UM/y)"
+          ],
+          [
+            "PV Battery Bat. conv.",
+            "1 kW 1 kWh 1 kW",
+            "800 350 1258",
+            "1 1 0.5",
+            "16 3 2"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 2: Cost parameters of the main components, calibrated with [8, 15, 47–51]. "
+        ],
+        "original_parser_footnotes": [
+          "\\*unit of measurement. "
+        ],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 2",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-105"
+              ],
+              "exact_visible_text": "Asset P0 and UM* alpha ($/UM*) beta (-) Maintenance ($/UM/y)\nPV 1 kW 800 1 16\nBattery 1 kWh 350 1 3\nBat. conv. 1 kW 1258 0.5 2\nInverter 1 kW 1887 0.5 2\nFuel gen. 1 kW 1013 0.8 0.05$/kW/h\nFuel tank 1 liter 52.2 0.45 0.15\n*unit of measurement.\nTable 2: Cost parameters of the main components, calibrated with [8, 15, 47-51].",
+              "table_rows": [
+                [
+                  "Asset",
+                  "P0 and UM*",
+                  "alpha ($/UM*)",
+                  "beta (-)",
+                  "Maintenance ($/UM/y)"
+                ],
+                [
+                  "PV",
+                  "1 kW",
+                  "800",
+                  "1",
+                  "16"
+                ],
+                [
+                  "Battery",
+                  "1 kWh",
+                  "350",
+                  "1",
+                  "3"
+                ],
+                [
+                  "Bat. conv.",
+                  "1 kW",
+                  "1258",
+                  "0.5",
+                  "2"
+                ],
+                [
+                  "Inverter",
+                  "1 kW",
+                  "1887",
+                  "0.5",
+                  "2"
+                ],
+                [
+                  "Fuel gen.",
+                  "1 kW",
+                  "1013",
+                  "0.8",
+                  "0.05$/kW/h"
+                ],
+                [
+                  "Fuel tank",
+                  "1 liter",
+                  "52.2",
+                  "0.45",
+                  "0.15"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [
+                "*unit of measurement."
+              ],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {
+              "1": 3,
+              "0.5": 1,
+              "2": 1,
+              "1887": 1,
+              "1013": 1,
+              "0.8": 1,
+              "0.05": 1,
+              "52.2": 1,
+              "0.45": 1,
+              "0.15": 1
+            },
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "2": 1,
+              "8": 1,
+              "15": 1,
+              "47": 1,
+              "51": 1
+            },
+            "parser_row_lengths": [
+              5,
+              5
+            ],
+            "auxiliary_row_lengths": [
+              5,
+              5,
+              5,
+              5,
+              5,
+              5,
+              5
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "scientific_scope_findings": [
+        "All six physical asset rows are visible in the primary crop. The raw parser contains only PV, Battery and Bat. conv. merged into one row; all Inverter/Fuel gen./Fuel tank rows are absent, not zero.",
+        "P_0 is a reference size with asset-specific units: kW, kWh or liter. Alpha, beta and maintenance are different quantities. Formula 9 scales alpha by a dimensionless size ratio raised to beta; beta below one implies nonlinear scale economies.",
+        "The diesel maintenance entry explicitly uses $/kW/h despite the general annual maintenance column heading. Keep this exception and the alpha unit/header convention; do not invent annual runtime or total costs."
+      ],
+      "complete_original_footnotes": [
+        "*unit of measurement."
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": true,
+      "numeric_value_cells": 24,
+      "row_identities_and_numeric_headers_excluded_from_value_count": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 21,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-021.png",
+            "sha256": "aee2af492e0f6d640e8334054f7655b97c1b2ba323b684eee916e3da051e6789"
+          },
+          {
+            "id": "crop-116",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\dd033265eaf51a779c8c8d3ab84d875b6e20e17cc5b4eacb86ad608aaa625567.jpg",
+            "sha256": "f1753830eb0f4656b2552c1dee03d197179d76212566a470895c7e7d6582ef60"
+          },
+          {
+            "id": "crop-117",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\5088422f5a49baba1f1ce0048e1cd3ae72134284a251acd803a02f38b2fe0914.jpg",
+            "sha256": "4e97411fb2a8583bca7fad96b699227a57a1c0e23f5c50d57d221a88798f969e"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          116,
+          117
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 21,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-021-180dpi.png",
+        "sha256": "ffcbbc85f48e6d00500965bf70ea8eb08dc24949279219a72b90fca637d0b686",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "table",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/dd033265eaf51a779c8c8d3ab84d875b6e20e17cc5b4eacb86ad608aaa625567.jpg",
+        "table_caption": [
+          "Table 3: Optimal size of the diesel generator (kW). "
+        ],
+        "table_footnote": [],
+        "table_body": "\n\n<html><body><table><tr><td colspan=\"2\">Operational strategy</td><td colspan=\"2\">Load following</td><td colspan=\"2\"></td><td colspan=\"4\">Rolling horizon</td></tr><tr><td colspan=\"2\">Load curt. cost ($/kWh)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td></tr><tr><td colspan=\"2\">Fuel delivery scenario</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td></tr><tr><td>ice ter pric</td><td>0.8</td><td>95</td><td>100</td><td>122</td><td>129</td><td>46</td><td>46</td><td>56</td><td>57</td></tr><tr><td></td><td>1.2</td><td>0</td><td>0</td><td>113</td><td>114</td><td>24</td><td>23</td><td>52</td><td>57</td></tr><tr><td>Fuel</td><td></td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>1.6</td><td></td><td></td><td>100</td><td>99</td><td>0</td><td>0</td><td>43</td><td>49</td></tr></table></body></html>\n\n",
+        "page_idx": 20
+      },
+      "scientific_reference_approval": false,
+      "matrix_index": 34,
+      "printed_table_number": 3,
+      "headers": [
+        "Fuel price ($/liter)",
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "B"
+        },
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "B"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "B"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "B"
+        }
+      ],
+      "rows": [
+        [
+          "0.8",
+          "95",
+          "100",
+          "122",
+          "129",
+          "46",
+          "46",
+          "56",
+          "57"
+        ],
+        [
+          "1.2",
+          "0",
+          "0",
+          "113",
+          "114",
+          "24",
+          "23",
+          "52",
+          "57"
+        ],
+        [
+          "1.6",
+          "0",
+          "0",
+          "100",
+          "99",
+          "0",
+          "0",
+          "43",
+          "49"
+        ]
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 21,
+        "raw_parser_content_index": 116,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "b68bbbd805df324c89cee9ba04f13c6cdfa72c21110b73cbe11d4d98c5e9a7d7",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b103"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\dd033265eaf51a779c8c8d3ab84d875b6e20e17cc5b4eacb86ad608aaa625567.jpg",
+        "actual_original_crop_sha256": "f1753830eb0f4656b2552c1dee03d197179d76212566a470895c7e7d6582ef60",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\021\\record.json",
+        "actual_page_record_sha256": "6a663132fc0cc8be238c21cd53384f16da00c19ed57cd559efc611a496f3b606",
+        "original_durable_handle": "run_582445781ebd4defaf7ed19d9b6b5dc6",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+          "actual_pdf_page": 21,
+          "raw_parser_content_index": 116,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "b68bbbd805df324c89cee9ba04f13c6cdfa72c21110b73cbe11d4d98c5e9a7d7",
+          "associated_frozen_original_block_ids": [
+            "paper_6dc9f2bdd81d9dcf4a46:b103"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\dd033265eaf51a779c8c8d3ab84d875b6e20e17cc5b4eacb86ad608aaa625567.jpg",
+          "actual_original_crop_sha256": "f1753830eb0f4656b2552c1dee03d197179d76212566a470895c7e7d6582ef60",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\021\\record.json",
+          "actual_page_record_sha256": "6a663132fc0cc8be238c21cd53384f16da00c19ed57cd559efc611a496f3b606",
+          "original_durable_handle": "run_582445781ebd4defaf7ed19d9b6b5dc6",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td colspan=\"2\">Operational strategy</td><td colspan=\"2\">Load following</td><td colspan=\"2\"></td><td colspan=\"4\">Rolling horizon</td></tr><tr><td colspan=\"2\">Load curt. cost ($/kWh)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td></tr><tr><td colspan=\"2\">Fuel delivery scenario</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td></tr><tr><td>ice ter pric</td><td>0.8</td><td>95</td><td>100</td><td>122</td><td>129</td><td>46</td><td>46</td><td>56</td><td>57</td></tr><tr><td></td><td>1.2</td><td>0</td><td>0</td><td>113</td><td>114</td><td>24</td><td>23</td><td>52</td><td>57</td></tr><tr><td>Fuel</td><td></td><td>0</td><td>0</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td></td><td>1.6</td><td></td><td></td><td>100</td><td>99</td><td>0</td><td>0</td><td>43</td><td>49</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Operational strategy",
+            "Load following",
+            "",
+            "Rolling horizon"
+          ],
+          [
+            "Load curt. cost ($/kWh)",
+            "0.5",
+            "1",
+            "0.5",
+            "1"
+          ],
+          [
+            "Fuel delivery scenario",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ],
+          [
+            "ice ter pric",
+            "0.8",
+            "95",
+            "100",
+            "122",
+            "129",
+            "46",
+            "46",
+            "56",
+            "57"
+          ],
+          [
+            "",
+            "1.2",
+            "0",
+            "0",
+            "113",
+            "114",
+            "24",
+            "23",
+            "52",
+            "57"
+          ],
+          [
+            "Fuel",
+            "",
+            "0",
+            "0",
+            "",
+            "",
+            "",
+            "",
+            "",
+            ""
+          ],
+          [
+            "",
+            "1.6",
+            "",
+            "",
+            "100",
+            "99",
+            "0",
+            "0",
+            "43",
+            "49"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 3: Optimal size of the diesel generator (kW). "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 3: Optimal size of the diesel generator (kW).",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-116"
+              ],
+              "exact_visible_text": "Operational strategy || Load following | Rolling horizon\nLoad curt. cost ($/kWh) || 0.5 | 1 | 0.5 | 1\nFuel delivery scenario || A | B | A | B | A | B | A | B\nFuel price ($/liter) | 0.8 || 95 | 100 | 122 | 129 | 46 | 46 | 56 | 57\nFuel price ($/liter) | 1.2 || 0 | 0 | 113 | 114 | 24 | 23 | 52 | 57\nFuel price ($/liter) | 1.6 || 0 | 0 | 100 | 99 | 0 | 0 | 43 | 49",
+              "table_rows": [
+                [
+                  "Operational strategy",
+                  "Load following",
+                  "Load following",
+                  "Rolling horizon",
+                  "Rolling horizon"
+                ],
+                [
+                  "Load curt. cost ($/kWh)",
+                  "0.5",
+                  "1",
+                  "0.5",
+                  "1"
+                ],
+                [
+                  "Fuel delivery scenario",
+                  "A",
+                  "B",
+                  "A",
+                  "B",
+                  "A",
+                  "B",
+                  "A",
+                  "B"
+                ],
+                [
+                  "0.8",
+                  "95",
+                  "100",
+                  "122",
+                  "129",
+                  "46",
+                  "46",
+                  "56",
+                  "57"
+                ],
+                [
+                  "1.2",
+                  "0",
+                  "0",
+                  "113",
+                  "114",
+                  "24",
+                  "23",
+                  "52",
+                  "57"
+                ],
+                [
+                  "1.6",
+                  "0",
+                  "0",
+                  "100",
+                  "99",
+                  "0",
+                  "0",
+                  "43",
+                  "49"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {},
+            "parser_row_lengths": [
+              4,
+              5,
+              9,
+              10,
+              10,
+              10,
+              10
+            ],
+            "auxiliary_row_lengths": [
+              5,
+              5,
+              9,
+              9,
+              9,
+              9
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "scientific_scope_findings": [
+        "All 24 installed diesel generator sizes have units kW. Preserve all zeros and the eight independent strategy/cost/delivery column combinations.",
+        "RHS is not universally smaller: at fuel price1.2 and curtailment cost0.5 LFS installs zero while RHS installs24/23kW. Zero generator capacity does not imply zero demand or established reliability.",
+        "Figure5 panel B1 denotes fuel1.2/curtailment0.5; it is not fuel-delivery scenario B. The primary prose24kW corresponds to table deliveryA; deliveryB is23kW."
+      ],
+      "complete_original_footnotes": [],
+      "declared_reading_transcriptions_not_exact_native_quotes": true,
+      "numeric_value_cells": 24,
+      "row_identities_and_numeric_headers_excluded_from_value_count": true,
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 21,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-021.png",
+            "sha256": "aee2af492e0f6d640e8334054f7655b97c1b2ba323b684eee916e3da051e6789"
+          },
+          {
+            "id": "crop-116",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\dd033265eaf51a779c8c8d3ab84d875b6e20e17cc5b4eacb86ad608aaa625567.jpg",
+            "sha256": "f1753830eb0f4656b2552c1dee03d197179d76212566a470895c7e7d6582ef60"
+          },
+          {
+            "id": "crop-117",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\5088422f5a49baba1f1ce0048e1cd3ae72134284a251acd803a02f38b2fe0914.jpg",
+            "sha256": "4e97411fb2a8583bca7fad96b699227a57a1c0e23f5c50d57d221a88798f969e"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          116,
+          117
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 21,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-021-180dpi.png",
+        "sha256": "ffcbbc85f48e6d00500965bf70ea8eb08dc24949279219a72b90fca637d0b686",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "table",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/5088422f5a49baba1f1ce0048e1cd3ae72134284a251acd803a02f38b2fe0914.jpg",
+        "table_caption": [
+          "Table 4: Optimal size of the fuel tank (thousands of liters). "
+        ],
+        "table_footnote": [],
+        "table_body": "\n\n<html><body><table><tr><td colspan=\"2\">Operational strategy</td><td colspan=\"4\">Load following</td><td colspan=\"4\">Rolling horizon</td></tr><tr><td colspan=\"2\">Load curt. cost ($/kWh)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td></tr><tr><td colspan=\"2\">Fuel delivery scenario</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td></tr><tr><td rowspan=\"3\">ce ter p /lite Fuel</td><td>0.8</td><td>2.3</td><td>4.0</td><td>3.4</td><td>5.5</td><td>3.2</td><td>5.2</td><td>3.9</td><td>8.0</td></tr><tr><td>1.2</td><td>0</td><td>0</td><td>3.2</td><td>4.2</td><td>1.5</td><td>2.2</td><td>3.6</td><td>4.5</td></tr><tr><td>1.6</td><td>0</td><td>0</td><td>2.9</td><td>3.1</td><td>0</td><td>0</td><td>2.3</td><td>4.0</td></tr></table></body></html>\n\n",
+        "page_idx": 20
+      },
+      "scientific_reference_approval": false,
+      "matrix_index": 35,
+      "printed_table_number": 4,
+      "headers": [
+        "Fuel price ($/liter)",
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "B"
+        },
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "LFS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "B"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "0.5",
+          "fuel_delivery_scenario": "B"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "A"
+        },
+        {
+          "strategy": "RHS",
+          "load_curtailment_cost_USD_per_kWh": "1",
+          "fuel_delivery_scenario": "B"
+        }
+      ],
+      "rows": [
+        [
+          "0.8",
+          "2.3",
+          "4.0",
+          "3.4",
+          "5.5",
+          "3.2",
+          "5.2",
+          "3.9",
+          "8.0"
+        ],
+        [
+          "1.2",
+          "0",
+          "0",
+          "3.2",
+          "4.2",
+          "1.5",
+          "2.2",
+          "3.6",
+          "4.5"
+        ],
+        [
+          "1.6",
+          "0",
+          "0",
+          "2.9",
+          "3.1",
+          "0",
+          "0",
+          "2.3",
+          "4.0"
+        ]
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 21,
+        "raw_parser_content_index": 117,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "fad2da343c23cbacc5b5cde88f64a8776146b53cbe90894592dbf4ba9e0e6395",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b104"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\5088422f5a49baba1f1ce0048e1cd3ae72134284a251acd803a02f38b2fe0914.jpg",
+        "actual_original_crop_sha256": "4e97411fb2a8583bca7fad96b699227a57a1c0e23f5c50d57d221a88798f969e",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\021\\record.json",
+        "actual_page_record_sha256": "6a663132fc0cc8be238c21cd53384f16da00c19ed57cd559efc611a496f3b606",
+        "original_durable_handle": "run_582445781ebd4defaf7ed19d9b6b5dc6",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+          "actual_pdf_page": 21,
+          "raw_parser_content_index": 117,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "fad2da343c23cbacc5b5cde88f64a8776146b53cbe90894592dbf4ba9e0e6395",
+          "associated_frozen_original_block_ids": [
+            "paper_6dc9f2bdd81d9dcf4a46:b104"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\5088422f5a49baba1f1ce0048e1cd3ae72134284a251acd803a02f38b2fe0914.jpg",
+          "actual_original_crop_sha256": "4e97411fb2a8583bca7fad96b699227a57a1c0e23f5c50d57d221a88798f969e",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\021\\record.json",
+          "actual_page_record_sha256": "6a663132fc0cc8be238c21cd53384f16da00c19ed57cd559efc611a496f3b606",
+          "original_durable_handle": "run_582445781ebd4defaf7ed19d9b6b5dc6",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            1
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td colspan=\"2\">Operational strategy</td><td colspan=\"4\">Load following</td><td colspan=\"4\">Rolling horizon</td></tr><tr><td colspan=\"2\">Load curt. cost ($/kWh)</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td><td colspan=\"2\">0.5</td><td colspan=\"2\">1</td></tr><tr><td colspan=\"2\">Fuel delivery scenario</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td><td>A</td><td>B</td></tr><tr><td rowspan=\"3\">ce ter p /lite Fuel</td><td>0.8</td><td>2.3</td><td>4.0</td><td>3.4</td><td>5.5</td><td>3.2</td><td>5.2</td><td>3.9</td><td>8.0</td></tr><tr><td>1.2</td><td>0</td><td>0</td><td>3.2</td><td>4.2</td><td>1.5</td><td>2.2</td><td>3.6</td><td>4.5</td></tr><tr><td>1.6</td><td>0</td><td>0</td><td>2.9</td><td>3.1</td><td>0</td><td>0</td><td>2.3</td><td>4.0</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Operational strategy",
+            "Load following",
+            "Rolling horizon"
+          ],
+          [
+            "Load curt. cost ($/kWh)",
+            "0.5",
+            "1",
+            "0.5",
+            "1"
+          ],
+          [
+            "Fuel delivery scenario",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B",
+            "A",
+            "B"
+          ],
+          [
+            "ce ter p /lite Fuel",
+            "0.8",
+            "2.3",
+            "4.0",
+            "3.4",
+            "5.5",
+            "3.2",
+            "5.2",
+            "3.9",
+            "8.0"
+          ],
+          [
+            "1.2",
+            "0",
+            "0",
+            "3.2",
+            "4.2",
+            "1.5",
+            "2.2",
+            "3.6",
+            "4.5"
+          ],
+          [
+            "1.6",
+            "0",
+            "0",
+            "2.9",
+            "3.1",
+            "0",
+            "0",
+            "2.3",
+            "4.0"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 4: Optimal size of the fuel tank (thousands of liters). "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 1,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 4: Optimal size of the fuel tank (thousands of liters).",
+              "location": "MIDDLE",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-117"
+              ],
+              "exact_visible_text": "Operational strategy || Load following | Rolling horizon\nLoad curt. cost ($/kWh) || 0.5 | 1 | 0.5 | 1\nFuel delivery scenario || A | B | A | B | A | B | A | B\nFuel price ($/liter) | 0.8 || 2.3 | 4.0 | 3.4 | 5.5 | 3.2 | 5.2 | 3.9 | 8.0\nFuel price ($/liter) | 1.2 || 0 | 0 | 3.2 | 4.2 | 1.5 | 2.2 | 3.6 | 4.5\nFuel price ($/liter) | 1.6 || 0 | 0 | 2.9 | 3.1 | 0 | 0 | 2.3 | 4.0",
+              "table_rows": [
+                [
+                  "Operational strategy",
+                  "Load following",
+                  "Load following",
+                  "Rolling horizon",
+                  "Rolling horizon"
+                ],
+                [
+                  "Load curt. cost ($/kWh)",
+                  "0.5",
+                  "1",
+                  "0.5",
+                  "1"
+                ],
+                [
+                  "Fuel delivery scenario",
+                  "A",
+                  "B",
+                  "A",
+                  "B",
+                  "A",
+                  "B",
+                  "A",
+                  "B"
+                ],
+                [
+                  "0.8",
+                  "2.3",
+                  "4.0",
+                  "3.4",
+                  "5.5",
+                  "3.2",
+                  "5.2",
+                  "3.9",
+                  "8.0"
+                ],
+                [
+                  "1.2",
+                  "0",
+                  "0",
+                  "3.2",
+                  "4.2",
+                  "1.5",
+                  "2.2",
+                  "3.6",
+                  "4.5"
+                ],
+                [
+                  "1.6",
+                  "0",
+                  "0",
+                  "2.9",
+                  "3.1",
+                  "0",
+                  "0",
+                  "2.3",
+                  "4.0"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 1,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {},
+            "parser_row_lengths": [
+              3,
+              5,
+              9,
+              10,
+              9,
+              9
+            ],
+            "auxiliary_row_lengths": [
+              5,
+              5,
+              9,
+              9,
+              9,
+              9
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "scientific_scope_findings": [
+        "Tank sizes are thousands of liters, not liters or kWh. All 24 cells and zero installations retained; every tank zero coincides with the corresponding generator zero.",
+        "For each fixed strategy/cost/delivery combination, the complete table shows nonincreasing tank size as fuel price rises. Primary adjacent prose instead says higher fuel price increases size. Preserve this primary cross-statement inconsistency.",
+        "DeliveryB exceedsA whenever both sizes are positive. RHS is not universally larger: at fuel1.6/cost1/deliveryA RHS2.3 is below LFS2.9. Ratios with zero LFS are undefined; zero/zero is not a percentage improvement. Fuel use24–35% and diesel energy28–45% are distinct prose quantities."
+      ],
+      "complete_original_footnotes": [],
+      "declared_reading_transcriptions_not_exact_native_quotes": true,
+      "numeric_value_cells": 24,
+      "row_identities_and_numeric_headers_excluded_from_value_count": true,
+      "expert_gold_or_scientific_reference_approval": false
+    }
+  ],
+  "equations": [
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-009.png",
+            "sha256": "447d8177ea5fbe04492f79b80d6741788235fdd029b7dee6178d24be5831b70d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          43,
+          45,
+          47,
+          49
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 9,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-009-180dpi.png",
+        "sha256": "1620a64186f37b5bb5656a77738159615a7fcf4d0f83c7511648551185e3daca",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}&{\\forall t\\quad\\operatorname*{min}\\sum_{t=1}^{T}C_{F,t}+C_{C,t}+C_{M,t}+C_{R C,t}+C_{S S}}\\ &{C_{S S}=\\left\\{\\begin{array}{c c}{0}&{\\mathrm{if~}E_{B,24}>E_{B,0}}\\ {c_{S S}\\left(E_{B,24}-E_{B,0}\\right)}&{\\mathrm{otherwise}}\\end{array}\\right.}\\ &{\\forall t}\\ &{\\forall t}\\ &{\\forall t}\\ &{\\forall t}\\ &{\\forall t}\\end{array}\\qquadC_{F,t}=c_{R}z_{D,t}}\\ &{\\forall t}\\ &{\\forall t}\\ &{\\forall t}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 8
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 153,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 43,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "b0cb95b809dd6fc56879c7d26e0cc9a729763c4543c9051a3848b84c20a9ff3c",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b38"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\009\\record.json",
+        "actual_page_record_sha256": "1529be677a5b30fdac34122f796cb3cb538d4e2b0d13a71d0494d76b5ae59927",
+        "original_durable_handle": "run_b86ecbedba084a6d8d0ee6829c1c1c38",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "1a",
+        "1b",
+        "1c",
+        "1d",
+        "1e",
+        "1f"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "min sum_t(C_F,t + C_C,t + C_M,t + C_RC,t) + C_SS",
+        "C_SS = 0 if E_B,24 > E_B,0; c_SS(E_B,24 - E_B,0) otherwise",
+        "C_C,t = c_C P_C,t",
+        "C_M,t = c_M z_D,t",
+        "C_F,t = c_F F_D,t",
+        "C_RC,t = c_R,t P_RC,t"
+      ],
+      "scientific_scope_findings": [
+        "Printed1b gives a negative cost for final battery energy below initial when c_SS is positive, although prose calls this an overuse penalty. This is visible in the primary PDF, not solely a parser defect. The mathematical example below is not a measurement or implementation assertion.",
+        "The raw equation block loses several cost relations and mislabels a maintenance-like term as fuel cost. The primary six subequations, binary diesel state, fuel use and load-versus-renewable curtailment costs must remain distinct.",
+        "This rolling-horizon dispatch objective is distinct from the full-project expected NPC sizing objective."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-009.png",
+            "sha256": "447d8177ea5fbe04492f79b80d6741788235fdd029b7dee6178d24be5831b70d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          43,
+          45,
+          47,
+          49
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 9,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-009-180dpi.png",
+        "sha256": "1620a64186f37b5bb5656a77738159615a7fcf4d0f83c7511648551185e3daca",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}&{\\forall t}\\ {\\forall t}&{}\\ {\\forall t}&{P_{B+,t}-P_{B-,t}+P_{i n v+,t}-P_{i n v-,t}=P_{L,t}-P_{C,t}}\\ {\\forall t}&{P_{B+,t}-P_{B-,t}+P_{i n v+,t}\\eta_{I}-\\frac{P_{i n v-,t}}{\\eta_{I}}+P_{P V A v,t}=P_{R C,t}}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 8
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 154,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 45,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "525bc46b45c777eb71adb1b96a7e9bae38c5fb18b0ca12a8d916828d19178c1c",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b40"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\009\\record.json",
+        "actual_page_record_sha256": "1529be677a5b30fdac34122f796cb3cb538d4e2b0d13a71d0494d76b5ae59927",
+        "original_durable_handle": "run_b86ecbedba084a6d8d0ee6829c1c1c38",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "2a",
+        "2b"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "P_D,t + P_inv+,t - P_inv-,t = P_L,t - P_C,t",
+        "P_B+,t - P_B-,t + P_inv+,t eta_I - P_inv-,t/eta_I + P_PVAv,t = P_RC,t"
+      ],
+      "scientific_scope_findings": [
+        "The primary AC balance contains diesel output P_D,t. Raw parser substitutes battery charge/discharge terms on that side, changing physical resource identity.",
+        "Keep primary DC-side efficiency conventions as printed and distinguish the DC battery/PV and AC load/diesel buses; no unverified engineering correction is inserted."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-009.png",
+            "sha256": "447d8177ea5fbe04492f79b80d6741788235fdd029b7dee6178d24be5831b70d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          43,
+          45,
+          47,
+          49
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 9,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-009-180dpi.png",
+        "sha256": "1620a64186f37b5bb5656a77738159615a7fcf4d0f83c7511648551185e3daca",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}&{\\forall t}\\ {\\forall t}&{F_{D,t}\\geq c_{D S,i}P_{D,t}+c_{D I,i}-\\left(1-z_{D,t}\\right)M}\\ {\\forall t,i}&{F_{D,t}\\geq c_{D S,i}P_{D,t}+c_{D I,i}-\\left(1-z_{D,t}\\right)M}\\ {\\forall t}&{\\quad\\quad V_{F,t}=V_{F,0}-\\sum_{t^{\\prime}=1}^{t}F_{D,t^{\\prime}}\\geq0}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 8
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 155,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 47,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "1a052cfbda5ab43bae19a648f989c984e1aa95b8e7ceba0df61970315276af14",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b42"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\009\\record.json",
+        "actual_page_record_sha256": "1529be677a5b30fdac34122f796cb3cb538d4e2b0d13a71d0494d76b5ae59927",
+        "original_durable_handle": "run_b86ecbedba084a6d8d0ee6829c1c1c38",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "3a",
+        "3b",
+        "3c"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "P_D,min z_D,t <= P_D,t <= P_D,max z_D,t",
+        "F_D,t >= c_DS,i P_D,t + c_DI,i - (1-z_D,t) M for all t,i",
+        "V_F,t = V_F,0 - sum_tprime=1..t F_D,tprime >= 0"
+      ],
+      "scientific_scope_findings": [
+        "Primary3a enforces the on/off technical minimum and maximum; parser omits it and duplicates3b. Big-M and binary diesel state are not continuously variable generator capacities.",
+        "Fuel consumption and tank stock must share a compatible per-step volume convention. The case uses hourly physical steps; no nonhourly conversion factor is supplied by this printed equation."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-009.png",
+            "sha256": "447d8177ea5fbe04492f79b80d6741788235fdd029b7dee6178d24be5831b70d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          43,
+          45,
+          47,
+          49
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 9,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-009-180dpi.png",
+        "sha256": "1620a64186f37b5bb5656a77738159615a7fcf4d0f83c7511648551185e3daca",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}&{\\forall t~0\\leq P_{i n v+,t}\\leq z_{I,t}P_{i n v+}^{m a x}}\\ &{\\forall t~0\\leq P_{i n v-,t}\\leq\\left(1-z_{I,t}\\right)P_{i n v-}^{m a x}}\\ &{\\forall t~E_{B}^{m a x}\\leq E_{B,t}\\leq E_{B}^{m a x}}\\ &{\\forall t~E_{B,t}=E_{B,0}+\\sum_{\\hat{t}=1}^{t}-\\frac{P_{B+,\\hat{t}}}{\\eta_{I}}+\\eta_{B}P_{B-,\\hat{t}}}\\ &{\\forall t~0\\leq P_{B+,t}\\leq z_{B,t}P_{B+}^{m a x}}\\ &{\\forall t~0\\leq P_{B-,t}\\leq\\left(1-z_{B,t}\\right)P_{B-}^{m a x}}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 8
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 156,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 49,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "6a8c50d253ca8ae5c509b25d1fa2a69c838c838ff2b0fdd2ae263e065d52be9f",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b44"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\009\\record.json",
+        "actual_page_record_sha256": "1529be677a5b30fdac34122f796cb3cb538d4e2b0d13a71d0494d76b5ae59927",
+        "original_durable_handle": "run_b86ecbedba084a6d8d0ee6829c1c1c38",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "4a",
+        "4b",
+        "4c",
+        "4d",
+        "4e",
+        "4f"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "0 <= P_inv+,t <= z_I,t P_inv+,max",
+        "0 <= P_inv-,t <= (1-z_I,t) P_inv-,max",
+        "E_B,max <= E_B,t <= E_B,max",
+        "E_B,t = E_B,0 + sum_that=1..t (-P_B+,that/eta_I + eta_B P_B-,that)",
+        "0 <= P_B+,t <= z_B,t P_B+,max",
+        "0 <= P_B-,t <= (1-z_B,t) P_B-,max"
+      ],
+      "scientific_scope_findings": [
+        "Primary4c itself prints max on BOTH sides. Literal inequality forces E_B,t to equal E_B,max. Do not silently replace the lower bound with min or claim that the actual solver used this expression.",
+        "Charge/discharge exclusivity and inverter directional limits are six separate constraints. Preserve printed eta_I/eta_B in4d; power-energy relation needs timestep units, case uses1h."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 10,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-010.png",
+            "sha256": "a9cd27b9ae7f6a50584d1d073da8c38d7c819886bbeefceef7bcff7534ddcce1"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          51
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 10,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-010-180dpi.png",
+        "sha256": "9bd6cde7c099554ee1dfe0d12f7fa95280172c8485183051c3cb6805e896814c",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\n\\begin{array}{r l}{\\forall t}&{{}0\\leq P_{P V,t}\\leq P_{P V A v,t}}\\ {\\forall t}&{{}\\quad0\\leq P_{C,t}\\leq P_{L,t}}\\end{array}\n$$",
+        "text_format": "latex",
+        "page_idx": 9
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 157,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 10,
+        "raw_parser_content_index": 51,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "993ddd21c3cc22fd76a1cc63d3fbb0dcd780d0855443d947a04c8ef274800ca3",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b46"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\010\\record.json",
+        "actual_page_record_sha256": "4bb66af37ca691f273c5d4bc22404ecba14d96188b6cbd850ebc5ea38135a81e",
+        "original_durable_handle": "run_7518ffd403234dd6b81a911dd7095d86",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "5a",
+        "5b"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "0 <= P_PV,t <= P_PVAv,t",
+        "0 <= P_C,t <= P_L,t"
+      ],
+      "scientific_scope_findings": [
+        "PV availability and load curtailment bounds are distinct. Renewable curtailment and unserved load do not have interchangeable penalties."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 11,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-011.png",
+            "sha256": "43e818bd49fb40e1d2891e1aa0e49b84bb27522e60295eee2946f525afc21c95"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          64
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 11,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-011-180dpi.png",
+        "sha256": "93d712eedfc3932c50bd4eb56938dfdc5cf678aa62fb0e60a9e53e91809763be",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nt_{D}(h)=t_{P}+t_{T}+p d f\n$$",
+        "text_format": "latex",
+        "page_idx": 10
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 158,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 11,
+        "raw_parser_content_index": 64,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "c7a55e91e554058600478dc4344024b5c336264a7937d0b44fadb0c99dafcdcf",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b58"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\011\\record.json",
+        "actual_page_record_sha256": "027ffd5f66307d8a9aafcf324ee17abf98f15103811a3bbd6414699a2a0b78a3",
+        "original_durable_handle": "run_b9abbf1f76744db694601d1f04759d9d",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "6"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "t_D (h) = t_P + t_T + pdf"
+      ],
+      "scientific_scope_findings": [
+        "The primary prose defines pdf as a probability density function, yet the printed equation adds it to time. Density-versus-random-duration dimensional interpretation is unresolved. Preserve the primary wording without claiming actual Monte Carlo samples were implemented incorrectly.",
+        "Table1 times are days; the equation labels hours. No maximum delivery time is established by a90th percentile."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 13,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-013.png",
+            "sha256": "4601d5c3d367822906ce641ebbf7aa89da110ad32f269657a80aeedf1843941a"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          73,
+          74
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 13,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-013-180dpi.png",
+        "sha256": "ab163fca8538cf5e1e8cd382b9ae7f0d7ec890af554f2c4d5feb7a5eb124130a",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nN P C=\\sum_{y=0}^{N_{L}}\\frac{C A P E X_{y}+O P E X_{y}}{(1+i)^{y}}\n$$",
+        "text_format": "latex",
+        "page_idx": 12
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 159,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 13,
+        "raw_parser_content_index": 73,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "dea5cb81ed4319e2fc78440b1e5b30019f554b908f0b26c69a2676b4c6e8749b",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b66"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\013\\record.json",
+        "actual_page_record_sha256": "534547e0bcb91de55a7c8a99cdc5947923c8b2eb9a5cec637309beea2db4b649",
+        "original_durable_handle": "run_a72971731ecc4f418180cdafeef28f6b",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "7"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "NPC = sum_y=0..N_L (CAPEX_y + OPEX_y)/(1+i)^y"
+      ],
+      "scientific_scope_findings": [
+        "Discounted full-project costs include investment, replacements and operating cost. Fifteen-year project life is a case assumption; NPC is not annual OPEX, dispatch cost or COE."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 13,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-013.png",
+            "sha256": "4601d5c3d367822906ce641ebbf7aa89da110ad32f269657a80aeedf1843941a"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          73,
+          74
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 13,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-013-180dpi.png",
+        "sha256": "ab163fca8538cf5e1e8cd382b9ae7f0d7ec890af554f2c4d5feb7a5eb124130a",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nO P E X_{y}=\\sum_{s=1}^{S}\\frac{O P E X_{y_{s}}}{S}\n$$",
+        "text_format": "latex",
+        "page_idx": 12
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 160,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 13,
+        "raw_parser_content_index": 74,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "ef8d544fd381e73157a47a5c763dec8c871d28f2cf4048200398889c3d9e2038",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b67"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\013\\record.json",
+        "actual_page_record_sha256": "534547e0bcb91de55a7c8a99cdc5947923c8b2eb9a5cec637309beea2db4b649",
+        "original_durable_handle": "run_a72971731ecc4f418180cdafeef28f6b",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "8"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "OPEX_y = sum_s=1..S OPEX_y,s / S"
+      ],
+      "scientific_scope_findings": [
+        "This is an equal-weight Monte Carlo scenario mean; the case hasS=5. It is not a confidence interval, worst-case guarantee or an independently validated population expectation."
+      ]
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 17,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-017.png",
+            "sha256": "6f99a128130d03d109e6afb8f92d87c3989cbe16269527dd7cd2068fddd543e6"
+          },
+          {
+            "id": "crop-98",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\95a0f2797e8d1fe7f789df6111be01d937ef082d77357d56ed34c158df5fbf3c.jpg",
+            "sha256": "0ccb10586410fa5f34ac3ce330cd4913b72973e46877fbaf0b694a772359916a"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          98,
+          101
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 17,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-017-180dpi.png",
+        "sha256": "080230da70e86c48ab4af6f9e8c9b0d2a7b4534e1a6408e6688894e2108576b2",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "equation",
+        "text": "$$\nC(x)=\\alpha{\\biggl(}{\\frac{P_{x}}{P_{0}}}{\\biggr)}^{\\beta}\n$$",
+        "text_format": "latex",
+        "page_idx": 16
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 163,
+      "original_visual_item": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 17,
+        "raw_parser_content_index": 101,
+        "raw_visual_type": "equation",
+        "raw_parser_item_sha256": "d80f41a85de3e0558678797290ce1ab8583bd04af7bb68cc9f6a60262f2a3c65",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b92"
+        ],
+        "actual_original_crop_path": null,
+        "actual_original_crop_sha256": null,
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\017\\record.json",
+        "actual_page_record_sha256": "4add6c1d8fcfd5f1cbe8a3758697da94a4426d2c4ee20cf4436017bc86fe65a7",
+        "original_durable_handle": "run_cea17b3bf9a148d393dea15f2966b89f",
+        "status": "PAGE_ONLY_ASSOCIATION_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "printed_equation_numbers": [
+        "9"
+      ],
+      "declared_reading_transcriptions_not_exact_native_quotes": [
+        "C(x) = alpha (P_x/P_0)^beta"
+      ],
+      "scientific_scope_findings": [
+        "The reference-size ratio is dimensionless and beta controls economies of scale. At beta0.5 quadrupling the reference size doubles modeled cost rather than quadrupling it. Table2 alpha/beta/maintenance and asset units are independently retained."
+      ]
+    }
+  ],
+  "plots": [
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 7,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-007.png",
+            "sha256": "9d643a473dc847421788b71552aab09f5a1bc0764ab7e052bfd484df33bd13fb"
+          },
+          {
+            "id": "crop-31",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\1f7c402e6cf8f64c4bfd7015c55ba4356be0e80074deb31186e6ea65ad055801.jpg",
+            "sha256": "51c98ce853e163e3b8b510c96371ac930abaab3316e3278b5ebb1c2a4b34009f"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          31
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 7,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-007-180dpi.png",
+        "sha256": "25470c4b40dda7cd38f50547f1f09310a620c5fa23976914620164e7a383cd17",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/1f7c402e6cf8f64c4bfd7015c55ba4356be0e80074deb31186e6ea65ad055801.jpg",
+        "img_caption": [
+          "Figure 1: Typical design of a rural mini-grid. "
+        ],
+        "img_footnote": [],
+        "page_idx": 6
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 151,
+      "figure": "Fig.1",
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 7,
+        "raw_parser_content_index": 31,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "42780c7ddaff5ca99af09b28b7e2a3ce8e31f6bbf28f1ca56987d0fbd4ac5980",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b28"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\1f7c402e6cf8f64c4bfd7015c55ba4356be0e80074deb31186e6ea65ad055801.jpg",
+        "actual_original_crop_sha256": "51c98ce853e163e3b8b510c96371ac930abaab3316e3278b5ebb1c2a4b34009f",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\007\\record.json",
+        "actual_page_record_sha256": "1f7c477a32a01d6006322ff6bec2c80d779eed9e4b290a238d28899a959851b3",
+        "original_durable_handle": "run_1ad730d44a51495b8892fbc6921de90e",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "caption": "Figure 1: Typical design of a rural mini-grid. ",
+      "scientific_scope_findings": [
+        "Complete single-bus topology: PV and battery converter on DC bus, bidirectional inverter linking AC bus, fuel storage and engine-generator supply AC load. This modeling topology is not field deployment or a detailed distribution-network power-flow result.",
+        "Primary simplification includes distribution losses within demand. All arrows and component roles considered."
+      ],
+      "exact_unprinted_plot_data_inferred": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 8,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-008.png",
+            "sha256": "a3e53615b34b44641e552e504ac017323e6cbf1626226fca2f03e154a5b05dc1"
+          },
+          {
+            "id": "crop-39",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\e6d905194c7b52cd78e4d495ee776c713c3d0ec456ca682500dba67230bbf7a1.jpg",
+            "sha256": "d5a5fc6b3c75657ff53814da37f5ca15f4c2dac8d8aed5d8618eea1ffc3ff52d"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          39
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 8,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-008-180dpi.png",
+        "sha256": "b06ce23e341d530b398b86a8032f13660287e414366eee215e51e1a6917cae32",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/e6d905194c7b52cd78e4d495ee776c713c3d0ec456ca682500dba67230bbf7a1.jpg",
+        "img_caption": [
+          "Figure 2: Rolling-horizon predictive strategy. "
+        ],
+        "img_footnote": [],
+        "page_idx": 7
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 152,
+      "figure": "Fig.2",
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 8,
+        "raw_parser_content_index": 39,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "7343aec4a7daf44b9274fae9d36186376f5d6fcb4ba49dbcb6c5f5260a505552",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b35"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\e6d905194c7b52cd78e4d495ee776c713c3d0ec456ca682500dba67230bbf7a1.jpg",
+        "actual_original_crop_sha256": "d5a5fc6b3c75657ff53814da37f5ca15f4c2dac8d8aed5d8618eea1ffc3ff52d",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\008\\record.json",
+        "actual_page_record_sha256": "90d9f0dd19fb8db8c6854b9acf7152c852402a233fc6b6d1b6718cc09553eb40",
+        "original_durable_handle": "run_d013107b58f144e9a658fb734b9406f4",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "caption": "Figure 2: Rolling-horizon predictive strategy. ",
+      "scientific_scope_findings": [
+        "Complete rolling-horizon illustration distinguishes physical timestepT_r, dispatch refreshT_h and optimization horizonT_o. Forecast PV/load and scheduled diesel are distinguished from past actual values and real-time correction.",
+        "CaseT_r=1h, T_h=6h, T_o=24h. No exact unprinted curve values or empirical forecast accuracy inferred from the schematic."
+      ],
+      "exact_unprinted_plot_data_inferred": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 14,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-014.png",
+            "sha256": "b4fb59a9de7176aef9d0e28dde32dab0b0c81a02fdf046e2037fb68e44dbbb30"
+          },
+          {
+            "id": "crop-80",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\f6da3e81f15e7792a6d4fafec37376c771ef79e0c808fbc7867fb768d8a20d3b.jpg",
+            "sha256": "7030581491afc830b2ad410c9549a2fb2d60fc8b3fa72abeb9b8aea49cabc125"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          80
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 14,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-014-180dpi.png",
+        "sha256": "2ee3bb9f667aa41666659ed6bd2712da51f345c07d01c5ba2ac8a42e49a27740",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/f6da3e81f15e7792a6d4fafec37376c771ef79e0c808fbc7867fb768d8a20d3b.jpg",
+        "img_caption": [
+          "Figure 3: Scheduling and operation of resources. "
+        ],
+        "img_footnote": [],
+        "page_idx": 13
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 161,
+      "figure": "Fig.3",
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 14,
+        "raw_parser_content_index": 80,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "bd23a4a3fe17d228de23f6c39a1a40c97db3ce2486e1316e9acea6f2d8c3efe6",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b73"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\f6da3e81f15e7792a6d4fafec37376c771ef79e0c808fbc7867fb768d8a20d3b.jpg",
+        "actual_original_crop_sha256": "7030581491afc830b2ad410c9549a2fb2d60fc8b3fa72abeb9b8aea49cabc125",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\014\\record.json",
+        "actual_page_record_sha256": "e7be3c8fcc71f3f912229a5d4172621643af2e833f1e038d1edf3a791ed5b5b9",
+        "original_durable_handle": "run_b1debb35c6be42a494da871fafc7ee81",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "caption": "Figure 3: Scheduling and operation of resources. ",
+      "scientific_scope_findings": [
+        "Complete nested workflow: draw annual scenarios, outerPSO component sizing/CAPEX, inner per-scenario dispatch with LFS or RHS MILP refresh and real-time correction, annual operational/replacement costs and expectedNPC, then updatePSO best and termination.",
+        "The diagram labels an optimal output but does not prove a global optimum. CasePSO200 maximum iterations,12 stall iterations,tolerance10^-3; simulated annual scenariosS=5."
+      ],
+      "exact_unprinted_plot_data_inferred": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 19,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-019.png",
+            "sha256": "2fc974570c1147638501b5954d786c76e84fb6d9b6528a87a228337b534df328"
+          },
+          {
+            "id": "crop-110",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\fd78bcf4a7416b15bb10575198a14042d30bd9956fb20eda1f3504bc6898bfb1.jpg",
+            "sha256": "01a0ef9107f52b8b1238389c1af3802077437f8325d4e7c30831c7eb131d0daa"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          110
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 19,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-019-180dpi.png",
+        "sha256": "901145303803c48529a234fca43685aea0cc7c82e90d6a9b257824747caab145",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/fd78bcf4a7416b15bb10575198a14042d30bd9956fb20eda1f3504bc6898bfb1.jpg",
+        "img_caption": [
+          "Figure 4: NPC of the mini-grid for different dispatching strategies, cost of load curtailment and fuel price; values are averaged on scenarios A and B of time required for fuel delivery. "
+        ],
+        "img_footnote": [],
+        "page_idx": 18
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 165,
+      "figure": "Fig.4",
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 19,
+        "raw_parser_content_index": 110,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "1a0dc9a1d49cb157135c75d632cefdd7f9d9c728e924f91845c927b6d3b5539b",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b100"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\fd78bcf4a7416b15bb10575198a14042d30bd9956fb20eda1f3504bc6898bfb1.jpg",
+        "actual_original_crop_sha256": "01a0ef9107f52b8b1238389c1af3802077437f8325d4e7c30831c7eb131d0daa",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\019\\record.json",
+        "actual_page_record_sha256": "62f707af632c102959290aff41b3becb9f9916b698f74db429226f7f794c89b7",
+        "original_durable_handle": "run_364077ecbd5640a4a96eebd120f1db32",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "caption": "Figure 4: NPC of the mini-grid for different dispatching strategies, cost of load curtailment and fuel price; values are averaged on scenarios A and B of time required for fuel delivery. ",
+      "scientific_scope_findings": [
+        "Complete two-panel NPC comparison: load-curtailment costs0.5/1.0USD/kWh; fuel0.80/1.20/1.60; greenLFS and blueRHS. Each plotted value averages fuel-delivery casesA/B; small error bars are their min/max, not confidence intervals or Monte Carlo standard deviations.",
+        "NPC axisM$ has a truncated1.7 baseline, so bar lengths cannot be compared as percentages from zero. Printed fuel x-axis label$/kWh conflicts with table/prose$/liter and remains a primary label inconsistency.",
+        "VisibleRHS is lower or equal in all six pairs, equal at highest fuel/lowest curtailment. The prose3% is not independently recovered as an exact unprinted bar value."
+      ],
+      "exact_unprinted_plot_data_inferred": false
+    },
+    {
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 20,
+        "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-020.png",
+            "sha256": "b044e3c25debcd11c398630e16a6bb64c36ed0011488ddb34dfa4090fb478523"
+          },
+          {
+            "id": "crop-113",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\fb410d0df85bdc9c5c0bc73821780f94733295701c47d042949df7f1578199a1.jpg",
+            "sha256": "14c37ffef5504a8eb8aa8cf06c2e5cef4e0df399ffc0b43b7452a38161b23d04"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          113
+        ]
+      },
+      "additional_complete_original_page_180dpi_directly_viewed": {
+        "actual_pdf_page": 20,
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\complete-stochastic-primary-page-reading-v12\\original-page-020-180dpi.png",
+        "sha256": "f3d743b89885394bec22ff31ec68ed2034fed03418622a7765a912f18e135f26",
+        "dpi": 180
+      },
+      "unchanged_original_parser_item": {
+        "type": "image",
+        "img_path": "C:\\Users\\Alandelone\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images/fb410d0df85bdc9c5c0bc73821780f94733295701c47d042949df7f1578199a1.jpg",
+        "img_caption": [
+          "Figure 5: Optimal size of the photovoltaic plant, the inverter, the DC/DC converter and the battery, for different dispatching strategies, cost of load curtailment and fuel price; each size is expressed in terms of percent difference with respect to the optimal solution obtained by applying LFS to case A1. "
+        ],
+        "img_footnote": [],
+        "page_idx": 19
+      },
+      "scientific_reference_approval": false,
+      "matrix_visual_index": 166,
+      "figure": "Fig.5",
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+        "actual_pdf_page": 20,
+        "raw_parser_content_index": 113,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "92a8159a4e117985a44fe1084e091681d298f71b492d38847b2cdc47f1bcf790",
+        "associated_frozen_original_block_ids": [
+          "paper_6dc9f2bdd81d9dcf4a46:b102"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Stochastic sizing of isolated rural mini-grids_ including effects of_fuel procurement and operational strategies\\images\\fb410d0df85bdc9c5c0bc73821780f94733295701c47d042949df7f1578199a1.jpg",
+        "actual_original_crop_sha256": "14c37ffef5504a8eb8aa8cf06c2e5cef4e0df399ffc0b43b7452a38161b23d04",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_6dc9f2bdd81d9dcf4a46\\020\\record.json",
+        "actual_page_record_sha256": "cf408213741172b5ef7360de79b2d597fbd804f9b5ccce3670e0440d51fb7f23",
+        "original_durable_handle": "run_20f196397bea4ee2934b4c9995e6fe0c",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "caption": "Figure 5: Optimal size of the photovoltaic plant, the inverter, the DC/DC converter and the battery, for different dispatching strategies, cost of load curtailment and fuel price; each size is expressed in terms of percent difference with respect to the optimal solution obtained by applying LFS to case A1. ",
+      "scientific_scope_findings": [
+        "Complete six panelsA1/A2/B1/B2/C1/C2: three fuel prices0.8/1.2/1.6USD/L by two curtailment costs0.5/1USD/kWh; two strategies and four component bars each,48 bars in total. PanelA/B/C letters are independent of fuel-delivery scenarioA/B.",
+        "Difference(%) is relative to baselineLFS panelA1 sizesPV806kWp, converter412kW,inverter234kW,battery2.25MWh. A zero difference bar is not zero installed capacity; negative percentages are not negative capacities.",
+        "Means and min/max bars refer to deliveryA/B. All components/legend/axis ranges retained; RHS is not uniformly smaller, including C1battery and C2converter exceptions. No exact unprinted bar heights or sampling confidence intervals invented."
+      ],
+      "exact_unprinted_plot_data_inferred": false
+    }
+  ],
+  "additional_method_assumption_pages_directly_viewed": [
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 12,
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-012.png",
+          "sha256": "4389eb507702528af2653e1716b044645ee176e355bbaa413491e02761691c46"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 15,
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-015.png",
+          "sha256": "8437ae3f11a8fc9ac5cab41b12999ec30201647fd33763a3b188197bf309dd56"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 22,
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-022.png",
+          "sha256": "8868650ae6351443e33a5f00c9fc12cc88ed17a9923cacffda42e05ed4cdc5e1"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "actual_pdf_page": 23,
+      "source_pdf_sha256": "589e5c2cadcbe5425ee111e0f2865d680a96f3d90b2d267db9e666dcaeac3584",
+      "attachments": [
+        {
+          "id": "page",
+          "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_6dc9f2bdd81d9dcf4a46-page-023.png",
+          "sha256": "2ceff68f8a2fc3c7eb2c074239123c765cb6cd40e53ccd94b42035911c88ee83"
+        }
+      ],
+      "raw_parser_visual_content_indices": []
+    }
+  ],
+  "method_and_external_validity_qualifications": [
+    "Five annual Monte Carlo scenarios and15-year planning life; physical1h/dispatch6h/forecast24h. This is a simulation sizing study, not our rerun or a globally certified optimum.",
+    "Forecast error is generated with Gaussian standard deviation5% at first prediction step rising to15% at horizon end. Local input demand uses nearby2014half-hour measurements plus Gaussian noise20% of actual demand; input provenance does not establish real deployment validation.",
+    "SyntheticPV/weather and mid-term representative annual load; long-term load growth is not simulated. Conclusion explicitly places real-mini-grid testing in future work.",
+    "Author computational timing (~month on12-core16GB and500timesLFS/RHS difference) remains an author report. No independent timing rerun or new software benchmark performed."
+  ],
+  "exact_declared_arithmetic_counterexamples": {
+    "negative_overuse_cost_example": {
+      "not_a_paper_measurement": true,
+      "E_final": 9,
+      "E_initial": 10,
+      "positive_c_SS": 1,
+      "printed_formula_cost": -1,
+      "prose_penalty_sign_conflict": true
+    },
+    "primary_max_max_bound_implies_constant_energy": true,
+    "cost_at_beta_one_half_and_size_four_P0_over_alpha": 2,
+    "conditional_bidirectional_AC_roundtrip_from_two_converters_inverters_and_battery_exact_fraction": "8468064/9765625",
+    "all12_tank_strategy_pairs": [
+      {
+        "fuel_price_USD_per_liter": "0.8",
+        "curtailment_cost_USD_per_kWh": "0.5",
+        "delivery_scenario": "A",
+        "LFS_thousand_liters": "2.3",
+        "RHS_thousand_liters": "3.2",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "9/10",
+        "relative_increase_exact_fraction": "9/23",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "0.8",
+        "curtailment_cost_USD_per_kWh": "0.5",
+        "delivery_scenario": "B",
+        "LFS_thousand_liters": "4.0",
+        "RHS_thousand_liters": "5.2",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "6/5",
+        "relative_increase_exact_fraction": "3/10",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "0.8",
+        "curtailment_cost_USD_per_kWh": "1",
+        "delivery_scenario": "A",
+        "LFS_thousand_liters": "3.4",
+        "RHS_thousand_liters": "3.9",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "1/2",
+        "relative_increase_exact_fraction": "5/34",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "0.8",
+        "curtailment_cost_USD_per_kWh": "1",
+        "delivery_scenario": "B",
+        "LFS_thousand_liters": "5.5",
+        "RHS_thousand_liters": "8.0",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "5/2",
+        "relative_increase_exact_fraction": "5/11",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "1.2",
+        "curtailment_cost_USD_per_kWh": "0.5",
+        "delivery_scenario": "A",
+        "LFS_thousand_liters": "0",
+        "RHS_thousand_liters": "1.5",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "3/2",
+        "relative_increase_exact_fraction": null,
+        "relative_increase_undefined_due_to_zero_denominator": true
+      },
+      {
+        "fuel_price_USD_per_liter": "1.2",
+        "curtailment_cost_USD_per_kWh": "0.5",
+        "delivery_scenario": "B",
+        "LFS_thousand_liters": "0",
+        "RHS_thousand_liters": "2.2",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "11/5",
+        "relative_increase_exact_fraction": null,
+        "relative_increase_undefined_due_to_zero_denominator": true
+      },
+      {
+        "fuel_price_USD_per_liter": "1.2",
+        "curtailment_cost_USD_per_kWh": "1",
+        "delivery_scenario": "A",
+        "LFS_thousand_liters": "3.2",
+        "RHS_thousand_liters": "3.6",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "2/5",
+        "relative_increase_exact_fraction": "1/8",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "1.2",
+        "curtailment_cost_USD_per_kWh": "1",
+        "delivery_scenario": "B",
+        "LFS_thousand_liters": "4.2",
+        "RHS_thousand_liters": "4.5",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "3/10",
+        "relative_increase_exact_fraction": "1/14",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "1.6",
+        "curtailment_cost_USD_per_kWh": "0.5",
+        "delivery_scenario": "A",
+        "LFS_thousand_liters": "0",
+        "RHS_thousand_liters": "0",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "0",
+        "relative_increase_exact_fraction": null,
+        "relative_increase_undefined_due_to_zero_denominator": true
+      },
+      {
+        "fuel_price_USD_per_liter": "1.6",
+        "curtailment_cost_USD_per_kWh": "0.5",
+        "delivery_scenario": "B",
+        "LFS_thousand_liters": "0",
+        "RHS_thousand_liters": "0",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "0",
+        "relative_increase_exact_fraction": null,
+        "relative_increase_undefined_due_to_zero_denominator": true
+      },
+      {
+        "fuel_price_USD_per_liter": "1.6",
+        "curtailment_cost_USD_per_kWh": "1",
+        "delivery_scenario": "A",
+        "LFS_thousand_liters": "2.9",
+        "RHS_thousand_liters": "2.3",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "-3/5",
+        "relative_increase_exact_fraction": "-6/29",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      },
+      {
+        "fuel_price_USD_per_liter": "1.6",
+        "curtailment_cost_USD_per_kWh": "1",
+        "delivery_scenario": "B",
+        "LFS_thousand_liters": "3.1",
+        "RHS_thousand_liters": "4.0",
+        "RHS_minus_LFS_thousand_liters_exact_fraction": "9/10",
+        "relative_increase_exact_fraction": "9/31",
+        "relative_increase_undefined_due_to_zero_denominator": false
+      }
+    ],
+    "all_eight_fixed_configuration_tank_sizes_nonincreasing_with_fuel_price": true,
+    "primary_equations_or_prose_repaired": false
+  },
+  "source_deficiencies_do_not_automatically_create_student_grades": true,
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false
+}

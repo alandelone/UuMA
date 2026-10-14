@@ -1,0 +1,13 @@
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-inline-v2.js']
+RUN ['node', 'tests/catalog_existing_papers.mjs']
+evalmachine.<anonymous>:25
+      $('collect-paper-search').addEventListener('input',event=>{if(event.isComposing)return;clearTimeout(collectPaperSearchTimer);collectPaperSearchTimer=setTimeout(()=>collectPaperPicker.load(event.target.value).catch(()=>{}),250);});
+      ^
+
+ReferenceError: $ is not defined
+    at evalmachine.<anonymous>:25:7
+    at Script.runInContext (node:vm:149:12)
+    at Object.runInContext (node:vm:301:6)
+    at file:///C:/Users/Alandelone/CodeSpace_Local/RSTV4/tests/catalog_existing_papers.mjs:41:5
+
+Node.js v24.19.0

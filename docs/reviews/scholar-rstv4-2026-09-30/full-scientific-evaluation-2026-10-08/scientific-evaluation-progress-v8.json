@@ -1,0 +1,62 @@
+{
+  "updated_at_utc": "2026-10-09T14:33:12.370561+00:00",
+  "scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "actual_atomic_report_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\atomic-report-v8.json",
+  "actual_atomic_report_sha256": "71c275f0e4d3361c060ab76cd358f0df655de1c1e63c24fb7f0e86a44f68b563",
+  "actual_whole_target_report_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\scientific-target-assurance-report-v5.json",
+  "actual_whole_target_report_sha256": "29a4ed752117aeb42070e32ac1d78f0091f09c1f9201a5816d4736efd45820a2",
+  "protocol_audited_case_counts": {
+    "AUDITED_AI_SCIENTIFIC_COMPARISON": 148,
+    "SOURCE_REFERENCE_UNACCEPTED": 79,
+    "AUDITED_UNRESOLVED_SCIENCE": 11,
+    "ORIGINAL_EXTRACTION_CONTRACT_FAILURE": 8,
+    "EVALUATION_CONTRACT_FAILURE": 6
+  },
+  "protocol_qualified_source_windows": 86,
+  "protocol_pass_does_not_establish_primary_scientific_support": true,
+  "primary_location_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\native-primary-location-and-complete-load-table-review-v4.json",
+  "primary_location_review_sha256": "4b06697aa3ca41fdeec596b803560ac114ff8eeadd22899864949d6322a3e8b4",
+  "source_native_claims_review_indexed": 1845,
+  "short_excerpt_review_priorities": 124,
+  "direct_primary_location_failures": 9,
+  "visual_progress_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\visual-evidence-progress-v2.json",
+  "visual_progress_sha256": "1a7decc7bd99cdd1d8d3d2b23a13608036db8cc3f4c148914c5850fac571cde4",
+  "original_visual_matrix_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-original-visual-review-matrix-v2.json",
+  "original_visual_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "complete_battery_table_pixel_review_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-scientific-evaluation-2026-10-08\\complete-battery-table-pixel-review-v3.json",
+  "complete_battery_table_pixel_review_sha256": "92ace9b1655ec25f17a65c4e3fc67cea09d2b13fa46052f7db18a5dda04f4293",
+  "all_original_pixel_attempts": 150,
+  "complete_tables_directly_reviewed_this_continuation": 2,
+  "table_value_cells_directly_checked_this_continuation": 47,
+  "original_source_status": {
+    "visited": 4,
+    "declared": 4,
+    "complete_pending_audit": 3,
+    "unaccepted": 1,
+    "original_scope_windows": 126,
+    "new_atomic_source_model_calls": 0,
+    "full_goal_complete": false
+  },
+  "incremental_strict_endpoint_sources": 3,
+  "original_grade_status": {
+    "completed_cases": 8,
+    "declared_cases": 8,
+    "protocol_complete_pending_audit": 8,
+    "evaluation_contract_failures": 0
+  },
+  "finite_dependent_coordinator_status": {
+    "phase": "report-scientific-target-assurance-v5.py",
+    "full_goal_complete": false
+  },
+  "all_original_scientific_verdicts_and_failures_retained": true,
+  "expert_gold": false,
+  "full_scientific_evaluation_complete": false,
+  "optimization_gain_proven": false,
+  "model_calls": 0
+}

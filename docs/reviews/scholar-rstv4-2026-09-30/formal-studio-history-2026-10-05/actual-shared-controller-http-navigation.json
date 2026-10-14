@@ -1,0 +1,323 @@
+{
+  "status": "PASS_ACTUAL_CONTROLLER_HTTP_SOURCE_NAVIGATION",
+  "new_model_calls": 0,
+  "browser_verified": false,
+  "routes": [
+    {
+      "message_id": "research_message_1b226b8ed34b433e9d7aea6610393bee",
+      "request_id": "research-chat-native-message-v3",
+      "module": "FIELDKG",
+      "context_sha256": "a7f2e1c95f1479e618d200269c85bf0940295ac2b000cba4d105ca1ce8f647af",
+      "url": "http://127.0.0.1:8885/?view=fieldkg&field=field_785167b274c54c2f921390317406d0a7&snapshot=fieldkg_snapshot_168ec05c7a2e4ad4a070b224c88e1189&discussion=research_message_1b226b8ed34b433e9d7aea6610393bee&discussion_scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D&discussion_source=0&discussion_return=http%3A%2F%2F127.0.0.1%3A3000%2F%3Fmanuscript%3Dmanuscript_0dd6fc921b534d44b01735629157f761%26view%3Dstructure",
+      "quote": {
+        "annotation": "隔离软件验收：固定原文讨论批注。",
+        "end": 30,
+        "object_text": "This software fixture lacks a recorded validation run.",
+        "offset_unit": "utf16",
+        "source": {
+          "context_sha256": "a7f2e1c95f1479e618d200269c85bf0940295ac2b000cba4d105ca1ce8f647af",
+          "field_id": "field_785167b274c54c2f921390317406d0a7",
+          "label": "FieldKG 流程软件验收 / Software acceptance source, not a research paper",
+          "module": "FIELDKG",
+          "object_id": "unit_c51ebd038a6a56ef28672e545db2bbd3",
+          "object_kind": "unit",
+          "page_number": null,
+          "paper_id": null,
+          "part": null,
+          "snapshot_id": "fieldkg_snapshot_168ec05c7a2e4ad4a070b224c88e1189",
+          "track_id": null,
+          "versions": [
+            {
+              "content_digest": "64206f9d228af83e853f951bfbf48f8cc02330b13c5da9305734dad4cdc6cc50",
+              "extractor_model": "legacy-paperpool-mincer",
+              "file_version_id": null,
+              "page_idx": 3,
+              "paper_id": "paper_735282c8fa8c0b42a92d63499f159f8f",
+              "paper_version": 1,
+              "paper_version_id": "paper_version_3586fb062bffe5bf497167b0bd0ba261",
+              "parse_run_id": null,
+              "parsed_digest": null,
+              "pdf_digest": null,
+              "prompt_version": "legacy",
+              "section": "Software fixture",
+              "seq_idx": 1,
+              "skeleton_id": "skeleton_c4def72df1572dd62073ba2ac38a556c",
+              "unit_id": "unit_c51ebd038a6a56ef28672e545db2bbd3",
+              "version": 1
+            },
+            {
+              "snapshot_digest": "bd7c49536341f5ec6720da1bf4bedce26bf32c31904489a61a654a70ee30ba06",
+              "snapshot_id": "fieldkg_snapshot_168ec05c7a2e4ad4a070b224c88e1189",
+              "snapshot_version": 1
+            }
+          ]
+        },
+        "start": 0,
+        "text": "This software fixture lacks a "
+      },
+      "current_source_state": "CURRENT",
+      "origin_request_read": true
+    },
+    {
+      "message_id": "research_message_21584ef8afbf4163a30b592a42eec9ba",
+      "request_id": "research-conversation-native-followup-v1",
+      "module": "FIELDKG",
+      "context_sha256": "a7f2e1c95f1479e618d200269c85bf0940295ac2b000cba4d105ca1ce8f647af",
+      "url": "http://127.0.0.1:8885/?view=fieldkg&field=field_785167b274c54c2f921390317406d0a7&snapshot=fieldkg_snapshot_168ec05c7a2e4ad4a070b224c88e1189&discussion=research_message_21584ef8afbf4163a30b592a42eec9ba&discussion_scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D&discussion_source=0&discussion_return=http%3A%2F%2F127.0.0.1%3A3000%2F%3Fmanuscript%3Dmanuscript_0dd6fc921b534d44b01735629157f761%26view%3Dstructure",
+      "quote": {
+        "annotation": "隔离软件验收：固定原文讨论批注。",
+        "end": 30,
+        "object_text": "This software fixture lacks a recorded validation run.",
+        "offset_unit": "utf16",
+        "source": {
+          "context_sha256": "a7f2e1c95f1479e618d200269c85bf0940295ac2b000cba4d105ca1ce8f647af",
+          "field_id": "field_785167b274c54c2f921390317406d0a7",
+          "label": "FieldKG 流程软件验收 / Software acceptance source, not a research paper",
+          "module": "FIELDKG",
+          "object_id": "unit_c51ebd038a6a56ef28672e545db2bbd3",
+          "object_kind": "unit",
+          "page_number": null,
+          "paper_id": null,
+          "part": null,
+          "snapshot_id": "fieldkg_snapshot_168ec05c7a2e4ad4a070b224c88e1189",
+          "track_id": null,
+          "versions": [
+            {
+              "content_digest": "64206f9d228af83e853f951bfbf48f8cc02330b13c5da9305734dad4cdc6cc50",
+              "extractor_model": "legacy-paperpool-mincer",
+              "file_version_id": null,
+              "page_idx": 3,
+              "paper_id": "paper_735282c8fa8c0b42a92d63499f159f8f",
+              "paper_version": 1,
+              "paper_version_id": "paper_version_3586fb062bffe5bf497167b0bd0ba261",
+              "parse_run_id": null,
+              "parsed_digest": null,
+              "pdf_digest": null,
+              "prompt_version": "legacy",
+              "section": "Software fixture",
+              "seq_idx": 1,
+              "skeleton_id": "skeleton_c4def72df1572dd62073ba2ac38a556c",
+              "unit_id": "unit_c51ebd038a6a56ef28672e545db2bbd3",
+              "version": 1
+            },
+            {
+              "snapshot_digest": "bd7c49536341f5ec6720da1bf4bedce26bf32c31904489a61a654a70ee30ba06",
+              "snapshot_id": "fieldkg_snapshot_168ec05c7a2e4ad4a070b224c88e1189",
+              "snapshot_version": 1
+            }
+          ]
+        },
+        "start": 0,
+        "text": "This software fixture lacks a "
+      },
+      "current_source_state": "CURRENT",
+      "origin_request_read": true
+    },
+    {
+      "message_id": "research_message_59c4795ed7c74fc2b71aae2d2193e7f6",
+      "request_id": "studio-shared-native-first-v1",
+      "module": "STUDIO",
+      "context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c",
+      "url": "http://127.0.0.1:3000/?manuscript=manuscript_0dd6fc921b534d44b01735629157f761&view=structure&discussion=research_message_59c4795ed7c74fc2b71aae2d2193e7f6&discussion_scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D&discussion_source=0&discussion_return=http%3A%2F%2F127.0.0.1%3A3000%2F%3Fmanuscript%3Dmanuscript_0dd6fc921b534d44b01735629157f761%26view%3Dstructure",
+      "quote": {
+        "annotation": "软件验收：固定标题选区，不修改稿件。",
+        "end": 4,
+        "object_text": "固定来源往返软件验收\n\n",
+        "offset_unit": "utf16",
+        "source": {
+          "context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c",
+          "document_revision": 0,
+          "field_id": null,
+          "label": "固定来源往返软件验收",
+          "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+          "module": "STUDIO",
+          "object_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+          "object_kind": "paper",
+          "page_number": null,
+          "paper_id": null,
+          "part": null,
+          "snapshot_id": null,
+          "track_id": null,
+          "versions": [
+            {
+              "author_revision": 0,
+              "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761"
+            }
+          ]
+        },
+        "start": 0,
+        "text": "固定来源"
+      },
+      "current_source_state": "CURRENT",
+      "origin_request_read": true
+    },
+    {
+      "message_id": "research_message_dbe2066494aa4dfa8cbb069a4457bd41",
+      "request_id": "studio-shared-native-followup-v1",
+      "module": "STUDIO",
+      "context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c",
+      "url": "http://127.0.0.1:3000/?manuscript=manuscript_0dd6fc921b534d44b01735629157f761&view=structure&discussion=research_message_dbe2066494aa4dfa8cbb069a4457bd41&discussion_scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D&discussion_source=0&discussion_return=http%3A%2F%2F127.0.0.1%3A3000%2F%3Fmanuscript%3Dmanuscript_0dd6fc921b534d44b01735629157f761%26view%3Dstructure",
+      "quote": {
+        "annotation": "软件验收：固定标题选区，不修改稿件。",
+        "end": 4,
+        "object_text": "固定来源往返软件验收\n\n",
+        "offset_unit": "utf16",
+        "source": {
+          "context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c",
+          "document_revision": 0,
+          "field_id": null,
+          "label": "固定来源往返软件验收",
+          "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+          "module": "STUDIO",
+          "object_id": "manuscript_0dd6fc921b534d44b01735629157f761",
+          "object_kind": "paper",
+          "page_number": null,
+          "paper_id": null,
+          "part": null,
+          "snapshot_id": null,
+          "track_id": null,
+          "versions": [
+            {
+              "author_revision": 0,
+              "manuscript_id": "manuscript_0dd6fc921b534d44b01735629157f761"
+            }
+          ]
+        },
+        "start": 0,
+        "text": "固定来源"
+      },
+      "current_source_state": "CURRENT",
+      "origin_request_read": true
+    }
+  ],
+  "requests": [
+    {
+      "route": "/api/catalog/discussion/context",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_1b226b8ed34b433e9d7aea6610393bee/context?scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_1b226b8ed34b433e9d7aea6610393bee/context?scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/requests/research-chat-native-message-v3?scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_1b226b8ed34b433e9d7aea6610393bee/context?scope=%5B%22STUDIO%22%2C%22wrong-owned-manuscript%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/context",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_21584ef8afbf4163a30b592a42eec9ba/context?scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_21584ef8afbf4163a30b592a42eec9ba/context?scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/requests/research-conversation-native-followup-v1?scope=%5B%22FIELDKG%22%2C%22field_785167b274c54c2f921390317406d0a7%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_21584ef8afbf4163a30b592a42eec9ba/context?scope=%5B%22STUDIO%22%2C%22wrong-owned-manuscript%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/context",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_59c4795ed7c74fc2b71aae2d2193e7f6/context?scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_59c4795ed7c74fc2b71aae2d2193e7f6/context?scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/requests/studio-shared-native-first-v1?scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_59c4795ed7c74fc2b71aae2d2193e7f6/context?scope=%5B%22STUDIO%22%2C%22wrong-owned-manuscript%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/context",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_dbe2066494aa4dfa8cbb069a4457bd41/context?scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_dbe2066494aa4dfa8cbb069a4457bd41/context?scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/history",
+      "method": "POST"
+    },
+    {
+      "route": "/api/catalog/discussion/requests/studio-shared-native-followup-v1?scope=%5B%22STUDIO%22%2C%22manuscript_0dd6fc921b534d44b01735629157f761%22%5D",
+      "method": "GET"
+    },
+    {
+      "route": "/api/catalog/discussion/messages/research_message_dbe2066494aa4dfa8cbb069a4457bd41/context?scope=%5B%22STUDIO%22%2C%22wrong-owned-manuscript%22%5D",
+      "method": "GET"
+    }
+  ]
+}

@@ -1,0 +1,1121 @@
+[
+  {
+    "paragraph_id": "paragraph_529edffdcc9b4266b4920fcb8f6dc48f",
+    "payload": {
+      "section_title": "Other software source",
+      "section_role": "Software_Test",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_8cc0b78a92274389addefa9c61e118df",
+          "label": "Software_Test",
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_8feab45ae41b428da86ac04323b0fc41",
+              "text": "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations."
+    },
+    "input_sha256": "cd09c1eabd9b92b4b83a77a61d6fe162e850f142c1ea261e02332f95462e6cc1",
+    "response": {
+      "paragraph": "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_8feab45ae41b428da86ac04323b0fc41"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+    "payload": {
+      "section_title": "Introduction",
+      "section_role": "Motivation",
+      "paragraph_purpose": "G06 edit 4: archived A01 is excluded, retain only A02 context; keep original thought and citations.",
+      "paradigm": "Original source comparison",
+      "intents": [
+        {
+          "id": "intent_c7af004e17bd423c958a5fee27ddabdf",
+          "label": "Software distinct source context",
+          "thoughts": [
+            {
+              "citation_mode": "SELECTED",
+              "citations": [
+                {
+                  "evidence_id": "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+                  "selected": true,
+                  "statement": "Original software source body 1.",
+                  "title": "Refreshed live catalog title - software"
+                },
+                {
+                  "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+                  "selected": true,
+                  "statement": "New original software source body.",
+                  "title": "Other selected source"
+                },
+                {
+                  "evidence_id": "evidence_3a2639ee8b5e432aafd7e3743c825f33",
+                  "selected": false,
+                  "statement": "Original software source body 2.",
+                  "title": "Catalog selected source"
+                }
+              ],
+              "id": "thought_009a96629cb14586b44697b3ec73f2bc",
+              "text": "Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [
+        {
+          "evidence_id": "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+          "scope_kind": "TRACK",
+          "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+          "track_id": "track_8fc0672591694b79bb747470d402772d",
+          "paper_id": "existing",
+          "paper_version_id": null,
+          "experiment_run_id": null,
+          "statement": "Original software source body 1.",
+          "excerpt": "Original software source body 1.",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "extractor_model": "TEST_FIXTURE_SOURCE",
+          "prompt_version": "1",
+          "content_digest": "ab40e7c12d84550949ae0b056004db888bc7058b97806672b6976f787fa0502b",
+          "created_at": "2026-10-09T10:14:32.100723+00:00",
+          "title": "Refreshed live catalog title - software",
+          "published_year": 2026,
+          "doi": null,
+          "landing_url": null,
+          "pdf_url": null,
+          "authors": [
+            "Fixture Author"
+          ],
+          "location": {
+            "page": 1,
+            "section": "Software source section 1",
+            "sequence": 0,
+            "skeleton_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "unit_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+            "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+          },
+          "source_context": {
+            "available": true,
+            "schema_version": 1,
+            "context_sha256": "39c72a32140b85f56290231cf016b22713be1e3bb93a068b84f1f5017470e27e",
+            "paper_id": "existing",
+            "paper_version_id": "paper_version_3183ca0311a8c0db58d34c4b6bae3f36",
+            "paper_version": 1,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "version": 1,
+            "file_version_id": "existing-file",
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "unit": {
+              "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2",
+              "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": "Software source section 1",
+              "raw_text": "Original software source body 1.",
+              "layer1": {
+                "triplets": []
+              },
+              "layer2": {},
+              "layer3": {
+                "intent": "Software_Test"
+              },
+              "layer4": "Software_Test",
+              "content_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154"
+            }
+          }
+        },
+        {
+          "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+          "scope_kind": "TRACK",
+          "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+          "track_id": "track_8fc0672591694b79bb747470d402772d",
+          "paper_id": "other",
+          "paper_version_id": null,
+          "experiment_run_id": null,
+          "statement": "New original software source body.",
+          "excerpt": "New original software source body.",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "extractor_model": "TEST_FIXTURE_SOURCE_NATIVE",
+          "prompt_version": "1",
+          "content_digest": "795f31789f6c1f5700c4f0842cc1ee1a8728e218084f19b8df1e5aaf3b397c71",
+          "created_at": "2026-10-09T10:42:34.310867+00:00",
+          "title": "Other selected source",
+          "published_year": 2026,
+          "doi": "10.1234/other",
+          "landing_url": null,
+          "pdf_url": null,
+          "authors": [
+            "Fixture Author"
+          ],
+          "location": {
+            "page": 1,
+            "section": "Other software source",
+            "sequence": 0,
+            "skeleton_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+            "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+            "unit_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450",
+            "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+          },
+          "source_context": {
+            "available": true,
+            "schema_version": 1,
+            "context_sha256": "a81c38d1c21a5e3cdb5d93e9eb065c1462968bf47d8132e3a82ebe9d08f49f2a",
+            "paper_id": "other",
+            "paper_version_id": "paper_version_db977494b25f25023cb1c71b98ae7814",
+            "paper_version": 1,
+            "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+            "version": 1,
+            "file_version_id": "software-native-other-file",
+            "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+            "unit": {
+              "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52",
+              "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": "Other software source",
+              "raw_text": "New original software source body.",
+              "layer1": {
+                "triplets": []
+              },
+              "layer2": {},
+              "layer3": {
+                "intent": "Software_Test"
+              },
+              "layer4": "Software_Test",
+              "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450"
+            }
+          }
+        }
+      ],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Introduction"
+      ],
+      "paragraph_group": {
+        "id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce",
+        "label": "G08 preserved Beta + Alpha group",
+        "paragraph_ids": [
+          "paragraph_895901de3a694d6f9a4b996e5459feeb",
+          "paragraph_e197b886c810436a823c7171839afac2",
+          "paragraph_d7c5a071db9f4c2f97b09c88fdd76912"
+        ]
+      }
+    },
+    "input_sha256": "5ad4260dc8e995d853c4ececadae6b5ce70a101ac318ce4595967d68afa13ece",
+    "response": {
+      "paragraph": "Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8].",
+      "sentences": [
+        "Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8]."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_009a96629cb14586b44697b3ec73f2bc"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_e197b886c810436a823c7171839afac2",
+    "payload": {
+      "section_title": "Introduction",
+      "section_role": "Motivation",
+      "paragraph_purpose": "G02 adopted software boundary: preserve the original thought and sources.",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_7e9e321878984056975695ce719e3555",
+          "label": "Research Context",
+          "thoughts": [
+            {
+              "citation_mode": "SELECTED",
+              "citations": [
+                {
+                  "evidence_id": "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+                  "selected": true
+                },
+                {
+                  "evidence_id": "evidence_3a2639ee8b5e432aafd7e3743c825f33",
+                  "selected": false
+                },
+                {
+                  "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+                  "selected": true,
+                  "statement": "New original software source body.",
+                  "title": "Other selected source"
+                }
+              ],
+              "id": "thought_author_1",
+              "text": "Check original sources only; no scientific claim is asserted."
+            },
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_5f3edebed89d482cb0b2d9d42c4930d8",
+              "text": "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [
+        {
+          "evidence_id": "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+          "scope_kind": "TRACK",
+          "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+          "track_id": "track_8fc0672591694b79bb747470d402772d",
+          "paper_id": "existing",
+          "paper_version_id": null,
+          "experiment_run_id": null,
+          "statement": "Original software source body 1.",
+          "excerpt": "Original software source body 1.",
+          "relation": "SUPPORTS",
+          "confidence": 0.8,
+          "extractor_model": "TEST_FIXTURE_SOURCE",
+          "prompt_version": "1",
+          "content_digest": "ab40e7c12d84550949ae0b056004db888bc7058b97806672b6976f787fa0502b",
+          "created_at": "2026-10-09T10:14:32.100723+00:00",
+          "title": "Refreshed live catalog title - software",
+          "published_year": 2026,
+          "doi": null,
+          "landing_url": null,
+          "pdf_url": null,
+          "authors": [
+            "Fixture Author"
+          ],
+          "location": {
+            "page": 1,
+            "section": "Software source section 1",
+            "sequence": 0,
+            "skeleton_digest": "bd7757805ba56be62663e3d4783bfa3755c4152324034b47f939d5dde11b1734",
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "unit_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154",
+            "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+          },
+          "source_context": {
+            "available": true,
+            "schema_version": 1,
+            "context_sha256": "39c72a32140b85f56290231cf016b22713be1e3bb93a068b84f1f5017470e27e",
+            "paper_id": "existing",
+            "paper_version_id": "paper_version_3183ca0311a8c0db58d34c4b6bae3f36",
+            "paper_version": 1,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "version": 1,
+            "file_version_id": "existing-file",
+            "parse_run_id": "parse_run_373c122ccb63d93e048ec3e45861ae6a",
+            "unit": {
+              "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2",
+              "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": "Software source section 1",
+              "raw_text": "Original software source body 1.",
+              "layer1": {
+                "triplets": []
+              },
+              "layer2": {},
+              "layer3": {
+                "intent": "Software_Test"
+              },
+              "layer4": "Software_Test",
+              "content_digest": "f379e51338532010e9138827e123b4a25bd6e4d4a696f00419bb26033f031154"
+            }
+          }
+        },
+        {
+          "evidence_id": "evidence_6b169de2b78d452f919391b00916f2c8",
+          "scope_kind": "TRACK",
+          "field_id": "field_792bb631f3f74deb8a42c496907730e0",
+          "track_id": "track_8fc0672591694b79bb747470d402772d",
+          "paper_id": "other",
+          "paper_version_id": null,
+          "experiment_run_id": null,
+          "statement": "New original software source body.",
+          "excerpt": "New original software source body.",
+          "relation": "SUPPORTS",
+          "confidence": 0.9,
+          "extractor_model": "TEST_FIXTURE_SOURCE_NATIVE",
+          "prompt_version": "1",
+          "content_digest": "795f31789f6c1f5700c4f0842cc1ee1a8728e218084f19b8df1e5aaf3b397c71",
+          "created_at": "2026-10-09T10:42:34.310867+00:00",
+          "title": "Other selected source",
+          "published_year": 2026,
+          "doi": "10.1234/other",
+          "landing_url": null,
+          "pdf_url": null,
+          "authors": [
+            "Fixture Author"
+          ],
+          "location": {
+            "page": 1,
+            "section": "Other software source",
+            "sequence": 0,
+            "skeleton_digest": "468a2ebb9a6043061a7b31e8cd26f944e9aaec58a643aa7761d28a43a335f3c3",
+            "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+            "unit_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450",
+            "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+          },
+          "source_context": {
+            "available": true,
+            "schema_version": 1,
+            "context_sha256": "a81c38d1c21a5e3cdb5d93e9eb065c1462968bf47d8132e3a82ebe9d08f49f2a",
+            "paper_id": "other",
+            "paper_version_id": "paper_version_db977494b25f25023cb1c71b98ae7814",
+            "paper_version": 1,
+            "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+            "version": 1,
+            "file_version_id": "software-native-other-file",
+            "parse_run_id": "parse_run_ad5cc39cd5c467e18a00215fd9b5a86c",
+            "unit": {
+              "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52",
+              "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": "Other software source",
+              "raw_text": "New original software source body.",
+              "layer1": {
+                "triplets": []
+              },
+              "layer2": {},
+              "layer3": {
+                "intent": "Software_Test"
+              },
+              "layer4": "Software_Test",
+              "content_digest": "a4d6fcf89e28337c55573f131c9a1554b3e065bd3971d16413115751407db450"
+            }
+          }
+        }
+      ],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Introduction"
+      ],
+      "paragraph_group": {
+        "id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce",
+        "label": "G08 preserved Beta + Alpha group",
+        "paragraph_ids": [
+          "paragraph_895901de3a694d6f9a4b996e5459feeb",
+          "paragraph_e197b886c810436a823c7171839afac2",
+          "paragraph_d7c5a071db9f4c2f97b09c88fdd76912"
+        ]
+      }
+    },
+    "input_sha256": "dcc45aeb09c4f0f68aa79ac92eafa795935abf6450e0a64f5ca5490670f2e38a",
+    "response": {
+      "paragraph": "First source [@evidence_6b169de2b78d452f919391b00916f2c8]. Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]. Repeat [@evidence_6b169de2b78d452f919391b00916f2c8]. G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.",
+      "sentences": [
+        "First source [@evidence_6b169de2b78d452f919391b00916f2c8].",
+        "Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9].",
+        "Repeat [@evidence_6b169de2b78d452f919391b00916f2c8].",
+        "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        },
+        {
+          "sentence": 1,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        },
+        {
+          "sentence": 2,
+          "thought_ids": [
+            "thought_author_1"
+          ]
+        },
+        {
+          "sentence": 3,
+          "thought_ids": [
+            "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_d7c5a071db9f4c2f97b09c88fdd76912",
+    "payload": {
+      "section_title": "Introduction",
+      "section_role": "Motivation",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_14bb0cfeffd945fabf33e3c00c86fac9",
+          "label": "Software_Test",
+          "template_source": {
+            "heading_location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 2,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "source_path": [
+              "Software source section 2"
+            ],
+            "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+            "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+            "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+          },
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_d9339400f0c34bf3a1e1a5084fca8535",
+              "text": "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Introduction"
+      ],
+      "paragraph_group": {
+        "id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce",
+        "label": "G08 preserved Beta + Alpha group",
+        "paragraph_ids": [
+          "paragraph_895901de3a694d6f9a4b996e5459feeb",
+          "paragraph_e197b886c810436a823c7171839afac2",
+          "paragraph_d7c5a071db9f4c2f97b09c88fdd76912"
+        ]
+      }
+    },
+    "input_sha256": "92d6b7fa7ea98c8ecb62604a45c56c44afa7bbef4d0ea0395ae38803298ba2b4",
+    "response": {
+      "paragraph": "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_d9339400f0c34bf3a1e1a5084fca8535"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_2c105662a8c9486887b271348cc73b76",
+    "payload": {
+      "section_title": "Software source section 1",
+      "section_role": "Software_Test",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_9c3c127381934f0fb156bcb8efd3a7f0",
+          "label": "Software_Test",
+          "template_source": {
+            "heading_location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 1,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "source_path": [
+              "Software source section 1"
+            ],
+            "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+            "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+            "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+          },
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_65c89c466a7e4933902c6d99398cf602",
+              "text": "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Software source section 1"
+      ]
+    },
+    "input_sha256": "64f36092c9b0d74586e255f13760788533e71e78e61c2b4b5eb643b071b9df44",
+    "response": {
+      "paragraph": "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_65c89c466a7e4933902c6d99398cf602"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_612b0d79cd9e4bcfbb5ecaf7dfec12c4",
+    "payload": {
+      "section_title": "Software source section 3",
+      "section_role": "Software_Test",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_9c6b8d5f070f4891bd4ec5d617c1f00b",
+          "label": "Software_Test",
+          "template_source": {
+            "heading_location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 3,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "source_path": [
+              "Software source section 3"
+            ],
+            "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+            "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+            "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+          },
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_e4206c1b37cc443a8c89978f568d68bc",
+              "text": "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Software source section 3"
+      ]
+    },
+    "input_sha256": "bb1da26b03c4f3b116fc6a1af4e7b6ef9a3fcd6791d369b5b8f0c8714905d547",
+    "response": {
+      "paragraph": "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_e4206c1b37cc443a8c89978f568d68bc"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_9f410814efd0438d807d125e47dfcf9c",
+    "payload": {
+      "section_title": "Software source section 1",
+      "section_role": "Software_Test",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_bebaea2654b0446c8e1616f627499260",
+          "label": "Software acceptance retained section",
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_284f9194e4ad42bc97e74a47b50c0947",
+              "text": "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Software source section 1"
+      ]
+    },
+    "input_sha256": "b969c444d1284f8b02cb9b66fc22d473673ee65ab9f9bba30e092525b5fd4c21",
+    "response": {
+      "paragraph": "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_284f9194e4ad42bc97e74a47b50c0947"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_d3fb7e5f34aa46d9aa1b4a0ac756d3ce",
+    "payload": {
+      "section_title": "Software source section 2",
+      "section_role": "Software_Test",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_70a4ece159de40a9b0803586786ba34a",
+          "label": "Software_Test",
+          "template_source": {
+            "heading_location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 2,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "source_path": [
+              "Software source section 2"
+            ],
+            "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+            "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+            "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+          },
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_6241bba238094788921c63c05ca391bd",
+              "text": "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Software source section 2"
+      ]
+    },
+    "input_sha256": "d9e7cf9136959fb25c389bbe49e076a65f01659f8eb5c0a6a78080210cbb315a",
+    "response": {
+      "paragraph": "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_6241bba238094788921c63c05ca391bd"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_be8877110de546f39c6c7b0d685a53bd",
+    "payload": {
+      "section_title": "Software source section 3",
+      "section_role": "Software_Test",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_2f323e76678b4da795c8a7240aecc0a9",
+          "label": "Software_Test",
+          "template_source": {
+            "heading_location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 3,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "source_path": [
+              "Software source section 3"
+            ],
+            "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+            "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+            "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+          },
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_57dc5c5c3f23424a9c3ef92df6abe94b",
+              "text": "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "Software source section 3"
+      ]
+    },
+    "input_sha256": "b82d6f60d2cbb16a1b6a336e6b8393dba9dd3a90dcaa489a6f52709828dc1281",
+    "response": {
+      "paragraph": "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_57dc5c5c3f23424a9c3ef92df6abe94b"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_a9859ce2b7204bd0aa5662d42cc59b63",
+    "payload": {
+      "section_title": "New section",
+      "section_role": "",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_0b4253980040472c83042a3878c8a0be",
+          "label": "Software_Test",
+          "template_source": {
+            "heading_location": {
+              "bbox": [
+                72,
+                90,
+                420,
+                110
+              ],
+              "heading_level": 1
+            },
+            "page_number": 1,
+            "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+            "source_path": [
+              "Software source section 1"
+            ],
+            "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+            "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+            "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+          },
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_746d6d977b5d49bc9b1ee07ca0a1c8d1",
+              "text": "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "New section"
+      ]
+    },
+    "input_sha256": "fa22aa7700ff5b88bc9716801eebfb1b284fb5034311f83bafa1cec8d9a73562",
+    "response": {
+      "paragraph": "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_746d6d977b5d49bc9b1ee07ca0a1c8d1"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  },
+  {
+    "paragraph_id": "paragraph_a5605d41730d4f99a82fe9acba279770",
+    "payload": {
+      "section_title": "New section",
+      "section_role": "",
+      "paragraph_purpose": "",
+      "paradigm": "",
+      "intents": [
+        {
+          "id": "intent_8e483f48f9f14320baa019f6484f241e",
+          "label": "Software acceptance preservation",
+          "thoughts": [
+            {
+              "citation_mode": "NONE",
+              "citations": [],
+              "id": "thought_eec81dfb504c445f85eaddcb74a87c68",
+              "text": "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted."
+            }
+          ]
+        }
+      ],
+      "selected_evidence": [],
+      "output_schema": {
+        "paragraph": "one nonempty string containing the entire paragraph",
+        "sentences": "array of exact consecutive sentence strings covering paragraph; no omitted text",
+        "sentence_mappings": [
+          {
+            "sentence": "zero-based integer index in sentences",
+            "thought_ids": "nonempty array of supplied stable author thought ids"
+          }
+        ],
+        "requirements": "One mapping per sentence; every author thought must appear; no invented ids."
+      },
+      "constraint": "Preserve every author thought; do not add scientific claims. Use only selected evidence ids in citations.",
+      "section_path": [
+        "Other software source",
+        "New section"
+      ],
+      "paragraph_group": {
+        "id": "paragraph_group_9e395ea0aac94f9abd25663ff7f1f221",
+        "label": "G09 retained software template paragraph",
+        "paragraph_ids": [
+          "paragraph_a5605d41730d4f99a82fe9acba279770"
+        ]
+      }
+    },
+    "input_sha256": "0fae9cf568a209676705203e0e7bec5ea0727c291ec7a505ee94bad6de006b77",
+    "response": {
+      "paragraph": "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted.",
+      "sentences": [
+        "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted."
+      ],
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_eec81dfb504c445f85eaddcb74a87c68"
+          ]
+        }
+      ],
+      "_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "task": "paragraph_realization",
+        "software_only": true
+      }
+    }
+  }
+]

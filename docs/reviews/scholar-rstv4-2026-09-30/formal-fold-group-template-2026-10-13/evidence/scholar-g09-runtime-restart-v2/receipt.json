@@ -1,0 +1,63 @@
+{
+  "status": "PASS_RESUME_EXISTING_DATA_OWNED_RUNTIME",
+  "stopped_processes": [],
+  "old_confirmed_missing_pids": [
+    4508,
+    109408,
+    109324,
+    64400,
+    76012,
+    115132
+  ],
+  "front_cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g07-build-2aju2a31\\writing-studio",
+  "frontend_chain": [
+    {
+      "ProcessId": 41060,
+      "ParentProcessId": 40796,
+      "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g07-build-2aju2a31\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040931)/"
+    },
+    {
+      "ProcessId": 40796,
+      "ParentProcessId": 8088,
+      "CommandLine": "C:\\Windows\\system32\\cmd.exe /d /s /c vinext start --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040883)/"
+    },
+    {
+      "ProcessId": 8088,
+      "ParentProcessId": 528,
+      "CommandLine": "\"C:\\Program Files\\nodejs\\\\node.exe\"  \"C:\\Program Files\\nodejs\\\\node_modules\\npm\\bin\\npm-cli.js\" run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040729)/"
+    },
+    {
+      "ProcessId": 528,
+      "ParentProcessId": 39268,
+      "CommandLine": "cmd.exe /c npm.cmd run start -- --port 3008 --hostname 127.0.0.1",
+      "CreationDate": "/Date(1791861040615)/"
+    }
+  ],
+  "backend_chain": [
+    {
+      "ProcessId": 21416,
+      "ParentProcessId": 10760,
+      "CommandLine": "\"C:\\Users\\Alandelone\\anaconda3\\python.exe\" C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+      "CreationDate": "/Date(1791861036985)/"
+    },
+    {
+      "ProcessId": 10760,
+      "ParentProcessId": 39268,
+      "CommandLine": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+      "CreationDate": "/Date(1791861036956)/"
+    }
+  ],
+  "backend_helper": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g09-serve-only-v1.py",
+  "backend_helper_sha256": "aa371c25bcdca53006d7a37eb09f940de5b6cae01498b4a5b69f08a19723c18b",
+  "all109_tables_exact": true,
+  "database_bytes_exact": true,
+  "source17_exact": true,
+  "new_models": 0,
+  "all_model_tasks_denied": true,
+  "seed_or_reset": false,
+  "database_sha256": "5917553d45c29c45a5105f06d1cc6b96e8856882e9c5e24384141b448429c332",
+  "overall11_complete": false
+}

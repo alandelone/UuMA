@@ -1,0 +1,81 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8885/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "研究总览":
+      - generic: 研究总览
+      - generic: ⌄
+  - region "研究总览":
+    - status: 真实研究结构 · 文献按唯一论文去重，父级取所属范围并集；明确关联与候选分别说明。写作 Paper 属于 Track。
+    - button "↻ 更新状态"
+    - button "＋ Field"
+    - tree "Field、Topic、Track、研究问题与写作 Paper":
+      - treeitem "Energy" [expanded] [level=1]:
+        - button "收起 Energy" [expanded]: ⌄
+        - generic: ◇
+        - generic "Energy"
+        - generic: Field
+        - link "查看 Energy 的 2 篇关联论文":
+          - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&scope_kind=field&scope_field_id=field_6242993287f547549daa4ded97914f3c&scope_object_id=field_6242993287f547549daa4ded97914f3c
+          - generic: ▤
+          - text: "2"
+        - generic: 研究领域
+      - treeitem "Trading" [expanded] [level=2]:
+        - button "收起 Trading" [expanded]: ⌄
+        - generic: ◈
+        - generic "Trading"
+        - generic: Topic
+        - link "查看 Trading 的 2 篇关联论文":
+          - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&scope_kind=topic&scope_field_id=field_6242993287f547549daa4ded97914f3c&scope_object_id=topic_63348338b6fc403c97c7eaec0f0f77b3
+          - generic: ▤
+          - text: "2"
+        - generic: 尚无采集
+      - treeitem "Track" [expanded] [level=3]:
+        - button "收起 Track" [expanded]: ⌄
+        - generic: ↗
+        - link "Track ↗":
+          - /url: http://127.0.0.1:8885/?view=track&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c&track=track_cd1adda6220f47b787f409e983c00947
+        - generic: Track
+        - link "查看 Track 的 2 篇关联论文":
+          - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&scope_kind=track&scope_field_id=field_6242993287f547549daa4ded97914f3c&scope_object_id=track_cd1adda6220f47b787f409e983c00947
+          - generic: ▤
+          - text: "2"
+        - generic: 尚无采集
+      - treeitem "G10 source roundtrip software acceptance — no scientific claim" [level=4]:
+        - generic: ▧
+        - link "G10 source roundtrip software acceptance — no scientific claim ↗":
+          - /url: http://127.0.0.1:3000/?manuscript=manuscript_14aef3be6a534016bf456a15dc865892&track=track_cd1adda6220f47b787f409e983c00947&from=catalog&return=http%3A%2F%2F127.0.0.1%3A8885%2F%3Fview%3Doverview%26overview_state%3D%257B%2522collapsed%2522%253A%255B%255D%252C%2522focus%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_9ecc9f28d2ff460ea8c4105327361727%255C%2522%255D%2522%252C%2522anchor%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_6242993287f547549daa4ded97914f3c%255C%2522%255D%2522%252C%2522offset%2522%253A15%252C%2522scroll%2522%253A158%252C%2522workspace%2522%253A%2522325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%2522%257D
+        - generic: Paper
+        - generic: 写作稿件
+        - generic: DRAFTING
+      - treeitem "Other" [active] [level=1]:
+        - generic: ◇
+        - generic "Other"
+        - generic: Field
+        - button "修改 Other": 编辑
+        - link "FieldKG ↗":
+          - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_9ecc9f28d2ff460ea8c4105327361727
+        - button "＋ Topic"
+        - button "关联 Topic"
+        - link "查看 Other 的 0 篇关联论文":
+          - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_9ecc9f28d2ff460ea8c4105327361727%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A15%2C%22scroll%22%3A158%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&scope_kind=field&scope_field_id=field_9ecc9f28d2ff460ea8c4105327361727&scope_object_id=field_9ecc9f28d2ff460ea8c4105327361727
+          - generic: ▤
+          - text: "0"
+        - generic: 研究领域
+    - generic: ▤
+    - generic: Paper Catalog
+    - generic: 全部可见论文
+    - button "打开全部论文目录":
+      - generic: ▤
+      - generic: "2"
+    - generic: 目录
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

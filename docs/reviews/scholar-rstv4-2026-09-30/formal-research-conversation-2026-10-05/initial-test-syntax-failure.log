@@ -1,0 +1,1143 @@
+CHECK ['tests/unit/catalog-research-chat.mjs']
+PASS click binds the real selected object
+PASS new source cannot silently rebind nonempty question
+PASS a slow old click cannot overwrite the newer choice
+PASS pin keeps the original scope across navigation
+PASS UTF16 emoji selection remains exact
+PASS a mismatched quote cannot attach to another version
+PASS removing selection keeps original question and object
+PASS local draft restores its own immutable source
+PASS storage failure keeps draft and permits explicit send
+PASS uncertain result reconciles original ID without another model submission
+PASS failed reply retains actual failure and author receipt
+PASS persisted RUNNING does not prove a live worker
+PASS cross-scope sources require explicit choice
+PASS deleted original remains a historical fixed source
+PASS restoring an uncertain request performs no new POST
+PASS annotation retry preserves the exact original request
+PASS leaving invalidates an outstanding source read
+PASS rejected stale source retains question for explicit comparison
+PASS followup explicitly carries the last actual reply as parent
+PASS starting a new discussion retains question and fixed selection
+PASS changing source starts its own discussion and preserves old continuation draft
+PASS restored continuation retains the exact chosen reply and history
+PASS old response cannot replace the newly selected source or its question
+PASS continuing a chosen historical branch never replaces a protected draft
+PASS failed turn can be followed up without inventing an assistant reply
+PASS historical call lookup is read only and leaves current question intact
+26 controlled discussion state checks passed; fixture model, no browser claim.
+Exit: 0
+CHECK ['tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+14 controlled workspace scenarios passed
+Exit: 0
+CHECK ['tests/catalog_research_overview.mjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed
+Exit: 0
+CHECK ['tests/unit/catalog-return.mjs']
+11 Catalog return origin/context cases passed
+Exit: 0
+CHECK ['--check', 'src/rstv4/catalog_research_chat.js']
+Exit: 0
+CHECK ['-e', "const fs=require('fs'),vm=require('vm');for(const m of fs.readFileSync('src/rstv4/catalog_web.html','utf8').matchAll(/<script(?:\\s[^>]*)?>([\\s\\S]*?)<\\/script>/g)){new vm.Script(m[1]);}console.log('Shipped Catalog inline scripts parse');"]
+Shipped Catalog inline scripts parse
+Exit: 0
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/research_context.py', 'src/rstv4/research_discussions.py', 'src/rstv4/model_gateway.py', 'src/rstv4/catalog_web.py', 'tests/test_research_discussions.py', 'tests/test_research_conversation.py']
+invalid-syntax: Expected `]`, found `assert`
+  --> tests\test_research_conversation.py:47:5
+   |
+45 |     assert len(second["job"]["input"]["conversation"]) == len(branch["job"]["input"]["conversation"]) == 2
+46 |     assert second["messages"][0]["message_id"] not in [item["message_id"] for item in branch["job"]["input"]["conversation"]
+47 |     assert new["job"]["input"]["conversation"] == []
+   |     ^^^^^^
+48 |     assert len(gateway.calls) == 4
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:48:5
+   |
+46 |     assert second["messages"][0]["message_id"] not in [item["message_id"] for item in branch["job"]["input"]["conversation"]
+47 |     assert new["job"]["input"]["conversation"] == []
+48 |     assert len(gateway.calls) == 4
+   |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:51:1
+   |
+51 | def test_changed_current_version_keeps_old_chain_and_distinguishes_current_source(environment):
+   | ^^^
+52 |     client, db, field, _, _, _, gateway = environment
+53 |     target = unit_target(client, field)
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:53:5
+   |
+51 | def test_changed_current_version_keeps_old_chain_and_distinguishes_current_source(environment):
+52 |     client, db, field, _, _, _, gateway = environment
+53 |     target = unit_target(client, field)
+   |     ^^^^^^
+54 |     old = context(client, target)
+55 |     _, first = round_trip(client, old, "old-source-first")
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:54:5
+   |
+52 |     client, db, field, _, _, _, gateway = environment
+53 |     target = unit_target(client, field)
+54 |     old = context(client, target)
+   |     ^^^
+55 |     _, first = round_trip(client, old, "old-source-first")
+56 |     with sqlite3.connect(db) as conn:
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:55:5
+   |
+53 |     target = unit_target(client, field)
+54 |     old = context(client, target)
+55 |     _, first = round_trip(client, old, "old-source-first")
+   |     ^
+56 |     with sqlite3.connect(db) as conn:
+57 |         conn.execute("UPDATE skeleton_units SET raw_text='Later current source'")
+   |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:56:5
+   |
+54 |     old = context(client, target)
+55 |     _, first = round_trip(client, old, "old-source-first")
+56 |     with sqlite3.connect(db) as conn:
+   |     ^^^^
+57 |         conn.execute("UPDATE skeleton_units SET raw_text='Later current source'")
+58 |     current = context(client, target)
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:58:5
+   |
+56 |     with sqlite3.connect(db) as conn:
+57 |         conn.execute("UPDATE skeleton_units SET raw_text='Later current source'")
+58 |     current = context(client, target)
+   |     ^^^^^^^
+59 |     gateway.sources = [old["context_sha256"]]
+60 |     _, next_reply = round_trip(client, current, "new-source-followup", parent_message_id=first["messages"][-1]["message_id"])
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:59:5
+   |
+57 |         conn.execute("UPDATE skeleton_units SET raw_text='Later current source'")
+58 |     current = context(client, target)
+59 |     gateway.sources = [old["context_sha256"]]
+   |     ^^^^^^^
+60 |     _, next_reply = round_trip(client, current, "new-source-followup", parent_message_id=first["messages"][-1]["message_id"])
+61 |     model_input = next_reply["job"]["input"]
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:60:5
+   |
+58 |     current = context(client, target)
+59 |     gateway.sources = [old["context_sha256"]]
+60 |     _, next_reply = round_trip(client, current, "new-source-followup", parent_message_id=first["messages"][-1]["message_id"])
+   |     ^
+61 |     model_input = next_reply["job"]["input"]
+62 |     assert model_input["source"]["context"] == current
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:61:5
+   |
+59 |     gateway.sources = [old["context_sha256"]]
+60 |     _, next_reply = round_trip(client, current, "new-source-followup", parent_message_id=first["messages"][-1]["message_id"])
+61 |     model_input = next_reply["job"]["input"]
+   |     ^^^^^^^^^^^
+62 |     assert model_input["source"]["context"] == current
+63 |     assert model_input["conversation"][0]["context"] == old
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:62:5
+   |
+60 |     _, next_reply = round_trip(client, current, "new-source-followup", parent_message_id=first["messages"][-1]["message_id"])
+61 |     model_input = next_reply["job"]["input"]
+62 |     assert model_input["source"]["context"] == current
+   |     ^^^^^^
+63 |     assert model_input["conversation"][0]["context"] == old
+64 |     assert next_reply["job"]["status"] == "COMPLETE"
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:63:5
+   |
+61 |     model_input = next_reply["job"]["input"]
+62 |     assert model_input["source"]["context"] == current
+63 |     assert model_input["conversation"][0]["context"] == old
+   |     ^^^^^^
+64 |     assert next_reply["job"]["status"] == "COMPLETE"
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:64:5
+   |
+62 |     assert model_input["source"]["context"] == current
+63 |     assert model_input["conversation"][0]["context"] == old
+64 |     assert next_reply["job"]["status"] == "COMPLETE"
+   |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:67:1
+   |
+67 | def test_deleted_source_can_continue_frozen_chain_without_source_substitution(environment):
+   | ^^^
+68 |     client, db, field, _, _, _, _ = environment
+69 |     bound = context(client, unit_target(client, field))
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:69:5
+   |
+67 | def test_deleted_source_can_continue_frozen_chain_without_source_substitution(environment):
+68 |     client, db, field, _, _, _, _ = environment
+69 |     bound = context(client, unit_target(client, field))
+   |     ^^^^^
+70 |     _, first = round_trip(client, bound, "deleted-source-first")
+71 |     parent = first["messages"][-1]["message_id"]
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:70:5
+   |
+68 |     client, db, field, _, _, _, _ = environment
+69 |     bound = context(client, unit_target(client, field))
+70 |     _, first = round_trip(client, bound, "deleted-source-first")
+   |     ^
+71 |     parent = first["messages"][-1]["message_id"]
+72 |     with sqlite3.connect(db) as conn:
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:71:5
+   |
+69 |     bound = context(client, unit_target(client, field))
+70 |     _, first = round_trip(client, bound, "deleted-source-first")
+71 |     parent = first["messages"][-1]["message_id"]
+   |     ^^^^^^
+72 |     with sqlite3.connect(db) as conn:
+73 |         conn.execute("DELETE FROM skeleton_units")
+   |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:72:5
+   |
+70 |     _, first = round_trip(client, bound, "deleted-source-first")
+71 |     parent = first["messages"][-1]["message_id"]
+72 |     with sqlite3.connect(db) as conn:
+   |     ^^^^
+73 |         conn.execute("DELETE FROM skeleton_units")
+74 |     selected = {**payload(bound)["source"], "history_message_id": parent}
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:74:5
+   |
+72 |     with sqlite3.connect(db) as conn:
+73 |         conn.execute("DELETE FROM skeleton_units")
+74 |     selected = {**payload(bound)["source"], "history_message_id": parent}
+   |     ^^^^^^^^
+75 |     _, next_reply = round_trip(client, bound, "deleted-source-next", source=selected, parent_message_id=parent)
+76 |     assert next_reply["job"]["input"]["source"]["context"] == bound
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:75:5
+   |
+73 |         conn.execute("DELETE FROM skeleton_units")
+74 |     selected = {**payload(bound)["source"], "history_message_id": parent}
+75 |     _, next_reply = round_trip(client, bound, "deleted-source-next", source=selected, parent_message_id=parent)
+   |     ^
+76 |     assert next_reply["job"]["input"]["source"]["context"] == bound
+77 |     assert next_reply["job"]["input"]["conversation"][0]["context"] == bound
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:76:5
+   |
+74 |     selected = {**payload(bound)["source"], "history_message_id": parent}
+75 |     _, next_reply = round_trip(client, bound, "deleted-source-next", source=selected, parent_message_id=parent)
+76 |     assert next_reply["job"]["input"]["source"]["context"] == bound
+   |     ^^^^^^
+77 |     assert next_reply["job"]["input"]["conversation"][0]["context"] == bound
+78 |     historical = client.get(f"/api/catalog/discussion/messages/{parent}/context", params={"scope": bound["scope_key"]}).json()
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:77:5
+   |
+75 |     _, next_reply = round_trip(client, bound, "deleted-source-next", source=selected, parent_message_id=parent)
+76 |     assert next_reply["job"]["input"]["source"]["context"] == bound
+77 |     assert next_reply["job"]["input"]["conversation"][0]["context"] == bound
+   |     ^^^^^^
+78 |     historical = client.get(f"/api/catalog/discussion/messages/{parent}/context", params={"scope": bound["scope_key"]}).json()
+79 |     assert historical["sources"][0]["current_source_state"] == "SOURCE_UNAVAILABLE"
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:78:5
+   |
+76 |     assert next_reply["job"]["input"]["source"]["context"] == bound
+77 |     assert next_reply["job"]["input"]["conversation"][0]["context"] == bound
+78 |     historical = client.get(f"/api/catalog/discussion/messages/{parent}/context", params={"scope": bound["scope_key"]}).json()
+   |     ^^^^^^^^^^
+79 |     assert historical["sources"][0]["current_source_state"] == "SOURCE_UNAVAILABLE"
+80 |     assert len(historical["conversation"]) == 2
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:79:5
+   |
+77 |     assert next_reply["job"]["input"]["conversation"][0]["context"] == bound
+78 |     historical = client.get(f"/api/catalog/discussion/messages/{parent}/context", params={"scope": bound["scope_key"]}).json()
+79 |     assert historical["sources"][0]["current_source_state"] == "SOURCE_UNAVAILABLE"
+   |     ^^^^^^
+80 |     assert len(historical["conversation"]) == 2
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:80:5
+   |
+78 |     historical = client.get(f"/api/catalog/discussion/messages/{parent}/context", params={"scope": bound["scope_key"]}).json()
+79 |     assert historical["sources"][0]["current_source_state"] == "SOURCE_UNAVAILABLE"
+80 |     assert len(historical["conversation"]) == 2
+   |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:83:1
+   |
+83 | def test_unknown_or_other_scope_parent_rolls_back_before_model(environment):
+   | ^^^
+84 |     client, db, field, _, track, _, gateway = environment
+85 |     bound = context(client, unit_target(client, field))
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:85:5
+   |
+83 | def test_unknown_or_other_scope_parent_rolls_back_before_model(environment):
+84 |     client, db, field, _, track, _, gateway = environment
+85 |     bound = context(client, unit_target(client, field))
+   |     ^^^^^
+86 |     _, first = round_trip(client, bound, "owner-first-request")
+87 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:86:5
+   |
+84 |     client, db, field, _, track, _, gateway = environment
+85 |     bound = context(client, unit_target(client, field))
+86 |     _, first = round_trip(client, bound, "owner-first-request")
+   |     ^
+87 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+88 |     for owner, parent in [(bound, "missing-message"), (other, first["messages"][-1]["message_id"])]:
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:87:5
+   |
+85 |     bound = context(client, unit_target(client, field))
+86 |     _, first = round_trip(client, bound, "owner-first-request")
+87 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+   |     ^^^^^
+88 |     for owner, parent in [(bound, "missing-message"), (other, first["messages"][-1]["message_id"])]:
+89 |         before = db.read_bytes()
+   |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:88:5
+   |
+86 |     _, first = round_trip(client, bound, "owner-first-request")
+87 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+88 |     for owner, parent in [(bound, "missing-message"), (other, first["messages"][-1]["message_id"])]:
+   |     ^^^
+89 |         before = db.read_bytes()
+90 |         response = client.post("/api/catalog/discussion/messages", json=payload(owner, request_id="invalid-parent-next", parent_messag…
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:90:9
+   |
+88 |     for owner, parent in [(bound, "missing-message"), (other, first["messages"][-1]["message_id"])]:
+89 |         before = db.read_bytes()
+90 |         response = client.post("/api/catalog/discussion/messages", json=payload(owner, request_id="invalid-parent-next", parent_messag…
+   |         ^^^^^^^^
+91 |         assert response.status_code == 404
+92 |         assert db.read_bytes() == before
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:91:9
+   |
+89 |         before = db.read_bytes()
+90 |         response = client.post("/api/catalog/discussion/messages", json=payload(owner, request_id="invalid-parent-next", parent_messag…
+91 |         assert response.status_code == 404
+   |         ^^^^^^
+92 |         assert db.read_bytes() == before
+93 |     assert len(gateway.calls) == 1
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:92:9
+   |
+90 |         response = client.post("/api/catalog/discussion/messages", json=payload(owner, request_id="invalid-parent-next", parent_messag…
+91 |         assert response.status_code == 404
+92 |         assert db.read_bytes() == before
+   |         ^^^^^^
+93 |     assert len(gateway.calls) == 1
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+  --> tests\test_research_conversation.py:93:5
+   |
+91 |         assert response.status_code == 404
+92 |         assert db.read_bytes() == before
+93 |     assert len(gateway.calls) == 1
+   |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+  --> tests\test_research_conversation.py:96:1
+   |
+96 | def test_running_question_cannot_be_used_as_completed_parent(environment):
+   | ^^^
+97 |     client, db, field, _, _, _, gateway = environment
+98 |     bound = context(client, unit_target(client, field))
+   |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:98:5
+    |
+ 96 | def test_running_question_cannot_be_used_as_completed_parent(environment):
+ 97 |     client, db, field, _, _, _, gateway = environment
+ 98 |     bound = context(client, unit_target(client, field))
+    |     ^^^^^
+ 99 |     gateway.release.clear()
+100 |     body = payload(bound)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:99:5
+    |
+ 97 |     client, db, field, _, _, _, gateway = environment
+ 98 |     bound = context(client, unit_target(client, field))
+ 99 |     gateway.release.clear()
+    |     ^^^^^^^
+100 |     body = payload(bound)
+101 |     client.post("/api/catalog/discussion/messages", json=body)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:100:5
+    |
+ 98 |     bound = context(client, unit_target(client, field))
+ 99 |     gateway.release.clear()
+100 |     body = payload(bound)
+    |     ^^^^
+101 |     client.post("/api/catalog/discussion/messages", json=body)
+102 |     assert gateway.entered.wait(2)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:101:5
+    |
+ 99 |     gateway.release.clear()
+100 |     body = payload(bound)
+101 |     client.post("/api/catalog/discussion/messages", json=body)
+    |     ^^^^^^
+102 |     assert gateway.entered.wait(2)
+103 |     state = client.app.state.discussions.request(body["request_id"], bound["scope_key"])
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:102:5
+    |
+100 |     body = payload(bound)
+101 |     client.post("/api/catalog/discussion/messages", json=body)
+102 |     assert gateway.entered.wait(2)
+    |     ^^^^^^
+103 |     state = client.app.state.discussions.request(body["request_id"], bound["scope_key"])
+104 |     try:
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:103:5
+    |
+101 |     client.post("/api/catalog/discussion/messages", json=body)
+102 |     assert gateway.entered.wait(2)
+103 |     state = client.app.state.discussions.request(body["request_id"], bound["scope_key"])
+    |     ^^^^^
+104 |     try:
+105 |         response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="running-parent-next", parent_messa…
+    |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:104:5
+    |
+102 |     assert gateway.entered.wait(2)
+103 |     state = client.app.state.discussions.request(body["request_id"], bound["scope_key"])
+104 |     try:
+    |     ^^^
+105 |         response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="running-parent-next", parent_messa…
+106 |         assert response.status_code == 409
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:106:9
+    |
+104 |     try:
+105 |         response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="running-parent-next", parent_messa…
+106 |         assert response.status_code == 409
+    |         ^^^^^^
+107 |         with sqlite3.connect(db) as conn:
+108 |             assert conn.execute("SELECT COUNT(*) FROM research_discussion_jobs").fetchone()[0] == 1
+    |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:107:9
+    |
+105 |         response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="running-parent-next", parent_messa…
+106 |         assert response.status_code == 409
+107 |         with sqlite3.connect(db) as conn:
+    |         ^^^^
+108 |             assert conn.execute("SELECT COUNT(*) FROM research_discussion_jobs").fetchone()[0] == 1
+109 |     finally:
+    |
+
+invalid-syntax: Expected newline, found `finally`
+   --> tests\test_research_conversation.py:109:5
+    |
+107 |         with sqlite3.connect(db) as conn:
+108 |             assert conn.execute("SELECT COUNT(*) FROM research_discussion_jobs").fetchone()[0] == 1
+109 |     finally:
+    |     ^^^^^^^
+110 |         gateway.release.set()
+111 |         wait(client, body["request_id"], bound)
+    |
+
+invalid-syntax: Expected a statement
+   --> tests\test_research_conversation.py:109:12
+    |
+107 |         with sqlite3.connect(db) as conn:
+108 |             assert conn.execute("SELECT COUNT(*) FROM research_discussion_jobs").fetchone()[0] == 1
+109 |     finally:
+    |            ^
+110 |         gateway.release.set()
+111 |         wait(client, body["request_id"], bound)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:111:9
+    |
+109 |     finally:
+110 |         gateway.release.set()
+111 |         wait(client, body["request_id"], bound)
+    |         ^^^^
+112 |     assert len(gateway.calls) == 1
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:112:5
+    |
+110 |         gateway.release.set()
+111 |         wait(client, body["request_id"], bound)
+112 |     assert len(gateway.calls) == 1
+    |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:115:1
+    |
+115 | def test_failed_question_remains_a_real_failed_turn_and_can_be_followed_up(environment):
+    | ^^^
+116 |     client, _, field, _, _, _, gateway = environment
+117 |     bound = context(client, unit_target(client, field))
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:117:5
+    |
+115 | def test_failed_question_remains_a_real_failed_turn_and_can_be_followed_up(environment):
+116 |     client, _, field, _, _, _, gateway = environment
+117 |     bound = context(client, unit_target(client, field))
+    |     ^^^^^
+118 |     gateway.failure = RuntimeError("Recorded model outage")
+119 |     _, first = round_trip(client, bound, "failed-parent-first")
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:118:5
+    |
+116 |     client, _, field, _, _, _, gateway = environment
+117 |     bound = context(client, unit_target(client, field))
+118 |     gateway.failure = RuntimeError("Recorded model outage")
+    |     ^^^^^^^
+119 |     _, first = round_trip(client, bound, "failed-parent-first")
+120 |     gateway.failure = None
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:119:5
+    |
+117 |     bound = context(client, unit_target(client, field))
+118 |     gateway.failure = RuntimeError("Recorded model outage")
+119 |     _, first = round_trip(client, bound, "failed-parent-first")
+    |     ^
+120 |     gateway.failure = None
+121 |     _, second = round_trip(client, bound, "failed-parent-next", parent_message_id=first["messages"][0]["message_id"])
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:120:5
+    |
+118 |     gateway.failure = RuntimeError("Recorded model outage")
+119 |     _, first = round_trip(client, bound, "failed-parent-first")
+120 |     gateway.failure = None
+    |     ^^^^^^^
+121 |     _, second = round_trip(client, bound, "failed-parent-next", parent_message_id=first["messages"][0]["message_id"])
+122 |     history = second["job"]["input"]["conversation"]
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:121:5
+    |
+119 |     _, first = round_trip(client, bound, "failed-parent-first")
+120 |     gateway.failure = None
+121 |     _, second = round_trip(client, bound, "failed-parent-next", parent_message_id=first["messages"][0]["message_id"])
+    |     ^
+122 |     history = second["job"]["input"]["conversation"]
+123 |     assert len(history) == 1 and history[0]["actor"] == "AUTHOR"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:122:5
+    |
+120 |     gateway.failure = None
+121 |     _, second = round_trip(client, bound, "failed-parent-next", parent_message_id=first["messages"][0]["message_id"])
+122 |     history = second["job"]["input"]["conversation"]
+    |     ^^^^^^^
+123 |     assert len(history) == 1 and history[0]["actor"] == "AUTHOR"
+124 |     assert history[0]["call_record"]["error"]["detail"] == "Recorded model outage"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:123:5
+    |
+121 |     _, second = round_trip(client, bound, "failed-parent-next", parent_message_id=first["messages"][0]["message_id"])
+122 |     history = second["job"]["input"]["conversation"]
+123 |     assert len(history) == 1 and history[0]["actor"] == "AUTHOR"
+    |     ^^^^^^
+124 |     assert history[0]["call_record"]["error"]["detail"] == "Recorded model outage"
+125 |     assert history[0]["call_record"]["model_contract"] is None
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:124:5
+    |
+122 |     history = second["job"]["input"]["conversation"]
+123 |     assert len(history) == 1 and history[0]["actor"] == "AUTHOR"
+124 |     assert history[0]["call_record"]["error"]["detail"] == "Recorded model outage"
+    |     ^^^^^^
+125 |     assert history[0]["call_record"]["model_contract"] is None
+126 |     assert second["job"]["status"] == "COMPLETE"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:125:5
+    |
+123 |     assert len(history) == 1 and history[0]["actor"] == "AUTHOR"
+124 |     assert history[0]["call_record"]["error"]["detail"] == "Recorded model outage"
+125 |     assert history[0]["call_record"]["model_contract"] is None
+    |     ^^^^^^
+126 |     assert second["job"]["status"] == "COMPLETE"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:126:5
+    |
+124 |     assert history[0]["call_record"]["error"]["detail"] == "Recorded model outage"
+125 |     assert history[0]["call_record"]["model_contract"] is None
+126 |     assert second["job"]["status"] == "COMPLETE"
+    |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:130:1
+    |
+129 | @pytest.mark.parametrize("field_name,value", [("content", "Invented reply"), ("reply_to", "wrong-message")])
+130 | def test_tampered_reply_or_parent_is_never_forwarded_as_history(environment, field_name, value):
+    | ^^^
+131 |     client, db, field, _, _, _, gateway = environment
+132 |     bound = context(client, unit_target(client, field))
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:132:5
+    |
+130 | def test_tampered_reply_or_parent_is_never_forwarded_as_history(environment, field_name, value):
+131 |     client, db, field, _, _, _, gateway = environment
+132 |     bound = context(client, unit_target(client, field))
+    |     ^^^^^
+133 |     _, first = round_trip(client, bound, "tamper-parent-first")
+134 |     parent = first["messages"][-1]["message_id"]
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:133:5
+    |
+131 |     client, db, field, _, _, _, gateway = environment
+132 |     bound = context(client, unit_target(client, field))
+133 |     _, first = round_trip(client, bound, "tamper-parent-first")
+    |     ^
+134 |     parent = first["messages"][-1]["message_id"]
+135 |     with sqlite3.connect(db) as conn:
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:134:5
+    |
+132 |     bound = context(client, unit_target(client, field))
+133 |     _, first = round_trip(client, bound, "tamper-parent-first")
+134 |     parent = first["messages"][-1]["message_id"]
+    |     ^^^^^^
+135 |     with sqlite3.connect(db) as conn:
+136 |         conn.execute(f"UPDATE research_discussion_messages SET {field_name}=? WHERE message_id=?", (value, parent))
+    |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:135:5
+    |
+133 |     _, first = round_trip(client, bound, "tamper-parent-first")
+134 |     parent = first["messages"][-1]["message_id"]
+135 |     with sqlite3.connect(db) as conn:
+    |     ^^^^
+136 |         conn.execute(f"UPDATE research_discussion_messages SET {field_name}=? WHERE message_id=?", (value, parent))
+137 |     before = db.read_bytes()
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:137:5
+    |
+135 |     with sqlite3.connect(db) as conn:
+136 |         conn.execute(f"UPDATE research_discussion_messages SET {field_name}=? WHERE message_id=?", (value, parent))
+137 |     before = db.read_bytes()
+    |     ^^^^^^
+138 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="tamper-parent-next", parent_message_id…
+139 |     assert response.status_code == 410 and db.read_bytes() == before
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:138:5
+    |
+136 |         conn.execute(f"UPDATE research_discussion_messages SET {field_name}=? WHERE message_id=?", (value, parent))
+137 |     before = db.read_bytes()
+138 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="tamper-parent-next", parent_message_id…
+    |     ^^^^^^^^
+139 |     assert response.status_code == 410 and db.read_bytes() == before
+140 |     assert client.post("/api/catalog/discussion/history", json={"target": bound["target"]}).status_code == 410
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:139:5
+    |
+137 |     before = db.read_bytes()
+138 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="tamper-parent-next", parent_message_id…
+139 |     assert response.status_code == 410 and db.read_bytes() == before
+    |     ^^^^^^
+140 |     assert client.post("/api/catalog/discussion/history", json={"target": bound["target"]}).status_code == 410
+141 |     assert len(gateway.calls) == 1
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:140:5
+    |
+138 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="tamper-parent-next", parent_message_id…
+139 |     assert response.status_code == 410 and db.read_bytes() == before
+140 |     assert client.post("/api/catalog/discussion/history", json={"target": bound["target"]}).status_code == 410
+    |     ^^^^^^
+141 |     assert len(gateway.calls) == 1
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:141:5
+    |
+139 |     assert response.status_code == 410 and db.read_bytes() == before
+140 |     assert client.post("/api/catalog/discussion/history", json={"target": bound["target"]}).status_code == 410
+141 |     assert len(gateway.calls) == 1
+    |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:144:1
+    |
+144 | def test_inherited_cross_scope_sources_require_explicit_confirmation_each_call(environment):
+    | ^^^
+145 |     client, db, field, _, track, _, gateway = environment
+146 |     bound = context(client, unit_target(client, field))
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:146:5
+    |
+144 | def test_inherited_cross_scope_sources_require_explicit_confirmation_each_call(environment):
+145 |     client, db, field, _, track, _, gateway = environment
+146 |     bound = context(client, unit_target(client, field))
+    |     ^^^^^
+147 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+148 |     _, first = round_trip(client, bound, "cross-parent-first", additional_sources=[payload(other)["source"]], allow_cross_scope=True)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:147:5
+    |
+145 |     client, db, field, _, track, _, gateway = environment
+146 |     bound = context(client, unit_target(client, field))
+147 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+    |     ^^^^^
+148 |     _, first = round_trip(client, bound, "cross-parent-first", additional_sources=[payload(other)["source"]], allow_cross_scope=True)
+149 |     parent = first["messages"][-1]["message_id"]
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:148:5
+    |
+146 |     bound = context(client, unit_target(client, field))
+147 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+148 |     _, first = round_trip(client, bound, "cross-parent-first", additional_sources=[payload(other)["source"]], allow_cross_scope=True)
+    |     ^
+149 |     parent = first["messages"][-1]["message_id"]
+150 |     before = db.read_bytes()
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:149:5
+    |
+147 |     other = context(client, {"module": "TRACK", "track_id": track, "object_kind": "track", "object_id": track})
+148 |     _, first = round_trip(client, bound, "cross-parent-first", additional_sources=[payload(other)["source"]], allow_cross_scope=True)
+149 |     parent = first["messages"][-1]["message_id"]
+    |     ^^^^^^
+150 |     before = db.read_bytes()
+151 |     body = payload(bound, request_id="cross-parent-next", parent_message_id=parent)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:150:5
+    |
+148 |     _, first = round_trip(client, bound, "cross-parent-first", additional_sources=[payload(other)["source"]], allow_cross_scope=True)
+149 |     parent = first["messages"][-1]["message_id"]
+150 |     before = db.read_bytes()
+    |     ^^^^^^
+151 |     body = payload(bound, request_id="cross-parent-next", parent_message_id=parent)
+152 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:151:5
+    |
+149 |     parent = first["messages"][-1]["message_id"]
+150 |     before = db.read_bytes()
+151 |     body = payload(bound, request_id="cross-parent-next", parent_message_id=parent)
+    |     ^^^^
+152 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+153 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:152:5
+    |
+150 |     before = db.read_bytes()
+151 |     body = payload(bound, request_id="cross-parent-next", parent_message_id=parent)
+152 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+    |     ^^^^^^
+153 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+154 |     body["allow_cross_scope"] = True
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:153:5
+    |
+151 |     body = payload(bound, request_id="cross-parent-next", parent_message_id=parent)
+152 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+153 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+    |     ^^^^^^
+154 |     body["allow_cross_scope"] = True
+155 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:154:5
+    |
+152 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 422
+153 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+154 |     body["allow_cross_scope"] = True
+    |     ^^^^
+155 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+156 |     second = wait(client, body["request_id"], bound)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:155:5
+    |
+153 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+154 |     body["allow_cross_scope"] = True
+155 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+    |     ^^^^^^
+156 |     second = wait(client, body["request_id"], bound)
+157 |     assert second["job"]["input"]["conversation"][0]["additional_sources"][0]["context"] == other
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:156:5
+    |
+154 |     body["allow_cross_scope"] = True
+155 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+156 |     second = wait(client, body["request_id"], bound)
+    |     ^^^^^^
+157 |     assert second["job"]["input"]["conversation"][0]["additional_sources"][0]["context"] == other
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:157:5
+    |
+155 |     assert client.post("/api/catalog/discussion/messages", json=body).status_code == 202
+156 |     second = wait(client, body["request_id"], bound)
+157 |     assert second["job"]["input"]["conversation"][0]["additional_sources"][0]["context"] == other
+    |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:160:1
+    |
+160 | def test_combined_history_budget_rejects_full_input_without_truncation(environment):
+    | ^^^
+161 |     client, db, field, _, _, _, gateway = environment
+162 |     target = unit_target(client, field)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:162:5
+    |
+160 | def test_combined_history_budget_rejects_full_input_without_truncation(environment):
+161 |     client, db, field, _, _, _, gateway = environment
+162 |     target = unit_target(client, field)
+    |     ^^^^^^
+163 |     with sqlite3.connect(db) as conn:
+164 |         conn.execute("UPDATE skeleton_units SET raw_text=?", ("Original source " * 360,))
+    |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:163:5
+    |
+161 |     client, db, field, _, _, _, gateway = environment
+162 |     target = unit_target(client, field)
+163 |     with sqlite3.connect(db) as conn:
+    |     ^^^^
+164 |         conn.execute("UPDATE skeleton_units SET raw_text=?", ("Original source " * 360,))
+165 |     bound = context(client, target)
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:165:5
+    |
+163 |     with sqlite3.connect(db) as conn:
+164 |         conn.execute("UPDATE skeleton_units SET raw_text=?", ("Original source " * 360,))
+165 |     bound = context(client, target)
+    |     ^^^^^
+166 |     _, first = round_trip(client, bound, "budget-history-first")
+167 |     assert first["job"]["status"] == "COMPLETE"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:166:5
+    |
+164 |         conn.execute("UPDATE skeleton_units SET raw_text=?", ("Original source " * 360,))
+165 |     bound = context(client, target)
+166 |     _, first = round_trip(client, bound, "budget-history-first")
+    |     ^
+167 |     assert first["job"]["status"] == "COMPLETE"
+168 |     before = db.read_bytes()
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:167:5
+    |
+165 |     bound = context(client, target)
+166 |     _, first = round_trip(client, bound, "budget-history-first")
+167 |     assert first["job"]["status"] == "COMPLETE"
+    |     ^^^^^^
+168 |     before = db.read_bytes()
+169 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="budget-history-next", parent_message_i…
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:168:5
+    |
+166 |     _, first = round_trip(client, bound, "budget-history-first")
+167 |     assert first["job"]["status"] == "COMPLETE"
+168 |     before = db.read_bytes()
+    |     ^^^^^^
+169 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="budget-history-next", parent_message_i…
+170 |     assert response.status_code == 422
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:169:5
+    |
+167 |     assert first["job"]["status"] == "COMPLETE"
+168 |     before = db.read_bytes()
+169 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="budget-history-next", parent_message_i…
+    |     ^^^^^^^^
+170 |     assert response.status_code == 422
+171 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:170:5
+    |
+168 |     before = db.read_bytes()
+169 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="budget-history-next", parent_message_i…
+170 |     assert response.status_code == 422
+    |     ^^^^^^
+171 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:171:5
+    |
+169 |     response = client.post("/api/catalog/discussion/messages", json=payload(bound, request_id="budget-history-next", parent_message_i…
+170 |     assert response.status_code == 422
+171 |     assert db.read_bytes() == before and len(gateway.calls) == 1
+    |     ^^^^^^
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:174:1
+    |
+174 | def test_saved_chain_tampering_is_rejected_before_any_repeated_model_call(environment):
+    | ^^^
+175 |     client, db, field, _, _, _, gateway = environment
+176 |     bound = context(client, unit_target(client, field))
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:176:5
+    |
+174 | def test_saved_chain_tampering_is_rejected_before_any_repeated_model_call(environment):
+175 |     client, db, field, _, _, _, gateway = environment
+176 |     bound = context(client, unit_target(client, field))
+    |     ^^^^^
+177 |     _, first = round_trip(client, bound, "chain-integrity-first")
+178 |     _, second = round_trip(client, bound, "chain-integrity-next", parent_message_id=first["messages"][-1]["message_id"])
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:177:5
+    |
+175 |     client, db, field, _, _, _, gateway = environment
+176 |     bound = context(client, unit_target(client, field))
+177 |     _, first = round_trip(client, bound, "chain-integrity-first")
+    |     ^
+178 |     _, second = round_trip(client, bound, "chain-integrity-next", parent_message_id=first["messages"][-1]["message_id"])
+179 |     with sqlite3.connect(db) as conn:
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:178:5
+    |
+176 |     bound = context(client, unit_target(client, field))
+177 |     _, first = round_trip(client, bound, "chain-integrity-first")
+178 |     _, second = round_trip(client, bound, "chain-integrity-next", parent_message_id=first["messages"][-1]["message_id"])
+    |     ^
+179 |     with sqlite3.connect(db) as conn:
+180 |         model_input = second["job"]["input"]
+    |
+
+invalid-syntax: Compound statements are not allowed on the same line as simple statements
+   --> tests\test_research_conversation.py:179:5
+    |
+177 |     _, first = round_trip(client, bound, "chain-integrity-first")
+178 |     _, second = round_trip(client, bound, "chain-integrity-next", parent_message_id=first["messages"][-1]["message_id"])
+179 |     with sqlite3.connect(db) as conn:
+    |     ^^^^
+180 |         model_input = second["job"]["input"]
+181 |         model_input["conversation"][0]["content"] = "Altered past question"
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:181:9
+    |
+179 |     with sqlite3.connect(db) as conn:
+180 |         model_input = second["job"]["input"]
+181 |         model_input["conversation"][0]["content"] = "Altered past question"
+    |         ^^^^^^^^^^^
+182 |         conn.execute("UPDATE research_discussion_jobs SET input_json=? WHERE request_id=?", (json.dumps(model_input), second["request…
+183 |     response = client.get(f"/api/catalog/discussion/requests/{second['request_id']}", params={"scope": bound["scope_key"]})
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:182:9
+    |
+180 |         model_input = second["job"]["input"]
+181 |         model_input["conversation"][0]["content"] = "Altered past question"
+182 |         conn.execute("UPDATE research_discussion_jobs SET input_json=? WHERE request_id=?", (json.dumps(model_input), second["request…
+    |         ^^^^
+183 |     response = client.get(f"/api/catalog/discussion/requests/{second['request_id']}", params={"scope": bound["scope_key"]})
+184 |     assert response.status_code == 410 and len(gateway.calls) == 2
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:183:5
+    |
+181 |         model_input["conversation"][0]["content"] = "Altered past question"
+182 |         conn.execute("UPDATE research_discussion_jobs SET input_json=? WHERE request_id=?", (json.dumps(model_input), second["request…
+183 |     response = client.get(f"/api/catalog/discussion/requests/{second['request_id']}", params={"scope": bound["scope_key"]})
+    |     ^^^^^^^^
+184 |     assert response.status_code == 410 and len(gateway.calls) == 2
+    |
+
+invalid-syntax: Simple statements must be separated by newlines or semicolons
+   --> tests\test_research_conversation.py:184:5
+    |
+182 |         conn.execute("UPDATE research_discussion_jobs SET input_json=? WHERE request_id=?", (json.dumps(model_input), second["request…
+183 |     response = client.get(f"/api/catalog/discussion/requests/{second['request_id']}", params={"scope": bound["scope_key"]})
+184 |     assert response.status_code == 410 and len(gateway.calls) == 2
+    |     ^^^^^^
+
+invalid-syntax: unexpected EOF while parsing
+   --> tests\test_research_conversation.py:184:68
+    |
+183 |     response = client.get(f"/api/catalog/discussion/requests/{second['request_id']}", params={"scope": bound["scope_key"]})
+184 |     assert response.status_code == 410 and len(gateway.calls) == 2
+    |                                                                   ^
+
+Found 103 errors.
+Exit: 1

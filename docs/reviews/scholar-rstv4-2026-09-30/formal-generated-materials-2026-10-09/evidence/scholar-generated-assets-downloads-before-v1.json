@@ -1,0 +1,18 @@
+{
+  "manuscript.pdf": {
+    "bytes": 13498,
+    "sha256": "fa294a1fe284baeb7fc3c52a434d4476204e95b9b80067bfcb0f7549fea2f1cb"
+  },
+  "manuscript_3a132decd09349b99b186a5c44dc191d-local-draft.json": {
+    "bytes": 1380,
+    "sha256": "ef9c5baa0247b8d0b52d92a77527541895700916f41b5e6317ac8931aa0a4c41"
+  },
+  "submission_package_462feff00b234357a635a3e63254aff4 (1).zip": {
+    "bytes": 20724,
+    "sha256": "c8690ba64bb08dbe3935cc2751ae52e15a983842d718c137938609a1bd5a94c4"
+  },
+  "submission_package_462feff00b234357a635a3e63254aff4.zip": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

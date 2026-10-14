@@ -1,0 +1,30 @@
+[
+  {
+    "command": [
+      "cmd.exe",
+      "/c",
+      "node_modules\\.bin\\tsc.cmd",
+      "--noEmit"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-structure.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "cmd.exe",
+      "/c",
+      "node_modules\\.bin\\oxlint.cmd",
+      "components/studio-template-adoption.tsx",
+      "components/studio-workspace.tsx",
+      "lib/studio-api.ts",
+      "lib/studio-types.ts"
+    ],
+    "exit_code": 1
+  }
+]

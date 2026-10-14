@@ -35,6 +35,18 @@ produce a candidate lesson, but never an automatic mandatory rule. Safety-critic
 strong evidence and explicit engineering review. Lessons must preserve scope, evidence, confidence,
 exceptions, and correction history.
 
+For questions about what the user bought, search staged order evidence with
+`inventory_search_purchase_history`. Use short product and specification keywords, for example
+`query="TPU 200 1.75"`; use `|` for alternatives such as `query="TPU | TPE"`. For 3D-printing
+consumables, set `category="打印耗材"`. Search includes resolved orders; the review queue from
+`inventory_list_purchase_history` does not answer a general purchase question. Read `product_url`,
+order ID, date, variant, and evidence reference from the result. Page while `has_more` is true
+before saying a list is complete. Purchase evidence does not prove physical stock on hand;
+use `inventory_get_balances` for stock. Never infer a database permission problem from a failed
+tool call. UuMA lab-domain MCP tools are directly available in this profile: call the exact
+semantic tool by name. Do not use `tool_search`, `tool_describe`, or `tool_call` to discover or
+invoke UuMA tools.
+
 You may create or refine candidate lessons. You may not accept, reject, supersede, deprecate, or
 promote them into mandatory rules; those transitions belong to the user or a designated reviewer.
 

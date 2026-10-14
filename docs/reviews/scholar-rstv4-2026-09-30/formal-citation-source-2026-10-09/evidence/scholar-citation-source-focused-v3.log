@@ -1,0 +1,70 @@
+RUN ['-m', 'ruff', 'check', 'src/rstv4/studio_sources.py', 'src/rstv4/studio.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_source_context.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\studio_read_views.py:2:1
+   |
+ 1 |   """Read immutable author/generated views without starting jobs or seeding documents."""
+ 2 | / from __future__ import annotations
+ 3 | |
+ 4 | | import hashlib
+ 5 | | import json
+ 6 | | import sqlite3
+ 7 | | from pathlib import Path
+ 8 | | from typing import Any
+ 9 | |
+10 | | from .service import NotFoundError, RSTV4Error
+11 | | from .studio_context import citation_ids, generated_view, legacy_bibliography
+12 | | from .studio_correspondence import has_correspondence, realization_document
+13 | | from .studio_materials import markdown as material_markdown
+14 | | from .studio_materials import verify_files as verify_material_files
+15 | | from .studio_realization import validate as validate_realization
+16 | | from .studio_structure import argument_context
+17 | | from .studio_sources import validate_references
+   | |_______________________________________________^
+help: Organize imports
+   |
+15 | from .studio_realization import validate as validate_realization
+16 + from .studio_sources import validate_references
+17 | from .studio_structure import argument_context
+   - from .studio_sources import validate_references
+18 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_studio_source_context.py:2:1
+   |
+ 1 |   """Exact software source provenance; these fixtures approve no scientific claims."""
+ 2 | / from __future__ import annotations
+ 3 | |
+ 4 | | import hashlib
+ 5 | | import json
+ 6 | | from copy import deepcopy
+ 7 | | from pathlib import Path
+ 8 | |
+ 9 | | import pytest
+10 | | from fastapi.testclient import TestClient
+11 | | from pypdf import PdfWriter
+12 | | from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
+13 | | from rstv4.database import transaction
+14 | | from rstv4.models import TrackFirstEvidenceInput
+15 | | from rstv4.research_views import skeleton_source
+16 | | from rstv4.service import RSTV4Error
+17 | | from rstv4.studio_api import create_app
+18 | | from test_acquisition_deep_read import setup
+19 | | from test_writing_studio import complete_document, create_studio, wait_for_job
+   | |______________________________________________________________________________^
+help: Organize imports
+   |
+12 | from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
+13 + from test_acquisition_deep_read import setup
+14 + from test_writing_studio import complete_document, create_studio, wait_for_job
+15 +
+16 | from rstv4.database import transaction
+--------------------------------------------------------------------------------
+20 | from rstv4.studio_api import create_app
+   - from test_acquisition_deep_read import setup
+   - from test_writing_studio import complete_document, create_studio, wait_for_job
+21 |
+   |
+
+Found 2 errors.
+[*] 2 fixable with the `--fix` option.

@@ -1,0 +1,165 @@
+{
+  "status": "PASS_EIGHT_CONCURRENT_ACTUAL_HTTP_REQUESTS_ONE_COLLECTION_ONE_JOB",
+  "browser_verified": false,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-collection-2026-10-05-_iaj7quw",
+  "receipts": [
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    },
+    {
+      "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+      "field_id": "field_8954128af8854470bc9c0eb1ada85d94",
+      "track_id": "track_584c2f1dd95d4c6da2de07d1ba1dcb62",
+      "name": "Actual concurrent software Collection",
+      "scope_version": 1,
+      "status": "ACTIVE",
+      "revision": 1,
+      "created_at": "2026-10-05T15:55:12.674639+00:00",
+      "updated_at": "2026-10-05T15:55:12.674639+00:00",
+      "topic_id": "topic_887ad0e32a2b420eb60d55ca6a698d8d",
+      "creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_8954128af8854470bc9c0eb1ada85d94\", \"name\": \"Actual concurrent software Collection\", \"queries\": [\"software concurrent fixture query\"], \"scope\": {}, \"topic_id\": \"topic_887ad0e32a2b420eb60d55ca6a698d8d\", \"track_id\": \"track_584c2f1dd95d4c6da2de07d1ba1dcb62\"}",
+      "scope": {},
+      "seeds": [],
+      "counts": {
+        "papers": 0,
+        "jobs": 1
+      }
+    }
+  ],
+  "collection_id": "collection_cb73df3b4506c961986155e0e9dd7638",
+  "jobs": 1,
+  "all_fixture_collections_paused": true,
+  "paper_candidates": 1,
+  "new_model_calls": 0,
+  "scientific_approval": false
+}

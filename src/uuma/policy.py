@@ -179,4 +179,17 @@ def default_agents() -> list[AgentDefinition]:
             },
             tools={"worker_mcp", "workspace_read", "workspace_write", "web_research"},
         ),
+        AgentDefinition(
+            agent_id="honc",
+            display_name="honc",
+            description="Manages daily execution tracing, rounds, habits, completion verification, and outbox reconciliation.",
+            capabilities={
+                "daily_execution",
+                "tracing",
+                "focus",
+                "checkin",
+                "habit_tracking",
+            },
+            tools={"worker_mcp", "honc_execution"},
+        ),
     ]

@@ -1,0 +1,62 @@
+--- source-before/studio-workspace.tsx
++++ source-after/studio-workspace.tsx
+@@ -2109,7 +2109,7 @@
+             <div className="source-search"><Search /><Input value={sourceQuery} onChange={(event) => setSourceQuery(event.target.value)} placeholder="找资料、依据、反证…" /></div>
+             <div className="source-list">
+               {pinnedReference ? <section className="source-card source-card--snapshot" aria-label="此生成版本的固定引用来源">
+-                <header><strong>[{pinnedReference.citation_index}] {pinnedReference.title || pinnedReference.statement || pinnedReference.evidence_id}</strong>
++                <header><strong>[{pinnedReference.citation_index}] {pinnedReference.title || pinnedReference.statement || '未提供题名'}</strong>
+                   <Button size="sm" variant="ghost" onClick={() => { sourcePreviewRequestRef.current += 1; setPinnedReference(null); setPinnedReferenceVersion(null); }}>关闭来源</Button></header>
+                 <p>{pinnedReference.authors?.join(', ')} {pinnedReference.published_year || ''}</p>
+                 <p>{pinnedReference.statement}</p><blockquote>{pinnedReference.excerpt}</blockquote>
+@@ -2138,7 +2138,7 @@
+                     <span className="source-card__excerpt">{source.excerpt}</span>
+                   </button>
+                   <footer>
+-                    <span>{source.title || source.evidence_id}</span>
++                    <span>{source.title || '未提供题名'}</span>
+                     {source.landing_url || source.pdf_url ? (
+                       <a href={source.pdf_url || source.landing_url} target="_blank" rel="noreferrer">查看原文 ↗</a>
+                     ) : <span>原文不可用</span>}
+@@ -2183,8 +2183,8 @@
+                   </div> : null}
+                   {Array.isArray(message.quoted.evidence_ids) ? (
+                     <div className="chat-evidence">
+-                      {(message.quoted.evidence_ids as unknown[]).filter((item): item is string => typeof item === 'string').map((evidenceId) => (
+-                        <button key={evidenceId} type="button" onClick={() => void openDiscussionSource(message.message_id, evidenceId)}>📚 {evidenceId}</button>
++                      {(message.quoted.evidence_ids as unknown[]).filter((item): item is string => typeof item === 'string').map((evidenceId, sourceIndex) => (
++                        <button key={evidenceId} type="button" aria-label={`查看此回复的第 ${sourceIndex + 1} 个引用来源`} onClick={() => void openDiscussionSource(message.message_id, evidenceId)}>📚 引用来源 {sourceIndex + 1}</button>
+                       ))}
+                     </div>
+                   ) : null}
+@@ -2864,7 +2864,7 @@
+           onArchiveFile={onArchiveFile}
+         />
+       ) : null}
+-      {!generated ? <div aria-live="polite"><p>正在读取此成文版本的段落与来源…</p><div className="whitespace-pre-wrap">{content}</div></div> : null}
++      {!generated ? <p aria-live="polite">正在读取此成文版本的段落与来源…</p> : null}
+       {generated?.blocks.map((block) => {
+         const discuss = () => onDiscuss(block);
+         const text = <CitationText text={block.text} references={generated.references} onCitation={onCitation} />;
+@@ -2910,7 +2910,7 @@
+         <ol>{generated.references.map((reference) => <li key={reference.evidence_id}>
+           <button type="button" className="inline-citation" onClick={() => onCitation(reference.evidence_id)} aria-label={`打开引用 ${reference.citation_index} 的来源`}>[{reference.citation_index}]</button>{' '}
+           {reference.authors?.join(', ')}{reference.published_year ? ` (${reference.published_year}). ` : ' '}
+-          {reference.title || reference.statement || (reference.source_snapshot_available ? reference.evidence_id : '历史书目信息不完整')}{reference.doi ? ` · ${reference.doi}` : ''}
++          {reference.title || reference.statement || '历史书目信息不完整'}{reference.doi ? ` · ${reference.doi}` : ''}
+         </li>)}</ol>
+       </section> : null}
+     </article>
+@@ -3021,9 +3021,10 @@
+   return parts.map((part, index) => {
+     const match = /^\[@([^\]]+)\]$/.exec(part);
+     if (!match) return <span key={`${index}-${part.slice(0, 8)}`}>{part}</span>;
++    const reference = references.find((item) => item.evidence_id === match[1]);
+     return (
+-      <button key={`${index}-${match[1]}`} type="button" className="inline-citation" aria-label={`打开引用 ${references.find((item) => item.evidence_id === match[1])?.citation_index || match[1]} 的来源`} onClick={(event) => { event.stopPropagation(); onCitation(match[1]); }}>
+-        {references.find((item) => item.evidence_id === match[1]) ? `[${references.find((item) => item.evidence_id === match[1])!.citation_index}]` : part}
++      <button key={`${index}-${match[1]}`} type="button" className="inline-citation" aria-label={reference ? `打开引用 ${reference.citation_index} 的来源` : '查看未登记引用的来源'} onClick={(event) => { event.stopPropagation(); onCitation(match[1]); }}>
++        {reference ? `[${reference.citation_index}]` : '[来源未登记]'}
+       </button>
+     );
+   });

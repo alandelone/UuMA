@@ -1,0 +1,93 @@
+{
+  "cursor": 36,
+  "events": [
+    {
+      "sequence": 28,
+      "source": {
+        "tabId": 1479454217
+      },
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "blockedCookies": [],
+        "cookiePartitionKey": {
+          "hasCrossSiteAncestor": false,
+          "topLevelSite": "http://127.0.0.1"
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": [],
+        "headers": {
+          "Cache-Control": "no-cache",
+          "Connection": "close",
+          "Pragma": "no-cache"
+        },
+        "headersText": "HTTP/1.0 204 Intercepted by the IDM Advanced Integration\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close\r\n\r\n",
+        "requestId": "81032.53",
+        "resourceIPAddressSpace": "Loopback",
+        "statusCode": 204
+      }
+    },
+    {
+      "sequence": 29,
+      "source": {
+        "tabId": 1479454217
+      },
+      "method": "Network.loadingFailed",
+      "params": {
+        "canceled": false,
+        "corsErrorStatus": {
+          "corsError": "MissingAllowOriginHeader",
+          "failedParameter": ""
+        },
+        "errorText": "net::ERR_FAILED",
+        "requestId": "81032.53",
+        "timestamp": 195386.581939,
+        "type": "Fetch"
+      }
+    },
+    {
+      "sequence": 35,
+      "source": {
+        "tabId": 1479454217
+      },
+      "method": "Network.responseReceivedExtraInfo",
+      "params": {
+        "blockedCookies": [],
+        "cookiePartitionKey": {
+          "hasCrossSiteAncestor": false,
+          "topLevelSite": "http://127.0.0.1"
+        },
+        "cookiePartitionKeyOpaque": false,
+        "exemptedCookies": [],
+        "headers": {
+          "Cache-Control": "no-cache",
+          "Connection": "close",
+          "Pragma": "no-cache"
+        },
+        "headersText": "HTTP/1.0 204 Intercepted by the IDM Advanced Integration\r\nCache-Control: no-cache\r\nPragma: no-cache\r\nConnection: close\r\n\r\n",
+        "requestId": "81032.54",
+        "resourceIPAddressSpace": "Loopback",
+        "statusCode": 204
+      }
+    },
+    {
+      "sequence": 36,
+      "source": {
+        "tabId": 1479454217
+      },
+      "method": "Network.loadingFailed",
+      "params": {
+        "canceled": false,
+        "corsErrorStatus": {
+          "corsError": "MissingAllowOriginHeader",
+          "failedParameter": ""
+        },
+        "errorText": "net::ERR_FAILED",
+        "requestId": "81032.54",
+        "timestamp": 195433.956271,
+        "type": "Fetch"
+      }
+    }
+  ],
+  "hasMore": false,
+  "truncated": false
+}

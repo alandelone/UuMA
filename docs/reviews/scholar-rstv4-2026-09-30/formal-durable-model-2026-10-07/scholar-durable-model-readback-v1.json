@@ -1,0 +1,68 @@
+{
+  "status": "PASS_ACTUAL_WAITING_MODEL_RECEIPT_READBACK",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-beqtn_vr",
+  "database_sha256": "ab99ee1dfa8beeacb80194e6fd95c1b1cd13e89f6b416f570a2915626b6520fc",
+  "database_unchanged": true,
+  "requests": [
+    {
+      "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9/model-calls/acquisition-call-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+      "status": 200
+    },
+    {
+      "path": "/api/catalog/collections/collection_d016024afda6fbf0ce956023f80306a8/progress",
+      "status": 200
+    },
+    {
+      "path": "/v1/runs/run_2147b77dd2f14b939ec55f589d8f653f",
+      "status": 200
+    }
+  ],
+  "actual_http_requests": 4,
+  "call": {
+    "call_id": "acquisition-call-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+    "started_at": "2026-10-07T11:02:49.039276+00:00",
+    "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+    "fencing_token": 2,
+    "task": "skeleton_layer_1",
+    "status": "WAITING",
+    "input": {
+      "raw_text": "Software review identity title"
+    },
+    "source": {
+      "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+      "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+      "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+      "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+      "transport_operation_id": "rstv4-model-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7"
+    },
+    "output": null,
+    "contract": {
+      "delivery": "durable-run-v1",
+      "router_run_id": "run_2147b77dd2f14b939ec55f589d8f653f",
+      "router_status": "running",
+      "transport_operation_id": "rstv4-model-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7"
+    },
+    "error_type": "ModelRunPending",
+    "completed_at": "2026-10-07T11:02:59.093158+00:00"
+  },
+  "vendor": {
+    "id": "run_2147b77dd2f14b939ec55f589d8f653f",
+    "status": "running",
+    "attempts": 1,
+    "current_provider": "gemini",
+    "current_model": "gemini-3.8-flash",
+    "waiting_reason": null,
+    "last_attempt_status": "running"
+  },
+  "new_model_submissions": 0,
+  "new_scientific_approval": false,
+  "new_intent_pipeline_verified": false,
+  "observed_at": 1791371958.2779818,
+  "browser_verified": false
+}

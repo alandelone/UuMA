@@ -1,0 +1,52 @@
+CHECK ['tests/catalog_research_overview.cjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+9 controlled overview scenarios passed
+Exit: 0
+CHECK ['tests/unit/catalog-return.cjs']
+11 Catalog return origin/context cases passed
+Exit: 0
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/catalog_web.py', 'src/rstv4/research_workspace.py', 'src/rstv4/database.py', 'tests/test_research_workspace.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\research_workspace.py:7:1
+   |
+ 5 |   """
+ 6 |
+ 7 | / from __future__ import annotations
+ 8 | |
+ 9 | | import hashlib
+10 | | import json
+11 | | import sqlite3
+12 | | from datetime import UTC, datetime
+13 | | from pathlib import Path
+14 | | from typing import Annotated, Any, Literal
+15 | |
+16 | | from pydantic import Field
+17 | |
+18 | | from .database import WORKSPACE_ACTION_SCHEMA
+19 | | from .models import FieldInput, StrictModel, TrackFirstTopicInput, TrackFirstTrackInput, new_id
+   | |_______________________________________________________________________________________________^
+help: Organize imports
+   |
+18 | from .database import WORKSPACE_ACTION_SCHEMA
+   - from .models import FieldInput, StrictModel, TrackFirstTopicInput, TrackFirstTrackInput, new_id
+19 + from .models import (
+20 +     FieldInput,
+21 +     StrictModel,
+22 +     TrackFirstTopicInput,
+23 +     TrackFirstTrackInput,
+24 +     new_id,
+25 + )
+26 |
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.
+Exit: 1

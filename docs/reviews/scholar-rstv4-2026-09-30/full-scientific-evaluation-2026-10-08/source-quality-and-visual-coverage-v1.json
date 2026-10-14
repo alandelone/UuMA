@@ -1,0 +1,119 @@
+{
+  "scope": {
+    "test_papers": 10,
+    "original_source_blocks": 1286,
+    "source_windows": 126,
+    "fixed_program_cases": 252,
+    "whole_paper_cases": 20
+  },
+  "native_pdf_pages": 150,
+  "parser_associated_pdf_pages": 136,
+  "native_pages_not_associated_with_parser_windows": {
+    "paper_19f55daa7f17ede2858b": [
+      16
+    ],
+    "paper_2f81cb801401904d4767": [
+      15
+    ],
+    "paper_6dc9f2bdd81d9dcf4a46": [
+      23,
+      24,
+      25,
+      26,
+      27
+    ],
+    "paper_75abf75ded7b6df0c2b5": [
+      17,
+      20
+    ],
+    "paper_95eebae164cc42fd6005": [
+      16,
+      17
+    ],
+    "paper_b637a4adf835d6357900": [
+      8
+    ],
+    "paper_fb88f52bf6ea0323e952": [
+      14,
+      15
+    ]
+  },
+  "publication_status_by_paper": [
+    {
+      "paper_id": "paper_95eebae164cc42fd6005",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_964b88669cfe422e7aef",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_ad7ea2de394ae32d2ed2",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_19f55daa7f17ede2858b",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_b637a4adf835d6357900",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_2f81cb801401904d4767",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_6dc9f2bdd81d9dcf4a46",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_603603415f45919cbdc8",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_fb88f52bf6ea0323e952",
+      "publication_status": "NOT_YET_VERIFIED"
+    },
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "publication_status": "RETRACTED_PUBLISHER_VERIFIED",
+      "original_doi": "10.1007/s00500-020-05372-y",
+      "retraction_note_doi": "10.1007/s00500-024-10235-x",
+      "retraction_date": "2024-10-23",
+      "verified_date": "2026-10-09",
+      "primary_sources": [
+        "https://link.springer.com/article/10.1007/s00500-020-05372-y",
+        "https://link.springer.com/article/10.1007/s00500-024-10235-x"
+      ],
+      "frozen_test_case_retained": true,
+      "original_pdf_watermark_visually_confirmed": true,
+      "reliable_real_world_scientific_gold": false
+    }
+  ],
+  "render_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\frozen-pdf-visual-evidence-20261009-v1\\render-record.json",
+  "visual_observations": [
+    {
+      "paper_id": "paper_75abf75ded7b6df0c2b5",
+      "pdf_page": 17,
+      "source_printed_page": 3191,
+      "figure_numbers": [
+        18,
+        19
+      ],
+      "contains_scientific_plots": true,
+      "parser_window_association": false,
+      "native_text_is_not_a_complete_representation_of_plot_pixels": true,
+      "visual_observation_role": "SOURCE_COMPLETENESS_DIAGNOSTIC_ONLY",
+      "scientific_reference_claims_created": 0
+    }
+  ],
+  "ten_paper_frozen_scope_preserved": true,
+  "source_fidelity_distinct_from_publication_credibility": true,
+  "legacy_overall_rationales_require_explicit_candidate_target_correction": true,
+  "pdf_visual_scientific_evaluation_complete": false,
+  "expert_gold": false,
+  "full_scientific_evaluation_complete": false,
+  "model_calls": 0,
+  "learner_outputs_rewritten": false
+}

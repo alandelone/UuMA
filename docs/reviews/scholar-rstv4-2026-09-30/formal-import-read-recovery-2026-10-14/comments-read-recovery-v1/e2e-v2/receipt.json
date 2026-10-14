@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "seconds": 6.237776279449463,
+  "build": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-native-import-build-v2-v3i1w89c\\writing-studio",
+  "spec": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\e2e\\review-read-recovery.spec.ts",
+  "database_access": "All API mocked; no writes/models/jobs",
+  "product_source_exact": true
+}

@@ -1,0 +1,62 @@
+{
+  "status": "PASS_FOUR_FORMAT_NATIVE_IMPORT_RELOAD_AND_PRESERVATION",
+  "scope": "This subset only; original118/all11 and G11 GPU recovery remain incomplete",
+  "tables": 109,
+  "old_comments_exact": 206,
+  "new_comments": 4,
+  "rounds": 3,
+  "old_rounds_and_baselines_exact": 2,
+  "all_other_tables_exact": 105,
+  "schema_exact": true,
+  "read_recovery_no_db_change": true,
+  "original_files_exact": true,
+  "derived_cache_metadata_changes": [
+    {
+      "candidate_id": "unit_19e88276e45e67e012f0cfafe02459a2",
+      "from_revision": 39,
+      "to_revision": 62,
+      "sample_json_exact": true
+    },
+    {
+      "candidate_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a",
+      "from_revision": 39,
+      "to_revision": 62,
+      "sample_json_exact": true
+    },
+    {
+      "candidate_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87",
+      "from_revision": 39,
+      "to_revision": 62,
+      "sample_json_exact": true
+    },
+    {
+      "candidate_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52",
+      "from_revision": 39,
+      "to_revision": 62,
+      "sample_json_exact": true
+    }
+  ],
+  "round3": {
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "round_number": 3,
+    "baseline_artifact_id": "artifact_f3abca7bf9254db28445818cfb5816c9",
+    "venue": "G11 original118 native file import software acceptance — no external reviewer or scientific approval",
+    "status": "ACTIVE",
+    "created_at": "2026-10-14T01:52:52.361494+00:00"
+  },
+  "baseline": {
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "baseline_manuscript_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+    "content_sha256": "2430bc03a020665b51cd6e522f578097184163259e098be99159c46b20126b7b",
+    "created_at": "2026-10-14T01:52:52.361494+00:00"
+  },
+  "new_comment_ids": [
+    "comment_15d8bb0d41d34beb93739f444e3578db",
+    "comment_17fd0d630e4d4a709714d6d1921384c4",
+    "comment_cea31df0e6d14212bb33fe5fa014ca97",
+    "comment_fa0cc799e11a4cafa02bfeff7736200a"
+  ],
+  "models_jobs_versions_history_unchanged": true,
+  "e2e_scenarios_passed": 8
+}

@@ -1,0 +1,140 @@
+from pathlib import Path
+import hashlib
+import json
+import re
+import shutil
+
+repo=Path.cwd()
+review=repo/'docs/reviews/scholar-rstv4-2026-09-30'
+folder=review/'formal-intent-correspondence-2026-10-09'
+assert not folder.exists()
+full=json.loads((repo/'.tmp/scholar-intent-correspondence-full-v4.json').read_text(encoding='utf-8'))
+assert full['status']=='PASS' and len(full['results'])==23 and full['changed_during_verification']==[]
+for path,digest in full['after_sha256'].items():
+    assert hashlib.sha256(Path(path).read_bytes()).hexdigest()==digest
+log=(repo/'.tmp/scholar-intent-correspondence-full-v4.log').read_text(encoding='utf-8')
+assert re.search(r'1042 passed, 20 warnings',log)
+static=json.loads((repo/'.tmp/scholar-intent-correspondence-static-v4.json').read_text(encoding='utf-8'))
+assert len(static)==15 and all(item['exit_code']==0 for item in static)
+native=repo/'.tmp/scholar-intent-correspondence-native-v2'
+audit=json.loads((native/'audit.json').read_text(encoding='utf-8'))
+assert audit['status']=='PASS_NATIVE_MAPPING_HISTORY_GENERATION' and not audit['overall_complete']
+refresh=json.loads((repo/'.tmp/scholar-intent-correspondence-runtime-refresh-v1.json').read_text(encoding='utf-8'))
+assert refresh['status']=='PASS_FINAL_BACKEND_REFRESH' and refresh['final_immutable_version_read']
+parent=review/'formal-source-hierarchy-2026-10-09'
+parent_manifest=json.loads((parent/'manifest.json').read_text(encoding='utf-8'))
+files=parent_manifest['copied_file_sha256']
+assert files is not None
+if isinstance(files,dict):
+    iterable=files.items()
+else:
+    iterable=[(row.get('path',row.get('relative_path')),row.get('sha256')) for row in files]
+for name,value in iterable:
+    digest=value['sha256'] if isinstance(value,dict) else value
+    assert hashlib.sha256((parent/name).read_bytes()).hexdigest()==digest
+assert hashlib.sha256((parent/'acceptance.md').read_bytes()).hexdigest()=='e22e3f95599d06cb797680bd4fce88e612e8feba462afe2464c95a12300837e2'
+folder.mkdir()
+shutil.copytree(native,folder/'native')
+shutil.copyfile(review/'intent-correspondence-contract-2026-10-09.md',folder/'contract.md')
+sources=['RSTV4/src/rstv4/studio.py','RSTV4/src/rstv4/studio_context.py',
+         'RSTV4/src/rstv4/studio_structure.py','RSTV4/src/rstv4/studio_templates.py',
+         'RSTV4/src/rstv4/studio_correspondence.py','RSTV4/src/rstv4/studio_read_views.py',
+         'RSTV4/tests/test_studio_correspondence.py','RSTV4/tests/test_studio_templates.py',
+         'writing-studio/lib/studio-correspondence.ts','writing-studio/lib/studio-blocks.ts',
+         'writing-studio/lib/studio-types.ts','writing-studio/components/studio-workspace.tsx',
+         'writing-studio/components/studio-intent-correspondence.tsx',
+         'writing-studio/tests/unit/studio-correspondence.cjs','writing-studio/tests/unit/studio-response-review.cjs']
+source_hashes={}
+for name in sources:
+    target=folder/'source-after'/name
+    target.parent.mkdir(parents=True,exist_ok=True)
+    shutil.copyfile(repo.parent/name,target)
+    source_hashes[name]=hashlib.sha256(target.read_bytes()).hexdigest()
+(folder/'evidence').mkdir()
+for path in (repo/'.tmp').glob('scholar-intent-correspondence-*'):
+    if path.is_file():
+        shutil.copyfile(path,folder/'evidence'/path.name)
+    elif path.is_dir() and path!=native:
+        shutil.copytree(path,folder/'evidence'/path.name)
+report=f'''# 原作者 Intent 对应到任意模板槽位：本批验收
+
+本批软件行为实跑通过；原118条／G-01至G-11全部保留，11组总验收未完成。
+下载验收继续依用户指示暂停。受控软件夹具不构成真实科学证据或批准。
+
+## 已修复并实跑
+
+- 作者明确选择任意已采用模板 Intent；原思想、稳定编号、所选引用存于完整原作者树。
+  两个同名子章节按编号及原文第2／4页区分，本次交叉对应，不按标签猜测。
+- 原段落用途、范式、段落组、公式、CSV附件关联、完整逻辑边及条件保留。
+  公式与附件输出位置需明确勾选，部分对应、未选位置和空槽继续阻止生成。
+- 预览取消不产生对应操作；改变目标使先前确认失效。保存、刷新、解除对应、
+  独立Undo／Redo及在目标槽位编辑均通过实际持久记录核对。
+- 后端仅接受同稿件实际固定来源采用记录的目标；非法／外来／重复／冲突／篡改
+  和重复请求分别拒绝或精确重放。模板替换释放对应，原作者内容保留。
+- 修复生成成功后历史读取按空模板核对而无法打开的问题。读取从固定作者版本
+  重建同一对应，核验原树、上下文、公式、附件、全部原逻辑边和条件，保留原有效
+  模型调用摘要／结果／映射守卫。六类篡改均拒绝。
+
+## 原生浏览器与独立账本
+
+隔离稿件 {audit['ms']}，r8→r19：
+
+|版本|保存操作|核对结果|
+|---|---|---|
+|r9|部分REPLACE|两同名子章节＋完整原作者树，固定来源第2／4页|
+|r10|第一项对应|第一段→第二同名槽位；含公式与附件位置|
+|r11|第二项对应|第二段→第一同名槽位；含公式与附件位置|
+|r12／r13|UNDO／REDO|逐次精确恢复r10／r11|
+|r14／r15|解除对应／UNDO|只解除第二项；原文不变；恢复r11|
+|r16／r17／r18／r19|EDIT／UNDO／REDO／UNDO|目标编辑写回原思想编号；恢复完整原文|
+
+独立检查109个表：全部旧操作、其他稿件和所有无关表逐条一致；11次新操作的完整
+before／after／inverse与初始关联记录精确一致。原作者树（除r16／r18明确编辑的
+一个思想外）、原组、两段公式、CSV字节摘要、引用与原逻辑边均不变。
+
+r10原生Generate拒绝缺项，未新增任务或调用。r19原生Generate成功，保存1个软件
+生成任务和2个声明TEST_FIXTURE_AUTHOR_CORRESPONDENCE调用，没有真实模型调用。
+原编译器生成Markdown、JSON、LaTeX、Bib、PDF五类产物，摘要与大小匹配。
+各思想只出现一次，固定原上下文与逻辑条件完整；刷新后的同一版本仍可打开。
+CSV关联保留于固定JSON，未把关联检查冒充为附件版面输出验收。
+没有点击任何下载链接、文件上传或浏览器权限提示。
+
+原生截图：[两段成文](native/final-two-paragraphs.png)、
+[第一项核对](native/first-review.png)。完整DOM和账本在native目录。
+全页截图超时保留为失败，不用它代替已保存的真实可见截图。
+
+## 回归证据
+
+最终源码27项对应后端检查通过；完整Python回归1042项通过／20条既有警告，
+23项后端流程与静态检查通过，15项前端检查通过。运行期间源码摘要未变。
+最终日志SHA256：{full['log_sha256']}。
+独立生产构建通过，原工作区源码与产物未被构建改写。最终后端仅重启本批拥有的
+8879服务，其他运行环境及待保存页面保留；固定r19成文再次核对通过。
+
+失败记录保留：旧flat来源继承、回滚夹具WAL基线、历史读取缺项、验证器实际字段／
+初始关联依赖、审稿回复单测缺少纯URL模块加载、L2条件篡改漏洞、复选框一次点击
+未生效、取消等待超时与全页截图超时。运行环境更新中启动进程先行退出的停止错误、
+读取接口缺少jobs字段、及后续界面读取新增样本缓存导致旧基线失效的检查均保留。
+最后重新冻结实际109表，恢复本批服务前后所有记录精确一致，原成文保持同一版本。
+先补上下文或修复产品，再重跑完整断言。
+WAL夹具只在冻结之前完整checkpoint；所有旧记录及原完整字节断言保持。
+依据：[SQLite WAL](https://www.sqlite.org/wal.html)。
+
+## 仍待11组整体验收
+
+本批覆盖G-08的部分软件流程，未把G-08或其他整组标成全部完成。仍需118条逐项
+实跑、真实合格来源及学术层级内容、全范围固定对象与Chat、多样本建议、未覆盖
+的离线／冲突恢复、完整Comment→修改→校验链、实际输入格式、Revision／Publication
+及全流程失效检查。ZIP／PDF原生下载按用户指示暂停。科学类型、原文质量和评审
+依据仍须真实证据／授权，continue不等于科学批准。
+'''
+(folder/'acceptance.md').write_text(report,encoding='utf-8')
+status={'status':'SCOPED_INTENT_CORRESPONDENCE_NATIVE_COMPLETE_OVERALL_INCOMPLETE',
+        'all118_all11_scope_retained':True,'g08_complete':False,'overall_complete':False,
+        'scientific_acceptance':False,'downloads_paused':True,'source_sha256':source_hashes,
+        'files':{str(p.relative_to(folder)):hashlib.sha256(p.read_bytes()).hexdigest() for p in folder.rglob('*') if p.is_file()}}
+(folder/'manifest.json').write_text(json.dumps(status,ensure_ascii=False,indent=2),encoding='utf-8')
+entry='\n\n2026-10-09 sealed explicit author Intent correspondence software batch: '+str(folder)+'. Final1042PASS/20warnings,23backend checks+15frontend checks; actualnative11opsr8→19, one software generation/two fixturecalls/five realcompiler artifacts, finalsource fixed-version read verified. All109tables/unrelated稿件 exact; originalbank/group/source/edges/CSV intact. Parent206sealed files verified. All118/all11overallINCOMPLETE; G08INCOMPLETE; downloadsPAUSED; no actualscience/model/approval claim. Next audit all118 and continue remaining real-source/complete workflow requirements, preserve native tabs and unrelated scientific workers.\n'
+for name in ['repomemory/findings.md','stage-gates/04-verification-report.md','docs/reviews/scholar-rstv4-2026-09-30/smoke.md']:
+    with (repo/name).open('a',encoding='utf-8') as handle: handle.write(entry)
+print(json.dumps({'status':status['status'],'files':len(status['files']),'report':str(folder/'acceptance.md'),'report_sha256':status['files']['acceptance.md'],'overall_complete':False}))

@@ -1,0 +1,26 @@
+{
+  "status": "REPRODUCED_STARTUP_SCHEMA_TIMESTAMP_WRITE",
+  "disposable_database": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-database-startup-diagnostic-v1.db",
+  "source_database_modified": false,
+  "table_count": 96,
+  "changed_tables": {
+    "schema_version": {
+      "before": [
+        [
+          "catalog",
+          5,
+          "2000-01-01 00:00:00"
+        ]
+      ],
+      "after": [
+        [
+          "catalog",
+          5,
+          "2026-10-05 11:02:37"
+        ]
+      ]
+    }
+  },
+  "before_sha256": "40f5602e8621b9f61db7d266cfe43eae538f853a738e38d996f0845f9ff568c8",
+  "after_sha256": "fcbc1cca3315f7cc2c350f7de9ab3c1627bd1370c0182c1961d76589f45b6fb1"
+}

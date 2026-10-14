@@ -1,0 +1,24 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/manuscript_scientific_review.py', 'src/rstv4/approval.py', 'src/rstv4/studio.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'src/rstv4/models.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/collection_web.py', 'src/rstv4/collection_inputs.py', 'src/rstv4/collection_runtime.py', 'src/rstv4/acquisition_model_calls.py', 'src/rstv4/skeleton_audit.py', 'src/rstv4/scope_literature.py', 'src/rstv4/track_first.py', 'src/rstv4/track_scientific_workspace.py', 'src/rstv4/skeleton_intent.py', 'src/rstv4/model_gateway.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/research_views.py', 'src/rstv4/durable_model_delivery.py', 'src/rstv4/fieldkg_semantics.py', 'src/rstv4/research_context.py', 'tests/test_manuscript_scientific_review.py', 'tests/test_catalog_paper_selection.py', 'tests/test_collection_runtime.py', 'tests/test_acquisition_deep_read.py', 'tests/test_scope_literature.py', 'tests/test_track_scientific_workspace.py', 'tests/test_skeleton_intent.py', 'tests/test_durable_model_delivery.py', 'tests/test_fieldkg_semantics.py']
+I001 [*] Import block is un-sorted or un-formatted
+    --> src\rstv4\database.py:1377:5
+     |
+1376 |   def initialize_catalog(path: Path) -> None:
+1377 | /     from .fieldkg_semantics import SCHEMA as FIELDKG_SEMANTIC_SCHEMA
+1378 | |     from .acquisition_model_calls import SCHEMA as MODEL_CALL_SCHEMA
+1379 | |     from .collection_runtime import SCHEMA as COLLECTION_RUNTIME_SCHEMA
+     | |_______________________________________________________________________^
+1380 |
+1381 |       _backup_legacy(path, "papers", CATALOG_VERSION)
+     |
+help: Organize imports
+     |
+1376 | def initialize_catalog(path: Path) -> None:
+     -     from .fieldkg_semantics import SCHEMA as FIELDKG_SEMANTIC_SCHEMA
+1377 |     from .acquisition_model_calls import SCHEMA as MODEL_CALL_SCHEMA
+1378 |     from .collection_runtime import SCHEMA as COLLECTION_RUNTIME_SCHEMA
+1379 +     from .fieldkg_semantics import SCHEMA as FIELDKG_SEMANTIC_SCHEMA
+1380 |
+     |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

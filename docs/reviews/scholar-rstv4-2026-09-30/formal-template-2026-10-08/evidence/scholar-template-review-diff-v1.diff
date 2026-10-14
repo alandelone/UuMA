@@ -1,0 +1,1101 @@
+--- before/studio.py
++++ C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\studio.py
+@@ -61,8 +61,9 @@
+ from .studio_structure import paragraph_group, validate_groups
+ from .studio_suggestions import MODEL_FORMAT, preview_change
+ from .studio_suggestions import apply as apply_suggestion
+ from .studio_suggestions import normalize as normalize_suggestions
++from .studio_templates import apply_structure, empty_sections, template_preview
+ from .track_first import TrackFirstService
+ 
+ WORKFLOW_STAGES = (
+     "PLANNING",
+@@ -433,8 +434,9 @@
+         source_skeleton_id: str | None,
+         source_version: str | None,
+         adopted: dict[str, Any],
+     ) -> dict[str, Any]:
++        """Retain a legacy metadata record; it never applies a template to author text."""
+         self.track_service.get_manuscript(manuscript_id)
+         template_instance_id = new_id("template_instance")
+         timestamp = _now()
+         with transaction(self.db_path) as conn:
+@@ -444,9 +446,9 @@
+                     template_instance_id,
+                     manuscript_id,
+                     source_skeleton_id,
+                     source_version,
+-                    _json(adopted),
++                    _json({**adopted, "source_verification": "UNVERIFIED_LEGACY_RECORD"}),
+                     timestamp,
+                     timestamp,
+                 ),
+             )
+@@ -455,8 +457,72 @@
+                    WHERE template_instance_id=?""",
+                 (template_instance_id,),
+             ).fetchone()
+         return _decode(row, "adopted_json")
++
++    def preview_template(self, manuscript_id: str, skeleton_id: str) -> dict[str, Any]:
++        with transaction(self.db_path) as conn:
++            conn.execute("BEGIN")
++            return template_preview(conn, manuscript_id, skeleton_id)
++
++    def apply_template(self, manuscript_id: str, request: dict[str, Any]) -> dict[str, Any]:
++        """Commit one exact, source-checked template adoption with its author revision."""
++        if request["mode"] not in {"INSERT", "REPLACE"}:
++            raise ValueError("Unknown template adoption mode")
++        if request["mode"] == "REPLACE" and request["replace_confirmed"] is not True:
++            raise ValueError("Template replacement requires explicit author confirmation")
++        with transaction(self.db_path) as conn:
++            conn.execute("BEGIN IMMEDIATE")
++            operation = conn.execute(
++                "SELECT * FROM studio_operations WHERE operation_id=?",
++                (request["operation_id"],),
++            ).fetchone()
++            if operation:
++                instance = conn.execute(
++                    """SELECT * FROM studio_template_instances WHERE manuscript_id=?
++                       AND json_extract(adopted_json,'$.operation_id')=?""",
++                    (manuscript_id, request["operation_id"]),
++                ).fetchone()
++                if (operation["manuscript_id"] != manuscript_id or instance is None
++                        or json.loads(instance["adopted_json"]).get("request") != request):
++                    raise RevisionConflictError("Template operation already has another request")
++                row = conn.execute(
++                    "SELECT * FROM studio_documents WHERE manuscript_id=?", (manuscript_id,),
++                ).fetchone()
++                return {**self._saved_response(row, dict(operation), idempotent=True),
++                        "template_instance": _decode(instance, "adopted_json")}
++            row = conn.execute(
++                "SELECT * FROM studio_documents WHERE manuscript_id=?", (manuscript_id,),
++            ).fetchone()
++            if row is None:
++                raise NotFoundError("Unknown Studio document")
++            if row["revision"] != request["base_revision"]:
++                raise RevisionConflictError("Author revision changed; preview the template again")
++            preview = template_preview(conn, manuscript_id, request["skeleton_id"])
++            if preview["source_sha256"] != request["source_sha256"]:
++                raise RevisionConflictError("Template source changed; inspect its current version")
++            before = json.loads(row["document_json"])
++            sections = empty_sections(preview, request["selected_unit_ids"])
++            document = apply_structure(before, sections, request["scope_type"],
++                                       request["scope_id"], request["mode"])
++            saved = self.save_document(
++                manuscript_id, base_revision=request["base_revision"],
++                operation_id=request["operation_id"], document=document,
++                operation_kind="ADOPT_TEMPLATE", comment_ids=request["comment_ids"],
++                _connection=conn,
++            )
++            instance_id = new_id("template_instance")
++            adopted = {"operation_id": request["operation_id"], "request": request,
++                       "source": preview, "resulting_revision": saved["document_revision"]}
++            timestamp = _now()
++            conn.execute("INSERT INTO studio_template_instances VALUES(?,?,?,?,?,?,?)",
++                         (instance_id, manuscript_id, preview["skeleton_id"],
++                          str(preview["skeleton_version"]), _json(adopted), timestamp, timestamp))
++            instance = conn.execute(
++                "SELECT * FROM studio_template_instances WHERE template_instance_id=?",
++                (instance_id,),
++            ).fetchone()
++            return {**saved, "template_instance": _decode(instance, "adopted_json")}
+ 
+     def resolve_finding(self, finding_id: str, status: str) -> dict[str, Any]:
+         if status not in {"OPEN", "ACCEPTED", "DISMISSED", "RESOLVED"}:
+             raise ValueError("Unknown finding status")
+@@ -1600,14 +1666,18 @@
+         if not isinstance(document.get("sections"), list):
+             raise TypeError("Document sections must be a list")
+         seen: set[str] = {manuscript_id}
+         for section in document["sections"]:
++            if section.get("placement_status") not in {None, "UNPLACED"}:
++                raise ValueError("Unknown section placement status")
+             for item in [section, *section.get("paragraphs", [])]:
+                 identifier = item.get("id")
+                 if not identifier or identifier in seen:
+                     raise ValueError("Every structural block must have a unique stable id")
+                 seen.add(identifier)
+             for paragraph in section.get("paragraphs", []):
++                if not isinstance(paragraph.get("logical_relation", ""), str):
++                    raise TypeError("Paragraph logical relation must be author text")
+                 for formula in paragraph.get("formulas", []):
+                     if not formula.get("id") or formula["id"] in seen:
+                         raise ValueError("Every formula must have a unique stable id")
+                     seen.add(formula["id"])
+@@ -1640,8 +1710,9 @@
+             for section_index, section in enumerate(document.get("sections", [])):
+                 values[section["id"]] = _json({
+                     "title": section.get("title"),
+                     "role": section.get("role"),
++                    "placement_status": section.get("placement_status"),
+                     "block_order": section.get("block_order"),
+                     "paragraph_ids": [item["id"] for item in section.get("paragraphs", [])],
+                     "position": section_index,
+                 })
+@@ -1650,8 +1721,11 @@
+                 for paragraph in section.get("paragraphs", []):
+                     values[paragraph["id"]] = _json({
+                         "purpose": paragraph.get("purpose"),
+                         "paradigm": paragraph.get("paradigm"),
++                        "logic": paragraph.get("logic"),
++                        "logical_relation": paragraph.get("logical_relation"),
++                        "template_source": paragraph.get("template_source"),
+                         "section_id": section["id"],
+                         "group_id": (paragraph_group(section, paragraph["id"]) or {}).get("id"),
+                         "intent_ids": [item["id"] for item in paragraph.get("intents", [])],
+                     })
+@@ -1675,8 +1749,11 @@
+             issues.append({"path": "title", "message": "Paper title is required"})
+         thought_count = 0
+         asset_ids: set[str] = set()
+         for section in document.get("sections", []):
++            if section.get("placement_status") == "UNPLACED":
++                issues.append({"path": section["id"],
++                               "message": "Original author content remains unplaced"})
+             if not str(section.get("title") or "").strip():
+                 issues.append({"path": section.get("id", "section"), "message": "Section title is missing"})
+             if not section.get("paragraphs"):
+                 issues.append({"path": section["id"], "message": "Section has no paragraph"})
+--- before/studio_api.py
++++ C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\studio_api.py
+@@ -133,8 +133,21 @@
+ class TemplateAdoptionRequest(ApiModel):
+     source_skeleton_id: str | None = Field(default=None, max_length=500)
+     source_version: str | None = Field(default=None, max_length=200)
+     adopted: dict[str, Any]
++
++
++class ApplyTemplateRequest(ApiModel):
++    base_revision: int = Field(ge=0, strict=True)
++    operation_id: str = Field(min_length=8, max_length=200)
++    skeleton_id: str = Field(min_length=1, max_length=500)
++    source_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
++    selected_unit_ids: list[str] = Field(min_length=1, max_length=2000)
++    scope_type: str = Field(pattern=r"^(paper|section|paragraph|intent)$")
++    scope_id: str | None = Field(default=None, max_length=500)
++    mode: str = Field(default="INSERT", pattern=r"^(INSERT|REPLACE)$")
++    replace_confirmed: bool = Field(default=False, strict=True)
++    comment_ids: list[str] = Field(default_factory=list, max_length=100)
+ 
+ 
+ def _extract_review_text(filename: str, content_type: str, content: bytes) -> str:
+     suffix = Path(filename).suffix.casefold()
+@@ -366,8 +379,16 @@
+             source_version=payload.source_version,
+             adopted=payload.adopted,
+         )
+ 
++    @app.get("/api/manuscripts/{manuscript_id}/templates/{skeleton_id}")
++    def preview_template(manuscript_id: str, skeleton_id: str) -> dict[str, Any]:
++        return service.preview_template(manuscript_id, skeleton_id)
++
++    @app.post("/api/manuscripts/{manuscript_id}/template-adoption")
++    def apply_template(manuscript_id: str, payload: ApplyTemplateRequest) -> dict[str, Any]:
++        return service.apply_template(manuscript_id, payload.model_dump())
++
+     @app.post("/api/manuscripts/{manuscript_id}/assets", status_code=201)
+     async def upload_asset(
+         manuscript_id: str,
+         file: Annotated[UploadFile, File()],
+--- before/studio-workspace.tsx
++++ C:\Users\Alandelone\CodeSpace_Local\writing-studio\components\studio-workspace.tsx
+@@ -63,8 +63,9 @@
+ import { StudioReviewRounds } from '@/components/studio-review-rounds';
+ import { StudioChangeHistory } from '@/components/studio-change-history';
+ import { StudioPackageDownloads } from '@/components/studio-package-downloads';
+ import { StudioResponseReview } from '@/components/studio-response-review';
++import { StudioTemplateAdoption, type TemplateCandidate } from '@/components/studio-template-adoption';
+ import { BlockControls, BlockMove, DropZone, EditorControls, Ungroup, blockKeyboardCoordinates, useEditorControls, type EditorUi } from '@/components/studio-block-controls';
+ import { ApiError, API_BASE, sharedDiscussionRequest, studioApi } from '@/lib/studio-api';
+ import { createSharedDiscussion, discussionDestination, discussionReference, discussionReturn, discussionWithoutReference, exactSelection, readableVersions, studioTarget, type DiscussionController, type DiscussionState, type LocatedSource } from '@/lib/shared-discussion';
+ import { historyFilter, legacySelection, matchesHistory } from '@/lib/studio-discussion-history';
+@@ -90,8 +91,9 @@
+   StudioJob,
+   StudioSuggestion,
+   SuggestionDecisionRequest,
+   Thought,
++  TemplateRequest,
+   WorkflowStage,
+   Workspace,
+ } from '@/lib/studio-types';
+ 
+@@ -449,8 +451,16 @@
+   const chatViewRef = useRef({ filter: chatFilter, selection, revision });
+   chatViewRef.current = { filter: chatFilter, selection, revision };
+   const [job, setJob] = useState<StudioJob | null>(initialWorkspace.latest_job);
+   const [jobIssues, setJobIssues] = useState<Array<{ path: string; message: string }>>([]);
++  const jobValidationMessageRef = useRef<string | null>(null);
++  const clearJobValidation = useCallback(() => {
++    const previous = jobValidationMessageRef.current;
++    setJobIssues([]);
++    if (previous) setStatusMessage((current) => current === previous ? '' : current);
++    jobValidationMessageRef.current = null;
++  }, []);
++  const [templateCandidate, setTemplateCandidate] = useState<TemplateCandidate | null>(null);
+   const [comments, setComments] = useState<ReviewComment[]>([]);
+   const [focusedChange, setFocusedChange] = useState<{ id: string } | null>(null);
+   const [commentsReady, setCommentsReady] = useState(false);
+   const [archivedComments, setArchivedComments] = useState<ReviewComment[]>([]);
+@@ -818,8 +828,9 @@
+   const refreshWorkspace = useCallback(async () => {
+     if (dirtyRef.current) await outbox.put(pendingSnapshot());
+     const fresh = await studioApi.workspace(workspace.manuscript.manuscript_id);
+     setWorkspace(fresh);
++    clearJobValidation();
+     setDocument(cloneDocument(fresh.document));
+     documentRef.current = cloneDocument(fresh.document);
+     setRevision(fresh.document_revision);
+     revisionRef.current = fresh.document_revision;
+@@ -832,9 +843,9 @@
+     const drafts = await outbox.list(workspace.manuscript.manuscript_id);
+     setLocalDrafts(drafts);
+     if (drafts.length) setStatusMessage('已载入服务器版本；未同步的本地副本仍可打开或导出。');
+     setSaveState('saved');
+-  }, [pendingSnapshot, workspace.manuscript.manuscript_id]);
++  }, [pendingSnapshot, workspace.manuscript.manuscript_id, clearJobValidation]);
+ 
+   const loadComments = useCallback(async () => {
+     const [all, rounds] = await Promise.all([studioApi.comments(workspace.manuscript.manuscript_id, true), studioApi.reviewRounds(workspace.manuscript.manuscript_id)]);
+     setReviewRounds(rounds);
+@@ -1119,8 +1130,9 @@
+         if (undoRef.current.length > 100) undoRef.current.shift();
+         redoRef.current = [];
+       }
+       documentRef.current = next;
++      clearJobValidation();
+       setDocument(next);
+       if (!dirtyRef.current) {
+         pendingCommentIdsRef.current = [...activeCommentsRef.current];
+         draftBaseRef.current = revisionRef.current;
+@@ -1135,9 +1147,9 @@
+       if (workspace.last_generated_revision !== null) {
+         setWorkspace((current) => ({ ...current, generated_is_stale: true }));
+       }
+     },
+-    [persistDraft, workspace.last_generated_revision],
++    [persistDraft, workspace.last_generated_revision, clearJobValidation],
+   );
+ 
+   useEffect(() => {
+     const modelContext = (
+@@ -1228,30 +1240,32 @@
+     const previous = undoRef.current.pop();
+     if (!previous) return;
+     redoRef.current.push(cloneDocument(documentRef.current));
+     documentRef.current = previous;
++    clearJobValidation();
+     setDocument(previous);
+     if (!dirtyRef.current) pendingCommentIdsRef.current = [...activeCommentsRef.current];
+     dirtyRef.current = true;
+     operationIdRef.current = uid('operation');
+     operationKindRef.current = 'UNDO';
+     persistDraft();
+     setSaveState(conflictRef.current ? draftViewRef.current ? 'recovery' : 'conflict' : 'pending');
+-  }, [persistDraft]);
++  }, [persistDraft, clearJobValidation]);
+ 
+   const redo = useCallback(() => {
+     const next = redoRef.current.pop();
+     if (!next) return;
+     undoRef.current.push(cloneDocument(documentRef.current));
+     documentRef.current = next;
++    clearJobValidation();
+     setDocument(next);
+     if (!dirtyRef.current) pendingCommentIdsRef.current = [...activeCommentsRef.current];
+     dirtyRef.current = true;
+     operationIdRef.current = uid('operation');
+     operationKindRef.current = 'REDO';
+     persistDraft();
+     setSaveState(conflictRef.current ? draftViewRef.current ? 'recovery' : 'conflict' : 'pending');
+-  }, [persistDraft]);
++  }, [persistDraft, clearJobValidation]);
+ 
+   useEffect(() => {
+     const handler = (event: KeyboardEvent) => {
+       if (!(event.ctrlKey || event.metaKey)) return;
+@@ -1321,23 +1335,29 @@
+     if (dirtyRef.current) {
+       setStatusMessage('稿件仍未同步，暂时不能开始任务。');
+       return;
+     }
++    const submittedRevision = revisionRef.current;
++    const submittedDocument = cloneDocument(documentRef.current);
+     try {
+       const next = await studioApi.createJob(
+         workspace.manuscript.manuscript_id,
+         kind,
+-        revisionRef.current,
++        submittedRevision,
+         kind === 'SUBMISSION_PACKAGE' && reviewRoundId ? { review_round_id: reviewRoundId, ...jobRequest } : jobRequest,
+       );
+       setJob(next);
+-      setJobIssues([]);
++      clearJobValidation();
+       setStatusMessage('');
+     } catch (caught) {
+       if (caught instanceof ApiError) {
+         const issues = (caught.body.issues as Array<{ path: string; message: string }> | undefined) || [];
+-        setJobIssues(issues);
+-        setStatusMessage(issues.map((item) => item.message).join(' · ') || caught.message);
++        const current = !dirtyRef.current && revisionRef.current === submittedRevision
++          && sameDocument(documentRef.current, submittedDocument);
++        setJobIssues(current ? issues : []);
++        const message = `结构 r${submittedRevision}：${issues.map((item) => item.message).join(' · ') || caught.message}${current ? '' : '；当前稿件已有修改，请重新检查。'}`;
++        jobValidationMessageRef.current = message;
++        setStatusMessage(message);
+       } else setStatusMessage(caught instanceof Error ? caught.message : '任务无法开始');
+     }
+   };
+ 
+@@ -1540,56 +1560,70 @@
+   };
+ 
+   const adoptCurrentSample = async () => {
+     const sample = samples[sampleIndex];
+-    if (!sample || !selection.id || !['section', 'paragraph', 'intent'].includes(selection.type)) {
+-      setStatusMessage('先选择章节、段落或 Intent，再采用样本结构。');
++    if (!sample?.skeleton_id || !['paper', 'section', 'paragraph', 'intent'].includes(selection.type)) {
++      setStatusMessage('先选择整篇、章节、段落或 Intent，再预览有固定来源的模板。');
+       return;
+     }
++    await flushSave();
++    if (dirtyRef.current || savingRef.current || conflictRef.current) {
++      setStatusMessage('请先保存当前修改或核对版本，再预览模板。本地内容已保留。');
++      return;
++    }
++    const targets: TemplateCandidate['targets'] = [{ scope_type: 'paper', scope_id: workspace.manuscript.manuscript_id, label: '整篇论文' }];
++    documentRef.current.sections.filter((section) => section.placement_status !== 'UNPLACED').forEach((section, sectionIndex) => {
++      const sectionLabel = `章节 ${sectionIndex + 1}：${section.title || '未命名'}`;
++      targets.push({ scope_type: 'section', scope_id: section.id, label: sectionLabel });
++      section.paragraphs.forEach((paragraph, paragraphIndex) => {
++        const paragraphLabel = `${sectionLabel} / 段落 ${paragraphIndex + 1}`;
++        targets.push({ scope_type: 'paragraph', scope_id: paragraph.id, label: paragraphLabel });
++        paragraph.intents.forEach((intent, intentIndex) => targets.push({ scope_type: 'intent', scope_id: intent.id,
++          label: `${paragraphLabel} / Intent ${intentIndex + 1}：${intent.label || '未定'}` }));
++      });
++    });
++    if (!targets.some((target) => target.scope_type === selection.type && target.scope_id === (selection.id || workspace.manuscript.manuscript_id))) {
++      setStatusMessage('请选择待安置区域以外的作者结构，再预览模板。');
++      return;
++    }
++    setTemplateCandidate({ skeleton_id: sample.skeleton_id, scope_type: selection.type as TemplateCandidate['scope_type'],
++      scope_id: selection.id || workspace.manuscript.manuscript_id, label: selection.label,
++      base_revision: revisionRef.current, operation_id: uid('template'), comment_ids: [...activeCommentsRef.current], targets });
++  };
++
++  const applyReviewedTemplate = async (request: TemplateRequest) => {
++    await flushSave();
++    if (dirtyRef.current || savingRef.current) throw new Error('当前修改尚未同步；原模板请求仍保留。');
++    const before = cloneDocument(documentRef.current);
++    const beforeRevision = revisionRef.current;
++    savingRef.current = true;
+     try {
+-      const instance = await studioApi.adoptTemplate(
+-        workspace.manuscript.manuscript_id,
+-        sample.skeleton_id || sample.unit_id,
+-        sample.version === undefined ? undefined : String(sample.version),
+-        {
+-          scope_type: selection.type,
+-          scope_id: selection.id,
+-          layer: sample.layer,
+-          layer3: sample.layer3,
+-          layer4: sample.layer4,
+-          source_paper_id: sample.paper_id,
+-        },
+-      );
+-      setWorkspace((current) => ({
+-        ...current,
+-        template_instances: [...(current.template_instances || []), instance],
+-      }));
+-      commit((draft) => {
+-        for (const section of draft.sections) {
+-          if (selection.type === 'section' && section.id === selection.id) {
+-            section.role = sample.layer4 || section.role;
+-          }
+-          for (const paragraph of section.paragraphs) {
+-            if (selection.type === 'paragraph' && paragraph.id === selection.id) {
+-              paragraph.paradigm = sample.layer4 || sample.layer || paragraph.paradigm;
+-            }
+-            for (const intent of paragraph.intents) {
+-              if (selection.type === 'intent' && intent.id === selection.id) {
+-                const suggestedIntent = Object.values(sample.layer3).find(
+-                  (value) => typeof value === 'string' && value.trim(),
+-                );
+-                intent.label = typeof suggestedIntent === 'string'
+-                  ? suggestedIntent
+-                  : sample.layer4 || intent.label;
+-              }
+-            }
+-          }
+-        }
+-      }, 'ADOPT_TEMPLATE');
+-      setStatusMessage('已记录模板来源并应用结构标签；样本文字没有复制为作者观点。');
+-    } catch (caught) {
+-      setStatusMessage(caught instanceof Error ? caught.message : '模板采用失败');
+-    }
++      const result = await studioApi.applyTemplate(workspace.manuscript.manuscript_id, request);
++      const instance = result.template_instance;
++      setWorkspace((current) => ({ ...current, document_revision: result.document_revision,
++        document: result.document, generated_is_stale: current.last_generated_revision !== null,
++        template_instances: [...current.template_instances.filter((item) => item.template_instance_id !== instance.template_instance_id), instance] }));
++      channelRef.current?.postMessage({ revision: result.document_revision });
++      if (!sameDocument(documentRef.current, before) || dirtyRef.current) {
++        await outbox.put(pendingSnapshot());
++        conflictRef.current = true; draftViewRef.current = false; setSaveState('conflict');
++        setStatusMessage('模板已保存；期间输入的本地修改仍保留，请核对版本。');
++        return;
++      }
++      if (beforeRevision === request.base_revision && result.document_revision === result.operation.resulting_revision) {
++        undoRef.current.push(before); redoRef.current = [];
++      }
++      documentRef.current = cloneDocument(result.document); setDocument(cloneDocument(result.document));
++      clearJobValidation();
++      revisionRef.current = result.document_revision; draftBaseRef.current = result.document_revision;
++      setRevision(result.document_revision); dirtyRef.current = false; conflictRef.current = false;
++      draftViewRef.current = false; operationIdRef.current = ''; pendingCommentIdsRef.current = [];
++      recoveredDraftRef.current = null; setSaveState('saved');
++      setStatusMessage(result.idempotent_replay && result.document_revision !== result.operation.resulting_revision
++        ? `原采用已记录在结构 r${result.operation.resulting_revision}；当前显示服务器 r${result.document_revision}，后续编辑与撤销保持。`
++        : request.mode === 'REPLACE' ? '已采用所选空结构；原内容保留在待安置区域，可移动或撤销。' : '已插入所选空结构，原思想、引用和编号保持。');
++      if (request.comment_ids.length) void loadComments();
++    } finally { savingRef.current = false; }
+   };
+ 
+   const generatedContent = generatedVersion?.content || latestGeneratedContent(workspace);
+   const reviewResult = job?.job_kind === 'WHOLE_PAPER_REVIEW' && job.status === 'SUCCEEDED' ? job.result : null;
+@@ -1774,8 +1808,10 @@
+           }}>保留本地副本并返回</Button>
+         </div>
+       ) : null}
+ 
++      <StudioTemplateAdoption key={workspace.manuscript.manuscript_id} manuscriptId={workspace.manuscript.manuscript_id}
++        candidate={templateCandidate} onClose={() => setTemplateCandidate(null)} onApply={applyReviewedTemplate} />
+       {comments.length || activeCommentIds.length ? (
+         <div className="revision-context" aria-label="当前意见关联">
+           <div aria-live="polite">
+             <strong>{activeCommentIds.length ? '正在回应' : '普通编辑'}</strong>
+@@ -1824,9 +1860,9 @@
+                 <p>{samples[sampleIndex]?.title}</p>
+                 <div className="flex gap-2">
+                   <Button size="sm" variant="outline" onClick={() => setSampleIndex((value) => (value - 1 + samples.length) % samples.length)}>←</Button>
+                   <Button size="sm" variant="outline" onClick={() => setSampleIndex((value) => (value + 1) % samples.length)}>→</Button>
+-                  <Button size="sm" variant="outline" onClick={() => void adoptCurrentSample()}>＋ 采用结构</Button>
++                  <Button size="sm" variant="outline" onClick={() => void adoptCurrentSample()}>＋ 预览完整模板</Button>
+                 </div>
+               </div>
+             ) : (
+               <p className="panel-empty">这个层级暂时没有可追溯的相似样本。</p>
+@@ -2267,8 +2303,14 @@
+       className={`structure-section ${selectedId === section.id ? 'selected-block' : ''} ${isDragging ? 'block-dragging' : ''}`}
+     >
+       <BlockRail kind="section" label={section.title || '未定章节'} compact={`SECTION ${sectionIndex + 1}`} onSelect={select}>{title}{role}</BlockRail>
+       <div className="structure-content">
++        {section.placement_status === 'UNPLACED' ? <div className="status-banner" aria-label="待安置的原内容">
++          <output><strong>待安置</strong> · 原内容、引用与编号完整保留。可将内容移入模板；未安置时不能生成成文。</output>
++          <Button size="sm" variant="outline" onClick={() => commit((draft) => {
++            delete draft.sections[sectionIndex].placement_status;
++          }, 'PLACE_ORIGINAL_SECTION')}>将此章节标记为已安置</Button>
++        </div> : null}
+         <div className="section-heading-row">
+           <BlockControls id={section.id} kind="section" label={section.title || '未定章节'}><button type="button" className="block-drag-handle" aria-label={`拖动章节 ${section.title}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); commit((draft) => { draft.sections.splice(sectionIndex, 1); }, 'DELETE_SECTION'); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
+           <Input
+             aria-label="章节标题"
+@@ -2419,8 +2461,10 @@
+     >
+       <BlockRail kind="paragraph" label={paragraph.purpose || `Paragraph ${paragraphIndex + 1}`} compact={`P${paragraphIndex + 1}`} onSelect={select}>
+         <Input aria-label="段落目的" value={paragraph.purpose} placeholder="段落目的" onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].purpose = event.target.value; })} />
+         <Input aria-label="段落组织范式" value={paragraph.paradigm} placeholder="自定义组织范式" onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].paradigm = event.target.value; })} />
++        <Input aria-label="L2 逻辑关系" value={paragraph.logical_relation || ''} placeholder="自定义逻辑关系" onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].logical_relation = event.target.value; })} />
++        {paragraph.logic ? <details><summary>模板来源的 L2 分析</summary><pre className="whitespace-pre-wrap break-words">{JSON.stringify(paragraph.logic, null, 2)}</pre></details> : null}
+       </BlockRail>
+       <div className="paragraph-content">
+         <div className="paragraph-config">
+           <BlockControls id={paragraph.id} kind="paragraph" label={paragraph.purpose || `Paragraph ${paragraphIndex + 1}`}><button type="button" className="block-drag-handle" aria-label={`拖动段落 ${paragraph.purpose || paragraphIndex + 1}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); commit((draft) => { draft.sections[sectionIndex].paragraphs.splice(paragraphIndex, 1); }, 'DELETE_PARAGRAPH'); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
+--- before/studio-types.ts
++++ C:\Users\Alandelone\CodeSpace_Local\writing-studio\lib\studio-types.ts
+@@ -23,8 +23,11 @@
+ export interface ParagraphBlock {
+   id: string;
+   purpose: string;
+   paradigm: string;
++  logical_relation?: string;
++  logic?: Record<string, unknown>;
++  template_source?: { skeleton_id: string; unit_id: string; source_sha256: string };
+   intents: IntentBlock[];
+   asset_ids: string[];
+   formulas?: Array<{
+     id: string;
+@@ -36,8 +39,9 @@
+ export interface SectionBlock {
+   id: string;
+   title: string;
+   role: string;
++  placement_status?: 'UNPLACED';
+   paragraphs: ParagraphBlock[];
+   paragraph_groups?: Array<{ id: string; label: string; paragraph_ids: string[] }>;
+   block_order?: string[];
+ }
+@@ -48,8 +52,34 @@
+   title: string;
+   abstract: string;
+   venue: string;
+   sections: SectionBlock[];
++}
++
++export interface TemplatePreview {
++  skeleton_id: string;
++  skeleton_version: number;
++  paper_id: string;
++  paper_version: number;
++  title: string;
++  source_sha256: string;
++  author_text_copied: false;
++  sections: Array<{ title: string; paragraphs: Array<{
++    unit_id: string; intent: string; role: string; logic: Record<string, unknown>;
++  }> }>;
++}
++
++export interface TemplateRequest {
++  base_revision: number;
++  operation_id: string;
++  skeleton_id: string;
++  source_sha256: string;
++  selected_unit_ids: string[];
++  scope_type: 'paper' | 'section' | 'paragraph' | 'intent';
++  scope_id: string | null;
++  mode: 'INSERT' | 'REPLACE';
++  replace_confirmed: boolean;
++  comment_ids: string[];
+ }
+ 
+ export interface Manuscript {
+   manuscript_id: string;
+--- before/studio-api.ts
++++ C:\Users\Alandelone\CodeSpace_Local\writing-studio\lib\studio-api.ts
+@@ -15,8 +15,10 @@
+   ChangeAssociationEvent,
+   SampleBlock,
+   SourceEvidence,
+   StudioDocument,
++  TemplatePreview,
++  TemplateRequest,
+   StudioJob,
+   SubmissionPackage,
+   TrackRecord,
+   Workspace,
+@@ -161,8 +163,15 @@
+           adopted,
+         }),
+       },
+     ),
++  templatePreview: (manuscriptId: string, skeletonId: string) =>
++    request<TemplatePreview>(`/manuscripts/${manuscriptId}/templates/${encodeURIComponent(skeletonId)}`),
++  applyTemplate: (manuscriptId: string, payload: TemplateRequest) =>
++    request<{ document: StudioDocument; document_revision: number; idempotent_replay: boolean;
++      operation: { resulting_revision: number }; template_instance: Workspace['template_instances'][number] }>(
++      `/manuscripts/${manuscriptId}/template-adoption`, { method: 'POST', body: JSON.stringify(payload) },
++    ),
+   uploadAsset: (manuscriptId: string, file: File) => {
+     const body = new FormData();
+     body.append('file', file);
+     return request<Workspace['assets'][number]>(
+--- /dev/null
++++ C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\studio_templates.py
+@@ -0,0 +1,147 @@
++"""Source-bound empty structures. Replacement never guesses where author text belongs."""
++
++from __future__ import annotations
++
++from copy import deepcopy
++from typing import Any
++
++from .models import new_id
++from .research_views import skeleton_source
++from .service import NotFoundError
++from .source_review import evidence_is_available, source_is_available
++
++
++def template_preview(conn: Any, manuscript_id: str, skeleton_id: str) -> dict:
++    source = skeleton_source(conn, skeleton_id)
++    scope = conn.execute(
++        """SELECT m.track_id,t.field_id FROM manuscripts m
++           JOIN research_tracks t USING(track_id) WHERE m.manuscript_id=?""",
++        (manuscript_id,),
++    ).fetchone()
++    if scope is None:
++        raise NotFoundError("Unknown template manuscript")
++    evidence = conn.execute(
++        """SELECT * FROM evidence WHERE paper_id=? AND (track_id=? OR field_id=?)
++           AND (paper_version_id=? OR paper_version_id IS NULL)""",
++        (source["paper_id"], scope["track_id"], scope["field_id"], source["paper_version_id"]),
++    ).fetchall()
++    if not source_is_available(conn, source["paper_version_id"]) or not any(
++        evidence_is_available(conn, dict(row)) for row in evidence
++    ):
++        raise ValueError("Template source is unavailable in this manuscript scope")
++    sections: list[dict] = []
++    for unit in source["units"]:
++        # Flat legacy Skeleton units do not prove Subsection or Group boundaries.
++        title = unit.get("section") or "未定章节"
++        if not sections or sections[-1]["title"] != title:
++            sections.append({"title": title, "paragraphs": []})
++        if not isinstance(unit.get("layer3"), dict) or not isinstance(unit.get("layer2"), dict):
++            raise TypeError("Template layers must be explicit structural objects")
++        label = unit["layer3"].get("intent")
++        label = label if isinstance(label, str) and label != "UNKNOWN" else ""
++        sections[-1]["paragraphs"].append({
++            "unit_id": unit["unit_id"], "intent": label,
++            "role": unit.get("layer4") or "", "logic": unit.get("layer2") or {},
++        })
++    if not sections:
++        raise ValueError("Template source has no structural units")
++    return {"skeleton_id": skeleton_id, "skeleton_version": source["version"],
++            "paper_id": source["paper_id"], "paper_version": source["paper_version"],
++            "title": source["title"], "source_sha256": source["context_sha256"],
++            "sections": sections, "author_text_copied": False}
++
++
++def empty_sections(preview: dict, selected: list[str]) -> list[dict]:
++    known = {p["unit_id"] for s in preview["sections"] for p in s["paragraphs"]}
++    if not selected or len(set(selected)) != len(selected) or not set(selected) <= known:
++        raise ValueError("Select distinct structural units from this exact template")
++    result = []
++    for section in preview["sections"]:
++        units = [p for p in section["paragraphs"] if p["unit_id"] in selected]
++        if not units:
++            continue
++        roles = {p["role"] for p in units}
++        result.append({
++            "id": new_id("section"), "title": section["title"],
++            "role": roles.pop() if len(roles) == 1 else "", "paragraphs": [
++                {"id": new_id("paragraph"), "purpose": "", "paradigm": "",
++                 "logical_relation": (p["logic"].get("discourse_relation")
++                                      if isinstance(p["logic"].get("discourse_relation"), str)
++                                      else ""),
++                 "asset_ids": [], "formulas": [], "logic": deepcopy(p["logic"]),
++                 "template_source": {"skeleton_id": preview["skeleton_id"],
++                                     "unit_id": p["unit_id"],
++                                     "source_sha256": preview["source_sha256"]},
++                 "intents": [{"id": new_id("intent"), "label": p["intent"], "thoughts": []}]}
++                for p in units],
++        })
++    return result
++
++
++def apply_structure(document: dict, sections: list[dict], scope_type: str,
++                    scope_id: str | None, mode: str) -> dict:
++    result = deepcopy(document)
++    if scope_type == "paper":
++        if scope_id not in {None, document["manuscript_id"]}:
++            raise ValueError("Template target belongs to another manuscript")
++        if mode == "REPLACE":
++            for section in result["sections"]:
++                section["placement_status"] = "UNPLACED"
++            result["sections"] = sections + result["sections"]
++        else:
++            result["sections"].extend(sections)
++        return result
++    for index, section in enumerate(result["sections"]):
++        if section.get("placement_status") == "UNPLACED":
++            continue
++        if scope_type == "section" and section["id"] == scope_id:
++            if mode == "REPLACE":
++                old = result["sections"].pop(index)
++                old["placement_status"] = "UNPLACED"
++                result["sections"][index:index] = sections
++                result["sections"].append(old)
++            else:
++                result["sections"][index + 1:index + 1] = sections
++            return result
++        for position, paragraph in enumerate(section["paragraphs"]):
++            if scope_type == "paragraph" and paragraph["id"] == scope_id:
++                added = [p for s in sections for p in s["paragraphs"]]
++                identifiers = [p["id"] for p in added]
++                offset = position if mode == "REPLACE" else position + 1
++                if mode == "REPLACE":
++                    section["paragraphs"].pop(position)
++                    result["sections"].append(_unplaced([paragraph]))
++                section["paragraphs"][offset:offset] = added
++                for group in section.get("paragraph_groups", []):
++                    if scope_id in group["paragraph_ids"]:
++                        spot = group["paragraph_ids"].index(scope_id)
++                        if mode == "REPLACE":
++                            group["paragraph_ids"][spot:spot + 1] = identifiers
++                        else:
++                            group["paragraph_ids"][spot + 1:spot + 1] = identifiers
++                        break
++                else:
++                    if "block_order" in section:
++                        spot = section["block_order"].index(scope_id)
++                        if mode == "REPLACE":
++                            section["block_order"][spot:spot + 1] = identifiers
++                        else:
++                            section["block_order"][spot + 1:spot + 1] = identifiers
++                return result
++            for spot, intent in enumerate(paragraph["intents"]):
++                if scope_type == "intent" and intent["id"] == scope_id:
++                    added = [i for s in sections for p in s["paragraphs"] for i in p["intents"]]
++                    offset = spot if mode == "REPLACE" else spot + 1
++                    if mode == "REPLACE":
++                        paragraph["intents"].pop(spot)
++                        holder = {"id": new_id("paragraph"), "purpose": "", "paradigm": "",
++                                  "asset_ids": [], "formulas": [], "intents": [intent]}
++                        result["sections"].append(_unplaced([holder]))
++                    paragraph["intents"][offset:offset] = added
++                    return result
++    raise ValueError("Choose an existing author structure outside the unplaced area")
++
++
++def _unplaced(paragraphs: list[dict]) -> dict:
++    return {"id": new_id("section"), "title": "待安置的原内容", "role": "",
++            "placement_status": "UNPLACED", "paragraphs": paragraphs}
+--- /dev/null
++++ C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_templates.py
+@@ -0,0 +1,215 @@
++"""Software fixtures only: adoption protects author data and creates no science approval."""
++
++from __future__ import annotations
++
++import hashlib
++import json
++import sqlite3
++from concurrent.futures import ThreadPoolExecutor
++from copy import deepcopy
++from pathlib import Path
++
++import pytest
++from fastapi.testclient import TestClient
++from test_studio_structure import grouped_fixture
++from test_track_first_fieldkg import make_paperpool
++
++from rstv4.models import FieldKGBuildInput, TrackFirstEvidenceInput
++from rstv4.service import RevisionConflictError
++from rstv4.studio import DocumentValidationError
++from rstv4.studio_api import create_app
++
++
++def fixture(root: Path):
++    service, manuscript_id, document = grouped_fixture(root)
++    manuscript = service.track_service.get_manuscript(manuscript_id)
++    with sqlite3.connect(service.db_path) as conn:
++        field_id = conn.execute("SELECT field_id FROM research_tracks WHERE track_id=?",
++                                (manuscript["track_id"],)).fetchone()[0]
++    pool = root / "template-source-fixture.db"
++    make_paperpool(pool)
++    build = service.track_service.create_fieldkg_build(FieldKGBuildInput(field_id=field_id))
++    service.track_service.import_paperpool(build["build_id"], str(pool), [])
++    with sqlite3.connect(service.db_path) as conn, conn:
++        source = conn.execute("SELECT skeleton_id,paper_version_id FROM paper_skeletons").fetchone()
++        paper = conn.execute("SELECT paper_id FROM paper_versions WHERE paper_version_id=?",
++                             (source[1],)).fetchone()[0]
++        unit = conn.execute("SELECT * FROM skeleton_units WHERE skeleton_id=?", (source[0],)).fetchone()
++        columns = [row[1] for row in conn.execute("PRAGMA table_info(skeleton_units)")]
++        second = dict(zip(columns, unit, strict=True))
++        second.update(unit_id="template-unit-2", seq_idx=2, section="Discussion",
++                      raw_text="MODEL SOURCE BODY MUST NEVER BECOME AUTHOR THOUGHT",
++                      layer3_json=json.dumps({"rationale": "not a label", "intent": "Claim"}))
++        conn.execute(f"INSERT INTO skeleton_units({','.join(columns)}) "
++                     f"VALUES({','.join('?' for _ in columns)})", tuple(second.values()))
++    service.track_service.add_evidence(TrackFirstEvidenceInput(
++        track_id=manuscript["track_id"], paper_id=paper, statement="Template software fixture",
++        excerpt="Software source", location="page 1", confidence=0.8, relation="SUPPORTS",
++        extractor_model="TEST_FIXTURE", prompt_version="TEST_FIXTURE",
++    ))
++    preview = service.preview_template(manuscript_id, source[0])
++    request = {"base_revision": 1, "operation_id": "template-operation-fixture",
++               "skeleton_id": source[0], "source_sha256": preview["source_sha256"],
++               "selected_unit_ids": [p["unit_id"] for s in preview["sections"] for p in s["paragraphs"]],
++               "scope_type": "paper", "scope_id": manuscript_id, "mode": "INSERT",
++               "replace_confirmed": False, "comment_ids": []}
++    return service, manuscript_id, document, preview, request
++
++
++@pytest.mark.parametrize("scope", ["paper", "section", "paragraph", "intent"])
++@pytest.mark.parametrize("mode", ["INSERT", "REPLACE"])
++def test_template_scope_is_atomic_empty_and_preserves_original_data(tmp_path, scope, mode):
++    service, manuscript_id, original, preview, request = fixture(tmp_path)
++    first = original["sections"][0]
++    paragraph = first["paragraphs"][0]
++    request.update(scope_type=scope, mode=mode, replace_confirmed=mode == "REPLACE",
++                   scope_id={"paper": manuscript_id, "section": first["id"],
++                             "paragraph": paragraph["id"],
++                             "intent": paragraph["intents"][0]["id"]}[scope])
++    with TestClient(create_app(tmp_path)) as client:
++        path = f"/api/manuscripts/{manuscript_id}/template-adoption"
++        response = client.post(path, json=request)
++        assert response.status_code == 200, response.text
++        result = response.json()
++        assert result["document_revision"] == 2
++        assert not result["idempotent_replay"]
++        saved = result["document"]
++        thoughts = lambda doc: {t["id"]: t for s in doc["sections"] for p in s["paragraphs"]
++                                for i in p["intents"] for t in i["thoughts"]}
++        assert thoughts(saved) == thoughts(original)
++        for old in original["sections"]:
++            for p in old["paragraphs"]:
++                current = next(x for s in saved["sections"] for x in s["paragraphs"] if x["id"] == p["id"])
++                assert current["asset_ids"] == p["asset_ids"]
++                assert current.get("formulas") == p.get("formulas")
++        assert "MODEL SOURCE BODY" not in json.dumps(saved)
++        assert "not a label" not in json.dumps(saved)
++        assert any(i["label"] == "Claim" and i["thoughts"] == []
++                   for s in saved["sections"] for p in s["paragraphs"] for i in p["intents"])
++        assert [s["title"] for s in preview["sections"]] == ["Introduction", "Discussion"]
++        if mode == "REPLACE":
++            assert any(s.get("placement_status") == "UNPLACED" for s in saved["sections"])
++            with pytest.raises(DocumentValidationError) as caught:
++                service._check_generate_ready(manuscript_id, saved)
++            assert any("unplaced" in i["message"] for i in caught.value.issues)
++        else:
++            assert not any(s.get("placement_status") for s in saved["sections"])
++        digest = hashlib.sha256(service.db_path.read_bytes()).hexdigest()
++        replay = client.post(path, json=request)
++        assert replay.status_code == 200 and replay.json()["idempotent_replay"]
++        assert replay.json()["template_instance"] == result["template_instance"]
++        assert hashlib.sha256(service.db_path.read_bytes()).hexdigest() == digest
++        assert service.get_document_revision(manuscript_id, 1)["document"] == original
++        service.save_document(manuscript_id, base_revision=2, operation_id="template-compensation",
++                              operation_kind="UNDO", document=original)
++        assert service.get_workspace(manuscript_id)["document"] == original
++        assert service.get_document_revision(manuscript_id, 2)["document"] == saved
++        after_undo = service.db_path.read_bytes()
++        original_retry = client.post(path, json=request).json()
++        assert original_retry["idempotent_replay"]
++        assert original_retry["document_revision"] == 3
++        assert original_retry["operation"]["resulting_revision"] == 2
++        assert original_retry["document"] == original
++        assert service.db_path.read_bytes() == after_undo
++
++
++@pytest.mark.parametrize("defect", ["unconfirmed", "foreign_unit", "duplicate_unit", "foreign_scope",
++                                  "stale_source", "stale_revision", "withdrawn_source"])
++def test_invalid_template_request_changes_no_database_bytes(tmp_path, defect):
++    service, manuscript_id, _, _, request = fixture(tmp_path)
++    if defect == "unconfirmed":
++        request["mode"] = "REPLACE"
++    elif defect == "foreign_unit":
++        request["selected_unit_ids"] = ["foreign-unit"]
++    elif defect == "duplicate_unit":
++        request["selected_unit_ids"] *= 2
++    elif defect == "foreign_scope":
++        request.update(scope_type="section", scope_id="another-ms-section")
++    elif defect == "stale_revision":
++        request["base_revision"] = 0
++    elif defect in {"stale_source", "withdrawn_source"}:
++        with sqlite3.connect(service.db_path) as conn, conn:
++            if defect == "stale_source":
++                conn.execute("UPDATE skeleton_units SET layer4='Changed' WHERE unit_id='template-unit-2'")
++            else:
++                conn.execute("UPDATE paper_versions SET source_json=?",
++                             (json.dumps({"file_version_id": "missing-withdrawn-file"}),))
++    with TestClient(create_app(tmp_path)) as client:
++        digest = hashlib.sha256(service.db_path.read_bytes()).hexdigest()
++        response = client.post(f"/api/manuscripts/{manuscript_id}/template-adoption", json=request)
++        assert response.status_code in {409, 422}, response.text
++        assert hashlib.sha256(service.db_path.read_bytes()).hexdigest() == digest
++
++
++def test_partial_template_double_submit_and_changed_retry(tmp_path):
++    service, manuscript_id, _, _, request = fixture(tmp_path)
++    request["selected_unit_ids"] = ["template-unit-2"]
++    with ThreadPoolExecutor(max_workers=2) as pool:
++        results = list(pool.map(lambda _: service.apply_template(manuscript_id, request), range(2)))
++    assert sorted(r["idempotent_replay"] for r in results) == [False, True]
++    assert all(r["document_revision"] == 2 for r in results)
++    with sqlite3.connect(service.db_path) as conn:
++        assert conn.execute("SELECT COUNT(*) FROM studio_template_instances").fetchone()[0] == 1
++        assert conn.execute("SELECT COUNT(*) FROM studio_jobs").fetchone()[0] == 0
++        assert conn.execute("SELECT COUNT(*) FROM studio_model_calls").fetchone()[0] == 0
++    altered = deepcopy(request)
++    altered["selected_unit_ids"] = ["changed-source-selection"]
++    before = service.db_path.read_bytes()
++    with pytest.raises(RevisionConflictError):
++        service.apply_template(manuscript_id, altered)
++    assert service.db_path.read_bytes() == before
++    assert service.get_workspace(manuscript_id)["document"]["sections"][-1]["title"] == "Discussion"
++
++
++def test_adoption_record_failure_rolls_back_document_and_operation(tmp_path, monkeypatch):
++    service, manuscript_id, _, _, request = fixture(tmp_path)
++    save = service.save_document
++
++    def interrupted(*args, **kwargs):
++        saved = save(*args, **kwargs)
++        assert saved["document_revision"] == 2
++        raise RuntimeError("software fixture failure after document writes")
++
++    monkeypatch.setattr(service, "save_document", interrupted)
++    before = service.db_path.read_bytes()
++    with pytest.raises(RuntimeError, match="after document writes"):
++        service.apply_template(manuscript_id, request)
++    assert service.db_path.read_bytes() == before
++    assert service.get_workspace(manuscript_id)["document_revision"] == 1
++
++
++def test_withdrawal_blocks_new_adoption_but_replay_reads_existing_result(tmp_path):
++    service, manuscript_id, _, _, request = fixture(tmp_path)
++    original = service.apply_template(manuscript_id, request)
++    with sqlite3.connect(service.db_path) as conn, conn:
++        conn.execute("UPDATE paper_versions SET source_json=?",
++                     (json.dumps({"file_version_id": "withdrawn-file"}),))
++    before = service.db_path.read_bytes()
++    replay = service.apply_template(manuscript_id, request)
++    assert replay["idempotent_replay"] and replay["template_instance"] == original["template_instance"]
++    assert service.db_path.read_bytes() == before
++    next_request = {**request, "operation_id": "template-after-withdrawal", "base_revision": 2}
++    with pytest.raises(ValueError, match="unavailable"):
++        service.apply_template(manuscript_id, next_request)
++    assert service.db_path.read_bytes() == before
++
++
++def test_original_operation_cannot_be_reused_by_another_manuscript(tmp_path):
++    service, manuscript_id, _, _, request = fixture(tmp_path)
++    service.apply_template(manuscript_id, request)
++    other = service.create_manuscript(
++        service.track_service.get_manuscript(manuscript_id)["track_id"], "Other fixture manuscript"
++    )["manuscript"]["manuscript_id"]
++    before = service.db_path.read_bytes()
++    with pytest.raises(RevisionConflictError):
++        service.apply_template(other, {**request, "scope_id": other})
++    assert service.db_path.read_bytes() == before
++
++
++def test_preview_is_read_only_and_does_not_copy_source_prose(tmp_path):
++    service, manuscript_id, _, preview, _ = fixture(tmp_path)
++    before = service.db_path.read_bytes()
++    assert service.preview_template(manuscript_id, preview["skeleton_id"]) == preview
++    assert service.db_path.read_bytes() == before
++    assert "MODEL SOURCE BODY" not in json.dumps(preview)
++    assert preview["sections"][1]["paragraphs"][0]["intent"] == "Claim"
+--- /dev/null
++++ C:\Users\Alandelone\CodeSpace_Local\writing-studio\components\studio-template-adoption.tsx
+@@ -0,0 +1,128 @@
++'use client';
++
++import { useEffect, useState } from 'react';
++import { Button } from '@/components/ui/button';
++import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from '@/components/ui/dialog';
++import { ApiError, studioApi } from '@/lib/studio-api';
++import type { TemplatePreview, TemplateRequest } from '@/lib/studio-types';
++
++type TemplateTarget = Pick<TemplateRequest, 'scope_type' | 'scope_id'> & { label: string };
++export type TemplateCandidate = Pick<TemplateRequest, 'base_revision' | 'operation_id' | 'skeleton_id' | 'scope_type' | 'scope_id' | 'comment_ids'> & { label: string; targets: TemplateTarget[] };
++type PendingTemplate = { request: TemplateRequest; label: string };
++
++export function StudioTemplateAdoption({ manuscriptId, candidate, onClose, onApply }: {
++  manuscriptId: string;
++  candidate: TemplateCandidate | null;
++  onClose: () => void;
++  onApply: (request: TemplateRequest) => Promise<void>;
++}) {
++  const storageKey = `pepper-template-pending-${manuscriptId}`;
++  const [preview, setPreview] = useState<TemplatePreview | null>(null);
++  const [selected, setSelected] = useState<string[]>([]);
++  const [mode, setMode] = useState<'INSERT' | 'REPLACE'>('INSERT');
++  const [confirmed, setConfirmed] = useState(false);
++  const [target, setTarget] = useState<TemplateTarget | null>(null);
++  const [pending, setPending] = useState<PendingTemplate | null>(null);
++  const [open, setOpen] = useState(false);
++  const [busy, setBusy] = useState(false);
++  const [error, setError] = useState('');
++  const [rejected, setRejected] = useState(false);
++
++  useEffect(() => {
++    try {
++      const value = window.localStorage.getItem(storageKey);
++      if (value) { setPending(JSON.parse(value)); setOpen(true); }
++    } catch { setError('待确认请求读取失败，请保留此页。'); }
++  }, [storageKey]);
++
++  useEffect(() => {
++    if (!candidate) return;
++    setOpen(true);
++    if (pending) return;
++    let alive = true;
++    setPreview(null); setError(''); setMode('INSERT'); setConfirmed(false);
++    setTarget(candidate.targets.find((item) => item.scope_type === candidate.scope_type && item.scope_id === candidate.scope_id) || null);
++    void studioApi.templatePreview(manuscriptId, candidate.skeleton_id).then((value) => {
++      if (!alive) return;
++      setPreview(value);
++      setSelected(value.sections.flatMap((section) => section.paragraphs.map((p) => p.unit_id)));
++    }).catch((caught) => { if (alive) setError(caught instanceof Error ? caught.message : '模板读取失败'); });
++    return () => { alive = false; };
++  }, [candidate, manuscriptId, pending]);
++
++  const close = () => { if (!busy) { setOpen(false); onClose(); } };
++  const submit = async () => {
++    const next = pending || (candidate && preview && target ? { label: target.label, request: {
++      base_revision: candidate.base_revision, operation_id: candidate.operation_id,
++      skeleton_id: candidate.skeleton_id, scope_type: target.scope_type, scope_id: target.scope_id,
++      comment_ids: candidate.comment_ids, source_sha256: preview.source_sha256,
++      selected_unit_ids: [...selected], mode, replace_confirmed: confirmed,
++    } } : null);
++    if (!next || busy) return;
++    setBusy(true); setError(''); setRejected(false);
++    try {
++      window.localStorage.setItem(storageKey, JSON.stringify(next));
++      setPending(next);
++      await onApply(next.request);
++      window.localStorage.removeItem(storageKey);
++      setPending(null); setOpen(false); onClose();
++    } catch (caught) {
++      setRejected(caught instanceof ApiError && [400, 404, 409, 422].includes(caught.status));
++      setError(caught instanceof Error ? caught.message : '结果待确认，请核对原请求。');
++    } finally { setBusy(false); }
++  };
++
++  return <>
++    {pending && !open ? <Button variant="outline" onClick={() => setOpen(true)}>核对待确认的模板采用</Button> : null}
++    <Dialog open={open} onOpenChange={(value) => { if (!value) close(); }}>
++      <DialogContent className="sm:max-w-2xl" showCloseButton={!busy}>
++        <DialogHeader><DialogTitle>采用模板结构</DialogTitle><DialogDescription>
++          {pending?.label || target?.label || candidate?.label} · 模板提供空槽，思想由作者填写。
++        </DialogDescription></DialogHeader>
++        {pending ? <output>已保留原采用请求（结构 r{pending.request.base_revision}，{pending.request.mode === 'INSERT' ? '插入' : '替换'}，{pending.request.selected_unit_ids.length} 个单元）。重试核对同一操作。</output> : preview ? <>
++          <p>{preview.title} · Paper v{preview.paper_version} / Skeleton v{preview.skeleton_version}</p>
++          <div className="max-h-72 overflow-y-auto rounded border p-3" aria-label="完整模板与部分采用">
++            {preview.sections.map((section, index) => <section key={index} className="mb-4">
++              <h3>{section.title}</h3>
++              {section.paragraphs.map((paragraph, position) => <label key={paragraph.unit_id} className="my-2 flex items-start gap-2">
++                <input type="checkbox" checked={selected.includes(paragraph.unit_id)} onChange={(event) => setSelected((current) => event.target.checked ? [...current, paragraph.unit_id] : current.filter((id) => id !== paragraph.unit_id))} />
++                <span>Paragraph {position + 1} → Intent: {paragraph.intent || '待作者确定'} → 空思想槽
++                  <small className="block">作用：{paragraph.role || '未定'} · L2：{JSON.stringify(paragraph.logic)}</small></span>
++              </label>)}
++            </section>)}
++          </div>
++          <label className="flex gap-2">采用范围
++            <select aria-label="模板采用范围" value={target ? `${target.scope_type}:${target.scope_id}` : ''} onChange={(event) => {
++              setTarget(candidate?.targets.find((item) => `${item.scope_type}:${item.scope_id}` === event.target.value) || null);
++              setConfirmed(false);
++            }}>
++              {!target ? <option value="">请选择作者结构</option> : null}
++              {candidate?.targets.map((item) => <option key={`${item.scope_type}:${item.scope_id}`} value={`${item.scope_type}:${item.scope_id}`}>{item.label}</option>)}
++            </select>
++          </label>
++          <label className="flex gap-2">采用方式
++            <select aria-label="模板采用方式" value={mode} onChange={(event) => { setMode(event.target.value as typeof mode); setConfirmed(false); }}>
++              <option value="INSERT">插入空结构（默认）</option><option value="REPLACE">替换结构，保留原内容到待安置</option>
++            </select>
++          </label>
++          {mode === 'REPLACE' ? <label className="flex gap-2"><input type="checkbox" checked={confirmed} onChange={(event) => setConfirmed(event.target.checked)} />
++            我确认替换所选结构；原思想、引用和编号保留到待安置，由我重新放置。</label> : null}
++          <p>已选择 {selected.length} 个单元。段落目的与组织范式留待作者填写。</p>
++        </> : <output>{error ? '模板未载入。' : '正在读取模板来源…'}</output>}
++        {error ? <p role="alert">{error}</p> : null}
++        <DialogFooter>
++          <Button variant="outline" disabled={busy} onClick={close}>{pending ? '保留请求并关闭' : '取消'}</Button>
++          {rejected && pending ? <Button variant="outline" onClick={() => {
++            try {
++              window.localStorage.setItem(`${storageKey}-rejected-${pending.request.operation_id}`, JSON.stringify({ ...pending, error }));
++              window.localStorage.removeItem(storageKey); setPending(null); setRejected(false); close();
++            } catch { setError('失败记录保存失败；原请求仍保留。'); }
++          }}>保留失败记录，重新预览</Button> : null}
++          <Button disabled={busy || (!pending && (!preview || !target || !selected.length || (mode === 'REPLACE' && !confirmed)))} onClick={() => void submit()}>
++            {busy ? '核对中…' : pending ? '核对原采用请求' : mode === 'INSERT' ? '插入所选空结构' : '确认替换并保留原内容'}
++          </Button>
++        </DialogFooter>
++      </DialogContent>
++    </Dialog>
++  </>;
++}

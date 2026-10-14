@@ -1,0 +1,51 @@
+8 controlled explicit review workflow checks passed
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+PASS historical unit location focuses the exact source and rejects a different owner
+PASS concept and relationship locations preserve the real case sensitive graph keys
+PASS a frozen source cannot be highlighted in a different Living or Snapshot view
+17 controlled workspace scenarios passed
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-current-ui.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-ui-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-workflow-view-v3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/research-overview-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pyproject.toml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/probe_chrome_acquisition_live.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition_worker.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_annotations.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_review.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/database.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/model_gateway.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/models.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/paperpool_evaluation.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/parser_quality.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/track_first.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_catalog_web.py', LF will be replaced by CRLF the next time Git touches it

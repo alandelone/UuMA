@@ -1,0 +1,1206 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-beqtn_vr",
+  "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+  "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+  "run_id": "semantic_run_d268a4e7ed0ff7274e99ddc91aa42c13",
+  "original_router_run_id": "run_f69fcf0f8b224b99851df0fdb1ce4bc3",
+  "original_build_receipt": {
+    "object_type": "build",
+    "object_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+    "build": {
+      "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+      "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+      "status": "EXTRACTING_EVIDENCE",
+      "retrieval_scope": {
+        "source": "EXISTING_PAPERSKELETON",
+        "selected_skeletons": [
+          "skeleton_f266944f63f2b256d0a61b1c5f26fda0"
+        ],
+        "paper_ids": [
+          "paper_dde0a449e93444c2771e7b0edeb7daf9"
+        ]
+      },
+      "revision": 1,
+      "created_at": "2026-10-08T05:53:16.133427+00:00",
+      "updated_at": "2026-10-08T05:53:16.133427+00:00",
+      "papers": [
+        {
+          "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+          "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+          "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+          "status": "IMPORTED",
+          "detail": null
+        }
+      ],
+      "evidence_candidates": [],
+      "candidate_gaps": [],
+      "gap_contexts": [],
+      "sources": [
+        {
+          "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+          "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+          "version": 2,
+          "extractor_model": null,
+          "prompt_version": "paper-skeleton-v2-located-intent",
+          "content_digest": "5ea76bfff3fe87cdd7b09294902fc59a56bd3266fcf5e19cb9eaff7f28ae6d8c",
+          "created_at": "2026-10-08T04:20:09.987231+00:00",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "paper_version": 1,
+          "pdf_digest": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "parsed_digest": "42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+          "units": [
+            {
+              "unit_id": "unit_61cbf9e20d9b92f4f65cae61d0b8655a",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "Software review identity title",
+              "layer1": {
+                "atomic_propositions": [
+                  "Software review identity title"
+                ],
+                "coreference_resolved_text": "Software review identity title",
+                "triplets": []
+              },
+              "layer2": {
+                "discourse_relations": [],
+                "rhetorical_function": "title",
+                "topic_continuity": {
+                  "active_topic": "Software review identity title",
+                  "continuity_type": "none_single_unit",
+                  "topic_transitions": []
+                }
+              },
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "Software review identity title",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+              },
+              "layer4": "UNKNOWN",
+              "content_digest": "252d9bf516b894879d3027319184dbc5306e22e8923a36bc20712e8ccf924bd2"
+            },
+            {
+              "unit_id": "unit_4c7d0ba903308a872a00115da0a1d9f5",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 1,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "DOI 10.1234/corrected",
+              "layer1": {
+                "prompt_version": "skeleton-l1-v1",
+                "propositions": [
+                  {
+                    "proposition": "The document has DOI 10.1234/corrected.",
+                    "triplets": [
+                      {
+                        "object": "10.1234/corrected",
+                        "predicate": "has DOI",
+                        "subject": "document"
+                      }
+                    ]
+                  }
+                ],
+                "task": "skeleton_layer_1"
+              },
+              "layer2": {
+                "discourse_relations": [],
+                "prompt_version": "skeleton-l2-v1",
+                "task": "skeleton_layer_2",
+                "topic_continuity": [
+                  {
+                    "proposition_indices": [
+                      0
+                    ],
+                    "topic": "Document metadata (DOI)"
+                  }
+                ]
+              },
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "DOI 10.1234/corrected",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+              },
+              "layer4": "METADATA",
+              "content_digest": "2b820af675eb7751859bf8b5739a8eb7a11024f705953eb00b15ef5b48197d68"
+            },
+            {
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 2,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+              "layer1": {
+                "atomic_propositions": [
+                  "Software fixture body serves source.",
+                  "Software fixture body serves ownership.",
+                  "Software fixture body serves exact references.",
+                  "Software fixture body preserves source.",
+                  "Software fixture body preserves ownership.",
+                  "Software fixture body preserves exact references."
+                ],
+                "coreference_resolution": [
+                  {
+                    "fragment": "serves source, ownership and exact references.",
+                    "resolved": "Software fixture body serves source, ownership and exact references."
+                  }
+                ],
+                "triplets": [
+                  {
+                    "object": "source",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "ownership",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "exact references",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "source",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "ownership",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "exact references",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  }
+                ]
+              },
+              "layer2": {
+                "discourse_relations": [
+                  {
+                    "arg1": "Software fixture body serves source, ownership and exact references.",
+                    "arg2": "Software fixture body preserves source, ownership and exact references.",
+                    "relation_type": "Parallel",
+                    "signal": null
+                  }
+                ],
+                "topic_continuity": {
+                  "continuity_chain": [
+                    {
+                      "entity": "Software fixture body",
+                      "mentions": [
+                        "serves source, ownership and exact references.",
+                        "Software fixture body preserves source, ownership and exact references.",
+                        "Software fixture body preserves so"
+                      ],
+                      "status": "maintained"
+                    }
+                  ],
+                  "dominant_topic": "Software fixture body"
+                }
+              },
+              "layer3": {
+                "confidence": 0.95,
+                "evidence_quote": "serves source, ownership and exact references.",
+                "intent": "UNKNOWN",
+                "qualifications": [],
+                "rationale": "The text consists of repetitive and fragmented fixture test statements with truncated phrasing, lacking coherent scientific context or rhetorical function."
+              },
+              "layer4": "UNKNOWN",
+              "content_digest": "44b78fdd91b28304e31766df3a49950e15ec531bb6cffc7d6ec70d2e1ebbddd2"
+            }
+          ],
+          "triplets": [
+            {
+              "triplet_id": "triplet_613bc7d4e84b5298e7b542575ef17bb6",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "exact references",
+              "content_digest": "c1277f57404e4cbf1c53a8a02f734ae289035629077ba6f079b22f4531639721"
+            },
+            {
+              "triplet_id": "triplet_7006dd1465e306a3629cc5b6be0afba1",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "source",
+              "content_digest": "31ceb70127f25402f3ec7219350f30efe66721766e3a358a3e98a51248837871"
+            },
+            {
+              "triplet_id": "triplet_be2fadf7d0dd93846db2e40cd6566fb6",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "exact references",
+              "content_digest": "70588582f0282416182e95e06162fb27d6a07e2099fa749219b1f16b55bfa237"
+            },
+            {
+              "triplet_id": "triplet_d3d8b1b5052bf07cb822357e2e616f7a",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "ownership",
+              "content_digest": "a4c80884d3f9f94247cd407e8b4e81370602aa22eacf8a566e61ff89eb653bdb"
+            },
+            {
+              "triplet_id": "triplet_e0e7dbf6485c3b7285ddcd61ba6634ce",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "source",
+              "content_digest": "05909294cf82bf57a82045415e2ea8ba7c2b26f2ca50941d13f2597527fe3be5"
+            },
+            {
+              "triplet_id": "triplet_ec0282609455ca8a0e14512be158f8c7",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "ownership",
+              "content_digest": "19b267de60f19f64034263791208e09ac9a17598a2c7650fab3af6d3749983d4"
+            }
+          ],
+          "context_sha256": "bda780b0bdd285fe763ee501cfc3f7fc618110a53721f087e0841ac5e65eb23d"
+        }
+      ],
+      "semantic_coverage": {
+        "typed_units": 3,
+        "unknown_units": 1,
+        "unclassified_units": [],
+        "complete": true,
+        "scientific_approval": false
+      },
+      "semantic_objects": [],
+      "semantic_runs": [],
+      "context_sha256": "2c7edfb5a837e506da61b60e3f6035631ddc186f240d51ef52419230c705c9fd"
+    },
+    "operation": "CREATE_BUILD",
+    "request_id": "native-current-source-build-v1",
+    "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c"
+  },
+  "before_table_sha256": {
+    "acquisition_attempts": "bef185cdcc660c4813b6b4886319f8fb5f230c07d43e53a14a094ae874ef0769",
+    "acquisition_jobs": "e30f20fb8b32613f68e5346edc86c3fda0b03019919fdc217e638ef0b12c595d",
+    "acquisition_model_call_events": "5b3ecd1f177fd6c25a93954415b12cad66fdae22eae812234ace3c739a7be2ed",
+    "acquisition_worker_presence": "6b7e214d454af506d00c8e5a13e300bc16ae8ebeb6ee509a84a6fbf66cf19ed4",
+    "approval_grants": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "blueprint_snapshots": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "browser_acquisition_requests": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "catalog_quarantine": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "catalog_review_actions": "d385ec521fc2a5128c90164b7d53c56865d4813c15a2928c37cda3f0258f50d4",
+    "catalog_review_annotations": "a4e6fc9545e877bcba18bcdeaaeed25825af05f0d1cb24f46e9e27873888f3cd",
+    "catalog_review_findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "citation_observations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_budget_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_candidate_frontier": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_memberships": "9f32e08c9bd08a7fd4cecc1c1cd3cc0e9440e28afbc44ba42f31ba0ef41bf3cc",
+    "collection_reference_frontier": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_runtime_state": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_seeds": "c4fb4a1fb78e66b26b67f0d444759129091a93aaa06e845b3d9d024c95605ecf",
+    "collections": "7eced1f77699c4ed587b9f654e9bbf92ba75ff7b62de2fe6dd5a667e2436cc99",
+    "comment_changes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "core_rankings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "decisions": "488e2b9bbef65d55c62f8f6558ece3952d270c9dd9bb7e7776a762be41df7f55",
+    "document_blocks": "b65a9770c41bfa94b431a4ea0ff1b463bedc269c5635673e1885416be41cea7c",
+    "evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "experiment_plans": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "field_topics": "7ca94e06f22de7da74a5283515b5f32676f3022c1f6f51f6e69c29c45879859c",
+    "fieldkg_build_papers": "df8a8aecd6dd0cfc2698eba482674986f1f9ad19f05419218a38168a2cb6641b",
+    "fieldkg_builds": "69013b025c5e8e5604640667aaf24f836ca575e8ab1bc322fe480f782605659b",
+    "fieldkg_candidate_gaps": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_evidence_candidates": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_semantic_objects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_semantic_runs": "1f0f6929eb90e2fa95ba9711d8206dd218213b3d834c12b9b812fc33503cc96b",
+    "fieldkg_snapshot_members": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_snapshots": "a8be68e473a6f574b5dd65b93dc7966fdc7dfe09a2811587e848d4f567502808",
+    "foundation_topics": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "foundation_versions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "foundations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "journal_metric_observations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "legacy_migration_sources": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "legacy_paper_mappings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "local_pdf_imports": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_nodes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_projects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_scientific_review_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_scientific_review_requests": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_status_history": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_versions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscripts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "metadata_observations": "a0e1fc09f469a33e2391807ae703c7a70e2056ed16859d8dd8b3c88657a8c5ab",
+    "node_evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "paper_assessments": "d7d74ea87d11d6c53ca6b3f6a35c60037eb3ba888a0647408b2ddb9fb7b4e932",
+    "paper_identities": "1b7fa02210f1dba6bc11ee2254fd98821146e420d5ced7272dd2bd422dda9a95",
+    "paper_journal_links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "paper_skeletons": "99951488723bed92d3a03bc5346121534a1530ba18d918ad2f593ac506c3dca9",
+    "paper_sources": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "paper_versions": "b7619e8e1471378123fb78dcfbb36a8fada27dfa5b1ef338f3b63d4a285ade6f",
+    "papers": "58f9999ff52caf33a2cc803e854863cea6100a4c86e28d53283ac32b705919a7",
+    "parse_runs": "8c8da4cb1f8ca227aaafcfa32aebf96a3821842d2d8a096314fad8af816157d9",
+    "pipeline_runs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "projection_outbox": "b97b7bc69578e16ff104fdc7f318f603f643b99e54bf1cbb1168d299aa116167",
+    "projection_watermarks": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "projects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "provider_cooldowns": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "reference_entries": "342bb562bdac369be113c37207066602528de9e1328bad58a51cea79a80a3ab7",
+    "research_edges": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "research_fields": "9661199be1b5aecdc5b02c28a6a117bfe4a5a2f6ea2e8b46a1f5f2addd354d49",
+    "research_nodes": "4029ad748812d68b7ca591a7cefa27d83f1fb360094c623e9c6cc5fce9eb408b",
+    "research_tracks": "1f50b7ce1589b23bb540d83835d50160b3ea1bff6522fa4fff263bb2df70ed3b",
+    "research_workspace_actions": "0db33af78d5c8887d277d9626af07073facb17adfe9d3cea03501bc7d4c77666",
+    "retrieval_runs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "review_comments": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "review_rounds": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "schema_version": "6d9ee5bf99fc9505d6972a76dadf9e702e97431886b90b14b43ab9997920855c",
+    "screening_input_snapshots": "5c7f12d5baa81b6a9e5cf9dd3ad40d655c5374e7c2c8d934d4a0ea7517d40925",
+    "skeleton_checkpoints": "b18d1a8d60af7f047ecc0ea017b8a8e16437b26f4af392b81aad27ede36cd531",
+    "skeleton_runs": "6f8a3b18ab08e59b02d851c0d5b66dcd18f4679e1a6206b019a1a1ededfef698",
+    "skeleton_triplets": "528c82f4bf485ff2a579eb4ad24f0533366795ca470820de332c8f9c8faa4b58",
+    "skeleton_units": "0a1dbd70f367183c0ca34064e6b166a9cee8d02d48dd978c5f4a6bf2c7f6f682",
+    "source_file_versions": "3cfeeceda18a5a0a27e6cfc9b2a533538f7181bd0dd6cce912fc2e63fca7c647",
+    "sqlite_sequence": "a4d2c45b8ed88531b94ca58b8e1aa763f52314bf6452e0dfe4867bb86dd1f292",
+    "studio_artifacts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_assets": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_change_link_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_change_link_state": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_changes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_chat_messages": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_comment_response_state": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_documents": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_jobs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_model_calls": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_operations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_response_checks": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_review_round_baselines": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_sample_candidates": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_submission_packages": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_suggestion_decisions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_template_instances": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "submission_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "topics": "5d2526300d1829845c3e25e1e449ebb89dd6ceaaa6234928f8bc4cf6807de29a",
+    "track_milestones": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "track_snapshot_adoptions": "87c5c56b99187b2869c286465df0574c2afc26b64176a0d4c4fb47dd66e4bbdc",
+    "track_topics": "ffe1346c65b9383462de32411f4d659ac11915504b040440c24c362d21d7bec8"
+  },
+  "scientific_approval": false,
+  "v1_failure_retained": true,
+  "v1_before_hashes_not_saved": true,
+  "sequence_contract": "research_workspace_actions uses action_seq INTEGER PRIMARY KEY AUTOINCREMENT; SQLite also changes sqlite_sequence on a new action. The failed v1 omitted this table; its complete before hashes were not saved and are not reconstructed.",
+  "before_semantic_run": {
+    "run_id": "semantic_run_d268a4e7ed0ff7274e99ddc91aa42c13",
+    "request_id": "native-current-source-semantics-v1",
+    "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+    "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+    "input_digest": "86c4ce3bc66804070afb41ff8cc440ebaea7da31f130961e72fd0c3709a36d1c",
+    "status": "WAITING",
+    "router_run_id": "run_f69fcf0f8b224b99851df0fdb1ce4bc3",
+    "error_type": "ModelRunPending",
+    "created_at": "2026-10-08T05:53:16.150936+00:00",
+    "updated_at": "2026-10-08T05:53:26.279871+00:00",
+    "input": {
+      "sources": [
+        {
+          "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+          "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+          "version": 2,
+          "extractor_model": null,
+          "prompt_version": "paper-skeleton-v2-located-intent",
+          "content_digest": "5ea76bfff3fe87cdd7b09294902fc59a56bd3266fcf5e19cb9eaff7f28ae6d8c",
+          "created_at": "2026-10-08T04:20:09.987231+00:00",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "paper_version": 1,
+          "pdf_digest": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "parsed_digest": "42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+          "units": [
+            {
+              "unit_id": "unit_61cbf9e20d9b92f4f65cae61d0b8655a",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "Software review identity title",
+              "layer1": {
+                "atomic_propositions": [
+                  "Software review identity title"
+                ],
+                "coreference_resolved_text": "Software review identity title",
+                "triplets": []
+              },
+              "layer2": {
+                "discourse_relations": [],
+                "rhetorical_function": "title",
+                "topic_continuity": {
+                  "active_topic": "Software review identity title",
+                  "continuity_type": "none_single_unit",
+                  "topic_transitions": []
+                }
+              },
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "Software review identity title",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+              },
+              "layer4": "UNKNOWN",
+              "content_digest": "252d9bf516b894879d3027319184dbc5306e22e8923a36bc20712e8ccf924bd2"
+            },
+            {
+              "unit_id": "unit_4c7d0ba903308a872a00115da0a1d9f5",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 1,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "DOI 10.1234/corrected",
+              "layer1": {
+                "prompt_version": "skeleton-l1-v1",
+                "propositions": [
+                  {
+                    "proposition": "The document has DOI 10.1234/corrected.",
+                    "triplets": [
+                      {
+                        "object": "10.1234/corrected",
+                        "predicate": "has DOI",
+                        "subject": "document"
+                      }
+                    ]
+                  }
+                ],
+                "task": "skeleton_layer_1"
+              },
+              "layer2": {
+                "discourse_relations": [],
+                "prompt_version": "skeleton-l2-v1",
+                "task": "skeleton_layer_2",
+                "topic_continuity": [
+                  {
+                    "proposition_indices": [
+                      0
+                    ],
+                    "topic": "Document metadata (DOI)"
+                  }
+                ]
+              },
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "DOI 10.1234/corrected",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+              },
+              "layer4": "METADATA",
+              "content_digest": "2b820af675eb7751859bf8b5739a8eb7a11024f705953eb00b15ef5b48197d68"
+            },
+            {
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 2,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+              "layer1": {
+                "atomic_propositions": [
+                  "Software fixture body serves source.",
+                  "Software fixture body serves ownership.",
+                  "Software fixture body serves exact references.",
+                  "Software fixture body preserves source.",
+                  "Software fixture body preserves ownership.",
+                  "Software fixture body preserves exact references."
+                ],
+                "coreference_resolution": [
+                  {
+                    "fragment": "serves source, ownership and exact references.",
+                    "resolved": "Software fixture body serves source, ownership and exact references."
+                  }
+                ],
+                "triplets": [
+                  {
+                    "object": "source",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "ownership",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "exact references",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "source",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "ownership",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "exact references",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  }
+                ]
+              },
+              "layer2": {
+                "discourse_relations": [
+                  {
+                    "arg1": "Software fixture body serves source, ownership and exact references.",
+                    "arg2": "Software fixture body preserves source, ownership and exact references.",
+                    "relation_type": "Parallel",
+                    "signal": null
+                  }
+                ],
+                "topic_continuity": {
+                  "continuity_chain": [
+                    {
+                      "entity": "Software fixture body",
+                      "mentions": [
+                        "serves source, ownership and exact references.",
+                        "Software fixture body preserves source, ownership and exact references.",
+                        "Software fixture body preserves so"
+                      ],
+                      "status": "maintained"
+                    }
+                  ],
+                  "dominant_topic": "Software fixture body"
+                }
+              },
+              "layer3": {
+                "confidence": 0.95,
+                "evidence_quote": "serves source, ownership and exact references.",
+                "intent": "UNKNOWN",
+                "qualifications": [],
+                "rationale": "The text consists of repetitive and fragmented fixture test statements with truncated phrasing, lacking coherent scientific context or rhetorical function."
+              },
+              "layer4": "UNKNOWN",
+              "content_digest": "44b78fdd91b28304e31766df3a49950e15ec531bb6cffc7d6ec70d2e1ebbddd2"
+            }
+          ],
+          "triplets": [
+            {
+              "triplet_id": "triplet_613bc7d4e84b5298e7b542575ef17bb6",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "exact references",
+              "content_digest": "c1277f57404e4cbf1c53a8a02f734ae289035629077ba6f079b22f4531639721"
+            },
+            {
+              "triplet_id": "triplet_7006dd1465e306a3629cc5b6be0afba1",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "source",
+              "content_digest": "31ceb70127f25402f3ec7219350f30efe66721766e3a358a3e98a51248837871"
+            },
+            {
+              "triplet_id": "triplet_be2fadf7d0dd93846db2e40cd6566fb6",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "exact references",
+              "content_digest": "70588582f0282416182e95e06162fb27d6a07e2099fa749219b1f16b55bfa237"
+            },
+            {
+              "triplet_id": "triplet_d3d8b1b5052bf07cb822357e2e616f7a",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "ownership",
+              "content_digest": "a4c80884d3f9f94247cd407e8b4e81370602aa22eacf8a566e61ff89eb653bdb"
+            },
+            {
+              "triplet_id": "triplet_e0e7dbf6485c3b7285ddcd61ba6634ce",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "source",
+              "content_digest": "05909294cf82bf57a82045415e2ea8ba7c2b26f2ca50941d13f2597527fe3be5"
+            },
+            {
+              "triplet_id": "triplet_ec0282609455ca8a0e14512be158f8c7",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "ownership",
+              "content_digest": "19b267de60f19f64034263791208e09ac9a17598a2c7650fab3af6d3749983d4"
+            }
+          ],
+          "context_sha256": "bda780b0bdd285fe763ee501cfc3f7fc618110a53721f087e0841ac5e65eb23d"
+        }
+      ],
+      "windows": [
+        {
+          "units": [
+            {
+              "unit_id": "unit_61cbf9e20d9b92f4f65cae61d0b8655a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+              "title": "Software review identity title",
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "Software review identity title",
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "Software review identity title",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+              }
+            },
+            {
+              "unit_id": "unit_4c7d0ba903308a872a00115da0a1d9f5",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+              "title": "Software review identity title",
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "DOI 10.1234/corrected",
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "DOI 10.1234/corrected",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+              }
+            },
+            {
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+              "title": "Software review identity title",
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+              "layer3": {
+                "confidence": 0.95,
+                "evidence_quote": "serves source, ownership and exact references.",
+                "intent": "UNKNOWN",
+                "qualifications": [],
+                "rationale": "The text consists of repetitive and fragmented fixture test statements with truncated phrasing, lacking coherent scientific context or rhetorical function."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "result": [],
+    "request": {
+      "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+      "confirmed": true,
+      "expected_context_sha256": "2c7edfb5a837e506da61b60e3f6035631ddc186f240d51ef52419230c705c9fd",
+      "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+      "operation": "EXTRACT_SEMANTICS",
+      "request_id": "native-current-source-semantics-v1"
+    }
+  },
+  "semantic_run": {
+    "run_id": "semantic_run_d268a4e7ed0ff7274e99ddc91aa42c13",
+    "request_id": "native-current-source-semantics-v1",
+    "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+    "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+    "input_digest": "86c4ce3bc66804070afb41ff8cc440ebaea7da31f130961e72fd0c3709a36d1c",
+    "status": "COMPLETED",
+    "router_run_id": "run_f69fcf0f8b224b99851df0fdb1ce4bc3",
+    "error_type": null,
+    "created_at": "2026-10-08T05:53:16.150936+00:00",
+    "updated_at": "2026-10-08T06:31:36.949055+00:00",
+    "input": {
+      "sources": [
+        {
+          "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+          "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+          "version": 2,
+          "extractor_model": null,
+          "prompt_version": "paper-skeleton-v2-located-intent",
+          "content_digest": "5ea76bfff3fe87cdd7b09294902fc59a56bd3266fcf5e19cb9eaff7f28ae6d8c",
+          "created_at": "2026-10-08T04:20:09.987231+00:00",
+          "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+          "paper_version": 1,
+          "pdf_digest": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+          "parsed_digest": "42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2",
+          "title": "Software review identity title",
+          "doi": "10.1234/corrected",
+          "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+          "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+          "units": [
+            {
+              "unit_id": "unit_61cbf9e20d9b92f4f65cae61d0b8655a",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 0,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "Software review identity title",
+              "layer1": {
+                "atomic_propositions": [
+                  "Software review identity title"
+                ],
+                "coreference_resolved_text": "Software review identity title",
+                "triplets": []
+              },
+              "layer2": {
+                "discourse_relations": [],
+                "rhetorical_function": "title",
+                "topic_continuity": {
+                  "active_topic": "Software review identity title",
+                  "continuity_type": "none_single_unit",
+                  "topic_transitions": []
+                }
+              },
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "Software review identity title",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+              },
+              "layer4": "UNKNOWN",
+              "content_digest": "252d9bf516b894879d3027319184dbc5306e22e8923a36bc20712e8ccf924bd2"
+            },
+            {
+              "unit_id": "unit_4c7d0ba903308a872a00115da0a1d9f5",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 1,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "DOI 10.1234/corrected",
+              "layer1": {
+                "prompt_version": "skeleton-l1-v1",
+                "propositions": [
+                  {
+                    "proposition": "The document has DOI 10.1234/corrected.",
+                    "triplets": [
+                      {
+                        "object": "10.1234/corrected",
+                        "predicate": "has DOI",
+                        "subject": "document"
+                      }
+                    ]
+                  }
+                ],
+                "task": "skeleton_layer_1"
+              },
+              "layer2": {
+                "discourse_relations": [],
+                "prompt_version": "skeleton-l2-v1",
+                "task": "skeleton_layer_2",
+                "topic_continuity": [
+                  {
+                    "proposition_indices": [
+                      0
+                    ],
+                    "topic": "Document metadata (DOI)"
+                  }
+                ]
+              },
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "DOI 10.1234/corrected",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+              },
+              "layer4": "METADATA",
+              "content_digest": "2b820af675eb7751859bf8b5739a8eb7a11024f705953eb00b15ef5b48197d68"
+            },
+            {
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "skeleton_id": "skeleton_f266944f63f2b256d0a61b1c5f26fda0",
+              "seq_idx": 2,
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+              "layer1": {
+                "atomic_propositions": [
+                  "Software fixture body serves source.",
+                  "Software fixture body serves ownership.",
+                  "Software fixture body serves exact references.",
+                  "Software fixture body preserves source.",
+                  "Software fixture body preserves ownership.",
+                  "Software fixture body preserves exact references."
+                ],
+                "coreference_resolution": [
+                  {
+                    "fragment": "serves source, ownership and exact references.",
+                    "resolved": "Software fixture body serves source, ownership and exact references."
+                  }
+                ],
+                "triplets": [
+                  {
+                    "object": "source",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "ownership",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "exact references",
+                    "predicate": "serves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "source",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "ownership",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  },
+                  {
+                    "object": "exact references",
+                    "predicate": "preserves",
+                    "subject": "Software fixture body"
+                  }
+                ]
+              },
+              "layer2": {
+                "discourse_relations": [
+                  {
+                    "arg1": "Software fixture body serves source, ownership and exact references.",
+                    "arg2": "Software fixture body preserves source, ownership and exact references.",
+                    "relation_type": "Parallel",
+                    "signal": null
+                  }
+                ],
+                "topic_continuity": {
+                  "continuity_chain": [
+                    {
+                      "entity": "Software fixture body",
+                      "mentions": [
+                        "serves source, ownership and exact references.",
+                        "Software fixture body preserves source, ownership and exact references.",
+                        "Software fixture body preserves so"
+                      ],
+                      "status": "maintained"
+                    }
+                  ],
+                  "dominant_topic": "Software fixture body"
+                }
+              },
+              "layer3": {
+                "confidence": 0.95,
+                "evidence_quote": "serves source, ownership and exact references.",
+                "intent": "UNKNOWN",
+                "qualifications": [],
+                "rationale": "The text consists of repetitive and fragmented fixture test statements with truncated phrasing, lacking coherent scientific context or rhetorical function."
+              },
+              "layer4": "UNKNOWN",
+              "content_digest": "44b78fdd91b28304e31766df3a49950e15ec531bb6cffc7d6ec70d2e1ebbddd2"
+            }
+          ],
+          "triplets": [
+            {
+              "triplet_id": "triplet_613bc7d4e84b5298e7b542575ef17bb6",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "exact references",
+              "content_digest": "c1277f57404e4cbf1c53a8a02f734ae289035629077ba6f079b22f4531639721"
+            },
+            {
+              "triplet_id": "triplet_7006dd1465e306a3629cc5b6be0afba1",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "source",
+              "content_digest": "31ceb70127f25402f3ec7219350f30efe66721766e3a358a3e98a51248837871"
+            },
+            {
+              "triplet_id": "triplet_be2fadf7d0dd93846db2e40cd6566fb6",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "exact references",
+              "content_digest": "70588582f0282416182e95e06162fb27d6a07e2099fa749219b1f16b55bfa237"
+            },
+            {
+              "triplet_id": "triplet_d3d8b1b5052bf07cb822357e2e616f7a",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "ownership",
+              "content_digest": "a4c80884d3f9f94247cd407e8b4e81370602aa22eacf8a566e61ff89eb653bdb"
+            },
+            {
+              "triplet_id": "triplet_e0e7dbf6485c3b7285ddcd61ba6634ce",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "serves",
+              "object": "source",
+              "content_digest": "05909294cf82bf57a82045415e2ea8ba7c2b26f2ca50941d13f2597527fe3be5"
+            },
+            {
+              "triplet_id": "triplet_ec0282609455ca8a0e14512be158f8c7",
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "subject": "Software fixture body",
+              "predicate": "preserves",
+              "object": "ownership",
+              "content_digest": "19b267de60f19f64034263791208e09ac9a17598a2c7650fab3af6d3749983d4"
+            }
+          ],
+          "context_sha256": "bda780b0bdd285fe763ee501cfc3f7fc618110a53721f087e0841ac5e65eb23d"
+        }
+      ],
+      "windows": [
+        {
+          "units": [
+            {
+              "unit_id": "unit_61cbf9e20d9b92f4f65cae61d0b8655a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+              "title": "Software review identity title",
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "Software review identity title",
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "Software review identity title",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+              }
+            },
+            {
+              "unit_id": "unit_4c7d0ba903308a872a00115da0a1d9f5",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+              "title": "Software review identity title",
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "DOI 10.1234/corrected",
+              "layer3": {
+                "confidence": 1.0,
+                "evidence_quote": "DOI 10.1234/corrected",
+                "intent": "Formal",
+                "qualifications": [],
+                "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+              }
+            },
+            {
+              "unit_id": "unit_481acb1b1bffe9d0e089e04b99d5323a",
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+              "title": "Software review identity title",
+              "page_idx": 1,
+              "section": null,
+              "raw_text": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so",
+              "layer3": {
+                "confidence": 0.95,
+                "evidence_quote": "serves source, ownership and exact references.",
+                "intent": "UNKNOWN",
+                "qualifications": [],
+                "rationale": "The text consists of repetitive and fragmented fixture test statements with truncated phrasing, lacking coherent scientific context or rhetorical function."
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "result": [
+      {
+        "window": 0,
+        "output": {
+          "objects": [],
+          "observed_unit_ids": [
+            "unit_61cbf9e20d9b92f4f65cae61d0b8655a",
+            "unit_4c7d0ba903308a872a00115da0a1d9f5",
+            "unit_481acb1b1bffe9d0e089e04b99d5323a"
+          ],
+          "_contract": {
+            "task": "fieldkg_semantics",
+            "tier": "standard",
+            "prompt_version": "fieldkg-semantics-v1-located-objects",
+            "estimated_input_tokens": 450,
+            "actual_model": "gemini-3.8-flash",
+            "usage": {
+              "completion_tokens": 112,
+              "prompt_tokens": 981,
+              "total_tokens": 1927
+            },
+            "status": "SUCCESS",
+            "transport_operation_id": "rstv4-model-1a7d78eb3e0d77417abd2d3a337d1538f84dfe84973b8b6cc0091bc60ba0b6c5",
+            "router_run_id": "run_f69fcf0f8b224b99851df0fdb1ce4bc3",
+            "delivery": "durable-run-v1"
+          }
+        },
+        "valid": true
+      }
+    ],
+    "request": {
+      "build_id": "fieldkg_build_030ea57e7eba488d98440cf67a275dce",
+      "confirmed": true,
+      "expected_context_sha256": "2c7edfb5a837e506da61b60e3f6035631ddc186f240d51ef52419230c705c9fd",
+      "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+      "operation": "EXTRACT_SEMANTICS",
+      "request_id": "native-current-source-semantics-v1"
+    }
+  },
+  "requests": [
+    {
+      "method": "POST",
+      "path": "/api/catalog/fieldkg-actions",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/fields/field_2d25f31c2f6f4f01a69332408f6c9e7c/semantic-runs/semantic_run_d268a4e7ed0ff7274e99ddc91aa42c13",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/fieldkg-semantic-runs",
+      "status": 201
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/fields/field_2d25f31c2f6f4f01a69332408f6c9e7c/semantic-runs/semantic_run_d268a4e7ed0ff7274e99ddc91aa42c13/advance",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/fields/field_2d25f31c2f6f4f01a69332408f6c9e7c/semantic-runs/semantic_run_d268a4e7ed0ff7274e99ddc91aa42c13",
+      "status": 200
+    }
+  ],
+  "changed_tables": [
+    "fieldkg_semantic_runs"
+  ],
+  "after_table_sha256": {
+    "acquisition_attempts": "bef185cdcc660c4813b6b4886319f8fb5f230c07d43e53a14a094ae874ef0769",
+    "acquisition_jobs": "e30f20fb8b32613f68e5346edc86c3fda0b03019919fdc217e638ef0b12c595d",
+    "acquisition_model_call_events": "5b3ecd1f177fd6c25a93954415b12cad66fdae22eae812234ace3c739a7be2ed",
+    "acquisition_worker_presence": "6b7e214d454af506d00c8e5a13e300bc16ae8ebeb6ee509a84a6fbf66cf19ed4",
+    "approval_grants": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "blueprint_snapshots": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "browser_acquisition_requests": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "catalog_quarantine": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "catalog_review_actions": "d385ec521fc2a5128c90164b7d53c56865d4813c15a2928c37cda3f0258f50d4",
+    "catalog_review_annotations": "a4e6fc9545e877bcba18bcdeaaeed25825af05f0d1cb24f46e9e27873888f3cd",
+    "catalog_review_findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "citation_observations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_budget_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_candidate_frontier": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_memberships": "9f32e08c9bd08a7fd4cecc1c1cd3cc0e9440e28afbc44ba42f31ba0ef41bf3cc",
+    "collection_reference_frontier": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_runtime_state": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "collection_seeds": "c4fb4a1fb78e66b26b67f0d444759129091a93aaa06e845b3d9d024c95605ecf",
+    "collections": "7eced1f77699c4ed587b9f654e9bbf92ba75ff7b62de2fe6dd5a667e2436cc99",
+    "comment_changes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "core_rankings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "decisions": "488e2b9bbef65d55c62f8f6558ece3952d270c9dd9bb7e7776a762be41df7f55",
+    "document_blocks": "b65a9770c41bfa94b431a4ea0ff1b463bedc269c5635673e1885416be41cea7c",
+    "evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "experiment_plans": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "field_topics": "7ca94e06f22de7da74a5283515b5f32676f3022c1f6f51f6e69c29c45879859c",
+    "fieldkg_build_papers": "df8a8aecd6dd0cfc2698eba482674986f1f9ad19f05419218a38168a2cb6641b",
+    "fieldkg_builds": "69013b025c5e8e5604640667aaf24f836ca575e8ab1bc322fe480f782605659b",
+    "fieldkg_candidate_gaps": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_evidence_candidates": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_semantic_objects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_semantic_runs": "5beb84063bc5b5db0fe6078f827ca5d36bbaed13ba53af4062c66fbf292ff8a6",
+    "fieldkg_snapshot_members": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "fieldkg_snapshots": "a8be68e473a6f574b5dd65b93dc7966fdc7dfe09a2811587e848d4f567502808",
+    "foundation_topics": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "foundation_versions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "foundations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "journal_metric_observations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "legacy_migration_sources": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "legacy_paper_mappings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "local_pdf_imports": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_nodes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_projects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_scientific_review_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_scientific_review_requests": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_status_history": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscript_versions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "manuscripts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "metadata_observations": "a0e1fc09f469a33e2391807ae703c7a70e2056ed16859d8dd8b3c88657a8c5ab",
+    "node_evidence": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "paper_assessments": "d7d74ea87d11d6c53ca6b3f6a35c60037eb3ba888a0647408b2ddb9fb7b4e932",
+    "paper_identities": "1b7fa02210f1dba6bc11ee2254fd98821146e420d5ced7272dd2bd422dda9a95",
+    "paper_journal_links": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "paper_skeletons": "99951488723bed92d3a03bc5346121534a1530ba18d918ad2f593ac506c3dca9",
+    "paper_sources": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "paper_versions": "b7619e8e1471378123fb78dcfbb36a8fada27dfa5b1ef338f3b63d4a285ade6f",
+    "papers": "58f9999ff52caf33a2cc803e854863cea6100a4c86e28d53283ac32b705919a7",
+    "parse_runs": "8c8da4cb1f8ca227aaafcfa32aebf96a3821842d2d8a096314fad8af816157d9",
+    "pipeline_runs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "projection_outbox": "b97b7bc69578e16ff104fdc7f318f603f643b99e54bf1cbb1168d299aa116167",
+    "projection_watermarks": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "projects": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "provider_cooldowns": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "reference_entries": "342bb562bdac369be113c37207066602528de9e1328bad58a51cea79a80a3ab7",
+    "research_edges": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "research_fields": "9661199be1b5aecdc5b02c28a6a117bfe4a5a2f6ea2e8b46a1f5f2addd354d49",
+    "research_nodes": "4029ad748812d68b7ca591a7cefa27d83f1fb360094c623e9c6cc5fce9eb408b",
+    "research_tracks": "1f50b7ce1589b23bb540d83835d50160b3ea1bff6522fa4fff263bb2df70ed3b",
+    "research_workspace_actions": "0db33af78d5c8887d277d9626af07073facb17adfe9d3cea03501bc7d4c77666",
+    "retrieval_runs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "review_comments": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "review_rounds": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "schema_version": "6d9ee5bf99fc9505d6972a76dadf9e702e97431886b90b14b43ab9997920855c",
+    "screening_input_snapshots": "5c7f12d5baa81b6a9e5cf9dd3ad40d655c5374e7c2c8d934d4a0ea7517d40925",
+    "skeleton_checkpoints": "b18d1a8d60af7f047ecc0ea017b8a8e16437b26f4af392b81aad27ede36cd531",
+    "skeleton_runs": "6f8a3b18ab08e59b02d851c0d5b66dcd18f4679e1a6206b019a1a1ededfef698",
+    "skeleton_triplets": "528c82f4bf485ff2a579eb4ad24f0533366795ca470820de332c8f9c8faa4b58",
+    "skeleton_units": "0a1dbd70f367183c0ca34064e6b166a9cee8d02d48dd978c5f4a6bf2c7f6f682",
+    "source_file_versions": "3cfeeceda18a5a0a27e6cfc9b2a533538f7181bd0dd6cce912fc2e63fca7c647",
+    "sqlite_sequence": "a4d2c45b8ed88531b94ca58b8e1aa763f52314bf6452e0dfe4867bb86dd1f292",
+    "studio_artifacts": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_assets": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_change_link_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_change_link_state": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_changes": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_chat_messages": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_comment_response_state": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_documents": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_findings": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_jobs": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_model_calls": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_operations": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_response_checks": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_review_round_baselines": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_sample_candidates": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_submission_packages": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_suggestion_decisions": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "studio_template_instances": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "submission_events": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "topics": "5d2526300d1829845c3e25e1e449ebb89dd6ceaaa6234928f8bc4cf6807de29a",
+    "track_milestones": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+    "track_snapshot_adoptions": "87c5c56b99187b2869c286465df0574c2afc26b64176a0d4c4fb47dd66e4bbdc",
+    "track_topics": "ffe1346c65b9383462de32411f4d659ac11915504b040440c24c362d21d7bec8"
+  },
+  "status": "PASS_EXACT_NATIVE_BUILD_RESUME_AND_SOURCE_INVARIANCE",
+  "source_tables_unchanged": true,
+  "original_12_model_calls_unchanged": true,
+  "native_semantic_objects": []
+}

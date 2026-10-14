@@ -1,0 +1,138 @@
+{
+  "status": "PASS_BEFORE_EDIT",
+  "parent_files": 206,
+  "source_sha256": {
+    "RSTV4/src/rstv4/studio.py": "89e638566abcc7c968a48de8d7e9b62898139ac8dba0faf0ad4869a4ee4009f9",
+    "RSTV4/src/rstv4/studio_context.py": "1417c60265d44a093dfc8ef8dec531da5494d75fa4c0d3a57fc1f375efe7aaee",
+    "RSTV4/src/rstv4/studio_structure.py": "6231de52ef24f604cd7b657910ad98516f5984f7f469aa97237eb5fe927bbfaa",
+    "RSTV4/src/rstv4/studio_templates.py": "53ca434fa5062043ddede5ca3770f161b8b6ad6ff87f5cfe2add7614d74ea44c",
+    "writing-studio/components/studio-workspace.tsx": "a89e82f2b1a65fceab068f41343fe1fdfaa28617c871f828c7a01a1dc92a55b3",
+    "writing-studio/components/studio-original-placement.tsx": "b5ae65b7e5ee3b737b46fff4b778be02886267bd899a2791a4768c8cf6176487",
+    "writing-studio/components/studio-block-controls.tsx": "c19937215f880fc21220770ca70195842670302f4bd03e00d2f51391355d2005",
+    "writing-studio/lib/studio-types.ts": "c876ab706333eef548deb6e080c7f21b9ddc8821b9af627c3ff341cd22f6767c",
+    "writing-studio/lib/studio-blocks.ts": "9a3d8d1c33a3667c109c70b3ee375908898d60caf3daf5c87b3bee372a5acf36"
+  },
+  "git_status_lines": {
+    "UuMA": 85,
+    "RSTV4": 283,
+    "writing-studio": 19
+  },
+  "native_revision": 8,
+  "native_document": {
+    "abstract": "",
+    "argument_relations": [
+      {
+        "condition": "Software-only relation condition Ω",
+        "id": "argument_relation_e8b8434232e5450396afceba1b56eaf0",
+        "relation": "Author comparison Ω",
+        "source_id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+        "target_id": "thought_640bf2359f714dc789eaa9792328adf2"
+      }
+    ],
+    "manuscript_id": "manuscript_98c35f5b5557453583cb20df8d52810d",
+    "schema_version": 1,
+    "sections": [
+      {
+        "block_order": [
+          "paragraph_group_d6e12e2942b045018c19de523b462c9a"
+        ],
+        "id": "section_e6c46cea1637456487cbf22f6d6d2ca5",
+        "paragraph_groups": [
+          {
+            "id": "paragraph_group_d6e12e2942b045018c19de523b462c9a",
+            "label": "Original author group Ω",
+            "paragraph_ids": [
+              "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+              "paragraph_356c9c06059e4d308dc1eda0e7c4c6db"
+            ]
+          }
+        ],
+        "paragraphs": [
+          {
+            "asset_ids": [
+              "asset_995ed7847a3546ff94c7abbd6a0ef352"
+            ],
+            "formulas": [
+              {
+                "caption": "Original author formula",
+                "id": "formula_d337c2e309f24eefbba3eb27454548ae",
+                "latex": "x=1"
+              }
+            ],
+            "id": "paragraph_f4d0648800864aeeaf90c7ce9ace0238",
+            "intents": [
+              {
+                "id": "intent_c27c009a52334af0834cd9978e18cd01",
+                "label": "Original author intent",
+                "thoughts": [
+                  {
+                    "citation_mode": "SELECTED",
+                    "citations": [
+                      {
+                        "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                        "selected": true
+                      }
+                    ],
+                    "id": "thought_aa60ef502db549e1ac1b2a82fb19c6cf",
+                    "text": "AUTHOR original wording Ω with its selected software citation."
+                  }
+                ]
+              }
+            ],
+            "logic": {
+              "discourse_relation": "Author comparison"
+            },
+            "logical_relation": "Author comparison",
+            "paradigm": "Original author organization",
+            "purpose": "Original author purpose Ω"
+          },
+          {
+            "asset_ids": [
+              "asset_995ed7847a3546ff94c7abbd6a0ef352"
+            ],
+            "formulas": [
+              {
+                "caption": "Original author formula",
+                "id": "formula_3eeb0c2412b74c0ba6228f215a8a525d",
+                "latex": "x=1"
+              }
+            ],
+            "id": "paragraph_356c9c06059e4d308dc1eda0e7c4c6db",
+            "intents": [
+              {
+                "id": "intent_56a5681618b24da2b65bfa184158e683",
+                "label": "Original author intent",
+                "thoughts": [
+                  {
+                    "citation_mode": "SELECTED",
+                    "citations": [
+                      {
+                        "evidence_id": "evidence_8a63870ad2cb494083c17595a2b3341c",
+                        "selected": true
+                      }
+                    ],
+                    "id": "thought_640bf2359f714dc789eaa9792328adf2",
+                    "text": "AUTHOR second original wording stays independent."
+                  }
+                ]
+              }
+            ],
+            "logic": {
+              "discourse_relation": "Author comparison"
+            },
+            "logical_relation": "Author comparison",
+            "paradigm": "Original author organization",
+            "purpose": "Original author purpose Ω"
+          }
+        ],
+        "role": "Motivation",
+        "title": "Original author root Ω"
+      }
+    ],
+    "title": "Source hierarchy native acceptance Ω — software fixture",
+    "venue": ""
+  },
+  "findings_chars": 211590,
+  "handoff_chars": 657206,
+  "gate_chars": 120238
+}

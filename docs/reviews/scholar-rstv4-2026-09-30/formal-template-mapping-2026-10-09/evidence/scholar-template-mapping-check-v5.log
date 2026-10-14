@@ -1,0 +1,24 @@
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\tsc.cmd', '--noEmit']
+RUN ['node', 'tests/unit/studio-structure.cjs']
+17 controlled movement/group/association cases passed; no browser used.
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+RUN ['node', 'tests/unit/studio-hierarchy.cjs']
+7 hierarchy/tree/argument preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-template-placement.cjs']
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-undo-history.cjs']
+PASS full author snapshots survive storage round trip, including citations, assets, formula and relations
+PASS server key order changes do not erase a semantically equal stack
+PASS foreign manuscript, changed revision and changed author word or array ordering are rejected
+PASS unreadable or malformed stacks and foreign snapshot stay unusable without mutating the saved raw
+PASS history is bounded to the most recent 100 complete operations
+PASS undo and redo stacks can each resume after a different saved revision
+6 durable undo storage binding and preservation cases passed; no browser used.
+RUN ['cmd.exe', '/c', 'node_modules\\.bin\\oxlint.cmd', '--threads=1', 'components/studio-workspace.tsx', 'components/studio-block-controls.tsx', 'components/studio-original-placement.tsx', 'lib/studio-blocks.ts', 'lib/studio-undo-history.ts']

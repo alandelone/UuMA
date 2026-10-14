@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-13T05:33:40.145Z",
+  "method": "POST (semantic read-only, mode=ro)",
+  "url": "http://127.0.0.1:8885/api/catalog/discussion/context",
+  "request": {
+    "module": "FIELDKG",
+    "object_kind": "semantic",
+    "object_id": "semantic_00914c6833eb86da95bfad0b3fc259be",
+    "field_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+    "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca"
+  },
+  "status": 404,
+  "body": {
+    "detail": "Snapshot does not belong to this Field"
+  }
+}

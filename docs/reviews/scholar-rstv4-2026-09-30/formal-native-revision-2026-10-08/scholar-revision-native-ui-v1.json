@@ -1,0 +1,30 @@
+{
+  "status": "PASS_NATIVE_ASSOCIATION_IMPORT_OFFLINE_AND_TWO_TAB_GUARDS_WITH_UPLOAD_BLOCKED",
+  "fixtureOrigin": "http://127.0.0.1:3004",
+  "goldenOrigin": "http://127.0.0.1:3000",
+  "scientificApproval": false,
+  "originalOpinionsVisible": 104,
+  "originalA104": "Batch acceptance opinion 101 — author edited preview.",
+  "singleImportedNumber": "A105",
+  "batchPreviewCount": 101,
+  "batchPreviewLast": "Native pasted opinion 101. Preserve exact original text.",
+  "over100ConfirmDisabled": true,
+  "afterImportVisibleCount": 205,
+  "deletedA01ClearedActiveAssociation": true,
+  "restoredA01Id": "comment_af961fc8ce894b4cb185308fb1ca52d4",
+  "newAuthorChange": "r6 → r7, no associated opinion",
+  "compensatingUndo": "r7 → r8",
+  "offlineDraftAfterRefresh": "Native offline first-tab draft. This must survive failed sync and must not replace the second-tab author text.",
+  "afterRefreshStatus": [
+    "版本冲突 · 未覆盖",
+    "",
+    ""
+  ],
+  "networkOfflineRestored": false,
+  "retainedLocalCopy": true,
+  "fileChooserBlocked": "Chrome extension Allow access to file URLs is disabled; no browser file upload completed.",
+  "observerFailuresRetained": [
+    "uncheck helper did not change state; actual click and Space both verified",
+    "download event timed out; actual downloaded JSON independently located and verified"
+  ]
+}

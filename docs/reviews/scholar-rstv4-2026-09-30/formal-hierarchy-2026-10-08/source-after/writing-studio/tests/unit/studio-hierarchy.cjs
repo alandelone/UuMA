@@ -1,0 +1,20 @@
+const assert = require('node:assert/strict');
+const fs = require('node:fs');
+const Module = require('node:module');
+const ts = require('typescript');
+const path = require('node:path');
+const file = path.resolve('lib/studio-blocks.ts');
+const compiled = ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
+const mod = new Module(file,module);mod.filename=file;mod.paths=module.paths;mod._compile(compiled,file);
+const {addSubsection,ancestors,canMove,deleteSectionTree,moveBlocks,reconcileStructure,sectionDepth}=mod.exports;
+const p = id => ({id,purpose:id,paradigm:'author',asset_ids:['asset-preserved'],formulas:[{id:'f-'+id,latex:'x=1'}],intents:[{id:'i-'+id,label:'Intent',thoughts:[{id:'t-'+id,text:'Exact Ω '+id,citation_mode:'SELECTED',citations:[{evidence_id:'e',selected:true}]}]}]});
+const doc={schema_version:1,manuscript_id:'ms',title:'Author',abstract:'',venue:'',sections:[{id:'a',title:'A',role:'',paragraphs:[p('p1')]},{id:'b',title:'B',role:'',paragraphs:[]},{id:'c',parent_section_id:'b',title:'Child',role:'',paragraphs:[p('p2')]},{id:'d',parent_section_id:'c',title:'Grandchild',role:'',paragraphs:[p('p3')]}],argument_relations:[{id:'edge',source_id:'p1',target_id:'t-p3',relation:'Supports','condition':'Fixture only'}]};
+let count=0;function check(name,fn){fn();count++;}
+check('move whole tree inside a parent, with ids words and edges unchanged',()=>{const next=moveBlocks(doc,['b'],{kind:'section',id:'a',placement:'inside'});assert.equal(next.sections[1].parent_section_id,'a');assert.equal(sectionDepth(next,'d'),3);assert.deepEqual(next.sections[3].paragraphs,doc.sections[3].paragraphs);assert.deepEqual(next.argument_relations,doc.argument_relations);assert.deepEqual(ancestors(next,'t-p3'),['i-p3','p3','d','c','b','a','ms']);});
+check('move parent after target subtree rather than between descendants',()=>{const next=moveBlocks(doc,['a'],{kind:'section',id:'b',placement:'after'});assert.deepEqual(next.sections.map(s=>s.id),['b','c','d','a']);});
+check('promote a subsection with all descendants, preserving endpoints',()=>{const next=moveBlocks(doc,['c'],{kind:'paper',id:'ms',placement:'inside'});assert.equal(next.sections[2].parent_section_id,undefined);assert.equal(next.sections[3].parent_section_id,'c');assert.deepEqual(next.argument_relations,doc.argument_relations);});
+check('self descendant and overlapping tree selection rejected',()=>{assert.equal(canMove(doc,['b'],{kind:'section',id:'d',placement:'inside'}),false);assert.equal(canMove(doc,['b','c'],{kind:'paper',id:'ms',placement:'inside'}),false);assert.throws(()=>moveBlocks(doc,['b'],{kind:'section',id:'c',placement:'after'}));});
+check('delete whole tree removes only incident edges; snapshot undo restores',()=>{const before=structuredClone(doc),next=structuredClone(doc);deleteSectionTree(next,'b');reconcileStructure(next);assert.deepEqual(next.sections,[before.sections[0]]);assert.deepEqual(next.argument_relations,[]);assert.deepEqual(before,doc);});
+check('new subsection explicit, no existing author content copied or moved',()=>{const next=structuredClone(doc);addSubsection(next,'b','new');assert.deepEqual(next.sections.map(s=>s.id),['a','b','c','d','new']);assert.equal(next.sections[4].parent_section_id,'b');assert.deepEqual(next.sections[4].paragraphs,[]);assert.deepEqual(next.sections[3],doc.sections[3]);});
+check('placement boundary cannot be silently crossed by nesting',()=>{const next=structuredClone(doc);next.sections[0].placement_status='UNPLACED';assert.equal(canMove(next,['a'],{kind:'section',id:'b',placement:'inside'}),false);});
+console.log(`${count} hierarchy/tree/argument preservation cases passed; no browser used.`);

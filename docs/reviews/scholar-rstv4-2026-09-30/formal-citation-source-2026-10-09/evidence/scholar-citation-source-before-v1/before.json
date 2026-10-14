@@ -1,0 +1,15 @@
+{
+  "code_sha256": {
+    "RSTV4/src/rstv4/studio.py": "eeaa0f495ad09784bdc110907bd3f08f55cd0afbe8be7755dc93a8110e484ec5",
+    "RSTV4/src/rstv4/studio_api.py": "76cd72e2619dbf544506ea0ac1f03ad7c9f7df1abdfe360940385cbf0b444969",
+    "RSTV4/src/rstv4/studio_read_views.py": "d2428c31d565f0ac05a54f37c82a40f860c63b595bffe5b2fc4625246d32290b",
+    "writing-studio/lib/studio-types.ts": "b6d64d4eef64a1155eb653164cae6a92a728160c97c4fd652012efabf79c303b",
+    "writing-studio/components/studio-workspace.tsx": "763fa75cc068285eeff808c22675dadc26706174049329ff0a15b152006550b9"
+  },
+  "fixture": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-source-before-l42h667v",
+  "manuscript_id": "manuscript_2bd691ac342d487f890a354fe64b7e31",
+  "source_context_missing": true,
+  "has_registered_source_file": true,
+  "has_exact_parse_and_skeleton": true,
+  "software_only": true
+}

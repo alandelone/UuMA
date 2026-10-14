@@ -12,6 +12,7 @@ TOKEN_ROLES = {
     "wisdom-oldman": "worker",
     "forge-lab-bot": "worker",
     "yonc": "worker",
+    "honc": "worker",
     "audit": "ingest",
 }
 

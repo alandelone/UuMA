@@ -1,0 +1,3267 @@
+{
+  "history": [
+    {
+      "check_id": "response_check_1fed5930d1e542eda690f30def12323a",
+      "request_id": "46c2f6d4-cc0b-46d2-95ff-f6a30b28e9d0",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+      "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+      "state_sha256": "f4fa81013709b397f3040143263d51d3773d544ace9ab392ec86469e4197beb7",
+      "context_sha256": "986771758a01dddaa0c4046fc361f41042bbf3de29ccb7df74d7f48668c657f5",
+      "outcome": "MODIFIED",
+      "created_at": "2026-10-13T05:02:52.930661+00:00",
+      "request": {
+        "acknowledged_all_assertions": true,
+        "claims": [
+          {
+            "end": 509,
+            "evidence_ids": [
+              "366d86bc698dbdbb8c868bba3868173e7c770f8d186fb0992e0e8dab7366af75"
+            ],
+            "offset_unit": "utf16",
+            "start": 0,
+            "text": "We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted."
+          }
+        ],
+        "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+        "context_sha256": "986771758a01dddaa0c4046fc361f41042bbf3de29ccb7df74d7f48668c657f5",
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "outcome": "MODIFIED",
+        "request_id": "46c2f6d4-cc0b-46d2-95ff-f6a30b28e9d0"
+      },
+      "context": {
+        "automatic_response_approval": false,
+        "baseline_available": true,
+        "baseline_citation_sources": [
+          {
+            "citation_index": 1,
+            "page": 1,
+            "paper_version": 1,
+            "section": "Other software source",
+            "title": "Other selected source",
+            "unit_number": 1
+          },
+          {
+            "citation_index": 2,
+            "page": 1,
+            "paper_version": 1,
+            "section": "Software source section 1",
+            "title": "Refreshed live catalog title - software",
+            "unit_number": 1
+          }
+        ],
+        "baseline_text_sha256": "9b6961d72985ab09298c38e5ae4e4fed6407aa27215e83869f1c16442299d31c",
+        "baseline_to_target_diff": "--- reviewed-baseline.md\n+++ final-manuscript.md\n@@ -1,7 +1,39 @@\n # Fixed citation source - software acceptance\n \n-## Introduction\n+## Other software source\n \n-First source [@evidence_6b169de2b78d452f919391b00916f2c8]. Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]. Repeat [@evidence_6b169de2b78d452f919391b00916f2c8].\n+G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Introduction\n \n Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8].\n+\n+First source [@evidence_6b169de2b78d452f919391b00916f2c8]. Next [@evidence_b5348fa59b3948ae9540b75a33ca9bd9]. Repeat [@evidence_6b169de2b78d452f919391b00916f2c8]. G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.\n+\n+G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 1\n+\n+G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 3\n+\n+G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 1\n+\n+G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted.\n+\n+### Software source section 2\n+\n+G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 3\n+\n+G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### New section\n+\n+G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted.",
+        "baseline_to_target_display_diff": "--- reviewed-baseline.md\n+++ final-manuscript.md\n@@ -1,7 +1,39 @@\n # Fixed citation source - software acceptance\n \n-## Introduction\n+## Other software source\n \n-First source [1]. Next [2]. Repeat [1].\n+G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted.\n \n-Beta software paragraph cites original page 1 [2] and additional source [1].\n+### Introduction\n+\n+Beta software paragraph cites original page 1 [1] and additional source [2].\n+\n+First source [2]. Next [1]. Repeat [2]. G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.\n+\n+G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 1\n+\n+G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 3\n+\n+G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 1\n+\n+G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted.\n+\n+### Software source section 2\n+\n+G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### Software source section 3\n+\n+G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+### New section\n+\n+G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted.\n+\n+G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted.",
+        "baseline_version_number": 3,
+        "context_sha256": "986771758a01dddaa0c4046fc361f41042bbf3de29ccb7df74d7f48668c657f5",
+        "evidence": [
+          {
+            "baseline_version_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+            "boxes": [],
+            "change_id": "change_04be28ac6ebc4794ba88c63af36a5141",
+            "changed_text": "",
+            "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+            "display_changed_text": "",
+            "evidence_id": "4088b288860aac0d9c5849f37f99ebebaf344961cb9bd3ea288c8db54f37fc95",
+            "final_line": null,
+            "final_line_end": null,
+            "final_page": null,
+            "final_page_end": null,
+            "final_pdf_sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+            "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": null,
+            "reason": "This edit's after-state does not equal the fixed generated input",
+            "sentence_index": null,
+            "status": "SUPERSEDED_OR_REVERSED",
+            "thought_id": "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+          },
+          {
+            "baseline_version_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+            "boxes": [],
+            "change_id": "change_3b76086ebbb34c0aad859a42abf35527",
+            "changed_text": "",
+            "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+            "display_changed_text": "",
+            "evidence_id": "7c497e9f7bdd085391ae4454005519506c41d94cf2813b902b122b4866a2096f",
+            "final_line": null,
+            "final_line_end": null,
+            "final_page": null,
+            "final_page_end": null,
+            "final_pdf_sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+            "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": null,
+            "reason": "This edit's after-state does not equal the fixed generated input",
+            "sentence_index": null,
+            "status": "SUPERSEDED_OR_REVERSED",
+            "thought_id": "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+          },
+          {
+            "baseline_version_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+            "boxes": [
+              {
+                "box": [
+                  260.858282,
+                  322.746175,
+                  279.643752,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  282.752846,
+                  322.746175,
+                  320.051059,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  323.149243,
+                  322.746175,
+                  367.342007,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  323.149243,
+                  322.746175,
+                  367.342007,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  371.727465,
+                  322.746175,
+                  408.52386,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  411.611135,
+                  322.746175,
+                  424.942055,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  428.051149,
+                  322.746175,
+                  462.207541,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  465.316634,
+                  322.746175,
+                  498.033025,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  501.142119,
+                  322.746175,
+                  516.894859,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  520.003953,
+                  322.746175,
+                  540.000333,
+                  333.655275
+                ],
+                "line": 8,
+                "page": 1
+              },
+              {
+                "box": [
+                  72,
+                  336.295175,
+                  120.490949,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  72,
+                  336.295175,
+                  120.490949,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  123.218224,
+                  336.295175,
+                  134.127325,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  136.8546,
+                  336.295175,
+                  176.24736,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  178.974635,
+                  336.295175,
+                  203.214655,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  205.94193,
+                  336.295175,
+                  213.218299,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  215.945574,
+                  336.295175,
+                  254.083788,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              },
+              {
+                "box": [
+                  215.945574,
+                  336.295175,
+                  254.083788,
+                  347.204275
+                ],
+                "line": 9,
+                "page": 1
+              }
+            ],
+            "change_id": "change_4940fc17d3ca499eb10f550fb49d3a3e",
+            "changed_text": "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.",
+            "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+            "display_changed_text": "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted.",
+            "evidence_id": "366d86bc698dbdbb8c868bba3868173e7c770f8d186fb0992e0e8dab7366af75",
+            "final_line": 8,
+            "final_line_end": 9,
+            "final_page": 1,
+            "final_page_end": 1,
+            "final_pdf_sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+            "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": "paragraph_e197b886c810436a823c7171839afac2",
+            "reason": "UNIQUE_FULL_PARAGRAPH",
+            "sentence_index": 3,
+            "status": "GENERATED_TEXT_CHANGED",
+            "text_comparison": "GENERATED_TEXT_CHANGED",
+            "thought_id": "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+          },
+          {
+            "baseline_version_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+            "boxes": [],
+            "change_id": "change_b4d65900fbe541aeb4d597de70681d46",
+            "changed_text": "",
+            "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+            "display_changed_text": "",
+            "evidence_id": "5391781aae09dd9dac9f8cf58898e44708d5d00c6bb6cdd48fa4dd9b9d299375",
+            "final_line": null,
+            "final_line_end": null,
+            "final_page": null,
+            "final_page_end": null,
+            "final_pdf_sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+            "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+            "line_number_kind": "visible_text_line_from_top_of_physical_page",
+            "paragraph_id": null,
+            "reason": "No changed thought can be attributed to a generated sentence",
+            "sentence_index": null,
+            "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+            "thought_id": null
+          }
+        ],
+        "pdf": {
+          "layout_sha256": "37cbe04e561cc669b4b7b45a374662535756d3eda6bb99e978b67b35274873f1",
+          "line_number_kind": "visible_text_line_from_top_of_physical_page",
+          "lines": [
+            {
+              "line": 1,
+              "page": 1,
+              "text": "Fixed citation source - software acceptance",
+              "words": [
+                {
+                  "box": [
+                    157.689,
+                    113.215342,
+                    196.130988,
+                    130.430742
+                  ],
+                  "text": "Fixed"
+                },
+                {
+                  "box": [
+                    200.417623,
+                    113.215342,
+                    252.081038,
+                    130.430742
+                  ],
+                  "text": "citation"
+                },
+                {
+                  "box": [
+                    256.384888,
+                    113.215342,
+                    301.317082,
+                    130.430742
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    305.620932,
+                    113.215342,
+                    311.35366,
+                    130.430742
+                  ],
+                  "text": "-"
+                },
+                {
+                  "box": [
+                    315.65751,
+                    113.215342,
+                    374.516963,
+                    130.430742
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    378.803598,
+                    113.215342,
+                    454.310342,
+                    130.430742
+                  ],
+                  "text": "acceptance"
+                }
+              ]
+            },
+            {
+              "line": 2,
+              "page": 1,
+              "text": "October 13, 2026",
+              "words": [
+                {
+                  "box": [
+                    264.33,
+                    172.103078,
+                    302.837699,
+                    184.058278
+                  ],
+                  "text": "October"
+                },
+                {
+                  "box": [
+                    305.826499,
+                    172.103078,
+                    320.770499,
+                    184.058278
+                  ],
+                  "text": "13,"
+                },
+                {
+                  "box": [
+                    323.759299,
+                    172.103078,
+                    347.669699,
+                    184.058278
+                  ],
+                  "text": "2026"
+                }
+              ]
+            },
+            {
+              "line": 3,
+              "page": 1,
+              "text": "1 Other software source",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    217.128771,
+                    79.1731,
+                    231.474971
+                  ],
+                  "text": "1"
+                },
+                {
+                  "box": [
+                    93.5193,
+                    217.128771,
+                    130.173841,
+                    231.474971
+                  ],
+                  "text": "Other"
+                },
+                {
+                  "box": [
+                    133.760391,
+                    217.128771,
+                    185.851443,
+                    231.474971
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    189.423647,
+                    217.128771,
+                    229.062198,
+                    231.474971
+                  ],
+                  "text": "source"
+                }
+              ]
+            },
+            {
+              "line": 4,
+              "page": 1,
+              "text": "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    244.832175,
+                    90.78547,
+                    255.741275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    94.320019,
+                    244.832175,
+                    131.618232,
+                    255.741275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    135.15278,
+                    244.832175,
+                    183.000092,
+                    255.741275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    186.54555,
+                    244.832175,
+                    202.309199,
+                    255.741275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    205.854657,
+                    244.832175,
+                    214.341937,
+                    255.741275
+                  ],
+                  "text": "1:"
+                },
+                {
+                  "box": [
+                    219.611032,
+                    244.832175,
+                    235.374682,
+                    255.741275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    238.90923,
+                    244.832175,
+                    266.781981,
+                    255.741275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    270.327438,
+                    244.832175,
+                    289.112908,
+                    255.741275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    292.658366,
+                    244.832175,
+                    309.032925,
+                    255.741275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    312.578382,
+                    244.832175,
+                    317.422023,
+                    255.741275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    320.96748,
+                    244.832175,
+                    358.538421,
+                    255.741275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    362.072969,
+                    244.832175,
+                    377.836619,
+                    255.741275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    381.382076,
+                    244.832175,
+                    403.27664,
+                    255.741275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    407.214825,
+                    244.832175,
+                    418.123925,
+                    255.741275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    421.669382,
+                    244.832175,
+                    461.062142,
+                    255.741275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    464.6076,
+                    244.832175,
+                    488.84762,
+                    255.741275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    492.393078,
+                    244.832175,
+                    501.480358,
+                    255.741275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.025815,
+                    244.832175,
+                    540.00039,
+                    255.741275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 5,
+              "page": 1,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    258.382175,
+                    100.472751,
+                    269.291275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    258.382175,
+                    110.476396,
+                    269.291275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    258.382175,
+                    151.341884,
+                    269.291275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 6,
+              "page": 1,
+              "text": "1.1 Introduction",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    287.321616,
+                    86.944,
+                    299.276816
+                  ],
+                  "text": "1.1"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    287.321616,
+                    163.827891,
+                    299.276816
+                  ],
+                  "text": "Introduction"
+                }
+              ]
+            },
+            {
+              "line": 7,
+              "page": 1,
+              "text": "Beta software paragraph cites original page 1 [1] and additional source [2].",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    309.197175,
+                    91.99638,
+                    320.106275
+                  ],
+                  "text": "Beta"
+                },
+                {
+                  "box": [
+                    94.723655,
+                    309.197175,
+                    132.021868,
+                    320.106275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    134.738234,
+                    309.197175,
+                    178.461907,
+                    320.106275
+                  ],
+                  "text": "paragraph"
+                },
+                {
+                  "box": [
+                    181.189182,
+                    309.197175,
+                    201.185562,
+                    320.106275
+                  ],
+                  "text": "cites"
+                },
+                {
+                  "box": [
+                    203.912837,
+                    309.197175,
+                    238.069229,
+                    320.106275
+                  ],
+                  "text": "original"
+                },
+                {
+                  "box": [
+                    240.796504,
+                    309.197175,
+                    261.131067,
+                    320.106275
+                  ],
+                  "text": "page"
+                },
+                {
+                  "box": [
+                    263.847433,
+                    309.197175,
+                    269.301983,
+                    320.106275
+                  ],
+                  "text": "1"
+                },
+                {
+                  "box": [
+                    272.029258,
+                    309.197175,
+                    284.74873,
+                    320.106275
+                  ],
+                  "text": "[1]"
+                },
+                {
+                  "box": [
+                    287.476005,
+                    309.197175,
+                    303.228746,
+                    320.106275
+                  ],
+                  "text": "and"
+                },
+                {
+                  "box": [
+                    305.956021,
+                    309.197175,
+                    349.592421,
+                    320.106275
+                  ],
+                  "text": "additional"
+                },
+                {
+                  "box": [
+                    352.319696,
+                    309.197175,
+                    380.792447,
+                    320.106275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    383.519722,
+                    309.197175,
+                    398.967005,
+                    320.106275
+                  ],
+                  "text": "[2]."
+                }
+              ]
+            },
+            {
+              "line": 8,
+              "page": 1,
+              "text": "First source [2]. Next [1]. Repeat [2]. G09 software boundary: preserve the original sources and their",
+              "words": [
+                {
+                  "box": [
+                    88.936,
+                    322.746175,
+                    108.626926,
+                    333.655275
+                  ],
+                  "text": "First"
+                },
+                {
+                  "box": [
+                    111.714201,
+                    322.746175,
+                    140.186952,
+                    333.655275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    143.296045,
+                    322.746175,
+                    158.750005,
+                    333.655275
+                  ],
+                  "text": "[2]."
+                },
+                {
+                  "box": [
+                    163.517282,
+                    322.746175,
+                    184.190027,
+                    333.655275
+                  ],
+                  "text": "Next"
+                },
+                {
+                  "box": [
+                    187.288211,
+                    322.746175,
+                    202.740005,
+                    333.655275
+                  ],
+                  "text": "[1]."
+                },
+                {
+                  "box": [
+                    207.507282,
+                    322.746175,
+                    237.540034,
+                    333.655275
+                  ],
+                  "text": "Repeat"
+                },
+                {
+                  "box": [
+                    240.638219,
+                    322.746175,
+                    256.091005,
+                    333.655275
+                  ],
+                  "text": "[2]."
+                },
+                {
+                  "box": [
+                    260.858282,
+                    322.746175,
+                    279.643752,
+                    333.655275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    282.752846,
+                    322.746175,
+                    320.051059,
+                    333.655275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    323.149243,
+                    322.746175,
+                    367.342007,
+                    333.655275
+                  ],
+                  "text": "boundary:"
+                },
+                {
+                  "box": [
+                    371.727465,
+                    322.746175,
+                    408.52386,
+                    333.655275
+                  ],
+                  "text": "preserve"
+                },
+                {
+                  "box": [
+                    411.611135,
+                    322.746175,
+                    424.942055,
+                    333.655275
+                  ],
+                  "text": "the"
+                },
+                {
+                  "box": [
+                    428.051149,
+                    322.746175,
+                    462.207541,
+                    333.655275
+                  ],
+                  "text": "original"
+                },
+                {
+                  "box": [
+                    465.316634,
+                    322.746175,
+                    498.033025,
+                    333.655275
+                  ],
+                  "text": "sources"
+                },
+                {
+                  "box": [
+                    501.142119,
+                    322.746175,
+                    516.894859,
+                    333.655275
+                  ],
+                  "text": "and"
+                },
+                {
+                  "box": [
+                    520.003953,
+                    322.746175,
+                    540.000333,
+                    333.655275
+                  ],
+                  "text": "their"
+                }
+              ]
+            },
+            {
+              "line": 9,
+              "page": 1,
+              "text": "conditions; no scientific claim is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    336.295175,
+                    120.490949,
+                    347.204275
+                  ],
+                  "text": "conditions;"
+                },
+                {
+                  "box": [
+                    123.218224,
+                    336.295175,
+                    134.127325,
+                    347.204275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    136.8546,
+                    336.295175,
+                    176.24736,
+                    347.204275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    178.974635,
+                    336.295175,
+                    203.214655,
+                    347.204275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    205.94193,
+                    336.295175,
+                    213.218299,
+                    347.204275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    215.945574,
+                    336.295175,
+                    254.083788,
+                    347.204275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 10,
+              "page": 1,
+              "text": "G09 software acceptance slot 4: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    88.936,
+                    349.844175,
+                    107.72147,
+                    360.753275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    110.328745,
+                    349.844175,
+                    147.626958,
+                    360.753275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    150.234233,
+                    349.844175,
+                    198.081545,
+                    360.753275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    200.68882,
+                    349.844175,
+                    216.45247,
+                    360.753275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    219.070654,
+                    349.844175,
+                    227.557934,
+                    360.753275
+                  ],
+                  "text": "4:"
+                },
+                {
+                  "box": [
+                    231.136119,
+                    349.844175,
+                    246.899768,
+                    360.753275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    249.507043,
+                    349.844175,
+                    277.379793,
+                    360.753275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    279.997977,
+                    349.844175,
+                    298.783448,
+                    360.753275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    301.401632,
+                    349.844175,
+                    317.776191,
+                    360.753275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    320.383466,
+                    349.844175,
+                    325.227106,
+                    360.753275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    327.84529,
+                    349.844175,
+                    365.41623,
+                    360.753275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    368.023505,
+                    349.844175,
+                    383.787155,
+                    360.753275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    386.405339,
+                    349.844175,
+                    408.299903,
+                    360.753275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    410.939905,
+                    349.844175,
+                    421.849005,
+                    360.753275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    424.45628,
+                    349.844175,
+                    463.84904,
+                    360.753275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    466.467224,
+                    349.844175,
+                    490.707244,
+                    360.753275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    493.325428,
+                    349.844175,
+                    502.412708,
+                    360.753275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.019983,
+                    349.844175,
+                    539.994558,
+                    360.753275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 11,
+              "page": 1,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    363.393175,
+                    100.472751,
+                    374.302275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    363.393175,
+                    110.476396,
+                    374.302275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    363.393175,
+                    151.341884,
+                    374.302275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 12,
+              "page": 1,
+              "text": "1.2 Software source section 1",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    392.333616,
+                    86.944,
+                    404.288816
+                  ],
+                  "text": "1.2"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    392.333616,
+                    144.30505,
+                    404.288816
+                  ],
+                  "text": "Software"
+                },
+                {
+                  "box": [
+                    147.281894,
+                    392.333616,
+                    180.314112,
+                    404.288816
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    183.290957,
+                    392.333616,
+                    218.487066,
+                    404.288816
+                  ],
+                  "text": "section"
+                },
+                {
+                  "box": [
+                    221.475866,
+                    392.333616,
+                    227.453466,
+                    404.288816
+                  ],
+                  "text": "1"
+                }
+              ]
+            },
+            {
+              "line": 13,
+              "page": 1,
+              "text": "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    414.209175,
+                    90.78547,
+                    425.118275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    94.320019,
+                    414.209175,
+                    131.618232,
+                    425.118275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    135.15278,
+                    414.209175,
+                    183.000092,
+                    425.118275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    186.54555,
+                    414.209175,
+                    202.309199,
+                    425.118275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    205.854657,
+                    414.209175,
+                    214.341937,
+                    425.118275
+                  ],
+                  "text": "2:"
+                },
+                {
+                  "box": [
+                    219.611032,
+                    414.209175,
+                    235.374682,
+                    425.118275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    238.90923,
+                    414.209175,
+                    266.781981,
+                    425.118275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    270.327438,
+                    414.209175,
+                    289.112908,
+                    425.118275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    292.658366,
+                    414.209175,
+                    309.032925,
+                    425.118275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    312.578382,
+                    414.209175,
+                    317.422023,
+                    425.118275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    320.96748,
+                    414.209175,
+                    358.538421,
+                    425.118275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    362.072969,
+                    414.209175,
+                    377.836619,
+                    425.118275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    381.382076,
+                    414.209175,
+                    403.27664,
+                    425.118275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    407.214825,
+                    414.209175,
+                    418.123925,
+                    425.118275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    421.669382,
+                    414.209175,
+                    461.062142,
+                    425.118275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    464.6076,
+                    414.209175,
+                    488.84762,
+                    425.118275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    492.393078,
+                    414.209175,
+                    501.480358,
+                    425.118275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.025815,
+                    414.209175,
+                    540.00039,
+                    425.118275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 14,
+              "page": 1,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    427.758175,
+                    100.472751,
+                    438.667275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    427.758175,
+                    110.476396,
+                    438.667275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    427.758175,
+                    151.341884,
+                    438.667275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 15,
+              "page": 1,
+              "text": "1.3 Software source section 3",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    456.697616,
+                    86.944,
+                    468.652816
+                  ],
+                  "text": "1.3"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    456.697616,
+                    144.30505,
+                    468.652816
+                  ],
+                  "text": "Software"
+                },
+                {
+                  "box": [
+                    147.281894,
+                    456.697616,
+                    180.314112,
+                    468.652816
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    183.290957,
+                    456.697616,
+                    218.487066,
+                    468.652816
+                  ],
+                  "text": "section"
+                },
+                {
+                  "box": [
+                    221.475866,
+                    456.697616,
+                    227.453466,
+                    468.652816
+                  ],
+                  "text": "3"
+                }
+              ]
+            },
+            {
+              "line": 16,
+              "page": 1,
+              "text": "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    478.573175,
+                    90.78547,
+                    489.482275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    94.320019,
+                    478.573175,
+                    131.618232,
+                    489.482275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    135.15278,
+                    478.573175,
+                    183.000092,
+                    489.482275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    186.54555,
+                    478.573175,
+                    202.309199,
+                    489.482275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    205.854657,
+                    478.573175,
+                    214.341937,
+                    489.482275
+                  ],
+                  "text": "3:"
+                },
+                {
+                  "box": [
+                    219.611032,
+                    478.573175,
+                    235.374682,
+                    489.482275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    238.90923,
+                    478.573175,
+                    266.781981,
+                    489.482275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    270.327438,
+                    478.573175,
+                    289.112908,
+                    489.482275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    292.658366,
+                    478.573175,
+                    309.032925,
+                    489.482275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    312.578382,
+                    478.573175,
+                    317.422023,
+                    489.482275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    320.96748,
+                    478.573175,
+                    358.538421,
+                    489.482275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    362.072969,
+                    478.573175,
+                    377.836619,
+                    489.482275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    381.382076,
+                    478.573175,
+                    403.27664,
+                    489.482275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    407.214825,
+                    478.573175,
+                    418.123925,
+                    489.482275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    421.669382,
+                    478.573175,
+                    461.062142,
+                    489.482275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    464.6076,
+                    478.573175,
+                    488.84762,
+                    489.482275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    492.393078,
+                    478.573175,
+                    501.480358,
+                    489.482275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.025815,
+                    478.573175,
+                    540.00039,
+                    489.482275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 17,
+              "page": 1,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    492.122175,
+                    100.472751,
+                    503.031275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    492.122175,
+                    110.476396,
+                    503.031275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    492.122175,
+                    151.341884,
+                    503.031275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 18,
+              "page": 1,
+              "text": "1.4 Software source section 1",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    521.061616,
+                    86.944,
+                    533.016816
+                  ],
+                  "text": "1.4"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    521.061616,
+                    144.30505,
+                    533.016816
+                  ],
+                  "text": "Software"
+                },
+                {
+                  "box": [
+                    147.281894,
+                    521.061616,
+                    180.314112,
+                    533.016816
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    183.290957,
+                    521.061616,
+                    218.487066,
+                    533.016816
+                  ],
+                  "text": "section"
+                },
+                {
+                  "box": [
+                    221.475866,
+                    521.061616,
+                    227.453466,
+                    533.016816
+                  ],
+                  "text": "1"
+                }
+              ]
+            },
+            {
+              "line": 19,
+              "page": 1,
+              "text": "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated work-",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    542.937175,
+                    90.78547,
+                    553.846275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    93.687291,
+                    542.937175,
+                    130.985504,
+                    553.846275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    133.887324,
+                    542.937175,
+                    181.734637,
+                    553.846275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    184.647367,
+                    542.937175,
+                    200.411016,
+                    553.846275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    203.312837,
+                    542.937175,
+                    211.800117,
+                    553.846275
+                  ],
+                  "text": "9:"
+                },
+                {
+                  "box": [
+                    215.803756,
+                    542.937175,
+                    231.567406,
+                    553.846275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    234.480135,
+                    542.937175,
+                    278.203808,
+                    553.846275
+                  ],
+                  "text": "paragraph"
+                },
+                {
+                  "box": [
+                    281.116538,
+                    542.937175,
+                    322.156572,
+                    553.846275
+                  ],
+                  "text": "preserves"
+                },
+                {
+                  "box": [
+                    325.047484,
+                    542.937175,
+                    338.378404,
+                    553.846275
+                  ],
+                  "text": "the"
+                },
+                {
+                  "box": [
+                    341.291134,
+                    542.937175,
+                    375.447526,
+                    553.846275
+                  ],
+                  "text": "original"
+                },
+                {
+                  "box": [
+                    378.360255,
+                    542.937175,
+                    405.633005,
+                    553.846275
+                  ],
+                  "text": "empty"
+                },
+                {
+                  "box": [
+                    408.545735,
+                    542.937175,
+                    439.451215,
+                    553.846275
+                  ],
+                  "text": "section"
+                },
+                {
+                  "box": [
+                    442.353036,
+                    542.937175,
+                    450.840316,
+                    553.846275
+                  ],
+                  "text": "in"
+                },
+                {
+                  "box": [
+                    453.753045,
+                    542.937175,
+                    467.083966,
+                    553.846275
+                  ],
+                  "text": "the"
+                },
+                {
+                  "box": [
+                    469.996695,
+                    542.937175,
+                    512.138549,
+                    553.846275
+                  ],
+                  "text": "generated"
+                },
+                {
+                  "box": [
+                    515.040369,
+                    542.937175,
+                    540.011299,
+                    553.846275
+                  ],
+                  "text": "work-"
+                }
+              ]
+            },
+            {
+              "line": 20,
+              "page": 1,
+              "text": "flow; no scientific claim is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    556.486175,
+                    93.785473,
+                    567.395275
+                  ],
+                  "text": "flow;"
+                },
+                {
+                  "box": [
+                    96.501839,
+                    556.486175,
+                    107.410939,
+                    567.395275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    110.138214,
+                    556.486175,
+                    149.530974,
+                    567.395275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    152.258249,
+                    556.486175,
+                    176.498269,
+                    567.395275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    179.225544,
+                    556.486175,
+                    186.501914,
+                    567.395275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    189.229189,
+                    556.486175,
+                    227.367402,
+                    567.395275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 21,
+              "page": 1,
+              "text": "1.5 Software source section 2",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    585.426616,
+                    86.944,
+                    597.381816
+                  ],
+                  "text": "1.5"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    585.426616,
+                    144.30505,
+                    597.381816
+                  ],
+                  "text": "Software"
+                },
+                {
+                  "box": [
+                    147.281894,
+                    585.426616,
+                    180.314112,
+                    597.381816
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    183.290957,
+                    585.426616,
+                    218.487066,
+                    597.381816
+                  ],
+                  "text": "section"
+                },
+                {
+                  "box": [
+                    221.475866,
+                    585.426616,
+                    227.453466,
+                    597.381816
+                  ],
+                  "text": "2"
+                }
+              ]
+            },
+            {
+              "line": 22,
+              "page": 1,
+              "text": "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    607.301175,
+                    90.78547,
+                    618.210275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    94.320019,
+                    607.301175,
+                    131.618232,
+                    618.210275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    135.15278,
+                    607.301175,
+                    183.000092,
+                    618.210275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    186.54555,
+                    607.301175,
+                    202.309199,
+                    618.210275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    205.854657,
+                    607.301175,
+                    214.341937,
+                    618.210275
+                  ],
+                  "text": "5:"
+                },
+                {
+                  "box": [
+                    219.611032,
+                    607.301175,
+                    235.374682,
+                    618.210275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    238.90923,
+                    607.301175,
+                    266.781981,
+                    618.210275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    270.327438,
+                    607.301175,
+                    289.112908,
+                    618.210275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    292.658366,
+                    607.301175,
+                    309.032925,
+                    618.210275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    312.578382,
+                    607.301175,
+                    317.422023,
+                    618.210275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    320.96748,
+                    607.301175,
+                    358.538421,
+                    618.210275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    362.072969,
+                    607.301175,
+                    377.836619,
+                    618.210275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    381.382076,
+                    607.301175,
+                    403.27664,
+                    618.210275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    407.214825,
+                    607.301175,
+                    418.123925,
+                    618.210275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    421.669382,
+                    607.301175,
+                    461.062142,
+                    618.210275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    464.6076,
+                    607.301175,
+                    488.84762,
+                    618.210275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    492.393078,
+                    607.301175,
+                    501.480358,
+                    618.210275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.025815,
+                    607.301175,
+                    540.00039,
+                    618.210275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 23,
+              "page": 1,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    620.851175,
+                    100.472751,
+                    631.760275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    620.851175,
+                    110.476396,
+                    631.760275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    620.851175,
+                    151.341884,
+                    631.760275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 24,
+              "page": 1,
+              "text": "1.6 Software source section 3",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    649.790616,
+                    86.944,
+                    661.745816
+                  ],
+                  "text": "1.6"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    649.790616,
+                    144.30505,
+                    661.745816
+                  ],
+                  "text": "Software"
+                },
+                {
+                  "box": [
+                    147.281894,
+                    649.790616,
+                    180.314112,
+                    661.745816
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    183.290957,
+                    649.790616,
+                    218.487066,
+                    661.745816
+                  ],
+                  "text": "section"
+                },
+                {
+                  "box": [
+                    221.475866,
+                    649.790616,
+                    227.453466,
+                    661.745816
+                  ],
+                  "text": "3"
+                }
+              ]
+            },
+            {
+              "line": 25,
+              "page": 1,
+              "text": "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    671.666175,
+                    90.78547,
+                    682.575275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    94.320019,
+                    671.666175,
+                    131.618232,
+                    682.575275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    135.15278,
+                    671.666175,
+                    183.000092,
+                    682.575275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    186.54555,
+                    671.666175,
+                    202.309199,
+                    682.575275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    205.854657,
+                    671.666175,
+                    214.341937,
+                    682.575275
+                  ],
+                  "text": "6:"
+                },
+                {
+                  "box": [
+                    219.611032,
+                    671.666175,
+                    235.374682,
+                    682.575275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    238.90923,
+                    671.666175,
+                    266.781981,
+                    682.575275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    270.327438,
+                    671.666175,
+                    289.112908,
+                    682.575275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    292.658366,
+                    671.666175,
+                    309.032925,
+                    682.575275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    312.578382,
+                    671.666175,
+                    317.422023,
+                    682.575275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    320.96748,
+                    671.666175,
+                    358.538421,
+                    682.575275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    362.072969,
+                    671.666175,
+                    377.836619,
+                    682.575275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    381.382076,
+                    671.666175,
+                    403.27664,
+                    682.575275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    407.214825,
+                    671.666175,
+                    418.123925,
+                    682.575275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    421.669382,
+                    671.666175,
+                    461.062142,
+                    682.575275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    464.6076,
+                    671.666175,
+                    488.84762,
+                    682.575275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    492.393078,
+                    671.666175,
+                    501.480358,
+                    682.575275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.025815,
+                    671.666175,
+                    540.00039,
+                    682.575275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 26,
+              "page": 1,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    685.215175,
+                    100.472751,
+                    696.124275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    685.215175,
+                    110.476396,
+                    696.124275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    685.215175,
+                    151.341884,
+                    696.124275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 27,
+              "page": 1,
+              "text": "1",
+              "words": [
+                {
+                  "box": [
+                    303.273,
+                    741.346175,
+                    308.72755,
+                    752.255275
+                  ],
+                  "text": "1"
+                }
+              ]
+            },
+            {
+              "line": 1,
+              "page": 2,
+              "text": "1.7 New section",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    73.454616,
+                    86.944,
+                    85.409816
+                  ],
+                  "text": "1.7"
+                },
+                {
+                  "box": [
+                    98.8992,
+                    73.454616,
+                    120.944589,
+                    85.409816
+                  ],
+                  "text": "New"
+                },
+                {
+                  "box": [
+                    123.921434,
+                    73.454616,
+                    159.117542,
+                    85.409816
+                  ],
+                  "text": "section"
+                }
+              ]
+            },
+            {
+              "line": 2,
+              "page": 2,
+              "text": "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    95.330175,
+                    90.78547,
+                    106.239275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    94.320019,
+                    95.330175,
+                    131.618232,
+                    106.239275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    135.15278,
+                    95.330175,
+                    183.000092,
+                    106.239275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    186.54555,
+                    95.330175,
+                    202.309199,
+                    106.239275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    205.854657,
+                    95.330175,
+                    214.341937,
+                    106.239275
+                  ],
+                  "text": "7:"
+                },
+                {
+                  "box": [
+                    219.611032,
+                    95.330175,
+                    235.374682,
+                    106.239275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    238.90923,
+                    95.330175,
+                    266.781981,
+                    106.239275
+                  ],
+                  "text": "author"
+                },
+                {
+                  "box": [
+                    270.327438,
+                    95.330175,
+                    289.112908,
+                    106.239275
+                  ],
+                  "text": "note"
+                },
+                {
+                  "box": [
+                    292.658366,
+                    95.330175,
+                    309.032925,
+                    106.239275
+                  ],
+                  "text": "fills"
+                },
+                {
+                  "box": [
+                    312.578382,
+                    95.330175,
+                    317.422023,
+                    106.239275
+                  ],
+                  "text": "a"
+                },
+                {
+                  "box": [
+                    320.96748,
+                    95.330175,
+                    358.538421,
+                    106.239275
+                  ],
+                  "text": "template"
+                },
+                {
+                  "box": [
+                    362.072969,
+                    95.330175,
+                    377.836619,
+                    106.239275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    381.382076,
+                    95.330175,
+                    403.27664,
+                    106.239275
+                  ],
+                  "text": "only;"
+                },
+                {
+                  "box": [
+                    407.214825,
+                    95.330175,
+                    418.123925,
+                    106.239275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    421.669382,
+                    95.330175,
+                    461.062142,
+                    106.239275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    464.6076,
+                    95.330175,
+                    488.84762,
+                    106.239275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    492.393078,
+                    95.330175,
+                    501.480358,
+                    106.239275
+                  ],
+                  "text": "or"
+                },
+                {
+                  "box": [
+                    505.025815,
+                    95.330175,
+                    540.00039,
+                    106.239275
+                  ],
+                  "text": "external"
+                }
+              ]
+            },
+            {
+              "line": 3,
+              "page": 2,
+              "text": "source is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    108.879175,
+                    100.472751,
+                    119.788275
+                  ],
+                  "text": "source"
+                },
+                {
+                  "box": [
+                    103.200026,
+                    108.879175,
+                    110.476396,
+                    119.788275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    113.203671,
+                    108.879175,
+                    151.341884,
+                    119.788275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 4,
+              "page": 2,
+              "text": "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test;",
+              "words": [
+                {
+                  "box": [
+                    88.936,
+                    122.428175,
+                    107.72147,
+                    133.337275
+                  ],
+                  "text": "G09"
+                },
+                {
+                  "box": [
+                    109.936017,
+                    122.428175,
+                    147.23423,
+                    133.337275
+                  ],
+                  "text": "software"
+                },
+                {
+                  "box": [
+                    149.448778,
+                    122.428175,
+                    197.29609,
+                    133.337275
+                  ],
+                  "text": "acceptance"
+                },
+                {
+                  "box": [
+                    199.510638,
+                    122.428175,
+                    215.274287,
+                    133.337275
+                  ],
+                  "text": "slot"
+                },
+                {
+                  "box": [
+                    217.499744,
+                    122.428175,
+                    225.987023,
+                    133.337275
+                  ],
+                  "text": "8:"
+                },
+                {
+                  "box": [
+                    229.368844,
+                    122.428175,
+                    242.699765,
+                    133.337275
+                  ],
+                  "text": "the"
+                },
+                {
+                  "box": [
+                    244.914312,
+                    122.428175,
+                    279.070704,
+                    133.337275
+                  ],
+                  "text": "original"
+                },
+                {
+                  "box": [
+                    281.29616,
+                    122.428175,
+                    308.56891,
+                    133.337275
+                  ],
+                  "text": "empty"
+                },
+                {
+                  "box": [
+                    310.794367,
+                    122.428175,
+                    354.51804,
+                    133.337275
+                  ],
+                  "text": "paragraph"
+                },
+                {
+                  "box": [
+                    356.732587,
+                    122.428175,
+                    364.008957,
+                    133.337275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    366.234413,
+                    122.428175,
+                    401.372624,
+                    133.337275
+                  ],
+                  "text": "retained"
+                },
+                {
+                  "box": [
+                    403.587171,
+                    122.428175,
+                    419.339912,
+                    133.337275
+                  ],
+                  "text": "and"
+                },
+                {
+                  "box": [
+                    421.565368,
+                    122.428175,
+                    443.994478,
+                    133.337275
+                  ],
+                  "text": "filled"
+                },
+                {
+                  "box": [
+                    446.209025,
+                    122.428175,
+                    458.503581,
+                    133.337275
+                  ],
+                  "text": "for"
+                },
+                {
+                  "box": [
+                    460.718128,
+                    122.428175,
+                    476.481778,
+                    133.337275
+                  ],
+                  "text": "this"
+                },
+                {
+                  "box": [
+                    478.707234,
+                    122.428175,
+                    519.769086,
+                    133.337275
+                  ],
+                  "text": "workflow"
+                },
+                {
+                  "box": [
+                    521.972725,
+                    122.428175,
+                    540.005467,
+                    133.337275
+                  ],
+                  "text": "test;"
+                }
+              ]
+            },
+            {
+              "line": 5,
+              "page": 2,
+              "text": "no scientific claim is asserted.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    135.977175,
+                    82.9091,
+                    146.886275
+                  ],
+                  "text": "no"
+                },
+                {
+                  "box": [
+                    85.636375,
+                    135.977175,
+                    125.029135,
+                    146.886275
+                  ],
+                  "text": "scientific"
+                },
+                {
+                  "box": [
+                    127.75641,
+                    135.977175,
+                    151.99643,
+                    146.886275
+                  ],
+                  "text": "claim"
+                },
+                {
+                  "box": [
+                    154.723705,
+                    135.977175,
+                    162.000075,
+                    146.886275
+                  ],
+                  "text": "is"
+                },
+                {
+                  "box": [
+                    164.72735,
+                    135.977175,
+                    202.865564,
+                    146.886275
+                  ],
+                  "text": "asserted."
+                }
+              ]
+            },
+            {
+              "line": 6,
+              "page": 2,
+              "text": "References",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    168.228771,
+                    138.064251,
+                    182.574971
+                  ],
+                  "text": "References"
+                }
+              ]
+            },
+            {
+              "line": 7,
+              "page": 2,
+              "text": "[1] Fixture Author. Refreshed live catalog title - software. 2026.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    195.932175,
+                    84.720011,
+                    206.841275
+                  ],
+                  "text": "[1]"
+                },
+                {
+                  "box": [
+                    90.174561,
+                    195.932175,
+                    121.538223,
+                    206.841275
+                  ],
+                  "text": "Fixture"
+                },
+                {
+                  "box": [
+                    124.254589,
+                    195.932175,
+                    157.025525,
+                    206.841275
+                  ],
+                  "text": "Author."
+                },
+                {
+                  "box": [
+                    160.941892,
+                    195.932175,
+                    204.905565,
+                    206.841275
+                  ],
+                  "text": "Refreshed"
+                },
+                {
+                  "box": [
+                    207.621931,
+                    195.932175,
+                    223.614672,
+                    206.841275
+                  ],
+                  "text": "live"
+                },
+                {
+                  "box": [
+                    226.331038,
+                    195.932175,
+                    257.836519,
+                    206.841275
+                  ],
+                  "text": "catalog"
+                },
+                {
+                  "box": [
+                    260.563794,
+                    195.932175,
+                    277.538353,
+                    206.841275
+                  ],
+                  "text": "title"
+                },
+                {
+                  "box": [
+                    280.265628,
+                    195.932175,
+                    283.898358,
+                    206.841275
+                  ],
+                  "text": "-"
+                },
+                {
+                  "box": [
+                    286.625633,
+                    195.932175,
+                    326.651121,
+                    206.841275
+                  ],
+                  "text": "software."
+                },
+                {
+                  "box": [
+                    330.567488,
+                    195.932175,
+                    355.112963,
+                    206.841275
+                  ],
+                  "text": "2026."
+                }
+              ]
+            },
+            {
+              "line": 8,
+              "page": 2,
+              "text": "[2] Fixture Author. Other selected source. 2026. doi: 10.1234/other.",
+              "words": [
+                {
+                  "box": [
+                    72,
+                    218.448175,
+                    84.720011,
+                    229.357275
+                  ],
+                  "text": "[2]"
+                },
+                {
+                  "box": [
+                    90.174561,
+                    218.448175,
+                    121.538223,
+                    229.357275
+                  ],
+                  "text": "Fixture"
+                },
+                {
+                  "box": [
+                    124.254589,
+                    218.448175,
+                    157.025525,
+                    229.357275
+                  ],
+                  "text": "Author."
+                },
+                {
+                  "box": [
+                    160.941892,
+                    218.448175,
+                    185.781913,
+                    229.357275
+                  ],
+                  "text": "Other"
+                },
+                {
+                  "box": [
+                    188.509188,
+                    218.448175,
+                    223.647399,
+                    229.357275
+                  ],
+                  "text": "selected"
+                },
+                {
+                  "box": [
+                    226.374674,
+                    218.448175,
+                    257.5747,
+                    229.357275
+                  ],
+                  "text": "source."
+                },
+                {
+                  "box": [
+                    261.501976,
+                    218.448175,
+                    286.047451,
+                    229.357275
+                  ],
+                  "text": "2026."
+                },
+                {
+                  "box": [
+                    289.974727,
+                    218.448175,
+                    306.949287,
+                    229.357275
+                  ],
+                  "text": "doi:"
+                },
+                {
+                  "box": [
+                    310.582017,
+                    218.448175,
+                    374.214797,
+                    229.357275
+                  ],
+                  "text": "10.1234/other."
+                }
+              ]
+            },
+            {
+              "line": 9,
+              "page": 2,
+              "text": "2",
+              "words": [
+                {
+                  "box": [
+                    303.273,
+                    741.346175,
+                    308.72755,
+                    752.255275
+                  ],
+                  "text": "2"
+                }
+              ]
+            }
+          ],
+          "method": "pdftotext-bbox-layout-v1",
+          "pdf_sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+          "status": "EXTRACTED"
+        },
+        "pdf_artifact_id": "artifact_aa2b869969bd4edc93242cedbae5fe2d",
+        "scientific_acceptance": false,
+        "state": {
+          "archived_at": null,
+          "author_decision": "Software acceptance decision: add an explicit software boundary note in the original Alpha Intent, while retaining the original author thought and its selected sources and conditions. This software workflow response is not an external review or scientific approval.",
+          "baseline_content_sha256": "9b6961d72985ab09298c38e5ae4e4fed6407aa27215e83869f1c16442299d31c",
+          "baseline_manuscript_version_id": "manuscript_version_7c2addf4da0f48948f8444b623cbe42e",
+          "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+          "current_author_document_sha256": "aca0488d74f2f6ee5d63afc1ceb25a295382e087104675a06e6e2e0264a1c4b6",
+          "current_author_revision": 62,
+          "edited_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.\nG09 author preview note: this second-round opinion is a software fixture, not an external review.",
+          "generated_input_revision": 62,
+          "generated_record_sha256": "3f650973112393c4536c06d12a0c9abeeed8502db483c815ae13042a141c36f5",
+          "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+          "linked_changes": [
+            {
+              "after_sha256": "7725af8343a30aa4894aa7d4fc1ba1013aba0d61ed01876c69ae20947f485051",
+              "before_sha256": "ffee0d38db89c30d0f265919a3c92de5ffc0451408ec13d37715597fe9884c08",
+              "change_id": "change_04be28ac6ebc4794ba88c63af36a5141",
+              "link_revision": 0
+            },
+            {
+              "after_sha256": "06d48168ecd4bd8219af61cd6d42ad067c554d5b6eb6701cdef1f87e5d68e600",
+              "before_sha256": "7725af8343a30aa4894aa7d4fc1ba1013aba0d61ed01876c69ae20947f485051",
+              "change_id": "change_3b76086ebbb34c0aad859a42abf35527",
+              "link_revision": 0
+            },
+            {
+              "after_sha256": "061a9cdd0ddadbff7dacad9c9bbb96e8f3033991150af491e0ffaf36116cfb99",
+              "before_sha256": "06d48168ecd4bd8219af61cd6d42ad067c554d5b6eb6701cdef1f87e5d68e600",
+              "change_id": "change_4940fc17d3ca499eb10f550fb49d3a3e",
+              "link_revision": 0
+            },
+            {
+              "after_sha256": "af45c39e0425f68bdd513dd151dadd4deb69a369e998ffd02fe311a88ea61de7",
+              "before_sha256": "b8a7dd559befb9489a7e5d05dc2ffea8f061baeb956c06e30f3e5bfbe97b0bd8",
+              "change_id": "change_b4d65900fbe541aeb4d597de70681d46",
+              "link_revision": 1
+            }
+          ],
+          "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+          "response_revision": 5,
+          "response_text": "We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted.",
+          "review_round_id": "review_round_b51564f0224e499081e58f341103b336",
+          "round_number": 2
+        },
+        "state_sha256": "f4fa81013709b397f3040143263d51d3773d544ace9ab392ec86469e4197beb7",
+        "target_citation_sources": [
+          {
+            "citation_index": 1,
+            "page": 1,
+            "paper_version": 1,
+            "section": "Software source section 1",
+            "title": "Refreshed live catalog title - software",
+            "unit_number": 1
+          },
+          {
+            "citation_index": 2,
+            "page": 1,
+            "paper_version": 1,
+            "section": "Other software source",
+            "title": "Other selected source",
+            "unit_number": 1
+          }
+        ],
+        "target_text_sha256": "2430bc03a020665b51cd6e522f578097184163259e098be99159c46b20126b7b",
+        "target_version_number": 5
+      }
+    }
+  ]
+}

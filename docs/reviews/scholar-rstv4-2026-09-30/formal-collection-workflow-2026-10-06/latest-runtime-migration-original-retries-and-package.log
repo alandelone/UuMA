@@ -1,0 +1,32 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-final-runtime-v1.py']
+Latest atomic Collection fixture service loaded; previous candidate and all paused Collections preserved.
+RUN ['node', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-controller-native-v2.mjs']
+Actual shipped Collection controller preview/start/exact retry/pause passed against isolated HTTP.
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-concurrent-native-v1.py']
+Actual isolated Collection root and listener verified.
+Eight concurrent actual HTTP creations returned the exact same Collection; one real queued job, no new models.
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-owned-runtime-v1.py']
+Isolated Catalog identity and listener verified.
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":10140},{"LocalAddress":"0.0.0.0","LocalPort":3000,"OwningProcess":57148}]
+Verified roots: Studio 54784, frontend 57148
+Owned isolated services loaded: Catalog 57236, Studio 55348, frontend 58324.
+Owned Catalog/Studio/frontend restart requested; original database snapshot preserved.
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-migration-proof-v1.py']
+Actual v5->v6 migration: all 96 original tables/rows preserved except the declared catalog version application; no new jobs or model calls.
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-original-final-v1.py']
+Isolated Catalog identity and listener verified.
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":53464},{"LocalAddress":"0.0.0.0","LocalPort":3000,"OwningProcess":58324}]
+Verified roots: Studio 55348, frontend 58324
+{"status": "PASS_CURRENT_COLLECTION_PREVIEW_AND_ORIGINAL_RETRIES", "new_jobs": 0, "new_model_calls": 0, "browser_verified": false, "counts": {"research_discussion_jobs": 4, "research_discussion_messages": 8, "research_discussion_annotations": 2, "studio_model_calls": 6}, "database_sha256": "33e370f0d3cc2286b008b395bfc48cfbf649ee2e0a8c762660ca24b6f703d4ca", "legacy_retry_verified": true, "studio_origin_verified": true, "source_context_sha256": "7fe44a14b9ee6f7e2b7552a958dd4334880872c669ebebb6d50c4e87fa5b121c", "historical_chain_messages": 4, "published_sha256": {"catalog_web.html": "10e6914c77e4e1f5ff3a6d47fc0734b0dc71c6f36a68ce2e3e48180461374a6e", "catalog_research_chat.js": "813cb3f4563eb5ba4554adec490c4577235ce8784892f5ada709188496434cbb", "catalog_research_workspaces.js": "58d4048e71c83367be91f9e1d974d2c6d46cd7f9078b8d3b285432e71d2367fc", "catalog_collections.js": "7470161fe568f22d88cac22c693445ea83fbb425e2123c9bd90943364d84b596"}, "compiled_assets_sha256": {"/_next/static/chunks/page-BvZpQSFA.js": "574e9e66f0744a67f950f81ffef225cf062fe2bc53f6689a9c271e99d762807c", "/_next/static/chunks/layout-segment-context-ndsk2KXH.js": "9c83768b13944ed4fac74762e427f08ba4e58727763529626aa15b2dfbafa107", "/_next/static/chunks/index-D3sygzUv.js": "373662f8067857b672a8f399f6a1324b8ba2171f677198d409dd4bee9151068f", "/_next/static/chunks/vinext-DW3H6xYL.js": "a8361310a163c4bba91e9030cd8e2a41e3eec405d673d90ef74fd9be337b80b2", "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021", "/_next/static/css/index.CU_wJ0Vv.css": "18fc26ac9066562768451d5d0b0bd216210595dcbd8743f4dd2b96acbe7175d4", "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077"}, "original_database_bytes_unchanged_since_previous_batch": false, "earlier_pre_fix_startup_byte_equality_failure_retained": true, "fixed_startup_all_tables_and_bytes_unchanged": true, "all_tables_verified": 96, "exact_previous_discussion_receipts_unchanged": true}
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-collection-packaging-v1.py']
+Processing c:\users\alandelone\codespace_local\rstv4
+  Preparing metadata (pyproject.toml): started
+  Preparing metadata (pyproject.toml): finished with status 'done'
+Building wheels for collected packages: rstv4
+  Building wheel for rstv4 (pyproject.toml): started
+  Building wheel for rstv4 (pyproject.toml): finished with status 'done'
+  Created wheel for rstv4: filename=rstv4-0.1.0-py3-none-any.whl size=729855 sha256=7e1c5602408066034559e1c09e24e2b3e2ad5af1dbc55270d24cc1b1f9aff5ef
+  Stored in directory: C:\Users\Alandelone\AppData\Local\Temp\pip-ephem-wheel-cache-y87u9qd_\wheels\57\5b\b7\cdc8935af193549c01f6b49d5e722b77f2010cd2f1e0e0ba84
+Successfully built rstv4
+
+Actual distribution includes the exact Catalog HTML and all four shipped JavaScript files.

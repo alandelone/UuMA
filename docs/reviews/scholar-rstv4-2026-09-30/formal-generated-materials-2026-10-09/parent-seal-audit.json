@@ -1,0 +1,14 @@
+[
+  {
+    "report": "formal-download-retry-2026-10-09",
+    "sealed_files": 20,
+    "status": "ALL_SEALED_FILES_EXACT",
+    "historical_current_source_hashes": "not compared to deliberately changed material source"
+  },
+  {
+    "report": "formal-intent-correspondence-2026-10-09",
+    "sealed_files": 872,
+    "status": "ALL_SEALED_FILES_EXACT",
+    "historical_current_source_hashes": "not compared to deliberately changed material source"
+  }
+]

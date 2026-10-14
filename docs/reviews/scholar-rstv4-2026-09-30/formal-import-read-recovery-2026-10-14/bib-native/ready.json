@@ -1,0 +1,17 @@
+{
+  "status": "PASS_READY_NOT_NATIVE_ACCEPTANCE",
+  "port": 8891,
+  "pid": 42036,
+  "bib": {
+    "path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-citation-source-2026-10-09/generated-versions/v2/references.bib",
+    "size": 324,
+    "sha256": "122f86ce0bdd360dffd25da0791b2b1a5a5ece3f365ba5c47d63fdb5ec7a2e0f",
+    "sealed": true,
+    "text": "@article{evidence_6b169de2b78d452f919391b00916f2c8,\r\n  title = {Other selected source},\r\n  author = {Fixture Author},\r\n  year = {2026},\r\n  doi = {10.1234/other}\r\n}\r\n\r\n@article{evidence_b5348fa59b3948ae9540b75a33ca9bd9,\r\n  title = {Refreshed live catalog title - software},\r\n  author = {Fixture Author},\r\n  year = {2026}\r\n}\r\n"
+  },
+  "oversize": {
+    "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-import-v1\\bib-native-v1\\over-limit.bib",
+    "bytes": 5000001,
+    "sha256": "9ae171821931c0605268b510b05c3fe089bcf1c6ec1c590847630eef54708753"
+  }
+}

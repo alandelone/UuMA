@@ -1,0 +1,376 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests', '-q']
+
+=================================== ERRORS ====================================
+________________ ERROR collecting tests/test_browser_bridge.py ________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_browser_bridge.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_browser_bridge.py:11: in <module>
+    from pypdf import PdfWriter
+E   ModuleNotFoundError: No module named 'pypdf'
+_________________ ERROR collecting tests/test_catalog_web.py __________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_catalog_web.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_catalog_web.py:10: in <module>
+    from pypdf import PdfWriter
+E   ModuleNotFoundError: No module named 'pypdf'
+_____________ ERROR collecting tests/test_collection_workspace.py _____________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_collection_workspace.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_collection_workspace.py:10: in <module>
+    from rstv4.acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+______________ ERROR collecting tests/test_fieldkg_workspace.py _______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_fieldkg_workspace.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_fieldkg_workspace.py:11: in <module>
+    from test_track_first_fieldkg import make_paperpool
+tests\test_track_first_fieldkg.py:26: in <module>
+    from rstv4.track_first import TrackFirstService
+src\rstv4\track_first.py:10: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_______________ ERROR collecting tests/test_local_pdf_import.py _______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_local_pdf_import.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_local_pdf_import.py:5: in <module>
+    from pypdf import PdfWriter
+E   ModuleNotFoundError: No module named 'pypdf'
+_______________ ERROR collecting tests/test_native_paperpool.py _______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_native_paperpool.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_native_paperpool.py:11: in <module>
+    from rstv4.acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+____________ ERROR collecting tests/test_research_conversation.py _____________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_research_conversation.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_research_conversation.py:8: in <module>
+    from test_research_discussions import context, payload, unit_target, wait
+tests\test_research_discussions.py:12: in <module>
+    from test_catalog_web import seed_catalog
+tests\test_catalog_web.py:10: in <module>
+    from pypdf import PdfWriter
+E   ModuleNotFoundError: No module named 'pypdf'
+_____________ ERROR collecting tests/test_research_discussions.py _____________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_research_discussions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_research_discussions.py:12: in <module>
+    from test_catalog_web import seed_catalog
+tests\test_catalog_web.py:10: in <module>
+    from pypdf import PdfWriter
+E   ModuleNotFoundError: No module named 'pypdf'
+______________ ERROR collecting tests/test_research_workspace.py ______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_research_workspace.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_research_workspace.py:11: in <module>
+    from rstv4.catalog_web import create_app
+src\rstv4\catalog_web.py:21: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_________ ERROR collecting tests/test_scholar_acceptance_contracts.py _________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_scholar_acceptance_contracts.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_scholar_acceptance_contracts.py:22: in <module>
+    from rstv4.studio import StudioService
+src\rstv4\studio.py:61: in <module>
+    from .track_first import TrackFirstService
+src\rstv4\track_first.py:10: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_______________ ERROR collecting tests/test_skeleton_quality.py _______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_skeleton_quality.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_skeleton_quality.py:8: in <module>
+    from rstv4.skeleton_audit import (
+src\rstv4\skeleton_audit.py:17: in <module>
+    from .acquisition_worker import AcquisitionWorker
+src\rstv4\acquisition_worker.py:16: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_____________ ERROR collecting tests/test_studio_change_links.py ______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_change_links.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_change_links.py:11: in <module>
+    from rstv4.studio_api import create_app
+src\rstv4\studio_api.py:18: in <module>
+    from .research_discussion_api import discussion_router
+src\rstv4\research_discussion_api.py:4: in <module>
+    from .research_context import DiscussionTarget
+src\rstv4\research_context.py:14: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+________________ ERROR collecting tests/test_studio_context.py ________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_context.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_context.py:9: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_______________ ERROR collecting tests/test_studio_delivery.py ________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_delivery.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_delivery.py:13: in <module>
+    from rstv4.studio import StudioService
+src\rstv4\studio.py:61: in <module>
+    from .track_first import TrackFirstService
+src\rstv4\track_first.py:10: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+________________ ERROR collecting tests/test_studio_history.py ________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_history.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_history.py:6: in <module>
+    from test_studio_context import generated_fixture
+tests\test_studio_context.py:9: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+______________ ERROR collecting tests/test_studio_realization.py ______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_realization.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_realization.py:11: in <module>
+    from rstv4.studio_api import create_app
+src\rstv4\studio_api.py:18: in <module>
+    from .research_discussion_api import discussion_router
+src\rstv4\research_discussion_api.py:4: in <module>
+    from .research_context import DiscussionTarget
+src\rstv4\research_context.py:14: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+____________ ERROR collecting tests/test_studio_response_checks.py ____________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_response_checks.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_response_checks.py:12: in <module>
+    from test_studio_revision_mapping import package_fixture
+tests\test_studio_revision_mapping.py:13: in <module>
+    from test_writing_studio import complete_document, create_studio, wait_for_job
+tests\test_writing_studio.py:8: in <module>
+    from docx import Document as WordDocument
+E   ModuleNotFoundError: No module named 'docx'
+___________ ERROR collecting tests/test_studio_review_provenance.py ___________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_review_provenance.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_review_provenance.py:10: in <module>
+    from test_writing_studio import complete_document, create_studio, wait_for_job
+tests\test_writing_studio.py:8: in <module>
+    from docx import Document as WordDocument
+E   ModuleNotFoundError: No module named 'docx'
+__________ ERROR collecting tests/test_studio_revision_contracts.py ___________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_revision_contracts.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_revision_contracts.py:10: in <module>
+    from test_writing_studio import complete_document, create_studio
+tests\test_writing_studio.py:8: in <module>
+    from docx import Document as WordDocument
+E   ModuleNotFoundError: No module named 'docx'
+___________ ERROR collecting tests/test_studio_revision_mapping.py ____________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_revision_mapping.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_revision_mapping.py:13: in <module>
+    from test_writing_studio import complete_document, create_studio, wait_for_job
+tests\test_writing_studio.py:8: in <module>
+    from docx import Document as WordDocument
+E   ModuleNotFoundError: No module named 'docx'
+________________ ERROR collecting tests/test_studio_rounds.py _________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_rounds.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_rounds.py:12: in <module>
+    from rstv4.studio_api import create_app
+src\rstv4\studio_api.py:18: in <module>
+    from .research_discussion_api import discussion_router
+src\rstv4\research_discussion_api.py:4: in <module>
+    from .research_context import DiscussionTarget
+src\rstv4\research_context.py:14: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+__________ ERROR collecting tests/test_studio_shared_discussions.py ___________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_shared_discussions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_shared_discussions.py:12: in <module>
+    from test_studio_context import generated_fixture
+tests\test_studio_context.py:9: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_______________ ERROR collecting tests/test_studio_structure.py _______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_structure.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_structure.py:9: in <module>
+    from rstv4.studio import DocumentValidationError, StudioService
+src\rstv4\studio.py:61: in <module>
+    from .track_first import TrackFirstService
+src\rstv4\track_first.py:10: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+______________ ERROR collecting tests/test_studio_suggestions.py ______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_studio_suggestions.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_studio_suggestions.py:14: in <module>
+    from rstv4.studio import StudioService
+src\rstv4\studio.py:61: in <module>
+    from .track_first import TrackFirstService
+src\rstv4\track_first.py:10: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+_____________ ERROR collecting tests/test_track_first_fieldkg.py ______________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_track_first_fieldkg.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_track_first_fieldkg.py:26: in <module>
+    from rstv4.track_first import TrackFirstService
+src\rstv4\track_first.py:10: in <module>
+    from .acquisition import AcquisitionService
+src\rstv4\acquisition.py:17: in <module>
+    from pypdf import PdfReader
+E   ModuleNotFoundError: No module named 'pypdf'
+________________ ERROR collecting tests/test_writing_studio.py ________________
+ImportError while importing test module 'C:\Users\Alandelone\CodeSpace_Local\RSTV4\tests\test_writing_studio.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+..\..\anaconda3\Lib\importlib\__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+tests\test_writing_studio.py:8: in <module>
+    from docx import Document as WordDocument
+E   ModuleNotFoundError: No module named 'docx'
+=========================== short test summary info ===========================
+ERROR tests/test_browser_bridge.py
+ERROR tests/test_catalog_web.py
+ERROR tests/test_collection_workspace.py
+ERROR tests/test_fieldkg_workspace.py
+ERROR tests/test_local_pdf_import.py
+ERROR tests/test_native_paperpool.py
+ERROR tests/test_research_conversation.py
+ERROR tests/test_research_discussions.py
+ERROR tests/test_research_workspace.py
+ERROR tests/test_scholar_acceptance_contracts.py
+ERROR tests/test_skeleton_quality.py
+ERROR tests/test_studio_change_links.py
+ERROR tests/test_studio_context.py
+ERROR tests/test_studio_delivery.py
+ERROR tests/test_studio_history.py
+ERROR tests/test_studio_realization.py
+ERROR tests/test_studio_response_checks.py
+ERROR tests/test_studio_review_provenance.py
+ERROR tests/test_studio_revision_contracts.py
+ERROR tests/test_studio_revision_mapping.py
+ERROR tests/test_studio_rounds.py
+ERROR tests/test_studio_shared_discussions.py
+ERROR tests/test_studio_structure.py
+ERROR tests/test_studio_suggestions.py
+ERROR tests/test_track_first_fieldkg.py
+ERROR tests/test_writing_studio.py
+!!!!!!!!!!!!!!!!!! Interrupted: 26 errors during collection !!!!!!!!!!!!!!!!!!!
+26 errors in 7.34s

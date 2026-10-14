@@ -1,0 +1,63 @@
+Browser tab: 1479455140, Title: "Pepper Writing Studio", URL: "http://127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D".
+1 AXWebArea Pepper Writing Studio, URL: 127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D
+	2 container
+		3 text WRITING STUDIO Fixed citation source - software acceptance  · RSTV4
+		4 text 已自动保存
+		5 button 撤销
+		6 button (disabled) 重做
+		7 button Done
+		8 container 稿件视图
+			9 button 返回 Track
+			10 container Paper workflow stage
+				11 text 1 Planning 2 Drafting 3 全文检查 4 定稿／投稿 5 Revision 6 Publication
+			12 container 稿件内容视图
+				13 button 🧩 结构
+				14 button 📄 成文
+				15 button ✍️ Revision
+			16 container 面板显示
+				17 button 显示或隐藏左侧样本
+				18 button 显示或隐藏右侧资料
+		19 container
+			20 button 修改原始结构
+			21 button 🔎 全文检查
+			22 button 进入定稿 →
+			23 text 正在读取此成文版本的段落与来源…
+		24 text FieldKG / Evidence
+		25 text 真实资料
+		26 text field (settable) base-ui-_r_4_
+		27 text 当前筛选没有真实 FieldKG 资料。
+		28 button (expanded) 与 Agent 讨论 0 条 · Fixed citation source - software acceptance, Secondary Actions: Collapse
+			29 text 与 Agent 讨论
+			30 text 0
+			31 text  条 · 
+			32 text Fixed citation source - software acceptance
+		33 container studio-discussion-body
+			34 button 整篇历史
+			35 button (disabled) 当前对象 · 此版本
+			36 text 讨论会固定到当前对象与版本；点击文字不会自动发送。
+			37 container
+				38 text 当前选择： Fixed citation source - software acceptance 草稿对象： Introduction / 段落 2  ·  成文 v3 · 结构 r10 草稿引用： Beta software paragraph cites original page 1 [2] and additional source [1].
+				39 button 移除草稿选区（保留对象）
+				40 button 将草稿绑定到当前对象／选区
+				41 container studio-discussion-pin-label
+					42 checkbox Description: 固定当前讨论对象, Value: 0, ID: base-ui-_r_1_
+					43 text 固定当前讨论对象
+			44 button (collapsed) 固定对象的完整原文与版本, Secondary Actions: Expand
+				45 text 固定对象的完整原文与版本
+			46 container studio-discussion-cross-label
+				47 checkbox Description: 明确允许比较不同研究范围的固定来源, Value: 0, ID: base-ui-_r_5_
+				48 text 明确允许比较不同研究范围的固定来源
+			49 container 本轮讨论的历史上下文
+				50 container
+					51 text 继续这段讨论 ·  2  条历史消息 
+					52 button 开始新讨论
+				53 button (collapsed) 本轮会带入的问题、回复与固定来源, Secondary Actions: Expand
+					54 text 本轮会带入的问题、回复与固定来源
+			55 text 已恢复原对象草稿；旧提交会先读取状态。
+			56 text entry area (settable) 讨论草稿
+			57 text entry area (settable) 当前讨论的 annotation
+			58 button (disabled) 发送讨论
+			59 button (disabled) 保存讨论批注
+			60 button 更新讨论历史
+
+The focused UI element is 1 AXWebArea Pepper Writing Studio, URL: 127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D

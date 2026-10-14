@@ -1,0 +1,283 @@
+ M README.md
+ M docs/paper-catalog-current-ui.md
+ M docs/paper-catalog-ui-v1.md
+ M docs/paper-catalog-workflow-view-v3.md
+ M docs/research-overview-v1.md
+ M integrations/chrome-paper-acquisition/README.md
+ M integrations/chrome-paper-acquisition/background.mjs
+ M integrations/chrome-paper-acquisition/background.test.mjs
+ M integrations/chrome-paper-acquisition/manifest.json
+ M integrations/chrome-paper-acquisition/popup.html
+ M integrations/chrome-paper-acquisition/popup.js
+ M integrations/chrome-paper-acquisition/site_probe.mjs
+ M integrations/chrome-paper-acquisition/site_probe.test.mjs
+ M pyproject.toml
+ M scripts/probe_chrome_acquisition_live.py
+ M src/rstv4/acquisition.py
+ M src/rstv4/acquisition_worker.py
+ M src/rstv4/approval.py
+ M src/rstv4/browser_bridge.py
+ M src/rstv4/catalog_annotations.py
+ M src/rstv4/catalog_review.py
+ M src/rstv4/catalog_web.html
+ M src/rstv4/catalog_web.py
+ M src/rstv4/database.py
+ M src/rstv4/experiment.py
+ M src/rstv4/model_gateway.py
+ M src/rstv4/models.py
+ M src/rstv4/paperpool_evaluation.py
+ M src/rstv4/parser_quality.py
+ M src/rstv4/studio.py
+ M src/rstv4/studio_api.py
+ M src/rstv4/track_first.py
+ M tests/test_browser_bridge.py
+ M tests/test_catalog_web.py
+?? build/
+?? docs/paperskeleton-evaluation-status-2026-10-04.json
+?? docs/paperskeleton-frozen-ten-paper-diagnosis-2026-10-03.md
+?? docs/paperskeleton-l2-source-diagnosis-2026-10-02.md
+?? docs/paperskeleton-quality-workstream.md
+?? docs/scholar-paperskeleton-pipeline-board.md
+?? src/rstv4/acquisition_model_calls.py
+?? src/rstv4/catalog_collections.js
+?? src/rstv4/catalog_experiments.js
+?? src/rstv4/catalog_research_chat.js
+?? src/rstv4/catalog_research_overview.js
+?? src/rstv4/catalog_research_workspaces.js
+?? src/rstv4/catalog_review_workflow.js
+?? src/rstv4/catalog_review_workflow.py
+?? src/rstv4/catalog_scientific_review.js
+?? src/rstv4/catalog_track_decisions.js
+?? src/rstv4/collection_inputs.py
+?? src/rstv4/collection_runtime.py
+?? src/rstv4/collection_web.py
+?? src/rstv4/durable_model_delivery.py
+?? src/rstv4/experiment_workspace.py
+?? src/rstv4/fieldkg_semantics.py
+?? src/rstv4/fieldkg_workspace.py
+?? src/rstv4/manuscript_scientific_review.py
+?? src/rstv4/research_context.py
+?? src/rstv4/research_discussion_api.py
+?? src/rstv4/research_discussions.py
+?? src/rstv4/research_views.py
+?? src/rstv4/research_workspace.py
+?? src/rstv4/scope_literature.py
+?? src/rstv4/skeleton_audit.py
+?? src/rstv4/skeleton_augmented_reference.py
+?? src/rstv4/skeleton_augmented_reference_v2.py
+?? src/rstv4/skeleton_augmented_reference_v3.py
+?? src/rstv4/skeleton_block_review.py
+?? src/rstv4/skeleton_boundary_reference.py
+?? src/rstv4/skeleton_boundary_reference_v2.py
+?? src/rstv4/skeleton_boundary_reference_v3.py
+?? src/rstv4/skeleton_boundary_reference_v4.py
+?? src/rstv4/skeleton_boundary_reference_v5.py
+?? src/rstv4/skeleton_boundary_reference_v6.py
+?? src/rstv4/skeleton_cached_reference.py
+?? src/rstv4/skeleton_complete_reference.py
+?? src/rstv4/skeleton_context_reference.py
+?? src/rstv4/skeleton_contextual_review.py
+?? src/rstv4/skeleton_contract.py
+?? src/rstv4/skeleton_corpus.py
+?? src/rstv4/skeleton_coverage_diagnostics.py
+?? src/rstv4/skeleton_cue_diagnosis.py
+?? src/rstv4/skeleton_dspy.py
+?? src/rstv4/skeleton_endpoint_review.py
+?? src/rstv4/skeleton_evaluator_recovery.py
+?? src/rstv4/skeleton_experiment.py
+?? src/rstv4/skeleton_graph_reference.py
+?? src/rstv4/skeleton_grounded_review.py
+?? src/rstv4/skeleton_historical_reference.py
+?? src/rstv4/skeleton_independent_source_edge.py
+?? src/rstv4/skeleton_intent.py
+?? src/rstv4/skeleton_local_experiment.py
+?? src/rstv4/skeleton_mapped_experiment.py
+?? src/rstv4/skeleton_mapped_experiment_v10.py
+?? src/rstv4/skeleton_mapped_experiment_v11.py
+?? src/rstv4/skeleton_mapped_experiment_v12.py
+?? src/rstv4/skeleton_mapped_experiment_v13.py
+?? src/rstv4/skeleton_mapped_experiment_v14.py
+?? src/rstv4/skeleton_mapped_experiment_v15.py
+?? src/rstv4/skeleton_mapped_experiment_v16.py
+?? src/rstv4/skeleton_mapped_experiment_v17.py
+?? src/rstv4/skeleton_mapped_experiment_v18.py
+?? src/rstv4/skeleton_mapped_experiment_v19.py
+?? src/rstv4/skeleton_mapped_experiment_v2.py
+?? src/rstv4/skeleton_mapped_experiment_v20.py
+?? src/rstv4/skeleton_mapped_experiment_v21.py
+?? src/rstv4/skeleton_mapped_experiment_v22.py
+?? src/rstv4/skeleton_mapped_experiment_v23.py
+?? src/rstv4/skeleton_mapped_experiment_v24.py
+?? src/rstv4/skeleton_mapped_experiment_v25.py
+?? src/rstv4/skeleton_mapped_experiment_v26.py
+?? src/rstv4/skeleton_mapped_experiment_v27.py
+?? src/rstv4/skeleton_mapped_experiment_v3.py
+?? src/rstv4/skeleton_mapped_experiment_v4.py
+?? src/rstv4/skeleton_mapped_experiment_v5.py
+?? src/rstv4/skeleton_mapped_experiment_v6.py
+?? src/rstv4/skeleton_mapped_experiment_v7.py
+?? src/rstv4/skeleton_mapped_experiment_v8.py
+?? src/rstv4/skeleton_mapped_experiment_v9.py
+?? src/rstv4/skeleton_mapped_graph.py
+?? src/rstv4/skeleton_mapped_graph_v2.py
+?? src/rstv4/skeleton_mapped_review.py
+?? src/rstv4/skeleton_normalized_endpoint.py
+?? src/rstv4/skeleton_normalized_endpoint_v2.py
+?? src/rstv4/skeleton_original_pdf_table_body_v7.py
+?? src/rstv4/skeleton_original_pdf_table_body_v8.py
+?? src/rstv4/skeleton_original_pdf_table_science_v1.py
+?? src/rstv4/skeleton_original_pdf_table_science_v2.py
+?? src/rstv4/skeleton_original_pdf_table_science_v3.py
+?? src/rstv4/skeleton_original_pdf_table_science_v4.py
+?? src/rstv4/skeleton_original_pdf_table_science_v5.py
+?? src/rstv4/skeleton_original_pdf_table_science_v6.py
+?? src/rstv4/skeleton_outline.py
+?? src/rstv4/skeleton_partition_reference.py
+?? src/rstv4/skeleton_partition_reference_v2.py
+?? src/rstv4/skeleton_partition_reference_v3.py
+?? src/rstv4/skeleton_pdf_footnote_anchors_v1.py
+?? src/rstv4/skeleton_pdf_numeric_source_v1.py
+?? src/rstv4/skeleton_preserved_reference.py
+?? src/rstv4/skeleton_reference_adjudication.py
+?? src/rstv4/skeleton_scientific_table_reference.py
+?? src/rstv4/skeleton_scientific_table_reference_v2.py
+?? src/rstv4/skeleton_scientific_table_reference_v3.py
+?? src/rstv4/skeleton_scientific_table_reference_v4.py
+?? src/rstv4/skeleton_scientific_table_reference_v5.py
+?? src/rstv4/skeleton_scientific_table_reference_v6.py
+?? src/rstv4/skeleton_scientific_table_reference_v7.py
+?? src/rstv4/skeleton_scientific_table_reference_v8.py
+?? src/rstv4/skeleton_source_reference.py
+?? src/rstv4/skeleton_staged_reference.py
+?? src/rstv4/skeleton_table_experiment.py
+?? src/rstv4/skeleton_table_reference.py
+?? src/rstv4/skeleton_table_reference_v2.py
+?? src/rstv4/skeleton_test_cue_reference.py
+?? src/rstv4/skeleton_test_cue_reference_v2.py
+?? src/rstv4/skeleton_test_cue_reference_v3.py
+?? src/rstv4/skeleton_test_cue_reference_v4.py
+?? src/rstv4/skeleton_test_cue_reference_v5.py
+?? src/rstv4/skeleton_test_cue_reference_v6.py
+?? src/rstv4/skeleton_test_cue_reference_v7.py
+?? src/rstv4/skeleton_test_cue_reference_v8.py
+?? src/rstv4/skeleton_test_cue_reference_v9.py
+?? src/rstv4/skeleton_transactional_reference.py
+?? src/rstv4/skeleton_transactional_reference_v2.py
+?? src/rstv4/skeleton_verified_experiment.py
+?? src/rstv4/skeleton_verified_reference.py
+?? src/rstv4/source_review.py
+?? src/rstv4/studio_change_links.py
+?? src/rstv4/studio_context.py
+?? src/rstv4/studio_delivery.py
+?? src/rstv4/studio_discussions.py
+?? src/rstv4/studio_read_views.py
+?? src/rstv4/studio_realization.py
+?? src/rstv4/studio_response_checks.py
+?? src/rstv4/studio_revision_mapping.py
+?? src/rstv4/studio_rounds.py
+?? src/rstv4/studio_structure.py
+?? src/rstv4/studio_suggestions.py
+?? src/rstv4/studio_templates.py
+?? src/rstv4/track_scientific_workspace.py
+?? tests/catalog_collection_progress.mjs
+?? tests/catalog_collections.mjs
+?? tests/catalog_deep_read.mjs
+?? tests/catalog_existing_papers.mjs
+?? tests/catalog_experiments.mjs
+?? tests/catalog_research_overview.mjs
+?? tests/catalog_research_workspaces.mjs
+?? tests/catalog_review_workflow.mjs
+?? tests/catalog_scientific_review.mjs
+?? tests/catalog_scope_literature.mjs
+?? tests/catalog_track_decisions.mjs
+?? tests/test_acquisition_deep_read.py
+?? tests/test_catalog_paper_selection.py
+?? tests/test_catalog_review_workflow.py
+?? tests/test_collection_runtime.py
+?? tests/test_collection_workspace.py
+?? tests/test_database_initialization.py
+?? tests/test_durable_model_delivery.py
+?? tests/test_experiment_artifact_trace.py
+?? tests/test_experiment_workspace.py
+?? tests/test_fieldkg_semantics.py
+?? tests/test_fieldkg_workspace.py
+?? tests/test_manuscript_scientific_review.py
+?? tests/test_research_conversation.py
+?? tests/test_research_discussions.py
+?? tests/test_research_workspace.py
+?? tests/test_scholar_acceptance_contracts.py
+?? tests/test_scope_literature.py
+?? tests/test_skeleton_augmented_projection.py
+?? tests/test_skeleton_augmented_reference.py
+?? tests/test_skeleton_block_review.py
+?? tests/test_skeleton_boundary_reference.py
+?? tests/test_skeleton_cached_reference.py
+?? tests/test_skeleton_claim_identifier_contract.py
+?? tests/test_skeleton_complete_reference.py
+?? tests/test_skeleton_context_reference.py
+?? tests/test_skeleton_contextual_review.py
+?? tests/test_skeleton_contract.py
+?? tests/test_skeleton_coverage_diagnostics.py
+?? tests/test_skeleton_endpoint_review.py
+?? tests/test_skeleton_evaluator_recovery.py
+?? tests/test_skeleton_exact_quote_boundary_geometry.py
+?? tests/test_skeleton_exact_source_history.py
+?? tests/test_skeleton_experiment.py
+?? tests/test_skeleton_graph_reference.py
+?? tests/test_skeleton_grounded_review.py
+?? tests/test_skeleton_historical_reference.py
+?? tests/test_skeleton_intent.py
+?? tests/test_skeleton_literal_empty_orphan_table.py
+?? tests/test_skeleton_local_experiment.py
+?? tests/test_skeleton_lossless_graph.py
+?? tests/test_skeleton_lossless_verified_reference.py
+?? tests/test_skeleton_mapped_graph.py
+?? tests/test_skeleton_mapped_review.py
+?? tests/test_skeleton_mapped_verified_reference.py
+?? tests/test_skeleton_normalized_endpoint.py
+?? tests/test_skeleton_normalized_native_endpoint.py
+?? tests/test_skeleton_original_pdf_table_science.py
+?? tests/test_skeleton_pdf_condition_proposition.py
+?? tests/test_skeleton_pdf_footnote_qualified_science.py
+?? tests/test_skeleton_pdf_numeric_source.py
+?? tests/test_skeleton_pdf_source_identity.py
+?? tests/test_skeleton_preserved_reference.py
+?? tests/test_skeleton_protocol_coverage.py
+?? tests/test_skeleton_quality.py
+?? tests/test_skeleton_reference_adjudication.py
+?? tests/test_skeleton_scientific_table_cell_locators.py
+?? tests/test_skeleton_scientific_table_complete_source_projection.py
+?? tests/test_skeleton_scientific_table_pdf_evidence.py
+?? tests/test_skeleton_scientific_table_pdf_line_locators.py
+?? tests/test_skeleton_scientific_table_reference.py
+?? tests/test_skeleton_scientific_table_row_feedback.py
+?? tests/test_skeleton_scientific_table_span_domain.py
+?? tests/test_skeleton_seed_revision_paths.py
+?? tests/test_skeleton_source_graph_endpoint_domain.py
+?? tests/test_skeleton_source_outline.py
+?? tests/test_skeleton_source_reference.py
+?? tests/test_skeleton_staged_reference.py
+?? tests/test_skeleton_table_range_and_required_cell_keys.py
+?? tests/test_skeleton_table_reference.py
+?? tests/test_skeleton_test_cue_reference.py
+?? tests/test_skeleton_transactional_reference.py
+?? tests/test_skeleton_transactional_reference_v2.py
+?? tests/test_skeleton_typed_nonassertive_boundary.py
+?? tests/test_skeleton_verified_reference.py
+?? tests/test_source_review_withdrawal.py
+?? tests/test_studio_change_links.py
+?? tests/test_studio_context.py
+?? tests/test_studio_delivery.py
+?? tests/test_studio_hierarchy.py
+?? tests/test_studio_history.py
+?? tests/test_studio_realization.py
+?? tests/test_studio_response_checks.py
+?? tests/test_studio_review_provenance.py
+?? tests/test_studio_revision_contracts.py
+?? tests/test_studio_revision_mapping.py
+?? tests/test_studio_rounds.py
+?? tests/test_studio_shared_discussions.py
+?? tests/test_studio_structure.py
+?? tests/test_studio_suggestions.py
+?? tests/test_studio_templates.py
+?? tests/test_track_scientific_workspace.py

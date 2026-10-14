@@ -1,0 +1,66 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/studio_correspondence.py', 'src/rstv4/studio.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_templates.py', 'src/rstv4/studio_read_views.py', 'tests/test_studio_correspondence.py', 'tests/test_studio_templates.py']
+All checks passed!
+RUN ['node', 'node_modules/typescript/bin/tsc', '--noEmit']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd', '--type-aware', '--deny-warnings', 'lib/studio-correspondence.ts', 'lib/studio-blocks.ts', 'lib/studio-types.ts', 'components/studio-intent-correspondence.tsx', 'components/studio-workspace.tsx']
+RUN ['git', 'diff', '--check']
+RUN ['node', 'tests/unit/studio-correspondence.cjs']
+PASS arbitrary nested same-label target retains canonical author data and fixed source
+PASS all-original context choices and distinct Intent references remain independent
+PASS leaving formula and asset placement pending does not invent a target
+PASS legacy flat fixed paragraph source is inherited without rewriting the slot
+PASS every reviewed source, target, parent, group and edge change invalidates confirmation
+PASS repeated/foreign/unplaced/self destinations fail without writes
+PASS explicitly cancelling and undo/redo preserve exact documents
+PASS deleting a target releases its mapping but never deletes original author content
+PASS template replacement releases references to canonical original bank
+9 author correspondence contracts passed; no browser or real model used.
+RUN ['node', 'tests/unit/studio-template-placement.cjs']
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-blocks.cjs']
+17 controlled movement/group/association cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-block-controls.cjs']
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+RUN ['node', 'tests/unit/studio-structure.cjs']
+17 controlled movement/group/association cases passed; no browser used.
+8 controlled keyboard-coordinate cases passed; actual getter; no browser used.
+RUN ['node', 'tests/unit/studio-hierarchy.cjs']
+7 hierarchy/tree/argument preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-undo-history.cjs']
+PASS full author snapshots survive storage round trip, including citations, assets, formula and relations
+PASS server key order changes do not erase a semantically equal stack
+PASS foreign manuscript, changed revision and changed author word or array ordering are rejected
+PASS unreadable or malformed stacks and foreign snapshot stay unusable without mutating the saved raw
+PASS history is bounded to the most recent 100 complete operations
+PASS undo and redo stacks can each resume after a different saved revision
+6 durable undo storage binding and preservation cases passed; no browser used.
+RUN ['node', 'tests/unit/studio-discussion-history.cjs']
+PASS current object excludes another revision and another kind with the same ID
+PASS generated filter distinguishes two versions with the same author revision
+PASS legacy author context preserves exact ID revision Unicode quote and annotation
+PASS another manuscript cannot supply the legacy binding
+PASS legacy generated context uses its verified immutable version and anchor
+PASS damaged generated object cannot be redirected to a neighboring anchor
+6 controlled Studio history helper checks passed
+RUN ['node', 'tests/unit/studio-response-review.cjs']
+C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\studio-response-review.cjs:58
+    throw new Error(`Unexpected import ${name}`);
+    ^
+
+Error: Unexpected import @/lib/studio-downloads
+    at requireMock (C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\studio-response-review.cjs:58:11)
+    at evalmachine.<anonymous>:13:28
+    at Script.runInContext (node:vm:149:12)
+    at Script.runInNewContext (node:vm:154:17)
+    at Object.runInNewContext (node:vm:310:38)
+    at setup (C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\studio-response-review.cjs:60:6)
+    at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\studio-response-review.cjs:73:13
+    at Object.<anonymous> (C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\studio-response-review.cjs:144:3)
+    at Module._compile (node:internal/modules/cjs/loader:1872:14)
+    at Object..js (node:internal/modules/cjs/loader:2003:10)

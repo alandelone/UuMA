@@ -87,6 +87,22 @@ def grounded_answer(answer: dict[str, Any]) -> dict[str, Any]:
 def is_progress_request(text: str) -> bool:
     """Recognize standalone operational questions; domain research is resolved separately."""
     value = re.sub(r"[\s?.!？！。]+", " ", text.casefold()).strip()
+    if re.fullmatch(
+        r"(?:please |pls )?(?:how (?:is|s) (?:the |your |our |my )?"
+        r"(?:research )?progress|(?:what is|what s) (?:the |your )?(?:research )?"
+        r"(?:status|progress)|(?:any|an?) (?:research )?(?:progress|updates?)|"
+        r"(?:show|list|view|review) (?:me )?(?:all |the |my |current )?"
+        r"(?:research )?(?:topics|progress|status)|what (?:are|is) (?:the |your |my )?topics)"
+        r"(?: now| so far| today)?",
+        value.replace("'", " "),
+    ):
+        return True
+    if re.fullmatch(
+        r"(?:请|帮我|我想)?(?:看看|查看|列出|显示|review)?(?:所有|全部|今天的|当前的)?"
+        r"(?:主题|研究主题|研究进度|进度|进展)(?:列表|怎样|怎么样|如何|到哪里了|呢|了吗)?",
+        value.replace(" ", ""),
+    ):
+        return True
     if ("topic" in value or "主题" in value) and any(
         marker in value for marker in ("进行中", "正在研究", "进度", "进展", "active", "running")
     ) and any(marker in value for marker in ("什么", "哪些", "有", "what", "which")):
@@ -97,6 +113,24 @@ def is_progress_request(text: str) -> bool:
         "research status", "research progress", "进度", "研究进度", "现在进度怎样",
         "进展如何", "有什么进展", "你研究到哪里了", "你做到哪里了", "还在研究吗",
     }
+
+
+def research_control_intent(text: str) -> str | None:
+    """Standalone commands operate on an existing task, never become durable questions."""
+    value = re.sub(r"[\s?.!？！。，,]+", " ", text.casefold()).strip()
+    value = re.sub(r"^(?:(?:ok(?:ay)?|please|pls|好的|嗯|那|请|先)\s*)+", "", value).strip()
+    value = re.sub(r"(?:吧|啦|咯)$", "", value).strip()
+    if re.fullmatch(r"(?:(?:continue|resume)\s*)+(?:research)?|(?:继续|恢复)+(?:研究)?", value):
+        return "resume"
+    for intent, commands in {
+        "resume": {"continue", "continue research", "resume", "resume research", "keep going",
+                   "继续", "继续研究", "恢复", "恢复研究", "继续旧主题", "继续之前的研究"},
+        "pause": {"pause", "pause research", "暂停", "暂停研究"},
+        "stop": {"stop", "stop research", "停止", "停止研究"},
+    }.items():
+        if value in commands:
+            return intent
+    return None
 
 
 def _features(text: str) -> set[str]:
@@ -171,6 +205,10 @@ class TopicKnowledgeService:
         if anchor:
             url += f"#{anchor}"
         return url
+
+    def topics_url(self) -> str:
+        url = f"{self.view_base_url}/wisdom/topics"
+        return url + (f"?token={self.view_token.replace('_', '%5F')}" if self.view_token else "")
 
     def _insert(self, conn, table: str, model, event_type: str, actor_id: str) -> dict[str, Any]:
         record = json_record(model)
@@ -273,6 +311,8 @@ class TopicKnowledgeService:
             raise ValueError("This is an API error response, not a research question.")
         if is_progress_request(text):
             raise ValueError("This is a progress request, not a research question.")
+        if research_control_intent(text):
+            raise ValueError("This is a research control request, not a research question.")
         now = datetime.now(UTC).isoformat()
         normalized = normalize_topic_text(text)
         route_key = _route_key(route)
@@ -1011,8 +1051,59 @@ class TopicKnowledgeService:
             )
             return version | {"document_url": self.topic_url(topic_id, "overview")}
 
+    def recover_topic_link(
+        self, original: KnowledgeTopicRecord, target_topic_id: str, *,
+        actor_id: str, reason: str, history_ref: str,
+    ) -> dict[str, Any]:
+        """Reviewer repairs a split-store link, preserving the external history reference.
+
+        Only navigation is recovered. No external claims, evidence or approvals are imported.
+        """
+        self.knowledge.require_reviewer(actor_id)
+        if not reason.strip() or not history_ref.strip():
+            raise ValueError("Recovery requires a reason and preserved history reference.")
+        with self.store.transaction() as conn:
+            target = self.knowledge._require("knowledge_topics", target_topic_id, conn)
+            if target["status"] != "ACTIVE" or target.get("superseded_by_topic_id"):
+                raise ValueError("Recovery target must be an active canonical topic.")
+            if original.topic_id == target_topic_id:
+                raise ValueError("A topic cannot redirect to itself.")
+            before = self.store.get_record("knowledge_topics", original.topic_id, conn)
+            if before:
+                if before.get("superseded_by_topic_id") == target_topic_id:
+                    return before
+                raise ValueError("Recovery cannot overwrite an existing local topic.")
+            recovered = original.model_copy(update={
+                "status": "ARCHIVED", "superseded_by_topic_id": target_topic_id,
+                "recovery_history_ref": history_ref, "summary": reason,
+                "updated_at": datetime.now(UTC),
+            })
+            return self._insert(
+                conn, "knowledge_topics", recovered, "TOPIC_LINK_RECOVERED", actor_id
+            )
+
+    def reverse_topic_link_recovery(
+        self, topic_id: str, *, actor_id: str, reason: str,
+    ) -> dict[str, Any]:
+        self.knowledge.require_reviewer(actor_id)
+        if not reason.strip():
+            raise ValueError("Reversal requires a reason.")
+        with self.store.transaction() as conn:
+            before = self.knowledge._require("knowledge_topics", topic_id, conn)
+            if not before.get("superseded_by_topic_id"):
+                raise ValueError("Topic has no recovered link to reverse.")
+            return self._update(
+                conn, "knowledge_topics", before,
+                before | {"superseded_by_topic_id": None, "summary": reason,
+                          "updated_at": datetime.now(UTC).isoformat()},
+                "TOPIC_LINK_RECOVERY_REVERSED", actor_id,
+            )
+
     def get_topic(self, topic_id: str) -> dict[str, Any]:
         topic = self.knowledge._require("knowledge_topics", topic_id)
+        if topic.get("superseded_by_topic_id"):
+            result = self.get_topic(topic["superseded_by_topic_id"])
+            return result | {"redirected_from": topic}
         with self.store.connect() as conn:
             document_row = conn.execute(
                 "SELECT record_json FROM topic_documents WHERE topic_id = ?", (topic_id,)
@@ -1082,12 +1173,46 @@ class TopicKnowledgeService:
             "document_url": context["document_url"],
         }
 
+    def bind_existing_topic(
+        self, topic_id: str, *, route: dict[str, str], actor_id: str,
+    ) -> dict[str, Any]:
+        """Restore conversation navigation without creating questions or resetting research."""
+        self.knowledge.require_writer(actor_id)
+        key = _route_key(route)
+        if not key:
+            raise ValueError("A stable conversation route is required.")
+        context = self.get_topic(topic_id)
+        root = next((item for item in context["questions"]
+                     if item["link"]["relationship"] == "ROOT"), None)
+        if not root:
+            raise ValueError("Existing topic has no root question.")
+        with self.store.transaction() as conn:
+            row = conn.execute(
+                "SELECT record_json FROM topic_routes WHERE route_key = ?", (key,)
+            ).fetchone()
+            if row:
+                before = json.loads(row["record_json"])
+                after = before | {"topic_id": context["topic"]["topic_id"],
+                                  "question_id": root["question"]["question_id"],
+                                  "updated_at": datetime.now(UTC).isoformat()}
+                if before["topic_id"] == after["topic_id"]:
+                    return before
+                return self._update(conn, "topic_routes", before, after,
+                                    "TOPIC_ROUTE_REBOUND", actor_id)
+            return self._insert(
+                conn, "topic_routes", TopicRouteRecord(
+                    route_key=key, topic_id=context["topic"]["topic_id"],
+                    question_id=root["question"]["question_id"],
+                ), "TOPIC_ROUTE_BOUND", actor_id,
+            )
+
     def list_topics(self, *, limit: int = 100) -> dict[str, Any]:
         records = self.store.list_records("knowledge_topics", limit=limit)
         return {"count": len(records), "records": records}
 
     def graph(self, topic_id: str) -> dict[str, Any]:
         data = self.get_topic(topic_id)
+        topic_id = data["topic"]["topic_id"]
         nodes = [{"id": topic_id, "kind": "topic", "label": data["topic"]["title"]}]
         edges: list[dict[str, str]] = []
         with self.store.connect() as conn:

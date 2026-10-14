@@ -1,0 +1,208 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_review_workflow.py', 'tests/test_parser_quality.py', 'tests/test_native_paperpool.py', 'tests/test_catalog_web.py', 'tests/test_collection_workspace.py', '-q']
+..........................................................               [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+58 passed, 1 warning in 15.53s
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'ruff', 'check', 'src/rstv4/catalog_review_workflow.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/parser_quality.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'tests/test_catalog_review_workflow.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\acquisition_worker.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import argparse
+ 4 | | import json
+ 5 | | import hashlib
+ 6 | | import os
+ 7 | | import shutil
+ 8 | | import socket
+ 9 | | import threading
+10 | | import time
+11 | | import urllib.error
+12 | | import urllib.request
+13 | | from contextlib import contextmanager
+14 | | from pathlib import Path
+15 | | from typing import Any, Self
+16 | |
+17 | | from .acquisition import AcquisitionService
+18 | | from .database import transaction
+19 | | from .catalog_review_workflow import file_integrity
+20 | | from .parser_quality import _align_reference_pages
+21 | | from .external_fulltext import FALLBACK_ADAPTERS
+22 | | from .model_gateway import ContextBudgetExceeded, UnlimitedLLMGateway
+23 | | from .models import BrowserAcquisitionInput, PdfRegistrationInput
+24 | | from .paper_parser import MinerUParser
+25 | | from .reference_parser import GrobidReferenceParser
+26 | | from .sources import (
+27 | |     locate_open_access_pdf,
+28 | |     lookup_bibliographic_reference,
+29 | |     resolve_doi,
+30 | |     search_all,
+31 | | )
+   | |_^
+32 |
+33 |   ROLE_QUEUES = {
+   |
+help: Organize imports
+   |
+3  | import argparse
+4  + import hashlib
+5  | import json
+   - import hashlib
+6  | import os
+--------------------------------------------------------------------------------
+17 | from .acquisition import AcquisitionService
+18 + from .catalog_review_workflow import file_integrity
+19 | from .database import transaction
+   - from .catalog_review_workflow import file_integrity
+   - from .parser_quality import _align_reference_pages
+20 | from .external_fulltext import FALLBACK_ADAPTERS
+21 | from .model_gateway import ContextBudgetExceeded, UnlimitedLLMGateway
+22 | from .models import BrowserAcquisitionInput, PdfRegistrationInput
+23 | from .paper_parser import MinerUParser
+24 + from .parser_quality import _align_reference_pages
+25 | from .reference_parser import GrobidReferenceParser
+   |
+
+UP035 [*] Import from `collections.abc` instead: `Callable`
+  --> src\rstv4\catalog_review_workflow.py:12:1
+   |
+10 | from contextlib import closing
+11 | from pathlib import Path
+12 | from typing import Any, Callable, Literal
+   | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+13 |
+14 | from pydantic import Field, model_validator
+   |
+help: Import from `collections.abc`
+   |
+11 | from pathlib import Path
+   - from typing import Any, Callable, Literal
+12 + from typing import Any, Literal
+13 + from collections.abc import Callable
+14 |
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\catalog_web.py:3:1
+   |
+ 1 |   """Local browser view of the authoritative Paper Catalog and review findings."""
+ 2 |
+ 3 | / from __future__ import annotations
+ 4 | |
+ 5 | | import hashlib
+ 6 | | import json
+ 7 | | import os
+ 8 | | import shutil
+ 9 | | import sqlite3
+10 | | import subprocess
+11 | | import xml.etree.ElementTree as ET
+12 | | from collections.abc import AsyncIterator, Iterator
+13 | | from contextlib import asynccontextmanager, contextmanager
+14 | | from functools import cmp_to_key
+15 | | from pathlib import Path
+16 | | from typing import Any
+17 | |
+18 | | from fastapi import FastAPI, HTTPException, Request
+19 | | from fastapi.responses import FileResponse, Response
+20 | | from pydantic import BaseModel, Field
+21 | | from pypdf import PdfReader
+22 | | from starlette.middleware.trustedhost import TrustedHostMiddleware
+23 | |
+24 | | from .acquisition import AcquisitionService
+25 | | from .catalog_annotations import (
+26 | |     ReviewAnnotationInput,
+27 | |     list_review_annotations,
+28 | |     record_review_annotation,
+29 | | )
+30 | | from .catalog_review import (
+31 | |     ReviewFindingInput,
+32 | |     list_review_findings,
+33 | |     record_review_finding,
+34 | | )
+35 | | from .collection_web import collection_router
+36 | | from .catalog_review_workflow import CatalogReviewWorkflow, ReviewActionInput
+37 | | from .fieldkg_workspace import FieldKGAction, record_fieldkg_action
+38 | | from .research_context import DiscussionTarget
+39 | | from .research_discussion_api import discussion_router
+40 | | from .research_discussions import (
+41 | |     AnnotationInput,
+42 | |     DiscussionHistoryRequest,
+43 | |     DiscussionInput,
+44 | |     ResearchDiscussionService,
+45 | | )
+46 | | from .research_views import available_skeletons, field_workspace, track_workspace
+47 | | from .research_workspace import (
+48 | |     WorkspaceAction,
+49 | |     WorkspaceError,
+50 | |     metadata_digest,
+51 | |     record_workspace_action,
+52 | | )
+   | |_^
+53 |
+54 |   TEXT_FIELDS = {"title", "authors", "doi", "source", "abstract", "pdf_status",
+   |
+help: Organize imports
+   |
+34 | )
+35 + from .catalog_review_workflow import CatalogReviewWorkflow, ReviewActionInput
+36 | from .collection_web import collection_router
+   - from .catalog_review_workflow import CatalogReviewWorkflow, ReviewActionInput
+37 | from .fieldkg_workspace import FieldKGAction, record_fieldkg_action
+   |
+
+F401 [*] `rstv4.acquisition.AcquisitionService` imported but unused
+  --> tests\test_catalog_review_workflow.py:14:31
+   |
+12 | from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
+13 |
+14 | from rstv4.acquisition import AcquisitionService
+   |                               ^^^^^^^^^^^^^^^^^^
+15 | from rstv4.acquisition_worker import AcquisitionWorker
+16 | from rstv4.catalog_web import create_app
+   |
+help: Remove unused import: `rstv4.acquisition.AcquisitionService`
+   |
+13 |
+   - from rstv4.acquisition import AcquisitionService
+14 | from rstv4.acquisition_worker import AcquisitionWorker
+   |
+
+RUF059 Unpacked variable `collection` is never used
+  --> tests\test_catalog_review_workflow.py:64:13
+   |
+63 | def test_identity_annotations_then_explicit_review_approves_and_queues_exact_parse(tmp_path: Path):
+64 |     service,collection,paper,file=fixture(tmp_path,mismatch=True)
+   |             ^^^^^^^^^^
+65 |     assert file['identity_status']=='NEEDS_REVIEW'
+66 |     with TestClient(create_app(tmp_path)) as client:
+   |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `collection` is never used
+   --> tests\test_catalog_review_workflow.py:110:13
+    |
+109 | def test_parser_source_correction_is_rechecked_then_publishes_and_keeps_history(tmp_path: Path):
+110 |     service,collection,paper,file=fixture(tmp_path)
+    |             ^^^^^^^^^^
+111 |     assert file['identity_status']=='VERIFIED'
+112 |     parsed={'parser':'explicit-fixture-parser','parser_version':'1','manifest':{'quality':{'reference_page_alignment':{'missing_sourc…
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `paper` is never used
+   --> tests\test_catalog_review_workflow.py:110:24
+    |
+109 | def test_parser_source_correction_is_rechecked_then_publishes_and_keeps_history(tmp_path: Path):
+110 |     service,collection,paper,file=fixture(tmp_path)
+    |                        ^^^^^
+111 |     assert file['identity_status']=='VERIFIED'
+112 |     parsed={'parser':'explicit-fixture-parser','parser_version':'1','manifest':{'quality':{'reference_page_alignment':{'missing_sourc…
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 7 errors.
+[*] 4 fixable with the `--fix` option (3 hidden fixes can be enabled with the `--unsafe-fixes` option).

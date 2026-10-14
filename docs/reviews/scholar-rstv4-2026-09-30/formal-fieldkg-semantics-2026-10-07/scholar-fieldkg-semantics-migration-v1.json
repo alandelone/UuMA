@@ -1,0 +1,14 @@
+{
+  "status": "PASS_ADDITIVE_SCHEMA11_TO12_PRESERVING_ALL106_OLD_TABLES",
+  "original_database_sha256": "39f8ca91435007f59e4e476c73ac8c860c5cfb758aa0098c79999cd44b81b88a",
+  "current_database_sha256": "a2ff55ebd92c70c7d86c643c203c2eda8dea57ac4ae42cf302b33b0bf9805d1b",
+  "old_table_count": 106,
+  "current_table_count": 108,
+  "new_tables": [
+    "fieldkg_semantic_runs",
+    "fieldkg_semantic_objects"
+  ],
+  "all_old_rows_preserved_except_declared_version": true,
+  "all_old_schema_definitions_preserved": true,
+  "no_semantic_objects_or_runs_added": true
+}

@@ -1,0 +1,3 @@
+['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/fieldkg_semantics.py', 'src/rstv4/catalog_web.py', 'src/rstv4/research_context.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/research_views.py']
+All checks passed!
+['node', '--check', 'src/rstv4/catalog_research_workspaces.js']

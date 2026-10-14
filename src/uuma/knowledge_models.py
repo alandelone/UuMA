@@ -322,6 +322,8 @@ class KnowledgeTopicRecord(StrictModel):
     focus: list[str] = Field(default_factory=list)
     summary: str | None = Field(default=None, max_length=16000)
     status: Literal["ACTIVE", "ARCHIVED"] = "ACTIVE"
+    superseded_by_topic_id: str | None = None
+    recovery_history_ref: str | None = None
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
 

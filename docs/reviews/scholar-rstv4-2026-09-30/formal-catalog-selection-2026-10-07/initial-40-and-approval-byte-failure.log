@@ -1,0 +1,36 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/acquisition.py', 'tests/test_catalog_paper_selection.py']
+All checks passed!
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_paper_selection.py', 'tests/test_collection_workspace.py', 'tests/test_manuscript_scientific_review.py', '-q']
+................................F........                                [100%]
+================================== FAILURES ===================================
+______ test_changed_source_after_proposal_rejects_before_consuming_grant ______
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-900/test_changed_source_after_prop0')
+
+    def test_changed_source_after_proposal_rejects_before_consuming_grant(tmp_path: Path):
+        service,*_=dependencies(tmp_path)
+        with TestClient(create_app(tmp_path)) as client:
+            context=client.get('/api/catalog/manuscripts/ms/scientific-review').json()
+            proposal=propose(client,context).json()
+            grant=capture_user_approval(tmp_path,profile='orchestrator',session_id='test',message_id='message',user_message=proposal['approval_phrase'])
+            with closing(sqlite3.connect(service.db_path)) as conn,conn:
+                conn.execute("UPDATE research_nodes SET status='STALE',revision=revision+1 WHERE node_id='untouched'")
+            before=state(service.db_path)
+            response=client.post('/api/catalog/manuscripts/ms/scientific-review/'+proposal['review_id']+'/apply')
+>           assert response.status_code==409 and state(service.db_path)==before
+E           AssertionError: assert (409 == 409 and ('f4ab82508b0...00\');', ...]) == ('f333b0151f1...00\');', ...])
+E            +  where 409 = <Response [409 Conflict]>.status_code
+E             
+E             At index 0 diff: 'f4ab82508b026662d9384353441bb0bed16a4181aeec61ccd1221917482dbd0b' != 'f333b0151f115165f387f9dab3fd56b1de71f2e1535a3380a24862670ebb1577'
+E             Use -v to get more diff)
+
+tests\test_manuscript_scientific_review.py:74: AssertionError
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+=========================== short test summary info ===========================
+FAILED tests/test_manuscript_scientific_review.py::test_changed_source_after_proposal_rejects_before_consuming_grant
+1 failed, 40 passed, 1 warning in 18.10s

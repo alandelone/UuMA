@@ -1,0 +1,61 @@
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-inline-v1.js']
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['node', 'tests/catalog_collections.mjs']
+9 controlled Collection request checks passed
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/models.py', 'src/rstv4/database.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/collection_web.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\acquisition.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import csv
+ 4 | | import hashlib
+ 5 | | import json
+ 6 | | import os
+ 7 | | import re
+ 8 | | import shutil
+ 9 | | import sqlite3
+10 | | import urllib.parse
+11 | | from collections import deque
+12 | | from collections.abc import Iterable
+13 | | from datetime import UTC, datetime, timedelta
+14 | | from pathlib import Path
+15 | | from typing import Any
+16 | |
+17 | | from pypdf import PdfReader
+18 | | from pypdf.errors import PdfReadError
+19 | |
+20 | | from .collection_inputs import normalize_input_doi, prepare_inputs
+21 | | from .database import initialize_catalog, transaction
+22 | | from .models import (
+23 | |     BrowserAcquisitionInput,
+24 | |     BrowserAcquisitionReceiptInput,
+25 | |     CollectionCreateInput,
+26 | |     CollectionScopeInput,
+27 | |     CollectionTargetInput,
+28 | |     CollectionSearchInput,
+29 | |     DeepReadRequestInput,
+30 | |     JournalMetricsImportInput,
+31 | |     LegacyPaperMigrationInput,
+32 | |     LocalPdfImportInput,
+33 | |     PdfRegistrationInput,
+34 | |     SourceCandidate,
+35 | |     new_id,
+36 | | )
+37 | | from .sources import PROVIDERS, ProviderResult
+   | |______________________________________________^
+38 |
+39 |   DOI_PREFIX = re.compile(r"^(?:https?://(?:dx\.)?doi\.org/|doi:\s*)", re.IGNORECASE)
+   |
+help: Organize imports
+   |
+26 |     CollectionScopeInput,
+27 +     CollectionSearchInput,
+28 |     CollectionTargetInput,
+   -     CollectionSearchInput,
+29 |     DeepReadRequestInput,
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

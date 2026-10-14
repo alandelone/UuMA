@@ -644,6 +644,59 @@ class ForgeJournalStore:
             assert job is not None
             return self._row(job)
 
+    def supersede_queued_capture(
+        self, sync_job_id: str, replacement_journal_id: str, reason: str, *, actor_id: str
+    ) -> dict[str, Any]:
+        """Withdraw an unsent capture after a reviewed correction; retain its payload and history."""
+        if actor_id not in {"user", "orchestrator"}:
+            raise PermissionError("Capture corrections require user or Orchestrator review.")
+        if not reason.strip():
+            raise JournalSyncError("A correction reason is required.")
+        with self.connect() as connection:
+            connection.execute("BEGIN IMMEDIATE")
+            job = connection.execute(
+                "SELECT * FROM forge_journal_sync_jobs WHERE sync_job_id = ?", (sync_job_id,)
+            ).fetchone()
+            replacement = connection.execute(
+                "SELECT journal_id FROM forge_journal_pages WHERE journal_id = ?",
+                (replacement_journal_id,),
+            ).fetchone()
+            if job is None or replacement is None:
+                raise JournalSyncError("Both the original capture and replacement must exist.")
+            if job["journal_id"] == replacement_journal_id:
+                raise JournalSyncError("The replacement must be a different journal record.")
+            if job["status"] != "QUEUED" or job["operation"] != "CREATE_LOG":
+                raise JournalSyncError("Only queued, unsent CREATE_LOG captures can be withdrawn.")
+            page = connection.execute(
+                "SELECT notion_page_id FROM forge_journal_pages WHERE journal_id = ?",
+                (job["journal_id"],),
+            ).fetchone()
+            if page["notion_page_id"]:
+                raise JournalSyncError("Published records require a visible remote correction.")
+            now = self._now_text()
+            connection.execute(
+                "UPDATE forge_journal_sync_jobs SET status = 'CANCELLED', last_error = ?, "
+                "updated_at = ? WHERE sync_job_id = ?",
+                (reason.strip(), now, sync_job_id),
+            )
+            pending = connection.execute(
+                "SELECT COUNT(*) FROM forge_journal_sync_jobs WHERE journal_id = ? "
+                "AND status IN ('QUEUED', 'LEASED')", (job["journal_id"],)
+            ).fetchone()[0]
+            if not pending:
+                connection.execute(
+                    "UPDATE forge_journal_pages SET sync_status = 'LOCAL', last_error = ?, "
+                    "updated_at = ? WHERE journal_id = ?",
+                    (reason.strip(), now, job["journal_id"]),
+                )
+            self._event(
+                connection, journal_id=job["journal_id"], sync_job_id=sync_job_id,
+                event_type="CAPTURE_SUPERSEDED", actor_id=actor_id,
+                details={"replacement_journal_id": replacement_journal_id, "reason": reason.strip()},
+            )
+        return {"sync_job_id": sync_job_id, "status": "CANCELLED",
+                "replacement_journal_id": replacement_journal_id}
+
     def claim_write(self, worker_id: str, *, lease_seconds: int = 120) -> dict[str, Any] | None:
         worker = worker_id.strip()
         if not worker:

@@ -1,0 +1,57 @@
+{
+  "checked_at": "2026-10-14T03:36:46.480866+00:00",
+  "installed_plugin_same_ast": true,
+  "installed_managed_soul_matches_source": true,
+  "all_nine_installed_skills_identical": true,
+  "ruff": {
+    "exit_code": 0,
+    "output": "All checks passed!",
+    "paths": [
+      "src/uuma/honc",
+      "src/uuma/session.py",
+      "integrations/hermes/honc_life",
+      "scripts/honc-native-lifecycle.py",
+      "scripts/configure-hermes-profile.py",
+      "test-fixtures/honc/native_life_probe.py",
+      "tests\\test_honc_conversation.py",
+      "tests\\test_honc_ledger.py",
+      "tests\\test_honc_life_admission.py",
+      "tests\\test_honc_life_context_history_migration.py",
+      "tests\\test_honc_life_manuals.py",
+      "tests\\test_honc_life_mcp.py",
+      "tests\\test_honc_life_models.py",
+      "tests\\test_honc_life_service.py",
+      "tests\\test_honc_life_setup.py",
+      "tests\\test_honc_mcp.py",
+      "tests\\test_honc_native_integration.py",
+      "tests\\test_honc_policy_acceptance_cases.py",
+      "tests\\test_honc_profile_config.py",
+      "tests\\test_honc_reminder_policy.py",
+      "tests\\test_honc_reminder_runtime.py",
+      "tests/test_configure_hermes_profile.py",
+      "tests/test_uuma_control_guard.py",
+      "tests/test_session.py"
+    ]
+  },
+  "actual_stdio_domain_status": {
+    "meta": null,
+    "content": [
+      {
+        "type": "text",
+        "text": "{\n  \"user_id\": \"isolated-model-owner\",\n  \"database_path\": \".uuma-local\\\\honc-model-eval\\\\dcceb24649aa4596a48683003bd7c659\\\\data\\\\honc\\\\honc.db\",\n  \"active_round\": null,\n  \"pending_outbox_count\": 0,\n  \"pending_outbox\": [],\n  \"recent_assessments\": []\n}",
+        "annotations": null,
+        "meta": null
+      }
+    ],
+    "structuredContent": {
+      "user_id": "isolated-model-owner",
+      "database_path": ".uuma-local\\honc-model-eval\\dcceb24649aa4596a48683003bd7c659\\data\\honc\\honc.db",
+      "active_round": null,
+      "pending_outbox_count": 0,
+      "pending_outbox": [],
+      "recent_assessments": []
+    },
+    "isError": false
+  },
+  "scope": "Read domain status on the same isolated profile that registered actual Direct Runs; no model or live personal writes."
+}

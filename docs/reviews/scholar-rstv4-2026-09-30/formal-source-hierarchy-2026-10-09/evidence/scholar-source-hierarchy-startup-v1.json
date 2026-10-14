@@ -1,0 +1,34 @@
+{
+  "status": "PASS_FRESH_ENTIRE_CONTEXT_AND_PRIOR_SEAL",
+  "mission": {
+    "schema_version": 1,
+    "mission": "Complete UuMA specialist agent trust, deployment, knowledge, and discussion capabilities",
+    "stage": "verification",
+    "active_skill": null,
+    "gate": {
+      "current": "stage-gates/04-verification-report.md",
+      "status": "pending_review",
+      "blocked_by": null
+    },
+    "allowed_stages": [
+      "discovery",
+      "design",
+      "execution",
+      "verification",
+      "complete"
+    ],
+    "updated_at": "2026-09-08T15:57:35+08:00"
+  },
+  "handoff_logical_characters": 637938,
+  "handoff_raw_sha256": "355dc0985f9a0c6402892db5c6658355f2b95104f189511f0b979f596ace8773",
+  "gate_characters": 119727,
+  "sealed_files": 276,
+  "product_sources_exact": 12,
+  "workspace_instruction_index_presence": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\AGENTS.md": false,
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.codegraph": false,
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\AGENTS.md": false,
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\.codegraph": false
+  },
+  "download_testing_remains_paused": true
+}

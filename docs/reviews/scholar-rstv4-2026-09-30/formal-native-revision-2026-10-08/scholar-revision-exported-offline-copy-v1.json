@@ -1,0 +1,45 @@
+{
+  "manuscriptId": "manuscript_3a132decd09349b99b186a5c44dc191d",
+  "baseRevision": 8,
+  "operationId": "operation_7b3121d248a34c00ba5b26fa832e523b",
+  "operationKind": "EDIT",
+  "commentIds": [],
+  "document": {
+    "abstract": "",
+    "manuscript_id": "manuscript_3a132decd09349b99b186a5c44dc191d",
+    "schema_version": 1,
+    "sections": [
+      {
+        "id": "section_820b0521e9874a4a8f6ffa5ee95c99f2",
+        "paragraphs": [
+          {
+            "asset_ids": [],
+            "formulas": [],
+            "id": "paragraph_321b0add21434829acff130b0931b921",
+            "intents": [
+              {
+                "id": "intent_4480273268ac4f2d872b1f34bbc7a42f",
+                "label": "Research Context",
+                "thoughts": [
+                  {
+                    "citation_mode": "NONE",
+                    "citations": [],
+                    "id": "thought_revision",
+                    "text": "Native offline first-tab draft. This must survive failed sync and must not replace the second-tab author text."
+                  }
+                ]
+              }
+            ],
+            "paradigm": "",
+            "purpose": ""
+          }
+        ],
+        "role": "Motivation",
+        "title": "Introduction"
+      }
+    ],
+    "title": "revision 界面验收（隔离数据）",
+    "venue": ""
+  },
+  "queuedAt": "2026-10-08T06:44:47.842Z"
+}

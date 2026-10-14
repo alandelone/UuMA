@@ -30,7 +30,11 @@ whole project graph while respecting the tools actually available.
 6. Check whether the decomposition covers the goal without overlap or hidden prerequisites.
    Treat L3 8–80 hours and L4 about two hours as soft review hints, not rejection rules or
    invented estimates. Stop at a useful level when inputs are missing and name the questions.
-7. Propose assignments separately from graph changes. For each suggestion, state the worker
+7. Before a concrete assignment proposal, load `yonc-colleagues` and call
+   `yonc_get_colleague_capabilities` to refresh the relevant registered capabilities and
+   restrictions. Read the linked role document for work that needs more detail. A failed
+   lookup makes current registry state unknown; it does not mean no colleagues exist.
+   Propose assignments separately from graph changes. For each suggestion, state the worker
    and source of its capability claim, current availability if verified, scope, inputs,
    deliverable, dependencies, acceptance criteria, and any budget or permission needs.
    Mark unverified capability or availability as provisional. No current tool persists a

@@ -1,0 +1,95 @@
+CHECK pytest exit=1
+.................F...................................................... [ 78%]
+....................                                                     [100%]
+================================== FAILURES ===================================
+________ test_actual_template_mapping_http_history_conflicts_and_undo _________
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-965/test_actual_template_mapping_h0')
+
+    def test_actual_template_mapping_http_history_conflicts_and_undo(tmp_path):
+        service, manuscript_id, original, _, request = fixture(tmp_path)
+        original["sections"] = original["sections"][:1]
+        service.save_document(manuscript_id, base_revision=1, operation_id="remove-empty-fixture-placeholder", document=original)
+        request.update(base_revision=2, mode="REPLACE", replace_confirmed=True)
+        adopted = service.apply_template(manuscript_id, request)["document"]
+        mapped = deepcopy(adopted)
+        slots = [p for s in mapped["sections"] if s.get("placement_status") != "UNPLACED" for p in s["paragraphs"]]
+        originals = [p for s in mapped["sections"] if s.get("placement_status") == "UNPLACED" for p in s["paragraphs"]]
+        for n, paragraph in enumerate(originals):
+            target = slots[min(n, len(slots)-1)]
+            target["intents"][0].setdefault("author_intent_ids", []).append(paragraph["intents"][0]["id"])
+            if paragraph.get("asset_ids") or paragraph.get("formulas"):
+                target.setdefault("author_context_paragraph_ids", []).append(paragraph["id"])
+>       assert unresolved(mapped) == []
+               ^^^^^^^^^^^^^^^^^^
+
+tests\test_studio_correspondence.py:130: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+src\rstv4\studio_correspondence.py:69: in unresolved
+    owners, contexts = validate(document)
+                       ^^^^^^^^^^^^^^^^^^
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+document = {'abstract': '', 'manuscript_id': 'manuscript_59420729a84744bfa0f2eb6903f2b7a0', 'schema_version': 1, 'sections': [{'i...'intents': [{...}], ...}, {'asset_ids': [], 'formulas': [], 'id': 'paragraph-3', 'intents': [{...}], ...}], ...}], ...}
+
+    def validate(document: dict) -> tuple[dict[str, str], dict[str, str]]:
+        """One Intent destination and one explicit attachment output per original paragraph."""
+        index = intent_index(document)
+        paragraphs = {paragraph["id"]: (section, paragraph)
+                      for section in document["sections"] for paragraph in section["paragraphs"]}
+        owners: dict[str, str] = {}
+        contexts: dict[str, str] = {}
+        for target_id, (section, _, target) in index.items():
+            refs = _references(target, "author_intent_ids")
+            if refs:
+                source = target.get("template_source", {})
+                if (section.get("placement_status") == "UNPLACED"
+                        or not isinstance(source, dict)
+                        or not isinstance(source.get("skeleton_id"), str)
+                        or not source.get("skeleton_id")
+                        or not isinstance(source.get("source_sha256"), str)
+                        or not source.get("source_sha256")):
+>                   raise ValueError("Author correspondence requires a placed fixed template Intent")
+E                   ValueError: Author correspondence requires a placed fixed template Intent
+
+src\rstv4\studio_correspondence.py:42: ValueError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_correspondence.py::test_actual_template_mapping_http_history_conflicts_and_undo
+1 failed, 91 passed in 47.20s
+
+
+CHECK correspondence-unit exit=0
+PASS arbitrary nested same-label target retains canonical author data and fixed source
+PASS all-original context choices and distinct Intent references remain independent
+PASS leaving formula and asset placement pending does not invent a target
+PASS every reviewed source, target, parent, group and edge change invalidates confirmation
+PASS repeated/foreign/unplaced/self destinations fail without writes
+PASS explicitly cancelling and undo/redo preserve exact documents
+PASS deleting a target releases its mapping but never deletes original author content
+PASS template replacement releases references to canonical original bank
+8 author correspondence contracts passed; no browser or real model used.
+
+
+CHECK placement-unit exit=0
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.
+
+
+CHECK blocks-unit exit=0
+17 controlled movement/group/association cases passed; no browser used.
+
+
+CHECK tsc exit=0
+
+
+CHECK oxlint exit=1
+components/studio-intent-correspondence.tsx:53:260: error jsx-a11y(label-has-associated-control): A form label must be associated with a control. help: Either give the label a `htmlFor` attribute with the id of the associated control, or wrap the label around the control.
+components/studio-intent-correspondence.tsx:56:9: error jsx-a11y(label-has-associated-control): A form label must be associated with a control. help: Either give the label a `htmlFor` attribute with the id of the associated control, or wrap the label around the control.
+
+

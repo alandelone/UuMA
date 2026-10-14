@@ -1,0 +1,19 @@
+{
+  "verified_before_stop": {
+    "Leaf": {
+      "ProcessId": 78244,
+      "ParentProcessId": 18988,
+      "CommandLine": "\"node\"   \"C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\\\..\\vinext\\dist\\cli.js\" dev --port 3004",
+      "CreationDate": "/Date(1791441302053)/"
+    },
+    "Root": {
+      "ProcessId": 75360,
+      "CommandLine": "cmd.exe /c npm run dev -- --port 3004",
+      "CreationDate": "/Date(1791441300803)/"
+    }
+  },
+  "stopped_only_listener": 78244,
+  "owned_root": 75360,
+  "original_golden_services_untouched": true,
+  "database_reset": false
+}

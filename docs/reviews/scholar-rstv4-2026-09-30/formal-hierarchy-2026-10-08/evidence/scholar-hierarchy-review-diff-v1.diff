@@ -1,0 +1,936 @@
+--- before/RSTV4/src/rstv4/studio.py
++++ after/RSTV4/src/rstv4/studio.py
+@@ -58,7 +58,14 @@
+ from .studio_rounds import baseline_text, content_digest
+ from .studio_rounds import resolve as resolve_review_round
+ from .studio_rounds import version as review_baseline_version
+-from .studio_structure import paragraph_group, validate_groups
++from .studio_structure import (
++    argument_context,
++    paragraph_group,
++    section_levels,
++    section_titles,
++    validate_argument_relations,
++    validate_groups,
++)
+ from .studio_suggestions import MODEL_FORMAT, preview_change
+ from .studio_suggestions import apply as apply_suggestion
+ from .studio_suggestions import normalize as normalize_suggestions
+@@ -1697,7 +1704,9 @@
+                         mode = thought.get("citation_mode", "PENDING")
+                         if mode not in {"PENDING", "NONE", "SELECTED"}:
+                             raise ValueError("Unknown thought citation mode")
+-        validate_groups(document, seen)
++        validate_groups(document, seen)
++        section_levels(document["sections"])
++        validate_argument_relations(document, seen)
+ 
+     @staticmethod
+     def _changed_block_ids(before: dict[str, Any], after: dict[str, Any]) -> set[str]:
+@@ -1712,6 +1721,7 @@
+                     "title": section.get("title"),
+                     "role": section.get("role"),
+                     "placement_status": section.get("placement_status"),
++                    "parent_section_id": section.get("parent_section_id"),
+                     "block_order": section.get("block_order"),
+                     "paragraph_ids": [item["id"] for item in section.get("paragraphs", [])],
+                     "position": section_index,
+@@ -1733,7 +1743,9 @@
+                         values[intent["id"]] = _json({"label": intent.get("label"), "paragraph_id": paragraph["id"], "thought_ids": [item["id"] for item in intent.get("thoughts", [])]})
+                         for thought in intent.get("thoughts", []):
+                             values[thought["id"]] = _json({**thought, "intent_id": intent["id"]})
+-            return values
++            for relation in document.get("argument_relations", []):
++                values[relation["id"]] = _json(relation)
++            return values
+ 
+         old = blocks(before)
+         new = blocks(after)
+@@ -1755,7 +1767,9 @@
+                                "message": "Original author content remains unplaced"})
+             if not str(section.get("title") or "").strip():
+                 issues.append({"path": section.get("id", "section"), "message": "Section title is missing"})
+-            if not section.get("paragraphs"):
++            if not section.get("paragraphs") and not any(
++                item.get("parent_section_id") == section["id"] for item in document["sections"]
++            ):
+                 issues.append({"path": section["id"], "message": "Section has no paragraph"})
+             for group in section.get("paragraph_groups", []):
+                 if not group["paragraph_ids"] or not group["label"].strip():
+@@ -1903,9 +1917,15 @@
+                 evidence = [frozen_evidence[item] for item in dict.fromkeys(evidence_ids)]
+                 payload = {
+                         "section_title": section["title"],
+-                        "section_role": section.get("role"),
+-                        "paragraph_purpose": paragraph.get("purpose"),
+-                        "paradigm": paragraph.get("paradigm"),
++                        "section_role": section.get("role"),
++                        **({"section_path": section_titles(document, section["id"])}
++                           if section.get("parent_section_id") else {}),
++                        "paragraph_purpose": paragraph.get("purpose"),
++                        "paradigm": paragraph.get("paradigm"),
++                        **({"logical_relation": paragraph["logical_relation"]}
++                           if paragraph.get("logical_relation") else {}),
++                        **({"argument_relations": argument_context(document, paragraph)}
++                           if argument_context(document, paragraph) else {}),
+                         **({"paragraph_group": paragraph_group(section, paragraph["id"])}
+                            if paragraph_group(section, paragraph["id"]) else {}),
+                         "intents": paragraph["intents"],
+@@ -1961,16 +1981,21 @@
+                     }
+                 )
+             generated_sections.append(
+-                {"section_id": section["id"], "title": section["title"], "paragraphs": generated_paragraphs,
++                {"section_id": section["id"], "title": section["title"], "paragraphs": generated_paragraphs,
++                 **({"parent_section_id": section["parent_section_id"],
++                     "section_depth": section_levels(document["sections"])[section["id"]]}
++                    if section.get("parent_section_id") else {}),
+                  **({"paragraph_groups": section["paragraph_groups"], "block_order": section["block_order"]}
+                     if section.get("paragraph_groups") else {})}
+             )
+-        generated = {
++        generated = {
+             "title": document["title"],
+             "abstract": document.get("abstract", ""),
+             "sections": generated_sections,
+             "input_revision": job["input_revision"],
+-            "citation_style": "numeric_first_use",
++            "citation_style": "numeric_first_use",
++            **({"argument_relations": document["argument_relations"]}
++               if document.get("argument_relations") else {}),
+         }
+         generated["references"] = self._reference_snapshot(generated, list(frozen_evidence.values()))
+         if self._job_cancel_requested(job["job_id"]):
+@@ -2462,7 +2487,10 @@
+                 r"\end{abstract}",
+             ])
+         for section in generated["sections"]:
+-            parts.append(rf"\section{{{cited_text(section['title'])}}}")
++            command = ["section", "subsection", "subsubsection", "paragraph", "subparagraph"][
++                section.get("section_depth", 0)
++            ]
++            parts.append("\\" + command + "{" + cited_text(section["title"]) + "}")
+             for paragraph in section["paragraphs"]:
+                 text = cited_text(paragraph["text"])
+                 parts.extend([text, ""])
+--- before/RSTV4/src/rstv4/studio_structure.py
++++ after/RSTV4/src/rstv4/studio_structure.py
+@@ -3,6 +3,102 @@
+ from __future__ import annotations
+ 
+ from typing import Any
++
++
++def section_levels(sections: list[dict], key: str = "id") -> dict[str, int]:
++    """Explicit parent identities, never inferred from titles or rhetorical layers."""
++    levels: dict[str, int] = {}
++    stack: list[str] = []
++    by_id = {section[key]: section for section in sections}
++    for section in sections:
++        identifier = section[key]
++        parent = section.get("parent_section_id")
++        if parent is None:
++            stack = []
++        else:
++            if not isinstance(parent, str) or parent not in stack:
++                raise ValueError("Subsection must follow its own existing parent in reading order")
++            if section.get("placement_status") != by_id[parent].get("placement_status"):
++                raise ValueError("A subsection must share its parent's placement status")
++            stack = stack[:stack.index(parent) + 1]
++        if len(stack) > 4:
++            raise ValueError("Author headings support Section through Subparagraph (five levels)")
++        levels[identifier] = len(stack)
++        stack.append(identifier)
++    return levels
++
++
++def section_end(sections: list[dict], index: int) -> int:
++    members = {sections[index]["id"]}
++    end = index + 1
++    while end < len(sections) and sections[end].get("parent_section_id") in members:
++        members.add(sections[end]["id"])
++        end += 1
++    return end
++
++
++def section_titles(document: dict, section_id: str) -> list[str]:
++    by_id = {section["id"]: section for section in document["sections"]}
++    result: list[str] = []
++    visited: set[str] = set()
++    current = by_id[section_id]
++    while current:
++        if current["id"] in visited:
++            raise ValueError("Author section hierarchy cannot contain cycles")
++        visited.add(current["id"])
++        result.insert(0, current["title"])
++        current = by_id.get(current.get("parent_section_id"))
++    return result
++
++
++def validate_argument_relations(document: dict, seen: set[str]) -> None:
++    nodes = {item["id"] for section in document["sections"]
++             for paragraph in section["paragraphs"]
++             for item in [paragraph, *paragraph["intents"],
++                          *(t for i in paragraph["intents"] for t in i["thoughts"])]}
++    relations = document.get("argument_relations", [])
++    if not isinstance(relations, list):
++        raise TypeError("Author argument relations must be a list")
++    for relation in relations:
++        if not isinstance(relation, dict):
++            raise TypeError("Author argument relations must be objects")
++        identifier = relation.get("id")
++        if not isinstance(identifier, str) or not identifier or identifier in seen:
++            raise ValueError("Every author argument relation needs a unique stable id")
++        seen.add(identifier)
++        source, target = relation.get("source_id"), relation.get("target_id")
++        if not isinstance(source, str) or not isinstance(target, str):
++            raise TypeError("Author relation endpoints must be stable block ids")
++        if source not in nodes or target not in nodes or source == target:
++            raise ValueError("Argument relations must join distinct blocks in this manuscript")
++        if not isinstance(relation.get("relation"), str) or not relation["relation"].strip():
++            raise ValueError("Describe the author's argument relation")
++        if not isinstance(relation.get("condition", ""), str):
++            raise TypeError("Argument relation conditions must be author text")
++
++
++def argument_context(document: dict, paragraph: dict) -> list[dict]:
++    """Freeze both endpoints for writing; an edge never grants scientific approval."""
++    if not document.get("argument_relations"):
++        return []
++    nodes = {}
++    local = set()
++    for section in document["sections"]:
++        for item in section["paragraphs"]:
++            text = "\n".join([item.get("purpose", ""),
++                              *(t["text"] for i in item["intents"] for t in i["thoughts"])])
++            entries = [(item, "paragraph", text),
++                       *((i, "intent", "\n".join([i["label"], *(t["text"] for t in i["thoughts"])]))
++                         for i in item["intents"]),
++                       *((t, "thought", t["text"]) for i in item["intents"] for t in i["thoughts"])]
++            for node, kind, text in entries:
++                nodes[node["id"]] = {"id": node["id"], "kind": kind, "author_text": text}
++                if item["id"] == paragraph["id"]:
++                    local.add(node["id"])
++    return [{**edge, "source": nodes[edge["source_id"]], "target": nodes[edge["target_id"]],
++             "origin": "AUTHOR_ARGUMENT_RELATION"}
++            for edge in document.get("argument_relations", [])
++            if edge["source_id"] in local or edge["target_id"] in local]
+ 
+ 
+ def validate_groups(document: dict[str, Any], seen: set[str]) -> None:
+--- before/RSTV4/src/rstv4/studio_context.py
++++ after/RSTV4/src/rstv4/studio_context.py
+@@ -97,7 +97,9 @@
+             block("heading", "abstract-heading", "Abstract", "Abstract")
+             block("paragraph", "abstract", generated["abstract"], "Abstract")
+         for section in generated["sections"]:
+-            block("heading", section["section_id"], section["title"], section["title"])
++            block("heading", section["section_id"], section["title"], section["title"],
++                  **({"heading_level": section["section_depth"] + 2}
++                     if section.get("section_depth") else {}))
+             for index, paragraph in enumerate(section["paragraphs"], 1):
+                 block(
+                     "paragraph", paragraph["paragraph_id"], paragraph["text"],
+@@ -149,9 +151,14 @@
+             document["title"], document.get("abstract", ""),
+             *(paragraph_text(paragraph) for section in document["sections"] for paragraph in section["paragraphs"]),
+         ])
+-    for section in document["sections"]:
++    for section_index, section in enumerate(document["sections"]):
+         if anchor_type == "section" and anchor_id == section["id"]:
+-            return section["title"], "\n".join([section["title"], *(paragraph_text(item) for item in section["paragraphs"])])
++            from .studio_structure import section_end
++
++            parts = [section["title"], *(paragraph_text(item) for item in section["paragraphs"])]
++            for child in document["sections"][section_index + 1:section_end(document["sections"], section_index)]:
++                parts.extend([child["title"], *(paragraph_text(item) for item in child["paragraphs"])])
++            return section["title"], "\n".join(parts)
+         for group in section.get("paragraph_groups", []):
+             if anchor_type == "paragraph_group" and anchor_id == group["id"]:
+                 by_id = {item["id"]: item for item in section["paragraphs"]}
+--- before/RSTV4/src/rstv4/studio_templates.py
++++ after/RSTV4/src/rstv4/studio_templates.py
+@@ -9,6 +9,7 @@
+ from .research_views import skeleton_source
+ from .service import NotFoundError
+ from .source_review import evidence_is_available, source_is_available
++from .studio_structure import section_end
+ 
+ 
+ def template_preview(conn: Any, manuscript_id: str, skeleton_id: str) -> dict:
+@@ -95,13 +96,22 @@
+         if section.get("placement_status") == "UNPLACED":
+             continue
+         if scope_type == "section" and section["id"] == scope_id:
++            end = section_end(result["sections"], index)
++            parent = section.get("parent_section_id")
++            if parent:
++                for added in sections:
++                    added["parent_section_id"] = parent
+             if mode == "REPLACE":
+-                old = result["sections"].pop(index)
+-                old["placement_status"] = "UNPLACED"
++                old = result["sections"][index:end]
++                del result["sections"][index:end]
++                for item in old:
++                    item["placement_status"] = "UNPLACED"
++                if parent:
++                    old[0]["unplaced_parent_section_id"] = old[0].pop("parent_section_id")
+                 result["sections"][index:index] = sections
+-                result["sections"].append(old)
++                result["sections"].extend(old)
+             else:
+-                result["sections"][index + 1:index + 1] = sections
++                result["sections"][end:end] = sections
+             return result
+         for position, paragraph in enumerate(section["paragraphs"]):
+             if scope_type == "paragraph" and paragraph["id"] == scope_id:
+--- before/RSTV4/src/rstv4/studio_read_views.py
++++ after/RSTV4/src/rstv4/studio_read_views.py
+@@ -48,7 +48,8 @@
+     if generated.get("abstract"):
+         parts.extend(["", "## Abstract", "", generated["abstract"]])
+     for section in generated["sections"]:
+-        parts.extend(["", f"## {section['title']}"])
++        prefix = "#" * (2 + section.get("section_depth", 0))
++        parts.extend(["", f"{prefix} {section['title']}"])
+         for paragraph in section["paragraphs"]:
+             parts.extend(["", paragraph["text"]])
+             for formula in paragraph.get("formulas", []):
+--- before/RSTV4/tests/test_studio_hierarchy.py
++++ after/RSTV4/tests/test_studio_hierarchy.py
+@@ -0,0 +1,178 @@
++"""Software contracts: author hierarchy and argument edges never approve science."""
++from __future__ import annotations
++
++import json
++import sqlite3
++from copy import deepcopy
++
++import pytest
++from fastapi.testclient import TestClient
++from test_studio_templates import fixture
++from test_writing_studio import complete_document, create_studio, wait_for_job
++
++from rstv4.studio import StudioService
++from rstv4.studio_api import create_app
++from rstv4.studio_context import structure_object
++from rstv4.studio_read_views import generated_markdown
++from rstv4.studio_structure import argument_context, section_levels
++
++
++def nested_fixture(root):
++    service, ms, original, _, request = fixture(root)
++    document = deepcopy(original)
++    parent = document['sections'][0]
++    child = deepcopy(document['sections'][1])
++    child.update(title='Author child', parent_section_id=parent['id'])
++    child['paragraphs'] = [parent['paragraphs'].pop()]
++    parent['block_order'].remove(child['paragraphs'][0]['id'])
++    # Move the existing second section into a real author-selected parent, preserving all IDs.
++    document['sections'][1] = child
++    nodes = [p for s in document['sections'] for p in s['paragraphs']]
++    edge = {'id':'argument-author-edge','source_id':nodes[0]['id'],
++            'target_id':nodes[-1]['intents'][0]['thoughts'][0]['id'],
++            'relation':'Contrasts under the author condition','condition':'Software fixture Ω only'}
++    document['argument_relations'] = [edge]
++    return service, ms, original, document, request
++
++
++def test_hierarchy_and_argument_save_historical_context_and_undo(tmp_path):
++    service, ms, original, doc, _ = nested_fixture(tmp_path)
++    with TestClient(create_app(tmp_path)) as client:
++        response = client.put(f'/api/manuscripts/{ms}/document',json={
++            'base_revision':1,'operation_id':'author-hierarchy-save','document':doc})
++        assert response.status_code == 200, response.text
++    assert service.get_workspace(ms)['document'] == doc
++    title, text = structure_object(doc,'section',doc['sections'][0]['id'])
++    assert title == original['sections'][0]['title'] and 'Author child' in text
++    assert doc['sections'][1]['paragraphs'][0]['intents'][0]['thoughts'][0]['text'] in text
++    service.save_document(ms,base_revision=2,operation_id='author-hierarchy-undo',
++                          operation_kind='UNDO',document=original)
++    with sqlite3.connect(service.db_path) as conn:
++        row = conn.execute("SELECT before_json,after_json,is_compensating FROM studio_changes WHERE operation_id='author-hierarchy-undo'").fetchone()
++        assert json.loads(row[0]) == doc and json.loads(row[1]) == original and row[2] == 1
++        assert conn.execute('SELECT COUNT(*) FROM studio_model_calls').fetchone()[0] == 0
++    assert service.get_workspace(ms)['document'] == original
++
++
++@pytest.mark.parametrize('defect',['foreign_parent','cycle','noncontiguous','different_placement',
++                                    'foreign_endpoint','self_edge','duplicate_edge_id','structural_edge_id',
++                                    'empty_relation','bad_condition','bad_edge_shape','too_deep'])
++def test_invalid_hierarchy_or_argument_rejects_without_any_database_write(tmp_path,defect):
++    service, ms, _, doc, _ = nested_fixture(tmp_path)
++    if defect == 'foreign_parent': doc['sections'][1]['parent_section_id'] = 'another-manuscript-section'
++    elif defect == 'cycle': doc['sections'][0]['parent_section_id'] = doc['sections'][1]['id']
++    elif defect == 'noncontiguous': doc['sections'].reverse()
++    elif defect == 'different_placement': doc['sections'][1]['placement_status'] = 'UNPLACED'
++    elif defect == 'foreign_endpoint': doc['argument_relations'][0]['target_id'] = 'foreign-thought'
++    elif defect == 'self_edge': doc['argument_relations'][0]['target_id'] = doc['argument_relations'][0]['source_id']
++    elif defect == 'duplicate_edge_id': doc['argument_relations'] *= 2
++    elif defect == 'structural_edge_id': doc['argument_relations'][0]['id'] = doc['sections'][0]['id']
++    elif defect == 'empty_relation': doc['argument_relations'][0]['relation'] = '   '
++    elif defect == 'bad_condition': doc['argument_relations'][0]['condition'] = {'unsupported':'condition'}
++    elif defect == 'bad_edge_shape': doc['argument_relations'] = ['bad edge']
++    elif defect == 'too_deep':
++        for i in range(5): doc['sections'].append({'id':f'deep-{i}','parent_section_id':doc['sections'][-1]['id'],'title':'deep','role':'','paragraphs':[]})
++    with TestClient(create_app(tmp_path)) as client:
++        before = service.db_path.read_bytes()
++        response = client.put(f'/api/manuscripts/{ms}/document',json={
++            'base_revision':1,'operation_id':'rejected-hierarchy','document':doc})
++        assert response.status_code == 422, response.text
++        assert service.db_path.read_bytes() == before
++
++
++@pytest.mark.parametrize('scope',['parent','child'])
++@pytest.mark.parametrize('mode',['INSERT','REPLACE'])
++def test_template_section_adoption_preserves_explicit_subtree_and_argument_ids(tmp_path,scope,mode):
++    service, ms, _, doc, request = nested_fixture(tmp_path)
++    service.save_document(ms,base_revision=1,operation_id='author-nesting-initial',document=doc)
++    target = doc['sections'][0 if scope == 'parent' else 1]
++    request.update(base_revision=2,scope_type='section',scope_id=target['id'],mode=mode,replace_confirmed=mode=='REPLACE')
++    result = service.apply_template(ms,request)
++    adopted = result['document']
++    section_levels(adopted['sections'])
++    assert adopted['argument_relations'] == doc['argument_relations']
++    assert all(any(p == original for s in adopted['sections'] for p in s['paragraphs'])
++               for old in doc['sections'] for original in old['paragraphs'])
++    if mode == 'REPLACE':
++        old = next(s for s in adopted['sections'] if s['id']==target['id'])
++        assert old['placement_status']=='UNPLACED'
++        if scope=='child':
++            assert old['unplaced_parent_section_id']==doc['sections'][0]['id']
++            assert 'parent_section_id' not in old
++        else:
++            child=next(s for s in adopted['sections'] if s['id']==doc['sections'][1]['id'])
++            assert child['placement_status']=='UNPLACED' and child['parent_section_id']==old['id']
++    service.save_document(ms,base_revision=3,operation_id='nested-template-undo',document=doc,operation_kind='UNDO')
++    before = service.db_path.read_bytes()
++    replay = service.apply_template(ms,request)
++    assert replay['document_revision']==4 and replay['document']==doc and replay['idempotent_replay']
++    assert service.db_path.read_bytes()==before
++
++
++def test_l2_context_freezes_full_both_endpoints_without_claiming_approval(tmp_path):
++    _, _, _, doc, _ = nested_fixture(tmp_path)
++    source = doc['sections'][0]['paragraphs'][0]
++    edges = argument_context(doc,source)
++    assert len(edges)==1 and edges[0]['origin']=='AUTHOR_ARGUMENT_RELATION'
++    assert source['intents'][0]['thoughts'][0]['text'] in edges[0]['source']['author_text']
++    assert edges[0]['target']['author_text']==doc['sections'][1]['paragraphs'][0]['intents'][0]['thoughts'][0]['text']
++    assert edges[0]['condition']=='Software fixture Ω only'
++    assert 'approval' not in edges[0] and 'scientific_decision' not in edges[0]
++
++
++def test_immutable_generated_markdown_and_latex_use_true_heading_levels():
++    original={'title':'Fixture','abstract':'','sections':[{'section_id':'root','title':'Root','paragraphs':[]},
++              {'section_id':'child','parent_section_id':'root','section_depth':1,'title':'Child','paragraphs':[{'text':'Exact author text','formulas':[]}]}]}
++    assert generated_markdown(original)=='# Fixture\n\n## Root\n\n### Child\n\nExact author text\n'
++    tex=StudioService._latex(original,[])
++    assert r'\section{Root}' in tex and r'\subsection{Child}' in tex
++    flat=deepcopy(original)
++    del flat['sections'][1]['parent_section_id'];del flat['sections'][1]['section_depth']
++    assert generated_markdown(flat)=='# Fixture\n\n## Root\n\n## Child\n\nExact author text\n'
++
++
++def test_actual_generation_worker_freezes_child_path_and_author_relations(tmp_path):
++    service, _, ms = create_studio(tmp_path)
++    doc = complete_document(service.get_workspace(ms))
++    root = doc['sections'][0]
++    paragraph = root['paragraphs'].pop()
++    paragraph['logical_relation'] = 'Author-defined conditional sequence'
++    child = {'id':'author-child','title':'Explicit author child','role':'',
++             'parent_section_id':root['id'],'paragraphs':[paragraph]}
++    doc['sections'].append(child)
++    intent = paragraph['intents'][0]
++    thought = intent['thoughts'][0]
++    doc['argument_relations'] = [{'id':'author-worker-edge','source_id':intent['id'],
++        'target_id':thought['id'],'relation':'Specifies','condition':'Only under author scope Ω'}]
++    service.save_document(ms,base_revision=0,operation_id='worker-hierarchy',document=doc)
++    captured = []
++    compiled = []
++
++    def software_gateway(task, payload):
++        captured.append(deepcopy(payload))
++        return {'paragraph':thought['text'],
++                'sentence_mappings':[{'sentence':0,'thought_ids':[thought['id']]}]}
++
++    def software_compile(job, generated):
++        compiled.append(deepcopy(generated))
++        return []
++
++    service.gateway.analyze = software_gateway
++    service._compile_artifacts = software_compile
++    job = wait_for_job(service, service.create_job(ms,'GENERATE',input_revision=1))
++    assert job['status']=='SUCCEEDED', job
++    assert len(captured)==len(compiled)==1
++    assert captured[0]['section_path']==[root['title'],child['title']]
++    assert captured[0]['logical_relation']==paragraph['logical_relation']
++    edge = captured[0]['argument_relations'][0]
++    assert edge['origin']=='AUTHOR_ARGUMENT_RELATION'
++    assert edge['source']['id']==intent['id'] and thought['text'] in edge['source']['author_text']
++    assert edge['target']['author_text']==thought['text']
++    assert edge['condition']==doc['argument_relations'][0]['condition']
++    assert compiled[0]['argument_relations']==doc['argument_relations']
++    assert compiled[0]['sections'][0]['paragraphs']==[]
++    assert compiled[0]['sections'][1]['section_depth']==1
++    assert service.get_workspace(ms)['document']==doc
++    with sqlite3.connect(service.db_path) as conn:
++        request = json.loads(conn.execute('SELECT input_json FROM studio_model_calls').fetchone()[0])
++        assert request['argument_relations']==captured[0]['argument_relations']
+--- before/writing-studio/lib/studio-blocks.ts
++++ after/writing-studio/lib/studio-blocks.ts
+@@ -22,16 +22,72 @@
+   groupId?: string;
+ }
+ 
++export function sectionDepth(document: StudioDocument, id: string): number {
++  const index = new Map(document.sections.map((section) => [section.id, section]));
++  let current = index.get(id);
++  const seen = new Set<string>();
++  let depth = 0;
++  while (current?.parent_section_id) {
++    if (seen.has(current.id)) throw new Error('章节不能循环嵌套。');
++    seen.add(current.id);
++    current = index.get(current.parent_section_id);
++    if (!current) throw new Error('原父章节不可用。');
++    depth += 1;
++  }
++  return depth;
++}
++
++export function sectionEnd(sections: SectionBlock[], index: number): number {
++  const members = new Set([sections[index].id]);
++  let end = index + 1;
++  while (end < sections.length && members.has(sections[end].parent_section_id || '')) {
++    members.add(sections[end].id);
++    end += 1;
++  }
++  return end;
++}
++
++export function sectionBreadcrumb(document: StudioDocument, id: string): string {
++  const index = new Map(document.sections.map((section) => [section.id, section]));
++  const titles: string[] = [];
++  const seen = new Set<string>();
++  let current = index.get(id);
++  while (current) {
++    if (seen.has(current.id)) throw new Error('章节不能循环嵌套。');
++    seen.add(current.id);
++    titles.unshift(current.title || '未定章节');
++    current = index.get(current.parent_section_id || '');
++  }
++  return titles.join(' / ');
++}
++
++export function deleteSectionTree(document: StudioDocument, id: string): void {
++  const index = document.sections.findIndex((section) => section.id === id);
++  if (index < 0) throw new Error('原章节不可用。');
++  document.sections.splice(index, sectionEnd(document.sections, index) - index);
++}
++
++export function addSubsection(document: StudioDocument, id: string, childId: string): void {
++  const index = document.sections.findIndex((section) => section.id === id);
++  if (index < 0 || sectionDepth(document, id) >= 4) throw new Error('无法继续添加更深的子章节。');
++  const parent = document.sections[index];
++  document.sections.splice(sectionEnd(document.sections, index), 0, {
++    id: childId, title: 'New subsection', role: '', paragraphs: [], parent_section_id: id,
++    ...(parent.placement_status ? { placement_status: parent.placement_status } : {}),
++  });
++}
++
+ export function blocks(document: StudioDocument): BlockLocation[] {
+   const result: BlockLocation[] = [
+     { kind: 'paper', id: document.manuscript_id, label: document.title },
+   ];
+   for (const section of document.sections) {
++    const sectionLabel = sectionBreadcrumb(document, section.id);
+     result.push({
+       kind: 'section',
+       id: section.id,
+-      label: section.title,
+-      parentId: document.manuscript_id,
++      label: sectionLabel,
++      parentId: section.parent_section_id || document.manuscript_id,
+       sectionId: section.id,
+     });
+     for (const group of [...(section.paragraph_groups || [])].sort(
+@@ -42,7 +98,7 @@
+       result.push({
+         kind: 'paragraph_group',
+         id: group.id,
+-        label: `${section.title} / ${group.label || '未定段落组'}`,
++        label: `${sectionLabel} / ${group.label || '未定段落组'}`,
+         parentId: section.id,
+         sectionId: section.id,
+         groupId: group.id,
+@@ -51,7 +107,7 @@
+       const group = section.paragraph_groups?.find((item) =>
+         item.paragraph_ids.includes(paragraph.id),
+       );
+-      const label = `${section.title} / ${group ? `${group.label || '段落组'} / ` : ''}${paragraph.purpose || '未定段落'}`;
++      const label = `${sectionLabel} / ${group ? `${group.label || '段落组'} / ` : ''}${paragraph.purpose || '未定段落'}`;
+       result.push({
+         kind: 'paragraph',
+         id: paragraph.id,
+@@ -138,6 +194,10 @@
+ 
+ export function reconcileStructure(document: StudioDocument): void {
+   for (const section of document.sections) reconcileSection(section);
++  if (document.argument_relations) {
++    const nodes = new Set(blocks(document).filter((item) => ['paragraph', 'intent', 'thought'].includes(item.kind)).map((item) => item.id));
++    document.argument_relations = document.argument_relations.filter((edge) => nodes.has(edge.source_id) && nodes.has(edge.target_id));
++  }
+ }
+ 
+ function roots(section: SectionBlock): string[] {
+@@ -168,6 +228,21 @@
+   )
+     return false;
+   const kind = sources[0]!.kind;
++  if (kind === 'section') {
++    if (sources.some((source) => ancestors(document, source!.id).some((id) => sourceIds.includes(id)))
++      || ancestors(document, target.id).some((id) => sourceIds.includes(id))) return false;
++    if (target.placement === 'inside' ? !['paper','section'].includes(destination.kind) : destination.kind !== 'section') return false;
++    const targetSection = document.sections.find((section) => section.id === target.id);
++    const parent = target.placement === 'inside' ? targetSection
++      : document.sections.find((section) => section.id === targetSection?.parent_section_id);
++    const depth = parent ? sectionDepth(document, parent.id) + 1 : 0;
++    return sources.every((source) => {
++      const position = document.sections.findIndex((section) => section.id === source!.id);
++      const root = document.sections[position];
++      const height = Math.max(...document.sections.slice(position, sectionEnd(document.sections, position)).map((section) => sectionDepth(document, section.id))) - sectionDepth(document, root.id);
++      return depth + height <= 4 && (!parent || parent.placement_status === root.placement_status);
++    });
++  }
+   if (target.placement === 'inside')
+     return (
+       {
+@@ -215,11 +290,29 @@
+       .flatMap((item) => item.paragraphs)
+       .flatMap((item) => item.intents)
+       .find((item) => item.id === id)!;
+-  if (kind === 'section' || kind === 'intent' || kind === 'thought') {
++  if (kind === 'section') {
++    const moved = sources.flatMap((source) => {
++      const position = result.sections.findIndex((section) => section.id === source.id);
++      return result.sections.slice(position, sectionEnd(result.sections, position));
++    });
++    const movedIds = new Set(moved.map((section) => section.id));
++    result.sections = result.sections.filter((section) => !movedIds.has(section.id));
++    const destinationIndex = result.sections.findIndex((section) => section.id === target.id);
++    const parent = target.placement === 'inside' ? destination.kind === 'paper' ? undefined : target.id
++      : result.sections[destinationIndex].parent_section_id;
++    for (const source of sources) {
++      const root = moved.find((section) => section.id === source.id)!;
++      if (parent) root.parent_section_id = parent;
++      else delete root.parent_section_id;
++    }
++    const at = target.placement === 'inside' ? destination.kind === 'paper' ? result.sections.length : sectionEnd(result.sections, destinationIndex)
++      : target.placement === 'after' ? sectionEnd(result.sections, destinationIndex) : destinationIndex;
++    result.sections.splice(at,0,...moved);
++    return result;
++  }
++  if (kind === 'intent' || kind === 'thought') {
+     const list = (location: BlockLocation) =>
+-      kind === 'section'
+-        ? result.sections
+-        : kind === 'intent'
++      kind === 'intent'
+           ? paragraphById(location.parentId!).intents
+           : intentById(location.parentId!).thoughts;
+     const moved = sources.map((source) => {
+@@ -229,9 +322,7 @@
+     });
+     const into =
+       target.placement === 'inside'
+-        ? kind === 'section'
+-          ? result.sections
+-          : kind === 'intent'
++        ? kind === 'intent'
+             ? paragraphById(target.id).intents
+             : intentById(target.id).thoughts
+         : list(destination);
+--- before/writing-studio/lib/studio-types.ts
++++ after/writing-studio/lib/studio-types.ts
+@@ -41,6 +41,8 @@
+   title: string;
+   role: string;
+   placement_status?: 'UNPLACED';
++  parent_section_id?: string;
++  unplaced_parent_section_id?: string;
+   paragraphs: ParagraphBlock[];
+   paragraph_groups?: Array<{ id: string; label: string; paragraph_ids: string[] }>;
+   block_order?: string[];
+@@ -53,6 +55,15 @@
+   abstract: string;
+   venue: string;
+   sections: SectionBlock[];
++  argument_relations?: ArgumentRelation[];
++}
++
++export interface ArgumentRelation {
++  id: string;
++  source_id: string;
++  target_id: string;
++  relation: string;
++  condition: string;
+ }
+ 
+ export interface TemplatePreview {
+@@ -310,6 +321,7 @@
+   label: string;
+   section_id?: string;
+   group_id?: string;
++  heading_level?: number;
+   thought_ids?: string[];
+   formulas?: ParagraphBlock['formulas'];
+ }
+--- before/writing-studio/components/studio-workspace.tsx
++++ after/writing-studio/components/studio-workspace.tsx
+@@ -65,13 +65,14 @@
+ import { StudioPackageDownloads } from '@/components/studio-package-downloads';
+ import { StudioResponseReview } from '@/components/studio-response-review';
+ import { StudioTemplateAdoption, type TemplateCandidate } from '@/components/studio-template-adoption';
++import { StudioArgumentRelations } from '@/components/studio-argument-relations';
+ import { BlockControls, BlockMove, DropZone, EditorControls, Ungroup, blockKeyboardCoordinates, useEditorControls, type EditorUi } from '@/components/studio-block-controls';
+ import { ApiError, API_BASE, sharedDiscussionRequest, studioApi } from '@/lib/studio-api';
+ import { createSharedDiscussion, discussionDestination, discussionReference, discussionReturn, discussionWithoutReference, exactSelection, readableVersions, studioTarget, type DiscussionController, type DiscussionState, type LocatedSource } from '@/lib/shared-discussion';
+ import { historyFilter, legacySelection, matchesHistory } from '@/lib/studio-discussion-history';
+ import { outbox, sameDocument, type PendingSave } from '@/lib/offline-outbox';
+ import { suggestionResultMode } from '@/lib/suggestion-result';
+-import { ancestors, moveBlocks, reconcileStructure, type BlockTarget } from '@/lib/studio-blocks';
++import { addSubsection, ancestors, canMove, deleteSectionTree, moveBlocks, reconcileStructure, sectionBreadcrumb, sectionDepth, sectionEnd, type BlockTarget } from '@/lib/studio-blocks';
+ import type {
+   AuthorQuote,
+   ChatContext,
+@@ -1572,7 +1573,7 @@
+     }
+     const targets: TemplateCandidate['targets'] = [{ scope_type: 'paper', scope_id: workspace.manuscript.manuscript_id, label: '整篇论文' }];
+     documentRef.current.sections.filter((section) => section.placement_status !== 'UNPLACED').forEach((section, sectionIndex) => {
+-      const sectionLabel = `章节 ${sectionIndex + 1}：${section.title || '未命名'}`;
++      const sectionLabel = `${section.parent_section_id ? '子章节' : '章节'} ${sectionIndex + 1}：${sectionBreadcrumb(documentRef.current,section.id)}`;
+       targets.push({ scope_type: 'section', scope_id: section.id, label: sectionLabel });
+       section.paragraphs.forEach((paragraph, paragraphIndex) => {
+         const paragraphLabel = `${sectionLabel} / 段落 ${paragraphIndex + 1}`;
+@@ -2214,7 +2215,7 @@
+             placeholder="Abstract 可以现在写，也可以先留到结构完整后补。"
+           />
+           <DropZone target={{ kind: 'paper', id: document.manuscript_id, placement: 'inside' }} empty={!document.sections.length} />
+-          {document.sections.map((section, sectionIndex) => (
++          {document.sections.map((section, sectionIndex) => ancestors(document,section.id).some((id) => editorUi.folded.includes(id)) ? null : (
+             <SectionEditor
+               key={section.id}
+               section={section}
+@@ -2290,6 +2291,8 @@
+   });
+   const ui = useEditorControls();
+   const folded = ui.folded.includes(section.id);
++  const depth = sectionDepth(ui.document,section.id);
++  const childCount = sectionEnd(ui.document.sections,sectionIndex) - sectionIndex - 1;
+   const select = () => setSelection({ type: 'section', id: section.id, label: section.title, role: section.role });
+   const title = <Input aria-label="章节标题" value={section.title} onFocus={select} onChange={(event) => commit((draft) => { draft.sections[sectionIndex].title = event.target.value; })} />;
+   const role = <Input aria-label="章节作用" value={section.role} placeholder="章节作用" onFocus={select} onChange={(event) => commit((draft) => { draft.sections[sectionIndex].role = event.target.value; })} />;
+@@ -2299,19 +2302,27 @@
+     <section
+       ref={setNodeRef}
+       data-block-id={section.id}
+-      style={{ transform: CSS.Transform.toString(transform), transition }}
++      style={{ transform: CSS.Transform.toString(transform), transition, ...(depth ? { marginLeft:depth*18, width:`calc(100% - ${depth*18}px)` } : {}) }}
+       className={`structure-section ${selectedId === section.id ? 'selected-block' : ''} ${isDragging ? 'block-dragging' : ''}`}
+     >
+-      <BlockRail kind="section" label={section.title || '未定章节'} compact={`SECTION ${sectionIndex + 1}`} onSelect={select}>{title}{role}</BlockRail>
++      <BlockRail kind="section" label={section.title || '未定章节'} compact={`${depth ? 'SUBSECTION' : 'SECTION'} ${sectionIndex + 1}`} onSelect={select}>{title}{role}
++        <label>父章节<select aria-label="父章节" value={section.parent_section_id || ''} onChange={(event) => commit((draft) => {
++          Object.assign(draft,moveBlocks(draft,[section.id],{kind:event.target.value ? 'section' : 'paper',id:event.target.value || draft.manuscript_id,placement:'inside'}));
++        },'REPARENT_SECTION')}>
++          <option value="">整篇论文（主章节）</option>
++          {ui.document.sections.filter((item) => canMove(ui.document,[section.id],{kind:'section',id:item.id,placement:'inside'})).map((item) => <option key={item.id} value={item.id}>{sectionBreadcrumb(ui.document,item.id)}</option>)}
++        </select></label>
++      </BlockRail>
+       <div className="structure-content">
+         {section.placement_status === 'UNPLACED' ? <div className="status-banner" aria-label="待安置的原内容">
+           <output><strong>待安置</strong> · 原内容、引用与编号完整保留。可将内容移入模板；未安置时不能生成成文。</output>
+           <Button size="sm" variant="outline" onClick={() => commit((draft) => {
+-            delete draft.sections[sectionIndex].placement_status;
++            for (const item of draft.sections.slice(sectionIndex,sectionEnd(draft.sections,sectionIndex))) delete item.placement_status;
+           }, 'PLACE_ORIGINAL_SECTION')}>将此章节标记为已安置</Button>
+         </div> : null}
+         <div className="section-heading-row">
+-          <BlockControls id={section.id} kind="section" label={section.title || '未定章节'}><button type="button" className="block-drag-handle" aria-label={`拖动章节 ${section.title}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); commit((draft) => { draft.sections.splice(sectionIndex, 1); }, 'DELETE_SECTION'); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
++          <BlockControls id={section.id} kind="section" label={section.title || '未定章节'}><button type="button" className="block-drag-handle" aria-label={`拖动章节 ${section.title}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); commit((draft) => deleteSectionTree(draft,section.id), 'DELETE_SECTION_TREE'); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
++          {depth ? <span className="text-xs" aria-label="子章节所属父章节">子章节 · {sectionBreadcrumb(ui.document,section.id)}</span> : null}
+           <Input
+             aria-label="章节标题"
+             value={section.title}
+@@ -2334,7 +2345,7 @@
+             const id = uid('paragraph_group');
+             target.paragraph_groups.push({ id, label: '', paragraph_ids: [] });
+             target.block_order.push(id);
+-          }, 'ADD_PARAGRAPH_GROUP')}>添加空段落组</button><button type="button" onClick={() => commit((draft) => { draft.sections.splice(sectionIndex, 1); }, 'DELETE_SECTION')}><Trash2 /> 删除章节</button></details>
++          }, 'ADD_PARAGRAPH_GROUP')}>添加空段落组</button><button type="button" onClick={() => commit((draft) => deleteSectionTree(draft,section.id), 'DELETE_SECTION_TREE')}><Trash2 /> 删除章节与子项</button></details>
+         </div>
+         <div id={`body-${section.id}`} inert={isDragging} hidden={folded}>
+         <SortableContext items={section.block_order || section.paragraphs.map((item) => item.id)} strategy={verticalListSortingStrategy}>
+@@ -2366,8 +2377,9 @@
+         >
+           <Plus /> Paragraph
+         </Button>
++        <Button variant="ghost" size="sm" disabled={depth>=4} onClick={() => commit((draft) => addSubsection(draft,section.id,uid('section')),'ADD_SUBSECTION')}>＋ 子章节</Button>
+         </div>
+-        {folded ? <p className="folded-summary">{section.paragraphs.length} 个段落 · {section.paragraph_groups?.length || 0} 个段落组</p> : null}
++        {folded ? <p className="folded-summary">{section.paragraphs.length} 个段落 · {section.paragraph_groups?.length || 0} 个段落组 · {childCount} 个子章节</p> : null}
+         <DropZone target={{ kind: 'section', id: section.id, placement: 'inside' }} empty={!section.paragraphs.length && !section.paragraph_groups?.length} />
+       </div>
+     </section>
+@@ -2463,6 +2475,7 @@
+         <Input aria-label="段落目的" value={paragraph.purpose} placeholder="段落目的" onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].purpose = event.target.value; })} />
+         <Input aria-label="段落组织范式" value={paragraph.paradigm} placeholder="自定义组织范式" onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].paradigm = event.target.value; })} />
+         <Input aria-label="L2 逻辑关系" value={paragraph.logical_relation || ''} placeholder="自定义逻辑关系" onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].logical_relation = event.target.value; })} />
++        <StudioArgumentRelations paragraphId={paragraph.id} />
+         {paragraph.logic ? <details><summary>模板来源的 L2 分析</summary><pre className="whitespace-pre-wrap break-words">{JSON.stringify(paragraph.logic, null, 2)}</pre></details> : null}
+       </BlockRail>
+       <div className="paragraph-content">
+@@ -2743,7 +2756,7 @@
+               const quote = quoteFromSelection(event.currentTarget, block.display_text);
+               onDiscuss(block, quote);
+             }}>
+-              {block.kind === 'title' ? <h1>{text}</h1> : block.kind === 'heading' ? <h2>{text}</h2> : <p>{text}</p>}
++              {block.kind === 'title' ? <h1>{text}</h1> : block.kind === 'heading' ? <h2 aria-level={block.heading_level || 2}>{text}</h2> : <p>{text}</p>}
+             </div>
+             {block.formulas?.map((formula) => <figure key={formula.id}><code>{formula.latex}</code><figcaption><CitationText text={formula.caption} references={generated.references} onCitation={onCitation} /></figcaption></figure>)}
+             <div className="reading-paragraph__actions">
+--- before/writing-studio/components/studio-argument-relations.tsx
++++ after/writing-studio/components/studio-argument-relations.tsx
+@@ -0,0 +1,108 @@
++'use client';
++
++import { useEffect, useState } from 'react';
++import { Button } from '@/components/ui/button';
++import { Dialog, DialogContent, DialogDescription, DialogTitle } from '@/components/ui/dialog';
++import { Input } from '@/components/ui/input';
++import { Textarea } from '@/components/ui/textarea';
++import { useEditorControls } from '@/components/studio-block-controls';
++import { ancestors, blocks } from '@/lib/studio-blocks';
++import type { ArgumentRelation } from '@/lib/studio-types';
++
++export function StudioArgumentRelations({ paragraphId }: { paragraphId: string }) {
++  const ui = useEditorControls();
++  const [open, setOpen] = useState(false);
++  const [sourceId, setSourceId] = useState(paragraphId);
++  const [targetId, setTargetId] = useState('');
++  const [relation, setRelation] = useState('');
++  const [condition, setCondition] = useState('');
++  const [editing, setEditing] = useState('');
++  const [hydrated, setHydrated] = useState(false);
++  const [notice, setNotice] = useState('');
++  const key = `pepper-argument-draft-${ui.document.manuscript_id}-${paragraphId}`;
++  const nodes = blocks(ui.document).filter((node) => ['paragraph', 'intent', 'thought'].includes(node.kind));
++  const edges = ui.document.argument_relations || [];
++  const connected = nodes.filter((node) => edges.some((edge) => edge.source_id === node.id || edge.target_id === node.id));
++  const valid = sourceId !== targetId && nodes.some((node) => node.id === sourceId) && nodes.some((node) => node.id === targetId) && relation.trim();
++
++  useEffect(() => {
++    try {
++      const raw = window.localStorage.getItem(key);
++      if (raw) {
++        const draft: unknown = JSON.parse(raw);
++        if (!draft || typeof draft !== 'object' || !['sourceId','targetId','relation','condition','editing'].every((name) => typeof (draft as Record<string, unknown>)[name] === 'string')) {
++          setNotice('原关系草稿无法读取，仍保留在此浏览器。');
++          return;
++        }
++        const value = draft as Record<string,string>;
++        setSourceId(value.sourceId); setTargetId(value.targetId); setRelation(value.relation);
++        setCondition(value.condition); setEditing(value.editing);
++      }
++      setHydrated(true);
++    } catch { setNotice('原关系草稿无法读取，仍保留在此浏览器。'); }
++  }, [key]);
++  useEffect(() => {
++    if (!hydrated) return;
++    try { window.localStorage.setItem(key, JSON.stringify({ sourceId,targetId,relation,condition,editing })); }
++    catch { setNotice('关系草稿暂时无法保存，请保留此页。'); }
++  }, [key,hydrated,sourceId,targetId,relation,condition,editing]);
++
++  const locate = (id: string) => { ui.unfold(ancestors(ui.document,id)); ui.selectBlock(id); setOpen(false); };
++  const save = () => {
++    if (!valid || !hydrated) return;
++    if (editing && !edges.some((edge) => edge.id === editing)) { setNotice('原关系已变化，请重新选择。原草稿仍保留。'); return; }
++    const next: ArgumentRelation = { id: editing || `argument_relation_${crypto.randomUUID()}`, source_id:sourceId, target_id:targetId, relation, condition };
++    ui.commit((document) => {
++      document.argument_relations = editing ? (document.argument_relations || []).map((edge) => edge.id === editing ? next : edge)
++        : [...(document.argument_relations || []),next];
++    }, editing ? 'EDIT_ARGUMENT_RELATION' : 'ADD_ARGUMENT_RELATION');
++    setEditing(''); setTargetId(''); setRelation(''); setNotice('关系已加入作者结构，可撤销。');
++  };
++  const label = (id: string) => nodes.find((node) => node.id === id)?.label || '原块不可用';
++  const position = (id: string) => { const index = connected.findIndex((node) => node.id === id); return { x:20+(index%2)*330, y:20+Math.floor(index/2)*100 }; };
++  return <>
++    <Button variant="outline" size="sm" onClick={() => setOpen(true)}>高级 L2 关系 · {edges.length}</Button>
++    <Dialog open={open} onOpenChange={setOpen}>
++      <DialogContent className="max-h-[85dvh] overflow-y-auto sm:max-w-3xl">
++        <DialogTitle>作者的 L2 关系</DialogTitle>
++        <DialogDescription>明确各段落、Intent 或思想之间的关系与适用条件。章节层级、段落目的和组织范式分别设置。</DialogDescription>
++        <div className="grid gap-3 sm:grid-cols-2">
++          <label className="grid min-w-0 gap-1">关系起点<select className="w-full min-w-0 max-w-full rounded border p-2" aria-label="L2 关系起点" value={sourceId} onChange={(event) => setSourceId(event.target.value)}>
++            {!nodes.some((node) => node.id===sourceId) ? <option value={sourceId}>原选块不可用</option> : null}
++            {nodes.map((node) => <option key={node.id} value={node.id}>{node.kind} · {node.label}</option>)}
++          </select></label>
++          <label className="grid min-w-0 gap-1">关系终点<select className="w-full min-w-0 max-w-full rounded border p-2" aria-label="L2 关系终点" value={targetId} onChange={(event) => setTargetId(event.target.value)}>
++            <option value="">选择另一块…</option>
++            {targetId && !nodes.some((node) => node.id===targetId) ? <option value={targetId}>原选块不可用</option> : null}
++            {nodes.filter((node) => node.id!==sourceId).map((node) => <option key={node.id} value={node.id}>{node.kind} · {node.label}</option>)}
++          </select></label>
++        </div>
++        <Input aria-label="L2 关系含义" placeholder="支持、对照、先后、条件，或自定义关系" value={relation} onChange={(event) => setRelation(event.target.value)} />
++        <Textarea aria-label="L2 关系适用条件" placeholder="适用范围与条件，可暂留空" value={condition} onChange={(event) => setCondition(event.target.value)} />
++        <div className="flex gap-2"><Button disabled={!valid || !hydrated} onClick={save}>{editing ? '保存关系修改' : '加入关系'}</Button>
++          {editing ? <Button variant="outline" onClick={() => { setEditing(''); setTargetId(''); setRelation(''); }}>保留已有关系，结束编辑</Button> : null}</div>
++        <output>{notice}</output>
++        {connected.length ? <svg className="w-full" aria-labelledby={`argument-title-${paragraphId}`} viewBox={`0 0 650 ${Math.ceil(connected.length/2)*100+80}`}>
++          <title id={`argument-title-${paragraphId}`}>作者已保存的 L2 关系图</title>
++          <defs><marker id={`argument-arrow-${paragraphId}`} markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#687d74" /></marker></defs>
++          {edges.map((edge) => { const from=position(edge.source_id),to=position(edge.target_id); const right=to.x>from.x; return <g key={edge.id}>
++            <path d={`M${from.x+(right ? 260 : 0)},${from.y+25} Q325,${Math.max(from.y,to.y)+120} ${to.x+(right ? 0 : 260)},${to.y+25}`} fill="none" stroke="#687d74" markerEnd={`url(#argument-arrow-${paragraphId})`} />
++            <text x="325" y={Math.max(from.y,to.y)+110} textAnchor="middle" fontSize="11">{edge.relation.slice(0,48)}</text>
++          </g>; })}
++          {connected.map((node,index) => { const p=position(node.id); return <g key={node.id}><rect x={p.x} y={p.y} width="260" height="50" rx="5" fill="#f4f7f3" stroke="#bcc8bf" /><text x={p.x+10} y={p.y+30} fontSize="12">{index+1}. {node.label.slice(-30)}</text></g>; })}
++        </svg> : <p>尚未指定块间关系。</p>}
++        <ol className="space-y-3" aria-label="已保存的作者关系">
++          {edges.map((edge) => <li key={edge.id} className="min-w-0 break-words rounded border p-3">
++            <p>{label(edge.source_id)} → <strong>{edge.relation}</strong> → {label(edge.target_id)}</p>
++            <p className="whitespace-pre-wrap">{edge.condition || '适用条件未定'}</p>
++            <div className="flex flex-wrap gap-2">
++              <Button variant="ghost" size="sm" onClick={() => locate(edge.source_id)}>定位起点</Button><Button variant="ghost" size="sm" onClick={() => locate(edge.target_id)}>定位终点</Button>
++              <Button variant="outline" size="sm" onClick={() => { setSourceId(edge.source_id);setTargetId(edge.target_id);setRelation(edge.relation);setCondition(edge.condition);setEditing(edge.id);setNotice(''); }}>编辑关系</Button>
++              <Button variant="ghost" size="sm" onClick={() => ui.commit((document) => { document.argument_relations=(document.argument_relations || []).filter((item) => item.id!==edge.id); },'DELETE_ARGUMENT_RELATION')}>删除关系</Button>
++            </div>
++          </li>)}
++        </ol>
++      </DialogContent>
++    </Dialog>
++  </>;
++}
+--- before/writing-studio/tests/unit/studio-hierarchy.cjs
++++ after/writing-studio/tests/unit/studio-hierarchy.cjs
+@@ -0,0 +1,20 @@
++const assert = require('node:assert/strict');
++const fs = require('node:fs');
++const Module = require('node:module');
++const ts = require('typescript');
++const path = require('node:path');
++const file = path.resolve('lib/studio-blocks.ts');
++const compiled = ts.transpileModule(fs.readFileSync(file,'utf8'),{compilerOptions:{module:ts.ModuleKind.CommonJS,target:ts.ScriptTarget.ES2022}}).outputText;
++const mod = new Module(file,module);mod.filename=file;mod.paths=module.paths;mod._compile(compiled,file);
++const {addSubsection,ancestors,canMove,deleteSectionTree,moveBlocks,reconcileStructure,sectionDepth}=mod.exports;
++const p = id => ({id,purpose:id,paradigm:'author',asset_ids:['asset-preserved'],formulas:[{id:'f-'+id,latex:'x=1'}],intents:[{id:'i-'+id,label:'Intent',thoughts:[{id:'t-'+id,text:'Exact Ω '+id,citation_mode:'SELECTED',citations:[{evidence_id:'e',selected:true}]}]}]});
++const doc={schema_version:1,manuscript_id:'ms',title:'Author',abstract:'',venue:'',sections:[{id:'a',title:'A',role:'',paragraphs:[p('p1')]},{id:'b',title:'B',role:'',paragraphs:[]},{id:'c',parent_section_id:'b',title:'Child',role:'',paragraphs:[p('p2')]},{id:'d',parent_section_id:'c',title:'Grandchild',role:'',paragraphs:[p('p3')]}],argument_relations:[{id:'edge',source_id:'p1',target_id:'t-p3',relation:'Supports','condition':'Fixture only'}]};
++let count=0;function check(name,fn){fn();count++;}
++check('move whole tree inside a parent, with ids words and edges unchanged',()=>{const next=moveBlocks(doc,['b'],{kind:'section',id:'a',placement:'inside'});assert.equal(next.sections[1].parent_section_id,'a');assert.equal(sectionDepth(next,'d'),3);assert.deepEqual(next.sections[3].paragraphs,doc.sections[3].paragraphs);assert.deepEqual(next.argument_relations,doc.argument_relations);assert.deepEqual(ancestors(next,'t-p3'),['i-p3','p3','d','c','b','a','ms']);});
++check('move parent after target subtree rather than between descendants',()=>{const next=moveBlocks(doc,['a'],{kind:'section',id:'b',placement:'after'});assert.deepEqual(next.sections.map(s=>s.id),['b','c','d','a']);});
++check('promote a subsection with all descendants, preserving endpoints',()=>{const next=moveBlocks(doc,['c'],{kind:'paper',id:'ms',placement:'inside'});assert.equal(next.sections[2].parent_section_id,undefined);assert.equal(next.sections[3].parent_section_id,'c');assert.deepEqual(next.argument_relations,doc.argument_relations);});
++check('self descendant and overlapping tree selection rejected',()=>{assert.equal(canMove(doc,['b'],{kind:'section',id:'d',placement:'inside'}),false);assert.equal(canMove(doc,['b','c'],{kind:'paper',id:'ms',placement:'inside'}),false);assert.throws(()=>moveBlocks(doc,['b'],{kind:'section',id:'c',placement:'after'}));});
++check('delete whole tree removes only incident edges; snapshot undo restores',()=>{const before=structuredClone(doc),next=structuredClone(doc);deleteSectionTree(next,'b');reconcileStructure(next);assert.deepEqual(next.sections,[before.sections[0]]);assert.deepEqual(next.argument_relations,[]);assert.deepEqual(before,doc);});
++check('new subsection explicit, no existing author content copied or moved',()=>{const next=structuredClone(doc);addSubsection(next,'b','new');assert.deepEqual(next.sections.map(s=>s.id),['a','b','c','d','new']);assert.equal(next.sections[4].parent_section_id,'b');assert.deepEqual(next.sections[4].paragraphs,[]);assert.deepEqual(next.sections[3],doc.sections[3]);});
++check('placement boundary cannot be silently crossed by nesting',()=>{const next=structuredClone(doc);next.sections[0].placement_status='UNPLACED';assert.equal(canMove(next,['a'],{kind:'section',id:'b',placement:'inside'}),false);});
++console.log(`${count} hierarchy/tree/argument preservation cases passed; no browser used.`);

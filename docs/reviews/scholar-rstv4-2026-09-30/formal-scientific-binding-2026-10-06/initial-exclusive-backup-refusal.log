@@ -1,0 +1,8 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-scientific-binding-migration-v2.py']
+Traceback (most recent call last):
+  File "C:\Users\Alandelone\CodeSpace_Local\UuMA\.tmp\scholar-scientific-binding-migration-v2.py", line 15, in <module>
+    backup=repo/'.tmp/scholar-scientific-binding-original-v7';backup.mkdir(exist_ok=False)
+                                                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Alandelone\anaconda3\Lib\pathlib.py", line 1116, in mkdir
+    os.mkdir(self, mode)
+FileExistsError: [WinError 183] Cannot create a file when that file already exists: 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-scientific-binding-original-v7'

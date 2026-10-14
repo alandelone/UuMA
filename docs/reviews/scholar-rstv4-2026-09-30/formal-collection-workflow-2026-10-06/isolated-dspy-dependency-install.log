@@ -1,0 +1,221 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'venv', '--system-site-packages', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'pip', 'install', '--disable-pip-version-check', '--index-url', 'https://pypi.org/simple', 'dspy==3.4.0']
+Collecting dspy==3.4.0
+  Using cached dspy-3.4.0-py3-none-any.whl (987 kB)
+Collecting openai>=1.66.2 (from dspy==3.4.0)
+  Downloading openai-3.24.0-py3-none-any.whl (2.1 MB)
+     ---------------------------------------- 2.1/2.1 MB 263.1 kB/s eta 0:00:00
+Requirement already satisfied: regex>=2023.10.3 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (2024.9.11)
+Collecting orjson>=3.9.0 (from dspy==3.4.0)
+  Using cached orjson-3.12.0-cp311-cp311-win_amd64.whl (122 kB)
+Requirement already satisfied: tqdm>=4.66.1 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (4.66.5)
+Requirement already satisfied: requests>=2.31.0 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (2.32.3)
+Requirement already satisfied: pydantic>=2.11.0 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (2.12.5)
+Collecting litellm>=1.65.8 (from dspy==3.4.0)
+  Downloading litellm-1.104.0-cp310-abi3-win_amd64.whl (37.6 MB)
+     -------------------------------------- 37.6/37.6 MB 108.1 kB/s eta 0:00:00
+Requirement already satisfied: diskcache>=5.6.0 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (5.6.3)
+Collecting json-repair>=0.54.2 (from dspy==3.4.0)
+  Using cached json_repair-0.63.5-py3-none-any.whl (51 kB)
+Requirement already satisfied: tenacity>=8.2.3 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (8.5.0)
+Requirement already satisfied: anyio in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (4.10.0)
+Requirement already satisfied: cachetools>=5.5.0 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (5.5.0)
+Requirement already satisfied: cloudpickle>=3.1.2 in c:\users\alandelone\anaconda3\lib\site-packages (from dspy==3.4.0) (3.1.2)
+Collecting gepa[dspy]==0.1.4 (from dspy==3.4.0)
+  Using cached gepa-0.1.4-py3-none-any.whl (290 kB)
+Collecting fastuuid<1.0,>=0.14.0 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached fastuuid-0.14.0-cp311-cp311-win_amd64.whl (156 kB)
+Requirement already satisfied: filelock<4.0,>=3.16.1 in c:\users\alandelone\anaconda3\lib\site-packages (from litellm>=1.65.8->dspy==3.4.0) (3.16.1)
+Requirement already satisfied: httpx[http2]<1.0,>=0.28.0 in c:\users\alandelone\anaconda3\lib\site-packages (from litellm>=1.65.8->dspy==3.4.0) (0.28.1)
+Collecting openai>=1.66.2 (from dspy==3.4.0)
+  Using cached openai-2.54.0-py3-none-any.whl (1.7 MB)
+Requirement already satisfied: python-dotenv<2.0,>=1.0.0 in c:\users\alandelone\anaconda3\lib\site-packages (from litellm>=1.65.8->dspy==3.4.0) (1.2.1)
+Collecting pyyaml<7.0,>=6.0.3 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached pyyaml-6.0.3-cp311-cp311-win_amd64.whl (158 kB)
+Requirement already satisfied: packaging>=24.0 in c:\users\alandelone\anaconda3\lib\site-packages (from litellm>=1.65.8->dspy==3.4.0) (24.1)
+Collecting importlib-metadata<9.0,>=8.0.0 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached importlib_metadata-8.9.0-py3-none-any.whl (27 kB)
+Collecting tiktoken<1.0,>=0.8.0 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached tiktoken-0.14.0-cp311-cp311-win_amd64.whl (944 kB)
+Collecting tokenizers<1.0,>=0.21.0 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached tokenizers-0.23.2-cp310-abi3-win_amd64.whl (2.9 MB)
+Collecting huggingface-hub<2.0,>=0.34.0 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached huggingface_hub-1.33.0-py3-none-any.whl (846 kB)
+Requirement already satisfied: click<9.0,>=8.0.0 in c:\users\alandelone\anaconda3\lib\site-packages (from litellm>=1.65.8->dspy==3.4.0) (8.1.7)
+Collecting jinja2<4.0,>=3.1.6 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached jinja2-3.1.6-py3-none-any.whl (134 kB)
+Collecting aiohttp<4.0,>=3.14.2 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached aiohttp-3.14.3-cp311-cp311-win_amd64.whl (481 kB)
+Collecting pydantic-settings<3.0,>=2.14.1 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached pydantic_settings-2.15.0-py3-none-any.whl (69 kB)
+Requirement already satisfied: jsonschema<5.0,>=4.0.0 in c:\users\alandelone\anaconda3\lib\site-packages (from litellm>=1.65.8->dspy==3.4.0) (4.23.0)
+Collecting boto3<2.0,>=1.43.1 (from litellm>=1.65.8->dspy==3.4.0)
+  Downloading boto3-1.43.108-py3-none-any.whl (140 kB)
+     ------------------------------------ 140.0/140.0 kB 115.4 kB/s eta 0:00:00
+Requirement already satisfied: distro<2,>=1.7.0 in c:\users\alandelone\anaconda3\lib\site-packages (from openai>=1.66.2->dspy==3.4.0) (1.9.0)
+Collecting jiter<1,>=0.10.0 (from openai>=1.66.2->dspy==3.4.0)
+  Using cached jiter-0.17.0-cp311-cp311-win_amd64.whl (231 kB)
+Requirement already satisfied: sniffio in c:\users\alandelone\anaconda3\lib\site-packages (from openai>=1.66.2->dspy==3.4.0) (1.3.1)
+Requirement already satisfied: typing-extensions<5,>=4.14 in c:\users\alandelone\anaconda3\lib\site-packages (from openai>=1.66.2->dspy==3.4.0) (4.15.0)
+Requirement already satisfied: idna>=2.8 in c:\users\alandelone\anaconda3\lib\site-packages (from anyio->dspy==3.4.0) (3.10)
+Requirement already satisfied: annotated-types>=0.6.0 in c:\users\alandelone\anaconda3\lib\site-packages (from pydantic>=2.11.0->dspy==3.4.0) (0.7.0)
+Requirement already satisfied: pydantic-core==2.41.5 in c:\users\alandelone\anaconda3\lib\site-packages (from pydantic>=2.11.0->dspy==3.4.0) (2.41.5)
+Requirement already satisfied: typing-inspection>=0.4.2 in c:\users\alandelone\anaconda3\lib\site-packages (from pydantic>=2.11.0->dspy==3.4.0) (0.4.2)
+Requirement already satisfied: charset-normalizer<4,>=2 in c:\users\alandelone\anaconda3\lib\site-packages (from requests>=2.31.0->dspy==3.4.0) (3.3.2)
+Requirement already satisfied: urllib3<3,>=1.21.1 in c:\users\alandelone\anaconda3\lib\site-packages (from requests>=2.31.0->dspy==3.4.0) (2.2.3)
+Requirement already satisfied: certifi>=2017.4.17 in c:\users\alandelone\anaconda3\lib\site-packages (from requests>=2.31.0->dspy==3.4.0) (2026.7.22)
+Requirement already satisfied: colorama in c:\users\alandelone\anaconda3\lib\site-packages (from tqdm>=4.66.1->dspy==3.4.0) (0.4.6)
+Collecting aiohappyeyeballs>=2.5.0 (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0)
+  Using cached aiohappyeyeballs-2.7.1-py3-none-any.whl (15 kB)
+Collecting aiosignal>=1.4.0 (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0)
+  Using cached aiosignal-1.4.0-py3-none-any.whl (7.5 kB)
+Requirement already satisfied: attrs>=17.3.0 in c:\users\alandelone\anaconda3\lib\site-packages (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0) (24.2.0)
+Requirement already satisfied: frozenlist>=1.1.1 in c:\users\alandelone\anaconda3\lib\site-packages (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0) (1.4.1)
+Requirement already satisfied: multidict<7.0,>=4.5 in c:\users\alandelone\anaconda3\lib\site-packages (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0) (6.1.0)
+Requirement already satisfied: propcache>=0.2.0 in c:\users\alandelone\anaconda3\lib\site-packages (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0) (0.4.1)
+Collecting yarl<2.0,>=1.17.0 (from aiohttp<4.0,>=3.14.2->litellm>=1.65.8->dspy==3.4.0)
+  Using cached yarl-1.25.1-cp311-cp311-win_amd64.whl (102 kB)
+Collecting botocore<1.44.0,>=1.43.108 (from boto3<2.0,>=1.43.1->litellm>=1.65.8->dspy==3.4.0)
+  Downloading botocore-1.43.108-py3-none-any.whl (16.0 MB)
+     -------------------------------------- 16.0/16.0 MB 126.0 kB/s eta 0:00:00
+Requirement already satisfied: jmespath<2.0.0,>=0.7.1 in c:\users\alandelone\anaconda3\lib\site-packages (from boto3<2.0,>=1.43.1->litellm>=1.65.8->dspy==3.4.0) (1.1.0)
+Collecting s3transfer<0.20.0,>=0.19.0 (from boto3<2.0,>=1.43.1->litellm>=1.65.8->dspy==3.4.0)
+  Using cached s3transfer-0.19.2-py3-none-any.whl (90 kB)
+Requirement already satisfied: httpcore==1.* in c:\users\alandelone\anaconda3\lib\site-packages (from httpx[http2]<1.0,>=0.28.0->litellm>=1.65.8->dspy==3.4.0) (1.0.5)
+Requirement already satisfied: h11<0.15,>=0.13 in c:\users\alandelone\anaconda3\lib\site-packages (from httpcore==1.*->httpx[http2]<1.0,>=0.28.0->litellm>=1.65.8->dspy==3.4.0) (0.14.0)
+Collecting h2<5,>=3 (from httpx[http2]<1.0,>=0.28.0->litellm>=1.65.8->dspy==3.4.0)
+  Using cached h2-4.4.1-py3-none-any.whl (62 kB)
+Collecting click<9.0,>=8.0.0 (from litellm>=1.65.8->dspy==3.4.0)
+  Using cached click-8.5.0-py3-none-any.whl (125 kB)
+Requirement already satisfied: fsspec>=2023.5.0 in c:\users\alandelone\anaconda3\lib\site-packages (from huggingface-hub<2.0,>=0.34.0->litellm>=1.65.8->dspy==3.4.0) (2024.9.0)
+Collecting hf-xet<2.0.0,>=1.6.0 (from huggingface-hub<2.0,>=0.34.0->litellm>=1.65.8->dspy==3.4.0)
+  Using cached hf_xet-1.6.0-cp38-abi3-win_amd64.whl (4.0 MB)
+Requirement already satisfied: zipp>=3.20 in c:\users\alandelone\anaconda3\lib\site-packages (from importlib-metadata<9.0,>=8.0.0->litellm>=1.65.8->dspy==3.4.0) (3.20.2)
+Requirement already satisfied: MarkupSafe>=2.0 in c:\users\alandelone\anaconda3\lib\site-packages (from jinja2<4.0,>=3.1.6->litellm>=1.65.8->dspy==3.4.0) (2.1.5)
+Requirement already satisfied: jsonschema-specifications>=2023.03.6 in c:\users\alandelone\anaconda3\lib\site-packages (from jsonschema<5.0,>=4.0.0->litellm>=1.65.8->dspy==3.4.0) (2023.12.1)
+Requirement already satisfied: referencing>=0.28.4 in c:\users\alandelone\anaconda3\lib\site-packages (from jsonschema<5.0,>=4.0.0->litellm>=1.65.8->dspy==3.4.0) (0.35.1)
+Requirement already satisfied: rpds-py>=0.7.1 in c:\users\alandelone\anaconda3\lib\site-packages (from jsonschema<5.0,>=4.0.0->litellm>=1.65.8->dspy==3.4.0) (0.20.0)
+Requirement already satisfied: python-dateutil<3.0.0,>=2.1 in c:\users\alandelone\anaconda3\lib\site-packages (from botocore<1.44.0,>=1.43.108->boto3<2.0,>=1.43.1->litellm>=1.65.8->dspy==3.4.0) (2.9.0.post0)
+Collecting hyperframe<7,>=6.1 (from h2<5,>=3->httpx[http2]<1.0,>=0.28.0->litellm>=1.65.8->dspy==3.4.0)
+  Using cached hyperframe-6.1.0-py3-none-any.whl (13 kB)
+Collecting hpack<5,>=4.2 (from h2<5,>=3->httpx[http2]<1.0,>=0.28.0->litellm>=1.65.8->dspy==3.4.0)
+  Using cached hpack-4.2.0-py3-none-any.whl (34 kB)
+Requirement already satisfied: six>=1.5 in c:\users\alandelone\anaconda3\lib\site-packages (from python-dateutil<3.0.0,>=2.1->botocore<1.44.0,>=1.43.108->boto3<2.0,>=1.43.1->litellm>=1.65.8->dspy==3.4.0) (1.17.0)
+Installing collected packages: yarl, pyyaml, orjson, json-repair, jiter, jinja2, importlib-metadata, hyperframe, hpack, hf-xet, gepa, fastuuid, click, aiosignal, aiohappyeyeballs, tiktoken, h2, botocore, aiohttp, s3transfer, pydantic-settings, openai, huggingface-hub, tokenizers, boto3, litellm, dspy
+  Attempting uninstall: yarl
+    Found existing installation: yarl 1.11.1
+    Not uninstalling yarl at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'yarl'. No files were found to uninstall.
+  Attempting uninstall: pyyaml
+    Found existing installation: PyYAML 6.0.2
+    Not uninstalling pyyaml at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'PyYAML'. No files were found to uninstall.
+  Attempting uninstall: jiter
+    Found existing installation: jiter 0.5.0
+    Not uninstalling jiter at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'jiter'. No files were found to uninstall.
+  Attempting uninstall: jinja2
+    Found existing installation: Jinja2 3.1.4
+    Not uninstalling jinja2 at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'Jinja2'. No files were found to uninstall.
+  Attempting uninstall: importlib-metadata
+    Found existing installation: importlib_metadata 7.2.1
+    Not uninstalling importlib-metadata at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'importlib_metadata'. No files were found to uninstall.
+  Attempting uninstall: hf-xet
+    Found existing installation: hf-xet 1.2.0
+    Not uninstalling hf-xet at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'hf-xet'. No files were found to uninstall.
+  Attempting uninstall: click
+    Found existing installation: click 8.1.7
+    Not uninstalling click at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'click'. No files were found to uninstall.
+  Attempting uninstall: aiosignal
+    Found existing installation: aiosignal 1.3.1
+    Not uninstalling aiosignal at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'aiosignal'. No files were found to uninstall.
+  Attempting uninstall: aiohappyeyeballs
+    Found existing installation: aiohappyeyeballs 2.4.0
+    Not uninstalling aiohappyeyeballs at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'aiohappyeyeballs'. No files were found to uninstall.
+  Attempting uninstall: tiktoken
+    Found existing installation: tiktoken 0.7.0
+    Not uninstalling tiktoken at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'tiktoken'. No files were found to uninstall.
+  Attempting uninstall: botocore
+    Found existing installation: botocore 1.42.19
+    Not uninstalling botocore at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'botocore'. No files were found to uninstall.
+  Attempting uninstall: aiohttp
+    Found existing installation: aiohttp 3.10.5
+    Not uninstalling aiohttp at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'aiohttp'. No files were found to uninstall.
+  Attempting uninstall: s3transfer
+    Found existing installation: s3transfer 0.16.0
+    Not uninstalling s3transfer at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 's3transfer'. No files were found to uninstall.
+  Attempting uninstall: pydantic-settings
+    Found existing installation: pydantic-settings 2.12.0
+    Not uninstalling pydantic-settings at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'pydantic-settings'. No files were found to uninstall.
+  Attempting uninstall: openai
+    Found existing installation: openai 1.47.0
+    Not uninstalling openai at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'openai'. No files were found to uninstall.
+  Attempting uninstall: huggingface-hub
+    Found existing installation: huggingface-hub 0.25.0
+    Not uninstalling huggingface-hub at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'huggingface-hub'. No files were found to uninstall.
+  Attempting uninstall: tokenizers
+    Found existing installation: tokenizers 0.15.1
+    Not uninstalling tokenizers at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'tokenizers'. No files were found to uninstall.
+  Attempting uninstall: boto3
+    Found existing installation: boto3 1.42.19
+    Not uninstalling boto3 at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'boto3'. No files were found to uninstall.
+  Attempting uninstall: litellm
+    Found existing installation: litellm 1.47.0
+    Not uninstalling litellm at c:\users\alandelone\anaconda3\lib\site-packages, outside environment C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1
+    Can't uninstall 'litellm'. No files were found to uninstall.
+ERROR: pip's dependency resolver does not currently take into account all the packages that are installed. This behaviour is the source of the following dependency conflicts.
+aider-chat 0.59.1 requires aiohappyeyeballs==2.4.0, but you have aiohappyeyeballs 2.7.1 which is incompatible.
+aider-chat 0.59.1 requires aiohttp==3.10.5, but you have aiohttp 3.14.3 which is incompatible.
+aider-chat 0.59.1 requires aiosignal==1.3.1, but you have aiosignal 1.4.0 which is incompatible.
+aider-chat 0.59.1 requires anyio==4.6.0, but you have anyio 4.10.0 which is incompatible.
+aider-chat 0.59.1 requires certifi==2024.8.30, but you have certifi 2026.7.22 which is incompatible.
+aider-chat 0.59.1 requires click==8.1.7, but you have click 8.5.0 which is incompatible.
+aider-chat 0.59.1 requires diff-match-patch==20230430, but you have diff-match-patch 20200713 which is incompatible.
+aider-chat 0.59.1 requires flake8==7.1.1, but you have flake8 7.0.0 which is incompatible.
+aider-chat 0.59.1 requires httpx==0.27.2, but you have httpx 0.28.1 which is incompatible.
+aider-chat 0.59.1 requires huggingface-hub==0.25.0, but you have huggingface-hub 1.33.0 which is incompatible.
+aider-chat 0.59.1 requires importlib-metadata==7.2.1, but you have importlib-metadata 8.9.0 which is incompatible.
+aider-chat 0.59.1 requires jinja2==3.1.4, but you have jinja2 3.1.6 which is incompatible.
+aider-chat 0.59.1 requires jiter==0.5.0, but you have jiter 0.17.0 which is incompatible.
+aider-chat 0.59.1 requires json5==0.9.25, but you have json5 0.12.1 which is incompatible.
+aider-chat 0.59.1 requires litellm==1.47.0, but you have litellm 1.104.0 which is incompatible.
+aider-chat 0.59.1 requires markdown-it-py==3.0.0, but you have markdown-it-py 2.2.0 which is incompatible.
+aider-chat 0.59.1 requires openai==1.47.0, but you have openai 2.54.0 which is incompatible.
+aider-chat 0.59.1 requires pycodestyle==2.12.1, but you have pycodestyle 2.11.1 which is incompatible.
+aider-chat 0.59.1 requires pydantic==2.9.2, but you have pydantic 2.12.5 which is incompatible.
+aider-chat 0.59.1 requires pydantic-core==2.23.4, but you have pydantic-core 2.41.5 which is incompatible.
+aider-chat 0.59.1 requires pygments==2.18.0, but you have pygments 2.19.2 which is incompatible.
+aider-chat 0.59.1 requires python-dotenv==1.0.1, but you have python-dotenv 1.2.1 which is incompatible.
+aider-chat 0.59.1 requires pyyaml==6.0.2, but you have pyyaml 6.0.3 which is incompatible.
+aider-chat 0.59.1 requires rich==13.8.1, but you have rich 14.2.0 which is incompatible.
+aider-chat 0.59.1 requires soupsieve==2.6, but you have soupsieve 2.5 which is incompatible.
+aider-chat 0.59.1 requires tiktoken==0.7.0, but you have tiktoken 0.14.0 which is incompatible.
+aider-chat 0.59.1 requires tokenizers==0.19.1, but you have tokenizers 0.23.2 which is incompatible.
+aider-chat 0.59.1 requires typing-extensions==4.12.2, but you have typing-extensions 4.15.0 which is incompatible.
+aider-chat 0.59.1 requires yarl==1.11.1, but you have yarl 1.25.1 which is incompatible.
+aiobotocore 3.1.0 requires botocore<1.42.20,>=1.41.0, but you have botocore 1.43.108 which is incompatible.
+bokeh 3.8.2 requires narwhals>=1.13, but you have narwhals 1.8.2 which is incompatible.
+flask 3.1.2 requires blinker>=1.9.0, but you have blinker 1.8.2 which is incompatible.
+holoviews 1.22.1 requires narwhals>=2, but you have narwhals 1.8.2 which is incompatible.
+opentelemetry-api 1.39.1 requires importlib-metadata<8.8.0,>=6.0, but you have importlib-metadata 8.9.0 which is incompatible.
+panel 1.8.5 requires narwhals>=2, but you have narwhals 1.8.2 which is incompatible.
+s3fs 2026.1.0 requires fsspec==2026.1.0, but you have fsspec 2024.9.0 which is incompatible.
+streamlit 1.38.0 requires rich<14,>=10.14.0, but you have rich 14.2.0 which is incompatible.
+transformers 4.39.3 requires huggingface-hub<1.0,>=0.19.3, but you have huggingface-hub 1.33.0 which is incompatible.
+transformers 4.39.3 requires tokenizers<0.19,>=0.14, but you have tokenizers 0.23.2 which is incompatible.
+Successfully installed aiohappyeyeballs-2.7.1 aiohttp-3.14.3 aiosignal-1.4.0 boto3-1.43.108 botocore-1.43.108 click-8.5.0 dspy-3.4.0 fastuuid-0.14.0 gepa-0.1.4 h2-4.4.1 hf-xet-1.6.0 hpack-4.2.0 huggingface-hub-1.33.0 hyperframe-6.1.0 importlib-metadata-8.9.0 jinja2-3.1.6 jiter-0.17.0 json-repair-0.63.5 litellm-1.104.0 openai-2.54.0 orjson-3.12.0 pydantic-settings-2.15.0 pyyaml-6.0.3 s3transfer-0.19.2 tiktoken-0.14.0 tokenizers-0.23.2 yarl-1.25.1

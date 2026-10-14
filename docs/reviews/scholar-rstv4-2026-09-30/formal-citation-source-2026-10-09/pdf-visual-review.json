@@ -1,0 +1,30 @@
+{
+  "status": "PASS_ALL_FIVE_ACTUAL_POPPLER_PAGE_IMAGES",
+  "method": "view_image inspected each of the two downloaded manuscript PDF pages and all three original source PDF pages after exact byte/identity audit.",
+  "pages": {
+    "1": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-manuscript-v1-1.png",
+      "sha256": "1dec3d150a798a8efb953ecd1c4893fb772ab88a6359acea6d9488cef1aaa97f"
+    },
+    "2": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-manuscript-v2-1.png",
+      "sha256": "c957f83b539ba2251bcbc4a2976e0348daa5cfb2df4baee58e90e57a5dbb022f"
+    },
+    "3": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-original-v1-1.png",
+      "sha256": "3032eee0144b4dd7d6eafd00d7d66c5d2cf66ef9a2a7052ab25567a531838081"
+    },
+    "4": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-original-v1-2.png",
+      "sha256": "916100a7e5ccdee7e44c1696309b0829d54ddd4eadfeab0090684669a0cdd423"
+    },
+    "5": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-original-v1-3.png",
+      "sha256": "66ef53057e1345208002f0f93133936efd6e7ae13c36d93819e6950b6421fb42"
+    }
+  },
+  "manuscript_v1": "Numeric [1], [2], [1] and the original bibliography are legible, inside page margins.",
+  "manuscript_v2": "Same numbers and changed bibliography (Other selected source; refreshed live catalog title) are legible, inside page margins.",
+  "original_pages_1_2_3": "Exact page-specific headings and body 1/2/3, readable and unclipped.",
+  "scientific_acceptance": false
+}

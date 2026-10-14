@@ -1,0 +1,20 @@
+RUN ['node', 'node_modules/typescript/bin/tsc', '--noEmit']
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\.bin\\oxlint.cmd', '--type-aware', '--deny-warnings', 'app/page.tsx', 'lib/review-comment-preview.ts', 'lib/studio-view-state.ts', 'lib/studio-types.ts', 'lib/studio-downloads.ts', 'components/studio-source-context.tsx', 'components/studio-workspace.tsx']
+RUN ['node', 'tests/unit/review-comment-preview.cjs']
+PASS a real 100-of-101 batch keeps the remaining opinion and original source positions
+PASS the second batch contains only opinion 101 and completion clears the finished preview
+PASS an excluded edited opinion keeps both texts and imported rows cannot be submitted twice
+RUN ['node', 'tests/unit/studio-view-state.cjs']
+PASS ordinary navigation isolates manuscript view while preserving Track/Catalog return
+PASS old generated anchors retain original version and author objects do not invent one
+PASS restored pointers reject foreign scopes, invalid indices and empty legacy IDs
+RUN ['node', 'tests/unit/studio-downloads.cjs']
+PASS ZIP bytes, length and fixed filename stream unchanged through same-origin delivery
+PASS package PDF and generated artifact use only fixed file routes
+PASS unavailable fixed files preserve 410 and backend explanation
+PASS arbitrary API, path traversal, URL and query requests never reach backend
+PASS foreign origins and writes do not reach file service
+PASS server destination is configured loopback API only
+PASS empty responses and redirects cannot become apparently successful downloads
+7 fixed-file delivery contracts passed; controlled requests, no browser used.
+RUN ['git', 'diff', '--check']

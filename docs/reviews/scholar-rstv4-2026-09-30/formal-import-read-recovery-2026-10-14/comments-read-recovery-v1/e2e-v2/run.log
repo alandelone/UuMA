@@ -1,0 +1,15 @@
+
+Running 8 tests using 1 worker
+
+(node:14476) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 1 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold comments failure cannot masquerade as empty or permit round creation; retry reads only (652ms)
+  ok 2 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:140:5 › Revision comments and rounds read recovery › cold rounds failure cannot masquerade as empty or permit round creation; retry reads only (550ms)
+  ok 3 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:155:3 › Revision comments and rounds read recovery › successful empty reads display a genuine empty state (392ms)
+  ok 4 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:164:3 › Revision comments and rounds read recovery › warm failure retains opinions, current round, local input and preview; retry does not write (648ms)
+  ok 5 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:181:3 › Revision comments and rounds read recovery › acknowledged round creation followed by failed reload never repeats create POST (878ms)
+  ok 6 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:195:3 › Revision comments and rounds read recovery › acknowledged import followed by failed reload retries GET without duplicate import (661ms)
+  ok 7 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:211:5 › Revision comments and rounds read recovery › late older empty response cannot replace a newer successful read (661ms)
+  ok 8 ..\..\..\..\..\..\Alandelone\CodeSpace_Local\writing-studio\tests\e2e\review-read-recovery.spec.ts:211:5 › Revision comments and rounds read recovery › late older failure response cannot replace a newer successful read (627ms)
+
+  8 passed (5.8s)

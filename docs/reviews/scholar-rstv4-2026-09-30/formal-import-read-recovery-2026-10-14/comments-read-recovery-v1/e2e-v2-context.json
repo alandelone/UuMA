@@ -1,0 +1,5 @@
+{
+  "before": "40e8bfaff4750f96321300acfd25be1cae4acb598e5f66a335018c32232dc90a",
+  "after": "b93b08b69b413e198fe9394c83cfb1fc01f37f94f20756b61327a74389acc67e",
+  "reason": "Exact same text occurs in rendered edited text and collapsed original provenance. Scope assertion to unique semantic comment article, direct edited paragraph. Every original behavior assertion retained."
+}

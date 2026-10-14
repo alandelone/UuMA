@@ -1,0 +1,28 @@
+Isolated Catalog identity and listener verified.
+[{"LocalAddress":"127.0.0.1","LocalPort":8874,"OwningProcess":55468},{"LocalAddress":"0.0.0.0","LocalPort":3000,"OwningProcess":53416}]
+Verified roots: Studio 55324, frontend 53416
+Owned isolated services loaded: Catalog 54648, Studio 54784, frontend 57148.
+CHECK scholar-studio-history-controller-v1.mjs
+{"status":"PASS_ACTUAL_CONTROLLER_HTTP_SOURCE_NAVIGATION","original_routes":4,"new_model_calls":0,"browser_verified":false}
+Exit: 0
+CHECK scholar-studio-history-native-view-v1.mjs
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+AssertionError [ERR_ASSERTION]: 来源不可用：{"detail":"Not Found"}
+
+404 !== 200
+。当前草稿与固定来源仍保留。
+    at file:///C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-studio-history-native-view-v1.mjs:44:48
+    at process.processTicksAndRejections (node:internal/process/task_queues:104:5) {
+  generatedMessage: false,
+  code: 'ERR_ASSERTION',
+  actual: null,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}
+
+Node.js v24.19.0
+Exit: 1

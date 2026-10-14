@@ -23,3 +23,19 @@ Run one session writer at a time. This entry point cannot prevent terminating a 
 commands executed outside it. A crash leaves an unfinished session for `resume`; it cannot invent
 the Agent's reasoning or next steps. There is no claim of a globally installed desktop stop hook.
 Use `check` before workflow publication/completion steps; bypassing this CLI bypasses its gate.
+
+Lifecycle checks read the latest journal event; progress iterates events individually. Keep the
+full append-only history and the complete handoff snapshot/digest checks. Do not load all historical
+handoff bodies merely to check whether a session is open, especially during low-memory execution.
+
+
+## Windows handoff text and preserved prior context
+
+When including the preceding handoff in a new CLI summary, read it with
+`Path.read_text(encoding="utf-8")` so the input and verification use the same universal-newline
+representation. Keep an exact raw-byte backup before generating. Do not decode `read_bytes()`
+and then write that CRLF string through the CLI: Windows text writing adds another carriage
+return, and reading for comparison normalizes it differently. Avoid building replacement Python
+source with escaped newline strings. Supply the long summary in process to the unchanged CLI
+entry point when it exceeds the Windows command-line length limit. Compare the entire previous
+logical text with the generated handoff; do not weaken the full-content preservation assertion.

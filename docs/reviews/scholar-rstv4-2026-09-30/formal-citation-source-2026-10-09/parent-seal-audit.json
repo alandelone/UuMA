@@ -1,0 +1,30 @@
+{
+  "status": "PASS",
+  "original_material_files_verified": 240,
+  "original_material_three_versions_strictly_read": [
+    {
+      "version": 1,
+      "generated_version_id": "manuscript_version_9f842e3acfea471a8c2a48abc8f02817",
+      "current_strict_read": "PASS"
+    },
+    {
+      "version": 2,
+      "generated_version_id": "manuscript_version_ea811e5a5f784c389fc664f84f18fa00",
+      "current_strict_read": "PASS"
+    },
+    {
+      "version": 3,
+      "generated_version_id": "manuscript_version_02338a596162441587a28d1c0ee72dbf",
+      "current_strict_read": "PASS"
+    }
+  ],
+  "original_material_database_bytes_preserved": true,
+  "deliberately_changed_current_material_sources": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_api.py",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_read_views.py",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx"
+  ],
+  "all_other_material_sources_unchanged": true
+}

@@ -124,7 +124,9 @@ class _OnnxBGEM3Encoder:
         options.enable_cpu_mem_arena = False
         options.enable_mem_pattern = False
         options.execution_mode = ort.ExecutionMode.ORT_SEQUENTIAL
-        options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_ENABLE_ALL
+        # Avoid a second packed/optimized copy of the FP32 weights on this shared host.
+        options.graph_optimization_level = ort.GraphOptimizationLevel.ORT_DISABLE_ALL
+        options.add_session_config_entry("session.disable_prepacking", "1")
         options.intra_op_num_threads = max(
             1, int(os.environ.get("UUMA_BGE_ONNX_THREADS", "2"))
         )
@@ -137,28 +139,35 @@ class _OnnxBGEM3Encoder:
         self._max_length = max(
             8, int(os.environ.get("UUMA_BGE_MAX_LENGTH", "2048"))
         )
+        self._batch_size = max(1, int(os.environ.get("UUMA_BGE_BATCH_SIZE", "1")))
+        self._encode_lock = threading.Lock()
 
     def encode(self, texts: Any) -> dict[str, Any]:
         import numpy as np
 
         scalar = isinstance(texts, str)
         batch = [texts] if scalar else list(texts)
-        encoded = self._tokenizer(
-            batch,
-            padding=True,
-            truncation=True,
-            max_length=self._max_length,
-            return_tensors="np",
-        )
-        dense = self._session.run(
-            ["sentence_embedding"],
-            {
-                "input_ids": encoded["input_ids"].astype(np.int64, copy=False),
-                "attention_mask": encoded["attention_mask"].astype(
-                    np.int64, copy=False
-                ),
-            },
-        )[0]
+        if not batch:
+            return {"dense_vecs": np.empty((0, 1024), dtype=np.float32)}
+        parts = []
+        # Serialize bounded batches: concurrent KAG executors share this CPU session.
+        with self._encode_lock:
+            for offset in range(0, len(batch), self._batch_size):
+                encoded = self._tokenizer(
+                    batch[offset:offset + self._batch_size],
+                    padding=True,
+                    truncation=True,
+                    max_length=self._max_length,
+                    return_tensors="np",
+                )
+                parts.append(self._session.run(
+                    ["sentence_embedding"],
+                    {
+                        "input_ids": encoded["input_ids"].astype(np.int64, copy=False),
+                        "attention_mask": encoded["attention_mask"].astype(np.int64, copy=False),
+                    },
+                )[0])
+        dense = np.concatenate(parts, axis=0)
         return {"dense_vecs": dense[0] if scalar else dense}
 
 
@@ -201,14 +210,23 @@ def _configure_local_bge_runtime() -> None:
                 "threads": max(
                     1, int(os.environ.get("UUMA_BGE_ONNX_THREADS", "2"))
                 ),
+                "batch_size": max(1, int(os.environ.get("UUMA_BGE_BATCH_SIZE", "1"))),
+                "graph_optimization": "disabled",
+                "prepacking": False,
             }
         )
+        models: dict[str, _OnnxBGEM3Encoder] = {}
+        model_lock = threading.Lock()
 
         def load_onnx_model(_self: Any, path: str) -> _OnnxBGEM3Encoder:
-            logging.getLogger(__name__).info(
-                "Loading BGE-M3 ONNX export from %r on CPU", path
-            )
-            return _OnnxBGEM3Encoder(path)
+            model_key = str(Path(path).resolve())
+            with model_lock:
+                if model_key not in models:
+                    logging.getLogger(__name__).info(
+                        "Loading BGE-M3 ONNX export from %r on CPU", path
+                    )
+                    models[model_key] = _OnnxBGEM3Encoder(path)
+                return models[model_key]
 
         LocalBGEM3VectorizeModel._load_model = load_onnx_model
         return

@@ -1,0 +1,3074 @@
+{
+  "status": "PASS_ACTUAL_SCIENTIFIC_BINDING_CONTROLLER_HTTP",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-scientific-binding-2026-10-06-tz7dk6uz",
+  "actual_port": 59890,
+  "http_requests": 25,
+  "actual_http_trace": [
+    {
+      "method": "GET",
+      "path": "/studio/api/manuscripts/ms/workspace",
+      "status": 200
+    },
+    {
+      "method": "PUT",
+      "path": "/studio/api/manuscripts/ms/document",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/workflow",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/actions",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/workflow",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/review/cases/source_file_9a590ba922c7e9366c43fd7b7193ce28/actions",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-research-overview.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-research-chat.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-research-workspaces.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-collections.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-review-workflow.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-scientific-review.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-scientific-review.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/manuscripts/ms/scientific-review",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/manuscripts/ms/scientific-review/proposals",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/manuscripts/ms/scientific-review",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/manuscripts/ms/scientific-review/manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c/apply",
+      "status": 403
+    },
+    {
+      "method": "GET",
+      "path": "/catalog-scientific-review.js",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/manuscripts/ms/scientific-review",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/studio/api/manuscripts/ms/workspace",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/manuscripts/ms/scientific-review/manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c/apply",
+      "status": 201
+    },
+    {
+      "method": "GET",
+      "path": "/api/catalog/manuscripts/ms/scientific-review",
+      "status": 200
+    },
+    {
+      "method": "GET",
+      "path": "/studio/api/manuscripts/ms/workspace",
+      "status": 200
+    },
+    {
+      "method": "POST",
+      "path": "/api/catalog/manuscripts/ms/scientific-review/manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c/apply",
+      "status": 201
+    }
+  ],
+  "assets_sha256": {
+    "catalog_web.html": "1e40526bbda76d696aa855a86149cfedeb9b1ce0f47249a1bda67696b45baded",
+    "catalog_research_overview.js": "feefe62d015c6c8b4a947319c41ff0ffb4e44fb31849974e8c0b95f89f315ed1",
+    "catalog_research_chat.js": "813cb3f4563eb5ba4554adec490c4577235ce8784892f5ada709188496434cbb",
+    "catalog_research_workspaces.js": "f86b238f8b6b892cd345adbedc24c05cc5513c0d2afb04351090c56699ea63db",
+    "catalog_collections.js": "7470161fe568f22d88cac22c693445ea83fbb425e2123c9bd90943364d84b596",
+    "catalog_review_workflow.js": "4160dfea9817b27964b12b6ad678c376d751a3398c0af17441b669138c0178c2",
+    "catalog_scientific_review.js": "98ce5c932af327cb81d21b49fc444a305488cdd547ce6859431124ceff6b4d32"
+  },
+  "proposed": {
+    "status": "PASS_ACTUAL_SHIPPED_SCIENTIFIC_CONTROLLER_PROPOSE",
+    "requests": [
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review",
+        "status": 200,
+        "response": {
+          "manuscript": {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 1,
+            "blocker": null,
+            "next_step": null,
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00",
+            "workflow_stage": "DRAFTING"
+          },
+          "track": {
+            "track_id": "track",
+            "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+            "primary_topic_id": "topic",
+            "title": "Software Track",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "status": "ACTIVE",
+            "mapping_status": "MAPPED",
+            "revision": 1,
+            "created_at": "now",
+            "updated_at": "now"
+          },
+          "bindings": {
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "child",
+                "section": null,
+                "node_revision": 1
+              }
+            ],
+            "evidence": [
+              {
+                "manuscript_id": "ms",
+                "evidence_id": "evidence",
+                "evidence_digest": "evidence-sha"
+              }
+            ]
+          },
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "STALE",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "STALE",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "untouched",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "APPROVED",
+              "statement": "untouched",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now"
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "evidence",
+              "scope_kind": "FIELDKG",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "track_id": null,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+              "experiment_run_id": null,
+              "statement": "Software fixture evidence",
+              "excerpt": "Exact fixture source",
+              "location_json": "{}",
+              "relation": "SUPPORTS",
+              "confidence": 1,
+              "extractor_model": "fixture",
+              "prompt_version": "fixture",
+              "content_digest": "evidence-sha",
+              "created_at": "now",
+              "source_available": false
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "edge",
+              "track_id": "track",
+              "source_node_id": "root",
+              "target_node_id": "child",
+              "relation": "MOTIVATES",
+              "created_at": "now"
+            }
+          ],
+          "node_evidence": [
+            {
+              "node_id": "root",
+              "evidence_id": "evidence"
+            }
+          ],
+          "author_structure": {
+            "revision": 1,
+            "sections": [
+              {
+                "id": "section_c92025b23a354149b6c0684d2ad16525",
+                "title": "Introduction"
+              }
+            ]
+          },
+          "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "reviews": []
+        }
+      },
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review/proposals",
+        "body": {
+          "request_id": "actual-http-scientific-binding-fixture",
+          "expected_revision": 2,
+          "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "node_ids": [
+            "untouched"
+          ],
+          "evidence_ids": [],
+          "section_map": {
+            "section_c92025b23a354149b6c0684d2ad16525": [
+              "untouched"
+            ]
+          },
+          "reason": "Explicit isolated software review: replace the complete current binding set"
+        },
+        "status": 201,
+        "response": {
+          "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+          "request_id": "actual-http-scientific-binding-fixture",
+          "manuscript_id": "ms",
+          "track_id": "track",
+          "expected_revision": 2,
+          "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "created_at": "2026-10-06T09:29:27.436499+00:00",
+          "request": {
+            "evidence_ids": [],
+            "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+            "expected_revision": 2,
+            "manuscript_id": "ms",
+            "node_ids": [
+              "untouched"
+            ],
+            "reason": "Explicit isolated software review: replace the complete current binding set",
+            "request_id": "actual-http-scientific-binding-fixture",
+            "section_map": {
+              "section_c92025b23a354149b6c0684d2ad16525": [
+                "untouched"
+              ]
+            }
+          },
+          "context": {
+            "author_structure": {
+              "revision": 1,
+              "sections": [
+                {
+                  "id": "section_c92025b23a354149b6c0684d2ad16525",
+                  "title": "Introduction"
+                }
+              ]
+            },
+            "bindings": {
+              "evidence": [
+                {
+                  "evidence_digest": "evidence-sha",
+                  "evidence_id": "evidence",
+                  "manuscript_id": "ms"
+                }
+              ],
+              "nodes": [
+                {
+                  "manuscript_id": "ms",
+                  "node_id": "child",
+                  "node_revision": 1,
+                  "section": null
+                }
+              ]
+            },
+            "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+            "edges": [
+              {
+                "created_at": "now",
+                "edge_id": "edge",
+                "relation": "MOTIVATES",
+                "source_node_id": "root",
+                "target_node_id": "child",
+                "track_id": "track"
+              }
+            ],
+            "evidence": [
+              {
+                "confidence": 1,
+                "content_digest": "evidence-sha",
+                "created_at": "now",
+                "evidence_id": "evidence",
+                "excerpt": "Exact fixture source",
+                "experiment_run_id": null,
+                "extractor_model": "fixture",
+                "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                "location_json": "{}",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+                "prompt_version": "fixture",
+                "relation": "SUPPORTS",
+                "scope_kind": "FIELDKG",
+                "source_available": false,
+                "statement": "Software fixture evidence",
+                "track_id": null
+              }
+            ],
+            "manuscript": {
+              "blocker": null,
+              "created_at": "now",
+              "manuscript_id": "ms",
+              "needs_scientific_review": 1,
+              "next_step": null,
+              "research_type": "conceptual_framework",
+              "revision": 2,
+              "scope": null,
+              "title": "Software MS",
+              "track_id": "track",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00",
+              "workflow_stage": "DRAFTING",
+              "writing_status": "DRAFTING"
+            },
+            "node_evidence": [
+              {
+                "evidence_id": "evidence",
+                "node_id": "root"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "child",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T09:29:27.303391+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "root",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T09:29:27.303391+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "untouched",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "untouched",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              }
+            ],
+            "proposed_bindings": {
+              "evidence": [],
+              "nodes": [
+                {
+                  "manuscript_id": "ms",
+                  "node_id": "untouched",
+                  "node_revision": 1,
+                  "section": "section_c92025b23a354149b6c0684d2ad16525"
+                }
+              ]
+            },
+            "track": {
+              "created_at": "now",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "mapping_status": "MAPPED",
+              "primary_topic_id": "topic",
+              "research_type": "conceptual_framework",
+              "revision": 1,
+              "scope": null,
+              "status": "ACTIVE",
+              "title": "Software Track",
+              "track_id": "track",
+              "updated_at": "now"
+            }
+          },
+          "status": "PROPOSED",
+          "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+          "event": null,
+          "grant_available": false
+        }
+      },
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review",
+        "status": 200,
+        "response": {
+          "manuscript": {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 1,
+            "blocker": null,
+            "next_step": null,
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00",
+            "workflow_stage": "DRAFTING"
+          },
+          "track": {
+            "track_id": "track",
+            "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+            "primary_topic_id": "topic",
+            "title": "Software Track",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "status": "ACTIVE",
+            "mapping_status": "MAPPED",
+            "revision": 1,
+            "created_at": "now",
+            "updated_at": "now"
+          },
+          "bindings": {
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "child",
+                "section": null,
+                "node_revision": 1
+              }
+            ],
+            "evidence": [
+              {
+                "manuscript_id": "ms",
+                "evidence_id": "evidence",
+                "evidence_digest": "evidence-sha"
+              }
+            ]
+          },
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "STALE",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "STALE",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "untouched",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "APPROVED",
+              "statement": "untouched",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now"
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "evidence",
+              "scope_kind": "FIELDKG",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "track_id": null,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+              "experiment_run_id": null,
+              "statement": "Software fixture evidence",
+              "excerpt": "Exact fixture source",
+              "location_json": "{}",
+              "relation": "SUPPORTS",
+              "confidence": 1,
+              "extractor_model": "fixture",
+              "prompt_version": "fixture",
+              "content_digest": "evidence-sha",
+              "created_at": "now",
+              "source_available": false
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "edge",
+              "track_id": "track",
+              "source_node_id": "root",
+              "target_node_id": "child",
+              "relation": "MOTIVATES",
+              "created_at": "now"
+            }
+          ],
+          "node_evidence": [
+            {
+              "node_id": "root",
+              "evidence_id": "evidence"
+            }
+          ],
+          "author_structure": {
+            "revision": 1,
+            "sections": [
+              {
+                "id": "section_c92025b23a354149b6c0684d2ad16525",
+                "title": "Introduction"
+              }
+            ]
+          },
+          "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "reviews": [
+            {
+              "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+              "request_id": "actual-http-scientific-binding-fixture",
+              "manuscript_id": "ms",
+              "track_id": "track",
+              "expected_revision": 2,
+              "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+              "created_at": "2026-10-06T09:29:27.436499+00:00",
+              "request": {
+                "evidence_ids": [],
+                "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+                "expected_revision": 2,
+                "manuscript_id": "ms",
+                "node_ids": [
+                  "untouched"
+                ],
+                "reason": "Explicit isolated software review: replace the complete current binding set",
+                "request_id": "actual-http-scientific-binding-fixture",
+                "section_map": {
+                  "section_c92025b23a354149b6c0684d2ad16525": [
+                    "untouched"
+                  ]
+                }
+              },
+              "context": {
+                "author_structure": {
+                  "revision": 1,
+                  "sections": [
+                    {
+                      "id": "section_c92025b23a354149b6c0684d2ad16525",
+                      "title": "Introduction"
+                    }
+                  ]
+                },
+                "bindings": {
+                  "evidence": [
+                    {
+                      "evidence_digest": "evidence-sha",
+                      "evidence_id": "evidence",
+                      "manuscript_id": "ms"
+                    }
+                  ],
+                  "nodes": [
+                    {
+                      "manuscript_id": "ms",
+                      "node_id": "child",
+                      "node_revision": 1,
+                      "section": null
+                    }
+                  ]
+                },
+                "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+                "edges": [
+                  {
+                    "created_at": "now",
+                    "edge_id": "edge",
+                    "relation": "MOTIVATES",
+                    "source_node_id": "root",
+                    "target_node_id": "child",
+                    "track_id": "track"
+                  }
+                ],
+                "evidence": [
+                  {
+                    "confidence": 1,
+                    "content_digest": "evidence-sha",
+                    "created_at": "now",
+                    "evidence_id": "evidence",
+                    "excerpt": "Exact fixture source",
+                    "experiment_run_id": null,
+                    "extractor_model": "fixture",
+                    "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                    "location_json": "{}",
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+                    "prompt_version": "fixture",
+                    "relation": "SUPPORTS",
+                    "scope_kind": "FIELDKG",
+                    "source_available": false,
+                    "statement": "Software fixture evidence",
+                    "track_id": null
+                  }
+                ],
+                "manuscript": {
+                  "blocker": null,
+                  "created_at": "now",
+                  "manuscript_id": "ms",
+                  "needs_scientific_review": 1,
+                  "next_step": null,
+                  "research_type": "conceptual_framework",
+                  "revision": 2,
+                  "scope": null,
+                  "title": "Software MS",
+                  "track_id": "track",
+                  "updated_at": "2026-10-06T09:29:27.303391+00:00",
+                  "workflow_stage": "DRAFTING",
+                  "writing_status": "DRAFTING"
+                },
+                "node_evidence": [
+                  {
+                    "evidence_id": "evidence",
+                    "node_id": "root"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "created_at": "now",
+                    "node_id": "child",
+                    "node_type": "method",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "child",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T09:29:27.303391+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "root",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "root",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T09:29:27.303391+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "untouched",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "untouched",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  }
+                ],
+                "proposed_bindings": {
+                  "evidence": [],
+                  "nodes": [
+                    {
+                      "manuscript_id": "ms",
+                      "node_id": "untouched",
+                      "node_revision": 1,
+                      "section": "section_c92025b23a354149b6c0684d2ad16525"
+                    }
+                  ]
+                },
+                "track": {
+                  "created_at": "now",
+                  "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                  "mapping_status": "MAPPED",
+                  "primary_topic_id": "topic",
+                  "research_type": "conceptual_framework",
+                  "revision": 1,
+                  "scope": null,
+                  "status": "ACTIVE",
+                  "title": "Software Track",
+                  "track_id": "track",
+                  "updated_at": "now"
+                }
+              },
+              "status": "PROPOSED",
+              "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+              "event": null,
+              "grant_available": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review/manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c/apply",
+        "body": {},
+        "status": 403,
+        "response": {
+          "detail": "A matching unconsumed user-message approval grant is required"
+        }
+      }
+    ],
+    "proposal": {
+      "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+      "request_id": "actual-http-scientific-binding-fixture",
+      "manuscript_id": "ms",
+      "track_id": "track",
+      "expected_revision": 2,
+      "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+      "created_at": "2026-10-06T09:29:27.436499+00:00",
+      "request": {
+        "evidence_ids": [],
+        "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+        "expected_revision": 2,
+        "manuscript_id": "ms",
+        "node_ids": [
+          "untouched"
+        ],
+        "reason": "Explicit isolated software review: replace the complete current binding set",
+        "request_id": "actual-http-scientific-binding-fixture",
+        "section_map": {
+          "section_c92025b23a354149b6c0684d2ad16525": [
+            "untouched"
+          ]
+        }
+      },
+      "context": {
+        "author_structure": {
+          "revision": 1,
+          "sections": [
+            {
+              "id": "section_c92025b23a354149b6c0684d2ad16525",
+              "title": "Introduction"
+            }
+          ]
+        },
+        "bindings": {
+          "evidence": [
+            {
+              "evidence_digest": "evidence-sha",
+              "evidence_id": "evidence",
+              "manuscript_id": "ms"
+            }
+          ],
+          "nodes": [
+            {
+              "manuscript_id": "ms",
+              "node_id": "child",
+              "node_revision": 1,
+              "section": null
+            }
+          ]
+        },
+        "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+        "edges": [
+          {
+            "created_at": "now",
+            "edge_id": "edge",
+            "relation": "MOTIVATES",
+            "source_node_id": "root",
+            "target_node_id": "child",
+            "track_id": "track"
+          }
+        ],
+        "evidence": [
+          {
+            "confidence": 1,
+            "content_digest": "evidence-sha",
+            "created_at": "now",
+            "evidence_id": "evidence",
+            "excerpt": "Exact fixture source",
+            "experiment_run_id": null,
+            "extractor_model": "fixture",
+            "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+            "location_json": "{}",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+            "prompt_version": "fixture",
+            "relation": "SUPPORTS",
+            "scope_kind": "FIELDKG",
+            "source_available": false,
+            "statement": "Software fixture evidence",
+            "track_id": null
+          }
+        ],
+        "manuscript": {
+          "blocker": null,
+          "created_at": "now",
+          "manuscript_id": "ms",
+          "needs_scientific_review": 1,
+          "next_step": null,
+          "research_type": "conceptual_framework",
+          "revision": 2,
+          "scope": null,
+          "title": "Software MS",
+          "track_id": "track",
+          "updated_at": "2026-10-06T09:29:27.303391+00:00",
+          "workflow_stage": "DRAFTING",
+          "writing_status": "DRAFTING"
+        },
+        "node_evidence": [
+          {
+            "evidence_id": "evidence",
+            "node_id": "root"
+          }
+        ],
+        "nodes": [
+          {
+            "created_at": "now",
+            "node_id": "child",
+            "node_type": "method",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "child",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          },
+          {
+            "created_at": "now",
+            "node_id": "root",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "root",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          },
+          {
+            "created_at": "now",
+            "node_id": "untouched",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 1,
+            "statement": "untouched",
+            "status": "APPROVED",
+            "track_id": "track",
+            "updated_at": "now"
+          }
+        ],
+        "proposed_bindings": {
+          "evidence": [],
+          "nodes": [
+            {
+              "manuscript_id": "ms",
+              "node_id": "untouched",
+              "node_revision": 1,
+              "section": "section_c92025b23a354149b6c0684d2ad16525"
+            }
+          ]
+        },
+        "track": {
+          "created_at": "now",
+          "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+          "mapping_status": "MAPPED",
+          "primary_topic_id": "topic",
+          "research_type": "conceptual_framework",
+          "revision": 1,
+          "scope": null,
+          "status": "ACTIVE",
+          "title": "Software Track",
+          "track_id": "track",
+          "updated_at": "now"
+        }
+      },
+      "status": "PROPOSED",
+      "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+      "event": null,
+      "grant_available": false
+    },
+    "original_bindings": {
+      "nodes": [
+        {
+          "manuscript_id": "ms",
+          "node_id": "child",
+          "section": null,
+          "node_revision": 1
+        }
+      ],
+      "evidence": [
+        {
+          "manuscript_id": "ms",
+          "evidence_id": "evidence",
+          "evidence_digest": "evidence-sha"
+        }
+      ]
+    },
+    "browser_verified": false,
+    "actual_scientific_approval": false,
+    "simulated_trusted_boundary": true
+  },
+  "applied": {
+    "status": "PASS_ACTUAL_SHIPPED_SCIENTIFIC_CONTROLLER_APPLY",
+    "requests": [
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review",
+        "status": 200,
+        "response": {
+          "manuscript": {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 1,
+            "blocker": null,
+            "next_step": null,
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00",
+            "workflow_stage": "DRAFTING"
+          },
+          "track": {
+            "track_id": "track",
+            "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+            "primary_topic_id": "topic",
+            "title": "Software Track",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "status": "ACTIVE",
+            "mapping_status": "MAPPED",
+            "revision": 1,
+            "created_at": "now",
+            "updated_at": "now"
+          },
+          "bindings": {
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "child",
+                "section": null,
+                "node_revision": 1
+              }
+            ],
+            "evidence": [
+              {
+                "manuscript_id": "ms",
+                "evidence_id": "evidence",
+                "evidence_digest": "evidence-sha"
+              }
+            ]
+          },
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "STALE",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "STALE",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "untouched",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "APPROVED",
+              "statement": "untouched",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now"
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "evidence",
+              "scope_kind": "FIELDKG",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "track_id": null,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+              "experiment_run_id": null,
+              "statement": "Software fixture evidence",
+              "excerpt": "Exact fixture source",
+              "location_json": "{}",
+              "relation": "SUPPORTS",
+              "confidence": 1,
+              "extractor_model": "fixture",
+              "prompt_version": "fixture",
+              "content_digest": "evidence-sha",
+              "created_at": "now",
+              "source_available": false
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "edge",
+              "track_id": "track",
+              "source_node_id": "root",
+              "target_node_id": "child",
+              "relation": "MOTIVATES",
+              "created_at": "now"
+            }
+          ],
+          "node_evidence": [
+            {
+              "node_id": "root",
+              "evidence_id": "evidence"
+            }
+          ],
+          "author_structure": {
+            "revision": 1,
+            "sections": [
+              {
+                "id": "section_c92025b23a354149b6c0684d2ad16525",
+                "title": "Introduction"
+              }
+            ]
+          },
+          "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "reviews": [
+            {
+              "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+              "request_id": "actual-http-scientific-binding-fixture",
+              "manuscript_id": "ms",
+              "track_id": "track",
+              "expected_revision": 2,
+              "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+              "created_at": "2026-10-06T09:29:27.436499+00:00",
+              "request": {
+                "evidence_ids": [],
+                "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+                "expected_revision": 2,
+                "manuscript_id": "ms",
+                "node_ids": [
+                  "untouched"
+                ],
+                "reason": "Explicit isolated software review: replace the complete current binding set",
+                "request_id": "actual-http-scientific-binding-fixture",
+                "section_map": {
+                  "section_c92025b23a354149b6c0684d2ad16525": [
+                    "untouched"
+                  ]
+                }
+              },
+              "context": {
+                "author_structure": {
+                  "revision": 1,
+                  "sections": [
+                    {
+                      "id": "section_c92025b23a354149b6c0684d2ad16525",
+                      "title": "Introduction"
+                    }
+                  ]
+                },
+                "bindings": {
+                  "evidence": [
+                    {
+                      "evidence_digest": "evidence-sha",
+                      "evidence_id": "evidence",
+                      "manuscript_id": "ms"
+                    }
+                  ],
+                  "nodes": [
+                    {
+                      "manuscript_id": "ms",
+                      "node_id": "child",
+                      "node_revision": 1,
+                      "section": null
+                    }
+                  ]
+                },
+                "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+                "edges": [
+                  {
+                    "created_at": "now",
+                    "edge_id": "edge",
+                    "relation": "MOTIVATES",
+                    "source_node_id": "root",
+                    "target_node_id": "child",
+                    "track_id": "track"
+                  }
+                ],
+                "evidence": [
+                  {
+                    "confidence": 1,
+                    "content_digest": "evidence-sha",
+                    "created_at": "now",
+                    "evidence_id": "evidence",
+                    "excerpt": "Exact fixture source",
+                    "experiment_run_id": null,
+                    "extractor_model": "fixture",
+                    "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                    "location_json": "{}",
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+                    "prompt_version": "fixture",
+                    "relation": "SUPPORTS",
+                    "scope_kind": "FIELDKG",
+                    "source_available": false,
+                    "statement": "Software fixture evidence",
+                    "track_id": null
+                  }
+                ],
+                "manuscript": {
+                  "blocker": null,
+                  "created_at": "now",
+                  "manuscript_id": "ms",
+                  "needs_scientific_review": 1,
+                  "next_step": null,
+                  "research_type": "conceptual_framework",
+                  "revision": 2,
+                  "scope": null,
+                  "title": "Software MS",
+                  "track_id": "track",
+                  "updated_at": "2026-10-06T09:29:27.303391+00:00",
+                  "workflow_stage": "DRAFTING",
+                  "writing_status": "DRAFTING"
+                },
+                "node_evidence": [
+                  {
+                    "evidence_id": "evidence",
+                    "node_id": "root"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "created_at": "now",
+                    "node_id": "child",
+                    "node_type": "method",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "child",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T09:29:27.303391+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "root",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "root",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T09:29:27.303391+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "untouched",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "untouched",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  }
+                ],
+                "proposed_bindings": {
+                  "evidence": [],
+                  "nodes": [
+                    {
+                      "manuscript_id": "ms",
+                      "node_id": "untouched",
+                      "node_revision": 1,
+                      "section": "section_c92025b23a354149b6c0684d2ad16525"
+                    }
+                  ]
+                },
+                "track": {
+                  "created_at": "now",
+                  "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                  "mapping_status": "MAPPED",
+                  "primary_topic_id": "topic",
+                  "research_type": "conceptual_framework",
+                  "revision": 1,
+                  "scope": null,
+                  "status": "ACTIVE",
+                  "title": "Software Track",
+                  "track_id": "track",
+                  "updated_at": "now"
+                }
+              },
+              "status": "PROPOSED",
+              "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+              "event": null,
+              "grant_available": true
+            }
+          ]
+        }
+      },
+      {
+        "path": "/studio/api/manuscripts/ms/workspace",
+        "status": 200,
+        "response": {
+          "manuscript": {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 1,
+            "blocker": null,
+            "next_step": null,
+            "revision": 2,
+            "created_at": "now",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00",
+            "workflow_stage": "DRAFTING",
+            "projects": [],
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "child",
+                "section": null,
+                "node_revision": 1
+              }
+            ],
+            "evidence": [
+              {
+                "manuscript_id": "ms",
+                "evidence_id": "evidence",
+                "evidence_digest": "evidence-sha"
+              }
+            ],
+            "versions": [
+              {
+                "manuscript_version_id": "old-version",
+                "manuscript_id": "ms",
+                "version": 1,
+                "content": "Frozen software manuscript",
+                "inputs_json": "{}",
+                "created_at": "now"
+              }
+            ],
+            "history": [],
+            "submissions": []
+          },
+          "workflow_stage": "DRAFTING",
+          "document_revision": 1,
+          "document": {
+            "abstract": "",
+            "manuscript_id": "ms",
+            "schema_version": 1,
+            "sections": [
+              {
+                "id": "section_c92025b23a354149b6c0684d2ad16525",
+                "paragraphs": [
+                  {
+                    "asset_ids": [],
+                    "formulas": [],
+                    "id": "paragraph_2602918d83014f65ae669baa1747e418",
+                    "intents": [
+                      {
+                        "id": "intent_9491600db2ad407fb4b7e19b94d62979",
+                        "label": "Research Context",
+                        "thoughts": [
+                          {
+                            "citation_mode": "NONE",
+                            "citations": [],
+                            "id": "thought_author_1",
+                            "text": "The author decides the central scientific claim."
+                          }
+                        ]
+                      }
+                    ],
+                    "paradigm": "",
+                    "purpose": ""
+                  }
+                ],
+                "role": "Motivation",
+                "title": "Introduction"
+              }
+            ],
+            "title": "Software author structure",
+            "venue": ""
+          },
+          "active_generated_version_id": "old-version",
+          "last_generated_revision": 1,
+          "generated_is_stale": false,
+          "assets": [],
+          "latest_job": null,
+          "artifacts": [],
+          "findings": [],
+          "template_instances": []
+        }
+      },
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review/manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c/apply",
+        "body": {},
+        "status": 201,
+        "response": {
+          "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+          "request_id": "actual-http-scientific-binding-fixture",
+          "manuscript_id": "ms",
+          "track_id": "track",
+          "expected_revision": 2,
+          "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "created_at": "2026-10-06T09:29:27.436499+00:00",
+          "request": {
+            "evidence_ids": [],
+            "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+            "expected_revision": 2,
+            "manuscript_id": "ms",
+            "node_ids": [
+              "untouched"
+            ],
+            "reason": "Explicit isolated software review: replace the complete current binding set",
+            "request_id": "actual-http-scientific-binding-fixture",
+            "section_map": {
+              "section_c92025b23a354149b6c0684d2ad16525": [
+                "untouched"
+              ]
+            }
+          },
+          "context": {
+            "author_structure": {
+              "revision": 1,
+              "sections": [
+                {
+                  "id": "section_c92025b23a354149b6c0684d2ad16525",
+                  "title": "Introduction"
+                }
+              ]
+            },
+            "bindings": {
+              "evidence": [
+                {
+                  "evidence_digest": "evidence-sha",
+                  "evidence_id": "evidence",
+                  "manuscript_id": "ms"
+                }
+              ],
+              "nodes": [
+                {
+                  "manuscript_id": "ms",
+                  "node_id": "child",
+                  "node_revision": 1,
+                  "section": null
+                }
+              ]
+            },
+            "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+            "edges": [
+              {
+                "created_at": "now",
+                "edge_id": "edge",
+                "relation": "MOTIVATES",
+                "source_node_id": "root",
+                "target_node_id": "child",
+                "track_id": "track"
+              }
+            ],
+            "evidence": [
+              {
+                "confidence": 1,
+                "content_digest": "evidence-sha",
+                "created_at": "now",
+                "evidence_id": "evidence",
+                "excerpt": "Exact fixture source",
+                "experiment_run_id": null,
+                "extractor_model": "fixture",
+                "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                "location_json": "{}",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+                "prompt_version": "fixture",
+                "relation": "SUPPORTS",
+                "scope_kind": "FIELDKG",
+                "source_available": false,
+                "statement": "Software fixture evidence",
+                "track_id": null
+              }
+            ],
+            "manuscript": {
+              "blocker": null,
+              "created_at": "now",
+              "manuscript_id": "ms",
+              "needs_scientific_review": 1,
+              "next_step": null,
+              "research_type": "conceptual_framework",
+              "revision": 2,
+              "scope": null,
+              "title": "Software MS",
+              "track_id": "track",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00",
+              "workflow_stage": "DRAFTING",
+              "writing_status": "DRAFTING"
+            },
+            "node_evidence": [
+              {
+                "evidence_id": "evidence",
+                "node_id": "root"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "child",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T09:29:27.303391+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "root",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T09:29:27.303391+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "untouched",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "untouched",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              }
+            ],
+            "proposed_bindings": {
+              "evidence": [],
+              "nodes": [
+                {
+                  "manuscript_id": "ms",
+                  "node_id": "untouched",
+                  "node_revision": 1,
+                  "section": "section_c92025b23a354149b6c0684d2ad16525"
+                }
+              ]
+            },
+            "track": {
+              "created_at": "now",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "mapping_status": "MAPPED",
+              "primary_topic_id": "topic",
+              "research_type": "conceptual_framework",
+              "revision": 1,
+              "scope": null,
+              "status": "ACTIVE",
+              "title": "Software Track",
+              "track_id": "track",
+              "updated_at": "now"
+            }
+          },
+          "status": "APPLIED",
+          "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+          "event": {
+            "event_id": "manuscript_review_event_31a2d12b991ba28c5ea98799981362ef",
+            "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+            "manuscript_id": "ms",
+            "grant_id": "grant_f00d6645f37b4204acccf0c614c7aed3",
+            "before_json": "{\"bindings\": {\"evidence\": [{\"evidence_digest\": \"evidence-sha\", \"evidence_id\": \"evidence\", \"manuscript_id\": \"ms\"}], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"child\", \"node_revision\": 1, \"section\": null}]}, \"needs_scientific_review\": 1, \"revision\": 2}",
+            "after_json": "{\"bindings\": {\"evidence\": [], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"untouched\", \"node_revision\": 1, \"section\": \"section_c92025b23a354149b6c0684d2ad16525\"}]}, \"needs_scientific_review\": 0, \"revision\": 3}",
+            "created_at": "2026-10-06T09:29:27.602250+00:00",
+            "before": {
+              "bindings": {
+                "evidence": [
+                  {
+                    "evidence_digest": "evidence-sha",
+                    "evidence_id": "evidence",
+                    "manuscript_id": "ms"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "manuscript_id": "ms",
+                    "node_id": "child",
+                    "node_revision": 1,
+                    "section": null
+                  }
+                ]
+              },
+              "needs_scientific_review": 1,
+              "revision": 2
+            },
+            "after": {
+              "bindings": {
+                "evidence": [],
+                "nodes": [
+                  {
+                    "manuscript_id": "ms",
+                    "node_id": "untouched",
+                    "node_revision": 1,
+                    "section": "section_c92025b23a354149b6c0684d2ad16525"
+                  }
+                ]
+              },
+              "needs_scientific_review": 0,
+              "revision": 3
+            }
+          },
+          "grant_available": false
+        }
+      },
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review",
+        "status": 200,
+        "response": {
+          "manuscript": {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 0,
+            "blocker": null,
+            "next_step": null,
+            "revision": 3,
+            "created_at": "now",
+            "updated_at": "2026-10-06T09:29:27.602250+00:00",
+            "workflow_stage": "DRAFTING"
+          },
+          "track": {
+            "track_id": "track",
+            "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+            "primary_topic_id": "topic",
+            "title": "Software Track",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "status": "ACTIVE",
+            "mapping_status": "MAPPED",
+            "revision": 1,
+            "created_at": "now",
+            "updated_at": "now"
+          },
+          "bindings": {
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "untouched",
+                "section": "section_c92025b23a354149b6c0684d2ad16525",
+                "node_revision": 1
+              }
+            ],
+            "evidence": []
+          },
+          "nodes": [
+            {
+              "node_id": "child",
+              "track_id": "track",
+              "node_type": "method",
+              "status": "STALE",
+              "statement": "child",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "root",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "STALE",
+              "statement": "root",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 2,
+              "created_at": "now",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00"
+            },
+            {
+              "node_id": "untouched",
+              "track_id": "track",
+              "node_type": "claim",
+              "status": "APPROVED",
+              "statement": "untouched",
+              "rationale": "Software fixture",
+              "payload_json": "{}",
+              "revision": 1,
+              "created_at": "now",
+              "updated_at": "now"
+            }
+          ],
+          "evidence": [
+            {
+              "evidence_id": "evidence",
+              "scope_kind": "FIELDKG",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "track_id": null,
+              "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+              "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+              "experiment_run_id": null,
+              "statement": "Software fixture evidence",
+              "excerpt": "Exact fixture source",
+              "location_json": "{}",
+              "relation": "SUPPORTS",
+              "confidence": 1,
+              "extractor_model": "fixture",
+              "prompt_version": "fixture",
+              "content_digest": "evidence-sha",
+              "created_at": "now",
+              "source_available": false
+            }
+          ],
+          "edges": [
+            {
+              "edge_id": "edge",
+              "track_id": "track",
+              "source_node_id": "root",
+              "target_node_id": "child",
+              "relation": "MOTIVATES",
+              "created_at": "now"
+            }
+          ],
+          "node_evidence": [
+            {
+              "node_id": "root",
+              "evidence_id": "evidence"
+            }
+          ],
+          "author_structure": {
+            "revision": 1,
+            "sections": [
+              {
+                "id": "section_c92025b23a354149b6c0684d2ad16525",
+                "title": "Introduction"
+              }
+            ]
+          },
+          "context_sha256": "093e8508f4820c110f9b2e9ad6c39a4c4dc1f89d349339cd7854a3233ccebfe9",
+          "reviews": [
+            {
+              "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+              "request_id": "actual-http-scientific-binding-fixture",
+              "manuscript_id": "ms",
+              "track_id": "track",
+              "expected_revision": 2,
+              "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+              "created_at": "2026-10-06T09:29:27.436499+00:00",
+              "request": {
+                "evidence_ids": [],
+                "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+                "expected_revision": 2,
+                "manuscript_id": "ms",
+                "node_ids": [
+                  "untouched"
+                ],
+                "reason": "Explicit isolated software review: replace the complete current binding set",
+                "request_id": "actual-http-scientific-binding-fixture",
+                "section_map": {
+                  "section_c92025b23a354149b6c0684d2ad16525": [
+                    "untouched"
+                  ]
+                }
+              },
+              "context": {
+                "author_structure": {
+                  "revision": 1,
+                  "sections": [
+                    {
+                      "id": "section_c92025b23a354149b6c0684d2ad16525",
+                      "title": "Introduction"
+                    }
+                  ]
+                },
+                "bindings": {
+                  "evidence": [
+                    {
+                      "evidence_digest": "evidence-sha",
+                      "evidence_id": "evidence",
+                      "manuscript_id": "ms"
+                    }
+                  ],
+                  "nodes": [
+                    {
+                      "manuscript_id": "ms",
+                      "node_id": "child",
+                      "node_revision": 1,
+                      "section": null
+                    }
+                  ]
+                },
+                "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+                "edges": [
+                  {
+                    "created_at": "now",
+                    "edge_id": "edge",
+                    "relation": "MOTIVATES",
+                    "source_node_id": "root",
+                    "target_node_id": "child",
+                    "track_id": "track"
+                  }
+                ],
+                "evidence": [
+                  {
+                    "confidence": 1,
+                    "content_digest": "evidence-sha",
+                    "created_at": "now",
+                    "evidence_id": "evidence",
+                    "excerpt": "Exact fixture source",
+                    "experiment_run_id": null,
+                    "extractor_model": "fixture",
+                    "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                    "location_json": "{}",
+                    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                    "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+                    "prompt_version": "fixture",
+                    "relation": "SUPPORTS",
+                    "scope_kind": "FIELDKG",
+                    "source_available": false,
+                    "statement": "Software fixture evidence",
+                    "track_id": null
+                  }
+                ],
+                "manuscript": {
+                  "blocker": null,
+                  "created_at": "now",
+                  "manuscript_id": "ms",
+                  "needs_scientific_review": 1,
+                  "next_step": null,
+                  "research_type": "conceptual_framework",
+                  "revision": 2,
+                  "scope": null,
+                  "title": "Software MS",
+                  "track_id": "track",
+                  "updated_at": "2026-10-06T09:29:27.303391+00:00",
+                  "workflow_stage": "DRAFTING",
+                  "writing_status": "DRAFTING"
+                },
+                "node_evidence": [
+                  {
+                    "evidence_id": "evidence",
+                    "node_id": "root"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "created_at": "now",
+                    "node_id": "child",
+                    "node_type": "method",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "child",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T09:29:27.303391+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "root",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 2,
+                    "statement": "root",
+                    "status": "STALE",
+                    "track_id": "track",
+                    "updated_at": "2026-10-06T09:29:27.303391+00:00"
+                  },
+                  {
+                    "created_at": "now",
+                    "node_id": "untouched",
+                    "node_type": "claim",
+                    "payload_json": "{}",
+                    "rationale": "Software fixture",
+                    "revision": 1,
+                    "statement": "untouched",
+                    "status": "APPROVED",
+                    "track_id": "track",
+                    "updated_at": "now"
+                  }
+                ],
+                "proposed_bindings": {
+                  "evidence": [],
+                  "nodes": [
+                    {
+                      "manuscript_id": "ms",
+                      "node_id": "untouched",
+                      "node_revision": 1,
+                      "section": "section_c92025b23a354149b6c0684d2ad16525"
+                    }
+                  ]
+                },
+                "track": {
+                  "created_at": "now",
+                  "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                  "mapping_status": "MAPPED",
+                  "primary_topic_id": "topic",
+                  "research_type": "conceptual_framework",
+                  "revision": 1,
+                  "scope": null,
+                  "status": "ACTIVE",
+                  "title": "Software Track",
+                  "track_id": "track",
+                  "updated_at": "now"
+                }
+              },
+              "status": "APPLIED",
+              "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+              "event": {
+                "event_id": "manuscript_review_event_31a2d12b991ba28c5ea98799981362ef",
+                "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+                "manuscript_id": "ms",
+                "grant_id": "grant_f00d6645f37b4204acccf0c614c7aed3",
+                "before_json": "{\"bindings\": {\"evidence\": [{\"evidence_digest\": \"evidence-sha\", \"evidence_id\": \"evidence\", \"manuscript_id\": \"ms\"}], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"child\", \"node_revision\": 1, \"section\": null}]}, \"needs_scientific_review\": 1, \"revision\": 2}",
+                "after_json": "{\"bindings\": {\"evidence\": [], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"untouched\", \"node_revision\": 1, \"section\": \"section_c92025b23a354149b6c0684d2ad16525\"}]}, \"needs_scientific_review\": 0, \"revision\": 3}",
+                "created_at": "2026-10-06T09:29:27.602250+00:00",
+                "before": {
+                  "bindings": {
+                    "evidence": [
+                      {
+                        "evidence_digest": "evidence-sha",
+                        "evidence_id": "evidence",
+                        "manuscript_id": "ms"
+                      }
+                    ],
+                    "nodes": [
+                      {
+                        "manuscript_id": "ms",
+                        "node_id": "child",
+                        "node_revision": 1,
+                        "section": null
+                      }
+                    ]
+                  },
+                  "needs_scientific_review": 1,
+                  "revision": 2
+                },
+                "after": {
+                  "bindings": {
+                    "evidence": [],
+                    "nodes": [
+                      {
+                        "manuscript_id": "ms",
+                        "node_id": "untouched",
+                        "node_revision": 1,
+                        "section": "section_c92025b23a354149b6c0684d2ad16525"
+                      }
+                    ]
+                  },
+                  "needs_scientific_review": 0,
+                  "revision": 3
+                }
+              },
+              "grant_available": false
+            }
+          ]
+        }
+      },
+      {
+        "path": "/studio/api/manuscripts/ms/workspace",
+        "status": 200,
+        "response": {
+          "manuscript": {
+            "manuscript_id": "ms",
+            "track_id": "track",
+            "title": "Software MS",
+            "scope": null,
+            "research_type": "conceptual_framework",
+            "writing_status": "DRAFTING",
+            "needs_scientific_review": 0,
+            "blocker": null,
+            "next_step": null,
+            "revision": 3,
+            "created_at": "now",
+            "updated_at": "2026-10-06T09:29:27.602250+00:00",
+            "workflow_stage": "DRAFTING",
+            "projects": [],
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "untouched",
+                "section": "section_c92025b23a354149b6c0684d2ad16525",
+                "node_revision": 1
+              }
+            ],
+            "evidence": [],
+            "versions": [
+              {
+                "manuscript_version_id": "old-version",
+                "manuscript_id": "ms",
+                "version": 1,
+                "content": "Frozen software manuscript",
+                "inputs_json": "{}",
+                "created_at": "now"
+              }
+            ],
+            "history": [],
+            "submissions": []
+          },
+          "workflow_stage": "DRAFTING",
+          "document_revision": 1,
+          "document": {
+            "abstract": "",
+            "manuscript_id": "ms",
+            "schema_version": 1,
+            "sections": [
+              {
+                "id": "section_c92025b23a354149b6c0684d2ad16525",
+                "paragraphs": [
+                  {
+                    "asset_ids": [],
+                    "formulas": [],
+                    "id": "paragraph_2602918d83014f65ae669baa1747e418",
+                    "intents": [
+                      {
+                        "id": "intent_9491600db2ad407fb4b7e19b94d62979",
+                        "label": "Research Context",
+                        "thoughts": [
+                          {
+                            "citation_mode": "NONE",
+                            "citations": [],
+                            "id": "thought_author_1",
+                            "text": "The author decides the central scientific claim."
+                          }
+                        ]
+                      }
+                    ],
+                    "paradigm": "",
+                    "purpose": ""
+                  }
+                ],
+                "role": "Motivation",
+                "title": "Introduction"
+              }
+            ],
+            "title": "Software author structure",
+            "venue": ""
+          },
+          "active_generated_version_id": "old-version",
+          "last_generated_revision": 1,
+          "generated_is_stale": true,
+          "assets": [],
+          "latest_job": null,
+          "artifacts": [],
+          "findings": [],
+          "template_instances": []
+        }
+      },
+      {
+        "path": "/api/catalog/manuscripts/ms/scientific-review/manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c/apply",
+        "body": {},
+        "status": 201,
+        "response": {
+          "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+          "request_id": "actual-http-scientific-binding-fixture",
+          "manuscript_id": "ms",
+          "track_id": "track",
+          "expected_revision": 2,
+          "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+          "created_at": "2026-10-06T09:29:27.436499+00:00",
+          "request": {
+            "evidence_ids": [],
+            "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+            "expected_revision": 2,
+            "manuscript_id": "ms",
+            "node_ids": [
+              "untouched"
+            ],
+            "reason": "Explicit isolated software review: replace the complete current binding set",
+            "request_id": "actual-http-scientific-binding-fixture",
+            "section_map": {
+              "section_c92025b23a354149b6c0684d2ad16525": [
+                "untouched"
+              ]
+            }
+          },
+          "context": {
+            "author_structure": {
+              "revision": 1,
+              "sections": [
+                {
+                  "id": "section_c92025b23a354149b6c0684d2ad16525",
+                  "title": "Introduction"
+                }
+              ]
+            },
+            "bindings": {
+              "evidence": [
+                {
+                  "evidence_digest": "evidence-sha",
+                  "evidence_id": "evidence",
+                  "manuscript_id": "ms"
+                }
+              ],
+              "nodes": [
+                {
+                  "manuscript_id": "ms",
+                  "node_id": "child",
+                  "node_revision": 1,
+                  "section": null
+                }
+              ]
+            },
+            "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+            "edges": [
+              {
+                "created_at": "now",
+                "edge_id": "edge",
+                "relation": "MOTIVATES",
+                "source_node_id": "root",
+                "target_node_id": "child",
+                "track_id": "track"
+              }
+            ],
+            "evidence": [
+              {
+                "confidence": 1,
+                "content_digest": "evidence-sha",
+                "created_at": "now",
+                "evidence_id": "evidence",
+                "excerpt": "Exact fixture source",
+                "experiment_run_id": null,
+                "extractor_model": "fixture",
+                "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+                "location_json": "{}",
+                "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+                "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+                "prompt_version": "fixture",
+                "relation": "SUPPORTS",
+                "scope_kind": "FIELDKG",
+                "source_available": false,
+                "statement": "Software fixture evidence",
+                "track_id": null
+              }
+            ],
+            "manuscript": {
+              "blocker": null,
+              "created_at": "now",
+              "manuscript_id": "ms",
+              "needs_scientific_review": 1,
+              "next_step": null,
+              "research_type": "conceptual_framework",
+              "revision": 2,
+              "scope": null,
+              "title": "Software MS",
+              "track_id": "track",
+              "updated_at": "2026-10-06T09:29:27.303391+00:00",
+              "workflow_stage": "DRAFTING",
+              "writing_status": "DRAFTING"
+            },
+            "node_evidence": [
+              {
+                "evidence_id": "evidence",
+                "node_id": "root"
+              }
+            ],
+            "nodes": [
+              {
+                "created_at": "now",
+                "node_id": "child",
+                "node_type": "method",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "child",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T09:29:27.303391+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "root",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 2,
+                "statement": "root",
+                "status": "STALE",
+                "track_id": "track",
+                "updated_at": "2026-10-06T09:29:27.303391+00:00"
+              },
+              {
+                "created_at": "now",
+                "node_id": "untouched",
+                "node_type": "claim",
+                "payload_json": "{}",
+                "rationale": "Software fixture",
+                "revision": 1,
+                "statement": "untouched",
+                "status": "APPROVED",
+                "track_id": "track",
+                "updated_at": "now"
+              }
+            ],
+            "proposed_bindings": {
+              "evidence": [],
+              "nodes": [
+                {
+                  "manuscript_id": "ms",
+                  "node_id": "untouched",
+                  "node_revision": 1,
+                  "section": "section_c92025b23a354149b6c0684d2ad16525"
+                }
+              ]
+            },
+            "track": {
+              "created_at": "now",
+              "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+              "mapping_status": "MAPPED",
+              "primary_topic_id": "topic",
+              "research_type": "conceptual_framework",
+              "revision": 1,
+              "scope": null,
+              "status": "ACTIVE",
+              "title": "Software Track",
+              "track_id": "track",
+              "updated_at": "now"
+            }
+          },
+          "status": "APPLIED",
+          "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+          "event": {
+            "event_id": "manuscript_review_event_31a2d12b991ba28c5ea98799981362ef",
+            "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+            "manuscript_id": "ms",
+            "grant_id": "grant_f00d6645f37b4204acccf0c614c7aed3",
+            "before_json": "{\"bindings\": {\"evidence\": [{\"evidence_digest\": \"evidence-sha\", \"evidence_id\": \"evidence\", \"manuscript_id\": \"ms\"}], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"child\", \"node_revision\": 1, \"section\": null}]}, \"needs_scientific_review\": 1, \"revision\": 2}",
+            "after_json": "{\"bindings\": {\"evidence\": [], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"untouched\", \"node_revision\": 1, \"section\": \"section_c92025b23a354149b6c0684d2ad16525\"}]}, \"needs_scientific_review\": 0, \"revision\": 3}",
+            "created_at": "2026-10-06T09:29:27.602250+00:00",
+            "before": {
+              "bindings": {
+                "evidence": [
+                  {
+                    "evidence_digest": "evidence-sha",
+                    "evidence_id": "evidence",
+                    "manuscript_id": "ms"
+                  }
+                ],
+                "nodes": [
+                  {
+                    "manuscript_id": "ms",
+                    "node_id": "child",
+                    "node_revision": 1,
+                    "section": null
+                  }
+                ]
+              },
+              "needs_scientific_review": 1,
+              "revision": 2
+            },
+            "after": {
+              "bindings": {
+                "evidence": [],
+                "nodes": [
+                  {
+                    "manuscript_id": "ms",
+                    "node_id": "untouched",
+                    "node_revision": 1,
+                    "section": "section_c92025b23a354149b6c0684d2ad16525"
+                  }
+                ]
+              },
+              "needs_scientific_review": 0,
+              "revision": 3
+            }
+          },
+          "grant_available": false
+        }
+      }
+    ],
+    "applied": {
+      "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+      "request_id": "actual-http-scientific-binding-fixture",
+      "manuscript_id": "ms",
+      "track_id": "track",
+      "expected_revision": 2,
+      "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+      "created_at": "2026-10-06T09:29:27.436499+00:00",
+      "request": {
+        "evidence_ids": [],
+        "expected_context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+        "expected_revision": 2,
+        "manuscript_id": "ms",
+        "node_ids": [
+          "untouched"
+        ],
+        "reason": "Explicit isolated software review: replace the complete current binding set",
+        "request_id": "actual-http-scientific-binding-fixture",
+        "section_map": {
+          "section_c92025b23a354149b6c0684d2ad16525": [
+            "untouched"
+          ]
+        }
+      },
+      "context": {
+        "author_structure": {
+          "revision": 1,
+          "sections": [
+            {
+              "id": "section_c92025b23a354149b6c0684d2ad16525",
+              "title": "Introduction"
+            }
+          ]
+        },
+        "bindings": {
+          "evidence": [
+            {
+              "evidence_digest": "evidence-sha",
+              "evidence_id": "evidence",
+              "manuscript_id": "ms"
+            }
+          ],
+          "nodes": [
+            {
+              "manuscript_id": "ms",
+              "node_id": "child",
+              "node_revision": 1,
+              "section": null
+            }
+          ]
+        },
+        "context_sha256": "1fe9200c59c8688b87f9bb8fcb9509924cf2ec3d9287e953b65f280b9656dd49",
+        "edges": [
+          {
+            "created_at": "now",
+            "edge_id": "edge",
+            "relation": "MOTIVATES",
+            "source_node_id": "root",
+            "target_node_id": "child",
+            "track_id": "track"
+          }
+        ],
+        "evidence": [
+          {
+            "confidence": 1,
+            "content_digest": "evidence-sha",
+            "created_at": "now",
+            "evidence_id": "evidence",
+            "excerpt": "Exact fixture source",
+            "experiment_run_id": null,
+            "extractor_model": "fixture",
+            "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+            "location_json": "{}",
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "paper_version_id": "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e",
+            "prompt_version": "fixture",
+            "relation": "SUPPORTS",
+            "scope_kind": "FIELDKG",
+            "source_available": false,
+            "statement": "Software fixture evidence",
+            "track_id": null
+          }
+        ],
+        "manuscript": {
+          "blocker": null,
+          "created_at": "now",
+          "manuscript_id": "ms",
+          "needs_scientific_review": 1,
+          "next_step": null,
+          "research_type": "conceptual_framework",
+          "revision": 2,
+          "scope": null,
+          "title": "Software MS",
+          "track_id": "track",
+          "updated_at": "2026-10-06T09:29:27.303391+00:00",
+          "workflow_stage": "DRAFTING",
+          "writing_status": "DRAFTING"
+        },
+        "node_evidence": [
+          {
+            "evidence_id": "evidence",
+            "node_id": "root"
+          }
+        ],
+        "nodes": [
+          {
+            "created_at": "now",
+            "node_id": "child",
+            "node_type": "method",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "child",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          },
+          {
+            "created_at": "now",
+            "node_id": "root",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "root",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          },
+          {
+            "created_at": "now",
+            "node_id": "untouched",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 1,
+            "statement": "untouched",
+            "status": "APPROVED",
+            "track_id": "track",
+            "updated_at": "now"
+          }
+        ],
+        "proposed_bindings": {
+          "evidence": [],
+          "nodes": [
+            {
+              "manuscript_id": "ms",
+              "node_id": "untouched",
+              "node_revision": 1,
+              "section": "section_c92025b23a354149b6c0684d2ad16525"
+            }
+          ]
+        },
+        "track": {
+          "created_at": "now",
+          "field_id": "field_6c8b9e41ea9a4717ad42b05865251634",
+          "mapping_status": "MAPPED",
+          "primary_topic_id": "topic",
+          "research_type": "conceptual_framework",
+          "revision": 1,
+          "scope": null,
+          "status": "ACTIVE",
+          "title": "Software Track",
+          "track_id": "track",
+          "updated_at": "now"
+        }
+      },
+      "status": "APPLIED",
+      "approval_phrase": "APPROVE manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+      "event": {
+        "event_id": "manuscript_review_event_31a2d12b991ba28c5ea98799981362ef",
+        "review_id": "manuscript_review_f861dfe0d3f27fd39842a2815f3bd77c",
+        "manuscript_id": "ms",
+        "grant_id": "grant_f00d6645f37b4204acccf0c614c7aed3",
+        "before_json": "{\"bindings\": {\"evidence\": [{\"evidence_digest\": \"evidence-sha\", \"evidence_id\": \"evidence\", \"manuscript_id\": \"ms\"}], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"child\", \"node_revision\": 1, \"section\": null}]}, \"needs_scientific_review\": 1, \"revision\": 2}",
+        "after_json": "{\"bindings\": {\"evidence\": [], \"nodes\": [{\"manuscript_id\": \"ms\", \"node_id\": \"untouched\", \"node_revision\": 1, \"section\": \"section_c92025b23a354149b6c0684d2ad16525\"}]}, \"needs_scientific_review\": 0, \"revision\": 3}",
+        "created_at": "2026-10-06T09:29:27.602250+00:00",
+        "before": {
+          "bindings": {
+            "evidence": [
+              {
+                "evidence_digest": "evidence-sha",
+                "evidence_id": "evidence",
+                "manuscript_id": "ms"
+              }
+            ],
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "child",
+                "node_revision": 1,
+                "section": null
+              }
+            ]
+          },
+          "needs_scientific_review": 1,
+          "revision": 2
+        },
+        "after": {
+          "bindings": {
+            "evidence": [],
+            "nodes": [
+              {
+                "manuscript_id": "ms",
+                "node_id": "untouched",
+                "node_revision": 1,
+                "section": "section_c92025b23a354149b6c0684d2ad16525"
+              }
+            ]
+          },
+          "needs_scientific_review": 0,
+          "revision": 3
+        }
+      },
+      "grant_available": false
+    },
+    "current_bindings": {
+      "nodes": [
+        {
+          "manuscript_id": "ms",
+          "node_id": "untouched",
+          "section": "section_c92025b23a354149b6c0684d2ad16525",
+          "node_revision": 1
+        }
+      ],
+      "evidence": []
+    },
+    "before": {
+      "manuscript": {
+        "manuscript_id": "ms",
+        "track_id": "track",
+        "title": "Software MS",
+        "scope": null,
+        "research_type": "conceptual_framework",
+        "writing_status": "DRAFTING",
+        "needs_scientific_review": 1,
+        "blocker": null,
+        "next_step": null,
+        "revision": 2,
+        "created_at": "now",
+        "updated_at": "2026-10-06T09:29:27.303391+00:00",
+        "workflow_stage": "DRAFTING",
+        "projects": [],
+        "nodes": [
+          {
+            "manuscript_id": "ms",
+            "node_id": "child",
+            "section": null,
+            "node_revision": 1
+          }
+        ],
+        "evidence": [
+          {
+            "manuscript_id": "ms",
+            "evidence_id": "evidence",
+            "evidence_digest": "evidence-sha"
+          }
+        ],
+        "versions": [
+          {
+            "manuscript_version_id": "old-version",
+            "manuscript_id": "ms",
+            "version": 1,
+            "content": "Frozen software manuscript",
+            "inputs_json": "{}",
+            "created_at": "now"
+          }
+        ],
+        "history": [],
+        "submissions": []
+      },
+      "workflow_stage": "DRAFTING",
+      "document_revision": 1,
+      "document": {
+        "abstract": "",
+        "manuscript_id": "ms",
+        "schema_version": 1,
+        "sections": [
+          {
+            "id": "section_c92025b23a354149b6c0684d2ad16525",
+            "paragraphs": [
+              {
+                "asset_ids": [],
+                "formulas": [],
+                "id": "paragraph_2602918d83014f65ae669baa1747e418",
+                "intents": [
+                  {
+                    "id": "intent_9491600db2ad407fb4b7e19b94d62979",
+                    "label": "Research Context",
+                    "thoughts": [
+                      {
+                        "citation_mode": "NONE",
+                        "citations": [],
+                        "id": "thought_author_1",
+                        "text": "The author decides the central scientific claim."
+                      }
+                    ]
+                  }
+                ],
+                "paradigm": "",
+                "purpose": ""
+              }
+            ],
+            "role": "Motivation",
+            "title": "Introduction"
+          }
+        ],
+        "title": "Software author structure",
+        "venue": ""
+      },
+      "active_generated_version_id": "old-version",
+      "last_generated_revision": 1,
+      "generated_is_stale": false,
+      "assets": [],
+      "latest_job": null,
+      "artifacts": [],
+      "findings": [],
+      "template_instances": []
+    },
+    "after": {
+      "manuscript": {
+        "manuscript_id": "ms",
+        "track_id": "track",
+        "title": "Software MS",
+        "scope": null,
+        "research_type": "conceptual_framework",
+        "writing_status": "DRAFTING",
+        "needs_scientific_review": 0,
+        "blocker": null,
+        "next_step": null,
+        "revision": 3,
+        "created_at": "now",
+        "updated_at": "2026-10-06T09:29:27.602250+00:00",
+        "workflow_stage": "DRAFTING",
+        "projects": [],
+        "nodes": [
+          {
+            "manuscript_id": "ms",
+            "node_id": "untouched",
+            "section": "section_c92025b23a354149b6c0684d2ad16525",
+            "node_revision": 1
+          }
+        ],
+        "evidence": [],
+        "versions": [
+          {
+            "manuscript_version_id": "old-version",
+            "manuscript_id": "ms",
+            "version": 1,
+            "content": "Frozen software manuscript",
+            "inputs_json": "{}",
+            "created_at": "now"
+          }
+        ],
+        "history": [],
+        "submissions": []
+      },
+      "workflow_stage": "DRAFTING",
+      "document_revision": 1,
+      "document": {
+        "abstract": "",
+        "manuscript_id": "ms",
+        "schema_version": 1,
+        "sections": [
+          {
+            "id": "section_c92025b23a354149b6c0684d2ad16525",
+            "paragraphs": [
+              {
+                "asset_ids": [],
+                "formulas": [],
+                "id": "paragraph_2602918d83014f65ae669baa1747e418",
+                "intents": [
+                  {
+                    "id": "intent_9491600db2ad407fb4b7e19b94d62979",
+                    "label": "Research Context",
+                    "thoughts": [
+                      {
+                        "citation_mode": "NONE",
+                        "citations": [],
+                        "id": "thought_author_1",
+                        "text": "The author decides the central scientific claim."
+                      }
+                    ]
+                  }
+                ],
+                "paradigm": "",
+                "purpose": ""
+              }
+            ],
+            "role": "Motivation",
+            "title": "Introduction"
+          }
+        ],
+        "title": "Software author structure",
+        "venue": ""
+      },
+      "active_generated_version_id": "old-version",
+      "last_generated_revision": 1,
+      "generated_is_stale": true,
+      "assets": [],
+      "latest_job": null,
+      "artifacts": [],
+      "findings": [],
+      "template_instances": []
+    },
+    "exact_retry": true,
+    "browser_verified": false,
+    "actual_scientific_approval": false,
+    "simulated_trusted_boundary": true
+  },
+  "source_withdrawal": {
+    "action_id": "review_action_8458179f343a9bfe3f5db5896def239c",
+    "request_id": "binding-native-source-withdrawal",
+    "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "action_kind": "REOPEN_IDENTITY",
+    "reviewer_label": "Alandelone",
+    "reason": "Explicit software fixture review",
+    "supersedes_action_id": null,
+    "created_at": "2026-10-06T09:29:27.303391+00:00",
+    "request": {
+      "action": "REOPEN_IDENTITY",
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "expected_context_sha256": "06d15c44cfa323761986a7dbc8593a2d85ff7f5315d50c64c8b7318770fb07b9",
+      "reason": "Explicit software fixture review",
+      "reference_selections": [],
+      "request_id": "binding-native-source-withdrawal"
+    },
+    "context": {
+      "blocked_jobs": [],
+      "candidate": null,
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "collections": [
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "name": "Fixture collection",
+          "revision": 1,
+          "status": "PAUSED"
+        }
+      ],
+      "context_sha256": "06d15c44cfa323761986a7dbc8593a2d85ff7f5315d50c64c8b7318770fb07b9",
+      "file": {
+        "created_at": "2026-10-06T09:29:26.937559+00:00",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "identity_status": "VERIFIED",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+        "size_bytes": 1826,
+        "validation": {
+          "doi_match": true,
+          "evidence_source": "pdf_text_and_raw_bytes",
+          "identity_status": "VERIFIED",
+          "technical_pdf_valid": true,
+          "title_token_ratio": 1.0
+        }
+      },
+      "findings": [],
+      "integrity_verified": true,
+      "job": null,
+      "kind": "PDF_IDENTITY",
+      "last_action_id": null,
+      "latest_annotations": {},
+      "paper": {
+        "canonical_key": "doi:10.1234/original",
+        "doi": "10.1234/original",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "title": "Software review identity title",
+        "updated_at": "2026-10-06T09:29:26.901455+00:00"
+      },
+      "quarantined": false,
+      "source_impact": {
+        "evidence_ids": [
+          "evidence"
+        ],
+        "jobs": [
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T09:29:26.937559+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T09:29:26.937559+00:00",
+            "fencing_token": 0,
+            "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+            "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+            "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+            "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_type": "PARSE_PDF",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 80,
+            "queue_class": "PARSER",
+            "result_json": null,
+            "rule_version": "parser-v1",
+            "status": "READY",
+            "updated_at": "2026-10-06T09:29:26.937559+00:00"
+          },
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T09:29:26.947129+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T09:29:26.947129+00:00",
+            "fencing_token": 0,
+            "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+            "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+            "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+            "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+            "job_type": "QUICK_READ",
+            "last_error_code": null,
+            "last_error_detail": null,
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 70,
+            "queue_class": "MODEL_READ",
+            "result_json": null,
+            "rule_version": "quick-read-v1",
+            "status": "READY",
+            "updated_at": "2026-10-06T09:29:26.947129+00:00"
+          }
+        ],
+        "manuscripts": [
+          {
+            "blocker": null,
+            "created_at": "now",
+            "manuscript_id": "ms",
+            "needs_scientific_review": 0,
+            "next_step": null,
+            "research_type": "conceptual_framework",
+            "revision": 1,
+            "scope": null,
+            "title": "Software MS",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.267381+00:00",
+            "workflow_stage": "DRAFTING",
+            "writing_status": "DRAFTING"
+          }
+        ],
+        "nodes": [
+          {
+            "created_at": "now",
+            "node_id": "child",
+            "node_type": "method",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 1,
+            "statement": "child",
+            "status": "APPROVED",
+            "track_id": "track",
+            "updated_at": "now"
+          },
+          {
+            "created_at": "now",
+            "node_id": "root",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 1,
+            "statement": "root",
+            "status": "APPROVED",
+            "track_id": "track",
+            "updated_at": "now"
+          }
+        ],
+        "paper_version_ids": [
+          "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+        ],
+        "snapshots": []
+      },
+      "workspace_id": "2434453fd9099f33a557f2d39b945dd3d1f7f2ef9612d8782bb3ed32369971e6"
+    },
+    "result": {
+      "affected_manuscripts": [
+        "ms"
+      ],
+      "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "invalidated_nodes": [
+        "child",
+        "root"
+      ],
+      "retained_evidence": [
+        "evidence"
+      ],
+      "retained_paper_versions": [
+        "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+      ],
+      "retained_snapshots": [],
+      "scientific_approval_restored": false,
+      "status": "IDENTITY_REOPENED",
+      "stopped_jobs": [
+        "job_045ee416f89c207f63a17371e7d46ddb",
+        "job_daa1702223be8e9d63800079a80e4f32"
+      ]
+    }
+  },
+  "file_identity_reapproval": {
+    "action_id": "review_action_d6f195d650dbf3d32ff6d62435a4a3f5",
+    "request_id": "binding-native-source-identity-reapproval",
+    "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+    "action_kind": "APPROVE_IDENTITY",
+    "reviewer_label": "Alandelone",
+    "reason": "Explicit software fixture review",
+    "supersedes_action_id": "review_action_8458179f343a9bfe3f5db5896def239c",
+    "created_at": "2026-10-06T09:29:27.327274+00:00",
+    "request": {
+      "action": "APPROVE_IDENTITY",
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "expected_context_sha256": "6f1dcb200e73dd36211160fa6f3796d78d766d7d6502143a4020b245fed9876c",
+      "reason": "Explicit software fixture review",
+      "reference_selections": [],
+      "request_id": "binding-native-source-identity-reapproval"
+    },
+    "context": {
+      "blocked_jobs": [
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "fencing_token": 1,
+          "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+          "job_type": "PARSE_PDF",
+          "review_kind": "PDF_IDENTITY",
+          "status": "NEEDS_HUMAN",
+          "updated_at": "2026-10-06T09:29:27.303391+00:00"
+        },
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "fencing_token": 1,
+          "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+          "job_type": "QUICK_READ",
+          "review_kind": "PDF_IDENTITY",
+          "status": "NEEDS_HUMAN",
+          "updated_at": "2026-10-06T09:29:27.303391+00:00"
+        }
+      ],
+      "candidate": null,
+      "case_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+      "collections": [
+        {
+          "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+          "name": "Fixture collection",
+          "revision": 1,
+          "status": "PAUSED"
+        }
+      ],
+      "context_sha256": "6f1dcb200e73dd36211160fa6f3796d78d766d7d6502143a4020b245fed9876c",
+      "file": {
+        "created_at": "2026-10-06T09:29:26.937559+00:00",
+        "file_version_id": "source_file_9a590ba922c7e9366c43fd7b7193ce28",
+        "identity_status": "NEEDS_REVIEW",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "sha256": "6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9",
+        "size_bytes": 1826,
+        "validation": {
+          "doi_match": true,
+          "evidence_source": "pdf_text_and_raw_bytes",
+          "identity_status": "VERIFIED",
+          "technical_pdf_valid": true,
+          "title_token_ratio": 1.0
+        }
+      },
+      "findings": [],
+      "integrity_verified": true,
+      "job": null,
+      "kind": "PDF_IDENTITY",
+      "last_action_id": "review_action_8458179f343a9bfe3f5db5896def239c",
+      "latest_annotations": {},
+      "paper": {
+        "canonical_key": "doi:10.1234/original",
+        "doi": "10.1234/original",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "title": "Software review identity title",
+        "updated_at": "2026-10-06T09:29:26.901455+00:00"
+      },
+      "quarantined": false,
+      "source_impact": {
+        "evidence_ids": [
+          "evidence"
+        ],
+        "jobs": [
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T09:29:26.937559+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T09:29:26.937559+00:00",
+            "fencing_token": 1,
+            "idempotency_key": "870a00ee4984f8d9051ea7fd939da56bd369ed03b7ec79b0adf3edd495a5a64e",
+            "input_digest": "1c1f7dd537a3c9486766575e15f90570e83e6b62a33b7ea0b42c5a9af84f020a",
+            "input_json": "{\"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\"}",
+            "job_id": "job_045ee416f89c207f63a17371e7d46ddb",
+            "job_type": "PARSE_PDF",
+            "last_error_code": "SOURCE_REVIEW_REOPENED",
+            "last_error_detail": "Explicit software fixture review",
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 80,
+            "queue_class": "PARSER",
+            "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_8458179f343a9bfe3f5db5896def239c\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+            "rule_version": "parser-v1",
+            "status": "NEEDS_HUMAN",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          },
+          {
+            "attempts": 0,
+            "available_at": "2026-10-06T09:29:26.947129+00:00",
+            "collection_id": "collection_e9f4b6ce61e76d9e210efa9407939ddf",
+            "created_at": "2026-10-06T09:29:26.947129+00:00",
+            "fencing_token": 1,
+            "idempotency_key": "e091f487539a95d083d8b50b71bc131b4fa1952822186ea8431a4e48003daa58",
+            "input_digest": "f3c83deb7f76e0e56387a3a5c0c26b7f46e3b7716f15f92bc1a710ed7b0fdc6c",
+            "input_json": "{\"parse_run_id\": \"parse_run_41b05c39d9ea4868439dead081271e13\"}",
+            "job_id": "job_daa1702223be8e9d63800079a80e4f32",
+            "job_type": "QUICK_READ",
+            "last_error_code": "SOURCE_REVIEW_REOPENED",
+            "last_error_detail": "Explicit software fixture review",
+            "lease_expires_at": null,
+            "lease_owner": null,
+            "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+            "priority": 70,
+            "queue_class": "MODEL_READ",
+            "result_json": "{\"review\": {\"kind\": \"PDF_IDENTITY\", \"file_version_id\": \"source_file_9a590ba922c7e9366c43fd7b7193ce28\", \"pdf_sha256\": \"6ade0c33d59b7e848fe23a3aa055e271b083eb928048c0cdea8b925736381cd9\", \"source_withdrawal_action_id\": \"review_action_8458179f343a9bfe3f5db5896def239c\", \"previous_status\": \"READY\", \"previous_result\": {}, \"previous_error_code\": null, \"previous_error_detail\": null}}",
+            "rule_version": "quick-read-v1",
+            "status": "NEEDS_HUMAN",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          }
+        ],
+        "manuscripts": [
+          {
+            "blocker": null,
+            "created_at": "now",
+            "manuscript_id": "ms",
+            "needs_scientific_review": 1,
+            "next_step": null,
+            "research_type": "conceptual_framework",
+            "revision": 2,
+            "scope": null,
+            "title": "Software MS",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00",
+            "workflow_stage": "DRAFTING",
+            "writing_status": "DRAFTING"
+          }
+        ],
+        "nodes": [
+          {
+            "created_at": "now",
+            "node_id": "child",
+            "node_type": "method",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "child",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          },
+          {
+            "created_at": "now",
+            "node_id": "root",
+            "node_type": "claim",
+            "payload_json": "{}",
+            "rationale": "Software fixture",
+            "revision": 2,
+            "statement": "root",
+            "status": "STALE",
+            "track_id": "track",
+            "updated_at": "2026-10-06T09:29:27.303391+00:00"
+          }
+        ],
+        "paper_version_ids": [
+          "paper_version_80a4e4dbf2d6e050ecf777b5d2f6406e"
+        ],
+        "snapshots": []
+      },
+      "workspace_id": "2434453fd9099f33a557f2d39b945dd3d1f7f2ef9612d8782bb3ed32369971e6"
+    },
+    "result": {
+      "parse_jobs": [
+        "job_045ee416f89c207f63a17371e7d46ddb"
+      ],
+      "resumed_jobs": [
+        "job_045ee416f89c207f63a17371e7d46ddb",
+        "job_daa1702223be8e9d63800079a80e4f32"
+      ],
+      "status": "APPROVED_IDENTITY",
+      "validation": {
+        "doi_match": true,
+        "evidence_source": "pdf_text_and_raw_bytes",
+        "identity_status": "VERIFIED",
+        "technical_pdf_valid": true,
+        "title_token_ratio": 1.0
+      }
+    }
+  },
+  "models_called": 0,
+  "actual_scientific_approval": false,
+  "simulated_trusted_boundary": true,
+  "browser_verified": false
+}

@@ -1,0 +1,333 @@
+A205
+第 1 轮 · 提出人未填写
+
+G07 corrected software opinion 101: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+G07 CORRECTED LAST 101 — retain until explicitly selected.
+
+原意见与导入来源
+
+G07 corrected software opinion 101: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+G07 CORRECTED LAST 101 — retain until explicitly selected.
+
+原始顺序：第 101 条
+
+导入批次：comment_import_b2a6579196924d1b829a20f0cafe766b
+
+本次导入的完整原文
+G07 corrected software opinion 001: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 002: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 003: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 004: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 005: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 006: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 007: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 008: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 009: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 010: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 011: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 012: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 013: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 014: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 015: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 016: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 017: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 018: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 019: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 020: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 021: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 022: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 023: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 024: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 025: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 026: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 027: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 028: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 029: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 030: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 031: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 032: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 033: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 034: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 035: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 036: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 037: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 038: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 039: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 040: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 041: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 042: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 043: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 044: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 045: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 046: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 047: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 048: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 049: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 050: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 051: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 052: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 053: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 054: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 055: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 056: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 057: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 058: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 059: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 060: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 061: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 062: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 063: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 064: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 065: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 066: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 067: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 068: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 069: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 070: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 071: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 072: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 073: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 074: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 075: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 076: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 077: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 078: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 079: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 080: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 081: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 082: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 083: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 084: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 085: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 086: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 087: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 088: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 089: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 090: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 091: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 092: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 093: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 094: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 095: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 096: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 097: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 098: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 099: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 100: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+
+G07 corrected software opinion 101: retain the original item through partial import.
+This line belongs to the same opinion; no scientific request.
+G07 CORRECTED LAST 101 — retain until explicitly selected.
+待处理
+已决定回应
+修改中
+待核对
+已处理 · 需作者核对
+保存回复
+核对回复
+查看核对历史
+
+回复尚未核对
+
+0 条关联修改

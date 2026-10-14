@@ -1,0 +1,86 @@
+{
+  "production_database_access": "read-only",
+  "production_counts": {
+    "papers": 3177,
+    "research_fields": 0,
+    "topics": 0,
+    "research_tracks": 0,
+    "projects": 0,
+    "manuscripts": 0,
+    "collections": 0,
+    "acquisition_jobs": 0,
+    "parse_runs": 0,
+    "paper_skeletons": 0,
+    "fieldkg_builds": 0,
+    "fieldkg_snapshots": 0,
+    "evidence": 0,
+    "decisions": 0,
+    "projection_outbox": 0
+  },
+  "supersession_probe": {
+    "dependent_status": "APPROVED",
+    "impact_node_statuses": [
+      "APPROVED"
+    ],
+    "dependent_manuscript_needs_scientific_review": 0,
+    "expected": "dependent STALE and dependent manuscript needs_scientific_review=1",
+    "research_nodes": [
+      {
+        "statement": "Original approved method",
+        "status": "SUPERSEDED"
+      },
+      {
+        "statement": "Question depending on original method",
+        "status": "APPROVED"
+      },
+      {
+        "statement": "Replacement method",
+        "status": "APPROVED"
+      }
+    ],
+    "original_decision_status": "APPROVED"
+  },
+  "superseded_method_run_probe": {
+    "blocked": false,
+    "exit_code": 0,
+    "stdout": "ISOLATED_ACCEPTANCE_ONLY",
+    "expected": "reject execution after method supersession"
+  },
+  "isolated_fixture": {
+    "root": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-acceptance-1nvliw3_",
+    "track_id": "track_ec4b447e818b4edf9885334f56f4fbf3",
+    "manuscript_id": "manuscript_70a25bb485244817837fa4701a9965f1",
+    "api_pid": 33740
+  },
+  "stage_gate_probe": {
+    "accepted_stages": [
+      "DRAFTING",
+      "WHOLE_PAPER_REVIEW",
+      "FINALIZATION_SUBMISSION",
+      "PUBLICATION"
+    ],
+    "generated_versions": 0,
+    "expected": "WHOLE_PAPER_REVIEW requires a successful immutable generated version"
+  },
+  "verification": {
+    "rstv4_pytest": {
+      "passed": 95,
+      "warnings": 2,
+      "elapsed_seconds": 28.71
+    },
+    "uuma_runtime_scholar_pytest": {
+      "passed": 25,
+      "deselected": 31
+    },
+    "frontend_e2e": {
+      "passed": 2,
+      "api_responses": "mocked by Playwright route interception"
+    },
+    "frontend_build": "passed",
+    "real_studio_ui": {
+      "database": "isolated fixture",
+      "thought_autosave_reload": "verified",
+      "incomplete_generate": "rejected"
+    }
+  }
+}

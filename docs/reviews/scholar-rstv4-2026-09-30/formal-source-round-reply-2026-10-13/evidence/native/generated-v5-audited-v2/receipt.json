@@ -1,0 +1,18 @@
+{
+  "status": "PASS_NATIVE_CURRENT_V5_SOURCE_CALLS_AND_PDF_LOCATION",
+  "version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+  "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+  "input_revision": 62,
+  "new_exact_fixture_calls": 11,
+  "new_artifacts": 5,
+  "original_four_versions_twenty_artifacts_exact": true,
+  "all_original205_comments_exact": true,
+  "two_rounds_fixed_baselines_exact": true,
+  "all_old_history_and_other_manuscript_exact": true,
+  "actual_note_final_page": 1,
+  "actual_note_final_lines": [
+    8,
+    9
+  ],
+  "overall11_complete": false
+}

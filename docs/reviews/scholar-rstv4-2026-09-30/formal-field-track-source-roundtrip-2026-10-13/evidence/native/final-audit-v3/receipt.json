@@ -1,0 +1,77 @@
+{
+  "status": "PASS_EXACT_OWNED_NATIVE_DELTAS_AND_ORIGINAL_PRESERVATION",
+  "at": "2026-10-13T06:14:18.740049+00:00",
+  "tables": 109,
+  "original105_tables_all_data_preserved": true,
+  "added_annotation_schema": {
+    "research_discussion_jobs": 0,
+    "research_discussion_requests": 1,
+    "research_discussion_messages": 0,
+    "research_discussion_annotations": 1
+  },
+  "allowed_delta_counts": {
+    "manuscript_status_history": {
+      "before": 0,
+      "after": 1
+    },
+    "manuscripts": {
+      "before": 0,
+      "after": 1
+    },
+    "research_workspace_actions": {
+      "before": 12,
+      "after": 13
+    },
+    "sqlite_sequence": {
+      "before": 1,
+      "after": 2
+    },
+    "studio_change_link_state": {
+      "before": 0,
+      "after": 2
+    },
+    "studio_changes": {
+      "before": 0,
+      "after": 2
+    },
+    "studio_documents": {
+      "before": 0,
+      "after": 1
+    },
+    "studio_operations": {
+      "before": 0,
+      "after": 2
+    },
+    "studio_sample_candidates": {
+      "before": 0,
+      "after": 2
+    },
+    "track_snapshot_adoptions": {
+      "before": 0,
+      "after": 1
+    }
+  },
+  "manuscript": "manuscript_14aef3be6a534016bf456a15dc865892",
+  "track": "track_cd1adda6220f47b787f409e983c00947",
+  "document_revision": 2,
+  "manuscript_cas_revision": 1,
+  "source_database_unchanged": true,
+  "g09_database_unchanged": true,
+  "unchanged_backend_sources": 175,
+  "explicit_default_endpoint_literal_changes": {
+    "src\\rstv4\\model_gateway.py": {
+      "expected": "3aa4a60092f33765129e1773ff2c5340daad2adeffd39b85c18c4a436cb6941b",
+      "actual": "c8ebb9bc46e8e34a7dd54faa19497e14e135cf7ba8f1f38c880ff7d2f99a8d85"
+    },
+    "src\\rstv4\\skeleton_dspy.py": {
+      "expected": "4be95fe4b00f9fda792adfdb61d28827fba4f3c7dc5490e7b47fb537209c83c6",
+      "actual": "c69e8d6d674e07a4636ce2a97039c71a12615f0a65489f019e13591b9f9422c7"
+    }
+  },
+  "all177_current_sources_frozen": true,
+  "new_models": 0,
+  "new_jobs": 0,
+  "science_approval": false,
+  "overall11_complete": false,
+  "database_sha256": "48ad81d1c1830a0dd289b49ea71669aa229681f2cf4a626f24d98a22a25487b7"
+}

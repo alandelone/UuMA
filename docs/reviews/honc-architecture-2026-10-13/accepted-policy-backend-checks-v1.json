@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "verified_at": "2026-10-14T03:39:50.359Z",
+  "scope": "Actual honc durable backend, with isolated fixtures for clocks and delivery side effects.",
+  "accepted_rules": [
+    "R1",
+    "R2",
+    "R3",
+    "R4"
+  ],
+  "case_ids": [
+    "RP01",
+    "RP02",
+    "RP03",
+    "RP04",
+    "RP05",
+    "RP06",
+    "RP07",
+    "RP08",
+    "RP09",
+    "RP10",
+    "RP11",
+    "RP12",
+    "RP13",
+    "RP14",
+    "RP15",
+    "RP16",
+    "RP17",
+    "RP18",
+    "RP19",
+    "RP20",
+    "RP21"
+  ],
+  "passed": 21,
+  "failed": 0,
+  "junit": "integrated-tests-v1.xml",
+  "junit_sha256": "6abb5c937a99278a1a11c0e550bf3ccd5d4b6d998950cd59d0d71789c43ea7fa",
+  "runtime_settings": "live-data-audit-v1.json",
+  "real_telegram_delivery_claimed": false
+}

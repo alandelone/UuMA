@@ -1,0 +1,18 @@
+{
+  "observed": "Official session run refused before executing child: No active session. Run start first.",
+  "latest_sources": {
+    "active-session\\HANDOFF.md": {
+      "sha256": "9b38edb9a32a174371721a130707270c6d6a378a9b05133c9f2824230623bcb1",
+      "logical_chars": 935970
+    },
+    "active-session\\progress.md": {
+      "sha256": "b2ef14f907c8abcdc7174d18b562d0d02688fd8098d4ae0ed0d0b058a973d938",
+      "logical_chars": 3048533
+    },
+    "mission_status.json": {
+      "sha256": "59236a9cf52d80205e620cc971befdd1d974224e62718d8c20a9215a6ec5ea3e",
+      "logical_chars": 465
+    }
+  },
+  "no_import_or_model_replayed": true
+}

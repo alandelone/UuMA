@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-13T05:33:40.144Z",
+  "method": "POST (semantic read-only, mode=ro)",
+  "url": "http://127.0.0.1:8885/api/catalog/discussion/context",
+  "request": {
+    "module": "FIELDKG",
+    "object_kind": "semantic",
+    "object_id": "semantic_7d511dcd559cae1e84ddc5d4d6012ae7",
+    "field_id": "field_6242993287f547549daa4ded97914f3c",
+    "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca"
+  },
+  "status": 200,
+  "body": {
+    "target": {
+      "module": "FIELDKG",
+      "object_kind": "semantic",
+      "object_id": "semantic_7d511dcd559cae1e84ddc5d4d6012ae7",
+      "paper_id": null,
+      "field_id": "field_6242993287f547549daa4ded97914f3c",
+      "track_id": null,
+      "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+      "part": null,
+      "page_number": null
+    },
+    "scope_key": "[\"FIELDKG\",\"field_6242993287f547549daa4ded97914f3c\"]",
+    "label": "Energy / CONCEPT",
+    "object_text": "Software fixture interpretation CONCEPT\n\nA larger trial reports strong validation under dry conditions.",
+    "record": {
+      "object_id": "semantic_7d511dcd559cae1e84ddc5d4d6012ae7",
+      "run_id": "semantic_run_6acb8baafa005a69ebddc8ba8ea1bc9e",
+      "field_id": "field_6242993287f547549daa4ded97914f3c",
+      "build_id": "fieldkg_build_4da71ed0abd44097be4794e31d1878dd",
+      "kind": "CONCEPT",
+      "statement": "Software fixture interpretation CONCEPT",
+      "rationale": "Software controls only, not a scientific quality judgment",
+      "confidence": 0.8,
+      "status": "ACCEPTED",
+      "revision": 2,
+      "content_digest": "8a800194a010d91ceb1f0d50fe2bee126207745f5d338239d0c5fe23c3492e8d",
+      "reviewed_at": "2026-10-07T15:49:59.149594+00:00",
+      "created_at": "2026-10-07T15:49:59.073298+00:00",
+      "references": [
+        {
+          "unit_id": "unit_bfbf50d11381db335d7c5e82036b5d3e",
+          "quote": "A larger trial reports strong validation under dry conditions.",
+          "role": "SUPPORTS",
+          "qualifications": [],
+          "source": {
+            "paper_id": "paper_e39aa6305f4b4b7f4f78100995e929e6",
+            "paper_version_id": "paper_version_66642b18fccb52f96a78c3b5a2305a0d",
+            "paper_version": 1,
+            "skeleton_id": "skeleton_546102908142c9be5d615a2aabd0b7f4",
+            "version": 1,
+            "file_version_id": null,
+            "parse_run_id": null,
+            "pdf_digest": null,
+            "parsed_digest": null
+          },
+          "location": {
+            "page_idx": 3,
+            "section": "Introduction",
+            "seq_idx": 1,
+            "offset_unit": "unicode_codepoint",
+            "start": 0,
+            "end": 62
+          },
+          "unit_digest": "8bde90649215724635b136036ea700c2c56c4765557d049d9075d02eb5bdf144",
+          "original_text": "A larger trial reports strong validation under dry conditions."
+        }
+      ],
+      "conditions": [],
+      "model_contract": {
+        "task": "fieldkg_semantics",
+        "actual_model": "software-fixture",
+        "prompt_version": "fieldkg-semantics-v1-located-objects",
+        "router_run_id": "fixture_semantic_run",
+        "transport_operation_id": "rstv4-model-3aae0c79888ee96b3809ec6ae0c2a1d0499b8167ee47199f1c2217f8b338b5c2"
+      },
+      "scientific_approval": false,
+      "context_sha256": "d430b36469404bfaa406b707c121527f43a3f6d11856146dcf6373fc459664c7"
+    },
+    "versions": [
+      {
+        "paper_id": "paper_e39aa6305f4b4b7f4f78100995e929e6",
+        "paper_version_id": "paper_version_66642b18fccb52f96a78c3b5a2305a0d",
+        "paper_version": 1,
+        "skeleton_id": "skeleton_546102908142c9be5d615a2aabd0b7f4",
+        "version": 1,
+        "file_version_id": null,
+        "parse_run_id": null,
+        "content_digest": "06724df8ec7953d8423f90c0ee841b576c848988d579312fc24a87c95998f88c",
+        "parsed_digest": null,
+        "pdf_digest": null,
+        "extractor_model": "legacy-paperpool-mincer",
+        "prompt_version": "legacy",
+        "unit_id": "unit_bfbf50d11381db335d7c5e82036b5d3e",
+        "page_idx": 3,
+        "section": "Introduction",
+        "seq_idx": 1,
+        "offset_unit": "unicode_codepoint",
+        "start": 0,
+        "end": 62
+      },
+      {
+        "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+        "snapshot_digest": "b74ce1c252d4b0bf2ee91aaa3cb11b1e369e60fe5341b4fea110aba6151f11f6",
+        "snapshot_version": 1
+      }
+    ],
+    "context_sha256": "6252b2e0503e2f99bb34548f84c173ccbf39febfc11dd46587e66a18754f43d8"
+  }
+}

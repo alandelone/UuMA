@@ -1,0 +1,35 @@
+{
+  "frontend_scoped_lint": {
+    "exit_code": 0,
+    "files": [
+      "components/studio-workspace.tsx",
+      "tests/e2e/review-read-recovery.spec.ts"
+    ],
+    "observed_in": "actual managed command output 2026-10-14"
+  },
+  "backend_fixed_baseline_and_import_contract_tests": {
+    "passed": 25,
+    "seconds": 36.13,
+    "files": [
+      "tests/test_studio_rounds.py",
+      "tests/test_studio_revision_contracts.py"
+    ],
+    "exit_code": 0,
+    "observed_in": "actual managed pytest process 6534 terminal output; not replayed"
+  },
+  "frontend_original_preview_unit_cases": {
+    "passed": 3,
+    "exit_code": 0
+  },
+  "isolated_build": "PASS;5.05seconds; original source/dist untouched",
+  "browser_regression": "8 passed;5.8seconds; all API routes mocked; zero actual DB/model calls",
+  "latest_full_suite": "Historical1078 passed before these frontend/GPU bridge changes; current final combined regression still due",
+  "gpu_device_cim_observation": {
+    "observed": "2026-10-14 actual managed read",
+    "name": "NVIDIA GeForce RTX 4070 Ti",
+    "status": "OK",
+    "ConfigManagerErrorCode": 0,
+    "DriverVersion": "32.0.16.1088",
+    "does_not_prove_cuda_runtime_healthy": true
+  }
+}

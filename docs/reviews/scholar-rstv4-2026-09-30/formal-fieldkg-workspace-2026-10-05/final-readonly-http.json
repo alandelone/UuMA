@@ -1,0 +1,12 @@
+{
+  "status": "CURRENT_SCRIPT_AND_FROZEN_RECEIPTS_VERIFIED_READONLY",
+  "native_parent_sha256": "c6bff0457030768e548708dab22f52b9a2635daa7bd544a9582f403f930103b1",
+  "page_sha256": "398ef88071e9bd9c9b67bd6a56f278625601e86f230933b2cd1a5139445b8476",
+  "script_sha256": "e3432001f024b68b5a07be33b389e747a9d92793ebbc35f3bf34d6b9fddb0aa3",
+  "snapshot_digest": "bd7c49536341f5ec6720da1bf4bedce26bf32c31904489a61a654a70ee30ba06",
+  "request_receipt_count": 12,
+  "new_mutations": 0,
+  "new_model_calls": 0,
+  "browser_verified": false,
+  "additional_multiple_version_adoption_test": true
+}

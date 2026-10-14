@@ -1,0 +1,114 @@
+- iframe [active] [id="codex-visualization"]:
+  - group "Scholar 统一工作台导航方案":
+    - group "总览首页与顶部工作区方案":
+      - generic "顶部导航工作台":
+        - banner:
+          - generic: Scholar
+          - tablist "工作区":
+            - tab "研究总览" [active] [selected]:
+              - generic: 研究总览
+            - tab "文献库":
+              - generic: 文献库
+            - tab "知识图谱":
+              - generic: 知识图谱
+            - tab "论文工作台":
+              - generic: 论文工作台
+          - button "Chat" [pressed]:
+            - text: Chat
+        - generic: 研究范围
+        - generic: 全部 Field
+        - generic: 讨论预览 · 示例资料
+        - main:
+          - tabpanel "研究总览":
+            - generic: 全部研究 · 可展开列表
+            - generic: 论文归属未核定：—
+            - generic "Solar Energy 研究结构":
+              - button "Solar Energy Field" [expanded]:
+                - text: Solar Energy
+                - generic: Field
+              - button "FieldKG"
+              - button "Solar Energy 文献归属未核定":
+                - text: —
+              - generic: 布局示例
+              - group "Solar Energy 下的 Topic":
+                - button "Solar Nowcasting Topic" [expanded]:
+                  - text: Solar Nowcasting
+                  - generic: Topic
+                - button "Solar Nowcasting 文献归属未核定":
+                  - text: —
+                - button "＋采集"
+                - generic: 范围示例
+                - group "Solar Nowcasting 下的 Track":
+                  - button "折叠 All-sky forecasting" [expanded]:
+                  - button "All-sky forecasting Track · 查看科研路线与 Projects":
+                    - text: All-sky forecasting
+                    - generic: Track · 查看科研路线与 Projects
+                  - button "All-sky forecasting 文献归属未核定":
+                    - text: —
+                  - button "＋采集"
+                  - generic: 探索示例
+                  - group "All-sky forecasting 下的问题与稿件":
+                    - button "条件变化如何影响预测？ Research Question" [expanded]:
+                      - text: 条件变化如何影响预测？
+                      - generic: Research Question
+                    - generic: 待审阅示例
+                    - group "关联问题的写作稿件":
+                      - button "Sky Image Forecasting Paper · 写作稿件":
+                        - text: Sky Image Forecasting
+                        - generic: Paper · 写作稿件
+                      - generic: Drafting · 示例
+                    - button "Solar Nowcasting Review Paper · 直接归属 Track":
+                      - text: Solar Nowcasting Review
+                      - generic: Paper · 直接归属 Track
+                    - generic: Planning · 示例
+            - generic "Rural Electrification 研究结构":
+              - button "Rural Electrification Field":
+                - text: Rural Electrification
+                - generic: Field
+              - button "FieldKG"
+              - button "Rural Electrification 文献归属未核定":
+                - text: —
+              - generic: 布局示例
+            - generic "Agricultural Robotics 研究结构":
+              - button "Agricultural Robotics Field":
+                - text: Agricultural Robotics
+                - generic: Field
+              - button "FieldKG"
+              - button "Agricultural Robotics 文献归属未核定":
+                - text: —
+              - generic: 布局示例
+          - status: 当前工作区：研究总览；列表展开、稿件文字与讨论输入保留。
+        - complementary "Scholar 上下文讨论":
+          - heading "与 Scholar 讨论" [level=3]
+          - button "固定对象"
+          - generic: 跟随当前选择
+          - strong: 研究总览 · 全部 Field
+          - generic: all-fields · 示例结构
+          - button "Abstract · Sky Image Forecasting for Islanded Microgrids · PDF 示例 v1"
+          - paragraph: “Sky images provide a local observation of changing cloud conditions. Validation must specify the observation period.”
+          - button "移除"
+          - button "Thought · 思想 1 · 结构 r2"
+          - paragraph: “说明研究对象和适用条件；用已选择的文献支持背景，保留未核实的部分。”
+          - paragraph: 标注：保留条件与出处，不把候选写成已确认结论。
+          - button "移除"
+          - button "FieldKG node · 候选 Gap · 示例 v2"
+          - paragraph: “现有证据对不同云量条件下的适用范围仍有不确定性；需回查来源与相反证据。”
+          - button "移除"
+          - checkbox "只看当前对象"
+          - text: 只看当前对象
+          - button "收起历史" [expanded]
+          - generic: 本地预览 · 14:55
+          - button "Paper · Sky Image Forecasting for Islanded Microgrids · PDF 示例 v1"
+          - paragraph: 这段证据的适用范围是什么？
+          - text: 讨论内容
+          - textbox "讨论内容":
+            - /placeholder: 针对当前对象写下问题…
+          - generic: 上下文固定到发送时
+          - button "预览发送" [disabled]
+          - text: 示例交互，消息不会实际发送。
+    - button "上一个方案":
+    - generic "1 / 2 总览首页＋顶部工作区 · 推荐":
+      - generic: 1 / 2
+      - generic: 总览首页＋顶部工作区 · 推荐
+    - button "下一个方案":
+    - status: "1 / 2: 总览首页＋顶部工作区 · 推荐"

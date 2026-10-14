@@ -1,0 +1,85 @@
+ M active-session/HANDOFF.md
+ M active-session/progress.md
+ M docs/agents/chatgpt-web-bridge.md
+ M docs/agents/wisdom-oldman.md
+ M docs/agents/yonc.md
+ M docs/architecture/system-architecture.md
+ M docs/plans/question-orbit-engine-wisdom-oldman-deployment.md
+ M integrations/hermes/uuma_control_guard/__init__.py
+ M profiles/forge-lab-bot/SOUL.md
+ M profiles/forge-lab-bot/skills/lab-inventory/SKILL.md
+ M profiles/forge-lab-bot/skills/lab-receiving/SKILL.md
+ M profiles/shared/chatgpt-consultation/SKILL.md
+ M profiles/wisdom-oldman/SOUL.md
+ M profiles/wisdom-oldman/skills/wisdom-evidence-research/SKILL.md
+ M profiles/wisdom-oldman/skills/wisdom-investigate/SKILL.md
+ M profiles/wisdom-oldman/skills/wisdom-question-orbit/SKILL.md
+ M profiles/yonc/SOUL.md
+ M profiles/yonc/skills/yonc-project-management/SKILL.md
+ M repomemory/findings.md
+ M rules/session-lifecycle.md
+ M rules/testing-contracts.md
+ M scripts/configure-hermes-profile.py
+ M scripts/deploy-hermes.ps1
+ M scripts/install-forge-journal-runner.ps1
+ M scripts/manage-forge-journal-runner.ps1
+ M src/uuma/auth.py
+ M src/uuma/commerce_adapters.py
+ M src/uuma/commerce_control.py
+ M src/uuma/commerce_store.py
+ M src/uuma/forge_journal.py
+ M src/uuma/kag_bridge.py
+ M src/uuma/knowledge_models.py
+ M src/uuma/lab_inventory.py
+ M src/uuma/mcp_knowledge.py
+ M src/uuma/mcp_worker.py
+ M src/uuma/orbit_runner.py
+ M src/uuma/policy.py
+ M src/uuma/question_orbit.py
+ M src/uuma/session.py
+ M src/uuma/settings.py
+ M src/uuma/specialist_skills.py
+ M src/uuma/wisdom_topics.py
+ M src/uuma/wisdom_view.py
+ M stage-gates/03-execution-brief.md
+ M stage-gates/04-verification-report.md
+ M tests/test_commerce_control.py
+ M tests/test_configure_hermes_profile.py
+ M tests/test_control_plane.py
+ M tests/test_forge_journal.py
+ M tests/test_forge_lab_tools.py
+ M tests/test_knowledge_runtime.py
+ M tests/test_orbit_runtime.py
+ M tests/test_order_workbook.py
+ M tests/test_platform_adapters.py
+ M tests/test_session.py
+ M tests/test_uuma_control_guard.py
+?? docs/agents/honc.md
+?? docs/agents/wisdom-conversation-recovery-2026-10-02.md
+?? docs/architecture/agent-research-tools.md
+?? docs/plans/honc-detailed-implementation-plan.zh-CN.md
+?? docs/plans/honc-execution-agent-plan.zh-CN.md
+?? docs/reviews/scholar-rstv4-2026-09-30/
+?? docs/reviews/yonc-colleague-awareness-2026-10-01.md
+?? profiles/honc/
+?? profiles/yonc/skills/yonc-colleagues/
+?? rules/scholar-deep-read-verification.md
+?? rules/scholar-dspy-source-evidence.md
+?? rules/scholar-extraction-evaluation.md
+?? rules/scholar-native-acceptance.md
+?? rules/scholar-preview-maintenance.md
+?? rules/scholar-source-basis-validation.md
+?? rules/scholar-ui-verification.md
+?? rules/scientific-evaluation-recovery.md
+?? scripts/deploy-honc-profile.py
+?? scripts/deploy-yonc-profile.py
+?? src/uuma/colleague_directory.py
+?? src/uuma/honc/
+?? test-fixtures/commerce/lazada_orders.html
+?? tests/test_honc_conversation.py
+?? tests/test_honc_ledger.py
+?? tests/test_honc_mcp.py
+?? tests/test_honc_profile_config.py
+?? tests/test_kag_embedding_memory.py
+?? tests/test_wisdom_conversation_recovery.py
+?? tests/test_yonc_colleagues.py

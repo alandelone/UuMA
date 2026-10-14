@@ -83,3 +83,24 @@ def test_handoff_history_and_command_secret_not_persisted(session):
     assert "First version" in journal and "Second version" in journal
     assert "do-not-store" not in journal
     session.close()
+
+
+def test_internal_lifecycle_checks_do_not_materialize_entire_history(session, monkeypatch):
+    session.start()
+    session.handoff("Original retained context", "None", "Continue")
+    before = session.db.execute("SELECT id,payload FROM repo_session_events ORDER BY id").fetchall()
+
+    def history_unavailable():
+        raise MemoryError("Whole history does not fit in memory")
+
+    monkeypatch.setattr(session, "events", history_unavailable)
+    session.progress()
+    assert session.run([sys.executable, "-c", "pass"]) == 0
+    session.handoff("Current preserved context", "None", "Review")
+    session.check()
+    session.close()
+    session.start()
+    assert session.db.execute("SELECT id,payload FROM repo_session_events WHERE id<=? ORDER BY id",
+                              (before[-1][0],)).fetchall() == before
+    text = (session.root / "active-session/progress.md").read_text()
+    assert '"content"' not in text and "closed" in text and "command_finished" in text

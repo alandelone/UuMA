@@ -1,0 +1,26 @@
+{
+  "status": "PASS_EXISTING_SEMANTIC_FIXTURE_COPY_DECLARED_ADDITIVE_SCHEMA",
+  "root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-g10-existing-copy-0v_dpup3",
+  "source_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-semantic-z_i0zcqj",
+  "source_db_sha256": "b26cfc52d956ac0f63a177daabf2d65248d9a7b420437c407ca34978ebd7af83",
+  "copied_db_sha256": "100858ceffea7cae0631faaabc38464af464cb5ba4e711fcac9f1fb1a8c4ee1d",
+  "original104_tables_rows_preserved": true,
+  "original_source_database_unchanged": true,
+  "new_empty_tables": [
+    "skeleton_source_outlines"
+  ],
+  "schema_versions": [
+    {
+      "component": "catalog",
+      "version": 13,
+      "applied_at": "2026-10-13 05:25:14"
+    }
+  ],
+  "new_models": 0,
+  "seeded_new_fixture": false,
+  "field_id": "field_6242993287f547549daa4ded97914f3c",
+  "other_field_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+  "track_id": "track_cd1adda6220f47b787f409e983c00947",
+  "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+  "overall11_complete": false
+}

@@ -1,0 +1,184 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8885/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8885/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "Track 工作面":
+      - generic: Track 工作面
+      - generic: ⌄
+  - region "所选 FieldKG 或 Track":
+    - paragraph: Energy / Track
+    - heading "Track" [level=1]
+    - paragraph:
+      - generic: ACTIVE
+      - text: · conceptual_framework · revision 1
+    - heading "Scope" [level=2]
+    - paragraph: 尚未设置研究范围。
+    - paragraph: MAPPED
+    - heading "来源复核记录" [level=2]
+    - paragraph: 没有来源撤回记录。
+    - heading "采用的 Snapshot" [level=2]
+    - link "Snapshot v1":
+      - /url: http://127.0.0.1:8885/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22325f8d571e428152ae40f7fab2b6d7681a369b2c11aca5ec5e68c6a17574103f%22%7D&field=field_6242993287f547549daa4ded97914f3c&snapshot=fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca
+    - text: ·
+    - generic: SEALED
+    - button "明确采用此版本"
+    - heading "科研里程碑" [level=2]
+    - strong: SCOPE
+    - generic: 尚未记录
+    - strong: SNAPSHOT_ADOPTION
+    - generic: 尚未记录
+    - strong: GAP
+    - generic: 尚未记录
+    - strong: IDEA
+    - generic: 尚未记录
+    - strong: RESEARCH_QUESTION
+    - generic: 尚未记录
+    - strong: HYPOTHESIS
+    - generic: 尚未记录
+    - strong: METHOD
+    - generic: 尚未记录
+    - strong: EXPERIMENT
+    - generic: 尚未记录
+    - strong: CLAIM
+    - generic: 尚未记录
+    - heading "Research Graph" [level=2]
+    - paragraph: 此范围尚无图谱对象。可选择真实 PaperSkeleton 创建 Build。
+    - heading "科研操作" [level=2]
+    - paragraph: 每个科研对象独立提出与审阅。替代上游决定后，依赖节点与稿件将要求复核。
+    - status: 已读取当前科学依据。
+    - button "更新科研依据"
+    - heading "新建科研提案" [level=3]
+    - text: 科研对象类型
+    - combobox "科研对象类型":
+      - option "Gap" [selected]
+      - option "Idea"
+      - option "Research Question"
+      - option "Hypothesis"
+      - option "Method"
+      - option "Claim"
+    - text: 科学陈述
+    - textbox "科学陈述"
+    - text: 提出／替代理由
+    - textbox "提出／替代理由"
+    - group "选择依据：Track 证据或明确采用的 Snapshot":
+      - generic: 选择依据：Track 证据或明确采用的 Snapshot
+      - checkbox "A larger trial reports strong validation under dry conditions. · SUPPORTS · 需审阅或尚未采用 evidence_a6ebbc126275f8d012c2d65da2946832" [disabled]
+      - text: A larger trial reports strong validation under dry conditions. · SUPPORTS · 需审阅或尚未采用
+      - generic: evidence_a6ebbc126275f8d012c2d65da2946832
+      - generic "原文、条件与来源版本"
+      - checkbox "Few studies validate peer trading in isolated rural microgrids. · CONTEXTUALIZES · 需审阅或尚未采用 evidence_f1e8b2b04a534a8b970e321dc582f551" [disabled]
+      - text: Few studies validate peer trading in isolated rural microgrids. · CONTEXTUALIZES · 需审阅或尚未采用
+      - generic: evidence_f1e8b2b04a534a8b970e321dc582f551
+      - generic "原文、条件与来源版本"
+    - group "选择已批准的上游科学节点":
+      - generic: 选择已批准的上游科学节点
+      - paragraph: 尚无科研节点；Gap 需先选择证据。
+    - button "保存待审阅提案"
+    - button "开始新的提案"
+    - heading "全部提案与独立状态" [level=3]
+    - paragraph: 尚无提案。
+    - heading "科研审阅提案" [level=2]
+    - paragraph: 尚无提案。讨论和 Snapshot 采用均不构成科学批准。
+    - heading "实施与实验计划" [level=2]
+    - status: 实验状态已读取。
+    - button "更新实验状态"
+    - generic "新建实施 Project"
+    - option "沿用 Track 类型" [selected]
+    - option "experimental"
+    - option "engineering_system"
+    - option "method_algorithm"
+    - option "systematic_review"
+    - option "sota_review"
+    - option "critical_review"
+    - option "bibliometric_review"
+    - option "conceptual_framework"
+    - option "case_study"
+    - heading "新建待审阅实验计划" [level=3]
+    - text: 实施归属
+    - combobox "实施归属":
+      - option "Track 直属" [selected]
+    - text: Method
+    - combobox "Method":
+      - option "选择已批准 Method" [selected]
+    - text: 工作目录
+    - textbox "工作目录": .
+    - button "读取实际文件"
+    - paragraph: 尚未读取目录。
+    - text: 脚本
+    - combobox "脚本":
+      - option "选择实际脚本" [selected]
+    - group "输入文件":
+      - generic: 输入文件
+      - paragraph: 先读取实际文件。
+    - text: Python 执行环境
+    - textbox "Python 执行环境": C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Scripts\python.exe
+    - text: 额外参数（JSON 字符串数组）
+    - textbox "额外参数（JSON 字符串数组）": "[]"
+    - text: 环境变量覆盖（JSON 字符串对象）
+    - textbox "环境变量覆盖（JSON 字符串对象）": "{}"
+    - text: 超时秒数
+    - spinbutton "超时秒数": "600"
+    - text: 指标文件
+    - textbox "指标文件": metrics.json
+    - text: 产物路径（每行一个）
+    - textbox "产物路径（每行一个）"
+    - button "核对完整文件与环境清单"
+    - button "保存待审阅计划" [disabled]
+    - button "开始新计划草稿"
+    - heading "计划与批准" [level=3]
+    - paragraph: 尚无实验计划。
+    - heading "本次执行与结果证据" [level=3]
+    - paragraph: 尚无此工作台的执行回执。
+    - heading "Projects（各自唯一 Owner Track）" [level=2]
+    - paragraph: 此 Track 暂无 Project；综述／概念研究可以没有 Project。
+    - heading "Track 直属执行记录" [level=2]
+    - paragraph: 尚无直属 Track 的运行。
+    - heading "Track 证据" [level=2]
+    - paragraph: 尚无证据记录。
+    - heading "Manuscripts / 投稿事件" [level=2]
+    - paragraph: 此 Track 暂无稿件。
+- dialog "确认 Track 采用 Snapshot":
+  - heading "确认 Track 采用 Snapshot" [level=2]
+  - paragraph: Track 明确采用 Snapshot v1。保留此前已采用的版本；不批准科研节点。
+  - paragraph: 只执行这里列出的操作。Candidate Gap 仍是候选；采用 Snapshot 不批准科研决定。
+  - status: 请先核对固定对象与版本，再明确确认。
+  - contentinfo:
+    - button "关闭并保留草稿" [active]
+    - button "确认此操作"
+- complementary "统一研究讨论":
+  - button "Chat · Track" [expanded]
+  - region "研究讨论":
+    - strong: 研究讨论
+    - button "收起"
+    - status: 已选此对象。可拖选下方原文，或直接提问。
+    - generic: TRACK / track · Track
+    - checkbox "固定当前对象"
+    - text: 固定当前对象
+    - generic "原文与版本 · 可拖选文字"
+    - paragraph: "track_id: track_cd1adda6220f47b787f409e983c00947 · track_revision: 1 · field_id: field_6242993287f547549daa4ded97914f3c"
+    - generic "当前固定对象的完整原文": Track
+    - checkbox "明确允许比较不同研究范围的所选来源"
+    - text: 明确允许比较不同研究范围的所选来源
+    - paragraph: 下一条问题将开始新讨论。
+    - text: 问题
+    - textbox "问题":
+      - /placeholder: 针对上方固定对象提问
+    - text: 讨论批注
+    - textbox "讨论批注":
+      - /placeholder: 保留原对象、原文和版本
+    - button "保存讨论批注"
+    - button "发送问题"
+    - region "当前研究范围的讨论历史":
+      - strong: 讨论与批注历史
+      - checkbox "只看当前对象"
+      - text: 只看当前对象
+      - button "更新历史"
+      - paragraph: 此研究范围尚无讨论或批注。

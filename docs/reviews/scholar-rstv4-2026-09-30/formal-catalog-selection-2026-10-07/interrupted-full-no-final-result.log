@@ -1,0 +1,90 @@
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-m', 'ruff', 'check', 'src/rstv4/manuscript_scientific_review.py', 'src/rstv4/approval.py', 'src/rstv4/studio.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'src/rstv4/models.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/collection_web.py', 'src/rstv4/collection_inputs.py', 'tests/test_manuscript_scientific_review.py', 'tests/test_catalog_paper_selection.py']
+All checks passed!
+RUN ['node', '--check', 'C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-existing-paper-full-inline-v1.js']
+RUN ['node', 'tests/catalog_scientific_review.mjs']
+6 controlled scientific binding review checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_scientific_review.js']
+RUN ['node', 'tests/catalog_review_workflow.mjs']
+8 controlled explicit review workflow checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_review_workflow.js']
+RUN ['node', 'tests/catalog_collections.mjs']
+9 controlled Collection request checks passed
+RUN ['node', '--check', 'src/rstv4/catalog_collections.js']
+RUN ['node', 'tests/catalog_research_workspaces.mjs']
+PASS actual graph preserves identities, original terms and scoped citations
+PASS snapshot graph uses frozen sources, evidence, references and citations
+PASS nine Build stages distinguish recorded artifacts and unknown runs
+PASS actual source detail preserves raw page, versions, layers, selection and keyboard close
+PASS frozen detail cannot substitute later Living source text
+PASS late Field response cannot overwrite a newly selected Field
+PASS failed read never displays success or mutates research
+PASS source chooser read failure is visible and does not create a Build
+PASS late source chooser cannot appear under a different Field
+PASS actual confirmation retains reason and retries exactly the uncertain original decision
+PASS known conflict retains draft and demands comparison before using the new version
+PASS changing an unsubmitted decision cannot silently submit the prior opposite decision
+PASS unavailable local storage blocks an untraceable request
+PASS Track shows independent milestones, Projects, manuscripts and no approval controls
+PASS historical unit location focuses the exact source and rejects a different owner
+PASS concept and relationship locations preserve the real case sensitive graph keys
+PASS a frozen source cannot be highlighted in a different Living or Snapshot view
+17 controlled workspace scenarios passed
+RUN ['node', '--check', 'src/rstv4/catalog_research_workspaces.js']
+RUN ['node', 'tests/catalog_research_overview.mjs']
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed
+RUN ['node', '--check', 'src/rstv4/catalog_research_overview.js']
+RUN ['node', 'tests/catalog_existing_papers.mjs']
+7 controlled existing-paper and actual section-handler checks passed
+RUN ['git', 'diff', '--check']
+warning: in the working copy of 'README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-current-ui.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-ui-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/paper-catalog-workflow-view-v3.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'docs/research-overview-v1.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/README.md', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/background.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/manifest.json', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/popup.js', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'integrations/chrome-paper-acquisition/site_probe.test.mjs', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'pyproject.toml', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'scripts/probe_chrome_acquisition_live.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/acquisition_worker.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/approval.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_annotations.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_review.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.html', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/model_gateway.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/paperpool_evaluation.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/parser_quality.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/studio_api.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'src/rstv4/track_first.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_browser_bridge.py', LF will be replaced by CRLF the next time Git touches it
+warning: in the working copy of 'tests/test_catalog_web.py', LF will be replaced by CRLF the next time Git touches it
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests', '-q', '--basetemp', 'C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-full-xfvb7xt0']
+........................................................................ [  8%]
+........................................................................ [ 17%]
+........................................................................ [ 25%]
+........................................................................ [ 34%]
+........................................................................ [ 42%]
+........................................................................ [ 51%]
+........................................................................ [ 59%]
+........................................................................ [ 68%]
+........................................................................ [ 76%]
+.................................................................

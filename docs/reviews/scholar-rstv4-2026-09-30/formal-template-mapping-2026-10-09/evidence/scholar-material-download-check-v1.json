@@ -1,0 +1,60 @@
+[
+  {
+    "command": [
+      "cmd.exe",
+      "/c",
+      "node_modules\\.bin\\tsc.cmd",
+      "--noEmit"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-downloads.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-structure.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-hierarchy.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-template-placement.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-undo-history.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "cmd.exe",
+      "/c",
+      "node_modules\\.bin\\oxlint.cmd",
+      "--threads=1",
+      "components/studio-workspace.tsx",
+      "components/studio-response-review.tsx",
+      "lib/studio-api.ts",
+      "lib/studio-downloads.ts",
+      "app/api/studio-files"
+    ],
+    "exit_code": 0
+  }
+]

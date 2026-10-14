@@ -51,6 +51,7 @@ from .wisdom_topics import (
     grounded_answer,
     is_machine_error_payload,
     is_progress_request,
+    research_control_intent,
     research_question_text,
 )
 
@@ -66,11 +67,22 @@ def _wake_orbit_runner(status: str) -> dict[str, Any]:
     if os.name == "nt" and profile_home:
         profile_home = str(Path(profile_home).resolve())
         python = Path(sys.executable).with_name("pythonw.exe")
+        runner_environment = os.environ.copy()
+        runner_environment["UUMA_DATA_DIR"] = str(Settings.from_env().knowledge_database_path().parent)
+        # Ensure the spawned process can find the uuma package even when
+        # sys.executable is Hermes's Python (not the UuMA venv Python).
+        # Derive UuMA src/ from this file's location: mcp_knowledge.py → src/
+        uuma_src = str(Path(__file__).resolve().parent.parent)
+        current_pythonpath = runner_environment.get("PYTHONPATH", "")
+        runner_environment["PYTHONPATH"] = (
+            f"{uuma_src}{os.pathsep}{current_pythonpath}"
+            if current_pythonpath else uuma_src
+        )
         try:
             process = subprocess.Popen(
                 [str(python if python.is_file() else sys.executable),
                  "-m", "uuma.orbit_runner", "--profile-home", profile_home],
-                env=os.environ.copy(),
+                env=runner_environment,
                 stdin=subprocess.DEVNULL,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
@@ -111,20 +123,92 @@ def _global_research_status() -> dict[str, Any]:
     }
     active: list[dict[str, Any]] = []
     paused: list[dict[str, Any]] = []
+    finished: list[dict[str, Any]] = []
     for orbit in orbits:
-        if orbit["status"] not in {"QUEUED", "ACTIVE", "PAUSED", "BLOCKED"}:
-            continue
         topic_id = orbit.get("topic_id")
         topic = topics.get(topic_id) if topic_id else None
+        if not topic or topic["status"] != "ACTIVE":
+            continue
+        context = _topics().get_topic(topic_id)
+        detail = _orbits().get(orbit["orbit_id"])
+        run = detail["research_run"]
+        cycle = detail.get("current_cycle") or {}
+        latest = context.get("latest_version") or {}
         item = {
             "orbit_id": orbit["orbit_id"],
             "status": orbit["status"],
             "topic_id": topic_id,
             "topic_title": topic["title"] if topic else orbit["objective"][:160],
             "document_url": _topics().topic_url(topic_id) if topic else None,
+            "stop_reason": orbit.get("stop_reason"),
+            "updated_at": orbit["updated_at"],
+            "document_version": (context.get("document") or {}).get("current_version", 0),
+            "section_count": len(latest.get("sections") or []),
+            "document_updated_at": (context.get("document") or {}).get("updated_at"),
+            "completed_cycles": run.get("cycle_count", 0),
+            "cycle_status": cycle.get("status"),
+            "retry_reason": cycle.get("error") if cycle.get("status") == "RETRY" else None,
+            "retry_at": cycle.get("lease_expires_at") if cycle.get("status") == "RETRY" else None,
+            "budget_usage": {key: run[key] for key in (
+                "active_seconds", "sources_used", "model_tokens_used", "search_queries_used",
+            )},
+            "budget": detail["budget"],
+            "open_questions": [_topics().knowledge.get(item["question_id"])["record"]["text"]
+                               for item in detail["frontier"] if item["status"] == "OPEN"],
         }
-        (active if orbit["status"] in {"QUEUED", "ACTIVE"} else paused).append(item)
-    return {"active": active, "paused": paused}
+        group = active if orbit["status"] in {"QUEUED", "ACTIVE"} else (
+            paused if orbit["status"] in {"PAUSED", "BLOCKED", "BUDGET_EXHAUSTED"} else finished
+        )
+        group.append(item)
+    return {"active": active, "paused": paused, "finished": finished,
+            "topics_url": _topics().topics_url()}
+
+
+def _control_existing_research(
+    intent: str, route: dict[str, str], actor_id: str, topic_id: str,
+) -> dict[str, Any]:
+    current = _topics().conversation_status(route)
+    target = topic_id or current.get("topic_id")
+    if not target:
+        candidates = [topic for topic in _topics().list_topics()["records"]
+                      if topic["status"] == "ACTIVE"]
+        if len(candidates) == 1:
+            target = candidates[0]["topic_id"]
+    changed: list[str] = []
+    if target:
+        context = _topics().get_topic(target)
+        if context["topic"]["status"] != "ACTIVE":
+            raise ValueError("Select an existing active topic to control research.")
+        if route:
+            _topics().bind_existing_topic(target, route=route, actor_id=actor_id)
+        transitions = {
+            "resume": ({"PAUSED", "BLOCKED", "FAILED"}, OrbitStatus.QUEUED),
+            "pause": ({"QUEUED", "ACTIVE"}, OrbitStatus.PAUSED),
+            "stop": ({"QUEUED", "ACTIVE", "PAUSED", "BLOCKED"}, OrbitStatus.STOPPED),
+        }
+        allowed, destination = transitions[intent]
+        for orbit in context["orbits"]:
+            if orbit["status"] in allowed:
+                _orbits().transition(orbit["orbit_id"], destination, actor_id=actor_id,
+                                     reason=f"User requested {intent} of existing research.")
+                changed.append(orbit["orbit_id"])
+    global_status = _global_research_status()
+    global_status["control_message"] = (
+        "请选择要操作的已有主题；这次没有更改研究任务。" if not target else
+        "已按指令更新原研究任务；没有建立新主题或重置预算。" if changed else
+        "现有任务无需切换，或已停止／预算已用完；这次没有启动新研究或追加预算。"
+    )
+    wake = _wake_orbit_runner("QUEUED") if changed and intent == "resume" else None
+    return {
+        "message_intent": intent, "needs_intent_resolution": False,
+        "needs_topic_selection": not bool(target), "knowledge_mutated": bool(changed),
+        "orbit_started": False, "changed_orbit_ids": changed, "runner_wake": wake,
+        "current_status": _topics().conversation_status(route), "global_status": global_status,
+        "research_continues": bool(global_status["active"]),
+        "instruction": "Report durable state. No new topic or budget was created. "
+                       "Stopped or exhausted tasks cannot resume automatically. "
+                       "If target is ambiguous, ask which existing topic the user means.",
+    }
 
 
 def _actor() -> str:
@@ -178,7 +262,7 @@ def _orbits() -> QuestionOrbitService:
 @lru_cache(maxsize=1)
 def _topics() -> TopicKnowledgeService:
     settings = Settings.from_env()
-    token = ensure_view_token(settings.data_dir)
+    token = ensure_view_token(settings.knowledge_database_path().parent)
     return TopicKnowledgeService(
         _service(),
         view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767"),
@@ -371,6 +455,7 @@ def knowledge_question_preflight(
     notification_route_json: str = "{}",
     intent: str = "auto",
     topic_creation_approved: bool = False,
+    topic_id: str = "",
 ) -> dict[str, Any]:
     """Read-only intake by default. Use intent=research only after interpreting conversation intent.
 
@@ -383,12 +468,18 @@ def knowledge_question_preflight(
     route = json.loads(notification_route_json)
     if not isinstance(route, dict) or any(not isinstance(value, str) for value in route.values()):
         raise ValueError("notification_route_json must contain a string-to-string object.")
-    if intent not in {"auto", "research", "status", "feedback", "conversation"}:
+    if intent not in {"auto", "research", "status", "feedback", "conversation",
+                      "resume", "pause", "stop"}:
         raise ValueError("Unsupported message intent.")
     if is_progress_request(question):
         intent = "status"
     if is_machine_error_payload(question):
         intent = "feedback"
+    control_intent = research_control_intent(question)
+    if control_intent:
+        intent = control_intent
+    if intent in {"resume", "pause", "stop"}:
+        return _control_existing_research(intent, route, actor_id, topic_id)
     if intent != "research":
         current_status = _topics().conversation_status(route)
         global_status = _global_research_status() if intent == "status" else None
@@ -405,7 +496,9 @@ def knowledge_question_preflight(
             "global_status": global_status,
             "instruction": (
                 "Interpret the user's message in its conversation context. For progress, report "
-                "only current_status. Feedback, errors and conversation must not create research. "
+                "current_status and global_status, including reasons and document links. "
+                "Feedback, errors and conversation must not create research. "
+                "Resume/pause/stop only control an existing topic; specify topic_id if ambiguous. "
                 "Only for a genuine topic/question/focus request, call this tool again with "
                 "intent=research and the resolved research question, preserving the supplied "
                 "notification route, task and run IDs. Do not treat citations as proof of relevance."

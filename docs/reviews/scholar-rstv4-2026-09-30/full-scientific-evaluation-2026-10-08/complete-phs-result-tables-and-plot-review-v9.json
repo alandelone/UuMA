@@ -1,0 +1,1948 @@
+{
+  "status": "COMPLETE_FOUR_ORIGINAL_PHS_RESULT_TABLES_AND_SIX_PLOT_SCIENTIFIC_SCOPE_REVIEWS",
+  "full_original_benchmark_scope": {
+    "papers": 10,
+    "windows": 126,
+    "fixed_program_cases": 252,
+    "whole_candidates": 20
+  },
+  "scientific_review_scope": {
+    "paper_id": "paper_19f55daa7f17ede2858b",
+    "complete_tables": 4,
+    "table_value_entries": 154,
+    "numeric_value_cells": 137,
+    "original_structural_dash_marker_cells": 17,
+    "complete_plots_directly_viewed_for_visible_scientific_scope": 6,
+    "exact_unprinted_plot_data_digitization_claimed": false
+  },
+  "original_pdf_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh.pdf",
+  "original_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+  "original_parser_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh_content_list.json",
+  "original_parser_sha256": "ea76e04f4cc4f5cfac1d86b8f51257d81a3208e0f393430a6f4ba959f35e2920",
+  "original_matrix_sha256": "7780f36015c387b6cf2260a4642c48bdcd3e66a345d3ea94765a41bdc642cd12",
+  "tables": [
+    {
+      "matrix_index": 15,
+      "page": 9,
+      "caption": "Table 6. Summary of optimisation results for different HES configurations.",
+      "columns": [
+        "Characteristics",
+        "PV/Diesel/PHS",
+        "PV/PHS",
+        "Diesel/PHS",
+        "PV/Diesel (split)/PHS",
+        "PV/Diesel/Battery",
+        "PV/Battery"
+      ],
+      "rows": [
+        [
+          "COE ($/kWh)",
+          "0.27",
+          "0.43",
+          "0.41",
+          "0.24",
+          "0.34",
+          "0.63"
+        ],
+        [
+          "NPC ($)",
+          "595,123",
+          "947,927",
+          "918,018",
+          "524,791",
+          "745,734",
+          "1,386,009"
+        ],
+        [
+          "Diesel genset (kW)",
+          "100",
+          "–",
+          "100",
+          "2 × 50",
+          "100",
+          "–"
+        ],
+        [
+          "PV module (kW)",
+          "156",
+          "300",
+          "–",
+          "137",
+          "142",
+          "517"
+        ],
+        [
+          "PHS (kWh)",
+          "762",
+          "2,542",
+          "508",
+          "508",
+          "–",
+          "–"
+        ],
+        [
+          "Battery (kWh)",
+          "–",
+          "–",
+          "–",
+          "–",
+          "884",
+          "2,536"
+        ],
+        [
+          "Inverter (kW)",
+          "57.5",
+          "119",
+          "34.2",
+          "51",
+          "54.5",
+          "119"
+        ],
+        [
+          "EE (kWh/yr)",
+          "47,368",
+          "224,395",
+          "0",
+          "34,655",
+          "41,166",
+          "561,708"
+        ],
+        [
+          "Unmet load (kWh/yr)",
+          "0",
+          "130",
+          "0",
+          "0",
+          "0",
+          "134"
+        ],
+        [
+          "Renewable fraction (%)",
+          "84",
+          "100",
+          "–",
+          "80",
+          "76",
+          "100"
+        ],
+        [
+          "Genset energy (kWh/yr)",
+          "39,205",
+          "–",
+          "243,385",
+          "53,755",
+          "54,002",
+          "–"
+        ],
+        [
+          "PV energy (kWh/yr)",
+          "243,509",
+          "466,373",
+          "–",
+          "212,244",
+          "220,926",
+          "803,760"
+        ],
+        [
+          "Fuel consumption (L/yr)",
+          "17,855",
+          "–",
+          "85,135",
+          "18,714",
+          "24,585",
+          "–"
+        ],
+        [
+          "DF (kWh/start-stop/yr)",
+          "73",
+          "–",
+          "385",
+          "65",
+          "77",
+          "–"
+        ]
+      ],
+      "value_entries": 84,
+      "numeric_value_cells": 67,
+      "original_structural_dash_marker_cells": 17,
+      "scientific_scope_findings": [
+        "All84 complete values/markers checked. Seventeen printed dash cells preserve absent component/resource or not-reported renewable-fraction scope, not substituted numeric zeros. True EE/unmet-load zeros remain numeric zero.",
+        "Single100kW diesel variant and split2×50kW variant have distinct optimized capacities, NPC595123/524791 and COE0.27/0.24. Keep generator multiplicity, both variants and their separate surplus/fuel output; do not collapse2×50 to an indistinguishable100kW design.",
+        "Storage PHS and battery columns are capacity kWh; inverter/diesel/PV rows are power kW; EE/unmet/generation annual kWh and fuel annual liters. DF uses its own literal kWh/start-stop/year unit.",
+        "PV/PHS and PV/Battery print unmet annual load130/134kWh while other configurations print0. Their100% renewable fraction does not establish equivalent reliability or identical demand coverage.",
+        "Raw parser merges PVenergy and fuel labels, detaches fuel row, converts dash to Chinese one or blank and drops several structural markers. Entire complete primary rows supplied here; no auxiliary crop observations were accepted on the original failed page9."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-009.png",
+            "sha256": "79beb0020eea527dc05ce79c14b4e80330f0a64f960855ffb5c1e9182c14f498"
+          },
+          {
+            "id": "crop-113",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\88afe2ea4df644f96eaf9ab76d39e7de9eb861030ac575bcb29fef15b83ad2e9.jpg",
+            "sha256": "459afb6e6497ef70855b3a0d79850ebb995d9b276a4172896f47d27b0bf7edcd"
+          },
+          {
+            "id": "crop-114",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\234c46427c82b41b78125e243272f65293b99d50fe1b5cc846a798de661f221e.jpg",
+            "sha256": "a3979fc8c7d519a19f4db1b0cbe8be3889423b6062ebac9e0fd35207e2a04c5f"
+          },
+          {
+            "id": "crop-118",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\5f8bdc9319b38c21dba5b88866f2c4fc5f7050258f0697222465fee94eaf304f.jpg",
+            "sha256": "e955d15ff087da0b89b7bae6d23d1e5fec9a2ebe8227d06b2bfdee30f20e65f0"
+          },
+          {
+            "id": "crop-119",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\a579515eeefe937b3b3daed73fd7d445fba970d3473bbaa344480d6f4b0be441.jpg",
+            "sha256": "e4b2cf0a3f2af6dd87ec90209c24b8aab082f5c63c4fde0952888b27de58b9c9"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          113,
+          114,
+          118,
+          119
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 113,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "da9c1cbf3a140e1c34e107d2301942f2df868671bf21899f43036af5762ee721",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b103"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\88afe2ea4df644f96eaf9ab76d39e7de9eb861030ac575bcb29fef15b83ad2e9.jpg",
+        "actual_original_crop_sha256": "459afb6e6497ef70855b3a0d79850ebb995d9b276a4172896f47d27b0bf7edcd",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+        "actual_page_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+        "original_durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+        "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 9,
+          "raw_parser_content_index": 113,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "da9c1cbf3a140e1c34e107d2301942f2df868671bf21899f43036af5762ee721",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b103"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\88afe2ea4df644f96eaf9ab76d39e7de9eb861030ac575bcb29fef15b83ad2e9.jpg",
+          "actual_original_crop_sha256": "459afb6e6497ef70855b3a0d79850ebb995d9b276a4172896f47d27b0bf7edcd",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+          "actual_page_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+          "original_durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+          "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+          "matched_auxiliary_visual_item_indices": [],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Characteristics</td><td>PV/Diesel/PHS</td><td>PV/PHS</td><td>Diesel/PHS</td><td>PV/Diesel(split)/PHS</td><td>PV/Diesel/Battery</td><td>PV/Battery</td></tr><tr><td>COE ($/kWh)</td><td>0.27</td><td>0.43</td><td>0.41</td><td>0.24</td><td>0.34</td><td>0.63</td></tr><tr><td>NPC ($)</td><td>595,123</td><td>947,927</td><td>918,018</td><td>524,791</td><td>745,734</td><td>1,386,009</td></tr><tr><td>Diesel genset (kW)</td><td>100</td><td>一</td><td>100</td><td>2×50</td><td>100</td><td>一</td></tr><tr><td>PV module (kW)</td><td>156</td><td>300</td><td>一</td><td>137</td><td>142</td><td>517</td></tr><tr><td>PHS (kWh)</td><td>762</td><td>2,542</td><td>508</td><td>508</td><td>一</td><td></td></tr><tr><td>Battery (kWh)</td><td>一</td><td>一</td><td>一</td><td></td><td>884</td><td>2,536</td></tr><tr><td>Inverter (kW)</td><td>57.5</td><td>119</td><td>34.2</td><td>51</td><td>54.5</td><td>119</td></tr><tr><td>EE (kWh/yr)</td><td>47,368</td><td>224,395</td><td>0</td><td>34,655</td><td>41,166</td><td>561,708</td></tr><tr><td>Unmet load (kWh/yr)</td><td>0</td><td>130</td><td>0</td><td>0</td><td>0</td><td>134</td></tr><tr><td>Renewable fraction (%)</td><td>84</td><td>100</td><td>一</td><td>80</td><td>76</td><td>100</td></tr><tr><td>Genset energy (kWh/yr)</td><td>39,205</td><td>一</td><td>243,385</td><td>53,755</td><td>54,002</td><td>一</td></tr><tr><td>PV energy (kWh/yr) Fuel consumption (L/yr)</td><td>243,509</td><td>466,373</td><td>一</td><td>212,244</td><td>220,926</td><td>803,760</td></tr><tr><td></td><td>17,855</td><td></td><td>85,135</td><td>18,714</td><td>24,585</td><td>一</td></tr><tr><td>DF (kWh/start-stop/yr)</td><td>73</td><td>一</td><td>385</td><td>65</td><td>77</td><td></td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Characteristics",
+            "PV/Diesel/PHS",
+            "PV/PHS",
+            "Diesel/PHS",
+            "PV/Diesel(split)/PHS",
+            "PV/Diesel/Battery",
+            "PV/Battery"
+          ],
+          [
+            "COE ($/kWh)",
+            "0.27",
+            "0.43",
+            "0.41",
+            "0.24",
+            "0.34",
+            "0.63"
+          ],
+          [
+            "NPC ($)",
+            "595,123",
+            "947,927",
+            "918,018",
+            "524,791",
+            "745,734",
+            "1,386,009"
+          ],
+          [
+            "Diesel genset (kW)",
+            "100",
+            "一",
+            "100",
+            "2×50",
+            "100",
+            "一"
+          ],
+          [
+            "PV module (kW)",
+            "156",
+            "300",
+            "一",
+            "137",
+            "142",
+            "517"
+          ],
+          [
+            "PHS (kWh)",
+            "762",
+            "2,542",
+            "508",
+            "508",
+            "一",
+            ""
+          ],
+          [
+            "Battery (kWh)",
+            "一",
+            "一",
+            "一",
+            "",
+            "884",
+            "2,536"
+          ],
+          [
+            "Inverter (kW)",
+            "57.5",
+            "119",
+            "34.2",
+            "51",
+            "54.5",
+            "119"
+          ],
+          [
+            "EE (kWh/yr)",
+            "47,368",
+            "224,395",
+            "0",
+            "34,655",
+            "41,166",
+            "561,708"
+          ],
+          [
+            "Unmet load (kWh/yr)",
+            "0",
+            "130",
+            "0",
+            "0",
+            "0",
+            "134"
+          ],
+          [
+            "Renewable fraction (%)",
+            "84",
+            "100",
+            "一",
+            "80",
+            "76",
+            "100"
+          ],
+          [
+            "Genset energy (kWh/yr)",
+            "39,205",
+            "一",
+            "243,385",
+            "53,755",
+            "54,002",
+            "一"
+          ],
+          [
+            "PV energy (kWh/yr) Fuel consumption (L/yr)",
+            "243,509",
+            "466,373",
+            "一",
+            "212,244",
+            "220,926",
+            "803,760"
+          ],
+          [
+            "",
+            "17,855",
+            "",
+            "85,135",
+            "18,714",
+            "24,585",
+            "一"
+          ],
+          [
+            "DF (kWh/start-stop/yr)",
+            "73",
+            "一",
+            "385",
+            "65",
+            "77",
+            ""
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 6 Summary of optimisation results for different HES configurations. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": []
+      },
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 16,
+      "page": 9,
+      "caption": "Table 7. Annualised costs of different hybrid system configurations.",
+      "columns": [
+        "Component cost",
+        "PV/Diesel/PHS",
+        "PV/PHS",
+        "Diesel/PHS",
+        "PV/Diesel/Battery",
+        "PV/Battery"
+      ],
+      "rows": [
+        [
+          "Capital ($)",
+          "29,916",
+          "59,726",
+          "8,841",
+          "35,004",
+          "102,908"
+        ],
+        [
+          "Operating ($)",
+          "9,650",
+          "26,969",
+          "4,542",
+          "4,639",
+          "15,020"
+        ],
+        [
+          "Replacement ($)",
+          "2,003",
+          "1,089",
+          "5,530",
+          "11,020",
+          "12,067"
+        ],
+        [
+          "Salvage ($)",
+          "−490",
+          "−170",
+          "−467",
+          "−913",
+          "−1,890"
+        ],
+        [
+          "Resource ($)",
+          "13,927",
+          "0.00",
+          "66,405",
+          "19,176",
+          "0.00"
+        ],
+        [
+          "Total ($)",
+          "55,005",
+          "87,614",
+          "84,849",
+          "68,926",
+          "128,104"
+        ]
+      ],
+      "value_entries": 30,
+      "numeric_value_cells": 30,
+      "original_structural_dash_marker_cells": 0,
+      "scientific_scope_findings": [
+        "All30 annualised costs checked. All five salvage figures are negative; raw parser falsely makes Diesel/PHS salvage positive467. Original full crop proves minus467.",
+        "The split generator variant does not have a separate column here. Annualized costs cannot be silently assigned to the split variant or identified with NPC or initial/lifecycle component costs in Figure7.",
+        "Original published column totals retained alongside exact sums of displayed component costs. Small residuals are recorded without new tolerance or inferred rounding rules. Page9 auxiliary observation failure remains recorded."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-009.png",
+            "sha256": "79beb0020eea527dc05ce79c14b4e80330f0a64f960855ffb5c1e9182c14f498"
+          },
+          {
+            "id": "crop-113",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\88afe2ea4df644f96eaf9ab76d39e7de9eb861030ac575bcb29fef15b83ad2e9.jpg",
+            "sha256": "459afb6e6497ef70855b3a0d79850ebb995d9b276a4172896f47d27b0bf7edcd"
+          },
+          {
+            "id": "crop-114",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\234c46427c82b41b78125e243272f65293b99d50fe1b5cc846a798de661f221e.jpg",
+            "sha256": "a3979fc8c7d519a19f4db1b0cbe8be3889423b6062ebac9e0fd35207e2a04c5f"
+          },
+          {
+            "id": "crop-118",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\5f8bdc9319b38c21dba5b88866f2c4fc5f7050258f0697222465fee94eaf304f.jpg",
+            "sha256": "e955d15ff087da0b89b7bae6d23d1e5fec9a2ebe8227d06b2bfdee30f20e65f0"
+          },
+          {
+            "id": "crop-119",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\a579515eeefe937b3b3daed73fd7d445fba970d3473bbaa344480d6f4b0be441.jpg",
+            "sha256": "e4b2cf0a3f2af6dd87ec90209c24b8aab082f5c63c4fde0952888b27de58b9c9"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          113,
+          114,
+          118,
+          119
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 114,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "e81828789f8a4d828b93c47e0608ce5176fdaf8420247e8d53cc019cca5da171",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b104"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\234c46427c82b41b78125e243272f65293b99d50fe1b5cc846a798de661f221e.jpg",
+        "actual_original_crop_sha256": "a3979fc8c7d519a19f4db1b0cbe8be3889423b6062ebac9e0fd35207e2a04c5f",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+        "actual_page_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+        "original_durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+        "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 9,
+          "raw_parser_content_index": 114,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "e81828789f8a4d828b93c47e0608ce5176fdaf8420247e8d53cc019cca5da171",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b104"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\234c46427c82b41b78125e243272f65293b99d50fe1b5cc846a798de661f221e.jpg",
+          "actual_original_crop_sha256": "a3979fc8c7d519a19f4db1b0cbe8be3889423b6062ebac9e0fd35207e2a04c5f",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+          "actual_page_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+          "original_durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+          "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+          "matched_auxiliary_visual_item_indices": [],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Component cost</td><td>PV/ Diesel/ PHS</td><td>PV/ PHS</td><td>Diesel/ PHS</td><td>PV/Diesel/ Battery</td><td>PV/ Battery</td></tr><tr><td>Capital ($)</td><td>29,916</td><td>59,726</td><td>8,841</td><td>35,004</td><td>102,908</td></tr><tr><td>Operating($)</td><td>9,650</td><td>26,969</td><td>4,542</td><td>4,639</td><td>15,020</td></tr><tr><td>Replacement ($)</td><td>2,003</td><td>1,089</td><td>5,530</td><td>11,020</td><td>12,067</td></tr><tr><td>Salvage ($)</td><td>-490</td><td>-170</td><td>467</td><td>-913</td><td>-1,890</td></tr><tr><td>Resource ($)</td><td>13,927</td><td>0.00</td><td>66,405</td><td>19,176</td><td>0.00</td></tr><tr><td>Total ($)</td><td>55,005</td><td>87,614</td><td>84,849</td><td>68,926</td><td>128,104</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Component cost",
+            "PV/ Diesel/ PHS",
+            "PV/ PHS",
+            "Diesel/ PHS",
+            "PV/Diesel/ Battery",
+            "PV/ Battery"
+          ],
+          [
+            "Capital ($)",
+            "29,916",
+            "59,726",
+            "8,841",
+            "35,004",
+            "102,908"
+          ],
+          [
+            "Operating($)",
+            "9,650",
+            "26,969",
+            "4,542",
+            "4,639",
+            "15,020"
+          ],
+          [
+            "Replacement ($)",
+            "2,003",
+            "1,089",
+            "5,530",
+            "11,020",
+            "12,067"
+          ],
+          [
+            "Salvage ($)",
+            "-490",
+            "-170",
+            "467",
+            "-913",
+            "-1,890"
+          ],
+          [
+            "Resource ($)",
+            "13,927",
+            "0.00",
+            "66,405",
+            "19,176",
+            "0.00"
+          ],
+          [
+            "Total ($)",
+            "55,005",
+            "87,614",
+            "84,849",
+            "68,926",
+            "128,104"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 7 Annualised costs of different hybrid system configurations. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": []
+      },
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 17,
+      "page": 12,
+      "caption": "Table 8. Comparison of emissions from PV/Diesel/PHS, Diesel/PHS, and PV/Diesel/Battery hybrid systems.",
+      "columns": [
+        "Emission (kg/yr)",
+        "PV/Diesel/PHS",
+        "Diesel/PHS",
+        "PV/Diesel/Battery"
+      ],
+      "rows": [
+        [
+          "CO₂",
+          "47,158",
+          "224,858",
+          "64,934"
+        ],
+        [
+          "CO",
+          "40.9",
+          "195",
+          "56.3"
+        ],
+        [
+          "UHC",
+          "5.89",
+          "28.1",
+          "8.11"
+        ],
+        [
+          "PM",
+          "4.29",
+          "20.4",
+          "5.90"
+        ],
+        [
+          "SO₂",
+          "115",
+          "546",
+          "158"
+        ],
+        [
+          "NOₓ",
+          "76.1",
+          "363",
+          "105"
+        ]
+      ],
+      "value_entries": 18,
+      "numeric_value_cells": 18,
+      "original_structural_dash_marker_cells": 0,
+      "scientific_scope_findings": [
+        "Allsix species×three configurations checked, including pollutant identities/subscripts and kg/year unit. Neither grams nor equivalent-carbon emissions are substituted for distinct species quantities.",
+        "Structured auxiliary values and raw parser values agree with all18 primary numbers. CO₂47158 belongs to the unsplit PV/Diesel/PHS column here; it is not automatically the HOMER split-variant48314 in Table9.",
+        "Numerical ratio and percent comparisons preserve the chosen denominator and configuration. Lower emissions under one modeled configuration are not general field measurements or unrestricted claims about every configuration."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-012.png",
+            "sha256": "644ed78a959df293a05bf946fcc2b46207cd2d5942b38c9bd2e7ccba968aded3"
+          },
+          {
+            "id": "crop-139",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9cf3307cb708eb75157eb347f7462c6a45ef46a6a7d7be3e2b12ba1026160ba3.jpg",
+            "sha256": "5be2a35c44569d549fd4e1a54d8dda498a8f9e41ace3e54c82fca09ca0f108e6"
+          },
+          {
+            "id": "crop-140",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9199a48cc843b82de33218a801cc10200ee447cf43042640cd40c4e37d37d3ff.jpg",
+            "sha256": "a1a2c86fa6f2cbfd694688955db450681f316a31b5e3dd48288a9a3b71d1cfbd"
+          },
+          {
+            "id": "crop-141",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\522941a5f846460b17091d4d1e895ef217550c5444b5fac492ab09ff4a6db217.jpg",
+            "sha256": "16c98d910a0c65518ce3e50a01ffe2e11423309cbbb8e16c24232610d336b0d2"
+          },
+          {
+            "id": "crop-142",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+            "sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9"
+          },
+          {
+            "id": "crop-144",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\f6bbe2d0096e19c7da881d1d64d642b2f706d93788e9e2fcc9413d0f043e4387.jpg",
+            "sha256": "22fdb3c59c12f0efa78c31d5f7feaf009d97596884686298064d1f82c9ed02f0"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          139,
+          140,
+          141,
+          142,
+          144
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 142,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "5f0d60dab4e0e0a3d28b304368b4df6fdd1c06a76641210a669accff21d6388b",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b128"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+        "actual_original_crop_sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+        "actual_page_record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+        "original_durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          4
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 12,
+          "raw_parser_content_index": 142,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "5f0d60dab4e0e0a3d28b304368b4df6fdd1c06a76641210a669accff21d6388b",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b128"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+          "actual_original_crop_sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+          "actual_page_record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+          "original_durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            4
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Emission (kg/yr)</td><td>PV/Diesel/PHS</td><td>Diesel/PHS</td><td>PV/Diesel/Battery</td></tr><tr><td>CO2</td><td>47,158</td><td>224,858</td><td>64,934</td></tr><tr><td>CO</td><td>40.9</td><td>195</td><td>56.3</td></tr><tr><td>UHC</td><td>5.89</td><td>28.1</td><td>8.11</td></tr><tr><td>PM</td><td>4.29</td><td>20.4</td><td>5.90</td></tr><tr><td>SO2</td><td>115</td><td>546</td><td>158</td></tr><tr><td>NOx</td><td>76.1</td><td>363</td><td>105</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Emission (kg/yr)",
+            "PV/Diesel/PHS",
+            "Diesel/PHS",
+            "PV/Diesel/Battery"
+          ],
+          [
+            "CO2",
+            "47,158",
+            "224,858",
+            "64,934"
+          ],
+          [
+            "CO",
+            "40.9",
+            "195",
+            "56.3"
+          ],
+          [
+            "UHC",
+            "5.89",
+            "28.1",
+            "8.11"
+          ],
+          [
+            "PM",
+            "4.29",
+            "20.4",
+            "5.90"
+          ],
+          [
+            "SO2",
+            "115",
+            "546",
+            "158"
+          ],
+          [
+            "NOx",
+            "76.1",
+            "363",
+            "105"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 8 Comparison of emissions from PV/Diesel/PHS, Diesel/PHS, and PV/Diesel/ Battery hybrid systems. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 4,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 8 Comparison of emissions from PV/Diesel/PHS, Diesel/PHS, and PV/Diesel/ Battery hybrid systems.",
+              "location": "MIDDLE",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-142"
+              ],
+              "exact_visible_text": "Emission (kg/yr) PV/Diesel/PHS Diesel/PHS PV/Diesel/Battery\nCO2 47,158 224,858 64,934\nCO 40.9 195 56.3\nUHC 5.89 28.1 8.11\nPM 4.29 20.4 5.90\nSO2 115 546 158\nNOx 76.1 363 105",
+              "table_rows": [
+                [
+                  "Emission (kg/yr)",
+                  "PV/Diesel/PHS",
+                  "Diesel/PHS",
+                  "PV/Diesel/Battery"
+                ],
+                [
+                  "CO2",
+                  "47,158",
+                  "224,858",
+                  "64,934"
+                ],
+                [
+                  "CO",
+                  "40.9",
+                  "195",
+                  "56.3"
+                ],
+                [
+                  "UHC",
+                  "5.89",
+                  "28.1",
+                  "8.11"
+                ],
+                [
+                  "PM",
+                  "4.29",
+                  "20.4",
+                  "5.90"
+                ],
+                [
+                  "SO2",
+                  "115",
+                  "546",
+                  "158"
+                ],
+                [
+                  "NOx",
+                  "76.1",
+                  "363",
+                  "105"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 4,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {},
+            "parser_row_lengths": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "auxiliary_row_lengths": [
+              4,
+              4,
+              4,
+              4,
+              4,
+              4,
+              4
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "expert_gold_or_scientific_reference_approval": false
+    },
+    {
+      "matrix_index": 18,
+      "page": 15,
+      "caption": "Table 9. Comparative analysis between HOMER and GA for the proposed PV/Diesel/PHS-based option.",
+      "columns": [
+        "Characteristic",
+        "HOMER",
+        "GA"
+      ],
+      "rows": [
+        [
+          "COE ($/kWh)",
+          "0.240",
+          "0.226"
+        ],
+        [
+          "NPC ($)",
+          "524,791",
+          "501,399"
+        ],
+        [
+          "Diesel genset (kW)",
+          "2 × 50",
+          "50"
+        ],
+        [
+          "PV module (kW)",
+          "137",
+          "184"
+        ],
+        [
+          "PHS (kWh)",
+          "508",
+          "490"
+        ],
+        [
+          "PV energy (kWh/yr)",
+          "212,244",
+          "272,690"
+        ],
+        [
+          "Genset energy (kWh/yr)",
+          "53,755",
+          "18,935"
+        ],
+        [
+          "EE (kWh/yr)",
+          "34,655",
+          "78,513"
+        ],
+        [
+          "RF (%)",
+          "80",
+          "91"
+        ],
+        [
+          "Fuel consumption (L/yr)",
+          "18,714",
+          "6,592"
+        ],
+        [
+          "CO₂ emissions (kg/yr)",
+          "48,314",
+          "17,019"
+        ]
+      ],
+      "value_entries": 22,
+      "numeric_value_cells": 22,
+      "original_structural_dash_marker_cells": 0,
+      "scientific_scope_findings": [
+        "All22 complete values checked. HOMER uses2×50kW generator, GA50kW; PV137/184kW and PHS508/490kWh differ. Comparison is of separately optimized hardware, not fixed identical hardware with only an algorithm swapped.",
+        "HOMER metrics align with the split-generator column in Table6. GA reduces modeledCOE/NPC/fuel/CO₂ but increases excess energy; do not infer uniform improvement of every objective.",
+        "Raw parser and auxiliary preserve all numeric values and configuration scope; multiplication-spacing differences are layout, not a scientific change.",
+        "Page15 conclusion associates COE0.24/NPC524791 with proposedPV/Diesel/PHS but its statement that PV/Diesel/Battery COE/NPC are25% higher follows the unsplit0.27/595123 comparison much more closely than the split comparison (~42%). Preserve the primary variant/scope inconsistency without repairing quoted conclusions."
+      ],
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 15,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-015.png",
+            "sha256": "bfbd462f120aba9018b4a4b79ea3dad8b9521f327aabee747acc76f13df5e497"
+          },
+          {
+            "id": "crop-162",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\616c70efecd9a1e5a578e693cbb0fcaef274b39e26370ce033fef9b71f3621f9.jpg",
+            "sha256": "628cd6e78d0c0c581947b257bbe14fb8771740a45b1f23be084292d93a951846"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          162
+        ]
+      },
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 15,
+        "raw_parser_content_index": 162,
+        "raw_visual_type": "table",
+        "raw_parser_item_sha256": "81b931036231f17e8151e730e520f95c284cc3049a4a2e25e63fb2d09e0472aa",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b147"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\616c70efecd9a1e5a578e693cbb0fcaef274b39e26370ce033fef9b71f3621f9.jpg",
+        "actual_original_crop_sha256": "628cd6e78d0c0c581947b257bbe14fb8771740a45b1f23be084292d93a951846",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\015\\record.json",
+        "actual_page_record_sha256": "fc4f6625c4b16fc2a06b1fe57081747c522eba8c592f3682de5b1531cca2a087",
+        "original_durable_handle": "run_0182eab9750c47f7b0b267414315583d",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "unchanged_original_parser_and_auxiliary_matrix_row": {
+        "original_visual_item": {
+          "paper_id": "paper_19f55daa7f17ede2858b",
+          "actual_pdf_page": 15,
+          "raw_parser_content_index": 162,
+          "raw_visual_type": "table",
+          "raw_parser_item_sha256": "81b931036231f17e8151e730e520f95c284cc3049a4a2e25e63fb2d09e0472aa",
+          "associated_frozen_original_block_ids": [
+            "paper_19f55daa7f17ede2858b:b147"
+          ],
+          "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\616c70efecd9a1e5a578e693cbb0fcaef274b39e26370ce033fef9b71f3621f9.jpg",
+          "actual_original_crop_sha256": "628cd6e78d0c0c581947b257bbe14fb8771740a45b1f23be084292d93a951846",
+          "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\015\\record.json",
+          "actual_page_record_sha256": "fc4f6625c4b16fc2a06b1fe57081747c522eba8c592f3682de5b1531cca2a087",
+          "original_durable_handle": "run_0182eab9750c47f7b0b267414315583d",
+          "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+          "matched_auxiliary_visual_item_indices": [
+            0
+          ],
+          "scientific_fidelity_verified": false,
+          "scientific_reference_approved": false,
+          "benchmark_grade_created": false
+        },
+        "original_parser_html": "\n\n<html><body><table><tr><td>Characteristic</td><td>HOMER</td><td>GA</td></tr><tr><td>COE ($/kWh)</td><td>0.240</td><td>0.226</td></tr><tr><td>NPC ($)</td><td>524,791</td><td>501,399</td></tr><tr><td>Diesel genset (kW)</td><td>2×50</td><td>50</td></tr><tr><td>PV module (kW)</td><td>137</td><td>184</td></tr><tr><td>PHS (kWh)</td><td>508</td><td>490</td></tr><tr><td>PV energy (kWh/yr)</td><td>212,244</td><td>272,690</td></tr><tr><td>Gensetenergy (kWh/yr)</td><td>53,755</td><td>18,935</td></tr><tr><td>EE (kWh/yr)</td><td>34,655</td><td>78,513</td></tr><tr><td>RF (%)</td><td>80</td><td>91</td></tr><tr><td>Fuel consumption (L/yr)</td><td>18,714</td><td>6,592</td></tr><tr><td>CO2emissions (kg/yr)</td><td>48,314</td><td>17,019</td></tr></table></body></html>\n\n",
+        "original_parser_rows": [
+          [
+            "Characteristic",
+            "HOMER",
+            "GA"
+          ],
+          [
+            "COE ($/kWh)",
+            "0.240",
+            "0.226"
+          ],
+          [
+            "NPC ($)",
+            "524,791",
+            "501,399"
+          ],
+          [
+            "Diesel genset (kW)",
+            "2×50",
+            "50"
+          ],
+          [
+            "PV module (kW)",
+            "137",
+            "184"
+          ],
+          [
+            "PHS (kWh)",
+            "508",
+            "490"
+          ],
+          [
+            "PV energy (kWh/yr)",
+            "212,244",
+            "272,690"
+          ],
+          [
+            "Gensetenergy (kWh/yr)",
+            "53,755",
+            "18,935"
+          ],
+          [
+            "EE (kWh/yr)",
+            "34,655",
+            "78,513"
+          ],
+          [
+            "RF (%)",
+            "80",
+            "91"
+          ],
+          [
+            "Fuel consumption (L/yr)",
+            "18,714",
+            "6,592"
+          ],
+          [
+            "CO2emissions (kg/yr)",
+            "48,314",
+            "17,019"
+          ]
+        ],
+        "original_parser_captions": [
+          "Table 9 Comparative analysis between HOMER and GA for the proposed PV/Diesel/ PHS-based option. "
+        ],
+        "original_parser_footnotes": [],
+        "actual_same_crop_auxiliary_tables": [
+          {
+            "item_index": 0,
+            "table": {
+              "kind": "TABLE",
+              "visible_label": "Table 9",
+              "location": "TOP",
+              "observed_in_payload_ids": [
+                "page",
+                "crop-162"
+              ],
+              "exact_visible_text": "Table 9\nComparative analysis between HOMER and GA for the proposed PV/Diesel/\nPHS-based option.\nCharacteristic HOMER GA\nCOE ($/kWh) 0.240 0.226\nNPC ($) 524,791 501,399\nDiesel genset (kW) 2 x 50 50\nPV module (kW) 137 184\nPHS (kWh) 508 490\nPV energy (kWh/yr) 212,244 272,690\nGenset energy (kWh/yr) 53,755 18,935\nEE (kWh/yr) 34,655 78,513\nRF (%) 80 91\nFuel consumption (L/yr) 18,714 6,592\nCO2 emissions (kg/yr) 48,314 17,019",
+              "table_rows": [
+                [
+                  "Characteristic",
+                  "HOMER",
+                  "GA"
+                ],
+                [
+                  "COE ($/kWh)",
+                  "0.240",
+                  "0.226"
+                ],
+                [
+                  "NPC ($)",
+                  "524,791",
+                  "501,399"
+                ],
+                [
+                  "Diesel genset (kW)",
+                  "2 × 50",
+                  "50"
+                ],
+                [
+                  "PV module (kW)",
+                  "137",
+                  "184"
+                ],
+                [
+                  "PHS (kWh)",
+                  "508",
+                  "490"
+                ],
+                [
+                  "PV energy (kWh/yr)",
+                  "212,244",
+                  "272,690"
+                ],
+                [
+                  "Genset energy (kWh/yr)",
+                  "53,755",
+                  "18,935"
+                ],
+                [
+                  "EE (kWh/yr)",
+                  "34,655",
+                  "78,513"
+                ],
+                [
+                  "RF (%)",
+                  "80",
+                  "91"
+                ],
+                [
+                  "Fuel consumption (L/yr)",
+                  "18,714",
+                  "6,592"
+                ],
+                [
+                  "CO2 emissions (kg/yr)",
+                  "48,314",
+                  "17,019"
+                ]
+              ],
+              "equations": [],
+              "visible_relationships": [],
+              "conditions_and_footnotes": [],
+              "uncertainty": []
+            }
+          }
+        ],
+        "source_pixel_science_approved": false,
+        "literal_difference_is_not_automatically_a_scientific_error": true,
+        "literal_consistency_checks": [
+          {
+            "auxiliary_item_index": 0,
+            "raw_parser_numeric_tokens_absent_from_auxiliary_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_raw_parser_rows": {},
+            "auxiliary_row_numeric_tokens_absent_from_its_flat_text": {},
+            "auxiliary_flat_numeric_tokens_absent_from_its_rows": {
+              "9": 1
+            },
+            "parser_row_lengths": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "auxiliary_row_lengths": [
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3,
+              3
+            ],
+            "scientific_error_diagnosed_from_token_difference": false
+          }
+        ]
+      },
+      "expert_gold_or_scientific_reference_approval": false
+    }
+  ],
+  "plots": [
+    {
+      "matrix_visual_index": 75,
+      "page": 9,
+      "figure": "Fig.7",
+      "caption": "Summary of costs of different components of PV/Diesel/PHS hybrid system.",
+      "plot_kind": "STACKED_COMPONENT_COST_BARS",
+      "x_categories": [
+        "Capital cost ($)",
+        "Operating cost ($)",
+        "Replacement cost ($)",
+        "Salvage ($)",
+        "Resource cost ($)"
+      ],
+      "left_axis": {
+        "label": "Cost ($)",
+        "ticks": [
+          "−10,000",
+          "65,000",
+          "140,000",
+          "215,000",
+          "290,000",
+          "365,000"
+        ]
+      },
+      "legend": [
+        "Diesel Generator",
+        "Pump Hydro",
+        "PV Module",
+        "System Converter"
+      ],
+      "scientific_scope_findings": [
+        "PV capital contribution is visually the largest; the diesel resource contribution is separate. Negative salvage is below the baseline, not a positive expense.",
+        "Plotcomponent monetary totals are distinct from annualised Table7 figures. No exact barsegment values are printed, so exact segment prices are not invented from pixel heights."
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 118,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "05ab75874b23ecaa2d98c6dd00a7dde18b24c0e5b0fc2adb963b3432c4a44781",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b107"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\5f8bdc9319b38c21dba5b88866f2c4fc5f7050258f0697222465fee94eaf304f.jpg",
+        "actual_original_crop_sha256": "e955d15ff087da0b89b7bae6d23d1e5fec9a2ebe8227d06b2bfdee30f20e65f0",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+        "actual_page_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+        "original_durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+        "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-009.png",
+            "sha256": "79beb0020eea527dc05ce79c14b4e80330f0a64f960855ffb5c1e9182c14f498"
+          },
+          {
+            "id": "crop-113",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\88afe2ea4df644f96eaf9ab76d39e7de9eb861030ac575bcb29fef15b83ad2e9.jpg",
+            "sha256": "459afb6e6497ef70855b3a0d79850ebb995d9b276a4172896f47d27b0bf7edcd"
+          },
+          {
+            "id": "crop-114",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\234c46427c82b41b78125e243272f65293b99d50fe1b5cc846a798de661f221e.jpg",
+            "sha256": "a3979fc8c7d519a19f4db1b0cbe8be3889423b6062ebac9e0fd35207e2a04c5f"
+          },
+          {
+            "id": "crop-118",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\5f8bdc9319b38c21dba5b88866f2c4fc5f7050258f0697222465fee94eaf304f.jpg",
+            "sha256": "e955d15ff087da0b89b7bae6d23d1e5fec9a2ebe8227d06b2bfdee30f20e65f0"
+          },
+          {
+            "id": "crop-119",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\a579515eeefe937b3b3daed73fd7d445fba970d3473bbaa344480d6f4b0be441.jpg",
+            "sha256": "e4b2cf0a3f2af6dd87ec90209c24b8aab082f5c63c4fde0952888b27de58b9c9"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          113,
+          114,
+          118,
+          119
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 76,
+      "page": 9,
+      "figure": "Fig.8",
+      "caption": "Energy generations from different units of PV/Diesel/PHS system to meet load demand.",
+      "plot_kind": "MONTHLY_STACKED_POWER_WITH_SEPARATE_LOAD_AXIS",
+      "x_categories": [
+        "Jan",
+        "Feb",
+        "Mar",
+        "Apr",
+        "May",
+        "Jun",
+        "Jul",
+        "Aug",
+        "Sep",
+        "Oct",
+        "Nov",
+        "Dec"
+      ],
+      "left_axis": {
+        "label": "Power (kW)",
+        "ticks": [
+          "0",
+          "8",
+          "16",
+          "24",
+          "32",
+          "40",
+          "48"
+        ]
+      },
+      "right_axis": {
+        "label": "Load demand (kW)",
+        "ticks": [
+          "0",
+          "8",
+          "16",
+          "24",
+          "32",
+          "40"
+        ]
+      },
+      "legend": [
+        "PV power",
+        "Diesel power",
+        "PHS",
+        "Load demand"
+      ],
+      "scientific_scope_findings": [
+        "Caption calls these energy generations but both plotted axes are power in kW. No annual kWh values are inferred from bar heights.",
+        "PV dominates winter bars; diesel contribution increases in summer, with small PHS contribution. Each legend color and stacked component is kept separate.",
+        "Two different vertical scales mean line/bar visual height cannot directly establish that total supply exceeds load. Exact monthly average/peak statistic is not labeled and is not invented."
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "raw_parser_content_index": 119,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "a3e5789762cbcae40ef04cddfa0c8e8c4899f79cd74c255d8a74d9aa874dff05",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b108"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\a579515eeefe937b3b3daed73fd7d445fba970d3473bbaa344480d6f4b0be441.jpg",
+        "actual_original_crop_sha256": "e4b2cf0a3f2af6dd87ec90209c24b8aab082f5c63c4fde0952888b27de58b9c9",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\009\\record.json",
+        "actual_page_record_sha256": "fb6ff48530b9dd475281699c6fd0c836393ac48728a7779185aad14680388389",
+        "original_durable_handle": "run_1e9403c5dc584090ae0c0f024e7df057",
+        "status": "AUXILIARY_PAGE_PROTOCOL_FAILURE_RETAINED",
+        "matched_auxiliary_visual_item_indices": [],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 9,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-009.png",
+            "sha256": "79beb0020eea527dc05ce79c14b4e80330f0a64f960855ffb5c1e9182c14f498"
+          },
+          {
+            "id": "crop-113",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\88afe2ea4df644f96eaf9ab76d39e7de9eb861030ac575bcb29fef15b83ad2e9.jpg",
+            "sha256": "459afb6e6497ef70855b3a0d79850ebb995d9b276a4172896f47d27b0bf7edcd"
+          },
+          {
+            "id": "crop-114",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\234c46427c82b41b78125e243272f65293b99d50fe1b5cc846a798de661f221e.jpg",
+            "sha256": "a3979fc8c7d519a19f4db1b0cbe8be3889423b6062ebac9e0fd35207e2a04c5f"
+          },
+          {
+            "id": "crop-118",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\5f8bdc9319b38c21dba5b88866f2c4fc5f7050258f0697222465fee94eaf304f.jpg",
+            "sha256": "e955d15ff087da0b89b7bae6d23d1e5fec9a2ebe8227d06b2bfdee30f20e65f0"
+          },
+          {
+            "id": "crop-119",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\a579515eeefe937b3b3daed73fd7d445fba970d3473bbaa344480d6f4b0be441.jpg",
+            "sha256": "e4b2cf0a3f2af6dd87ec90209c24b8aab082f5c63c4fde0952888b27de58b9c9"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          113,
+          114,
+          118,
+          119
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 80,
+      "page": 12,
+      "figure": "Fig.12",
+      "caption": "Battery state of charge for a PV/Diesel/Battery hybrid system over a year.",
+      "plot_kind": "DENSE_ANNUAL_TIME_SERIES",
+      "left_axis": {
+        "label": "State of Charge (%)",
+        "ticks": [
+          "0",
+          "20",
+          "40",
+          "60",
+          "80",
+          "100"
+        ]
+      },
+      "horizontal_axis": {
+        "label": "Time step (h)",
+        "ticks": [
+          "0",
+          "876",
+          "1752",
+          "2628",
+          "3504",
+          "4380",
+          "5256",
+          "6132",
+          "7008",
+          "7884",
+          "8760"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Series belongs to PV/Diesel/Battery, not PHS. It visibly remains near or above40% and peaks below100%, with frequent low-state periods around the middle of the year.",
+        "These are bounded visual observations, not an exact8760-sample digitization or a numerical minimum verified from underlying data. No exact charge/discharge counts or durations are invented."
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 139,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "b3c563efec01321acc76bc934407bb1d006d1bc024eafb528c34afcaa19f17ed",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b125"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9cf3307cb708eb75157eb347f7462c6a45ef46a6a7d7be3e2b12ba1026160ba3.jpg",
+        "actual_original_crop_sha256": "5be2a35c44569d549fd4e1a54d8dda498a8f9e41ace3e54c82fca09ca0f108e6",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+        "actual_page_record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+        "original_durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          0
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-012.png",
+            "sha256": "644ed78a959df293a05bf946fcc2b46207cd2d5942b38c9bd2e7ccba968aded3"
+          },
+          {
+            "id": "crop-139",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9cf3307cb708eb75157eb347f7462c6a45ef46a6a7d7be3e2b12ba1026160ba3.jpg",
+            "sha256": "5be2a35c44569d549fd4e1a54d8dda498a8f9e41ace3e54c82fca09ca0f108e6"
+          },
+          {
+            "id": "crop-140",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9199a48cc843b82de33218a801cc10200ee447cf43042640cd40c4e37d37d3ff.jpg",
+            "sha256": "a1a2c86fa6f2cbfd694688955db450681f316a31b5e3dd48288a9a3b71d1cfbd"
+          },
+          {
+            "id": "crop-141",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\522941a5f846460b17091d4d1e895ef217550c5444b5fac492ab09ff4a6db217.jpg",
+            "sha256": "16c98d910a0c65518ce3e50a01ffe2e11423309cbbb8e16c24232610d336b0d2"
+          },
+          {
+            "id": "crop-142",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+            "sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9"
+          },
+          {
+            "id": "crop-144",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\f6bbe2d0096e19c7da881d1d64d642b2f706d93788e9e2fcc9413d0f043e4387.jpg",
+            "sha256": "22fdb3c59c12f0efa78c31d5f7feaf009d97596884686298064d1f82c9ed02f0"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          139,
+          140,
+          141,
+          142,
+          144
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 81,
+      "page": 12,
+      "figure": "Fig.13",
+      "caption": "Effects of load demand (sizes of households) on the COE and the NPC.",
+      "plot_kind": "TWO_AXIS_FIVE_DESIGN_POINTS",
+      "x_design_points": [
+        "30",
+        "40",
+        "50",
+        "60",
+        "70"
+      ],
+      "left_axis": {
+        "label": "COE ($/kWh)",
+        "range_ticks": [
+          "0.00",
+          "0.05",
+          "0.10",
+          "0.15",
+          "0.20",
+          "0.25",
+          "0.30"
+        ]
+      },
+      "right_axis": {
+        "label": "NPC ($)",
+        "range_ticks": [
+          "0",
+          "200000",
+          "400000",
+          "600000",
+          "800000",
+          "1000000"
+        ]
+      },
+      "scientific_scope_findings": [
+        "The blue COE line decreases across five household counts while the orange NPC line increases. Opposite directions and their different units must not be merged.",
+        "Exact point values are not printed; approximate graphical heights do not create a precise numerical reference. The figure concerns demand/design sensitivity, not a controlled field experiment."
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 140,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "a7be85c74ec3fa69b9404f9fa0926da7ea490dfc1933df7420678a97b3997c4b",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b126"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9199a48cc843b82de33218a801cc10200ee447cf43042640cd40c4e37d37d3ff.jpg",
+        "actual_original_crop_sha256": "a1a2c86fa6f2cbfd694688955db450681f316a31b5e3dd48288a9a3b71d1cfbd",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+        "actual_page_record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+        "original_durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          1
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-012.png",
+            "sha256": "644ed78a959df293a05bf946fcc2b46207cd2d5942b38c9bd2e7ccba968aded3"
+          },
+          {
+            "id": "crop-139",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9cf3307cb708eb75157eb347f7462c6a45ef46a6a7d7be3e2b12ba1026160ba3.jpg",
+            "sha256": "5be2a35c44569d549fd4e1a54d8dda498a8f9e41ace3e54c82fca09ca0f108e6"
+          },
+          {
+            "id": "crop-140",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9199a48cc843b82de33218a801cc10200ee447cf43042640cd40c4e37d37d3ff.jpg",
+            "sha256": "a1a2c86fa6f2cbfd694688955db450681f316a31b5e3dd48288a9a3b71d1cfbd"
+          },
+          {
+            "id": "crop-141",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\522941a5f846460b17091d4d1e895ef217550c5444b5fac492ab09ff4a6db217.jpg",
+            "sha256": "16c98d910a0c65518ce3e50a01ffe2e11423309cbbb8e16c24232610d336b0d2"
+          },
+          {
+            "id": "crop-142",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+            "sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9"
+          },
+          {
+            "id": "crop-144",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\f6bbe2d0096e19c7da881d1d64d642b2f706d93788e9e2fcc9413d0f043e4387.jpg",
+            "sha256": "22fdb3c59c12f0efa78c31d5f7feaf009d97596884686298064d1f82c9ed02f0"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          139,
+          140,
+          141,
+          142,
+          144
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 82,
+      "page": 12,
+      "figure": "Fig.14",
+      "caption": "Effects of load demand (sizes of households) on the RF and the EE.",
+      "plot_kind": "TWO_AXIS_FIVE_DESIGN_POINTS",
+      "x_design_points": [
+        "30",
+        "40",
+        "50",
+        "60",
+        "70"
+      ],
+      "left_axis": {
+        "label": "RF (%)",
+        "ticks": [
+          "0",
+          "25",
+          "50",
+          "75",
+          "100"
+        ]
+      },
+      "right_axis": {
+        "label": "EE (kWh/yr)",
+        "ticks": [
+          "0",
+          "15000",
+          "30000",
+          "45000",
+          "60000"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Excess energy increases over five design points. Renewable fraction is not monotone: it decreases30→40→50, increases50→60, then decreases60→70. Preserve reversals rather than call it uniformly decreasing.",
+        "RFpercent and annualEEenergy use separate scales; curve intersections do not imply equal numerical values or common quantities. Underlying reoptimized hardware is not assumed fixed."
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 141,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "a05c340d4caa2e47ed9c98cab375593df0ba59e9fa9b3b928ee98101e9008f4d",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b127"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\522941a5f846460b17091d4d1e895ef217550c5444b5fac492ab09ff4a6db217.jpg",
+        "actual_original_crop_sha256": "16c98d910a0c65518ce3e50a01ffe2e11423309cbbb8e16c24232610d336b0d2",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+        "actual_page_record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+        "original_durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          2
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-012.png",
+            "sha256": "644ed78a959df293a05bf946fcc2b46207cd2d5942b38c9bd2e7ccba968aded3"
+          },
+          {
+            "id": "crop-139",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9cf3307cb708eb75157eb347f7462c6a45ef46a6a7d7be3e2b12ba1026160ba3.jpg",
+            "sha256": "5be2a35c44569d549fd4e1a54d8dda498a8f9e41ace3e54c82fca09ca0f108e6"
+          },
+          {
+            "id": "crop-140",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9199a48cc843b82de33218a801cc10200ee447cf43042640cd40c4e37d37d3ff.jpg",
+            "sha256": "a1a2c86fa6f2cbfd694688955db450681f316a31b5e3dd48288a9a3b71d1cfbd"
+          },
+          {
+            "id": "crop-141",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\522941a5f846460b17091d4d1e895ef217550c5444b5fac492ab09ff4a6db217.jpg",
+            "sha256": "16c98d910a0c65518ce3e50a01ffe2e11423309cbbb8e16c24232610d336b0d2"
+          },
+          {
+            "id": "crop-142",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+            "sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9"
+          },
+          {
+            "id": "crop-144",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\f6bbe2d0096e19c7da881d1d64d642b2f706d93788e9e2fcc9413d0f043e4387.jpg",
+            "sha256": "22fdb3c59c12f0efa78c31d5f7feaf009d97596884686298064d1f82c9ed02f0"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          139,
+          140,
+          141,
+          142,
+          144
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    },
+    {
+      "matrix_visual_index": 84,
+      "page": 12,
+      "figure": "Fig.15",
+      "caption": "CO₂ emissions from different energy sources.",
+      "plot_kind": "FIVE_CATEGORY_EMISSION_BARS",
+      "x_categories": [
+        "PV/Diesel/Pump-Hydro",
+        "Diesel/Pump-Hydro",
+        "PV/Diesel/Battery",
+        "Kerosene consumption",
+        "Grid electricity"
+      ],
+      "left_axis": {
+        "label": "CO₂ (kg/yr)",
+        "ticks": [
+          "0",
+          "50000",
+          "100000",
+          "150000",
+          "200000",
+          "250000"
+        ]
+      },
+      "scientific_scope_findings": [
+        "Diesel/Pump-Hydro is visibly highest; PV/Diesel/Pump-Hydro lowest; kerosene and PV/Diesel/Battery bars are close in height and grid is higher than both.",
+        "Emissions are annualCO₂mass rather than all-pollutant sums. Chartcontains extra kerosene/grid categories not in Table8. No exact bar numbers or split-versus-single configuration are invented where the caption does not specify them."
+      ],
+      "entire_original_crop_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "raw_parser_content_index": 144,
+        "raw_visual_type": "image",
+        "raw_parser_item_sha256": "6ccf1e5e7cc60b4bc7059651ec1e9656e1109303f5bf69a96737dd2f2e5f0175",
+        "associated_frozen_original_block_ids": [
+          "paper_19f55daa7f17ede2858b:b129"
+        ],
+        "actual_original_crop_path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\f6bbe2d0096e19c7da881d1d64d642b2f706d93788e9e2fcc9413d0f043e4387.jpg",
+        "actual_original_crop_sha256": "22fdb3c59c12f0efa78c31d5f7feaf009d97596884686298064d1f82c9ed02f0",
+        "actual_page_record_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\all150-original-pdf-visual-observations-v1\\paper_19f55daa7f17ede2858b\\012\\record.json",
+        "actual_page_record_sha256": "305527a15fe9a4e9f5ca6563a892d07a906ac388fafb214bf1c16fc8b720eaa2",
+        "original_durable_handle": "run_a5a2f5a3423a42a1a59221f0e601c0c7",
+        "status": "ACTUAL_CROP_ASSOCIATION_RECORDED_SCIENCE_PENDING",
+        "matched_auxiliary_visual_item_indices": [
+          3
+        ],
+        "scientific_fidelity_verified": false,
+        "scientific_reference_approved": false,
+        "benchmark_grade_created": false
+      },
+      "entire_original_page_directly_viewed": {
+        "paper_id": "paper_19f55daa7f17ede2858b",
+        "actual_pdf_page": 12,
+        "source_pdf_sha256": "4d50e049ed973565e40142b1a37c0f76df89bc3d2e0638d9c8b5d9ea67cafad8",
+        "attachments": [
+          {
+            "id": "page",
+            "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\full-original-pdf-visual-source-inventory-v3\\paper_19f55daa7f17ede2858b-page-012.png",
+            "sha256": "644ed78a959df293a05bf946fcc2b46207cd2d5942b38c9bd2e7ccba968aded3"
+          },
+          {
+            "id": "crop-139",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9cf3307cb708eb75157eb347f7462c6a45ef46a6a7d7be3e2b12ba1026160ba3.jpg",
+            "sha256": "5be2a35c44569d549fd4e1a54d8dda498a8f9e41ace3e54c82fca09ca0f108e6"
+          },
+          {
+            "id": "crop-140",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\9199a48cc843b82de33218a801cc10200ee447cf43042640cd40c4e37d37d3ff.jpg",
+            "sha256": "a1a2c86fa6f2cbfd694688955db450681f316a31b5e3dd48288a9a3b71d1cfbd"
+          },
+          {
+            "id": "crop-141",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\522941a5f846460b17091d4d1e895ef217550c5444b5fac492ab09ff4a6db217.jpg",
+            "sha256": "16c98d910a0c65518ce3e50a01ffe2e11423309cbbb8e16c24232610d336b0d2"
+          },
+          {
+            "id": "crop-142",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\4db23390eb82f7e5c88573b5b34554b6988f33974e5a9f82d542947e8eba2c6c.jpg",
+            "sha256": "5b20c16beb3404ff9699b25aca9e9fc3244ccf6538a97cef39b04f57172a36d9"
+          },
+          {
+            "id": "crop-144",
+            "path": "C:\\iCloudDrive\\Research Papars Phd 300 Sparta!\\pdfparser\\Optimal sizing of a grid-independent PV_diesel_pump-hydro hybrid system__A case study in Bangladesh\\images\\f6bbe2d0096e19c7da881d1d64d642b2f706d93788e9e2fcc9413d0f043e4387.jpg",
+            "sha256": "22fdb3c59c12f0efa78c31d5f7feaf009d97596884686298064d1f82c9ed02f0"
+          }
+        ],
+        "raw_parser_visual_content_indices": [
+          139,
+          140,
+          141,
+          142,
+          144
+        ]
+      },
+      "exact_unprinted_plot_data_inferred": false,
+      "scientific_reference_approval": false
+    }
+  ],
+  "exact_supplementary_arithmetic": {
+    "all5_annualised_cost_sums": [
+      {
+        "configuration": "PV/Diesel/PHS",
+        "displayed_component_sum_USD": "55006",
+        "published_total_USD": "55,005",
+        "published_minus_displayed_sum_USD": "-1"
+      },
+      {
+        "configuration": "PV/PHS",
+        "displayed_component_sum_USD": "87614.00",
+        "published_total_USD": "87,614",
+        "published_minus_displayed_sum_USD": "0.00"
+      },
+      {
+        "configuration": "Diesel/PHS",
+        "displayed_component_sum_USD": "84851",
+        "published_total_USD": "84,849",
+        "published_minus_displayed_sum_USD": "-2"
+      },
+      {
+        "configuration": "PV/Diesel/Battery",
+        "displayed_component_sum_USD": "68926",
+        "published_total_USD": "68,926",
+        "published_minus_displayed_sum_USD": "0"
+      },
+      {
+        "configuration": "PV/Battery",
+        "displayed_component_sum_USD": "128105.00",
+        "published_total_USD": "128,104",
+        "published_minus_displayed_sum_USD": "-1.00"
+      }
+    ],
+    "battery_cost_comparison_with_both_diesel_variants": [
+      {
+        "metric": "COE",
+        "reference_variant": "single diesel",
+        "compared_variant": "PV/Diesel/Battery",
+        "percent_higher_exact_fraction": "700/27",
+        "percent_higher_decimal": "25.92592592592592592592592593"
+      },
+      {
+        "metric": "COE",
+        "reference_variant": "split diesel",
+        "compared_variant": "PV/Diesel/Battery",
+        "percent_higher_exact_fraction": "125/3",
+        "percent_higher_decimal": "41.66666666666666666666666667"
+      },
+      {
+        "metric": "NPC",
+        "reference_variant": "single diesel",
+        "compared_variant": "PV/Diesel/Battery",
+        "percent_higher_exact_fraction": "15061100/595123",
+        "percent_higher_decimal": "25.30754146621790789467051349"
+      },
+      {
+        "metric": "NPC",
+        "reference_variant": "split diesel",
+        "compared_variant": "PV/Diesel/Battery",
+        "percent_higher_exact_fraction": "22094300/524791",
+        "percent_higher_decimal": "42.10114121621750373005634624"
+      }
+    ],
+    "CO2_single_vs_diesel_ratio_exact_fraction": "112429/23579",
+    "CO2_single_percent_lower_than_battery_exact_fraction": "888800/32467",
+    "new_tolerance_or_unstated_rounding_rule_inferred": false,
+    "original_displayed_values_replaced": false
+  },
+  "original_reference_verdicts_and_grades_unchanged": true,
+  "new_model_calls": 0,
+  "expert_gold_or_scientific_reference_approval": false,
+  "full_scientific_evaluation_complete": false
+}

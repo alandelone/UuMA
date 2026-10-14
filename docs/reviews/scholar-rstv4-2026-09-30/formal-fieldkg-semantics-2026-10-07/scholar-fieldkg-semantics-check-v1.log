@@ -1,0 +1,29 @@
+['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-m', 'ruff', 'check', '--fix', 'src/rstv4/fieldkg_semantics.py', 'src/rstv4/catalog_web.py', 'src/rstv4/research_context.py', 'src/rstv4/fieldkg_workspace.py', 'src/rstv4/research_views.py']
+F706 `return` statement outside of a function/method
+   --> src\rstv4\fieldkg_semantics.py:109:5
+    |
+107 |             raise ValueError("A semantic review reason is required")
+108 |
+109 |     return self
+    |     ^^^^^^^^^^^
+
+F821 Undefined name `self`
+   --> src\rstv4\fieldkg_semantics.py:109:12
+    |
+107 |             raise ValueError("A semantic review reason is required")
+108 |
+109 |     return self
+    |            ^^^^
+
+BLE001 Do not catch blind exception: `Exception`
+   --> src\rstv4\fieldkg_semantics.py:375:16
+    |
+373 |         except (ModelRunPending, ModelRunStopped) as failure:
+374 |             pending = failure
+375 |         except Exception as failure:
+    |                ^^^^^^^^^
+376 |             error = failure
+377 |         with transaction(self.db_path) as conn:
+    |
+
+Found 6 errors (3 fixed, 3 remaining).

@@ -1,0 +1,3 @@
+Browser tab: 1479455140, Title: "Pepper Writing Studio", URL: "http://127.0.0.1:3008/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=1&chat=1&folds=%5B%22paragraph_895901de3a694d6f9a4b996e5459feeb%22%5D".
+There has been no change in the accessibility tree.
+The focused UI element is 504 button 查看此回复的第 1 个引用来源

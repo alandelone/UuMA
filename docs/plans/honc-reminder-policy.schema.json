@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Honc approved reminder design defaults artifact v1",
+  "description": "Validates a design artifact, not a registered runtime settings tool or production configuration.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "document_type", "date", "timezone", "policy_acceptance_file", "accepted_decision_ids", "runtime_applied", "policies"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "document_type": {"const": "APPROVED_DESIGN_DEFAULTS"},
+    "date": {"type": "string", "format": "date"},
+    "timezone": {"const": "Asia/Kuala_Lumpur"},
+    "policy_acceptance_file": {"type": "string", "minLength": 1},
+    "accepted_decision_ids": {"type": "array", "minItems": 4, "maxItems": 4, "uniqueItems": true, "items": {"enum": ["R1", "R2", "R3", "R4"]}},
+    "runtime_applied": {"const": false},
+    "policies": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["default_reminder_count", "importance_does_not_change_count", "body_followup_enabled", "nightly_unchecked_habit_chase_enabled", "wake_fallback_time", "advance_explicit_wake_or_day_start", "bedtime_fallback_time", "advance_explicit_bedtime", "share_anchor_and_fallback_occurrence_quota", "suppress_when_complete", "missed_window_policy", "fixed_point_grace_minutes", "window_start_inclusive", "window_end_exclusive", "group_simultaneous", "grouping_scope", "group_order", "unknown_delivery_action"],
+      "properties": {
+        "default_reminder_count": {"type": "integer", "minimum": 0},
+        "importance_does_not_change_count": {"const": true},
+        "body_followup_enabled": {"const": false},
+        "nightly_unchecked_habit_chase_enabled": {"const": false},
+        "wake_fallback_time": {"type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"},
+        "advance_explicit_wake_or_day_start": {"const": true},
+        "bedtime_fallback_time": {"type": "string", "pattern": "^(?:[01][0-9]|2[0-3]):[0-5][0-9]$"},
+        "advance_explicit_bedtime": {"const": true},
+        "share_anchor_and_fallback_occurrence_quota": {"const": true},
+        "suppress_when_complete": {"const": true},
+        "missed_window_policy": {"const": "expire"},
+        "fixed_point_grace_minutes": {"type": "integer", "minimum": 1},
+        "window_start_inclusive": {"const": true},
+        "window_end_exclusive": {"const": true},
+        "group_simultaneous": {"const": true},
+        "grouping_scope": {"const": ["owner", "bound_delivery_target", "original_due_at"]},
+        "group_order": {"const": ["importance_desc", "habit_id_asc", "instance_id_asc"]},
+        "unknown_delivery_action": {"const": "lookup_only_no_automatic_resend"}
+      }
+    }
+  }
+}

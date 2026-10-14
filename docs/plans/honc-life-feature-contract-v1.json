@@ -1,0 +1,225 @@
+{
+  "schema_version": 1,
+  "scope": "Honc life capability extension on existing Hermes",
+  "status": "IMPLEMENTED_VERIFIED_AND_LIVE_CONFIGURED",
+  "date": "2026-10-13",
+  "timezone": "Asia/Kuala_Lumpur",
+  "changes_mission_gate": false,
+  "implementation_authorized_by_this_file": false,
+  "review_file": "../reviews/honc-architecture-2026-10-13/user-review.md",
+  "policy_acceptance_file": "../reviews/honc-architecture-2026-10-13/policy-acceptance.json",
+  "verification_note": "Passes refer to the stated behavior contracts verified by real backend/integration tests and production-model trajectories. Native Telegram adapter is connected and automatic silent ticks ran; isolated delivery callbacks are not claimed as real Telegram send receipts. The global mission gate remains pending_review.",
+  "features": [
+    {
+      "id": "HL01",
+      "behavior": "Retain Hermes profile, agent loop and narrow tool permissions",
+      "verification": [
+        "Boot an isolated honc profile with the real existing guard and Skills",
+        "Register a Direct Run and read domain status",
+        "Terminal, arbitrary recipient and other domain writes remain unavailable",
+        "No second agent runtime or mid-session toolset change"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/live-profile-verification-v1.json",
+        "../reviews/honc-architecture-2026-10-13/final-source-and-status-audit-v1.json",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json"
+      ]
+    },
+    {
+      "id": "HL02",
+      "behavior": "Trusted source and one logical write effect across retries",
+      "verification": [
+        "Replay one real input with the same request_ref and payload; records and IDs stay identical",
+        "Changed payload on the same ref returns conflict",
+        "Other user/profile/session source is rejected",
+        "Two domains in one source have separate persistent receipts without duplicate facts"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json"
+      ]
+    },
+    {
+      "id": "HL03",
+      "behavior": "Configure, pause, resume and retire habits with retained historical versions",
+      "verification": [
+        "Create an explicit habit and reject implicit creation through check-in",
+        "Update target with expected_revision; prior events keep old definition",
+        "Concurrent stale update conflicts",
+        "Retire hides active habit and preserves audit history"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml"
+      ]
+    },
+    {
+      "id": "HL04",
+      "behavior": "Preserve habit units, multiple occurrences and explicit outcomes",
+      "verification": [
+        "20 minutes remains duration rather than 20 completions",
+        "Breakfast and lunch remain separate instances",
+        "Negative, planned, queried or quoted activity does not produce completed check-in",
+        "Partial, skipped, not_done and unrecorded have distinct meanings"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json"
+      ]
+    },
+    {
+      "id": "HL05",
+      "behavior": "User-supplied body observations without proactive follow-up",
+      "verification": [
+        "Record fatigue, pain and positive wellbeing with exact source",
+        "Unspecified part, score and time remain unknown",
+        "Do not create follow-up job, medical inference or body-change prompt",
+        "While a focus round runs, body recording preserves its ID and state"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json",
+        "../reviews/honc-architecture-2026-10-13/live-data-audit-v1.json"
+      ]
+    },
+    {
+      "id": "HL06",
+      "behavior": "Diary retains user content and supplies one related habit check-in",
+      "verification": [
+        "Save a diary and its text-habit reference atomically",
+        "Retry creates no extra diary or check-in",
+        "Body links do not duplicate the source observation",
+        "Backfilled yesterday diary does not complete today's instance"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json"
+      ]
+    },
+    {
+      "id": "HL07",
+      "behavior": "Wake at 08:00 or an earlier explicit day start, with one shared quota",
+      "verification": [
+        "Explicit 07:00 wake/day start schedules the morning instance",
+        "08:00 tick does not repeat it",
+        "Race the anchor and tick from separate execution paths; one delivery operation",
+        "08:00 sends without a user chat and does not create a factual wake observation"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/live-data-audit-v1.json"
+      ]
+    },
+    {
+      "id": "HL08",
+      "behavior": "21:30 diary/body invitation once, without nightly unchecked-habit chasing",
+      "verification": [
+        "Due bedtime invitation includes optional body logging",
+        "No reply does not produce extra reminder",
+        "Earlier unrecorded habits are absent from bedtime chase",
+        "Configured reminder count controls quota; importance does not add reminders"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/live-data-audit-v1.json"
+      ]
+    },
+    {
+      "id": "HL09",
+      "behavior": "History query, approximate times, corrections and user isolation",
+      "verification": [
+        "Yesterday and approximate time preserve source date and precision",
+        "Correct quantity without deleting original event",
+        "Effective aggregates use corrected value and units",
+        "Cross-user lookup, cursor and receipt cannot leak records",
+        "Unknown occurrence date remains explicit"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json"
+      ]
+    },
+    {
+      "id": "HL10",
+      "behavior": "Hermes reminder delivery and restart recovery retain actual receipts",
+      "verification": [
+        "Exercise real Hermes no-agent scheduler and delivery adapter using isolated profile",
+        "Map reminder_id to native execution and delivery outcome",
+        "After restart do not re-send delivered or uncertain attempts",
+        "Unknown delivery stays unknown rather than successful",
+        "Lost fencing owner cannot submit another effect"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/first-live-tick-v1.json",
+        "../reviews/honc-architecture-2026-10-13/live-runtime-verification-v1.json"
+      ]
+    },
+    {
+      "id": "HL11",
+      "behavior": "Approved product policies for early completion, missed windows, grouping and bedtime",
+      "verification": [
+        "Implement the explicitly accepted R1 through R4 policies",
+        "Prove full-instance completion suppresses only unsent corresponding reminders",
+        "Test start-inclusive/end-exclusive windows and 30-minute point grace",
+        "A grouped notification consumes each included instance quota once",
+        "Explicit early bedtime shares the 21:30 quota",
+        "Uncertain delivery is not replayed"
+      ],
+      "accepted_review_decisions": [
+        "R1",
+        "R2",
+        "R3",
+        "R4"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/accepted-policy-backend-checks-v1.json"
+      ]
+    },
+    {
+      "id": "HL12",
+      "behavior": "Detailed manuals match tools and actual ordinary-model trajectories",
+      "verification": [
+        "Validate documentation examples against actual schemas",
+        "Run versioned messages through the configured production-level model",
+        "Verify final records, operation IDs and replies for negation, ambiguity and partial success",
+        "Measure calls, failures and latency without switching to stronger model as acceptance shortcut"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/production-model-eval-v1.json"
+      ]
+    },
+    {
+      "id": "HL13",
+      "behavior": "Non-destructive inheritance and staged migration of old habits and history",
+      "verification": [
+        "Inventory original habit IDs, fields and record types without sending messages",
+        "Produce old-to-new mapping for user comments",
+        "Keep original raw data and IDs; never seed fabricated personal records",
+        "Unmapped ownership or units remain pending instead of guessed",
+        "Disable duplicate old/new reminder route at reviewed cutover with recoverable configuration"
+      ],
+      "passes": true,
+      "evidence": [
+        "../reviews/honc-architecture-2026-10-13/integrated-tests-v1.xml",
+        "../reviews/honc-architecture-2026-10-13/live-installation-v1.json",
+        "../reviews/honc-architecture-2026-10-13/live-data-audit-v1.json"
+      ]
+    }
+  ],
+  "verified_at": "2026-10-14T03:39:08.021Z"
+}

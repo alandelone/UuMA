@@ -1,0 +1,50 @@
+{
+  "status": "PASS_READ_ONLY_RECORD_AND_DOWNLOAD_AUDIT",
+  "database_bytes_preserved": true,
+  "tables": 109,
+  "author_revision": 4,
+  "generated_versions": [
+    "manuscript_version_7ea00b67724045db8db687b46beb1530",
+    "manuscript_version_e7f175c6d7f84911b13c1e4453041a30"
+  ],
+  "all_original_failed_rows_preserved": true,
+  "recorded_real_model_replies": 1,
+  "real_http_attempt_count_unknown": true,
+  "software_generation_calls": 2,
+  "software_discussion_replies": 2,
+  "sources_remain_candidates_not_scientific_approval": true,
+  "downloads": [
+    {
+      "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\downloaded-manuscript-v1.pdf",
+      "browser_download": "C:\\Users\\Alandelone\\Downloads\\manuscript (3).pdf",
+      "sha256": "a4c396aeeeae23d1ac8ac420fd15306fab5bfce58a91e57c468ec75c031dbc23",
+      "generated_version_id": "manuscript_version_7ea00b67724045db8db687b46beb1530",
+      "pages": 1,
+      "text_sha256": "9ab2e0342e5397f01dbff73048e229e26a7b5dfe2765d497f64c5dc8ba9c42be"
+    },
+    {
+      "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\downloaded-manuscript-v2.pdf",
+      "browser_download": "C:\\Users\\Alandelone\\Downloads\\manuscript (4).pdf",
+      "sha256": "f4d45ac2f3f5cf1eb3a1caad146139e347a4b9ba8202626f3e3a149ebb3ffd85",
+      "generated_version_id": "manuscript_version_e7f175c6d7f84911b13c1e4453041a30",
+      "pages": 1,
+      "text_sha256": "3262f91d74610a3f0ecf328aaf59b93eabadc610e2c697cdaed7f545d67d8881"
+    },
+    {
+      "file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\downloaded-original-v1.pdf",
+      "browser_download": "C:\\Users\\Alandelone\\Downloads\\original-source (1).pdf",
+      "sha256": "c74a420d8072b452157bc9891e02f23ff0f98b9f8f09e6aac7d67c0c2c4107bb",
+      "pages": 3,
+      "text_sha256": "08c8517807e204c2846d3dfbb81271e68a74dfb6c5ec85557f87dfcdf7a150be"
+    }
+  ],
+  "rendered_pages": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-manuscript-v1-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-manuscript-v2-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-original-v1-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-original-v1-2.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-citation-source-native-audit-v1\\render\\downloaded-original-v1-3.png"
+  ],
+  "all_pages_visual_review_required": true,
+  "full_11_groups_complete": false
+}

@@ -1,0 +1,66 @@
+{
+  "checked_at_utc": "2026-10-02T07:20:09.633462+00:00",
+  "requirement_rows": 118,
+  "unique_requirement_ids": 118,
+  "local_links_checked": 71,
+  "missing_links": [],
+  "owned_service_ports_released": {
+    "8874": true,
+    "8875": true,
+    "3000": true,
+    "8876": true
+  },
+  "source_sha256": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\ui-requirements-preservation.md": "d19f39b731cb21c9b14ee89fdd5c160bd4b2453d4f28d1ffa42d936a4f52ad0d",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\unified-workspace-proposal.md": "adbeb3127381dc59d5fa2d1baa6f1588f3733b2a8ad0582c12c118d6e77cab04",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\full-pipeline-and-ui-acceptance.md": "0135ab5bca2a7bf376abc6ac905364415f7f0e9da94638ac568d9d6c15fe760c",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx": "2d920ee39412ef719afd14f2c3d2ee37195658c46a837b9c626be589f6dd864b",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-api.ts": "295879d1707cf5819cebbb76a72a3be4bfe37f64084f330cfaf9e422a8a64d0e",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_web.html": "d31242c0571d93ca49c51815f4c6d48cab93446f012bf1ba1ceae8f2ac096c44",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": "59b6c905c7d20a33c02cf539806fae6fcc2ca667eefebb01b73319ec90e18efc",
+    "C:\\Users\\Alandelone\\.codex\\visualizations\\2026\\09\\30\\01a0f29c-8c3a-7c80-8370-ef90d30dd671\\scholar-unified-workspace.html": "8c10610ff411cb201eb61095f20fd78483f45e2e2375811e401e561ebb716ff7"
+  },
+  "browser_observations": [
+    "Catalog: true test hierarchy, no fabricated paper-association count",
+    "Solar filter reduced three fixture papers to two; paper details loaded",
+    "PDF identity review: one case, DOI/title flags and source reader preserved",
+    "SECTION 1 selected Introduction in left samples and bottom Chat",
+    "Citation bookmark shows explicit no-external-citation decision",
+    "Both panels independently closed; reload reopened both",
+    "Revision pencil opened structure without visible active-comment controls",
+    "Deleting A01 changed the other comment display from A02 to A01",
+    "Archived comment restored; backend comment IDs remained stable"
+  ],
+  "not_run_this_round": [
+    "full automated regression",
+    "model Chat/Generate",
+    "LaTeX compilation",
+    "FieldKG build",
+    "scientific approvals",
+    "experiment",
+    "submission/revision package",
+    "long-running worker health"
+  ],
+  "formal_product_code_changed": false,
+  "production_research_data_changed": false,
+  "preview_only_observations": [
+    "Catalog Sky filter: one of three example papers; source excerpt reference in Chat",
+    "Studio four regions; object selection, citation NONE and empty-input preflight",
+    "Thought selection and annotation reference preserve ID, version, quote and note",
+    "Enter creates Thought; Undo removes it and Redo restores it without changing Chat",
+    "Archive A01 leaves A02 unchanged; restore preserves A01",
+    "Revision active-comment context visible and can be ended",
+    "Done returns to reading with both side panels closed; no generation or stage advance",
+    "FieldKG node and excerpt update Chat; pin mode visible",
+    "Reload restored selected manuscript/object, local references and history",
+    "320px viewport: Studio, Catalog and overview document scroll width equals client width"
+  ],
+  "preview_limits": [
+    "Example data only; no production API or Agent requests",
+    "Basic two-condition filters and single sort; full typed nested filters and multiple sort require formal UI",
+    "Original quote/version retained; full old structural version view not implemented",
+    "Complete PDF word-locator, Skeleton reader, scientific approval, server save and output packages not connected",
+    "16 KiB persistence ceiling; over-limit content remains in memory with an explicit warning",
+    "Late preview ID/revision and review-title consistency fixes syntax-checked and startup-checked; all prior interaction cases were not rerun afterward"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-10-03",
+  "requirements": 118,
+  "overall_accepted": false,
+  "fixture_model_substitution": true,
+  "real_compiler": true,
+  "production_data_changed": false,
+  "related_tests_passed": 28,
+  "full_regression_passed": 316,
+  "full_regression_warnings": 21,
+  "production_build_exit_code": 0,
+  "browser_file_upload": "pending_manual_permission",
+  "narrow_viewport": "unverified_override_did_not_apply",
+  "source_sha256": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx": "9495b4751e2e7b41fb7c7cf44be88068f80f514a437bd1371b34f6dcda2dabd8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts": "178cdabef919790e883280bd9aadb98136aff6c10d31d2f9b05d15360e333ac3",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-api.ts": "7cd8a00f078a1b473e46a068de3cbec4cfa8be1b1f9102417b593e78e128b71e",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\app\\globals.css": "d21d400f4d337300ba3b45bc7dfc1fb6f1627e9c14ebe5982833308a10dfccd5",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio.py": "86963f15216af36c24b2df8c5315e751a449ba3ccfe47bead254dbe501fb28c7",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\studio_api.py": "9393c780197d659b56e125ec223b21490e6ef316cd17c60a516923cc7b1c84c3",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_studio_revision_contracts.py": "daecddb057c7c5f6d80f6327786086428ce42987620568ed72094a5abf613c68"
+  },
+  "artifact_sha256": {
+    "acceptance.md": "8add446e5dfd809bbe7a70de9fcefeee089b682749a0573cf0a19ededcac6769",
+    "production-build.log": "b807da70062fd8e5887597c0328edeac9ad757c37dec82c53469b811dfc8fc95",
+    "revision-context.jpg": "96bebfa6f17ec76ad9354167558e617d2baf5a35385825409d06bdf9f7dcc284",
+    "runtime-evidence.json": "9bf624d39e283eeb20c0e6f868bcc4fada72c9bbf0b8bd403bad2b73ac7b29b2",
+    "stage3-done.jpg": "2f97b762e10820f32cab0069d432ad9864b98ea3111d591c95064c6923660004",
+    "viewport-override-unapplied.jpg": "96bebfa6f17ec76ad9354167558e617d2baf5a35385825409d06bdf9f7dcc284"
+  }
+}

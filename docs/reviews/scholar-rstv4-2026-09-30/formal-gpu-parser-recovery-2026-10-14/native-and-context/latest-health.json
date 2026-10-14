@@ -1,0 +1,31 @@
+{
+  "observed_unix": 1791948888.0093656,
+  "probes": [
+    {
+      "probe": 1,
+      "exit_code": 0,
+      "seconds": 0.046999999991385266,
+      "stdout": "NVIDIA GeForce RTX 4070 Ti, 610.88, 12282, 1223, 10772, 19\r\n",
+      "stderr": ""
+    },
+    {
+      "probe": 2,
+      "exit_code": 0,
+      "seconds": 5.703000000008615,
+      "stdout": "{\"AvailableMBytes\":10798,\"CommittedBytes\":34114088960,\"CommitLimit\":40469790720,\"PercentCommittedBytesInUse\":84}\r\n",
+      "stderr": ""
+    },
+    {
+      "probe": 3,
+      "exit_code": 0,
+      "seconds": 3.2189999999973224,
+      "stdout": "{\"torch_version\": \"2.3.1+cu118\", \"cuda_build\": \"11.8\", \"cuda_available\": true, \"gpu_count\": 1}\r\n{\"torch_version\": \"2.3.1+cu118\", \"cuda_build\": \"11.8\", \"cuda_available\": true, \"gpu_count\": 1, \"gpu_name\": \"NVIDIA GeForce RTX 4070 Ti\", \"free_bytes\": 11593056256, \"total_bytes\": 12878086144, \"actual_cuda_matrix_exact\": true}\r\n",
+      "stderr": ""
+    }
+  ],
+  "parser_attempts_started": 0,
+  "models_loaded": 0,
+  "global_settings_changed": false,
+  "gpu_health_passed": true,
+  "no_cpu_fallback": true
+}

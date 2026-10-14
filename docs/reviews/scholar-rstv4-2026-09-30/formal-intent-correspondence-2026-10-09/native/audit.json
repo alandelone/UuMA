@@ -1,0 +1,30 @@
+{
+  "status": "PASS_NATIVE_MAPPING_HISTORY_GENERATION",
+  "ms": "manuscript_98c35f5b5557453583cb20df8d52810d",
+  "revision": 19,
+  "new_operations": 11,
+  "mapping_owners": {
+    "intent_56a5681618b24da2b65bfa184158e683": "intent_70932ec2d56e48c393b3d2cab8fa6a01",
+    "intent_c27c009a52334af0834cd9978e18cd01": "intent_20a2122a4697456e9037d7ca357f7018"
+  },
+  "context_owners": {
+    "paragraph_356c9c06059e4d308dc1eda0e7c4c6db": "paragraph_6a190b1f81e140c59ed01faae29e0b39",
+    "paragraph_f4d0648800864aeeaf90c7ce9ace0238": "paragraph_40f8dc3b091e4fe18e77a8ee70bd6737"
+  },
+  "canonical_data_and_group_and_edges_exact": true,
+  "all_compensations_exact": true,
+  "another_manuscript_and_all_unrelated_tables_exact": true,
+  "fixed_source_pages": [
+    2,
+    4
+  ],
+  "software_generation_jobs": 1,
+  "software_generation_model_calls": 2,
+  "real_compiler_artifacts": 5,
+  "selected_citations_frozen": true,
+  "scientific_acceptance": false,
+  "actual_real_model_calls": 0,
+  "downloads_paused": true,
+  "overall_complete": false,
+  "all118_all11_scope_retained": true
+}

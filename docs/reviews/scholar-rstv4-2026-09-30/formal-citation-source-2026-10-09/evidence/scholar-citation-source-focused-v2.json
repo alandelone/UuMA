@@ -1,0 +1,15 @@
+[
+  {
+    "args": [
+      "-m",
+      "ruff",
+      "check",
+      "src/rstv4/studio_sources.py",
+      "src/rstv4/studio.py",
+      "src/rstv4/studio_api.py",
+      "src/rstv4/studio_read_views.py",
+      "tests/test_studio_source_context.py"
+    ],
+    "exit_code": 1
+  }
+]

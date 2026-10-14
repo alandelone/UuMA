@@ -1,0 +1,113 @@
+RUN ['node', 'tests/catalog_review_workflow.mjs']
+8 controlled explicit review workflow checks passed
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'pytest', 'tests/test_catalog_review_workflow.py', 'tests/test_parser_quality.py', 'tests/test_native_paperpool.py', 'tests/test_catalog_web.py', 'tests/test_collection_workspace.py', 'tests/test_database_initialization.py', 'tests/test_research_discussions.py', '-q']
+........................................................................ [ 86%]
+...........                                                              [100%]
+============================== warnings summary ===============================
+.venv\Lib\site-packages\fastapi\testclient.py:1
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Lib\site-packages\fastapi\testclient.py:1: StarletteDeprecationWarning: Using `httpx` with `starlette.testclient` is deprecated; install `httpx2` instead.
+    from starlette.testclient import TestClient as TestClient  # noqa
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+83 passed, 1 warning in 24.73s
+RUN ['C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe', '-X', 'utf8', '-m', 'ruff', 'check', 'src/rstv4/catalog_review_workflow.py', 'src/rstv4/acquisition.py', 'src/rstv4/acquisition_worker.py', 'src/rstv4/parser_quality.py', 'src/rstv4/catalog_web.py', 'src/rstv4/database.py', 'tests/test_catalog_review_workflow.py']
+I001 [*] Import block is un-sorted or un-formatted
+  --> src\rstv4\catalog_web.py:3:1
+   |
+ 1 |   """Local browser view of the authoritative Paper Catalog and review findings."""
+ 2 |
+ 3 | / from __future__ import annotations
+ 4 | |
+ 5 | | import hashlib
+ 6 | | import json
+ 7 | | import os
+ 8 | | import shutil
+ 9 | | import sqlite3
+10 | | import subprocess
+11 | | import xml.etree.ElementTree as ET
+12 | | from collections.abc import AsyncIterator, Iterator
+13 | | from contextlib import asynccontextmanager, contextmanager
+14 | | from functools import cmp_to_key
+15 | | from pathlib import Path
+16 | | from typing import Any
+17 | |
+18 | | from fastapi import FastAPI, HTTPException, Request
+19 | | from fastapi.responses import FileResponse, Response
+20 | | from pydantic import BaseModel, Field
+21 | | from pypdf import PdfReader
+22 | | from starlette.middleware.trustedhost import TrustedHostMiddleware
+23 | |
+24 | | from .acquisition import AcquisitionService
+25 | | from .catalog_annotations import (
+26 | |     ReviewAnnotationInput,
+27 | |     list_review_annotations,
+28 | |     record_review_annotation,
+29 | | )
+30 | | from .catalog_review import (
+31 | |     ReviewFindingInput,
+32 | |     list_review_findings,
+33 | |     record_review_finding,
+34 | | )
+35 | | from .catalog_review_workflow import CatalogReviewWorkflow, ReviewActionInput, file_integrity
+36 | | from .collection_web import collection_router
+37 | | from .fieldkg_workspace import FieldKGAction, record_fieldkg_action
+38 | | from .research_context import DiscussionTarget
+39 | | from .research_discussion_api import discussion_router
+40 | | from .research_discussions import (
+41 | |     AnnotationInput,
+42 | |     DiscussionHistoryRequest,
+43 | |     DiscussionInput,
+44 | |     ResearchDiscussionService,
+45 | | )
+46 | | from .research_views import available_skeletons, field_workspace, track_workspace
+47 | | from .research_workspace import (
+48 | |     WorkspaceAction,
+49 | |     WorkspaceError,
+50 | |     metadata_digest,
+51 | |     record_workspace_action,
+52 | | )
+   | |_^
+53 |
+54 |   TEXT_FIELDS = {"title", "authors", "doi", "source", "abstract", "pdf_status",
+   |
+help: Organize imports
+   |
+34 | )
+   - from .catalog_review_workflow import CatalogReviewWorkflow, ReviewActionInput, file_integrity
+35 + from .catalog_review_workflow import (
+36 +     CatalogReviewWorkflow,
+37 +     ReviewActionInput,
+38 +     file_integrity,
+39 + )
+40 | from .collection_web import collection_router
+   |
+
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_catalog_review_workflow.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import copy
+ 4 | | import hashlib
+ 5 | | import json
+ 6 | | import sqlite3
+ 7 | | from contextlib import closing
+ 8 | | from pathlib import Path
+ 9 | |
+10 | | from fastapi.testclient import TestClient
+11 | | from pypdf import PdfWriter
+12 | | from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
+13 | | from rstv4.acquisition_worker import AcquisitionWorker
+14 | | from rstv4.catalog_web import create_app
+15 | | from rstv4.models import CollectionCreateInput, FieldInput, PdfRegistrationInput
+16 | | from rstv4.track_first import TrackFirstService
+   | |_______________________________________________^
+help: Organize imports
+   |
+12 | from pypdf.generic import DecodedStreamObject, DictionaryObject, NameObject
+13 +
+14 | from rstv4.acquisition_worker import AcquisitionWorker
+   |
+
+Found 2 errors.
+[*] 2 fixable with the `--fix` option.

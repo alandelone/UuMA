@@ -1,0 +1,24 @@
+{
+  "status": "PASS_ACTUAL_THREE_PAGE_IMAGE_INSPECTION",
+  "pdf_sha256": "9dd3f477ab1f5a30121ece889cd752d0855a002409babb7948437616cee89972",
+  "method": "All three actual Poppler PNG pages inspected with view_image after native download and independent geometry audit.",
+  "page1": "Original PNG and original text/title/caption legible, no clipping.",
+  "page2": "Original JPEG and SVG shapes/colors/captions legible; complete ten-row CSV remains together with caption above, inside margins.",
+  "page3": "Both original XLSX sheets and complete ten-row Markdown table legible with captions above and all cells inside margins.",
+  "pages": {
+    "1": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-audit-v3\\render\\page-1.png",
+      "sha256": "14b1d00b3a72201959ef044718a78ae3081ab0e02adbc275603635d1415b69bf"
+    },
+    "2": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-audit-v3\\render\\page-2.png",
+      "sha256": "b8aeead8f503d48fea8a10a22c4c7ffae0c78d4b0c57cfb4c603c12b44fb7dbc"
+    },
+    "3": {
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-generated-assets-native-audit-v3\\render\\page-3.png",
+      "sha256": "81fe46652cba71d9187337cab75857df5c96843fe0a54174b484ce1ab132565f"
+    }
+  },
+  "prior_native_v1_visual_status": "FAIL_TABLE_RIGHT_EDGE_RETAINED",
+  "scientific_acceptance": false
+}

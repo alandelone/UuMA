@@ -1,0 +1,16 @@
+
+CHECK ['-m', 'ruff', 'check', 'src/rstv4/studio.py', 'src/rstv4/studio_structure.py', 'src/rstv4/studio_context.py', 'src/rstv4/studio_suggestions.py', 'src/rstv4/studio_api.py', 'src/rstv4/studio_rounds.py', 'src/rstv4/studio_realization.py', 'src/rstv4/studio_change_links.py', 'src/rstv4/studio_revision_mapping.py', 'src/rstv4/studio_delivery.py', 'src/rstv4/studio_response_checks.py', 'src/rstv4/database.py', 'tests/test_studio_response_checks.py']
+All checks passed!
+
+Exit: 0
+
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\typescript\\bin\\tsc', '--noEmit']
+
+Exit: 0
+
+CHECK ['C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\oxlint\\bin\\oxlint', 'components/studio-workspace.tsx', 'components/studio-review-rounds.tsx', 'components/studio-block-controls.tsx', 'components/studio-change-history.tsx', 'components/studio-package-downloads.tsx', 'components/studio-response-review.tsx', 'lib/studio-api.ts', 'lib/studio-types.ts', 'lib/studio-blocks.ts']
+components/studio-response-review.tsx:186:71: error jsx-a11y(prefer-tag-over-role): Prefer `output` over `role` attribute `status`. help: Replace HTML elements with `role` attribute `status` to corresponding semantic HTML tag `output`.
+components/studio-response-review.tsx:221:5: error jsx-a11y(label-has-associated-control): A form label must be associated with a control. help: Either give the label a `htmlFor` attribute with the id of the associated control, or wrap the label around the control.
+components/studio-response-review.tsx:241:18: error jsx-a11y(prefer-tag-over-role): Prefer `output` over `role` attribute `status`. help: Replace HTML elements with `role` attribute `status` to corresponding semantic HTML tag `output`.
+
+Exit: 1

@@ -1,0 +1,272 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Source hierarchy native acceptance Ω — software fixture · RSTV4
+  - status: 已自动保存
+  - button "撤销":
+  - button "重做" [disabled]:
+  - button "Generate":
+    - text: Generate
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: Software_Claim
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - generic: 1 / 5
+    - generic: Software_Test
+    - blockquote: SOFTWARE_SOURCE_BODY_0_NEVER_AUTHOR_TEXT. This content is synthetic structural test material, without scientific claims.
+    - paragraph: Source hierarchy software fixture
+    - button "←"
+    - button "→"
+    - button "＋ 预览完整模板"
+    - button "拖入完整模板 Source hierarchy software fixture":
+      - text: 拖入模板
+    - paragraph: 放到整篇入口，或章节、段落、Intent 后方；先预览，确认后再采用。
+  - generic "结构选择与移动":
+    - button "多选／分组"
+    - status
+  - textbox "Paper title": Source hierarchy native acceptance Ω — software fixture
+  - textbox "作者摘要":
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+  - button "选择并设置 Source Alpha Ω": SECTION 1
+  - button "拖动章节 Source Alpha Ω":
+  - button "折叠 Source Alpha Ω" [expanded]:
+  - textbox "章节标题": Source Alpha Ω
+  - textbox "章节作用"
+  - generic "章节操作": •••
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - generic: 放入 Source Alpha Ω 里面
+  - button "选择并设置 Repeated source heading": SUBSECTION 2
+  - button "拖动章节 Repeated source heading":
+  - button "折叠 Repeated source heading" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Source Alpha Ω / Repeated source heading
+  - textbox "章节标题": Repeated source heading
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Claim": INTENT
+    - button "拖动 Intent Software_Claim":
+    - button "折叠 Software_Claim" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Claim
+    - generic "Intent 操作": •••
+    - group "对应的原作者上下文":
+      - generic "原作者：Original author intent · Original author root Ω"
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: AUTHOR second original wording stays independent.
+    - button "选择引用":
+      - generic: "1"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Repeated source heading": SUBSECTION 3
+  - button "拖动章节 Repeated source heading":
+  - button "折叠 Repeated source heading" [expanded]:
+  - generic "子章节所属父章节": 子章节 · Source Alpha Ω / Repeated source heading
+  - textbox "章节标题": Repeated source heading
+  - textbox "章节作用": Software_Test
+  - generic "章节操作": •••
+  - article:
+    - button "选择并设置 Paragraph 1": P1
+    - button "拖动段落 1":
+    - button "折叠 Paragraph 1" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic "段落操作": •••
+    - button "选择并设置 Software_Claim": INTENT
+    - button "拖动 Intent Software_Claim":
+    - button "折叠 Software_Claim" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Claim
+    - generic "Intent 操作": •••
+    - group "对应的原作者上下文":
+      - generic "原作者：Original author intent · Original author root Ω"
+    - button "拖动思想块":
+    - textbox "作者思想":
+      - /placeholder: 写下你要表达的原子思想…
+      - text: AUTHOR original wording Ω with its selected software citation.
+    - button "选择引用":
+      - generic: "1"
+    - generic "思想块菜单": •••
+    - button "思想":
+      - text: 思想
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "选择并设置 Original author root Ω": SECTION 4
+  - generic "待安置的原内容":
+    - status:
+      - strong: 待安置
+      - text: · 原内容、引用与编号完整保留。可将内容移入模板；未安置时不能生成成文。
+    - button "预览安置原章节"
+    - button "对应到模板 Intent"
+    - button "将此章节标记为已安置"
+  - button "拖动章节 Original author root Ω":
+  - button "折叠 Original author root Ω" [expanded]:
+  - textbox "章节标题": Original author root Ω
+  - textbox "章节作用": Motivation
+  - generic "章节操作": •••
+  - button "选择并设置 Original author group Ω": GROUP
+  - button "拖动段落组 Original author group Ω":
+  - button "折叠 Original author group Ω" [expanded]:
+  - textbox "段落组用途":
+    - /placeholder: 段落组用途可以暂时未定
+    - text: Original author group Ω
+  - generic "段落组操作": •••
+  - article:
+    - button "选择并设置 Original author purpose Ω": P1
+    - button "拖动段落 Original author purpose Ω":
+    - button "折叠 Original author purpose Ω" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+      - text: Original author purpose Ω
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original author organization
+    - generic "段落操作": •••
+    - button "选择并设置 Original author intent": INTENT
+    - button "拖动 Intent Original author intent":
+    - button "折叠 Original author intent" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Original author intent
+    - generic "Intent 操作": •••
+    - generic "已对应的原作者 Intent":
+      - paragraph: 思想已对应到模板槽位，原作者结构与编号保留。
+      - button "查看对应槽位"
+      - blockquote: AUTHOR original wording Ω with its selected software citation.
+    - generic: ∑
+    - textbox "公式 1":
+      - /placeholder: LaTeX：E = mc^2
+      - text: x=1
+    - textbox "公式 1 的说明":
+      - /placeholder: 公式说明（可选）
+      - text: Original author formula
+    - button "删除公式 1":
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+    - figure "author-software-table.csv READY":
+      - table:
+        - rowgroup:
+          - row "x y":
+            - cell "x"
+            - cell "y"
+          - row "1 2":
+            - cell "1"
+            - cell "2"
+      - link "author-software-table.csv":
+        - /url: http://127.0.0.1:8879/api/assets/asset_995ed7847a3546ff94c7abbd6a0ef352/content
+      - generic: READY
+  - article:
+    - button "选择并设置 Original author purpose Ω": P2
+    - button "拖动段落 Original author purpose Ω":
+    - button "折叠 Original author purpose Ω" [expanded]:
+    - textbox "段落目的":
+      - /placeholder: 这个段落要完成什么？
+      - text: Original author purpose Ω
+    - textbox "段落组织范式":
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original author organization
+    - generic "段落操作": •••
+    - button "选择并设置 Original author intent": INTENT
+    - button "拖动 Intent Original author intent":
+    - button "折叠 Original author intent" [expanded]:
+    - textbox "Intent 标签":
+      - /placeholder: Intent 可以暂时未定
+      - text: Original author intent
+    - generic "Intent 操作": •••
+    - generic "已对应的原作者 Intent":
+      - paragraph: 思想已对应到模板槽位，原作者结构与编号保留。
+      - button "查看对应槽位"
+      - blockquote: AUTHOR second original wording stays independent.
+    - generic: ∑
+    - textbox "公式 1":
+      - /placeholder: LaTeX：E = mc^2
+      - text: x=1
+    - textbox "公式 1 的说明":
+      - /placeholder: 公式说明（可选）
+      - text: Original author formula
+    - button "删除公式 1":
+    - button "Intent":
+      - text: Intent
+    - button "∑ 公式"
+    - text: 图／表
+    - figure "author-software-table.csv READY":
+      - table:
+        - rowgroup:
+          - row "x y":
+            - cell "x"
+            - cell "y"
+          - row "1 2":
+            - cell "1"
+            - cell "2"
+      - link "author-software-table.csv":
+        - /url: http://127.0.0.1:8879/api/assets/asset_995ed7847a3546ff94c7abbd6a0ef352/content
+      - generic: READY
+  - button "组内段落":
+    - text: 组内段落
+  - button "Paragraph":
+    - text: Paragraph
+  - button "＋ 子章节"
+  - button "添加章节":
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - article:
+      - button "将证据加入当前思想：Synthetic hierarchy software fixture":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Synthetic hierarchy software fixture
+        - generic: Synthetic source only
+      - generic: Source hierarchy software fixture
+      - generic: 原文不可用
+  - status
+  - button "与 Agent 讨论 0 条 · Software_Claim":
+    - text: 与 Agent 讨论
+    - text: 0 条 · Software_Claim

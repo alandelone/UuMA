@@ -106,3 +106,38 @@ def test_pause_resume_cancel_flow(control_store):
     cancelled = control_store.cancel_task(task_id, reason="User abort")
     assert cancelled["status"] == "CANCELLED"
     assert cancelled["active_lease_token"] is None
+
+
+def test_custom_task_search_storefront(control_store):
+    task = control_store.create_custom_task(
+        platform="taobao",
+        account_id="llm_agent",
+        action="SEARCH_STOREFRONT",
+        payload={
+            "shop_url": "https://store.taobao.com",
+            "keyword": "M3 screw",
+            "max_results": 10,
+            "min_sales": 1
+        }
+    )
+    assert task["platform"] == "taobao"
+    assert task["status"] == "QUEUED"
+
+    cmd = control_store.claim_command("browser_worker", ttl_seconds=60)
+    assert cmd is not None
+    assert cmd["action"] == "SEARCH_STOREFRONT"
+    assert cmd["payload"]["keyword"] == "M3 screw"
+    assert cmd["payload"]["min_sales"] == 1
+
+    # Report completion checkpoint
+    res = control_store.report_checkpoint(
+        task["task_id"],
+        cmd["lease_token"],
+        cmd["fencing_token"],
+        checkpoint={"products": [{"ref": "S1", "name": "M3x10 screw", "price": 0.05, "sales_count": 500}]},
+        status="COMPLETED"
+    )
+    assert res["status"] == "COMPLETED"
+    assert len(res["last_checkpoint"]["products"]) == 1
+    assert res["last_checkpoint"]["products"][0]["ref"] == "S1"
+

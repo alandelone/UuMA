@@ -1,0 +1,23 @@
+{
+  "status": "PASS_G09_ORIGINAL_NATIVE_SOFTWARE_GROUP_DEFINITION",
+  "original_definition": "Source page/block/version readable; independent second fixed baseline; original opinions, unassigned actual edits, true modifications and reply materials readable",
+  "author_revision": 62,
+  "target_version": 5,
+  "second_round_baseline": 3,
+  "original205_comments_and_original_round_exact": true,
+  "append_only_review_checks": 2,
+  "real_native_zip_and_pdf_download_verified": true,
+  "final_pdf_two_pages_visually_checked": true,
+  "narrow390_review_no_horizontal_overflow": true,
+  "all109_tables_exact_after_download_and_refresh": true,
+  "full_backend_tests": 1078,
+  "database_sha256": "9f46702f641a18a5418814377dc74e7183d1648516c4d83a5ffcc07990069c7c",
+  "overall11_complete": false,
+  "remaining_scope": [
+    "G10",
+    "G11",
+    "original118_final_audit",
+    "all11_integrated_native_flow"
+  ],
+  "scientific_acceptance": false
+}

@@ -1,0 +1,21 @@
+{
+  "status": "PASS_SEALED_TEMPLATE_SOURCE_AND_DOWNLOAD_BACKUPS",
+  "full_template_final_log_sha256": "5c42bab37f62b60ddcc925d8b5cea7e7ead8d48f3e9bee92c91bce0d8f936670",
+  "source_sha256": {
+    "lib/studio-api.ts": "fe7bc96a30b3f3a16d263bf04ce0ae46d2efa76e78b5b70c4553bd04e40e20e6",
+    "components/studio-workspace.tsx": "36b97e12db02cbba54c06b7f301eb0981a930888d9ecdf4a16f61d2754e29cf0",
+    "components/studio-response-review.tsx": "639a7d45f789aaeff9d4b9b02207e5999fdc1f7ee1bfff9fc53c1a1a9c45907f"
+  },
+  "clone_database_sha256": "5134adca967243e086f1f53cb1b15f7f5fc12da9ca1ac9aed85306daf5a669ca",
+  "existing_files_copied": [
+    "lib/studio-api.ts",
+    "components/studio-workspace.tsx",
+    "components/studio-response-review.tsx"
+  ],
+  "new_paths": [
+    "lib/studio-downloads.ts",
+    "app/api/studio-files/[...path]/route.ts",
+    "tests/unit/studio-downloads.cjs"
+  ],
+  "no_product_changes_yet": true
+}

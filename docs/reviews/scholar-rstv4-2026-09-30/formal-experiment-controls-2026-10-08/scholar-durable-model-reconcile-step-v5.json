@@ -1,0 +1,688 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-intent-beqtn_vr",
+  "job": {
+    "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+    "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "SKELETON",
+    "queue_class": "MODEL_SKELETON",
+    "status": "RESOURCE_WAIT",
+    "priority": 200,
+    "idempotency_key": "actual-structured-intent-contract-v1",
+    "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document\", \"request\": {\"idempotency_key\": \"actual-structured-intent-contract-v1\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document\"}, \"user_requested\": true}",
+    "input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+    "rule_version": "skeleton-v1",
+    "attempts": 68,
+    "available_at": "2026-10-08T02:33:17.607380+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 68,
+    "last_error_code": "RESOURCE_WAIT",
+    "last_error_detail": "Model execution run_8896d65f29e043d4b55bdf1c39583de5 is running; resume the same request",
+    "result_json": null,
+    "created_at": "2026-10-07T10:33:29.812277+00:00",
+    "updated_at": "2026-10-08T02:33:12.610389+00:00"
+  },
+  "step": {
+    "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+    "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "SKELETON",
+    "queue_class": "MODEL_SKELETON",
+    "status": "RESOURCE_WAIT",
+    "priority": 200,
+    "idempotency_key": "actual-structured-intent-contract-v1",
+    "input_json": "{\"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document\", \"request\": {\"idempotency_key\": \"actual-structured-intent-contract-v1\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_5de840df2a60a2b9d9705d6f92807413\", \"reason\": \"Explicit new located-intent contract verification; preserve prior generation and do not invent findings or gaps for this software document\"}, \"user_requested\": true}",
+    "input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+    "rule_version": "skeleton-v1",
+    "attempts": 68,
+    "available_at": "2026-10-08T02:33:17.607380+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 68,
+    "last_error_code": "RESOURCE_WAIT",
+    "last_error_detail": "Model execution run_8896d65f29e043d4b55bdf1c39583de5 is running; resume the same request",
+    "result_json": null,
+    "created_at": "2026-10-07T10:33:29.812277+00:00",
+    "updated_at": "2026-10-08T02:33:12.610389+00:00"
+  },
+  "calls": [
+    {
+      "call_id": "acquisition-call-7098dfaf2f8349dda0bd952259e95665",
+      "started_at": "2026-10-07T10:33:55.128784+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 1,
+      "task": "skeleton_layer_1",
+      "status": "FAILED",
+      "input": {
+        "raw_text": "Software review identity title"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99"
+      },
+      "output": null,
+      "contract": null,
+      "error_type": "TimeoutError",
+      "completed_at": "2026-10-07T10:38:55.141138+00:00"
+    },
+    {
+      "call_id": "acquisition-call-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+      "started_at": "2026-10-07T11:02:49.039276+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 18,
+      "task": "skeleton_layer_1",
+      "status": "RETURNED",
+      "input": {
+        "raw_text": "Software review identity title"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.8-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 11,
+          "prompt_version": "skeleton-l1-v1",
+          "receipt_id": "acquisition-call-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+          "router_run_id": "run_2147b77dd2f14b939ec55f589d8f653f",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_1",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+          "usage": {
+            "completion_tokens": 32,
+            "prompt_tokens": 91,
+            "total_tokens": 814
+          }
+        },
+        "atomic_propositions": [
+          "Software review identity title"
+        ],
+        "coreference_resolved_text": "Software review identity title",
+        "triplets": []
+      },
+      "contract": {
+        "actual_model": "gemini-3.8-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 11,
+        "prompt_version": "skeleton-l1-v1",
+        "receipt_id": "acquisition-call-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+        "router_run_id": "run_2147b77dd2f14b939ec55f589d8f653f",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_1",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-b26e9837c6f2e26f967af55f994bd4285021e67665f849bf68299053ba02fec7",
+        "usage": {
+          "completion_tokens": 32,
+          "prompt_tokens": 91,
+          "total_tokens": 814
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-07T11:35:43.602412+00:00"
+    },
+    {
+      "call_id": "acquisition-call-59c481ae9803489015924329cc553e5628f72ae8c004f24b6c50f88cafe20e1e",
+      "started_at": "2026-10-07T11:35:43.612434+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 63,
+      "task": "skeleton_layer_2",
+      "status": "RETURNED",
+      "input": {
+        "layer1": {
+          "atomic_propositions": [
+            "Software review identity title"
+          ],
+          "coreference_resolved_text": "Software review identity title",
+          "triplets": []
+        },
+        "raw_text": "Software review identity title"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-59c481ae9803489015924329cc553e5628f72ae8c004f24b6c50f88cafe20e1e"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.7-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 49,
+          "prompt_version": "skeleton-l2-v1",
+          "receipt_id": "acquisition-call-59c481ae9803489015924329cc553e5628f72ae8c004f24b6c50f88cafe20e1e",
+          "router_run_id": "run_67ae270d29c14282af4a3ab49e00ae34",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_2",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-59c481ae9803489015924329cc553e5628f72ae8c004f24b6c50f88cafe20e1e",
+          "usage": {
+            "completion_tokens": 51,
+            "prompt_tokens": 125,
+            "total_tokens": 669
+          }
+        },
+        "discourse_relations": [],
+        "rhetorical_function": "title",
+        "topic_continuity": {
+          "active_topic": "Software review identity title",
+          "continuity_type": "none_single_unit",
+          "topic_transitions": []
+        }
+      },
+      "contract": {
+        "actual_model": "gemini-3.7-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 49,
+        "prompt_version": "skeleton-l2-v1",
+        "receipt_id": "acquisition-call-59c481ae9803489015924329cc553e5628f72ae8c004f24b6c50f88cafe20e1e",
+        "router_run_id": "run_67ae270d29c14282af4a3ab49e00ae34",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_2",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-59c481ae9803489015924329cc553e5628f72ae8c004f24b6c50f88cafe20e1e",
+        "usage": {
+          "completion_tokens": 51,
+          "prompt_tokens": 125,
+          "total_tokens": 669
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-07T15:26:21.777339+00:00"
+    },
+    {
+      "call_id": "acquisition-call-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+      "started_at": "2026-10-07T15:26:21.795303+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 64,
+      "task": "skeleton_layer_3",
+      "status": "RETURNED",
+      "input": {
+        "layer1": {
+          "atomic_propositions": [
+            "Software review identity title"
+          ],
+          "coreference_resolved_text": "Software review identity title",
+          "triplets": []
+        },
+        "layer2": {
+          "discourse_relations": [],
+          "rhetorical_function": "title",
+          "topic_continuity": {
+            "active_topic": "Software review identity title",
+            "continuity_type": "none_single_unit",
+            "topic_transitions": []
+          }
+        },
+        "raw_text": "Software review identity title"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.8-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 100,
+          "prompt_version": "skeleton-l3-v2-located-intent",
+          "receipt_id": "acquisition-call-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+          "router_run_id": "run_1a9883cc49ef415194a42d774886870e",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_3",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+          "usage": {
+            "completion_tokens": 53,
+            "prompt_tokens": 408,
+            "total_tokens": 712
+          }
+        },
+        "confidence": 1.0,
+        "evidence_quote": "Software review identity title",
+        "intent": "Formal",
+        "qualifications": [],
+        "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+      },
+      "contract": {
+        "actual_model": "gemini-3.8-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 100,
+        "prompt_version": "skeleton-l3-v2-located-intent",
+        "receipt_id": "acquisition-call-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+        "router_run_id": "run_1a9883cc49ef415194a42d774886870e",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_3",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-6a8274a9eeb204d8df85a02d7f1a0bddb3569b0ffbd76a948c0fbde6225033bb",
+        "usage": {
+          "completion_tokens": 53,
+          "prompt_tokens": 408,
+          "total_tokens": 712
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-07T15:39:35.763246+00:00"
+    },
+    {
+      "call_id": "acquisition-call-3d797434faa5713eb1c2d0b4c755f9f354d88bb12d59437b196344565bdbfb68",
+      "started_at": "2026-10-07T15:39:35.775736+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 65,
+      "task": "skeleton_layer_4",
+      "status": "RETURNED",
+      "input": {
+        "layer1": {
+          "atomic_propositions": [
+            "Software review identity title"
+          ],
+          "coreference_resolved_text": "Software review identity title",
+          "triplets": []
+        },
+        "layer2": {
+          "discourse_relations": [],
+          "rhetorical_function": "title",
+          "topic_continuity": {
+            "active_topic": "Software review identity title",
+            "continuity_type": "none_single_unit",
+            "topic_transitions": []
+          }
+        },
+        "layer3": {
+          "confidence": 1.0,
+          "evidence_quote": "Software review identity title",
+          "intent": "Formal",
+          "qualifications": [],
+          "rationale": "The raw text is a title/metadata element, which is explicitly classified as Formal."
+        },
+        "raw_text": "Software review identity title"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-3d797434faa5713eb1c2d0b4c755f9f354d88bb12d59437b196344565bdbfb68"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.8-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 157,
+          "prompt_version": "skeleton-l4-v1",
+          "receipt_id": "acquisition-call-3d797434faa5713eb1c2d0b4c755f9f354d88bb12d59437b196344565bdbfb68",
+          "router_run_id": "run_87e6d8896d7847ef86ec8f8cc2ff555c",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_4",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-3d797434faa5713eb1c2d0b4c755f9f354d88bb12d59437b196344565bdbfb68",
+          "usage": {
+            "completion_tokens": 49,
+            "prompt_tokens": 241,
+            "total_tokens": 1548
+          }
+        },
+        "confidence": 1.0,
+        "evidence_quote": "Software review identity title",
+        "rationale": "The raw text and layer 2 rhetorical function explicitly designate this unit as a title.",
+        "skeleton_role": "title"
+      },
+      "contract": {
+        "actual_model": "gemini-3.8-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 157,
+        "prompt_version": "skeleton-l4-v1",
+        "receipt_id": "acquisition-call-3d797434faa5713eb1c2d0b4c755f9f354d88bb12d59437b196344565bdbfb68",
+        "router_run_id": "run_87e6d8896d7847ef86ec8f8cc2ff555c",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_4",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-3d797434faa5713eb1c2d0b4c755f9f354d88bb12d59437b196344565bdbfb68",
+        "usage": {
+          "completion_tokens": 49,
+          "prompt_tokens": 241,
+          "total_tokens": 1548
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-07T16:04:49.008815+00:00"
+    },
+    {
+      "call_id": "acquisition-call-9e28c2696ffc9c59d609fe397e0ef57a68363ad7eeb69b036daf7214fab0c049",
+      "started_at": "2026-10-07T16:04:49.018343+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 66,
+      "task": "skeleton_layer_1",
+      "status": "RETURNED",
+      "input": {
+        "raw_text": "DOI 10.1234/corrected"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-9e28c2696ffc9c59d609fe397e0ef57a68363ad7eeb69b036daf7214fab0c049"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.7-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 9,
+          "prompt_version": "skeleton-l1-v1",
+          "receipt_id": "acquisition-call-9e28c2696ffc9c59d609fe397e0ef57a68363ad7eeb69b036daf7214fab0c049",
+          "router_run_id": "run_7f6e0af321e442ee8779840e9075358a",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_1",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-9e28c2696ffc9c59d609fe397e0ef57a68363ad7eeb69b036daf7214fab0c049",
+          "usage": {
+            "completion_tokens": 80,
+            "prompt_tokens": 98,
+            "total_tokens": 501
+          }
+        },
+        "prompt_version": "skeleton-l1-v1",
+        "propositions": [
+          {
+            "proposition": "The document has DOI 10.1234/corrected.",
+            "triplets": [
+              {
+                "object": "10.1234/corrected",
+                "predicate": "has DOI",
+                "subject": "document"
+              }
+            ]
+          }
+        ],
+        "task": "skeleton_layer_1"
+      },
+      "contract": {
+        "actual_model": "gemini-3.7-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 9,
+        "prompt_version": "skeleton-l1-v1",
+        "receipt_id": "acquisition-call-9e28c2696ffc9c59d609fe397e0ef57a68363ad7eeb69b036daf7214fab0c049",
+        "router_run_id": "run_7f6e0af321e442ee8779840e9075358a",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_1",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-9e28c2696ffc9c59d609fe397e0ef57a68363ad7eeb69b036daf7214fab0c049",
+        "usage": {
+          "completion_tokens": 80,
+          "prompt_tokens": 98,
+          "total_tokens": 501
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-07T17:15:06.026269+00:00"
+    },
+    {
+      "call_id": "acquisition-call-53f13dbd0d2739e037ddafe887ba68044d0a58b04d9e0eaee55bd7c207e07ce8",
+      "started_at": "2026-10-07T17:15:06.036826+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 67,
+      "task": "skeleton_layer_2",
+      "status": "RETURNED",
+      "input": {
+        "layer1": {
+          "prompt_version": "skeleton-l1-v1",
+          "propositions": [
+            {
+              "proposition": "The document has DOI 10.1234/corrected.",
+              "triplets": [
+                {
+                  "object": "10.1234/corrected",
+                  "predicate": "has DOI",
+                  "subject": "document"
+                }
+              ]
+            }
+          ],
+          "task": "skeleton_layer_1"
+        },
+        "raw_text": "DOI 10.1234/corrected"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-53f13dbd0d2739e037ddafe887ba68044d0a58b04d9e0eaee55bd7c207e07ce8"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.7-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 71,
+          "prompt_version": "skeleton-l2-v1",
+          "receipt_id": "acquisition-call-53f13dbd0d2739e037ddafe887ba68044d0a58b04d9e0eaee55bd7c207e07ce8",
+          "router_run_id": "run_4a407c66664e451394c3d5b86ba2801d",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_2",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-53f13dbd0d2739e037ddafe887ba68044d0a58b04d9e0eaee55bd7c207e07ce8",
+          "usage": {
+            "completion_tokens": 53,
+            "prompt_tokens": 180,
+            "total_tokens": 483
+          }
+        },
+        "discourse_relations": [],
+        "prompt_version": "skeleton-l2-v1",
+        "task": "skeleton_layer_2",
+        "topic_continuity": [
+          {
+            "proposition_indices": [
+              0
+            ],
+            "topic": "Document metadata (DOI)"
+          }
+        ]
+      },
+      "contract": {
+        "actual_model": "gemini-3.7-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 71,
+        "prompt_version": "skeleton-l2-v1",
+        "receipt_id": "acquisition-call-53f13dbd0d2739e037ddafe887ba68044d0a58b04d9e0eaee55bd7c207e07ce8",
+        "router_run_id": "run_4a407c66664e451394c3d5b86ba2801d",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_2",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-53f13dbd0d2739e037ddafe887ba68044d0a58b04d9e0eaee55bd7c207e07ce8",
+        "usage": {
+          "completion_tokens": 53,
+          "prompt_tokens": 180,
+          "total_tokens": 483
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-07T20:36:01.644397+00:00"
+    },
+    {
+      "call_id": "acquisition-call-e7959390cccc889d858f4d41406a33727808664135be970764093943cb569602",
+      "started_at": "2026-10-07T20:36:01.656420+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 68,
+      "task": "skeleton_layer_3",
+      "status": "RETURNED",
+      "input": {
+        "layer1": {
+          "prompt_version": "skeleton-l1-v1",
+          "propositions": [
+            {
+              "proposition": "The document has DOI 10.1234/corrected.",
+              "triplets": [
+                {
+                  "object": "10.1234/corrected",
+                  "predicate": "has DOI",
+                  "subject": "document"
+                }
+              ]
+            }
+          ],
+          "task": "skeleton_layer_1"
+        },
+        "layer2": {
+          "discourse_relations": [],
+          "prompt_version": "skeleton-l2-v1",
+          "task": "skeleton_layer_2",
+          "topic_continuity": [
+            {
+              "proposition_indices": [
+                0
+              ],
+              "topic": "Document metadata (DOI)"
+            }
+          ]
+        },
+        "raw_text": "DOI 10.1234/corrected"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-e7959390cccc889d858f4d41406a33727808664135be970764093943cb569602"
+      },
+      "output": {
+        "_contract": {
+          "actual_model": "gemini-3.8-flash",
+          "delivery": "durable-run-v1",
+          "estimated_input_tokens": 119,
+          "prompt_version": "skeleton-l3-v2-located-intent",
+          "receipt_id": "acquisition-call-e7959390cccc889d858f4d41406a33727808664135be970764093943cb569602",
+          "router_run_id": "run_809d779ad148435697b070055907833b",
+          "status": "SUCCESS",
+          "task": "skeleton_layer_3",
+          "tier": "standard",
+          "transport_operation_id": "rstv4-model-e7959390cccc889d858f4d41406a33727808664135be970764093943cb569602",
+          "usage": {
+            "completion_tokens": 60,
+            "prompt_tokens": 465,
+            "total_tokens": 693
+          }
+        },
+        "confidence": 1.0,
+        "evidence_quote": "DOI 10.1234/corrected",
+        "intent": "Formal",
+        "qualifications": [],
+        "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+      },
+      "contract": {
+        "actual_model": "gemini-3.8-flash",
+        "delivery": "durable-run-v1",
+        "estimated_input_tokens": 119,
+        "prompt_version": "skeleton-l3-v2-located-intent",
+        "receipt_id": "acquisition-call-e7959390cccc889d858f4d41406a33727808664135be970764093943cb569602",
+        "router_run_id": "run_809d779ad148435697b070055907833b",
+        "status": "SUCCESS",
+        "task": "skeleton_layer_3",
+        "tier": "standard",
+        "transport_operation_id": "rstv4-model-e7959390cccc889d858f4d41406a33727808664135be970764093943cb569602",
+        "usage": {
+          "completion_tokens": 60,
+          "prompt_tokens": 465,
+          "total_tokens": 693
+        }
+      },
+      "error_type": null,
+      "completed_at": "2026-10-08T02:33:02.513371+00:00"
+    },
+    {
+      "call_id": "acquisition-call-f4e147d88ba5384a94bce1406528723ed32efc08baa99caf57e1187dc8b33b9b",
+      "started_at": "2026-10-08T02:33:02.523917+00:00",
+      "job_id": "job_8ee9bf872f51c8fd2372d7bd26fbbe7c",
+      "fencing_token": 68,
+      "task": "skeleton_layer_4",
+      "status": "WAITING",
+      "input": {
+        "layer1": {
+          "prompt_version": "skeleton-l1-v1",
+          "propositions": [
+            {
+              "proposition": "The document has DOI 10.1234/corrected.",
+              "triplets": [
+                {
+                  "object": "10.1234/corrected",
+                  "predicate": "has DOI",
+                  "subject": "document"
+                }
+              ]
+            }
+          ],
+          "task": "skeleton_layer_1"
+        },
+        "layer2": {
+          "discourse_relations": [],
+          "prompt_version": "skeleton-l2-v1",
+          "task": "skeleton_layer_2",
+          "topic_continuity": [
+            {
+              "proposition_indices": [
+                0
+              ],
+              "topic": "Document metadata (DOI)"
+            }
+          ]
+        },
+        "layer3": {
+          "confidence": 1.0,
+          "evidence_quote": "DOI 10.1234/corrected",
+          "intent": "Formal",
+          "qualifications": [],
+          "rationale": "The text consists solely of a DOI identifier, which constitutes bibliographic metadata classified as Formal."
+        },
+        "raw_text": "DOI 10.1234/corrected"
+      },
+      "source": {
+        "collection_id": "collection_d016024afda6fbf0ce956023f80306a8",
+        "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+        "job_input_digest": "ed0b27e518a19be29cabaf067489aa81ab7f0d39c7d890b8f29b2f32733b1731",
+        "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+        "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+        "transport_operation_id": "rstv4-model-f4e147d88ba5384a94bce1406528723ed32efc08baa99caf57e1187dc8b33b9b"
+      },
+      "output": null,
+      "contract": {
+        "delivery": "durable-run-v1",
+        "router_run_id": "run_8896d65f29e043d4b55bdf1c39583de5",
+        "router_status": "running",
+        "transport_operation_id": "rstv4-model-f4e147d88ba5384a94bce1406528723ed32efc08baa99caf57e1187dc8b33b9b"
+      },
+      "error_type": "ModelRunPending",
+      "completed_at": "2026-10-08T02:33:12.599706+00:00"
+    }
+  ],
+  "scientific_approval": false
+}

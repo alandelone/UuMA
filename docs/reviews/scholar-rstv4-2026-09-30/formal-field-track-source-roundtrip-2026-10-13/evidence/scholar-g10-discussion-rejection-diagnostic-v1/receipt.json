@@ -1,0 +1,8 @@
+{
+  "status": "FOCUSED_UNCHANGED_CONTRACT_PASS",
+  "exit_code": 0,
+  "seconds": 1.72,
+  "production_and_assertions_unchanged": true,
+  "full_current_suite_complete": false,
+  "summary": ".                                                                        [100%]\n1 passed in 1.12s\n"
+}
