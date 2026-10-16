@@ -1,0 +1,28 @@
+{
+  "method": "POST",
+  "path": "/api/comments/comment_8ecd722c5ea041858723009b72fc4cce/restore",
+  "status": 200,
+  "body_sha256": "dfdc9977bcd3fc94c29efc29ca42517bac370f9e182b008bb72aade3d808b0d7",
+  "body": {
+    "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+    "review_round_id": "review_round_b51564f0224e499081e58f341103b336",
+    "source": "PASTED",
+    "reviewer": null,
+    "original_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.",
+    "edited_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.\nG09 author preview note: this second-round opinion is a software fixture, not an external review.",
+    "author_decision": "Software acceptance decision: add an explicit software boundary note in the original Alpha Intent, while retaining the original author thought and its selected sources and conditions. This software workflow response is not an external review or scientific approval.",
+    "response_text": "We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted. This review is limited to software behavior.",
+    "status": "RESOLVED",
+    "archived_at": null,
+    "created_at": "2026-10-13T03:45:27.649261+00:00",
+    "updated_at": "2026-10-14T10:15:58.864058+00:00",
+    "import_metadata": {
+      "comment_number": 206,
+      "import_batch_id": "comment_import_3c39a6fab1d7498a92deba6e55d2fb28",
+      "original_index": 0,
+      "original_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted.",
+      "raw_import_text": "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline.\nPreserve every source and condition; link only the actual author change that answers this software request.\nNo external reviewer or scientific judgment is asserted."
+    },
+    "display_label": "A206"
+  }
+}

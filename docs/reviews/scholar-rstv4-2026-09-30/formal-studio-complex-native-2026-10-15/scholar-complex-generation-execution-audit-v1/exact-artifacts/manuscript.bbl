@@ -1,0 +1,24 @@
+\begin{thebibliography}{3}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Author(2026{\natexlab{a}})]{evidence_b5348fa59b3948ae9540b75a33ca9bd9}
+Fixture Author.
+\newblock Refreshed live catalog title - software.
+\newblock 2026{\natexlab{a}}.
+
+\bibitem[Author(2026{\natexlab{b}})]{evidence_3a2639ee8b5e432aafd7e3743c825f33}
+Fixture Author.
+\newblock Refreshed live catalog title - software.
+\newblock 2026{\natexlab{b}}.
+
+\bibitem[Author(2026{\natexlab{c}})]{evidence_6b169de2b78d452f919391b00916f2c8}
+Fixture Author.
+\newblock Other selected source.
+\newblock 2026{\natexlab{c}}.
+\newblock \doi{10.1234/other}.
+
+\end{thebibliography}

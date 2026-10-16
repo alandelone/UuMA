@@ -12,7 +12,7 @@ from typing import Any
 
 _LOGGER = logging.getLogger(__name__)
 _LOCK = threading.RLock()
-_PENDING: dict[tuple[str, ...], tuple[str, datetime]] = {}
+_PENDING: dict[tuple[str, ...], tuple[str, datetime, str]] = {}
 _TURNS: dict[tuple[str, str], str] = {}
 _BROKER = None
 _CONFIG: dict[str, Any] = {}
@@ -54,7 +54,7 @@ def _pre_gateway_dispatch(event=None, gateway=None, **kwargs):
     if not isinstance(text, str) or (not text.strip() and media_type not in {"voice", "audio"}):
         return
     with _LOCK:
-        _PENDING[(platform, actor, chat, message_id)] = (text, datetime.now(UTC))
+        _PENDING[(platform, actor, chat, message_id)] = (text, datetime.now(UTC), media_type)
         while len(_PENDING) > 128:
             _PENDING.pop(next(iter(_PENDING)))
     return
@@ -69,6 +69,7 @@ def _pre_llm_call(**kwargs):
 
     if get_session_env("HERMES_CRON_SESSION"):
         return None
+    input_kind = "text"
     platform = str(kwargs.get("platform") or "")
     session = str(kwargs.get("session_id") or "")
     turn = str(kwargs.get("turn_id") or "")
@@ -95,7 +96,9 @@ def _pre_llm_call(**kwargs):
             return {
                 "context": "生活记录入口尚未核实这条真实消息。只读，不要编造 request_ref 或宣称保存。"
             }
-        authored, received = pending
+        authored, received, media_type = pending
+        if media_type in {"voice", "audio"} and not authored.strip():
+            input_kind = "voice_transcript"
         raw = authored if authored.strip() else raw
         transport = f"{platform}:{chat}:{mid}"
     elif platform in {"cli", "terminal", ""}:
@@ -111,6 +114,7 @@ def _pre_llm_call(**kwargs):
         turn_id=turn,
         received_at=received,
         actor_id=actor,
+        input_kind=input_kind,
     )
     with _LOCK:
         _TURNS[(session, turn)] = token

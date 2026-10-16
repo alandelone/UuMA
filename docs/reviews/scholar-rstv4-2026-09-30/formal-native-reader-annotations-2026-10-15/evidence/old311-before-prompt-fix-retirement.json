@@ -1,0 +1,17 @@
+{
+  "status": "PASS_OLD311_FROZEN_CATALOG_ONLY_RETIRED_BEFORE_PROMPT_FIX",
+  "pid": 34240,
+  "pid_absent": true,
+  "port": 52891,
+  "port_free_bind_proven": true,
+  "old_13_events_exact": true,
+  "post_fixture_all_110_tables_exact": true,
+  "owned_root_all_files_exact_before_after_retire": true,
+  "all_original_root_files_and_tables_exact": true,
+  "all_4_fixture_pdfs_and_candidate_exact": true,
+  "old_source_311_exact": true,
+  "product_edits": 0,
+  "catalog_service_restarted": false,
+  "browser_actions_by_this_helper": 0,
+  "all_8_added_fixture_rows_exact": true
+}

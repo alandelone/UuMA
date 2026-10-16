@@ -1,0 +1,39 @@
+{
+  "old_tables": 83,
+  "new_tables": 105,
+  "new_empty_tables": [
+    "acquisition_model_call_events",
+    "acquisition_worker_presence",
+    "catalog_review_actions",
+    "collection_budget_events",
+    "collection_candidate_frontier",
+    "collection_reference_frontier",
+    "collection_runtime_state",
+    "fieldkg_semantic_objects",
+    "fieldkg_semantic_runs",
+    "manuscript_scientific_review_events",
+    "manuscript_scientific_review_requests",
+    "research_workspace_actions",
+    "screening_input_snapshots",
+    "skeleton_source_outlines",
+    "sqlite_sequence",
+    "studio_change_link_events",
+    "studio_change_link_state",
+    "studio_comment_response_state",
+    "studio_model_calls",
+    "studio_response_checks",
+    "studio_review_round_baselines",
+    "studio_suggestion_decisions"
+  ],
+  "old_fields_and_rows_exact": true,
+  "old_column_extensions": {
+    "collections": [
+      "creation_request_json",
+      "topic_id"
+    ]
+  },
+  "old_schema_changes": [
+    "Nullable collections topic_id and creation_request_json additions",
+    "Skeleton history uniqueness removal and SQLite quoted table name"
+  ]
+}

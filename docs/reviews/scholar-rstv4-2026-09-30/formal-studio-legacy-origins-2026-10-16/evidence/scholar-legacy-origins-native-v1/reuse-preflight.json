@@ -1,0 +1,7 @@
+{
+  "A212_old_context_immutable": true,
+  "A215_current_check_retained": true,
+  "no_new_model_job_generation_package_or_check": true,
+  "all_mutations_denied": true,
+  "backend318_frontend91_dist_verified": true
+}

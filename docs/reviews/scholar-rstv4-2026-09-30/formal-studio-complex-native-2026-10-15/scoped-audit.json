@@ -1,0 +1,111 @@
+{
+  "one_native_GENERATE": [
+    {
+      "file": "action-087-request.json",
+      "method": "POST",
+      "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/jobs",
+      "status": 202
+    }
+  ],
+  "one_native_response_check": [
+    {
+      "file": "action-090-request.json",
+      "method": "POST",
+      "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_f39d35831bd0472bb9282ab116e90611/response-checks",
+      "status": 200
+    }
+  ],
+  "claims": [
+    {
+      "start": 24,
+      "end": 151,
+      "text": "We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences.",
+      "offset_unit": "utf16",
+      "evidence_ids": [
+        "62d134a7ca7c85bbfeee82d2c1e6064d7b1aef8270b2370b0e570a50c7ef7c41",
+        "12588bfafec7bbad5cb99b0e52728ef6b321b83217009c559e1ccc84aba27a63",
+        "78c6c9e38f85d77b7f580b198ab5c8c3d17e59b8ef52e00de4e4f150b27eca41"
+      ]
+    },
+    {
+      "start": 152,
+      "end": 283,
+      "text": "We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences.",
+      "offset_unit": "utf16",
+      "evidence_ids": [
+        "5fc506a38339590081a4302c8eab3e6e8b93deb1b508174fe035e961f8429505",
+        "7b4512856729eb82aca7997a1679c6d033d504c5f1d622a0877dde9bade1d375"
+      ]
+    }
+  ],
+  "generation": {
+    "status": "PASS_SCOPED_NATIVE_GENERATION_EXECUTION_AND_RENDER_AUDIT_NOT_FINAL_FORMAL_SEAL",
+    "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+    "generated_version_id": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+    "version": 6,
+    "author_revision": 79,
+    "one_actual_native_generate_post": true,
+    "actual_compile_completed": true,
+    "actual_paragraph_fixture_calls": 10,
+    "remote_model_calls": 0,
+    "all10_input_output_contracts_exact": true,
+    "alpha_actual_sentences": 5,
+    "shared_and_separate_mapping_exact": true,
+    "all11_complete_author_thought_texts_preserved": true,
+    "three_argument_relation_conditions_and_endpoint_author_texts_frozen": true,
+    "three_selected_evidence_source_snapshots_exact": true,
+    "two_original_material_sources_and_render_exact": true,
+    "five_main_artifacts_exact": true,
+    "old_generation_rows_and_other_manuscripts_exact": true,
+    "old_durable_checks_links_sources_exact": true,
+    "concurrent_parent_a212_reply_check_changes_declared_separately": true,
+    "full110_captured_before_and_after_reads_retained": true,
+    "all_other_tables_exact": true,
+    "all_old_owned_non_database_files_exact": true,
+    "new_generated_files": 13,
+    "current311_91_76_exact": true,
+    "pdf_pages": 2,
+    "pdf_bytes": 50360,
+    "pdf_sha256": "ec3988b80410560cd1b40d9bd15615718b2c9ab144147a2d028af461d497c0a1",
+    "pdf_visual_no_clipping_observed": true,
+    "scientific_approval": false,
+    "formal_report_sealed": false,
+    "all11_complete": false
+  },
+  "post_generation_immutability": {
+    "status": "PASS_TWO_EXACT_NATIVE_AUTHOR_EDITS_ALL_GENERATED_STATE_IMMUTABLE",
+    "before_revision": 79,
+    "after_revision": 81,
+    "changed_tables": [
+      "comment_changes",
+      "manuscripts",
+      "studio_change_link_state",
+      "studio_changes",
+      "studio_documents",
+      "studio_operations"
+    ],
+    "all_other_tables_exact": true,
+    "all_old_append_only_rows_retained": true,
+    "all_generated_versions_model_calls_jobs_artifacts_checks_exact": true,
+    "all_non_database_files_exact": true,
+    "current311_91_76_exact": true,
+    "generated_revision_still": 79,
+    "generated_version_id": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+    "no_new_generation_or_model_or_check": true,
+    "all11_complete": false
+  },
+  "native_A213_evidence_rows": 18,
+  "native_A213_disabled_rows": 15,
+  "native_A214_evidence_rows": 6,
+  "native_A214_disabled_rows": 3,
+  "full_terminal110_equals_last_post_edit_checkpoint": true,
+  "current311_91_76_exact": true,
+  "old_publication_root_untouched": true,
+  "menu_overlap_confirmed_not_fixed_by_this_run": true,
+  "native_reverse_Thought_Intent_navigation_missing": true,
+  "layout_only_product_branch_not_implemented_in_this_source": true,
+  "new_package_not_executed": true,
+  "all118_complete": false,
+  "final_all11_integrated_complete": false,
+  "scientific_approval": false
+}

@@ -90,3 +90,14 @@ self-corrected in partial-domain, no duplicate body write. Final sources frozen 
 model/provider; no fabricated zero-token pass, no stronger fallback. Live default settings applied
 and feature contracts13/13 backed by scoped evidence; real Telegram first-due receipt remains
 normal-runtime evidence, not claimed observed by fixture callbacks. Final setup review is current.
+
+## 2026-10-15 Telegram voice incident resolved
+
+本人语音被原生 STT 的外层引号误判引用，grants=[]，不是网关延迟发令牌。
+宿主现在根据认证媒体来源识别包装，仅匹配时忽略汉字间空格；原文不变。排队后续
+消息现在在 profile 范围执行一次入口认证。typed quote／转述／计划／假设限制保留。
+实际honc独立profile缺observability插件，虽然配置enabled；现已安装并修正安装器。
+旧会话无Phoenix spans，不宣称读到内部推理。真实修复trace可读回3spans，capture_content
+仍false。原Telegram79+82两条身体报告已幂等补存，保留用户可能性表达，无诊断、未推断
+早餐/营养素完成，不恢复被最新说明取代的旧腹痛段。274+28两组回归通过，网关61844
+所有现有Telegram连接恢复，唯一提醒任务继续正常。详见新incident修复说明。

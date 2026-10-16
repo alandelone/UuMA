@@ -1,0 +1,18 @@
+{
+  "audit.md": {
+    "bytes": 7739,
+    "sha256": "d1fbe8aaf0cd4e3ebfdf8920a2a937bf42856152ef0728710986194eb78cd08f"
+  },
+  "evidence-matrix.json": {
+    "bytes": 8234,
+    "sha256": "262aab0da5ff1d8480eeb555a2d6e104654a318af1de35d6c1ac68b8a19f58a0"
+  },
+  "identity-native-preparation-contract.json": {
+    "bytes": 3651,
+    "sha256": "84bda33dd0451f82fc39205fa396ed5e0eac6587f409d4950362503fa96be672"
+  },
+  "identity-native-preparation-contract.md": {
+    "bytes": 6489,
+    "sha256": "3631af771963b222a1f56088e7cc9edb433a05bc4f62df46b852029e5cbd7275"
+  }
+}

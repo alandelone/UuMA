@@ -1,0 +1,325 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button [disabled]:
+  - button [disabled]:
+  - button:
+    - text: Done
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+  - alert:
+    - generic: Failed to fetch
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button: 关联意见
+  - region:
+    - button: 重新读取意见与轮次
+  - paragraph: Reviewer comments
+  - heading [level=2]: 意见 → 决定 → 修改 → 回复
+  - button: 🗃 已删除
+  - button: 📦 投稿包
+  - region:
+    - text: 返修轮次
+    - combobox
+    - paragraph: 固定被审稿 v5 / 作者结构 r62；本轮生成不会移动基线。
+    - button: 建立第 5 轮…
+  - textbox:
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+  - button: 👀 准备预览
+  - button: ➕ 单条新增
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button
+  - article:
+    - button:
+    - generic: A207
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "G11 native TXT import: preserve this first line. Keep the second line inside the same opinion. Edited in native preview; original source stays unchanged."
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+    - textbox:
+      - /placeholder: 回复内容
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button:
+  - article:
+    - button:
+    - generic: A208
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: Native Markdown review opinion. Keep the source filename and original text.
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+    - textbox:
+      - /placeholder: 回复内容
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button:
+  - article:
+    - button:
+    - generic: A209
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: Native DOCX review opinion. Preserve the original document source.
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+    - textbox:
+      - /placeholder: 回复内容
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button:
+  - article:
+    - button:
+    - generic: A210
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: Native PDF review opinion. Preserve exact extracted source.
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+    - textbox:
+      - /placeholder: 回复内容
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button:
+  - article:
+    - button:
+    - generic: A211
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted."
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE decision: Do not change the manuscript. The current synthetic request asks us to preserve the existing Alpha author wording, selected sources, conditions, and fixed v5; these remain unchanged. No new scientific evidence or requested substantive amendment is supplied in this software case. The reply therefore explains intentional preservation and makes no claim that an unperformed edit was implemented. This software acknowledgement is not scientific approval or an external reviewer decision."
+    - textbox:
+      - /placeholder: 回复内容
+      - text: "SOFTWARE_FIXTURE reply: We intentionally retain the existing Alpha wording and fixed generated v5. No manuscript text, citation, source condition, or generated version was changed for this software acceptance case. This is an explicit no-change response, not a claim that a new scientific amendment or external review occurred."
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复、版本或关联已变化 · 需要重新核对
+    - generic: 0 条关联修改
+    - button:
+  - article:
+    - button:
+    - generic: A212
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval."
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval."
+    - textbox:
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE reply. We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences. We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences. This verifies software provenance and compiled locations only; no scientific approval is asserted.
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复、版本或关联已变化 · 需要重新核对
+    - generic: 2 条关联修改
+    - navigation:
+      - link:
+        - /url: "#change-change_a1353447cfd348ce9d732f461ed53dc1"
+        - text: 查看修改 1
+      - link:
+        - /url: "#change-change_fd5f8336b0bb4d09923ab48c708ec736"
+        - text: 查看修改 2
+    - button:
+  - article:
+    - button:
+    - generic: A213
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence."
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given."
+    - textbox:
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE pending reply. Intent-label, moved/deleted structure, citation identity and material changes are recorded, but a complete semantic attribution to final prose has not been established. The temporary wording was reverted and must not count as a completed prose amendment.
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 18 条关联修改
+    - navigation:
+      - link:
+        - /url: "#change-change_99508413a70f406782d71fab2638566f"
+        - text: 查看修改 1
+      - link:
+        - /url: "#change-change_8e0b3363594442338ada3e5d34a46cd9"
+        - text: 查看修改 2
+      - link:
+        - /url: "#change-change_7b1598ac4de04664bcfa006ec0d037e2"
+        - text: 查看修改 3
+      - link:
+        - /url: "#change-change_f79e2bceb00a4f37b18c90c088b80538"
+        - text: 查看修改 4
+      - link:
+        - /url: "#change-change_a86ac9d5e27b49c09dc4b5d73cc80ae4"
+        - text: 查看修改 5
+      - link:
+        - /url: "#change-change_24ee1a3c11a7413eaecbb4a445fed479"
+        - text: 查看修改 6
+      - link:
+        - /url: "#change-change_678c9d935ff444238c4e5058ae588547"
+        - text: 查看修改 7
+      - link:
+        - /url: "#change-change_645c267c519447e8bf87dda503cf3878"
+        - text: 查看修改 8
+      - link:
+        - /url: "#change-change_bb49cfcf9046419fa1c44dcbdd8d5d64"
+        - text: 查看修改 9
+      - link:
+        - /url: "#change-change_950e8e19ccac41e4840674d44833faf0"
+        - text: 查看修改 10
+      - link:
+        - /url: "#change-change_d7d6ff79d3104cfeafaad193b8fda3d3"
+        - text: 查看修改 11
+      - link:
+        - /url: "#change-change_523ef7d3658a4fefa68a79f081fafd69"
+        - text: 查看修改 12
+      - link:
+        - /url: "#change-change_097542651611481e931f038c5e2d1c9e"
+        - text: 查看修改 13
+      - link:
+        - /url: "#change-change_5c1258e78fec4cd79883778d3ced665a"
+        - text: 查看修改 14
+      - link:
+        - /url: "#change-change_a1353447cfd348ce9d732f461ed53dc1"
+        - text: 查看修改 15
+      - link:
+        - /url: "#change-change_eb2dccc53af646c9a808f4b2a6e00e43"
+        - text: 查看修改 16
+      - link:
+        - /url: "#change-change_71d720bd4dfa4867a3e1347122e14d7a"
+        - text: 查看修改 17
+      - link:
+        - /url: "#change-change_293fdf411252491488ec5738cb2191b2"
+        - text: 查看修改 18
+    - button:
+  - article:
+    - button:
+    - generic: A214
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted."
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments."
+    - textbox:
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE pending reply. The Beta citation identity and the fictional table and figure are saved in v6, but their complete typed attribution to final prose remains unverified. No completed scientific amendment or scientific approval is asserted.
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 4 条关联修改
+    - navigation:
+      - link:
+        - /url: "#change-change_523ef7d3658a4fefa68a79f081fafd69"
+        - text: 查看修改 1
+      - link:
+        - /url: "#change-change_097542651611481e931f038c5e2d1c9e"
+        - text: 查看修改 2
+      - link:
+        - /url: "#change-change_5c1258e78fec4cd79883778d3ced665a"
+        - text: 查看修改 3
+      - link:
+        - /url: "#change-change_a1353447cfd348ce9d732f461ed53dc1"
+        - text: 查看修改 4
+    - button:
+  - region:
+    - heading [level=3]: 已保存修改
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox
+    - button: 刷新修改历史
+    - alert: Failed to fetch
+  - region "已生成的投稿包":
+    - heading [level=3]: 投稿包
+    - button:
+      - text: 刷新
+    - paragraph: 此轮还没有投稿包。按“投稿包”生成后可在这里下载。
+  - status
+  - button [expanded]:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Fixed citation source - software acceptance
+  - button: 整篇历史
+  - button [disabled]: 当前对象 · 此版本
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - generic: 当前选择：Fixed citation source - software acceptance
+  - strong: 草稿对象：Fixed citation source - software acceptance · 结构 r86
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - generic: 固定对象的完整原文与版本
+  - status: 历史读取失败：Failed to fetch。可以重试。
+  - textbox:
+    - /placeholder: 讨论：Fixed citation source - software acceptance
+  - textbox:
+    - /placeholder: Annotation（可选）
+  - button [disabled]:
+  - button [disabled]: 保存讨论批注
+  - button: 更新讨论历史
+- dialog "A212 的核对历史":
+  - heading "A212 的核对历史" [level=2]
+  - paragraph: 保留作者当时核对的回复、理由、版本与实际改动。当前文件暂时不可用时，历史记录仍可查看。
+  - paragraph: Oct 15, 2026, 3:57 PM · 作者确认修改
+  - paragraph: 成文 v6
+  - paragraph: "SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval."
+  - paragraph: SOFTWARE_FIXTURE reply. We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences. We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences. This verifies software provenance and compiled locations only; no scientific approval is asserted.
+  - paragraph: 已核对声明：We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences.
+  - paragraph: "SOFTWARE_FIXTURE: Check original sources only and preserve their original conditions without asserting any scientific claim; retain both original source-only and source-condition boundaries in this shared sentence and in their separate sentences. [1] [3] · 当时的最终 PDF 第 1 页，可见文本第 16 行"
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想" [active]
+  - paragraph: Check original sources only; no scientific claim is asserted. · 当时的最终 PDF 第 1 页，可见文本第 18 行
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想"
+  - paragraph: "SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence. [1] [3] · 当时的最终 PDF 第 1 页，可见文本第 19 行"
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想"
+  - paragraph: 已核对声明：We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences.
+  - paragraph: "SOFTWARE_FIXTURE: Check original sources only and preserve their original conditions without asserting any scientific claim; retain both original source-only and source-condition boundaries in this shared sentence and in their separate sentences. [1] [3] · 当时的最终 PDF 第 1 页，可见文本第 16 行"
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想"
+  - paragraph: "SOFTWARE_FIXTURE C-MANY author clarification: retain this original boundary in the shared sentence and in the separate source-condition sentence. · 当时的最终 PDF 第 1 页，可见文本第 21 行"
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想"
+  - button "返回"
+  - button "Close":
+    - generic: Close

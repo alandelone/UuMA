@@ -1,0 +1,18 @@
+{
+  "status_code": 201,
+  "body": {
+    "review_round_id": "review_round_72931d507bda4bdb813dc14988444892",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "round_number": 4,
+    "baseline_artifact_id": "artifact_4490526c1a944aaca49b4f0ab35b5730",
+    "venue": "SOFTWARE_FIXTURE pure layout acceptance — no external reviewer or scientific approval",
+    "status": "ACTIVE",
+    "created_at": "2026-10-15T13:13:01.607605+00:00",
+    "baseline_manuscript_version_id": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+    "baseline_version": 6,
+    "baseline_document_revision": 79,
+    "baseline_available": true,
+    "baseline_origin": "explicit_round_baseline",
+    "baseline_content_sha256": "057ef3de030d506a8c41340612132a2bcf677e04e8646156eaca5b10128880ce"
+  }
+}

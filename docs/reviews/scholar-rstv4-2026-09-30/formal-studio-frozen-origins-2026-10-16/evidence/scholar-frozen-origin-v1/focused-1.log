@@ -1,0 +1,17 @@
+PASS Serialized saves retain newer keystrokes and advance the actual CAS basis
+PASS Conflicting page edits require an explicit comparison before replacing the reply
+PASS Unmount restores drafts, review waits for save, and an uncertain submit retries its original decision
+PASS Archived opinions expose review history without modifying their reply
+PASS Actual dialog retains Unicode selection offsets and rejects retained evidence
+AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+
+  assert(text(source.tree).includes('固定成文 v2 · 作者原稿 r2'))
+
+    at C:\Users\Alandelone\CodeSpace_Local\writing-studio\tests\unit\studio-response-review.cjs:164:3 {
+  generatedMessage: true,
+  code: 'ERR_ASSERTION',
+  actual: false,
+  expected: true,
+  operator: '==',
+  diff: 'simple'
+}

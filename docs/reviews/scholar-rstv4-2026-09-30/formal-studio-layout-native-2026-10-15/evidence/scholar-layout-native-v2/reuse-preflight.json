@@ -1,0 +1,13 @@
+{
+  "same_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz",
+  "current_author85_equals_fixed_v6_author79": true,
+  "original_source_v6": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+  "all_existing_jobs_models_versions_artifacts_checks_exact": true,
+  "new_round_or_import_replayed": false,
+  "old_guard_key_job_kind_corrected_to_shipped_API_kind_before_first_job_submission": true,
+  "one_new_layout_job_and_one_package_allowed_only": true,
+  "models_workers_gpu": 0,
+  "backend_source_count": 314,
+  "frontend_source_count": 91,
+  "frontend_dist_count": 76
+}

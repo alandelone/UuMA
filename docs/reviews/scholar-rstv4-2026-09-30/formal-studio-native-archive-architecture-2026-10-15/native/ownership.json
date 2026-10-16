@@ -1,0 +1,61 @@
+{
+  "backend": {
+    "pid": 39248,
+    "create_time": 1792039623.945289,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v6.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 68332
+  },
+  "frontend": {
+    "pid": 70488,
+    "create_time": 1792039625.2515004,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "63377",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-publication-chain-build-mlpu7aqn\\writing-studio",
+    "parent_pid": 55552
+  },
+  "backend_launcher": {
+    "pid": 68332,
+    "create_time": 1792039623.9255562,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v6.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 55552
+  },
+  "frontend_windows_console_children": [
+    {
+      "pid": 39352,
+      "create_time": 1792039625.2566717,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 70488
+    }
+  ],
+  "ports": [
+    8877,
+    63377
+  ],
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v6\\stop.request.json",
+  "owned_scope": "same v6 processes retained after launch observer MemoryError; no restart"
+}

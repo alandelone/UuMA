@@ -1,0 +1,17 @@
+{
+  "status": "PASS_RE10_HTTP_ARCHIVE_RESTORE_NONEMPTY_REPLY_TWO_CHECKS_AND_109_TABLE_AUDIT",
+  "schema_exact": true,
+  "unchanged_tables": 107,
+  "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+  "same_display_label": "A206",
+  "reply_text_and_two_checks_four_links_exact": true,
+  "response_revision": [
+    6,
+    7,
+    8
+  ],
+  "old_checks_intentionally_stale": true,
+  "new_models_jobs_checks_generations": 0,
+  "source_original_files_and_rows_exact": true,
+  "all11_complete": false
+}

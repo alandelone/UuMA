@@ -1,0 +1,20 @@
+{
+  "new_empty_tables": [
+    "studio_submission_bindings"
+  ],
+  "old105_rows_exact_except_schema_version": true,
+  "before_versions": [
+    {
+      "component": "catalog",
+      "version": 13,
+      "applied_at": "2026-10-13 06:14:22"
+    }
+  ],
+  "after_versions": [
+    {
+      "component": "catalog",
+      "version": 14,
+      "applied_at": "2026-10-15 06:46:47"
+    }
+  ]
+}

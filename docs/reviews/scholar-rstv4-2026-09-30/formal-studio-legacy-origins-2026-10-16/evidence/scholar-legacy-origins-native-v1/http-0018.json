@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments",
+  "query": "include_archived=true",
+  "status": 200,
+  "seconds": 0.1569999999992433,
+  "response_sha256": "ba41786e1a3e8f07e7a15d70484182d5653c3de92e5cf180331d379397afac66",
+  "origin": "http://127.0.0.1:60073"
+}

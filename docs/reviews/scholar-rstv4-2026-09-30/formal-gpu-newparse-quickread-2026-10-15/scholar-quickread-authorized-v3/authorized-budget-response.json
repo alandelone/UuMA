@@ -1,0 +1,11 @@
+{
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "revision": 4,
+  "status": "ACTIVE",
+  "limits": {
+    "max_papers": 500,
+    "max_registered_pdf_bytes": 10737418240,
+    "max_active_seconds": 175828,
+    "max_task_attempts": null
+  }
+}

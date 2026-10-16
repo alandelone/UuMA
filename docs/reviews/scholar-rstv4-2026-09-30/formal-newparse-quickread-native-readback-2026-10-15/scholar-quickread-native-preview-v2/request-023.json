@@ -1,0 +1,7 @@
+{
+  "method": "GET",
+  "path": "/api/catalog/research-overview",
+  "query": "",
+  "body_utf8": null,
+  "allowed": true
+}

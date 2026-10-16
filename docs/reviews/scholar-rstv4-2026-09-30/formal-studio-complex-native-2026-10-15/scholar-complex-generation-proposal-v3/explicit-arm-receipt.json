@@ -1,0 +1,9 @@
+{
+  "status": "EXPLICITLY_ARMED_NO_JOB_SUBMITTED",
+  "contract_sha256": "7c3e70d1eb7becb142b398eca9c577a71480ee4dad67e0ccd2054e2b6fee2305",
+  "author_revision": 79,
+  "db110_and_all_root_files_unchanged": true,
+  "jobs_created": 0,
+  "model_calls": 0,
+  "scientific_approval": false
+}

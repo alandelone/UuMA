@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/history",
+  "body_utf8": "{\"target\":{\"module\":\"STUDIO\",\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"document_revision\":83},\"limit\":30,\"current_object_only\":false}",
+  "body_sha256": "5dfa93f331de4f5e58e64afb1f997f138170ccf694c7bb30bab5bb264cfd7b1d"
+}

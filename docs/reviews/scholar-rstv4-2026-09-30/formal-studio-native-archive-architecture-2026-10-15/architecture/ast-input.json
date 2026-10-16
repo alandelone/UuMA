@@ -1,0 +1,368 @@
+{
+  "files": [
+    {
+      "relative": "app\\layout.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\app\\layout.tsx"
+    },
+    {
+      "relative": "app\\page.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\app\\page.tsx"
+    },
+    {
+      "relative": "app\\api\\studio-files\\[...path]\\route.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\app\\api\\studio-files\\[...path]\\route.ts"
+    },
+    {
+      "relative": "components\\studio-argument-relations.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-argument-relations.tsx"
+    },
+    {
+      "relative": "components\\studio-block-controls.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-block-controls.tsx"
+    },
+    {
+      "relative": "components\\studio-change-history.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-change-history.tsx"
+    },
+    {
+      "relative": "components\\studio-evidence-source.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-evidence-source.tsx"
+    },
+    {
+      "relative": "components\\studio-intent-correspondence.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-intent-correspondence.tsx"
+    },
+    {
+      "relative": "components\\studio-original-placement.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-original-placement.tsx"
+    },
+    {
+      "relative": "components\\studio-package-downloads.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-package-downloads.tsx"
+    },
+    {
+      "relative": "components\\studio-response-review.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-response-review.tsx"
+    },
+    {
+      "relative": "components\\studio-review-rounds.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-review-rounds.tsx"
+    },
+    {
+      "relative": "components\\studio-source-context.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-source-context.tsx"
+    },
+    {
+      "relative": "components\\studio-suggestion-review.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-suggestion-review.tsx"
+    },
+    {
+      "relative": "components\\studio-template-adoption.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-template-adoption.tsx"
+    },
+    {
+      "relative": "components\\studio-workspace.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\studio-workspace.tsx"
+    },
+    {
+      "relative": "components\\ui\\accordion.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\accordion.tsx"
+    },
+    {
+      "relative": "components\\ui\\alert-dialog.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\alert-dialog.tsx"
+    },
+    {
+      "relative": "components\\ui\\alert.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\alert.tsx"
+    },
+    {
+      "relative": "components\\ui\\aspect-ratio.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\aspect-ratio.tsx"
+    },
+    {
+      "relative": "components\\ui\\attachment.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\attachment.tsx"
+    },
+    {
+      "relative": "components\\ui\\avatar.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\avatar.tsx"
+    },
+    {
+      "relative": "components\\ui\\badge.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\badge.tsx"
+    },
+    {
+      "relative": "components\\ui\\breadcrumb.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\breadcrumb.tsx"
+    },
+    {
+      "relative": "components\\ui\\bubble.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\bubble.tsx"
+    },
+    {
+      "relative": "components\\ui\\button-group.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\button-group.tsx"
+    },
+    {
+      "relative": "components\\ui\\button.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\button.tsx"
+    },
+    {
+      "relative": "components\\ui\\calendar.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\calendar.tsx"
+    },
+    {
+      "relative": "components\\ui\\card.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\card.tsx"
+    },
+    {
+      "relative": "components\\ui\\carousel.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\carousel.tsx"
+    },
+    {
+      "relative": "components\\ui\\chart.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\chart.tsx"
+    },
+    {
+      "relative": "components\\ui\\checkbox.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\checkbox.tsx"
+    },
+    {
+      "relative": "components\\ui\\collapsible.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\collapsible.tsx"
+    },
+    {
+      "relative": "components\\ui\\combobox.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\combobox.tsx"
+    },
+    {
+      "relative": "components\\ui\\command.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\command.tsx"
+    },
+    {
+      "relative": "components\\ui\\context-menu.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\context-menu.tsx"
+    },
+    {
+      "relative": "components\\ui\\dialog.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\dialog.tsx"
+    },
+    {
+      "relative": "components\\ui\\direction.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\direction.tsx"
+    },
+    {
+      "relative": "components\\ui\\drawer.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\drawer.tsx"
+    },
+    {
+      "relative": "components\\ui\\dropdown-menu.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\dropdown-menu.tsx"
+    },
+    {
+      "relative": "components\\ui\\empty.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\empty.tsx"
+    },
+    {
+      "relative": "components\\ui\\field.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\field.tsx"
+    },
+    {
+      "relative": "components\\ui\\hover-card.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\hover-card.tsx"
+    },
+    {
+      "relative": "components\\ui\\input-group.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\input-group.tsx"
+    },
+    {
+      "relative": "components\\ui\\input-otp.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\input-otp.tsx"
+    },
+    {
+      "relative": "components\\ui\\input.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\input.tsx"
+    },
+    {
+      "relative": "components\\ui\\item.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\item.tsx"
+    },
+    {
+      "relative": "components\\ui\\kbd.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\kbd.tsx"
+    },
+    {
+      "relative": "components\\ui\\label.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\label.tsx"
+    },
+    {
+      "relative": "components\\ui\\marker.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\marker.tsx"
+    },
+    {
+      "relative": "components\\ui\\menubar.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\menubar.tsx"
+    },
+    {
+      "relative": "components\\ui\\message-scroller.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\message-scroller.tsx"
+    },
+    {
+      "relative": "components\\ui\\message.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\message.tsx"
+    },
+    {
+      "relative": "components\\ui\\native-select.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\native-select.tsx"
+    },
+    {
+      "relative": "components\\ui\\navigation-menu.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\navigation-menu.tsx"
+    },
+    {
+      "relative": "components\\ui\\pagination.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\pagination.tsx"
+    },
+    {
+      "relative": "components\\ui\\popover.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\popover.tsx"
+    },
+    {
+      "relative": "components\\ui\\progress.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\progress.tsx"
+    },
+    {
+      "relative": "components\\ui\\radio-group.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\radio-group.tsx"
+    },
+    {
+      "relative": "components\\ui\\resizable.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\resizable.tsx"
+    },
+    {
+      "relative": "components\\ui\\scroll-area.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\scroll-area.tsx"
+    },
+    {
+      "relative": "components\\ui\\select.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\select.tsx"
+    },
+    {
+      "relative": "components\\ui\\separator.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\separator.tsx"
+    },
+    {
+      "relative": "components\\ui\\sheet.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\sheet.tsx"
+    },
+    {
+      "relative": "components\\ui\\sidebar.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\sidebar.tsx"
+    },
+    {
+      "relative": "components\\ui\\skeleton.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\skeleton.tsx"
+    },
+    {
+      "relative": "components\\ui\\slider.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\slider.tsx"
+    },
+    {
+      "relative": "components\\ui\\spinner.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\spinner.tsx"
+    },
+    {
+      "relative": "components\\ui\\switch.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\switch.tsx"
+    },
+    {
+      "relative": "components\\ui\\table.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\table.tsx"
+    },
+    {
+      "relative": "components\\ui\\tabs.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\tabs.tsx"
+    },
+    {
+      "relative": "components\\ui\\textarea.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\textarea.tsx"
+    },
+    {
+      "relative": "components\\ui\\toast.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\toast.tsx"
+    },
+    {
+      "relative": "components\\ui\\toggle-group.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\toggle-group.tsx"
+    },
+    {
+      "relative": "components\\ui\\toggle.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\toggle.tsx"
+    },
+    {
+      "relative": "components\\ui\\tooltip.tsx",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\components\\ui\\tooltip.tsx"
+    },
+    {
+      "relative": "lib\\catalog-return.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\catalog-return.ts"
+    },
+    {
+      "relative": "lib\\offline-outbox.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\offline-outbox.ts"
+    },
+    {
+      "relative": "lib\\review-comment-preview.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\review-comment-preview.ts"
+    },
+    {
+      "relative": "lib\\shared-discussion.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\shared-discussion.ts"
+    },
+    {
+      "relative": "lib\\studio-api.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-api.ts"
+    },
+    {
+      "relative": "lib\\studio-blocks.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-blocks.ts"
+    },
+    {
+      "relative": "lib\\studio-correspondence.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-correspondence.ts"
+    },
+    {
+      "relative": "lib\\studio-discussion-history.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-discussion-history.ts"
+    },
+    {
+      "relative": "lib\\studio-downloads.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-downloads.ts"
+    },
+    {
+      "relative": "lib\\studio-types.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-types.ts"
+    },
+    {
+      "relative": "lib\\studio-undo-history.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-undo-history.ts"
+    },
+    {
+      "relative": "lib\\studio-view-state.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\studio-view-state.ts"
+    },
+    {
+      "relative": "lib\\suggestion-result.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\suggestion-result.ts"
+    },
+    {
+      "relative": "lib\\utils.ts",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\lib\\utils.ts"
+    },
+    {
+      "relative": "../RSTV4/src/rstv4/catalog_research_chat.js",
+      "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_research_chat.js"
+    }
+  ]
+}

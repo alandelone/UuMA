@@ -1,0 +1,13 @@
+{
+  "status": "READY_SAME_V6_OWNED_PROCESSES_AFTER_OBSERVER_MEMORY_FAILURE",
+  "url": "http://127.0.0.1:63377/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_b51564f0224e499081e58f341103b336",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "no_process_restart": true,
+  "before110_tables_and_bytes_exact": true,
+  "source311_frontend91_dist76_originals_external25_exact": true,
+  "frontend_pid": 70488,
+  "backend_pid": 39248,
+  "native_business_mutations": 0,
+  "no_new_build_or_copy": true,
+  "stop_command": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe -X utf8 C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v6-stop-owned.py"
+}

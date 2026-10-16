@@ -1,0 +1,8 @@
+{
+  "status": "PASS_FIVE_MENU_KINDS_TWO_MEASURED_WIDTHS",
+  "valid_cases": 10,
+  "prior_viewport_override_ineffective_five_cases_not_counted_as_narrow": true,
+  "all110_exact_after_pointer_open_cancel": true,
+  "author_revision": 81,
+  "models_jobs_business_mutations": 0
+}

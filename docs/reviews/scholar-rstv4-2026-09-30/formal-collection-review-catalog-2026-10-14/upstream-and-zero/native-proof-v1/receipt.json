@@ -1,0 +1,49 @@
+{
+  "status": "PASS_DISTINCT_READ_ONLY_NATIVE_UPSTREAM_VISIBILITY; not whole G11 completion",
+  "completed_at": "2026-10-13T14:29:23.829Z",
+  "owned_tab_id": "1479457363",
+  "owned_tab_closed": true,
+  "browser_extension_instance": "48be98f0-f45c-49ef-82e0-8f0296e6cc74",
+  "base_url": "http://127.0.0.1:8888/",
+  "actions": [
+    "Visible Overview link Isolated track -> current Track",
+    "Open original superseded Method in Research Graph and expand actual record",
+    "Open direct stale Claim and expand original dependency record",
+    "Open indirect stale Claim and expand original dependency record",
+    "Read disabled legacy execute button (isEnabled false; disabled attribute present), no execution click",
+    "Expand preserved terminal experiment / original stdout / full original detail",
+    "Open same-catalogue scientific review through flagged manuscript link",
+    "Reload scientific-review page: original Claim revision1 binding and required-review flag remain",
+    "Close only newly-owned proof tab; own browser tabs inventory empty"
+  ],
+  "exact_rendered_records_match_historical_baseline": true,
+  "exact_rendered_run_detail_matches_historical_baseline": true,
+  "disabled_old_plan": {
+    "at": "2026-10-13T14:25:40.189Z",
+    "oldPlanText": "实验计划 · APPROVEDexperiment_plan_81163acc4ada40c786e62a8e66576d9d · Method method_578417c4dcfc42e99060150cccd53613 · Track 直属命令：C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe -c from pathlib import Path; Path('C:\\\\Users\\\\ALANDE~1\\\\AppData\\\\Local\\\\Temp\\\\scholar-formal-gates-z2aa267y\\\\old-method-must-not-run.txt').touch()旧计划未保留完整审阅清单，请提出新计划。执行此计划一次",
+    "executeEnabled": false,
+    "executeDisabledAttribute": ""
+  },
+  "flagged_manuscript": {
+    "at": "2026-10-13T14:26:51.520Z",
+    "articleCount": 1,
+    "text": "Indirect fixture manuscript ↗ 重审与替换当前依据PLANNING · 写作记录 PLANNING · 需要科学复核 ",
+    "reviewHref": "/?view=scientific_review&manuscript=manuscript_fde24662e8b044c59e729f7516ad10ca"
+  },
+  "review_binding_retained": {
+    "claim_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+    "bound_revision": 1,
+    "current_node_revision": 2,
+    "needs_scientific_review": true,
+    "manuscript_revision": 2,
+    "review_proposals": 0
+  },
+  "assertion_context_correction": "Initial string-substring assertion assumed decoded quotes; DOM snapshot serializes generic text as a JSON string. Re-inspected exact line, parsed both JSON layers, then all original node fields and terminal detail compared exactly; source/native assertions were retained.",
+  "limits": [
+    "Historical supersession was not newly replayed or approved in UI; this verifies current original invalidation and retained history visibility",
+    "Old plan execution was not clicked because native button is disabled for missing reviewed_manifest; exact Method refusal separately proved by main core-boundary helper",
+    "Default Studio links point at port3000 and were not opened; main owns four isolated zero-version native tests on3010/8890",
+    "No viewport changed, API fetch, React/storage access, source product edit, Send, annotation, new proposal, approval or experiment execution",
+    "Full original and current owned DB preservation after these reads remains main independent audit responsibility"
+  ]
+}

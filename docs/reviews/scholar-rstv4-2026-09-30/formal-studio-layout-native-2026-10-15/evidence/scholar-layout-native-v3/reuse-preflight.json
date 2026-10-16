@@ -1,0 +1,13 @@
+{
+  "same_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz",
+  "same_successful_v7_and_author86": true,
+  "original_v6_v7_PDFs_and_generated_versions_retained": true,
+  "all_model_calls_and_checks_exact": true,
+  "generation_denied_entirely": true,
+  "old_single_submission_marker_preserved": true,
+  "one_new_package_only": true,
+  "only_two_backend_and_two_frontend_followup_files_changed": true,
+  "backend_source_count": 314,
+  "frontend_source_count": 91,
+  "frontend_dist_count": 76
+}

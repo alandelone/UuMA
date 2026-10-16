@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+  "content_type": "application/json",
+  "body_utf8": "{\"venue\":\"SOFTWARE_FIXTURE Local WF09-10 — no external submission\",\"round_number\":3,\"status\":\"SUBMITTED\",\"detail\":\"SOFTWARE_FIXTURE: Local SUBMITTED event for fixed generated v5 / author r62 only. No external journal delivery or scientific approval occurred.\",\"generated_version_id\":\"manuscript_version_de30b95a2d6843059d3c8b420627bf58\",\"acknowledged\":true,\"operation_id\":\"06d7ad6e-c358-4d2f-99c7-7c924ce037e5\"}",
+  "body_sha256": "758a0a0b1723e4b02778e8ff41163d7409697deea665e66ee33120c0071b1b68",
+  "body_bytes": 413
+}

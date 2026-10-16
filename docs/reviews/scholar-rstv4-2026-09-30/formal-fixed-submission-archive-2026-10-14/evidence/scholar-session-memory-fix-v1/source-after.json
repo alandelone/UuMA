@@ -1,0 +1,10 @@
+{
+  "src/uuma/session.py": {
+    "bytes": 8879,
+    "sha256": "18eda81834906f8d0946d3da1967243244ef0cea6e427d3b42f38a1d4cf5ab1a"
+  },
+  "tests/test_session.py": {
+    "bytes": 6834,
+    "sha256": "af7eca6793021c00d5fdfc06d6f6406b0d00f9f4b6d8a13b6402c8bbb42955fd"
+  }
+}

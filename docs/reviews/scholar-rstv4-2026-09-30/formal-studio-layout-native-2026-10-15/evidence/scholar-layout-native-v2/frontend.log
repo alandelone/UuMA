@@ -1,0 +1,8 @@
+
+  vinext start  (port 54980)
+
+[vinext] Production server running at http://127.0.0.1:54980
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-layout-build-4pfou5jy/writing-studio/dist/client/_next/static/chunks/vinext-49wieQy1.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-layout-build-4pfou5jy/writing-studio/dist/client/_next/static/chunks/page-BzsAtUCv.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-layout-build-4pfou5jy/writing-studio/dist/client/_next/static/chunks/index-DxHO0Sdu.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-layout-build-4pfou5jy/writing-studio/dist/client/_next/static/css/index.BeuyK8Oi.css: Premature close

@@ -1,0 +1,6 @@
+{
+  "RSTV4/src/rstv4/studio_revision_mapping.py": "ea47bd78656f94270c79275e0f8373b33e790945ab83709954dc55f641533457",
+  "RSTV4/tests/test_studio_revision_mapping.py": "20c4ccba07e459503bfd9ed358ea3b3b45fa1a34c9bb44813a6c7885cacbed07",
+  "writing-studio/components/studio-workspace.tsx": "308215348681286bf137cf2f35cefaebacb3e636dec451280b6da390ef7e794d",
+  "writing-studio/app/globals.css": "71a987ed9a401130e4f6fccf6051868a5f2def4e42396ed1f1329cf627170a58"
+}

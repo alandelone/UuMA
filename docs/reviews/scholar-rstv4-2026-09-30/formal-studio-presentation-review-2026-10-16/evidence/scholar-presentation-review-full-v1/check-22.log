@@ -1,0 +1,8 @@
+PASS template drop only exposes locations with the same insertion meaning as preview
+PASS unplaced sources, thoughts, groups, unknown and foreign manuscript are not adoption destinations
+PASS whole reviewed author tree preserves all author fields, stable endpoints, groups, source and siblings
+PASS repeated placement, missing and unplaced destination, self and descendant never change input
+PASS depth limit considers the entire original subtree
+PASS extracting an unplaced subtree leaves its unresolved parent and all external relations
+PASS old immutable snapshot can undo and redo without content conversion or provenance loss
+7 template drag destination and reviewed placement preservation cases passed; no browser used.

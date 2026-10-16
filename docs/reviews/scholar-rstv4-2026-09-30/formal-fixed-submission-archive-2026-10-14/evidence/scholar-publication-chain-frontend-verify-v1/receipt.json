@@ -1,0 +1,23 @@
+{
+  "status": "PASS_CURRENT_8_COMPONENTS_TYPES_LINT",
+  "checks": [
+    {
+      "name": "components",
+      "exit_code": 0,
+      "seconds": 0.27
+    },
+    {
+      "name": "types",
+      "exit_code": 0,
+      "seconds": 1.59
+    },
+    {
+      "name": "lint",
+      "exit_code": 0,
+      "seconds": 0.72
+    }
+  ],
+  "files_frozen": 109,
+  "source_and_tests_unchanged": true,
+  "native_browser_executed": false
+}

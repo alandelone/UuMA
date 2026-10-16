@@ -1,0 +1,38 @@
+{
+  "original_session": "20261014_171549_c546b0aa",
+  "original_message_ids": [
+    "79",
+    "82"
+  ],
+  "message79": {
+    "ledger_source_present": true,
+    "granted_operations": [],
+    "life_context_request_refs_empty": true,
+    "actual_body_tool_called": false,
+    "control_result_submitted": true,
+    "assistant_claim": "claimed gateway had not issued write refs; requested repeated formula",
+    "finding": "empty grant was a deterministic quoted-input refusal, not a pending token"
+  },
+  "message82": {
+    "ledger_source_present": false,
+    "queued_followup": true,
+    "actual_body_tool_called": false,
+    "finding": "queued preprocessing bypassed initial dispatch hook"
+  },
+  "phoenix": {
+    "historical_session_spans_found": 0,
+    "projects_checked": [
+      "hermes",
+      "default"
+    ],
+    "observability_installed_before": false,
+    "content_capture": false,
+    "old_private_reasoning_available": false
+  },
+  "primary_causes": [
+    "Authenticated STT wrapper treated as an untrusted quote",
+    "Han-to-Han spaces prevented some keyword matching",
+    "Queued follow-up skipped ingress authentication hook",
+    "Enabled observability name had no installed package in this standalone profile"
+  ]
+}

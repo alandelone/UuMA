@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_f39d35831bd0472bb9282ab116e90611",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval.\",\"response_text\":\"SOFTWARE_FIXTURE reply. We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences. We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences. This verifies software provenance and compiled locations only; no scientific approval is asserted.\",\"expected_content_sha256\":\"742e9cb0e28e8b9b0d274ca933fc093c27d1f8d71a71a4679643f5d47a1820c5\"}",
+  "body_sha256": "dd067556e21986815fc4be026e77ccd7a6ee8df746afbaeb326df358b82e1458",
+  "body_bytes": 768
+}

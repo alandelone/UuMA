@@ -1,0 +1,175 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:52059/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%22%2C%22offset%22%3A0%2C%22scroll%22%3A0%2C%22workspace%22%3A%2276d51c64705e6c27e88c66d3df6efbfe68af1c6d6dacdd911c26be94c9c38937%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:52059/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%22%2C%22offset%22%3A0%2C%22scroll%22%3A0%2C%22workspace%22%3A%2276d51c64705e6c27e88c66d3df6efbfe68af1c6d6dacdd911c26be94c9c38937%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:52059/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%22%2C%22offset%22%3A0%2C%22scroll%22%3A0%2C%22workspace%22%3A%2276d51c64705e6c27e88c66d3df6efbfe68af1c6d6dacdd911c26be94c9c38937%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "论文目录":
+      - generic: 论文目录
+      - generic: ⌄
+  - button "☰ Filter"
+  - button "↕ Sort"
+  - button "▤ Columns"
+  - button "Refresh catalog": ↻
+  - heading "Filter" [level=3]
+  - generic: Where
+  - combobox "Filter group logic":
+    - option "All (AND)" [selected]
+    - option "Any (OR)"
+  - combobox "Filter field":
+    - option "Name" [selected]
+    - option "Authors"
+    - option "Year"
+    - option "DOI"
+    - option "Source"
+    - option "Abstract"
+    - option "PDF status"
+    - option "PDF files"
+    - option "Verified PDFs"
+    - option "PDFs to review"
+    - option "Parse"
+    - option "Parse runs"
+    - option "References"
+    - option "QuickRead"
+    - option "QuickReads"
+    - option "Skeleton"
+    - option "Skeletons"
+    - option "Review"
+    - option "Human cases"
+    - option "Collections"
+    - option "Created"
+    - option "Last Updated"
+  - combobox "Filter operator":
+    - option "Is"
+    - option "Is not"
+    - option "Contains" [selected]
+    - option "Does not contain"
+    - option "Is empty"
+    - option "Is not empty"
+  - textbox "Filter value":
+    - /placeholder: Value
+    - text: Software
+  - button "Remove filter rule": ×
+  - generic: Match
+  - combobox "Filter group logic":
+    - option "All (AND)"
+    - option "Any (OR)" [selected]
+  - button "Remove group"
+  - combobox "Filter field":
+    - option "Name"
+    - option "Authors"
+    - option "Year"
+    - option "DOI"
+    - option "Source"
+    - option "Abstract"
+    - option "PDF status" [selected]
+    - option "PDF files"
+    - option "Verified PDFs"
+    - option "PDFs to review"
+    - option "Parse"
+    - option "Parse runs"
+    - option "References"
+    - option "QuickRead"
+    - option "QuickReads"
+    - option "Skeleton"
+    - option "Skeletons"
+    - option "Review"
+    - option "Human cases"
+    - option "Collections"
+    - option "Created"
+    - option "Last Updated"
+  - combobox "Filter operator":
+    - option "Is" [selected]
+    - option "Is not"
+    - option "Contains"
+    - option "Does not contain"
+    - option "Is empty"
+    - option "Is not empty"
+  - combobox "Filter value":
+    - option "Select…"
+    - option "NEEDS_REVIEW" [selected]
+    - option "VERIFIED"
+    - option "NO_PDF"
+  - button "Remove filter rule": ×
+  - button "＋ Add filter rule"
+  - button "＋ Add group"
+  - button "＋ Add filter rule"
+  - button "＋ Add group"
+  - table "Paper Catalog":
+    - rowgroup:
+      - row "Name Resize Name column Created Resize Created column Year Resize Year column Last Updated Resize Last Updated column Authors Resize Authors column DOI Resize DOI column Source Resize Source column PDF status Resize PDF status column PDF files Resize PDF files column PDFs to review Resize PDFs to review column Parse Resize Parse column References Resize References column QuickRead Resize QuickRead column Skeleton Resize Skeleton column Review Resize Review column":
+        - columnheader "Name Resize Name column":
+          - generic: Aa
+          - text: Name
+          - separator "Resize Name column"
+        - columnheader "Created Resize Created column":
+          - generic: ◷
+          - text: Created
+          - separator "Resize Created column"
+        - columnheader "Year Resize Year column":
+          - generic: ▣
+          - text: Year
+          - separator "Resize Year column"
+        - columnheader "Last Updated Resize Last Updated column":
+          - generic: ◷
+          - text: Last Updated
+          - separator "Resize Last Updated column"
+        - columnheader "Authors Resize Authors column":
+          - generic: Aa
+          - text: Authors
+          - separator "Resize Authors column"
+        - columnheader "DOI Resize DOI column":
+          - generic: Aa
+          - text: DOI
+          - separator "Resize DOI column"
+        - columnheader "Source Resize Source column":
+          - generic: Aa
+          - text: Source
+          - separator "Resize Source column"
+        - columnheader "PDF status Resize PDF status column":
+          - generic: ◆
+          - text: PDF status
+          - separator "Resize PDF status column"
+        - columnheader "PDF files Resize PDF files column":
+          - generic: "#"
+          - text: PDF files
+          - separator "Resize PDF files column"
+        - columnheader "PDFs to review Resize PDFs to review column":
+          - generic: "#"
+          - text: PDFs to review
+          - separator "Resize PDFs to review column"
+        - columnheader "Parse Resize Parse column":
+          - generic: ◆
+          - text: Parse
+          - separator "Resize Parse column"
+        - columnheader "References Resize References column":
+          - generic: "#"
+          - text: References
+          - separator "Resize References column"
+        - columnheader "QuickRead Resize QuickRead column":
+          - generic: ◆
+          - text: QuickRead
+          - separator "Resize QuickRead column"
+        - columnheader "Skeleton Resize Skeleton column":
+          - generic: ◆
+          - text: Skeleton
+          - separator "Resize Skeleton column"
+        - columnheader "Review Resize Review column":
+          - generic: ◆
+          - text: Review
+          - separator "Resize Review column"
+    - rowgroup:
+      - row "No papers match this view.":
+        - cell "No papers match this view."
+  - generic: 0 papers
+  - button "← Previous" [disabled]
+  - generic: Page 1 · 50 per page
+  - button "Next →" [disabled]
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/context",
+  "body_utf8": "{\"module\":\"STUDIO\",\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"document_revision\":86}",
+  "body_sha256": "d4de488863031f22a4d95fe6f39434713d6e26bec5e732dc2696d69524a75c2e"
+}

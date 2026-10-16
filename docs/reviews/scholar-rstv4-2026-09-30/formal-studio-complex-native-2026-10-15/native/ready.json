@@ -1,0 +1,59 @@
+{
+  "status": "READY_SAME_ORIGINAL_LIVE_HANDLES_AFTER_EXACT_JOURNAL_CONTEXT_AUDIT",
+  "url": "http://127.0.0.1:56931/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_b51564f0224e499081e58f341103b336",
+  "health": {
+    "status": "ok",
+    "workflow_stages": [
+      "PLANNING",
+      "DRAFTING",
+      "WHOLE_PAPER_REVIEW",
+      "FINALIZATION_SUBMISSION",
+      "REVISION",
+      "PUBLICATION"
+    ]
+  },
+  "served_assets": {
+    "/_next/static/chunks/vinext-BPPoZsno.js": "5413ccaf89c0ebfb6b71c2a14596491f8a27d33308515959ab7478092200ed1c",
+    "/_next/static/chunks/page-CjbQD6Ec.js": "3b194274429957c783f4a1fd7930d6b43c11b6e04b2f101bce689e12399b0ccd",
+    "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "/_next/static/chunks/layout-segment-context-BoUNDXv2.js": "68f601318bc09581dabb12e83d0ab943270a62cab7ae509f4397a76283f23e6d",
+    "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "/_next/static/chunks/index-Dd8DXA57.js": "75ac07f84d4c7298093ea67377472689e8ab654c4e7dc484da2d6c3ea21e363c",
+    "/_next/static/css/index.PBEt8VaD.css": "a927e3709ef99db5416703ab0860d18a1e9b6d8c735b85a1b676d42082bfdb6d"
+  },
+  "backend_identity": {
+    "pid": 29020,
+    "create_time": 1792049400.847747,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-complex-native-runtime-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 7492
+  },
+  "frontend_identity": {
+    "pid": 5300,
+    "create_time": 1792049402.155652,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "56931",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-publication-chain-build-mlpu7aqn\\writing-studio",
+    "parent_pid": 18236
+  },
+  "full110_exact": true,
+  "nonDB_files_exact": true,
+  "exact_header_transition_declared": true,
+  "source311_frontend91_dist76_exact": true,
+  "models_unarmed": true,
+  "native_actions": 0,
+  "stop_command": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe -X utf8 C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-complex-native-runtime-v1-stop.py"
+}

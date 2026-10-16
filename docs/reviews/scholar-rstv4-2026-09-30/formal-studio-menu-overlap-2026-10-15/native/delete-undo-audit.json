@@ -1,0 +1,26 @@
+{
+  "status": "PASS_EXPLICIT_POINTER_DELETE_AND_NATIVE_UNDO",
+  "before_revision": 81,
+  "after_revision": 83,
+  "deleted_only_declared_software_slot2": true,
+  "entire_author_document_restored_exact": true,
+  "all_generated_versions_calls_jobs_artifacts_checks_exact": true,
+  "changed_tables": [
+    "manuscripts",
+    "studio_change_link_state",
+    "studio_changes",
+    "studio_documents",
+    "studio_operations"
+  ],
+  "new_operations": [
+    {
+      "operation_id": "operation_6918c1dce2c947f38c57ce4ede996f42",
+      "kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_87c70fb181ca4740976e16e02a739334",
+      "kind": "DELETE_PARAGRAPH"
+    }
+  ],
+  "all11_complete": false
+}

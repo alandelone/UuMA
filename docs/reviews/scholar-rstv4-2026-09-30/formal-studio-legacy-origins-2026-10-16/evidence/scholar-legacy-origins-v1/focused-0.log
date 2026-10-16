@@ -1,0 +1,13 @@
+RUF059 Unpacked variable `originals` is never used
+   --> tests\test_studio_historical_origins.py:160:29
+    |
+159 | def test_real_template_projection_shared_sentence_reads_original_author_bank(tmp_path):
+160 |     service, ms, _, mapped, originals, _ = mapped_fixture(tmp_path)
+    |                             ^^^^^^^^^
+161 |     first_intent = next(p for s in mapped['sections'] if s.get('placement_status')=='UNPLACED' for p in s['paragraphs'])['intents'][0]
+162 |     second = deepcopy(first_intent['thoughts'][0]);second.update(id='historical-shared-thought-two',text='Independent original softwa…
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 3 errors (2 fixed, 1 remaining).
+No fixes available (1 hidden fix can be enabled with the `--unsafe-fixes` option).

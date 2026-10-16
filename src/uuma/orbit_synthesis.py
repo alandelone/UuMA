@@ -90,7 +90,7 @@ class OrbitCompactSynthesizer:
             ):
                 continue
             certainty = str(point.get("certainty") or "evidence").casefold()
-            label = "暂定解释" if certainty == "inference" else "资料支持"
+            prefix = "暂定解释：" if certainty == "inference" else ""
             links = []
             for key in dict.fromkeys(keys):
                 item = by_key[key]
@@ -105,7 +105,7 @@ class OrbitCompactSynthesizer:
                 if page and item["media_type"] == "application/pdf":
                     locator += f"#page={page.group(1)}"
                 links.append(f"[{key}]({locator})")
-            paragraphs.append(f"{label}：{text} {' '.join(links)}")
+            paragraphs.append(f"{prefix}{text} {' '.join(links)}")
         if not paragraphs:
             return KnowledgeAnswer(
                 answer="已检索的摘录尚不足以形成可核查的直接回答。",

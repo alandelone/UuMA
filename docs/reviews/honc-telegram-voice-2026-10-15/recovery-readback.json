@@ -1,0 +1,20 @@
+{
+  "count": 2,
+  "verified_at": "2026-10-15T03:09:44.839Z",
+  "records": [
+    {
+      "object_id": "body_9f9c7b75b17d4fa182a4c20e57f66c58",
+      "operation_id": "operation_1e98fe163c5d43ada5e8bbaa20ba5740",
+      "payload_json": "{\"observations\":[{\"body_part\":null,\"change_text\":null,\"description\":\"今天 会比较 累 一 点点\",\"reported_score\":null,\"score_scale\":null,\"severity_text\":null},{\"body_part\":null,\"change_text\":null,\"description\":\"6 点 呃 有 一点点 的 我们 讲 鼻子 塞啦 鼻子 流 鼻涕\",\"reported_score\":null,\"score_scale\":null,\"severity_text\":null},{\"body_part\":null,\"change_text\":null,\"description\":\"可能 因为 昨天 可能 over do 还是说 11 点 多才 睡 的 关系 呢\",\"reported_score\":null,\"score_scale\":null,\"severity_text\":null}],\"related_record_ids\":[],\"source_quote\":\"\\\"就是 说我 这边 再重 新 一次 把 刚 才有 的 信息 忘记 掉 重 新来 过 就是说 呃 早上 已经 吃 就是说 刚 才有 的 呃 Supplement 呢 就是 营养 已经 早上 早早 的 时候 就吃 了 然后 今天 早上 9 点 的 早餐 喝了一杯水 所以 其实是 相当 的 饱 的 然后 身体 一 开始 早上 可能 因为 昨天 可能 over do 还是说 11 点 多才 睡 的 关系 呢 然后 精神 透支 的 关系 啦 造成说 今天 会比较 累 一 点点 然后 6 点 呃 有 一点点 的 我们 讲 鼻子 塞啦 鼻子 流 鼻涕 然后 精神 一点 累 然后 啊 精神 一点 累\\\"\",\"time\":{\"occurred_at\":null,\"occurred_date\":\"2026-10-15\",\"precision\":\"approximate\",\"time_text\":\"早上\"}}",
+      "adapter_id": "authorized-telegram-voice-recovery-v1",
+      "source_event_id": "original-message:79"
+    },
+    {
+      "object_id": "body_3c949c77565b402e8aa847069858e5b1",
+      "operation_id": "operation_6f6fac43535340229e242233a3df55da",
+      "payload_json": "{\"observations\":[{\"body_part\":null,\"change_text\":null,\"description\":\"还有还有一件事情就是再加上说我早上有去哪别人不要的吸尘机, 吸尘机,然后也有可能是因为灰尘的问题造成的敏感呐, 所以开始就鼻子开始有点塞,都也是有诸多的因素呐,就是把它记录一下。 这关于到身体的状况。\",\"reported_score\":null,\"score_scale\":null,\"severity_text\":null}],\"related_record_ids\":[],\"source_quote\":\"\\\"还有还有一件事情就是再加上说我早上有去哪别人不要的吸尘机, 吸尘机,然后也有可能是因为灰尘的问题造成的敏感呐, 所以开始就鼻子开始有点塞,都也是有诸多的因素呐,就是把它记录一下。 这关于到身体的状况。\\\"\",\"time\":{\"occurred_at\":null,\"occurred_date\":\"2026-10-15\",\"precision\":\"approximate\",\"time_text\":\"早上\"}}",
+      "adapter_id": "authorized-telegram-voice-recovery-v1",
+      "source_event_id": "original-message:82"
+    }
+  ]
+}

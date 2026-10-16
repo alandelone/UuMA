@@ -1,0 +1,21 @@
+{
+  "exit_code": 0,
+  "seconds": 35.38999999999942,
+  "command": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "-m",
+    "pytest",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-async-review-v1\\test_layout_async.py",
+    "-q",
+    "--tb=short",
+    "--basetemp=C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-async-review-v1\\pytest-1792069230116935100"
+  ],
+  "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-async-review-v1\\tests-1792069230116935100.txt",
+  "test_sha256": "6a5aca439c7f3580cd1acec1249fe13d512d2c8e6f0473bbd884a27022cb44a5",
+  "live_product_modified": false,
+  "network_models": false,
+  "test_source_realization": "one explicit local synthetic gateway call in disposable fixture",
+  "replays": "async real service/compiler, all models denied"
+}

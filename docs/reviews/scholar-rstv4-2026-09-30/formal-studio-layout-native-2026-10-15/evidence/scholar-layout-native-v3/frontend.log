@@ -1,0 +1,5 @@
+
+  vinext start  (port 62304)
+
+[vinext] Production server running at http://127.0.0.1:62304
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-layout-fit-build-1s4_z_pg/writing-studio/dist/client/_next/static/chunks/vinext-Lx6x1waf.js: Premature close

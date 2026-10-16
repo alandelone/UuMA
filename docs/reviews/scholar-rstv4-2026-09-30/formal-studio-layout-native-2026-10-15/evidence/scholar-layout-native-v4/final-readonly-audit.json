@@ -1,0 +1,24 @@
+{
+  "status": "PASS_FINAL_SAME_V7_PACKAGE_CSS_NATIVE_READBACK",
+  "native_package_cells_checked": 42,
+  "actual_viewports": [
+    1280,
+    760
+  ],
+  "all21_buttons_and_filenames_fit_cells_no_intersection": true,
+  "toolbar_text_buttons_fit_and_center_hits_pass": true,
+  "final_readonly_UI_all110_exact": true,
+  "final_readonly_UI_all_non_database_files_exact": true,
+  "only_three_author_operations83_to86": true,
+  "sole_new_comment_link_and_reply_state_A215": true,
+  "pending_layout_check_not_falsely_confirmed": true,
+  "full1178_20warnings_535_90seconds_retained": true,
+  "full24JS_and_Ruff_pass": true,
+  "only_final_CSS_wrap_rule_changed_after_full": true,
+  "final_new_build_pass": true,
+  "final_backend_source_count": 314,
+  "final_frontend_product_source_count": 91,
+  "first_origin_parallel_fetch_issue_still_requires_diagnosis": true,
+  "all118_complete": false,
+  "final11_complete": false
+}

@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+  "body_utf8": "{\"round_number\":4,\"venue\":\"SOFTWARE_FIXTURE pure layout acceptance — no external reviewer or scientific approval\",\"baseline_manuscript_version_id\":\"manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01\",\"expected_document_revision\":85}",
+  "body_sha256": "4c276c455f4a0d919d499b70cba475ed10c37156022bd09ae08265363354adcb"
+}

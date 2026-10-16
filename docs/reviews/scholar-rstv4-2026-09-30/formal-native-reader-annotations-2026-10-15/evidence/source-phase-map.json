@@ -1,0 +1,768 @@
+{
+  "old_html_sha256": "8624e2d3b632d885bd4dac28e3ea48ede79c0e07f56ee1bb4967d89668762ec3",
+  "new_html_sha256": "e573c3771cc6f4723be6c2611eabfb81bae3200722ccdd1ccac9018924e18447",
+  "other_310_exact": true,
+  "old_core_steps": 93,
+  "old_added_fixture_steps": 21,
+  "transition_steps": 4,
+  "new_loaded_page_steps": 8,
+  "total_steps": 126,
+  "steps": [
+    {
+      "index": 1,
+      "step": "rv-recovered-loaded-page-before-action",
+      "observed_at_utc": "2026-10-14T17:28:06.918Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 2,
+      "step": "rv-maximize-for-pdf-selection",
+      "observed_at_utc": "2026-10-14T17:28:26.699Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 3,
+      "step": "rv-stable-after-service-resume",
+      "observed_at_utc": "2026-10-14T17:30:53.066Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 4,
+      "step": "rv-bring-pdf-to-reading-area",
+      "observed_at_utc": "2026-10-14T17:31:31.877Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 5,
+      "step": "rv-select-exact-doi",
+      "observed_at_utc": "2026-10-14T17:31:37.859Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 6,
+      "step": "rv-reading-position-settled",
+      "observed_at_utc": "2026-10-14T17:31:46.522Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 7,
+      "step": "rv-select-doi-verified-position",
+      "observed_at_utc": "2026-10-14T17:31:51.404Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 8,
+      "step": "rv-doi-menu-settled",
+      "observed_at_utc": "2026-10-14T17:31:56.560Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 9,
+      "step": "rv-save-doi-native-click",
+      "observed_at_utc": "2026-10-14T17:32:02.305Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 10,
+      "step": "rv-doi-confirmed-ack",
+      "observed_at_utc": "2026-10-14T17:32:10.758Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 11,
+      "step": "rv-comment-focused",
+      "observed_at_utc": "2026-10-14T17:32:21.311Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 12,
+      "step": "rv-comment-focus-confirmed",
+      "observed_at_utc": "2026-10-14T17:32:28.551Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 13,
+      "step": "rv-doi-comment-input",
+      "observed_at_utc": "2026-10-14T17:32:33.971Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 14,
+      "step": "rv-title-selected",
+      "observed_at_utc": "2026-10-14T17:32:48.818Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 15,
+      "step": "rv-title-menu-settled",
+      "observed_at_utc": "2026-10-14T17:32:52.557Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 16,
+      "step": "rv-title-save-click",
+      "observed_at_utc": "2026-10-14T17:32:56.895Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 17,
+      "step": "rv-title-confirmed-ack",
+      "observed_at_utc": "2026-10-14T17:33:02.255Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 18,
+      "step": "rv-copy-selected-title",
+      "observed_at_utc": "2026-10-14T17:33:07.884Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 19,
+      "step": "rv-title-comment-input",
+      "observed_at_utc": "2026-10-14T17:33:20.162Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 20,
+      "step": "rv-pdf-zoom-and-title-blur",
+      "observed_at_utc": "2026-10-14T17:33:26.835Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 21,
+      "step": "rv-zoom-confirmed",
+      "observed_at_utc": "2026-10-14T17:33:32.661Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 22,
+      "step": "rv-pdf-zoom-out",
+      "observed_at_utc": "2026-10-14T17:33:41.829Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 23,
+      "step": "rv-continuous-scroll-toward-page2",
+      "observed_at_utc": "2026-10-14T17:33:54.560Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 24,
+      "step": "rv-page2-settled",
+      "observed_at_utc": "2026-10-14T17:33:59.645Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 25,
+      "step": "rv-collision-doi-selected-page2",
+      "observed_at_utc": "2026-10-14T17:34:05.106Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 26,
+      "step": "rv-collision-menu-settled",
+      "observed_at_utc": "2026-10-14T17:34:10.174Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 27,
+      "step": "rv-collision-attempt-native",
+      "observed_at_utc": "2026-10-14T17:34:15.238Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 28,
+      "step": "rv-collision-result-confirmed",
+      "observed_at_utc": "2026-10-14T17:34:21.845Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 29,
+      "step": "rv-continuous-scroll-to-page3",
+      "observed_at_utc": "2026-10-14T17:34:34.077Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 30,
+      "step": "rv-scroll-position-before-page3",
+      "observed_at_utc": "2026-10-14T17:34:40.297Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 31,
+      "step": "rv-page3-enter",
+      "observed_at_utc": "2026-10-14T17:34:45.217Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 32,
+      "step": "rv-page3-loaded-confirmed",
+      "observed_at_utc": "2026-10-14T17:34:51.674Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 33,
+      "step": "rv-main-doi-absent-native",
+      "observed_at_utc": "2026-10-14T17:34:58.408Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 34,
+      "step": "rv-main-absent-confirmed",
+      "observed_at_utc": "2026-10-14T17:35:06.209Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 35,
+      "step": "rv-return-pdf-page1",
+      "observed_at_utc": "2026-10-14T17:35:16.444Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 36,
+      "step": "rv-backscroll-settled",
+      "observed_at_utc": "2026-10-14T17:35:21.368Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 37,
+      "step": "rv-reader-scrollbar-to-start",
+      "observed_at_utc": "2026-10-14T17:35:27.667Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 38,
+      "step": "rv-page1-before-doi-restore",
+      "observed_at_utc": "2026-10-14T17:35:32.168Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 39,
+      "step": "rv-reselect-main-doi",
+      "observed_at_utc": "2026-10-14T17:35:37.707Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 40,
+      "step": "rv-main-doi-restored-before-wrong-pdf",
+      "observed_at_utc": "2026-10-14T17:35:50.069Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 41,
+      "step": "rv-both-fields-confirmed-before-reversal",
+      "observed_at_utc": "2026-10-14T17:35:56.072Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 42,
+      "step": "rv-observe-after-offscreen-button",
+      "observed_at_utc": "2026-10-14T17:36:11.229Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 43,
+      "step": "rv-bring-file-reversal-controls-visible",
+      "observed_at_utc": "2026-10-14T17:36:16.211Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 44,
+      "step": "rv-file-reversal-controls-settled",
+      "observed_at_utc": "2026-10-14T17:36:21.081Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 45,
+      "step": "rv-wrong-pdf-applied",
+      "observed_at_utc": "2026-10-14T17:36:26.509Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 46,
+      "step": "rv-wrong-pdf-reversal-confirmed",
+      "observed_at_utc": "2026-10-14T17:36:33.303Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 47,
+      "step": "rv-selection-while-wrong-pdf",
+      "observed_at_utc": "2026-10-14T17:36:44.954Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 48,
+      "step": "rv-wrong-pdf-no-annotation-menu",
+      "observed_at_utc": "2026-10-14T17:36:49.643Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 49,
+      "step": "rv-reopen-wrong-pdf-decision",
+      "observed_at_utc": "2026-10-14T17:36:54.309Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 50,
+      "step": "rv-reopen-confirmed",
+      "observed_at_utc": "2026-10-14T17:36:58.910Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 51,
+      "step": "rv-reopened-doi-selection",
+      "observed_at_utc": "2026-10-14T17:37:04.469Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 52,
+      "step": "rv-reopened-selection-menu-check",
+      "observed_at_utc": "2026-10-14T17:37:10.023Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 53,
+      "step": "rv-clear-old-selection-after-reopen",
+      "observed_at_utc": "2026-10-14T17:37:15.758Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 54,
+      "step": "rv-fresh-doi-selection-after-reopen",
+      "observed_at_utc": "2026-10-14T17:37:26.496Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 55,
+      "step": "rv-save-doi-after-reopen",
+      "observed_at_utc": "2026-10-14T17:37:31.937Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 56,
+      "step": "rv-reopened-save-confirmed",
+      "observed_at_utc": "2026-10-14T17:37:40.845Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 57,
+      "step": "rv-reload-annotation-from-server",
+      "observed_at_utc": "2026-10-14T17:37:57.781Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 58,
+      "step": "rv-reload-completed",
+      "observed_at_utc": "2026-10-14T17:38:04.386Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 59,
+      "step": "rv-queue-return-top",
+      "observed_at_utc": "2026-10-14T17:38:16.545Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 60,
+      "step": "rv-search-known-doi",
+      "observed_at_utc": "2026-10-14T17:38:22.285Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 61,
+      "step": "rv-absence-file-reader",
+      "observed_at_utc": "2026-10-14T17:38:27.691Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 62,
+      "step": "rv-absent-known-catalog-doi",
+      "observed_at_utc": "2026-10-14T17:38:32.991Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 63,
+      "step": "rv-known-doi-preserved-confirmed",
+      "observed_at_utc": "2026-10-14T17:38:43.035Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 64,
+      "step": "rv-filter-controls-visible",
+      "observed_at_utc": "2026-10-14T17:38:54.673Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 65,
+      "step": "rv-search-empty-result",
+      "observed_at_utc": "2026-10-14T17:39:01.199Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 66,
+      "step": "rv-search-cleared",
+      "observed_at_utc": "2026-10-14T17:39:06.168Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 67,
+      "step": "rv-type-filter-options",
+      "observed_at_utc": "2026-10-14T17:39:13.219Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 68,
+      "step": "rv-quality-filter-empty",
+      "observed_at_utc": "2026-10-14T17:39:19.227Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 69,
+      "step": "rv-identity-filter-options",
+      "observed_at_utc": "2026-10-14T17:39:36.056Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 70,
+      "step": "rv-identity-filter-active",
+      "observed_at_utc": "2026-10-14T17:39:43.670Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 71,
+      "step": "rv-search-title-reopen-main",
+      "observed_at_utc": "2026-10-14T17:39:50.337Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 72,
+      "step": "rv-before-narrow-window",
+      "observed_at_utc": "2026-10-14T17:40:08.559Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 73,
+      "step": "rv-restore-for-narrow-layout",
+      "observed_at_utc": "2026-10-14T17:40:13.994Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 74,
+      "step": "rv-restored-window-stable",
+      "observed_at_utc": "2026-10-14T17:40:27.656Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 75,
+      "step": "rv-narrow-window-resize",
+      "observed_at_utc": "2026-10-14T17:40:33.545Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 76,
+      "step": "rv-window-size-menu",
+      "observed_at_utc": "2026-10-14T17:41:04.921Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 77,
+      "step": "rv-window-left-edge-narrow",
+      "observed_at_utc": "2026-10-14T17:41:11.491Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 78,
+      "step": "rv-800px-layout-settled",
+      "observed_at_utc": "2026-10-14T17:41:17.862Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 79,
+      "step": "rv-narrow-pdf-before-review-fields",
+      "observed_at_utc": "2026-10-14T17:41:25.284Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 80,
+      "step": "rv-600px-narrow-reader",
+      "observed_at_utc": "2026-10-14T17:41:32.603Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 81,
+      "step": "rv-narrow-final-reading-order",
+      "observed_at_utc": "2026-10-14T17:42:01.129Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 82,
+      "step": "rv-return-wide-after-narrow-check",
+      "observed_at_utc": "2026-10-14T17:42:06.493Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 83,
+      "step": "rv-wide-stable-before-failure-check",
+      "observed_at_utc": "2026-10-14T17:42:13.492Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 84,
+      "step": "rv-comment-outage-target-visible",
+      "observed_at_utc": "2026-10-14T17:42:21.349Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 85,
+      "step": "rv-before-controlled-outage-stable",
+      "observed_at_utc": "2026-10-14T17:42:40.914Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 86,
+      "step": "rv-after-agent-interruption-observe",
+      "observed_at_utc": "2026-10-14T21:45:46.105Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 87,
+      "step": "rv-outage-comment-draft-entered",
+      "observed_at_utc": "2026-10-14T21:46:13.502Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 88,
+      "step": "rv-outage-comment-failure-confirmed",
+      "observed_at_utc": "2026-10-14T21:46:28.015Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 89,
+      "step": "rv-recovery-ready-original-retry",
+      "observed_at_utc": "2026-10-14T21:47:41.309Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 90,
+      "step": "rv-retry-button-brought-visible",
+      "observed_at_utc": "2026-10-14T21:47:47.632Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 91,
+      "step": "rv-original-comment-request-retry-held",
+      "observed_at_utc": "2026-10-14T21:47:53.186Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 92,
+      "step": "rv-comment-saving-before-held-ack",
+      "observed_at_utc": "2026-10-14T21:48:03.974Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 93,
+      "step": "rv-original-retry-ack-released",
+      "observed_at_utc": "2026-10-14T21:48:16.023Z",
+      "phase": "OLD311_CORE_EVENTS"
+    },
+    {
+      "index": 94,
+      "step": "rv-before-new-case-list-refresh",
+      "observed_at_utc": "2026-10-14T21:55:30.460Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 95,
+      "step": "rv-refresh-appended-software-cases",
+      "observed_at_utc": "2026-10-14T21:55:36.837Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 96,
+      "step": "rv-three-identity-one-parser-counts",
+      "observed_at_utc": "2026-10-14T21:55:42.836Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 97,
+      "step": "rv-new-parser-type-menu",
+      "observed_at_utc": "2026-10-14T21:55:48.885Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 98,
+      "step": "rv-parser-nonempty-filter",
+      "observed_at_utc": "2026-10-14T21:55:55.942Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 99,
+      "step": "rv-parser-current-state-resume",
+      "observed_at_utc": "2026-10-15T02:46:50.976Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 100,
+      "step": "rv-return-owned-parser-tab",
+      "observed_at_utc": "2026-10-15T02:47:05.219Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 101,
+      "step": "rv-parser-title-search-match",
+      "observed_at_utc": "2026-10-15T02:47:18.148Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 102,
+      "step": "rv-parser-doi-search-match",
+      "observed_at_utc": "2026-10-15T02:47:23.667Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 103,
+      "step": "rv-parser-wide-details",
+      "observed_at_utc": "2026-10-15T02:47:31.259Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 104,
+      "step": "rv-parser-wide-stable",
+      "observed_at_utc": "2026-10-15T02:47:37.203Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 105,
+      "step": "rv-parser-quality-details-visible",
+      "observed_at_utc": "2026-10-15T02:47:44.656Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 106,
+      "step": "rv-parser-details-settled",
+      "observed_at_utc": "2026-10-15T02:47:57.984Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 107,
+      "step": "rv-return-parser-filter-controls",
+      "observed_at_utc": "2026-10-15T02:48:05.458Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 108,
+      "step": "rv-parser-search-cleared",
+      "observed_at_utc": "2026-10-15T02:48:12.050Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 109,
+      "step": "rv-identity-only-menu",
+      "observed_at_utc": "2026-10-15T02:48:18.296Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 110,
+      "step": "rv-identity-three-cases",
+      "observed_at_utc": "2026-10-15T02:48:24.876Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 111,
+      "step": "rv-doi-only-identity-control-open",
+      "observed_at_utc": "2026-10-15T02:48:32.833Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 112,
+      "step": "rv-doi-only-field-actions-confirmed",
+      "observed_at_utc": "2026-10-15T02:48:40.308Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 113,
+      "step": "rv-unflagged-title-selection-control",
+      "observed_at_utc": "2026-10-15T02:49:17.921Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 114,
+      "step": "rv-doi-only-prompt-mismatch-confirmed",
+      "observed_at_utc": "2026-10-15T02:50:23.009Z",
+      "phase": "OLD311_ADDED_FIXTURE_NATIVE"
+    },
+    {
+      "index": 115,
+      "step": "rv-prompt-fix-before-reload",
+      "observed_at_utc": "2026-10-15T02:55:24.464Z",
+      "phase": "RELOAD_TRANSITION_NOT_NEW_PAGE_PROVEN"
+    },
+    {
+      "index": 116,
+      "step": "rv-reactivated-target-window",
+      "observed_at_utc": "2026-10-15T02:55:47.132Z",
+      "phase": "RELOAD_TRANSITION_NOT_NEW_PAGE_PROVEN"
+    },
+    {
+      "index": 117,
+      "step": "rv-target-window-settled-before-fixed-reload",
+      "observed_at_utc": "2026-10-15T02:56:12.202Z",
+      "phase": "RELOAD_TRANSITION_NOT_NEW_PAGE_PROVEN"
+    },
+    {
+      "index": 118,
+      "step": "rv-fixed-guidance-page-reload",
+      "observed_at_utc": "2026-10-15T02:56:28.480Z",
+      "phase": "RELOAD_TRANSITION_NOT_NEW_PAGE_PROVEN"
+    },
+    {
+      "index": 119,
+      "step": "rv-fixed-single-field-prompt-loaded",
+      "observed_at_utc": "2026-10-15T02:56:36.054Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 120,
+      "step": "rv-fixed-guidance-in-view",
+      "observed_at_utc": "2026-10-15T02:56:43.555Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 121,
+      "step": "rv-fixed-return-main-list",
+      "observed_at_utc": "2026-10-15T02:57:47.690Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 122,
+      "step": "rv-current-source-main-reopen",
+      "observed_at_utc": "2026-10-15T02:57:54.137Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 123,
+      "step": "rv-current-main-loaded-persistence",
+      "observed_at_utc": "2026-10-15T02:58:00.281Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 124,
+      "step": "rv-current-main-highlight-and-guidance",
+      "observed_at_utc": "2026-10-15T02:58:07.123Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 125,
+      "step": "rv-current-source-highlight-visible",
+      "observed_at_utc": "2026-10-15T02:58:52.371Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    },
+    {
+      "index": 126,
+      "step": "rv-current-highlight-settled",
+      "observed_at_utc": "2026-10-15T02:59:06.545Z",
+      "phase": "NEW311_LOADED_PAGE_READ_ONLY_RECHECK"
+    }
+  ]
+}

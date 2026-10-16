@@ -1,0 +1,21 @@
+{
+  "status": "PASS_CURRENT_NATIVE_IDENTITY_REOPEN_APPROVE_RECOVERY_AND_ALL_TABLE_AUDIT",
+  "tables": 105,
+  "unchanged_tables": 102,
+  "all_protected_rows_and_fields_exact": true,
+  "actions_appended": 2,
+  "nonterminal_jobs_restored": [
+    "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+    "job_fe4651959298eab54d88abd9edaf6760"
+  ],
+  "terminal_jobs_exact": true,
+  "workers_started": 0,
+  "new_attempts": 0,
+  "models_executed": 0,
+  "new_parses": 0,
+  "original_files_exact": true,
+  "copied_original_files_exact": true,
+  "new_owned_derived_files": [],
+  "scientific_approval": false,
+  "all11_complete": false
+}

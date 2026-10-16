@@ -1,0 +1,114 @@
+{
+  "parser_case": {
+    "kind": "PARSER",
+    "case_id": "software_fixture_rv_parser_job_07b736b47e49",
+    "paper_id": "software_fixture_rv_parser_paper_07b736b47e49",
+    "title": "SOFTWARE_FIXTURE Parser Quality Source",
+    "doi": "10.9898/rv-parser-07b736b47e49",
+    "created_at": "2026-10-14T21:54:18.444279+00:00",
+    "file_version_id": "software_fixture_rv_parser_file_07b736b47e49",
+    "storage_path": null,
+    "detail": "SOFTWARE_FIXTURE: candidate omits numbered reference [6] on PDF page 2; no parser or model executed."
+  },
+  "identity_case": {
+    "kind": "PDF_IDENTITY",
+    "case_id": "software_fixture_rv_doi_only_file_07b736b47e49",
+    "paper_id": "software_fixture_rv_doi_only_paper_07b736b47e49",
+    "title": "SOFTWARE_FIXTURE DOI Only Identity Control",
+    "doi": "10.9898/rv-doi-before-07b736b47e49",
+    "created_at": "2026-10-14T21:54:18.444279+00:00",
+    "file_version_id": "software_fixture_rv_doi_only_file_07b736b47e49",
+    "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_doi_only_identity.pdf",
+    "detail": {
+      "doi_match": false,
+      "fixture": "SOFTWARE_FIXTURE",
+      "title_token_ratio": 1
+    }
+  },
+  "parser_workflow": {
+    "case_id": "software_fixture_rv_parser_job_07b736b47e49",
+    "workspace_id": "21b301fb2d4b631bdea2d65a152686e9aa8cbb3e21b7d65bb57e86c4465910ee",
+    "kind": "PARSER",
+    "file": {
+      "file_version_id": "software_fixture_rv_parser_file_07b736b47e49",
+      "paper_id": "software_fixture_rv_parser_paper_07b736b47e49",
+      "sha256": "913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a",
+      "size_bytes": 2346,
+      "identity_status": "VERIFIED",
+      "validation": {
+        "doi_match": true,
+        "fixture": "SOFTWARE_FIXTURE",
+        "title_token_ratio": 1
+      },
+      "created_at": "2026-10-14T21:54:18.444279+00:00"
+    },
+    "paper": {
+      "paper_id": "software_fixture_rv_parser_paper_07b736b47e49",
+      "title": "SOFTWARE_FIXTURE Parser Quality Source",
+      "doi": "10.9898/rv-parser-07b736b47e49",
+      "canonical_key": "doi:10.9898/rv-parser-07b736b47e49",
+      "updated_at": "2026-10-14T21:54:18.444279+00:00"
+    },
+    "integrity_verified": true,
+    "quarantined": false,
+    "latest_annotations": {},
+    "findings": [],
+    "blocked_jobs": [
+      {
+        "job_id": "software_fixture_rv_parser_job_07b736b47e49",
+        "collection_id": "software_fixture_rv_paused_collection_07b736b47e49",
+        "job_type": "PARSE_PDF",
+        "status": "NEEDS_HUMAN",
+        "fencing_token": 0,
+        "updated_at": "2026-10-14T21:54:18.444279+00:00",
+        "review_kind": "PARSE_QUALITY"
+      }
+    ],
+    "collections": [],
+    "candidate": {
+      "available": true,
+      "sha256": "852df6576449c04bcf95ef68c0b720fe537ed09b9a20b374b964094e91fbbbb6",
+      "quality": {
+        "body_blocks": 1,
+        "body_characters": 200,
+        "reference_entries": 5,
+        "reference_page_alignment": {
+          "missing_source_numbered_references": [
+            6
+          ],
+          "source_numbered_references": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ]
+        }
+      },
+      "parser": "SOFTWARE_FIXTURE synthetic candidate - no parser executed",
+      "body_blocks": 1,
+      "reference_entries": 5
+    },
+    "job": {
+      "job_id": "software_fixture_rv_parser_job_07b736b47e49",
+      "collection_id": "software_fixture_rv_paused_collection_07b736b47e49",
+      "paper_id": "software_fixture_rv_parser_paper_07b736b47e49",
+      "job_type": "PARSE_PDF",
+      "status": "NEEDS_HUMAN",
+      "fencing_token": 0,
+      "updated_at": "2026-10-14T21:54:18.444279+00:00",
+      "last_error_detail": "SOFTWARE_FIXTURE: candidate omits numbered reference [6] on PDF page 2; no parser or model executed.",
+      "result_json": "{\"review\": {\"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-rv-native-w6ahcxx8\\\\data\\\\artifacts\\\\papers\\\\software_fixture_rv_parser_paper_07b736b47e49\\\\913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a\\\\review\\\\software_fixture_rv_parser_job_07b736b47e49-0\\\\candidate.json\", \"sha256\": \"852df6576449c04bcf95ef68c0b720fe537ed09b9a20b374b964094e91fbbbb6\"}, \"correction_action_ids\": [], \"file_version_id\": \"software_fixture_rv_parser_file_07b736b47e49\", \"kind\": \"PARSE_QUALITY\", \"parser_executed\": false, \"pdf_sha256\": \"913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a\", \"software_fixture\": true}}"
+    },
+    "last_action_id": null,
+    "source_impact": null,
+    "context_sha256": "d21ca474abb305d6d858af8968bacc84dc043deff6ea25e6025deba23fdb7fb3",
+    "history": [],
+    "allowed_actions": [
+      "RECHECK_PARSE"
+    ]
+  },
+  "reads_only": true,
+  "pdf_page_image_or_text_endpoints_requested": false
+}

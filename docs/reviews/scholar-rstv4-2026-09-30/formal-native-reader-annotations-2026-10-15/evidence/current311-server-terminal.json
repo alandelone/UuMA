@@ -1,0 +1,9 @@
+{
+  "pid": 62200,
+  "port": 52891,
+  "requests": 19,
+  "source_new311_exact": true,
+  "original_root_exact": true,
+  "all_4_fixture_pdfs_and_candidate_exact": true,
+  "native_acceptance_complete": false
+}

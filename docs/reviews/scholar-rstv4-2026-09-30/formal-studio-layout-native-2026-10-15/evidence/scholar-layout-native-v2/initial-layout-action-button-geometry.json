@@ -1,0 +1,38 @@
+[
+  {
+    "hit": "Done",
+    "label": "Done",
+    "rect": {
+      "bottom": 48.140625,
+      "height": 31,
+      "left": 1050.5,
+      "right": 1117.765625,
+      "top": 17.140625,
+      "width": 67.265625
+    }
+  },
+  {
+    "hit": "仅重新排版",
+    "label": "仅重新排版",
+    "rect": {
+      "bottom": 48.140625,
+      "height": 31,
+      "left": 1122.765625,
+      "right": 1153.765625,
+      "top": 17.140625,
+      "width": 31
+    }
+  },
+  {
+    "hit": "Generate",
+    "label": "Generate",
+    "rect": {
+      "bottom": 48.140625,
+      "height": 31,
+      "left": 1158.765625,
+      "right": 1249,
+      "top": 17.140625,
+      "width": 90.234375
+    }
+  }
+]

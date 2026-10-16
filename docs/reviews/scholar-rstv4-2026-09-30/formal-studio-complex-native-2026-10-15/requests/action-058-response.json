@@ -1,0 +1,36 @@
+{
+  "status_code": 201,
+  "body": {
+    "asset_id": "asset_ea004de6f5da423ba6ab98710d9a9458",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "filename": "software-only-table.csv",
+    "media_type": "text/csv",
+    "size_bytes": 184,
+    "sha256": "cb1b1e1e64ba376010ce1bb9836a4ab4d642634f22f32e8dd9ac6618c00edc6f",
+    "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\assets\\cb1b1e1e64ba3760-software-only-table.csv",
+    "asset_kind": "TABLE",
+    "status": "READY",
+    "created_at": "2026-10-15T07:44:18.657516+00:00",
+    "metadata": {
+      "columns": 3,
+      "preview": [
+        [
+          "SOFTWARE_FIXTURE",
+          "fictional_value",
+          "qualification"
+        ],
+        [
+          "alpha_demo",
+          "1",
+          "Software rendering test only; no scientific measurement"
+        ],
+        [
+          "beta_demo",
+          "2",
+          "Software rendering test only; no scientific measurement"
+        ]
+      ],
+      "rows": 3
+    }
+  }
+}

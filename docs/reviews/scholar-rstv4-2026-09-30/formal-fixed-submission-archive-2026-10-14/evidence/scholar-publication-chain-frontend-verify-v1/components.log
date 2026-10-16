@@ -1,0 +1,8 @@
+PASS actual parent wiring disables publication for a legacy scientific-review hold
+PASS historical/legacy records never borrow active version; final submission guarded
+PASS failed same-payload retry preserves input and operation identity
+PASS acknowledged event read recovery never repeats successful POST
+PASS published requires exact bound acceptance venue, round and version; later withdrawal or revision invalidates it
+PASS archive requires published accepted version, both explicit files and author confirmation; unavailable hashes retained
+PASS failed upload retains selected file and never creates archive completion
+PASS existing Stage6 entry requires current accepted displayed version; zero content has no completion action

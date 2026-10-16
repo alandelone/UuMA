@@ -1,0 +1,22 @@
+{
+  "status": "PASS_POST_A206_CHECKPOINT_RETAINED_NO_V8_BUSINESS_ACTIONS_OWNED_SERVICES_RETIRED",
+  "v6_native_business_requests": 2,
+  "v8_business_requests": 0,
+  "v8_all110_tables_exact_post_native_restore": true,
+  "v8_non_sidecar_bytes_exact": true,
+  "original109_and_external25_and_source311_frontend91_dist76_exact": true,
+  "v8_owned_identities_absent": true,
+  "v8_ports_free": [
+    8877,
+    61614
+  ],
+  "v6_owned_processes_were_observed_absent_after_interrupt_cause_unknown": true,
+  "old63377_now_os_excluded": true,
+  "system_settings_changed": false,
+  "browser_block": "in-app Browser Use URL policy refuses current data: network-error page; target61614 navigation and close of own error tab not completed",
+  "explained_no_change_native_executed": false,
+  "models_gpu_workers_executed": 0,
+  "budget_consent1800_already_received_but_no_update_while_gateway403": true,
+  "overall118_complete": false,
+  "final_all11_integrated_complete": false
+}

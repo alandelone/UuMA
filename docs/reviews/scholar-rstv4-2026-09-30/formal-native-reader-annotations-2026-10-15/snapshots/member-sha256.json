@@ -1,0 +1,102 @@
+{
+  "copy/source-before-all110.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\source-before-all-110-tables.json",
+    "sha256": "1f53a5ddef864e189e9a852df77925bcf5f4d204dcc64d8c8624f325613f275b",
+    "size_bytes": 7130681
+  },
+  "copy/prepared-initial-fixtures-all110.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\prepared-all-110-tables.json",
+    "sha256": "3bdcd252e575095c92e653397c69d5a337875a18a746c941c78893811748e50c",
+    "size_bytes": 7134453
+  },
+  "final13/all-110-tables-final13.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-v3\\all-110-tables-final13.json",
+    "sha256": "be5d74388bcf6e73eb4d5c01597dff1a55e2a139cdd8aa05a51a5187df5c2a1a",
+    "size_bytes": 7144589
+  },
+  "additional-fixtures/after-all110-13events.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-fixtures-prepare-v1\\after-all-110-tables-13events.json",
+    "sha256": "c97bd09cb53e5a254eb624445166b44e3db468aed6c5299ab8c54751cf8a5227",
+    "size_bytes": 7149635
+  },
+  "before-prompt-fix/all110-before-retire.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-before-prompt-fix-v1\\all-110-tables-before-retire.json",
+    "sha256": "c97bd09cb53e5a254eb624445166b44e3db468aed6c5299ab8c54751cf8a5227",
+    "size_bytes": 7149635
+  },
+  "current-final/all110-final.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-current-final-v1\\all-110-tables-final.json",
+    "sha256": "c97bd09cb53e5a254eb624445166b44e3db468aed6c5299ab8c54751cf8a5227",
+    "size_bytes": 7149635
+  },
+  "native/snapshot-absent-preserves-known-doi.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-absent-preserves-known-doi.json",
+    "sha256": "17082ef455b583b1c22d95a0fd5b2e8647d82b08e7c81065d96f860497d8d0bf",
+    "size_bytes": 7182647
+  },
+  "native/snapshot-before-ui.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-before-ui.json",
+    "sha256": "78ed574df29702ad9a57386cfa02d1968b977c896a9b3dfb7349ea668870e3a2",
+    "size_bytes": 7157060
+  },
+  "native/snapshot-both-fields-before-wrong-pdf.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-both-fields-before-wrong-pdf.json",
+    "sha256": "6934516521cb27ae4f06ecdbb254fca404457a2fa7102bd9487e63990430edad",
+    "size_bytes": 7169995
+  },
+  "native/snapshot-collision-rejected.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-collision-rejected.json",
+    "sha256": "dd6bc64f20d90d300c29a296f57a982f82703c6ea4b7990f9e406d9d49bceeff",
+    "size_bytes": 7166254
+  },
+  "native/snapshot-doi-comment-debounce.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-doi-comment-debounce.json",
+    "sha256": "62979950b19c0450e863b6498770775c5ee16aa115c81b6c1ec68c0324e1525c",
+    "size_bytes": 7161427
+  },
+  "native/snapshot-doi-native-saved.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-doi-native-saved.json",
+    "sha256": "99f794a4a8ee6434b594338ab54b53c52bb5101953ccc23da91991eaca6f6e72",
+    "size_bytes": 7159475
+  },
+  "native/snapshot-main-absent-reverts-doi.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-main-absent-reverts-doi.json",
+    "sha256": "20a0c7a6babb74e459026b7bacc673636733bf11df154cf6913c233d78ff4837",
+    "size_bytes": 7168119
+  },
+  "native/snapshot-outage-before.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-outage-before.json",
+    "sha256": "075409ab0e0dcc3c1d949d83fceb95d7de25047a1cf7717e380586c71430a6c9",
+    "size_bytes": 7186482
+  },
+  "native/snapshot-outage-draft-no-write.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-outage-draft-no-write.json",
+    "sha256": "1327ceea35ab2d74796f1193e8bb7935b59f7d5b911a8d24e63d263e94ec51d4",
+    "size_bytes": 7186490
+  },
+  "native/snapshot-recovered-comment-confirmed.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-recovered-comment-confirmed.json",
+    "sha256": "634298e4c3c06187110cc6dc03a7a925944062dee0e08404659c79d419ae06cd",
+    "size_bytes": 7187402
+  },
+  "native/snapshot-reopened-and-annotated.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-reopened-and-annotated.json",
+    "sha256": "4dd2320fa6669d91eb8daa2f16a069e868a15b27caad7655ac044f4e8cbf8505",
+    "size_bytes": 7177000
+  },
+  "native/snapshot-response-held-awaiting-ack.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-response-held-awaiting-ack.json",
+    "sha256": "46e1763c068140b8114d8b9225fd889bae82c415b36bc4845286a41f766e79f1",
+    "size_bytes": 7187401
+  },
+  "native/snapshot-title-and-comments-saved.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-title-and-comments-saved.json",
+    "sha256": "c9017addc3494650bc7b6885644405f5794f9122fbb8f419ec86db6c0152693f",
+    "size_bytes": 7165156
+  },
+  "native/snapshot-wrong-pdf-reverts-both.json": {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\snapshot-wrong-pdf-reverts-both.json",
+    "sha256": "c4051a52745a1c95f093cc6bc85d490ef6b87a8ff1ad195bd7a6324ae22f7865",
+    "size_bytes": 7173397
+  }
+}

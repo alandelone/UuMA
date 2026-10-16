@@ -1,0 +1,7 @@
+{
+  "path": "C:/Users/Alandelone/AppData/Local/hermes/hermes-agent/gateway/run_inbound.py",
+  "before_sha256": "9c8daaac9f8a8816d91385fafa0f686f5d72e801b642247f540706c7fad298d3",
+  "after_sha256": "7415deaedeadf762558a32a68e9d0b9f227a7bfd8ec08c3c3caa58777f433f68",
+  "backup": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.uuma-local/honc-voice-fix-backup-20261015/native-run_inbound.py",
+  "change": "Run pre_gateway_dispatch once for queued inbound preprocessing under the routed profile; preserve idle one-shot hook behavior."
+}

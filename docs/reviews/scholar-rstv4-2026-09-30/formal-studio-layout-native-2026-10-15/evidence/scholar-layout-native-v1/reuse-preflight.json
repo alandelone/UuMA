@@ -1,0 +1,12 @@
+{
+  "same_preserved_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz",
+  "author_revision": 83,
+  "generated_input_revision": 79,
+  "fixed_source": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+  "only_document_variants": 8,
+  "one_layout_recompile_only": true,
+  "one_new_round_and_import_only": true,
+  "one_new_package_only": true,
+  "models_workers_gpu": 0,
+  "new_schema_or_database_copies": 0
+}

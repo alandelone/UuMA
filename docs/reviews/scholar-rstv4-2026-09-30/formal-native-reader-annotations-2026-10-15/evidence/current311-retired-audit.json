@@ -1,0 +1,13 @@
+{
+  "status": "PASS_CURRENT_CATALOG_OWNED_SERVICE_RETIRED",
+  "owned_pid": 62200,
+  "pid_absent": true,
+  "port": 52891,
+  "port_free_bind_proven": true,
+  "all_110_tables_and_13_events_and_8_fixture_rows_exact": true,
+  "owned_root_all_files_exact_before_after_retire": true,
+  "original_root_all_files_and_tables_exact": true,
+  "source_new311_exact": true,
+  "all_4_pdfs_and_candidate_exact": true,
+  "native_acceptance_complete": false
+}

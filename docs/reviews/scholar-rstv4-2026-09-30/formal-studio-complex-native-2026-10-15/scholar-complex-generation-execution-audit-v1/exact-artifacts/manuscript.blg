@@ -1,0 +1,50 @@
+This is BibTeX, Version 0.99d (TeX Live 2025)
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: manuscript.aux
+The style file: unsrtnat.bst
+Database file #1: references.bib
+Warning--empty journal in evidence_b5348fa59b3948ae9540b75a33ca9bd9
+Warning--empty journal in evidence_3a2639ee8b5e432aafd7e3743c825f33
+Warning--empty journal in evidence_6b169de2b78d452f919391b00916f2c8
+You've used 3 entries,
+            2481 wiz_defined-function locations,
+            559 strings with 4648 characters,
+and the built_in function-call counts, 825 in all, are:
+= -- 66
+> -- 21
+< -- 3
++ -- 14
+- -- 6
+* -- 43
+:= -- 139
+add.period$ -- 10
+call.type$ -- 3
+change.case$ -- 6
+chr.to.int$ -- 1
+cite$ -- 6
+duplicate$ -- 54
+empty$ -- 85
+format.name$ -- 9
+if$ -- 166
+int.to.chr$ -- 3
+int.to.str$ -- 4
+missing$ -- 3
+newline$ -- 24
+num.names$ -- 9
+pop$ -- 32
+preamble$ -- 1
+purify$ -- 3
+quote$ -- 0
+skip$ -- 30
+stack$ -- 0
+substring$ -- 6
+swap$ -- 6
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 21
+warning$ -- 3
+while$ -- 6
+width$ -- 0
+write$ -- 42
+(There were 3 warnings)

@@ -1,0 +1,74 @@
+{
+  "status": "FAIL_RETAINED",
+  "checks": [
+    {
+      "name": "catalog_collection_progress",
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "catalog_collections",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "name": "catalog_deep_read",
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "catalog_existing_papers",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "name": "catalog_experiments",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "name": "catalog_pdf_annotations",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "name": "catalog_research_overview",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "name": "catalog_research_workspaces",
+      "exit_code": 0,
+      "seconds": 0.06
+    },
+    {
+      "name": "catalog_review_workflow",
+      "exit_code": 0,
+      "seconds": 0.05
+    },
+    {
+      "name": "catalog_scientific_review",
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "catalog_scope_literature",
+      "exit_code": 0,
+      "seconds": 0.06
+    },
+    {
+      "name": "catalog_track_decisions",
+      "exit_code": 0,
+      "seconds": 0.03
+    },
+    {
+      "name": "ruff",
+      "exit_code": 1,
+      "seconds": 0.09
+    }
+  ],
+  "source_files": 311,
+  "source_and_tests_unchanged": true,
+  "native_browser_executed": false,
+  "overall11_complete": false
+}

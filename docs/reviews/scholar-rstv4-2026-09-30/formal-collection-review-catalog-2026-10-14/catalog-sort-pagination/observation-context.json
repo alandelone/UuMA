@@ -1,0 +1,7 @@
+{
+  "initialReversedPriorityObservation": "Capture ran during outstanding UI requests and did not match the independent complete-page assertion; original operation was not repeated.",
+  "rawInitialMismatchNotCaptured": true,
+  "laterReadOnlyObservationAll50Exact": true,
+  "queryReceipt": "010.json",
+  "sortingActionsReplayed": false
+}

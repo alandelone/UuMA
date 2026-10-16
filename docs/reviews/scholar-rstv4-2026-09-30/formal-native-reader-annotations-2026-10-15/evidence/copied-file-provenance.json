@@ -1,0 +1,374 @@
+[
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-native-reader-annotations-final-report-v1.md",
+    "report_member": "acceptance.md",
+    "sha256": "ee193e9ed69befbe09b8109a9d1c47dfcf4eceee43e2cf889c5ca001a5e0cc47",
+    "size_bytes": 9636
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-fix-v1\\catalog_web.before.html.raw",
+    "report_member": "source-before/catalog_web.html.raw",
+    "sha256": "8624e2d3b632d885bd4dac28e3ea48ede79c0e07f56ee1bb4967d89668762ec3",
+    "size_bytes": 201227
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-fix-v1\\source-before-old311.json",
+    "report_member": "source-before/source-vector-old311.json",
+    "sha256": "7c4f70356da73ab06f3584df57180459448cdadbdad23b1efe1e42d0d85c815c",
+    "size_bytes": 34868
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-reader-full-v3\\receipt.json",
+    "report_member": "source-before/historical-full1130-receipt.json",
+    "sha256": "257fd574a451aee3d632eb6331e4e7a3542cce99599c1ecfbb0b7626b030e8fb",
+    "size_bytes": 3530
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-reader-full-v3\\pytest.log",
+    "report_member": "source-before/historical-full1130-pytest.log",
+    "sha256": "6a974e3f45089bc4ea37f67d395b12ed8a952d2725730d05da5791662205e18e",
+    "size_bytes": 8028
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_web.html",
+    "report_member": "source-current/catalog_web.html",
+    "sha256": "e573c3771cc6f4723be6c2611eabfb81bae3200722ccdd1ccac9018924e18447",
+    "size_bytes": 201274
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-fix-v1\\source-after-new311.json",
+    "report_member": "source-current/source-vector-new311.json",
+    "sha256": "6d5db7e42e9ed086dc997f21a0df6294aa1b313427a878b321ca89795447ec09",
+    "size_bytes": 34868
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-fix-v1\\edit-receipt.json",
+    "report_member": "evidence/declared-single-html-diff.json",
+    "sha256": "e70d1093364684982fc64219162de07a71be4455ee8bf3a50f0c269794e9b253",
+    "size_bytes": 542
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-fix-v1\\whole-script-syntax.json",
+    "report_member": "checks/whole-script-syntax.json",
+    "sha256": "488c25a6bf76bc892546b6752b12198a415380620ef5aff0fc6b12567613a5c4",
+    "size_bytes": 265
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-full-v1\\pytest.log",
+    "report_member": "checks/full-current/pytest.log",
+    "sha256": "904e424e0164dd0cedeaa296a2fdd8fb09fdd5c17b950ebbd105a67f17db5fb1",
+    "size_bytes": 8028
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-full-v1\\receipt.json",
+    "report_member": "checks/full-current/receipt.json",
+    "sha256": "6dbf1041d4a2d3c480738bc6ec05fb1d47dc9c64ea9bf5058ce0fec0da3493e0",
+    "size_bytes": 3568
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-full-v1\\source-before.json",
+    "report_member": "checks/full-current/source-before.json",
+    "sha256": "d302b3d5a0e9559002a87661646518bd82140e70784651e235dfd594206b7853",
+    "size_bytes": 34866
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_collection_progress.log",
+    "report_member": "checks/frontend-current/catalog_collection_progress.log",
+    "sha256": "15d8c1414d4a786e7f999c69b4481437421ac13e580ad0479e43c2fe5f5a4e9f",
+    "size_bytes": 68
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_collections.log",
+    "report_member": "checks/frontend-current/catalog_collections.log",
+    "sha256": "89bb081459081ea60e0729b7d8adaad21816cb454186397af2676a33fcf856ee",
+    "size_bytes": 46
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_deep_read.log",
+    "report_member": "checks/frontend-current/catalog_deep_read.log",
+    "sha256": "d3cff5d6967541cafa745a9922eedf26d22554fe77c8d469160fb4e30593b1d7",
+    "size_bytes": 64
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_existing_papers.log",
+    "report_member": "checks/frontend-current/catalog_existing_papers.log",
+    "sha256": "fb8c932045fec6281f5a00c78702bd84e441e702cecb734ca0fd0bfa39211808",
+    "size_bytes": 69
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_experiments.log",
+    "report_member": "checks/frontend-current/catalog_experiments.log",
+    "sha256": "be1e05bbcab4d482a47992dee08817576f31817bc66defdeadf447d006c6b251",
+    "size_bytes": 839
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_pdf_annotations.log",
+    "report_member": "checks/frontend-current/catalog_pdf_annotations.log",
+    "sha256": "3a58a7eba53ed0cc24aad3c22cd29bd7c427e6b2364fc0ded50aea1b50d0deb5",
+    "size_bytes": 75
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_research_overview.log",
+    "report_member": "checks/frontend-current/catalog_research_overview.log",
+    "sha256": "9dc06634a871757cd9f8ac30527c00c2d3c2ccb8473fcbe5401ca5ae3eacf9e7",
+    "size_bytes": 891
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_research_workspaces.log",
+    "report_member": "checks/frontend-current/catalog_research_workspaces.log",
+    "sha256": "ab411dd8975c15021ccc321a39ef9ef23bb6ced0b7258a6a67ac85f094029a1a",
+    "size_bytes": 1982
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_review_workflow.log",
+    "report_member": "checks/frontend-current/catalog_review_workflow.log",
+    "sha256": "80afcfa17d71a4b524b2726a292a8961fd24479d23a1cfa1c4984e1f2015c5ae",
+    "size_bytes": 52
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_scientific_review.log",
+    "report_member": "checks/frontend-current/catalog_scientific_review.log",
+    "sha256": "09926b764502aca415eccd3a6fb3f3ec074ee7db3cd159ab886d6a8f2ebb807e",
+    "size_bytes": 53
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_scope_literature.log",
+    "report_member": "checks/frontend-current/catalog_scope_literature.log",
+    "sha256": "dc429e6f48beac7f4a2f22b676338320bcce2fdf1eddb3ec36c7204086bc5534",
+    "size_bytes": 103
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\catalog_track_decisions.log",
+    "report_member": "checks/frontend-current/catalog_track_decisions.log",
+    "sha256": "d8ba601aeec41df0c8de0a9b67d2b4f44c4dbf46e3f86e042299e6ebc37ed160",
+    "size_bytes": 1040
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\receipt.json",
+    "report_member": "checks/frontend-current/receipt.json",
+    "sha256": "2d26c51803fb3adcce7de4c1806fb28fac322c7b1ec7f5f0a72f8b5222c8a7d8",
+    "size_bytes": 1533
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\ruff.log",
+    "report_member": "checks/frontend-current/ruff.log",
+    "sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18",
+    "size_bytes": 19
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-prompt-frontend-v1\\source-before.json",
+    "report_member": "checks/frontend-current/source-before.json",
+    "sha256": "d302b3d5a0e9559002a87661646518bd82140e70784651e235dfd594206b7853",
+    "size_bytes": 34866
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\native-ui-log.json",
+    "report_member": "evidence/native-ui-log-current126.json",
+    "sha256": "0ce443d580a84c7d8b1626d4059ea24587e72e49ca822574dfd0ed4a328c44cf",
+    "size_bytes": 1909337
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\native-fixed-doi-only.png",
+    "report_member": "evidence/native-fixed-doi-only.png",
+    "sha256": "2560b99657f9506a66047266347852ad3236b7190a52b5aff1cd711ccfd32f4d",
+    "size_bytes": 61418
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\native-main-reopened.png",
+    "report_member": "evidence/native-main-reopened.png",
+    "sha256": "abfe7be10ea53f2cf2ce5b7f8299029c7f3cf741b2ee0b088299d94c20b09dc4",
+    "size_bytes": 68753
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\http.jsonl",
+    "report_member": "evidence/http-initial-read-only.jsonl",
+    "sha256": "581abddf253c21f70f11e5d6bf2e3d31b38b1ea89ed24764b72f821b73809309",
+    "size_bytes": 3894
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\http.jsonl",
+    "report_member": "evidence/http-old311-native.jsonl",
+    "sha256": "7121838343e318233c86394947055076393e0b1a182097b173855e93dca61c25",
+    "size_bytes": 14913
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-recovery-v1\\http.jsonl",
+    "report_member": "evidence/http-old311-recovery.jsonl",
+    "sha256": "2f756981532bb30aa222940877f46d1d9e0ab516a2fa269d33d41378c1f78fdd",
+    "size_bytes": 7551
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\http.jsonl",
+    "report_member": "evidence/http-current311-read-only.jsonl",
+    "sha256": "5872e07e5ff15361e874ff74aab0dc3484b386810800c3d6a612c6ede4624357",
+    "size_bytes": 3798
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\lazy-loading-audit.json",
+    "report_member": "evidence/lazy-loading-audit.json",
+    "sha256": "bd12e325d1583aaadb25a6e95019622f8d7af7330f30ca6dd11e63b328b22580",
+    "size_bytes": 2010
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\server.json",
+    "report_member": "evidence/initial-fixture-and-server.json",
+    "sha256": "dab9a106c637330c4d81d8e54f06611c2073b9eda85b6598b90213edb724df91",
+    "size_bytes": 2736
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\retire-audit.json",
+    "report_member": "evidence/initial-policy-stopped-retirement.json",
+    "sha256": "f9bc33ef3f9aed6684f42e74ca34a86755e2ccc539018a5d7b36e94130a3deba",
+    "size_bytes": 7061
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\source-root-all-files.json",
+    "report_member": "evidence/protected-original-files.json",
+    "sha256": "33c58e2b06bfeda5f7812f43cf1ad018e0ab94db5177df35417f9d3f8f854884",
+    "size_bytes": 14710
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-v3\\audit.json",
+    "report_member": "evidence/final13-audit.json",
+    "sha256": "4405f62b6130c44e9bc7850b50176c12e72d10c734b8cff7cf5a742c55281d08",
+    "size_bytes": 5933
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-v3\\all-13-annotation-events.json",
+    "report_member": "evidence/all-13-annotation-events.json",
+    "sha256": "68707db70d792d57512fae309f443aa421a91b9be0bbc479dd65d75f8aa8c4a5",
+    "size_bytes": 12211
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-seal-v3.json",
+    "report_member": "evidence/historical-final13-seal.json",
+    "sha256": "4469a4fa1b9efa67a9ca1c32db7631af23a34c3dc4d9a18ffc8d004f2d7b46fd",
+    "size_bytes": 617
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-audit-v1.log",
+    "report_member": "evidence/retained-audit-failure-v1.log",
+    "sha256": "9055aef252a077c7bf3c6709dd1959fd8cb07e4d918b7523aef14fe22e061e61",
+    "size_bytes": 310
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-audit-v2.log",
+    "report_member": "evidence/retained-audit-failure-v2.log",
+    "sha256": "a708e02035d0740e6fbd4221ecf1734044200c897876739022087aadbdde034e",
+    "size_bytes": 305
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-final13-audit-v3.log",
+    "report_member": "evidence/final13-audit-pass-v3.log",
+    "sha256": "952bfaa399f7dc0c4b0f6f6d3a2b79c5f3de75cb346551b6354b61249fa5f3bf",
+    "size_bytes": 590
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-recovery-v1\\annotation-response-held.json",
+    "report_member": "evidence/annotation-response-held.json",
+    "sha256": "c2b29204e6d4b44f8139483175acd68d2108127372138d7e6121d22891e5da49",
+    "size_bytes": 207
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-recovery-v1\\annotation-response-released.json",
+    "report_member": "evidence/annotation-response-released.json",
+    "sha256": "43c614b810b440aa9b576558cfa175302414a8fb575f4c32fc4ea287e79c02c2",
+    "size_bytes": 209
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-resume-v1\\outage-stopped-audit.json",
+    "report_member": "evidence/outage-stopped-audit.json",
+    "sha256": "324891c981a6d210b8c3478962dad9973bb747ac39bacdd3d17fa574243b1415",
+    "size_bytes": 1714
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-before-prompt-fix-v1\\retired-audit.json",
+    "report_member": "evidence/old311-before-prompt-fix-retirement.json",
+    "sha256": "7fc65980d3a13645c58227bb759270d3afd15933216fc5043531dbe22a159dc6",
+    "size_bytes": 590
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-fixtures-prepare-v1\\preparation.json",
+    "report_member": "evidence/fixture-additions/preparation.json",
+    "sha256": "f46c4b65ead440655789af9792ca8a6f91d9310b0660e26d810d7ca815c84a39",
+    "size_bytes": 3487
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-fixtures-prepare-v1\\added-rows-exact.json",
+    "report_member": "evidence/fixture-additions/added-rows-exact.json",
+    "sha256": "0b0cfe2345f3ad5564c001178c274765a28f0fa4cd954b1738c482d8fc0a600a",
+    "size_bytes": 6560
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-fixtures-prepare-v1\\added-files-exact.json",
+    "report_member": "evidence/fixture-additions/added-files-exact.json",
+    "sha256": "1f98ce3739577ba83b8dc1bba6ef66b61c36681e2e80f138cd5cc6c6b54be5ed",
+    "size_bytes": 629
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-fixtures-prepare-v1\\api-readback.json",
+    "report_member": "evidence/fixture-additions/api-readback.json",
+    "sha256": "27d8fef5f4b2d5cd9211a4ca63522fd719888d793cebc001a1ae76e7b7141a16",
+    "size_bytes": 5080
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-fixtures-prepare-v1\\visual-qa.json",
+    "report_member": "evidence/fixture-additions/visual-qa.json",
+    "sha256": "25b8f3b39ad3c38cd0a67e13ee3f427b309b0a9634824a6eb396fc1279618b31",
+    "size_bytes": 340
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-current-final-v1\\audit-before-retire.json",
+    "report_member": "evidence/current311-native-audit.json",
+    "sha256": "5a42ae26d2deec885f3f797ea7769834def1fcce93aa14969760aa75c405c570",
+    "size_bytes": 1264
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-current-final-v1\\retired-audit.json",
+    "report_member": "evidence/current311-retired-audit.json",
+    "sha256": "31e442c49172ab35ac494bed20e0f99b523527eebd5b4cb02f4ce23cceae08e5",
+    "size_bytes": 455
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\terminal.json",
+    "report_member": "evidence/current311-server-terminal.json",
+    "sha256": "1d6d109d8b8fc9be6b13d87c5880ad17e278fadace8dcdf954b6626df4f6177a",
+    "size_bytes": 214
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v3\\policy-stop-current-native-seal.json",
+    "report_member": "evidence/studio-policy-stop-current-native-seal.json",
+    "sha256": "2c513b764874d73aea3de721ec095b08eba306795781028afe95f68a1fe86b89",
+    "size_bytes": 1975
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_three_page_annotation.pdf",
+    "report_member": "inputs/software-fixtures/main-three-pages.pdf",
+    "sha256": "e36f5d3ee0ca0bf1a237cec37f36b185784fcd48e0a746640013d2991f9c4ba1",
+    "size_bytes": 3024
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_without_printed_doi.pdf",
+    "report_member": "inputs/software-fixtures/absent-known-doi.pdf",
+    "sha256": "cd7c1d6d6b39c089fdf28ef31cc180e3e726245504544e3c8fa60837845c5a84",
+    "size_bytes": 1286
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_parser_quality.pdf",
+    "report_member": "inputs/software-fixtures/parser-quality.pdf",
+    "sha256": "913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a",
+    "size_bytes": 2346
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_doi_only_identity.pdf",
+    "report_member": "inputs/software-fixtures/doi-only-control.pdf",
+    "sha256": "46fecf608e8d572af12cc1d2ca43814b8f0ccbdb367697a14849d8a7a55ca863",
+    "size_bytes": 1327
+  },
+  {
+    "source": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\artifacts\\papers\\software_fixture_rv_parser_paper_07b736b47e49\\913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a\\review\\software_fixture_rv_parser_job_07b736b47e49-0\\candidate.json",
+    "report_member": "inputs/software-fixtures/synthetic-parser-candidate.json",
+    "sha256": "852df6576449c04bcf95ef68c0b720fe537ed09b9a20b374b964094e91fbbbb6",
+    "size_bytes": 1608
+  }
+]

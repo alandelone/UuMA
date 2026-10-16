@@ -1,0 +1,10 @@
+{
+  "profile": "honc",
+  "life_plugin_installed": true,
+  "observability_plugin_installed": true,
+  "credentials_unchanged": true,
+  "configuration_unchanged": true,
+  "live_config_and_user_habit_versions_preserved": true,
+  "native_gateway_file": "gateway/run_inbound.py",
+  "backup": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\honc-voice-fix-backup-20261015"
+}

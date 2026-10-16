@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_342fc9f8af994f599623410886be6877",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments.\",\"response_text\":\"SOFTWARE_FIXTURE pending reply. The Beta citation identity and the fictional table and figure are saved in v6, but their complete typed attribution to final prose remains unverified. No completed scientific amendment or scientific approval is asserted.\",\"expected_content_sha256\":\"b46b11be6fc461c3b82e488e97e5b6ddba382314f9e4440d5bdfc651aefcea8b\"}",
+  "body_sha256": "f273d1ea0aeb445d4dd683d56b13c3375a1572927f2593172ae2a01470796b33",
+  "body_bytes": 629
+}

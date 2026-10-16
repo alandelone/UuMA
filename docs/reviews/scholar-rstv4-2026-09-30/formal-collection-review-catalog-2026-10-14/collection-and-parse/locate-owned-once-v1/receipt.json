@@ -1,0 +1,42 @@
+{
+  "status": "PASS_ACTUAL_REGISTERED_PDF_REUSE_NO_NETWORK",
+  "result": {
+    "job_id": "job_7e3c308f323a9117009efcda3c190672",
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "LOCATE_PDF",
+    "queue_class": "NETWORK",
+    "status": "SUCCEEDED",
+    "priority": 30,
+    "idempotency_key": "a9d2ab5955f34d71153fe9f0b7063eb87e78fccf652209da5266c99aaad0a7a3",
+    "input_json": "{\"doi\": \"10.1234/corrected\", \"screen_context_sha256\": \"11c0c1adc8377a668bf3a6287492cdee4355f3e6ee3f72467da37c29e926f0f7\"}",
+    "input_digest": "76f0b3b28d3884edb46a837ef0c5447695cde6b61a29e90cb8ed15c3705d98b7",
+    "rule_version": "catalog-file-reuse-v1",
+    "attempts": 1,
+    "available_at": "2026-10-13T06:32:10.900860+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 1,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": "{\"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"identity_status\": \"VERIFIED\", \"parse_job_id\": \"job_76d39031d8cc329ec431e6a896a08f54\", \"status\": \"REUSED_CATALOG_PDF\", \"storage_path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scholar-review-recovery-2026-10-06-3xtv51bn\\\\data\\\\artifacts\\\\papers\\\\paper_dde0a449e93444c2771e7b0edeb7daf9\\\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\\\source.pdf\"}",
+    "created_at": "2026-10-13T06:32:10.900860+00:00",
+    "updated_at": "2026-10-13T06:36:30.725939+00:00"
+  },
+  "reused": {
+    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "identity_status": "VERIFIED",
+    "parse_job_id": "job_76d39031d8cc329ec431e6a896a08f54",
+    "status": "REUSED_CATALOG_PDF",
+    "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf"
+  },
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "job_id": "job_7e3c308f323a9117009efcda3c190672",
+  "new_parse_job_id": "job_76d39031d8cc329ec431e6a896a08f54",
+  "remote_calls": 0,
+  "fixture_model_calls": 0,
+  "all_historical_data_rows_preserved": true,
+  "all_protected_original_files_exact": true,
+  "g11_complete": false,
+  "overall11_complete": false
+}

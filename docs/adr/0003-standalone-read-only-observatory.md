@@ -1,0 +1,3 @@
+# Standalone Read-Only Observatory Architecture
+
+To guarantee that the All-in-One Observatory never modifies business databases, triggers control-plane migrations, or exposes privileged execution APIs, the Observatory runs as a standalone FastAPI service on port 8790 with a dedicated `observatory.db` read-only index cache. Rather than mounting within the existing UuMA control plane API (`uuma.api`), it operates in a separate process with strict read-only SQLite connections (`mode=ro&nolock=1`) and soft per-source degradation, ensuring that monitoring traffic cannot corrupt agent states or block orchestrator operations.

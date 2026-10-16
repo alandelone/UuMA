@@ -1,5 +1,66 @@
 # Findings
 
+## 2026-10-15 Scholar actual pure-layout continuation
+
+Final receipt: the CSS wrap repair passed a new production build and all21 file
+cells at1280/760,42 native cases with no overflow/intersection. Final read-only
+UI preserved110 tables and all nonDB files exactly. All four owned preview pairs
+are retired; no live worker/model. Formal report316 payloads sealed SHA
+1ba4931f1253ceb33f283e986c67cf6276fc8b4864c7d9c26c544c5026a032b7.
+Original118 matrixv10 updates only ST19/RE09/RE12/RE13/RE14, other113 exact,
+all118 original text/order and11 definitions unchanged;50 report digests verified.
+Both overall completion flags remain false. The Samples cache interval's exact
+delta is eight cells: four existing candidates' revision85->86 AND timestamp,
+with all sample JSON/identity/query fields exact; the first timestamp-only guess
+was rejected and corrected. Retain first-origin failed reads as unresolved.
+
+Applied the explicit standard/narrow margin and immutable exact-realization replay
+contract after ten real service/compiler integrations and two scientific-withdrawal
+guards. The cloned test fixture initially failed preflight because studio_assets
+storage paths were not relocated; retained failures and fixed only fixture paths.
+Apply auditing initially assumed original newline mode and a nested git apply
+silently skipped the expected-copy menu patch. Complete candidate LF-to-CRLF bytes
+plus five exact unique accepted menu hunks verified the one actual application;
+all other frozen files remained exact. Sorted imports and unused names only.
+
+Actual same-root author83 restored the two post-generation label/condition markers
+natively83->85; independent round4 fixed v6/r79, single C-LAYOUT opinion A215.
+Only layout saved85->86. Actual single job studio_job_db4959fe580a4a47a246787ee5954268
+SUCCEEDED with NO new model calls, immutable source realization and material bytes.
+v7 manuscript_version_8732ec9497074d82ae2b4359a7c235e5 PDF SHA
+a78ee2ad02957da5bb56876c4c4c526d7be1fe76359fc0489960b80929634b9b.
+Both pages rendered and inspected; no missing original table cells/figure/refs.
+
+Actual native pure-layout evidence first remained unknown: full diagnostic found
+exactly ASCII apostrophe versus TeX U+2019 in Beta paragraph's. Fixed ONLY
+word-internal apostrophe token equivalence, preserving primes/minus/other punctuation,
+full paragraph uniqueness and physical PDF boxes. Same retained v6/v7 now all20
+paragraphs uniquely locate and A215 yields LAYOUT_ONLY, empty changed_text and
+supports_scientific_text_modification:false. Native confirmation stays disabled even
+after full-reply acknowledgement. No regenerated v6/v7 and no fake no-change check.
+Fixed new toolbar action's accidental31px icon width; actual1280 and actual760
+visible positive bounds, full text and intended center hit verified. The first760
+measurement was offscreen after editor click, kept but not counted; scroll-to-brand
+then actual measurement passed and device metrics cleared.
+
+Full current regression after apostrophe/toolbar fixes1178PASS/20warnings/535.90s,
+24JS suites plus Ruff PASS, frozen414-source vector unchanged; earlier1172 pass
+kept as preceding code state. Real builds and typecheck pass. One actual package
+job studio_job_e6cc5fc6730e4da8b08052c85c8cf945 SUCCEEDED, package
+submission_package_04b7b4c8d0fa4e25b5009089c5a863c8 has21 exact manifest/ZIP files,
+170648 bytes, SHA4dd985ae36c51afd8100dce6e86b005663d36427b70afe1bcc1319ce18fc8810.
+Only A215 remains unresolved; old immutable rows/files/model calls/checks preserved.
+The first changed-table audit missed shipped comment_changes/response-state names;
+retain diagnostics and verify old-row counters, never replay package or generation.
+
+Native package list exposed long material filenames overflowing adjacent columns;
+applying one CSS wrapping rule after full suite and exact owned runtime stop.
+Keep full backend1178 evidence and run new frontend build/check/native readback only.
+Several first-origin parallel reads/image loads reported Failed to fetch; native
+later reads recovered, but root cause remains unproven and final11 cannot close from
+this scope. Distinct frozen Thought/Intent reverse navigation and source/material/
+structure typed positive attribution and final same-current-source11 remain due.
+
 ## 2026-10-04 - Shared endpoint representation and complete boundary context
 
 - Previous goal turn classification: progress. It fixed unique claim IDs and immutable
@@ -3307,3 +3368,172 @@ texts, all six references and every protected row. Never weaken assertions or
 substitute raw pre-normalization blocks, replay GPU/model work or alter data.
 Current gate remains verification/pending_review; v3 restarts this read-only audit
 using the corrected execution/storage contract. All failed audit helpers retained.
+
+## 2026-10-15 honc voice writes missing refs
+
+Actual Telegram79/STT raw starts an ASCIIquote wrapper; allowed_operations rejected all quoted
+content and granted nothing. Typed quotation safety stays closed; authenticated voice metadata
+now permits removing only the host wrapper for admission and ignores Han spaces without changing
+stored rawsource. Queued Telegram82 bypassed pre_gateway_dispatch; native gateway/run_inbound.py
+now runs it once in routed preprocessing and marks idle events to avoid repeat hooks.274 UuMA
+and28 installed Hermes regressions passed. Actual body record source79+82 recovered once each
+under stable dedicated recovery IDs; original sources/messages untouched, superseded old75 not
+imported, no inferred habit completion/diagnosis. Readback and idempotent replay verified.
+
+honc had enabled observability config but no profile-local plugin; global plugin not auto-loaded.
+Phoenix old session has no spans in either project; do not claim private thinking was available.
+Installed own observability and fixed life installer to copy it; preserve capture_content=false.
+Actual Phoenix recoverytrace b4604d2a85370e33cf27160872118390 has3 spans, actual two body
+APPLIED receipts. It is a recovery chain with no LLM calls, not retrospective model evidence.
+Full backups .uuma-local/honc-voice-fix-backup-20261015. Evidence docs/reviews/
+honc-telegram-voice-2026-10-15. Original Terra/Gemini model, creds and user-edited habit versions
+retained. Reload onlyexistingidle sharedgateway gracefully; no extra manual Telegramtest.
+
+
+2026-10-15 Studio copied-fixture artifact path context: A211 native no-change review
+correctly rejected fixed-v5 PDF because all25 copied studio_artifacts.storage_path
+values still named an external original temp root. Keep verified_artifact_bytes
+root containment, original artifact SHA/size, generation/version/model/input guards.
+Before continuing, quiesce the owned copy, retain its complete110-table/raw backup,
+copy exact original25 bytes under owned data/writing-studio/MS/generated/job/name,
+then relocate ONLY those25 owned-copy storage_path values in one guarded transaction.
+Verify every other109 table and every other artifact field exact, original files
+unchanged, and no generation/model/GPU/native replay. Retain the old path mapping,
+failed UI evidence and both snapshots. This is fixture-location repair, not product
+guard relaxation, new generated output, or scientific approval.
+
+2026-10-15 latest-parse QuickRead: human recovery report verified once with native
+GET/models200, unchanged original endpoint/signature/credentials. Apply the
+already-approved original Collection time allowance once, using latest measured
+elapsed seconds rounded up plus1800; preserve500papers/10GiB/attempt limit null.
+The v3 harness stopped before claim because its own IDLE presence was incorrectly
+included in an all-STOPPED guard. Preserve budget and failed evidence. Correct
+only that context: other workers STOPPED, exact own instance IDLE, original sole
+MODEL_READ target. v4 actual original job SUCCEEDED/attempt1/fence1, same new parse,
+STARTED+RETURNED model receipt. Actual migration105-to106 adds one empty binding
+table, catalog13-to14. GPUattempt6/PDF/oldhistory exact, no deep read. Null model
+scientific fields are no scientific conclusion; never rerun this successful job.
+# 2026-10-15 complex native move pointer diagnostic
+
+Resolved natively after preserving the failed frozen-source complex run: the
+two-file grid wrapper fix is applied to writing-studio/components/studio-workspace.tsx
+and app/globals.css. Actual new build14.34s and eight related JS suites PASS.
+Five menu kinds at measured1280/760 widths (ten accepted cases) have nonoverlapping
+rectangles and correct center hits; native Move opens the real dialog. First
+viewport capability attempt left innerWidth1280; keep those five extra observations
+but do not count them as narrow. Supported CDP metric override measured760; all five
+reran and both overrides were cleared. Explicit slot2 Delete+Undo81->82->83 restores
+the full author document exactly; all generated/call/job/artifact/check rows exact.
+Formal report formal-studio-menu-overlap-2026-10-15 is sealed, not full11 approval.
+
+The separate complex native generation produced v6/r79, actual ten honest local
+fixture calls and two compiled PDF pages. Five Alpha sentence units map shared
+sentence0 to both original thoughts; remaining units individually preserve them.
+A212 two exact UTF16 assertions received one successful native check, later STALE
+after only one L2 condition and Intent label changed79->81. Entire generated state
+and all non-DB file bytes exact. A21318rows/15disabled, A2146rows/3disabled; enabled
+rows are earlier explicit multi-associated Alpha edits. Positive structure/source/
+material attribution and Beta PDF_TEXT_NOT_FOUND remain real gaps. Shared sentence
+rows still lack native Thought/Intent provenance labels and reverse navigation.
+Layout candidate30tests and actual offline box movement exist under .tmp only;
+not applied, async replay/lineage/race/full regression/native execution still due.
+Matrixv9 keeps all118 originals/11 definitions; only8rows updated/other110exact,
+49report digests verified; overall118/final11 remainfalse. Both owned previewpairs
+8877/56931 and8877/58989 retired, root scui-complex-native-qjbemsgz preserved at83/v6.
+
+Subsequent read-only live DOM and screenshot confirm an actual overlapping target:
+the Move button center (907.0547,389.7344) hits the Delete button in elementFromPoint.
+Move itself has a nonempty89.984x34.969 rectangle but is visually covered by Delete.
+Evidence move-menu-pointer-readonly-dom-diagnostic.json and matching PNG under the
+same runtime evidence directory. Native keyboard Enter did open the real move dialog
+and MOVE_BLOCKS preserved the slot2 object. Candidate CSS fix must remain separate
+until the current frozen-source generation has been exercised and retained.
+
+Missing interaction context: the official Browser observed the correct move label,
+but two pointer activations caused DELETE_PARAGRAPH on isolated software slot2.
+Full request/snapshot evidence stays in .tmp/scholar-complex-native-runtime-v1;
+both were reversed natively. This is not a successful move or product acceptance.
+Retain the pointer defect and use native keyboard activation with a fresh dialog
+and actual MOVE_BLOCKS identity checks before claiming the keyboard route passes.
+
+
+
+2026-10-16 frozen Thought/Intent and citation attribution first focused run:
+44 backend checks passed; two genuine new classification failures showed a space
+left before punctuation when removing citation markers. Strip only horizontal space
+attached to that marker, preserving prose word boundaries and punctuation. Keep
+negative different-prose tests. The real-PDF added fixture stopped before round
+creation because create_review_round requires venue; supply the declared software
+venue. The controlled JSX text helper ignored numeric children, hiding actual v/r
+digits from its assertion; render numbers as text and retain exact v2/r2 assertion.
+Keep all failed logs. No successful native/model/job/check or package is replayed.
+Legacy stored contexts are never backfilled from the current author editor.
+
+
+2026-10-16 Studio frozen origins applied: full1190/24JS plus native A212 v7/r86 shared-sentence reverse views passed. Each row preserves original raw Intent/Thought, not a mutable editor or template projection. Legacy v6 check JSON unchanged and explicitly unavailable without snapshots. CITATION_ONLY real-compiler source replacement cannot confirm scientific prose. All110/old bytes exact, owned8877/54375 retired. Matrixv11 four rows only, other114 and original118/11 definitions exact;51 report digests. Pure layout/other typed acknowledgements, legacy provenance supplemental read, initial native fetch and inline-history click close observation remain open. No model/GPU/QuickRead/package/version/check replay; full11 remains active.
+
+
+2026-10-16 presentation reply contract: actual17 compiler/HTTP/negative cases,
+component and TypeScript all passed. Ruff rejects same-name fixture import aliases
+(PLC0414), even though they declare exports to the unused-import checker. Re-export
+the two shared pytest fixtures in __all__, preserving all behavior assertions and
+both failed lint logs. Do not regenerate the preserved v6/v7 or replay successful
+native/GPU/QuickRead/package actions. New outcome PRESENTATION_MODIFIED requires
+exact identical frozen prose plus verified layout-only evidence from both PDFs;
+scientific MODIFIED retains its original changed-prose guard.
+
+
+2026-10-16 presentation audit execution context: stored historical request_json
+includes manuscript_id and comment_id in addition to the exact HTTP body, as the
+unchanged record() canonical request wrapper declares. Require both exact owners
+and every original request field, not a body-only dictionary comparison. Runtime
+terminal audit already proved the complete wrapper exact. Preserve the first
+readonly auditor failure and do not replay successful A215 confirmation.
+Run Ruff with cwd RSTV4 so its own configuration classifies test fixtures correctly;
+running it from UuMA selects different first-party grouping rules. Retain both
+failed lint observations; explicit __all__ exposes shared pytest fixtures without
+same-name aliases or broad lint suppression.
+
+
+2026-10-16 legacy origin first focused run:32 backend checks passed; the new real
+template fixture failed at its first generation because it assumed paragraph_id
+in the paragraph-realization payload. Actual failed job73387abf... records KeyError
+paragraph_id; stable first Thought ID is present through actual payload.intents.
+Use that recorded identity for unique software wording, retain SUCCEEDED assertions
+and include full job diagnostics. No original successful model/native/job is replayed.
+All controlled frontend checks passed, but TypeScript correctly rejected a failed
+type-predicate branch narrowing an already-typed value to never. Treat transport
+result as unknown before unchanged runtime validation; no identity guard weakened.
+Remove the unused fixture unpacked variable; preserve all first logs.
+Historical reads use pure revision reader and raw serialized SHA, avoiding
+get_workspace initialization. Projected generated slot and raw author-bank paragraph
+can differ: bind through verified Thought mappings, never identical text or current
+editor and never accept ambiguous placements.
+
+2026-10-16 initial delivery diagnosis before transport repair: transparent final-ASGI v1/v2 on exact r86/v7 and existing build observed matching-origin OPTIONS200 for /api/tracks, final body sent, but no following GET; real browser initial and one explicit retry showed Failed to fetch. Full security header observation includes no Access-Control-Request-Private-Network; root cause at browser/response boundary remains unproved. Preserve both read-only intervals, all110/no-file-change and exact owned stops. Introduce same-origin JSON transport through a configured loopback /api destination only, retaining backend semantics, byte payloads/status, stable API_BASE draft namespace and fixed-file path. Require foreign-origin, invalid destination, path traversal and file-route refusal, no automatic mutation retry, exact multipart/UTF16/CAS/idempotency forwarding, real local HTTP and actual initial native read. Do not weaken provenance, confirmation, science or session guards.
+
+2026-10-16 same-origin historical-read scope context BEFORE corrected audit:
+The initial-load/refresh checkpoint actually compared all110 tables equal. Later
+native G01 old-v3 Alpha/Beta focus extended that interval and legitimately called
+get_samples on the old anchors at current author revision86. Actual persisted diff
+is ONLY studio_sample_candidates: same16 keys/rows, exactly8 existing old-v3 rows
+have document_revision13->86 and created_at changed; every sample_json/query_key/
+candidate/anchor/owner and all other109 tables/schema remain exact. Product
+studio.py:get_samples explicitly INSERT OR REPLACE refreshes this revision-keyed
+cache (lines888-962); no new author/model/job/version/check decision is involved.
+Original audit-v1's full110 assertion failed and is retained; do not relabel the
+extended interval all110/read-only-physical-DB exact or undo/restore cached records
+to green. The runtime's original narrow finally guard will also remain a recorded
+failure on stop; an independent exact-identity stop and final business audit must
+record this boundary, not rewrite old receipts or rerun successful UI operations.
+For the expanded historical-read phase require schema and other109 tables exact,
+same16 cache keys, exactly2 named v3 anchors*4 candidates with only revision/time
+changes, complete raw sample_json exact, timestamps within actual samples requests,
+all non-database files exact and current raw author/calls/jobs/checks/packages exact.
+Do not weaken product tests, source provenance, rejection or approval assertions.
+
+2026-10-16 all11-copy checkpoint context: first preparation created one owned copy and committed only37 declared storage_path relocations, then compared sqlite3.Row directly to tuple and stopped. Actual owned-copy journal WAL and tuple checkpoint(0,0,0) verified. Require tuple(row)==(0,0,0), same full110/37 path guards, no source-root change. Recover exactly the existing copy from diagnostic after verifying all37 existing rows/files and allother108 exact; do not rerun mkdir/copy/SQL or initialize a second branch. No model, UI or author action had started.
+
+2026-10-16 all11 fixed-generation preflight context: the owned37-path copy and baseline completed, but helper incorrectly passed catalog root to pure generated_version(storage_root). Actual StudioService passes root/data/writing-studio. Both originalmaterial files already copied and byte-exact; no missing data or production verifier defect. Retain the unavailable-material failure; correct ONLY helper argument and finish read-only preflight in existing copy, no second copy, SQL/path/model/UI replay. Require full original v7/input86 verifier and all110 unchanged before launch.
+
+2026-10-16 all11 runtime ready recovery: original common launch started both verified services and completed HTML/assets/workspace/110 startup reads, then helper expected before110-all-files.json while preparation saved before-all-files.json. Actual data/bytes remain exact. Record both names same digest, finish readiness/ownership of the EXISTING exact PIDs only; never launch a second pair, rebuild or copy data on this late observer failure. Current helper preparation now uses canonical name.

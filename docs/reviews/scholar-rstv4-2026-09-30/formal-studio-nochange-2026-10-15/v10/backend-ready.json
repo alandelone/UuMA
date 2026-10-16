@@ -1,0 +1,23 @@
+{
+  "pid": 30936,
+  "identity": {
+    "pid": 30936,
+    "create_time": 1792046303.757167,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 9788
+  },
+  "port": 8877,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "source_files": 311,
+  "lifespan": "off",
+  "models_allowed": 0,
+  "workers_started": 0,
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\stop.request.json"
+}

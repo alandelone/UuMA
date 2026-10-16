@@ -1,0 +1,12 @@
+{
+  "status": "PASS_EXACT_118_ORIGINAL_REQUIREMENTS_ORDER_TEXT_AND_REFERENCED_REPORT_HASHES",
+  "requirements": 118,
+  "groups": 11,
+  "all_original_ids_text_and_order_exact": true,
+  "unique_verified_formal_report_references": 40,
+  "latest_fixed_submission_chain_sealed": true,
+  "latest_backend_full_pass": 1110,
+  "native_final_all11_complete": false,
+  "overall118_complete": false,
+  "note": "Evidence mapping is a bounded audit, not an acceptance percentage."
+}

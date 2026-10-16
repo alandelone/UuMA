@@ -1,0 +1,73 @@
+                    Fixed citation source - software acceptance
+
+
+                                              October 15, 2026
+
+
+1     Other software source
+G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external
+source is asserted.
+software-only-table.csv
+ SOFTWARE_FIXTURE                     fictional_value                     qualification
+ alpha_demo                           1                                   Software rendering test only; no sci-
+                                                                          entific measurement
+ beta_demo                            2                                   Software rendering test only; no sci-
+                                                                          entific measurement
+
+
+
+
+                                             software-only-figure.svg
+
+1.1   Introduction
+Beta software original paragraph. Keep this second paragraph’s original source and conditions; no scientific
+claim is asserted. [1] [2]
+     SOFTWARE_FIXTURE: Check original sources only and preserve their original conditions without as-
+serting any scientific claim; retain both original source-only and source-condition boundaries in this shared
+sentence and in their separate sentences. [1] [3] Check original sources only; no scientific claim is asserted.
+SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared
+sentence and in the separate source-check sentence. [1] [3] G09 software boundary: preserve the original
+sources and their conditions; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clar-
+ification: retain this original boundary in the shared sentence and in the separate source-condition sentence.
+     G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external
+source is asserted.
+
+
+
+
+                                                        1
+1.2   Software source section 3
+G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external
+source is asserted.
+
+1.3   Software source section 1
+G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated work-
+flow; no scientific claim is asserted.
+
+1.4   Software source section 2
+G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external
+source is asserted.
+
+1.5   Software source section 3
+G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external
+source is asserted.
+
+1.6   New section
+G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external
+source is asserted.
+    G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test;
+no scientific claim is asserted.
+
+
+References
+[1] Fixture Author. Refreshed live catalog title - software. 2026.
+
+[2] Fixture Author. Refreshed live catalog title - software. 2026.
+
+[3] Fixture Author. Other selected source. 2026. doi: 10.1234/other.
+
+
+
+
+                                                      2
+

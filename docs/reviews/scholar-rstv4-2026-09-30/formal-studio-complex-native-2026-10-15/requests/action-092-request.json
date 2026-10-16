@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given.\",\"response_text\":\"SOFTWARE_FIXTURE pending reply. Intent-label, moved/deleted structure, citation identity and material changes are recorded, but a complete semantic attribution to final prose has not been established. The temporary wording was reverted and must not count as a completed prose amendment.\",\"expected_content_sha256\":\"27edbecae55a8f0a865c8554bc8291de53412fb83af545a4d97d4eba906c1f5a\"}",
+  "body_sha256": "90381cb37c137477a93db2f440d78996f87566ea5c0f4c863f176bba60370341",
+  "body_bytes": 657
+}

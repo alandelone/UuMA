@@ -1,0 +1,66 @@
+{
+  "status": "PASS_NATIVE_FIVE_LEGACY_ORIGINS_READONLY",
+  "check_id": "response_check_6cde187dab114344895de0899fc20940",
+  "historical_context_sha256": "30e1f693668d9ea1880d8bcf1a0d74a8e42901934dda192242d68a7743a2cdd0",
+  "historical_version": 6,
+  "historical_input_revision": 79,
+  "current_author_revision": 86,
+  "current_generated_version": 7,
+  "all_five_selected_evidence_read": [
+    {
+      "evidence_id": "62d134a7ca7c85bbfeee82d2c1e6064d7b1aef8270b2370b0e570a50c7ef7c41",
+      "thought_id": "thought_author_1",
+      "sentence_index": 0,
+      "full_intent_thoughts": 2,
+      "response_sha256": "4cce5c2360bcbe993e6d9ed33c00be2cabfc10689e314b2090bf1448a8f902c5"
+    },
+    {
+      "evidence_id": "5fc506a38339590081a4302c8eab3e6e8b93deb1b508174fe035e961f8429505",
+      "thought_id": "thought_5f3edebed89d482cb0b2d9d42c4930d8",
+      "sentence_index": 0,
+      "full_intent_thoughts": 2,
+      "response_sha256": "3c126525b9007b8db4641543ffae38e718ada68f846bf5c6aca95f1f56589abe"
+    },
+    {
+      "evidence_id": "12588bfafec7bbad5cb99b0e52728ef6b321b83217009c559e1ccc84aba27a63",
+      "thought_id": "thought_author_1",
+      "sentence_index": 1,
+      "full_intent_thoughts": 2,
+      "response_sha256": "ffec6d0e1356a15f9a5e396f7bad6262106baa38fc398152916de5ea9589ec60"
+    },
+    {
+      "evidence_id": "78c6c9e38f85d77b7f580b198ab5c8c3d17e59b8ef52e00de4e4f150b27eca41",
+      "thought_id": "thought_author_1",
+      "sentence_index": 2,
+      "full_intent_thoughts": 2,
+      "response_sha256": "eed9d14f2f4edb82856beffdf424044df668cf2a01c8a1bdc008efa6bfaf9f91"
+    },
+    {
+      "evidence_id": "7b4512856729eb82aca7997a1679c6d033d504c5f1d622a0877dde9bade1d375",
+      "thought_id": "thought_5f3edebed89d482cb0b2d9d42c4930d8",
+      "sentence_index": 4,
+      "full_intent_thoughts": 2,
+      "response_sha256": "7077a90abdeaf900a6e824bef68288e991831f7a66583eec564484204923af20"
+    }
+  ],
+  "shared_sentence_two_distinct_original_thoughts": true,
+  "full_original_intent_and_thought_text_exact": true,
+  "original_context_and_request_bytes_unchanged": true,
+  "all110_tables_exact": true,
+  "all_non_sidecar_bytes_exact": true,
+  "A212_stale_status_preserved": true,
+  "A215_current_check_retained": true,
+  "all_owned_services_stopped": true,
+  "native_viewport": [
+    1280,
+    720
+  ],
+  "narrow_viewport_tested_this_turn": false,
+  "horizontal_overflow": false,
+  "no_business_mutation_or_model_job_generation_package_budget_replay": true,
+  "http_observed_count": 25,
+  "initial_fetch_failed_then_comments_recovered_explicitly": true,
+  "initial_fetch_cause_unresolved": true,
+  "scientific_approval": false,
+  "final11_complete": false
+}

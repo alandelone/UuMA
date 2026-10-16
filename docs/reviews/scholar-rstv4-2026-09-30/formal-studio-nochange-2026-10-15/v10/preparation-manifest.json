@@ -1,0 +1,39 @@
+{
+  "files": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\receipt.json": {
+      "sha256": "710888459ccd847fa308665a6fca825a4b820e2a78e7b084c9fdb80f47f61ceb"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\reuse-preflight.json": {
+      "sha256": "090cb1d7195e48f5e8ed66c7b5988ba8f4a14e7adf1ce4f8b08b62cb2661f057"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\before110-all-tables.json": {
+      "sha256": "f9ef1f775011be2de9e875e7e62d17d0fa8c3c427b6a683ea4d47bdbe7313aa7"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\before110-all-files.json": {
+      "sha256": "d9dd5a839b71a80515b58fa6c1a15c351ef979e428de94cffa7759b1a97c28fb"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\previous-owned-identity-audit.json": {
+      "sha256": "40d8504d7593829cfc8031bb943bef9743b9bfd6c74bef4864270e26bc824915"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\ownership.json": {
+      "sha256": "567a528a30bb0c499ee654b7299563c33f339bffce227b934b50ca7c9a667079"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\ready.json": {
+      "sha256": "2db2cb0753ea8f9b9289faed2acab6ccc1e73528074aa870ec0afc087cc8f54c"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\backend-launched.json": {
+      "sha256": "51682cc886c2fb5f24b50042552e0d4123af093e3f2e6d244b70b1d8d7de0ea3"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\backend-ready.json": {
+      "sha256": "440a99632970253417e9ea20e5f92197bfab070cd8586368c9d968e6bb125c12"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\frontend-launched.json": {
+      "sha256": "1cc5ebacc74434b7767b8c8de9a35682a83bc0d5ccb1401dc2c3bdc78b45de03"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\initial-workspace.json": {
+      "sha256": "13d0dafc1f9b4d8e3d529e489daf9c837b132a2b76cab5e8d2cc2cb694b5725d"
+    }
+  },
+  "v5_runner_sha256": "066a41bda50cd58d8bb0bd6e86fccac19de9565f741298b3f06296f377808d81",
+  "prior_v4_failed_before_services": true
+}

@@ -9,6 +9,7 @@ import uuid
 import xml.etree.ElementTree as ET
 from collections.abc import Callable
 from dataclasses import dataclass, field
+from enum import StrEnum
 from typing import Any, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -18,6 +19,61 @@ from .knowledge_service import KnowledgeService
 from .safe_web import SafeWebFetcher
 
 LOGGER = logging.getLogger(__name__)
+
+
+class DiscoveryOutcome(StrEnum):
+    SUCCESS = "SUCCESS"
+    NO_MATCH = "NO_MATCH"
+    TRANSIENT_FAILURE = "TRANSIENT_FAILURE"
+    AUTH_REQUIRED = "AUTH_REQUIRED"
+    BUDGET_REACHED = "BUDGET_REACHED"
+    SKIPPED = "SKIPPED"
+
+
+@dataclass(frozen=True)
+class DiscoveryAttempt:
+    provider: str
+    query: str
+    outcome: DiscoveryOutcome
+    tier: int = 1
+    artifacts_found: int = 0
+    error_detail: str | None = None
+    duration_ms: float = 0.0
+    request_id: str | None = None
+    metadata: dict[str, object] = field(default_factory=dict)
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "tier": self.tier,
+            "provider": self.provider,
+            "query": self.query,
+            "outcome": self.outcome.value if hasattr(self.outcome, "value") else str(self.outcome),
+            "artifacts_found": self.artifacts_found,
+            "error_detail": self.error_detail,
+            "duration_ms": round(self.duration_ms, 2),
+            "request_id": self.request_id,
+            "metadata": dict(self.metadata),
+        }
+
+
+@dataclass(frozen=True)
+class CycleExplanation:
+    status: str
+    summary: str
+    attempts: list[DiscoveryAttempt] = field(default_factory=list)
+    untried_paths: list[str] = field(default_factory=list)
+    blocked_paths: list[str] = field(default_factory=list)
+    next_step: str = ""
+
+    def to_dict(self) -> dict[str, Any]:
+        return {
+            "status": self.status,
+            "summary": self.summary,
+            "attempts": [a.to_dict() for a in self.attempts],
+            "untried_paths": list(self.untried_paths),
+            "blocked_paths": list(self.blocked_paths),
+            "next_step": self.next_step,
+        }
 
 
 @dataclass(frozen=True)
@@ -33,6 +89,16 @@ class DiscoveryArtifact:
 class DiscoveryResponse:
     artifacts: list[DiscoveryArtifact]
     request_id: str | None = None
+    in_progress: bool = False
+    report_text: str | None = None
+    outcome: DiscoveryOutcome | None = None
+    error_detail: str | None = None
+    duration_ms: float = 0.0
+
+    def resolve_outcome(self) -> DiscoveryOutcome:
+        if self.outcome is not None:
+            return self.outcome
+        return DiscoveryOutcome.SUCCESS if self.artifacts else DiscoveryOutcome.NO_MATCH
 
 
 _GENERIC_CJK = {
@@ -119,7 +185,7 @@ def discovery_queries(question: str) -> list[str]:
 
 
 def artifact_is_relevant(question: str, artifact: DiscoveryArtifact) -> bool:
-    if artifact.provider == "user-url":
+    if artifact.provider == "user-url" or artifact.metadata.get("is_report"):
         return True
     crop = _scallion_variants(question)
     if crop:
@@ -556,7 +622,7 @@ class ChatGPTDiscoveryProvider:
         with urlopen(request, timeout=timeout) as response:
             return json.loads(response.read().decode("utf-8"))
 
-    def discover(self, query: str, *, limit: int = 5) -> DiscoveryResponse:
+    def _resolve_token(self) -> str | None:
         token = self.token
         if not token:
             try:
@@ -565,29 +631,179 @@ class ChatGPTDiscoveryProvider:
                 token = Settings.from_env().load_tokens().get(self.agent)
             except Exception:  # noqa: BLE001
                 token = None
+        return token
+
+    def check_status(self, request_id: str, *, token: str | None = None) -> dict[str, Any] | None:
+        tok = token or self._resolve_token()
+        if not tok:
+            return None
+        headers = {
+            "Authorization": f"Bearer {tok}",
+            "X-UuMA-Identity": self.agent,
+        }
+        status_url = f"{self.base_url}/agent/requests/{request_id}"
+        req = Request(status_url, headers=headers, method="GET")
+        try:
+            return self._open(req, timeout=10.0)
+        except Exception as exc:  # noqa: BLE001
+            LOGGER.warning("ChatGPT check_status failed for %s: %s", request_id, exc)
+            return None
+
+    def _parse_artifacts(
+        self,
+        result_payload: dict[str, Any],
+        req_id: str,
+        thread: str,
+        query: str,
+        *,
+        mode: str | None = None,
+        limit: int = 5,
+    ) -> DiscoveryResponse:
+        current_mode = mode or self.mode
+        answer_text = str(result_payload.get("answer") or "")
+        raw_citations = result_payload.get("citations") or []
+        artifacts: list[DiscoveryArtifact] = []
+
+        if answer_text and (current_mode == "deep_research" or len(answer_text) > 400):
+            artifacts.append(
+                DiscoveryArtifact(
+                    locator=f"chatgpt://reports/{req_id}",
+                    title=f"ChatGPT Deep Research Report: {query[:60]}",
+                    provider=self.name,
+                    snippet=answer_text[:300],
+                    metadata={
+                        "is_report": True,
+                        "full_text": answer_text,
+                        "chatgpt_request_id": req_id,
+                        "mode": current_mode,
+                        "thread": thread,
+                    },
+                )
+            )
+
+        for item in raw_citations:
+            if isinstance(item, dict):
+                loc = str(item.get("url") or "").strip()
+                title = str(item.get("title") or loc).strip()
+            elif isinstance(item, str):
+                loc = item.strip()
+                title = loc
+            else:
+                continue
+
+            if not loc.startswith(("http://", "https://")):
+                continue
+
+            artifacts.append(
+                DiscoveryArtifact(
+                    locator=loc,
+                    title=title or loc,
+                    provider=self.name,
+                    snippet=answer_text[:300],
+                    metadata={
+                        "chatgpt_request_id": req_id,
+                        "mode": current_mode,
+                        "thread": thread,
+                    },
+                )
+            )
+            if len(artifacts) >= limit:
+                break
+
+        outcome = DiscoveryOutcome.SUCCESS if artifacts else DiscoveryOutcome.NO_MATCH
+        return DiscoveryResponse(
+            artifacts,
+            request_id=req_id,
+            in_progress=False,
+            report_text=answer_text if current_mode == "deep_research" else None,
+            outcome=outcome,
+        )
+
+    def discover(
+        self,
+        query: str,
+        *,
+        limit: int = 5,
+        mode: str | None = None,
+        pending_request_id: str | None = None,
+    ) -> DiscoveryResponse:
+        t0 = time.monotonic()
+        current_mode = mode or self.mode
+        token = self._resolve_token()
         if not token:
             LOGGER.info("ChatGPT discovery skipped: no token configured for %s", self.agent)
-            return DiscoveryResponse([])
+            return DiscoveryResponse(
+                [],
+                outcome=DiscoveryOutcome.AUTH_REQUIRED,
+                error_detail=f"No token configured for {self.agent}",
+                duration_ms=(time.monotonic() - t0) * 1000,
+            )
 
+        clean_thread = re.sub(r"[^a-zA-Z0-9_-]", "_", query)[:30] or "orbit-main"
+        thread = f"orbit-{clean_thread}"
+
+        # 1. If checking an existing pending request, poll it directly
+        if pending_request_id:
+            state = self.check_status(pending_request_id, token=token)
+            if state:
+                status = state.get("status")
+                if status == "COMPLETED":
+                    res = state.get("result") or {}
+                    resp = self._parse_artifacts(res, pending_request_id, thread, query, mode=current_mode, limit=limit)
+                    return DiscoveryResponse(
+                        resp.artifacts,
+                        request_id=resp.request_id,
+                        in_progress=resp.in_progress,
+                        report_text=resp.report_text,
+                        outcome=resp.outcome,
+                        error_detail=resp.error_detail,
+                        duration_ms=(time.monotonic() - t0) * 1000,
+                    )
+                if status in {"PREFLIGHT", "SENDING", "RUNNING", "QUEUED"}:
+                    return DiscoveryResponse(
+                        [],
+                        request_id=pending_request_id,
+                        in_progress=True,
+                        outcome=DiscoveryOutcome.SUCCESS,
+                        duration_ms=(time.monotonic() - t0) * 1000,
+                    )
+                LOGGER.info("Prior ChatGPT request %s ended with status %s", pending_request_id, status)
+                return DiscoveryResponse(
+                    [],
+                    request_id=pending_request_id,
+                    outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                    error_detail=f"Prior request status {status}",
+                    duration_ms=(time.monotonic() - t0) * 1000,
+                )
+
+        # 2. Otherwise submit new request
         run_id = self.run_id
         if not run_id and self.run_id_getter:
             try:
                 run_id = self.run_id_getter()
             except Exception as exc:  # noqa: BLE001
                 LOGGER.warning("ChatGPT discovery skipped: run_id lookup failed: %s", exc)
-                return DiscoveryResponse([])
+                return DiscoveryResponse(
+                    [],
+                    outcome=DiscoveryOutcome.SKIPPED,
+                    error_detail=f"run_id lookup failed: {exc}",
+                    duration_ms=(time.monotonic() - t0) * 1000,
+                )
         if not run_id:
             LOGGER.info("ChatGPT discovery skipped: no active run_id available")
-            return DiscoveryResponse([])
+            return DiscoveryResponse(
+                [],
+                outcome=DiscoveryOutcome.SKIPPED,
+                error_detail="No active run_id available",
+                duration_ms=(time.monotonic() - t0) * 1000,
+            )
 
         idempotency_key = f"orbit-{uuid.uuid4().hex[:16]}"
-        clean_thread = re.sub(r"[^a-zA-Z0-9_-]", "_", query)[:30] or "orbit-main"
-        thread = f"orbit-{clean_thread}"
         payload = {
             "run_id": run_id,
             "prompt": query,
             "idempotency_key": idempotency_key,
-            "mode": self.mode,
+            "mode": current_mode,
             "project": self.project,
             "thread": thread,
             "sites": [],
@@ -608,30 +824,60 @@ class ChatGPTDiscoveryProvider:
         )
         try:
             created = self._open(req, timeout=15.0)
-        except (URLError, HTTPError, TimeoutError, OSError) as exc:
+        except HTTPError as exc:
+            if exc.code in {401, 403}:
+                return DiscoveryResponse(
+                    [],
+                    outcome=DiscoveryOutcome.AUTH_REQUIRED,
+                    error_detail=f"HTTP {exc.code} {exc.reason}",
+                    duration_ms=(time.monotonic() - t0) * 1000,
+                )
+            elif exc.code == 429:
+                return DiscoveryResponse(
+                    [],
+                    outcome=DiscoveryOutcome.BUDGET_REACHED,
+                    error_detail="HTTP 429 Rate limit reached",
+                    duration_ms=(time.monotonic() - t0) * 1000,
+                )
+            else:
+                return DiscoveryResponse(
+                    [],
+                    outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                    error_detail=f"HTTP {exc.code} {exc.reason}",
+                    duration_ms=(time.monotonic() - t0) * 1000,
+                )
+        except (URLError, TimeoutError, OSError) as exc:
             LOGGER.warning("ChatGPT discovery unavailable at %s: %s", submit_url, exc)
-            return DiscoveryResponse([])
+            return DiscoveryResponse(
+                [],
+                outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                error_detail=str(exc),
+                duration_ms=(time.monotonic() - t0) * 1000,
+            )
 
         req_id = created.get("id")
         if not req_id:
-            return DiscoveryResponse([])
+            return DiscoveryResponse(
+                [],
+                outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                error_detail="Submission response lacked request ID",
+                duration_ms=(time.monotonic() - t0) * 1000,
+            )
 
-        status_url = f"{self.base_url}/agent/requests/{req_id}"
-        deadline = time.monotonic() + self.timeout
+        # For deep_research, use shorter initial poll so caller can continue asynchronously
+        effective_timeout = min(self.timeout, 8.0) if current_mode == "deep_research" else self.timeout
+        deadline = time.monotonic() + effective_timeout
         result_payload = None
+        last_state = None
 
         while time.monotonic() < deadline:
             time.sleep(self.poll_interval)
-            poll_req = Request(status_url, headers=headers, method="GET")
-            try:
-                state = self._open(poll_req, timeout=10.0)
-            except (URLError, HTTPError, TimeoutError, OSError) as exc:
-                LOGGER.warning("ChatGPT discovery poll failed for %s: %s", req_id, exc)
+            last_state = self.check_status(req_id, token=token)
+            if not last_state:
                 break
-
-            status = state.get("status")
+            status = last_state.get("status")
             if status == "COMPLETED":
-                result_payload = state.get("result")
+                result_payload = last_state.get("result")
                 break
             if status in {"FAILED", "CANCELLED", "PAUSED", "NEEDS_REVIEW"}:
                 LOGGER.warning(
@@ -640,40 +886,30 @@ class ChatGPTDiscoveryProvider:
                 break
 
         if not result_payload or not isinstance(result_payload, dict):
-            return DiscoveryResponse([], request_id=req_id)
-
-        raw_citations = result_payload.get("citations") or []
-        artifacts: list[DiscoveryArtifact] = []
-        for item in raw_citations:
-            if isinstance(item, dict):
-                loc = str(item.get("url") or "").strip()
-                title = str(item.get("title") or loc).strip()
-            elif isinstance(item, str):
-                loc = item.strip()
-                title = loc
-            else:
-                continue
-
-            if not loc.startswith(("http://", "https://")):
-                continue
-
-            artifacts.append(
-                DiscoveryArtifact(
-                    locator=loc,
-                    title=title or loc,
-                    provider=self.name,
-                    snippet=str(result_payload.get("answer") or "")[:300],
-                    metadata={
-                        "chatgpt_request_id": req_id,
-                        "mode": self.mode,
-                        "thread": thread,
-                    },
-                )
+            in_prog = bool(
+                last_state and last_state.get("status") in {"PREFLIGHT", "SENDING", "RUNNING", "QUEUED"}
             )
-            if len(artifacts) >= limit:
-                break
+            outcome = DiscoveryOutcome.SUCCESS if in_prog else DiscoveryOutcome.TRANSIENT_FAILURE
+            detail = "In progress" if in_prog else f"Request status: {last_state.get('status') if last_state else 'timeout'}"
+            return DiscoveryResponse(
+                [],
+                request_id=req_id,
+                in_progress=in_prog,
+                outcome=outcome,
+                error_detail=detail,
+                duration_ms=(time.monotonic() - t0) * 1000,
+            )
 
-        return DiscoveryResponse(artifacts, request_id=req_id)
+        resp = self._parse_artifacts(result_payload, req_id, thread, query, mode=current_mode, limit=limit)
+        return DiscoveryResponse(
+            resp.artifacts,
+            request_id=resp.request_id,
+            in_progress=resp.in_progress,
+            report_text=resp.report_text,
+            outcome=resp.outcome,
+            error_detail=resp.error_detail,
+            duration_ms=(time.monotonic() - t0) * 1000,
+        )
 
 
 def configured_providers(

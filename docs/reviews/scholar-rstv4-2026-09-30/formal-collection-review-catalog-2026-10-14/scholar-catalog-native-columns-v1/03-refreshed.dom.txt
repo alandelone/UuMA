@@ -1,0 +1,112 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8887/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8887/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8887/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "论文目录":
+      - generic: 论文目录
+      - generic: ⌄
+  - button "☰ Filter"
+  - button "↕ Sort"
+  - button "▤ Columns"
+  - button "Refresh catalog": ↻
+  - strong: 审核恢复软件 Topic · 范围文献
+  - text: · 1 篇唯一论文 · 0 篇已排除
+  - button "查看已排除"
+  - link "返回研究总览":
+    - /url: "?view=overview"
+  - table "Paper Catalog":
+    - rowgroup:
+      - row "Name Resize Name column Year Resize Year column Created Resize Created column Last Updated Resize Last Updated column DOI Resize DOI column Source Resize Source column PDF status Resize PDF status column PDF files Resize PDF files column PDFs to review Resize PDFs to review column Parse Resize Parse column References Resize References column QuickRead Resize QuickRead column Skeleton Resize Skeleton column Review Resize Review column":
+        - columnheader "Name Resize Name column":
+          - generic: Aa
+          - text: Name
+          - separator "Resize Name column"
+        - columnheader "Year Resize Year column":
+          - generic: ▣
+          - text: Year
+          - separator "Resize Year column"
+        - columnheader "Created Resize Created column":
+          - generic: ◷
+          - text: Created
+          - separator "Resize Created column"
+        - columnheader "Last Updated Resize Last Updated column":
+          - generic: ◷
+          - text: Last Updated
+          - separator "Resize Last Updated column"
+        - columnheader "DOI Resize DOI column":
+          - generic: Aa
+          - text: DOI
+          - separator "Resize DOI column"
+        - columnheader "Source Resize Source column":
+          - generic: Aa
+          - text: Source
+          - separator "Resize Source column"
+        - columnheader "PDF status Resize PDF status column":
+          - generic: ◆
+          - text: PDF status
+          - separator "Resize PDF status column"
+        - columnheader "PDF files Resize PDF files column":
+          - generic: "#"
+          - text: PDF files
+          - separator "Resize PDF files column"
+        - columnheader "PDFs to review Resize PDFs to review column":
+          - generic: "#"
+          - text: PDFs to review
+          - separator "Resize PDFs to review column"
+        - columnheader "Parse Resize Parse column":
+          - generic: ◆
+          - text: Parse
+          - separator "Resize Parse column"
+        - columnheader "References Resize References column":
+          - generic: "#"
+          - text: References
+          - separator "Resize References column"
+        - columnheader "QuickRead Resize QuickRead column":
+          - generic: ◆
+          - text: QuickRead
+          - separator "Resize QuickRead column"
+        - columnheader "Skeleton Resize Skeleton column":
+          - generic: ◆
+          - text: Skeleton
+          - separator "Resize Skeleton column"
+        - columnheader "Review Resize Review column":
+          - generic: ◆
+          - text: Review
+          - separator "Resize Review column"
+    - rowgroup:
+      - row "Software review identity title — October 6, 2026 at 8:57 AM October 6, 2026 at 8:57 AM 10.1234/corrected Local PDF VERIFIED 1 0 PARSED 6 AVAILABLE AVAILABLE CLEAR":
+        - cell "Software review identity title":
+          - button "Software review identity title"
+          - generic "明确关联（非科学批准） · 2 条归属"
+        - cell "—"
+        - cell "October 6, 2026 at 8:57 AM"
+        - cell "October 6, 2026 at 8:57 AM"
+        - cell "10.1234/corrected"
+        - cell "Local PDF"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "PARSED":
+          - generic: PARSED
+        - cell "6"
+        - cell "AVAILABLE":
+          - generic: AVAILABLE
+        - cell "AVAILABLE":
+          - generic: AVAILABLE
+        - cell "CLEAR":
+          - generic: CLEAR
+  - generic: 1 papers
+  - button "← Previous" [disabled]
+  - generic: Page 1 · 50 per page
+  - button "Next →" [disabled]
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

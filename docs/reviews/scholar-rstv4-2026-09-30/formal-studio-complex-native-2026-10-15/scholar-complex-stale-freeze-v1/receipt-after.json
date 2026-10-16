@@ -1,0 +1,22 @@
+{
+  "status": "PASS_TWO_EXACT_NATIVE_AUTHOR_EDITS_ALL_GENERATED_STATE_IMMUTABLE",
+  "before_revision": 79,
+  "after_revision": 81,
+  "changed_tables": [
+    "comment_changes",
+    "manuscripts",
+    "studio_change_link_state",
+    "studio_changes",
+    "studio_documents",
+    "studio_operations"
+  ],
+  "all_other_tables_exact": true,
+  "all_old_append_only_rows_retained": true,
+  "all_generated_versions_model_calls_jobs_artifacts_checks_exact": true,
+  "all_non_database_files_exact": true,
+  "current311_91_76_exact": true,
+  "generated_revision_still": 79,
+  "generated_version_id": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+  "no_new_generation_or_model_or_check": true,
+  "all11_complete": false
+}

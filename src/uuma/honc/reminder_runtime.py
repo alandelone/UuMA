@@ -36,6 +36,59 @@ def local_clock(day: date, clock: str) -> datetime:
     return datetime.combine(day, time.fromisoformat(clock), LOCAL_TIMEZONE)
 
 
+def _format_reminder_label(definition: dict[str, Any], member: ReminderOccurrence | None = None) -> str:
+    name = definition["name"]
+    semantic_role = definition.get("semantic_role")
+    if semantic_role == "diary":
+        return f"{name}（日记）：记录今天的日记；也可以顺便记下今天的身体状态。"
+
+    friendly_tag = ""
+    if member is not None:
+        local_hour = member.due_at.astimezone(LOCAL_TIMEZONE).hour
+        if member.trigger == "bedtime":
+            friendly_tag = "睡前"
+        elif member.trigger == "wake":
+            friendly_tag = "晨间"
+        elif local_hour in (11, 12, 13):
+            friendly_tag = "午餐"
+        elif local_hour in (18, 19, 20):
+            friendly_tag = "晚餐"
+        elif local_hour in (7, 8, 9):
+            friendly_tag = "早餐"
+        elif local_hour == 16:
+            friendly_tag = "运动"
+
+    if not friendly_tag and definition.get("aliases"):
+        for alias in definition["aliases"]:
+            if alias != name:
+                friendly_tag = alias
+                break
+
+    emoji = ""
+    if name == "eat_bh" or "餐" in friendly_tag or "饭" in friendly_tag:
+        emoji = "🍽️ "
+    elif "锻体" in name or "运动" in friendly_tag or "八段锦" in friendly_tag:
+        emoji = "🏃 "
+    elif "💊" in name or "药" in friendly_tag:
+        emoji = "💊 "
+    elif "泡脚" in name:
+        emoji = "🦶 "
+    elif "休息" in friendly_tag or "Rest" in name:
+        emoji = "🧘 "
+    elif "日记" in friendly_tag or "Dairy" in name:
+        emoji = "📖 "
+    elif "保养" in friendly_tag or "15" in name:
+        emoji = "🌙 "
+
+    desc = (definition.get("description") or "").strip()
+    tag_str = f"（{friendly_tag}）" if friendly_tag and friendly_tag not in name else ""
+    if desc and desc != f"{name}alert" and desc != name:
+        return f"{emoji}{name}{tag_str}：{desc}"
+    if tag_str:
+        return f"{emoji}{name}{tag_str}"
+    return f"{emoji}{name}" if emoji else name
+
+
 class ReminderRuntime:
     def __init__(self, store: LifeStore, *, owner_id: str, delivery_target_id: str) -> None:
         self.store, self.owner_id, self.delivery_target_id = store, owner_id, delivery_target_id
@@ -422,10 +475,7 @@ class ReminderRuntime:
                 for member in members:
                     value = self.store.get_object(connection, self.owner_id, member.habit_id)
                     definition = value["payload"]["definition"]
-                    label = definition["name"]
-                    if definition.get("semantic_role") == "diary":
-                        label = "记录今天的日记；也可以顺便记下今天的身体状态。"
-                    descriptions.append(label)
+                    descriptions.append(_format_reminder_label(definition, member))
                     self.save_snapshot(
                         connection,
                         member.model_copy(
@@ -435,7 +485,7 @@ class ReminderRuntime:
                             }
                         ),
                     )
-                content = "到习惯时间了：\n" + "\n".join(f"• {value}" for value in descriptions)
+                content = "🔔 honc 习惯提醒：\n" + "\n".join(f"• {value}" for value in descriptions)
                 fence = uuid4().hex
                 connection.execute(
                     "INSERT INTO life_reminder_groups VALUES (?, ?, ?, 'RESERVED', ?, ?, ?, ?, NULL, NULL) "

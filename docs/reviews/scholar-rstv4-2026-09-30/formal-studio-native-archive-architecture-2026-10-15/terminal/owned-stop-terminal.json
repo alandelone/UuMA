@@ -1,0 +1,26 @@
+{
+  "status": "EXACT_OWNED_FRONTEND_AND_BACKEND_STOPPED_PORTS_FREE",
+  "ports": [
+    8877,
+    61614
+  ],
+  "frontend_pid": 22568,
+  "backend_pid": 13828,
+  "known_windows_console_children": [
+    {
+      "pid": 2336,
+      "create_time": 1792045282.5508676,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 22568
+    }
+  ],
+  "original_files_and_external25_exact": true,
+  "current_backend311_exact": true,
+  "root_preserved": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "no_other_processes_stopped": true,
+  "scientific_approval": false
+}

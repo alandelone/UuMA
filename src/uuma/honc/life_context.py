@@ -8,7 +8,7 @@ import re
 import secrets
 from datetime import UTC, datetime, timedelta
 from pathlib import Path
-from typing import Any
+from typing import Any, Literal
 
 from .life_service import LifeService
 from .life_store import LifeStore
@@ -67,9 +67,13 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
     if not querying and not planned:
         named_report = any(
             name.casefold() in value.casefold() for name in known_habit_names
-        ) and re.search(r"做了|练了|读了|记|完成|打卡|\bdone\b|\bcompleted\b", value, re.IGNORECASE)
+        ) and re.search(
+            r"做了|练了|读了|打了|游了|打|游|记|完成|打卡|\bdone\b|\bcompleted\b",
+            value,
+            re.IGNORECASE,
+        )
         if named_report or re.search(
-            r"打卡|完成|运动|跑步|走路|喝水|喝了|吃了|服药|泡脚|呼吸|锻炼|没.{0,4}(?:喝水|运动|吃|做)|\b(?:done|completed|drank|ate|exercised|walked|workout)\b",
+            r"打卡|完成|运动|跑步|走路|游泳|游了|八段锦|喝水|喝了|吃了|服药|泡脚|呼吸|锻炼|没.{0,4}(?:喝水|运动|吃|做)|\b(?:done|completed|drank|ate|exercised|walked|workout|swam)\b",
             value,
             re.IGNORECASE,
         ):
@@ -87,12 +91,26 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
     return tuple(sorted(set(grants)))
 
 
-def allowed_operations(text: str, known_habit_names: tuple[str, ...] = ()) -> tuple[str, ...]:
+def allowed_operations(
+    text: str,
+    known_habit_names: tuple[str, ...] = (),
+    *,
+    input_kind: Literal["text", "voice_transcript"] = "text",
+) -> tuple[str, ...]:
     """Admit each actual-report clause without letting a future plan erase another domain.
 
     This boundary grants operations, not extracted facts. The existing Hermes model
     and strict source/quantity/version validation still decide the actual payload.
     """
+    if input_kind not in {"text", "voice_transcript"}:
+        raise ValueError("Unsupported host input kind")
+    # Remove only the wrapper added by Hermes to authenticated voice transcription.
+    # Typed quotes and quotation inside a voice transcript remain untrusted reports.
+    if input_kind == "voice_transcript":
+        text = text.strip()
+        if len(text) >= 2 and text[0] == text[-1] == '"':
+            text = text[1:-1]
+        text = re.sub(r"(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])", "", text)
     if re.search(
         r"^(?:如果|假设|例如|比如|别人说|他说|她说|有人说|引用|明天|后天)|^(?:if |suppose |tomorrow |he said|she said)|^[「『\"]",
         text.strip(),
@@ -138,6 +156,7 @@ class LifeContextBroker:
         turn_id: str,
         received_at: datetime,
         actor_id: str,
+        input_kind: Literal["text", "voice_transcript"] = "text",
     ) -> tuple[str, dict[str, Any]]:
         if actor_id != self.config["owner_id"] or not all((transport_id, session_id, turn_id)):
             raise PermissionError(
@@ -162,7 +181,7 @@ class LifeContextBroker:
             for row in rows:
                 definition = json.loads(row[0])["definition"]
                 names.extend([definition["name"], *definition.get("aliases", [])])
-            grants = allowed_operations(raw_content, tuple(names))
+            grants = allowed_operations(raw_content, tuple(names), input_kind=input_kind)
             prior = connection.execute(
                 "SELECT received_at FROM life_sources WHERE owner_id=? AND profile='honc' "
                 "AND adapter_id=? AND source_event_id=?",

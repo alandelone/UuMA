@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_f39d35831bd0472bb9282ab116e90611/response-checks/response_check_6cde187dab114344895de0899fc20940/origins/78c6c9e38f85d77b7f580b198ab5c8c3d17e59b8ef52e00de4e4f150b27eca41",
+  "query": "",
+  "status": 200,
+  "seconds": 0.0,
+  "response_sha256": "eed9d14f2f4edb82856beffdf424044df668cf2a01c8a1bdc008efa6bfaf9f91",
+  "origin": "http://127.0.0.1:60073"
+}

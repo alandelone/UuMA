@@ -1,0 +1,20 @@
+{
+  "status": "PASS_ORIGINAL_UNCHANGED_READINESS_FUNCTION_WITH_READONLY_DB_ADAPTER",
+  "prior78_exact_issues": [
+    {
+      "path": "section_d1caf2b4f21d4d2e989f1733809f01be",
+      "message": "Section has no paragraph"
+    }
+  ],
+  "current_revision": 79,
+  "current_issues": [],
+  "only_document_difference": "DELETE_EMPTY_SECTION_CONTAINER",
+  "removed_section_id": "section_d1caf2b4f21d4d2e989f1733809f01be",
+  "all10_v2_payloads_and_paragraph_bytes_exact": true,
+  "alpha_only_sentence_boundaries_and_mapping_refined": "five actual sentences, original author text/citations unchanged",
+  "prior_v2_contract_sha256": "0962c0d148c54d8279fd79eb1e2275370381cdfd44f36830504a1488ec66b227",
+  "prior_proposal_contract_sha256": "9989c45dcb7cf943ad39ffeb1840cafa27a9d99b4d0a41e4ff9355e2a599c763",
+  "jobs_created": 0,
+  "models_executed": 0,
+  "guard_weakened": false
+}

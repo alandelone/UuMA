@@ -73,7 +73,7 @@ def _probe(runtime: KagRuntimeManager, namespace: str, project_id: str, kind: st
     if health.get("ready") is not True or str(health.get("project_id")) != project_id:
         raise KagUnavailableError("The graph bridge is not ready for the expected project")
     host = str(health.get("host_addr", "")).rstrip("/")
-    if not host.startswith(("http://127.0.0.1:", "http://localhost:")):
+    if not host.startswith(("http://127.0.0.1:", "http://localhost:", "http://192.168.", "http://10.", "http://172.")):
         raise KagUnavailableError("The graph server must be the configured local service")
     api = host + "/public/v1"
     projects = _request(api + "/project")
@@ -104,11 +104,14 @@ def ensure_knowledge_graph(profile: str, *, recover: bool = True) -> dict[str, A
         try:
             _probe(runtime, namespace, project_id, kind)
         except (OSError, ValueError, KeyError, TypeError, KagUnavailableError):
-            if not recover or not runtime.auto_recover or not runtime.compose_file:
+            if not recover or not runtime.auto_recover:
                 raise
             # Do not accept the bridges' shallow /health as proof of graph availability.
-            with runtime_lock(runtime.compose_file):
-                runtime._recover_locked(runtime.compose_file)
+            if runtime.compose_file and not runtime._is_remote_host():
+                with runtime_lock(runtime.compose_file):
+                    runtime._recover_locked(runtime.compose_file)
+            else:
+                runtime.recover()
             recovered = True
             deadline = time.monotonic() + 45
             while True:

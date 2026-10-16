@@ -1,0 +1,21 @@
+{
+  "status": "READ_ONLY_NATIVE_PREVIEW_TERMINAL_ORIGINAL106_AND_FILES_EXACT",
+  "identity": {
+    "pid": 13656,
+    "create_time": 1792048107.2363951,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-quickread-native-preview-v2.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 13528
+  },
+  "port": 54984,
+  "all106_exact": true,
+  "all_files_exact": true,
+  "source311_exact": true,
+  "models_workers_jobs_budget_mutations": 0
+}

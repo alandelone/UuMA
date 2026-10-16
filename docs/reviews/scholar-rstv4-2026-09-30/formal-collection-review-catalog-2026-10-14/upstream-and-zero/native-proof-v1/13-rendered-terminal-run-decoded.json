@@ -1,0 +1,12 @@
+{
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe",
+    "-c",
+    "print('ISOLATED_ACCEPTANCE_ONLY')"
+  ],
+  "exit_code": 0,
+  "duration": 0.03252816200256348,
+  "metrics": {},
+  "stdout_preview": "ISOLATED_ACCEPTANCE_ONLY\n",
+  "stderr_preview": ""
+}

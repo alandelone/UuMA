@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/history",
+  "query": "",
+  "status": 200,
+  "seconds": 0.06199999999807915,
+  "response_sha256": "a5a84dd00123c42b1a72df4b09104012e7e05d068df862f2eb683a7397183786",
+  "origin": "http://127.0.0.1:56581",
+  "request_json": {
+    "target": {
+      "module": "STUDIO",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "object_kind": "paper",
+      "object_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 86
+    },
+    "limit": 30,
+    "current_object_only": false
+  }
+}

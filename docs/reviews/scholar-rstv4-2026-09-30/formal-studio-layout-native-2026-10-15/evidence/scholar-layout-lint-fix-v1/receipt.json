@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "files": {
+    "src/rstv4/studio.py": {
+      "before_sha256": "37bd71bd6dc33d4f1d7768c2f7a3b42a49f64e6793192707cab2d6bfc9336c6f",
+      "after_sha256": "7b6f3ae03d03b3fccd8353f4969b43d276801434f2f40ee8c7d0be618a79886b"
+    },
+    "src/rstv4/studio_read_views.py": {
+      "before_sha256": "6180716f9c3c815b32cf05c5bbf8ea591ce9a42e87e270f0fe7eea4bb139e78f",
+      "after_sha256": "a898fb4d680c61d5d89ea2a3555bf2fe7b1abdf54b135fa14df975a065bb6400"
+    },
+    "tests/test_studio_layout.py": {
+      "before_sha256": "4eac46147f3c701e489443f0ea2c279ab1238956c7ce8f644997bd7e43db2e49",
+      "after_sha256": "394896106654bc0bf5dfa51755decc208ccb78a6ae451a34d3f0d3f2090496ae"
+    },
+    "tests/test_studio_layout_integration.py": {
+      "before_sha256": "1053061db25b03e8f155a5489a4c53625f553dece997ab20a3859272de3b9d06",
+      "after_sha256": "23df542242449e8d99c9978e6da0a04ad8db018c3aba7b2735b064e9689d09a5"
+    }
+  },
+  "changes": "sort imports/remove unused import; explicit subprocess check=False with existing returncode assertion; unused unpacked names prefixed only",
+  "behavioral_assertions_changed": false,
+  "typecheck_exit_code": 0
+}

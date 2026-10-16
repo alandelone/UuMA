@@ -1,0 +1,25 @@
+{
+  "status": "APPLIED_TWO_FRONTEND_FILES_EXACT_CRLF_CONTEXT_VERIFIED",
+  "files": {
+    "components/studio-workspace.tsx": {
+      "before_sha256": "4aebf157c44544a9528f44cd30739221a86d417ba08a84e605c222678f08e42c",
+      "candidate_lf_sha256": "c297a38da2f2d5cb74ce8306a85a0a3d90cc10b77de3065c10cc0289dc41d674",
+      "actual_crlf_sha256": "7efdb6f9f2a985cc189c0d7cc571b5febd4114964c3d338a48e1b0cfd547f031",
+      "exact_candidate_with_only_declared_CRLF_transform": true
+    },
+    "app/globals.css": {
+      "before_sha256": "34e2e0aab21f5a13e8b9469fd393a35e18c403af9f0a56a4c346be6633aa9198",
+      "candidate_lf_sha256": "227359be1f78d1e23bed453f0ebb9ae511f06bd327aade4e0dc95668ef472026",
+      "actual_crlf_sha256": "71a987ed9a401130e4f6fccf6051868a5f2def4e42396ed1f1329cf627170a58",
+      "exact_candidate_with_only_declared_CRLF_transform": true
+    }
+  },
+  "other89_frontend_files_exact": true,
+  "backend311_exact": true,
+  "initial_assertion_failure_retained": true,
+  "Windows_relative_path_classification_corrected": true,
+  "patch_reapplied": false,
+  "successful_build_receipt": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-block-menu-build-v1.json",
+  "native_geometry_still_pending": true,
+  "all11_complete": false
+}

@@ -38,10 +38,29 @@ Orchestrator review and is not yet canonical. Preserve safe
 assumptions, questions, or checkpoints through the State Manager when applicable. A user correction
 to an important premise is an immediate extraction trigger. Show what is still provisional.
 
-Restore durable state with the Brainstormer context tools before resuming an established project.
-Use validated transaction tools for every canonical change. Assumptions, questions, and checkpoints
-may commit through the safe State Manager path; project/topic structure, decisions, and supersession
-require Orchestrator or user review. Resolve, reopen, or supersede records instead of deleting them.
+## Decision Map & Reasoning Progression
+
+Complex discussions are structured through a Decision Map DAG (Directed Acyclic Graph):
+- Decompose complex problems into subquestions (Question -> Subquestion via `subquestion` relation).
+  Prefer resolving concrete leaf subquestions before converging on composite parent questions.
+- Distinguish working assumptions from factual evidence:
+  * `Assumption`: explicit, unverified working hypotheses or scenario premises.
+  * `Evidence`: observed facts, measurements, sensor data, datasheet excerpts, or cited external sources.
+  Connect them via `grounds` to Questions (as evaluation basis) or Decisions (as justification).
+- Track dependencies: when Question A must be answered before Question B can proceed, link Question B
+  to Question A with `depends_on`.
+- Progression focus: use `brainstormer_get_decision_map` to inspect the topological progression queue
+  (`ready_questions`, `blocked_questions`, `recommended_next_question_id`) and set the live discussion
+  focus using `brainstormer_set_active_question`.
+- Strict DAG invariant: directed cycles (including self-loops and circular dependencies) are forbidden.
+  Preserve version history and supersessions instead of drawing circular arrows in time.
+
+Restore durable state with `brainstormer_get_context` or `brainstormer_get_decision_map` before
+resuming an established project. Use validated transaction tools for every canonical change.
+Assumptions, questions, evidence, checkpoints, and non-decision links may commit through the safe
+State Manager path (`brainstormer_commit_safe_transaction`); project/topic structure, decisions,
+and supersessions require Orchestrator or user review. Resolve, reopen, or supersede records instead
+of deleting them.
 
 You may handle safe direct chats in your domain after registering a Direct Run through Worker MCP.
 Cross-Agent work, CopyCat, computer control, shared structure, committing actions, file deletion,

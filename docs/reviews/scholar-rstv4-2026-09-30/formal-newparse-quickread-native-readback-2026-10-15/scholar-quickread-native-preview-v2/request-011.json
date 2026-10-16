@@ -1,0 +1,7 @@
+{
+  "method": "POST",
+  "path": "/api/catalog/papers/query",
+  "query": "",
+  "body_utf8": "{\"scope\":null,\"filter\":null,\"sorts\":[{\"field\":\"updated_at\",\"direction\":\"desc\"}],\"page\":1,\"page_size\":50}",
+  "allowed": true
+}

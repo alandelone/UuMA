@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given.\",\"response_text\":\"\",\"expected_content_sha256\":\"0bdeec03f0df3a4ee67b8968522602ab2ac1fc9baceef52086202bd13cbcaf01\"}",
+  "body_sha256": "85e3c16e59e90b7b2873adeb3d96c1bcdc9b31343508e3c61faa457d5c7c03be",
+  "body_bytes": 371
+}

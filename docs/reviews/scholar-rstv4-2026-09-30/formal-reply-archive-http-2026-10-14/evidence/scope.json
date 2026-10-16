@@ -1,0 +1,25 @@
+{
+  "status": "PASS_HTTP_ARCHIVE_RESTORE_WITH_NONEMPTY_REPLY_AND_ORIGINAL_HISTORY",
+  "native_browser_executed": false,
+  "native_browser_required": true,
+  "actions": [
+    "DELETE archive once",
+    "POST restore once"
+  ],
+  "read_only_receipts": 16,
+  "source_exact": true,
+  "schema_exact": true,
+  "unchanged_tables": 107,
+  "declared_changed_tables": [
+    "review_comments",
+    "studio_comment_response_state"
+  ],
+  "response_revisions": [
+    6,
+    7,
+    8
+  ],
+  "history_preserved": 2,
+  "changes_preserved": 4,
+  "all11_complete": false
+}

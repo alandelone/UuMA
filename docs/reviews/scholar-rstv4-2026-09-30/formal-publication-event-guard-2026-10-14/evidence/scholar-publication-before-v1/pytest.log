@@ -1,0 +1,305 @@
+FFFFFFFF..                                                               [100%]
+================================== FAILURES ===================================
+_ test_publication_event_rejects_zero_versions_without_any_database_change[DRAFTING] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_rejects0')
+stage = 'DRAFTING'
+
+    @pytest.mark.parametrize("stage", ["DRAFTING", "FINALIZATION_SUBMISSION", "REVISION", "PUBLICATION"])
+    def test_publication_event_rejects_zero_versions_without_any_database_change(
+        tmp_path: Path, stage: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        app = create_app(tmp_path)
+        try:
+            # Legacy stage labels alone are never proof of successful generation.
+            with sqlite3.connect(service.db_path) as conn:
+                conn.execute(
+                    "UPDATE manuscripts SET workflow_stage=? WHERE manuscript_id=?", (stage, manuscript_id)
+                )
+            before = database_state(service)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_85c538572b4c464ab8243d7c37c54b7a","manuscript_id":"manuscript_49bc0e48232d47938e72d9fdafb43ff9","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:15.640025+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:53: AssertionError
+_ test_publication_event_rejects_zero_versions_without_any_database_change[FINALIZATION_SUBMISSION] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_rejects1')
+stage = 'FINALIZATION_SUBMISSION'
+
+    @pytest.mark.parametrize("stage", ["DRAFTING", "FINALIZATION_SUBMISSION", "REVISION", "PUBLICATION"])
+    def test_publication_event_rejects_zero_versions_without_any_database_change(
+        tmp_path: Path, stage: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        app = create_app(tmp_path)
+        try:
+            # Legacy stage labels alone are never proof of successful generation.
+            with sqlite3.connect(service.db_path) as conn:
+                conn.execute(
+                    "UPDATE manuscripts SET workflow_stage=? WHERE manuscript_id=?", (stage, manuscript_id)
+                )
+            before = database_state(service)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_f91fb7d8f7794b6299b562254b518041","manuscript_id":"manuscript_5636e8aaccce40a29564b307e526be87","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:16.196317+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:53: AssertionError
+_ test_publication_event_rejects_zero_versions_without_any_database_change[REVISION] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_rejects2')
+stage = 'REVISION'
+
+    @pytest.mark.parametrize("stage", ["DRAFTING", "FINALIZATION_SUBMISSION", "REVISION", "PUBLICATION"])
+    def test_publication_event_rejects_zero_versions_without_any_database_change(
+        tmp_path: Path, stage: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        app = create_app(tmp_path)
+        try:
+            # Legacy stage labels alone are never proof of successful generation.
+            with sqlite3.connect(service.db_path) as conn:
+                conn.execute(
+                    "UPDATE manuscripts SET workflow_stage=? WHERE manuscript_id=?", (stage, manuscript_id)
+                )
+            before = database_state(service)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_3499fc69cb6f4ea0a1633c53378d3159","manuscript_id":"manuscript_e6a7fcbd77094e3981af82c57f12eae7","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:16.648019+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:53: AssertionError
+_ test_publication_event_rejects_zero_versions_without_any_database_change[PUBLICATION] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_rejects3')
+stage = 'PUBLICATION'
+
+    @pytest.mark.parametrize("stage", ["DRAFTING", "FINALIZATION_SUBMISSION", "REVISION", "PUBLICATION"])
+    def test_publication_event_rejects_zero_versions_without_any_database_change(
+        tmp_path: Path, stage: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        app = create_app(tmp_path)
+        try:
+            # Legacy stage labels alone are never proof of successful generation.
+            with sqlite3.connect(service.db_path) as conn:
+                conn.execute(
+                    "UPDATE manuscripts SET workflow_stage=? WHERE manuscript_id=?", (stage, manuscript_id)
+                )
+            before = database_state(service)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_adb1e817f92240fca7d7ce90db4aac7f","manuscript_id":"manuscript_efe19981965b42479d97ac0b8182c389","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:17.092170+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:53: AssertionError
+_ test_publication_event_cannot_bypass_current_version_science_or_stage_guards[author_changed] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_cannot_0')
+unready = 'author_changed'
+
+    @pytest.mark.parametrize("unready", ["author_changed", "scientific_review", "planning"])
+    def test_publication_event_cannot_bypass_current_version_science_or_stage_guards(
+        tmp_path: Path, unready: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        try:
+            current_generated(service, manuscript_id)
+            manuscript = service.get_workspace(manuscript_id)["manuscript"]
+            service.set_stage(
+                manuscript_id, "FINALIZATION_SUBMISSION", expected_revision=manuscript["revision"],
+                reason="Software fixture reviewed output",
+            )
+            if unready == "author_changed":
+                document = service.get_workspace(manuscript_id)["document"]
+                document["abstract"] = "New unsent author content"
+                service.save_document(
+                    manuscript_id, base_revision=1, operation_id="publication-stale-input",
+                    document=document,
+                )
+            else:
+                with sqlite3.connect(service.db_path) as conn:
+                    if unready == "scientific_review":
+                        conn.execute(
+                            "UPDATE manuscripts SET needs_scientific_review=1 WHERE manuscript_id=?",
+                            (manuscript_id,),
+                        )
+                    else:
+                        conn.execute(
+                            "UPDATE manuscripts SET workflow_stage='PLANNING' WHERE manuscript_id=?",
+                            (manuscript_id,),
+                        )
+            before = database_state(service)
+            app = create_app(tmp_path)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_92fc2b7f4e83458eb838832e9c10d486","manuscript_id":"manuscript_3179a3a69ead4aecb4a80150c16a628f","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:17.791546+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:97: AssertionError
+_ test_publication_event_cannot_bypass_current_version_science_or_stage_guards[scientific_review] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_cannot_1')
+unready = 'scientific_review'
+
+    @pytest.mark.parametrize("unready", ["author_changed", "scientific_review", "planning"])
+    def test_publication_event_cannot_bypass_current_version_science_or_stage_guards(
+        tmp_path: Path, unready: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        try:
+            current_generated(service, manuscript_id)
+            manuscript = service.get_workspace(manuscript_id)["manuscript"]
+            service.set_stage(
+                manuscript_id, "FINALIZATION_SUBMISSION", expected_revision=manuscript["revision"],
+                reason="Software fixture reviewed output",
+            )
+            if unready == "author_changed":
+                document = service.get_workspace(manuscript_id)["document"]
+                document["abstract"] = "New unsent author content"
+                service.save_document(
+                    manuscript_id, base_revision=1, operation_id="publication-stale-input",
+                    document=document,
+                )
+            else:
+                with sqlite3.connect(service.db_path) as conn:
+                    if unready == "scientific_review":
+                        conn.execute(
+                            "UPDATE manuscripts SET needs_scientific_review=1 WHERE manuscript_id=?",
+                            (manuscript_id,),
+                        )
+                    else:
+                        conn.execute(
+                            "UPDATE manuscripts SET workflow_stage='PLANNING' WHERE manuscript_id=?",
+                            (manuscript_id,),
+                        )
+            before = database_state(service)
+            app = create_app(tmp_path)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_3d21c2ede23e456980e310c623395c12","manuscript_id":"manuscript_17583b3174c94370845c5ccfab5bec96","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:18.526211+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:97: AssertionError
+_ test_publication_event_cannot_bypass_current_version_science_or_stage_guards[planning] _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_cannot_2')
+unready = 'planning'
+
+    @pytest.mark.parametrize("unready", ["author_changed", "scientific_review", "planning"])
+    def test_publication_event_cannot_bypass_current_version_science_or_stage_guards(
+        tmp_path: Path, unready: str
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        try:
+            current_generated(service, manuscript_id)
+            manuscript = service.get_workspace(manuscript_id)["manuscript"]
+            service.set_stage(
+                manuscript_id, "FINALIZATION_SUBMISSION", expected_revision=manuscript["revision"],
+                reason="Software fixture reviewed output",
+            )
+            if unready == "author_changed":
+                document = service.get_workspace(manuscript_id)["document"]
+                document["abstract"] = "New unsent author content"
+                service.save_document(
+                    manuscript_id, base_revision=1, operation_id="publication-stale-input",
+                    document=document,
+                )
+            else:
+                with sqlite3.connect(service.db_path) as conn:
+                    if unready == "scientific_review":
+                        conn.execute(
+                            "UPDATE manuscripts SET needs_scientific_review=1 WHERE manuscript_id=?",
+                            (manuscript_id,),
+                        )
+                    else:
+                        conn.execute(
+                            "UPDATE manuscripts SET workflow_stage='PLANNING' WHERE manuscript_id=?",
+                            (manuscript_id,),
+                        )
+            before = database_state(service)
+            app = create_app(tmp_path)
+            with TestClient(app) as client:
+                response = client.post(
+                    f"/api/manuscripts/{manuscript_id}/submission-events",
+                    json={"venue": "Software fixture", "round_number": 1, "status": "PUBLISHED"},
+                )
+>           assert response.status_code == 422, response.text
+E           AssertionError: {"event_id":"submission_0d340591e3d3476e83a81ba6186408cc","manuscript_id":"manuscript_71794117069543d28dc8c5e4e364d217","venue":"Software fixture","round":1,"status":"PUBLISHED","detail":null,"created_at":"2026-10-14T10:20:19.149856+00:00"}
+E           assert 201 == 422
+E            +  where 201 = <Response [201 Created]>.status_code
+
+tests\test_studio_submission_events.py:97: AssertionError
+_ test_publication_event_and_stage_history_commit_together_and_reject_stale_repeat _
+
+tmp_path = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1093/test_publication_event_and_sta0')
+
+    def test_publication_event_and_stage_history_commit_together_and_reject_stale_repeat(
+        tmp_path: Path,
+    ) -> None:
+        service, _, manuscript_id = create_studio(tmp_path)
+        try:
+            current_generated(service, manuscript_id)
+            manuscript = service.get_workspace(manuscript_id)["manuscript"]
+            service.set_stage(
+                manuscript_id, "FINALIZATION_SUBMISSION", expected_revision=manuscript["revision"],
+                reason="Software fixture reviewed output",
+            )
+            before = service.get_workspace(manuscript_id)
+            event = service.record_submission_event(
+                manuscript_id, venue="Software fixture", round_number=1, status="PUBLISHED",
+                detail="Local software acceptance, no external journal submission",
+            )
+            after = StudioService(tmp_path).get_workspace(manuscript_id)
+            assert event in after["manuscript"]["submissions"]
+            assert after["workflow_stage"] == "PUBLICATION"
+            assert after["manuscript"]["revision"] == before["manuscript"]["revision"] + 1
+>           assert len(after["manuscript"]["history"]) == len(before["manuscript"]["history"]) + 1
+E           AssertionError: assert 2 == (2 + 1)
+E            +  where 2 = len([{'blocker': None, 'created_at': '2026-10-14T10:20:19.460575+00:00', 'history_id': 'history_7dd05fbc9bb94e539cdf2ecc90..._id': 'history_52180af7231e4cbaa002734974e515e0', 'manuscript_id': 'manuscript_de115ef05c674a5ca3054c2b308a9861', ...}])
+E            +  and   2 = len([{'blocker': None, 'created_at': '2026-10-14T10:20:19.460575+00:00', 'history_id': 'history_7dd05fbc9bb94e539cdf2ecc90..._id': 'history_52180af7231e4cbaa002734974e515e0', 'manuscript_id': 'manuscript_de115ef05c674a5ca3054c2b308a9861', ...}])
+
+tests\test_studio_submission_events.py:123: AssertionError
+=========================== short test summary info ===========================
+FAILED tests/test_studio_submission_events.py::test_publication_event_rejects_zero_versions_without_any_database_change[DRAFTING]
+FAILED tests/test_studio_submission_events.py::test_publication_event_rejects_zero_versions_without_any_database_change[FINALIZATION_SUBMISSION]
+FAILED tests/test_studio_submission_events.py::test_publication_event_rejects_zero_versions_without_any_database_change[REVISION]
+FAILED tests/test_studio_submission_events.py::test_publication_event_rejects_zero_versions_without_any_database_change[PUBLICATION]
+FAILED tests/test_studio_submission_events.py::test_publication_event_cannot_bypass_current_version_science_or_stage_guards[author_changed]
+FAILED tests/test_studio_submission_events.py::test_publication_event_cannot_bypass_current_version_science_or_stage_guards[scientific_review]
+FAILED tests/test_studio_submission_events.py::test_publication_event_cannot_bypass_current_version_science_or_stage_guards[planning]
+FAILED tests/test_studio_submission_events.py::test_publication_event_and_stage_history_commit_together_and_reject_stale_repeat
+8 failed, 2 passed in 6.73s

@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "comment_id": "comment_342fc9f8af994f599623410886be6877",
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "source": "PASTED",
+    "reviewer": null,
+    "original_text": "3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted.",
+    "edited_text": "3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted.",
+    "author_decision": "SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments.",
+    "response_text": "SOFTWARE_FIXTURE pending reply. The Beta citation identity and the fictional table and figure are saved in v6, but their complete typed attribution to final prose remains unverified. No completed scientific amendment or scientific approval is asserted.",
+    "status": "PENDING",
+    "archived_at": null,
+    "created_at": "2026-10-15T07:35:59.055172+00:00",
+    "updated_at": "2026-10-15T08:00:24.106079+00:00",
+    "import_metadata": {
+      "comment_number": 214,
+      "import_batch_id": "comment_import_9e8101ea7a40461bb632fbd225e09c5e",
+      "original_index": 2,
+      "original_text": "3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted.",
+      "raw_import_text": "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval.\n\n2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence.\n\n3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted."
+    },
+    "display_label": "A214",
+    "content_sha256": "781e187812925a79335fe2d057f0579b2ff2db227945f67684c0fb7652c0b4fa",
+    "response_state_sha256": "d5c4249acd00b8cc26f22ac85d868351979d7d4b5e4da5dad75494bdf26c4a91",
+    "response_verification": {
+      "status": "NOT_REVIEWED"
+    }
+  }
+}

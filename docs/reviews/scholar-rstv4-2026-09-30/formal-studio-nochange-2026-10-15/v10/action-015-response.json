@@ -1,0 +1,382 @@
+{
+  "status_code": 201,
+  "body": {
+    "event_id": "submission_11ea9271d86a4f43ba6fa6c486b31174",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "venue": "SOFTWARE_FIXTURE Local WF09-10 — no external submission",
+    "round": 3,
+    "status": "ARCHIVED",
+    "detail": "SOFTWARE_FIXTURE local archive: exact original fixed v5 PDF and explicit synthetic local proof text are bound by byte hashes. No external publication, scientific acceptance, or publisher proof approval is asserted.",
+    "created_at": "2026-10-15T06:55:31.182168+00:00",
+    "binding": {
+      "status": "BOUND",
+      "snapshot": {
+        "accepted_event_id": "submission_c3b44e1105424837a63b10ca787e33af",
+        "event": {
+          "detail": "SOFTWARE_FIXTURE local archive: exact original fixed v5 PDF and explicit synthetic local proof text are bound by byte hashes. No external publication, scientific acceptance, or publisher proof approval is asserted.",
+          "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+          "round": 3,
+          "status": "ARCHIVED",
+          "venue": "SOFTWARE_FIXTURE Local WF09-10 — no external submission"
+        },
+        "files": {
+          "final": {
+            "asset_id": "asset_a0fa7844e8234f1b9bef01da3f031ab9",
+            "byte_size": 13830,
+            "filename": "SOFTWARE_FIXTURE-v5-final.pdf",
+            "media_type": "application/pdf",
+            "sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4"
+          },
+          "proof": {
+            "asset_id": "asset_24bccb8186a54a578fb0b34410a085f3",
+            "byte_size": 739,
+            "filename": "SOFTWARE_FIXTURE-v5-local-proof.txt",
+            "media_type": "text/plain",
+            "sha256": "319b444fb182840168b1d2e3e83f6da18c19aacf6b42044f4f3f2455d29e5ca1"
+          }
+        },
+        "generated_version": {
+          "content_sha256": "2430bc03a020665b51cd6e522f578097184163259e098be99159c46b20126b7b",
+          "document_revision": 62,
+          "inputs_sha256": "98fd045a4b6217aafb60a9ec4efbe5704e5cff5d8fafb68982dab35fd6c74893",
+          "job_id": "studio_job_de2856bae51842b38ed6342f3fca6b10",
+          "manuscript_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+          "template_manifest": {
+            "author_document_sha256": "aca0488d74f2f6ee5d63afc1ceb25a295382e087104675a06e6e2e0264a1c4b6",
+            "citation_style": "numeric_first_use",
+            "status": "RECORDED",
+            "template_sources": [
+              {
+                "skeleton_id": "skeleton_dacb7912eb37f640e511be09e374aacf",
+                "source_sha256": "04547d056e333e010376e4179759f6a3a6d5a829c909ba9e396655976aaf8d72",
+                "unit_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 2,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 2"
+                ],
+                "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 2,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 2"
+                ],
+                "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 1,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 1"
+                ],
+                "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 1,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 1"
+                ],
+                "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 1,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 1"
+                ],
+                "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 3,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 3"
+                ],
+                "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 3,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 3"
+                ],
+                "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 3,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 3"
+                ],
+                "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 1,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 1"
+                ],
+                "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 2,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 2"
+                ],
+                "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 2,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 2"
+                ],
+                "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 2,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 2"
+                ],
+                "source_section_id": "block_8a1f9d7da38b0e3ac14756d622151f20",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 3,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 3"
+                ],
+                "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 3,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 3"
+                ],
+                "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 3,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 3"
+                ],
+                "source_section_id": "block_5f2f9687f044318e75fddaff26f37fc0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 1,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 1"
+                ],
+                "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+              },
+              {
+                "heading_location": {
+                  "bbox": [
+                    72,
+                    90,
+                    420,
+                    110
+                  ],
+                  "heading_level": 1
+                },
+                "page_number": 1,
+                "skeleton_id": "skeleton_7fdfaa3452584457753a03697f4a3f27",
+                "source_path": [
+                  "Software source section 1"
+                ],
+                "source_section_id": "block_a7ba8e551929a7cfae13a988b087cda0",
+                "source_sha256": "e90084a48892d93d022cadeabee67c93cd4aa271adb48665ff28e5f9f9d4f6f8",
+                "unit_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+              }
+            ],
+            "venue": ""
+          },
+          "version": 5
+        },
+        "parent_event_id": "submission_f20d1e7502c44106b50e591c22b40927"
+      },
+      "snapshot_sha256": "bfa744f1c643de1912b90c3c00e271593ae8b0728b67d992b6be3155e89ce541"
+    }
+  }
+}

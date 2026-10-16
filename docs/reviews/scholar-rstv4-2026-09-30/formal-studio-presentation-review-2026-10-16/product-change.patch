@@ -1,0 +1,316 @@
+--- a/RSTV4/src/rstv4/studio_response_checks.py
++++ b/RSTV4/src/rstv4/studio_response_checks.py
+@@ -114,11 +114,16 @@
+         if claims:
+             raise ValueError("A no-change explanation cannot contain modification assertions")
+         return
+-    if outcome != "MODIFIED":
++    if outcome not in {"MODIFIED", "PRESENTATION_MODIFIED"}:
+         raise ValueError("Unknown author reply-review outcome")
+     if not claims:
+         raise ValueError("Select each modification assertion and its actual final-manuscript change")
+-    if not context["baseline_to_target_diff"]:
++    presentation = outcome == "PRESENTATION_MODIFIED"
++    if presentation and (not context.get("baseline_available") or context["baseline_to_target_diff"]
++                         or not context.get("baseline_text_sha256")
++                         or context.get("baseline_text_sha256") != context.get("target_text_sha256")):
++        raise ValueError("A presentation-only reply requires identical fixed baseline and target text")
++    if not presentation and not context["baseline_to_target_diff"]:
+         raise ValueError("The final manuscript has no text difference from the fixed reviewed baseline")
+     evidence = {row["evidence_id"]: row for row in context["evidence"]}
+     raw_reply = current["response_text"].encode("utf-16-le")
+@@ -143,6 +148,21 @@
+             raise ValueError("Duplicate assertion evidence is not allowed")
+         for identifier in selected_ids:
+             row = evidence.get(identifier)
++            if presentation:
++                if (row is None or row.get("status") != "LAYOUT_ONLY"
++                        or row.get("change_kind") != "PRESENTATION"
++                        or row.get("supports_scientific_text_modification") is not False
++                        or row.get("changed_text") != ""
++                        or not row.get("boxes") or not row.get("baseline_boxes")
++                        or row["boxes"] == row["baseline_boxes"]
++                        or row.get("final_page") is None or row.get("final_line") is None
++                        or row.get("generated_version_id") != current["generated_version_id"]
++                        or row.get("baseline_version_id") != current.get("baseline_manuscript_version_id")
++                        or not row.get("baseline_pdf_sha256")
++                        or row.get("baseline_pdf_sha256") == row.get("final_pdf_sha256")
++                        or row.get("final_pdf_sha256") != context.get("pdf", {}).get("pdf_sha256")):
++                    raise ValueError("A presentation assertion requires verified layout-only evidence from both fixed PDFs")
++                continue
+             if (row is None or row["status"] != "GENERATED_TEXT_CHANGED" or not row.get("boxes")
+                     or row.get("final_page") is None or row.get("final_line") is None):
+                 raise ValueError("Retained, superseded, unknown or unrelated changes cannot prove an assertion was implemented")
+--- a/RSTV4/src/rstv4/studio_api.py
++++ b/RSTV4/src/rstv4/studio_api.py
+@@ -114,7 +114,7 @@
+ class ResponseReviewRequest(ApiModel):
+     request_id: str = Field(min_length=8, max_length=200)
+     context_sha256: str = Field(pattern=r"^[0-9a-f]{64}$")
+-    outcome: str = Field(pattern=r"^(MODIFIED|EXPLAINED_NO_CHANGE)$")
++    outcome: str = Field(pattern=r"^(MODIFIED|PRESENTATION_MODIFIED|EXPLAINED_NO_CHANGE)$")
+     claims: list[ReplyAssertionRequest] = Field(default_factory=list, max_length=100)
+     acknowledged_all_assertions: bool = Field(strict=True)
+ 
+--- a/writing-studio/components/studio-response-review.tsx
++++ b/writing-studio/components/studio-response-review.tsx
+@@ -221,6 +221,12 @@
+   const [selection, setSelection] = useState({ start: 0, end: 0 });
+   const [notice, setNotice] = useState('');
+   const stale = context.state.current_author_revision !== context.state.generated_input_revision;
++  const presentation = outcome === 'PRESENTATION_MODIFIED';
++  const modifying = outcome !== 'EXPLAINED_NO_CHANGE';
++  const evidenceAllowed = (row: ResponseReviewContext['evidence'][number]) => presentation
++    ? row.status === 'LAYOUT_ONLY' && row.change_kind === 'PRESENTATION' && row.supports_scientific_text_modification === false
++    : row.status === 'GENERATED_TEXT_CHANGED';
++  const changeOutcome = (next: ResponseReviewRequest['outcome']) => { setOutcome(next); setClaims([]); setAcknowledged(false); };
+   const addSelection = () => {
+     const { start, end } = selection;
+     if (end <= start || claims.some((item) => start < item.end && end > item.start)) { setNotice('请选择一段尚未核对的“已修改”回复文字。'); return; }
+@@ -233,8 +239,9 @@
+     <p className="whitespace-pre-wrap break-words text-sm">决定与理由：{context.state.author_decision || '尚未填写'}</p>
+     <label htmlFor={`review-reply-${commentId}`} className="space-y-2 text-sm">完整保存回复（可用键盘或鼠标选取修改声明）<Textarea id={`review-reply-${commentId}`} readOnly value={context.state.response_text || ''} onSelect={(event) => setSelection({ start: event.currentTarget.selectionStart, end: event.currentTarget.selectionEnd })} aria-label="选择完整回复中的修改声明" /></label>
+     <fieldset disabled={disabled} className="space-y-2 text-sm"><legend>本次作者决定</legend>
+-      <label className="flex items-center gap-2"><input type="radio" name={`response-outcome-${commentId}`} checked={outcome === 'MODIFIED'} onChange={() => { setOutcome('MODIFIED'); setAcknowledged(false); }} />已经修改，逐条对应实际变化</label>
+-      <label className="flex items-center gap-2"><input type="radio" name={`response-outcome-${commentId}`} checked={outcome === 'EXPLAINED_NO_CHANGE'} onChange={() => { setOutcome('EXPLAINED_NO_CHANGE'); setAcknowledged(false); }} />决定不修改，回复中已说明理由</label>
++      <label className="flex items-center gap-2"><input type="radio" name={`response-outcome-${commentId}`} checked={outcome === 'MODIFIED'} onChange={() => changeOutcome('MODIFIED')} />已经修改，逐条对应实际变化</label>
++      <label className="flex items-center gap-2"><input type="radio" name={`response-outcome-${commentId}`} checked={presentation} onChange={() => changeOutcome('PRESENTATION_MODIFIED')} />仅修改排版，核对实际 PDF 位置变化</label>
++      <label className="flex items-center gap-2"><input type="radio" name={`response-outcome-${commentId}`} checked={outcome === 'EXPLAINED_NO_CHANGE'} onChange={() => changeOutcome('EXPLAINED_NO_CHANGE')} />决定不修改，回复中已说明理由</label>
+     </fieldset>
+     <details><summary>被审稿与最终稿的实际文字差异</summary>
+       <pre className="whitespace-pre-wrap break-words text-xs">{context.baseline_to_target_display_diff === undefined ? context.baseline_to_target_diff || '没有可证明的基准文字差异。' : context.baseline_to_target_display_diff || (context.baseline_to_target_diff ? '编号后的正文相同，原始引用或顺序存在差异；请对照下方两版固定引用来源。' : '没有可证明的基准文字差异。')}</pre>
+@@ -244,12 +251,13 @@
+         </section>)}
+       </details> : null}
+     </details>
+-    {outcome === 'MODIFIED' ? <div className="space-y-3">
++    {modifying ? <div className="space-y-3">
++      {presentation ? <p className="text-sm">仅核对排版声明及两版实际 PDF 的位置变化。正文、引用与素材须保持原样；这不会确认科学正文已修改。</p> : null}
+       <Button size="sm" variant="outline" disabled={disabled || selection.end <= selection.start} onClick={addSelection}>加入所选修改声明</Button>
+       {claims.map((claim, index) => <fieldset disabled={disabled} key={`${claim.start}-${claim.end}`} className="space-y-2 rounded border p-3 text-sm">
+         <legend>修改声明 {index + 1}</legend><p className="whitespace-pre-wrap break-words">{claim.text}</p>
+         {context.evidence.map((row) => <div key={row.evidence_id} className="space-y-1"><label className="flex items-start gap-2">
+-          <Checkbox aria-label={`声明 ${index + 1} 对应 ${(row.display_changed_text ?? row.changed_text) || '无法定位的变化'}`} disabled={row.status !== 'GENERATED_TEXT_CHANGED'} checked={claim.evidence_ids.includes(row.evidence_id)} onCheckedChange={(checked) => { setClaims((current) => current.map((item, i) => i === index ? { ...item, evidence_ids: checked ? [...item.evidence_ids, row.evidence_id] : item.evidence_ids.filter((id) => id !== row.evidence_id) } : item)); setAcknowledged(false); }} />
++          <Checkbox aria-label={`声明 ${index + 1} 对应 ${row.status === 'LAYOUT_ONLY' ? '仅调整成文页边距' : (row.display_changed_text ?? row.changed_text) || '无法定位的变化'}`} disabled={!evidenceAllowed(row)} checked={claim.evidence_ids.includes(row.evidence_id)} onCheckedChange={(checked) => { setClaims((current) => current.map((item, i) => i === index ? { ...item, evidence_ids: checked ? [...item.evidence_ids, row.evidence_id] : item.evidence_ids.filter((id) => id !== row.evidence_id) } : item)); setAcknowledged(false); }} />
+           <span className="min-w-0 whitespace-pre-wrap break-words">{row.status === 'LAYOUT_ONLY' ? '仅调整成文页边距；正文、来源与素材保持原样' : (row.display_changed_text ?? row.changed_text) || '结构或来源变化尚无法对应成文'}<small className="block text-muted-foreground">{row.status === 'GENERATED_TEXT_CHANGED' ? `最终 PDF 第 ${row.final_page} 页，可见文本第 ${row.final_line} 行${row.final_line_end !== row.final_line ? ` 至第 ${row.final_page_end} 页第 ${row.final_line_end} 行` : ''}` : row.status === 'CITATION_ONLY' ? '仅引用变化，不能证明正文文字已修改' : row.status === 'LAYOUT_ONLY' ? `最终 PDF 第 ${row.final_page} 页、第 ${row.final_line} 行位置已变化；不能证明科学正文已修改` : row.status === 'EXACT_BASELINE_TEXT_RETAINED' ? '与基准稿文字相同，不能证明已修改' : '尚无足够的最终稿定位依据'}</small></span>
+         </label><FrozenOrigin row={row} context={context} /></div>)}
+         {!context.evidence.length ? <p>没有属于此意见的最终稿改动依据。</p> : null}
+@@ -257,12 +265,12 @@
+       </fieldset>)}
+       <p className="text-xs text-muted-foreground">行号按实际 PDF 页面从上到下的可见文本计数。保留文字、已撤回改动及无法定位的变化不能作为完成依据。</p>
+     </div> : <p className="text-sm">确认之前，请确保决定中保留不修改的理由，完整回复没有声称实施了未发生的修改。</p>}
+-    <label className="flex items-start gap-2 text-sm"><Checkbox disabled={disabled} checked={acknowledged} onCheckedChange={(checked) => setAcknowledged(Boolean(checked))} /><span>{outcome === 'MODIFIED' ? '我已检查完整回复，将每处“已修改”声明逐条列出，并核对所选实际变化。' : '我已检查完整回复，保留不修改的理由，且没有遗漏需要核对的修改声明。'}</span></label>
++    <label className="flex items-start gap-2 text-sm"><Checkbox disabled={disabled} checked={acknowledged} onCheckedChange={(checked) => setAcknowledged(Boolean(checked))} /><span>{presentation ? '我已检查完整回复，逐条核对仅排版声明及实际 PDF 位置，回复未声称科学正文已修改。' : outcome === 'MODIFIED' ? '我已检查完整回复，将每处“已修改”声明逐条列出，并核对所选实际变化。' : '我已检查完整回复，保留不修改的理由，且没有遗漏需要核对的修改声明。'}</span></label>
+     {notice ? <output aria-live="polite" className="text-sm">{notice}</output> : null}
+     {context.pdf_artifact_id ? <a className="text-sm underline" href={studioFileUrl(`/artifacts/${context.pdf_artifact_id}`)} target="_blank" rel="noreferrer">查看本版最终 PDF</a> : null}
+     <details><summary>保留的核对历史（{context.history.length}）</summary><ResponseHistory history={context.history} /></details>
+-    <div className="flex flex-wrap justify-end gap-2"><Button variant="outline" onClick={() => onOpenChange(false)}>返回</Button><Button disabled={disabled || stale || !acknowledged || !context.state.response_text?.trim() || !context.state.author_decision?.trim() || (outcome === 'MODIFIED' && (!context.baseline_to_target_diff || !claims.length || claims.some((item) => !item.evidence_ids.length)))} onClick={() => {
+-      void onConfirm({ request_id: crypto.randomUUID(), context_sha256: context.context_sha256, outcome, claims: outcome === 'MODIFIED' ? claims : [], acknowledged_all_assertions: true });
++    <div className="flex flex-wrap justify-end gap-2"><Button variant="outline" onClick={() => onOpenChange(false)}>返回</Button><Button disabled={disabled || stale || !acknowledged || !context.state.response_text?.trim() || !context.state.author_decision?.trim() || (modifying && ((presentation ? !context.baseline_available || Boolean(context.baseline_to_target_diff) : !context.baseline_to_target_diff) || !claims.length || claims.some((item) => !item.evidence_ids.length || item.evidence_ids.some((id) => !context.evidence.some((row) => row.evidence_id === id && evidenceAllowed(row))))))} onClick={() => {
++      void onConfirm({ request_id: crypto.randomUUID(), context_sha256: context.context_sha256, outcome, claims: modifying ? claims : [], acknowledged_all_assertions: true });
+     }}>作者确认并保存核对记录</Button></div>
+     <p className="text-xs text-muted-foreground">此记录证明作者核对过所列回复与版本。研究结论是否成立，仍需正式科研验收。</p>
+   </DialogContent></Dialog>;
+@@ -270,11 +278,11 @@
+ 
+ function ResponseHistory({ history }: { history: ResponseReviewContext['history'] }) {
+   return <div>{history.length ? history.map((check) => <section key={check.check_id} className="space-y-2 border-t py-2 text-sm">
+-    <p>{new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(check.created_at))} · {check.outcome === 'MODIFIED' ? '作者确认修改' : '作者确认不修改及理由'}</p>
++    <p>{new Intl.DateTimeFormat(undefined, { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(check.created_at))} · {check.outcome === 'PRESENTATION_MODIFIED' ? '作者确认仅排版修改' : check.outcome === 'MODIFIED' ? '作者确认修改' : check.outcome === 'EXPLAINED_NO_CHANGE' ? '作者确认不修改及理由' : '未识别的核对类型'}</p>
+     <p>成文 v{check.context.target_version_number}</p><p className="whitespace-pre-wrap break-words">{check.context.state.author_decision}</p><p className="whitespace-pre-wrap break-words">{check.context.state.response_text}</p>
+     {check.request.claims.map((claim) => <div key={`${claim.start}-${claim.end}`}><p className="whitespace-pre-wrap break-words">已核对声明：{claim.text}</p>{claim.evidence_ids.map((id) => {
+       const row = check.context.evidence.find((item) => item.evidence_id === id);
+-      return row ? <div key={id}><p className="whitespace-pre-wrap break-words text-muted-foreground">{row.display_changed_text ?? row.changed_text} · 当时的最终 PDF 第 {row.final_page} 页，可见文本第 {row.final_line} 行</p><FrozenOrigin row={row} context={check.context} /></div> : null;
++      return row ? <div key={id}><p className="whitespace-pre-wrap break-words text-muted-foreground">{row.status === 'LAYOUT_ONLY' ? '仅排版位置变化，正文、引用与素材未变' : row.display_changed_text ?? row.changed_text} · 当时的最终 PDF 第 {row.final_page} 页，可见文本第 {row.final_line} 行</p>{row.status === 'LAYOUT_ONLY' ? null : <FrozenOrigin row={row} context={check.context} />}</div> : null;
+     })}</div>)}
+   </section>) : <p className="text-sm text-muted-foreground">尚无作者核对记录。原意见和已保存回复仍保留。</p>}</div>;
+ }
+--- a/writing-studio/lib/studio-types.ts
++++ b/writing-studio/lib/studio-types.ts
+@@ -487,7 +487,7 @@
+ export interface ResponseVerification {
+   status: 'NOT_REVIEWED' | 'LEGACY_UNVERIFIED' | 'CURRENT' | 'STALE';
+   checked_at?: string;
+-  outcome?: 'MODIFIED' | 'EXPLAINED_NO_CHANGE';
++  outcome?: 'MODIFIED' | 'PRESENTATION_MODIFIED' | 'EXPLAINED_NO_CHANGE';
+   generated_version_id?: string;
+ }
+ 
+@@ -502,7 +502,7 @@
+ export interface ResponseReviewRequest {
+   request_id: string;
+   context_sha256: string;
+-  outcome: 'MODIFIED' | 'EXPLAINED_NO_CHANGE';
++  outcome: 'MODIFIED' | 'PRESENTATION_MODIFIED' | 'EXPLAINED_NO_CHANGE';
+   claims: ReplyAssertion[];
+   acknowledged_all_assertions: boolean;
+ }
+@@ -558,6 +558,8 @@
+     origins?: FrozenEvidenceOrigin[];
+     change_id: string;
+     status: string;
++    change_kind?: string;
++    supports_scientific_text_modification?: boolean;
+     changed_text: string;
+     display_changed_text?: string;
+     reason: string;
+--- a/writing-studio/tests/unit/studio-response-review.cjs
++++ b/writing-studio/tests/unit/studio-response-review.cjs
+@@ -184,4 +184,32 @@
+   assert.equal(historicalSource.props.context, historicalCheck.context);
+   assert(text(runtime(historicalSource.type, historicalSource.props).tree).includes(origin.thought_text));
+   console.log('PASS Historical source view reads its original stored context without consulting the active editor');
++
++  const layoutContext = { ...reviewContext, baseline_available: true, baseline_to_target_diff: '',
++    evidence: [{ evidence_id: 'layout-real', change_id: 'margin-change', status: 'LAYOUT_ONLY',
++      change_kind: 'PRESENTATION', supports_scientific_text_modification: false, changed_text: '',
++      final_page: 1, final_line: 4 }] };
++  let layoutRequest;
++  const layoutReview = runtime(dialog.type, { ...dialog.props, context: layoutContext, disabled: false,
++    onConfirm: async (request) => { layoutRequest = request; } });
++  all(layoutReview.render(), (node) => node.type === 'input' && node.props.type === 'radio')[1].props.onChange();
++  named(layoutReview.render(), 'Textarea').props.onSelect({ currentTarget: { selectionStart: 3, selectionEnd: 17 } });
++  button(layoutReview, '加入所选修改声明').props.onClick();
++  assert.equal(all(layoutReview.render(), (node) => node.type === 'Checkbox')[0].props.disabled, false);
++  all(layoutReview.render(), (node) => node.type === 'Checkbox')[0].props.onCheckedChange(true);
++  all(layoutReview.render(), (node) => node.type === 'Checkbox').at(-1).props.onCheckedChange(true);
++  assert.equal(button(layoutReview, '作者确认并保存核对记录').props.disabled, false);
++  button(layoutReview, '作者确认并保存核对记录').props.onClick();
++  assert.equal(layoutRequest.outcome, 'PRESENTATION_MODIFIED');
++  assert.equal(layoutRequest.claims.length, 1);
++  assert.equal(layoutRequest.claims[0].evidence_ids[0], 'layout-real');
++  all(layoutReview.render(), (node) => node.type === 'input' && node.props.type === 'radio')[0].props.onChange();
++  assert.equal(all(layoutReview.render(), (node) => node.type === 'fieldset' && text(node.props.children).includes('修改声明 1')).length, 0);
++  assert.equal(button(layoutReview, '作者确认并保存核对记录').props.disabled, true);
++  const layoutHistory = runtime(historyComponent, { history: [{ ...historicalCheck, outcome: 'PRESENTATION_MODIFIED',
++    context: layoutContext, request: { claims: layoutRequest.claims } }] });
++  assert(text(layoutHistory.tree).includes('作者确认仅排版修改'));
++  assert(text(layoutHistory.tree).includes('仅排版位置变化，正文、引用与素材未变'));
++  assert(!text(layoutHistory.tree).includes('作者确认不修改及理由'));
++  console.log('PASS Presentation acknowledgement uses its own evidence type without a prose diff; switching outcomes clears claims');
+ })().catch((error) => { console.error(error); process.exitCode = 1; });
+--- /dev/null
++++ b/RSTV4/tests/test_studio_presentation_review.py
+@@ -0,0 +1,122 @@
++"""Real compiler and typed acknowledgement of presentation, preserving prose guards."""
++import json
++from copy import deepcopy
++from pathlib import Path
++
++import pytest
++from fastapi.testclient import TestClient
++from test_studio_layout_integration import branch, compiled_source, replay
++from test_writing_studio import wait_for_job
++
++from rstv4.service import RevisionConflictError
++from rstv4.studio_api import create_app
++from rstv4.studio_response_checks import validate_claims
++
++__all__ = ["branch", "compiled_source"]  # Explicitly expose shared pytest fixtures.
++
++
++def prepared(branch):
++    service, ms, source, _ = branch
++    review = service.create_review_round(ms, round_number=1, venue="Presentation software fixture")
++    comment = service.import_comments(review["review_round_id"], [{"text": "Change only the margins."}], source="FIXTURE")[0]
++    ws = service.get_workspace(ms)
++    document = deepcopy(ws["document"])
++    document["layout"] = {"page_margin": "narrow"}
++    service.save_document(ms, base_revision=1, operation_id="presentation-linked-margin", document=document,
++                          operation_kind="LAYOUT", comment_ids=[comment["comment_id"]])
++    assert replay(service, ms, source)["status"] == "SUCCEEDED"
++    text = "We changed only the margins."
++    service.update_comment(comment["comment_id"], {"response_text": text, "author_decision": "Presentation only; original prose retained."})
++    context = service.response_review_context(ms, comment["comment_id"])
++    assert len(context["evidence"]) == 1 and context["evidence"][0]["status"] == "LAYOUT_ONLY"
++    request = {"request_id": "presentation-review-native-contract", "context_sha256": context["context_sha256"],
++               "outcome": "PRESENTATION_MODIFIED", "acknowledged_all_assertions": True,
++               "claims": [{"start": 0, "end": len(text), "text": text, "offset_unit": "utf16",
++                           "evidence_ids": [context["evidence"][0]["evidence_id"]]}]}
++    return service, ms, comment["comment_id"], context, request, document
++
++
++@pytest.fixture(scope="module")
++def exact_context(compiled_source, tmp_path_factory):
++    # Share a real compiled context for pure negative validation; mutate only deep copies.
++    from test_studio_layout_integration import branch as branch_fixture
++
++    generator = branch_fixture.__wrapped__(compiled_source, tmp_path_factory.mktemp("presentation-context"))
++    context_branch = next(generator)
++    try:
++        yield prepared(context_branch)[3:5]
++    finally:
++        try:
++            next(generator)
++        except StopIteration:
++            pass
++
++
++@pytest.mark.parametrize("invalid", ["scientific_outcome", "no_claim", "unacknowledged", "prose_changed",
++    "unknown_baseline", "retained", "wrong_kind", "scientific_support", "missing_old_boxes",
++    "unmoved_boxes", "same_pdf", "wrong_target", "wrong_baseline", "wrong_pdf", "wrong_text", "duplicate"])
++def test_presentation_never_bypasses_fixed_pdf_exact_reply_and_type_guards(exact_context, invalid):
++    original, original_request = exact_context
++    context, request = deepcopy(original), deepcopy(original_request)
++    row = context["evidence"][0]
++    if invalid == "scientific_outcome":
++        request["outcome"] = "MODIFIED"
++        context["baseline_to_target_diff"] = "Pretend prose change"
++    elif invalid == "no_claim":
++        request["claims"] = []
++    elif invalid == "unacknowledged":
++        request["acknowledged_all_assertions"] = False
++    elif invalid == "prose_changed":
++        context["baseline_to_target_diff"] = "Actual changed prose"
++    elif invalid == "unknown_baseline":
++        context["baseline_available"] = False
++    elif invalid == "retained":
++        row["status"] = "EXACT_BASELINE_TEXT_RETAINED"
++    elif invalid == "wrong_kind":
++        row["change_kind"] = "CITATION"
++    elif invalid == "scientific_support":
++        row["supports_scientific_text_modification"] = True
++    elif invalid == "missing_old_boxes":
++        row["baseline_boxes"] = []
++    elif invalid == "unmoved_boxes":
++        row["baseline_boxes"] = row["boxes"]
++    elif invalid == "same_pdf":
++        row["baseline_pdf_sha256"] = row["final_pdf_sha256"]
++    elif invalid == "wrong_target":
++        row["generated_version_id"] = "another-target"
++    elif invalid == "wrong_baseline":
++        row["baseline_version_id"] = "another-baseline"
++    elif invalid == "wrong_pdf":
++        row["final_pdf_sha256"] = "f" * 64
++    elif invalid == "wrong_text":
++        request["claims"][0]["text"] = "Not the saved reply"
++    else:
++        request["claims"][0]["evidence_ids"] *= 2
++    with pytest.raises(ValueError):
++        validate_claims(context, request["outcome"], request["claims"], request["acknowledged_all_assertions"])
++
++
++def test_presentation_http_confirmation_replay_export_and_later_reply_staleness(branch):
++    service, ms, comment, context, request, _ = prepared(branch)
++    route = f"/api/manuscripts/{ms}/comments/{comment}/response-checks"
++    with TestClient(create_app(service.root)) as client:
++        response = client.post(route, json=request)
++        assert response.status_code == 200, response.text
++        first = response.json()
++        assert first["comment"]["response_verification"]["status"] == "CURRENT"
++        assert first["comment"]["response_verification"]["outcome"] == "PRESENTATION_MODIFIED"
++        assert first["history"][0]["context"]["evidence"] == context["evidence"]
++        retry = client.post(route, json=request)
++        assert retry.status_code == 200 and retry.json()["idempotent_replay"]
++        assert retry.json()["check_id"] == first["check_id"] and len(retry.json()["history"]) == 1
++    package = wait_for_job(service, service.create_job(ms, "SUBMISSION_PACKAGE", input_revision=2))
++    assert package["status"] == "SUCCEEDED", package
++    exported = json.loads((Path(package["result"]["directory"])/"response-review-history.json").read_text(encoding="utf8"))
++    assert exported["comments"][0]["checks"] == first["history"]
++    assert package["result"]["manifest"]["unresolved_comment_ids"] == []
++    service.update_comment(comment, {"response_text": "A later reply."})
++    assert service.list_comments(ms)[0]["response_verification"]["status"] == "STALE"
++    assert service.response_review_history(ms, comment)["history"] == first["history"]
++    assert service.confirm_response_review(ms, comment, request)["idempotent_replay"]
++    with pytest.raises(RevisionConflictError):
++        service.confirm_response_review(ms, comment, {**request,"outcome":"MODIFIED"})

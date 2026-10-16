@@ -84,6 +84,22 @@ class KagRuntimeManager:
     auto_recover: bool = True
     recovery_timeout_seconds: int = 120
 
+    def _is_remote_host(self) -> bool:
+        if not self.kag_config:
+            return False
+        config = self.kag_config.expanduser().resolve()
+        if not config.is_file():
+            return False
+        try:
+            for line in config.read_text(encoding="utf-8-sig").splitlines():
+                stripped = line.strip()
+                if stripped.startswith("host_addr:"):
+                    addr = stripped.partition(":")[2].strip().rstrip("/")
+                    return not addr.startswith(("http://127.0.0.1", "http://localhost"))
+        except (OSError, UnicodeDecodeError):
+            return False
+        return False
+
     def _ensure_docker_engine(self) -> None:
         creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
         probe = ["docker", "info", "--format", "{{.ServerVersion}}"]
@@ -141,8 +157,21 @@ class KagRuntimeManager:
     def recover(self) -> dict[str, Any]:
         if not self.auto_recover:
             raise KagUnavailableError("KAG automatic recovery is disabled.")
-        if self.compose_file is None:
-            raise KagUnavailableError("UUMA_KAG_COMPOSE_FILE is not configured.")
+        if self.compose_file is None or self._is_remote_host():
+            self._ensure_bridge_process()
+            client = JsonHttpClient(self.bridge_url, timeout_seconds=3)
+            deadline = time.monotonic() + self.recovery_timeout_seconds
+            last_error = "health check did not run"
+            while time.monotonic() < deadline:
+                try:
+                    health = client.request("/health")
+                    if health.get("ready") is True:
+                        return health
+                    last_error = str(health)
+                except KagUnavailableError as exc:
+                    last_error = str(exc)
+                time.sleep(2)
+            raise KagUnavailableError(f"KAG did not become ready: {last_error}")
         compose_file = self.compose_file.expanduser().resolve()
         if not compose_file.is_file():
             raise KagUnavailableError(f"KAG compose file does not exist: {compose_file}")
@@ -159,32 +188,33 @@ class KagRuntimeManager:
             raise KagUnavailableError(str(exc)) from exc
 
     def _recover_locked(self, compose_file: Path) -> dict[str, Any]:
-        command = [
-            "docker",
-            "compose",
-            "-p",
-            "uuma-wisdom-kag",
-            "-f",
-            str(compose_file),
-            "up",
-            "-d",
-        ]
-        creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
-        self._ensure_docker_engine()
-        try:
-            completed = subprocess.run(
-                command,
-                capture_output=True,
-                text=True,
-                timeout=self.recovery_timeout_seconds,
-                check=False,
-                creationflags=creation_flags,
-            )
-        except (OSError, subprocess.TimeoutExpired) as exc:
-            raise KagUnavailableError(f"KAG recovery command failed: {exc}") from exc
-        if completed.returncode != 0:
-            message = (completed.stderr or completed.stdout).strip()
-            raise KagUnavailableError(f"KAG recovery failed: {message[-1000:]}")
+        if not self._is_remote_host():
+            command = [
+                "docker",
+                "compose",
+                "-p",
+                "uuma-wisdom-kag",
+                "-f",
+                str(compose_file),
+                "up",
+                "-d",
+            ]
+            creation_flags = getattr(subprocess, "CREATE_NO_WINDOW", 0)
+            self._ensure_docker_engine()
+            try:
+                completed = subprocess.run(
+                    command,
+                    capture_output=True,
+                    text=True,
+                    timeout=self.recovery_timeout_seconds,
+                    check=False,
+                    creationflags=creation_flags,
+                )
+            except (OSError, subprocess.TimeoutExpired) as exc:
+                raise KagUnavailableError(f"KAG recovery command failed: {exc}") from exc
+            if completed.returncode != 0:
+                message = (completed.stderr or completed.stdout).strip()
+                raise KagUnavailableError(f"KAG recovery failed: {message[-1000:]}")
         self._ensure_bridge_process()
         client = JsonHttpClient(self.bridge_url, timeout_seconds=3)
         deadline = time.monotonic() + self.recovery_timeout_seconds
@@ -229,6 +259,15 @@ class KagRuntimeManager:
         environment = dict(os.environ)
         environment["UUMA_KAG_CONFIG"] = str(config)
         environment["UUMA_KAG_BACKGROUND"] = "true"
+        src_path = str(Path(__file__).resolve().parents[1])
+        existing_pp = environment.get("PYTHONPATH", "")
+        if src_path not in existing_pp:
+            environment["PYTHONPATH"] = f"{src_path}{os.pathsep}{existing_pp}" if existing_pp else src_path
+        from urllib.parse import urlparse
+
+        parsed_bridge = urlparse(self.bridge_url)
+        if parsed_bridge.port:
+            environment["UUMA_KAG_BRIDGE_PORT"] = str(parsed_bridge.port)
         if environment.get("OPENAI_API_KEY"):
             return environment
         if environment.get("OPENROUTER_API_KEY"):

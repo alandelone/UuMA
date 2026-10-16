@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_7702027e5fd44006a5a11fba9c369462",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"\",\"response_text\":\"SOFTWARE_FIXTURE reply: We intentionally retain the existing Alpha wording and fixed generated v5. No manuscript text, citation, source condition, or generated version was changed for this software acceptance case. This is an explicit no-change response, not a claim that a new scientific amendment or external review occurred.\",\"expected_content_sha256\":\"e98df4bc57fa1eb6da740e42fc80760d4f2da363d12bf8287a19579bb4fdd78d\"}",
+  "body_sha256": "986d13e5d50801d8c0931ad0f1c6c373a209394e7109683a3c44e4dada118b5d",
+  "body_bytes": 461
+}

@@ -1,0 +1,32 @@
+{
+  "RSTV4/src/rstv4/studio_response_checks.py": {
+    "sha256": "40bb5250163e6c065acb233adb9b2bc769f193dd089dc9db0af0e55eee02c43b",
+    "bytes": 12189,
+    "before_sha256": "6da7be09aa232f61983d8c63cc828da345c215b7f4c013655e2d461516af7813"
+  },
+  "RSTV4/src/rstv4/studio_api.py": {
+    "sha256": "cba2a102300e8fc78aaf91c5b5ed5178522c47fa258774d72087c135199e67b9",
+    "bytes": 28465,
+    "before_sha256": "0550c2bf33d50212034db99f09d1a0b1a01a7b9378d900a8bed08296c9d97aac"
+  },
+  "writing-studio/components/studio-response-review.tsx": {
+    "sha256": "77397bd54474ab27cfe02f1e1e43711b6e7d93f95ef0e7c3386eb1935ee27e87",
+    "bytes": 30049,
+    "before_sha256": "67c3e620e25054ed21c1ec9a954827b49843f73578ba006aaf4eb7dfbc6231c5"
+  },
+  "writing-studio/lib/studio-types.ts": {
+    "sha256": "5210d587000901339075d07a394657ba71c18469035d414fec3fb637c67bb1a1",
+    "bytes": 17193,
+    "before_sha256": "c873f040592ad60d0230d1f909ac3aeeb009934e1796238cc66e3518f12cf438"
+  },
+  "writing-studio/tests/unit/studio-response-review.cjs": {
+    "sha256": "54adaf9384cd622cede17b8d29b783a60b41b6e160f4138830ef1aad1b6c8193",
+    "bytes": 18357,
+    "before_sha256": "c4fee557cbe386f6c3dad55e7dfe9a833fabe7720847faa2b0d656923ad40dce"
+  },
+  "RSTV4/tests/test_studio_presentation_review.py": {
+    "sha256": "8254e41ea0d975a7a72c1938f384d676e9bcad12ec32269d75ce34c804291527",
+    "bytes": 6514,
+    "before_sha256": null
+  }
+}

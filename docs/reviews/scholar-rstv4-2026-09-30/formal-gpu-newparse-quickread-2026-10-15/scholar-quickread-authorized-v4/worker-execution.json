@@ -1,0 +1,23 @@
+{
+  "job_id": "job_fe4651959298eab54d88abd9edaf6760",
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+  "job_type": "QUICK_READ",
+  "queue_class": "MODEL_READ",
+  "status": "SUCCEEDED",
+  "priority": 70,
+  "idempotency_key": "5e1b371eea6638c83acd4c413e96c22021af95f7a979582f6d589e459e4d49b2",
+  "input_json": "{\"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\"}",
+  "input_digest": "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+  "rule_version": "quick-read-v1",
+  "attempts": 1,
+  "available_at": "2026-10-14T03:39:08.818489+00:00",
+  "lease_owner": null,
+  "lease_expires_at": null,
+  "fencing_token": 1,
+  "last_error_code": null,
+  "last_error_detail": null,
+  "result_json": "{\"card\": {\"author_contribution\": null, \"deep_read_reasons\": [], \"evidence_quotes\": [], \"limitations\": null, \"materials\": null, \"method\": null, \"question\": null, \"results\": null}, \"contract\": {\"actual_model\": \"gemini-3.5-flash-lite\", \"delivery\": \"durable-run-v1\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"usage\": {\"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346}}}",
+  "created_at": "2026-10-14T03:39:08.818489+00:00",
+  "updated_at": "2026-10-15T06:47:30.591114+00:00"
+}

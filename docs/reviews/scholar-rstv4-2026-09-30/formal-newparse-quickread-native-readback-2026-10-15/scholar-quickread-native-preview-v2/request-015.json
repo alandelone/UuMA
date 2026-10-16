@@ -1,0 +1,7 @@
+{
+  "method": "POST",
+  "path": "/api/catalog/discussion/history",
+  "query": "",
+  "body_utf8": "{\"target\":{\"module\":\"CATALOG\",\"object_kind\":\"paper\",\"object_id\":\"paper_dde0a449e93444c2771e7b0edeb7daf9\",\"paper_id\":\"paper_dde0a449e93444c2771e7b0edeb7daf9\",\"field_id\":null,\"track_id\":null,\"snapshot_id\":null,\"part\":null,\"page_number\":null},\"limit\":30,\"current_object_only\":false}",
+  "allowed": true
+}

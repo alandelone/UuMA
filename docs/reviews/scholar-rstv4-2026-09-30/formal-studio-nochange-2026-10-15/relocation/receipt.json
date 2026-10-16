@@ -1,0 +1,18 @@
+{
+  "status": "PASS_DECLARED_OWNED_COPY_ARTIFACT_LOCATION_CONTEXT_REPAIR",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "artifact_rows_relocated": 25,
+  "only_changed_table": "studio_artifacts",
+  "only_changed_field": "storage_path",
+  "other109_tables_exact": true,
+  "all_generated_ids_hashes_sizes_contents_metadata_except_path_exact": true,
+  "old_absolute_files_unchanged": true,
+  "existing_A206_and_new_A211_rows_unchanged": true,
+  "current311_frontend91_dist76_and_original109_external25_exact": true,
+  "no_product_or_test_change": true,
+  "no_schema_migration": true,
+  "no_model_gpu_or_native_mutation_replay": true,
+  "no_path_guard_bypass": true,
+  "all118_complete": false,
+  "final11_complete": false
+}

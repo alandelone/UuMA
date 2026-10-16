@@ -1,0 +1,75 @@
+{
+  "source": {
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "job_input_digest": "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "parse_run_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+    "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+    "transport_operation_id": "rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c"
+  },
+  "input": {
+    "blocks": [
+      {
+        "block_id": "block_64153f2d69fdb26b0ee5302911bd5503",
+        "section": null,
+        "text": "Software review identity title"
+      },
+      {
+        "block_id": "block_cba63dccbd51d23a840357b5cfd86cfe",
+        "section": null,
+        "text": "DOI 10.1234/corrected"
+      },
+      {
+        "block_id": "block_8dcf145baedc07eb0d747751d07e73eb",
+        "section": null,
+        "text": "serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so"
+      }
+    ]
+  },
+  "output": {
+    "_contract": {
+      "actual_model": "gemini-3.5-flash-lite",
+      "delivery": "durable-run-v1",
+      "estimated_input_tokens": 117,
+      "prompt_version": "quick-read-v1",
+      "receipt_id": "acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+      "router_run_id": "run_1d896e58474643dc8a6528159fddc051",
+      "status": "SUCCESS",
+      "task": "quick_read",
+      "tier": "light",
+      "transport_operation_id": "rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+      "usage": {
+        "completion_tokens": 67,
+        "prompt_tokens": 279,
+        "total_tokens": 346
+      }
+    },
+    "author_contribution": null,
+    "deep_read_reasons": [],
+    "evidence_quotes": [],
+    "limitations": null,
+    "materials": null,
+    "method": null,
+    "question": null,
+    "results": null
+  },
+  "contract": {
+    "actual_model": "gemini-3.5-flash-lite",
+    "delivery": "durable-run-v1",
+    "estimated_input_tokens": 117,
+    "prompt_version": "quick-read-v1",
+    "receipt_id": "acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+    "router_run_id": "run_1d896e58474643dc8a6528159fddc051",
+    "status": "SUCCESS",
+    "task": "quick_read",
+    "tier": "light",
+    "transport_operation_id": "rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+    "usage": {
+      "completion_tokens": 67,
+      "prompt_tokens": 279,
+      "total_tokens": 346
+    }
+  },
+  "error_type": null
+}

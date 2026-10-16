@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/jobs",
+  "body": {
+    "kind": "SUBMISSION_PACKAGE",
+    "input_revision": 86,
+    "request": {
+      "review_round_id": "review_round_72931d507bda4bdb813dc14988444892"
+    }
+  },
+  "body_sha256": "a12636a983f1566db670ea62b1c622d9a1b6334f9cbcd9f4a2ef4e039ee57331"
+}

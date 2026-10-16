@@ -1,0 +1,17 @@
+[
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-response-review.cjs"
+    ],
+    "exit_code": 0
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exit_code": 0
+  }
+]

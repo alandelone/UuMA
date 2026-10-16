@@ -1,0 +1,111 @@
+{
+  "status": "READ_ONLY_G11_ORIGINAL_SCOPE_AUDIT_CURRENT_REGRESSION_PENDING",
+  "g11_original_definition": "| G-11 | P1：采集启动、审核恢复与三个既有科研／阶段契约问题未闭环 | 2026-10-07 目录选入当前：已有论文选入、按范围筛选与文件复用软件路径接通，范围变更与 SCI 字节保护保持；整组和真实全链仍未关闭。 此前记录：2026-10-06 科学绑定当前：重审提案、批准边界、完整绑定替换与过期生成保护已实跑软件路径；完整科研链路、浏览器与整组仍未关闭。 此前记录：2026-10-06 来源撤回当前：撤回、任务停住、来源重审展示实跑；文件重批不恢复科学批准，完整科研重新绑定仍待完成。 此前记录：2026-10-06 审核恢复当前：采集与两条审核恢复已实跑；原科研／阶段保护保持，完整 SCI 重审／绑定与整组未关闭。 此前记录：2026-10-06 当前：采集开始与状态实际运行；科研复核／失效／零成文保护保持，完整审核恢复与全流程未关闭。 此前记录保留：C:44–48，前次 A-01 / A-02 / A-03 | Catalog:546 开始禁用；其余见前次报告的隔离重现 | 真 Collection 运行可追踪；审核复检恢复；上游失效传播、旧方法拒绝运行、零版本不可进 Stage 3 / Publication |",
+  "matrix": [
+    {
+      "id": "G11-C",
+      "requirement": "真 Collection 运行可追踪",
+      "evidence_level": "直接证明",
+      "finding": "新 Collection 从原 Topic 原生开始并返回；SCREEN1次明确软件筛选夹具、LOCATE1次复用 VERIFIED 原PDF；PARSE同一job实际6次历史→GPU成功；原生详情与暂停/继续；非语言模型/科学批准。",
+      "evidence": ".tmp/scholar-g11-parallel-v1/proof/new-collection-return-original-topic.dom.txt; screen-owned-once-v2/receipt.json; locate-owned-once-v1/receipt.json; native-pause-resume-v1/receipt.json; formal-gpu-parser-recovery-2026-10-14/native-and-context/03-native-gpu-success.dom.txt"
+    },
+    {
+      "id": "G11-R-parse",
+      "requirement": "审核复检恢复（解析）",
+      "evidence_level": "直接证明",
+      "finding": "原始PDF页2词56–66补ref6；RECHECK_PARSE返回quality_approved=false并恢复原job；失败候选与5次失败保留；attempt6真实GPU发布parse_run_bb2661e7c11bb18dd684661073472d71 / paper_version_ef45db917629e2f892e0c7e7aac31d1a；3正文块6引用与原生固定来源读回。",
+      "evidence": ".tmp/scholar-g11-parallel-v1/proof/native-reference6-correction-and-recheck-receipt.dom.txt; formal-gpu-parser-recovery-2026-10-14/audit-and-execution/actual-gpu-success-final-audit-v3.json; native-and-context/04-native-two-parses-six-references.dom.txt; 05-native-new-parse-fixed-source.dom.txt"
+    },
+    {
+      "id": "G11-R-identity",
+      "requirement": "审核复检恢复（身份）",
+      "evidence_level": "历史直接执行＋当前间接，原生缺证",
+      "finding": "10/06真正HTTP＋正式JS controller已完成title/DOI精确来源修正、APPROVE_IDENTITY、VERIFIED、原LOCATE恢复及parse入队；browser_verified=false。10/13新LOCATE复用该历史VERIFIED，不是新的身份修复。原句不要求本轮重复身份，但不能把历史controller称旧浏览器点击或宣称两条当前原生闭环。当前Python后端已变，父线程正在做current回归。",
+      "evidence": "formal-review-recovery-2026-10-06/actual-identity-controller-original-receipt.json; actual-identity-parser-recovery-helper.py; actual-shipped-controller-helper.mjs; .tmp/scholar-g11-parallel-v1/actual-mineru-once-after-all-tables.json:catalog_review_actions"
+    },
+    {
+      "id": "G11-U",
+      "requirement": "上游失效传播",
+      "evidence_level": "原历史传播＋当前原生状态/历史保持直接证明",
+      "finding": "原Method被替代；直接/间接Claim均STALE r2；间接稿needs_scientific_review=1且旧binding r1保留。10/13原生读取真实ID及刷新确认；没有重新批准或重放supersession。当前track_first.py摘要与10/13审计一致。",
+      "evidence": ".tmp/scholar-g11-upstream-native-prepare-v1/native-proof-v1/report.md; receipt.json; upstream-zero-final-audit-v1.json; historical-all-tables.json"
+    },
+    {
+      "id": "G11-M",
+      "requirement": "旧方法拒绝运行",
+      "evidence_level": "直接证明（核心边界）＋原生禁用",
+      "finding": "当前run_experiment(old_plan)实调一次确切Method refusal，0新增run/approval/model/marker；原生旧计划按钮因缺reviewed_manifest禁用。没有声称点击禁用按钮触发Method guard，没有重复旧终态。",
+      "evidence": ".tmp/scholar-g11-upstream-native-prepare-v1/owned-copy-receipt.json; native-proof-v1/06-old-plan-native-disabled.json; upstream-zero-final-audit-v1.json"
+    },
+    {
+      "id": "G11-Z",
+      "requirement": "零版本不可进 Stage3 / Publication",
+      "evidence_level": "直接证明",
+      "finding": "4个真实独立零版本MS原生空成文；四合法边界HTTP422精确successful-generated-version要求；105表/文件保持。无Generate/阶段改写/伪造版本。",
+      "evidence": ".tmp/scholar-g11-upstream-native-prepare-v1/zero-version-boundary-v1/receipt.json; zero-version-native-v1; upstream-zero-final-audit-v1.json"
+    }
+  ],
+  "gpu_manifest_files": 70,
+  "gpu_manifest_failures": [],
+  "old_identity_manifest_files": 24,
+  "old_identity_manifest_failures": [],
+  "current_key_source_checks": [
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/studio.py",
+      "expected": "73e31e84d3fadb51a46ec9c50e44e0763cccde98be6cac519a2db480923e6797",
+      "actual": "73e31e84d3fadb51a46ec9c50e44e0763cccde98be6cac519a2db480923e6797",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/catalog_review_workflow.py",
+      "expected": "aca89c29d089d4655c6b69a5dabb88191adaae16ea40fcc1ae9cb9de5b7e9074",
+      "actual": "aca89c29d089d4655c6b69a5dabb88191adaae16ea40fcc1ae9cb9de5b7e9074",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/acquisition_worker.py",
+      "expected": "410f14f0c0d81a0c44f9678a91f98a430fba79ab26ceeb699e397bff370496da",
+      "actual": "410f14f0c0d81a0c44f9678a91f98a430fba79ab26ceeb699e397bff370496da",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/track_first.py",
+      "expected": "5e66d9590a50d3b3335dbb52557a68b489a1e4c794c12cc584534a311e726143",
+      "actual": "5e66d9590a50d3b3335dbb52557a68b489a1e4c794c12cc584534a311e726143",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/acquisition.py",
+      "expected": "911f386b806dd8d12588f9efe8328ebad5de90fa7eb991a98c8314f5fe57ae8f",
+      "actual": "911f386b806dd8d12588f9efe8328ebad5de90fa7eb991a98c8314f5fe57ae8f",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/collection_runtime.py",
+      "expected": "54c9007ff8fc24801cf42e2252a8f0c729d57b8c8f61fe7a116436f860b5f826",
+      "actual": "54c9007ff8fc24801cf42e2252a8f0c729d57b8c8f61fe7a116436f860b5f826",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/experiment.py",
+      "expected": "1d31c8f3273f5ac821eaca65972cf89a277e8a55982d0d3105739bae73e0356f",
+      "actual": "1d31c8f3273f5ac821eaca65972cf89a277e8a55982d0d3105739bae73e0356f",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/experiment_workspace.py",
+      "expected": "6fc3b224fe43ec810b0fc944d7c7416c6da01f2f7caa196fbd655d5b4141da66",
+      "actual": "6fc3b224fe43ec810b0fc944d7c7416c6da01f2f7caa196fbd655d5b4141da66",
+      "pass": true
+    },
+    {
+      "path": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/src/rstv4/studio_api.py",
+      "expected": "5a62bab6568aaecbe61b10602d2d15a936bb19ae5a35cfaa6639093c7e8d3e36",
+      "actual": "5a62bab6568aaecbe61b10602d2d15a936bb19ae5a35cfaa6639093c7e8d3e36",
+      "pass": true
+    }
+  ],
+  "g11_complete_not_changed": true,
+  "all11_complete": false,
+  "original118_complete": false
+}

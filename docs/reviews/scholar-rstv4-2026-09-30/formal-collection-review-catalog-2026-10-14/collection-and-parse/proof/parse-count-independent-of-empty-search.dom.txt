@@ -1,0 +1,37 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8887/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8887/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8887/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "核对原文":
+      - generic: 核对原文
+      - generic: ⌄
+  - region "核对原文":
+    - button "← 返回 Paper Catalog"
+    - generic: Human review
+    - heading "核对原文" [level=1]
+    - paragraph: 对照 Catalog 记录、自动检查结果和原始 PDF，判断论文文件是否正确，或定位解析问题。
+    - generic "待审核数量":
+      - generic: PDF 身份 · 0
+      - generic: 解析质量 · 1
+    - complementary:
+      - strong: 待审核 · 0
+      - combobox "审核类型":
+        - option "全部类型" [selected]
+        - option "PDF 身份"
+        - option "解析质量"
+      - textbox "搜索待审核论文" [active]:
+        - /placeholder: 搜索标题或 DOI
+        - text: G11 no matching title
+      - paragraph: 没有符合条件的审核记录。
+    - strong: 没有符合条件的审核记录
+    - text: 可以切换审核类型或修改搜索条件。
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

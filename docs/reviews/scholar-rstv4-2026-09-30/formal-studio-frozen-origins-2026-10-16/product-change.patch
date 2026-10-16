@@ -1,0 +1,347 @@
+--- a/RSTV4/src/rstv4/studio_revision_mapping.py
++++ b/RSTV4/src/rstv4/studio_revision_mapping.py
+@@ -101,6 +101,51 @@
+             for intent in paragraph.get("intents", []) for thought in intent.get("thoughts", [])}
+ 
+ 
++def frozen_origins(document: dict[str, Any], target: dict[str, Any]) -> dict[str, list[dict[str, Any]]]:
++    """Original author-bank context, never the current editor or a projected template slot."""
++    if document.get("manuscript_id") != target["manuscript_id"]:
++        raise ValueError("Frozen author origins belong to another manuscript")
++    result: dict[str, list[dict[str, Any]]] = {}
++    for section in document.get("sections", []):
++        for paragraph in section.get("paragraphs", []):
++            for intent in paragraph.get("intents", []):
++                original = [{"thought_id": t["id"], "text": t["text"]}
++                            for t in intent.get("thoughts", [])]
++                for thought in intent.get("thoughts", []):
++                    result.setdefault(thought["id"], []).append({
++                        "manuscript_id": target["manuscript_id"],
++                        "generated_version_id": target["generated_version_id"],
++                        "generated_version_number": target["version"],
++                        "input_revision": target["input_revision"],
++                        "section_id": section["id"], "section_title": section["title"],
++                        "paragraph_id": paragraph["id"],
++                        "paragraph_purpose": paragraph.get("purpose", ""),
++                        "intent_id": intent["id"], "intent_label": intent["label"],
++                        "thought_id": thought["id"], "thought_text": thought["text"],
++                        "intent_thoughts": original,
++                    })
++    return result
++
++
++def compare_sentence(sentence: str, original: dict[str, Any] | None,
++                     original_text: str) -> str:
++    """Compare recorded full sentences; citation identity never proves prose changed."""
++    if not original or not original.get("sentence_positions_verified"):
++        return ("GENERATED_TEXT_CHANGED" if sentence and not original_text else
++                "EXACT_BASELINE_TEXT_RETAINED" if sentence and sentence in original_text
++                else "BASELINE_SENTENCE_COMPARISON_UNKNOWN")
++    previous = [item["text"] for item in original["sentences"]]
++    if sentence in previous:
++        return "EXACT_BASELINE_TEXT_RETAINED"
++
++    def prose(text: str) -> str:
++        return re.sub(r"\s+", " ", re.sub(r"[ \t]*\[@[^\]]+\]", "", text)).strip()
++
++    if prose(sentence) and any(prose(sentence) == prose(text) for text in previous):
++        return "CITATION_ONLY"
++    return "GENERATED_TEXT_CHANGED"
++
++
+ def write_mapping(path: Path, comments: list[dict[str, Any]], *, target: dict[str, Any],
+                   baseline: dict[str, Any] | None, target_document: dict[str, Any],
+                   baseline_document: dict[str, Any] | None, pdf: Path,
+@@ -113,6 +158,8 @@
+     blocks = {b["object_id"]: b for b in target["blocks"] if b["kind"] == "paragraph"}
+     original_blocks = {b["object_id"]: b for b in baseline["blocks"] if b["kind"] == "paragraph"} if baseline else {}
+     realizations = {item["paragraph_id"]: item for item in target.get("realizations", [])}
++    original_realizations = {item["paragraph_id"]: item for item in baseline.get("realizations", [])} if baseline else {}
++    origins = frozen_origins(target_document, target)
+     rows = []
+     for comment in comments:
+         for change in comment.get("changes", []):
+@@ -175,15 +222,18 @@
+                         locations.append({"page": word["page"], "line": word["line"], "box": word["box"]})
+                         locations.extend({"page": extra["page"], "line": extra["line"], "box": extra["box"]} for extra in word.get("extra_boxes", []))
+                     # Text comparison is an observation, not a semantic claim or author approval.
+-                    retained = bool(sentence and sentence in original_text)
+-                    status = "EXACT_BASELINE_TEXT_RETAINED" if retained else "GENERATED_TEXT_CHANGED"
++                    status = compare_sentence(sentence, original_realizations.get(paragraph_id), original_text)
+                     rows.append({**entry, "changed_text": sentence, "sentence_index": sentence_index,
+                         "status": status if span else "FINAL_LOCATION_UNKNOWN", "text_comparison": status,
++                        "change_kind": "CITATION" if status == "CITATION_ONLY" else "TEXT",
++                        "supports_scientific_text_modification": bool(span) and status == "GENERATED_TEXT_CHANGED",
+                         "reason": match_status, "boxes": locations,
+                         "final_page": locations[0]["page"] if locations else None,
+                         "final_line": locations[0]["line"] if locations else None,
+                         "final_page_end": locations[-1]["page"] if locations else None,
+                         "final_line_end": locations[-1]["line"] if locations else None})
++    for row in rows:
++        row["origins"] = origins.get(row["thought_id"], [])
+     columns = ["comment_id", "change_id", "final_line", "final_page", "changed_text", "thought_id", "paragraph_id",
+                "sentence_index", "final_line_end", "final_page_end", "status", "text_comparison", "reason",
+                "line_number_kind", "generated_version_id", "baseline_version_id", "final_pdf_sha256",
+@@ -199,6 +249,7 @@
+     return {"rows": len(rows), "changed_text_rows_with_final_location": sum(row["status"] == "GENERATED_TEXT_CHANGED" for row in rows),
+             "retained_text_rows_with_final_location": sum(row["status"] == "EXACT_BASELINE_TEXT_RETAINED" for row in rows),
+             "layout_only_rows": sum(row["status"] == "LAYOUT_ONLY" for row in rows),
+-            "unknown_or_unattributed_rows": sum(row["status"] not in {"GENERATED_TEXT_CHANGED", "EXACT_BASELINE_TEXT_RETAINED", "LAYOUT_ONLY"} for row in rows),
++            "citation_only_rows": sum(row["status"] == "CITATION_ONLY" for row in rows),
++            "unknown_or_unattributed_rows": sum(row["status"] not in {"GENERATED_TEXT_CHANGED", "EXACT_BASELINE_TEXT_RETAINED", "LAYOUT_ONLY", "CITATION_ONLY"} for row in rows),
+             "line_number_kind": layout.get("line_number_kind"), "pdf_sha256": layout["pdf_sha256"],
+             "layout_status": layout["status"], "semantic_or_response_claims_approved": False}
+--- /dev/null
++++ b/RSTV4/tests/test_studio_frozen_origins.py
+@@ -0,0 +1,109 @@
++"""Frozen author provenance and citation-only attribution; no scientific approval."""
++from __future__ import annotations
++
++import json
++from copy import deepcopy
++
++import pytest
++from test_studio_response_checks import prepared
++from test_studio_source_context import generate, source_studio
++
++from rstv4.database import transaction
++from rstv4.studio_revision_mapping import compare_sentence, frozen_origins
++
++
++@pytest.mark.parametrize("before,after,expected", [
++    ("A finding [@a].", "A finding [@b].", "CITATION_ONLY"),
++    ("A finding [@a].", "A finding.", "CITATION_ONLY"),
++    ("A finding.", "A finding [@a] [@b].", "CITATION_ONLY"),
++    ("A finding [@a] [@b].", "A finding [@b] [@a].", "CITATION_ONLY"),
++    ("A finding [@a].", "A finding [@a].", "EXACT_BASELINE_TEXT_RETAINED"),
++    ("A finding [@a].", "A different finding [@b].", "GENERATED_TEXT_CHANGED"),
++    ("No study is conducted.", "A study is conducted.", "GENERATED_TEXT_CHANGED"),
++    ("A finding?", "A finding.", "GENERATED_TEXT_CHANGED"),
++])
++def test_citation_identity_cannot_prove_changed_prose(before, after, expected):
++    recorded = {"sentence_positions_verified": True, "sentences": [{"text": before}]}
++    assert compare_sentence(after, recorded, before) == expected
++
++
++def test_unrecorded_baseline_sentences_remain_unknown():
++    assert compare_sentence("A changed sentence.", None, "Old prose.") == "BASELINE_SENTENCE_COMPARISON_UNKNOWN"
++
++
++def test_origins_preserve_full_original_bank_intent_and_thought_identity():
++    bank = {"id": "bank", "title": "Original section", "placement_status": "UNPLACED",
++            "paragraphs": [{"id": "original-paragraph", "purpose": "Original purpose", "intents": [
++                {"id": "original-intent", "label": "Original intent", "thoughts": [
++                    {"id": "thought-one", "text": "Same opening.\nComplete first qualification."},
++                    {"id": "thought-two", "text": "Same opening.\nComplete second qualification."}]}]}]}
++    document = {"manuscript_id": "ms", "sections": [bank, {"id": "template", "title": "Placed section",
++                "paragraphs": [{"id": "slot", "intents": [{"id": "slot-intent", "label": "Template slot",
++                    "author_intent_ids": ["original-intent"], "thoughts": []}]}]}]}
++    target = {"manuscript_id": "ms", "generated_version_id": "v-fixed", "version": 4, "input_revision": 8}
++    original = deepcopy(document)
++    origins = frozen_origins(document, target)
++    assert set(origins) == {"thought-one", "thought-two"}
++    first, second = origins["thought-one"][0], origins["thought-two"][0]
++    assert first["intent_id"] == second["intent_id"] == "original-intent"
++    assert first["paragraph_id"] == "original-paragraph" and first["section_id"] == "bank"
++    assert first["intent_thoughts"] == second["intent_thoughts"] == [
++        {"thought_id": t["id"], "text": t["text"]} for t in bank["paragraphs"][0]["intents"][0]["thoughts"]]
++    assert first["thought_text"] != second["thought_text"] and document == original
++    with pytest.raises(ValueError, match="another manuscript"):
++        frozen_origins(document, {**target, "manuscript_id": "foreign"})
++
++
++def test_actual_reply_check_keeps_frozen_origins_after_current_author_changes(tmp_path):
++    service, ms, comment, context, request, document, _ = prepared(tmp_path)
++    row = next(r for r in context["evidence"] if r["status"] == "GENERATED_TEXT_CHANGED")
++    origin = row["origins"][0]
++    original_intent = document["sections"][0]["paragraphs"][0]["intents"][0]
++    assert origin["thought_text"] == original_intent["thoughts"][0]["text"]
++    assert origin["input_revision"] == 2 and origin["generated_version_id"] == context["state"]["generated_version_id"]
++    check = service.confirm_response_review(ms, comment, request)
++    with transaction(service.db_path) as conn:
++        raw = conn.execute("SELECT context_json FROM studio_response_checks WHERE check_id=?", (check["check_id"],)).fetchone()[0]
++    changed = deepcopy(document)
++    changed["sections"][0]["paragraphs"][0]["intents"][0].update(label="Later mutable intent")
++    changed["sections"][0]["paragraphs"][0]["intents"][0]["thoughts"][0]["text"] = "Later mutable thought."
++    service.save_document(ms, base_revision=2, operation_id="later-origin-edit", document=changed)
++    assert service.response_review_history(ms, comment)["history"] == check["history"]
++    assert service.confirm_response_review(ms, comment, request)["idempotent_replay"]
++    with transaction(service.db_path) as conn:
++        assert conn.execute("SELECT context_json FROM studio_response_checks WHERE check_id=?", (check["check_id"],)).fetchone()[0] == raw
++    assert json.loads(raw)["evidence"][0]["origins"][0] == origin
++
++
++def test_actual_citation_only_pdf_rows_cannot_confirm_scientific_prose_change(tmp_path):
++    service, ms, evidence, _, _, document = source_studio(tmp_path, compile_pdf=True)
++    thought = document["sections"][0]["paragraphs"][0]["intents"][0]["thoughts"][0]
++
++    def response(evidence_id):
++        sentence = f"No scientific conclusion is asserted [@{evidence_id}]."
++        return {"paragraph": sentence, "sentences": [sentence],
++                "sentence_mappings": [{"sentence": 0, "thought_ids": [thought["id"]]}],
++                "_contract": {"actual_model": "TEST_FIXTURE", "task": "paragraph_realization"}}
++
++    service.gateway.analyze = lambda task, payload: response(evidence[0]["evidence_id"])
++    baseline = generate(service, ms)
++    review = service.create_review_round(ms, round_number=1, venue="Software citation-only acceptance")
++    comment = service.import_comments(review["review_round_id"], [{"text": "Change only the citation."}], source="FIXTURE")[0]
++    thought["citations"] = [{"evidence_id": evidence[1]["evidence_id"], "selected": True}]
++    service.save_document(ms, base_revision=1, operation_id="citation-only", document=document, comment_ids=[comment["comment_id"]])
++    service.gateway.analyze = lambda task, payload: response(evidence[1]["evidence_id"])
++    target = generate(service, ms)
++    service.update_comment(comment["comment_id"], {"author_decision": "Software guard test", "response_text": "We modified the prose."})
++    context = service.response_review_context(ms, comment["comment_id"])
++    assert context["baseline_to_target_diff"] and not context["baseline_to_target_display_diff"]
++    assert baseline["references"][0]["evidence_id"] != target["references"][0]["evidence_id"]
++    row, = context["evidence"]
++    assert row["status"] == "CITATION_ONLY" and row["change_kind"] == "CITATION"
++    assert row["boxes"] and row["final_page"] and row["final_line"]
++    assert row["supports_scientific_text_modification"] is False
++    request = {"request_id": "reject-citation-as-prose", "context_sha256": context["context_sha256"],
++               "outcome": "MODIFIED", "acknowledged_all_assertions": True,
++               "claims": [{"start": 0, "end": 22, "text": "We modified the prose.", "offset_unit": "utf16", "evidence_ids": [row["evidence_id"]]}]}
++    with pytest.raises(ValueError, match="unknown"):
++        service.confirm_response_review(ms, comment["comment_id"], request)
++    assert service.response_review_history(ms, comment["comment_id"])["history"] == []
+--- a/writing-studio/components/studio-response-review.tsx
++++ b/writing-studio/components/studio-response-review.tsx
+@@ -248,10 +248,10 @@
+       <Button size="sm" variant="outline" disabled={disabled || selection.end <= selection.start} onClick={addSelection}>加入所选修改声明</Button>
+       {claims.map((claim, index) => <fieldset disabled={disabled} key={`${claim.start}-${claim.end}`} className="space-y-2 rounded border p-3 text-sm">
+         <legend>修改声明 {index + 1}</legend><p className="whitespace-pre-wrap break-words">{claim.text}</p>
+-        {context.evidence.map((row) => <label key={row.evidence_id} className="flex items-start gap-2">
++        {context.evidence.map((row) => <div key={row.evidence_id} className="space-y-1"><label className="flex items-start gap-2">
+           <Checkbox aria-label={`声明 ${index + 1} 对应 ${(row.display_changed_text ?? row.changed_text) || '无法定位的变化'}`} disabled={row.status !== 'GENERATED_TEXT_CHANGED'} checked={claim.evidence_ids.includes(row.evidence_id)} onCheckedChange={(checked) => { setClaims((current) => current.map((item, i) => i === index ? { ...item, evidence_ids: checked ? [...item.evidence_ids, row.evidence_id] : item.evidence_ids.filter((id) => id !== row.evidence_id) } : item)); setAcknowledged(false); }} />
+-          <span className="min-w-0 whitespace-pre-wrap break-words">{row.status === 'LAYOUT_ONLY' ? '仅调整成文页边距；正文、来源与素材保持原样' : (row.display_changed_text ?? row.changed_text) || '结构或来源变化尚无法对应成文'}<small className="block text-muted-foreground">{row.status === 'GENERATED_TEXT_CHANGED' ? `最终 PDF 第 ${row.final_page} 页，可见文本第 ${row.final_line} 行${row.final_line_end !== row.final_line ? ` 至第 ${row.final_page_end} 页第 ${row.final_line_end} 行` : ''}` : row.status === 'LAYOUT_ONLY' ? `最终 PDF 第 ${row.final_page} 页、第 ${row.final_line} 行位置已变化；不能证明科学正文已修改` : row.status === 'EXACT_BASELINE_TEXT_RETAINED' ? '与基准稿文字相同，不能证明已修改' : '尚无足够的最终稿定位依据'}</small></span>
+-        </label>)}
++          <span className="min-w-0 whitespace-pre-wrap break-words">{row.status === 'LAYOUT_ONLY' ? '仅调整成文页边距；正文、来源与素材保持原样' : (row.display_changed_text ?? row.changed_text) || '结构或来源变化尚无法对应成文'}<small className="block text-muted-foreground">{row.status === 'GENERATED_TEXT_CHANGED' ? `最终 PDF 第 ${row.final_page} 页，可见文本第 ${row.final_line} 行${row.final_line_end !== row.final_line ? ` 至第 ${row.final_page_end} 页第 ${row.final_line_end} 行` : ''}` : row.status === 'CITATION_ONLY' ? '仅引用变化，不能证明正文文字已修改' : row.status === 'LAYOUT_ONLY' ? `最终 PDF 第 ${row.final_page} 页、第 ${row.final_line} 行位置已变化；不能证明科学正文已修改` : row.status === 'EXACT_BASELINE_TEXT_RETAINED' ? '与基准稿文字相同，不能证明已修改' : '尚无足够的最终稿定位依据'}</small></span>
++        </label><FrozenOrigin row={row} context={context} /></div>)}
+         {!context.evidence.length ? <p>没有属于此意见的最终稿改动依据。</p> : null}
+         <Button size="sm" variant="ghost" onClick={() => { setClaims((current) => current.filter((_, i) => i !== index)); setAcknowledged(false); }}>移除此声明</Button>
+       </fieldset>)}
+@@ -274,7 +274,32 @@
+     <p>成文 v{check.context.target_version_number}</p><p className="whitespace-pre-wrap break-words">{check.context.state.author_decision}</p><p className="whitespace-pre-wrap break-words">{check.context.state.response_text}</p>
+     {check.request.claims.map((claim) => <div key={`${claim.start}-${claim.end}`}><p className="whitespace-pre-wrap break-words">已核对声明：{claim.text}</p>{claim.evidence_ids.map((id) => {
+       const row = check.context.evidence.find((item) => item.evidence_id === id);
+-      return row ? <p key={id} className="whitespace-pre-wrap break-words text-muted-foreground">{row.changed_text} · 当时的最终 PDF 第 {row.final_page} 页，可见文本第 {row.final_line} 行</p> : null;
++      return row ? <div key={id}><p className="whitespace-pre-wrap break-words text-muted-foreground">{row.display_changed_text ?? row.changed_text} · 当时的最终 PDF 第 {row.final_page} 页，可见文本第 {row.final_line} 行</p><FrozenOrigin row={row} context={check.context} /></div> : null;
+     })}</div>)}
+   </section>) : <p className="text-sm text-muted-foreground">尚无作者核对记录。原意见和已保存回复仍保留。</p>}</div>;
+ }
++
++function FrozenOrigin({ row, context }: {
++  row: ResponseReviewContext['evidence'][number];
++  context: Omit<ResponseReviewContext, 'history' | 'verification'>;
++}) {
++  const origins = row.origins;
++  const valid = origins?.length && origins.every((origin) =>
++    origin.manuscript_id === context.state.manuscript_id && Boolean(origin.manuscript_id) &&
++    origin.generated_version_id === context.state.generated_version_id && Boolean(origin.generated_version_id) &&
++    origin.generated_version_number === context.target_version_number &&
++    origin.input_revision === context.state.generated_input_revision &&
++    origin.thought_id === row.thought_id &&
++    Array.isArray(origin.intent_thoughts) &&
++    origin.intent_thoughts.filter((thought) => thought.thought_id === origin.thought_id && thought.text === origin.thought_text).length === 1);
++  if (!valid || !origins) return <p className="text-xs text-muted-foreground">此依据未记录可验证的固定版本原思想。</p>;
++  return <div className="min-w-0 space-y-1">{origins.map((origin) => <details key={`${origin.intent_id}:${origin.thought_id}`} className="rounded border p-2 text-xs whitespace-pre-wrap break-words">
++    <summary>回查原思想 · Intent {origin.intent_label} · Thought {origin.thought_id}</summary>
++    <p>固定成文 v{origin.generated_version_number} · 作者原稿 r{origin.input_revision}</p>
++    <p>{origin.section_title} / {origin.paragraph_purpose || '原段落'}</p>
++    <p>原 Intent 全文：{origin.intent_label}</p>
++    <ol className="list-decimal space-y-2 pl-5">{origin.intent_thoughts.map((thought) => <li key={thought.thought_id} aria-current={thought.thought_id === origin.thought_id ? 'true' : undefined} className={thought.thought_id === origin.thought_id ? 'rounded border-l-2 border-primary pl-2 font-medium' : ''}>
++      <p>{thought.thought_id === origin.thought_id ? '本条成文对应的 Thought' : '同一 Intent 的其他 Thought'} · {thought.thought_id}</p><p>{thought.text}</p>
++    </li>)}</ol>
++  </details>)}</div>;
++}
+--- a/writing-studio/lib/studio-types.ts
++++ b/writing-studio/lib/studio-types.ts
+@@ -516,9 +516,27 @@
+   paper_version: number | null;
+ }
+ 
++export interface FrozenEvidenceOrigin {
++  manuscript_id: string;
++  generated_version_id: string;
++  generated_version_number: number;
++  input_revision: number;
++  section_id: string;
++  section_title: string;
++  paragraph_id: string;
++  paragraph_purpose: string;
++  intent_id: string;
++  intent_label: string;
++  thought_id: string;
++  thought_text: string;
++  intent_thoughts: Array<{ thought_id: string; text: string }>;
++}
++
+ export interface ResponseReviewContext {
+   context_sha256: string;
+   state: {
++    manuscript_id?: string;
++    generated_version_id?: string;
+     response_text: string;
+     author_decision: string;
+     current_author_revision: number;
+@@ -536,6 +554,8 @@
+   target_citation_sources?: ReviewCitationSource[];
+   evidence: Array<{
+     evidence_id: string;
++    thought_id?: string | null;
++    origins?: FrozenEvidenceOrigin[];
+     change_id: string;
+     status: string;
+     changed_text: string;
+--- a/writing-studio/tests/unit/studio-response-review.cjs
++++ b/writing-studio/tests/unit/studio-response-review.cjs
+@@ -31,7 +31,7 @@
+   return [...(predicate(tree) ? [tree] : []), ...all(tree.props?.children, predicate)];
+ }
+ const named = (tree, name) => all(tree, (node) => node.type === name)[0];
+-const text = (value) => Array.isArray(value) ? value.map(text).join('') : typeof value === 'string' ? value : value?.props ? text(value.props.children) : '';
++const text = (value) => Array.isArray(value) ? value.map(text).join('') : typeof value === 'string' || typeof value === 'number' ? String(value) : value?.props ? text(value.props.children) : '';
+ const button = (r, label) => all(r.render(), (node) => node.type === 'Button' && text(node.props.children) === label)[0];
+ const tick = async () => { for (let i = 0; i < 40; i++) await Promise.resolve(); };
+ function storage() {
+@@ -147,4 +147,41 @@
+   assert.equal(accepted.claims[0].text, 'We changed it.'); assert.deepEqual(Array.from(accepted.claims[0].evidence_ids), ['real-change']);
+   child.unmount();
+   console.log('PASS Actual dialog retains Unicode selection offsets and rejects retained evidence');
++
++  const origin = { manuscript_id: 'ms-frozen', generated_version_id: 'version-frozen', generated_version_number: 2,
++    input_revision: 2, section_id: 'original-section', section_title: 'Original section', paragraph_id: 'original-paragraph',
++    paragraph_purpose: 'Full original purpose', intent_id: 'intent-original', intent_label: 'Original intent label',
++    thought_id: 'thought-one', thought_text: 'First full thought.\nOriginal qualification 😀.',
++    intent_thoughts: [{ thought_id: 'thought-one', text: 'First full thought.\nOriginal qualification 😀.' },
++      { thought_id: 'thought-two', text: 'Second full thought.\nA different qualification.' }] };
++  const frozen = { ...reviewContext, state: { ...reviewContext.state, manuscript_id: 'ms-frozen', generated_version_id: 'version-frozen' },
++    evidence: [{ ...reviewContext.evidence[0], thought_id: 'thought-one', origins: [origin] },
++      { ...reviewContext.evidence[0], evidence_id: 'shared-second', thought_id: 'thought-two', origins: [{ ...origin, thought_id: 'thought-two', thought_text: origin.intent_thoughts[1].text }] }] };
++  const sourceComponent = all(child.render(), (node) => typeof node.type === 'function' && node.type.name === 'FrozenOrigin')[0].type;
++  const source = runtime(sourceComponent, { row: frozen.evidence[0], context: frozen });
++  assert(text(source.tree).includes(origin.thought_text));
++  assert(text(source.tree).includes(origin.intent_thoughts[1].text));
++  assert(text(source.tree).includes('固定成文 v2 · 作者原稿 r2'));
++  assert.equal(all(source.tree, (node) => node.type === 'li' && node.props['aria-current'] === 'true').length, 1);
++  assert.equal(all(source.tree, (node) => node.type === 'Checkbox' || node.type === 'Input' || node.type === 'Textarea').length, 0);
++  const secondSource = runtime(sourceComponent, { row: frozen.evidence[1], context: frozen });
++  assert.notEqual(text(named(source.tree, 'summary')), text(named(secondSource.tree, 'summary')));
++  for (const invalid of [{ ...origin, manuscript_id: 'foreign' }, { ...origin, generated_version_id: 'later-version' },
++    { ...origin, input_revision: 99 }, { ...origin, thought_id: 'another-thought' },
++    { ...origin, intent_thoughts: [] }]) {
++    const rejected = runtime(sourceComponent, { row: { ...frozen.evidence[0], origins: [invalid] }, context: frozen });
++    assert(text(rejected.tree).includes('未记录可验证的固定版本原思想'));
++    assert.equal(all(rejected.tree, (node) => node.type === 'details').length, 0);
++  }
++  assert(text(runtime(sourceComponent, { row: reviewContext.evidence[0], context: frozen }).tree).includes('未记录可验证的固定版本原思想'));
++  console.log('PASS Shared sentences expose distinct full frozen Thoughts and Intent context; invalid or legacy origins stay unavailable');
++
++  const historicalCheck = { check_id: 'fixed-check', created_at: '2026-10-15T00:00:00Z', outcome: 'MODIFIED', context: frozen,
++    request: { claims: [{ start: 0, end: 5, text: 'Claim', evidence_ids: ['real-change'] }] } };
++  const historyComponent = all(child.render(), (node) => typeof node.type === 'function' && node.type.name === 'ResponseHistory')[0].type;
++  const historyTree = runtime(historyComponent, { history: [historicalCheck] }).tree;
++  const historicalSource = all(historyTree, (node) => typeof node.type === 'function' && node.type.name === 'FrozenOrigin')[0];
++  assert.equal(historicalSource.props.context, historicalCheck.context);
++  assert(text(runtime(historicalSource.type, historicalSource.props).tree).includes(origin.thought_text));
++  console.log('PASS Historical source view reads its original stored context without consulting the active editor');
+ })().catch((error) => { console.error(error); process.exitCode = 1; });

@@ -1,0 +1,134 @@
+{
+  "status": "PASS_FINAL13_NATIVE_READER_BEHAVIOR_AUDIT_NOT_ALL_118_OR_G01_G11_ACCEPTANCE",
+  "annotations": 13,
+  "all_prior_12_events_exact": true,
+  "all_original_110_table_rows_and_schema_preserved": true,
+  "original_root_all_files_exact": true,
+  "protected_file_count": 74,
+  "source_311_exact": true,
+  "two_fixture_pdfs_exact": true,
+  "all_found_source_word_ranges_verified_with_offline_original_pdf": true,
+  "all_events_reviewer_and_utc_timestamp_and_predecessor_verified": true,
+  "source_comment_checks": [
+    {
+      "field": "DOI",
+      "source_annotation": "review_annotation_33b9e10d597844a292dfb202f16b0db4",
+      "note_annotation": "review_annotation_edc131822e1b4f56a80a39f3a8ee8592",
+      "comment": "SOFTWARE_FIXTURE: native DOI selection, page 1; debounce save verified separately.",
+      "page": 1,
+      "word_start": 11,
+      "word_end": 11,
+      "source_selection_preserved": true
+    },
+    {
+      "field": "TITLE",
+      "source_annotation": "review_annotation_12bb20295b9a4b4abe9bcdc7b0ed1332",
+      "note_annotation": "review_annotation_14c1e10b2c8f4683b9877211d5a2fa90",
+      "comment": "SOFTWARE_FIXTURE: complete native title selection, page 1; blur-save review.",
+      "page": 1,
+      "word_start": 4,
+      "word_end": 9,
+      "source_selection_preserved": true
+    }
+  ],
+  "collision_http_409_all_110_tables_identical": true,
+  "absent_reverses_file_caused_doi_correction": true,
+  "absent_preserves_known_doi_not_created_by_this_file": true,
+  "wrong_pdf_compensating_reverted_fields": [
+    "DOI",
+    "TITLE"
+  ],
+  "wrong_pdf_restored_title_normalized_title_doi_canonical_key": true,
+  "reopen_preserved_title_reversal_and_later_found_explicitly_reapplied_doi": true,
+  "outage_failed_draft_all_110_tables_exact_12_events": true,
+  "recovery_original_retry_appended_exactly_one_note": {
+    "annotation_id": "review_annotation_4f916d84e17f4c12a67b0509c9bf7d7c",
+    "submission_id": "ae108c8b-d2cd-402d-a8f3-409b11c31d27",
+    "case_id": "software_fixture_rv_main_file_abd70179dcff",
+    "paper_id": "software_fixture_rv_main_paper_abd70179dcff",
+    "file_version_id": "software_fixture_rv_main_file_abd70179dcff",
+    "field_name": "DOI",
+    "decision": "FOUND",
+    "selected_text": "10.9898/rv-native-abd70179dcff",
+    "page_number": 1,
+    "word_start": 11,
+    "word_end": 11,
+    "comment": "SOFTWARE_FIXTURE: outage draft must remain unsaved until the original request succeeds.",
+    "value_before": "10.9898/rv-native-abd70179dcff",
+    "value_after": "10.9898/rv-native-abd70179dcff",
+    "canonical_key_before": "doi:10.9898/rv-native-abd70179dcff",
+    "canonical_key_after": "doi:10.9898/rv-native-abd70179dcff",
+    "reviewer_label": "Alandelone",
+    "supersedes_annotation_id": "review_annotation_2a1158da5deb4c5b86fbdda8000e870d",
+    "created_at": "2026-10-14T21:47:53.128131+00:00"
+  },
+  "recovery_paper_rows_exact_outage_baseline": true,
+  "recovery_identity_note_side_effect": [
+    {
+      "identity_id": "identity_d586f34b46f94739bee390ce2f70db38",
+      "changed_fields": [
+        "observed_at"
+      ]
+    }
+  ],
+  "pending_ack_ui_did_not_claim_saved": {
+    "rv-outage-comment-failure-confirmed": {
+      "observed_at_utc": "2026-10-14T21:46:28.015Z",
+      "expected_text_observed": "Failed to fetch",
+      "source": "Official accessibility tree and document_text capture"
+    },
+    "rv-comment-saving-before-held-ack": {
+      "observed_at_utc": "2026-10-14T21:48:03.974Z",
+      "expected_text_observed": "正在自动保存…",
+      "source": "Official accessibility tree and document_text capture"
+    },
+    "rv-original-retry-ack-released": {
+      "observed_at_utc": "2026-10-14T21:48:16.023Z",
+      "expected_text_observed": "已自动保存",
+      "source": "Official accessibility tree and document_text capture"
+    }
+  },
+  "native_ui_capture_steps": 93,
+  "native_http_page3_requests": [
+    {
+      "sequence": 17,
+      "utc": "2026-10-14T17:33:54.500702+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/3/text",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 47.0
+    },
+    {
+      "sequence": 18,
+      "utc": "2026-10-14T17:33:54.572267+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/3.png",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 125.0
+    },
+    {
+      "sequence": 73,
+      "utc": "2026-10-14T17:41:11.313512+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/3/text",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 31.0
+    }
+  ],
+  "remaining_scope": [
+    "RV01 nonempty parser quality fixture",
+    "RV02 single-field identity control",
+    "original118 remaining requirements",
+    "same-current-source combined G01-G11 native acceptance"
+  ],
+  "limits": [
+    "SOFTWARE_FIXTURE inputs establish software/UI behavior, not scientific quality.",
+    "The stopped-service failed request payload/id is not persisted by the server; native retry button and stable payload source/tests support retry semantics.",
+    "expected_annotation_id is not a stored request column; predecessor chains are independently verified.",
+    "The original policy-stopped navigation remains unknown; later official fresh page read and actual UI actions provide the recorded native evidence.",
+    "Some official document_text values contain only an object placeholder; the complete official accessibility tree independently contains the exact failure, draft, saving and saved text. Earlier audit attempts expected document_text alone or an incorrect pending phrase; both failed and are retained. The observed pending phrase is 正在自动保存…."
+  ]
+}

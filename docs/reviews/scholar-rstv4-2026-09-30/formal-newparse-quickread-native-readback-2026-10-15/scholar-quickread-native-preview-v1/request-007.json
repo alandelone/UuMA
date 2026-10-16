@@ -1,0 +1,7 @@
+{
+  "method": "GET",
+  "path": "/catalog-collections.js",
+  "query": "v=bib-read-20261014",
+  "body_utf8": null,
+  "allowed": true
+}

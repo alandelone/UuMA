@@ -1,0 +1,167 @@
+{
+  "status": "PASS_SAME_ACTUAL_FIXED_V6_V7_LAYOUT_LOCATION_AFTER_APOSTROPHE_FIX",
+  "author_revision": 86,
+  "source": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01",
+  "target": "manuscript_version_8732ec9497074d82ae2b4359a7c235e5",
+  "job": {
+    "job_id": "studio_job_db4959fe580a4a47a246787ee5954268",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "job_kind": "GENERATE",
+    "status": "SUCCEEDED",
+    "input_revision": 86,
+    "request_json": "{\"layout_replay_version_id\":\"manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01\",\"scientific_binding\":{\"bindings_sha256\":\"2c2c36f8ee98f0e905a875f545bafd28775686f009db662686106905c22662e0\",\"event_id\":null,\"needs_scientific_review\":false}}",
+    "result_json": "{\"artifacts\":[{\"artifact_id\":\"artifact_6dd014ba2f3f4783a9f1eba6b7037a30\",\"kind\":\"MARKDOWN\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_db4959fe580a4a47a246787ee5954268\\\\manuscript.md\"},{\"artifact_id\":\"artifact_5e195cc5a2824b83aed1ce93d222b676\",\"kind\":\"GENERATED_JSON\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_db4959fe580a4a47a246787ee5954268\\\\generated.json\"},{\"artifact_id\":\"artifact_bcdaf5cabed94367b6095ac8b03c9a23\",\"kind\":\"TEX\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_db4959fe580a4a47a246787ee5954268\\\\manuscript.tex\"},{\"artifact_id\":\"artifact_1a9dada3abdb4ad3aefa3738a2e3640c\",\"kind\":\"BIB\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_db4959fe580a4a47a246787ee5954268\\\\references.bib\"},{\"artifact_id\":\"artifact_9ed9f4d6283d4aeb80f5bdd6bba9a7db\",\"kind\":\"PDF\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_db4959fe580a4a47a246787ee5954268\\\\manuscript.pdf\"}],\"generated_version_id\":\"manuscript_version_8732ec9497074d82ae2b4359a7c235e5\"}",
+    "error_json": null,
+    "created_at": "2026-10-15T13:16:39.950873+00:00",
+    "started_at": "2026-10-15T13:16:39.963904+00:00",
+    "completed_at": "2026-10-15T13:16:44.924241+00:00"
+  },
+  "same_generated_content": true,
+  "pdfs": [
+    {
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_e1b44f87565846198e4166948b2b480d\\manuscript.pdf",
+      "copy": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-location-after-fix-v1\\baseline-v6.pdf",
+      "sha256": "ec3988b80410560cd1b40d9bd15615718b2c9ab144147a2d028af461d497c0a1"
+    },
+    {
+      "path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_db4959fe580a4a47a246787ee5954268\\manuscript.pdf",
+      "copy": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-location-after-fix-v1\\target-v7.pdf",
+      "sha256": "a78ee2ad02957da5bb56876c4c4c526d7be1fe76359fc0489960b80929634b9b"
+    }
+  ],
+  "matches": [
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_529edffdcc9b4266b4920fcb8f6dc48f",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 28
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_e197b886c810436a823c7171839afac2",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 129
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_2c105662a8c9486887b271348cc73b76",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_612b0d79cd9e4bcfbb5ecaf7dfec12c4",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_9f410814efd0438d807d125e47dfcf9c",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_d3fb7e5f34aa46d9aa1b4a0ac756d3ce",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_be8877110de546f39c6c7b0d685a53bd",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_a9859ce2b7204bd0aa5662d42cc59b63",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "baseline-v6",
+      "paragraph_id": "paragraph_a5605d41730d4f99a82fe9acba279770",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 25
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_529edffdcc9b4266b4920fcb8f6dc48f",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 28
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_e197b886c810436a823c7171839afac2",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 129
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_2c105662a8c9486887b271348cc73b76",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_612b0d79cd9e4bcfbb5ecaf7dfec12c4",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_9f410814efd0438d807d125e47dfcf9c",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_d3fb7e5f34aa46d9aa1b4a0ac756d3ce",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_be8877110de546f39c6c7b0d685a53bd",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_a9859ce2b7204bd0aa5662d42cc59b63",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 24
+    },
+    {
+      "version": "target-v7",
+      "paragraph_id": "paragraph_a5605d41730d4f99a82fe9acba279770",
+      "status": "UNIQUE_FULL_PARAGRAPH",
+      "matched_tokens": 25
+    }
+  ],
+  "all110_readonly_diagnostic_exact": true,
+  "model_calls_unchanged": true,
+  "only_one_new_generated_version_and_five_artifacts": true,
+  "old_checks_exact_no_new_check": true,
+  "generated_sections_and_references_exact": true,
+  "all_author_semantics_exact": true,
+  "current_context_evidence": [
+    {
+      "status": "LAYOUT_ONLY",
+      "reason": "Only the explicit margin changed; exact frozen content and identities retained; actual compiled PDF boxes moved"
+    }
+  ],
+  "final11_complete": false
+}

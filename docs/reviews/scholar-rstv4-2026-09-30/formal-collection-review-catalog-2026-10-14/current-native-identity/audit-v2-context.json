@@ -1,0 +1,8 @@
+{
+  "failure_class": "READ_ONLY_AUDITOR_EXPECTED_JSON_STRING_FOR_SQL_NULL",
+  "actual_product_contract": "Review reopen stores json.loads(result_json or {}). Approval restores that declared previous_result as serialized JSON.",
+  "permitted_empty_result_normalization": "Only the two already declared nonterminal jobs may change result_json from SQL NULL to JSON {}.",
+  "native_actions_replayed": false,
+  "database_modified_by_auditor": false,
+  "other_original_rows_and_all_immutable_fields_still_exact": true
+}

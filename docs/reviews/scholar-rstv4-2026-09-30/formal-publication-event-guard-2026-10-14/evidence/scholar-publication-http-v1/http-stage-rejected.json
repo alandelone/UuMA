@@ -1,0 +1,15 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+  "request": {
+    "venue": "Isolated software workflow acceptance",
+    "round_number": 2,
+    "status": "PUBLISHED",
+    "detail": "Software acceptance event only. No external submission, acceptance, publication or scientific approval."
+  },
+  "status": 422,
+  "body": {
+    "error": "invalid_input",
+    "detail": "Cannot move manuscript from WHOLE_PAPER_REVIEW to PUBLICATION"
+  }
+}

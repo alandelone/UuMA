@@ -1,0 +1,26 @@
+{
+  "status": "EXACT_OWNED_FRONTEND_AND_BACKEND_STOPPED_PORTS_FREE",
+  "ports": [
+    8877,
+    62304
+  ],
+  "frontend_pid": 32032,
+  "backend_pid": 16748,
+  "known_windows_console_children": [
+    {
+      "pid": 11632,
+      "create_time": 1792070657.734284,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 32032
+    }
+  ],
+  "original_files_and_external25_exact": true,
+  "current_backend311_exact": true,
+  "root_preserved": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz",
+  "no_other_processes_stopped": true,
+  "scientific_approval": false
+}

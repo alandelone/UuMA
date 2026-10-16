@@ -1,0 +1,53 @@
+{
+  "status": "PASS_NATIVE_LOCAL_WF09_WF10_PUBLICATION_PROVENANCE",
+  "full_table_count": 110,
+  "unchanged_tables": 105,
+  "changed_tables": [
+    "manuscript_status_history",
+    "manuscripts",
+    "studio_assets",
+    "studio_submission_bindings",
+    "submission_events"
+  ],
+  "schemas_exact": true,
+  "old_append_rows_exact": true,
+  "all_comments_checks_links_original_and_a211_exact": true,
+  "author_revision": 62,
+  "active_generated_version": 5,
+  "generated_version_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+  "workflow_revision_before": 6,
+  "workflow_revision_after": 8,
+  "single_explicit_stage_write": true,
+  "published_service_automatically_enters_publication": true,
+  "archive_no_extra_revision": true,
+  "new_event_ids": [
+    "submission_7622823f3eba4450ac9fdf3fcfd3f3b9",
+    "submission_c3b44e1105424837a63b10ca787e33af",
+    "submission_f20d1e7502c44106b50e591c22b40927",
+    "submission_11ea9271d86a4f43ba6fa6c486b31174"
+  ],
+  "new_asset_ids": [
+    "asset_a0fa7844e8234f1b9bef01da3f031ab9",
+    "asset_24bccb8186a54a578fb0b34410a085f3"
+  ],
+  "all_event_bindings_hashes_parent_acceptance_and_fixed_version_exact": true,
+  "source311_frontend91_dist76_exact": true,
+  "all_original109_tables_raw_db_and_files_exact": true,
+  "external25_exact": true,
+  "all_old_owned_files_exact_except_expected_catalog": true,
+  "new_owned_files_only_two_uploaded_assets": true,
+  "native_observations_total": 45,
+  "prior_a211_first18_exact": true,
+  "wf_native_observations": 23,
+  "final_native_generated_read_complete": true,
+  "final_archive_receipt_persists_after_native_reload": true,
+  "final_live_snapshot_equals_last_action018_and_terminal": true,
+  "owned_processes_absent_and_ports_free": true,
+  "root_retained": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "models_executed_in_studio": 0,
+  "workers_started": 0,
+  "scientific_approval": false,
+  "external_submission_or_acceptance": false,
+  "original118_complete": false,
+  "integrated11_complete": false
+}

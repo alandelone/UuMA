@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+  "content_type": "application/json",
+  "body_utf8": "{\"venue\":\"SOFTWARE_FIXTURE Local WF09-10 — no external submission\",\"round_number\":3,\"status\":\"ARCHIVED\",\"detail\":\"SOFTWARE_FIXTURE local archive: exact original fixed v5 PDF and explicit synthetic local proof text are bound by byte hashes. No external publication, scientific acceptance, or publisher proof approval is asserted.\",\"generated_version_id\":\"manuscript_version_de30b95a2d6843059d3c8b420627bf58\",\"final_asset_id\":\"asset_a0fa7844e8234f1b9bef01da3f031ab9\",\"proof_asset_id\":\"asset_24bccb8186a54a578fb0b34410a085f3\",\"acknowledged\":true,\"operation_id\":\"b6b343f4-93cf-4c39-84c6-c9daddfba6eb\"}",
+  "body_sha256": "d4b808a04f79fc7d1da742c966be545298bce175f40c74954683e098e5a41602",
+  "body_bytes": 599
+}

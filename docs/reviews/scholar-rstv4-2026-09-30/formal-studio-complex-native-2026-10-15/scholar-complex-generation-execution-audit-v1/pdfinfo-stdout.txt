@@ -1,0 +1,17 @@
+Creator:         LaTeX with hyperref
+Producer:        xdvipdfmx (20250410)
+CreationDate:    Thu Oct 15 15:52:53 2026 Malay Peninsula Standard Time
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           2
+Encrypted:       no
+Page size:       612 x 792 pts (letter)
+Page rot:        0
+File size:       50360 bytes
+Optimized:       no
+PDF version:     1.5

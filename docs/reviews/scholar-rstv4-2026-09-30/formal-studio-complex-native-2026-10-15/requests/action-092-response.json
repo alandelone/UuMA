@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "comment_id": "comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "source": "PASTED",
+    "reviewer": null,
+    "original_text": "2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence.",
+    "edited_text": "2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence.",
+    "author_decision": "SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given.",
+    "response_text": "SOFTWARE_FIXTURE pending reply. Intent-label, moved/deleted structure, citation identity and material changes are recorded, but a complete semantic attribution to final prose has not been established. The temporary wording was reverted and must not count as a completed prose amendment.",
+    "status": "PENDING",
+    "archived_at": null,
+    "created_at": "2026-10-15T07:35:59.055172+00:00",
+    "updated_at": "2026-10-15T07:58:33.356497+00:00",
+    "import_metadata": {
+      "comment_number": 213,
+      "import_batch_id": "comment_import_9e8101ea7a40461bb632fbd225e09c5e",
+      "original_index": 1,
+      "original_text": "2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence.",
+      "raw_import_text": "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval.\n\n2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence.\n\n3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted."
+    },
+    "display_label": "A213",
+    "content_sha256": "f38878d5bb34f486601cd444170992fa60c2048d2da87d9bca8ef7d5a0a14d06",
+    "response_state_sha256": "28158f245f39fc29b52d535eb16cd006fcd52988f391a31cb501cfe01ca5abcb",
+    "response_verification": {
+      "status": "NOT_REVIEWED"
+    }
+  }
+}

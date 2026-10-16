@@ -1,0 +1,26 @@
+[
+  {
+    "label": "声明 1 对应 无法定位的变化",
+    "enabled": false
+  },
+  {
+    "label": "声明 1 对应 Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted. [1] [2]",
+    "enabled": false
+  },
+  {
+    "label": "声明 1 对应 无法定位的变化",
+    "enabled": false
+  },
+  {
+    "label": "声明 1 对应 SOFTWARE_FIXTURE: Check original sources only and preserve their original conditions without asserting any scientific claim; retain both original source-only and source-condition boundaries in this shared sentence and in their separate sentences. [1] [3]",
+    "enabled": true
+  },
+  {
+    "label": "声明 1 对应 Check original sources only; no scientific claim is asserted.",
+    "enabled": true
+  },
+  {
+    "label": "声明 1 对应 SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence. [1] [3]",
+    "enabled": true
+  }
+]

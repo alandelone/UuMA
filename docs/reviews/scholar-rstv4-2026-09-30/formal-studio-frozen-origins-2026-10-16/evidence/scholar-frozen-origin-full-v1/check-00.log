@@ -1,0 +1,64 @@
+........................................................................ [  6%]
+........................................................................ [ 12%]
+........................................................................ [ 18%]
+........................................................................ [ 24%]
+........................................................................ [ 30%]
+........................................................................ [ 36%]
+........................................................................ [ 42%]
+........................................................................ [ 48%]
+........................................................................ [ 54%]
+........................................................................ [ 60%]
+........................................................................ [ 66%]
+........................................................................ [ 72%]
+........................................................................ [ 78%]
+........................................................................ [ 84%]
+........................................................................ [ 90%]
+........................................................................ [ 96%]
+......................................                                   [100%]
+============================== warnings summary ===============================
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_context_reference.py:67: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**inputs, repair_feedback=feedback)
+
+tests/test_skeleton_context_reference.py::test_context_uses_actual_ordered_spans_and_distinct_annotation_review
+  C:\Users\Alandelone\anaconda3\Lib\site-packages\pydantic\_internal\_generate_schema.py:1463: UserWarning: Item 'summary' on TypedDict class 'ChatCompletionReasoningItem' is using the `ReadOnly` qualifier. Pydantic will not protect items from any mutation on dictionary instances.
+    warnings.warn(
+
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+tests/test_skeleton_graph_reference.py::test_annotation_and_review_have_distinct_real_receipt_requests
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_graph_reference.py:281: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_lossless_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_lossless_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph_v2.py:363: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+tests/test_skeleton_mapped_graph.py::test_graph_annotation_review_are_distinct_calls_and_cached_replay
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:246: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = predictor(**stage_values, repair_feedback=feedback)
+
+tests/test_skeleton_mapped_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_mapped_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_mapped_graph.py:347: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_skeleton_verified_reference.py::test_full_reference_correction_preserves_claims_and_failed_round
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+tests/test_skeleton_verified_reference.py::test_missing_claims_in_graph_correction_remain_a_source_failure
+  C:\Users\Alandelone\CodeSpace_Local\RSTV4\src\rstv4\skeleton_verified_reference.py:147: DeprecationWarning: Implementing custom LMs through BaseLM.forward() or aforward() is deprecated. Implement an engine with complete(Request) -> Response and pass it to dspy.LM(engine=...) instead. The old subclass interface remains supported throughout DSPy 3.4 and is scheduled for removal in 3.5, along with LegacyEngine and AsyncLegacyEngine. See https://dspy.ai/community/normalized-lm-api-migration/#custom-engines-and-legacy-plugins.
+    result = self.corrector(**values, repair_feedback=feedback)
+
+tests/test_track_first_fieldkg.py::test_public_mcp_is_track_first
+  C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Lib\site-packages\pydantic_settings\sources\utils.py:47: IncompleteFieldDefinitionWarning: Field 'lifespan' has an incomplete definition: its annotation contains an unresolved forward reference, so settings sources may fail to correctly resolve its value. Call `model_rebuild()` on the model where the field is defined, once all the referenced types are defined.
+    warnings.warn(
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+1190 passed, 20 warnings in 557.35s (0:09:17)

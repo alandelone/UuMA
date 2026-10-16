@@ -1,0 +1,61 @@
+{
+  "backend": {
+    "pid": 12776,
+    "create_time": 1792045800.4567857,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v9.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 13004
+  },
+  "frontend": {
+    "pid": 27844,
+    "create_time": 1792045801.6625464,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "50114",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-publication-chain-build-mlpu7aqn\\writing-studio",
+    "parent_pid": 22960
+  },
+  "backend_launcher": {
+    "pid": 13004,
+    "create_time": 1792045800.4398017,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v9.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 22960
+  },
+  "frontend_windows_console_children": [
+    {
+      "pid": 16788,
+      "create_time": 1792045801.667844,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 27844
+    }
+  ],
+  "ports": [
+    8877,
+    50114
+  ],
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v9\\stop.request.json",
+  "owned_scope": "current v5 identities only"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "whole_inline_script_parsed": true,
+  "inline_script_count": 1,
+  "node_exit_code": 0,
+  "stderr": "",
+  "source_html_sha256": "e573c3771cc6f4723be6c2611eabfb81bae3200722ccdd1ccac9018924e18447",
+  "native_browser_executed": false
+}

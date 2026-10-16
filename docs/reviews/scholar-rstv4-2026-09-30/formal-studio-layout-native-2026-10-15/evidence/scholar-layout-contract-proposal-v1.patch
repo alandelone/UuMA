@@ -1,0 +1,854 @@
+--- a/RSTV4/src/rstv4/studio.py
++++ b/RSTV4/src/rstv4/studio.py
+@@ -74,6 +74,7 @@
+ from .studio_realization import OUTPUT_SCHEMA
+ from .studio_realization import validate as validate_realization
+ from .studio_revision_mapping import write_mapping
++from .studio_layout import layout_settings, layout_replay
+ from .studio_rounds import baseline_text, content_digest
+ from .studio_rounds import resolve as resolve_review_round
+ from .studio_rounds import version as review_baseline_version
+@@ -1702,8 +1703,13 @@
+                 folder = Path(directory)
+                 pdf = folder / "fixed-manuscript.pdf"
+                 pdf.write_bytes(raw)
++                baseline_pdf = None
++                old_pdfs = [a for a in baseline["artifacts"] if a["artifact_kind"] == "PDF"] if baseline else []
++                if len(old_pdfs) == 1:
++                    baseline_pdf = folder / "baseline-manuscript.pdf"
++                    baseline_pdf.write_bytes(self._verified_artifact_bytes(old_pdfs[0]))
+                 write_mapping(folder / "change-location-map.csv", [comment], target=target,
+-                              baseline=baseline, target_document=target_document, baseline_document=baseline_document, pdf=pdf)
++                              baseline=baseline, target_document=target_document, baseline_document=baseline_document, pdf=pdf, baseline_pdf=baseline_pdf)
+                 mapping = json.loads((folder / "change-realization-map.json").read_text(encoding="utf-8"))
+                 evidence = [{**item, "evidence_id": response_checks.digest(item),
+                              "display_changed_text": numbered_text(item["changed_text"], target["references"])}
+@@ -1832,6 +1838,7 @@
+ 
+     @staticmethod
+     def _validate_document_shape(manuscript_id: str, document: dict[str, Any]) -> None:
++        layout_settings(document)
+         if document.get("schema_version") != 1:
+             raise ValueError("Unsupported Studio document schema")
+         if document.get("manuscript_id") != manuscript_id:
+@@ -2067,145 +2074,177 @@
+         document = realization_document(author_document)
+         current_stage = workspace["workflow_stage"]
+         self._check_generate_ready(job["manuscript_id"], author_document)
+-        with transaction(self.db_path) as conn:
+-            frozen_materials, material_files = freeze_materials(
+-                conn, self.storage_root, job["manuscript_id"], document
+-            )
+-        if material_files:
+-            material_directory = self.storage_root / job["manuscript_id"] / "generated" / job["job_id"]
+-            material_directory.mkdir(parents=True, exist_ok=True)
+-            for filename, content in material_files.items():
+-                (material_directory / filename).write_bytes(content)
+-        selected_ids = list(dict.fromkeys(
+-            item["evidence_id"]
+-            for section in document["sections"] for paragraph in section["paragraphs"]
+-            for intent in paragraph["intents"] for thought in intent["thoughts"]
+-            for item in thought.get("citations", [])
+-            if item.get("selected") and item.get("evidence_id")
+-        ))
+-        # One source snapshot feeds realization, references and compilation.
+-        # A later metadata refresh must not rewrite this generated version.
+-        frozen_evidence = {item["evidence_id"]: item for item in self._evidence_by_ids(selected_ids)}
+-        if set(frozen_evidence) != set(selected_ids):
+-            raise RSTV4Error("A selected source is unavailable")
+-        track = self.track_service.get_track(workspace["manuscript"]["track_id"])
+-        if any(
+-            item["track_id"] != track["track_id"] and item["field_id"] != track["field_id"]
+-            for item in frozen_evidence.values()
+-        ):
+-            raise RSTV4Error("A selected source is outside this manuscript's Field and Track")
+-        generated_sections: list[dict[str, Any]] = []
+-        for section in document["sections"]:
+-            generated_paragraphs = []
+-            for paragraph in section["paragraphs"]:
+-                if self._job_cancel_requested(job["job_id"]):
+-                    raise JobCancelled("Generation cancelled by author")
+-                evidence_ids = []
+-                for intent in paragraph["intents"]:
+-                    for thought in intent["thoughts"]:
+-                        evidence_ids.extend(
+-                            item["evidence_id"]
+-                            for item in thought.get("citations", [])
+-                            if item.get("selected") and item.get("evidence_id")
+-                        )
+-                evidence = [frozen_evidence[item] for item in dict.fromkeys(evidence_ids)]
+-                payload = {
+-                        "section_title": section["title"],
+-                        "section_role": section.get("role"),
+-                        **({"section_path": section_titles(document, section["id"])}
+-                           if section.get("parent_section_id") else {}),
+-                        "paragraph_purpose": paragraph.get("purpose"),
+-                        "paradigm": paragraph.get("paradigm"),
+-                        **({"logical_relation": paragraph["logical_relation"]}
+-                           if paragraph.get("logical_relation") else {}),
+-                        **({"argument_relations": argument_context(author_document, paragraph)}
+-                           if argument_context(author_document, paragraph) else {}),
+-                        **({"author_contexts": paragraph["author_contexts"]}
+-                           if paragraph.get("author_contexts") else {}),
+-                        **({"paragraph_group": paragraph_group(section, paragraph["id"])}
+-                           if paragraph_group(section, paragraph["id"]) else {}),
+-                        "intents": paragraph["intents"],
+-                        "selected_evidence": [model_source(item) for item in evidence],
+-                        **({"assets": [frozen_materials[a] for a in paragraph["asset_ids"]]}
+-                           if paragraph.get("asset_ids") else {}),
+-                        "output_schema": OUTPUT_SCHEMA,
+-                        "constraint": (
+-                            "Preserve every author thought; do not add scientific claims. "
+-                            "Use only selected evidence ids in citations."
+-                        ),
+-                }
+-                expected_thought_ids = {
+-                    thought["id"]
+-                    for intent in paragraph["intents"]
+-                    for thought in intent["thoughts"]
+-                }
+-                feedback = None
+-                for attempt in range(3):
++        replay_id = request.get("layout_replay_version_id")
++        if replay_id is not None:
++            if not isinstance(replay_id, str) or not replay_id:
++                raise ValueError("Choose a fixed generated version for layout replay")
++            self.get_generated_version(job["manuscript_id"], replay_id)
++            with transaction(self.db_path) as conn:
++                source = conn.execute("SELECT inputs_json FROM manuscript_versions WHERE manuscript_id=? AND manuscript_version_id=?",
++                                      (job["manuscript_id"], replay_id)).fetchone()
++                inputs = json.loads(source["inputs_json"])
++            if inputs.get("scientific_binding") != scientific_binding:
++                raise RevisionConflictError("Scientific bindings changed since the source generation; layout replay is unavailable")
++            source_document = self.get_document_revision(job["manuscript_id"], inputs["studio_revision"])["document"]
++            generated = layout_replay(source_document, author_document, inputs["generated"],
++                                      job["input_revision"], replay_id)
++            # Frozen material identities and exact verified source/render bytes are reused.
++            old_directory = self.storage_root / job["manuscript_id"] / "generated" / inputs["job_id"]
++            new_directory = self.storage_root / job["manuscript_id"] / "generated" / job["job_id"]
++            assets = [a for s in generated["sections"] for p in s["paragraphs"] for a in p.get("assets", [])]
++            verify_material_files(old_directory, assets)
++            new_directory.mkdir(parents=True, exist_ok=True)
++            for asset in assets:
++                for key in ["source_file", "render_file"]:
++                    if key in asset:
++                        filename = asset[key]
++                        if not isinstance(filename, str) or Path(filename).name != filename:
++                            raise RSTV4Error("Unsafe frozen material path")
++                        shutil.copyfile(old_directory / filename, new_directory / filename)
++        else:
++            with transaction(self.db_path) as conn:
++                frozen_materials, material_files = freeze_materials(
++                    conn, self.storage_root, job["manuscript_id"], document
++                )
++            if material_files:
++                material_directory = self.storage_root / job["manuscript_id"] / "generated" / job["job_id"]
++                material_directory.mkdir(parents=True, exist_ok=True)
++                for filename, content in material_files.items():
++                    (material_directory / filename).write_bytes(content)
++            selected_ids = list(dict.fromkeys(
++                item["evidence_id"]
++                for section in document["sections"] for paragraph in section["paragraphs"]
++                for intent in paragraph["intents"] for thought in intent["thoughts"]
++                for item in thought.get("citations", [])
++                if item.get("selected") and item.get("evidence_id")
++            ))
++            # One source snapshot feeds realization, references and compilation.
++            # A later metadata refresh must not rewrite this generated version.
++            frozen_evidence = {item["evidence_id"]: item for item in self._evidence_by_ids(selected_ids)}
++            if set(frozen_evidence) != set(selected_ids):
++                raise RSTV4Error("A selected source is unavailable")
++            track = self.track_service.get_track(workspace["manuscript"]["track_id"])
++            if any(
++                item["track_id"] != track["track_id"] and item["field_id"] != track["field_id"]
++                for item in frozen_evidence.values()
++            ):
++                raise RSTV4Error("A selected source is outside this manuscript's Field and Track")
++            generated_sections: list[dict[str, Any]] = []
++            for section in document["sections"]:
++                generated_paragraphs = []
++                for paragraph in section["paragraphs"]:
+                     if self._job_cancel_requested(job["job_id"]):
+                         raise JobCancelled("Generation cancelled by author")
+-                    try:
+-                        response, call_id = self._model_call(
+-                            job["manuscript_id"], "paragraph_realization",
+-                            {**payload, **({"schema_correction": feedback} if feedback else {})},
+-                            job_id=job["job_id"], input_revision=job["input_revision"],
+-                            validate=partial(validate_realization, thought_ids=expected_thought_ids,
+-                                             evidence_ids=set(evidence_ids)),
+-                        )
+-                        realization = validate_realization(response, expected_thought_ids, set(evidence_ids))
+-                        break
+-                    except RSTV4Error as exc:
+-                        if attempt == 2:
+-                            raise
+-                        feedback = {"attempt": attempt + 1, "error": str(exc),
+-                                    "requirement": "Return the declared schema without changing author thoughts or adding sources."}
+-                generated_paragraphs.append(
+-                    {
+-                        "paragraph_id": paragraph["id"],
+-                        "text": realization["text"],
+-                        "thought_ids": [
+-                            thought["id"]
+-                            for intent in paragraph["intents"]
+-                            for thought in intent["thoughts"]
+-                        ],
+-                        "sentence_mappings": realization["sentence_mappings"],
+-                        "sentences": realization["sentences"],
+-                        "sentence_positions_verified": realization["sentence_positions_verified"],
+-                        "model_contract": response.get("_contract"),
+-                        "model_call_id": call_id,
+-                        "evidence_ids": sorted(set(evidence_ids)),
+-                        "formulas": paragraph.get("formulas", []),
+-                        **({"asset_ids": paragraph["asset_ids"]}
+-                           if paragraph.get("asset_ids") or paragraph.get("author_contexts") else {}),
+-                        **({"assets": [frozen_materials[a] for a in paragraph["asset_ids"]]}
+-                           if paragraph.get("asset_ids") else {}),
+-                        **({"author_contexts": paragraph["author_contexts"]}
+-                           if paragraph.get("author_contexts") else {}),
+-                        **({"group_id": paragraph_group(section, paragraph["id"])["id"]}
+-                           if paragraph_group(section, paragraph["id"]) else {}),
++                    evidence_ids = []
++                    for intent in paragraph["intents"]:
++                        for thought in intent["thoughts"]:
++                            evidence_ids.extend(
++                                item["evidence_id"]
++                                for item in thought.get("citations", [])
++                                if item.get("selected") and item.get("evidence_id")
++                            )
++                    evidence = [frozen_evidence[item] for item in dict.fromkeys(evidence_ids)]
++                    payload = {
++                            "section_title": section["title"],
++                            "section_role": section.get("role"),
++                            **({"section_path": section_titles(document, section["id"])}
++                               if section.get("parent_section_id") else {}),
++                            "paragraph_purpose": paragraph.get("purpose"),
++                            "paradigm": paragraph.get("paradigm"),
++                            **({"logical_relation": paragraph["logical_relation"]}
++                               if paragraph.get("logical_relation") else {}),
++                            **({"argument_relations": argument_context(author_document, paragraph)}
++                               if argument_context(author_document, paragraph) else {}),
++                            **({"author_contexts": paragraph["author_contexts"]}
++                               if paragraph.get("author_contexts") else {}),
++                            **({"paragraph_group": paragraph_group(section, paragraph["id"])}
++                               if paragraph_group(section, paragraph["id"]) else {}),
++                            "intents": paragraph["intents"],
++                            "selected_evidence": [model_source(item) for item in evidence],
++                            **({"assets": [frozen_materials[a] for a in paragraph["asset_ids"]]}
++                               if paragraph.get("asset_ids") else {}),
++                            "output_schema": OUTPUT_SCHEMA,
++                            "constraint": (
++                                "Preserve every author thought; do not add scientific claims. "
++                                "Use only selected evidence ids in citations."
++                            ),
+                     }
++                    expected_thought_ids = {
++                        thought["id"]
++                        for intent in paragraph["intents"]
++                        for thought in intent["thoughts"]
++                    }
++                    feedback = None
++                    for attempt in range(3):
++                        if self._job_cancel_requested(job["job_id"]):
++                            raise JobCancelled("Generation cancelled by author")
++                        try:
++                            response, call_id = self._model_call(
++                                job["manuscript_id"], "paragraph_realization",
++                                {**payload, **({"schema_correction": feedback} if feedback else {})},
++                                job_id=job["job_id"], input_revision=job["input_revision"],
++                                validate=partial(validate_realization, thought_ids=expected_thought_ids,
++                                                 evidence_ids=set(evidence_ids)),
++                            )
++                            realization = validate_realization(response, expected_thought_ids, set(evidence_ids))
++                            break
++                        except RSTV4Error as exc:
++                            if attempt == 2:
++                                raise
++                            feedback = {"attempt": attempt + 1, "error": str(exc),
++                                        "requirement": "Return the declared schema without changing author thoughts or adding sources."}
++                    generated_paragraphs.append(
++                        {
++                            "paragraph_id": paragraph["id"],
++                            "text": realization["text"],
++                            "thought_ids": [
++                                thought["id"]
++                                for intent in paragraph["intents"]
++                                for thought in intent["thoughts"]
++                            ],
++                            "sentence_mappings": realization["sentence_mappings"],
++                            "sentences": realization["sentences"],
++                            "sentence_positions_verified": realization["sentence_positions_verified"],
++                            "model_contract": response.get("_contract"),
++                            "model_call_id": call_id,
++                            "evidence_ids": sorted(set(evidence_ids)),
++                            "formulas": paragraph.get("formulas", []),
++                            **({"asset_ids": paragraph["asset_ids"]}
++                               if paragraph.get("asset_ids") or paragraph.get("author_contexts") else {}),
++                            **({"assets": [frozen_materials[a] for a in paragraph["asset_ids"]]}
++                               if paragraph.get("asset_ids") else {}),
++                            **({"author_contexts": paragraph["author_contexts"]}
++                               if paragraph.get("author_contexts") else {}),
++                            **({"group_id": paragraph_group(section, paragraph["id"])["id"]}
++                               if paragraph_group(section, paragraph["id"]) else {}),
++                        }
++                    )
++                generated_sections.append(
++                    {"section_id": section["id"], "title": section["title"], "paragraphs": generated_paragraphs,
++                     **({"parent_section_id": section["parent_section_id"],
++                         "section_depth": section_levels(document["sections"])[section["id"]]}
++                        if section.get("parent_section_id") else {}),
++                     **({"paragraph_groups": section["paragraph_groups"], "block_order": section["block_order"]}
++                        if section.get("paragraph_groups") else {})}
+                 )
+-            generated_sections.append(
+-                {"section_id": section["id"], "title": section["title"], "paragraphs": generated_paragraphs,
+-                 **({"parent_section_id": section["parent_section_id"],
+-                     "section_depth": section_levels(document["sections"])[section["id"]]}
+-                    if section.get("parent_section_id") else {}),
+-                 **({"paragraph_groups": section["paragraph_groups"], "block_order": section["block_order"]}
+-                    if section.get("paragraph_groups") else {})}
+-            )
+-        generated = {
+-            "title": document["title"],
+-            "abstract": document.get("abstract", ""),
+-            "sections": generated_sections,
+-            "input_revision": job["input_revision"],
+-            "citation_style": "numeric_first_use",
+-            **({"material_snapshot_schema": 1} if frozen_materials else {}),
+-            **({"author_source_sections": document["author_source_sections"]}
+-               if document.get("author_source_sections") else {}),
+-            **({"argument_relations": document["argument_relations"]}
+-               if document.get("argument_relations") else {}),
+-        }
+-        generated["references"] = self._reference_snapshot(generated, list(frozen_evidence.values()))
+-        generated["reference_snapshot_schema"] = 1
++            generated = {
++                "title": document["title"],
++                "abstract": document.get("abstract", ""),
++                "sections": generated_sections,
++                "input_revision": job["input_revision"],
++                "citation_style": "numeric_first_use",
++                **({"material_snapshot_schema": 1} if frozen_materials else {}),
++                **({"author_source_sections": document["author_source_sections"]}
++                   if document.get("author_source_sections") else {}),
++                **({"argument_relations": document["argument_relations"]}
++                   if document.get("argument_relations") else {}),
++            }
++            generated["references"] = self._reference_snapshot(generated, list(frozen_evidence.values()))
++            generated["reference_snapshot_schema"] = 1
++            if self._job_cancel_requested(job["job_id"]):
++                raise JobCancelled("Generation cancelled by author")
++            if "layout" in author_document:
++                generated["layout"] = layout_settings(author_document)
+         if self._job_cancel_requested(job["job_id"]):
+             raise JobCancelled("Generation cancelled by author")
+         artifacts = self._compile_artifacts(job, generated)
+@@ -2496,11 +2535,16 @@
+                             if review_round and review_round["baseline_manuscript_version_id"] else None)
+         original_document = (self.get_document_revision(job["manuscript_id"], baseline_version["input_revision"])["document"]
+                              if baseline_version and baseline_version["input_revision"] is not None else None)
++        baseline_pdf = None
++        old_pdfs = [a for a in baseline_version["artifacts"] if a["artifact_kind"] == "PDF"] if baseline_version else []
++        if len(old_pdfs) == 1:
++            baseline_pdf = package_dir / "baseline-manuscript.pdf"
++            baseline_pdf.write_bytes(self._verified_artifact_bytes(old_pdfs[0]))
+         location_summary = write_mapping(
+             package_dir / "change-location-map.csv",
+             comments, target=generated_version, baseline=baseline_version,
+             target_document=self.get_document_revision(job["manuscript_id"], generated_version["input_revision"])["document"],
+-            baseline_document=original_document, pdf=package_dir / "clean-manuscript.pdf",
++            baseline_document=original_document, pdf=package_dir / "clean-manuscript.pdf", baseline_pdf=baseline_pdf,
+         )
+         (package_dir / "author-structure.json").write_text(_json({
+             "manuscript_id": job["manuscript_id"],
+@@ -2710,7 +2754,7 @@
+ 
+         parts = [
+             r"\documentclass[11pt]{article}",
+-            r"\usepackage[margin=1in]{geometry}",
++            r"\usepackage[margin=" + ("0.75in" if layout_settings(generated)["page_margin"] == "narrow" else "1in") + r"]{geometry}",
+             r"\usepackage{fontspec}",
+             r"\usepackage{hyperref}",
+             r"\usepackage[numbers,square]{natbib}",
+--- a/RSTV4/src/rstv4/studio_context.py
++++ b/RSTV4/src/rstv4/studio_context.py
+@@ -130,6 +130,7 @@
+         "content": version["content"],
+         "input_revision": generated.get("input_revision") if generated else None,
+         "structure_mapping_available": generated is not None,
++        **({"layout": generated["layout"]} if generated and "layout" in generated else {}),
+         "blocks": blocks,
+         **({"realizations": realizations} if realizations else {}),
+         "references": references,
+--- /dev/null
++++ b/RSTV4/src/rstv4/studio_layout.py
+@@ -0,0 +1,111 @@
++"""Explicit page margins, frozen realization replay and conservative layout evidence."""
++from __future__ import annotations
++
++import hashlib
++import json
++from copy import deepcopy
++from typing import Any
++
++
++def layout_settings(document: dict[str, Any]) -> dict[str, str]:
++    value = document.get("layout", {"page_margin": "standard"})
++    if (not isinstance(value, dict) or set(value) != {"page_margin"}
++            or value["page_margin"] not in ("standard", "narrow")):
++        raise ValueError("Layout must choose the standard or narrow page margin")
++    return dict(value)
++
++
++def author_semantics(document: dict[str, Any]) -> dict[str, Any]:
++    """Remove exactly the typed presentation field; unknown fields remain significant."""
++    return {key: value for key, value in document.items() if key != "layout"}
++
++
++def digest(value: Any) -> str:
++    raw = json.dumps(value, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
++    return hashlib.sha256(raw.encode("utf8")).hexdigest()
++
++
++def layout_replay(before: dict[str, Any], after: dict[str, Any], source: dict[str, Any],
++                  input_revision: int, source_version_id: str) -> dict[str, Any]:
++    """Reuse exact generated sentences/references/materials; never call a language model."""
++    if author_semantics(before) != author_semantics(after):
++        raise ValueError("Layout replay cannot change author text, structure, citations, relations or materials")
++    old, new = layout_settings(before), layout_settings(after)
++    if old == new:
++        raise ValueError("Change a page margin before requesting layout replay")
++    if layout_settings(source) != old:
++        raise ValueError("The source generation does not freeze the original page margin")
++    if type(input_revision) is not int or input_revision <= source["input_revision"]:
++        raise ValueError("Layout replay requires a later author revision")
++    result = deepcopy(source)
++    result["input_revision"] = input_revision
++    result["layout"] = new
++    result["layout_replay"] = {
++        "schema_version": 1, "source_generated_version_id": source_version_id,
++        "source_generated_sha256": digest(source), "method": "exact-realization-recompile-v1",
++    }
++    return result
++
++
++def same_generated_content(left: dict[str, Any], right: dict[str, Any]) -> bool:
++    def fixed(view: dict[str, Any]) -> dict[str, Any]:
++        return {"content": view["content"], "references": view["references"],
++                "citation_style": view.get("citation_style"),
++                "realizations": view.get("realizations", []),
++                "blocks": [{k: v for k, v in block.items() if k != "anchor_id"}
++                           for block in view["blocks"]]}
++    return fixed(left) == fixed(right)
++
++
++def layout_only_evidence(before: dict[str, Any], after: dict[str, Any], *,
++                         baseline_document: dict[str, Any] | None,
++                         target_document: dict[str, Any], baseline: dict[str, Any] | None,
++                         target: dict[str, Any], old_layout: dict[str, Any] | None,
++                         new_layout: dict[str, Any]) -> dict[str, Any] | None:
++    """Require unchanged identities and exact text plus measured compiled PDF movement."""
++    from .studio_revision_mapping import unique_paragraph
++
++    if (baseline is None or baseline_document is None or after != target_document
++            or author_semantics(before) != author_semantics(after)
++            or author_semantics(baseline_document) != author_semantics(target_document)
++            or layout_settings(before) == layout_settings(after)
++            or layout_settings(baseline_document) == layout_settings(target_document)
++            or layout_settings(baseline) != layout_settings(baseline_document)
++            or layout_settings(target) != layout_settings(target_document)
++            or not same_generated_content(baseline, target)
++            or old_layout is None or old_layout.get("status") != "EXTRACTED"
++            or new_layout.get("status") != "EXTRACTED"):
++        return None
++    old_blocks = {block["object_id"]: block for block in baseline["blocks"] if block["kind"] == "paragraph"}
++    moved = []
++    for block in target["blocks"]:
++        if block["kind"] != "paragraph":
++            continue
++        old = old_blocks.get(block["object_id"])
++        if old is None:
++            return None
++        original, _ = unique_paragraph(old_layout, old["display_text"])
++        final, _ = unique_paragraph(new_layout, block["display_text"])
++        if not original or not final:
++            return None
++        def positions(span: list[dict[str, Any]]) -> list[dict[str, Any]]:
++            result = []
++            for word in span:
++                result.append({key: word[key] for key in ("page", "line", "box")})
++                result.extend({key: extra[key] for key in ("page", "line", "box")}
++                              for extra in word.get("extra_boxes", []))
++            return result
++        old_boxes, new_boxes = positions(original), positions(final)
++        if old_boxes != new_boxes:
++            moved.append({"paragraph_id": block["object_id"], "baseline_boxes": old_boxes,
++                          "boxes": new_boxes})
++    if not moved:
++        return None
++    first = moved[0]
++    return {"status": "LAYOUT_ONLY", "change_kind": "PRESENTATION", "changed_text": "",
++            "reason": "Only the explicit margin changed; exact frozen content and identities retained; actual compiled PDF boxes moved",
++            "baseline_pdf_sha256": old_layout["pdf_sha256"], "baseline_boxes": first["baseline_boxes"],
++            "boxes": first["boxes"], "paragraph_id": first["paragraph_id"],
++            "final_page": first["boxes"][0]["page"], "final_line": first["boxes"][0]["line"],
++            "final_page_end": first["boxes"][-1]["page"], "final_line_end": first["boxes"][-1]["line"],
++            "moved_paragraphs": moved, "supports_scientific_text_modification": False}
+--- a/RSTV4/src/rstv4/studio_read_views.py
++++ b/RSTV4/src/rstv4/studio_read_views.py
+@@ -15,6 +15,7 @@
+ from .studio_realization import validate as validate_realization
+ from .studio_sources import freeze_source, validate_references
+ from .studio_structure import argument_context
++from .studio_layout import layout_replay
+ 
+ 
+ def document_revision(conn: sqlite3.Connection, manuscript_id: str, revision: int) -> dict:
+@@ -65,7 +66,7 @@
+     return "\n".join(parts).strip() + "\n"
+ 
+ 
+-def generated_version(conn: sqlite3.Connection, storage_root: Path, manuscript_id: str, version_id: str) -> dict:
++def generated_version(conn: sqlite3.Connection, storage_root: Path, manuscript_id: str, version_id: str, *, _layout_depth: int = 0) -> dict:
+     row = conn.execute("SELECT * FROM manuscript_versions WHERE manuscript_id=? AND manuscript_version_id=?", (manuscript_id, version_id)).fetchone()
+     if row is None:
+         raise NotFoundError("The generated version does not belong to this manuscript")
+@@ -78,7 +79,28 @@
+         generated = json.loads(verified_artifact_bytes(storage_root, by_kind["GENERATED_JSON"]))
+     if generated is not None and (generated_markdown(generated) != version["content"] or generated["input_revision"] != inputs.get("studio_revision")):
+         raise RSTV4Error("Generated structure does not match its immutable version")
+-    if generated is not None:
++    replay = generated.get("layout_replay") if generated else None
++    if replay is not None:
++        if _layout_depth >= 32 or not isinstance(replay, dict):
++            raise RSTV4Error("Invalid or excessively deep layout replay provenance")
++        parent_id = replay.get("source_generated_version_id")
++        parent = conn.execute("SELECT * FROM manuscript_versions WHERE manuscript_id=? AND manuscript_version_id=?",
++                              (manuscript_id, parent_id)).fetchone()
++        if parent is None or parent["version"] >= row["version"]:
++            raise RSTV4Error("Layout replay must reference an earlier version of this manuscript")
++        generated_version(conn, storage_root, manuscript_id, parent_id, _layout_depth=_layout_depth + 1)
++        parent_inputs = json.loads(parent["inputs_json"])
++        if inputs.get("scientific_binding") != parent_inputs.get("scientific_binding"):
++            raise RSTV4Error("Layout replay changed its fixed scientific binding")
++        original = document_revision(conn, manuscript_id, parent_inputs["studio_revision"])["document"]
++        current = document_revision(conn, manuscript_id, inputs["studio_revision"])["document"]
++        expected = layout_replay(original, current, parent_inputs["generated"], inputs["studio_revision"], parent_id)
++        if generated != expected:
++            raise RSTV4Error("Layout replay differs from its exact frozen source version")
++        if generated.get("material_snapshot_schema") == 1:
++            verify_material_files(storage_root / manuscript_id / "generated" / inputs["job_id"],
++                                  [a for s in generated["sections"] for p in s["paragraphs"] for a in p.get("assets", [])])
++    if generated is not None and replay is None:
+         source_paragraphs = None
+         frozen_evidence = {}
+         for section in generated["sections"]:
+--- a/RSTV4/src/rstv4/studio_revision_mapping.py
++++ b/RSTV4/src/rstv4/studio_revision_mapping.py
+@@ -13,6 +13,7 @@
+ from typing import Any
+ 
+ from .studio_context import numbered_text
++from .studio_layout import layout_only_evidence
+ 
+ 
+ def tokens(text: str) -> list[str]:
+@@ -98,8 +99,11 @@
+ 
+ def write_mapping(path: Path, comments: list[dict[str, Any]], *, target: dict[str, Any],
+                   baseline: dict[str, Any] | None, target_document: dict[str, Any],
+-                  baseline_document: dict[str, Any] | None, pdf: Path) -> dict[str, Any]:
++                  baseline_document: dict[str, Any] | None, pdf: Path,
++                  baseline_pdf: Path | None = None) -> dict[str, Any]:
+     layout = extract_layout(pdf, path.parent / "final-compiled-layout.xhtml")
++    old_layout = (extract_layout(baseline_pdf, path.parent / "baseline-compiled-layout.xhtml")
++                  if baseline_pdf is not None else None)
+     final_thoughts = thoughts(target_document)
+     baseline_thoughts = thoughts(baseline_document) if baseline_document is not None else None
+     blocks = {b["object_id"]: b for b in target["blocks"] if b["kind"] == "paragraph"}
+@@ -119,7 +123,12 @@
+                     "changed_text": "", "thought_id": None, "paragraph_id": None,
+                     "sentence_index": None, "boxes": []}
+             if not changed:
+-                rows.append({**base, "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED", "reason": "No changed thought can be attributed to a generated sentence"})
++                presentation = layout_only_evidence(
++                    json.loads(change["before_json"]), json.loads(change["after_json"]),
++                    baseline_document=baseline_document, target_document=target_document,
++                    baseline=baseline, target=target, old_layout=old_layout, new_layout=layout)
++                rows.append({**base, **(presentation or {"status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
++                    "reason": "No proven pure layout change or changed thought can be attributed to generated output"})})
+             for identifier in changed:
+                 entry = {**base, "thought_id": identifier}
+                 expected, current = after.get(identifier), final_thoughts.get(identifier)
+@@ -173,7 +182,8 @@
+                         "final_line_end": locations[-1]["line"] if locations else None})
+     columns = ["comment_id", "change_id", "final_line", "final_page", "changed_text", "thought_id", "paragraph_id",
+                "sentence_index", "final_line_end", "final_page_end", "status", "text_comparison", "reason",
+-               "line_number_kind", "generated_version_id", "baseline_version_id", "final_pdf_sha256"]
++               "line_number_kind", "generated_version_id", "baseline_version_id", "final_pdf_sha256",
++               "change_kind", "baseline_pdf_sha256", "supports_scientific_text_modification"]
+     with path.open("w", encoding="utf-8-sig", newline="") as handle:
+         writer = csv.DictWriter(handle, columns, extrasaction="ignore")
+         writer.writeheader()
+@@ -184,6 +194,7 @@
+     (path.parent / "change-realization-map.json").write_text(json.dumps(report, ensure_ascii=False, indent=2), encoding="utf-8")
+     return {"rows": len(rows), "changed_text_rows_with_final_location": sum(row["status"] == "GENERATED_TEXT_CHANGED" for row in rows),
+             "retained_text_rows_with_final_location": sum(row["status"] == "EXACT_BASELINE_TEXT_RETAINED" for row in rows),
+-            "unknown_or_unattributed_rows": sum(row["status"] not in {"GENERATED_TEXT_CHANGED", "EXACT_BASELINE_TEXT_RETAINED"} for row in rows),
++            "layout_only_rows": sum(row["status"] == "LAYOUT_ONLY" for row in rows),
++            "unknown_or_unattributed_rows": sum(row["status"] not in {"GENERATED_TEXT_CHANGED", "EXACT_BASELINE_TEXT_RETAINED", "LAYOUT_ONLY"} for row in rows),
+             "line_number_kind": layout.get("line_number_kind"), "pdf_sha256": layout["pdf_sha256"],
+             "layout_status": layout["status"], "semantic_or_response_claims_approved": False}
+--- /dev/null
++++ b/RSTV4/tests/test_studio_layout.py
+@@ -0,0 +1,204 @@
++from __future__ import annotations
++
++import hashlib
++import json
++import os
++import shutil
++import subprocess
++from copy import deepcopy
++from pathlib import Path
++
++import pytest
++
++from rstv4.studio import StudioService
++from rstv4.studio_context import generated_view
++from rstv4.studio_layout import layout_only_evidence, layout_replay, layout_settings
++from rstv4.studio_response_checks import validate_claims
++from rstv4.studio_revision_mapping import extract_layout, write_mapping
++from rstv4.service import RevisionConflictError
++from test_writing_studio import complete_document, create_studio
++
++
++def fixture():
++    author = {"schema_version": 1, "manuscript_id": "layout-fixture", "title": "Layout fixture",
++              "abstract": "", "venue": "Software fixture", "sections": [{"id": "s", "title": "Fixture",
++              "paragraphs": [{"id": "p", "purpose": "Layout only", "asset_ids": [], "intents": [{
++                  "id": "i", "label": "Preserve content", "thoughts": [{"id": "t", "text": "Preserve author wording.",
++                      "citation_mode": "NONE", "citations": []}]}]}]}]}
++    prose = "Alpha fixture begins. " + " ".join(
++        "This software example preserves wording and measured geometry across the unchanged content." for _ in range(18)
++    ) + " Alpha fixture ends."
++    generated = {"title": author["title"], "abstract": "", "input_revision": 1,
++                 "citation_style": "numeric_first_use", "references": [], "sections": [{"section_id": "s",
++                 "title": "Fixture", "paragraphs": [{"paragraph_id": "p", "text": prose,
++                    "thought_ids": ["t"], "evidence_ids": [], "formulas": []}]}]}
++    after = deepcopy(author)
++    after["layout"] = {"page_margin": "narrow"}
++    return author, after, generated
++
++
++@pytest.mark.parametrize("value", [None, [], "narrow", {}, {"page_margin": "1in"},
++    {"page_margin": True}, {"page_margin": "narrow", "raw_tex": "bad"}, {"font_size": 12}])
++def test_layout_rejects_unknown_or_untyped_latex_controls(value):
++    with pytest.raises(ValueError):
++        layout_settings({"layout": value})
++
++
++def test_absent_layout_preserves_historical_tex_and_input_does_not_mutate():
++    before, after, source = fixture()
++    source_bytes = json.dumps(source, sort_keys=True)
++    old_tex = StudioService._latex(source, [])
++    assert r"\usepackage[margin=1in]{geometry}" in old_tex
++    new = layout_replay(before, after, source, 2, "fixed-v5")
++    assert json.dumps(source, sort_keys=True) == source_bytes
++    assert new["sections"] == source["sections"] and new["references"] == source["references"]
++    assert new["layout_replay"]["source_generated_version_id"] == "fixed-v5"
++    assert r"\usepackage[margin=0.75in]{geometry}" in StudioService._latex(new, [])
++    assert "layout" not in source and "layout" not in before
++
++
++@pytest.mark.parametrize("mutation", ["text", "citation", "citation_identity", "material", "formula", "condition", "order", "unknown"])
++def test_layout_replay_rejects_any_semantic_identity_or_structural_change(mutation):
++    before, after, source = fixture()
++    paragraph = after["sections"][0]["paragraphs"][0]
++    thought = paragraph["intents"][0]["thoughts"][0]
++    if mutation == "text":
++        thought["text"] += " A changed scientific claim."
++    elif mutation == "citation":
++        thought["citations"] = [{"evidence_id": "source1", "selected": True}]
++    elif mutation == "citation_identity":
++        thought["citation_mode"] = "SELECTED"
++    elif mutation == "material":
++        paragraph["asset_ids"] = ["new-material"]
++    elif mutation == "formula":
++        paragraph["formulas"] = [{"id": "f", "latex": "a=b"}]
++    elif mutation == "condition":
++        after["argument_relations"] = [{"condition": "Under different conditions"}]
++    elif mutation == "order":
++        after["sections"].insert(0, {"id": "new-section", "title": "Changed order", "paragraphs": []})
++    else:
++        after["future_semantic_field"] = "Never silently strip unknown fields"
++    with pytest.raises(ValueError, match="cannot change"):
++        layout_replay(before, after, source, 2, "fixed-v5")
++
++
++def test_replay_requires_real_margin_change_later_revision_and_correct_frozen_source():
++    before, after, source = fixture()
++    with pytest.raises(ValueError, match="Change a page margin"):
++        layout_replay(before, deepcopy(before), source, 2, "fixed-v5")
++    with pytest.raises(ValueError, match="later author revision"):
++        layout_replay(before, after, source, 1, "fixed-v5")
++    source["layout"] = {"page_margin": "narrow"}
++    with pytest.raises(ValueError, match="original page margin"):
++        layout_replay(before, after, source, 2, "fixed-v5")
++
++
++@pytest.fixture(scope="module")
++def compiled_pair(tmp_path_factory):
++    before, after, source = fixture()
++    target = layout_replay(before, after, source, 2, "fixed-v5")
++    directory = tmp_path_factory.mktemp("layout-compiled")
++    layouts, pdfs, views = [], [], []
++    for index, generated in enumerate([source, target]):
++        folder = directory / str(index)
++        folder.mkdir()
++        (folder / "manuscript.tex").write_text(StudioService._latex(generated, []), encoding="utf8")
++        command = shutil.which("xelatex")
++        assert command, "Meaningful layout acceptance requires the actual TeX compiler"
++        result = subprocess.run([command, "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error", "manuscript.tex"],
++            cwd=folder, env={**os.environ, "openin_any": "p", "openout_any": "p"}, capture_output=True, timeout=90)
++        assert result.returncode == 0, result.stdout[-2000:]
++        pdf = folder / "manuscript.pdf"
++        layout = extract_layout(pdf, folder / "layout.xhtml")
++        assert layout["status"] == "EXTRACTED"
++        layouts.append(layout)
++        pdfs.append(pdf)
++        views.append(generated_view({"manuscript_version_id": f"v{index+5}", "manuscript_id": "layout-fixture",
++                                    "version": index+5, "content": StudioService._generated_markdown(generated)}, generated, []))
++    return before, after, source, target, layouts, pdfs, views, directory
++
++
++def evidence(pair, **overrides):
++    before, after, _, _, layouts, _, views, _ = pair
++    arguments = {"baseline_document": before, "target_document": after, "baseline": views[0], "target": views[1],
++                 "old_layout": layouts[0], "new_layout": layouts[1]}
++    arguments.update(overrides)
++    return layout_only_evidence(before, after, **arguments)
++
++
++def test_actual_compiled_margin_change_moves_final_page_line_geometry_without_new_text(compiled_pair):
++    row = evidence(compiled_pair)
++    assert row and row["status"] == "LAYOUT_ONLY" and row["change_kind"] == "PRESENTATION"
++    assert row["changed_text"] == "" and not row["supports_scientific_text_modification"]
++    assert row["baseline_boxes"] != row["boxes"] and row["final_page"] >= 1
++    before, after, _, _, layouts, pdfs, views, directory = compiled_pair
++    assert views[0]["content"] == views[1]["content"]
++    assert hashlib.sha256(pdfs[0].read_bytes()).hexdigest() == row["baseline_pdf_sha256"]
++    changes = [{"comment_id": "opinion", "changes": [{"change_id": "layout-edit", "before_json": json.dumps(before), "after_json": json.dumps(after)}]}]
++    summary = write_mapping(directory / "locations.csv", changes, target=views[1], baseline=views[0],
++                            target_document=after, baseline_document=before, pdf=pdfs[1], baseline_pdf=pdfs[0])
++    assert summary["layout_only_rows"] == 1 and summary["unknown_or_unattributed_rows"] == 0
++    report = json.loads((directory / "change-realization-map.json").read_text(encoding="utf8"))
++    assert report["rows"][0]["status"] == "LAYOUT_ONLY" and not report["scientific_acceptance"]
++
++
++@pytest.mark.parametrize("mutation", ["unknown_baseline", "no_geometry_change", "missing_pdf", "changed_source", "changed_material", "changed_text", "changed_realization", "superseded", "unfrozen_layout"])
++def test_actual_layout_type_is_not_inferred_from_unchanged_thoughts_or_pdf_hash_alone(compiled_pair, mutation):
++    before, after, _, _, layouts, _, views, _ = compiled_pair
++    changed = deepcopy(views[1])
++    arguments = {}
++    if mutation == "unknown_baseline":
++        arguments["baseline_document"] = None
++    elif mutation == "no_geometry_change":
++        arguments["new_layout"] = layouts[0]
++    elif mutation == "missing_pdf":
++        arguments["old_layout"] = None
++    elif mutation == "changed_source":
++        changed["references"] = [{"evidence_id": "different-source", "title": "Same display label"}]
++    elif mutation == "changed_material":
++        changed["blocks"][-1]["assets"] = [{"asset_id": "different-original", "sha256": "not-original"}]
++    elif mutation == "changed_text":
++        changed["content"] += "Changed body text."
++    elif mutation == "changed_realization":
++        changed["realizations"] = [{"model_call_id": "new-model-call"}]
++    elif mutation == "superseded":
++        arguments["target_document"] = before
++    else:
++        changed.pop("layout")
++    arguments["target"] = changed
++    assert evidence(compiled_pair, **arguments) is None
++
++
++def test_layout_evidence_cannot_prove_scientific_body_modification(compiled_pair):
++    row = evidence(compiled_pair)
++    assert row
++    row["evidence_id"] = "layout-only"
++    context = {"state": {"archived_at": None, "response_text": "We changed the science.", "author_decision": "Fixture",
++        "generated_version_id": "v6", "current_author_revision": 2, "generated_input_revision": 2},
++        "baseline_to_target_diff": "Force a nonempty diff to exercise the evidence-type guard", "evidence": [row]}
++    claim = {"start": 0, "end": len("We changed the science.".encode("utf-16-le")) // 2, "text": "We changed the science.", "offset_unit": "utf16", "evidence_ids": ["layout-only"]}
++    with pytest.raises(ValueError, match="cannot prove"):
++        validate_claims(context, "MODIFIED", [claim], True)
++
++
++def test_original_save_revision_idempotency_undo_redo_and_invalid_layout_guards(tmp_path):
++    service, _, ms = create_studio(tmp_path)
++    before = complete_document(service.get_workspace(ms))
++    service.save_document(ms, base_revision=0, operation_id="initial-layout-base", document=before)
++    after = deepcopy(before)
++    after["layout"] = {"page_margin": "narrow"}
++    first = service.save_document(ms, base_revision=1, operation_id="layout-only-1", document=after, operation_kind="LAYOUT")
++    assert first["document_revision"] == 2
++    assert service.save_document(ms, base_revision=1, operation_id="layout-only-1", document=after, operation_kind="LAYOUT")["idempotent_replay"]
++    with pytest.raises(RevisionConflictError):
++        service.save_document(ms, base_revision=1, operation_id="layout-conflicting", document=before)
++    service.save_document(ms, base_revision=2, operation_id="layout-undo-1", document=before, operation_kind="UNDO")
++    assert "layout" not in service.get_workspace(ms)["document"]
++    service.save_document(ms, base_revision=3, operation_id="layout-redo-1", document=after, operation_kind="REDO")
++    assert service.get_workspace(ms)["document"]["layout"] == {"page_margin": "narrow"}
++    invalid = deepcopy(after)
++    invalid["layout"] = {"page_margin": "arbitrary TeX"}
++    with pytest.raises(ValueError):
++        service.save_document(ms, base_revision=4, operation_id="layout-invalid-1", document=invalid)
++    assert service.get_workspace(ms)["document_revision"] == 4
++    assert service.get_workspace(ms)["latest_job"] is None
+--- a/writing-studio/components/studio-response-review.tsx
++++ b/writing-studio/components/studio-response-review.tsx
+@@ -250,7 +250,7 @@
+         <legend>修改声明 {index + 1}</legend><p className="whitespace-pre-wrap break-words">{claim.text}</p>
+         {context.evidence.map((row) => <label key={row.evidence_id} className="flex items-start gap-2">
+           <Checkbox aria-label={`声明 ${index + 1} 对应 ${(row.display_changed_text ?? row.changed_text) || '无法定位的变化'}`} disabled={row.status !== 'GENERATED_TEXT_CHANGED'} checked={claim.evidence_ids.includes(row.evidence_id)} onCheckedChange={(checked) => { setClaims((current) => current.map((item, i) => i === index ? { ...item, evidence_ids: checked ? [...item.evidence_ids, row.evidence_id] : item.evidence_ids.filter((id) => id !== row.evidence_id) } : item)); setAcknowledged(false); }} />
+-          <span className="min-w-0 whitespace-pre-wrap break-words">{(row.display_changed_text ?? row.changed_text) || '结构或来源变化尚无法对应成文'}<small className="block text-muted-foreground">{row.status === 'GENERATED_TEXT_CHANGED' ? `最终 PDF 第 ${row.final_page} 页，可见文本第 ${row.final_line} 行${row.final_line_end !== row.final_line ? ` 至第 ${row.final_page_end} 页第 ${row.final_line_end} 行` : ''}` : row.status === 'EXACT_BASELINE_TEXT_RETAINED' ? '与基准稿文字相同，不能证明已修改' : '尚无足够的最终稿定位依据'}</small></span>
++          <span className="min-w-0 whitespace-pre-wrap break-words">{row.status === 'LAYOUT_ONLY' ? '仅调整成文页边距；正文、来源与素材保持原样' : (row.display_changed_text ?? row.changed_text) || '结构或来源变化尚无法对应成文'}<small className="block text-muted-foreground">{row.status === 'GENERATED_TEXT_CHANGED' ? `最终 PDF 第 ${row.final_page} 页，可见文本第 ${row.final_line} 行${row.final_line_end !== row.final_line ? ` 至第 ${row.final_page_end} 页第 ${row.final_line_end} 行` : ''}` : row.status === 'LAYOUT_ONLY' ? `最终 PDF 第 ${row.final_page} 页、第 ${row.final_line} 行位置已变化；不能证明科学正文已修改` : row.status === 'EXACT_BASELINE_TEXT_RETAINED' ? '与基准稿文字相同，不能证明已修改' : '尚无足够的最终稿定位依据'}</small></span>
+         </label>)}
+         {!context.evidence.length ? <p>没有属于此意见的最终稿改动依据。</p> : null}
+         <Button size="sm" variant="ghost" onClick={() => { setClaims((current) => current.filter((_, i) => i !== index)); setAcknowledged(false); }}>移除此声明</Button>
+--- a/writing-studio/components/studio-workspace.tsx
++++ b/writing-studio/components/studio-workspace.tsx
+@@ -1864,6 +1864,8 @@
+             {stage === 'WHOLE_PAPER_REVIEW' && workspace.active_generated_version_id ? (
+               <Button variant="secondary" onClick={() => switchMode('reading')}><Check /> Done</Button>
+             ) : null}
++            <Button variant="outline" disabled={!workspace.active_generated_version_id || !!job && ['QUEUED', 'RUNNING', 'CANCEL_REQUESTED'].includes(job.status)}
++              onClick={() => void startJob('GENERATE', { layout_replay_version_id: workspace.active_generated_version_id })}>仅重新排版</Button>
+             <Button onClick={() => void startJob('GENERATE')} disabled={job?.status === 'RUNNING'}>
+               {job && ['QUEUED', 'RUNNING'].includes(job.status) ? <LoaderCircle className="animate-spin" /> : <Sparkles />}
+               Generate
+@@ -2425,6 +2427,12 @@
+       <EditorControls ui={editorUi}>
+       <SortableContext items={document.sections.map((item) => item.id)} strategy={verticalListSortingStrategy}>
+         <div className="paper-sheet" data-rail-direction={editorUi.direction}>
++          <label className="grid gap-1 text-sm">成文页边距
++            <select aria-label="成文页边距" value={document.layout?.page_margin ?? 'standard'}
++              onChange={(event) => commit((draft) => { draft.layout = { page_margin: event.target.value as 'standard' | 'narrow' }; }, 'LAYOUT')}>
++              <option value="standard">标准（1 英寸）</option><option value="narrow">窄（0.75 英寸）</option>
++            </select>
++          </label>
+           <Input
+             className="paper-title"
+             value={document.title}
+--- a/writing-studio/lib/studio-types.ts
++++ b/writing-studio/lib/studio-types.ts
+@@ -63,6 +63,7 @@
+ }
+ 
+ export interface StudioDocument {
++  layout?: { page_margin: 'standard' | 'narrow' };
+   schema_version: 1;
+   manuscript_id: string;
+   title: string;

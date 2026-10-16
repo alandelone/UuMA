@@ -1,0 +1,10 @@
+{
+  "switch": {
+    "toolbarBottom": 101,
+    "top": 109,
+    "visible": [
+      "columns-panel"
+    ]
+  },
+  "closed": []
+}

@@ -1,0 +1,8 @@
+PASS Serialized saves retain newer keystrokes and advance the actual CAS basis
+PASS Conflicting page edits require an explicit comparison before replacing the reply
+PASS Unmount restores drafts, review waits for save, and an uncertain submit retries its original decision
+PASS Archived opinions expose review history without modifying their reply
+PASS Actual dialog retains Unicode selection offsets and rejects retained evidence
+PASS Shared sentences expose distinct full frozen Thoughts and Intent context; invalid or legacy origins stay unavailable
+PASS Historical source view reads its original stored context without consulting the active editor
+PASS Presentation acknowledgement uses its own evidence type without a prose diff; switching outcomes clears claims

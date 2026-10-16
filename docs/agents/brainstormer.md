@@ -323,10 +323,14 @@ Topic
 Decision
 Assumption
 Question
+Evidence
 Checkpoint
 ```
 
-Later objects may include fact, evidence, architecture element, task, artifact, and context-source records.
+Objects are interconnected through directed acyclic graph (DAG) edges:
+- Hierarchy (归属): `contains` (Topic -> Question), `subquestion` (Question -> Subquestion).
+- Grounding & Dependency (依据/依赖): `grounds` (Evidence/Assumption -> Question/Decision),
+  `depends_on` (Question -> Question), `decides` (Question -> Decision).
 
 Suggested project layout:
 
@@ -477,7 +481,7 @@ UNLINK
 CHECKPOINT
 ```
 
-The State Manager validates schema, target existence, expected revision, links, duplicate identities, and conflicts. Either all required operations commit or none commit.
+The State Manager validates schema, target existence, expected revision, links, duplicate identities, conflicts, and DAG acyclicity (rejecting any link that would introduce a directed cycle). Either all required operations commit or none commit.
 
 This keeps responsibilities clear:
 

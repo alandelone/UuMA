@@ -1,0 +1,57 @@
+{
+  "status": "PROPOSED_ONLY_NOT_ARMED",
+  "author_revision": 79,
+  "paragraphs": 10,
+  "thoughts": 11,
+  "argument_relations": 3,
+  "selected_evidence_ids": [
+    "evidence_b5348fa59b3948ae9540b75a33ca9bd9",
+    "evidence_3a2639ee8b5e432aafd7e3743c825f33",
+    "evidence_6b169de2b78d452f919391b00916f2c8"
+  ],
+  "exact_product_payload_ast": true,
+  "all_responses_original_validator_passed": true,
+  "full_original_thoughts_and_selected_citations_preserved": true,
+  "alpha_mapping": [
+    {
+      "sentence": 0,
+      "thought_ids": [
+        "thought_author_1",
+        "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+      ]
+    },
+    {
+      "sentence": 1,
+      "thought_ids": [
+        "thought_author_1"
+      ]
+    },
+    {
+      "sentence": 2,
+      "thought_ids": [
+        "thought_author_1"
+      ]
+    },
+    {
+      "sentence": 3,
+      "thought_ids": [
+        "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+      ]
+    },
+    {
+      "sentence": 4,
+      "thought_ids": [
+        "thought_5f3edebed89d482cb0b2d9d42c4930d8"
+      ]
+    }
+  ],
+  "db110_and_all_files_unchanged": true,
+  "source311_frontend91_dist76_exact": true,
+  "runtime_receipt_sha256": "da5a708cbf5bd559d007c7df7b4b6cfca46eb3f8e568c246b7951dcc48468ebb",
+  "builder_sha256": "fc13d5a4e17421b507763c85de8691e8ce33fe72ab5f5fdb92114ac5861742ff",
+  "contract_sha256": "7c3e70d1eb7becb142b398eca9c577a71480ee4dad67e0ccd2054e2b6fee2305",
+  "material_render_only_in_memory": true,
+  "armed": false,
+  "model_worker_api_mutations": 0,
+  "scientific_approval": false
+}

@@ -824,7 +824,7 @@ def test_provisional_completion_reopens_frontier_for_a_new_cycle(tmp_path: Path)
     assert orbits.used_source_ids(orbit_id) == {"src-one"}
 
 
-def test_no_new_source_checks_other_open_questions_before_pausing(tmp_path: Path) -> None:
+def test_no_new_source_advances_frontier_without_premature_pause(tmp_path: Path) -> None:
     service = KnowledgeService(tmp_path / "wisdom.db")
     questions = [
         service.add_question(
@@ -875,11 +875,13 @@ def test_no_new_source_checks_other_open_questions_before_pausing(tmp_path: Path
         satisfaction_rationale="No new source for the other aspect.",
         active_seconds=1, no_new_source=True,
     )
-    assert second_result["orbit"]["status"] == "PAUSED"
-    assert "所有未解决问题" in second_result["orbit"]["stop_reason"]
-    assert second_result["research_run"]["stop_reason"] == second_result["orbit"][
-        "stop_reason"
-    ]
+    assert second_result["orbit"]["status"] == "QUEUED"
+    assert second_result["orbit"]["stop_reason"] is None
+    assert second_result["research_run"]["status"] == "ACTIVE"
+    assert second_result["research_run"]["stop_reason"] is None
+    third = orbits.acquire_cycle("runner-3")
+    assert third is not None
+    assert third["question_id"] == first["question_id"]
     assert service.history()["chain_valid"]
 
 
@@ -1258,7 +1260,7 @@ def test_runner_executes_one_durable_cycle(tmp_path: Path, monkeypatch) -> None:
     assert orbits.discovery_usage(provider="openalex")["requests"] == 1
 
 
-def test_runner_pauses_after_unrelated_search_hits_without_canonical_ingestion(
+def test_runner_continues_after_unrelated_search_hits_without_canonical_ingestion(
     tmp_path: Path, monkeypatch
 ) -> None:
     monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {"ready": True})
@@ -1274,7 +1276,8 @@ def test_runner_pauses_after_unrelated_search_hits_without_canonical_ingestion(
         heartbeat_interval=0,
     )
     assert runner.run_once()
-    assert orbits.get(orbit_id)["orbit"]["status"] == "PAUSED"
+    assert orbits.get(orbit_id)["orbit"]["status"] == "QUEUED"
+    assert orbits.get(orbit_id)["orbit"]["stop_reason"] is None
     assert service.list_records("source")["records"] == []
 
 
@@ -1294,7 +1297,7 @@ def test_one_throttled_provider_does_not_retry_successful_empty_discovery(
         owner_id="partial-discovery-test", heartbeat_interval=0,
     )
     assert runner.run_once()
-    assert orbits.get(orbit_id)["orbit"]["status"] == "PAUSED"
+    assert orbits.get(orbit_id)["orbit"]["status"] == "QUEUED"
     assert all(item["status"] != "RETRY" for item in service.store.list_records("orbit_cycles"))
 
 

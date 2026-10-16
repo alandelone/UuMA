@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/sources",
+  "query": "q=",
+  "status": 200,
+  "seconds": 0.01599999999598367,
+  "response_sha256": "1e01129a9efbcaef1376d84b669bc4b9b90de187917ad0bacc67021dbee2a23d",
+  "origin": "http://127.0.0.1:56581",
+  "request_json": null
+}

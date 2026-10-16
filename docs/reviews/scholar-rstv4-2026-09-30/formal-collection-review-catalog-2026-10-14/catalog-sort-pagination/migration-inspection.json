@@ -1,0 +1,60 @@
+{
+  "diffs": [
+    {
+      "key": [
+        "index",
+        "sqlite_autoindex_skeleton_runs_2"
+      ],
+      "before": [
+        "index",
+        "sqlite_autoindex_skeleton_runs_2",
+        "skeleton_runs",
+        null
+      ],
+      "after": null
+    },
+    {
+      "key": [
+        "table",
+        "collections"
+      ],
+      "before": [
+        "table",
+        "collections",
+        "collections",
+        "CREATE TABLE collections (\n  collection_id TEXT PRIMARY KEY,\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  track_id TEXT REFERENCES research_tracks(track_id),\n  name TEXT NOT NULL,\n  scope_json TEXT NOT NULL,\n  scope_version INTEGER NOT NULL,\n  status TEXT NOT NULL,\n  revision INTEGER NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+      ],
+      "after": [
+        "table",
+        "collections",
+        "collections",
+        "CREATE TABLE collections (\n  collection_id TEXT PRIMARY KEY,\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  track_id TEXT REFERENCES research_tracks(track_id),\n  name TEXT NOT NULL,\n  scope_json TEXT NOT NULL,\n  scope_version INTEGER NOT NULL,\n  status TEXT NOT NULL,\n  revision INTEGER NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n, topic_id TEXT REFERENCES topics(topic_id), creation_request_json TEXT)"
+      ]
+    },
+    {
+      "key": [
+        "table",
+        "skeleton_runs"
+      ],
+      "before": [
+        "table",
+        "skeleton_runs",
+        "skeleton_runs",
+        "CREATE TABLE skeleton_runs (\n  skeleton_run_id TEXT PRIMARY KEY,\n  parse_run_id TEXT NOT NULL REFERENCES parse_runs(parse_run_id),\n  model_tier TEXT NOT NULL,\n  model_name TEXT,\n  prompt_version TEXT NOT NULL,\n  context_builder_version TEXT NOT NULL,\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  completed_at TEXT,\n  UNIQUE(parse_run_id, prompt_version, context_builder_version)\n)"
+      ],
+      "after": [
+        "table",
+        "skeleton_runs",
+        "skeleton_runs",
+        "CREATE TABLE \"skeleton_runs\" (\n  skeleton_run_id TEXT PRIMARY KEY,\n  parse_run_id TEXT NOT NULL REFERENCES parse_runs(parse_run_id),\n  model_tier TEXT NOT NULL,\n  model_name TEXT,\n  prompt_version TEXT NOT NULL,\n  context_builder_version TEXT NOT NULL,\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  completed_at TEXT\n)"
+      ]
+    }
+  ],
+  "new_columns": {
+    "collections": [
+      "creation_request_json",
+      "topic_id"
+    ]
+  },
+  "source_exact": true
+}

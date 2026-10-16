@@ -1,0 +1,13 @@
+{
+  "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+  "payload": {
+    "stage": "FINALIZATION_SUBMISSION",
+    "expected_revision": 1,
+    "reason": "G11 explicit zero-version software guard only"
+  },
+  "status": 422,
+  "body": {
+    "error": "studio_error",
+    "detail": "A successful generated version is required before advancing this stage"
+  }
+}

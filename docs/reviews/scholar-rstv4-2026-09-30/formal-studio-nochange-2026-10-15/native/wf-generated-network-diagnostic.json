@@ -1,0 +1,901 @@
+{
+  "cursor": 743,
+  "hasMore": false,
+  "truncated": false,
+  "events": [
+    {
+      "sequence": 54,
+      "method": "Network.requestWillBeSent",
+      "requestId": "C15F3600EBB7563D14E77F729ABB057B",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 55,
+      "method": "Network.requestWillBeSent",
+      "requestId": "D82632279E3F8B915553E222F26B2B2F",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 56,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.55",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 57,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.56",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 62,
+      "method": "Network.responseReceived",
+      "requestId": "C15F3600EBB7563D14E77F729ABB057B",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 63,
+      "method": "Network.responseReceived",
+      "requestId": "D82632279E3F8B915553E222F26B2B2F",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 70,
+      "method": "Network.responseReceived",
+      "requestId": "21028.56",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 74,
+      "method": "Network.responseReceived",
+      "requestId": "21028.55",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 124,
+      "method": "Network.requestWillBeSent",
+      "requestId": "BAC479728FA9512E57C9770791F5E9EA",
+      "url": "http://127.0.0.1:8877/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments"
+    },
+    {
+      "sequence": 126,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.57",
+      "url": "http://127.0.0.1:8877/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments"
+    },
+    {
+      "sequence": 128,
+      "method": "Network.responseReceived",
+      "requestId": "BAC479728FA9512E57C9770791F5E9EA",
+      "url": "http://127.0.0.1:8877/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "status": 200
+    },
+    {
+      "sequence": 132,
+      "method": "Network.responseReceived",
+      "requestId": "21028.57",
+      "url": "http://127.0.0.1:8877/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+      "status": 201
+    },
+    {
+      "sequence": 135,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.58",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 136,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.59",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 141,
+      "method": "Network.responseReceived",
+      "requestId": "21028.59",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 145,
+      "method": "Network.responseReceived",
+      "requestId": "21028.58",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 172,
+      "method": "Network.requestWillBeSent",
+      "requestId": "6BD06DE5A234E6A03FEF1D8A23E0553A",
+      "url": "http://127.0.0.1:8877/api/comments/comment_7702027e5fd44006a5a11fba9c369462"
+    },
+    {
+      "sequence": 173,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.60",
+      "url": "http://127.0.0.1:8877/api/comments/comment_7702027e5fd44006a5a11fba9c369462"
+    },
+    {
+      "sequence": 176,
+      "method": "Network.responseReceived",
+      "requestId": "6BD06DE5A234E6A03FEF1D8A23E0553A",
+      "url": "http://127.0.0.1:8877/api/comments/comment_7702027e5fd44006a5a11fba9c369462",
+      "status": 200
+    },
+    {
+      "sequence": 180,
+      "method": "Network.responseReceived",
+      "requestId": "21028.60",
+      "url": "http://127.0.0.1:8877/api/comments/comment_7702027e5fd44006a5a11fba9c369462",
+      "status": 200
+    },
+    {
+      "sequence": 183,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.61",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 184,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.62",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 189,
+      "method": "Network.responseReceived",
+      "requestId": "21028.62",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 193,
+      "method": "Network.responseReceived",
+      "requestId": "21028.61",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 218,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.63",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 219,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.64",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 222,
+      "method": "Network.responseReceived",
+      "requestId": "21028.64",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 227,
+      "method": "Network.responseReceived",
+      "requestId": "21028.63",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 261,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.65",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review"
+    },
+    {
+      "sequence": 262,
+      "method": "Network.requestWillBeSent",
+      "requestId": "89F15354A2A8F16D432B4920CF182B63",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review"
+    },
+    {
+      "sequence": 265,
+      "method": "Network.responseReceived",
+      "requestId": "89F15354A2A8F16D432B4920CF182B63",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review",
+      "status": 200
+    },
+    {
+      "sequence": 270,
+      "method": "Network.responseReceived",
+      "requestId": "21028.65",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review",
+      "status": 422
+    },
+    {
+      "sequence": 276,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.66",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 277,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.67",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 280,
+      "method": "Network.responseReceived",
+      "requestId": "21028.67",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 284,
+      "method": "Network.responseReceived",
+      "requestId": "21028.66",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 323,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.68",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review"
+    },
+    {
+      "sequence": 327,
+      "method": "Network.responseReceived",
+      "requestId": "21028.68",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review",
+      "status": 200
+    },
+    {
+      "sequence": 337,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.69",
+      "url": "http://127.0.0.1:8877/api/comments/comment_7702027e5fd44006a5a11fba9c369462"
+    },
+    {
+      "sequence": 339,
+      "method": "Network.responseReceived",
+      "requestId": "21028.69",
+      "url": "http://127.0.0.1:8877/api/comments/comment_7702027e5fd44006a5a11fba9c369462",
+      "status": 200
+    },
+    {
+      "sequence": 342,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.70",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 343,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.71",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 348,
+      "method": "Network.responseReceived",
+      "requestId": "21028.71",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 352,
+      "method": "Network.responseReceived",
+      "requestId": "21028.70",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 362,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.72",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 363,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.73",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 366,
+      "method": "Network.responseReceived",
+      "requestId": "21028.73",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 370,
+      "method": "Network.responseReceived",
+      "requestId": "21028.72",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 392,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.74",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review"
+    },
+    {
+      "sequence": 396,
+      "method": "Network.responseReceived",
+      "requestId": "21028.74",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-review",
+      "status": 200
+    },
+    {
+      "sequence": 401,
+      "method": "Network.requestWillBeSent",
+      "requestId": "87A72BF1134CB33BB1C165BD1595BBDA",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks"
+    },
+    {
+      "sequence": 404,
+      "method": "Network.responseReceived",
+      "requestId": "87A72BF1134CB33BB1C165BD1595BBDA",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks",
+      "status": 200
+    },
+    {
+      "sequence": 406,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.75",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks"
+    },
+    {
+      "sequence": 410,
+      "method": "Network.responseReceived",
+      "requestId": "21028.75",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks",
+      "status": 200
+    },
+    {
+      "sequence": 413,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.76",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 414,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.77",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 419,
+      "method": "Network.responseReceived",
+      "requestId": "21028.77",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 423,
+      "method": "Network.responseReceived",
+      "requestId": "21028.76",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 446,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.78",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks"
+    },
+    {
+      "sequence": 448,
+      "method": "Network.responseReceived",
+      "requestId": "21028.78",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks",
+      "status": 200
+    },
+    {
+      "sequence": 453,
+      "method": "Network.requestWillBeSent",
+      "requestId": "50695932AAF0A4A0DA4CF2482B7458FB",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/changes"
+    },
+    {
+      "sequence": 454,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.79",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/changes"
+    },
+    {
+      "sequence": 457,
+      "method": "Network.responseReceived",
+      "requestId": "50695932AAF0A4A0DA4CF2482B7458FB",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/changes",
+      "status": 200
+    },
+    {
+      "sequence": 461,
+      "method": "Network.responseReceived",
+      "requestId": "21028.79",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/changes",
+      "status": 200
+    },
+    {
+      "sequence": 474,
+      "method": "Network.requestWillBeSent",
+      "requestId": "92D741001C37BFA6FC17F2262DA9DE4C",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 475,
+      "method": "Network.requestWillBeSent",
+      "requestId": "2E42AD939CBC233A69855ECA1976B8B7",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 479,
+      "method": "Network.responseReceived",
+      "requestId": "92D741001C37BFA6FC17F2262DA9DE4C",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 482,
+      "method": "Network.responseReceived",
+      "requestId": "2E42AD939CBC233A69855ECA1976B8B7",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 486,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.80",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 487,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.81",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 490,
+      "method": "Network.responseReceived",
+      "requestId": "21028.81",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 494,
+      "method": "Network.responseReceived",
+      "requestId": "21028.80",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true",
+      "status": 200
+    },
+    {
+      "sequence": 511,
+      "method": "Network.requestWillBeSent",
+      "requestId": "5B616AF1B80BE63CB068F97480B09AE6",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/stage"
+    },
+    {
+      "sequence": 512,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.82",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/stage"
+    },
+    {
+      "sequence": 515,
+      "method": "Network.responseReceived",
+      "requestId": "5B616AF1B80BE63CB068F97480B09AE6",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/stage",
+      "status": 200
+    },
+    {
+      "sequence": 519,
+      "method": "Network.responseReceived",
+      "requestId": "21028.82",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/stage",
+      "status": 200
+    },
+    {
+      "sequence": 524,
+      "method": "Network.requestWillBeSent",
+      "requestId": "2CFDBFB5423413B28995B151BFFBF616",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages"
+    },
+    {
+      "sequence": 525,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.83",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages"
+    },
+    {
+      "sequence": 529,
+      "method": "Network.responseReceived",
+      "requestId": "2CFDBFB5423413B28995B151BFFBF616",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages",
+      "status": 200
+    },
+    {
+      "sequence": 535,
+      "method": "Network.responseReceived",
+      "requestId": "21028.83",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages",
+      "status": 200
+    },
+    {
+      "sequence": 541,
+      "method": "Network.requestWillBeSent",
+      "requestId": "EFBEC040F8D0F39B79B08F5CCEFFE08E",
+      "url": "http://127.0.0.1:50114/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=0&chat=0&round=review_round_e4845ca796d74594b33b86fb529b4404"
+    },
+    {
+      "sequence": 545,
+      "method": "Network.responseReceived",
+      "requestId": "EFBEC040F8D0F39B79B08F5CCEFFE08E",
+      "url": "http://127.0.0.1:50114/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=reading&left=0&right=0&chat=0&round=review_round_e4845ca796d74594b33b86fb529b4404",
+      "status": 200
+    },
+    {
+      "sequence": 551,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.85",
+      "url": "http://127.0.0.1:50114/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2"
+    },
+    {
+      "sequence": 553,
+      "method": "Network.responseReceived",
+      "requestId": "21028.85",
+      "url": "http://127.0.0.1:50114/_next/static/_vinext_fonts/geist-8ac0455e797f/geist-98bbbccb.woff2",
+      "status": 200
+    },
+    {
+      "sequence": 556,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.86",
+      "url": "http://127.0.0.1:50114/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2"
+    },
+    {
+      "sequence": 558,
+      "method": "Network.responseReceived",
+      "requestId": "21028.86",
+      "url": "http://127.0.0.1:50114/_next/static/_vinext_fonts/geist-mono-00e989178794/geist-mono-013b2f2f.woff2",
+      "status": 200
+    },
+    {
+      "sequence": 562,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.87",
+      "url": "http://127.0.0.1:50114/_next/static/css/index.PBEt8VaD.css"
+    },
+    {
+      "sequence": 564,
+      "method": "Network.responseReceived",
+      "requestId": "21028.87",
+      "url": "http://127.0.0.1:50114/_next/static/css/index.PBEt8VaD.css",
+      "status": 200
+    },
+    {
+      "sequence": 567,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.88",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/index-Dd8DXA57.js"
+    },
+    {
+      "sequence": 569,
+      "method": "Network.responseReceived",
+      "requestId": "21028.88",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/index-Dd8DXA57.js",
+      "status": 200
+    },
+    {
+      "sequence": 572,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.89",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/rolldown-runtime-hePW80VL.js"
+    },
+    {
+      "sequence": 574,
+      "method": "Network.responseReceived",
+      "requestId": "21028.89",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/rolldown-runtime-hePW80VL.js",
+      "status": 200
+    },
+    {
+      "sequence": 577,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.90",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/framework-A1pNZAzD.js"
+    },
+    {
+      "sequence": 579,
+      "method": "Network.responseReceived",
+      "requestId": "21028.90",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/framework-A1pNZAzD.js",
+      "status": 200
+    },
+    {
+      "sequence": 582,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.91",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/vinext-BPPoZsno.js"
+    },
+    {
+      "sequence": 584,
+      "method": "Network.responseReceived",
+      "requestId": "21028.91",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/vinext-BPPoZsno.js",
+      "status": 200
+    },
+    {
+      "sequence": 587,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.92",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/layout-segment-context-BoUNDXv2.js"
+    },
+    {
+      "sequence": 589,
+      "method": "Network.responseReceived",
+      "requestId": "21028.92",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/layout-segment-context-BoUNDXv2.js",
+      "status": 200
+    },
+    {
+      "sequence": 592,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.93",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/page-CjbQD6Ec.js"
+    },
+    {
+      "sequence": 594,
+      "method": "Network.responseReceived",
+      "requestId": "21028.93",
+      "url": "http://127.0.0.1:50114/_next/static/chunks/page-CjbQD6Ec.js",
+      "status": 200
+    },
+    {
+      "sequence": 617,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.118",
+      "url": "http://127.0.0.1:8877/api/tracks"
+    },
+    {
+      "sequence": 618,
+      "method": "Network.requestWillBeSent",
+      "requestId": "C0EB6FD1ECA8B7A7F7F27B009FD6A01E",
+      "url": "http://127.0.0.1:8877/api/tracks"
+    },
+    {
+      "sequence": 621,
+      "method": "Network.responseReceived",
+      "requestId": "C0EB6FD1ECA8B7A7F7F27B009FD6A01E",
+      "url": "http://127.0.0.1:8877/api/tracks",
+      "status": 200
+    },
+    {
+      "sequence": 625,
+      "method": "Network.responseReceived",
+      "requestId": "21028.118",
+      "url": "http://127.0.0.1:8877/api/tracks",
+      "status": 200
+    },
+    {
+      "sequence": 628,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.119",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/workspace"
+    },
+    {
+      "sequence": 629,
+      "method": "Network.requestWillBeSent",
+      "requestId": "0B33E98DF3A19F3DADCFCA38B614D9F0",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/workspace"
+    },
+    {
+      "sequence": 632,
+      "method": "Network.responseReceived",
+      "requestId": "0B33E98DF3A19F3DADCFCA38B614D9F0",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/workspace",
+      "status": 200
+    },
+    {
+      "sequence": 636,
+      "method": "Network.responseReceived",
+      "requestId": "21028.119",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/workspace",
+      "status": 200
+    },
+    {
+      "sequence": 640,
+      "method": "Network.requestWillBeSent",
+      "requestId": "E9F9EBCB79539CA950FD6FB3003D5CFC",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat?limit=100"
+    },
+    {
+      "sequence": 642,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.120",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages"
+    },
+    {
+      "sequence": 643,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.121",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat?limit=100"
+    },
+    {
+      "sequence": 644,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.122",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments?include_archived=true"
+    },
+    {
+      "sequence": 645,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.123",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds"
+    },
+    {
+      "sequence": 650,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.124",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history"
+    },
+    {
+      "sequence": 651,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.125",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_de30b95a2d6843059d3c8b420627bf58"
+    },
+    {
+      "sequence": 652,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.126",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat?limit=100"
+    },
+    {
+      "sequence": 655,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.127",
+      "url": "http://127.0.0.1:8877/api/research/discussion/context"
+    },
+    {
+      "sequence": 656,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.128",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history"
+    },
+    {
+      "sequence": 662,
+      "method": "Network.responseReceived",
+      "requestId": "E9F9EBCB79539CA950FD6FB3003D5CFC",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat?limit=100",
+      "status": 200
+    },
+    {
+      "sequence": 666,
+      "method": "Network.requestWillBeSent",
+      "requestId": "E6935C18D1BA3AA45773D7F24936EF9B",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history"
+    },
+    {
+      "sequence": 668,
+      "method": "Network.requestWillBeSent",
+      "requestId": "4F44060B932E6BAEDAA64D39284A49BE",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_de30b95a2d6843059d3c8b420627bf58"
+    },
+    {
+      "sequence": 669,
+      "method": "Network.requestWillBeSent",
+      "requestId": "DD58FC2C812874032504BBAEE1DDEBF7",
+      "url": "http://127.0.0.1:8877/api/research/discussion/context"
+    },
+    {
+      "sequence": 670,
+      "method": "Network.responseReceived",
+      "requestId": "21028.120",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages",
+      "status": 200
+    },
+    {
+      "sequence": 671,
+      "method": "Network.requestWillBeSent",
+      "requestId": "AB1B1397090330EF03E0ACDDBF3BC25C",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history"
+    },
+    {
+      "sequence": 681,
+      "method": "Network.responseReceived",
+      "requestId": "E6935C18D1BA3AA45773D7F24936EF9B",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history",
+      "status": 200
+    },
+    {
+      "sequence": 686,
+      "method": "Network.responseReceived",
+      "requestId": "4F44060B932E6BAEDAA64D39284A49BE",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+      "status": 200
+    },
+    {
+      "sequence": 687,
+      "method": "Network.responseReceived",
+      "requestId": "DD58FC2C812874032504BBAEE1DDEBF7",
+      "url": "http://127.0.0.1:8877/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "sequence": 689,
+      "method": "Network.responseReceived",
+      "requestId": "AB1B1397090330EF03E0ACDDBF3BC25C",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history",
+      "status": 200
+    },
+    {
+      "sequence": 696,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.129",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/samples?layer=paper"
+    },
+    {
+      "sequence": 697,
+      "method": "Network.requestWillBeSent",
+      "requestId": "705DE7109005BE137B6E4E11FC508365",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/samples?layer=paper"
+    },
+    {
+      "sequence": 701,
+      "method": "Network.responseReceived",
+      "requestId": "21028.127",
+      "url": "http://127.0.0.1:8877/api/research/discussion/context",
+      "status": 200
+    },
+    {
+      "sequence": 704,
+      "method": "Network.requestWillBeSent",
+      "requestId": "21028.130",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/sources?q="
+    },
+    {
+      "sequence": 705,
+      "method": "Network.requestWillBeSent",
+      "requestId": "AD551D77386199E09C564B0A0B1116BD",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/sources?q="
+    },
+    {
+      "sequence": 708,
+      "method": "Network.responseReceived",
+      "requestId": "21028.123",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+      "status": 200
+    },
+    {
+      "sequence": 709,
+      "method": "Network.responseReceived",
+      "requestId": "21028.121",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat?limit=100",
+      "status": 200
+    },
+    {
+      "sequence": 711,
+      "method": "Network.responseReceived",
+      "requestId": "21028.124",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history",
+      "status": 200
+    },
+    {
+      "sequence": 721,
+      "method": "Network.responseReceived",
+      "requestId": "21028.128",
+      "url": "http://127.0.0.1:8877/api/research/discussion/history",
+      "status": 200
+    },
+    {
+      "sequence": 725,
+      "method": "Network.responseReceived",
+      "requestId": "705DE7109005BE137B6E4E11FC508365",
+      "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/samples?layer=paper",
+      "status": 200
+    }
+  ]
+}

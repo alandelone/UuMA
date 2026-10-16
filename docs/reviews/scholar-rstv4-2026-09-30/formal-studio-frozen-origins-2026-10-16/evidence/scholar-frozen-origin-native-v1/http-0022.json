@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_de30b95a2d6843059d3c8b420627bf58",
+  "query": "",
+  "status": 200,
+  "seconds": 0.01599999999598367,
+  "response_sha256": "770011a6f5f2f5f13013205d09bdc9810437114c7f9dc8c848c1a305343bfe0d",
+  "origin": null
+}

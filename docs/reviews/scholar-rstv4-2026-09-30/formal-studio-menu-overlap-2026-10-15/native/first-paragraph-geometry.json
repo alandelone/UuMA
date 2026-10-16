@@ -1,0 +1,38 @@
+{
+  "buttons": [
+    {
+      "centerHit": "移动原内容…",
+      "centerHitIsSelf": true,
+      "rect": {
+        "bottom": 407.796875,
+        "height": 34.96875,
+        "left": 1153.015625,
+        "right": 1243,
+        "top": 372.828125,
+        "width": 89.984375,
+        "x": 1153.015625,
+        "y": 372.828125
+      },
+      "text": "移动原内容…"
+    },
+    {
+      "centerHit": "删除段落",
+      "centerHitIsSelf": true,
+      "rect": {
+        "bottom": 452.171875,
+        "height": 40.375,
+        "left": 1153.015625,
+        "right": 1240.59375,
+        "top": 411.796875,
+        "width": 87.578125,
+        "x": 1153.015625,
+        "y": 411.796875
+      },
+      "text": "删除段落"
+    }
+  ],
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

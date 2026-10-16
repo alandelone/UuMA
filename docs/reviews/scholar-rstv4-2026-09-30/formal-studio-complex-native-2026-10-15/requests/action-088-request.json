@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_f39d35831bd0472bb9282ab116e90611",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval.\",\"response_text\":\"\",\"expected_content_sha256\":\"4c5eebf35259c007e92685bf4635e0d2171552acbbfdbff7b995a3500a320f11\"}",
+  "body_sha256": "f0d06fa9bbedd59d9c873a2f61b82617b7131b2decc5dd42dd813a759a11a161",
+  "body_bytes": 386
+}

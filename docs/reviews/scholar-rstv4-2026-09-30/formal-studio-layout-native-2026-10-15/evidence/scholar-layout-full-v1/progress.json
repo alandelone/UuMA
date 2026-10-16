@@ -1,0 +1,305 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests",
+      "-q",
+      "--tb=short",
+      "--basetemp",
+      "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-layout-full-7sidi4ct"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 543.344000000001,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-00.log",
+    "log_sha256": "4ddb606f55bab6324bc44c0fdaca302e2f091adad8950209ebda2065f62a55a1"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_collection_progress.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.0470000000022992,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-01.log",
+    "log_sha256": "15d8c1414d4a786e7f999c69b4481437421ac13e580ad0479e43c2fe5f5a4e9f"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_collections.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.046999999998661224,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-02.log",
+    "log_sha256": "89bb081459081ea60e0729b7d8adaad21816cb454186397af2676a33fcf856ee"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_deep_read.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.046999999998661224,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-03.log",
+    "log_sha256": "d3cff5d6967541cafa745a9922eedf26d22554fe77c8d469160fb4e30593b1d7"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_existing_papers.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.0470000000022992,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-04.log",
+    "log_sha256": "fb8c932045fec6281f5a00c78702bd84e441e702cecb734ca0fd0bfa39211808"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_experiments.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.046999999998661224,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-05.log",
+    "log_sha256": "be1e05bbcab4d482a47992dee08817576f31817bc66defdeadf447d006c6b251"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_pdf_annotations.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.0470000000022992,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-06.log",
+    "log_sha256": "3a58a7eba53ed0cc24aad3c22cd29bd7c427e6b2364fc0ded50aea1b50d0deb5"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_research_overview.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.046999999998661224,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-07.log",
+    "log_sha256": "9dc06634a871757cd9f8ac30527c00c2d3c2ccb8473fcbe5401ca5ae3eacf9e7"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_research_workspaces.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.07800000000133878,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-08.log",
+    "log_sha256": "ab411dd8975c15021ccc321a39ef9ef23bb6ced0b7258a6a67ac85f094029a1a"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_review_workflow.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.046999999998661224,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-09.log",
+    "log_sha256": "80afcfa17d71a4b524b2726a292a8961fd24479d23a1cfa1c4984e1f2015c5ae"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_scientific_review.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.06300000000192085,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-10.log",
+    "log_sha256": "09926b764502aca415eccd3a6fb3f3ec074ee7db3cd159ab886d6a8f2ebb807e"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_scope_literature.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.06199999999807915,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-11.log",
+    "log_sha256": "dc429e6f48beac7f4a2f22b676338320bcce2fdf1eddb3ec36c7204086bc5534"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\catalog_track_decisions.mjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.0470000000022992,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-12.log",
+    "log_sha256": "d8ba601aeec41df0c8de0a9b67d2b4f44c4dbf46e3f86e042299e6ebc37ed160"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\review-comment-preview.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.17199999999866122,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-13.log",
+    "log_sha256": "1ed55f252fe04f3807d9381a56c2de87e2b40bfeb56a9e667165a80ba418844e"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-block-controls.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.20300000000133878,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-14.log",
+    "log_sha256": "a5986f79a6a07c214a288e32750eb494546c3a066a78a9b8399193c856dacd46"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-blocks.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.21799999999711872,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-15.log",
+    "log_sha256": "49fa37cdb79f6b602f1ecb303fe13c40572b77acf62a9c8555f396bf9ac84e58"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-correspondence.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.21899999999732245,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-16.log",
+    "log_sha256": "b1511e0542aa2a6ddd5633832cbccbdc73578cf5770fcad14c9c5caab26355d8"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-discussion-history.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.18800000000192085,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-17.log",
+    "log_sha256": "6afa8ce07dfcba3f6df4e5cd29663f8dc3c311092f0a5416e1811808cd7f5527"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-downloads.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.20300000000133878,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-18.log",
+    "log_sha256": "8b8536c2c9bbcb10e227bf2414e01a431e993cd6830db7e1057ca51cb277ee7c"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-hierarchy.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.2029999999977008,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-19.log",
+    "log_sha256": "1664d8266395f8aca5cce7ecc5a53cf5d304d203c72d46544acf322d82d48d24"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-response-review.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.3279999999977008,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-20.log",
+    "log_sha256": "0f24c380def94ca1c92ebce00b2b69c258e7ef0882bfbda3e5e13e86cf359031"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-structure.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.25,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-21.log",
+    "log_sha256": "dc9ee34cc2a91ca311725099e50aaf391c00f491d1faa0fb6154affbf8d8ce38"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-template-placement.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.21900000000096043,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-22.log",
+    "log_sha256": "49ae5a608b386f3a06b7f9e9cac9a87db6a925d2252dc526de5628e140b23250"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-undo-history.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.21900000000096043,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-23.log",
+    "log_sha256": "464ce25c061cc8c1a619b881ae1c97dc3db438c9b3703478c542819b64d3acbe"
+  },
+  {
+    "command": [
+      "node",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-view-state.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.18699999999807915,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-24.log",
+    "log_sha256": "2eee0ad961f8413c9254041f42bb9de093cbf61bb1f68b0025fbcecf64a3ed2a"
+  },
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/rstv4/studio.py",
+      "src/rstv4/studio_layout.py",
+      "src/rstv4/studio_context.py",
+      "src/rstv4/studio_read_views.py",
+      "src/rstv4/studio_revision_mapping.py",
+      "tests/test_studio_layout.py",
+      "tests/test_studio_layout_integration.py"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.09400000000096043,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-full-v1\\check-25.log",
+    "log_sha256": "82b3e6a6c090a57601d22943bd23fca9218d1031dbe5a7b754092f9a156b4f18"
+  }
+]

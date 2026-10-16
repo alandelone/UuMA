@@ -1,0 +1,38 @@
+PLW1510 `subprocess.run` without explicit `check` argument
+   --> tests\test_studio_layout.py:107:18
+    |
+105 |         command = shutil.which("xelatex")
+106 |         assert command, "Meaningful layout acceptance requires the actual TeX compiler"
+107 |         result = subprocess.run([command, "-no-shell-escape", "-interaction=nonstopmode", "-halt-on-error", "manuscript.tex"],
+    |                  ^^^^^^^^^^^^^^
+108 |             cwd=folder, env={**os.environ, "openin_any": "p", "openout_any": "p"}, capture_output=True, timeout=90)
+109 |         assert result.returncode == 0, result.stdout[-2000:]
+    |
+help: Add explicit `check=False`
+
+RUF059 Unpacked variable `layouts` is never used
+   --> tests\test_studio_layout.py:133:26
+    |
+131 |     assert row["changed_text"] == "" and not row["supports_scientific_text_modification"]
+132 |     assert row["baseline_boxes"] != row["boxes"] and row["final_page"] >= 1
+133 |     before, after, _, _, layouts, pdfs, views, directory = compiled_pair
+    |                          ^^^^^^^
+134 |     assert views[0]["content"] == views[1]["content"]
+135 |     assert hashlib.sha256(pdfs[0].read_bytes()).hexdigest() == row["baseline_pdf_sha256"]
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+RUF059 Unpacked variable `after` is never used
+   --> tests\test_studio_layout.py:146:13
+    |
+144 | @pytest.mark.parametrize("mutation", ["unknown_baseline", "no_geometry_change", "missing_pdf", "changed_source", "changed_material", …
+145 | def test_actual_layout_type_is_not_inferred_from_unchanged_thoughts_or_pdf_hash_alone(compiled_pair, mutation):
+146 |     before, after, _, _, layouts, _, views, _ = compiled_pair
+    |             ^^^^^
+147 |     changed = deepcopy(views[1])
+148 |     arguments = {}
+    |
+help: Prefix it with an underscore or any other dummy variable pattern
+
+Found 8 errors (5 fixed, 3 remaining).
+No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).

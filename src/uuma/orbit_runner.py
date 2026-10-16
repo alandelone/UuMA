@@ -24,12 +24,13 @@ from .kag_adapter import (
 )
 from .knowledge_construction import KnowledgeConstructor
 from .knowledge_ingest import KnowledgeIngestor
-from .knowledge_models import ReasoningMode, SatisfactionLevel
+from .knowledge_models import ReasoningMode, SatisfactionLevel, SourceType
 from .knowledge_runtime import ensure_knowledge_graph
 from .knowledge_service import KnowledgeService
 from .orbit_discovery import (
     CanonicalCitationProvider,
     ChatGPTDiscoveryProvider,
+    CycleExplanation,
     DiscoveryArtifact,
     DiscoveryProvider,
     artifact_identity,
@@ -39,7 +40,7 @@ from .orbit_discovery import (
     configured_providers,
     urls_in_question,
 )
-from .orbit_discovery import discovery_queries as build_discovery_queries
+from .orbit_planner import AdaptiveResearchPlanner
 from .orbit_synthesis import OrbitCompactSynthesizer
 from .question_orbit import QuestionOrbitService
 from .safe_web import RetryAfterError, SafeWebFetcher
@@ -206,6 +207,33 @@ class OrbitNotificationDispatcher:
             lines.extend(["", str(payload["summary"]).strip()])
         if payload.get("change_summary"):
             lines.extend(["", f"本轮变化：{payload['change_summary']}"])
+
+        exp = payload.get("cycle_explanation")
+        if isinstance(exp, dict):
+            attempts = exp.get("attempts") or []
+            if attempts:
+                lines.extend(["", "🔍 本轮检索链路（白盒追踪）："])
+                for att in attempts[:5]:
+                    if not isinstance(att, dict):
+                        continue
+                    outcome = att.get("outcome") or "ATTEMPT"
+                    provider = att.get("provider") or "provider"
+                    query = att.get("query") or ""
+                    found = att.get("artifacts_found", 0)
+                    detail = att.get("error_detail")
+                    if outcome == "SUCCESS":
+                        lines.append(f"- [{outcome}] {provider}：检索到 {found} 条相关线索")
+                    elif outcome == "NO_MATCH":
+                        clean_q = query[:40] + ("..." if len(query) > 40 else "")
+                        lines.append(f"- [{outcome}] {provider}（查询：“{clean_q}”）：未检索到匹配公开文献")
+                    else:
+                        lines.append(f"- [{outcome}] {provider}：{detail or '未完成'}")
+            untried = exp.get("untried_paths") or []
+            if untried:
+                lines.extend(["", f"⏳ 待探索途径：{', '.join(untried)}"])
+            if exp.get("next_step"):
+                lines.extend(["", f"下一步：{exp['next_step']}"])
+
         sources = payload.get("sources") or []
         if sources:
             lines.extend(["", "来源："])
@@ -293,6 +321,8 @@ class OrbitRunner:
         self.heartbeat_interval = heartbeat_interval
         self.sources_per_cycle = max(1, min(sources_per_cycle, 5))
         self._idle_logged = False
+        self.planner = AdaptiveResearchPlanner(self.providers)
+        self._active_discovery_requests: dict[str, str] = {}
 
     def run_once(self) -> bool:
         LOGGER.debug("Polling for a runnable Orbit cycle owner=%s", self.owner_id)
@@ -437,7 +467,19 @@ class OrbitRunner:
         self._publish_first_grounded_answer(cycle, current)
         current_level = SatisfactionLevel(current["satisfaction_level"])
         if current_level in {SatisfactionLevel.SUFFICIENT, SatisfactionLevel.STRONG}:
-            self._complete(cycle, started, current, [], [], [], 0)
+            exp = CycleExplanation(
+                status="COMPLETE",
+                summary="现有知识库已包含满足要求的充分证据，无需额外执行外部检索。",
+                attempts=[],
+                untried_paths=[p.name for p in self.providers],
+                blocked_paths=[],
+                next_step="已达成目标。",
+            )
+            self._complete(
+                cycle, started, current, [], [], [], 0,
+                cycle_explanation=exp.to_dict(),
+                discovery_attempts=[],
+            )
             return
 
         artifacts = urls_in_question(question)
@@ -449,38 +491,47 @@ class OrbitRunner:
             if artifact_is_relevant(question, artifact):
                 artifacts.append(artifact)
                 cached_locators.add(source["locator"])
+        orbit_id = cycle["orbit_id"]
+        pending_req_id = self._active_discovery_requests.get(orbit_id)
+        discovered, traces, next_pending_req_id = self.planner.execute_discovery(
+            question,
+            limit=5,
+            pending_request_id=pending_req_id,
+            deep_research_allowed=True,
+            is_provider_throttled=lambda name: (
+                name == "brave"
+                and self.orbits.discovery_usage(provider="brave")["requests"] >= self.BRAVE_MONTHLY_LIMIT
+            ),
+        )
+        if next_pending_req_id:
+            self._active_discovery_requests[orbit_id] = next_pending_req_id
+        elif orbit_id in self._active_discovery_requests:
+            del self._active_discovery_requests[orbit_id]
+
         discovery_queries: list[str] = []
-        queries = build_discovery_queries(question)
         search_queries_used = 0
         retry_delays: list[int] = []
         provider_limit_reached = False
-        for provider in self.providers:
-            for query in queries:
-                if provider.name == "brave":
-                    usage = self.orbits.discovery_usage(provider="brave")
-                    if usage["requests"] >= self.BRAVE_MONTHLY_LIMIT:
-                        provider_limit_reached = True
-                        break
-                try:
-                    response = provider.discover(
-                        query, limit=10 if provider.name == "ddgs" else 5
-                    )
-                except RetryAfterError as exc:
-                    retry_delays.append(exc.retry_after_seconds)
-                    continue
-                except Exception as exc:  # noqa: BLE001 - One provider must not sink the Orbit.
-                    LOGGER.warning("Discovery provider %s failed: %s", provider.name, exc)
-                    continue
-                discovery_queries.append(query)
-                if provider.name != "canonical-citations":
+
+        for trace in traces:
+            if trace.status == "THROTTLED":
+                provider_limit_reached = True
+                continue
+            if "retry_after_seconds" in trace.metadata:
+                retry_delays.append(trace.metadata["retry_after_seconds"])
+                continue
+            if trace.status in {"SUCCESS", "EMPTY"}:
+                discovery_queries.append(trace.query)
+                if trace.provider != "canonical-citations":
                     search_queries_used += 1
                 self.orbits.record_discovery_usage(
-                    cycle["orbit_id"],
-                    provider.name,
-                    result_count=len(response.artifacts),
-                    provider_request_id=response.request_id,
+                    orbit_id,
+                    trace.provider,
+                    result_count=trace.result_count,
+                    provider_request_id=trace.request_id,
                 )
-                artifacts.extend(response.artifacts)
+
+        artifacts.extend(discovered)
 
         deduped: list[DiscoveryArtifact] = []
         seen: set[str] = set()
@@ -526,9 +577,20 @@ class OrbitRunner:
                 if cached["source"]["source_id"] in used_source_ids:
                     continue
             try:
-                ingested = cached or self.ingestor.ingest_web(
-                    artifact.locator, actor_id="wisdom-oldman", topic_question=question
-                )
+                if artifact.metadata.get("is_report") and artifact.metadata.get("full_text"):
+                    ingested = cached or self.ingestor.ingest_text(
+                        locator=artifact.locator,
+                        title=artifact.title,
+                        text=artifact.metadata["full_text"],
+                        media_type="text/markdown",
+                        source_type=SourceType.OTHER,
+                        actor_id="wisdom-oldman",
+                        metadata=artifact.metadata,
+                    )
+                else:
+                    ingested = cached or self.ingestor.ingest_web(
+                        artifact.locator, actor_id="wisdom-oldman", topic_question=question
+                    )
             except RetryAfterError as exc:
                 retry_delays.append(exc.retry_after_seconds)
                 continue
@@ -564,12 +626,17 @@ class OrbitRunner:
             if provider_limit_reached and not discovery_queries:
                 raise PermissionError("The available search provider has reached its monthly limit.")
             reusable = self._assess_satisfaction(current, source_ids=[], evidence_ids=[])
+            explanation = self.planner.compute_cycle_explanation(
+                question, traces, status=current.get("status") or "ACTIVE"
+            )
             self._complete(
                 cycle, started, reusable, [], [], discovery_queries,
                 int(current.get("projection_watermark") or 0),
                 search_queries_used=search_queries_used,
                 model_input_characters=model_input_characters,
                 no_new_source=True,
+                cycle_explanation=explanation.to_dict(),
+                discovery_attempts=[a.to_dict() for a in explanation.attempts],
             )
             return
 
@@ -602,6 +669,15 @@ class OrbitRunner:
             dict.fromkeys(item["question_id"] for item in expanded)
         )
         conflicts = final_answer.get("conflicts") or []
+        explanation = self.planner.compute_cycle_explanation(
+            question,
+            traces,
+            status=(
+                "COMPLETE"
+                if final_answer["satisfaction_level"] in {"SUFFICIENT", "STRONG"}
+                else "ACTIVE"
+            ),
+        )
         completion = self._complete(
             cycle,
             started,
@@ -613,6 +689,8 @@ class OrbitRunner:
             search_queries_used=search_queries_used,
             generated_question_ids=generated_question_ids,
             model_input_characters=model_input_characters,
+            cycle_explanation=explanation.to_dict(),
+            discovery_attempts=[a.to_dict() for a in explanation.attempts],
         )
         version = completion.get("document_version") or {}
         section = next(
@@ -630,6 +708,7 @@ class OrbitRunner:
             "document_url": version.get("document_url"),
             "sources": section.get("citations", [])[:8],
             "research_status": completion["orbit"]["status"],
+            "cycle_explanation": explanation.to_dict(),
         }
         if self._materially_changed(current, final_answer):
             self.orbits.enqueue_notification(
@@ -703,6 +782,8 @@ class OrbitRunner:
         generated_question_ids: list[str] | None = None,
         model_input_characters: int = 0,
         no_new_source: bool = False,
+        cycle_explanation: dict[str, Any] | None = None,
+        discovery_attempts: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         answer_text = str(answer.get("answer") or "")
         estimated_tokens = max(
@@ -734,6 +815,8 @@ class OrbitRunner:
             ),
             answer=answer,
             no_new_source=no_new_source,
+            cycle_explanation=cycle_explanation,
+            discovery_attempts=discovery_attempts,
         )
 
     @staticmethod

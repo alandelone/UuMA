@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "comment_id": "comment_f39d35831bd0472bb9282ab116e90611",
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "source": "PASTED",
+    "reviewer": null,
+    "original_text": "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval.",
+    "edited_text": "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval.",
+    "author_decision": "SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval.",
+    "response_text": "",
+    "status": "PENDING",
+    "archived_at": null,
+    "created_at": "2026-10-15T07:35:59.055172+00:00",
+    "updated_at": "2026-10-15T07:53:58.078376+00:00",
+    "import_metadata": {
+      "comment_number": 212,
+      "import_batch_id": "comment_import_9e8101ea7a40461bb632fbd225e09c5e",
+      "original_index": 0,
+      "original_text": "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval.",
+      "raw_import_text": "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval.\n\n2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence.\n\n3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted."
+    },
+    "display_label": "A212",
+    "content_sha256": "742e9cb0e28e8b9b0d274ca933fc093c27d1f8d71a71a4679643f5d47a1820c5",
+    "response_state_sha256": "075710c516a93f4eb13682d93d905f892bccba21882f96f929e61004ef38d813",
+    "response_verification": {
+      "status": "NOT_REVIEWED"
+    }
+  }
+}

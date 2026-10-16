@@ -1,0 +1,45 @@
+{
+  "status": "PASS",
+  "catalog_version": 13,
+  "original_table_count": 83,
+  "migrated_table_count": 105,
+  "new_empty_tables": [
+    "acquisition_model_call_events",
+    "acquisition_worker_presence",
+    "catalog_review_actions",
+    "collection_budget_events",
+    "collection_candidate_frontier",
+    "collection_reference_frontier",
+    "collection_runtime_state",
+    "fieldkg_semantic_objects",
+    "fieldkg_semantic_runs",
+    "manuscript_scientific_review_events",
+    "manuscript_scientific_review_requests",
+    "research_workspace_actions",
+    "screening_input_snapshots",
+    "skeleton_source_outlines",
+    "sqlite_sequence",
+    "studio_change_link_events",
+    "studio_change_link_state",
+    "studio_comment_response_state",
+    "studio_model_calls",
+    "studio_response_checks",
+    "studio_review_round_baselines",
+    "studio_suggestion_decisions"
+  ],
+  "old_row_new_fields": {},
+  "schema_version_before": [
+    {
+      "component": "catalog",
+      "version": 5,
+      "applied_at": "2026-10-02 14:59:40"
+    }
+  ],
+  "schema_version_after": [
+    {
+      "component": "catalog",
+      "version": 13,
+      "applied_at": "2026-10-13 14:12:39"
+    }
+  ]
+}

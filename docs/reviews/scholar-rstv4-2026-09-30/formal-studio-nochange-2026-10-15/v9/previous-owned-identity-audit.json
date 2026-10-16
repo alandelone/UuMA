@@ -1,0 +1,27 @@
+{
+  "old_owned_identities_absent": true,
+  "entries": [
+    {
+      "pid": 39248,
+      "old_identity_absent": true,
+      "numeric_pid_reused": false
+    },
+    {
+      "pid": 70488,
+      "old_identity_absent": true,
+      "numeric_pid_reused": false
+    },
+    {
+      "pid": 68332,
+      "old_identity_absent": true,
+      "numeric_pid_reused": false
+    },
+    {
+      "pid": 39352,
+      "old_identity_absent": true,
+      "numeric_pid_reused": false
+    }
+  ],
+  "prior_v6_lost_after_interruption_cause_unknown": true,
+  "no_process_stopped_or_replayed": true
+}

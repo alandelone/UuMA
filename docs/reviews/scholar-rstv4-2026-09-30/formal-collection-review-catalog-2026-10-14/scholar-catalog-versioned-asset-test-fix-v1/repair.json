@@ -1,0 +1,8 @@
+{
+  "target": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\tests\\test_catalog_web.py",
+  "before_sha256": "b50826c612522096965d4c8f3a2c1840f4806abba722b0e2080b84545b2e510c",
+  "after_sha256": "206fdc15ef83cbf8dce32f4902486360f7baf393406a6c0e638be491b7fe1358",
+  "reason": "Require the actual versioned script and successful current reader export; retain unversioned-route assertion.",
+  "product_changed": false,
+  "failed_full_receipt": ".tmp/scholar-all11-current-regression-v1/receipt.json"
+}

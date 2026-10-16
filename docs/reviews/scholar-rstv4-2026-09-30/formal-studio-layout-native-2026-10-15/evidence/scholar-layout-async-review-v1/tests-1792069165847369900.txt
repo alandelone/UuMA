@@ -1,0 +1,121 @@
+FFFFFFFFFF                                                               [100%]
+================================== FAILURES ===================================
+_______ test_real_async_replay_compiles_readback_materials_and_context ________
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:96: in test_real_async_replay_compiles_readback_materials_and_context
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+_______ test_during_real_compile_cancel_or_edit_never_promotes[cancel] ________
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:141: in test_during_real_compile_cancel_or_edit_never_promotes
+    job = service.create_job(ms, "GENERATE", input_revision=2, request={"layout_replay_version_id": source})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+____ test_during_real_compile_cancel_or_edit_never_promotes[author_change] ____
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:141: in test_during_real_compile_cancel_or_edit_never_promotes
+    job = service.create_job(ms, "GENERATE", input_revision=2, request={"layout_replay_version_id": source})
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+__ test_readback_rejects_tampered_replay_or_original_provenance[source_hash] __
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:162: in test_readback_rejects_tampered_replay_or_original_provenance
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+__ test_readback_rejects_tampered_replay_or_original_provenance[self_parent] __
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:162: in test_readback_rejects_tampered_replay_or_original_provenance
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+____ test_readback_rejects_tampered_replay_or_original_provenance[binding] ____
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:162: in test_readback_rejects_tampered_replay_or_original_provenance
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+__ test_readback_rejects_tampered_replay_or_original_provenance[author_text] __
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:162: in test_readback_rejects_tampered_replay_or_original_provenance
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+__ test_readback_rejects_tampered_replay_or_original_provenance[model_call] ___
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:162: in test_readback_rejects_tampered_replay_or_original_provenance
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+_ test_readback_rejects_tampered_replay_or_original_provenance[material_bytes] _
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:162: in test_readback_rejects_tampered_replay_or_original_provenance
+    job = replay(service, ms, source)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+__________ test_semantic_change_is_rejected_before_compile_and_model __________
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:201: in test_semantic_change_is_rejected_before_compile_and_model
+    terminal = replay(service, ms, source)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.tmp\scholar-layout-async-review-v1\test_layout_async.py:75: in replay
+    return wait_for_job(service, service.create_job(ms, "GENERATE",
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:1319: in create_job
+    self._check_generate_ready(manuscript_id, workspace["document"])
+.tmp\scholar-layout-contract-proposal-v1\candidate\RSTV4\src\rstv4\studio.py:2009: in _check_generate_ready
+    raise DocumentValidationError(issues)
+E   rstv4.studio.DocumentValidationError: The manuscript structure is not ready to generate
+=========================== short test summary info ===========================
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_real_async_replay_compiles_readback_materials_and_context
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_during_real_compile_cancel_or_edit_never_promotes[cancel]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_during_real_compile_cancel_or_edit_never_promotes[author_change]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_readback_rejects_tampered_replay_or_original_provenance[source_hash]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_readback_rejects_tampered_replay_or_original_provenance[self_parent]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_readback_rejects_tampered_replay_or_original_provenance[binding]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_readback_rejects_tampered_replay_or_original_provenance[author_text]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_readback_rejects_tampered_replay_or_original_provenance[model_call]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_readback_rejects_tampered_replay_or_original_provenance[material_bytes]
+FAILED .tmp/scholar-layout-async-review-v1/test_layout_async.py::test_semantic_change_is_rejected_before_compile_and_model
+10 failed in 9.22s
+

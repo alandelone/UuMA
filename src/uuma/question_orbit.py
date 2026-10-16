@@ -355,12 +355,28 @@ class QuestionOrbitService:
                 "SELECT record_json FROM orbit_cycles WHERE orbit_id = ? "
                 "ORDER BY updated_sequence DESC LIMIT 1", (orbit_id,),
             ).fetchone()
+            usage_rows = conn.execute(
+                "SELECT record_json FROM discovery_usage WHERE orbit_id = ? "
+                "ORDER BY updated_sequence DESC LIMIT 20", (orbit_id,),
+            ).fetchall()
+        recent_usage = [json.loads(row["record_json"]) for row in usage_rows]
+        attempted_routes = [
+            {
+                "provider": r["provider"],
+                "results": r["result_count"],
+                "request_id": r.get("provider_request_id"),
+                "timestamp": r.get("created_at"),
+            }
+            for r in recent_usage
+        ]
         return {
             "orbit": orbit,
             "research_run": self.knowledge._require("research_runs", orbit["research_run_id"]),
             "frontier": self.frontier(orbit_id)["records"],
             "budget": self.BUDGETS[orbit["budget_tier"]],
             "current_cycle": json.loads(cycle_row["record_json"]) if cycle_row else None,
+            "recent_discovery_usage": recent_usage,
+            "attempted_routes": attempted_routes,
         }
 
     def list(self, status: str | None = None, limit: int = 100) -> dict[str, Any]:
@@ -1062,6 +1078,8 @@ class QuestionOrbitService:
         answer: dict[str, Any] | None = None,
         no_new_source: bool = False,
         actor_id: str = "wisdom-oldman",
+        cycle_explanation: Any | None = None,
+        discovery_attempts: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         self.knowledge.require_writer(actor_id)
         source_ids = list(dict.fromkeys(source_ids or []))
@@ -1097,6 +1115,15 @@ class QuestionOrbitService:
                 "lease_expires_at": now.isoformat(),
                 "updated_at": now.isoformat(),
             }
+            if cycle_explanation:
+                exp_dict = (
+                    cycle_explanation.to_dict()
+                    if hasattr(cycle_explanation, "to_dict")
+                    else dict(cycle_explanation)
+                )
+                cycle_after["cycle_explanation"] = exp_dict
+            if discovery_attempts:
+                cycle_after["discovery_attempts"] = discovery_attempts
             self._update(
                 conn,
                 "orbit_cycles",
@@ -1159,6 +1186,13 @@ class QuestionOrbitService:
                 "satisfaction_rationale": satisfaction_rationale,
                 "updated_at": now.isoformat(),
             }
+            if cycle_explanation:
+                exp_dict = (
+                    cycle_explanation.to_dict()
+                    if hasattr(cycle_explanation, "to_dict")
+                    else dict(cycle_explanation)
+                )
+                run_after["latest_cycle_explanation"] = exp_dict
             budget = self.BUDGETS[orbit_before["budget_tier"]]
             exhausted = (
                 run_after["active_seconds"] >= budget["active_seconds"]
@@ -1176,6 +1210,15 @@ class QuestionOrbitService:
                 SatisfactionLevel.SUFFICIENT,
                 SatisfactionLevel.STRONG,
             } and not high_open
+
+            exp_dict = (
+                cycle_explanation.to_dict()
+                if hasattr(cycle_explanation, "to_dict")
+                else (cycle_explanation or {})
+            )
+            untried = exp_dict.get("untried_paths") or []
+            blocked_paths = exp_dict.get("blocked_paths") or []
+
             if satisfied:
                 orbit_status = OrbitStatus.COMPLETED
                 run_status = ResearchRunStatus.COMPLETED
@@ -1184,20 +1227,23 @@ class QuestionOrbitService:
                 orbit_status = OrbitStatus.BUDGET_EXHAUSTED
                 run_status = ResearchRunStatus.BUDGET_EXHAUSTED
                 stop_reason = "The Orbit reached at least one configured research budget limit."
-            elif no_new_source and open_frontier and all(
-                int(item.get("no_source_attempts", 0)) > 0 for item in open_frontier
-            ):
-                orbit_status = OrbitStatus.PAUSED
-                run_status = ResearchRunStatus.PAUSED
-                stop_reason = (
-                    "本轮已检查所有未解决问题，在当前可用的公开来源中仍未找到新的、"
-                    "可核查且直接相关的资料；"
-                    "现有成果和缺口已保留，可在补充方向或新资料后继续。"
-                )
             elif not open_frontier:
                 orbit_status = OrbitStatus.BLOCKED
                 run_status = ResearchRunStatus.PAUSED
                 stop_reason = "No open research frontier remains while knowledge is still incomplete."
+            elif blocked_paths and not untried and no_new_source:
+                orbit_status = OrbitStatus.BLOCKED
+                run_status = ResearchRunStatus.PAUSED
+                stop_reason = f"All available discovery providers are blocked ({', '.join(blocked_paths)}); awaiting credentials or quota recovery."
+            elif no_new_source and not untried and open_frontier and all(
+                int(item.get("no_source_attempts", 0)) >= 2 for item in open_frontier
+            ):
+                orbit_status = OrbitStatus.PAUSED
+                run_status = ResearchRunStatus.PAUSED
+                stop_reason = (
+                    exp_dict.get("summary")
+                    or "已检索所有未解决问题且全部可用渠道均未找到直接相关资料；成果与缺口已保留。"
+                )
             else:
                 orbit_status = OrbitStatus.QUEUED
                 run_status = ResearchRunStatus.ACTIVE
@@ -1238,6 +1284,8 @@ class QuestionOrbitService:
                 "satisfaction_level": satisfaction_level.value,
                 "research_status": orbit_status.value,
             }
+            if exp_dict:
+                notification_payload["cycle_explanation"] = exp_dict
             if orbit_before.get("topic_id") and answer:
                 document_version = self.topics.publish_answer(
                     orbit_before["topic_id"],

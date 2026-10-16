@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "comment_id": "comment_f71edb5758ef41f3b0d96d8cdbed18d5",
+    "review_round_id": "review_round_72931d507bda4bdb813dc14988444892",
+    "source": "PASTED",
+    "reviewer": null,
+    "original_text": "SOFTWARE_FIXTURE C-LAYOUT: Change only the page margin from standard to narrow. Preserve the exact v6 author content, frozen sentences, sources, conditions, citations and table/figure bytes. Verify actual compiled PDF movement separately from scientific prose amendments. This is software acceptance only; no external review or scientific approval.",
+    "edited_text": "SOFTWARE_FIXTURE C-LAYOUT: Change only the page margin from standard to narrow. Preserve the exact v6 author content, frozen sentences, sources, conditions, citations and table/figure bytes. Verify actual compiled PDF movement separately from scientific prose amendments. This is software acceptance only; no external review or scientific approval.",
+    "author_decision": "SOFTWARE_FIXTURE decision: Apply only the explicit page-margin setting. The fixed v6 realization is reused and recompiled without a model call; no author prose, scientific claim, source, condition or material identity is amended. This presentation change must not count as evidence of scientific text modification.",
+    "response_text": "SOFTWARE_FIXTURE reply. We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content. The author text, generated sentences, sources, conditions, citation identities and original table/figure bytes remain unchanged. This is presentation-only evidence, not a scientific prose amendment or scientific approval.",
+    "status": "PENDING",
+    "archived_at": null,
+    "created_at": "2026-10-15T13:13:32.901437+00:00",
+    "updated_at": "2026-10-15T13:17:42.590492+00:00",
+    "import_metadata": {
+      "comment_number": 215,
+      "import_batch_id": "comment_import_af5ce9b06cab4b73b02838b228ecbb12",
+      "original_index": 0,
+      "original_text": "SOFTWARE_FIXTURE C-LAYOUT: Change only the page margin from standard to narrow. Preserve the exact v6 author content, frozen sentences, sources, conditions, citations and table/figure bytes. Verify actual compiled PDF movement separately from scientific prose amendments. This is software acceptance only; no external review or scientific approval.",
+      "raw_import_text": "SOFTWARE_FIXTURE C-LAYOUT: Change only the page margin from standard to narrow. Preserve the exact v6 author content, frozen sentences, sources, conditions, citations and table/figure bytes. Verify actual compiled PDF movement separately from scientific prose amendments. This is software acceptance only; no external review or scientific approval."
+    },
+    "display_label": "A215",
+    "content_sha256": "6ee30971e12239a726045460ac5aeb2b8e22d6fef5b88e9d014e418f8e91f6b9",
+    "response_state_sha256": "71c6c18ee3fb2bfd8981569036cad28e911d4dea3913814231c3ea0ffa52a940",
+    "response_verification": {
+      "status": "NOT_REVIEWED"
+    }
+  }
+}

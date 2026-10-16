@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/jobs",
+  "content_type": "application/json",
+  "body_utf8": "{\"kind\":\"GENERATE\",\"input_revision\":79,\"request\":{}}",
+  "body_sha256": "ff7bff692c5ad6a63aa45b0831e90462304bd5bc7bcdb2772bb1f2b9efa6a4d0",
+  "body_bytes": 52
+}

@@ -1,0 +1,87 @@
+{
+  "status": "PASS_BOUNDED_SOFTWARE_ACCEPTANCE",
+  "observed_at_utc": "2026-10-14T17:00:54.308528+00:00",
+  "full_passed": 1130,
+  "existing_warnings": 20,
+  "pytest_seconds": 498.87,
+  "full_wrapper_seconds": 500.97,
+  "frozen_files": 311,
+  "old_files_unchanged": 306,
+  "changed_old_files": [
+    "src/rstv4/catalog_annotations.py",
+    "src/rstv4/catalog_web.html",
+    "src/rstv4/catalog_web.py"
+  ],
+  "added_files": [
+    "tests/catalog_pdf_annotations.mjs",
+    "tests/test_catalog_annotation_retries.py"
+  ],
+  "actual_frontend_annotation_checks": 16,
+  "catalog_script_suites": 12,
+  "actual_current_http_requests": 35,
+  "http_audits": [
+    {
+      "status": "PASS",
+      "http_requests": 25,
+      "tables": 110,
+      "unchanged_tables": 107,
+      "changed_tables": [
+        "catalog_review_annotations",
+        "paper_identities",
+        "papers"
+      ],
+      "annotation_events": 12,
+      "source_words_checked": true,
+      "old_original_rows_and_files_exact": true,
+      "schema_unchanged": true,
+      "models_jobs_workers_gpu_executed": 0,
+      "native_browser_executed": false,
+      "all11_complete": false
+    },
+    {
+      "status": "PASS",
+      "http_requests": 10,
+      "tables": 110,
+      "unchanged_tables": 108,
+      "changed_tables": [
+        "catalog_review_annotations",
+        "papers"
+      ],
+      "source_file_versions_added_before_baseline": 1,
+      "annotation_events_added": 2,
+      "original_copy_exact": true,
+      "source_words_checked": true,
+      "jobs_models_gpu_workers_executed": 0,
+      "native_browser_executed": false,
+      "all11_complete": false
+    }
+  ],
+  "http_archive_all_entries_verified": 82,
+  "schema_unchanged": true,
+  "original_data_preserved": true,
+  "models_gpu_jobs_workers_executed": 0,
+  "native_browser_executed": false,
+  "legacy_clients_without_optional_guards_remain_compatible": true,
+  "full_page_reload_draft_persistence_added": false,
+  "original118_complete": false,
+  "final_all11_integrated_complete": false,
+  "mission": {
+    "schema_version": 1,
+    "mission": "Complete UuMA specialist agent trust, deployment, knowledge, and discussion capabilities",
+    "stage": "verification",
+    "active_skill": null,
+    "gate": {
+      "current": "stage-gates/04-verification-report.md",
+      "status": "pending_review",
+      "blocked_by": null
+    },
+    "allowed_stages": [
+      "discovery",
+      "design",
+      "execution",
+      "verification",
+      "complete"
+    ],
+    "updated_at": "2026-09-08T15:57:35+08:00"
+  }
+}

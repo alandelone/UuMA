@@ -891,3 +891,23 @@ Three setup contexts remain: eleven overlapping individual uncertainty windows v
 }
 
 The milestone author completed and retained all four full prefixes/manifest19; do not rerun its exclusive writer. Outer wrapper failed only while regenerating progress.md after command_finished journal commit. Unchanged official resume succeeded, refreshing the readable projection. Preserve exact failure and full sources; no production edit, journal bypass, cleanup or weaker session/byte/science guards. Verify current20-prefix chain and all immutable completed scientific artifacts, then run unchanged GET-only observer and official full handoff/check/close. This is execution context, not a scientific failure or permission to count missing scores.
+
+2026-10-16 same-origin historical-read scope context BEFORE corrected audit:
+The initial-load/refresh checkpoint actually compared all110 tables equal. Later
+native G01 old-v3 Alpha/Beta focus extended that interval and legitimately called
+get_samples on the old anchors at current author revision86. Actual persisted diff
+is ONLY studio_sample_candidates: same16 keys/rows, exactly8 existing old-v3 rows
+have document_revision13->86 and created_at changed; every sample_json/query_key/
+candidate/anchor/owner and all other109 tables/schema remain exact. Product
+studio.py:get_samples explicitly INSERT OR REPLACE refreshes this revision-keyed
+cache (lines888-962); no new author/model/job/version/check decision is involved.
+Original audit-v1's full110 assertion failed and is retained; do not relabel the
+extended interval all110/read-only-physical-DB exact or undo/restore cached records
+to green. The runtime's original narrow finally guard will also remain a recorded
+failure on stop; an independent exact-identity stop and final business audit must
+record this boundary, not rewrite old receipts or rerun successful UI operations.
+For the expanded historical-read phase require schema and other109 tables exact,
+same16 cache keys, exactly2 named v3 anchors*4 candidates with only revision/time
+changes, complete raw sample_json exact, timestamps within actual samples requests,
+all non-database files exact and current raw author/calls/jobs/checks/packages exact.
+Do not weaken product tests, source provenance, rejection or approval assertions.

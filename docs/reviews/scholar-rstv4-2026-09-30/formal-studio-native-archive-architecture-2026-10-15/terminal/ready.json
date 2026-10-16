@@ -1,0 +1,84 @@
+{
+  "status": "READY_NATIVE_ACTIONS_NOT_EXECUTED",
+  "url": "http://127.0.0.1:61614/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_b51564f0224e499081e58f341103b336",
+  "backend_url": "http://127.0.0.1:8877",
+  "backend_identity": {
+    "pid": 13828,
+    "create_time": 1792045281.1411412,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v8.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 3556
+  },
+  "frontend_identity": {
+    "pid": 22568,
+    "create_time": 1792045282.547822,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "61614",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-publication-chain-build-mlpu7aqn\\writing-studio",
+    "parent_pid": 13272
+  },
+  "backend_launch_pid": 3556,
+  "frontend_port": 61614,
+  "listeners": [
+    {
+      "pid": 13828,
+      "address": "127.0.0.1",
+      "port": 8877
+    },
+    {
+      "pid": 22568,
+      "address": "127.0.0.1",
+      "port": 61614
+    }
+  ],
+  "health": {
+    "status": "ok",
+    "workflow_stages": [
+      "PLANNING",
+      "DRAFTING",
+      "WHOLE_PAPER_REVIEW",
+      "FINALIZATION_SUBMISSION",
+      "REVISION",
+      "PUBLICATION"
+    ]
+  },
+  "frontend_status": 200,
+  "frontend_html_sha256": "e4ffc9234627f292ca2f6dbf1a6f4482164f2155ff4aed7bb949775f221272dc",
+  "served_assets_sha256": {
+    "/_next/static/chunks/layout-segment-context-BoUNDXv2.js": "68f601318bc09581dabb12e83d0ab943270a62cab7ae509f4397a76283f23e6d",
+    "/_next/static/chunks/page-CjbQD6Ec.js": "3b194274429957c783f4a1fd7930d6b43c11b6e04b2f101bce689e12399b0ccd",
+    "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "/_next/static/chunks/index-Dd8DXA57.js": "75ac07f84d4c7298093ea67377472689e8ab654c4e7dc484da2d6c3ea21e363c",
+    "/_next/static/css/index.PBEt8VaD.css": "a927e3709ef99db5416703ab0860d18a1e9b6d8c735b85a1b676d42082bfdb6d",
+    "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "/_next/static/chunks/vinext-BPPoZsno.js": "5413ccaf89c0ebfb6b71c2a14596491f8a27d33308515959ab7478092200ed1c"
+  },
+  "startup_all_tables_exact": true,
+  "startup_non_sidecar_files_exact": true,
+  "original_all_files_and_tables_exact": true,
+  "original_external_artifacts_exact": true,
+  "backend_source_count": 311,
+  "frontend_source_count": 91,
+  "frontend_dist_count": 76,
+  "actual_vinext_ssr": true,
+  "new_builds": 0,
+  "workers_started": 0,
+  "models_executed": 0,
+  "native_actions_executed": 0,
+  "stop_command": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe -X utf8 C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v8-stop-owned.py",
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v8\\stop.request.json",
+  "all11_complete": false
+}

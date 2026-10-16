@@ -1,3 +1,5 @@
+import json
+import sqlite3
 import subprocess
 import sys
 
@@ -104,3 +106,72 @@ def test_internal_lifecycle_checks_do_not_materialize_entire_history(session, mo
                               (before[-1][0],)).fetchall() == before
     text = (session.root / "active-session/progress.md").read_text()
     assert '"content"' not in text and "closed" in text and "command_finished" in text
+
+
+def test_progress_preserves_full_projection_without_sqlite_json_parsing(session):
+    session.start()
+    path = session.root / "active-session/progress.md"
+    marker = "\n<!-- automatic-session-journal -->\n"
+    # The marker crosses the prefix reader's chunk boundary, including non-ASCII text.
+    prefix = "作者记录\n" + "p" * 65520
+    path.write_text(prefix + marker + "old projection\n", encoding="utf-8")
+    payloads = [
+        {"content": "retained large context " * 50000, "snapshot": {"a": "sha", "b": "sha"},
+         "exit_code": 0, "changed": ["file.txt"], "other": {"content": "nested retained"}},
+        *({"snapshot": value} for value in [[], {}, None, "scalar", 7]),
+        {"executable": "python.exe", "files_observed": 99},
+    ]
+    session.db.executemany(
+        "INSERT INTO repo_session_events(time,kind,payload) VALUES (?,?,?)",
+        [("fixture time", "fixture", json.dumps(payload)) for payload in payloads],
+    )
+    session.db.commit()
+    before = session.events()
+    # Capture the established projection contract on this isolated database, including
+    # JSON scalars/null, before denying JSON functions to the production projection.
+    expected = []
+    for seq, time, kind, raw, count in session.db.execute(
+        "SELECT id,time,kind,json_remove(payload,'$.content','$.snapshot'), "
+        "CASE WHEN json_type(payload,'$.snapshot') IS NOT NULL THEN "
+        "(SELECT COUNT(*) FROM json_each(payload,'$.snapshot')) ELSE NULL END "
+        "FROM repo_session_events ORDER BY id"
+    ):
+        payload = json.loads(raw)
+        if count is not None:
+            payload["files_observed"] = count
+        expected.append(f"- {time} #{seq} {kind}: {json.dumps(payload)}")
+
+    def no_json_functions(action, name, function, database, trigger):
+        if action == sqlite3.SQLITE_FUNCTION and str(function).startswith("json"):
+            return sqlite3.SQLITE_DENY
+        return sqlite3.SQLITE_OK
+
+    session.db.set_authorizer(no_json_functions)
+    try:
+        session.progress()
+    finally:
+        session.db.set_authorizer(None)
+    assert path.read_text(encoding="utf-8") == prefix + marker + "\n".join(expected) + "\n"
+    assert session.events() == before
+    assert "retained large context" not in path.read_text(encoding="utf-8")
+
+
+def test_failed_progress_keeps_previous_projection_and_full_journal(session, monkeypatch):
+    session.start()
+    session.append("fixture", retained="projection failure target")
+    path = session.root / "active-session/progress.md"
+    before_file = path.read_bytes()
+    before_journal = session.events()
+    original_loads = json.loads
+
+    def limited_decode(raw):
+        if "projection failure target" in raw:
+            raise MemoryError("controlled projection allocation failure")
+        return original_loads(raw)
+
+    monkeypatch.setattr("uuma.session.json.loads", limited_decode)
+    with pytest.raises(MemoryError, match="controlled projection"):
+        session.progress()
+    assert path.read_bytes() == before_file
+    assert session.events() == before_journal
+    assert not list(path.parent.glob(".progress.md.*.tmp"))

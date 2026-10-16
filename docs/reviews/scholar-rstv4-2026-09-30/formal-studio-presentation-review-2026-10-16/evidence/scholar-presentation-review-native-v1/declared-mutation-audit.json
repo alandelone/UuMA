@@ -1,0 +1,14 @@
+{
+  "changed_tables": [
+    "review_comments",
+    "studio_response_checks"
+  ],
+  "other108_exact": true,
+  "only_A215_status_updated_at_changed": true,
+  "all_old_checks_exact": true,
+  "new_check_id": "response_check_1b9b3eaa4905448092dd2c472f7c9324",
+  "outcome": "PRESENTATION_MODIFIED",
+  "exact_request_saved": true,
+  "baseline_v6_target_v7": true,
+  "scientific_approval": false
+}

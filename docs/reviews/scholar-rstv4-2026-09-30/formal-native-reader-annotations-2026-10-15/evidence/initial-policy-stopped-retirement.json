@@ -1,0 +1,224 @@
+{
+  "status": "PASS_OWNED_SERVER_RETIRED_AND_UNCHANGED_DATA_AUDIT_NOT_NATIVE_ACCEPTANCE",
+  "owned_pid": 13716,
+  "pid_absent": true,
+  "port": 52891,
+  "port_free_bind_proven": true,
+  "original_tool_session": 99736,
+  "original_tool_session_exit_code": 0,
+  "owned_root_retained": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8",
+  "fixture_baseline_all_110_tables_exact": true,
+  "fixture_schema_exact": true,
+  "fixture_rows_exact": true,
+  "original_root_all_110_tables_exact": true,
+  "original_root_all_files_exact": true,
+  "protected_original_file_count": 74,
+  "frozen_source_311_exact": true,
+  "both_software_fixture_pdfs_retained_and_hash_exact": {
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_three_page_annotation.pdf": "e36f5d3ee0ca0bf1a237cec37f36b185784fcd48e0a746640013d2991f9c4ba1",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_without_printed_doi.pdf": "cd7c1d6d6b39c089fdf28ef31cc180e3e726245504544e3c8fa60837845c5a84"
+  },
+  "requests_total": 21,
+  "requests": [
+    {
+      "sequence": 1,
+      "utc": "2026-10-14T17:06:47.915433+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pdf-info",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 15.0
+    },
+    {
+      "sequence": 2,
+      "utc": "2026-10-14T17:06:47.945573+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_absent_file_abd70179dcff/pdf-info",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 16.0
+    },
+    {
+      "sequence": 3,
+      "utc": "2026-10-14T17:07:36.182752+00:00",
+      "method": "GET",
+      "path": "/",
+      "query": "view=review&case=software_fixture_rv_main_file_abd70179dcff",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 4,
+      "utc": "2026-10-14T17:07:36.198263+00:00",
+      "method": "GET",
+      "path": "/catalog-research-overview.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 5,
+      "utc": "2026-10-14T17:07:36.199264+00:00",
+      "method": "GET",
+      "path": "/catalog-track-decisions.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 6,
+      "utc": "2026-10-14T17:07:36.200857+00:00",
+      "method": "GET",
+      "path": "/catalog-collections.js",
+      "query": "v=bib-read-20261014",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 7,
+      "utc": "2026-10-14T17:07:36.200857+00:00",
+      "method": "GET",
+      "path": "/catalog-research-chat.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 8,
+      "utc": "2026-10-14T17:07:36.201776+00:00",
+      "method": "GET",
+      "path": "/catalog-experiments.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 9,
+      "utc": "2026-10-14T17:07:36.201776+00:00",
+      "method": "GET",
+      "path": "/catalog-research-workspaces.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 10,
+      "utc": "2026-10-14T17:07:36.205775+00:00",
+      "method": "GET",
+      "path": "/catalog-scientific-review.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 11,
+      "utc": "2026-10-14T17:07:36.206774+00:00",
+      "method": "GET",
+      "path": "/catalog-review-workflow.js",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 12,
+      "utc": "2026-10-14T17:07:36.318828+00:00",
+      "method": "GET",
+      "path": "/api/catalog/review/cases",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 16.0
+    },
+    {
+      "sequence": 13,
+      "utc": "2026-10-14T17:07:36.319828+00:00",
+      "method": "GET",
+      "path": "/api/catalog/summary",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 16.0
+    },
+    {
+      "sequence": 14,
+      "utc": "2026-10-14T17:07:36.348891+00:00",
+      "method": "GET",
+      "path": "/api/catalog/review/cases/software_fixture_rv_main_file_abd70179dcff/annotations",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 16.0
+    },
+    {
+      "sequence": 15,
+      "utc": "2026-10-14T17:07:36.350734+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pdf-info",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 16.0
+    },
+    {
+      "sequence": 16,
+      "utc": "2026-10-14T17:07:36.352251+00:00",
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": "",
+      "status": 404,
+      "elapsed_ms": 0.0
+    },
+    {
+      "sequence": 17,
+      "utc": "2026-10-14T17:07:36.352251+00:00",
+      "method": "GET",
+      "path": "/api/catalog/review/cases/software_fixture_rv_main_file_abd70179dcff/workflow",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 16.0
+    },
+    {
+      "sequence": 18,
+      "utc": "2026-10-14T17:07:36.398013+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/2/text",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 47.0
+    },
+    {
+      "sequence": 19,
+      "utc": "2026-10-14T17:07:36.399015+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/1/text",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 47.0
+    },
+    {
+      "sequence": 20,
+      "utc": "2026-10-14T17:07:36.484558+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/1.png",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 125.0
+    },
+    {
+      "sequence": 21,
+      "utc": "2026-10-14T17:07:36.489559+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/2.png",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 141.0
+    }
+  ],
+  "http_root_page_get_count": 1,
+  "pdf_page_png_or_text_get_count": 4,
+  "annotation_post_count": 0,
+  "all_http_methods_get": true,
+  "browser_navigation_outcome": "UNKNOWN_URL_POLICY_STOP_NO_FURTHER_APP_INPUT",
+  "native_ui_acceptance_complete": false,
+  "browser_render_or_user_interaction_proven": false,
+  "http_log_sha256": "581abddf253c21f70f11e5d6bf2e3d31b38b1ea89ed24764b72f821b73809309",
+  "prepared_all_tables_sha256": "3bdcd252e575095c92e653397c69d5a337875a18a746c941c78893811748e50c",
+  "terminal_all_tables_sha256": "3bdcd252e575095c92e653397c69d5a337875a18a746c941c78893811748e50c",
+  "source_vector_sha256": "7c4f70356da73ab06f3584df57180459448cdadbdad23b1efe1e42d0d85c815c"
+}

@@ -1,0 +1,17 @@
+{
+  "status": "PASS_CA07_NATIVE_MULTI_SORT_STABLE_TIES_AND_50_PAGINATION",
+  "native_cases": [
+    "default-page1",
+    "default-page2",
+    "default-back-page1",
+    "mixed-priority",
+    "reversed-priority",
+    "tied-page1",
+    "tied-page2",
+    "tied-back-page1"
+  ],
+  "original_source_bytes_and_83_tables_exact": true,
+  "owned_105_tables_schema_and_rows_exact": true,
+  "new_models_workers_or_papers": 0,
+  "all11_complete": false
+}

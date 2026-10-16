@@ -1,0 +1,62 @@
+[
+  {
+    "file": "components\\studio-response-review.tsx",
+    "callee": "fetchCurrent().catch",
+    "line": 105,
+    "argument_kinds": [
+      "ArrowFunction"
+    ]
+  },
+  {
+    "file": "components\\studio-response-review.tsx",
+    "callee": "fetchCurrent",
+    "line": 105,
+    "argument_kinds": []
+  },
+  {
+    "file": "components\\studio-response-review.tsx",
+    "callee": "fetchCurrent",
+    "line": 139,
+    "argument_kinds": []
+  },
+  {
+    "file": "components\\studio-response-review.tsx",
+    "callee": "fetchCurrent().catch",
+    "line": 189,
+    "argument_kinds": [
+      "ArrowFunction"
+    ]
+  },
+  {
+    "file": "components\\studio-response-review.tsx",
+    "callee": "fetchCurrent",
+    "line": 189,
+    "argument_kinds": []
+  },
+  {
+    "file": "lib\\studio-api.ts",
+    "callee": "fetch",
+    "line": 60,
+    "argument_kinds": [
+      "TemplateExpression",
+      "ObjectLiteralExpression"
+    ]
+  },
+  {
+    "file": "lib\\studio-api.ts",
+    "callee": "fetch",
+    "line": 77,
+    "argument_kinds": [
+      "CallExpression"
+    ]
+  },
+  {
+    "file": "lib\\studio-downloads.ts",
+    "callee": "fetchFile",
+    "line": 51,
+    "argument_kinds": [
+      "TemplateExpression",
+      "ObjectLiteralExpression"
+    ]
+  }
+]

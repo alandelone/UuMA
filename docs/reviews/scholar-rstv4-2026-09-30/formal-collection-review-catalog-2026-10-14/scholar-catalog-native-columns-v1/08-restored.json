@@ -1,0 +1,64 @@
+{
+  "headings": [
+    {
+      "text": "AaName",
+      "width": 340
+    },
+    {
+      "text": "◷Created",
+      "width": 220
+    },
+    {
+      "text": "▣Year",
+      "width": 132
+    },
+    {
+      "text": "◷Last Updated",
+      "width": 220
+    },
+    {
+      "text": "AaAuthors",
+      "width": 200
+    },
+    {
+      "text": "AaDOI",
+      "width": 132
+    },
+    {
+      "text": "AaSource",
+      "width": 155
+    },
+    {
+      "text": "◆PDF status",
+      "width": 132
+    },
+    {
+      "text": "#PDF files",
+      "width": 132
+    },
+    {
+      "text": "#PDFs to review",
+      "width": 132
+    },
+    {
+      "text": "◆Parse",
+      "width": 132
+    },
+    {
+      "text": "#References",
+      "width": 132
+    },
+    {
+      "text": "◆QuickRead",
+      "width": 132
+    },
+    {
+      "text": "◆Skeleton",
+      "width": 132
+    },
+    {
+      "text": "◆Review",
+      "width": 132
+    }
+  ]
+}

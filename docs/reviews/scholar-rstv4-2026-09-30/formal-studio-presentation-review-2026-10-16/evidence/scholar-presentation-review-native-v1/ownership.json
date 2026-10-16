@@ -1,0 +1,61 @@
+{
+  "backend": {
+    "pid": 37240,
+    "create_time": 1792087245.09748,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 48224
+  },
+  "frontend": {
+    "pid": 40692,
+    "create_time": 1792087246.4047143,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "56581",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-presentation-review-build-3cb8b9iz\\writing-studio",
+    "parent_pid": 48436
+  },
+  "backend_launcher": {
+    "pid": 48224,
+    "create_time": 1792087245.080901,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 48436
+  },
+  "frontend_windows_console_children": [
+    {
+      "pid": 42552,
+      "create_time": 1792087246.4094925,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 40692
+    }
+  ],
+  "ports": [
+    8877,
+    56581
+  ],
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\stop.request.json",
+  "owned_scope": "current v5 identities only"
+}

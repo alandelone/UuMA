@@ -1,0 +1,39 @@
+{
+  "files": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\receipt.json": {
+      "sha256": "533e254c77c111cbe45d61ed0b41cb102c1099b5c364fda446f0abcfe0a30488"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\reuse-preflight.json": {
+      "sha256": "4efd4decb0670b2b5a77ce4159f9d2b31793c95355bc8a516ba2983a13ba7e60"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\before110-all-tables.json": {
+      "sha256": "d49e109b6f85cb550232631e8b545e0e8299ad538d43dc4d7c0e96eeb3c2f0c8"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\before110-all-files.json": {
+      "sha256": "74ada03b413e0b0b06218b86d197b3138f511af6f59f707af67867fa4c55f1e7"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\previous-owned-identity-audit.json": {
+      "sha256": "90cfc8ca37d153680bfc65deef54603b7a6e00f83ac4d61b751db0dd7b2adab2"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\ownership.json": {
+      "sha256": "7fc702309036c0f2a8015084b6710d35309467d1baec8333c1b135da2b19b961"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\ready.json": {
+      "sha256": "664095f0e0723e4d7eac396ee3cf2f432992788210aae94970c9c9781176c918"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\backend-launched.json": {
+      "sha256": "0dbd43fa48d41e3c0626303a1f6cbca5909880471d7bdd208c6dcb33ac0c0e0f"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\backend-ready.json": {
+      "sha256": "e05e926e2fe36e84efd82a62f94a645cb62aa69b42afe335b21468bef103eb19"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\frontend-launched.json": {
+      "sha256": "50651302b49ccbcd9d16676c4238bafc200e9a08655843b081ed05961f452874"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-native-v1\\initial-workspace.json": {
+      "sha256": "f4796dfc0900ae28297ec24cd499262e3ac0a5bfd4008f22cccb5ad8970fbb01"
+    }
+  },
+  "v5_runner_sha256": "d66efb14888ec68afdad4ab0f0a424a592d447b51d8b1d759b8969e64f1792bf",
+  "prior_v4_failed_before_services": true
+}

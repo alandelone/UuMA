@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/packages",
+  "query": "",
+  "status": 200,
+  "seconds": 0.10899999999674037,
+  "response_sha256": "84701f5ad7449cf174132fdc1960b6e3ff2d48b3a2a1f17368388a413b18eb35",
+  "origin": "http://127.0.0.1:54375"
+}

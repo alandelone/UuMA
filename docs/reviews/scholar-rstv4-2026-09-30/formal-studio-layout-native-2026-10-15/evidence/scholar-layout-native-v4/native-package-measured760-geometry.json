@@ -1,0 +1,533 @@
+{
+  "items": [
+    {
+      "button": {
+        "bottom": 202.5625,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 5,
+        "right": 108.609375,
+        "scrollWidth": 102,
+        "top": 179.5,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 219.40625,
+        "left": 5,
+        "right": 369.296875,
+        "top": 179.5
+      },
+      "filename": {
+        "clientWidth": 110,
+        "left": 5,
+        "right": 115.375,
+        "scrollWidth": 110
+      },
+      "name": "author-structure.json"
+    },
+    {
+      "button": {
+        "bottom": 202.5625,
+        "clientWidth": 209,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 587,
+        "scrollWidth": 209,
+        "top": 179.5,
+        "width": 211.3125
+      },
+      "cell": {
+        "bottom": 219.40625,
+        "left": 375.6875,
+        "right": 740,
+        "top": 179.5
+      },
+      "filename": {
+        "clientWidth": 161,
+        "left": 375.6875,
+        "right": 536.734375,
+        "scrollWidth": 161
+      },
+      "name": "baseline-compiled-layout.xhtml"
+    },
+    {
+      "button": {
+        "bottom": 248.859375,
+        "clientWidth": 165,
+        "height": 23.0625,
+        "left": 5,
+        "right": 171.546875,
+        "scrollWidth": 165,
+        "top": 225.796875,
+        "width": 166.546875
+      },
+      "cell": {
+        "bottom": 265.703125,
+        "left": 5,
+        "right": 369.296875,
+        "top": 225.796875
+      },
+      "filename": {
+        "clientWidth": 125,
+        "left": 5,
+        "right": 130.234375,
+        "scrollWidth": 125
+      },
+      "name": "baseline-manuscript.pdf"
+    },
+    {
+      "button": {
+        "bottom": 248.859375,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 479.296875,
+        "scrollWidth": 102,
+        "top": 225.796875,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 265.703125,
+        "left": 375.6875,
+        "right": 740,
+        "top": 225.796875
+      },
+      "filename": {
+        "clientWidth": 130,
+        "left": 375.6875,
+        "right": 505.90625,
+        "scrollWidth": 130
+      },
+      "name": "change-location-map.csv"
+    },
+    {
+      "button": {
+        "bottom": 295.15625,
+        "clientWidth": 142,
+        "height": 23.0625,
+        "left": 5,
+        "right": 149.40625,
+        "scrollWidth": 142,
+        "top": 272.09375,
+        "width": 144.40625
+      },
+      "cell": {
+        "bottom": 312,
+        "left": 5,
+        "right": 369.296875,
+        "top": 272.09375
+      },
+      "filename": {
+        "clientWidth": 146,
+        "left": 5,
+        "right": 151.3125,
+        "scrollWidth": 146
+      },
+      "name": "change-realization-map.json"
+    },
+    {
+      "button": {
+        "bottom": 295.15625,
+        "clientWidth": 115,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 492.75,
+        "scrollWidth": 115,
+        "top": 272.09375,
+        "width": 117.0625
+      },
+      "cell": {
+        "bottom": 312,
+        "left": 375.6875,
+        "right": 740,
+        "top": 272.09375
+      },
+      "filename": {
+        "clientWidth": 111,
+        "left": 375.6875,
+        "right": 486.1875,
+        "scrollWidth": 111
+      },
+      "name": "clean-manuscript.md"
+    },
+    {
+      "button": {
+        "bottom": 341.453125,
+        "clientWidth": 75,
+        "height": 23.0625,
+        "left": 5,
+        "right": 81.71875,
+        "scrollWidth": 75,
+        "top": 318.390625,
+        "width": 76.71875
+      },
+      "cell": {
+        "bottom": 358.296875,
+        "left": 5,
+        "right": 369.296875,
+        "top": 318.390625
+      },
+      "filename": {
+        "clientWidth": 111,
+        "left": 5,
+        "right": 115.921875,
+        "scrollWidth": 111
+      },
+      "name": "clean-manuscript.pdf"
+    },
+    {
+      "button": {
+        "bottom": 341.453125,
+        "clientWidth": 85,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 462.875,
+        "scrollWidth": 85,
+        "top": 318.390625,
+        "width": 87.1875
+      },
+      "cell": {
+        "bottom": 358.296875,
+        "left": 375.6875,
+        "right": 740,
+        "top": 318.390625
+      },
+      "filename": {
+        "clientWidth": 109,
+        "left": 375.6875,
+        "right": 484.78125,
+        "scrollWidth": 109
+      },
+      "name": "clean-manuscript.tex"
+    },
+    {
+      "button": {
+        "bottom": 387.75,
+        "clientWidth": 115,
+        "height": 23.0625,
+        "left": 5,
+        "right": 122.203125,
+        "scrollWidth": 115,
+        "top": 364.6875,
+        "width": 117.203125
+      },
+      "cell": {
+        "bottom": 404.59375,
+        "left": 5,
+        "right": 369.296875,
+        "top": 364.6875
+      },
+      "filename": {
+        "clientWidth": 137,
+        "left": 5,
+        "right": 142.46875,
+        "scrollWidth": 137
+      },
+      "name": "comment-change-map.csv"
+    },
+    {
+      "button": {
+        "bottom": 387.75,
+        "clientWidth": 116,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 493.21875,
+        "scrollWidth": 116,
+        "top": 364.6875,
+        "width": 117.53125
+      },
+      "cell": {
+        "bottom": 404.59375,
+        "left": 375.6875,
+        "right": 740,
+        "top": 364.6875
+      },
+      "filename": {
+        "clientWidth": 142,
+        "left": 375.6875,
+        "right": 517.75,
+        "scrollWidth": 142
+      },
+      "name": "final-compiled-layout.xhtml"
+    },
+    {
+      "button": {
+        "bottom": 434.046875,
+        "clientWidth": 142,
+        "height": 23.0625,
+        "left": 5,
+        "right": 149.40625,
+        "scrollWidth": 142,
+        "top": 410.984375,
+        "width": 144.40625
+      },
+      "cell": {
+        "bottom": 450.890625,
+        "left": 5,
+        "right": 369.296875,
+        "top": 410.984375
+      },
+      "filename": {
+        "clientWidth": 81,
+        "left": 5,
+        "right": 85.78125,
+        "scrollWidth": 81
+      },
+      "name": "generated.json"
+    },
+    {
+      "button": {
+        "bottom": 434.046875,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 479.296875,
+        "scrollWidth": 102,
+        "top": 410.984375,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 450.890625,
+        "left": 375.6875,
+        "right": 740,
+        "top": 410.984375
+      },
+      "filename": {
+        "clientWidth": 143,
+        "left": 375.6875,
+        "right": 519.171875,
+        "scrollWidth": 143
+      },
+      "name": "generation-model-calls.json"
+    },
+    {
+      "button": {
+        "bottom": 480.34375,
+        "clientWidth": 115,
+        "height": 23.0625,
+        "left": 5,
+        "right": 122.203125,
+        "scrollWidth": 115,
+        "top": 457.28125,
+        "width": 117.203125
+      },
+      "cell": {
+        "bottom": 497.1875,
+        "left": 5,
+        "right": 369.296875,
+        "top": 457.28125
+      },
+      "filename": {
+        "clientWidth": 73,
+        "left": 5,
+        "right": 77.84375,
+        "scrollWidth": 73
+      },
+      "name": "manifest.json"
+    },
+    {
+      "button": {
+        "bottom": 480.34375,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 479.296875,
+        "scrollWidth": 102,
+        "top": 457.28125,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 497.1875,
+        "left": 375.6875,
+        "right": 740,
+        "top": 457.28125
+      },
+      "filename": {
+        "clientWidth": 125,
+        "left": 375.6875,
+        "right": 500.234375,
+        "scrollWidth": 125
+      },
+      "name": "marked-comparison.md"
+    },
+    {
+      "button": {
+        "bottom": 547.703125,
+        "clientWidth": 362,
+        "height": 44.125,
+        "left": 5,
+        "right": 369.296875,
+        "scrollWidth": 362,
+        "top": 503.578125,
+        "width": 364.296875
+      },
+      "cell": {
+        "bottom": 564.546875,
+        "left": 5,
+        "right": 369.296875,
+        "top": 503.578125
+      },
+      "filename": {
+        "clientWidth": 323,
+        "left": 5,
+        "right": 328.03125,
+        "scrollWidth": 323
+      },
+      "name": "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-render.png"
+    },
+    {
+      "button": {
+        "bottom": 547.703125,
+        "clientWidth": 362,
+        "height": 44.125,
+        "left": 375.6875,
+        "right": 740,
+        "scrollWidth": 362,
+        "top": 503.578125,
+        "width": 364.3125
+      },
+      "cell": {
+        "bottom": 564.546875,
+        "left": 375.6875,
+        "right": 740,
+        "top": 503.578125
+      },
+      "filename": {
+        "clientWidth": 320,
+        "left": 375.6875,
+        "right": 696.140625,
+        "scrollWidth": 320
+      },
+      "name": "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-source.svg"
+    },
+    {
+      "button": {
+        "bottom": 615.0625,
+        "clientWidth": 362,
+        "height": 44.125,
+        "left": 5,
+        "right": 369.296875,
+        "scrollWidth": 362,
+        "top": 570.9375,
+        "width": 364.296875
+      },
+      "cell": {
+        "bottom": 631.90625,
+        "left": 5,
+        "right": 369.296875,
+        "top": 570.9375
+      },
+      "filename": {
+        "clientWidth": 321,
+        "left": 5,
+        "right": 325.609375,
+        "scrollWidth": 321
+      },
+      "name": "material-asset_ea004de6f5da423ba6ab98710d9a9458-source.csv"
+    },
+    {
+      "button": {
+        "bottom": 604.53125,
+        "clientWidth": 74,
+        "height": 33.59375,
+        "left": 375.6875,
+        "right": 452.09375,
+        "scrollWidth": 74,
+        "top": 570.9375,
+        "width": 76.40625
+      },
+      "cell": {
+        "bottom": 631.90625,
+        "left": 375.6875,
+        "right": 740,
+        "top": 570.9375
+      },
+      "filename": {
+        "clientWidth": 77,
+        "left": 375.6875,
+        "right": 452.609375,
+        "scrollWidth": 77
+      },
+      "name": "references.bib"
+    },
+    {
+      "button": {
+        "bottom": 661.359375,
+        "clientWidth": 192,
+        "height": 23.0625,
+        "left": 5,
+        "right": 198.953125,
+        "scrollWidth": 192,
+        "top": 638.296875,
+        "width": 193.953125
+      },
+      "cell": {
+        "bottom": 678.203125,
+        "left": 5,
+        "right": 369.296875,
+        "top": 638.296875
+      },
+      "filename": {
+        "clientWidth": 147,
+        "left": 5,
+        "right": 152.15625,
+        "scrollWidth": 147
+      },
+      "name": "response-review-history.json"
+    },
+    {
+      "button": {
+        "bottom": 661.359375,
+        "clientWidth": 74,
+        "height": 23.0625,
+        "left": 375.6875,
+        "right": 452.09375,
+        "scrollWidth": 74,
+        "top": 638.296875,
+        "width": 76.40625
+      },
+      "cell": {
+        "bottom": 678.203125,
+        "left": 375.6875,
+        "right": 740,
+        "top": 638.296875
+      },
+      "filename": {
+        "clientWidth": 135,
+        "left": 375.6875,
+        "right": 510.46875,
+        "scrollWidth": 135
+      },
+      "name": "response-to-reviewers.md"
+    },
+    {
+      "button": {
+        "bottom": 707.65625,
+        "clientWidth": 88,
+        "height": 23.0625,
+        "left": 5,
+        "right": 95,
+        "scrollWidth": 88,
+        "top": 684.59375,
+        "width": 90
+      },
+      "cell": {
+        "bottom": 724.5,
+        "left": 5,
+        "right": 369.296875,
+        "top": 684.59375
+      },
+      "filename": {
+        "clientWidth": 139,
+        "left": 5,
+        "right": 144.109375,
+        "scrollWidth": 139
+      },
+      "name": "unresolved-comments.json"
+    }
+  ],
+  "viewport": {
+    "height": 900,
+    "width": 760
+  }
+}

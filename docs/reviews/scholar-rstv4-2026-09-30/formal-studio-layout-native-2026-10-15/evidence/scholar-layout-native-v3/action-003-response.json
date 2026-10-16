@@ -1,0 +1,18 @@
+{
+  "status_code": 202,
+  "body": {
+    "job_id": "studio_job_e6cc5fc6730e4da8b08052c85c8cf945",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "job_kind": "SUBMISSION_PACKAGE",
+    "status": "QUEUED",
+    "input_revision": 86,
+    "created_at": "2026-10-15T13:26:40.418808+00:00",
+    "started_at": null,
+    "completed_at": null,
+    "request": {
+      "review_round_id": "review_round_72931d507bda4bdb813dc14988444892"
+    },
+    "result": null,
+    "error": null
+  }
+}

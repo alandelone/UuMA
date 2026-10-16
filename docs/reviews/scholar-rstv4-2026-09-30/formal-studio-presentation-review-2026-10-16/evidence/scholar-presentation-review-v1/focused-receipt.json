@@ -1,0 +1,68 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "--fix",
+      "tests/test_studio_presentation_review.py"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 1,
+    "seconds": 0.10899999999674037,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-v1\\check-0.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests/test_studio_presentation_review.py",
+      "-q",
+      "--tb=short"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 12.39100000000326,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-v1\\check-1.log"
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-response-review.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.34399999999732245,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-v1\\check-2.log"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 3.561999999998079,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-v1\\check-3.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/rstv4/studio_response_checks.py",
+      "src/rstv4/studio_api.py",
+      "tests/test_studio_presentation_review.py"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 1,
+    "seconds": 0.0940000000045984,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-v1\\check-4.log"
+  }
+]

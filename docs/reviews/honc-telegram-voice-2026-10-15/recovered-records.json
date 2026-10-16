@@ -1,0 +1,75 @@
+{
+  "verified_at": "2026-10-15T03:07:30.455622+00:00",
+  "recovered_body_records": 2,
+  "original_messages_unchanged": true,
+  "earlier_superseded_report_not_imported": true,
+  "no_habit_completion_inferred": true,
+  "no_diagnosis_inferred": true,
+  "real_model_calls": 0,
+  "extra_telegram_messages_sent": 0,
+  "phoenix_trace_id": "b4604d2a85370e33cf27160872118390",
+  "records": [
+    {
+      "original_telegram_message_id": "79",
+      "original_session": "20261014_171549_c546b0aa",
+      "operation": {
+        "ok": true,
+        "status": "APPLIED",
+        "effect_state": "committed",
+        "operation_id": "operation_1e98fe163c5d43ada5e8bbaa20ba5740",
+        "records": [
+          {
+            "id": "body_9f9c7b75b17d4fa182a4c20e57f66c58",
+            "kind": "body",
+            "revision": 1,
+            "occurred_at": null,
+            "occurred_date": "2026-10-15",
+            "precision": "approximate"
+          }
+        ],
+        "data": {
+          "followup_created": false
+        },
+        "receipt_refs": {
+          "source_ref": "source_4829242b43d947afa5f15750b3aec8ed",
+          "operation": "operation_1e98fe163c5d43ada5e8bbaa20ba5740"
+        },
+        "next_action": "NONE",
+        "retry_policy": "none",
+        "errors": []
+      },
+      "replay_status": "ALREADY_APPLIED"
+    },
+    {
+      "original_telegram_message_id": "82",
+      "original_session": "20261014_171549_c546b0aa",
+      "operation": {
+        "ok": true,
+        "status": "APPLIED",
+        "effect_state": "committed",
+        "operation_id": "operation_6f6fac43535340229e242233a3df55da",
+        "records": [
+          {
+            "id": "body_3c949c77565b402e8aa847069858e5b1",
+            "kind": "body",
+            "revision": 1,
+            "occurred_at": null,
+            "occurred_date": "2026-10-15",
+            "precision": "approximate"
+          }
+        ],
+        "data": {
+          "followup_created": false
+        },
+        "receipt_refs": {
+          "source_ref": "source_85bc5597db6249339b8097e68267f85c",
+          "operation": "operation_6f6fac43535340229e242233a3df55da"
+        },
+        "next_action": "NONE",
+        "retry_policy": "none",
+        "errors": []
+      },
+      "replay_status": "ALREADY_APPLIED"
+    }
+  ]
+}

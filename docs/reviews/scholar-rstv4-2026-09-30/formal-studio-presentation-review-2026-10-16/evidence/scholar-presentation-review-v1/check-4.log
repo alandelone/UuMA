@@ -1,0 +1,26 @@
+PLC0414 Import alias does not rename original package
+  --> tests\test_studio_presentation_review.py:8:44
+   |
+ 6 | import pytest
+ 7 | from fastapi.testclient import TestClient
+ 8 | from test_studio_layout_integration import branch as branch
+   |                                            ^^^^^^^^^^^^^^^^
+ 9 | from test_studio_layout_integration import compiled_source as compiled_source
+10 | from test_studio_layout_integration import replay
+   |
+help: Remove import alias
+
+PLC0414 Import alias does not rename original package
+  --> tests\test_studio_presentation_review.py:9:44
+   |
+ 7 | from fastapi.testclient import TestClient
+ 8 | from test_studio_layout_integration import branch as branch
+ 9 | from test_studio_layout_integration import compiled_source as compiled_source
+   |                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+10 | from test_studio_layout_integration import replay
+11 | from test_writing_studio import wait_for_job
+   |
+help: Remove import alias
+
+Found 2 errors.
+No fixes available (2 hidden fixes can be enabled with the `--unsafe-fixes` option).

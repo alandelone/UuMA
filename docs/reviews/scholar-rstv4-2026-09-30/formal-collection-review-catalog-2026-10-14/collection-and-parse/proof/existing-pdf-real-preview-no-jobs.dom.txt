@@ -1,0 +1,98 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8887/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8887/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8887/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "新建采集":
+      - generic: 新建采集
+      - generic: ⌄
+  - region "新建文献采集":
+    - generic: ▤
+    - strong: PAPER CATALOG
+    - generic: Scholar · RSTV4 · 文献采集
+    - generic: Topic／Track 文献采集
+    - navigation "采集页面导航":
+      - button "← 返回"
+      - generic: 研究总览 → 新建采集
+      - generic: 审核恢复软件 Field / 审核恢复软件 Topic
+    - text: Collection / New
+    - heading "新建文献采集" [level=1]
+    - paragraph: 研究归属已由总览确定。可选择 Catalog 已有论文，也可填写 DOI、BibTeX 和检索词。
+    - region "DOI 列表":
+      - heading "DOI 列表" [level=2]
+      - paragraph: 每行一篇；纯 DOI 或 doi.org 链接均可。
+      - generic: 粘贴 DOI
+      - textbox "粘贴 DOI":
+        - /placeholder: "10.1016/j.solener.2024.112345\nhttps://doi.org/10.3390/en13215566"
+    - region "BibTeX":
+      - heading "BibTeX" [level=2]
+      - paragraph: 粘贴内容，或读取本机 .bib 文件。
+      - generic: 粘贴 BibTeX
+      - textbox "粘贴 BibTeX":
+        - /placeholder: "@article{...}"
+      - generic: 选择 .bib 文件
+      - button "选择 .bib 文件 文件只会读入上方文本框；当前不会上传。"
+      - generic: 文件只会读入上方文本框；当前不会上传。
+    - region "检索词":
+      - heading "检索词" [level=2]
+      - paragraph: 每行一条关键词或检索式。
+      - generic: 粘贴检索词
+      - textbox "粘贴检索词 可单独使用，也可与 DOI／BibTeX 一起采集。":
+        - /placeholder: "solar irradiance nowcasting all-sky images\nmicrogrid solar forecasting uncertainty"
+      - generic: 可单独使用，也可与 DOI／BibTeX 一起采集。
+    - region "从 Catalog 选择已有论文":
+      - heading "从 Catalog 选择已有论文" [level=2]
+      - paragraph: 选入本次 Topic／Track 后重新按研究范围筛选。已有文件会检查完整性后复用，身份待审仍需复核。
+      - generic: 搜索题名、DOI 或作者
+      - textbox "搜索题名、DOI 或作者":
+        - /placeholder: 题名、DOI 或作者…
+      - checkbox "Software review identity title" [checked]
+      - strong: Software review identity title
+      - paragraph: 10.1234/corrected
+      - text: 已登记验证文件，复用前检查完整性
+      - text: Catalog 匹配 1 篇
+      - button "上一页" [disabled]
+      - button "下一页" [disabled]
+      - status: 这里只选择目录论文，检查输入才会确认文件是否可以复用。
+      - heading "已选择 1 篇" [level=3]
+      - strong: Software review identity title
+      - button "移除选择"
+      - paragraph: 与 DOI／BibTeX 指向同一论文的输入合并为一个采集成员；原始输入保留。
+    - complementary "采集输入预览":
+      - text: Before you begin
+      - heading "本次采集预览" [level=2]
+      - paragraph: 输入会即时汇总。「检查输入」会核对 Catalog 与实际 PDF 文件，不会创建任务。
+      - strong: "0"
+      - generic: 唯一 DOI
+      - strong: "0"
+      - generic: BibTeX 条目
+      - strong: "0"
+      - generic: 检索式
+      - list:
+        - generic: 研究归属
+        - strong: 审核恢复软件 Field / 审核恢复软件 Topic
+        - generic: 输入内重复 DOI
+        - strong: "0"
+        - generic: 无效 DOI 行
+        - strong: "0"
+        - generic: Catalog 已有论文
+        - strong: "1"
+        - generic: 可复用 PDF
+        - strong: "1"
+        - generic: 身份待审核
+        - strong: "0"
+      - generic "采集预算：默认 500 篇／10 GiB／24 小时"
+      - strong: 按「开始采集」之后
+      - paragraph: 创建 Collection 并返回原 Topic／Track。右侧状态可打开详情，查看任务、失败和人工处理项。已有且完整的已验证 PDF 会复用；无 DOI 的 BibTeX 与新论文仍需身份解析。排队状态会等待相应服务处理。
+    - paragraph: 检查通过；已有 1 篇，可复用 1 份 PDF，待审核 0 篇。尚未创建任务。
+    - button "检查输入" [active]
+    - button "开始采集 →"
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

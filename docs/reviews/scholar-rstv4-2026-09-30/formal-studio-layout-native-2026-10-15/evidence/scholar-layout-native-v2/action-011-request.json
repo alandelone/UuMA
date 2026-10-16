@@ -1,0 +1,6 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_f71edb5758ef41f3b0d96d8cdbed18d5",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE decision: Apply only the explicit page-margin setting. The fixed v6 realization is reused and recompiled without a model call; no author prose, scientific claim, source, condition or material identity is amended. This presentation change must not count as evidence of scientific text modification.\",\"response_text\":\"SOFTWARE_FIXTURE reply. We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content. The author text, generated sentences, sources, conditions, citation identities and original table/figure bytes remain unchanged. This is presentation-only evidence, not a scientific prose amendment or scientific approval.\",\"expected_content_sha256\":\"058dcf4aac5d7190f645340a7f78fa56f694e0218723f2addeb34ba7e5d4661e\"}",
+  "body_sha256": "02beaf0e8a1d18bc6b3fbdf0e804ac2b8f1748f968acb188feaea193c85a36cc"
+}

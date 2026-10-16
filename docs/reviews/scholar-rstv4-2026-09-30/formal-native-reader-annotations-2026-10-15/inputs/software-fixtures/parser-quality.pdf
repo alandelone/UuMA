@@ -1,0 +1,105 @@
+%PDF-1.3
+%‚„œ”
+1 0 obj
+<<
+/Producer (pypdf)
+/Title (SOFTWARE\137FIXTURE SOFTWARE\137FIXTURE\137parser\137quality)
+/Subject (Synthetic review UI fixture\073 no parser or model executed\056)
+>>
+endobj
+2 0 obj
+<<
+/Type /Pages
+/Count 2
+/Kids [ 5 0 R 7 0 R ]
+>>
+endobj
+3 0 obj
+<<
+/Type /Catalog
+/Pages 2 0 R
+>>
+endobj
+4 0 obj
+<<
+/Type /Font
+/Subtype /Type1
+/BaseFont /Helvetica
+>>
+endobj
+5 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 4 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 6 0 R
+>>
+endobj
+6 0 obj
+<<
+/Length 555
+>>
+stream
+BT /F1 10 Tf 48 748 Td (SOFTWARE_FIXTURE - ACCEPTANCE ONLY) Tj ET
+BT /F1 17 Tf 48 702 Td (SOFTWARE_FIXTURE Parser Quality Source) Tj ET
+BT /F1 13 Tf 48 665 Td (DOI: 10.9898/rv-parser-07b736b47e49) Tj ET
+BT /F1 12 Tf 48 620 Td (This software-only text provides a controlled parser-quality view.) Tj ET
+BT /F1 12 Tf 48 595 Td (The candidate intentionally omits reference six from page two.) Tj ET
+BT /F1 12 Tf 48 570 Td (No parser, model, worker, or scientific review generated this fixture.) Tj ET
+BT /F1 10 Tf 48 40 Td (Software fixture page 1 of 2) Tj ET
+endstream
+endobj
+7 0 obj
+<<
+/Type /Page
+/Resources <<
+/Font <<
+/F1 4 0 R
+>>
+>>
+/MediaBox [ 0.0 0.0 612 792 ]
+/Parent 2 0 R
+/Contents 8 0 R
+>>
+endobj
+8 0 obj
+<<
+/Length 786
+>>
+stream
+BT /F1 10 Tf 48 748 Td (SOFTWARE_FIXTURE - ACCEPTANCE ONLY) Tj ET
+BT /F1 17 Tf 48 702 Td (SOFTWARE_FIXTURE Numbered References) Tj ET
+BT /F1 12 Tf 48 657 Td ([1] Software Author 1. Controlled reference fixture number 1. 2026.) Tj ET
+BT /F1 12 Tf 48 623 Td ([2] Software Author 2. Controlled reference fixture number 2. 2026.) Tj ET
+BT /F1 12 Tf 48 589 Td ([3] Software Author 3. Controlled reference fixture number 3. 2026.) Tj ET
+BT /F1 12 Tf 48 555 Td ([4] Software Author 4. Controlled reference fixture number 4. 2026.) Tj ET
+BT /F1 12 Tf 48 521 Td ([5] Software Author 5. Controlled reference fixture number 5. 2026.) Tj ET
+BT /F1 12 Tf 48 487 Td ([6] Software Author 6. Controlled reference fixture number 6. 2026.) Tj ET
+BT /F1 10 Tf 48 40 Td (Software fixture page 2 of 2) Tj ET
+endstream
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000015 00000 n 
+0000000199 00000 n 
+0000000264 00000 n 
+0000000313 00000 n 
+0000000383 00000 n 
+0000000515 00000 n 
+0000001121 00000 n 
+0000001253 00000 n 
+trailer
+<<
+/Size 9
+/Root 3 0 R
+/Info 1 0 R
+>>
+startxref
+2090
+%%EOF

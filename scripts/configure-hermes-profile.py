@@ -23,6 +23,8 @@ BRAINSTORMER_WORKER_TOOLS = (
     "submit_result",
     "brainstormer_search_topics",
     "brainstormer_get_context",
+    "brainstormer_get_decision_map",
+    "brainstormer_set_active_question",
     "brainstormer_propose_transaction",
     "brainstormer_commit_safe_transaction",
     "brainstormer_calculate_capacity",

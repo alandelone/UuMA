@@ -1,0 +1,9 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/history",
+  "query": "",
+  "status": 200,
+  "seconds": 0.13999999999941792,
+  "response_sha256": "a5a84dd00123c42b1a72df4b09104012e7e05d068df862f2eb683a7397183786",
+  "origin": "http://127.0.0.1:60073"
+}

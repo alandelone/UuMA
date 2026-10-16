@@ -1,0 +1,202 @@
+[
+  {
+    "artifact_id": "artifact_13c3e127a6924a148b803b3f599d449d",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.tex",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.tex",
+    "sha256": "49553aa1e7864f00c4b5a15790583ac1e9a82b4775ab8673a02f5d33c63cb9b6",
+    "size_bytes": 735,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_195566734c1d461ea9683fb07d8d0ca0",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\references.bib",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\references.bib",
+    "sha256": "f524812653e997389a89270353f276fc2f096696db5d2beccf447dc043336edb",
+    "size_bytes": 324,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_227d169568f84a9aabbae927c3203c54",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.tex",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.tex",
+    "sha256": "c2745bd8f1592f0f813307f5e286ef06a940d99ad03108d08723bed3e48e157a",
+    "size_bytes": 563,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_23999011d53c4a8a9dd92f3d744e147b",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.tex",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.tex",
+    "sha256": "362e332ce7710f74d812c8509017431965686d808cb46492758da20a02481fdd",
+    "size_bytes": 2320,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_2e2aedfcd2f7498aa50b820e242b5b84",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\references.bib",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\references.bib",
+    "sha256": "f524812653e997389a89270353f276fc2f096696db5d2beccf447dc043336edb",
+    "size_bytes": 324,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_2ecef37439e04a609d33a1a721bd4a04",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\references.bib",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\references.bib",
+    "sha256": "122f86ce0bdd360dffd25da0791b2b1a5a5ece3f365ba5c47d63fdb5ec7a2e0f",
+    "size_bytes": 324,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_35b9305bb4524c8c84456247c7ae43b9",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.pdf",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.pdf",
+    "sha256": "a4c396aeeeae23d1ac8ac420fd15306fab5bfce58a91e57c468ec75c031dbc23",
+    "size_bytes": 9091,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_4012958fd937410ea0620eca7bd11c73",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.pdf",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.pdf",
+    "sha256": "6d956fd784fe3bb8331a1966d40460aac702bd034bf44a7f0d5011c0b7809f6d",
+    "size_bytes": 9757,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_5ad74027523a436d84b228bbbf6f0ae2",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.md",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.md",
+    "sha256": "f8d520de323fd7d1abb5545dc2d0f15b2190ee00d2772c43b9596c45ec2e59ce",
+    "size_bytes": 394,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_5b694a79aff249278af78067de0f4b0d",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.md",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.md",
+    "sha256": "ec876e85433dd186a43b67d8692c26e3b7619ab4facb89523b4f651c116b4aa4",
+    "size_bytes": 232,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_6e28e7b4d095407289626fb03c88639f",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.md",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.md",
+    "sha256": "da41dcfb42e0053a9db932a2592b5308632c8b6ad310c2d2895a5139eb4578dc",
+    "size_bytes": 232,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_72be87fbf6b04759ab5431968eb4e0d1",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\references.bib",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\references.bib",
+    "sha256": "122f86ce0bdd360dffd25da0791b2b1a5a5ece3f365ba5c47d63fdb5ec7a2e0f",
+    "size_bytes": 324,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_7477255312e6405988e21c626026e5ae",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.pdf",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.pdf",
+    "sha256": "320d3f6acc8f24f00412b7468cc89b2dbefc6a46fc40c8391f2a92c90f5824c0",
+    "size_bytes": 9639,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_7b0c5b8e344c427fb79a5de7ae07b2ef",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\generated.json",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\generated.json",
+    "sha256": "64e49976c1023beb4fc62bb1b5f30bbb6c6a4d18832677ad07d22007feee9788",
+    "size_bytes": 12807,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_89d3f80f6aed4695b048ef58fd439b68",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.tex",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\manuscript.tex",
+    "sha256": "a4340bee5f8607d9a81b506f4e0eb1e251079e0387e3b3a41d44b0372029f40d",
+    "size_bytes": 563,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_aa2b869969bd4edc93242cedbae5fe2d",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.pdf",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.pdf",
+    "sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+    "size_bytes": 13830,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_cad04d0586ce4a51b5b7d5f45519b56e",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.pdf",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\manuscript.pdf",
+    "sha256": "f4d45ac2f3f5cf1eb3a1caad146139e347a4b9ba8202626f3e3a149ebb3ffd85",
+    "size_bytes": 9404,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_cd0863e680fe4bd7b0e197555e7d5765",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\references.bib",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\references.bib",
+    "sha256": "f882360d52db2dbf92464deb2feca05e493311a7acc2f4b3a024596b56ca1406",
+    "size_bytes": 284,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_d1328b33a4154d3986cbd5be8b0f02f2",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.md",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_d0e256cf865541589830ee84a54bfc8c\\manuscript.md",
+    "sha256": "5cd67372f21dccab8c1ebbe87a2d25a2b07f4ec07e78fd621a0979c88f6045e5",
+    "size_bytes": 394,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_d56ccca8e4c243179e25da7e884abfcc",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\generated.json",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\generated.json",
+    "sha256": "3ed11e3d8c02ab5c93056e307863616e08af8e167c7f414687f15afbb038b433",
+    "size_bytes": 23567,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_df885ac1882e42bf88dce4c2e01be4b9",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\generated.json",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_96fc0b4bf0244090906d0a5523d0a3c9\\generated.json",
+    "sha256": "e4e31a2d5430586d08999b1b5e047e5a5609f23041cfb43b5c6897c124c4046d",
+    "size_bytes": 12064,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_dfbe848f0e8c462c94e364dcf1e79e65",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\generated.json",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_656de2aa09334457a5894c7020133b84\\generated.json",
+    "sha256": "e11ebbd5ef6911f44564724959dda17880749ab77011cc302b8604b45ed48626",
+    "size_bytes": 16565,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_eaffa9a0da7d41058f910d59dbf1a152",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.tex",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\manuscript.tex",
+    "sha256": "e87bb411a589b09af127603cdcbad70c64b9ce4007abb3f5b9b146d3cc9e058f",
+    "size_bytes": 735,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_f3abca7bf9254db28445818cfb5816c9",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.md",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.md",
+    "sha256": "5380a3f1f65aa6d5405c63b729bf9893b279423e7a9a9e60f69c58f184a25534",
+    "size_bytes": 1930,
+    "target_preexisting_exact": true
+  },
+  {
+    "artifact_id": "artifact_f4ee8b5f953149aa9121a569b02ee576",
+    "from": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-citation-source-native-du6504t2\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\generated.json",
+    "to": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_8a04eeac4a3a4c7eb7261eef5bbb196e\\generated.json",
+    "sha256": "12af18e38da2786c3cc047176161b71634d94c6074a16f2603aaf063da1b2a40",
+    "size_bytes": 12807,
+    "target_preexisting_exact": true
+  }
+]

@@ -1,0 +1,31 @@
+{
+  "identity": {
+    "pid": 42996,
+    "create_time": 1792088793.7979746,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "60073",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-legacy-origins-build-6okl70tr\\writing-studio",
+    "parent_pid": 48588
+  },
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.EXE",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+    "start",
+    "--port",
+    "60073",
+    "--hostname",
+    "127.0.0.1"
+  ],
+  "port": 60073,
+  "url": "http://127.0.0.1:60073/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_e4845ca796d74594b33b86fb529b4404",
+  "production_build_reused": true,
+  "actual_vinext_ssr": true,
+  "bootstrap_replacement": false
+}

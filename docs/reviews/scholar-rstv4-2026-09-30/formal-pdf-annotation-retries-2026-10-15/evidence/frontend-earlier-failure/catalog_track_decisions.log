@@ -1,0 +1,15 @@
+PASS all six independent scientific types and exact evidence are rendered
+PASS propose uses exact selected dependencies and never submits an approval grant
+PASS unknown submission survives reload and retries exact original body
+PASS known conflict preserves draft and requires deliberate version comparison
+PASS storage refusal stops before a mutation is sent
+PASS late Track context cannot overwrite a different selected Track
+PASS late successful mutation clears only its original Track receipt
+PASS drafts are isolated between tabs
+PASS replacement preserves original node and its explicit dependencies
+PASS apply requires read-back authentic grant and captured basis
+PASS unknown apply result retries original action after grant is consumed
+PASS HTML actually loads the new controller before workspace mount
+PASS actual mounted form and buttons invoke proposal and Chat node handlers
+PASS invalid selected dependencies remain removable instead of disappearing on edit
+14 controlled scientific UI checks passed; browser acceptance false

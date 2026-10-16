@@ -1,0 +1,79 @@
+{
+  "job": {
+    "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "job_kind": "GENERATE",
+    "status": "SUCCEEDED",
+    "input_revision": 79,
+    "request_json": "{\"scientific_binding\":{\"bindings_sha256\":\"2c2c36f8ee98f0e905a875f545bafd28775686f009db662686106905c22662e0\",\"event_id\":null,\"needs_scientific_review\":false}}",
+    "result_json": "{\"artifacts\":[{\"artifact_id\":\"artifact_4490526c1a944aaca49b4f0ab35b5730\",\"kind\":\"MARKDOWN\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_e1b44f87565846198e4166948b2b480d\\\\manuscript.md\"},{\"artifact_id\":\"artifact_e5719f0611d54b868b252a49b3ce2e11\",\"kind\":\"GENERATED_JSON\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_e1b44f87565846198e4166948b2b480d\\\\generated.json\"},{\"artifact_id\":\"artifact_bb58916d066b41ffbeb150874f1776cf\",\"kind\":\"TEX\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_e1b44f87565846198e4166948b2b480d\\\\manuscript.tex\"},{\"artifact_id\":\"artifact_9843e5eb68124a0faff9379e5d9b08e1\",\"kind\":\"BIB\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_e1b44f87565846198e4166948b2b480d\\\\references.bib\"},{\"artifact_id\":\"artifact_dfa2773d607e4a1db98276d20bfa9566\",\"kind\":\"PDF\",\"path\":\"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-complex-native-qjbemsgz\\\\data\\\\writing-studio\\\\manuscript_56652adf9d054cb6ab3819efacf3475c\\\\generated\\\\studio_job_e1b44f87565846198e4166948b2b480d\\\\manuscript.pdf\"}],\"generated_version_id\":\"manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01\"}",
+    "error_json": null,
+    "created_at": "2026-10-15T07:52:47.752023+00:00",
+    "started_at": "2026-10-15T07:52:47.766749+00:00",
+    "completed_at": "2026-10-15T07:52:53.119547+00:00"
+  },
+  "artifacts": [
+    {
+      "artifact_id": "artifact_4490526c1a944aaca49b4f0ab35b5730",
+      "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 79,
+      "artifact_kind": "MARKDOWN",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_e1b44f87565846198e4166948b2b480d\\manuscript.md",
+      "sha256": "c4268a0f464c6263e7acc3b3f7189e4011c6470b449a035499c7c342d542c0cc",
+      "size_bytes": 3017,
+      "created_at": "2026-10-15T07:52:53.094020+00:00"
+    },
+    {
+      "artifact_id": "artifact_e5719f0611d54b868b252a49b3ce2e11",
+      "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 79,
+      "artifact_kind": "GENERATED_JSON",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_e1b44f87565846198e4166948b2b480d\\generated.json",
+      "sha256": "a498fcf98491ba049e1c9938a986a1c3dc3a79785390506a45ffa8dbe6c80957",
+      "size_bytes": 35533,
+      "created_at": "2026-10-15T07:52:53.095027+00:00"
+    },
+    {
+      "artifact_id": "artifact_bb58916d066b41ffbeb150874f1776cf",
+      "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 79,
+      "artifact_kind": "TEX",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_e1b44f87565846198e4166948b2b480d\\manuscript.tex",
+      "sha256": "b792c4eee72daefb104b4b5f02ca3d95770e4ccf5704462c8896ecdfc46b8aaf",
+      "size_bytes": 3788,
+      "created_at": "2026-10-15T07:52:53.095027+00:00"
+    },
+    {
+      "artifact_id": "artifact_9843e5eb68124a0faff9379e5d9b08e1",
+      "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 79,
+      "artifact_kind": "BIB",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_e1b44f87565846198e4166948b2b480d\\references.bib",
+      "sha256": "cc2d5de89b5800c1909c6378a6a9fe28f51f53aa0593ab8cc4b968a7248726af",
+      "size_bytes": 483,
+      "created_at": "2026-10-15T07:52:53.095027+00:00"
+    },
+    {
+      "artifact_id": "artifact_dfa2773d607e4a1db98276d20bfa9566",
+      "job_id": "studio_job_e1b44f87565846198e4166948b2b480d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "document_revision": 79,
+      "artifact_kind": "PDF",
+      "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_e1b44f87565846198e4166948b2b480d\\manuscript.pdf",
+      "sha256": "ec3988b80410560cd1b40d9bd15615718b2c9ab144147a2d028af461d497c0a1",
+      "size_bytes": 50360,
+      "created_at": "2026-10-15T07:52:53.100023+00:00"
+    }
+  ],
+  "pdf_sha256": "ec3988b80410560cd1b40d9bd15615718b2c9ab144147a2d028af461d497c0a1",
+  "rendered_pngs": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-complex-generation-execution-audit-v1\\render\\page-1.png",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-complex-generation-execution-audit-v1\\render\\page-2.png"
+  ],
+  "product_files_edited": false,
+  "models_or_jobs_executed_by_capture": 0
+}

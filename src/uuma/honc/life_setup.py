@@ -221,6 +221,7 @@ def install(
         profile_home / "config.yaml",
         profile_home / "SOUL.md",
         profile_home / "plugins/honc_life",
+        profile_home / "plugins/uuma_observability",
         profile_home / "scripts/honc-life-tick.py",
     ]
     targets += [
@@ -272,6 +273,13 @@ def install(
         dirs_exist_ok=True,
         ignore=shutil.ignore_patterns("__pycache__", "runtime.json"),
     )
+    if "uuma_observability" in config.get("plugins", {}).get("enabled", []):
+        shutil.copytree(
+            repository / "integrations/hermes/uuma_observability",
+            profile_home / "plugins/uuma_observability",
+            dirs_exist_ok=True,
+            ignore=shutil.ignore_patterns("__pycache__"),
+        )
     runtime_path.write_text(json.dumps(runtime, ensure_ascii=False, indent=2), encoding="utf-8")
     scripts = profile_home / "scripts"
     scripts.mkdir(exist_ok=True)

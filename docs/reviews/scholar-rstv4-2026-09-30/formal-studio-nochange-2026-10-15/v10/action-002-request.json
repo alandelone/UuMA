@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_7702027e5fd44006a5a11fba9c369462/response-checks",
+  "content_type": "application/json",
+  "body_utf8": "{\"request_id\":\"97b9eddc-fe14-42e9-8ab4-2d859776c884\",\"context_sha256\":\"29842e23a97ccc3ff7f51f9f0ad733821151f38f44257b939b75517307a68435\",\"outcome\":\"EXPLAINED_NO_CHANGE\",\"claims\":[],\"acknowledged_all_assertions\":true}",
+  "body_sha256": "6acfa6823fa5554f435b62fc1a6640983e73bbb177d46352742f9dd326002c26",
+  "body_bytes": 216
+}

@@ -1,0 +1,204 @@
+{
+  "acquisition_jobs": {
+    "columns": [
+      "job_id",
+      "collection_id",
+      "paper_id",
+      "job_type",
+      "queue_class",
+      "status",
+      "priority",
+      "idempotency_key",
+      "input_json",
+      "input_digest",
+      "rule_version",
+      "attempts",
+      "available_at",
+      "lease_owner",
+      "lease_expires_at",
+      "fencing_token",
+      "last_error_code",
+      "last_error_detail",
+      "result_json",
+      "created_at",
+      "updated_at"
+    ],
+    "rows": [
+      [
+        "software_fixture_rv_parser_job_07b736b47e49",
+        "software_fixture_rv_paused_collection_07b736b47e49",
+        "software_fixture_rv_parser_paper_07b736b47e49",
+        "PARSE_PDF",
+        "PARSER",
+        "NEEDS_HUMAN",
+        80,
+        "SOFTWARE_FIXTURE:software_fixture_rv_parser_job_07b736b47e49",
+        "{\"file_version_id\":\"software_fixture_rv_parser_file_07b736b47e49\",\"software_fixture\":true}",
+        "2a22124da19fa22bcfe0688e0e7e62734866a761b04bdf78a0390a4136e49a95",
+        "SOFTWARE_FIXTURE-1",
+        0,
+        "2026-10-14T21:54:18.444279+00:00",
+        null,
+        null,
+        0,
+        "SOFTWARE_FIXTURE_PARSE_QUALITY",
+        "SOFTWARE_FIXTURE: candidate omits numbered reference [6] on PDF page 2; no parser or model executed.",
+        "{\"review\": {\"candidate\": {\"path\": \"C:\\\\Users\\\\Alandelone\\\\AppData\\\\Local\\\\Temp\\\\scui-rv-native-w6ahcxx8\\\\data\\\\artifacts\\\\papers\\\\software_fixture_rv_parser_paper_07b736b47e49\\\\913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a\\\\review\\\\software_fixture_rv_parser_job_07b736b47e49-0\\\\candidate.json\", \"sha256\": \"852df6576449c04bcf95ef68c0b720fe537ed09b9a20b374b964094e91fbbbb6\"}, \"correction_action_ids\": [], \"file_version_id\": \"software_fixture_rv_parser_file_07b736b47e49\", \"kind\": \"PARSE_QUALITY\", \"parser_executed\": false, \"pdf_sha256\": \"913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a\", \"software_fixture\": true}}",
+        "2026-10-14T21:54:18.444279+00:00",
+        "2026-10-14T21:54:18.444279+00:00"
+      ]
+    ]
+  },
+  "collections": {
+    "columns": [
+      "collection_id",
+      "field_id",
+      "track_id",
+      "name",
+      "scope_json",
+      "scope_version",
+      "status",
+      "revision",
+      "created_at",
+      "updated_at",
+      "topic_id",
+      "creation_request_json"
+    ],
+    "rows": [
+      [
+        "software_fixture_rv_paused_collection_07b736b47e49",
+        "f1",
+        null,
+        "SOFTWARE_FIXTURE paused parser review",
+        "{\"software_fixture\":true}",
+        1,
+        "PAUSED",
+        1,
+        "2026-10-14T21:54:18.444279+00:00",
+        "2026-10-14T21:54:18.444279+00:00",
+        null,
+        null
+      ]
+    ]
+  },
+  "paper_identities": {
+    "columns": [
+      "identity_id",
+      "paper_id",
+      "scheme",
+      "normalized_value",
+      "status",
+      "source",
+      "observed_at"
+    ],
+    "rows": [
+      [
+        "software_fixture_identity_software_fixture_rv_doi_only_paper_07b736b47e49",
+        "software_fixture_rv_doi_only_paper_07b736b47e49",
+        "DOI",
+        "10.9898/rv-doi-before-07b736b47e49",
+        "CONFIRMED",
+        "SOFTWARE_FIXTURE",
+        "2026-10-14T21:54:18.444279+00:00"
+      ],
+      [
+        "software_fixture_identity_software_fixture_rv_parser_paper_07b736b47e49",
+        "software_fixture_rv_parser_paper_07b736b47e49",
+        "DOI",
+        "10.9898/rv-parser-07b736b47e49",
+        "CONFIRMED",
+        "SOFTWARE_FIXTURE",
+        "2026-10-14T21:54:18.444279+00:00"
+      ]
+    ]
+  },
+  "papers": {
+    "columns": [
+      "paper_id",
+      "canonical_key",
+      "doi",
+      "normalized_title",
+      "title",
+      "authors_json",
+      "published_year",
+      "abstract",
+      "landing_url",
+      "pdf_url",
+      "created_at",
+      "updated_at"
+    ],
+    "rows": [
+      [
+        "software_fixture_rv_doi_only_paper_07b736b47e49",
+        "doi:10.9898/rv-doi-before-07b736b47e49",
+        "10.9898/rv-doi-before-07b736b47e49",
+        "software_fixture doi only identity control",
+        "SOFTWARE_FIXTURE DOI Only Identity Control",
+        "[\"SOFTWARE_FIXTURE\"]",
+        2026,
+        null,
+        null,
+        null,
+        "2026-10-14T21:54:18.444279+00:00",
+        "2026-10-14T21:54:18.444279+00:00"
+      ],
+      [
+        "software_fixture_rv_parser_paper_07b736b47e49",
+        "doi:10.9898/rv-parser-07b736b47e49",
+        "10.9898/rv-parser-07b736b47e49",
+        "software_fixture parser quality source",
+        "SOFTWARE_FIXTURE Parser Quality Source",
+        "[\"SOFTWARE_FIXTURE\"]",
+        2026,
+        null,
+        null,
+        null,
+        "2026-10-14T21:54:18.444279+00:00",
+        "2026-10-14T21:54:18.444279+00:00"
+      ]
+    ]
+  },
+  "source_file_versions": {
+    "columns": [
+      "file_version_id",
+      "paper_id",
+      "sha256",
+      "size_bytes",
+      "mime_type",
+      "storage_path",
+      "acquisition_method",
+      "source_url",
+      "identity_status",
+      "validation_json",
+      "created_at"
+    ],
+    "rows": [
+      [
+        "software_fixture_rv_doi_only_file_07b736b47e49",
+        "software_fixture_rv_doi_only_paper_07b736b47e49",
+        "46fecf608e8d572af12cc1d2ca43814b8f0ccbdb367697a14849d8a7a55ca863",
+        1327,
+        "application/pdf",
+        "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_doi_only_identity.pdf",
+        "LOCAL",
+        null,
+        "NEEDS_REVIEW",
+        "{\"doi_match\": false, \"fixture\": \"SOFTWARE_FIXTURE\", \"title_token_ratio\": 1}",
+        "2026-10-14T21:54:18.444279+00:00"
+      ],
+      [
+        "software_fixture_rv_parser_file_07b736b47e49",
+        "software_fixture_rv_parser_paper_07b736b47e49",
+        "913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a",
+        2346,
+        "application/pdf",
+        "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_parser_quality.pdf",
+        "LOCAL",
+        null,
+        "VERIFIED",
+        "{\"doi_match\": true, \"fixture\": \"SOFTWARE_FIXTURE\", \"title_token_ratio\": 1}",
+        "2026-10-14T21:54:18.444279+00:00"
+      ]
+    ]
+  }
+}

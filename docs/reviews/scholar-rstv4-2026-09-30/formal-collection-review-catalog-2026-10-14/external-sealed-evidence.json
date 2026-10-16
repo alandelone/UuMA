@@ -1,0 +1,11 @@
+{
+  "gpu_report": {
+    "relative_path": "../formal-gpu-parser-recovery-2026-10-14/acceptance.md",
+    "sha256": "49c1dbfbe892e5d8ef417c9fa455ac73c7055fe30dfb3d7b42ba41080c0d7e81"
+  },
+  "gpu_manifest": {
+    "relative_path": "../formal-gpu-parser-recovery-2026-10-14/manifest.json",
+    "sha256": "afa2f100b6332d94877e8d12c28c2bb6bb91869ae7807e1641272d94bd50174b"
+  },
+  "gpu_payload_files_verified": 70
+}

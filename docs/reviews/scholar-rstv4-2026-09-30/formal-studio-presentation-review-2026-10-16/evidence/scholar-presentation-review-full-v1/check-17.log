@@ -1,0 +1,7 @@
+PASS current object excludes another revision and another kind with the same ID
+PASS generated filter distinguishes two versions with the same author revision
+PASS legacy author context preserves exact ID revision Unicode quote and annotation
+PASS another manuscript cannot supply the legacy binding
+PASS legacy generated context uses its verified immutable version and anchor
+PASS damaged generated object cannot be redirected to a neighboring anchor
+6 controlled Studio history helper checks passed

@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_342fc9f8af994f599623410886be6877",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments.\",\"response_text\":\"\",\"expected_content_sha256\":\"bf2a252a3648b6d851d693d6282c4aa1820c77f72b8c1a4f0e4057aa4df1a099\"}",
+  "body_sha256": "bfecdb6c0094a492647e64149b28ef0cd0a956bfb07e0fb8e7a5ce5eed6110a4",
+  "body_bytes": 377
+}

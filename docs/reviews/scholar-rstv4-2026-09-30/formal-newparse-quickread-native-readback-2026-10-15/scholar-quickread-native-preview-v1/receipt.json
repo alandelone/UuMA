@@ -1,0 +1,14 @@
+{
+  "status": "PREPARED_ORIGINAL_QUICKREAD_READ_ONLY_NATIVE_PREVIEW",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d",
+  "source_root": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+  "tables": 106,
+  "source_files": 311,
+  "model_operations": 0,
+  "workers": 0,
+  "job_executions": 0,
+  "stop_nonce": "fd5ff07a0c544c10ba18d7d165decb12",
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-quickread-native-preview-v1\\stop.request.json",
+  "models_or_budget_replayed": false,
+  "original_result_preserved": true
+}

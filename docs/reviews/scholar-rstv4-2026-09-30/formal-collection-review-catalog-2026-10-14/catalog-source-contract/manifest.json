@@ -1,0 +1,14 @@
+{
+  "copied-fixture-contract.json": {
+    "bytes": 4328,
+    "sha256": "83427834e222007c718d977b2cdf676e2870fe81ff9dd6e71adf98e43c04d9c7"
+  },
+  "source-and-contract.md": {
+    "bytes": 3487,
+    "sha256": "b7018b806c13f63949c017faffd3fc9137d3559e69e199ab4cb6ff977f7d6abd"
+  },
+  "source-audit.json": {
+    "bytes": 292277,
+    "sha256": "d0278cd042f34b1632e286420e0fff6da4831339a70c6189f86b7b3163ace2e8"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "request_id": "5aba7664-de6b-4876-996e-3323973ace33",
+  "action": "REOPEN_IDENTITY",
+  "expected_context_sha256": "9b1457e69c36ae4c4e913156d32b81826795a35e378eeb75b75002df36ab4cfb",
+  "reason": "软件验收：在独立副本重新核对同一原始 PDF 的技术身份。保留全部解析、模型和科学历史；不启动 worker。",
+  "reference_selections": []
+}

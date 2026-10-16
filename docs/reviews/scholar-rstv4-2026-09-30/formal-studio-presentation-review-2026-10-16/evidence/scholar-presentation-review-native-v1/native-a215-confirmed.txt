@@ -1,0 +1,119 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - alert:
+    - generic: Failed to fetch
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button "关联意见"
+  - region "意见与轮次读取状态":
+    - button "重新读取意见与轮次"
+  - paragraph: Reviewer comments
+  - heading "意见 → 决定 → 修改 → 回复" [level=2]
+  - button "🗃 已删除"
+  - button "📦 投稿包"
+  - region "返修轮次与固定被审版本":
+    - text: 返修轮次
+    - combobox "选择返修轮次":
+      - option "请选择轮次…"
+      - option "第 1 轮 · G06 software acceptance — no external reviewer"
+      - option "第 2 轮 · G09 software acceptance - independent round 2; no external reviewer"
+      - option "第 3 轮 · G11 original118 native file import software acceptance — no external reviewer or scientific approval"
+      - option "第 4 轮 · SOFTWARE_FIXTURE pure layout acceptance — no external reviewer or scientific approval" [selected]
+    - paragraph: 固定被审稿 v6 / 作者结构 r79；本轮生成不会移动基线。
+    - button "建立第 5 轮…"
+  - textbox "审稿意见输入":
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+  - button "👀 准备预览"
+  - button "➕ 单条新增"
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button "导入审稿意见文件"
+  - article:
+    - button "开始修改意见 A215":
+    - generic "comment_f71edb5758ef41f3b0d96d8cdbed18d5": A215
+    - generic: 第 4 轮 · 提出人未填写
+    - paragraph: "SOFTWARE_FIXTURE C-LAYOUT: Change only the page margin from standard to narrow. Preserve the exact v6 author content, frozen sentences, sources, conditions, citations and table/figure bytes. Verify actual compiled PDF movement separately from scientific prose amendments. This is software acceptance only; no external review or scientific approval."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A215":
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE decision: Apply only the explicit page-margin setting. The fixed v6 realization is reused and recompiled without a model call; no author prose, scientific claim, source, condition or material identity is amended. This presentation change must not count as evidence of scientific text modification."
+    - textbox "回复内容 A215":
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE reply. We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content. The author text, generated sentences, sources, conditions, citation identities and original table/figure bytes remain unchanged. This is presentation-only evidence, not a scientific prose amendment or scientific approval.
+    - combobox "意见状态 A215":
+      - option "待处理"
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled] [selected]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 作者已核对本版回复
+    - status: 核对记录已保存，作者已确认本版回复。
+    - generic: 1 条关联修改
+    - navigation "A215 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_67d0f750af844f9686966ff19623b470"
+    - button "移入已删除 A215":
+  - region "已保存修改与意见关联":
+    - heading "已保存修改" [level=3]
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox "显示":
+      - option "全部修改" [selected]
+      - option "未关联意见"
+      - option "已关联意见"
+    - button "刷新修改历史"
+    - alert: Failed to fetch
+  - region "已生成的投稿包":
+    - heading "投稿包" [level=3]
+    - button "刷新":
+      - text: 刷新
+    - paragraph: 此轮还没有投稿包。按“投稿包”生成后可在这里下载。
+    - alert: Failed to fetch
+  - status
+  - button "与 Agent 讨论 0 条 · Fixed citation source - software acceptance" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Fixed citation source - software acceptance
+  - button "整篇历史"
+  - button "当前对象 · 此版本" [disabled]
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - generic: 当前选择：Fixed citation source - software acceptance
+  - strong: 草稿对象：Fixed citation source - software acceptance · 结构 r86
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - generic "固定对象的完整原文与版本"
+  - status: 历史读取失败：Failed to fetch。可以重试。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：Fixed citation source - software acceptance
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+  - button "发送讨论" [disabled]:
+  - button "保存讨论批注" [disabled]
+  - button "更新讨论历史"

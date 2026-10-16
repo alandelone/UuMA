@@ -1,0 +1,20 @@
+{
+  "status": "PASS_FIXED_V7_TWO_NATIVE_THOUGHTS_AND_LEGACY_BOUNDARY",
+  "source_backend_count": 315,
+  "source_frontend_count": 91,
+  "dist_count": 76,
+  "six_origins_match_exact_r86": true,
+  "same_sentence_boxes_different_original_thoughts": true,
+  "native_full_intent_and_selected_thought": true,
+  "native760_no_overflow_no_implicit_checks": true,
+  "old_v6_history_exact_missing_origins_explicit": true,
+  "all110_and_non_sidecar_bytes_exact": true,
+  "new_models_jobs_checks_versions_packages": 0,
+  "actual_request_count": 23,
+  "native_initial_fetch_failure_still_open": true,
+  "inline_history_click_closed_dialog_observation_retained": true,
+  "Beta_native_text_actually_differs_from_baseline_not_citation_only_fixture": true,
+  "owned_processes_stopped": true,
+  "overall118_complete": false,
+  "final11_complete": false
+}

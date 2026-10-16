@@ -1,0 +1,7 @@
+{
+  "method": "GET",
+  "path": "/api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6/progress",
+  "query": "reference_offset=0",
+  "body_utf8": null,
+  "allowed": true
+}

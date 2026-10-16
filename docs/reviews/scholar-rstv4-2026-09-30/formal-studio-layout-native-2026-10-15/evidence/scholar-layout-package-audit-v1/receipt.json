@@ -1,0 +1,49 @@
+{
+  "status": "PASS_ORIGINAL_LAYOUT_JOB_AND_ONE_NATIVE_PACKAGE_EXACT",
+  "new_jobs": [
+    {
+      "job_id": "studio_job_db4959fe580a4a47a246787ee5954268",
+      "kind": "GENERATE",
+      "status": "SUCCEEDED"
+    },
+    {
+      "job_id": "studio_job_e6cc5fc6730e4da8b08052c85c8cf945",
+      "kind": "SUBMISSION_PACKAGE",
+      "status": "SUCCEEDED"
+    }
+  ],
+  "package_id": "submission_package_04b7b4c8d0fa4e25b5009089c5a863c8",
+  "directory": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\packages\\studio_job_e6cc5fc6730e4da8b08052c85c8cf945",
+  "files": 21,
+  "zip_bytes": 170648,
+  "zip_sha256": "4dd985ae36c51afd8100dce6e86b005663d36427b70afe1bcc1319ce18fc8810",
+  "every_fixed_file_manifest_and_zip_member_exact": true,
+  "v6_and_v7_original_pdf_bytes_exact": true,
+  "layout_only_rows": 1,
+  "pending_A215_preserved_no_new_check": true,
+  "all_old_immutable110_rows_preserved": true,
+  "all_old_non_database_files_exact": true,
+  "unchanged_models_assets_checks": true,
+  "schema_changes": false,
+  "changed_tables": [
+    "comment_changes",
+    "manuscript_versions",
+    "manuscripts",
+    "review_comments",
+    "review_rounds",
+    "studio_artifacts",
+    "studio_change_link_state",
+    "studio_changes",
+    "studio_comment_response_state",
+    "studio_documents",
+    "studio_jobs",
+    "studio_operations",
+    "studio_review_round_baselines",
+    "studio_sample_candidates",
+    "studio_submission_packages"
+  ],
+  "browser_download_not_retested": true,
+  "native_package_file_label_overflow_remains_to_fix": true,
+  "all118_complete": false,
+  "final11_complete": false
+}

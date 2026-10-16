@@ -1,0 +1,39 @@
+{
+  "files": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\receipt.json": {
+      "sha256": "28f9411c42daef80172ef53a53dc5b1ccedb2a346cb5a2c008df2c46e51e49c3"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\reuse-preflight.json": {
+      "sha256": "ef480d0fae37d03362dcd5705119469d87c5a2a2a5c24a02ccfb8d946f385f62"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\before110-all-tables.json": {
+      "sha256": "3cc935d625ed46ede32c78275f5c20395faf039c2e41c37834a590104366aa4a"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\before110-all-files.json": {
+      "sha256": "c605f40a3ecc25f074be8abef69b811594dcc25debecc377916ea659728835c1"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\previous-owned-identity-audit.json": {
+      "sha256": "a1ace0ebace49421fad341d4d53ec27cf07b99d3d4f002e0ce5b5b6a98b0c5a3"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\ownership.json": {
+      "sha256": "9df4f33f8e30e533dff70976e97501ea8b9365e802f73766950cca5c518c294c"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\ready.json": {
+      "sha256": "60022d25e4d0505a32b1b9e95b6aa2def5af5c5d0f9de91311d28354d417e15b"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\backend-launched.json": {
+      "sha256": "9b13727720437fd8a08a61eb55833fb0751928a6f717ede62e938c211b993162"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\backend-ready.json": {
+      "sha256": "f57df5928f4485e74a4c93035e4f6d7d3a2d53532d0b95bd2d5ce82541b08a9e"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\frontend-launched.json": {
+      "sha256": "ebaf8c95731510f3599cb7dcf1ea7ccd4bad379f5e02f70989e0ce99a7ccd9d0"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1\\initial-workspace.json": {
+      "sha256": "f4796dfc0900ae28297ec24cd499262e3ac0a5bfd4008f22cccb5ad8970fbb01"
+    }
+  },
+  "v5_runner_sha256": "31b6011f051095eeb4ff1f57ca5fbe4b3c466aae3b620db61da73e73abfdb497",
+  "prior_v4_failed_before_services": true
+}

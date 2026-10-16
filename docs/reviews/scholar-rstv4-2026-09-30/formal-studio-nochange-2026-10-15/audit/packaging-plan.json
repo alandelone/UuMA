@@ -1,0 +1,19 @@
+{
+  "destination": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\formal-studio-nochange-2026-10-15",
+  "seal_after_v10_owned_retirement": true,
+  "scope": "A211 native no-change and separately declared 25-path fixture relocation only",
+  "copy": [
+    "audit",
+    "native first18 log and all screenshots including failure",
+    "v9 requests/responses/retirement",
+    "v10 requests/responses/retirement",
+    "relocation full plan/receipts/filemaps and original DB backup",
+    "source311/frontend91/dist76 original protection vectors",
+    "prior retained regression receipt",
+    "all110 exact checkpoint ZIP with member hashes",
+    "audit and execution-context helper source"
+  ],
+  "payload_manifest": "Every report payload SHA-256, excluding manifest itself; manifest SHA in external seal receipt",
+  "no_old_seal_edits": true,
+  "no_mission_gate_matrix_session_lifecycle_actions": true
+}

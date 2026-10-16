@@ -1,0 +1,7 @@
+{
+  "method": "POST",
+  "path": "/api/catalog/discussion/context",
+  "query": "",
+  "body_utf8": "{\"module\":\"CATALOG\",\"paper_id\":\"paper_dde0a449e93444c2771e7b0edeb7daf9\",\"object_kind\":\"parse\",\"object_id\":\"parse_run_bb2661e7c11bb18dd684661073472d71\"}",
+  "allowed": true
+}

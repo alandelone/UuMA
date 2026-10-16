@@ -1,0 +1,7 @@
+{
+  "request_id": "2a2cc010-afe7-460d-8d33-253522501163",
+  "action": "APPROVE_IDENTITY",
+  "expected_context_sha256": "f6a4793ce472393ab732b6bac7b67b5aeed7272e0db593d91880161f4fd4acd9",
+  "reason": "软件验收：已对照原始 PDF，标题 Software review identity title 与 DOI 10.1234/corrected 均与记录相符。仅批准文件技术身份，保留科学批准边界及暂停采集。",
+  "reference_selections": []
+}

@@ -1,0 +1,140 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button [disabled]:
+  - button [disabled]:
+  - button:
+    - text: Done
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+  - alert:
+    - generic: Failed to fetch
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button: 关联意见
+  - region:
+    - button: 重新读取意见与轮次
+  - paragraph: Reviewer comments
+  - heading [level=2]: 意见 → 决定 → 修改 → 回复
+  - button: 🗃 已删除
+  - button: 📦 投稿包
+  - region:
+    - text: 返修轮次
+    - combobox
+    - paragraph: 固定被审稿 v6 / 作者结构 r79；本轮生成不会移动基线。
+    - button: 建立第 5 轮…
+  - textbox:
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+  - button: 👀 准备预览
+  - button: ➕ 单条新增
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button
+  - article:
+    - button:
+    - generic: A215
+    - generic: 第 4 轮 · 提出人未填写
+    - paragraph: "SOFTWARE_FIXTURE C-LAYOUT: Change only the page margin from standard to narrow. Preserve the exact v6 author content, frozen sentences, sources, conditions, citations and table/figure bytes. Verify actual compiled PDF movement separately from scientific prose amendments. This is software acceptance only; no external review or scientific approval."
+    - generic: 原意见与导入来源
+    - textbox:
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE decision: Apply only the explicit page-margin setting. The fixed v6 realization is reused and recompiled without a model call; no author prose, scientific claim, source, condition or material identity is amended. This presentation change must not count as evidence of scientific text modification."
+    - textbox:
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE reply. We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content. The author text, generated sentences, sources, conditions, citation identities and original table/figure bytes remain unchanged. This is presentation-only evidence, not a scientific prose amendment or scientific approval.
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复尚未核对
+    - generic: 1 条关联修改
+    - navigation:
+      - link:
+        - /url: "#change-change_67d0f750af844f9686966ff19623b470"
+        - text: 查看修改 1
+    - button:
+  - region:
+    - heading [level=3]: 已保存修改
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox
+    - button: 刷新修改历史
+    - alert: Failed to fetch
+  - region "已生成的投稿包":
+    - heading [level=3]: 投稿包
+    - button:
+      - text: 刷新
+    - paragraph: 此轮还没有投稿包。按“投稿包”生成后可在这里下载。
+    - alert: Failed to fetch
+  - status
+  - button [expanded]:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Fixed citation source - software acceptance
+  - button: 整篇历史
+  - button [disabled]: 当前对象 · 此版本
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - generic: 当前选择：Fixed citation source - software acceptance
+  - strong: 草稿对象：Fixed citation source - software acceptance · 结构 r86
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - generic: 固定对象的完整原文与版本
+  - status: 历史读取失败：Failed to fetch。可以重试。
+  - textbox:
+    - /placeholder: 讨论：Fixed citation source - software acceptance
+  - textbox:
+    - /placeholder: Annotation（可选）
+  - button [disabled]:
+  - button [disabled]: 保存讨论批注
+  - button: 更新讨论历史
+- dialog "作者核对回复":
+  - heading "作者核对回复" [level=2]
+  - paragraph: 第 4 轮 · 被审稿 v6 → 成文 v7。请逐条核对回复中的修改声明。
+  - paragraph: "决定与理由：SOFTWARE_FIXTURE decision: Apply only the explicit page-margin setting. The fixed v6 realization is reused and recompiled without a model call; no author prose, scientific claim, source, condition or material identity is amended. This presentation change must not count as evidence of scientific text modification."
+  - text: 完整保存回复（可用键盘或鼠标选取修改声明）
+  - textbox "选择完整回复中的修改声明": SOFTWARE_FIXTURE reply. We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content. The author text, generated sentences, sources, conditions, citation identities and original table/figure bytes remain unchanged. This is presentation-only evidence, not a scientific prose amendment or scientific approval.
+  - group "本次作者决定":
+    - generic: 本次作者决定
+    - radio "已经修改，逐条对应实际变化" [checked]
+    - text: 已经修改，逐条对应实际变化
+    - radio "仅修改排版，核对实际 PDF 位置变化"
+    - text: 仅修改排版，核对实际 PDF 位置变化
+    - radio "决定不修改，回复中已说明理由"
+    - text: 决定不修改，回复中已说明理由
+  - generic "被审稿与最终稿的实际文字差异"
+  - button "加入所选修改声明" [active]
+  - group "修改声明 1":
+    - generic: 修改声明 1
+    - paragraph: We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content.
+    - checkbox "声明 1 对应 仅调整成文页边距 仅调整成文页边距；正文、来源与素材保持原样 最终 PDF 第 1 页、第 4 行位置已变化；不能证明科学正文已修改" [disabled]
+    - checkbox [disabled]
+    - text: 仅调整成文页边距；正文、来源与素材保持原样
+    - generic: 最终 PDF 第 1 页、第 4 行位置已变化；不能证明科学正文已修改
+    - paragraph: 此依据未记录可验证的固定版本原思想。
+    - button "移除此声明"
+  - paragraph: 行号按实际 PDF 页面从上到下的可见文本计数。保留文字、已撤回改动及无法定位的变化不能作为完成依据。
+  - checkbox "我已检查完整回复，将每处“已修改”声明逐条列出，并核对所选实际变化。"
+  - checkbox
+  - generic: 我已检查完整回复，将每处“已修改”声明逐条列出，并核对所选实际变化。
+  - link "查看本版最终 PDF":
+    - /url: /api/studio-files/artifacts/artifact_9ed9f4d6283d4aeb80f5bdd6bba9a7db
+  - generic "保留的核对历史（0）"
+  - button "返回"
+  - button "作者确认并保存核对记录" [disabled]
+  - paragraph: 此记录证明作者核对过所列回复与版本。研究结论是否成立，仍需正式科研验收。
+  - button "Close":
+    - generic: Close

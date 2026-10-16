@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "comment_id": "comment_7702027e5fd44006a5a11fba9c369462",
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "source": "SINGLE",
+    "reviewer": null,
+    "original_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.",
+    "edited_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.",
+    "author_decision": "",
+    "response_text": "SOFTWARE_FIXTURE reply: We intentionally retain the existing Alpha wording and fixed generated v5. No manuscript text, citation, source condition, or generated version was changed for this software acceptance case. This is an explicit no-change response, not a claim that a new scientific amendment or external review occurred.",
+    "status": "PENDING",
+    "archived_at": null,
+    "created_at": "2026-10-15T06:32:39.874021+00:00",
+    "updated_at": "2026-10-15T06:33:13.563396+00:00",
+    "import_metadata": {
+      "comment_number": 211,
+      "import_batch_id": "comment_import_c1c8460aa6c7402bbddaeebfe6595b09",
+      "original_index": 0,
+      "original_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.",
+      "raw_import_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted."
+    },
+    "display_label": "A211",
+    "content_sha256": "98cc389a9ffcf117532c0a7c75cd139a23494fac98f749cf1a86b169f8a28e65",
+    "response_state_sha256": "b4eb53086a2ce4639b8a79af9de4ea166dfa1d2727ed16cdf2707a7b780674db",
+    "response_verification": {
+      "status": "NOT_REVIEWED"
+    }
+  }
+}

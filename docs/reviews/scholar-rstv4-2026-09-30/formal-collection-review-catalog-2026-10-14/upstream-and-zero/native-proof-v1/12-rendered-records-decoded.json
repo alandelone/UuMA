@@ -1,0 +1,51 @@
+{
+  "method": {
+    "node_id": "method_578417c4dcfc42e99060150cccd53613",
+    "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+    "node_type": "method",
+    "status": "SUPERSEDED",
+    "statement": "Isolated method 011d49e3a9ce43c696e8525ba6579412",
+    "rationale": "Fixture approval only",
+    "payload": {
+      "evidence_ids": [],
+      "upstream_node_ids": []
+    },
+    "revision": 2,
+    "created_at": "2026-10-02T14:59:39.119186+00:00",
+    "updated_at": "2026-10-02T14:59:39.293033+00:00"
+  },
+  "direct": {
+    "node_id": "claim_bb84d9ba73be4451a3b4222d941427e2",
+    "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+    "node_type": "claim",
+    "status": "STALE",
+    "statement": "Isolated claim 6644ada96ea349dd90e002aa8879f948",
+    "rationale": "Fixture approval only",
+    "payload": {
+      "evidence_ids": [],
+      "upstream_node_ids": [
+        "method_578417c4dcfc42e99060150cccd53613"
+      ]
+    },
+    "revision": 2,
+    "created_at": "2026-10-02T14:59:39.149798+00:00",
+    "updated_at": "2026-10-02T14:59:39.293033+00:00"
+  },
+  "indirect": {
+    "node_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+    "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+    "node_type": "claim",
+    "status": "STALE",
+    "statement": "Isolated claim d8de1260d07540f7a0a2c849fb43b3d0",
+    "rationale": "Fixture approval only",
+    "payload": {
+      "evidence_ids": [],
+      "upstream_node_ids": [
+        "claim_bb84d9ba73be4451a3b4222d941427e2"
+      ]
+    },
+    "revision": 2,
+    "created_at": "2026-10-02T14:59:39.180820+00:00",
+    "updated_at": "2026-10-02T14:59:39.293033+00:00"
+  }
+}

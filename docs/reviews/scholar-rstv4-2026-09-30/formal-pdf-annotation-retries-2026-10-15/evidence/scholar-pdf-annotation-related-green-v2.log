@@ -1,0 +1,36 @@
+................F...............                                         [100%]
+================================== FAILURES ===================================
+________ test_http_retry_recognized_before_missing_pdf_or_changed_page ________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1139/test_http_retry_recognized_bef0/data/catalog.db')
+
+    def test_http_retry_recognized_before_missing_pdf_or_changed_page(catalog: Path) -> None:
+        with TestClient(create_app(catalog.parent.parent)) as client:
+            payload = title_input().model_dump()
+            original = client.post("/api/catalog/review/cases/f2/annotations", json=payload)
+            assert original.status_code == 201
+            with sqlite3.connect(catalog) as conn:
+                source = Path(conn.execute(
+                    "SELECT storage_path FROM source_file_versions WHERE file_version_id='f2'",
+                ).fetchone()[0])
+            source.rename(source.with_suffix(".temporarily-missing"))
+            before = snapshot(catalog)
+            retry = client.post("/api/catalog/review/cases/f2/annotations", json=payload)
+            assert retry.status_code == 201
+            assert retry.json() == original.json()
+            conflict = client.post("/api/catalog/review/cases/f2/annotations", json={
+                **payload, "page_number": 999,
+            })
+            assert conflict.status_code == 409
+            fresh = client.post("/api/catalog/review/cases/f2/annotations", json={
+                **payload, "submission_id": "new-source-missing",
+                "expected_annotation_id": original.json()["annotation_id"],
+            })
+>           assert fresh.status_code == 404
+E           assert 410 == 404
+E            +  where 410 = <Response [410 Gone]>.status_code
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:223: AssertionError
+=========================== short test summary info ===========================
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_http_retry_recognized_before_missing_pdf_or_changed_page
+1 failed, 31 passed in 11.93s

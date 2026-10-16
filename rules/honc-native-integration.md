@@ -57,3 +57,19 @@ Require empty outer output, persisted native execution ID, one included instance
 and no second delivery after reconciliation and replay. Native suppressed is terminal;
 it must not be treated as retryable FAILED_UNSENT. A fixture transport acknowledgment
 does not establish a real Telegram send.
+
+## Authenticated voice and queued inbound (2026-10-15)
+
+Hermes _transcribe_one_clip adds one ASCII quote pair. Only verified voice/audio events with
+empty authored text may identify the result as voice_transcript. Preserve raw source, normalize
+only admission matching; typed quotations and nested quoted/reported/planned input stay closed.
+Never solve missing refs by granting every operation or asking the user to repeat valid speech.
+Queued follow-ups must execute pre_gateway_dispatch exactly once in their routed profile before
+preprocessing. Installed native gateway/run_inbound.py has this boundary fix and an event marker;
+retain exact backups/patch/hash and verify after Hermes upgrades.
+
+Standalone profile plugin enabled lists do not install global plugin files. honc needs its own
+uuma_observability package. Verify actual loaded modules/runtime and read back Phoenix spans;
+a configured endpoint or enabled name alone is not tracing proof. Missing historical spans or
+private reasoning must not be claimed reviewed. Recovery traces represent actual backend repairs,
+not fabricated LLM calls. Preserve capture_content=false unless explicitly changed.

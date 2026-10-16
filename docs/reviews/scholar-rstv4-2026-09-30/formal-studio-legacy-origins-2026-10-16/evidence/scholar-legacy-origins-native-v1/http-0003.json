@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/tracks",
+  "query": "",
+  "status": 200,
+  "seconds": 0.014999999999417923,
+  "response_sha256": "d476825cd4f9aad0d893852393810056907dd45a22c405839822f201769f0b18",
+  "origin": "http://127.0.0.1:60073"
+}

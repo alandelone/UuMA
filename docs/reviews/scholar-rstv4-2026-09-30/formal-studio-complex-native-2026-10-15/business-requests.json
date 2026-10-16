@@ -1,0 +1,182 @@
+[
+  {
+    "file": "action-005-request.json",
+    "method": "POST",
+    "path": "/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+    "status": 201
+  },
+  {
+    "file": "action-010-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-014-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-018-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-020-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-023-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-030-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-034-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-038-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-042-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-046-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-050-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-054-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-058-request.json",
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/assets",
+    "status": 201
+  },
+  {
+    "file": "action-059-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-062-request.json",
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/assets",
+    "status": 201
+  },
+  {
+    "file": "action-063-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-069-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-076-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-083-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-087-request.json",
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/jobs",
+    "status": 202
+  },
+  {
+    "file": "action-088-request.json",
+    "method": "PATCH",
+    "path": "/api/comments/comment_f39d35831bd0472bb9282ab116e90611",
+    "status": 200
+  },
+  {
+    "file": "action-089-request.json",
+    "method": "PATCH",
+    "path": "/api/comments/comment_f39d35831bd0472bb9282ab116e90611",
+    "status": 200
+  },
+  {
+    "file": "action-090-request.json",
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_f39d35831bd0472bb9282ab116e90611/response-checks",
+    "status": 200
+  },
+  {
+    "file": "action-091-request.json",
+    "method": "PATCH",
+    "path": "/api/comments/comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+    "status": 200
+  },
+  {
+    "file": "action-092-request.json",
+    "method": "PATCH",
+    "path": "/api/comments/comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+    "status": 200
+  },
+  {
+    "file": "action-093-request.json",
+    "method": "PATCH",
+    "path": "/api/comments/comment_342fc9f8af994f599623410886be6877",
+    "status": 200
+  },
+  {
+    "file": "action-094-request.json",
+    "method": "PATCH",
+    "path": "/api/comments/comment_342fc9f8af994f599623410886be6877",
+    "status": 200
+  },
+  {
+    "file": "action-099-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  },
+  {
+    "file": "action-101-request.json",
+    "method": "PUT",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/document",
+    "status": 200
+  }
+]

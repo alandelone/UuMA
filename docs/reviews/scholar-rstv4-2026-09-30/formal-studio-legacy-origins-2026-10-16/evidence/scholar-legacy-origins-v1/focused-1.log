@@ -1,0 +1,12 @@
+...............F.................                                        [100%]
+================================== FAILURES ===================================
+__ test_real_template_projection_shared_sentence_reads_original_author_bank ___
+tests\test_studio_historical_origins.py:172: in test_real_template_projection_shared_sentence_reads_original_author_bank
+    assert wait_for_job(service,service.create_job(ms,'GENERATE',input_revision=4))['status']=='SUCCEEDED'
+E   AssertionError: assert 'FAILED' == 'SUCCEEDED'
+E     
+E     - SUCCEEDED
+E     + FAILED
+=========================== short test summary info ===========================
+FAILED tests/test_studio_historical_origins.py::test_real_template_projection_shared_sentence_reads_original_author_bank
+1 failed, 32 passed in 59.53s

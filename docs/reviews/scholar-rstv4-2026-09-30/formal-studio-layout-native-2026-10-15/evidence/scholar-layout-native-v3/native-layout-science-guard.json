@@ -1,0 +1,24 @@
+{
+  "confirmation": [
+    {
+      "disabled": true
+    }
+  ],
+  "evidence": [
+    {
+      "aria": null,
+      "disabled": false,
+      "role": null
+    },
+    {
+      "aria": null,
+      "disabled": false,
+      "role": null
+    },
+    {
+      "aria": null,
+      "disabled": true,
+      "role": null
+    }
+  ]
+}

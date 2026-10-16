@@ -1,0 +1,58 @@
+[
+  {
+    "label": "wf09-filled-submission-unacknowledged-disabled",
+    "step": 25,
+    "button": "＋ 记录",
+    "disabled": true,
+    "observed_ax_line": "69 button (disabled) ＋ 记录"
+  },
+  {
+    "label": "wf09-submission-acknowledged-enabled",
+    "step": 26,
+    "button": "＋ 记录",
+    "disabled": false,
+    "observed_ax_line": "69 button ＋ 记录"
+  },
+  {
+    "label": "wf10-published-before-accepted-disabled",
+    "step": 28,
+    "button": "＋ 记录",
+    "disabled": true,
+    "observed_ax_line": "69 button (disabled) ＋ 记录"
+  },
+  {
+    "label": "wf10-published-ack-without-acceptance-still-disabled",
+    "step": 29,
+    "button": "＋ 记录",
+    "disabled": true,
+    "observed_ax_line": "69 button (disabled) ＋ 记录"
+  },
+  {
+    "label": "wf10-published-after-local-acceptance-awaits-ack",
+    "step": 32,
+    "button": "＋ 记录",
+    "disabled": true,
+    "observed_ax_line": "69 button (disabled) ＋ 记录"
+  },
+  {
+    "label": "wf10-archive-ack-without-file-selection-disabled",
+    "step": 40,
+    "button": "确认归档完成",
+    "disabled": true,
+    "observed_ax_line": "92 button (disabled) 确认归档完成"
+  },
+  {
+    "label": "wf10-both-files-selected-no-archive-ack-disabled",
+    "step": 41,
+    "button": "确认归档完成",
+    "disabled": true,
+    "observed_ax_line": "92 button (disabled) 确认归档完成"
+  },
+  {
+    "label": "wf10-files-and-local-archive-ack-enabled",
+    "step": 42,
+    "button": "确认归档完成",
+    "disabled": false,
+    "observed_ax_line": "92 button 确认归档完成"
+  }
+]

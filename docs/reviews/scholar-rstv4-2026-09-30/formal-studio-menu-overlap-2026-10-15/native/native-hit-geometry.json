@@ -1,0 +1,692 @@
+[
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.9375,
+          "height": 34.96875,
+          "left": 1141.421875,
+          "right": 1231.40625,
+          "top": 372.96875,
+          "width": 89.984375,
+          "x": 1141.421875,
+          "y": 372.96875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除思想块",
+        "rect": {
+          "bottom": 452.3125,
+          "height": 40.375,
+          "left": 1141.421875,
+          "right": 1241,
+          "top": 411.9375,
+          "width": 99.578125,
+          "x": 1141.421875,
+          "y": 411.9375
+        },
+        "text": "删除思想块"
+      }
+    ],
+    "label": "思想块菜单",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "wide1280"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.9375,
+          "height": 34.96875,
+          "left": 1143.9375,
+          "right": 1233.921875,
+          "top": 372.96875,
+          "width": 89.984375,
+          "x": 1143.9375,
+          "y": 372.96875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除 Intent",
+        "rect": {
+          "bottom": 452.3125,
+          "height": 40.375,
+          "left": 1143.9375,
+          "right": 1242,
+          "top": 411.9375,
+          "width": 98.0625,
+          "x": 1143.9375,
+          "y": 411.9375
+        },
+        "text": "删除 Intent"
+      }
+    ],
+    "label": "Intent 操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "wide1280"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.796875,
+          "height": 34.96875,
+          "left": 1153.015625,
+          "right": 1243,
+          "top": 372.828125,
+          "width": 89.984375,
+          "x": 1153.015625,
+          "y": 372.828125
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除段落",
+        "rect": {
+          "bottom": 452.171875,
+          "height": 40.375,
+          "left": 1153.015625,
+          "right": 1240.59375,
+          "top": 411.796875,
+          "width": 87.578125,
+          "x": 1153.015625,
+          "y": 411.796875
+        },
+        "text": "删除段落"
+      }
+    ],
+    "label": "段落操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "wide1280"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.0625,
+          "height": 34.96875,
+          "left": -18.984375,
+          "right": 71,
+          "top": 372.09375,
+          "width": 89.984375,
+          "x": -18.984375,
+          "y": 372.09375
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "添加空段落组",
+        "rect": {
+          "bottom": 446.03125,
+          "height": 34.96875,
+          "left": -18.984375,
+          "right": 74.203125,
+          "top": 411.0625,
+          "width": 93.1875,
+          "x": -18.984375,
+          "y": 411.0625
+        },
+        "text": "添加空段落组"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除章节与子项",
+        "rect": {
+          "bottom": 490.40625,
+          "height": 40.375,
+          "left": -18.984375,
+          "right": 104.59375,
+          "top": 450.03125,
+          "width": 123.578125,
+          "x": -18.984375,
+          "y": 450.03125
+        },
+        "text": "删除章节与子项"
+      }
+    ],
+    "label": "章节操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "wide1280"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.953125,
+          "height": 34.96875,
+          "left": 1111.625,
+          "right": 1201.609375,
+          "top": 372.984375,
+          "width": 89.984375,
+          "x": 1111.625,
+          "y": 372.984375
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "解除分组，保留内容",
+        "rect": {
+          "bottom": 446.921875,
+          "height": 34.96875,
+          "left": 1111.625,
+          "right": 1240.8125,
+          "top": 411.953125,
+          "width": 129.1875,
+          "x": 1111.625,
+          "y": 411.953125
+        },
+        "text": "解除分组，保留内容"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除组及其段落",
+        "rect": {
+          "bottom": 491.296875,
+          "height": 40.375,
+          "left": 1111.625,
+          "right": 1235.203125,
+          "top": 450.921875,
+          "width": 123.578125,
+          "x": 1111.625,
+          "y": 450.921875
+        },
+        "text": "删除组及其段落"
+      }
+    ],
+    "label": "段落组操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "wide1280"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.9375,
+          "height": 34.96875,
+          "left": 1141.421875,
+          "right": 1231.40625,
+          "top": 372.96875,
+          "width": 89.984375,
+          "x": 1141.421875,
+          "y": 372.96875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除思想块",
+        "rect": {
+          "bottom": 452.3125,
+          "height": 40.375,
+          "left": 1141.421875,
+          "right": 1241,
+          "top": 411.9375,
+          "width": 99.578125,
+          "x": 1141.421875,
+          "y": 411.9375
+        },
+        "text": "删除思想块"
+      }
+    ],
+    "label": "思想块菜单",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.9375,
+          "height": 34.96875,
+          "left": 1143.9375,
+          "right": 1233.921875,
+          "top": 372.96875,
+          "width": 89.984375,
+          "x": 1143.9375,
+          "y": 372.96875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除 Intent",
+        "rect": {
+          "bottom": 452.3125,
+          "height": 40.375,
+          "left": 1143.9375,
+          "right": 1242,
+          "top": 411.9375,
+          "width": 98.0625,
+          "x": 1143.9375,
+          "y": 411.9375
+        },
+        "text": "删除 Intent"
+      }
+    ],
+    "label": "Intent 操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.796875,
+          "height": 34.96875,
+          "left": 1153.015625,
+          "right": 1243,
+          "top": 372.828125,
+          "width": 89.984375,
+          "x": 1153.015625,
+          "y": 372.828125
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除段落",
+        "rect": {
+          "bottom": 452.171875,
+          "height": 40.375,
+          "left": 1153.015625,
+          "right": 1240.59375,
+          "top": 411.796875,
+          "width": 87.578125,
+          "x": 1153.015625,
+          "y": 411.796875
+        },
+        "text": "删除段落"
+      }
+    ],
+    "label": "段落操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.0625,
+          "height": 34.96875,
+          "left": -18.984375,
+          "right": 71,
+          "top": 372.09375,
+          "width": 89.984375,
+          "x": -18.984375,
+          "y": 372.09375
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "添加空段落组",
+        "rect": {
+          "bottom": 446.03125,
+          "height": 34.96875,
+          "left": -18.984375,
+          "right": 74.203125,
+          "top": 411.0625,
+          "width": 93.1875,
+          "x": -18.984375,
+          "y": 411.0625
+        },
+        "text": "添加空段落组"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除章节与子项",
+        "rect": {
+          "bottom": 490.40625,
+          "height": 40.375,
+          "left": -18.984375,
+          "right": 104.59375,
+          "top": 450.03125,
+          "width": 123.578125,
+          "x": -18.984375,
+          "y": 450.03125
+        },
+        "text": "删除章节与子项"
+      }
+    ],
+    "label": "章节操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.953125,
+          "height": 34.96875,
+          "left": 1111.625,
+          "right": 1201.609375,
+          "top": 372.984375,
+          "width": 89.984375,
+          "x": 1111.625,
+          "y": 372.984375
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "解除分组，保留内容",
+        "rect": {
+          "bottom": 446.921875,
+          "height": 34.96875,
+          "left": 1111.625,
+          "right": 1240.8125,
+          "top": 411.953125,
+          "width": 129.1875,
+          "x": 1111.625,
+          "y": 411.953125
+        },
+        "text": "解除分组，保留内容"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除组及其段落",
+        "rect": {
+          "bottom": 491.296875,
+          "height": 40.375,
+          "left": 1111.625,
+          "right": 1235.203125,
+          "top": 450.921875,
+          "width": 123.578125,
+          "x": 1111.625,
+          "y": 450.921875
+        },
+        "text": "删除组及其段落"
+      }
+    ],
+    "label": "段落组操作",
+    "viewport": {
+      "height": 720,
+      "width": 1280
+    },
+    "viewportName": "narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.9375,
+          "height": 34.96875,
+          "left": 629.421875,
+          "right": 719.40625,
+          "top": 372.96875,
+          "width": 89.984375,
+          "x": 629.421875,
+          "y": 372.96875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除思想块",
+        "rect": {
+          "bottom": 452.3125,
+          "height": 40.375,
+          "left": 629.421875,
+          "right": 729,
+          "top": 411.9375,
+          "width": 99.578125,
+          "x": 629.421875,
+          "y": 411.9375
+        },
+        "text": "删除思想块"
+      }
+    ],
+    "label": "思想块菜单",
+    "viewport": {
+      "height": 720,
+      "width": 760
+    },
+    "viewportName": "measured-narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.9375,
+          "height": 34.96875,
+          "left": 631.9375,
+          "right": 721.921875,
+          "top": 372.96875,
+          "width": 89.984375,
+          "x": 631.9375,
+          "y": 372.96875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除 Intent",
+        "rect": {
+          "bottom": 452.3125,
+          "height": 40.375,
+          "left": 631.9375,
+          "right": 730,
+          "top": 411.9375,
+          "width": 98.0625,
+          "x": 631.9375,
+          "y": 411.9375
+        },
+        "text": "删除 Intent"
+      }
+    ],
+    "label": "Intent 操作",
+    "viewport": {
+      "height": 720,
+      "width": 760
+    },
+    "viewportName": "measured-narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.609375,
+          "height": 34.96875,
+          "left": 641.015625,
+          "right": 731,
+          "top": 372.640625,
+          "width": 89.984375,
+          "x": 641.015625,
+          "y": 372.640625
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除段落",
+        "rect": {
+          "bottom": 451.984375,
+          "height": 40.375,
+          "left": 641.015625,
+          "right": 728.59375,
+          "top": 411.609375,
+          "width": 87.578125,
+          "x": 641.015625,
+          "y": 411.609375
+        },
+        "text": "删除段落"
+      }
+    ],
+    "label": "段落操作",
+    "viewport": {
+      "height": 720,
+      "width": 760
+    },
+    "viewportName": "measured-narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.4375,
+          "height": 34.96875,
+          "left": 89.421875,
+          "right": 179.40625,
+          "top": 372.46875,
+          "width": 89.984375,
+          "x": 89.421875,
+          "y": 372.46875
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "添加空段落组",
+        "rect": {
+          "bottom": 446.40625,
+          "height": 34.96875,
+          "left": 89.421875,
+          "right": 182.609375,
+          "top": 411.4375,
+          "width": 93.1875,
+          "x": 89.421875,
+          "y": 411.4375
+        },
+        "text": "添加空段落组"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除章节与子项",
+        "rect": {
+          "bottom": 490.78125,
+          "height": 40.375,
+          "left": 89.421875,
+          "right": 213,
+          "top": 450.40625,
+          "width": 123.578125,
+          "x": 89.421875,
+          "y": 450.40625
+        },
+        "text": "删除章节与子项"
+      }
+    ],
+    "label": "章节操作",
+    "viewport": {
+      "height": 720,
+      "width": 760
+    },
+    "viewportName": "measured-narrow760"
+  },
+  {
+    "buttons": [
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "移动原内容…",
+        "rect": {
+          "bottom": 407.328125,
+          "height": 34.96875,
+          "left": 599.625,
+          "right": 689.609375,
+          "top": 372.359375,
+          "width": 89.984375,
+          "x": 599.625,
+          "y": 372.359375
+        },
+        "text": "移动原内容…"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "解除分组，保留内容",
+        "rect": {
+          "bottom": 446.296875,
+          "height": 34.96875,
+          "left": 599.625,
+          "right": 728.8125,
+          "top": 411.328125,
+          "width": 129.1875,
+          "x": 599.625,
+          "y": 411.328125
+        },
+        "text": "解除分组，保留内容"
+      },
+      {
+        "centerHitIsSelf": true,
+        "centerHitText": "删除组及其段落",
+        "rect": {
+          "bottom": 490.671875,
+          "height": 40.375,
+          "left": 599.625,
+          "right": 723.203125,
+          "top": 450.296875,
+          "width": 123.578125,
+          "x": 599.625,
+          "y": 450.296875
+        },
+        "text": "删除组及其段落"
+      }
+    ],
+    "label": "段落组操作",
+    "viewport": {
+      "height": 720,
+      "width": 760
+    },
+    "viewportName": "measured-narrow760"
+  }
+]

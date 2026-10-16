@@ -1,0 +1,20 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+  "request": {
+    "venue": "Isolated software workflow acceptance",
+    "round_number": 2,
+    "status": "PUBLISHED",
+    "detail": "Software acceptance event only. No external submission, acceptance, publication or scientific approval."
+  },
+  "status": 201,
+  "body": {
+    "event_id": "submission_4aa7de48043d47af97415f607b9ce765",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "venue": "Isolated software workflow acceptance",
+    "round": 2,
+    "status": "PUBLISHED",
+    "detail": "Software acceptance event only. No external submission, acceptance, publication or scientific approval.",
+    "created_at": "2026-10-14T10:25:34.352879+00:00"
+  }
+}

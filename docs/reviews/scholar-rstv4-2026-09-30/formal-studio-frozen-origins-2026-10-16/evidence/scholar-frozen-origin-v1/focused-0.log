@@ -1,0 +1,26 @@
+.FF........F...................................                          [100%]
+================================== FAILURES ===================================
+_ test_citation_identity_cannot_prove_changed_prose[A finding [@a].-A finding.-CITATION_ONLY] _
+tests\test_studio_frozen_origins.py:27: in test_citation_identity_cannot_prove_changed_prose
+    assert compare_sentence(after, recorded, before) == expected
+E   AssertionError: assert 'GENERATED_TEXT_CHANGED' == 'CITATION_ONLY'
+E     
+E     - CITATION_ONLY
+E     + GENERATED_TEXT_CHANGED
+_ test_citation_identity_cannot_prove_changed_prose[A finding.-A finding [@a] [@b].-CITATION_ONLY] _
+tests\test_studio_frozen_origins.py:27: in test_citation_identity_cannot_prove_changed_prose
+    assert compare_sentence(after, recorded, before) == expected
+E   AssertionError: assert 'GENERATED_TEXT_CHANGED' == 'CITATION_ONLY'
+E     
+E     - CITATION_ONLY
+E     + GENERATED_TEXT_CHANGED
+__ test_actual_citation_only_pdf_rows_cannot_confirm_scientific_prose_change __
+tests\test_studio_frozen_origins.py:90: in test_actual_citation_only_pdf_rows_cannot_confirm_scientific_prose_change
+    review = service.create_review_round(ms, round_number=1)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E   TypeError: StudioService.create_review_round() missing 1 required keyword-only argument: 'venue'
+=========================== short test summary info ===========================
+FAILED tests/test_studio_frozen_origins.py::test_citation_identity_cannot_prove_changed_prose[A finding [@a].-A finding.-CITATION_ONLY]
+FAILED tests/test_studio_frozen_origins.py::test_citation_identity_cannot_prove_changed_prose[A finding.-A finding [@a] [@b].-CITATION_ONLY]
+FAILED tests/test_studio_frozen_origins.py::test_actual_citation_only_pdf_rows_cannot_confirm_scientific_prose_change
+3 failed, 44 passed in 174.74s (0:02:54)

@@ -1,0 +1,28 @@
+{
+  "status": "PASS_A211_TERMINAL_RETAINED_OWNED_IDENTITIES_RETIRED",
+  "observed_at_utc": "2026-10-15T06:56:55.553653+00:00",
+  "owned_v10_identities_absent": true,
+  "ports_free": [
+    8877,
+    50114
+  ],
+  "root_retained": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "all110_terminal_exact_latest_action": "action-018-all-tables.json",
+  "a211_comment_state_and_check_exact_saved_result": true,
+  "post_nochange_other_changed_tables": [
+    "manuscript_status_history",
+    "manuscripts",
+    "studio_assets",
+    "studio_submission_bindings",
+    "submission_events"
+  ],
+  "post_nochange_non_catalog_file_differences": [
+    "data/writing-studio/manuscript_56652adf9d054cb6ab3819efacf3475c/assets/319b444fb1828401-SOFTWARE_FIXTURE-v5-local-proof.txt",
+    "data/writing-studio/manuscript_56652adf9d054cb6ab3819efacf3475c/assets/f3d27b83a2256d7c-SOFTWARE_FIXTURE-v5-final.pdf"
+  ],
+  "later_work_outside_this_bounded_report": true,
+  "original109_source311_frontend91_dist76_external25_exact": true,
+  "model_gpu_generation_workers_executed_by_this_studio_preview": false,
+  "overall118_complete": false,
+  "final_all11_integrated_complete": false
+}

@@ -1,0 +1,8 @@
+{
+  "former_frontend_port": 63377,
+  "former_port_now_in_os_excluded_63290_63389_range": true,
+  "new_frontend_port": 50114,
+  "allocation": "OS ephemeral bind(0)",
+  "backend_port_retained": 8877,
+  "system_settings_changed": false
+}

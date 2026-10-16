@@ -1,0 +1,56 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "test": "studio-block-controls.cjs",
+      "exit_code": 0,
+      "seconds": 0.5,
+      "log_sha256": "a5986f79a6a07c214a288e32750eb494546c3a066a78a9b8399193c856dacd46"
+    },
+    {
+      "test": "studio-blocks.cjs",
+      "exit_code": 0,
+      "seconds": 0.21900000000096043,
+      "log_sha256": "49fa37cdb79f6b602f1ecb303fe13c40572b77acf62a9c8555f396bf9ac84e58"
+    },
+    {
+      "test": "studio-structure.cjs",
+      "exit_code": 0,
+      "seconds": 0.23400000000037835,
+      "log_sha256": "dc9ee34cc2a91ca311725099e50aaf391c00f491d1faa0fb6154affbf8d8ce38"
+    },
+    {
+      "test": "studio-hierarchy.cjs",
+      "exit_code": 0,
+      "seconds": 0.21900000000096043,
+      "log_sha256": "1664d8266395f8aca5cce7ecc5a53cf5d304d203c72d46544acf322d82d48d24"
+    },
+    {
+      "test": "studio-undo-history.cjs",
+      "exit_code": 0,
+      "seconds": 0.2029999999977008,
+      "log_sha256": "464ce25c061cc8c1a619b881ae1c97dc3db438c9b3703478c542819b64d3acbe"
+    },
+    {
+      "test": "studio-template-placement.cjs",
+      "exit_code": 0,
+      "seconds": 0.23500000000058208,
+      "log_sha256": "49ae5a608b386f3a06b7f9e9cac9a87db6a925d2252dc526de5628e140b23250"
+    },
+    {
+      "test": "studio-correspondence.cjs",
+      "exit_code": 0,
+      "seconds": 0.21900000000096043,
+      "log_sha256": "b1511e0542aa2a6ddd5633832cbccbdc73578cf5770fcad14c9c5caab26355d8"
+    },
+    {
+      "test": "studio-response-review.cjs",
+      "exit_code": 0,
+      "seconds": 0.31300000000192085,
+      "log_sha256": "0f24c380def94ca1c92ebce00b2b69c258e7ef0882bfbda3e5e13e86cf359031"
+    }
+  ],
+  "current_frontend91_exact_before_after": true,
+  "successful_actual_build_retained": true,
+  "backend_full1130_not_repeated_for_frontend_only_fix": true
+}

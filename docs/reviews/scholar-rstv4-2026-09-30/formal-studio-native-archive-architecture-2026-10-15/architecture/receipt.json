@@ -1,0 +1,54 @@
+{
+  "status": "PASS_CURRENT_BUILD_ST01_STATIC_ARCHITECTURE_BOUNDARY_NOT_NATIVE_FINAL_FLOW",
+  "frontend_product_files": 91,
+  "frontend_dist_files": 76,
+  "backend_files": 311,
+  "typescript_parsed_files_including_shared_controller": 91,
+  "client_assets_scanned_all_bytes": 23,
+  "client_text_assets": 12,
+  "runtime_imports_count": 95,
+  "direct_network_calls": [
+    {
+      "file": "lib\\studio-api.ts",
+      "callee": "fetch",
+      "line": 60,
+      "argument_kinds": [
+        "TemplateExpression",
+        "ObjectLiteralExpression"
+      ]
+    },
+    {
+      "file": "lib\\studio-api.ts",
+      "callee": "fetch",
+      "line": 77,
+      "argument_kinds": [
+        "CallExpression"
+      ]
+    },
+    {
+      "file": "lib\\studio-downloads.ts",
+      "callee": "fetchFile",
+      "line": 51,
+      "argument_kinds": [
+        "TemplateExpression",
+        "ObjectLiteralExpression"
+      ]
+    }
+  ],
+  "no_direct_vendor_db_or_model_sdk_imports": true,
+  "no_configured_gateway_credential_in_client_assets": true,
+  "no_model_provider_endpoint_or_secret_env_names_in_client_assets": true,
+  "browser_local_indexeddb_is_pending_save_outbox_not_authoritative_backend_db": true,
+  "authority": "browser API request with manuscript/base revision/operation ID -> FastAPI -> StudioService.save_document transaction",
+  "fixed_file_proxy_restricts_loopback_api_no_credentials_redirect_error": true,
+  "three_frozen_vectors_unchanged_before_after": true,
+  "model_network_calls": 0,
+  "browser_actions": 0,
+  "db_or_business_mutations": 0,
+  "new_servers": 0,
+  "new_builds": 0,
+  "new_tests_or_full_repeats": 0,
+  "remaining": "Track/Paper/manuscript same-ID final native integration remains; static audit is not blanket security certification or final11 acceptance",
+  "overall118_complete": false,
+  "final_all11_integrated_complete": false
+}

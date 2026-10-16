@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/models",
+  "base_url": "https://api.95963210.xyz/v1",
+  "inference_submitted": false,
+  "credential_changed": false,
+  "status": 403,
+  "content_type": "application/json; charset=utf-8",
+  "server": "cloudflare",
+  "diagnostic": "{\"type\":\"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1010/\",\"title\":\"Error 1010: Access denied\",\"status\":403,\"detail\":\"The site owner has blocked access based on your browser's signature.\",\"instance\":\"a4a83e449cdace59\",\"error_code\":1010,\"error_name\":\"browser_signature_banned\",\"error_category\":\"access_denied\",\"ray_id\":\"a4a83e449cdace59\",\"timestamp\":\"2026-10-14T17:18:26Z\",\"zone\":\"api.95963210.xyz\",\"cloudflare_error\":true,\"retryable\":false,\"owner_action_required\":true,\"what_you_should_do\":\"**Do not retry.** Your user-agent has been bann"
+}

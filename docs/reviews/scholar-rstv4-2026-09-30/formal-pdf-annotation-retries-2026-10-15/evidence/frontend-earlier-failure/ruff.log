@@ -1,0 +1,34 @@
+I001 [*] Import block is un-sorted or un-formatted
+  --> tests\test_catalog_annotation_retries.py:1:1
+   |
+ 1 | / from __future__ import annotations
+ 2 | |
+ 3 | | import sqlite3
+ 4 | | from concurrent.futures import ThreadPoolExecutor
+ 5 | | from pathlib import Path
+ 6 | | from threading import Barrier
+ 7 | |
+ 8 | | import pytest
+ 9 | | from fastapi.testclient import TestClient
+10 | | from rstv4.catalog_annotations import (
+11 | |     ReviewAnnotationInput,
+12 | |     find_review_annotation_replay,
+13 | |     record_review_annotation,
+14 | | )
+15 | | from rstv4.catalog_web import create_app
+16 | | from test_catalog_web import seed_catalog
+   | |_________________________________________^
+help: Organize imports
+   |
+9  | from fastapi.testclient import TestClient
+10 + from test_catalog_web import seed_catalog
+11 +
+12 | from rstv4.catalog_annotations import (
+--------------------------------------------------------------------------------
+17 | from rstv4.catalog_web import create_app
+   - from test_catalog_web import seed_catalog
+18 |
+   |
+
+Found 1 error.
+[*] 1 fixable with the `--fix` option.

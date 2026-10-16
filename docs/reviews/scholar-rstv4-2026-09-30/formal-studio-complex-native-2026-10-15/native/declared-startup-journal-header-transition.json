@@ -1,0 +1,18 @@
+{
+  "status": "EXACT_HEADER_ONLY_DELETE_TO_WAL_TRANSITION_ORIGINAL_FILE_RECONSTRUCTS",
+  "original_file_sha256": "c3fddc4ea7ddd0601c02f8e14a6e3d368eca0ab6c039bdd37b1332a8ddf641a6",
+  "after_file_sha256": "6904d98b2d47c90185087fc412e30bd7dfcc2d9c1539a5faf863a83982084623",
+  "write_read_versions_before": [
+    1,
+    1
+  ],
+  "write_read_versions_after": [
+    2,
+    2
+  ],
+  "change_counter_before": 111,
+  "change_counter_after": 112,
+  "entire_remaining_file_bytes_exact": true,
+  "full110_schema_and_rows_exact": true,
+  "no_native_model_job_or_document_actions": true
+}

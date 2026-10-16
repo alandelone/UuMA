@@ -1,0 +1,15 @@
+{
+  "status": "PASS_REAL_HTTP_GUARDS_ATOMIC_PUBLICATION_AND_109_TABLE_AUDIT",
+  "schemas": 109,
+  "unchanged_tables": 106,
+  "original_rows_preserved": true,
+  "new_history": 2,
+  "new_local_software_submission_events": 1,
+  "author_revision": 62,
+  "generated_version": 5,
+  "new_jobs_models_generations": 0,
+  "source_files_exact": true,
+  "native_browser_executed": false,
+  "accepted_and_fixed_final_version_archive_full_chain_complete": false,
+  "all11_complete": false
+}

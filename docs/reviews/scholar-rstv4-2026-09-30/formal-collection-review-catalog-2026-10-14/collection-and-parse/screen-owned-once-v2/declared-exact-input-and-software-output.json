@@ -1,0 +1,73 @@
+{
+  "job": {
+    "job_id": "job_f29493ae5a38b106b623b0bf03b638a6",
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "SCREEN",
+    "queue_class": "MODEL_SCREEN",
+    "status": "READY",
+    "priority": 60,
+    "idempotency_key": "f53aebec50a5ced1529514746d39e9845133304f222dc5062f4825cfe2054cbf",
+    "input_json": "{\"scope_version\": 1, \"screen_context_sha256\": \"11c0c1adc8377a668bf3a6287492cdee4355f3e6ee3f72467da37c29e926f0f7\"}",
+    "input_digest": "6a607cb9ed97b907aeb6089a0946df76dd0bf9a1d317e0361edf031a4dee756c",
+    "rule_version": "screen-v1-scope-1",
+    "attempts": 0,
+    "available_at": "2026-10-13T06:25:50.527410+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 0,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": null,
+    "created_at": "2026-10-13T06:25:50.527410+00:00",
+    "updated_at": "2026-10-13T06:25:50.527410+00:00"
+  },
+  "frozen_context": {
+    "collection": {
+      "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+      "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+      "topic_id": "topic_738405b70b574a248971a315bf333706",
+      "track_id": null,
+      "scope_version": 1,
+      "scope": {
+        "topic": "审核恢复软件 Topic",
+        "track": ""
+      }
+    },
+    "paper": {
+      "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "doi": "10.1234/corrected",
+      "title": "Software review identity title",
+      "published_year": null,
+      "abstract": null,
+      "authors": []
+    }
+  },
+  "model_input": {
+    "scope": {
+      "topic": "审核恢复软件 Topic",
+      "track": ""
+    },
+    "title": "Software review identity title",
+    "abstract": null
+  },
+  "model_input_sha256": "cdbaaef58553368c3c42ad06c657827070ea901a4b0c5f42e6d13e4e4fb9c1f4",
+  "software_response": {
+    "category": "DIRECT",
+    "rationale": "Explicit G11 software execution fixture only; not scientific relevance approval.",
+    "evidence_quotes": [
+      "Software review identity title"
+    ],
+    "_contract": {
+      "actual_model": "TEST_FIXTURE_G11_CURRENT_NATIVE_SCREEN",
+      "prompt_version": "screen-v1",
+      "task": "screen",
+      "tier": "light",
+      "fixture": true,
+      "scientific_approval": false
+    }
+  },
+  "remote_calls_allowed": 0,
+  "max_fixture_calls": 1,
+  "old_terminal_calls_not_reexecuted": true
+}

@@ -1,0 +1,6 @@
+{
+  "reason": "\n\n2026-10-14 current identity native audit restart from verification/pending_review.\nThe two original native actions are already durable; do not repeat them. Auditor\nv1 assumed old result_json was a JSON string, although a declared nonterminal job\nhad SQL NULL. source_review.invalidate_source explicitly saves json.loads(value\nor {}) as previous_result; approval serializes that object. Only the already\ndeclared two nonterminal job result fields may normalize SQL NULL to JSON {}.\nAuditor v2 next assumed HTTP200 and top-level action; the formal Catalog route\ndeclares HTTP201 and the persisted response uses action_kind. Verify exact201,\nexact action_kind, action linkage, 105 schemas, 102 unchanged tables, old action\nrows, terminal jobs, immutable inputs/attempts, original and copied file bytes.\nThis corrects the execution/response audit contract; no product/data/model/native\nreplay or assertion relaxation. v1/v2 failed helpers and responses are retained.\n",
+  "product_unchanged": true,
+  "native_replay": false,
+  "api_sha256": "fdcf19d6075b130ef272d59700b6ba594a40a8884f841f5d63886bd311d58949"
+}

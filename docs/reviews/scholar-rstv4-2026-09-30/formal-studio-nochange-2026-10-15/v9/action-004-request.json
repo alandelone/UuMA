@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/review-rounds/review_round_e4845ca796d74594b33b86fb529b4404/comments",
+  "content_type": "application/json",
+  "body_utf8": "{\"source\":\"SINGLE\",\"comments\":[{\"text\":\"SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.\",\"original_text\":\"SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.\",\"include\":true}],\"import_metadata\":{\"original_text\":\"SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.\"}}",
+  "body_sha256": "1b8db539680f7d11eded098063e7636628b1eb73748b0fa6862289aad5d9337e",
+  "body_bytes": 969
+}

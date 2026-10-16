@@ -1,0 +1,39 @@
+{
+  "files": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\receipt.json": {
+      "sha256": "76fe6e630fdaa5233f23b4c540532db3ebeed04d345a616d7800a5fe294157b6"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\reuse-preflight.json": {
+      "sha256": "af7891b5d02de63b54a20f11acfde8acc757f775f9842123a14e265c87bc0f7e"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\before110-all-tables.json": {
+      "sha256": "2775ad70bf2d6dfeba1b60c779889641541c56be54fcff5729a63da80fb94824"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\before110-all-files.json": {
+      "sha256": "a38bfc3b45286f5632e46fed9bde71ad050b8293aa0e2f1bc18c3231cf4026bb"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\previous-owned-identity-audit.json": {
+      "sha256": "5578e642841952037d1128c40a6b0d82e257f6ff3319fe5ae1f7932e653a9f37"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\ownership.json": {
+      "sha256": "5e19ef9c75ba40820850ae85a91095d73c88426630f729d7606eeda35dcafd9f"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\ready.json": {
+      "sha256": "a18b39262a3e1f4fb6e7679329df0a0700269972bb4856f35f72b3cccf8a7baf"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\backend-launched.json": {
+      "sha256": "4388ace665e8c4c6235ee9a1e509a05368a4574285e80a87e7efd3f750d3088a"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\backend-ready.json": {
+      "sha256": "29b270a88027e8b8b33076f040f9422ce94dc4485222f01c374b9373d9fe7e5d"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\frontend-launched.json": {
+      "sha256": "8e2294a1c272d6982d34e7a3d59192ffb8cd7b5b493c83eb83bea1145a2bba3b"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v3\\initial-workspace.json": {
+      "sha256": "95f00c0b088a196050df664888e3915c4b4eec41bf44f3865c05df30542f9af4"
+    }
+  },
+  "v5_runner_sha256": "0573f4b330a8ad803c2cb8cdcd9a480517bb6104e3c6ddcf677a15941be7dda8",
+  "prior_v4_failed_before_services": true
+}

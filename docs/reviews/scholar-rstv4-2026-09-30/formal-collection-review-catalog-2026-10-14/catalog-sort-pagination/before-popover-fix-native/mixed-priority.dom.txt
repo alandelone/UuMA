@@ -1,0 +1,1247 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:62860/
+    - link "文献库":
+      - /url: http://127.0.0.1:62860/?view=all
+    - link "知识图谱":
+      - /url: http://127.0.0.1:62860/?view=fieldkg
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "论文目录":
+      - generic: 论文目录
+      - generic: ⌄
+  - generic: 440 to review
+  - button "核对原文 →"
+  - button "☰ Filter"
+  - button "↕ Sort"
+  - button "▤ Columns"
+  - button "Refresh catalog": ↻
+  - heading "Sort" [level=3]
+  - combobox "Sort field":
+    - option "Name"
+    - option "Authors"
+    - option "Year" [selected]
+    - option "DOI"
+    - option "Source"
+    - option "Abstract"
+    - option "PDF status"
+    - option "PDF files"
+    - option "Verified PDFs"
+    - option "PDFs to review"
+    - option "Parse"
+    - option "Parse runs"
+    - option "References"
+    - option "QuickRead"
+    - option "QuickReads"
+    - option "Skeleton"
+    - option "Skeletons"
+    - option "Review"
+    - option "Human cases"
+    - option "Collections"
+    - option "Created"
+    - option "Last Updated"
+  - combobox "Sort direction":
+    - option "A→Z / oldest→newest"
+    - option "Z→A / newest→oldest" [selected]
+  - button "Remove sort": ×
+  - combobox "Sort field":
+    - option "Name"
+    - option "Authors"
+    - option "Year"
+    - option "DOI"
+    - option "Source"
+    - option "Abstract"
+    - option "PDF status"
+    - option "PDF files"
+    - option "Verified PDFs"
+    - option "PDFs to review"
+    - option "Parse"
+    - option "Parse runs"
+    - option "References"
+    - option "QuickRead"
+    - option "QuickReads"
+    - option "Skeleton"
+    - option "Skeletons"
+    - option "Review"
+    - option "Human cases"
+    - option "Collections"
+    - option "Created"
+    - option "Last Updated" [selected]
+  - combobox "Sort direction":
+    - option "A→Z / oldest→newest" [selected]
+    - option "Z→A / newest→oldest"
+  - button "Remove sort": ×
+  - button "＋ Add sort"
+  - table "Paper Catalog":
+    - rowgroup:
+      - row "Name Resize Name column Created Resize Created column Year Resize Year column Last Updated Resize Last Updated column Authors Resize Authors column DOI Resize DOI column Source Resize Source column PDF status Resize PDF status column PDF files Resize PDF files column PDFs to review Resize PDFs to review column Parse Resize Parse column References Resize References column QuickRead Resize QuickRead column Skeleton Resize Skeleton column Review Resize Review column":
+        - columnheader "Name Resize Name column":
+          - generic: Aa
+          - text: Name
+          - separator "Resize Name column"
+        - columnheader "Created Resize Created column":
+          - generic: ◷
+          - text: Created
+          - separator "Resize Created column"
+        - columnheader "Year Resize Year column":
+          - generic: ▣
+          - text: Year
+          - separator "Resize Year column"
+        - columnheader "Last Updated Resize Last Updated column":
+          - generic: ◷
+          - text: Last Updated
+          - separator "Resize Last Updated column"
+        - columnheader "Authors Resize Authors column":
+          - generic: Aa
+          - text: Authors
+          - separator "Resize Authors column"
+        - columnheader "DOI Resize DOI column":
+          - generic: Aa
+          - text: DOI
+          - separator "Resize DOI column"
+        - columnheader "Source Resize Source column":
+          - generic: Aa
+          - text: Source
+          - separator "Resize Source column"
+        - columnheader "PDF status Resize PDF status column":
+          - generic: ◆
+          - text: PDF status
+          - separator "Resize PDF status column"
+        - columnheader "PDF files Resize PDF files column":
+          - generic: "#"
+          - text: PDF files
+          - separator "Resize PDF files column"
+        - columnheader "PDFs to review Resize PDFs to review column":
+          - generic: "#"
+          - text: PDFs to review
+          - separator "Resize PDFs to review column"
+        - columnheader "Parse Resize Parse column":
+          - generic: ◆
+          - text: Parse
+          - separator "Resize Parse column"
+        - columnheader "References Resize References column":
+          - generic: "#"
+          - text: References
+          - separator "Resize References column"
+        - columnheader "QuickRead Resize QuickRead column":
+          - generic: ◆
+          - text: QuickRead
+          - separator "Resize QuickRead column"
+        - columnheader "Skeleton Resize Skeleton column":
+          - generic: ◆
+          - text: Skeleton
+          - separator "Resize Skeleton column"
+        - columnheader "Review Resize Review column":
+          - generic: ◆
+          - text: Review
+          - separator "Resize Review column"
+    - rowgroup:
+      - row "Stochastic Optimal Scheduling of Flexible Traction Power Supply System for Heavy Haul Railway Considering the Online Degradation of Energy Storage September 10, 2026 at 3:13 PM 2025 September 10, 2026 at 3:13 PM Zhe Li, Yan‐Lin He, Gaoqiang Peng, Jie Yin 10.3390/wevj16040206 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Stochastic Optimal Scheduling of Flexible Traction Power Supply System for Heavy Haul Railway Considering the Online Degradation of Energy Storage":
+          - button "Stochastic Optimal Scheduling of Flexible Traction Power Supply System for Heavy Haul Railway Considering the Online Degradation of Energy Storage"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2025"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Zhe Li, Yan‐Lin He, Gaoqiang Peng, Jie Yin"
+        - cell "10.3390/wevj16040206"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Analysis and Comparison of Tree-Based Shallow Learning Methods for Forecasting Solar Energy Production September 10, 2026 at 3:13 PM 2025 September 10, 2026 at 3:13 PM Medine Gülmez, Gökhan Yüksek, Alkan Alkaya 10.1109/isas66241.2025.11101861 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Analysis and Comparison of Tree-Based Shallow Learning Methods for Forecasting Solar Energy Production":
+          - button "Analysis and Comparison of Tree-Based Shallow Learning Methods for Forecasting Solar Energy Production"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2025"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Medine Gülmez, Gökhan Yüksek, Alkan Alkaya"
+        - cell "10.1109/isas66241.2025.11101861"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Accurate solar power prediction with advanced hybrid deep learning approach September 10, 2026 at 3:13 PM 2025 September 10, 2026 at 3:13 PM Dongran Song, Muhammad Shams Ur Rehman, Xiaofei Deng, Xiao Zhao, Javeria Noor, Jian Yang, Mi Dong 10.1016/j.engappai.2025.110367 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Accurate solar power prediction with advanced hybrid deep learning approach":
+          - button "Accurate solar power prediction with advanced hybrid deep learning approach"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2025"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Dongran Song, Muhammad Shams Ur Rehman, Xiaofei Deng, Xiao Zhao, Javeria Noor, Jian Yang, Mi Dong"
+        - cell "10.1016/j.engappai.2025.110367"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Parametric Forecast of Solar Energy over Time by Applying Machine Learning Techniques: Systematic Review September 10, 2026 at 3:13 PM 2025 September 10, 2026 at 3:13 PM Fernando Venâncio Mucomole, Carlos Silva, Lourenço Lázaro Magaia 10.3390/en18061460 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Parametric Forecast of Solar Energy over Time by Applying Machine Learning Techniques: Systematic Review"':
+          - 'button "Parametric Forecast of Solar Energy over Time by Applying Machine Learning Techniques: Systematic Review"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2025"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Fernando Venâncio Mucomole, Carlos Silva, Lourenço Lázaro Magaia"
+        - cell "10.3390/en18061460"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Innovative Approaches in Residential Solar Electricity: Forecasting and Fault Detection Using Machine Learning September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:13 PM Shruti Kalra, Ruby Beniwal, V. P. Singh, Narendra Singh Beniwal 10.3390/electricity5030029 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Innovative Approaches in Residential Solar Electricity: Forecasting and Fault Detection Using Machine Learning"':
+          - 'button "Innovative Approaches in Residential Solar Electricity: Forecasting and Fault Detection Using Machine Learning"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Shruti Kalra, Ruby Beniwal, V. P. Singh, Narendra Singh Beniwal"
+        - cell "10.3390/electricity5030029"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "A Review and Evaluation of the State of Art in Image-Based Solar Energy Forecasting: The Methodology and Technology Used September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:13 PM Carlos M. Travieso, Fidel Cabrera-Quintero, Alejandro Piñán-Roescher, Sergio Celada-Bernal 10.3390/app14135605 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "A Review and Evaluation of the State of Art in Image-Based Solar Energy Forecasting: The Methodology and Technology Used"':
+          - 'button "A Review and Evaluation of the State of Art in Image-Based Solar Energy Forecasting: The Methodology and Technology Used"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Carlos M. Travieso, Fidel Cabrera-Quintero, Alejandro Piñán-Roescher, Sergio Celada-Bernal"
+        - cell "10.3390/app14135605"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Systematic Review on Ground-Based Cloud Tracking Methods for Photovoltaics Nowcasting September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:13 PM Juliana Marian Arrais, Allan Cerentini, Bruno Juncklaus Martins, Thiago Zimmermann Loureiro Chaves, Sylvio Luiz Mantelli Neto, Aldo von Wangenheim 10.4236/ajcc.2024.133021 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Systematic Review on Ground-Based Cloud Tracking Methods for Photovoltaics Nowcasting":
+          - button "Systematic Review on Ground-Based Cloud Tracking Methods for Photovoltaics Nowcasting"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Juliana Marian Arrais, Allan Cerentini, Bruno Juncklaus Martins, Thiago Zimmermann Loureiro Chaves, Sylvio Luiz Mantelli Neto, Aldo von Wangenheim"
+        - cell "10.4236/ajcc.2024.133021"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Advancements in Photovoltaic Cell Materials: Silicon, Organic, and Perovskite Solar Cells September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:13 PM Abniel Machín, Francisco Márquez 10.20944/preprints202401.2160.v1 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Advancements in Photovoltaic Cell Materials: Silicon, Organic, and Perovskite Solar Cells"':
+          - 'button "Advancements in Photovoltaic Cell Materials: Silicon, Organic, and Perovskite Solar Cells"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Abniel Machín, Francisco Márquez"
+        - cell "10.20944/preprints202401.2160.v1"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Short-Term Solar Irradiance Prediction with a Hybrid Ensemble Model Using EUMETSAT Satellite Images September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:13 PM Jayesh Thaker, Robert Höller, Mufaddal Kapasi 10.3390/en17020329 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Short-Term Solar Irradiance Prediction with a Hybrid Ensemble Model Using EUMETSAT Satellite Images":
+          - button "Short-Term Solar Irradiance Prediction with a Hybrid Ensemble Model Using EUMETSAT Satellite Images"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Jayesh Thaker, Robert Höller, Mufaddal Kapasi"
+        - cell "10.3390/en17020329"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Blending of a novel all sky imager model with persistence and a satellite based model for high-resolution irradiance nowcasting September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:15 PM Straub, Nils, Herzberg, Wiebke, Dittmann, Anna, Lorenz, Elke 10.1016/j.solener.2024.112319 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Blending of a novel all sky imager model with persistence and a satellite based model for high-resolution irradiance nowcasting":
+          - button "Blending of a novel all sky imager model with persistence and a satellite based model for high-resolution irradiance nowcasting"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:15 PM"
+        - cell "Straub, Nils, Herzberg, Wiebke, Dittmann, Anna, Lorenz, Elke"
+        - cell "10.1016/j.solener.2024.112319"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Enhanced {Convolutional} {Neural} {Network} for solar radiation nowcasting: All-{Sky} camera infrared images embedded with exogeneous parameters September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:15 PM Ogliari, Emanuele, Sakwa, Maciej, Cusa, Paolo 10.1016/j.renene.2023.119735 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Enhanced {Convolutional} {Neural} {Network} for solar radiation nowcasting: All-{Sky} camera infrared images embedded with exogeneous parameters"':
+          - 'button "Enhanced {Convolutional} {Neural} {Network} for solar radiation nowcasting: All-{Sky} camera infrared images embedded with exogeneous parameters"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:15 PM"
+        - cell "Ogliari, Emanuele, Sakwa, Maciej, Cusa, Paolo"
+        - cell "10.1016/j.renene.2023.119735"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Overfitting, Underfitting and General Model Overconfidence and Under-Performance Pitfalls and Best Practices in Machine Learning and AI September 10, 2026 at 3:13 PM 2024 September 10, 2026 at 3:25 PM Constantin Aliferis, György Simon 10.1007/978-3-031-39355-6_10 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Overfitting, Underfitting and General Model Overconfidence and Under-Performance Pitfalls and Best Practices in Machine Learning and AI":
+          - button "Overfitting, Underfitting and General Model Overconfidence and Under-Performance Pitfalls and Best Practices in Machine Learning and AI"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2024"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Constantin Aliferis, György Simon"
+        - cell "10.1007/978-3-031-39355-6_10"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Probabilistic solar nowcasting based on all-sky imagers September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:13 PM Nouri, Bijan, Wilbert, Stefan, Blum, Niklas, Fabel, Yann, Lorenz, Elke, Hammer, Annette, Schmidt, Thomas, Zarzalejo, Luis F., Pitz-Paal, Robert 10.1016/j.solener.2023.01.060 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Probabilistic solar nowcasting based on all-sky imagers":
+          - button "Probabilistic solar nowcasting based on all-sky imagers"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Nouri, Bijan, Wilbert, Stefan, Blum, Niklas, Fabel, Yann, Lorenz, Elke, Hammer, Annette, Schmidt, Thomas, Zarzalejo, Luis F., Pitz-Paal, Robert"
+        - cell "10.1016/j.solener.2023.01.060"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Smart photovoltaic system for Indian smart cities: a cost analysis September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:13 PM Ruby Beniwal, Shruti Kalra, Narendra SinghBeniwal, Hari Om Gupta 10.1007/s11356-023-25600-w Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Smart photovoltaic system for Indian smart cities: a cost analysis"':
+          - 'button "Smart photovoltaic system for Indian smart cities: a cost analysis"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Ruby Beniwal, Shruti Kalra, Narendra SinghBeniwal, Hari Om Gupta"
+        - cell "10.1007/s11356-023-25600-w"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Walk‐to‐Charge Technology: Exploring Efficient Energy Harvesting Solutions for Smart Electronics September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:13 PM Ruby Beniwal, Shruti Kalra, Narendra Singh Beniwal, Hirak Mazumdar, Ashish Singhal, Sunil Kumar Singh 10.1155/2023/6614658 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Walk‐to‐Charge Technology: Exploring Efficient Energy Harvesting Solutions for Smart Electronics"':
+          - 'button "Walk‐to‐Charge Technology: Exploring Efficient Energy Harvesting Solutions for Smart Electronics"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Ruby Beniwal, Shruti Kalra, Narendra Singh Beniwal, Hirak Mazumdar, Ashish Singhal, Sunil Kumar Singh"
+        - cell "10.1155/2023/6614658"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "CyL-GHI: Global Horizontal Irradiance Dataset Containing 18 Years of Refined Data at 30-Min Granularity from 37 Stations Located in Castile and León (Spain) September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:13 PM Llinet Benavides César, Miguel Ángel Manso Callejo, Calimanut-Ionut Cira, Ramón Alcarria 10.3390/data8040065 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "CyL-GHI: Global Horizontal Irradiance Dataset Containing 18 Years of Refined Data at 30-Min Granularity from 37 Stations Located in Castile and León (Spain)"':
+          - 'button "CyL-GHI: Global Horizontal Irradiance Dataset Containing 18 Years of Refined Data at 30-Min Granularity from 37 Stations Located in Castile and León (Spain)"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Llinet Benavides César, Miguel Ángel Manso Callejo, Calimanut-Ionut Cira, Ramón Alcarria"
+        - cell "10.3390/data8040065"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Simplified Method for Predicting Hourly Global Solar Radiation Using Extraterrestrial Radiation and Limited Weather Forecast Parameters September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:13 PM Xinyu Yang, Ying Ji, Xiaoxia Wang, Menghan Niu, Shuijing Long, Jingchao Xie, Yuying Sun 10.3390/en16073215 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Simplified Method for Predicting Hourly Global Solar Radiation Using Extraterrestrial Radiation and Limited Weather Forecast Parameters":
+          - button "Simplified Method for Predicting Hourly Global Solar Radiation Using Extraterrestrial Radiation and Limited Weather Forecast Parameters"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Xinyu Yang, Ying Ji, Xiaoxia Wang, Menghan Niu, Shuijing Long, Jingchao Xie, Yuying Sun"
+        - cell "10.3390/en16073215"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Physics-Informed Machine Learning for Data Anomaly Detection, Classification, Localization, and Mitigation: A Review, Challenges, and Path Forward September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:25 PM Mehdi Jabbari Zideh, Paroma Chatterjee, Anurag K. Srivastava 10.1109/access.2023.3347989 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Physics-Informed Machine Learning for Data Anomaly Detection, Classification, Localization, and Mitigation: A Review, Challenges, and Path Forward"':
+          - 'button "Physics-Informed Machine Learning for Data Anomaly Detection, Classification, Localization, and Mitigation: A Review, Challenges, and Path Forward"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Mehdi Jabbari Zideh, Paroma Chatterjee, Anurag K. Srivastava"
+        - cell "10.1109/access.2023.3347989"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Omnivision forecasting: Combining satellite and sky images for improved deterministic and probabilistic intra-hour solar energy predictions September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:26 PM Quentin Paletta, Guillaume Arbod, Joan Lasenby 10.1016/j.apenergy.2023.120818 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Omnivision forecasting: Combining satellite and sky images for improved deterministic and probabilistic intra-hour solar energy predictions"':
+          - 'button "Omnivision forecasting: Combining satellite and sky images for improved deterministic and probabilistic intra-hour solar energy predictions"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:26 PM"
+        - cell "Quentin Paletta, Guillaume Arbod, Joan Lasenby"
+        - cell "10.1016/j.apenergy.2023.120818"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Semantic Segmentation of Cloud Images captured with Horizon-Oriented Cameras for Nowcasting Applications September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:26 PM Bruno Juncklaus Martins, Juliana Marian Arrais, Allan Cerentini, Sylvio Mantelli, Geraldo Tolentino Ribeiro Neto, Aldo von Wangenheim 10.21203/rs.3.rs-3072958/v1 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Semantic Segmentation of Cloud Images captured with Horizon-Oriented Cameras for Nowcasting Applications":
+          - button "Semantic Segmentation of Cloud Images captured with Horizon-Oriented Cameras for Nowcasting Applications"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:26 PM"
+        - cell "Bruno Juncklaus Martins, Juliana Marian Arrais, Allan Cerentini, Sylvio Mantelli, Geraldo Tolentino Ribeiro Neto, Aldo von Wangenheim"
+        - cell "10.21203/rs.3.rs-3072958/v1"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Photovoltaic power electricity generation nowcasting combining sky camera images and learning supervised algorithms in the Southern Spain September 10, 2026 at 3:13 PM 2023 September 10, 2026 at 3:30 PM Mauricio Trigo-González, Marcelo Cortés-Carmona, Aitor Marzo, Joaquín Alonso-Montesinos, M. Martínez-Durbán, Gabriel López, Carlos Portillo, F.J. Batlles 10.1016/j.renene.2023.01.111 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Photovoltaic power electricity generation nowcasting combining sky camera images and learning supervised algorithms in the Southern Spain":
+          - button "Photovoltaic power electricity generation nowcasting combining sky camera images and learning supervised algorithms in the Southern Spain"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2023"
+        - cell "September 10, 2026 at 3:30 PM"
+        - cell "Mauricio Trigo-González, Marcelo Cortés-Carmona, Aitor Marzo, Joaquín Alonso-Montesinos, M. Martínez-Durbán, Gabriel López, Carlos Portillo, F.J. Batlles"
+        - cell "10.1016/j.renene.2023.01.111"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "A network of all sky imagers ({ASI}) enabling accurate and high-resolution very short-term forecasts of solar irradiance September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Schmidt, T., St{\\\" u}hrenberg, J., Blum, N., Lezaca, J., Hammer, A., Vogt, T. 10.1049/icp.2022.2778 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "A network of all sky imagers ({ASI}) enabling accurate and high-resolution very short-term forecasts of solar irradiance"':
+          - 'button "A network of all sky imagers ({ASI}) enabling accurate and high-resolution very short-term forecasts of solar irradiance"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - 'cell "Schmidt, T., St{\\\" u}hrenberg, J., Blum, N., Lezaca, J., Hammer, A., Vogt, T."'
+        - cell "10.1049/icp.2022.2778"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Irradiance {Nowcasting} by {Means} of {Deep}-{Learning} {Analysis} of {Infrared} {Images} September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Niccolai, Alessandro, Orooji, Seyedamir, Matteri, Andrea, Ogliari, Emanuele, Leva, Sonia 10.3390/forecast4010019 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Irradiance {Nowcasting} by {Means} of {Deep}-{Learning} {Analysis} of {Infrared} {Images}"':
+          - 'button "Irradiance {Nowcasting} by {Means} of {Deep}-{Learning} {Analysis} of {Infrared} {Images}"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Niccolai, Alessandro, Orooji, Seyedamir, Matteri, Andrea, Ogliari, Emanuele, Leva, Sonia"
+        - cell "10.3390/forecast4010019"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "How to Achieve Efficiencies beyond 22.1% for CdTe-Based Thin-Film Solar Cells September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM I. M. Dharmadasa, A. E. Alam 10.3390/en15249510 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "How to Achieve Efficiencies beyond 22.1% for CdTe-Based Thin-Film Solar Cells":
+          - button "How to Achieve Efficiencies beyond 22.1% for CdTe-Based Thin-Film Solar Cells"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "I. M. Dharmadasa, A. E. Alam"
+        - cell "10.3390/en15249510"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Boosting solar radiation predictions with global climate models, observational predictors and hybrid deep-machine learning algorithms September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Sujan Ghimire, Ravinesh C. Deo, David Casillas-Pérez, Sancho Salcedo‐Sanz 10.1016/j.apenergy.2022.119063 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Boosting solar radiation predictions with global climate models, observational predictors and hybrid deep-machine learning algorithms":
+          - button "Boosting solar radiation predictions with global climate models, observational predictors and hybrid deep-machine learning algorithms"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Sujan Ghimire, Ravinesh C. Deo, David Casillas-Pérez, Sancho Salcedo‐Sanz"
+        - cell "10.1016/j.apenergy.2022.119063"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Recent advances in intra-hour solar forecasting: A review of ground-based sky image methods September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Lin Fan, Yao Zhang, Jianxue Wang 10.1016/j.ijforecast.2021.11.002 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Recent advances in intra-hour solar forecasting: A review of ground-based sky image methods"':
+          - 'button "Recent advances in intra-hour solar forecasting: A review of ground-based sky image methods"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Lin Fan, Yao Zhang, Jianxue Wang"
+        - cell "10.1016/j.ijforecast.2021.11.002"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "A comprehensive review of solar irradiation estimation and forecasting using artificial neural networks: data, models and trends September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Naima El-Amarty, Manal Marzouq, Hakim El Fadili, Saad Dosse Bennani, A.E. Ruano 10.1007/s11356-022-24240-w Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "A comprehensive review of solar irradiation estimation and forecasting using artificial neural networks: data, models and trends"':
+          - 'button "A comprehensive review of solar irradiation estimation and forecasting using artificial neural networks: data, models and trends"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Naima El-Amarty, Manal Marzouq, Hakim El Fadili, Saad Dosse Bennani, A.E. Ruano"
+        - cell "10.1007/s11356-022-24240-w"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Interpretable deep learning models for hourly solar radiation prediction based on graph neural network and attention September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Yuan Gao, Shohei Miyata, Yasunori Akashi 10.1016/j.apenergy.2022.119288 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Interpretable deep learning models for hourly solar radiation prediction based on graph neural network and attention":
+          - button "Interpretable deep learning models for hourly solar radiation prediction based on graph neural network and attention"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Yuan Gao, Shohei Miyata, Yasunori Akashi"
+        - cell "10.1016/j.apenergy.2022.119288"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Short-term solar radiation forecasting with a novel image processing-based deep learning approach September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Ardan Hüseyin Eşlik, Emre Akarslan, Fatih Onur Hocaoğlu 10.1016/j.renene.2022.10.063 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Short-term solar radiation forecasting with a novel image processing-based deep learning approach":
+          - button "Short-term solar radiation forecasting with a novel image processing-based deep learning approach"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Ardan Hüseyin Eşlik, Emre Akarslan, Fatih Onur Hocaoğlu"
+        - cell "10.1016/j.renene.2022.10.063"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Retrieval of aerosol properties using relative radiance measurements from an all-sky camera September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Roberto Román, Juan Carlos Antuña‐Sánchez, Victoria E. Cachorro, Carlos Toledano, Benjamín Torres, David Mateos, David Fuertes, César López, Ramiro González, Tatyana Lapionok, Marcos Herreras-Giralda, Оleg Dubovik, A. M. de Frutos 10.5194/amt-15-407-2022 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Retrieval of aerosol properties using relative radiance measurements from an all-sky camera":
+          - button "Retrieval of aerosol properties using relative radiance measurements from an all-sky camera"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Roberto Román, Juan Carlos Antuña‐Sánchez, Victoria E. Cachorro, Carlos Toledano, Benjamín Torres, David Mateos, David Fuertes, César López, Ramiro González, Tatyana Lapionok, Marcos Herreras-Giralda, Оleg Dubovik, A. M. de Frutos"
+        - cell "10.5194/amt-15-407-2022"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Estimation of solar irradiance and solar power based on all-sky images September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Tsai-Ping Chu, Jiahong Guo, Yih‐Guang Leu, Li-Fen Chou 10.1016/j.solener.2022.11.031 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Estimation of solar irradiance and solar power based on all-sky images":
+          - button "Estimation of solar irradiance and solar power based on all-sky images"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Tsai-Ping Chu, Jiahong Guo, Yih‐Guang Leu, Li-Fen Chou"
+        - cell "10.1016/j.solener.2022.11.031"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Enhancing solar PV output forecast by integrating ground and satellite observations with deep learning September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Jun Qin, Hou Jiang, Ning Lu, Ling Yao, Chenghu Zhou 10.1016/j.rser.2022.112680 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Enhancing solar PV output forecast by integrating ground and satellite observations with deep learning":
+          - button "Enhancing solar PV output forecast by integrating ground and satellite observations with deep learning"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Jun Qin, Hou Jiang, Ning Lu, Ling Yao, Chenghu Zhou"
+        - cell "10.1016/j.rser.2022.112680"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Cloud Segmentation and Motion Tracking in Sky Images September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:13 PM Benjamin G. Pierce, Joshua S. Stein, Jennifer L. Braid, Daniel Riley 10.1109/jphotov.2022.3215890 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Cloud Segmentation and Motion Tracking in Sky Images":
+          - button "Cloud Segmentation and Motion Tracking in Sky Images"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Benjamin G. Pierce, Joshua S. Stein, Jennifer L. Braid, Daniel Riley"
+        - cell "10.1109/jphotov.2022.3215890"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "A comparative study of different materials used for solar photovoltaics technology September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:25 PM Neha Kumari, Sanjay Kumar Singh, Sanjay Kumar 10.1016/j.matpr.2022.06.403 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "A comparative study of different materials used for solar photovoltaics technology":
+          - button "A comparative study of different materials used for solar photovoltaics technology"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Neha Kumari, Sanjay Kumar Singh, Sanjay Kumar"
+        - cell "10.1016/j.matpr.2022.06.403"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Measurement of diffuse and plane of array irradiance by a combination of a pyranometer and an all-sky imager September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:25 PM Niklas Blum, Stefan Wilbert, Bijan Nouri, Jorge Lezaca, David Huckebrink, Andreas Kazantzidis, Detlev Heinemann, Luis F. Zarzalejo, M.J. Jiménez, Robert Pitz‐Paal 10.1016/j.solener.2021.11.064 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Measurement of diffuse and plane of array irradiance by a combination of a pyranometer and an all-sky imager":
+          - button "Measurement of diffuse and plane of array irradiance by a combination of a pyranometer and an all-sky imager"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Niklas Blum, Stefan Wilbert, Bijan Nouri, Jorge Lezaca, David Huckebrink, Andreas Kazantzidis, Detlev Heinemann, Luis F. Zarzalejo, M.J. Jiménez, Robert Pitz‐Paal"
+        - cell "10.1016/j.solener.2021.11.064"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Systematic review of nowcasting approaches for solar energy production based upon ground-based cloud imaging September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:26 PM Bruno Juncklaus Martins, Allan Cerentini, Sylvio Luiz Mantelli Neto, Thiago Zimmermann Loureiro Chaves, Nicolas Moreira Branco, Aldo von Wangenheim, Ricardo Rüther, Juliana Marian Arrais 10.1016/j.seja.2022.100019 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Systematic review of nowcasting approaches for solar energy production based upon ground-based cloud imaging":
+          - button "Systematic review of nowcasting approaches for solar energy production based upon ground-based cloud imaging"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:26 PM"
+        - cell "Bruno Juncklaus Martins, Allan Cerentini, Sylvio Luiz Mantelli Neto, Thiago Zimmermann Loureiro Chaves, Nicolas Moreira Branco, Aldo von Wangenheim, Ricardo Rüther, Juliana Marian Arrais"
+        - cell "10.1016/j.seja.2022.100019"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Investigating photovoltaic solar power output forecasting using machine learning algorithms September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:26 PM Yusuf Essam, Ali Najah Ahmed, Rohaini Ramli, Kwok‐wing Chau, Muhammad Shazril Idris Ibrahim, Mohsen Sherif, Ahmed Sefelnasr, Ahmed El‐Shafie 10.1080/19942060.2022.2126528 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Investigating photovoltaic solar power output forecasting using machine learning algorithms":
+          - button "Investigating photovoltaic solar power output forecasting using machine learning algorithms"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:26 PM"
+        - cell "Yusuf Essam, Ali Najah Ahmed, Rohaini Ramli, Kwok‐wing Chau, Muhammad Shazril Idris Ibrahim, Mohsen Sherif, Ahmed Sefelnasr, Ahmed El‐Shafie"
+        - cell "10.1080/19942060.2022.2126528"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "A PV ramp-rate control strategy to extend battery lifespan using forecasting September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:26 PM Alejandro González-Moreno, Javier Marcos, I. de la Parra, Luis Marroyo 10.1016/j.apenergy.2022.119546 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "A PV ramp-rate control strategy to extend battery lifespan using forecasting":
+          - button "A PV ramp-rate control strategy to extend battery lifespan using forecasting"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:26 PM"
+        - cell "Alejandro González-Moreno, Javier Marcos, I. de la Parra, Luis Marroyo"
+        - cell "10.1016/j.apenergy.2022.119546"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "A Feature Importance Analysis Based Solar Irradiance Mapping Model Using Multi-channel Satellite Remote Sensing Data September 10, 2026 at 3:13 PM 2022 September 10, 2026 at 3:26 PM Ying Su, Na Li, Heng Yang, Fei Wang, Changping Sun, Zhao Zhen, Zubing Zou, Xinxin Ge 10.1109/icps54075.2022.9773880 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "A Feature Importance Analysis Based Solar Irradiance Mapping Model Using Multi-channel Satellite Remote Sensing Data":
+          - button "A Feature Importance Analysis Based Solar Irradiance Mapping Model Using Multi-channel Satellite Remote Sensing Data"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2022"
+        - cell "September 10, 2026 at 3:26 PM"
+        - cell "Ying Su, Na Li, Heng Yang, Fei Wang, Changping Sun, Zhao Zhen, Zubing Zou, Xinxin Ge"
+        - cell "10.1109/icps54075.2022.9773880"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Forecasting of solar irradiance and ramp events with all-sky imagers September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Logothetis, Stavros-Andreas, Salamalikis, Vasileios, Wilbert, Stefan, Remund, Jan, Zarzalejo, Luis, Xie, Yu, Nouri, Bijan, Ntavelis, Evangelos, Nou, Julien, Visser, Lennard, Sengupta, Manajit, P{\\'' o}, M{\\'' a}rio, Chauvin, Remi, Grieu, Stephane, Sark, Wilfried Van, Kazantzidis, Andreas 10.5194/ems2021-75 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - cell "Forecasting of solar irradiance and ramp events with all-sky imagers":
+          - button "Forecasting of solar irradiance and ramp events with all-sky imagers"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - 'cell "Logothetis, Stavros-Andreas, Salamalikis, Vasileios, Wilbert, Stefan, Remund, Jan, Zarzalejo, Luis, Xie, Yu, Nouri, Bijan, Ntavelis, Evangelos, Nou, Julien, Visser, Lennard, Sengupta, Manajit, P{\\'' o}, M{\\'' a}rio, Chauvin, Remi, Grieu, Stephane, Sark, Wilfried Van, Kazantzidis, Andreas"'
+        - cell "10.5194/ems2021-75"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "A review of primary technologies of thin-film solar cells September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Erteza Tawsif Efaz, M. M. Rhaman, Safayat-Al Imam, Khandaker Lubaba Bashar, Fahmid Kabir, MD Ehasan Mourtaza, Syed Nazmus Sakib, F. A. Mozahid 10.1088/2631-8695/ac2353 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "A review of primary technologies of thin-film solar cells":
+          - button "A review of primary technologies of thin-film solar cells"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Erteza Tawsif Efaz, M. M. Rhaman, Safayat-Al Imam, Khandaker Lubaba Bashar, Fahmid Kabir, MD Ehasan Mourtaza, Syed Nazmus Sakib, F. A. Mozahid"
+        - cell "10.1088/2631-8695/ac2353"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Renewable Energy Transition: A panacea to the ravaging effects of climate change in Nigeria September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Usman Bello, Udofia Livingstone, Auwal M Abdullahi, Ibrahim Sulaiman, Khuzaifah M. Yahuza 10.13170/aijst.10.3.23375 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Renewable Energy Transition: A panacea to the ravaging effects of climate change in Nigeria"':
+          - 'button "Renewable Energy Transition: A panacea to the ravaging effects of climate change in Nigeria"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Usman Bello, Udofia Livingstone, Auwal M Abdullahi, Ibrahim Sulaiman, Khuzaifah M. Yahuza"
+        - cell "10.13170/aijst.10.3.23375"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Small-Scale Solar Photovoltaic Power Prediction for Residential Load in Saudi Arabia Using Machine Learning September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Mohamed Mohana, Abdelaziz Salah Saidi, Salem Alelyani, Mohammed J. Alshayeb, Suhail Pasha Syed Basha, Ali E. Anqi 10.3390/en14206759 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Small-Scale Solar Photovoltaic Power Prediction for Residential Load in Saudi Arabia Using Machine Learning":
+          - button "Small-Scale Solar Photovoltaic Power Prediction for Residential Load in Saudi Arabia Using Machine Learning"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Mohamed Mohana, Abdelaziz Salah Saidi, Salem Alelyani, Mohammed J. Alshayeb, Suhail Pasha Syed Basha, Ali E. Anqi"
+        - cell "10.3390/en14206759"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "The State-of-the-Art Progress in Cloud Detection, Identification, and Tracking Approaches: A Systematic Review September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Manisha Sawant, Mayur Kishor Shende, Andrés Feijóo, Neeraj Dhanraj Bokde 10.3390/en14238119 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "The State-of-the-Art Progress in Cloud Detection, Identification, and Tracking Approaches: A Systematic Review"':
+          - 'button "The State-of-the-Art Progress in Cloud Detection, Identification, and Tracking Approaches: A Systematic Review"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Manisha Sawant, Mayur Kishor Shende, Andrés Feijóo, Neeraj Dhanraj Bokde"
+        - cell "10.3390/en14238119"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Evaluating the performance of radiometers for solar overirradiance events September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Giuliano L. Martins, Sylvio Luiz Mantelli Neto, Ricardo Rüther 10.1016/j.solener.2021.11.050 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Evaluating the performance of radiometers for solar overirradiance events":
+          - button "Evaluating the performance of radiometers for solar overirradiance events"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Giuliano L. Martins, Sylvio Luiz Mantelli Neto, Ricardo Rüther"
+        - cell "10.1016/j.solener.2021.11.050"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "A Method of Ground-Based Cloud Motion Predict: CCLSTM + SR-Net September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:13 PM Zhiying Lu, Zehan Wang, Xin Li, Jianfeng Zhang 10.3390/rs13193876 Local PDF NO_PDF 0 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "A Method of Ground-Based Cloud Motion Predict: CCLSTM + SR-Net"':
+          - 'button "A Method of Ground-Based Cloud Motion Predict: CCLSTM + SR-Net"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "Zhiying Lu, Zehan Wang, Xin Li, Jianfeng Zhang"
+        - cell "10.3390/rs13193876"
+        - cell "Local PDF"
+        - cell "NO_PDF":
+          - generic: NO_PDF
+        - cell "0"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Bifacial Photovoltaics 2021: Status, Opportunities and Challenges September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:25 PM Radovan Kopecek, Joris Libal 10.3390/en14082076 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR"':
+        - 'cell "Bifacial Photovoltaics 2021: Status, Opportunities and Challenges"':
+          - 'button "Bifacial Photovoltaics 2021: Status, Opportunities and Challenges"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Radovan Kopecek, Joris Libal"
+        - cell "10.3390/en14082076"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Solar photovoltaic power prediction using different machine learning methods September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:25 PM Bouchaib Zazoum 10.1016/j.egyr.2021.11.183 C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Solar photovoltaic power prediction using different machine learning methods":
+          - button "Solar photovoltaic power prediction using different machine learning methods"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Bouchaib Zazoum"
+        - cell "10.1016/j.egyr.2021.11.183"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - 'row "Air pollution and soiling implications for solar photovoltaic power generation: A comprehensive review September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:25 PM Zhe Song, Jia Liu, Hongxing Yang 10.1016/j.apenergy.2021.117247 Local PDF NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW"':
+        - 'cell "Air pollution and soiling implications for solar photovoltaic power generation: A comprehensive review"':
+          - 'button "Air pollution and soiling implications for solar photovoltaic power generation: A comprehensive review"'
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Zhe Song, Jia Liu, Hongxing Yang"
+        - cell "10.1016/j.apenergy.2021.117247"
+        - cell "Local PDF"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "A Comprehensive Comparative Study of Artificial Neural Network (ANN) and Support Vector Machines (SVM) on Stock Forecasting September 10, 2026 at 3:13 PM 2021 September 10, 2026 at 3:25 PM Akshit Kurani, Pavan Doshi, Aarya Vakharia, Manan Shah 10.1007/s40745-021-00344-x C:\\iCloudDrive\\Research Papers Solar Forecast VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "A Comprehensive Comparative Study of Artificial Neural Network (ANN) and Support Vector Machines (SVM) on Stock Forecasting":
+          - button "A Comprehensive Comparative Study of Artificial Neural Network (ANN) and Support Vector Machines (SVM) on Stock Forecasting"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2021"
+        - cell "September 10, 2026 at 3:25 PM"
+        - cell "Akshit Kurani, Pavan Doshi, Aarya Vakharia, Manan Shah"
+        - cell "10.1007/s40745-021-00344-x"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+  - generic: 1,197 papers
+  - button "← Previous" [disabled]
+  - generic: Page 1 · 50 per page
+  - button "Next →"
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

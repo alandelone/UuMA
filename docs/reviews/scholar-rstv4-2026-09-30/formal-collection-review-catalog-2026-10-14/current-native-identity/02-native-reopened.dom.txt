@@ -1,0 +1,168 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:52059/
+    - link "文献库":
+      - /url: http://127.0.0.1:52059/?view=all
+    - link "知识图谱":
+      - /url: http://127.0.0.1:52059/?view=fieldkg
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "核对原文":
+      - generic: 核对原文
+      - generic: ⌄
+  - region "核对原文":
+    - button "← 返回 Paper Catalog"
+    - generic: Human review
+    - heading "核对原文" [level=1]
+    - paragraph: 对照 Catalog 记录、自动检查结果和原始 PDF，判断论文文件是否正确，或定位解析问题。
+    - generic "待审核数量":
+      - generic: PDF 身份 · 1
+      - generic: 解析质量 · 0
+    - complementary:
+      - strong: 待审核 · 0
+      - combobox "审核类型":
+        - option "全部类型" [selected]
+        - option "PDF 身份"
+        - option "解析质量"
+      - textbox "搜索待审核论文":
+        - /placeholder: 搜索标题或 DOI
+      - paragraph: 没有符合条件的审核记录。
+    - text: PDF 身份 · 待核对
+    - heading "Software review identity title" [level=2]
+    - generic: 10.1234/corrected· 2026-10-06
+    - button "Catalog 详情 ↗"
+    - heading "人工要核对什么" [level=3]
+    - paragraph: 自动检查没有指出 DOI 或标题问题；可检查这份 PDF 是否确实属于该论文。
+    - heading "Catalog 记录与原文批注" [level=3]
+    - generic: DOI
+    - strong: 10.1234/corrected
+    - generic: 标题
+    - strong: Software review identity title
+    - button "这份 PDF 不是该论文"
+    - paragraph
+    - heading "复核与继续" [level=3]
+    - paragraph: 当前文件等待复核
+    - paragraph: 先保存原文核对与修正，再明确批准当前文件身份。解析质量会独立复检。
+    - generic: 本次复核说明
+    - textbox "本次复核说明"
+    - button "复核并批准文件身份"
+    - button "更新复核依据"
+    - paragraph
+    - paragraph: 采集暂停状态会保留。重新排队后，任务完成质量检查才会发布解析版本。
+    - heading "复核记录" [level=4]
+    - strong: 文件已重新进入审核，原版本保留
+    - paragraph: 软件验收：在独立副本重新核对同一原始 PDF 的技术身份。保留全部解析、模型和科学历史；不启动 worker。 · Alandelone · 2026年10月14日 15:03:05
+    - strong: 文件身份已批准
+    - paragraph: Explicit identity review of owned software fixture; no scientific approval · Alandelone · 2026年10月6日 08:57:19
+    - strong: 原始 PDF
+    - generic: 第 1 / 2 页
+    - button "放大"
+    - link "打开完整 PDF ↗":
+      - /url: /api/catalog/files/source_file_491d18ddee7958c95deb123a188280d5/pdf
+    - generic: 向下滚动可连续阅读各页；拖选文字后可直接标注。
+    - button "复制选中文字"
+    - img "原文第 1 页"
+    - generic "第 1 页可选文字":
+      - generic: Software
+      - generic: review
+      - generic: identity
+      - generic: title
+      - generic: DOI
+      - generic: 10.1234/corrected
+      - generic: Software
+      - generic: fixture
+      - generic: body
+      - generic: preserves
+      - generic: source,
+      - generic: ownership
+      - generic: and
+      - generic: exact
+      - generic: references.
+      - generic: Software
+      - generic: fixture
+      - generic: body
+      - generic: preserves
+      - generic: source,
+      - generic: ownership
+      - generic: and
+      - generic: exact
+      - generic: references.
+      - generic: Software
+      - generic: fixture
+      - generic: body
+      - generic: preserves
+      - generic: sou
+    - img "原文第 2 页"
+    - generic "第 2 页可选文字":
+      - generic: References
+      - generic: "[1]"
+      - generic: Reference
+      - generic: author
+      - generic: "1."
+      - generic: Distinct
+      - generic: software
+      - generic: citation
+      - generic: experiment
+      - generic: validation
+      - generic: "1."
+      - generic: "2026."
+      - generic: "[2]"
+      - generic: Reference
+      - generic: author
+      - generic: "2."
+      - generic: Distinct
+      - generic: software
+      - generic: citation
+      - generic: experiment
+      - generic: validation
+      - generic: "2."
+      - generic: "2026."
+      - generic: "[3]"
+      - generic: Reference
+      - generic: author
+      - generic: "3."
+      - generic: Distinct
+      - generic: software
+      - generic: citation
+      - generic: experiment
+      - generic: validation
+      - generic: "3."
+      - generic: "2026."
+      - generic: "[4]"
+      - generic: Reference
+      - generic: author
+      - generic: "4."
+      - generic: Distinct
+      - generic: software
+      - generic: citation
+      - generic: experiment
+      - generic: validation
+      - generic: "4."
+      - generic: "2026."
+      - generic: "[5]"
+      - generic: Reference
+      - generic: author
+      - generic: "5."
+      - generic: Distinct
+      - generic: software
+      - generic: citation
+      - generic: experiment
+      - generic: validation
+      - generic: "5."
+      - generic: "2026."
+      - generic: "[6]"
+      - generic: Reference
+      - generic: author
+      - generic: "6."
+      - generic: Distinct
+      - generic: software
+      - generic: citation
+      - generic: experiment
+      - generic: validation
+      - generic: "6."
+      - generic: "2026."
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

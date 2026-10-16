@@ -1,0 +1,17 @@
+{
+  "status": "PASS_PREPARED_COPY_AND_CORE_REFUSAL; native evidence still required",
+  "at": "2026-10-13T14:12:39.217602+00:00",
+  "owned_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-upstream-copy-j6xdmqml",
+  "source_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y",
+  "original_sha256": "67b46849c0dc6f2ffc1629411f01e65390a5d533ed34b28b369293c18e0e0d6c",
+  "owned_sha256": "985ac9a25ed1e522a543ab71d24053042dd223d117e27379c8c195a39287a2da",
+  "old_plan_id": "experiment_plan_81163acc4ada40c786e62a8e66576d9d",
+  "old_method_id": "method_578417c4dcfc42e99060150cccd53613",
+  "refusal": "The experiment method is no longer approved in this track",
+  "old_plan_runs_added": 0,
+  "pipeline_run_count": 1,
+  "new_approvals": 0,
+  "models_called": 0,
+  "normal_original_files_preserved": true,
+  "shared_sqlite_sidecars_excluded_from_file_hash_comparison": true
+}

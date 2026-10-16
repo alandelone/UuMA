@@ -1,0 +1,1191 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:62860/
+    - link "文献库":
+      - /url: http://127.0.0.1:62860/?view=all
+    - link "知识图谱":
+      - /url: http://127.0.0.1:62860/?view=fieldkg
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "论文目录":
+      - generic: 论文目录
+      - generic: ⌄
+  - generic: 440 to review
+  - button "核对原文 →"
+  - button "☰ Filter"
+  - button "↕ Sort"
+  - button "▤ Columns"
+  - button "Refresh catalog": ↻
+  - table "Paper Catalog":
+    - rowgroup:
+      - row "Name Resize Name column Created Resize Created column Year Resize Year column Last Updated Resize Last Updated column Authors Resize Authors column DOI Resize DOI column Source Resize Source column PDF status Resize PDF status column PDF files Resize PDF files column PDFs to review Resize PDFs to review column Parse Resize Parse column References Resize References column QuickRead Resize QuickRead column Skeleton Resize Skeleton column Review Resize Review column":
+        - columnheader "Name Resize Name column":
+          - generic: Aa
+          - text: Name
+          - separator "Resize Name column"
+        - columnheader "Created Resize Created column":
+          - generic: ◷
+          - text: Created
+          - separator "Resize Created column"
+        - columnheader "Year Resize Year column":
+          - generic: ▣
+          - text: Year
+          - separator "Resize Year column"
+        - columnheader "Last Updated Resize Last Updated column":
+          - generic: ◷
+          - text: Last Updated
+          - separator "Resize Last Updated column"
+        - columnheader "Authors Resize Authors column":
+          - generic: Aa
+          - text: Authors
+          - separator "Resize Authors column"
+        - columnheader "DOI Resize DOI column":
+          - generic: Aa
+          - text: DOI
+          - separator "Resize DOI column"
+        - columnheader "Source Resize Source column":
+          - generic: Aa
+          - text: Source
+          - separator "Resize Source column"
+        - columnheader "PDF status Resize PDF status column":
+          - generic: ◆
+          - text: PDF status
+          - separator "Resize PDF status column"
+        - columnheader "PDF files Resize PDF files column":
+          - generic: "#"
+          - text: PDF files
+          - separator "Resize PDF files column"
+        - columnheader "PDFs to review Resize PDFs to review column":
+          - generic: "#"
+          - text: PDFs to review
+          - separator "Resize PDFs to review column"
+        - columnheader "Parse Resize Parse column":
+          - generic: ◆
+          - text: Parse
+          - separator "Resize Parse column"
+        - columnheader "References Resize References column":
+          - generic: "#"
+          - text: References
+          - separator "Resize References column"
+        - columnheader "QuickRead Resize QuickRead column":
+          - generic: ◆
+          - text: QuickRead
+          - separator "Resize QuickRead column"
+        - columnheader "Skeleton Resize Skeleton column":
+          - generic: ◆
+          - text: Skeleton
+          - separator "Resize Skeleton column"
+        - columnheader "Review Resize Review column":
+          - generic: ◆
+          - text: Review
+          - separator "Resize Review column"
+    - rowgroup:
+      - row "Reliability Predictors for Solar Irradiance Satellite- Based Forecast September 10, 2026 at 3:13 PM 2020 September 28, 2026 at 4:55 PM Sylvain Cros, Jordi Badosa, A. Szantaï, Martial Haeffelin 10.3390/en13215566 C:\\iCloudDrive\\Research Papers Solar Forecast,C:\\iCloudDrive\\Research Papars Phd 300 Sparta! NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Reliability Predictors for Solar Irradiance Satellite- Based Forecast":
+          - button "Reliability Predictors for Solar Irradiance Satellite- Based Forecast"
+        - cell "September 10, 2026 at 3:13 PM"
+        - cell "2020"
+        - cell "September 28, 2026 at 4:55 PM"
+        - cell "Sylvain Cros, Jordi Badosa, A. Szantaï, Martial Haeffelin"
+        - cell "10.3390/en13215566"
+        - cell "C:\\iCloudDrive\\Research Papers Solar Forecast,C:\\iCloudDrive\\Research Papars Phd 300 Sparta!"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "X Fairness and cooperation are rewarding September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "X Fairness and cooperation are rewarding":
+          - button "X Fairness and cooperation are rewarding"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Wide area monitoring and control for voltage assessment in smart grids with distributed generation September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Wide area monitoring and control for voltage assessment in smart grids with distributed generation":
+          - button "Wide area monitoring and control for voltage assessment in smart grids with distributed generation"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "What Is This “Peer-to-Peer” About- September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "What Is This “Peer-to-Peer” About-":
+          - button "What Is This “Peer-to-Peer” About-"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Walrasian Market Clearing for Demand Response Exchange September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Walrasian Market Clearing for Demand Response Exchange":
+          - button "Walrasian Market Clearing for Demand Response Exchange"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Virtual Organization Structure for Agent-Based Local Electricity Trading September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Virtual Organization Structure for Agent-Based Local Electricity Trading":
+          - button "Virtual Organization Structure for Agent-Based Local Electricity Trading"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Using H∞controller for monitoring and control of smart grids September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Using H∞controller for monitoring and control of smart grids":
+          - button "Using H∞controller for monitoring and control of smart grids"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Transaction analysis in deregulated power systems using game theory September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Transaction analysis in deregulated power systems using game theory":
+          - button "Transaction analysis in deregulated power systems using game theory"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Trading Arrangements and Cost Allocation in P2P Energy Markets on Low-Voltage Networks September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Trading Arrangements and Cost Allocation in P2P Energy Markets on Low-Voltage Networks":
+          - button "Trading Arrangements and Cost Allocation in P2P Energy Markets on Low-Voltage Networks"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Trade-Off in Implementation of P2P Energy Trading over Hyperledger Blockchain September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Trade-Off in Implementation of P2P Energy Trading over Hyperledger Blockchain":
+          - button "Trade-Off in Implementation of P2P Energy Trading over Hyperledger Blockchain"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Towards resilient networked microgrids- Blockchain-enabled peer-to-peer electricity trading mechanism C2017- September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Towards resilient networked microgrids- Blockchain-enabled peer-to-peer electricity trading mechanism C2017-":
+          - button "Towards resilient networked microgrids- Blockchain-enabled peer-to-peer electricity trading mechanism C2017-"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "The economic opportunity of distributed smart solar systems September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "The economic opportunity of distributed smart solar systems":
+          - button "The economic opportunity of distributed smart solar systems"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "SynergyChain Blockchain-assisted Adaptive Cyberphysical P2P Energy Trading September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "SynergyChain Blockchain-assisted Adaptive Cyberphysical P2P Energy Trading":
+          - button "SynergyChain Blockchain-assisted Adaptive Cyberphysical P2P Energy Trading"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Renewable energy for sustainable rural development-Synergies and mismatches September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Renewable energy for sustainable rural development-Synergies and mismatches":
+          - button "Renewable energy for sustainable rural development-Synergies and mismatches"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Renewable Energy Integration through Coalition Formation for P2P Energy Trading September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Renewable Energy Integration through Coalition Formation for P2P Energy Trading":
+          - button "Renewable Energy Integration through Coalition Formation for P2P Energy Trading"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Regulated P2P Energy Trading A Typical Australian Distribution Network Case Study September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Regulated P2P Energy Trading A Typical Australian Distribution Network Case Study":
+          - button "Regulated P2P Energy Trading A Typical Australian Distribution Network Case Study"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Optimal placement of multi-distributed generation units including different load models using particle swarm optimization September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Optimal placement of multi-distributed generation units including different load models using particle swarm optimization":
+          - button "Optimal placement of multi-distributed generation units including different load models using particle swarm optimization"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Optimal management of local energy trading in future smart microgrid September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Optimal management of local energy trading in future smart microgrid":
+          - button "Optimal management of local energy trading in future smart microgrid"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Opportunistic Networks Challenges in Specializing the P2P Paradigm September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Opportunistic Networks Challenges in Specializing the P2P Paradigm":
+          - button "Opportunistic Networks Challenges in Specializing the P2P Paradigm"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Operator-oriented Peer-to-peer Energy Trading among Residential Customers in South Korea September 27, 2026 at 2:56 PM — September 27, 2026 at 2:56 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Operator-oriented Peer-to-peer Energy Trading among Residential Customers in South Korea":
+          - button "Operator-oriented Peer-to-peer Energy Trading among Residential Customers in South Korea"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:56 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "The Advantages and Disadvantages of the Blockchain Technology September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "The Advantages and Disadvantages of the Blockchain Technology":
+          - button "The Advantages and Disadvantages of the Blockchain Technology"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Techno-economic evaluation for hybrid renewable energy system 2 September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Techno-economic evaluation for hybrid renewable energy system 2":
+          - button "Techno-economic evaluation for hybrid renewable energy system 2"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Techno-economic analysis of off-grid renewable energy power station A case study September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Techno-economic analysis of off-grid renewable energy power station A case study":
+          - button "Techno-economic analysis of off-grid renewable energy power station A case study"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Techno-economic analysis of a wind–solar hybrid renewable energy system with rainwater collection feature for urban high-rise application September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Techno-economic analysis of a wind–solar hybrid renewable energy system with rainwater collection feature for urban high-rise application":
+          - button "Techno-economic analysis of a wind–solar hybrid renewable energy system with rainwater collection feature for urban high-rise application"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Techno-economic analysis of a hybrid power system based on the cost-effective hydrogen production method for rural electrification, A case study in Iran September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Techno-economic analysis of a hybrid power system based on the cost-effective hydrogen production method for rural electrification, A case study in Iran":
+          - button "Techno-economic analysis of a hybrid power system based on the cost-effective hydrogen production method for rural electrification, A case study in Iran"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Techno-economic Analysis of Biogenset and Hybrid Solar-Diesel-Battery for Rural Electrification September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Techno-economic Analysis of Biogenset and Hybrid Solar-Diesel-Battery for Rural Electrification":
+          - button "Techno-economic Analysis of Biogenset and Hybrid Solar-Diesel-Battery for Rural Electrification"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Supply function equilibrium- theory and applicationsC2013- September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Supply function equilibrium- theory and applicationsC2013-":
+          - button "Supply function equilibrium- theory and applicationsC2013-"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Stochastic modeling of electric power prices in a multi-market environment September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Stochastic modeling of electric power prices in a multi-market environment":
+          - button "Stochastic modeling of electric power prices in a multi-market environment"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "State-of-the-Art Analysis and Perspectives for Peer-to-Peer Energy Trading September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "State-of-the-Art Analysis and Perspectives for Peer-to-Peer Energy Trading":
+          - button "State-of-the-Art Analysis and Perspectives for Peer-to-Peer Energy Trading"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "State-Of-The-Art and Prospects for Peer-To-Peer Transaction-Based Energy System September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "State-Of-The-Art and Prospects for Peer-To-Peer Transaction-Based Energy System":
+          - button "State-Of-The-Art and Prospects for Peer-To-Peer Transaction-Based Energy System"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Solar Pico PV Market Potential in Nepal September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Solar Pico PV Market Potential in Nepal":
+          - button "Solar Pico PV Market Potential in Nepal"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Solar power generation by PV (photovoltaic) technology- A review September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Solar power generation by PV (photovoltaic) technology- A review":
+          - button "Solar power generation by PV (photovoltaic) technology- A review"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Solar Power Forecasting Using Weather Type Clustering and emsembles of neural networks September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Solar Power Forecasting Using Weather Type Clustering and emsembles of neural networks":
+          - button "Solar Power Forecasting Using Weather Type Clustering and emsembles of neural networks"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Solar Power Forecasting A Review September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Solar Power Forecasting A Review":
+          - button "Solar Power Forecasting A Review"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Software Defined Networking for Flexible and Green Energy Internet September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Software Defined Networking for Flexible and Green Energy Internet":
+          - button "Software Defined Networking for Flexible and Green Energy Internet"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart grids concept in electrical distribution sys September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Smart grids concept in electrical distribution sys":
+          - button "Smart grids concept in electrical distribution sys"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Smart microgrids and virtual power plants in a hierarchical control structure September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart microgrids and virtual power plants in a hierarchical control structure":
+          - button "Smart microgrids and virtual power plants in a hierarchical control structure"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart metering in smart grid framework a review September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart metering in smart grid framework a review":
+          - button "Smart metering in smart grid framework a review"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart grid security- Threats, vulnerabilities and solutions September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart grid security- Threats, vulnerabilities and solutions":
+          - button "Smart grid security- Threats, vulnerabilities and solutions"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart grid Challenges, Issues and Solutions September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart grid Challenges, Issues and Solutions":
+          - button "Smart grid Challenges, Issues and Solutions"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart Distribution Systems——review September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart Distribution Systems——review":
+          - button "Smart Distribution Systems——review"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Small scale hydro-power as a source of renewable energy in Malaysia A review September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Small scale hydro-power as a source of renewable energy in Malaysia A review":
+          - button "Small scale hydro-power as a source of renewable energy in Malaysia A review"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Rural Electrification A Retrofitting Case of KSBM in September 27, 2026 at 2:47 PM — September 27, 2026 at 2:47 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Rural Electrification A Retrofitting Case of KSBM in":
+          - button "Rural Electrification A Retrofitting Case of KSBM in"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:47 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart contracts in energy systems A systematic review of fundamental approaches and implementations September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Smart contracts in energy systems A systematic review of fundamental approaches and implementations":
+          - button "Smart contracts in energy systems A systematic review of fundamental approaches and implementations"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Smart Robust Resources Control in LV Network to Deal With Voltage Rise Issue September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart Robust Resources Control in LV Network to Deal With Voltage Rise Issue":
+          - button "Smart Robust Resources Control in LV Network to Deal With Voltage Rise Issue"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smart Power Router-A Flexible Agent-Based Converter Interface in Active Distribution Networks September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Smart Power Router-A Flexible Agent-Based Converter Interface in Active Distribution Networks":
+          - button "Smart Power Router-A Flexible Agent-Based Converter Interface in Active Distribution Networks"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Smallholders--uneven-capacities-to-adapt-to-climate-change-amid 2019 World-D September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Smallholders--uneven-capacities-to-adapt-to-climate-change-amid 2019 World-D":
+          - button "Smallholders--uneven-capacities-to-adapt-to-climate-change-amid 2019 World-D"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Small Scale Hydro Turbines for Sustainable Rural Electrification Program September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Small Scale Hydro Turbines for Sustainable Rural Electrification Program":
+          - button "Small Scale Hydro Turbines for Sustainable Rural Electrification Program"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+      - row "Secure Blockchain-Based Energy Transaction Framework in Smart Power Systems September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers VERIFIED 1 0 NOT_STARTED 0 NOT_STARTED NOT_STARTED CLEAR":
+        - cell "Secure Blockchain-Based Energy Transaction Framework in Smart Power Systems":
+          - button "Secure Blockchain-Based Energy Transaction Framework in Smart Power Systems"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "CLEAR":
+          - generic: CLEAR
+      - row "Role of smart meters in smart grid September 27, 2026 at 2:42 PM — September 27, 2026 at 2:42 PM — C:\\iCloudDrive\\Research Papers NEEDS_REVIEW 1 1 NOT_STARTED 0 NOT_STARTED NOT_STARTED NEEDS_REVIEW":
+        - cell "Role of smart meters in smart grid":
+          - button "Role of smart meters in smart grid"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell "—"
+        - cell "September 27, 2026 at 2:42 PM"
+        - cell
+        - cell "—"
+        - cell "C:\\iCloudDrive\\Research Papers"
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+        - cell "1"
+        - cell "1"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "0"
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NOT_STARTED":
+          - generic: NOT_STARTED
+        - cell "NEEDS_REVIEW":
+          - button "NEEDS_REVIEW"
+  - generic: 1,197 papers
+  - button "← Previous" [disabled]
+  - generic: Page 1 · 50 per page
+  - button "Next →"
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

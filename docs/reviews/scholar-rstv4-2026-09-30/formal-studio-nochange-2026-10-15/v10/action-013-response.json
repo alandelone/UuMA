@@ -1,0 +1,19 @@
+{
+  "status_code": 201,
+  "body": {
+    "asset_id": "asset_a0fa7844e8234f1b9bef01da3f031ab9",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "filename": "SOFTWARE_FIXTURE-v5-final.pdf",
+    "media_type": "application/pdf",
+    "size_bytes": 13830,
+    "sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+    "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\assets\\f3d27b83a2256d7c-SOFTWARE_FIXTURE-v5-final.pdf",
+    "asset_kind": "DOCUMENT",
+    "status": "READY",
+    "created_at": "2026-10-15T06:54:39.618030+00:00",
+    "metadata": {
+      "pages": 2,
+      "safe": true
+    }
+  }
+}

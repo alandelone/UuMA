@@ -1,0 +1,12 @@
+PASS global hierarchy, shared Topic and manuscript ownership have stable identities
+PASS folding a Field hides every descendant while all other Fields remain
+PASS deleted and malformed navigation state cannot select a neighboring object
+PASS actual keyboard handler expands, enters a child, returns to parent and reaches End
+PASS actual list preserves folds, focus and viewport anchor through refresh and return
+PASS a different Catalog database cannot inherit previous folds
+PASS returning from another view restores overview position without capturing that view
+PASS actual editor preserves draft and retries the exact uncertain request
+PASS actual conflict retains draft and requires explicit comparison before rebasing
+PASS unavailable storage blocks an untraceable create request
+PASS two tab namespaces preserve independent drafts across reload
+11 controlled overview scenarios passed

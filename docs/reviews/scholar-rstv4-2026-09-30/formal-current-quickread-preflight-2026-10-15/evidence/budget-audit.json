@@ -1,0 +1,138 @@
+{
+  "status": "READ_ONLY_BUDGET_BLOCKER_AND_UNEXECUTED_PROPOSAL",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d",
+  "database": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d\\data\\catalog.db",
+  "database_sha256_before": "9e1e3f6ec4a59567c791ec0f5df7b32d26fbe27a5f41787bc7cf59c64b3fcc94",
+  "source_current_utc": "2026-10-14T17:18:53.327929+00:00",
+  "source_current_malaysia": "2026-10-15T01:18:53.327929+08:00",
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "collection_revision": 3,
+  "collection_status": "ACTIVE",
+  "collection_kind": "TOPIC_COLLECTION",
+  "topic_id": "topic_738405b70b574a248971a315bf333706",
+  "field_id": "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+  "track_id": null,
+  "current_schema": 13,
+  "table_count": 105,
+  "collection_creation_request_json": "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_2d25f31c2f6f4f01a69332408f6c9e7c\", \"name\": \"审核恢复软件 Topic · 文献采集\", \"paper_ids\": [\"paper_dde0a449e93444c2771e7b0edeb7daf9\"], \"queries\": [], \"scope\": {\"topic\": \"审核恢复软件 Topic\", \"track\": \"\"}, \"topic_id\": \"topic_738405b70b574a248971a315bf333706\", \"track_id\": null}",
+  "budget_history": [
+    {
+      "event_id": "budget_28395cb63409111bede83410f5e40c96",
+      "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+      "request_id": "initial:2a4a1038-9fef-4a7c-9996-5d3d433e11ba",
+      "request_json": "{\"collection_id\":\"collection_62ca47c927342115eb5f8fd870af9ca6\",\"limits\":{\"max_active_seconds\":86400,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null}}",
+      "limits_json": "{\"max_active_seconds\":86400,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null}",
+      "result_json": "{\"collection_id\":\"collection_62ca47c927342115eb5f8fd870af9ca6\",\"limits\":{\"max_active_seconds\":86400,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null},\"revision\":1}",
+      "created_at": "2026-10-13T06:25:50.527410+00:00"
+    }
+  ],
+  "current_limits": {
+    "max_active_seconds": 86400,
+    "max_papers": 500,
+    "max_registered_pdf_bytes": 10737418240,
+    "max_task_attempts": null
+  },
+  "runtime_state": {
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "active_seconds": 27268.844743,
+    "active_since": "2026-10-13T14:00:48.943559+00:00",
+    "stop_reason_json": null,
+    "updated_at": "2026-10-13T14:00:48.943559+00:00"
+  },
+  "usage_at_exact_observed_time": {
+    "papers": 1,
+    "registered_pdf_bytes": 1827,
+    "task_attempts": 8,
+    "active_seconds": 125553.22911300001,
+    "stop_reason": null,
+    "observed_at": "2026-10-14T17:18:53.327929+00:00"
+  },
+  "dispatch_stop_output": {
+    "kind": "BUDGET_EXHAUSTED",
+    "dimension": "active_seconds",
+    "limit": 86400,
+    "observed": 125553.235629
+  },
+  "default_provenance": {
+    "creation_request_has_budget_key": false,
+    "current_collection_create_fallback": "payload.budget or CollectionBudgetInput()",
+    "fallback_source": "src/rstv4/acquisition.py:220",
+    "declared_default_source": "src/rstv4/models.py:299",
+    "current_defaults": {
+      "max_papers": 500,
+      "max_registered_pdf_bytes": 10737418240,
+      "max_active_seconds": 86400,
+      "max_task_attempts": null
+    },
+    "first_recorded_limits_equal_defaults": true,
+    "authorization_inference": "None: recorded omission plus matching defaults identifies a software default; it does not prove human budget authorization."
+  },
+  "target_job": {
+    "job_id": "job_fe4651959298eab54d88abd9edaf6760",
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "job_type": "QUICK_READ",
+    "queue_class": "MODEL_READ",
+    "status": "READY",
+    "priority": 70,
+    "idempotency_key": "5e1b371eea6638c83acd4c413e96c22021af95f7a979582f6d589e459e4d49b2",
+    "input_json": "{\"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\"}",
+    "input_digest": "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+    "rule_version": "quick-read-v1",
+    "attempts": 0,
+    "available_at": "2026-10-14T03:39:08.818489+00:00",
+    "lease_owner": null,
+    "lease_expires_at": null,
+    "fencing_token": 0,
+    "last_error_code": null,
+    "last_error_detail": null,
+    "result_json": null,
+    "created_at": "2026-10-14T03:39:08.818489+00:00",
+    "updated_at": "2026-10-14T03:39:08.818489+00:00"
+  },
+  "unexecuted_proposal": {
+    "conditional_on": "Gateway restored and explicit budget-review boundary resolved; recalculate against then-current usage and revision before any write.",
+    "operation": "AcquisitionService.update_collection_budget / POST /api/catalog/collections/{collection_id}/budget",
+    "request_id": "scholar-original-gpu-quickread-budget-proposal-v1",
+    "expected_revision_at_audit": 3,
+    "only_changed_limit": "max_active_seconds",
+    "minimum_new_integer_seconds_to_dispatch_now": 125554,
+    "minimum_increment_from_86400_seconds": 39154,
+    "suggested_headroom_seconds": 900,
+    "suggested_new_limit_if_applied_at_audit_time": 126454,
+    "suggested_increment_seconds": 40054,
+    "suggested_complete_limits_payload": {
+      "max_active_seconds": 126454,
+      "max_papers": 500,
+      "max_registered_pdf_bytes": 10737418240,
+      "max_task_attempts": null
+    },
+    "reason": "Only permit the existing original GPU-parse QuickRead light task with its exact parse/source and same durable operation identity. No GPU rerun, no old DONE call replay, no SKELETON execution, no expansion of papers, PDF bytes, task-attempt policy or reference-depth policy.",
+    "supported_effects": [
+      "Append one collection_budget_events row; original rows remain exact",
+      "Increment collections.revision by one and update its timestamp",
+      "Existing runtime state and accumulated active seconds stay intact",
+      "Other limits explicitly copied unchanged; request limits is a full replacement, not a partial patch",
+      "No max-depth field is added or changed; fixed_depth_cutoff remains outside this budget operation"
+    ],
+    "execution_guard": [
+      "Allowed process queue only MODEL_READ",
+      "Claim and execute only exact target job on exact original root/parse/paper/file",
+      "One initial run_once only; if pending, observe same run and resume same job only with unchanged operation identity",
+      "No MODEL_SKELETON dispatch; downstream queued child may exist but remains unexecuted",
+      "No inference while current gateway health is HTTP403",
+      "If collection becomes PAUSED, budget update does not resume it; separate existing resume semantics must be reviewed",
+      "ACTIVE time accrues even with STOPPED workers; current proposal amount expires as wall clock advances"
+    ],
+    "route_source": "src/rstv4/collection_web.py:50 and :205"
+  },
+  "read_only": true,
+  "db_writes": 0,
+  "posts": 0,
+  "model_calls": 0,
+  "workers_started": 0,
+  "browser_actions": 0,
+  "shared_session_closed": false,
+  "database_sha256_after": "9e1e3f6ec4a59567c791ec0f5df7b32d26fbe27a5f41787bc7cf59c64b3fcc94",
+  "database_bytes_exact": true
+}

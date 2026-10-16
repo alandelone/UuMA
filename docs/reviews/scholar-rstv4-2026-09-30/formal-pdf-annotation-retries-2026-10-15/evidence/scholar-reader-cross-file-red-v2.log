@@ -1,0 +1,62 @@
+FFF                                                                      [100%]
+================================== FAILURES ===================================
+__________ test_comment_cannot_restore_value_changed_by_another_file __________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1182/test_comment_cannot_restore_va0/data/catalog.db')
+
+    def test_comment_cannot_restore_value_changed_by_another_file(catalog: Path) -> None:
+        first = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        original = catalog.parent.parent / "sample.pdf"
+        other = catalog.parent.parent / "another-version.pdf"
+        other.write_bytes(original.read_bytes() + b"\n% software second file version\n")
+        with sqlite3.connect(catalog) as conn:
+            conn.execute("""INSERT INTO source_file_versions SELECT 'other-file',paper_id,?,
+                         ?,mime_type,?,acquisition_method,source_url,
+                         identity_status,validation_json,created_at FROM source_file_versions
+                         WHERE file_version_id='f2'""", (
+                             hashlib.sha256(other.read_bytes()).hexdigest(),
+                             other.stat().st_size, str(other),
+                         ))
+        record_review_annotation(catalog, "other-file", title_input(
+            submission_id="other-file-selection", word_end=2,
+        ), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Catalog changed"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:247: Failed
+_________ test_value_guard_retry_is_checked_against_original_receipt __________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1182/test_value_guard_retry_is_chec0/data/catalog.db')
+
+    def test_value_guard_retry_is_checked_against_original_receipt(catalog: Path) -> None:
+        first = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        note = title_input(submission_id="guarded-comment", expected_annotation_id=first["annotation_id"],
+                           expected_catalog_value={"value": first["value_after"]}, comment="New note")
+        saved = record_review_annotation(catalog, "f2", note, WORDS)
+        with sqlite3.connect(catalog) as conn:
+            conn.execute("UPDATE papers SET title='Changed elsewhere' WHERE paper_id='p2'")
+        before = snapshot(catalog)
+        assert record_review_annotation(catalog, "f2", note, None) == saved
+        assert find_review_annotation_replay(catalog, "f2", note) == saved
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:265: Failed
+__________ test_explicit_null_value_guard_is_distinct_from_no_guard ___________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1182/test_explicit_null_value_guard0/data/catalog.db')
+
+    def test_explicit_null_value_guard_is_distinct_from_no_guard(catalog: Path) -> None:
+        payload = dict(submission_id="null-value-guard", field_name="DOI", decision="ABSENT",
+                       expected_annotation_id="", expected_catalog_value={"value": None})
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Catalog changed"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:276: Failed
+=========================== short test summary info ===========================
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_comment_cannot_restore_value_changed_by_another_file
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_value_guard_retry_is_checked_against_original_receipt
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_explicit_null_value_guard_is_distinct_from_no_guard
+3 failed, 17 deselected in 1.56s

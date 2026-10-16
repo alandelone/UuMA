@@ -1,0 +1,149 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8887/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8887/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8887/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "研究总览":
+      - generic: 研究总览
+      - generic: ⌄
+  - region "研究总览":
+    - status: 真实研究结构 · 文献按唯一论文去重，父级取所属范围并集；明确关联与候选分别说明。写作 Paper 属于 Track。
+    - button "↻ 更新状态"
+    - button "＋ Field"
+    - tree "Field、Topic、Track、研究问题与写作 Paper":
+      - treeitem "审核恢复软件 Field" [expanded] [level=1]:
+        - button "收起 审核恢复软件 Field" [expanded]: ⌄
+        - generic: ◇
+        - generic "审核恢复软件 Field"
+        - generic: Field
+        - link "查看 审核恢复软件 Field 的 1 篇关联论文":
+          - /url: http://127.0.0.1:8887/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D&view=all&scope_kind=field&scope_field_id=field_2d25f31c2f6f4f01a69332408f6c9e7c&scope_object_id=field_2d25f31c2f6f4f01a69332408f6c9e7c
+          - generic: ▤
+          - text: "1"
+        - generic: 研究领域
+      - treeitem "审核恢复软件 Topic" [active] [level=2]:
+        - generic: ◈
+        - generic "审核恢复软件 Topic"
+        - generic: Topic
+        - button "修改 审核恢复软件 Topic": 编辑
+        - button "＋ Track"
+        - link "查看 审核恢复软件 Topic 的 1 篇关联论文":
+          - /url: http://127.0.0.1:8887/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22topic%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%2C%5C%22topic_738405b70b574a248971a315bf333706%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_2d25f31c2f6f4f01a69332408f6c9e7c%5C%22%5D%22%2C%22offset%22%3A163%2C%22scroll%22%3A10%2C%22workspace%22%3A%22bdcb8569e86e0a98f93f9bd1d87212b9dac5e1b64f91f0c4e5016d9f9ab8d14d%22%7D&view=all&scope_kind=topic&scope_field_id=field_2d25f31c2f6f4f01a69332408f6c9e7c&scope_object_id=topic_738405b70b574a248971a315bf333706
+          - generic: ▤
+          - text: "1"
+        - button "查看 审核恢复软件 Topic 的采集详情": 采集中 · 1 项待处理 ↗
+        - button "＋ 采集"
+    - generic: ▤
+    - generic: Paper Catalog
+    - generic: 全部可见论文
+    - button "打开全部论文目录":
+      - generic: ▤
+      - generic: "1"
+    - generic: 目录
+- complementary "详情":
+  - text: Collection / ACTIVE
+  - heading "审核恢复软件 Topic · 文献采集" [level=2]
+  - text: collection_62ca47c927342115eb5f8fd870af9ca6
+  - button "关闭采集详情": ✕
+  - paragraph: 1 篇论文 · 3 项任务 · 本次读取 2026年10月13日 22:00:48
+  - paragraph
+  - button "暂停采集"
+  - button "↻ 更新状态"
+  - paragraph: 暂停后停止领取新任务，正在执行的任务会完成当前步骤。待执行表示任务还在等待处理服务领取。
+  - heading "当前前沿与停止原因" [level=3]
+  - paragraph: 仍有任务待处理 · 待处理任务 1 · 原文引用 6，未解析 6
+  - paragraph: 本范围已登记 1 篇／0.000 GiB PDF，累计运行 27269 秒，任务尝试 7 次。
+  - paragraph: 文件量按登记内容统计，重复文件只计一次；此处不是网络流量或模型费用。
+  - heading "预算设置" [level=3]
+  - generic: 最多论文数（留空表示不限）
+  - spinbutton "最多论文数（留空表示不限）": "500"
+  - generic: 登记 PDF 总量（GiB）（留空表示不限）
+  - spinbutton "登记 PDF 总量（GiB）（留空表示不限）": "10"
+  - generic: 累计运行时间（小时）（留空表示不限）
+  - spinbutton "累计运行时间（小时）（留空表示不限）": "24"
+  - generic: 最多任务尝试次数（留空表示不限）
+  - spinbutton "最多任务尝试次数（留空表示不限）"
+  - generic: 本次调整原因
+  - textbox "本次调整原因"
+  - paragraph: 采集状态已变，原草稿保留。
+  - button "对照当前状态后继续"
+  - button "保存预算"
+  - status
+  - paragraph: 保存预算不会自动恢复采集；仍需点击“继续采集”。
+  - heading "处理服务独立心跳" [level=3]
+  - strong: 模型处理服务
+  - paragraph: 已报告停止 · 2026年10月7日 13:15:07
+  - strong: 模型处理服务
+  - paragraph: 已报告停止 · 2026年10月13日 14:32:10
+  - strong: 获取服务
+  - paragraph: 已报告停止 · 2026年10月13日 14:36:30
+  - strong: 解析服务
+  - paragraph: 已报告停止 · 2026年10月13日 21:56:02
+  - strong: 解析服务
+  - paragraph: 已报告停止 · 2026年10月13日 14:36:57
+  - paragraph: 心跳与任务租约分别显示；超过 45 秒未报到会标为过期。
+  - heading "原文引用与未解析前沿" [level=3]
+  - strong: 尚未定位规范论文
+  - paragraph: "[1] Reference author 1. Distinct software citation experiment validation 1. 2026."
+  - text: 原文第 2 页 · 未记录章节
+  - strong: 尚未定位规范论文
+  - paragraph: "[2] Reference author 2. Distinct software citation experiment validation 2. 2026."
+  - text: 原文第 2 页 · 未记录章节
+  - strong: 尚未定位规范论文
+  - paragraph: "[6] Reference author 6. Distinct software citation experiment validation 6. 2026."
+  - text: 原文第 2 页 · 未记录章节
+  - strong: 尚未定位规范论文
+  - paragraph: "[4] Reference author 4. Distinct software citation experiment validation 4. 2026."
+  - text: 原文第 2 页 · 未记录章节
+  - strong: 尚未定位规范论文
+  - paragraph: "[5] Reference author 5. Distinct software citation experiment validation 5. 2026."
+  - text: 原文第 2 页 · 未记录章节
+  - strong: 尚未定位规范论文
+  - paragraph: "[3] Reference author 3. Distinct software citation experiment validation 3. 2026."
+  - text: 原文第 2 页 · 未记录章节
+  - button "上一页引用" [disabled]
+  - button "下一页引用" [disabled]
+  - paragraph: 没有固定深度截止；当前前沿处理完不代替科学审核。
+  - heading "处理阶段" [level=3]
+  - generic: 获取 PDF · 已完成 · 1 项
+  - generic: PDF 解析 · 等待重试 · 1 项
+  - generic: 范围筛选 · 已完成 · 1 项
+  - heading "任务与需要处理的项目" [level=3]
+  - strong: PDF 解析 · 等待重试
+  - paragraph: job_76d39031d8cc329ec431e6a896a08f54 · 已尝试 5 次
+  - button "查看 Catalog 论文"
+  - paragraph: "TEMPORARY_FAILURE：MinerU analyze exited with code 3221225477: \x1b[32m2026-10-13 21:55:56.072\x1b[0m | \x1b[1mINFO \x1b[0m | \x1b[36mmagic_pdf.data.dataset\x1b[0m:\x1b[36m__init__\x1b[0m:\x1b[36m156\x1b[0m - \x1b[1mlang: None\x1b[0m \x1b[32m2026-10-13 21:55:56.085\x1b[0m | \x1b[1mINFO \x1b[0m | \x1b[36mmagic_pdf.libs.pdf_check\x1b[0m:\x1b[36mdetect_invalid_chars\x1b[0m:\x1b[36m67\x1b[0m - \x1b[1mcid_count: 0, text_len: 765, cid_chars_radio: 0.0\x1b[0m RSTV4_STAGE analyze_start type=SupportedPdfParseMethod.TXT \x1b[32m2026-10-13 21:55:56.086\x1b[0m | \x1b[1mINFO \x1b[0m | \x1b[36mmagic_pdf.model.pdf_extract_kit\x1b[0m:\x1b[36m__init__\x1b[0m:\x1b[36m78\x1b[0m - \x1b[1mDocAnalysis init, this may take some times, layout_model: doclayout_yolo, apply_formula: True, apply_ocr: False, apply_table: True, table_model: rapid_table, lang: None\x1b[0m \x1b[32m2026-10-13 21:55:56.087\x1b[0m | \x1b[1mINFO \x1b[0m | \x1b[36mmagic_pdf.model.pdf_extract_kit\x1b[0m:\x1b[36m__init__\x1b[0m:\x1b[36m92\x1b[0m - \x1b[1musing device: cuda\x1b[0m \x1b[32m2026-10-13 21:55:56.087\x1b[0m | \x1b[1mINFO \x1b[0m | \x1b[36mmagic_pdf.model.pdf_extract_kit\x1b[0m:\x1b[36m__init__\x1b[0m:\x1b[36m96\x1b[0m - \x1b[1musing models_dir: C:\\Users\\Alandelone\\.cache\\huggingface\\hub\\models--opendatalab--PDF-Extract-Kit-1.0\\snapshots\\60416a2cabad3f7b7284b43ce37a99864484fba2/models\x1b[0m Windows fatal exception: access violation Current thread 0x0000be4c (most recent call first): File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\torch\\nn\\modules\\linear.py\", line 98 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\modeling_unimernet_encoder.py\", line 523 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\modeling_unimernet_encoder.py\", line 592 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\modeling_unimernet_encoder.py\", line 721 in <listcomp> File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\modeling_unimernet_encoder.py\", line 720 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\modeling_unimernet_encoder.py\", line 782 in <listcomp> File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\modeling_unimernet_encoder.py\", line 781 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\encoder_decoder.py\", line 171 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\transformers\\modeling_utils.py\", line 1428 in _from_config File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\transformers\\models\\auto\\auto_factory.py\", line 438 in from_config File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\transformers\\models\\vision_encoder_decoder\\modeling_vision_encoder_decoder.py\", line 192 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\encoder_decoder.py\", line 592 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\encoder_decoder.py\", line 753 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\unimernet.py\", line 35 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\models\\unimernet\\unimernet.py\", line 101 in from_config File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\unimernet\\tasks\\base_task.py\", line 33 in build_model File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\sub_modules\\mfr\\unimernet\\Unimernet.py\", line 59 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\sub_modules\\model_init.py\", line 65 in mfr_model_init File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\sub_modules\\model_init.py\", line 163 in atom_model_init File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\sub_modules\\model_init.py\", line 137 in get_atom_model File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\pdf_extract_kit.py\", line 119 in __init__ File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\doc_analyze_by_custom_model.py\", line 123 in custom_model_init File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\doc_analyze_by_custom_model.py\", line 56 in get_model File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\model\\doc_analyze_by_custom_model.py\", line 155 in doc_analyze File \"C:\\Users\\Alandelone\\anaconda3\\envs\\ragent-mineru122\\lib\\site-packages\\magic_pdf\\data\\dataset.py\", line 212 in apply File \"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\scripts\\mineru_bridge.py\", line 89 in main File \"C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\scripts\\mineru_bridge.py\", line 168 in <module>"
+  - button "重试此步骤"
+  - strong: 获取 PDF · 已完成
+  - paragraph: job_7e3c308f323a9117009efcda3c190672 · 已尝试 1 次
+  - button "查看 Catalog 论文"
+  - strong: 范围筛选 · 已完成
+  - paragraph: job_f29493ae5a38b106b623b0bf03b638a6 · 已尝试 1 次
+  - button "查看 Catalog 论文"
+  - heading "最近执行记录" [level=3]
+  - text: RETRY_WAIT · g11-single-owned-actual-mineru-once
+  - paragraph: 2026年10月13日 21:55:36 → 2026年10月13日 21:56:02
+  - text: RETRY_WAIT · g11-single-owned-actual-mineru-once
+  - paragraph: 2026年10月13日 21:49:05 → 2026年10月13日 21:49:36
+  - text: RETRY_WAIT · g11-single-owned-actual-mineru-once
+  - paragraph: 2026年10月13日 15:22:32 → 2026年10月13日 15:23:07
+  - text: RETRY_WAIT · g11-single-owned-actual-mineru-once
+  - paragraph: 2026年10月13日 14:54:03 → 2026年10月13日 14:54:54
+  - text: NEEDS_HUMAN · g11-single-owned-controlled-incomplete-parser-once
+  - paragraph: 2026年10月13日 14:36:57 → 2026年10月13日 14:36:57
+  - text: SUCCEEDED · g11-native-locate-owned-once-v1
+  - paragraph: 2026年10月13日 14:36:30 → 2026年10月13日 14:36:30
+  - text: SUCCEEDED · g11-native-screen-owned-once-v1
+  - paragraph: 2026年10月13日 14:32:10 → 2026年10月13日 14:32:10
+  - heading "同一 Topic／Field 的采集记录" [level=3]
+  - button "审核恢复软件 Topic · 文献采集 · ACTIVE"
+  - button "审核恢复软件 Collection · PAUSED"
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

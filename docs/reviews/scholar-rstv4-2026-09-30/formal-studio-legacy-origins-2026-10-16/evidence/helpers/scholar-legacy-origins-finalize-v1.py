@@ -1,0 +1,55 @@
+from pathlib import Path
+from contextlib import closing
+import hashlib,json,sqlite3,sys,time
+
+repo=Path(__file__).resolve().parents[1];read=lambda p:json.loads(p.read_text(encoding='utf8'));sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest()
+seal=read(repo/'.tmp/scholar-legacy-origins-seal-v1.json');report=Path(seal['directory'])
+assert sha(report/'acceptance.md')==seal['acceptance_sha256'] and sha(report/'manifest.json')==seal['manifest_sha256']
+assert all(sha(report/n)==v['sha256'] and (report/n).stat().st_size==v['bytes'] for n,v in read(report/'manifest.json').items())
+base=repo/'docs/reviews/scholar-rstv4-2026-09-30/formal-original118-evidence-matrix-2026-10-15';matrix=read(base/'matrix.json')
+assert matrix['schema_version']==13 and len(matrix['requirements'])==118 and len(matrix['groups'])==11
+assert not matrix['overall118_complete'] and not matrix['final_all11_integrated_complete']
+assert all(sha(base/n)==h for n,h in read(base/'manifest.json')['files'].items())
+refs=read(base/'verified-references.json');assert len(refs)==53 and all(sha(Path(p))==h for p,h in refs.items())
+full=read(repo/'.tmp/scholar-legacy-origins-full-v1/receipt.json');assert full['status']=='PASS' and not full['changed_during_run']
+assert all(sha(Path(p))==h for p,h in read(Path(full['source_before'])).items())
+audit=read(repo/'.tmp/scholar-legacy-origins-native-v1/final-audit.json');assert audit['all110_tables_exact'] and audit['all_owned_services_stopped']
+mission_path=repo/'mission_status.json';mission_sha=sha(mission_path);mission=read(mission_path)
+assert mission['stage']=='verification' and mission['gate']['status']=='pending_review' and mission['gate']['blocked_by'] is None
+old_digest=read(repo/'.tmp/scholar-presentation-review-finalize-v1.json')['handoff_sha256']
+with closing(sqlite3.connect((repo/'.uuma-local/uuma.db').resolve().as_uri()+'?mode=ro',uri=True)) as conn:
+    row=conn.execute("SELECT payload FROM repo_session_events WHERE kind='handoff' AND json_extract(payload,'$.digest')=? ORDER BY id DESC LIMIT 1",(old_digest,)).fetchone()
+assert row is not None
+previous=json.loads(row[0])['content'];previous_path=repo/'.tmp/scholar-legacy-origins-previous-verified-handoff-v1.md'
+with previous_path.open('x',encoding='utf8') as handle:handle.write(previous)
+assert sha(previous_path)==old_digest
+live=repo/'active-session/HANDOFF.md';fresh=live.read_text(encoding='utf8');backup=repo/f'.tmp/scholar-legacy-origins-fresh-entire-handoff-{time.time_ns()}.raw.md';backup.write_bytes(live.read_bytes())
+current=f'''2026-10-16 Scholar original all11 goal remains ACTIVE/INCOMPLETE. Previous turn PROGRESS: pure-layout independent PRESENTATION_MODIFIED real A215 once +1207 full. This turn PROGRESS: verified historical-origin supplemental read, genuine template-projection mapping repair, actual five legacy A212 native GETs, full1223 and matrixv13.
+
+APPLIED: RSTV4 new studio_history_origins.py pure read and studio.py semantic historical_response_origins; studio_api.py GET /api/manuscripts/{{ms}}/comments/{{comment}}/response-checks/{{check}}/origins/{{evidence}}. Owner/check/evidence/context/state/request exact identities, original content+rawinputsJSON digest, old raw targettext SHA and original author serialized JSON SHA all required. Existing generated_version model/material/replay verifier retained, exact oldinputrev, exact verified sentence/Thought mapping, unique original bank origin, stored snapshot equality. Clear UNAVAILABLE/AMBIGUOUS, no mutable current fallback and no old context/request writes. document_revision optin include_serialized_sha preserves exact original JSON string, default shape unchanged. studio_revision_mapping maps changedThoughts through verified generated ThoughtID placement, not original paragraph-ID equality; baseline placement similarly fixed, multipleplacement explicitUNKNOWN. Original source text still from authorbank, not generatedslot.
+
+FRONTEND: response history snapshot first, missingoldorigin explicit readbutton; separate ephemeral result, strict check/evidence/context/source version/revision/rawdigests/fulluniqueThought/Intent guards, no merging into oldcheck, loadingdedup/retry/requestidentity+mounted late response guard, all13reasoncodes readable. libtypes/API/component/unit tests updated. Agent layout_candidate_review implementedfrontend and later performed separate complete readonly review, not a second frontendauthor; review SHA021ff5607b390d910710e358098a47b50b7da97a5340462b495553e1f79b359b. No substantive scopeddefect; directmultipleplacementnegative test coverage absent; arbitrarymalformed structuralDB could trigger lowerverifier KeyError/TypeError/AttributeError ->HTTPfail, still no unverifiedorigin orhistorymutation. No false independent newexecution claim.
+
+ACTUAL NATIVE READONLY: preserved scui-complex-native-qjbemsgz currentr86/v7 input86 and A215currentPRESENTATION_MODIFIED unchanged. Original A212 check {audit['check_id']} fromround3/v6/r79 nowderivedSTALE. Actual tab7 samecomplexBrowser binding; allfive selectedlegacyrows fetchedonce via nativebuttons, GET200, separate RECONSTRUCTED_FROM_FIXED_INPUT envelopes. Two sharedsentence0 rows highlight differentOriginalThoughts; restsentences1/2/4 correct. OriginalIntentlabel Research Context — SOFTWARE_FIXTURE intent label only; both orderedThoughtfulltexts exact r79. TargetrecordSHAee57735173b05c44d80cee729f53aa3334902f96835db2663c7e1d062fc8802d;authorJSONSHA4878b211d4b7a68e70fe29f9a9381d1a88a19122f9ee868271427112bdd58a67;ctxSHA30e1f693668d9ea1880d8bcf1a0d74a8e42901934dda192242d68a7743a2cdd0. Independentfinalaudit compared originals directly to rawDBstrings and originalbank, all110tables/fullschema/oldcheckrows and non-sidecarfilebytes exact. No confirm,save,models,jobs,gen,package,budget,GPU,QuickRead,deepread,IDM replay.
+
+NATIVE RESOURCES: currentownership pair backend37264/8877 and frontend42996/60073 plusknownconsole45748 retiredexactbirth/cmd/cwd, portsfree; no otherprocesses stopped, originalStudio anduser8891 untouched. Root retained atsamepath. Currentterminal .tmp/scholar-legacy-origins-native-v1/backend-terminal.json authoritative and equalspriorpresentation terminal (no mutations). Browser complexTab nowtab7 onretired60073; do not reload deadURL. OldmenuCdp pointsmissingtab5, no use. Native1280x720,dialog657px nohorizontaloverflow, twofullcards screenshotsandallfiveDOM. Thisturn narrowviewportnot tested. InitialparallelFailedtofetch persists comments/roundexplicitretry recovers, otherinitialerrorsunresolved. Agent readonlydiagnosis requested .tmp/scholar-initial-fetch-diagnosis-v1.md ifwritten; never claimcauseuntilverified. Oneauxiliaryprocessenumeration failed AccessDenied onsystempid236, retained, no servicesaltered or broadkill.
+
+VERIFICATION: focused33backend(16new+17mapping)pass/JS/TypeScript/Ruff; current full1223PASS20existingwarnings24JS/Ruff {full['seconds']:.2f}s, {full['source_count']}sourcefiles unchanged throughrun/seal. Backend318/frontend91/dist76; productionbuild4.90694s at C:/Users/Alandelone/AppData/Local/Temp/scui-legacy-origins-build-6okl70tr/writing-studio,originalsource/dist unchanged. Initialtemplatefixture assumedmissingmodelpayloadparagraph_id failed; corrected actualpayloadIntentfirstThoughtID unique fixturewording, originalfailroot pytest1247 and originalfailedjob studio_job_73387abf32454837bb73153b2242ceee retained. FirstRuff unusedvariable +TS falsepredicate neverbranch also fixedwithactualcontract, no sourceassertion relaxed. Oldformatfixture dropsorigins and recomputescontextBEFOREauthorconfirm, doesnot rewriteconfirmedhistory. Quiescence andWALcheckpointbeforefreeze forHTTPimmutablefixture. Allfirstfailedlogsretained. New16 include truecompiler/templateprojection/sharedsentence/boxes, wrongowners, missingPDFpureoriginread, context/rawJSON/model/provenance/duplicate/wrongThought/storedorigin failures.
+
+SEALED: {report.as_posix()}, {seal['payload_files']}payloads,reportSHA{seal['acceptance_sha256']},manifestSHA{seal['manifest_sha256']}. Neverappendtosealedfolders. Matrixv13 originalformal-original118-evidence-matrix-2026-10-15:53reportdigests verified,onlyST05/RE12/RE13 changed,other115exact;original118IDs/text/source_lines/order/11groupdefinitionsexact. Priorv12fivefiles .tmp/scholar-original118-legacy-v13/prior-v12-formal. Bothoverallflagsfalse,missionverification/pending_review unchanged.
+
+NEXT: positivecomplete typedattribution and independentack forIntent/structuremove/delete, citationidentity, TABLE/FIGURE assets with truefixedauthor/generated/source/material proof. Existingpdf_annotation_backend readonlydesign .tmp/scholar-typed-change-design-v1/design.md ifwritten; notimplementedyet. Preserve existingUNKNOWN/reversed/deletionfailclosed, don'tturnmetadata/materials into scientificTEXT_CHANGED. OriginalA21318linkedchanges/A2144linkedchanges stillpending, oldA212STALE preserved, A215layoutconfirmationdone. Thenremainingoriginal118namedgaps and finalsame-sourceall11/combineddelivery; old21filepackageimmutable predatesA215confirmation, do NOTsayupdated. No successfultaskreplay. User latestpublicendpointrestored unchangedclient/signature/credentials; originalQuickReadalreadySUCCEEDED andGPUalreadySUCCEEDED, no probes/retry/newbudgetduejusttoendpointreconfirmation.
+
+Fullfreshsharedhandoff and previousverifiedScholarhandoff preserved below. No reset/clean, no baselinecommit, preserve unrelatedWisdom/Honc/Gap6/UuMAchanges. Fullobjectiveincomplete; continueusefulwork atnextturn, do notmarkgoalcomplete/paused/blocked.
+'''
+summary=current+'\n\nFULL FRESH SHARED HANDOFF (PRESERVED):\n\n'+fresh
+if previous not in fresh:summary+='\n\nFULL PREVIOUS VERIFIED SCHOLAR HANDOFF (PRESERVED):\n\n'+previous
+from uuma.session import main
+for args in [['handoff','--summary',summary,'--dead-ends','Retained initial fixture/Ruff/TypeScript failures; actual model-payload identity fixed without relaxing source guards. Initial native parallel fetch errors remain unresolved after explicit recovery. Readonly review boundaries disclosed. No original business replay or destructive cleanup.','--next-step','Continue complete all11 objective: positive structure/Intent/citation/material typed provenance and independent confirmations, diagnose initial fetching, remaining original118 and final same-source all11 combined delivery. Preserve original r86/v7, A212 oldSTALE, A215 currenttypedcheck and oldpackage snapshot.'],['check'],['close']]:
+    sys.argv=['uuma.session',*args];main()
+saved=live.read_text(encoding='utf8');assert fresh in saved and previous in saved and current in saved and sha(mission_path)==mission_sha
+result={'status':'PASS_HANDOFF_CHECK_CLOSE','entire_fresh_handoff_preserved':True,'entire_prior_verified_handoff_preserved':True,
+ 'fresh_raw_backup':str(backup),'handoff_sha256':sha(live),'handoff_characters':len(saved),'matrix_schema':13,
+ 'verified_reports':53,'goal':'active','overall118_complete':False,'final11_complete':False}
+with (repo/'.tmp/scholar-legacy-origins-finalize-v1.json').open('x',encoding='utf8') as handle:json.dump(result,handle,indent=2)
+print(json.dumps(result,indent=2))

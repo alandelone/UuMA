@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "exit_code": 0,
+  "seconds": 47.75,
+  "source_files": 309,
+  "source_and_tests_unchanged": true,
+  "summary": "........................................................................ [ 94%]\n....                                                                     [100%]\n76 passed in 46.96s\n",
+  "overall11_complete": false
+}

@@ -1,0 +1,533 @@
+{
+  "items": [
+    {
+      "button": {
+        "bottom": 529.71875,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 13,
+        "right": 116.609375,
+        "scrollWidth": 102,
+        "top": 506.65625,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 546.5625,
+        "left": 13,
+        "right": 317.953125,
+        "top": 506.65625
+      },
+      "filename": {
+        "clientWidth": 110,
+        "left": 13,
+        "right": 123.375,
+        "scrollWidth": 110
+      },
+      "name": "author-structure.json"
+    },
+    {
+      "button": {
+        "bottom": 529.71875,
+        "clientWidth": 209,
+        "height": 23.0625,
+        "left": 324.34375,
+        "right": 535.65625,
+        "scrollWidth": 209,
+        "top": 506.65625,
+        "width": 211.3125
+      },
+      "cell": {
+        "bottom": 546.5625,
+        "left": 324.34375,
+        "right": 629.296875,
+        "top": 506.65625
+      },
+      "filename": {
+        "clientWidth": 161,
+        "left": 324.34375,
+        "right": 485.390625,
+        "scrollWidth": 161
+      },
+      "name": "baseline-compiled-layout.xhtml"
+    },
+    {
+      "button": {
+        "bottom": 529.71875,
+        "clientWidth": 165,
+        "height": 23.0625,
+        "left": 635.6875,
+        "right": 802.234375,
+        "scrollWidth": 165,
+        "top": 506.65625,
+        "width": 166.546875
+      },
+      "cell": {
+        "bottom": 546.5625,
+        "left": 635.6875,
+        "right": 940.640625,
+        "top": 506.65625
+      },
+      "filename": {
+        "clientWidth": 125,
+        "left": 635.6875,
+        "right": 760.921875,
+        "scrollWidth": 125
+      },
+      "name": "baseline-manuscript.pdf"
+    },
+    {
+      "button": {
+        "bottom": 529.71875,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 947.03125,
+        "right": 1050.640625,
+        "scrollWidth": 102,
+        "top": 506.65625,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 546.5625,
+        "left": 947.03125,
+        "right": 1252,
+        "top": 506.65625
+      },
+      "filename": {
+        "clientWidth": 130,
+        "left": 947.03125,
+        "right": 1077.25,
+        "scrollWidth": 130
+      },
+      "name": "change-location-map.csv"
+    },
+    {
+      "button": {
+        "bottom": 576.015625,
+        "clientWidth": 142,
+        "height": 23.0625,
+        "left": 13,
+        "right": 157.40625,
+        "scrollWidth": 142,
+        "top": 552.953125,
+        "width": 144.40625
+      },
+      "cell": {
+        "bottom": 592.859375,
+        "left": 13,
+        "right": 317.953125,
+        "top": 552.953125
+      },
+      "filename": {
+        "clientWidth": 146,
+        "left": 13,
+        "right": 159.3125,
+        "scrollWidth": 146
+      },
+      "name": "change-realization-map.json"
+    },
+    {
+      "button": {
+        "bottom": 576.015625,
+        "clientWidth": 115,
+        "height": 23.0625,
+        "left": 324.34375,
+        "right": 441.40625,
+        "scrollWidth": 115,
+        "top": 552.953125,
+        "width": 117.0625
+      },
+      "cell": {
+        "bottom": 592.859375,
+        "left": 324.34375,
+        "right": 629.296875,
+        "top": 552.953125
+      },
+      "filename": {
+        "clientWidth": 111,
+        "left": 324.34375,
+        "right": 434.84375,
+        "scrollWidth": 111
+      },
+      "name": "clean-manuscript.md"
+    },
+    {
+      "button": {
+        "bottom": 576.015625,
+        "clientWidth": 75,
+        "height": 23.0625,
+        "left": 635.6875,
+        "right": 712.40625,
+        "scrollWidth": 75,
+        "top": 552.953125,
+        "width": 76.71875
+      },
+      "cell": {
+        "bottom": 592.859375,
+        "left": 635.6875,
+        "right": 940.640625,
+        "top": 552.953125
+      },
+      "filename": {
+        "clientWidth": 111,
+        "left": 635.6875,
+        "right": 746.609375,
+        "scrollWidth": 111
+      },
+      "name": "clean-manuscript.pdf"
+    },
+    {
+      "button": {
+        "bottom": 576.015625,
+        "clientWidth": 85,
+        "height": 23.0625,
+        "left": 947.03125,
+        "right": 1034.21875,
+        "scrollWidth": 85,
+        "top": 552.953125,
+        "width": 87.1875
+      },
+      "cell": {
+        "bottom": 592.859375,
+        "left": 947.03125,
+        "right": 1252,
+        "top": 552.953125
+      },
+      "filename": {
+        "clientWidth": 109,
+        "left": 947.03125,
+        "right": 1056.125,
+        "scrollWidth": 109
+      },
+      "name": "clean-manuscript.tex"
+    },
+    {
+      "button": {
+        "bottom": 622.3125,
+        "clientWidth": 115,
+        "height": 23.0625,
+        "left": 13,
+        "right": 130.203125,
+        "scrollWidth": 115,
+        "top": 599.25,
+        "width": 117.203125
+      },
+      "cell": {
+        "bottom": 639.15625,
+        "left": 13,
+        "right": 317.953125,
+        "top": 599.25
+      },
+      "filename": {
+        "clientWidth": 137,
+        "left": 13,
+        "right": 150.46875,
+        "scrollWidth": 137
+      },
+      "name": "comment-change-map.csv"
+    },
+    {
+      "button": {
+        "bottom": 622.3125,
+        "clientWidth": 116,
+        "height": 23.0625,
+        "left": 324.34375,
+        "right": 441.875,
+        "scrollWidth": 116,
+        "top": 599.25,
+        "width": 117.53125
+      },
+      "cell": {
+        "bottom": 639.15625,
+        "left": 324.34375,
+        "right": 629.296875,
+        "top": 599.25
+      },
+      "filename": {
+        "clientWidth": 142,
+        "left": 324.34375,
+        "right": 466.40625,
+        "scrollWidth": 142
+      },
+      "name": "final-compiled-layout.xhtml"
+    },
+    {
+      "button": {
+        "bottom": 622.3125,
+        "clientWidth": 142,
+        "height": 23.0625,
+        "left": 635.6875,
+        "right": 780.09375,
+        "scrollWidth": 142,
+        "top": 599.25,
+        "width": 144.40625
+      },
+      "cell": {
+        "bottom": 639.15625,
+        "left": 635.6875,
+        "right": 940.640625,
+        "top": 599.25
+      },
+      "filename": {
+        "clientWidth": 81,
+        "left": 635.6875,
+        "right": 716.46875,
+        "scrollWidth": 81
+      },
+      "name": "generated.json"
+    },
+    {
+      "button": {
+        "bottom": 622.3125,
+        "clientWidth": 102,
+        "height": 23.0625,
+        "left": 947.03125,
+        "right": 1050.640625,
+        "scrollWidth": 102,
+        "top": 599.25,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 639.15625,
+        "left": 947.03125,
+        "right": 1252,
+        "top": 599.25
+      },
+      "filename": {
+        "clientWidth": 143,
+        "left": 947.03125,
+        "right": 1090.515625,
+        "scrollWidth": 143
+      },
+      "name": "generation-model-calls.json"
+    },
+    {
+      "button": {
+        "bottom": 698.09375,
+        "clientWidth": 115,
+        "height": 52.546875,
+        "left": 13,
+        "right": 130.203125,
+        "scrollWidth": 115,
+        "top": 645.546875,
+        "width": 117.203125
+      },
+      "cell": {
+        "bottom": 744.421875,
+        "left": 13,
+        "right": 317.953125,
+        "top": 645.546875
+      },
+      "filename": {
+        "clientWidth": 73,
+        "left": 13,
+        "right": 85.84375,
+        "scrollWidth": 73
+      },
+      "name": "manifest.json"
+    },
+    {
+      "button": {
+        "bottom": 698.09375,
+        "clientWidth": 102,
+        "height": 52.546875,
+        "left": 324.34375,
+        "right": 427.953125,
+        "scrollWidth": 102,
+        "top": 645.546875,
+        "width": 103.609375
+      },
+      "cell": {
+        "bottom": 744.421875,
+        "left": 324.34375,
+        "right": 629.296875,
+        "top": 645.546875
+      },
+      "filename": {
+        "clientWidth": 125,
+        "left": 324.34375,
+        "right": 448.890625,
+        "scrollWidth": 125
+      },
+      "name": "marked-comparison.md"
+    },
+    {
+      "button": {
+        "bottom": 710.734375,
+        "clientWidth": 303,
+        "height": 65.1875,
+        "left": 635.6875,
+        "right": 940.640625,
+        "scrollWidth": 303,
+        "top": 645.546875,
+        "width": 304.953125
+      },
+      "cell": {
+        "bottom": 744.421875,
+        "left": 635.6875,
+        "right": 940.640625,
+        "top": 645.546875
+      },
+      "filename": {
+        "clientWidth": 305,
+        "left": 635.6875,
+        "right": 940.640625,
+        "scrollWidth": 305
+      },
+      "name": "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-render.png"
+    },
+    {
+      "button": {
+        "bottom": 710.734375,
+        "clientWidth": 303,
+        "height": 65.1875,
+        "left": 947.03125,
+        "right": 1252,
+        "scrollWidth": 303,
+        "top": 645.546875,
+        "width": 304.96875
+      },
+      "cell": {
+        "bottom": 744.421875,
+        "left": 947.03125,
+        "right": 1252,
+        "top": 645.546875
+      },
+      "filename": {
+        "clientWidth": 305,
+        "left": 947.03125,
+        "right": 1252,
+        "scrollWidth": 305
+      },
+      "name": "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-source.svg"
+    },
+    {
+      "button": {
+        "bottom": 816,
+        "clientWidth": 303,
+        "height": 65.1875,
+        "left": 13,
+        "right": 317.953125,
+        "scrollWidth": 303,
+        "top": 750.8125,
+        "width": 304.953125
+      },
+      "cell": {
+        "bottom": 849.6875,
+        "left": 13,
+        "right": 317.953125,
+        "top": 750.8125
+      },
+      "filename": {
+        "clientWidth": 305,
+        "left": 13,
+        "right": 317.953125,
+        "scrollWidth": 305
+      },
+      "name": "material-asset_ea004de6f5da423ba6ab98710d9a9458-source.csv"
+    },
+    {
+      "button": {
+        "bottom": 803.359375,
+        "clientWidth": 74,
+        "height": 52.546875,
+        "left": 324.34375,
+        "right": 400.75,
+        "scrollWidth": 74,
+        "top": 750.8125,
+        "width": 76.40625
+      },
+      "cell": {
+        "bottom": 849.6875,
+        "left": 324.34375,
+        "right": 629.296875,
+        "top": 750.8125
+      },
+      "filename": {
+        "clientWidth": 77,
+        "left": 324.34375,
+        "right": 401.265625,
+        "scrollWidth": 77
+      },
+      "name": "references.bib"
+    },
+    {
+      "button": {
+        "bottom": 803.359375,
+        "clientWidth": 192,
+        "height": 52.546875,
+        "left": 635.6875,
+        "right": 829.640625,
+        "scrollWidth": 192,
+        "top": 750.8125,
+        "width": 193.953125
+      },
+      "cell": {
+        "bottom": 849.6875,
+        "left": 635.6875,
+        "right": 940.640625,
+        "top": 750.8125
+      },
+      "filename": {
+        "clientWidth": 147,
+        "left": 635.6875,
+        "right": 782.84375,
+        "scrollWidth": 147
+      },
+      "name": "response-review-history.json"
+    },
+    {
+      "button": {
+        "bottom": 803.359375,
+        "clientWidth": 74,
+        "height": 52.546875,
+        "left": 947.03125,
+        "right": 1023.4375,
+        "scrollWidth": 74,
+        "top": 750.8125,
+        "width": 76.40625
+      },
+      "cell": {
+        "bottom": 849.6875,
+        "left": 947.03125,
+        "right": 1252,
+        "top": 750.8125
+      },
+      "filename": {
+        "clientWidth": 135,
+        "left": 947.03125,
+        "right": 1081.8125,
+        "scrollWidth": 135
+      },
+      "name": "response-to-reviewers.md"
+    },
+    {
+      "button": {
+        "bottom": 879.140625,
+        "clientWidth": 88,
+        "height": 23.0625,
+        "left": 13,
+        "right": 103,
+        "scrollWidth": 88,
+        "top": 856.078125,
+        "width": 90
+      },
+      "cell": {
+        "bottom": 895.984375,
+        "left": 13,
+        "right": 317.953125,
+        "top": 856.078125
+      },
+      "filename": {
+        "clientWidth": 139,
+        "left": 13,
+        "right": 152.109375,
+        "scrollWidth": 139
+      },
+      "name": "unresolved-comments.json"
+    }
+  ],
+  "viewport": {
+    "height": 720,
+    "width": 1280
+  }
+}

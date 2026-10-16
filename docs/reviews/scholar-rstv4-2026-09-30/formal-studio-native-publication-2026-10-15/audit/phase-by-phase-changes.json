@@ -1,0 +1,135 @@
+[
+  {
+    "action": 3,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/stage",
+    "status_code": 200,
+    "changed_tables": [
+      "manuscript_status_history",
+      "manuscripts"
+    ]
+  },
+  {
+    "action": 4,
+    "method": "POST",
+    "path": "/api/research/discussion/history",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 5,
+    "method": "POST",
+    "path": "/api/research/discussion/context",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 6,
+    "method": "POST",
+    "path": "/api/research/discussion/history",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 7,
+    "method": "POST",
+    "path": "/api/research/discussion/history",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 8,
+    "method": "POST",
+    "path": "/api/research/discussion/history",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 9,
+    "method": "POST",
+    "path": "/api/research/discussion/context",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 10,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+    "status_code": 201,
+    "changed_tables": [
+      "studio_submission_bindings",
+      "submission_events"
+    ]
+  },
+  {
+    "action": 11,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+    "status_code": 201,
+    "changed_tables": [
+      "studio_submission_bindings",
+      "submission_events"
+    ]
+  },
+  {
+    "action": 12,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+    "status_code": 201,
+    "changed_tables": [
+      "manuscript_status_history",
+      "manuscripts",
+      "studio_submission_bindings",
+      "submission_events"
+    ]
+  },
+  {
+    "action": 13,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/assets",
+    "status_code": 201,
+    "changed_tables": [
+      "studio_assets"
+    ]
+  },
+  {
+    "action": 14,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/assets",
+    "status_code": 201,
+    "changed_tables": [
+      "studio_assets"
+    ]
+  },
+  {
+    "action": 15,
+    "method": "POST",
+    "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+    "status_code": 201,
+    "changed_tables": [
+      "studio_submission_bindings",
+      "submission_events"
+    ]
+  },
+  {
+    "action": 16,
+    "method": "POST",
+    "path": "/api/research/discussion/history",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 17,
+    "method": "POST",
+    "path": "/api/research/discussion/context",
+    "status_code": 200,
+    "changed_tables": []
+  },
+  {
+    "action": 18,
+    "method": "POST",
+    "path": "/api/research/discussion/history",
+    "status_code": 200,
+    "changed_tables": []
+  }
+]

@@ -1,0 +1,60 @@
+{
+  "all_other109_tables_exact": true,
+  "all16_sample_contents_and_identities_exact": true,
+  "exactly_eight_changed_cells": [
+    {
+      "identity": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "document_revision": 86,
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_19e88276e45e67e012f0cfafe02459a2"
+      },
+      "old_document_revision": 85,
+      "new_document_revision": 86,
+      "old_created_at": "2026-10-15T13:11:20.779689+00:00",
+      "new_created_at": "2026-10-15T13:30:31.855051+00:00"
+    },
+    {
+      "identity": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "document_revision": 86,
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_6b5e7b816c9f9dd817c2f84af02e0f3a"
+      },
+      "old_document_revision": 85,
+      "new_document_revision": 86,
+      "old_created_at": "2026-10-15T13:11:20.780690+00:00",
+      "new_created_at": "2026-10-15T13:30:31.855051+00:00"
+    },
+    {
+      "identity": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "document_revision": 86,
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_81e7fbc8417a6ec7d07a6cae8da29c87"
+      },
+      "old_document_revision": 85,
+      "new_document_revision": 86,
+      "old_created_at": "2026-10-15T13:11:20.780690+00:00",
+      "new_created_at": "2026-10-15T13:30:31.855051+00:00"
+    },
+    {
+      "identity": {
+        "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+        "anchor_id": "paper",
+        "document_revision": 86,
+        "query_key": "907957c0f6d0afaf9dc04eeab82fa5552a9a6175bc2218019e515567e0a4d813",
+        "candidate_id": "unit_aa3c1d64881f03b52cc0af2c6b4d8f52"
+      },
+      "old_document_revision": 85,
+      "new_document_revision": 86,
+      "old_created_at": "2026-10-15T13:11:20.780690+00:00",
+      "new_created_at": "2026-10-15T13:30:31.855051+00:00"
+    }
+  ],
+  "source": "native structure view opened Samples during actual760 toolbar verification",
+  "first_timestamp_only_hypothesis_failed_and_retained": true
+}

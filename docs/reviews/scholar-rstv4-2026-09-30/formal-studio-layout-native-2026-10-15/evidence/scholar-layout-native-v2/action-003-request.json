@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/history",
+  "body_utf8": "{\"target\":{\"module\":\"STUDIO\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"paper_id\":null,\"field_id\":null,\"track_id\":null,\"snapshot_id\":null,\"part\":null,\"page_number\":null,\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"document_revision\":85},\"limit\":30,\"current_object_only\":false}",
+  "body_sha256": "9df8da3ce6a38bc77a965f0010f67281e09ba4cf8a102e1ba1d90d5ff47715ba"
+}

@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+  "content_type": "application/json",
+  "body_utf8": "{\"venue\":\"SOFTWARE_FIXTURE Local WF09-10 — no external submission\",\"round_number\":3,\"status\":\"PUBLISHED\",\"detail\":\"SOFTWARE_FIXTURE: Local PUBLISHED event for the accepted fixed v5 / r62 test state. No real publication, DOI, external submission, or scientific approval is claimed.\",\"generated_version_id\":\"manuscript_version_de30b95a2d6843059d3c8b420627bf58\",\"acknowledged\":true,\"operation_id\":\"48690f85-ba84-4441-b595-2534bdf9dbfd\"}",
+  "body_sha256": "3b2c79dd3948a3597492a666754f78fe6666b7bb28b84f58ac763e109a3e9ab1",
+  "body_bytes": 435
+}

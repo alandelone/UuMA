@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/submission-events",
+  "content_type": "application/json",
+  "body_utf8": "{\"venue\":\"SOFTWARE_FIXTURE Local WF09-10 — no external submission\",\"round_number\":3,\"status\":\"ACCEPTED\",\"detail\":\"SOFTWARE_FIXTURE: Local ACCEPTED state transition test on fixed v5 / r62. No journal acceptance, external reviewer decision, or scientific approval is asserted.\",\"generated_version_id\":\"manuscript_version_de30b95a2d6843059d3c8b420627bf58\",\"operation_id\":\"5d875594-5a8b-4760-8e01-71bf1a47d95e\"}",
+  "body_sha256": "855a86a1e17b8715ca1a2fae1284d96139b0ec8c5ef50e0aa6b9cf0dd4953dc9",
+  "body_bytes": 409
+}

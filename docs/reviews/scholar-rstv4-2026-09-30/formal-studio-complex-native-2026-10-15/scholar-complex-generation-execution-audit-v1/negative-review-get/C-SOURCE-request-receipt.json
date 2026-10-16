@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_342fc9f8af994f599623410886be6877/response-review",
+  "status": 200,
+  "seconds": 0.125,
+  "content_type": "application/json",
+  "bytes": 52696,
+  "sha256": "61460ce1ed820004366cff950d4a79dff161b89a6bae37c3d658fac265f606d0",
+  "comment_id": "comment_342fc9f8af994f599623410886be6877"
+}

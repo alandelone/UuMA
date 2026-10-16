@@ -1,0 +1,250 @@
+{
+  "acquisition_attempts": {
+    "before_rows": 16,
+    "after_rows": 17,
+    "removed": [],
+    "added": [
+      [
+        "attempt_6539efae495a4b219372675e16189a44",
+        "job_fe4651959298eab54d88abd9edaf6760",
+        1,
+        "g11-original-newparse-quickread-once-v4",
+        "SUCCEEDED",
+        "2026-10-15T06:47:26.002733+00:00",
+        "2026-10-15T06:47:30.591114+00:00",
+        "{\"card\": {\"question\": null, \"method\": null, \"materials\": null, \"author_contribution\": null, \"results\": null, \"limitations\": null, \"deep_read_reasons\": [], \"evidence_quotes\": []}, \"contract\": {\"task\": \"quick_read\", \"tier\": \"light\", \"prompt_version\": \"quick-read-v1\", \"estimated_input_tokens\": 117, \"actual_model\": \"gemini-3.5-flash-lite\", \"usage\": {\"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346}, \"status\": \"SUCCESS\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"delivery\": \"durable-run-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\"}}"
+      ]
+    ]
+  },
+  "acquisition_jobs": {
+    "before_rows": 11,
+    "after_rows": 11,
+    "removed": [
+      [
+        "job_fe4651959298eab54d88abd9edaf6760",
+        "collection_62ca47c927342115eb5f8fd870af9ca6",
+        "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "QUICK_READ",
+        "MODEL_READ",
+        "READY",
+        70,
+        "5e1b371eea6638c83acd4c413e96c22021af95f7a979582f6d589e459e4d49b2",
+        "{\"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\"}",
+        "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+        "quick-read-v1",
+        0,
+        "2026-10-14T03:39:08.818489+00:00",
+        null,
+        null,
+        0,
+        null,
+        null,
+        null,
+        "2026-10-14T03:39:08.818489+00:00",
+        "2026-10-14T03:39:08.818489+00:00"
+      ]
+    ],
+    "added": [
+      [
+        "job_fe4651959298eab54d88abd9edaf6760",
+        "collection_62ca47c927342115eb5f8fd870af9ca6",
+        "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "QUICK_READ",
+        "MODEL_READ",
+        "SUCCEEDED",
+        70,
+        "5e1b371eea6638c83acd4c413e96c22021af95f7a979582f6d589e459e4d49b2",
+        "{\"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\"}",
+        "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+        "quick-read-v1",
+        1,
+        "2026-10-14T03:39:08.818489+00:00",
+        null,
+        null,
+        1,
+        null,
+        null,
+        "{\"card\": {\"author_contribution\": null, \"deep_read_reasons\": [], \"evidence_quotes\": [], \"limitations\": null, \"materials\": null, \"method\": null, \"question\": null, \"results\": null}, \"contract\": {\"actual_model\": \"gemini-3.5-flash-lite\", \"delivery\": \"durable-run-v1\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"usage\": {\"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346}}}",
+        "2026-10-14T03:39:08.818489+00:00",
+        "2026-10-15T06:47:30.591114+00:00"
+      ]
+    ]
+  },
+  "acquisition_model_call_events": {
+    "before_rows": 32,
+    "after_rows": 34,
+    "removed": [],
+    "added": [
+      [
+        33,
+        "acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+        "STARTED",
+        "job_fe4651959298eab54d88abd9edaf6760",
+        "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        1,
+        "quick_read",
+        "{\"blocks\": [{\"block_id\": \"block_64153f2d69fdb26b0ee5302911bd5503\", \"section\": null, \"text\": \"Software review identity title\"}, {\"block_id\": \"block_cba63dccbd51d23a840357b5cfd86cfe\", \"section\": null, \"text\": \"DOI 10.1234/corrected\"}, {\"block_id\": \"block_8dcf145baedc07eb0d747751d07e73eb\", \"section\": null, \"text\": \"serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so\"}]}",
+        "{\"collection_id\": \"collection_62ca47c927342115eb5f8fd870af9ca6\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"job_input_digest\": \"43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\"}",
+        null,
+        null,
+        null,
+        "2026-10-15T06:47:26.030251+00:00"
+      ],
+      [
+        34,
+        "acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+        "RETURNED",
+        "job_fe4651959298eab54d88abd9edaf6760",
+        "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        1,
+        "quick_read",
+        "{\"blocks\": [{\"block_id\": \"block_64153f2d69fdb26b0ee5302911bd5503\", \"section\": null, \"text\": \"Software review identity title\"}, {\"block_id\": \"block_cba63dccbd51d23a840357b5cfd86cfe\", \"section\": null, \"text\": \"DOI 10.1234/corrected\"}, {\"block_id\": \"block_8dcf145baedc07eb0d747751d07e73eb\", \"section\": null, \"text\": \"serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so\"}]}",
+        "{\"collection_id\": \"collection_62ca47c927342115eb5f8fd870af9ca6\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"job_input_digest\": \"43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\"}",
+        "{\"_contract\": {\"actual_model\": \"gemini-3.5-flash-lite\", \"delivery\": \"durable-run-v1\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"usage\": {\"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346}}, \"author_contribution\": null, \"deep_read_reasons\": [], \"evidence_quotes\": [], \"limitations\": null, \"materials\": null, \"method\": null, \"question\": null, \"results\": null}",
+        "{\"actual_model\": \"gemini-3.5-flash-lite\", \"delivery\": \"durable-run-v1\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"usage\": {\"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346}}",
+        null,
+        "2026-10-15T06:47:30.565605+00:00"
+      ]
+    ]
+  },
+  "acquisition_worker_presence": {
+    "before_rows": 6,
+    "after_rows": 8,
+    "removed": [],
+    "added": [
+      [
+        "g11-original-newparse-quickread-once-v3",
+        "0a6caf814d1d4d678aebbab816d1601e",
+        "model",
+        "小钢炮",
+        9860,
+        "STOPPED",
+        null,
+        "2026-10-15T06:46:47.779131+00:00",
+        "2026-10-15T06:46:47.801281+00:00",
+        "2026-10-15T06:47:32.801281+00:00"
+      ],
+      [
+        "g11-original-newparse-quickread-once-v4",
+        "542201a967424eca9813f69d39f28ef6",
+        "model",
+        "小钢炮",
+        30548,
+        "STOPPED",
+        null,
+        "2026-10-15T06:47:25.990219+00:00",
+        "2026-10-15T06:47:30.612621+00:00",
+        "2026-10-15T06:48:15.612621+00:00"
+      ]
+    ]
+  },
+  "collection_budget_events": {
+    "before_rows": 1,
+    "after_rows": 2,
+    "removed": [],
+    "added": [
+      [
+        "budget_a92fe28e29c0d964b9283d96ca2cc213",
+        "collection_62ca47c927342115eb5f8fd870af9ca6",
+        "g11-newparse-quickread-time-budget-v1",
+        "{\"collection_id\":\"collection_62ca47c927342115eb5f8fd870af9ca6\",\"expected_revision\":3,\"limits\":{\"max_active_seconds\":175828,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null},\"reason\":\"Human explicitly approved 30 additional runnable minutes for this original QuickRead after service recovery. Preserve all other limits and accumulated history; no GPU or deep read replay.\",\"request_id\":\"g11-newparse-quickread-time-budget-v1\"}",
+        "{\"max_active_seconds\":175828,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null}",
+        "{\"collection_id\":\"collection_62ca47c927342115eb5f8fd870af9ca6\",\"limits\":{\"max_active_seconds\":175828,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null},\"revision\":4,\"status\":\"ACTIVE\"}",
+        "2026-10-15T06:46:47.758119+00:00"
+      ]
+    ]
+  },
+  "collections": {
+    "before_rows": 2,
+    "after_rows": 2,
+    "removed": [
+      [
+        "collection_62ca47c927342115eb5f8fd870af9ca6",
+        "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+        null,
+        "审核恢复软件 Topic · 文献采集",
+        "{\"topic\": \"审核恢复软件 Topic\", \"track\": \"\"}",
+        1,
+        "ACTIVE",
+        3,
+        "2026-10-13T06:25:50.527410+00:00",
+        "2026-10-13T14:00:48.943559+00:00",
+        "topic_738405b70b574a248971a315bf333706",
+        "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_2d25f31c2f6f4f01a69332408f6c9e7c\", \"name\": \"审核恢复软件 Topic · 文献采集\", \"paper_ids\": [\"paper_dde0a449e93444c2771e7b0edeb7daf9\"], \"queries\": [], \"scope\": {\"topic\": \"审核恢复软件 Topic\", \"track\": \"\"}, \"topic_id\": \"topic_738405b70b574a248971a315bf333706\", \"track_id\": null}"
+      ]
+    ],
+    "added": [
+      [
+        "collection_62ca47c927342115eb5f8fd870af9ca6",
+        "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+        null,
+        "审核恢复软件 Topic · 文献采集",
+        "{\"topic\": \"审核恢复软件 Topic\", \"track\": \"\"}",
+        1,
+        "ACTIVE",
+        4,
+        "2026-10-13T06:25:50.527410+00:00",
+        "2026-10-15T06:46:47.758119+00:00",
+        "topic_738405b70b574a248971a315bf333706",
+        "{\"bibtex\": null, \"dois\": [], \"field_id\": \"field_2d25f31c2f6f4f01a69332408f6c9e7c\", \"name\": \"审核恢复软件 Topic · 文献采集\", \"paper_ids\": [\"paper_dde0a449e93444c2771e7b0edeb7daf9\"], \"queries\": [], \"scope\": {\"topic\": \"审核恢复软件 Topic\", \"track\": \"\"}, \"topic_id\": \"topic_738405b70b574a248971a315bf333706\", \"track_id\": null}"
+      ]
+    ]
+  },
+  "paper_assessments": {
+    "before_rows": 4,
+    "after_rows": 5,
+    "removed": [],
+    "added": [
+      [
+        "assessment_2663f1581433c6e731b80ff6eca5113f",
+        "paper_dde0a449e93444c2771e7b0edeb7daf9",
+        "field_2d25f31c2f6f4f01a69332408f6c9e7c",
+        null,
+        "QUICK_READ",
+        "COMPLETED",
+        "{\"author_contribution\": null, \"deep_read_reasons\": [], \"evidence_quotes\": [], \"limitations\": null, \"materials\": null, \"method\": null, \"question\": null, \"results\": null}",
+        "[]",
+        "quick-read-v1",
+        "light",
+        "gemini-3.5-flash-lite",
+        "quick-read-v1",
+        "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+        "2026-10-15T06:47:30.579108+00:00"
+      ]
+    ]
+  },
+  "schema_version": {
+    "before_rows": 1,
+    "after_rows": 1,
+    "removed": [
+      [
+        "catalog",
+        13,
+        "2026-10-13 06:14:22"
+      ]
+    ],
+    "added": [
+      [
+        "catalog",
+        14,
+        "2026-10-15 06:46:47"
+      ]
+    ]
+  },
+  "sqlite_sequence": {
+    "before_rows": 2,
+    "after_rows": 2,
+    "removed": [
+      [
+        "acquisition_model_call_events",
+        32
+      ]
+    ],
+    "added": [
+      [
+        "acquisition_model_call_events",
+        34
+      ]
+    ]
+  }
+}

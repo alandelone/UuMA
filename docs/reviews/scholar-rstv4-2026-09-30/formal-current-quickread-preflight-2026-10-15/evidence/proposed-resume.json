@@ -1,0 +1,48 @@
+{
+  "status": "PROPOSED_ONLY_PENDING_USER_AND_SERVICE_RECOVERY",
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "job_id": "job_fe4651959298eab54d88abd9edaf6760",
+  "parse_run_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+  "allowed_queue": [
+    "MODEL_READ"
+  ],
+  "model_tier": "light",
+  "job_executions_allowed": 1,
+  "original_limits": {
+    "max_papers": 500,
+    "max_registered_pdf_bytes": 10737418240,
+    "max_active_seconds": 86400,
+    "max_task_attempts": null
+  },
+  "proposed_limits": {
+    "max_papers": 500,
+    "max_registered_pdf_bytes": 10737418240,
+    "max_active_seconds": "ceil(latest active_seconds at authorized execution) + 1800",
+    "max_task_attempts": null
+  },
+  "additional_runnable_seconds": 1800,
+  "historical_time_and_events_reset": false,
+  "expected_revision": "read latest immediately before approved update; reject stale revision",
+  "route": "POST /api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6/budget",
+  "request_payload_template": {
+    "request_id": "g11-newparse-quickread-time-budget-v1",
+    "expected_revision": "CURRENT_REVISION_AT_APPROVED_EXECUTION",
+    "limits": {
+      "max_papers": 500,
+      "max_registered_pdf_bytes": 10737418240,
+      "max_active_seconds": "ceil(CURRENT_ACTIVE_SECONDS) + 1800",
+      "max_task_attempts": null
+    },
+    "reason": "Pending human approval: allow at most 30 additional runnable minutes for the original GPU-newparse QuickRead; preserve all other limits and accumulated history."
+  },
+  "execute_only_after": [
+    "explicit human budget authorization",
+    "the authorized model service is reachable without changing blocked client signatures or evading access controls",
+    "original source, membership, target job state, parse version and all frozen source guards still pass"
+  ],
+  "no_gpu_parse_replay": true,
+  "no_deep_read_execution": true,
+  "no_new_model_submission_for_existing_returned_operation": true,
+  "model_submission_executed": false,
+  "budget_changed": false
+}

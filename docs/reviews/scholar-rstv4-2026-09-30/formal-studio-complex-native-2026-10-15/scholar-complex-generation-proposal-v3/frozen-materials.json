@@ -1,0 +1,54 @@
+{
+  "asset_ea004de6f5da423ba6ab98710d9a9458": {
+    "asset_id": "asset_ea004de6f5da423ba6ab98710d9a9458",
+    "filename": "software-only-table.csv",
+    "media_type": "text/csv",
+    "asset_kind": "TABLE",
+    "sha256": "cb1b1e1e64ba376010ce1bb9836a4ab4d642634f22f32e8dd9ac6618c00edc6f",
+    "size_bytes": 184,
+    "display_kind": "TABLE",
+    "tables": [
+      {
+        "title": "software-only-table.csv",
+        "rows": [
+          [
+            "SOFTWARE_FIXTURE",
+            "fictional_value",
+            "qualification"
+          ],
+          [
+            "alpha_demo",
+            "1",
+            "Software rendering test only; no scientific measurement"
+          ],
+          [
+            "beta_demo",
+            "2",
+            "Software rendering test only; no scientific measurement"
+          ]
+        ],
+        "row_count": 3,
+        "column_count": 3
+      }
+    ],
+    "source_file": "material-asset_ea004de6f5da423ba6ab98710d9a9458-source.csv",
+    "snapshot_schema": 1
+  },
+  "asset_65e4b91ba806497e9afd0c7c514c7d1b": {
+    "asset_id": "asset_65e4b91ba806497e9afd0c7c514c7d1b",
+    "filename": "software-only-figure.svg",
+    "media_type": "image/svg+xml",
+    "asset_kind": "FIGURE",
+    "sha256": "ae9e803a67deadce288524b14932f4bb190fc9c7125a16164c7d355104e58084",
+    "size_bytes": 584,
+    "display_kind": "FIGURE",
+    "width": 1800,
+    "height": 540,
+    "renderer": "resvg_py/0.5.0",
+    "source_file": "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-source.svg",
+    "snapshot_schema": 1,
+    "render_file": "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-render.png",
+    "render_sha256": "dff8a294011df4139da35677d14ff3ef1c3f5d66c0601533a33099c82215b4f3",
+    "render_size_bytes": 32715
+  }
+}

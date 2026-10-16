@@ -1,0 +1,24 @@
+{
+  "status": "PASS_CURRENT_DECLARED_SOURCE_DELTA_BUILD_AND_SESSION_FIX",
+  "backend_before_files": 307,
+  "backend_current_files": 309,
+  "backend_changed": [
+    "src/rstv4/database.py",
+    "src/rstv4/models.py",
+    "src/rstv4/studio.py",
+    "src/rstv4/studio_api.py",
+    "tests/test_scholar_acceptance_contracts.py",
+    "tests/test_skeleton_source_outline.py",
+    "tests/test_studio_submission_events.py",
+    "tests/test_writing_studio.py"
+  ],
+  "backend_new": [
+    "src/rstv4/studio_publication.py",
+    "tests/test_studio_publication_chain.py"
+  ],
+  "frontend_files": 109,
+  "frontend_product_current_build_exact": true,
+  "frontend_unit_tests_changed_after_build_only": true,
+  "session_fix_sources_exact_except_two_proven_concurrent_deltas": true,
+  "overall11_complete": false
+}

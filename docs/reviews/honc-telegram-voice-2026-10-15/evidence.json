@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "verified_at": "2026-10-15T03:12:26.649Z",
+  "status": "RESOLVED_DEPLOYED_AND_RECOVERED",
+  "root_cause": "Authenticated STT was rejected as quoted input; queued follow-up skipped ingress; honc observability configured without installed local plugin.",
+  "regression": {
+    "honc": 274,
+    "native_gateway": 28,
+    "failures": 0,
+    "errors": 0
+  },
+  "original_body_records_recovered": 2,
+  "replay_duplicate_records": 0,
+  "phoenix": {
+    "historical_conversation_available": false,
+    "new_real_recovery_trace_id": "b4604d2a85370e33cf27160872118390",
+    "new_span_count": 3,
+    "content_capture": false,
+    "private_reasoning_review_claimed": false
+  },
+  "live": {
+    "gateway_pid": 61844,
+    "state": "running",
+    "telegram": "connected",
+    "native_job_preserved": "3381ec71b9d2",
+    "last_native_job_status": "ok"
+  },
+  "model_changed": false,
+  "credentials_changed": false,
+  "synthetic_telegram_messages_sent": 0,
+  "mission_gate_changed": false,
+  "backup_directory": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.uuma-local/honc-voice-fix-backup-20261015",
+  "sha256": {
+    "src/uuma/honc/life_context.py": "9f6f1c6ba861123fcb80f73c5e160f411027c148ed94bacbfea6c5133a6126dd",
+    "src/uuma/honc/life_setup.py": "87916570aa57b8ea5bd38af6b61a2484f8d6bcf3a80acc8d13c884ff6424ebf7",
+    "integrations/hermes/honc_life/__init__.py": "72ead7747035912753e141e8bfd81c477449781e70f7c0c89541174cf3ca8776",
+    "profiles/honc/SOUL.md": "8e66664828dee98ac172f53d293fb772d0918930a311cb8714e512b2fadc82ec",
+    "tests/test_honc_life_admission.py": "16238ccb9c239f861894e35afe2b5b4e38324d0754314677da08cc927230cf47",
+    "tests/test_honc_voice_inbound.py": "f575979d9c4e4bdb7e303e253dd248839c1d1e2df1330ffd43eea8aa0872178c",
+    "test-fixtures/honc/voice_inbound_probe.py": "12196bc6fd5e258147c550046519547a1034da492bdd651d6d6d3339b99cf0f2",
+    "rules/honc-native-integration.md": "b7763ce52308f82e89546f6053f0d326f306e66065150906f561dcf8fbbb5cf2",
+    "repomemory/honc-habits-body-tracker-2026-10-13.md": "86396447e4ff9916912b709aa7936b5725a9d4447fdc84e5a5941c9b0cce107b",
+    "docs/reviews/honc-telegram-voice-2026-10-15/focused-tests.xml": "d589b8d2232d64fd9d738b6061b73c9d3feec31bd2678b3744fd10c8fb7e3b9a",
+    "docs/reviews/honc-telegram-voice-2026-10-15/gateway-reload.json": "7753749c0f64d6dde33a5c392c985129fe72b8877fc7361147cb9deba7658bc0",
+    "docs/reviews/honc-telegram-voice-2026-10-15/hermes-queued-inbound.patch": "5548da7c43362a7e0522ab5bf4c54b1ba31922c05cfc6bf1621c5a3cbc595b60",
+    "docs/reviews/honc-telegram-voice-2026-10-15/incident-evidence.json": "f7805a8d4ecdabfb82a219b2a4dbff0c0d603b6720c8aed7ef4d250a2989fbe0",
+    "docs/reviews/honc-telegram-voice-2026-10-15/installation.json": "6e246f9c2d6ca7a05024da0e73795192a21245d1344fbb32527134250a326604",
+    "docs/reviews/honc-telegram-voice-2026-10-15/integrated-tests.xml": "ccf60abded1884ff9cb81d838c70456201fe3c8c7c194ad44acd068ee1ab30f7",
+    "docs/reviews/honc-telegram-voice-2026-10-15/live-runtime-after.json": "d3364f0f4ec5c2fc1913be78274e3b7f69ee85bd64d86235c6dbc8c4dda21464",
+    "docs/reviews/honc-telegram-voice-2026-10-15/native-gateway-tests.xml": "358328ccfedcbea1536465e8ad45d97226644e59d70c931f5977287cefddf426",
+    "docs/reviews/honc-telegram-voice-2026-10-15/native-source-receipt.json": "7f6c5387282456c1761f0d007512ae7c032f99e56ce5e98776440617dc6ed7bc",
+    "docs/reviews/honc-telegram-voice-2026-10-15/phoenix-before.json": "c53cbb4226961b670eda40ab63982b2a314f201f852aa55b1c3998320103d961",
+    "docs/reviews/honc-telegram-voice-2026-10-15/phoenix-recovery-trace.json": "0da5adf90f674553acb7a0252b7cf9f74d6115b14e5b5b5388b05dd2cedf5ee6",
+    "docs/reviews/honc-telegram-voice-2026-10-15/phoenix-session-before.json": "5c4ce020108366495d320048c8f506ca5a347a70ec59ec7a417ecc613185d27e",
+    "docs/reviews/honc-telegram-voice-2026-10-15/recovered-records.json": "109693019e411af78df02ff1292db3882be0dd9fb56ff4ae7ffd73bdab8cbb3e",
+    "docs/reviews/honc-telegram-voice-2026-10-15/recovery-readback.json": "43b71f1623c7f1305a46711f0a6b4d23f344446842f25310631bcef8e1a60298",
+    "docs/reviews/honc-telegram-voice-2026-10-15/resolution.zh-CN.md": "31ba1ccd8a2f4354d29f99d04f31f5ffb636f26c66349641ac37010c880d0f1e"
+  },
+  "external_sha256": {
+    "C:/Users/Alandelone/AppData/Local/hermes/hermes-agent/gateway/run_inbound.py": "7415deaedeadf762558a32a68e9d0b9f227a7bfd8ec08c3c3caa58777f433f68",
+    "C:/Users/Alandelone/AppData/Local/hermes/profiles/honc/plugins/honc_life/__init__.py": "72ead7747035912753e141e8bfd81c477449781e70f7c0c89541174cf3ca8776",
+    "C:/Users/Alandelone/AppData/Local/hermes/profiles/honc/plugins/uuma_observability/__init__.py": "4bdb6312eb67bf6f8ebfa0d806a9b5f517120d2c1a643cac215b10bdd0836a40"
+  }
+}

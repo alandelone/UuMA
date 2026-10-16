@@ -76,3 +76,53 @@ Updating this glossary does not mean those capabilities already exist.
 **component ref**
 : A component_refs record caching a canonical component reference for local relationships;
   it does not by itself prove that a purchase has been physically received.
+
+## Observatory — Multi-Agent Monitoring
+
+**observatory item**:
+A normalized projection envelope of an agent's domain artifact (project, topic, run, discussion, task, or turn) for unified fleet monitoring.
+_Avoid_: Task, entity, record
+
+**activity event**:
+An immutable, timestamped runtime audit or execution event with global deduplication and agent provenance.
+_Avoid_: Log entry, message
+
+**harvest cursor**:
+A durable checkpoint tracking the observatory's background progress through local audit spools and source databases.
+_Avoid_: Pointer, offset
+
+**source freshness**:
+The reachability, freshness timestamp, and read health of an underlying database, tracked independently of reported execution status.
+_Avoid_: Online status, heartbeat
+
+**shared inspector**:
+A single-page inspection panel for drilling down into an observatory item's timeline, sessions, tools, and artifacts without navigation.
+_Avoid_: Modal dialog, detail page, drawer
+
+**generic hermes adapter**:
+A fallback observatory source adapter providing baseline activity stream and session exploration for newly registered agents lacking a specialized adapter.
+_Avoid_: Default poller, unspecialized agent
+
+**request epoch**:
+A monotonically increasing counter used by the shared inspector to drop stale out-of-order asynchronous responses.
+_Avoid_: Request ID, timestamp filter
+
+## Question Orbit — Autonomous Research & Discovery
+
+**discovery attempt**:
+A single execution record of a query against an authorized discovery provider within an Orbit cycle, capturing the query, provider identity, semantic outcome, and raw failure or citation details.
+_Avoid_: Search log, provider call, query trace
+
+**cycle explanation**:
+A structured, human-readable and machine-verifiable report synthesized at the end of an Orbit cycle, explaining attempted paths, failure classifications, remaining untried routes, and next recommended actions.
+_Avoid_: Cycle summary, status message, failure log
+
+**discovery outcome**:
+A standard six-state semantic classification (`SUCCESS`, `NO_MATCH`, `TRANSIENT_FAILURE`, `AUTH_REQUIRED`, `BUDGET_REACHED`, `SKIPPED`) assigned to each discovery attempt, distinguishing between true lack of evidence and environmental or authorization blocks.
+_Avoid_: HTTP status, error code, failure flag
+
+**untried path**:
+An authorized, configured discovery capability or provider mode that was not executed during the current cycle or whose prerequisites remain available for subsequent exploration.
+_Avoid_: Missed search, fallback candidate, backup engine
+
+

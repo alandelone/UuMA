@@ -1,0 +1,27 @@
+{
+  "status": "PASS_ONE_NATIVE_A215_TYPED_PRESENTATION_CHECK",
+  "new_check_id": "response_check_1b9b3eaa4905448092dd2c472f7c9324",
+  "outcome": "PRESENTATION_MODIFIED",
+  "verification": "CURRENT",
+  "comment_status": "RESOLVED",
+  "claims_utf16": [
+    [
+      24,
+      126
+    ]
+  ],
+  "one_http_post200_only": true,
+  "fixed_v6_to_v7_actual_pdf_boxes": true,
+  "scientific_MODIFIED_still_rejected": true,
+  "all_other108_tables_and_old_checks_exact": true,
+  "all_non_database_files_exact": true,
+  "models_jobs_versions_packages_started": 0,
+  "backend_source_count": 316,
+  "frontend_source_count": 91,
+  "dist_count": 76,
+  "old_package_not_rewritten_with_new_acknowledgement": true,
+  "initial_fetch_issue_still_open": true,
+  "all_owned_services_stopped": true,
+  "overall118_complete": false,
+  "final11_complete": false
+}

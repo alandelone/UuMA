@@ -1,0 +1,62 @@
+{
+  "RSTV4/src/rstv4/studio.py": {
+    "sha256": "7b6f3ae03d03b3fccd8353f4969b43d276801434f2f40ee8c7d0be618a79886b",
+    "bytes": 159924,
+    "baseline_sha256": "41949007432e9fe7e71fbbe9a6f0b53d4b658ae537a5faf881ea60da757db7c8"
+  },
+  "RSTV4/src/rstv4/studio_context.py": {
+    "sha256": "b83914bae142d79f6fe59483f62d298efcd749b15d76161d4e05e8ca160c34ed",
+    "bytes": 11054,
+    "baseline_sha256": "f0b161b010d7fc9511f1d3140eb46486822c8ada7444acdc6139ea607e2e5e4f"
+  },
+  "RSTV4/src/rstv4/studio_layout.py": {
+    "sha256": "5950008c8ee7e54e5b22e7e7c9c04705617736d7231a15d51a6564c70cfb9d72",
+    "bytes": 6053,
+    "baseline_sha256": null
+  },
+  "RSTV4/src/rstv4/studio_read_views.py": {
+    "sha256": "a898fb4d680c61d5d89ea2a3555bf2fe7b1abdf54b135fa14df975a065bb6400",
+    "bytes": 14475,
+    "baseline_sha256": "49249b7075e29b43de24fdb4ad24cdf052f04e4af566c8ae85cb20ad7598a568"
+  },
+  "RSTV4/src/rstv4/studio_revision_mapping.py": {
+    "sha256": "42757285f01326adf2252e683929f7a9b85925924d346f7ce2505e725c949dc9",
+    "bytes": 13529,
+    "baseline_sha256": "af384ca5b1f5ce078e543c41bbb4f916d9a2e8fca651713adee3c094d04147f6"
+  },
+  "RSTV4/tests/test_studio_layout.py": {
+    "sha256": "394896106654bc0bf5dfa51755decc208ccb78a6ae451a34d3f0d3f2090496ae",
+    "bytes": 11689,
+    "baseline_sha256": null
+  },
+  "writing-studio/components/studio-response-review.tsx": {
+    "sha256": "6dd9413820b940be823f385cca54bb319f761a16a92028adb97c49780c3aa506",
+    "bytes": 26203,
+    "baseline_sha256": "af03a27fe60c6c43e98287d95331f5e300b8e30da4ccce958a9d40d77c35d060"
+  },
+  "writing-studio/components/studio-workspace.tsx": {
+    "sha256": "d559d716aac125c469a345976ab85d0f43d6221c7467f68b13208d2a305f5af2",
+    "bytes": 209204,
+    "baseline_sha256": "7efdb6f9f2a985cc189c0d7cc571b5febd4114964c3d338a48e1b0cfd547f031"
+  },
+  "writing-studio/lib/studio-types.ts": {
+    "sha256": "ab02bac88c588d6a96b9a8289aa20393e98e811e58b31d6c0035ff1e837763ad",
+    "bytes": 16490,
+    "baseline_sha256": "c01b0c0e177a0e15579654fd8b788dd6538e4d28b57980e9f06076f4265111d8"
+  },
+  "RSTV4/tests/test_studio_layout_integration.py": {
+    "sha256": "23df542242449e8d99c9978e6da0a04ad8db018c3aba7b2735b064e9689d09a5",
+    "bytes": 12241,
+    "baseline_sha256": null
+  },
+  "RSTV4/tests/test_studio_revision_mapping.py": {
+    "sha256": "a20007a67092fc534f20e35f9404ebeaddc4e928d40c75e6563c656c0a7106c4",
+    "bytes": 11105,
+    "baseline_sha256": "20c4ccba07e459503bfd9ed358ea3b3b45fa1a34c9bb44813a6c7885cacbed07"
+  },
+  "writing-studio/app/globals.css": {
+    "sha256": "b50d43e47169415851455222021e8df3f73fe731a8f81436d7ef40c269446952",
+    "bytes": 54903,
+    "baseline_sha256": "71a987ed9a401130e4f6fccf6051868a5f2def4e42396ed1f1329cf627170a58"
+  }
+}

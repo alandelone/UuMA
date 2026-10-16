@@ -1,0 +1,30 @@
+{
+  "status_code": 200,
+  "body": {
+    "comment_id": "comment_7702027e5fd44006a5a11fba9c369462",
+    "review_round_id": "review_round_e4845ca796d74594b33b86fb529b4404",
+    "source": "SINGLE",
+    "reviewer": null,
+    "original_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.",
+    "edited_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.",
+    "author_decision": "SOFTWARE_FIXTURE decision: Do not change the manuscript. The current synthetic request asks us to preserve the existing Alpha author wording, selected sources, conditions, and fixed v5; these remain unchanged. No new scientific evidence or requested substantive amendment is supplied in this software case. The reply therefore explains intentional preservation and makes no claim that an unperformed edit was implemented. This software acknowledgement is not scientific approval or an external reviewer decision.",
+    "response_text": "SOFTWARE_FIXTURE reply: We intentionally retain the existing Alpha wording and fixed generated v5. No manuscript text, citation, source condition, or generated version was changed for this software acceptance case. This is an explicit no-change response, not a claim that a new scientific amendment or external review occurred.",
+    "status": "PENDING",
+    "archived_at": null,
+    "created_at": "2026-10-15T06:32:39.874021+00:00",
+    "updated_at": "2026-10-15T06:39:42.090410+00:00",
+    "import_metadata": {
+      "comment_number": 211,
+      "import_batch_id": "comment_import_c1c8460aa6c7402bbddaeebfe6595b09",
+      "original_index": 0,
+      "original_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted.",
+      "raw_import_text": "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted."
+    },
+    "display_label": "A211",
+    "content_sha256": "0710ff6227c59db3531cde727115740a568c49376bf2913422d6e3f9e39d8833",
+    "response_state_sha256": "2b1ee46ebf36f5e6594348210bd5c68b9d0f625d9885bb2c34f881228d34c5de",
+    "response_verification": {
+      "status": "NOT_REVIEWED"
+    }
+  }
+}

@@ -1,0 +1,13 @@
+PASS Serialized saves retain newer keystrokes and advance the actual CAS basis
+PASS Conflicting page edits require an explicit comparison before replacing the reply
+PASS Unmount restores drafts, review waits for save, and an uncertain submit retries its original decision
+PASS Archived opinions expose review history without modifying their reply
+PASS Actual dialog retains Unicode selection offsets and rejects retained evidence
+PASS Shared sentences expose distinct full frozen Thoughts and Intent context; invalid or legacy origins stay unavailable
+PASS Historical source view reads its original stored context without consulting the active editor
+PASS Presentation acknowledgement uses its own evidence type without a prose diff; switching outcomes clears claims
+PASS Legacy readback is an explicit single GET, labels its fixed input and preserves the exact historical record
+PASS Supplemental origins reject wrong check/evidence/context/owner/version/revision/hashes and malformed full Intent data
+PASS Read errors and ambiguous old sources remain retryable without blocking or rewriting historical replies
+PASS Switching historical checks and unmounting suppress late source results
+PASS The shipped supplemental-origin client uses an encoded read-only no-store GET and sends no body

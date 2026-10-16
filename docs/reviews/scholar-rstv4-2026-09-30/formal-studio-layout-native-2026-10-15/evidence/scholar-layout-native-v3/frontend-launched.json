@@ -1,0 +1,31 @@
+{
+  "identity": {
+    "pid": 32032,
+    "create_time": 1792070657.7288473,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "62304",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-layout-fit-build-1s4_z_pg\\writing-studio",
+    "parent_pid": 540
+  },
+  "argv": [
+    "C:\\Program Files\\nodejs\\node.EXE",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+    "start",
+    "--port",
+    "62304",
+    "--hostname",
+    "127.0.0.1"
+  ],
+  "port": 62304,
+  "url": "http://127.0.0.1:62304/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_72931d507bda4bdb813dc14988444892",
+  "production_build_reused": true,
+  "actual_vinext_ssr": true,
+  "bootstrap_replacement": false
+}

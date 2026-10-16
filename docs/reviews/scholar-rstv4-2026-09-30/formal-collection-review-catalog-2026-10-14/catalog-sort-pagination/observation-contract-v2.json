@@ -1,0 +1,6 @@
+{
+  "verifiedSource": "catalog_web.html loadPapers lines769-778 sets list-count to Loading papers while retaining old matching table rows, and paperQueryToken prevents outdated response publication.",
+  "captureRequirement": "Await exact non-loading result count and first/last full-page IDs before reading complete DOM.",
+  "nativeSortOperationsReplayed": false,
+  "productQueryRulesChanged": false
+}

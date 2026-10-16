@@ -1,0 +1,7 @@
+{
+  "mode": "http",
+  "base_url": "https://api.95963210.xyz/v1",
+  "inference_submitted": false,
+  "status": 403,
+  "error_type": "HTTPError"
+}

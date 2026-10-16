@@ -153,20 +153,11 @@ Wisdom 可提出知识修改；只有 Orchestrator／用户审查可以批准、
 
 ## 8. 实现状态与验收边界
 
-2026-10-02 已核查：桥接提供三个模式及持久请求；Wisdom 后台适配器固定选择 `search`，
-只取引用和短答案片段，最长同步等待 60 秒。核查的两个控制库中没有 Wisdom 实际请求。
-零提交的具体原因尚待追踪。后台的来源饱和分支仍会自动暂停；上述新契约要求修复它。
+2026-10-15 闭环实现与端到端验证更新：
+1. **ChatGPT 真实调用端到端打通**：在 `wisdom-oldman/config.yaml` 插件白名单中补充 `chatgpt-bridge` 权限；在 `ChatGPTBrowser.prepare()` 中加入基于 Chrome 配置文件 (`Profile 10`) 的断线自动拉起与握手；通过 `scripts/verify-chatgpt-live.py` 诊断脚本完成真实账户路由 (`wisdom-oldman` -> `main`)、运行权限配对校验与阻断清理。
+2. **长周期 Deep Research 异步打捞与报告消费**：在 `ChatGPTDiscoveryProvider` 引入非阻塞提交与 `check_status()` 轮询机制，支持跨研究周期的 `pending_request_id` 状态继承；在 `OrbitRunner` 中接入 `is_report` 深度报告识别，调用 `KnowledgeIngestor.ingest_text()` 完整摄入 Markdown 全文并在 `wisdom.db` 中切块提取候选主张（`CANDIDATE`）。
+3. **自适应研究规划器与白箱决策追踪**：在 `src/uuma/orbit_planner.py` 实现 `AdaptiveResearchPlanner` 与 `reformulate_queries()`（专业中英拉丁学术同义词扩展与去杂），构建 Tier 1 (学术/规范) -> Tier 2 (全网搜索) -> Tier 3 (ChatGPT咨询/深度研究) -> Tier 4 (领域补充) 的分层升级策略，并在 `discovery_usage` 与 `QuestionOrbitService.get()` 暴露结构化 `attempted_routes` 白箱决策链。
+4. 全量回归：`tests/test_orbit_planner.py`、`tests/test_orbit_runtime.py` 与 `tests/test_chatgpt_bridge.py` 共 94 项 pytest 契约及 ruff 校验全部通过。
 
-本次更新交付架构和 Agent 操作指引。它不代表通用能力目录、自动模式选择、持久报告回收、
-工具尝试详情查询及自动暂停修复已经实现或通过真实 Telegram 验收。
-
-后续实现须验证：
-
-1. 旧主题遇到资料缺口时，确实提交适合的 ChatGPT 任务，且请求关联原主题。
-2. 普通搜索空结果可触发有理由的换法；ChatGPT 解释只产生线索，核查后才形成候选。
-3. Deep Research 超过一个周期及进程重启后仍回收同一报告，不重复提交。
-4. 等待、无结果、故障、权限及额度问题分别记录并在聊天中解释。
-5. 用户暂停／停止重启后有效；预算耗尽精确说明且不追加。
-6. 跨聊天询问状态、原因、途径和后续仍定位旧主题，不误建新主题。
-7. 新来源仅需能力描述和适配器接入，既有知识流程与批准边界不变。
-8. 真实 Telegram 直接回答与重要 digest 有送达证据；未观察环节不标记通过。
+后续实机观察项：
+- 真实 Telegram 生产交互环境下长周期运行对特定植物研究课题（如青葱气雾栽培参数）的大报告送达与用户审查批准。

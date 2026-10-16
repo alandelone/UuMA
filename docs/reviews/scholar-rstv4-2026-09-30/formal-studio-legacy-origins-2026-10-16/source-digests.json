@@ -1,0 +1,52 @@
+{
+  "RSTV4/src/rstv4/studio_read_views.py": {
+    "sha256": "fdaf71276fca52b74531375fcef77a10ca9eb01fa07cdffde409fc7fa8f5455a",
+    "bytes": 14702,
+    "before_sha256": "a898fb4d680c61d5d89ea2a3555bf2fe7b1abdf54b135fa14df975a065bb6400"
+  },
+  "RSTV4/src/rstv4/studio.py": {
+    "sha256": "e0989b52e8a7041006475aea37b529b0c8c363c5a62776475b29a6367325fde3",
+    "bytes": 160512,
+    "before_sha256": "7b6f3ae03d03b3fccd8353f4969b43d276801434f2f40ee8c7d0be618a79886b"
+  },
+  "RSTV4/src/rstv4/studio_api.py": {
+    "sha256": "f4d89fe9d442828dd655c33785ebc9ad9efeb827369af1037e9ed649b157c765",
+    "bytes": 28848,
+    "before_sha256": "cba2a102300e8fc78aaf91c5b5ed5178522c47fa258774d72087c135199e67b9"
+  },
+  "writing-studio/components/studio-response-review.tsx": {
+    "sha256": "ba55105d9daad1f858446b162b95b5f050b51f20da692bcf0dbe5bfc0f3aafaf",
+    "bytes": 39560,
+    "before_sha256": "77397bd54474ab27cfe02f1e1e43711b6e7d93f95ef0e7c3386eb1935ee27e87"
+  },
+  "writing-studio/lib/studio-api.ts": {
+    "sha256": "e19f8f9e805014808fab5aba70f1ff37826769bc1b98e3640c98e45b9dff0b2d",
+    "bytes": 13470,
+    "before_sha256": "a89552657c672248030cbd1cfa1cd988f38244cfe9bddd80b589be8887a74e8c"
+  },
+  "writing-studio/lib/studio-types.ts": {
+    "sha256": "450e44abb40dc998f340d1284275d17990799ca877d267cf0e0438f1408bdf39",
+    "bytes": 17812,
+    "before_sha256": "5210d587000901339075d07a394657ba71c18469035d414fec3fb637c67bb1a1"
+  },
+  "writing-studio/tests/unit/studio-response-review.cjs": {
+    "sha256": "f95e677e7b3a667e5aff32d4b8d104e82b202c7fe7edbeb6f98cb791be2a0e6a",
+    "bytes": 29568,
+    "before_sha256": "54adaf9384cd622cede17b8d29b783a60b41b6e160f4138830ef1aad1b6c8193"
+  },
+  "RSTV4/src/rstv4/studio_revision_mapping.py": {
+    "sha256": "f6e756e2c1a804f1660784367645f5ba600413f2bad6b21dbca48e09992201e0",
+    "bytes": 17521,
+    "before_sha256": "c9984b2c37be59f37299d59aa6bf5a656b124a55a6b481cda6c2ec9bfca8e696"
+  },
+  "RSTV4/src/rstv4/studio_history_origins.py": {
+    "sha256": "7952f79048ab8484994712e28bca76342ceaeeea02575bf3bbeae85ff66f9454",
+    "bytes": 6295,
+    "before_sha256": null
+  },
+  "RSTV4/tests/test_studio_historical_origins.py": {
+    "sha256": "d3ec7f44949993ec544bd186202c6ab8e5928a0cc4d865d037003cc7d0b74e7d",
+    "bytes": 12061,
+    "before_sha256": null
+  }
+}

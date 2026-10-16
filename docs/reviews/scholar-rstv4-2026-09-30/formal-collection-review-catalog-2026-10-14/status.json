@@ -1,0 +1,13 @@
+{
+  "g11_original_software_definition_passed": true,
+  "current_native_identity_reopen_approve_passed": true,
+  "gpu_attempt6_passed": true,
+  "catalog_columns_compound_filter_and_sort_pagination_native_evidence": true,
+  "latest_regression_passed": 1078,
+  "warnings": 20,
+  "source_files_frozen": 306,
+  "original118_complete": false,
+  "all11_integrated_complete": false,
+  "scientific_approval": false,
+  "gate_status": "pending_review"
+}

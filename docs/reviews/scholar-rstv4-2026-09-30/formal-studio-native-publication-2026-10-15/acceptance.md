@@ -1,0 +1,35 @@
+# Native local WF09–10 publication and archive acceptance — 2026-10-15
+
+The current Studio completed the actual local software-fixture chain: finalization → SUBMITTED → ACCEPTED → PUBLISHED → exact-file archive → native reload and persistent receipt. This is bounded WF09/WF10 software evidence. Original118 coverage and the same-current-source combined11-group acceptance remain incomplete. No scientific approval, external journal submission/acceptance/publication or UuMA gate transition is asserted.
+
+## Actual native behavior and guards
+
+The official in-app browser operated the same current311-file backend,91-file frontend and existing76-file build. Of45 retained native observations, the first18 A211 observations remain exactly equal to their previous sealed prefix; steps23–45 provide23 WF observations, with four intervening read/navigation observations preserved. A211 checks and all old comments/links remain unchanged throughout this workflow phase.
+
+The real stage request returned200 and changed workflow revision6→7, WHOLE_PAPER_REVIEW→FINALIZATION_SUBMISSION. The SUBMITTED form could not record until its displayed fixed-version acknowledgement was checked. Before acceptance, selecting PUBLISHED could not record even with that acknowledgement checked. After a single explicit local ACCEPTED event, PUBLISHED still required the displayed-version acknowledgement. Each of SUBMITTED, ACCEPTED and PUBLISHED was submitted once and returned201. All venue/detail strings explicitly state SOFTWARE_FIXTURE/local/no external submission or scientific approval.
+
+PUBLISHED automatically entered PUBLICATION through the original service, revision7→8. An attempted click using an obsolete accessibility node then reported stale state and made no second stage request. No extra stage transition was needed. The existing v5 and author structure r62 were retained.
+
+Two native file-chooser uploads each returned201 exactly once. The final PDF is the original generated v5 byte-for-byte:13830bytes, SHA256 `f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4`. The739-byte TXT proof is explicitly synthetic local UI evidence, not a publisher proof; SHA256 `319b444fb182840168b1d2e3e83f6da18c19aacf6b42044f4f3f2455d29e5ca1`. Its text disclaims external publication, DOI registration, scientific evidence and unperformed amendments. The report includes exact uploaded bytes and verifies their stored asset bytes/hashes, manuscript ownership and fixed-version binding.
+
+Archive confirmation remained disabled with acknowledgement but no selected files, and with both files selected but no archive acknowledgement. It enabled only after selecting both exact files and acknowledging this local fixture. The archive action returned201 once, event `submission_11ea9271d86a4f43ba6fa6c486b31174`. A subsequent intentional native reload showed the same persistent archive receipt, original v5/r62, both filenames, SHA256 values and sizes. The final generated read completed, including fixed manuscript text and references; the intermediate loading observation is preserved.
+
+## Independent full-state and binding audit
+
+Every stage was compared against its immediate complete110-table predecessor. Action003 changed manuscripts and appended status history; actions010/011 appended only event/binding; action012 additionally performed automatic PUBLICATION/history; actions013/014 each appended one asset; action015 appended only archive event/binding. Discussion context/history actions004–009 and016–018 were readonly and changed no tables.
+
+Across action002→final,105 of110tables remain precisely identical. Only five tables change: manuscripts, manuscript_status_history, submission_events, studio_submission_bindings and studio_assets. No old append row is removed or changed. The target manuscript changes only writing_status, workflow_stage, revision and updated_at; its title and every other field remain exact, as do all other manuscripts. Two status-history rows, four events, four bindings and two assets are appended. ARCHIVED preserves revision8 and PUBLICATION. Schema and all author documents/history, current and old generated versions/jobs/artifacts, sources, approvals,210 old comments plus A211, response checks and change links remain exact.
+
+Each new binding independently matches its exact canonical original request, operation ID, event body, timestamp and frozen snapshot SHA256. Parent linkage is SUBMITTED→ACCEPTED→PUBLISHED→ARCHIVED. Publication and archive both point to the exact local ACCEPTED event. All four freeze the same generated version, content/input hashes, original successful generation job, author r62 digest and recorded template/source manifest. The archive alone binds the two exact owned, READY document assets. Full row-level differences are archived.
+
+The original109-table source root's raw database and all original files remain exact;25 external original artifacts remain byte-identical. All preexisting owned payload files remain exact except the expected database changes; only two uploaded asset files are new. Current backend311/frontend91/build76 vectors remain exact. Studio ran no model, worker or generation. This separate workflow did not rerun GPU or QuickRead.
+
+The final complete readonly110-table snapshot equals both the last action018 checkpoint and the actual stopped backend terminal snapshot. Exact owned frontend/backend/console identities have exited, ports8877/50114 are free and the root/data are retained. Other user pages and processes were not closed by this audit.
+
+## Preserved failures and practical limits
+
+Initial generated-view reads were pending/failed; their real diagnostics remain archived. An intentional official reload recovered real200 reads without modifying security settings or fabricating responses. The first file-chooser label wait timed out and reset the browser kernel before any asset POST; subsequent observed-label native chooser uploads each created only one asset. Timeout and stale-node observations are retained; successful business actions were not replayed.
+
+The first readonly audit stopped because binary multipart captures deliberately store body_utf8=null. The failed helper is retained. Audit v2 distinguishes textual JSON requests from binary uploads and independently reconstructs the exact multipart envelope using the observed boundary, original frozen uploadAsset field name, filename, media type and exact fixture bytes; both observed full-body sizes and SHA256 digests must match. No successful native action or model execution was repeated.
+
+These software fixtures exercise local state, guards and immutable provenance, including a deliberately synthetic proof. They do not validate the quality of a real journal proof or scientific result. Remaining original118 requirements, updated delivery quality, complex source/mapping/reasoning branches, native slow-read behavior and complete11-group integrated acceptance still require their own evidence. Historical passing groups are not promoted to a current whole-system pass.

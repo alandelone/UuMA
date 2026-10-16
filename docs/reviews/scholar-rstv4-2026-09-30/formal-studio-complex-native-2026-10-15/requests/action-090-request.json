@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_f39d35831bd0472bb9282ab116e90611/response-checks",
+  "content_type": "application/json",
+  "body_utf8": "{\"request_id\":\"396d588d-7350-4bd7-9f2e-e8848195069b\",\"context_sha256\":\"30e1f693668d9ea1880d8bcf1a0d74a8e42901934dda192242d68a7743a2cdd0\",\"outcome\":\"MODIFIED\",\"claims\":[{\"start\":24,\"end\":151,\"text\":\"We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences.\",\"offset_unit\":\"utf16\",\"evidence_ids\":[\"62d134a7ca7c85bbfeee82d2c1e6064d7b1aef8270b2370b0e570a50c7ef7c41\",\"12588bfafec7bbad5cb99b0e52728ef6b321b83217009c559e1ccc84aba27a63\",\"78c6c9e38f85d77b7f580b198ab5c8c3d17e59b8ef52e00de4e4f150b27eca41\"]},{\"start\":152,\"end\":283,\"text\":\"We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences.\",\"offset_unit\":\"utf16\",\"evidence_ids\":[\"5fc506a38339590081a4302c8eab3e6e8b93deb1b508174fe035e961f8429505\",\"7b4512856729eb82aca7997a1679c6d033d504c5f1d622a0877dde9bade1d375\"]}],\"acknowledged_all_assertions\":true}",
+  "body_sha256": "aaeeea00c4956779fe006733ac1648b0515ed4e2af665b33cd85ed7b6d539af4",
+  "body_bytes": 942
+}

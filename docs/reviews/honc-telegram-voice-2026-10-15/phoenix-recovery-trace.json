@@ -1,0 +1,71 @@
+{
+  "data": [
+    {
+      "id": "U3Bhbjo0MDg3OA==",
+      "name": "honc.voice_record_recovery",
+      "context": {
+        "trace_id": "b4604d2a85370e33cf27160872118390",
+        "span_id": "900c90fdd5d42aa7"
+      },
+      "span_kind": "CHAIN",
+      "parent_id": null,
+      "start_time": "2026-10-15T03:07:30.400533+00:00",
+      "end_time": "2026-10-15T03:07:30.449103+00:00",
+      "status_code": "UNSET",
+      "status_message": "",
+      "attributes": {
+        "uuma.agent.profile": "honc",
+        "uuma.recovery.kind": "original_telegram_source_backfill",
+        "uuma.recovery.original_message_count": 2,
+        "uuma.real_model_calls": 0,
+        "session.id": "honc-voice-recovery-20261015"
+      },
+      "events": []
+    },
+    {
+      "id": "U3Bhbjo0MDg3Nw==",
+      "name": "honc_record_body.recovery",
+      "context": {
+        "trace_id": "b4604d2a85370e33cf27160872118390",
+        "span_id": "df81797563b29a38"
+      },
+      "span_kind": "TOOL",
+      "parent_id": "900c90fdd5d42aa7",
+      "start_time": "2026-10-15T03:07:30.435587+00:00",
+      "end_time": "2026-10-15T03:07:30.449103+00:00",
+      "status_code": "UNSET",
+      "status_message": "",
+      "attributes": {
+        "uuma.agent.profile": "honc",
+        "uuma.life.status": "APPLIED",
+        "uuma.life.operation_id": "operation_6f6fac43535340229e242233a3df55da",
+        "uuma.recovery.original_platform_message_id": "82",
+        "session.id": "honc-voice-recovery-20261015"
+      },
+      "events": []
+    },
+    {
+      "id": "U3Bhbjo0MDg3Ng==",
+      "name": "honc_record_body.recovery",
+      "context": {
+        "trace_id": "b4604d2a85370e33cf27160872118390",
+        "span_id": "370c65ee6e37409d"
+      },
+      "span_kind": "TOOL",
+      "parent_id": "900c90fdd5d42aa7",
+      "start_time": "2026-10-15T03:07:30.421065+00:00",
+      "end_time": "2026-10-15T03:07:30.433087+00:00",
+      "status_code": "UNSET",
+      "status_message": "",
+      "attributes": {
+        "uuma.agent.profile": "honc",
+        "uuma.life.status": "APPLIED",
+        "uuma.life.operation_id": "operation_1e98fe163c5d43ada5e8bbaa20ba5740",
+        "uuma.recovery.original_platform_message_id": "79",
+        "session.id": "honc-voice-recovery-20261015"
+      },
+      "events": []
+    }
+  ],
+  "next_cursor": null
+}

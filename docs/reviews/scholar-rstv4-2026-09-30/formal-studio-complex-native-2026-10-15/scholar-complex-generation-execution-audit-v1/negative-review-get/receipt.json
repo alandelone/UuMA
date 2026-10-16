@@ -1,0 +1,60 @@
+{
+  "results": [
+    {
+      "label": "C-META",
+      "comment_id": "comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+      "status": 200,
+      "seconds": 0.125,
+      "top_keys": [
+        "state",
+        "state_sha256",
+        "baseline_available",
+        "baseline_version_number",
+        "target_version_number",
+        "baseline_text_sha256",
+        "target_text_sha256",
+        "baseline_to_target_diff",
+        "baseline_to_target_display_diff",
+        "baseline_citation_sources",
+        "target_citation_sources",
+        "evidence",
+        "pdf",
+        "pdf_artifact_id",
+        "scientific_acceptance",
+        "automatic_response_approval",
+        "context_sha256",
+        "history",
+        "verification"
+      ]
+    },
+    {
+      "label": "C-SOURCE",
+      "comment_id": "comment_342fc9f8af994f599623410886be6877",
+      "status": 200,
+      "seconds": 0.125,
+      "top_keys": [
+        "state",
+        "state_sha256",
+        "baseline_available",
+        "baseline_version_number",
+        "target_version_number",
+        "baseline_text_sha256",
+        "target_text_sha256",
+        "baseline_to_target_diff",
+        "baseline_to_target_display_diff",
+        "baseline_citation_sources",
+        "target_citation_sources",
+        "evidence",
+        "pdf",
+        "pdf_artifact_id",
+        "scientific_acceptance",
+        "automatic_response_approval",
+        "context_sha256",
+        "history",
+        "verification"
+      ]
+    }
+  ],
+  "all110_exact": true,
+  "model_job_or_mutation": false
+}

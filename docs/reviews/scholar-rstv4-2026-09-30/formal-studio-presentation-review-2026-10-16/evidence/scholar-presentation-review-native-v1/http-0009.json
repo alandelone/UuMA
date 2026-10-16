@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/context",
+  "query": "",
+  "status": 200,
+  "seconds": 0.0,
+  "response_sha256": "166ddac05be379f1e15f5b8c449e0608ed7444cfabca7192583d3f2596efe912",
+  "origin": "http://127.0.0.1:56581",
+  "request_json": {
+    "module": "STUDIO",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "object_kind": "paper",
+    "object_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "document_revision": 86
+  }
+}

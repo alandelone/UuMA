@@ -1,0 +1,10 @@
+PASS arbitrary nested same-label target retains canonical author data and fixed source
+PASS all-original context choices and distinct Intent references remain independent
+PASS leaving formula and asset placement pending does not invent a target
+PASS legacy flat fixed paragraph source is inherited without rewriting the slot
+PASS every reviewed source, target, parent, group and edge change invalidates confirmation
+PASS repeated/foreign/unplaced/self destinations fail without writes
+PASS explicitly cancelling and undo/redo preserve exact documents
+PASS deleting a target releases its mapping but never deletes original author content
+PASS template replacement releases references to canonical original bank
+9 author correspondence contracts passed; no browser or real model used.

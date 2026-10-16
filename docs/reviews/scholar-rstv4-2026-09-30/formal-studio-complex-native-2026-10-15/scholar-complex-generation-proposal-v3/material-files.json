@@ -1,0 +1,14 @@
+{
+  "material-asset_ea004de6f5da423ba6ab98710d9a9458-source.csv": {
+    "bytes": 184,
+    "sha256": "cb1b1e1e64ba376010ce1bb9836a4ab4d642634f22f32e8dd9ac6618c00edc6f"
+  },
+  "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-source.svg": {
+    "bytes": 584,
+    "sha256": "ae9e803a67deadce288524b14932f4bb190fc9c7125a16164c7d355104e58084"
+  },
+  "material-asset_65e4b91ba806497e9afd0c7c514c7d1b-render.png": {
+    "bytes": 32715,
+    "sha256": "dff8a294011df4139da35677d14ff3ef1c3f5d66c0601533a33099c82215b4f3"
+  }
+}

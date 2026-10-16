@@ -1,0 +1,9 @@
+{
+  "original_failure": "Read-only migration auditor omitted two actual existing initialize_catalog migrations.",
+  "verified_source": "database.py:1395-1396 adds nullable topic_id/creation_request_json; 1363 SQLite table rename quotes skeleton_runs.",
+  "retained_same_allocated_copy": true,
+  "old_original_fields_and_rows_still_exact": true,
+  "source_database_unchanged": true,
+  "no_native_actions_or_models_replayed": true,
+  "resume_initialization_must_be_idempotent": true
+}

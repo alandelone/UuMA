@@ -7,6 +7,7 @@ import hashlib
 import json
 import sqlite3
 import subprocess
+import tempfile
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -40,22 +41,54 @@ class Session:
     def progress(self):
         path = self.root / "active-session" / "progress.md"
         path.parent.mkdir(exist_ok=True)
-        original = path.read_text(encoding="utf-8") if path.exists() else "# Progress\n"
         marker = "\n<!-- automatic-session-journal -->\n"
-        lines = []
-        for seq, time, kind, raw, file_count in self.db.execute(
-            "SELECT id,time,kind,json_remove(payload,'$.content','$.snapshot'), "
-            "CASE WHEN json_type(payload,'$.snapshot') IS NOT NULL THEN "
-            "(SELECT COUNT(*) FROM json_each(payload,'$.snapshot')) ELSE NULL END "
-            "FROM repo_session_events ORDER BY id"
-        ):
-            payload = json.loads(raw)
-            if file_count is not None:
-                payload["files_observed"] = file_count
-            lines.append(f"- {time} #{seq} {kind}: {json.dumps(payload)}")
-        path.write_text(
-            original.split(marker)[0] + marker + "\n".join(lines) + "\n", encoding="utf-8"
-        )
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w", encoding="utf-8", dir=path.parent,
+                prefix=f".{path.name}.", suffix=".tmp", delete=False,
+            ) as output:
+                temporary = Path(output.name)
+                if path.exists():
+                    with path.open(encoding="utf-8") as original:
+                        pending = ""
+                        while chunk := original.read(65536):
+                            pending += chunk
+                            if marker in pending:
+                                output.write(pending.split(marker, 1)[0])
+                                break
+                            keep = len(marker) - 1
+                            output.write(pending[:-keep])
+                            pending = pending[-keep:]
+                        else:
+                            output.write(pending)
+                else:
+                    output.write("# Progress\n")
+                output.write(marker)
+                for seq, time, kind, raw in self.db.execute(
+                    "SELECT id,time,kind,payload FROM repo_session_events ORDER BY id"
+                ):
+                    payload = json.loads(raw)
+                    payload.pop("content", None)
+                    if "snapshot" in payload:
+                        snapshot = payload.pop("snapshot")
+                        payload["files_observed"] = (
+                            len(snapshot) if isinstance(snapshot, (dict, list)) else 1
+                        )
+                        del snapshot
+                    output.write(f"- {time} #{seq} {kind}: {json.dumps(payload)}\n")
+            for _ in range(5):
+                try:
+                    temporary.replace(path)
+                    break
+                except PermissionError:
+                    import time
+                    time.sleep(0.15)
+            else:
+                temporary.replace(path)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
 
     def snapshot(self):
         result = subprocess.run(

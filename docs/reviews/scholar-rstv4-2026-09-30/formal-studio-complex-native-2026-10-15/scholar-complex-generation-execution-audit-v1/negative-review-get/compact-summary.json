@@ -1,0 +1,275 @@
+{
+  "C-META": {
+    "statuses": {
+      "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED": 7,
+      "FINAL_LOCATION_UNKNOWN": 1,
+      "REMOVED_FROM_AUTHOR_STRUCTURE": 1,
+      "NO_AUTHOR_CHANGE_FROM_BASELINE": 3,
+      "SUPERSEDED_OR_REVERSED": 3,
+      "GENERATED_TEXT_CHANGED": 3
+    },
+    "rows": [
+      {
+        "change_id": "change_097542651611481e931f038c5e2d1c9e",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_24ee1a3c11a7413eaecbb4a445fed479",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_523ef7d3658a4fefa68a79f081fafd69",
+        "status": "FINAL_LOCATION_UNKNOWN",
+        "reason": "PDF_TEXT_NOT_FOUND",
+        "thought_id": "thought_009a96629cb14586b44697b3ec73f2bc",
+        "sentence_index": 0,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_5c1258e78fec4cd79883778d3ced665a",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_645c267c519447e8bf87dda503cf3878",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_678c9d935ff444238c4e5058ae588547",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_7b1598ac4de04664bcfa006ec0d037e2",
+        "status": "REMOVED_FROM_AUTHOR_STRUCTURE",
+        "reason": "Deleted author thought has no final text location",
+        "thought_id": "thought_d9339400f0c34bf3a1e1a5084fca8535",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_8e0b3363594442338ada3e5d34a46cd9",
+        "status": "NO_AUTHOR_CHANGE_FROM_BASELINE",
+        "reason": "Fixed baseline and target author thought are identical",
+        "thought_id": "thought_65c89c466a7e4933902c6d99398cf602",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_950e8e19ccac41e4840674d44833faf0",
+        "status": "NO_AUTHOR_CHANGE_FROM_BASELINE",
+        "reason": "Fixed baseline and target author thought are identical",
+        "thought_id": "thought_65c89c466a7e4933902c6d99398cf602",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_99508413a70f406782d71fab2638566f",
+        "status": "SUPERSEDED_OR_REVERSED",
+        "reason": "This edit's after-state does not equal the fixed generated input",
+        "thought_id": "thought_65c89c466a7e4933902c6d99398cf602",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_a1353447cfd348ce9d732f461ed53dc1",
+        "status": "GENERATED_TEXT_CHANGED",
+        "reason": "UNIQUE_FULL_PARAGRAPH",
+        "thought_id": "thought_author_1",
+        "sentence_index": 0,
+        "final_page": 1,
+        "final_line": 16,
+        "final_line_end": 18
+      },
+      {
+        "change_id": "change_a1353447cfd348ce9d732f461ed53dc1",
+        "status": "GENERATED_TEXT_CHANGED",
+        "reason": "UNIQUE_FULL_PARAGRAPH",
+        "thought_id": "thought_author_1",
+        "sentence_index": 1,
+        "final_page": 1,
+        "final_line": 18,
+        "final_line_end": 18
+      },
+      {
+        "change_id": "change_a1353447cfd348ce9d732f461ed53dc1",
+        "status": "GENERATED_TEXT_CHANGED",
+        "reason": "UNIQUE_FULL_PARAGRAPH",
+        "thought_id": "thought_author_1",
+        "sentence_index": 2,
+        "final_page": 1,
+        "final_line": 19,
+        "final_line_end": 20
+      },
+      {
+        "change_id": "change_a86ac9d5e27b49c09dc4b5d73cc80ae4",
+        "status": "NO_AUTHOR_CHANGE_FROM_BASELINE",
+        "reason": "Fixed baseline and target author thought are identical",
+        "thought_id": "thought_65c89c466a7e4933902c6d99398cf602",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_bb49cfcf9046419fa1c44dcbdd8d5d64",
+        "status": "SUPERSEDED_OR_REVERSED",
+        "reason": "This edit's after-state does not equal the fixed generated input",
+        "thought_id": "thought_65c89c466a7e4933902c6d99398cf602",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_d7d6ff79d3104cfeafaad193b8fda3d3",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_eb2dccc53af646c9a808f4b2a6e00e43",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_f79e2bceb00a4f37b18c90c088b80538",
+        "status": "SUPERSEDED_OR_REVERSED",
+        "reason": "This edit's after-state does not equal the fixed generated input",
+        "thought_id": "thought_65c89c466a7e4933902c6d99398cf602",
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      }
+    ],
+    "pdf_sha256": "ec3988b80410560cd1b40d9bd15615718b2c9ab144147a2d028af461d497c0a1",
+    "verification": {
+      "status": "NOT_REVIEWED"
+    },
+    "scientific_acceptance": false,
+    "automatic_response_approval": false
+  },
+  "C-SOURCE": {
+    "statuses": {
+      "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED": 2,
+      "FINAL_LOCATION_UNKNOWN": 1,
+      "GENERATED_TEXT_CHANGED": 3
+    },
+    "rows": [
+      {
+        "change_id": "change_097542651611481e931f038c5e2d1c9e",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_523ef7d3658a4fefa68a79f081fafd69",
+        "status": "FINAL_LOCATION_UNKNOWN",
+        "reason": "PDF_TEXT_NOT_FOUND",
+        "thought_id": "thought_009a96629cb14586b44697b3ec73f2bc",
+        "sentence_index": 0,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_5c1258e78fec4cd79883778d3ced665a",
+        "status": "STRUCTURE_OR_SOURCE_CHANGE_UNMAPPED",
+        "reason": "No changed thought can be attributed to a generated sentence",
+        "thought_id": null,
+        "sentence_index": null,
+        "final_page": null,
+        "final_line": null,
+        "final_line_end": null
+      },
+      {
+        "change_id": "change_a1353447cfd348ce9d732f461ed53dc1",
+        "status": "GENERATED_TEXT_CHANGED",
+        "reason": "UNIQUE_FULL_PARAGRAPH",
+        "thought_id": "thought_author_1",
+        "sentence_index": 0,
+        "final_page": 1,
+        "final_line": 16,
+        "final_line_end": 18
+      },
+      {
+        "change_id": "change_a1353447cfd348ce9d732f461ed53dc1",
+        "status": "GENERATED_TEXT_CHANGED",
+        "reason": "UNIQUE_FULL_PARAGRAPH",
+        "thought_id": "thought_author_1",
+        "sentence_index": 1,
+        "final_page": 1,
+        "final_line": 18,
+        "final_line_end": 18
+      },
+      {
+        "change_id": "change_a1353447cfd348ce9d732f461ed53dc1",
+        "status": "GENERATED_TEXT_CHANGED",
+        "reason": "UNIQUE_FULL_PARAGRAPH",
+        "thought_id": "thought_author_1",
+        "sentence_index": 2,
+        "final_page": 1,
+        "final_line": 19,
+        "final_line_end": 20
+      }
+    ],
+    "pdf_sha256": "ec3988b80410560cd1b40d9bd15615718b2c9ab144147a2d028af461d497c0a1",
+    "verification": {
+      "status": "NOT_REVIEWED"
+    },
+    "scientific_acceptance": false,
+    "automatic_response_approval": false
+  }
+}

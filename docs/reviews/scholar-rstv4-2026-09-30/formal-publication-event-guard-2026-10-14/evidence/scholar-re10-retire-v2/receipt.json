@@ -1,0 +1,11 @@
+{
+  "status": "PASS_ONLY_RE10_OWNED_SERVICES_RETIRED",
+  "ports_free": [
+    49414,
+    52898,
+    49415
+  ],
+  "processes": 6,
+  "original_and_owned_tables_preserved": true,
+  "original_studio_and_user_kept_bib_page_untouched": true
+}

@@ -1,0 +1,43 @@
+--- a/gateway/run_inbound.py
++++ b/gateway/run_inbound.py
+@@ -69,6 +69,8 @@
+         """Run the ``pre_gateway_dispatch`` plugin hook; None = drop, else the (maybe rewritten) event.
+         Results: ``{"action": "skip"}`` → drop; ``{"action": "rewrite", "text"}`` → replace ``event.text``;
+         ``allow``/None → normal dispatch. Runs BEFORE auth so plugins can handle unauthorized senders."""
++        if getattr(event, "_hermes_dispatch_hook_checked", False) is True:
++            return event
+         try:
+             from hermes_cli.lifecycle import invoke_hook as _invoke_hook
+             _hook_results = _invoke_hook(
+@@ -98,6 +100,7 @@
+                 break
+             if _action == "allow":
+                 break
++        event._hermes_dispatch_hook_checked = True
+         return event
+ 
+     async def _hm_offer_pairing_code(self, source: SessionSource) -> None:
+@@ -1713,11 +1716,20 @@
+     ) -> Optional[str]:
+         """Run inbound preprocessing under the routed profile when multiplexed."""
+         from gateway.run import _async_profile_runtime_scope
+-        kwargs = dict(event=event, source=source, history=history, session_key=session_key)
++        async def prepare():
++            # Queued follow-ups bypass idle intake. Apply plugin admission once,
++            # under this event's routed profile, before processing its content.
++            checked = self._hm_pre_gateway_dispatch_hook(event, source)
++            if checked is None:
++                return None
++            return await self._prepare_inbound_message_text(
++                event=checked, source=checked.source, history=history, session_key=session_key,
++            )
++
+         if getattr(getattr(self, "config", None), "multiplex_profiles", False):
+             async with _async_profile_runtime_scope(self._resolve_profile_home_for_source(source)):
+-                return await self._prepare_inbound_message_text(**kwargs)
+-        return await self._prepare_inbound_message_text(**kwargs)
++                return await prepare()
++        return await prepare()
+ 
+     async def _prepare_clarify_reply_text(self, event) -> str:
+         """Return raw text or successful voice transcripts for a clarify reply."""

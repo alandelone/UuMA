@@ -1,0 +1,39 @@
+{
+  "files": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\receipt.json": {
+      "sha256": "ca7928ae3478a71ac5a4d31ff9fb753406f37f584b5ba0fa590e7411ca867f59"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\reuse-preflight.json": {
+      "sha256": "93ce5ff763859b0488c440f1ff91099fe2d29d0c15c20cc39fb8de889ae194e9"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\before110-all-tables.json": {
+      "sha256": "3cc935d625ed46ede32c78275f5c20395faf039c2e41c37834a590104366aa4a"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\before110-all-files.json": {
+      "sha256": "c605f40a3ecc25f074be8abef69b811594dcc25debecc377916ea659728835c1"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\previous-owned-identity-audit.json": {
+      "sha256": "5382839daf84f9bbeea93df33c2251af5ee3d7be1cac35e9144c7226b472bf3a"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\ownership.json": {
+      "sha256": "bd74300d385aa51423385552155cfd70e016d0bd22f7cccf0c4eeecf90d927f3"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\ready.json": {
+      "sha256": "eb1b8f562d9200c1a133481dd89bc5ec88d1a67880b6cd4fb5e22049cdec3b86"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\backend-launched.json": {
+      "sha256": "daed3fb61ed9ac6cac6a16376c905b805bce46c73830b0ff3ed202fe13cde532"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\backend-ready.json": {
+      "sha256": "8e11f590f7ffeab712255c1c87ae4f9d11abf9443c6c775407f72b6626bac5ed"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\frontend-launched.json": {
+      "sha256": "6402946517de2be65e782c5686dcb449b291201600ef9a8e02058ec67312605f"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-presentation-review-native-v1\\initial-workspace.json": {
+      "sha256": "f4796dfc0900ae28297ec24cd499262e3ac0a5bfd4008f22cccb5ad8970fbb01"
+    }
+  },
+  "v5_runner_sha256": "2ee8b8568e1009f23356a802c261776f95d50e018dcf24ff9000d60157ac6391",
+  "prior_v4_failed_before_services": true
+}

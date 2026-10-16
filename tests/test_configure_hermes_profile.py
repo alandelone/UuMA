@@ -86,6 +86,7 @@ def test_brainstormer_profile_replaces_inherited_orchestrator_guard_permissions(
     assert set(config["mcp_servers"]["uuma-worker"]["tools"]["include"]) == {
         "register_direct_run", "get_assignment", "report_progress", "block_run",
         "submit_result", "brainstormer_search_topics", "brainstormer_get_context",
+        "brainstormer_get_decision_map", "brainstormer_set_active_question",
         "brainstormer_propose_transaction", "brainstormer_commit_safe_transaction",
         "brainstormer_calculate_capacity",
         "brainstormer_propose_project_topic",

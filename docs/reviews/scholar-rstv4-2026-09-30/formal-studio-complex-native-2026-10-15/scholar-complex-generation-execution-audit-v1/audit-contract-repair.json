@@ -1,0 +1,12 @@
+{
+  "current_gate": "verification/pending_review",
+  "original_generation_reexecuted": false,
+  "retained_failed_auditors": ["scholar-complex-generation-execution-audit-v1.py", "scholar-complex-generation-execution-audit-v2.py", "scholar-complex-generation-execution-audit-v3.py"],
+  "v1_context_error": "Studio job status SUCCEEDED differs from studio_model_calls status VALIDATED. The actual unchanged _model_call sets VALIDATED only after original realization validation succeeds.",
+  "v2_context_error": "Parent concurrently continued A213 response editing after A212, so readonly whole-state comparison must account for its exact already-logged successful PATCH/response-check operations rather than falsely assume exclusive A212 editing.",
+  "v3_context_error": "Figure SVG is intentionally rendered as a verified PNG in the actual PDF. Its labels are image pixels, not extractable PDF text. Keep original SVG labels, exact SVG/render hash and independent page-PNG visual inspection; do not claim nonexistent text extraction or invent OCR.",
+  "final_passing_auditor": "scholar-complex-generation-execution-audit-v4.py",
+  "v3_required_guards": "Generation six tables preserve all old rows and exact new job/calls/artifacts/version; other110 tables exact except explicitly matched successful concurrent response requests. For each changed comment, require exact actual logged author_decision/response_text; changed statuses and appended checks require an actual completed response-check request for that comment. All old check rows, links, sources and all original files remain exact. Preserve complete raw differences; do not classify concurrent edits as generation effects.",
+  "assertions_weakened": false,
+  "product_or_database_edits": false
+}

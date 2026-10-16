@@ -1,0 +1,37 @@
+[
+  {
+    "file": "app\\page.tsx",
+    "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+    "line": 91
+  },
+  {
+    "file": "app\\page.tsx",
+    "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+    "line": 151
+  },
+  {
+    "file": "app\\api\\studio-files\\[...path]\\route.ts",
+    "name": "RSTV4_API",
+    "line": 6
+  },
+  {
+    "file": "app\\api\\studio-files\\[...path]\\route.ts",
+    "name": "NEXT_PUBLIC_RSTV4_API",
+    "line": 6
+  },
+  {
+    "file": "components\\studio-workspace.tsx",
+    "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+    "line": 903
+  },
+  {
+    "file": "components\\studio-workspace.tsx",
+    "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+    "line": 1560
+  },
+  {
+    "file": "lib\\studio-api.ts",
+    "name": "NEXT_PUBLIC_RSTV4_API",
+    "line": 30
+  }
+]

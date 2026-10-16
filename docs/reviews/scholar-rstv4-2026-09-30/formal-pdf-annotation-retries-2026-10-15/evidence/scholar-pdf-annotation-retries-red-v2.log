@@ -1,0 +1,314 @@
+FFFFFFF.FFFFF.F                                                          [100%]
+================================== FAILURES ===================================
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes0] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change0/data/catalog.db')
+changes = {'field_name': 'DOI'}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes1] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change1/data/catalog.db')
+changes = {'decision': 'REOPEN', 'field_name': 'PDF', 'page_number': None, 'word_end': None, ...}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes2] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change2/data/catalog.db')
+changes = {'page_number': 2}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes3] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change3/data/catalog.db')
+changes = {'word_start': 1}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes4] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change4/data/catalog.db')
+changes = {'word_end': 2}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes5] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change5/data/catalog.db')
+changes = {'comment': 'A different note'}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+_____ test_reused_key_rejects_changed_payload_without_mutation[changes6] ______
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_reused_key_rejects_change6/data/catalog.db')
+changes = {'expected_annotation_id': 'another-head'}
+
+    @pytest.mark.parametrize("changes", [
+        {"field_name": "DOI"},
+        {"field_name": "PDF", "decision": "REOPEN", "page_number": None,
+         "word_start": None, "word_end": None},
+        {"page_number": 2}, {"word_start": 1}, {"word_end": 2},
+        {"comment": "A different note"},
+        {"expected_annotation_id": "another-head"},
+    ])
+    def test_reused_key_rejects_changed_payload_without_mutation(catalog: Path, changes: dict) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="Submission ID"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:53: Failed
+___________ test_new_write_rejects_outdated_head_without_mutation[] ___________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_new_write_rejects_outdate0/data/catalog.db')
+expected = ''
+
+    @pytest.mark.parametrize("expected", ["", "missing-head"])
+    def test_new_write_rejects_outdated_head_without_mutation(catalog: Path, expected: str) -> None:
+        record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="changed"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:76: Failed
+_____ test_new_write_rejects_outdated_head_without_mutation[missing-head] _____
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_new_write_rejects_outdate1/data/catalog.db')
+expected = 'missing-head'
+
+    @pytest.mark.parametrize("expected", ["", "missing-head"])
+    def test_new_write_rejects_outdated_head_without_mutation(catalog: Path, expected: str) -> None:
+        record_review_annotation(catalog, "f2", title_input(), WORDS)
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="changed"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:76: Failed
+___ test_matching_head_appends_and_old_comment_cannot_restore_old_selection ___
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_matching_head_appends_and0/data/catalog.db')
+
+    def test_matching_head_appends_and_old_comment_cannot_restore_old_selection(catalog: Path) -> None:
+        original = record_review_annotation(catalog, "f2", title_input(), WORDS)
+        newer = record_review_annotation(catalog, "f2", title_input(
+            submission_id="selection-newer", word_end=2, comment="New passage",
+            expected_annotation_id=original["annotation_id"],
+        ), WORDS)
+        assert newer["supersedes_annotation_id"] == original["annotation_id"]
+        before = snapshot(catalog)
+>       with pytest.raises(ValueError, match="changed"):
+E       Failed: DID NOT RAISE <class 'ValueError'>
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:92: Failed
+____________ test_concurrent_requests_serialize_key_and_head[True] ____________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_concurrent_requests_seria0/data/catalog.db')
+same_key = True
+
+    @pytest.mark.parametrize("same_key", [True, False])
+    def test_concurrent_requests_serialize_key_and_head(catalog: Path, same_key: bool) -> None:
+        barrier = Barrier(2)
+    
+        def write(index: int) -> tuple[str, object]:
+            annotation = title_input(submission_id="concurrent-same" if same_key else f"concurrent-{index}")
+            barrier.wait(timeout=10)
+            try:
+                return "saved", record_review_annotation(catalog, "f2", annotation, WORDS)
+            except ValueError as exc:
+                return "conflict", str(exc)
+    
+        with ThreadPoolExecutor(max_workers=2) as pool:
+>           results = list(pool.map(write, (1, 2)))
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:115: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+..\..\anaconda3\Lib\concurrent\futures\_base.py:619: in result_iterator
+    yield _result_or_cancel(fs.pop())
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\..\anaconda3\Lib\concurrent\futures\_base.py:317: in _result_or_cancel
+    return fut.result(timeout)
+           ^^^^^^^^^^^^^^^^^^^
+..\..\anaconda3\Lib\concurrent\futures\_base.py:456: in result
+    return self.__get_result()
+           ^^^^^^^^^^^^^^^^^^^
+..\..\anaconda3\Lib\concurrent\futures\_base.py:401: in __get_result
+    raise self._exception
+..\..\anaconda3\Lib\concurrent\futures\thread.py:58: in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\RSTV4\tests\test_catalog_annotation_retries.py:110: in write
+    return "saved", record_review_annotation(catalog, "f2", annotation, WORDS)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+..\RSTV4\src\rstv4\catalog_annotations.py:297: in record_review_annotation
+    return _insert_event(conn, {
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _
+
+conn = <sqlite3.Connection object at 0x0000028483794040>
+values = {'canonical_key_after': None, 'canonical_key_before': None, 'case_id': 'f2', 'comment': 'Original note', ...}
+
+    def _insert_event(conn: sqlite3.Connection, values: dict[str, Any]) -> dict[str, Any]:
+        event_id = f"review_annotation_{uuid4().hex}"
+        prior = _latest_for_field(conn, values["case_id"], values["field_name"])
+>       conn.execute(
+            """INSERT INTO catalog_review_annotations(
+               annotation_id,submission_id,case_id,paper_id,file_version_id,field_name,
+               decision,selected_text,page_number,word_start,word_end,comment,value_before,
+               value_after,canonical_key_before,canonical_key_after,reviewer_label,
+               supersedes_annotation_id,created_at)
+               VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)""",
+            (
+                event_id, values["submission_id"], values["case_id"], values["paper_id"],
+                values["file_version_id"], values["field_name"], values["decision"],
+                values.get("selected_text"), values.get("page_number"), values.get("word_start"),
+                values.get("word_end"), values.get("comment", ""), values.get("value_before"),
+                values.get("value_after"), values.get("canonical_key_before"),
+                values.get("canonical_key_after"), getpass.getuser(),
+                prior["annotation_id"] if prior else None, datetime.now(UTC).isoformat(),
+            ),
+        )
+E       sqlite3.IntegrityError: UNIQUE constraint failed: catalog_review_annotations.submission_id
+
+..\RSTV4\src\rstv4\catalog_annotations.py:82: IntegrityError
+___________ test_concurrent_requests_serialize_key_and_head[False] ____________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_concurrent_requests_seria1/data/catalog.db')
+same_key = False
+
+    @pytest.mark.parametrize("same_key", [True, False])
+    def test_concurrent_requests_serialize_key_and_head(catalog: Path, same_key: bool) -> None:
+        barrier = Barrier(2)
+    
+        def write(index: int) -> tuple[str, object]:
+            annotation = title_input(submission_id="concurrent-same" if same_key else f"concurrent-{index}")
+            barrier.wait(timeout=10)
+            try:
+                return "saved", record_review_annotation(catalog, "f2", annotation, WORDS)
+            except ValueError as exc:
+                return "conflict", str(exc)
+    
+        with ThreadPoolExecutor(max_workers=2) as pool:
+            results = list(pool.map(write, (1, 2)))
+        saved = [row for status, row in results if status == "saved"]
+>       assert len(saved) == (2 if same_key else 1)
+E       AssertionError: assert 2 == 1
+E        +  where 2 = len([{'annotation_id': 'review_annotation_7240e9906fbd40508e388c8552253e9b', 'canonical_key_after': None, 'canonical_key_b...on_6bf09d8dcbcd43aa955cdc52cdce3ed3', 'canonical_key_after': None, 'canonical_key_before': None, 'case_id': 'f2', ...}])
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:117: AssertionError
+__________ test_http_conflict_and_stale_head_leave_catalog_unchanged __________
+
+catalog = WindowsPath('C:/Users/Alandelone/AppData/Local/Temp/pytest-of-Alandelone/pytest-1135/test_http_conflict_and_stale_h0/data/catalog.db')
+
+    def test_http_conflict_and_stale_head_leave_catalog_unchanged(catalog: Path) -> None:
+        with TestClient(create_app(catalog.parent.parent)) as client:
+            words = client.get("/api/catalog/files/f2/pages/1/text").json()["words"]
+            assert [word["text"] for word in words[:4]] == [word["text"] for word in WORDS[:4]]
+            payload = title_input().model_dump()
+            first = client.post("/api/catalog/review/cases/f2/annotations", json=payload)
+            assert first.status_code == 201
+            before = snapshot(catalog)
+            for changes in ({"comment": "Changed intent"},
+                            {"submission_id": "new-stale-http", "expected_annotation_id": ""}):
+                conflict = client.post("/api/catalog/review/cases/f2/annotations", json={**payload, **changes})
+>               assert conflict.status_code == 409
+E               assert 201 == 409
+E                +  where 201 = <Response [201 Created]>.status_code
+
+..\RSTV4\tests\test_catalog_annotation_retries.py:166: AssertionError
+=========================== short test summary info ===========================
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes0]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes1]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes2]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes3]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes4]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes5]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_reused_key_rejects_changed_payload_without_mutation[changes6]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_new_write_rejects_outdated_head_without_mutation[]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_new_write_rejects_outdated_head_without_mutation[missing-head]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_matching_head_appends_and_old_comment_cannot_restore_old_selection
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_concurrent_requests_serialize_key_and_head[True]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_concurrent_requests_serialize_key_and_head[False]
+FAILED ..\RSTV4\tests\test_catalog_annotation_retries.py::test_http_conflict_and_stale_head_leave_catalog_unchanged
+13 failed, 2 passed in 5.07s

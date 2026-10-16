@@ -1,0 +1,21 @@
+{
+  "pid": 43452,
+  "identity": {
+    "pid": 43452,
+    "create_time": 1792071352.3587615,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v4.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 45192
+  },
+  "port": 8877,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz",
+  "models_allowed": 0,
+  "workers_started": 0,
+  "stop_file": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-layout-native-v4\\stop.request.json"
+}

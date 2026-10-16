@@ -1,0 +1,62 @@
+{
+  "status": "PREPARED_ADDITIONAL_SOFTWARE_FIXTURES_NOT_NATIVE_ACCEPTANCE",
+  "owned_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8",
+  "source_311_exact": true,
+  "schema_110_exact": true,
+  "all_previous_13_events_exact": true,
+  "all_previous_rows_preserved": true,
+  "all_previous_owned_non_db_files_exact": true,
+  "original_root_all_files_and_tables_exact": true,
+  "added_rows": {
+    "acquisition_jobs": 1,
+    "collections": 1,
+    "paper_identities": 2,
+    "papers": 2,
+    "source_file_versions": 2
+  },
+  "added_files": {
+    "data/software-fixtures/SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49/SOFTWARE_FIXTURE_parser_quality.pdf": "913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a",
+    "data/software-fixtures/SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49/SOFTWARE_FIXTURE_doi_only_identity.pdf": "46fecf608e8d572af12cc1d2ca43814b8f0ccbdb367697a14849d8a7a55ca863",
+    "data/artifacts/papers/software_fixture_rv_parser_paper_07b736b47e49/913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a/review/software_fixture_rv_parser_job_07b736b47e49-0/candidate.json": "852df6576449c04bcf95ef68c0b720fe537ed09b9a20b374b964094e91fbbbb6"
+  },
+  "parser": {
+    "job_id": "software_fixture_rv_parser_job_07b736b47e49",
+    "paper_id": "software_fixture_rv_parser_paper_07b736b47e49",
+    "file_version_id": "software_fixture_rv_parser_file_07b736b47e49",
+    "collection_id": "software_fixture_rv_paused_collection_07b736b47e49",
+    "collection_status": "PAUSED",
+    "status": "NEEDS_HUMAN",
+    "attempts": 0,
+    "fencing_token": 0,
+    "lease_owner": null,
+    "title": "SOFTWARE_FIXTURE Parser Quality Source",
+    "doi": "10.9898/rv-parser-07b736b47e49",
+    "pdf": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_parser_quality.pdf",
+    "candidate": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\artifacts\\papers\\software_fixture_rv_parser_paper_07b736b47e49\\913f7128a79c232a2b7c860cdf4ac86d20c95b361dcb20d50606e808e9f44e4a\\review\\software_fixture_rv_parser_job_07b736b47e49-0\\candidate.json",
+    "candidate_reference_entries": 5,
+    "source_reference_entries": 6,
+    "missing_reference": 6,
+    "missing_reference_page": 2,
+    "url": "http://127.0.0.1:52891/?view=review&case=software_fixture_rv_parser_job_07b736b47e49"
+  },
+  "single_doi_identity": {
+    "paper_id": "software_fixture_rv_doi_only_paper_07b736b47e49",
+    "file_version_id": "software_fixture_rv_doi_only_file_07b736b47e49",
+    "title": "SOFTWARE_FIXTURE DOI Only Identity Control",
+    "catalog_doi_before": "10.9898/rv-doi-before-07b736b47e49",
+    "source_doi": "10.9898/rv-doi-source-07b736b47e49",
+    "doi_match": false,
+    "title_token_ratio": 1,
+    "expected_visible_editor": "DOI only",
+    "pdf": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_rv01_rv02_07b736b47e49\\SOFTWARE_FIXTURE_doi_only_identity.pdf",
+    "url": "http://127.0.0.1:52891/?view=review&case=software_fixture_rv_doi_only_file_07b736b47e49"
+  },
+  "model_calls": 0,
+  "workers_started": 0,
+  "parser_executions": 0,
+  "parse_run_rows_added": 0,
+  "attempt_rows_added": 0,
+  "annotation_posts_by_preparation": 0,
+  "visual_review": "pending agent inspection",
+  "native_acceptance_complete": false
+}

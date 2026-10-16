@@ -1,0 +1,40 @@
+{
+  "compile": {
+    "pdf_info": "Creator:         LaTeX with hyperref\nProducer:        xdvipdfmx (20250410)\nCreationDate:    Thu Oct 15 15:52:53 2026 Malay Peninsula Standard Time\nCustom Metadata: no\nMetadata Stream: no\nTagged:          no\nUserProperties:  no\nSuspects:        no\nForm:            none\nJavaScript:      no\nPages:           2\nEncrypted:       no\nPage size:       612 x 792 pts (letter)\nPage rot:        0\nFile size:       50360 bytes\nOptimized:       no\nPDF version:     1.5\n",
+    "overfull_box_messages": [],
+    "warning_lines": [
+      "Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)",
+      "LaTeX Warning: No \\author given."
+    ],
+    "compiler": "XeTeX/xdvipdfmx from actual preserved log and PDF metadata",
+    "tex_product_uses_no_shell_escape_and_restrictive_openin_openout": true,
+    "full_compile_subprocess_args_not_separately_traced": true
+  },
+  "geometry": [
+    {
+      "width": 612.0,
+      "height": 792.0,
+      "word_count": 199,
+      "outside_page": [],
+      "bounds": [
+        72.0,
+        113.215342,
+        540.011299,
+        752.255275
+      ]
+    },
+    {
+      "width": 612.0,
+      "height": 792.0,
+      "word_count": 182,
+      "outside_page": [],
+      "bounds": [
+        72.0,
+        73.454616,
+        540.011299,
+        752.255275
+      ]
+    }
+  ],
+  "visual_review": "Both rendered pages inspected: complete table qualification wraps, intact SVG, Alpha prose and 3 source references; no clipping or overflow observed."
+}

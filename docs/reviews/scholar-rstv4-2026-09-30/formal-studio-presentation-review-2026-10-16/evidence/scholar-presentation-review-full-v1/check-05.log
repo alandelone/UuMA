@@ -1,0 +1,12 @@
+PASS complete plan UI and Project metadata use actual Method and files
+PASS preview binds exact selection and unchanged form preserves manifest
+PASS uncertain request survives refresh and retries same body
+PASS late start completion retains original Track receipt without replacing other draft
+PASS storage failure prevents submitting execution
+PASS changed context requires explicit comparison; grant availability does not mint approval
+PASS RUNNING means saved state and does not offer another execution
+PASS late file lookup cannot change selected owner directory
+PASS Project creation preserves a separate plan and unsent result draft
+PASS changing the selected directory invalidates original file choices
+PASS unavailable input and script choices remain visible and can be deliberately removed
+PASS 11 experiment controller scenarios

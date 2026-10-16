@@ -1,0 +1,83 @@
+--- a/writing-studio/components/studio-workspace.tsx
++++ b/writing-studio/components/studio-workspace.tsx
+@@ -376,12 +376,12 @@
+         </PopoverContent>
+       </Popover>
+       <details className="block-menu" inert={isDragging}>
+-        <summary aria-label="思想块菜单">•••</summary>
++        <summary aria-label="思想块菜单">•••</summary><div className="block-menu-actions">
+         <BlockMove id={thought.id} />
+         <button type="button" onClick={onDelete}>
+           <Trash2 /> 删除思想块
+         </button>
+-      </details>
++      </div></details>
+     </div>
+     <DropZone target={{ kind: 'thought', id: thought.id, placement: 'after' }} />
+     </>
+@@ -2565,14 +2565,14 @@
+             onFocus={select}
+             onChange={(event) => commit((draft) => { draft.sections[sectionIndex].role = event.target.value; })}
+           />
+-          <details className="block-menu"><summary aria-label="章节操作">•••</summary><BlockMove id={section.id} /><button type="button" onClick={() => commit((draft) => {
++          <details className="block-menu"><summary aria-label="章节操作">•••</summary><div className="block-menu-actions"><BlockMove id={section.id} /><button type="button" onClick={() => commit((draft) => {
+             const target = draft.sections[sectionIndex];
+             target.block_order ||= target.paragraphs.map((item) => item.id);
+             target.paragraph_groups ||= [];
+             const id = uid('paragraph_group');
+             target.paragraph_groups.push({ id, label: '', paragraph_ids: [] });
+             target.block_order.push(id);
+-          }, 'ADD_PARAGRAPH_GROUP')}>添加空段落组</button><button type="button" onClick={() => commit((draft) => deleteSectionTree(draft,section.id), 'DELETE_SECTION_TREE')}><Trash2 /> 删除章节与子项</button></details>
++          }, 'ADD_PARAGRAPH_GROUP')}>添加空段落组</button><button type="button" onClick={() => commit((draft) => deleteSectionTree(draft,section.id), 'DELETE_SECTION_TREE')}><Trash2 /> 删除章节与子项</button></div></details>
+         </div>
+         <div id={`body-${section.id}`} inert={isDragging} hidden={folded}>
+         <SortableContext items={section.block_order || section.paragraphs.map((item) => item.id)} strategy={verticalListSortingStrategy}>
+@@ -2638,7 +2638,7 @@
+         <div className="group-heading">
+           <BlockControls id={group.id} kind="paragraph_group" label={group.label || '未定段落组'}><button type="button" className="block-drag-handle" aria-label={`拖动段落组 ${group.label}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); remove(); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
+           {label}
+-          <details className="block-menu"><summary aria-label="段落组操作">•••</summary><BlockMove id={group.id} /><Ungroup id={group.id} /><button type="button" onClick={remove}><Trash2 /> 删除组及其段落</button></details>
++          <details className="block-menu"><summary aria-label="段落组操作">•••</summary><div className="block-menu-actions"><BlockMove id={group.id} /><Ungroup id={group.id} /><button type="button" onClick={remove}><Trash2 /> 删除组及其段落</button></div></details>
+         </div>
+         <div id={`body-${group.id}`} inert={isDragging} hidden={folded}>
+           <SortableContext items={group.paragraph_ids} strategy={verticalListSortingStrategy}>
+@@ -2710,7 +2710,7 @@
+           <BlockControls id={paragraph.id} kind="paragraph" label={paragraph.purpose || `Paragraph ${paragraphIndex + 1}`}><button type="button" className="block-drag-handle" aria-label={`拖动段落 ${paragraph.purpose || paragraphIndex + 1}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); commit((draft) => { draft.sections[sectionIndex].paragraphs.splice(paragraphIndex, 1); }, 'DELETE_PARAGRAPH'); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
+           <Input aria-label="段落目的" value={paragraph.purpose} placeholder="这个段落要完成什么？" onFocus={() => setSelection({ type: 'paragraph', id: paragraph.id, label: paragraph.purpose || `Paragraph ${paragraphIndex + 1}`, role: section.role })} onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].purpose = event.target.value; })} />
+           <Input aria-label="段落组织范式" value={paragraph.paradigm} placeholder="范式：Funnel / MEAL / 自定义" onFocus={() => setSelection({ type: 'paragraph', id: paragraph.id, label: paragraph.purpose || `Paragraph ${paragraphIndex + 1}`, role: section.role })} onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].paradigm = event.target.value; })} />
+-          <details className="block-menu"><summary aria-label="段落操作">•••</summary><BlockMove id={paragraph.id} /><button type="button" onClick={() => commit((draft) => { draft.sections[sectionIndex].paragraphs.splice(paragraphIndex, 1); }, 'DELETE_PARAGRAPH')}><Trash2 /> 删除段落</button></details>
++          <details className="block-menu"><summary aria-label="段落操作">•••</summary><div className="block-menu-actions"><BlockMove id={paragraph.id} /><button type="button" onClick={() => commit((draft) => { draft.sections[sectionIndex].paragraphs.splice(paragraphIndex, 1); }, 'DELETE_PARAGRAPH')}><Trash2 /> 删除段落</button></div></details>
+         </div>
+         <div id={`body-${paragraph.id}`} inert={isDragging} hidden={folded}>
+         <SortableContext items={paragraph.intents.map((item) => item.id)} strategy={verticalListSortingStrategy}>
+@@ -2841,7 +2841,7 @@
+         <div className="intent-heading">
+           <BlockControls id={intent.id} kind="intent" label={intent.label || '未定 Intent'}><button type="button" className="block-drag-handle" aria-label={`拖动 Intent ${intent.label || intentIndex + 1}`} {...attributes} {...listeners} onKeyDown={(event) => { if (event.key === 'Delete') { event.preventDefault(); commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].intents.splice(intentIndex, 1); }, 'DELETE_INTENT'); } else listeners?.onKeyDown?.(event); }}><GripVertical /></button></BlockControls>
+           <Input aria-label="Intent 标签" value={intent.label} placeholder="Intent 可以暂时未定" onFocus={select} onChange={(event) => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].intents[intentIndex].label = event.target.value; })} />
+-          <details className="block-menu"><summary aria-label="Intent 操作">•••</summary><BlockMove id={intent.id} /><button type="button" onClick={() => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].intents.splice(intentIndex, 1); }, 'DELETE_INTENT')}><Trash2 /> 删除 Intent</button></details>
++          <details className="block-menu"><summary aria-label="Intent 操作">•••</summary><div className="block-menu-actions"><BlockMove id={intent.id} /><button type="button" onClick={() => commit((draft) => { draft.sections[sectionIndex].paragraphs[paragraphIndex].intents.splice(intentIndex, 1); }, 'DELETE_INTENT')}><Trash2 /> 删除 Intent</button></div></details>
+         </div>
+         <div id={`body-${intent.id}`} inert={isDragging} hidden={folded}>
+         {mappedOriginalTarget ? <div className="rounded border p-2 text-sm" aria-label="已对应的原作者 Intent">
+--- a/writing-studio/app/globals.css
++++ b/writing-studio/app/globals.css
+@@ -750,10 +750,18 @@
+   background: var(--muted);
+ }
+ 
+-.block-menu[open] button {
++.block-menu-actions {
+   position: absolute;
+   right: 0;
++  top: 100%;
+   z-index: 20;
++  display: grid;
++  gap: 0.25rem;
++  width: max-content;
++}
++
++.block-menu[open] .block-menu-actions > button {
++  position: static;
+   display: flex;
+   width: max-content;
+   align-items: center;

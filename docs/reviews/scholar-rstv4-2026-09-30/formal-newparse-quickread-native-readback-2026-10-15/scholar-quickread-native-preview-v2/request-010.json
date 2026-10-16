@@ -1,0 +1,7 @@
+{
+  "method": "GET",
+  "path": "/api/catalog/summary",
+  "query": "",
+  "body_utf8": null,
+  "allowed": true
+}

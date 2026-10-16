@@ -1,0 +1,24 @@
+{
+  "identity": {
+    "pid": 47016,
+    "create_time": 1792086022.6146116,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 27312
+  },
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-native-v1.py",
+    "serve"
+  ],
+  "port": 8877,
+  "tool_observation": "Use backend-ready.json actual server PID, which may be a descendant of the Windows venv launcher."
+}

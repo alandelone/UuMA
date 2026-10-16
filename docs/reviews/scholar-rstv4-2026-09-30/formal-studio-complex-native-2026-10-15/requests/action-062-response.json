@@ -1,0 +1,19 @@
+{
+  "status_code": 201,
+  "body": {
+    "asset_id": "asset_65e4b91ba806497e9afd0c7c514c7d1b",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "filename": "software-only-figure.svg",
+    "media_type": "image/svg+xml",
+    "size_bytes": 584,
+    "sha256": "ae9e803a67deadce288524b14932f4bb190fc9c7125a16164c7d355104e58084",
+    "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\assets\\ae9e803a67deadce-software-only-figure.svg",
+    "asset_kind": "FIGURE",
+    "status": "READY",
+    "created_at": "2026-10-15T07:44:25.733350+00:00",
+    "metadata": {
+      "root": "svg",
+      "safe": true
+    }
+  }
+}

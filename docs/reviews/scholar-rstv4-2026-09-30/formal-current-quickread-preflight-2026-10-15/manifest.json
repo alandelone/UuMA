@@ -1,0 +1,14 @@
+{
+  "files": {
+    "acceptance.md": "67c17fe25cfbbc49877e40132d19de492a30945112ceb820324eb4ea3da53a87",
+    "verification.json": "2539d9ce3f3f861325cb38d75ff9fc6a9d9ccd51f31c154bffe19602062337f9",
+    "evidence/before-all-105-tables.json": "d6be5178aa1035b30158bd3bbe396b148028abf657677c8947247c1d388c5db7",
+    "evidence/before-files.json": "8c3d7694b39c9fbe352c3b6f02da1c3a015230040b51378bcfcfad96aebe6ec0",
+    "evidence/budget-audit.json": "2a042d751646c804ad983f1c5e220ee681c71303f6742487ee90d2166857c1f1",
+    "evidence/gateway-diagnostic.json": "e4a84e9050ac4d3f12b01d3c93c4f2ec4b7f98dcbb687a34ebfbbaa7bbe4e6cd",
+    "evidence/gateway-health.json": "356a8dfb5eadfe84872c8b018a2ab50e3c6bcc9853f441d1a81a535df2dddb07",
+    "evidence/preflight.json": "a5fed88e80afe73673b34991a3f5d04471ea25a0f2db05cf8f3844beaae1084a",
+    "evidence/proposed-resume.json": "36b1881699e7fa2619ddf45797c430a55d9d9d8eee98969c9ee8331a07e39bee",
+    "evidence/source-vector-311.json": "829cba845e3e359a964a84b4e1135adff8542d55261752a98abac39cbf28be12"
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "status": "PASS_CURRENT_NEW311_READ_ONLY_NATIVE_RECHECK",
+  "all_110_tables_exact_pre_prompt_fix": true,
+  "all_13_events_exact": true,
+  "all_8_added_fixture_rows_exact": true,
+  "schema_exact": true,
+  "source_new311_exact": true,
+  "other_310_files_exact_old311": true,
+  "original_root_all_files_and_tables_exact": true,
+  "all_4_fixture_pdfs_and_candidate_exact": true,
+  "new_service_http_requests": 19,
+  "new_service_annotation_posts": 0,
+  "new_service_parser_actions_or_model_calls": 0,
+  "native_ui_capture_steps": 126,
+  "fixed_doi_only_prompt_observed": "请核对：DOI。在右侧 PDF 中拖选对应文字，再点“标为 DOI”。",
+  "both_flag_prompt_and_original_comment_restored_in_current_source_main": true,
+  "two_actual_chrome_screenshot_hashes": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\native-fixed-doi-only.png": "2560b99657f9506a66047266347852ad3236b7190a52b5aff1cd711ccfd32f4d",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-prompt-fixed-v1\\native-main-reopened.png": "abfe7be10ea53f2cf2ce5b7f8299029c7f3cf741b2ee0b088299d94c20b09dc4"
+  },
+  "screenshots_visually_inspected": true,
+  "native_acceptance_complete": false
+}

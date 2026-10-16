@@ -1,0 +1,12 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/jobs",
+  "body": {
+    "kind": "GENERATE",
+    "input_revision": 86,
+    "request": {
+      "layout_replay_version_id": "manuscript_version_e1c764ab2d5a4e97898eda9f5d815d01"
+    }
+  },
+  "body_sha256": "340298284650e2d38215e53e15012dff08ae970cd22e01bcb0baa59aa8e8d693"
+}

@@ -1,0 +1,104 @@
+{
+  "status": "READ_ONLY_SOURCE_FOUND_COPY_AND_NATIVE_UI_NOT_EXECUTED",
+  "requirement": "多条 Sort 支持不同方向与优先级；默认更新倒序，相同值按 paper_id 稳定排序；每页 50 篇",
+  "source_db": "C:/Users/Alandelone/CodeSpace_Local/RSTV4/data/catalog.db",
+  "source_root": "C:/Users/Alandelone/CodeSpace_Local/RSTV4",
+  "source_kind": "existing real Catalog production data already read-only audited in this task; not a newly seeded software fixture",
+  "source_raw_sha256": "24ade014972da14c8b2b03c7a506a89934c9e0e310048824806f97fdc5b9dff3",
+  "source_raw_bytes": 14106624,
+  "source_tables": 83,
+  "total_unique_papers": 3177,
+  "quarantined_papers": 1980,
+  "expected_visible_unique_papers": 1197,
+  "expected_year_present": 80,
+  "expected_tie_group": {
+    "published_year": null,
+    "authors": "",
+    "count": 1117
+  },
+  "source_evidence": [
+    ".tmp/scholar_acceptance_probe.py:PRODUCTION",
+    ".tmp/scholar-acceptance-results.json:production_counts",
+    "docs/reviews/scholar-rstv4-2026-09-30/acceptance-evidence.json:production_counts"
+  ],
+  "copy_contract": {
+    "new_destination_only": true,
+    "method": "SQLite read-only source consistent backup into new owned root/data/catalog.db; retain all original83 tables/rows/schema; original source remains read-only",
+    "service_init": "Current constructor migration may occur only in new owned copy; capture exact schema/old rows before/after. Explicit version/application timestamp metadata only; added new tables empty unless a justified actual read initializes a declared row.",
+    "no_new_papers_seeds_or_models": true,
+    "source_paths": "Preserve original catalog metadata/paths, use newowned cache/output; no source PDF needs opening for CA07",
+    "worker_and_models": "never start any acquisition/parse/quickread/model/extractor/experiment worker; gateways deny all tasks",
+    "http": "GET and actual read-only POST /api/catalog/papers/query only; other writes403. UI preferences local to new origin. No Collection writes.",
+    "browser": "New owned tab/port. Never touch kept unresponsive IAB tab2 or Writing Studio. No CPU emulation."
+  },
+  "native_checks": [
+    {
+      "id": "default",
+      "sorts": [],
+      "expected": "1197 visible; updated_at desc, paper_id asc stable; Page1 50rows, Page2 50rows, no duplicateIDs; no quarantine"
+    },
+    {
+      "id": "mixed_direction_and_priority",
+      "sorts": [
+        {
+          "field": "published_year",
+          "direction": "desc"
+        },
+        {
+          "field": "updated_at",
+          "direction": "asc"
+        }
+      ],
+      "expected": "Years 2025..2019 then null; within same year oldest first. Rebuild via remove/add to make updated_at asc first and published_year desc second; independent tuple order changes while each pair obeys stated priority."
+    },
+    {
+      "id": "tie_and_pagination",
+      "sorts": [
+        {
+          "field": "published_year",
+          "direction": "desc"
+        },
+        {
+          "field": "authors",
+          "direction": "asc"
+        }
+      ],
+      "filter": {
+        "type": "group",
+        "operator": "and",
+        "rules": [
+          {
+            "field": "published_year",
+            "operator": "is_empty"
+          },
+          {
+            "field": "authors",
+            "operator": "is_empty"
+          }
+        ]
+      },
+      "expected": "1117 visible genuine tied rows; all keys equal, exact globalpaper_id asc. Page1=first50 IDs, Page2=next50, backreturnsfirst50; filter/sorts retained, no gaps/duplicates."
+    }
+  ],
+  "read_only_db_allowance": "Zero logical row/schema changes during UI after explicit startup baseline; source raw hash and83table rows unchanged before/after. New browser local prefs may change. Any unexpected read writes retained and diagnosed, never broad whitelist.",
+  "no_acceptance_claims": [
+    "CA07 native not executed by this child",
+    "No source science quality accepted",
+    "No original118 or all11 completion"
+  ],
+  "original_schema_version": {
+    "user_version": {
+      "user_version": 0
+    },
+    "metadata_tables": {
+      "schema_version": [
+        {
+          "component": "catalog",
+          "version": 5,
+          "applied_at": "2026-09-27 06:56:16"
+        }
+      ],
+      "legacy_migration_sources": []
+    }
+  }
+}

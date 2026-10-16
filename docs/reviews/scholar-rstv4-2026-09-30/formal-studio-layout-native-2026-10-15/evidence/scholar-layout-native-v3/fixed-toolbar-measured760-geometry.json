@@ -1,0 +1,34 @@
+{
+  "buttons": [
+    {
+      "clientWidth": 90,
+      "label": "仅重新排版",
+      "rect": {
+        "bottom": -34,
+        "height": 31,
+        "left": 545.765625,
+        "right": 637.765625,
+        "top": -65,
+        "width": 92
+      },
+      "scrollWidth": 90
+    },
+    {
+      "clientWidth": 88,
+      "label": "Generate",
+      "rect": {
+        "bottom": -34,
+        "height": 31,
+        "left": 642.765625,
+        "right": 733,
+        "top": -65,
+        "width": 90.234375
+      },
+      "scrollWidth": 88
+    }
+  ],
+  "viewport": {
+    "height": 900,
+    "width": 760
+  }
+}

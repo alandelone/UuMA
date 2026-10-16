@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/review-rounds",
+  "query": "",
+  "status": 200,
+  "seconds": 0.06199999999807915,
+  "response_sha256": "77fccaf7f5db69ddf7862b3eb077b5d03d947f9dae2d0073e85dc904c2f664a8",
+  "origin": "http://127.0.0.1:56581",
+  "request_json": null
+}

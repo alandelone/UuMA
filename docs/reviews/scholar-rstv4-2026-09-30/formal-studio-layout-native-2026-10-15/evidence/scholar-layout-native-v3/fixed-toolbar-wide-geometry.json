@@ -1,0 +1,44 @@
+[
+  {
+    "clientWidth": 65,
+    "hit": "Done",
+    "label": "Done",
+    "rect": {
+      "bottom": 48.140625,
+      "height": 31,
+      "left": 989.5,
+      "right": 1056.765625,
+      "top": 17.140625,
+      "width": 67.265625
+    },
+    "scrollWidth": 65
+  },
+  {
+    "clientWidth": 90,
+    "hit": "仅重新排版",
+    "label": "仅重新排版",
+    "rect": {
+      "bottom": 48.140625,
+      "height": 31,
+      "left": 1061.765625,
+      "right": 1153.765625,
+      "top": 17.140625,
+      "width": 92
+    },
+    "scrollWidth": 90
+  },
+  {
+    "clientWidth": 88,
+    "hit": "Generate",
+    "label": "Generate",
+    "rect": {
+      "bottom": 48.140625,
+      "height": 31,
+      "left": 1158.765625,
+      "right": 1249,
+      "top": 17.140625,
+      "width": 90.234375
+    },
+    "scrollWidth": 88
+  }
+]

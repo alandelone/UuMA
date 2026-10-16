@@ -1,0 +1,96 @@
+[
+  {
+    "request": "action-088-request.json",
+    "method": "PATCH",
+    "comment_id": "comment_f39d35831bd0472bb9282ab116e90611",
+    "payload": {
+      "author_decision": "SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval.",
+      "response_text": "",
+      "expected_content_sha256": "4c5eebf35259c007e92685bf4635e0d2171552acbbfdbff7b995a3500a320f11"
+    }
+  },
+  {
+    "request": "action-089-request.json",
+    "method": "PATCH",
+    "comment_id": "comment_f39d35831bd0472bb9282ab116e90611",
+    "payload": {
+      "author_decision": "SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval.",
+      "response_text": "SOFTWARE_FIXTURE reply. We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences. We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences. This verifies software provenance and compiled locations only; no scientific approval is asserted.",
+      "expected_content_sha256": "742e9cb0e28e8b9b0d274ca933fc093c27d1f8d71a71a4679643f5d47a1820c5"
+    }
+  },
+  {
+    "request": "action-090-request.json",
+    "method": "POST_RESPONSE_CHECK",
+    "comment_id": "comment_f39d35831bd0472bb9282ab116e90611",
+    "payload": {
+      "request_id": "396d588d-7350-4bd7-9f2e-e8848195069b",
+      "context_sha256": "30e1f693668d9ea1880d8bcf1a0d74a8e42901934dda192242d68a7743a2cdd0",
+      "outcome": "MODIFIED",
+      "claims": [
+        {
+          "start": 24,
+          "end": 151,
+          "text": "We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences.",
+          "offset_unit": "utf16",
+          "evidence_ids": [
+            "62d134a7ca7c85bbfeee82d2c1e6064d7b1aef8270b2370b0e570a50c7ef7c41",
+            "12588bfafec7bbad5cb99b0e52728ef6b321b83217009c559e1ccc84aba27a63",
+            "78c6c9e38f85d77b7f580b198ab5c8c3d17e59b8ef52e00de4e4f150b27eca41"
+          ]
+        },
+        {
+          "start": 152,
+          "end": 283,
+          "text": "We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences.",
+          "offset_unit": "utf16",
+          "evidence_ids": [
+            "5fc506a38339590081a4302c8eab3e6e8b93deb1b508174fe035e961f8429505",
+            "7b4512856729eb82aca7997a1679c6d033d504c5f1d622a0877dde9bade1d375"
+          ]
+        }
+      ],
+      "acknowledged_all_assertions": true
+    }
+  },
+  {
+    "request": "action-091-request.json",
+    "method": "PATCH",
+    "comment_id": "comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+    "payload": {
+      "author_decision": "SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given.",
+      "response_text": "",
+      "expected_content_sha256": "0bdeec03f0df3a4ee67b8968522602ab2ac1fc9baceef52086202bd13cbcaf01"
+    }
+  },
+  {
+    "request": "action-092-request.json",
+    "method": "PATCH",
+    "comment_id": "comment_0acc6bedbeeb4b8191786b5d1e59f3f5",
+    "payload": {
+      "author_decision": "SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given.",
+      "response_text": "SOFTWARE_FIXTURE pending reply. Intent-label, moved/deleted structure, citation identity and material changes are recorded, but a complete semantic attribution to final prose has not been established. The temporary wording was reverted and must not count as a completed prose amendment.",
+      "expected_content_sha256": "27edbecae55a8f0a865c8554bc8291de53412fb83af545a4d97d4eba906c1f5a"
+    }
+  },
+  {
+    "request": "action-093-request.json",
+    "method": "PATCH",
+    "comment_id": "comment_342fc9f8af994f599623410886be6877",
+    "payload": {
+      "author_decision": "SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments.",
+      "response_text": "",
+      "expected_content_sha256": "bf2a252a3648b6d851d693d6282c4aa1820c77f72b8c1a4f0e4057aa4df1a099"
+    }
+  },
+  {
+    "request": "action-094-request.json",
+    "method": "PATCH",
+    "comment_id": "comment_342fc9f8af994f599623410886be6877",
+    "payload": {
+      "author_decision": "SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments.",
+      "response_text": "SOFTWARE_FIXTURE pending reply. The Beta citation identity and the fictional table and figure are saved in v6, but their complete typed attribution to final prose remains unverified. No completed scientific amendment or scientific approval is asserted.",
+      "expected_content_sha256": "b46b11be6fc461c3b82e488e97e5b6ddba382314f9e4440d5bdfc651aefcea8b"
+    }
+  }
+]

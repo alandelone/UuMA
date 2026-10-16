@@ -1,0 +1,63 @@
+{
+  "status": "APPLIED_LAYOUT_CONTRACT_AND_SERVICE_INTEGRATION_TESTS_EXACT_AUDITED",
+  "files": {
+    "RSTV4/src/rstv4/studio.py": {
+      "before_sha256": "41949007432e9fe7e71fbbe9a6f0b53d4b658ae537a5faf881ea60da757db7c8",
+      "after_sha256": "37bd71bd6dc33d4f1d7768c2f7a3b42a49f64e6793192707cab2d6bfc9336c6f",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "RSTV4/src/rstv4/studio_context.py": {
+      "before_sha256": "f0b161b010d7fc9511f1d3140eb46486822c8ada7444acdc6139ea607e2e5e4f",
+      "after_sha256": "b83914bae142d79f6fe59483f62d298efcd749b15d76161d4e05e8ca160c34ed",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "RSTV4/src/rstv4/studio_layout.py": {
+      "before_sha256": null,
+      "after_sha256": "5950008c8ee7e54e5b22e7e7c9c04705617736d7231a15d51a6564c70cfb9d72",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "RSTV4/src/rstv4/studio_read_views.py": {
+      "before_sha256": "49249b7075e29b43de24fdb4ad24cdf052f04e4af566c8ae85cb20ad7598a568",
+      "after_sha256": "6180716f9c3c815b32cf05c5bbf8ea591ce9a42e87e270f0fe7eea4bb139e78f",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "RSTV4/src/rstv4/studio_revision_mapping.py": {
+      "before_sha256": "af384ca5b1f5ce078e543c41bbb4f916d9a2e8fca651713adee3c094d04147f6",
+      "after_sha256": "ea47bd78656f94270c79275e0f8373b33e790945ab83709954dc55f641533457",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "RSTV4/tests/test_studio_layout.py": {
+      "before_sha256": null,
+      "after_sha256": "4eac46147f3c701e489443f0ea2c279ab1238956c7ce8f644997bd7e43db2e49",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "writing-studio/components/studio-response-review.tsx": {
+      "before_sha256": "af03a27fe60c6c43e98287d95331f5e300b8e30da4ccce958a9d40d77c35d060",
+      "after_sha256": "6dd9413820b940be823f385cca54bb319f761a16a92028adb97c49780c3aa506",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "writing-studio/components/studio-workspace.tsx": {
+      "before_sha256": "7efdb6f9f2a985cc189c0d7cc571b5febd4114964c3d338a48e1b0cfd547f031",
+      "after_sha256": "308215348681286bf137cf2f35cefaebacb3e636dec451280b6da390ef7e794d",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "writing-studio/lib/studio-types.ts": {
+      "before_sha256": "c01b0c0e177a0e15579654fd8b788dd6538e4d28b57980e9f06076f4265111d8",
+      "after_sha256": "ab02bac88c588d6a96b9a8289aa20393e98e811e58b31d6c0035ff1e837763ad",
+      "exact_candidate_plus_accepted_menu_with_declared_LF_to_CRLF": true
+    },
+    "RSTV4/tests/test_studio_layout_integration.py": {
+      "before_sha256": null,
+      "after_sha256": "1053061db25b03e8f155a5489a4c53625f553dece997ab20a3859272de3b9d06"
+    }
+  },
+  "all_other_frozen_backend311_frontend91_exact": true,
+  "accepted_menu_wrappers_and_css_preserved": true,
+  "initial_apply_audit_failure_retained": true,
+  "git_autocrlf_all_nine_files_exact": true,
+  "nested_git_expected_copy_skipped_corrected_by_five_exact_unique_hunks": true,
+  "patch_reapplied": false,
+  "schema_changes": false,
+  "native_acceptance": false,
+  "final11_complete": false
+}

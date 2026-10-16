@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_f39d35831bd0472bb9282ab116e90611/response-review",
+  "query": "",
+  "status": 200,
+  "seconds": 0.18800000000192085,
+  "response_sha256": "4c7eecb13a874d986b70ed2c602c2bc0beace262f490c5e55ef22aa82e336ce0",
+  "origin": "http://127.0.0.1:54375"
+}

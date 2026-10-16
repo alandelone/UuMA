@@ -1,0 +1,108 @@
+{
+  "status": "PREPARATION_ONLY_NOT_EXECUTED",
+  "source_root": "C:/Users/Alandelone/AppData/Local/Temp/scui-g11-native-22n_zg_d",
+  "source_db_relative": "data/catalog.db",
+  "sealed_logical_baseline": "docs/reviews/scholar-rstv4-2026-09-30/formal-gpu-parser-recovery-2026-10-14/actual-execution/actual-mineru-once-after-all-tables.json",
+  "sealed_logical_baseline_sha256": "d713569c259e9b2cf4f86a4488280f9806235e6dda9654d8a27ff7526932cb2f",
+  "expected_tables": 105,
+  "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+  "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+  "pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+  "pdf_bytes": 1827,
+  "source_storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+  "native_relative_url": "/?view=review&case=source_file_491d18ddee7958c95deb123a188280d5",
+  "expected_source_impact": {
+    "research_nodes": 0,
+    "manuscripts": 0,
+    "jobs": [
+      {
+        "job_id": "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+        "job_type": "LOCATE_PDF",
+        "status": "READY",
+        "attempts": 1,
+        "fencing_token": 1
+      },
+      {
+        "job_id": "job_fe4651959298eab54d88abd9edaf6760",
+        "job_type": "QUICK_READ",
+        "status": "READY",
+        "attempts": 0,
+        "fencing_token": 0
+      }
+    ],
+    "terminal_jobs_excluded": true
+  },
+  "allowed_write_tables": {
+    "source_file_versions": {
+      "existing_rows": 1,
+      "fields": [
+        "identity_status",
+        "validation_json"
+      ],
+      "sequence": [
+        "VERIFIED",
+        "NEEDS_REVIEW",
+        "VERIFIED"
+      ],
+      "immutable_fields": [
+        "file_version_id",
+        "paper_id",
+        "sha256",
+        "size_bytes",
+        "mime_type",
+        "storage_path",
+        "acquisition_method",
+        "source_url",
+        "created_at"
+      ]
+    },
+    "catalog_review_actions": {
+      "append_only": 2,
+      "actions": [
+        "REOPEN_IDENTITY",
+        "APPROVE_IDENTITY"
+      ],
+      "case_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "preserve_all_old_rows": true
+    },
+    "acquisition_jobs": {
+      "only_existing_ids": [
+        "job_ce6c4d42d5f07ead8f5bd6d21189427c",
+        "job_fe4651959298eab54d88abd9edaf6760"
+      ],
+      "no_append_expected": true,
+      "allowed_fields": [
+        "status",
+        "fencing_token",
+        "lease_owner",
+        "lease_expires_at",
+        "last_error_code",
+        "last_error_detail",
+        "result_json",
+        "updated_at",
+        "available_at"
+      ],
+      "attempts_unchanged": true,
+      "input_digest_and_input_json_exact": true,
+      "intermediate": "NEEDS_HUMAN, PDF_IDENTITY, SOURCE_REVIEW_REOPENED, fence +1",
+      "final": "READY, same attempt count, same inputs, no worker execution",
+      "succeeded_skipped_failed_terminal_exact": true
+    }
+  },
+  "forbidden": [
+    "direct SQL mutation",
+    "model/worker/parser/extractor starts",
+    "retry any existing terminal job",
+    "scientific proposals/approvals/binding restores",
+    "new source or title/DOI mismatch fabrication",
+    "source path rewrites",
+    "private GPU config or weights copy",
+    "opening/changing/closing user-kept unresponsive IAB tab2",
+    "product/src/tests/scripts edits",
+    "shared session/HANDOFF/gate writes by child"
+  ],
+  "expected_new_publications": 0,
+  "expected_new_models": 0,
+  "expected_new_workers": 0,
+  "expected_new_attempts": 0
+}

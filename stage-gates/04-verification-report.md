@@ -1,5 +1,29 @@
 # Verification Report
 
+## 2026-10-16 当前源码G03/G04综合实跑进度
+
+421源码无新增产品改动。G03真实后台断连/本地草稿/重连单次保存、双稿独立草稿/对象/折叠/面板/精确非零滚动、总览更新不展开；G04实际结构保存后Done保留v7/五条旧OPEN问题/全部110表均实跑。仅两笔预定作者保存，其他104表与原来源分支保持；首轮52像素观察及前置上下文失败保留。其余九组、原118和完整交付仍未完成，gate不批准。
+[当前未封存证据](C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-all11-native-v1/acceptance.md)。
+
+
+## 2026-10-16 Studio 旧核对固定原思想补查
+
+A212旧五条依据原生GET200，固定v6/r79完整Intent/Thought精确；旧context/request、110表及相关文件不变，当前r86/v7和A215确认保留。1223后端/24JS/类型/Ruff/生产构建通过。矩阵v13仅三行更新，原118全文/11组不变。结构/引用/素材正向类型、初始读取问题与最终同源11组仍待，不批准阶段门。
+[封存证据](C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-studio-legacy-origins-2026-10-16/acceptance.md)。
+
+
+## 2026-10-16 Studio 排版独立回复确认续批
+
+原A215/v6→v7仅一次原生POST200，PRESENTATION_MODIFIED/CURRENT/RESOLVED及明确历史已通过；科学正文守卫未放宽。1207后端/24JS/类型/Ruff与新构建通过，仅新check和A215状态/时间变化，其他108表及旧记录/产物保持。复杂类型、旧历史来源与最终同源11继续，不批准阶段门。
+[本批证据](C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-studio-presentation-review-2026-10-16/acceptance.md)。
+
+
+## 2026-10-16 Studio 固定原思想反查续批
+
+共享句两个原Thought完整反查、原Intent全文、历史固定上下文与仅引用变化分类/拒绝科学正文确认已补。1190后端/24JS/类型与Ruff、原生1280/760通过；110表和原产物保持，临时服务已退役。旧历史补读、复杂类型独立回复确认和最终同源11组继续，不批准阶段门。
+[本批证据](C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-studio-frozen-origins-2026-10-16/acceptance.md)。
+
+
 ## 2026-10-08 实验 Run 记录与产物续批
 
 完整输出／环境／所选输入／原产物记录与 Track 回查已补齐，无效 metrics／输入变化／缺产物不生成结果证据。940 完整回归、14 相关／25 工作面检查及实际脚本／4 次 HTTP 软件授权路径通过；当前108表与旧资料／回执保持。计划创建／真实批准／启动恢复完整UI、科学内容及浏览器继续。原118／全部11不关闭。
@@ -1767,3 +1791,34 @@ Four native formats/source readback and failure recovery passed; 8 browser regre
 ## 2026-10-14 Actual GPU parser recovery
 
 Same original PDF attempt6 GPU parse SUCCEEDED; newversion2/3bodyblocks/6page-alignedrefs, actual native fixed-source readback, exact canonical outputdigest and105table preservation audited. Earlier failures retained; dependentcurrent QUICK_READ READY/attempt0 unexecuted. Bib slow-read guard/tests pass but temporary throttled native test page remains unverified and retained per user instruction. G11/original118/finalall11 still incomplete; missionpendingreview unchanged. [Evidence](../docs/reviews/scholar-rstv4-2026-09-30/formal-gpu-parser-recovery-2026-10-14/acceptance.md).
+
+
+2026-10-14 current identity native audit restart from verification/pending_review.
+The two original native actions are already durable; do not repeat them. Auditor
+v1 assumed old result_json was a JSON string, although a declared nonterminal job
+had SQL NULL. source_review.invalidate_source explicitly saves json.loads(value
+or {}) as previous_result; approval serializes that object. Only the already
+declared two nonterminal job result fields may normalize SQL NULL to JSON {}.
+Auditor v2 next assumed HTTP200 and top-level action; the formal Catalog route
+declares HTTP201 and the persisted response uses action_kind. Verify exact201,
+exact action_kind, action linkage, 105 schemas, 102 unchanged tables, old action
+rows, terminal jobs, immutable inputs/attempts, original and copied file bytes.
+This corrects the execution/response audit contract; no product/data/model/native
+replay or assertion relaxation. v1/v2 failed helpers and responses are retained.
+
+
+## 2026-10-14 G11原软件定义与目录当前实跑
+
+G11 Collection/审核复检恢复/GPU第6次/上游失效/旧方法拒绝/零版本边界证据通过；新身份原生闭环与105表保持核对通过。真实1197文献副本多排序/稳定同值/50分页8场景通过，弹层遮挡修复并宽窄屏实跑；当前1078全量通过/20既有警告。原118与最终全11贯通、科学批准未完成，gate pending_review不变。报告：docs/reviews/scholar-rstv4-2026-09-30/formal-collection-review-catalog-2026-10-14/acceptance.md。
+
+
+## 2026-10-14 Scholar 发表事件入口保护续批
+
+真实复现PUBLISHED绕过阶段校验并修复为共用版本/科学/阶段守卫、同事务事件与阶段历史。修复前8失败/2通过保留，修复后41相关、1088完整回归、真实5次HTTP及109表/106不变审计通过。A206另完成接口归档/恢复与两核对/四修改保持，原生分支未完成。ACCEPTED/固定终稿校样归档链及原118/最终11贯通仍未完成；gate维持pending_review。
+[正式证据](C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-publication-event-guard-2026-10-14/acceptance.md)。
+
+
+## 2026-10-14 Scholar 固定投稿与接收后归档续批
+
+固定生成版/模板来源/接收前提/终稿校样摘要/作者完成事件、稳定请求幂等及原子阶段历史已接通；保持六阶段与旧UNBOUND事件。最终1110完整回归、76相关、8前端、类型/检查/隔离构建及真实21HTTP/110表105不变审计通过，完整失败证据保留。原生完整WF09/WF10、原118和最终11贯通仍待验，pending_review保持。
+[正式证据](C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-fixed-submission-archive-2026-10-14/acceptance.md)。

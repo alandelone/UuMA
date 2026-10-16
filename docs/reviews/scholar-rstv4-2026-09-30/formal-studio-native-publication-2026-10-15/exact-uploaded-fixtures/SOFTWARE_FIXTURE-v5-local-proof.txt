@@ -1,0 +1,11 @@
+SOFTWARE_FIXTURE LOCAL PUBLICATION WORKFLOW CHECK
+This text file is a synthetic local proof fixture for UI archive binding tests.
+It is not a publisher proof or a scientific approval.
+Original fixed generated version: manuscript_version_de30b95a2d6843059d3c8b420627bf58
+Author structure revision: 62
+Final PDF SHA256: f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4
+Final PDF byte size: 13830
+The test preserves the existing Alpha wording, citations, selected source conditions,
+and fixed generated v5. It does not assert external submission, acceptance,
+publication, DOI registration, new scientific evidence, or an unperformed amendment.
+The local archive will bind these exact uploaded bytes and this explicit fixture.

@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/assets",
+  "content_type": "multipart/form-data; boundary=----WebKitFormBoundarypHYk93XkeNJyzgtk",
+  "body_utf8": null,
+  "body_sha256": "ab952e106c044f2c190f642b55c3f359801197096d88d2abd8c769b414f22d0d",
+  "body_bytes": 948
+}

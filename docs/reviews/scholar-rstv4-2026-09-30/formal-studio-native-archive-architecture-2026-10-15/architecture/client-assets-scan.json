@@ -1,0 +1,163 @@
+[
+  {
+    "file": "dist\\client\\favicon.svg",
+    "bytes": 712,
+    "sha256": "e6d2e59b7b5bbb0342e0fb496dfc262decbfe4426bbb7b047aec8d467d1dc6f7",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\vinext-client-entry-manifest.json",
+    "bytes": 65,
+    "sha256": "216aef9014888c2c465b23206a22fade8310d786e16603626160189347c6bf8f",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\.vite\\manifest.json",
+    "bytes": 2309,
+    "sha256": "9b9efc95c3c13325978ee57afba42a8cd0b11e28b2705d8bd4915c25f2c29428",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\4296cd34-9867-4c43-8f3d-81e9bf22f624\\_buildManifest.js",
+    "bytes": 159,
+    "sha256": "47f02b34be6dc481257b6efce4c19e19111f37ef5c437f8ffed44f0da97fa9bb",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\4296cd34-9867-4c43-8f3d-81e9bf22f624\\_ssgManifest.js",
+    "bytes": 76,
+    "sha256": "653f3e53e89b4f8548ff86c19e92bb3c6b84b6be7485a320b1e00893ed877479",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\chunks\\framework-A1pNZAzD.js",
+    "bytes": 190103,
+    "sha256": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\chunks\\index-Dd8DXA57.js",
+    "bytes": 109365,
+    "sha256": "75ac07f84d4c7298093ea67377472689e8ab654c4e7dc484da2d6c3ea21e363c",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\chunks\\layout-segment-context-BoUNDXv2.js",
+    "bytes": 496,
+    "sha256": "68f601318bc09581dabb12e83d0ab943270a62cab7ae509f4397a76283f23e6d",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\chunks\\page-CjbQD6Ec.js",
+    "bytes": 452284,
+    "sha256": "3b194274429957c783f4a1fd7930d6b43c11b6e04b2f101bce689e12399b0ccd",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\chunks\\rolldown-runtime-hePW80VL.js",
+    "bytes": 716,
+    "sha256": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\chunks\\vinext-BPPoZsno.js",
+    "bytes": 111479,
+    "sha256": "5413ccaf89c0ebfb6b71c2a14596491f8a27d33308515959ab7478092200ed1c",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\css\\index.PBEt8VaD.css",
+    "bytes": 243200,
+    "sha256": "a927e3709ef99db5416703ab0860d18a1e9b6d8c735b85a1b676d42082bfdb6d",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-8ac0455e797f\\geist-001175b1.woff2",
+    "bytes": 16540,
+    "sha256": "58a6b173d5ca1dec92166ea3c6cb1a84a4144556d10928ac14e8e6b40e4787bd",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-8ac0455e797f\\geist-52306abf.woff2",
+    "bytes": 7968,
+    "sha256": "f689f638f29fff460a2d5749edb5d5c38d7bef0389f32032d871f23fc6ebb008",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-8ac0455e797f\\geist-875ccdd4.woff2",
+    "bytes": 14900,
+    "sha256": "6129fc8571c3e0cb0a4c41f5160c974a843b055009dc4ad8858bd808e18a2d86",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-8ac0455e797f\\geist-98bbbccb.woff2",
+    "bytes": 29288,
+    "sha256": "9b6f5ff45b278c744b5f379a2c4ecbaf858a842b8eaf82ac8d21b699ca16c608",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-8ac0455e797f\\geist-ff2310f5.woff2",
+    "bytes": 7252,
+    "sha256": "b7a545bbb08256bd809f11cfe66d88da3e22d169ea4407737b1ef0ec1ed3d791",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-mono-00e989178794\\geist-mono-013b2f2f.woff2",
+    "bytes": 23108,
+    "sha256": "5f3d6ad60f29d6cb708414ec6887163d63bf197377ef5417d2483ff31ace6c3b",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-mono-00e989178794\\geist-mono-0638449e.woff2",
+    "bytes": 5892,
+    "sha256": "d67e4a94ba498635f764ddca7d1ec4271f5642f032eb24b426764480f66f8497",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-mono-00e989178794\\geist-mono-44745446.woff2",
+    "bytes": 14712,
+    "sha256": "745994b5cd950ec201b66526375f057d540847cccfc70f4f24f5f571d26d3923",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-mono-00e989178794\\geist-mono-44e03052.woff2",
+    "bytes": 12872,
+    "sha256": "75b3bedbebc35f347c0ae3b416aa871941555357e7b0f83767eb5987875589ed",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-mono-00e989178794\\geist-mono-971fb274.woff2",
+    "bytes": 7728,
+    "sha256": "16e1d48b6dd29eb240aec5db36184eb182933c082cd43de7f35af686d58087d2",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  },
+  {
+    "file": "dist\\client\\_next\\static\\_vinext_fonts\\geist-mono-00e989178794\\geist-mono-f6b33328.woff2",
+    "bytes": 6204,
+    "sha256": "e27f657e38d52887baa3b6b2f812bef93dfdd356f0810e40edd4ee284cc7e9f6",
+    "forbidden_marker_matches": [],
+    "configured_gateway_key_present": false
+  }
+]

@@ -1,0 +1,6 @@
+{
+  "at": "2026-10-13T14:25:40.189Z",
+  "oldPlanText": "实验计划 · APPROVEDexperiment_plan_81163acc4ada40c786e62a8e66576d9d · Method method_578417c4dcfc42e99060150cccd53613 · Track 直属命令：C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\.venv\\Scripts\\python.exe -c from pathlib import Path; Path('C:\\\\Users\\\\ALANDE~1\\\\AppData\\\\Local\\\\Temp\\\\scholar-formal-gates-z2aa267y\\\\old-method-must-not-run.txt').touch()旧计划未保留完整审阅清单，请提出新计划。执行此计划一次",
+  "executeEnabled": false,
+  "executeDisabledAttribute": ""
+}

@@ -110,9 +110,9 @@ def create_wisdom_view_app(settings: Settings | None = None) -> FastAPI:
 
 
 def main() -> None:
+    app = create_wisdom_view_app()
     uvicorn.run(
-        "uuma.wisdom_view:create_wisdom_view_app",
-        factory=True,
+        app,
         host="127.0.0.1",
         port=int(os.environ.get("UUMA_WISDOM_VIEW_PORT", "8767")),
     )

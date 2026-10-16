@@ -1,0 +1,2905 @@
+{
+  "typescript_version": "5.9.3",
+  "files": [
+    {
+      "file": "app\\layout.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "next",
+          "type_only": true,
+          "line": 1
+        },
+        {
+          "module": "next/font/google",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "./globals.css",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "app\\page.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/studio-workspace",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 9
+        },
+        {
+          "module": "@/lib/catalog-return",
+          "type_only": false,
+          "line": 10
+        },
+        {
+          "module": "@/lib/studio-view-state",
+          "type_only": false,
+          "line": 11
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 12
+        }
+      ],
+      "calls": [],
+      "env": [
+        {
+          "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+          "line": 91
+        },
+        {
+          "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+          "line": 151
+        }
+      ]
+    },
+    {
+      "file": "app\\api\\studio-files\\[...path]\\route.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "../../../../lib/studio-downloads",
+          "type_only": false,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": [
+        {
+          "name": "RSTV4_API",
+          "line": 6
+        },
+        {
+          "name": "NEXT_PUBLIC_RSTV4_API",
+          "line": 6
+        }
+      ]
+    },
+    {
+      "file": "components\\studio-argument-relations.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/textarea",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/studio-block-controls",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/lib/studio-blocks",
+          "type_only": false,
+          "line": 9
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 10
+        }
+      ],
+      "calls": [
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 30,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 46,
+          "argument_kinds": [
+            "Identifier",
+            "CallExpression"
+          ]
+        }
+      ],
+      "env": []
+    },
+    {
+      "file": "components\\studio-block-controls.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@dnd-kit/core",
+          "type_only": false,
+          "line": 10
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 15
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 17
+        },
+        {
+          "module": "@/components/ui/checkbox",
+          "type_only": false,
+          "line": 18
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 19
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 25
+        },
+        {
+          "module": "@/lib/studio-blocks",
+          "type_only": false,
+          "line": 26
+        },
+        {
+          "module": "@/lib/offline-outbox",
+          "type_only": false,
+          "line": 37
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 38
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-change-history.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-evidence-source.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/studio-downloads",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 6
+        },
+        {
+          "module": "@/components/studio-source-context",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-intent-correspondence.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/checkbox",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/studio-block-controls",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/lib/studio-blocks",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/lib/studio-correspondence",
+          "type_only": false,
+          "line": 9
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-original-placement.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/checkbox",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/studio-block-controls",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/lib/studio-blocks",
+          "type_only": false,
+          "line": 8
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-package-downloads.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 8
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-response-review.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/checkbox",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/textarea",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 9
+        },
+        {
+          "module": "@/lib/studio-downloads",
+          "type_only": false,
+          "line": 10
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 11
+        }
+      ],
+      "calls": [
+        {
+          "callee": "localStorage.removeItem",
+          "line": 48,
+          "argument_kinds": [
+            "PropertyAccessExpression"
+          ]
+        },
+        {
+          "callee": "localStorage.setItem",
+          "line": 49,
+          "argument_kinds": [
+            "PropertyAccessExpression",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "sessionStorage.getItem",
+          "line": 57,
+          "argument_kinds": [
+            "StringLiteral"
+          ]
+        },
+        {
+          "callee": "sessionStorage.setItem",
+          "line": 58,
+          "argument_kinds": [
+            "StringLiteral",
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "localStorage.getItem",
+          "line": 60,
+          "argument_kinds": [
+            "PropertyAccessExpression"
+          ]
+        },
+        {
+          "callee": "Object.keys(localStorage).filter((key) => key.startsWith(prefix) && key !== slot.current)\r\n        .flatMap((key) => { try { return [JSON.parse(localStorage.getItem(key) || '') as Checkpoint]; } catch { return []; } })\r\n        .filter",
+          "line": 71,
+          "argument_kinds": [
+            "ArrowFunction"
+          ]
+        },
+        {
+          "callee": "Object.keys(localStorage).filter((key) => key.startsWith(prefix) && key !== slot.current)\r\n        .flatMap",
+          "line": 71,
+          "argument_kinds": [
+            "ArrowFunction"
+          ]
+        },
+        {
+          "callee": "Object.keys(localStorage).filter",
+          "line": 71,
+          "argument_kinds": [
+            "ArrowFunction"
+          ]
+        },
+        {
+          "callee": "localStorage.getItem",
+          "line": 72,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "fetchCurrent().catch",
+          "line": 105,
+          "argument_kinds": [
+            "ArrowFunction"
+          ]
+        },
+        {
+          "callee": "fetchCurrent",
+          "line": 105,
+          "argument_kinds": []
+        },
+        {
+          "callee": "fetchCurrent",
+          "line": 139,
+          "argument_kinds": []
+        },
+        {
+          "callee": "fetchCurrent().catch",
+          "line": 189,
+          "argument_kinds": [
+            "ArrowFunction"
+          ]
+        },
+        {
+          "callee": "fetchCurrent",
+          "line": 189,
+          "argument_kinds": []
+        }
+      ],
+      "env": []
+    },
+    {
+      "file": "components\\studio-review-rounds.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 10
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 11
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-source-context.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@/lib/studio-downloads",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 2
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-suggestion-review.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/components/ui/checkbox",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 13
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 14
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\studio-template-adoption.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 7
+        }
+      ],
+      "calls": [
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 33,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 64,
+          "argument_kinds": [
+            "Identifier",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.removeItem",
+          "line": 67,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 122,
+          "argument_kinds": [
+            "TemplateExpression",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.removeItem",
+          "line": 123,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        }
+      ],
+      "env": []
+    },
+    {
+      "file": "components\\studio-workspace.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@dnd-kit/core",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@dnd-kit/sortable",
+          "type_only": false,
+          "line": 14
+        },
+        {
+          "module": "@dnd-kit/utilities",
+          "type_only": false,
+          "line": 19
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 20
+        },
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 44
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 52
+        },
+        {
+          "module": "@/components/ui/checkbox",
+          "type_only": false,
+          "line": 53
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 54
+        },
+        {
+          "module": "@/components/ui/popover",
+          "type_only": false,
+          "line": 55
+        },
+        {
+          "module": "@/components/ui/textarea",
+          "type_only": false,
+          "line": 62
+        },
+        {
+          "module": "@/components/studio-suggestion-review",
+          "type_only": false,
+          "line": 63
+        },
+        {
+          "module": "@/components/studio-review-rounds",
+          "type_only": false,
+          "line": 64
+        },
+        {
+          "module": "@/components/studio-change-history",
+          "type_only": false,
+          "line": 65
+        },
+        {
+          "module": "@/components/studio-source-context",
+          "type_only": false,
+          "line": 66
+        },
+        {
+          "module": "@/components/studio-evidence-source",
+          "type_only": false,
+          "line": 67
+        },
+        {
+          "module": "@/components/studio-package-downloads",
+          "type_only": false,
+          "line": 68
+        },
+        {
+          "module": "@/components/studio-response-review",
+          "type_only": false,
+          "line": 69
+        },
+        {
+          "module": "@/components/studio-template-adoption",
+          "type_only": false,
+          "line": 70
+        },
+        {
+          "module": "@/components/studio-argument-relations",
+          "type_only": false,
+          "line": 71
+        },
+        {
+          "module": "@/components/studio-original-placement",
+          "type_only": false,
+          "line": 72
+        },
+        {
+          "module": "@/components/studio-intent-correspondence",
+          "type_only": false,
+          "line": 73
+        },
+        {
+          "module": "@/lib/studio-correspondence",
+          "type_only": false,
+          "line": 74
+        },
+        {
+          "module": "@/components/studio-block-controls",
+          "type_only": false,
+          "line": 75
+        },
+        {
+          "module": "@/lib/studio-api",
+          "type_only": false,
+          "line": 76
+        },
+        {
+          "module": "@/lib/studio-downloads",
+          "type_only": false,
+          "line": 77
+        },
+        {
+          "module": "@/lib/studio-view-state",
+          "type_only": false,
+          "line": 78
+        },
+        {
+          "module": "@/lib/review-comment-preview",
+          "type_only": false,
+          "line": 79
+        },
+        {
+          "module": "@/lib/shared-discussion",
+          "type_only": false,
+          "line": 80
+        },
+        {
+          "module": "@/lib/studio-discussion-history",
+          "type_only": false,
+          "line": 81
+        },
+        {
+          "module": "@/lib/offline-outbox",
+          "type_only": false,
+          "line": 82
+        },
+        {
+          "module": "@/lib/suggestion-result",
+          "type_only": false,
+          "line": 83
+        },
+        {
+          "module": "@/lib/studio-undo-history",
+          "type_only": false,
+          "line": 84
+        },
+        {
+          "module": "@/lib/studio-blocks",
+          "type_only": false,
+          "line": 85
+        },
+        {
+          "module": "@/lib/studio-types",
+          "type_only": true,
+          "line": 86
+        }
+      ],
+      "calls": [
+        {
+          "callee": "window.sessionStorage.getItem",
+          "line": 547,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.sessionStorage.setItem",
+          "line": 565,
+          "argument_kinds": [
+            "TemplateExpression",
+            "PropertyAccessExpression"
+          ]
+        },
+        {
+          "callee": "window.sessionStorage.setItem",
+          "line": 569,
+          "argument_kinds": [
+            "Identifier",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 576,
+          "argument_kinds": [
+            "Identifier",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.removeItem",
+          "line": 579,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 678,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 713,
+          "argument_kinds": [
+            "TemplateExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 714,
+          "argument_kinds": [
+            "TemplateExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 731,
+          "argument_kinds": [
+            "Identifier",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 774,
+          "argument_kinds": [
+            "TemplateExpression",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 801,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.sessionStorage.getItem",
+          "line": 829,
+          "argument_kinds": [
+            "StringLiteral"
+          ]
+        },
+        {
+          "callee": "window.sessionStorage.setItem",
+          "line": 830,
+          "argument_kinds": [
+            "StringLiteral",
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 2089,
+          "argument_kinds": [
+            "TemplateExpression",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "setImportBusy",
+          "line": 3378,
+          "argument_kinds": [
+            "TrueKeyword"
+          ]
+        },
+        {
+          "callee": "studioApi.importComments",
+          "line": 3381,
+          "argument_kinds": [
+            "Identifier",
+            "CallExpression",
+            "Identifier",
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "onImportSaved",
+          "line": 3382,
+          "argument_kinds": []
+        },
+        {
+          "callee": "afterCommentImport",
+          "line": 3383,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "setImportBusy",
+          "line": 3397,
+          "argument_kinds": [
+            "FalseKeyword"
+          ]
+        },
+        {
+          "callee": "confirmImport",
+          "line": 3470,
+          "argument_kinds": []
+        }
+      ],
+      "env": [
+        {
+          "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+          "line": 903
+        },
+        {
+          "name": "NEXT_PUBLIC_PAPER_CATALOG_URL",
+          "line": 1560
+        }
+      ]
+    },
+    {
+      "file": "components\\ui\\accordion.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/accordion",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 4
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\alert-dialog.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/alert-dialog",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\alert.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 4
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\aspect-ratio.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\attachment.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\avatar.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/avatar",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\badge.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\breadcrumb.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\bubble.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\button-group.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/components/ui/separator",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\button.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/button",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 4
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\calendar.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "react-day-picker",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 11
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 12
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 13
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\card.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\carousel.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "embla-carousel-react",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 9
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 10
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\chart.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "recharts",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "recharts",
+          "type_only": true,
+          "line": 5
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\checkbox.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/checkbox",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\collapsible.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/collapsible",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\combobox.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/input-group",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 14
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\command.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "cmdk",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/dialog",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/input-group",
+          "type_only": false,
+          "line": 14
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 15
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\context-menu.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/context-menu",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\dialog.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/dialog",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 8
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\direction.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/direction-provider",
+          "type_only": false,
+          "line": 3,
+          "export": true
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\drawer.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/drawer",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\dropdown-menu.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/menu",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\empty.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\field.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/label",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/separator",
+          "type_only": false,
+          "line": 8
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\hover-card.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/preview-card",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\input-group.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/components/ui/textarea",
+          "type_only": false,
+          "line": 9
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\input-otp.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "input-otp",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\input.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/input",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 4
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\item.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/separator",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\kbd.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\label.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\marker.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\menubar.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/menu",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@base-ui/react/menubar",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "@/components/ui/dropdown-menu",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 23
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\message-scroller.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@shadcn/react/message-scroller",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 11
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 12
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 13
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\message.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\native-select.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 4
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\navigation-menu.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/navigation-menu",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\pagination.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\popover.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/popover",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\progress.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/progress",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\radio-group.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/radio",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/radio-group",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\resizable.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react-resizable-panels",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\scroll-area.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/scroll-area",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\select.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/select",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 7
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\separator.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/separator",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\sheet.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/dialog",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 8
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\sidebar.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/merge-props",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@base-ui/react/use-render",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/hooks/use-mobile",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 9
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 10
+        },
+        {
+          "module": "@/components/ui/input",
+          "type_only": false,
+          "line": 11
+        },
+        {
+          "module": "@/components/ui/separator",
+          "type_only": false,
+          "line": 12
+        },
+        {
+          "module": "@/components/ui/sheet",
+          "type_only": false,
+          "line": 13
+        },
+        {
+          "module": "@/components/ui/skeleton",
+          "type_only": false,
+          "line": 20
+        },
+        {
+          "module": "@/components/ui/tooltip",
+          "type_only": false,
+          "line": 21
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 26
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\skeleton.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\slider.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/slider",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\spinner.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 2
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\switch.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/switch",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\table.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\tabs.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/tabs",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\textarea.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 3
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\toast.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/toast",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/components/ui/button",
+          "type_only": false,
+          "line": 7
+        },
+        {
+          "module": "lucide-react",
+          "type_only": false,
+          "line": 8
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\toggle-group.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "react",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@base-ui/react/toggle",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@base-ui/react/toggle-group",
+          "type_only": false,
+          "line": 5
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 6
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 8
+        },
+        {
+          "module": "@/components/ui/toggle",
+          "type_only": false,
+          "line": 9
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\toggle.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/toggle",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "class-variance-authority",
+          "type_only": false,
+          "line": 4
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 6
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "components\\ui\\tooltip.tsx",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "@base-ui/react/tooltip",
+          "type_only": false,
+          "line": 3
+        },
+        {
+          "module": "@/lib/utils",
+          "type_only": false,
+          "line": 5
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\catalog-return.ts",
+      "parse_diagnostics": [],
+      "imports": [],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\offline-outbox.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 1
+        }
+      ],
+      "calls": [
+        {
+          "callee": "indexedDB.open",
+          "line": 52,
+          "argument_kinds": [
+            "Identifier",
+            "FirstLiteralToken"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 85,
+          "argument_kinds": [
+            "BinaryExpression",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.key",
+          "line": 103,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 106,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.setItem",
+          "line": 127,
+          "argument_kinds": [
+            "BinaryExpression",
+            "CallExpression"
+          ]
+        },
+        {
+          "callee": "window.localStorage.getItem",
+          "line": 145,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        },
+        {
+          "callee": "window.localStorage.removeItem",
+          "line": 147,
+          "argument_kinds": [
+            "Identifier"
+          ]
+        }
+      ],
+      "env": []
+    },
+    {
+      "file": "lib\\review-comment-preview.ts",
+      "parse_diagnostics": [],
+      "imports": [],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\shared-discussion.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "../../RSTV4/src/rstv4/catalog_research_chat.js",
+          "type_only": false,
+          "line": 2
+        },
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 4
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-api.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./studio-downloads",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 2
+        }
+      ],
+      "calls": [
+        {
+          "callee": "fetch",
+          "line": 60,
+          "argument_kinds": [
+            "TemplateExpression",
+            "ObjectLiteralExpression"
+          ]
+        },
+        {
+          "callee": "fetch",
+          "line": 77,
+          "argument_kinds": [
+            "CallExpression"
+          ]
+        }
+      ],
+      "env": [
+        {
+          "name": "NEXT_PUBLIC_RSTV4_API",
+          "line": 30
+        }
+      ]
+    },
+    {
+      "file": "lib\\studio-blocks.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-correspondence.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 1
+        },
+        {
+          "module": "./studio-blocks",
+          "type_only": false,
+          "line": 2
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-discussion-history.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-downloads.ts",
+      "parse_diagnostics": [],
+      "imports": [],
+      "calls": [
+        {
+          "callee": "fetchFile",
+          "line": 51,
+          "argument_kinds": [
+            "TemplateExpression",
+            "ObjectLiteralExpression"
+          ]
+        }
+      ],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-types.ts",
+      "parse_diagnostics": [],
+      "imports": [],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-undo-history.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./offline-outbox",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 2
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\studio-view-state.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./shared-discussion",
+          "type_only": true,
+          "line": 1
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\suggestion-result.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "./offline-outbox",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "./studio-types",
+          "type_only": true,
+          "line": 2
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "lib\\utils.ts",
+      "parse_diagnostics": [],
+      "imports": [
+        {
+          "module": "clsx",
+          "type_only": false,
+          "line": 1
+        },
+        {
+          "module": "tailwind-merge",
+          "type_only": false,
+          "line": 2
+        }
+      ],
+      "calls": [],
+      "env": []
+    },
+    {
+      "file": "../RSTV4/src/rstv4/catalog_research_chat.js",
+      "parse_diagnostics": [],
+      "imports": [],
+      "calls": [],
+      "env": []
+    }
+  ]
+}

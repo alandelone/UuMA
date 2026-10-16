@@ -1,0 +1,44 @@
+{
+  "status": "PASS_EXACT_TWO_DELTAS_IDENTIFIED_AND_CURRENT_9_FOCUSED_TESTS",
+  "original_memory_fix": {
+    "sha256": "18eda81834906f8d0946d3da1967243244ef0cea6e427d3b42f38a1d4cf5ab1a",
+    "bytes": 8879
+  },
+  "concurrent_current": {
+    "sha256": "5e0a3c03fc3cbebb6bd5c168c96065b8ef57ba74bdda94b0bcdae4297d778095",
+    "bytes": 9057
+  },
+  "reverse_retry_only_sha256": "76080c1a5422929ad48e3ae244f2971a6deb2752ea7187dda0bd0161de9b33a5",
+  "reverse_both_delta_sha256": "18eda81834906f8d0946d3da1967243244ef0cea6e427d3b42f38a1d4cf5ab1a",
+  "reconstructed_exact_old_hash": true,
+  "exact_delta": [
+    {
+      "id": "replacement_retry",
+      "old": "            temporary.replace(path)",
+      "new": "            for _ in range(5):\n                try:\n                    temporary.replace(path)\n                    break\n                except PermissionError:\n                    import time\n                    time.sleep(0.15)\n            else:\n                temporary.replace(path)",
+      "behavior": "Five caught PermissionError attempts each followed by0.15s sleep, then sixth unguarded finalreplace; finalfailure propagates, finallycleanup remains. No new journal or business-command retry."
+    },
+    {
+      "id": "empty_journal_newline_removed",
+      "old": "                if not wrote_event:\n                    output.write(\"\\n\")\n",
+      "new": "",
+      "behavior": "An entirely empty journal now emits no trailing blankline aftermarker; priorprojection did. Existingrealhistory/nonemptyprojection unchanged. wrote_event assignments remain but no longer controloutput."
+    }
+  ],
+  "remaining_code_exact_after_reverse": true,
+  "current_source_unchanged_during_focused_tests": true,
+  "test": {
+    "wrapper": "official python -m uuma.session run",
+    "command": "python -m pytest tests/test_session.py -q",
+    "exit_code": 0,
+    "passed": 9,
+    "seconds": 2.14,
+    "wrapper_exit_code": 0,
+    "replayed_business_actions": 0
+  },
+  "limits": [
+    "Nine existing tests do not exercise empty-journal projection or injected PermissionError/retry exhaustion.",
+    "No claim concurrent edit is only retry; both exactdeltas explicitly retained.",
+    "No source edits/rollback, handoff/close, model orScholarregression performed."
+  ]
+}

@@ -1,0 +1,6 @@
+{
+  "initial_visible_error": "Failed to fetch",
+  "actual_user_ui_read_retry_succeeded": true,
+  "failed_events_after_retry": [],
+  "security_or_api_cors_settings_changed": false
+}

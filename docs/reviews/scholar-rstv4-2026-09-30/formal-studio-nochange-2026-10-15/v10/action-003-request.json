@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/stage",
+  "content_type": "application/json",
+  "body_utf8": "{\"stage\":\"FINALIZATION_SUBMISSION\",\"expected_revision\":6,\"reason\":\"Author moved paper to FINALIZATION_SUBMISSION\"}",
+  "body_sha256": "4f2c99126c3701a98dd5a035774d4f21a7380857476c33728f95c0895ed54efd",
+  "body_bytes": 114
+}

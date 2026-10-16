@@ -1,0 +1,10 @@
+{
+  "target": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\src\\rstv4\\catalog_web.html",
+  "before_sha256": "6aaaeaa4a9ac58e08b8b912f34e7b6f5119df71b7d5e5c4553530e23eeb4a22c",
+  "after_sha256": "40aeb09b47481dc3099ae06fac022e9c01729273c0372c4a22ccf5b4c1ff02f9",
+  "old": "          document.querySelector(`[data-panel=\"${panel}\"]`).classList.toggle('active',!el.hidden);\n        }\n      }\n      function displayValue",
+  "new": "          document.querySelector(`[data-panel=\"${panel}\"]`).classList.toggle('active',!el.hidden);\n        }\n        positionCatalogPanels();\n      }\n      function positionCatalogPanels(){\n        const top=document.querySelector('.top').getBoundingClientRect().bottom+window.scrollY+8;\n        for(const panel of document.querySelectorAll('.popover:not([hidden])'))panel.style.top=`${top}px`;\n      }\n      window.addEventListener('resize',positionCatalogPanels);\n      function displayValue",
+  "crlf": false,
+  "reason": "Actual native Sort panel at y47 covered toolbar y62..91.5; position every open panel below actual toolbar and recalculate on resize.",
+  "queries_or_business_rules_changed": false
+}

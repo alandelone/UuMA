@@ -1,0 +1,26 @@
+{
+  "session.py.before.raw": {
+    "bytes": 7682,
+    "sha256": "d09e4317ca66646829c3c95af9eebabc15a16a793da03bc9cdb11b2709d1257d"
+  },
+  "test_session.py.before.raw": {
+    "bytes": 3670,
+    "sha256": "8d2da110ba40da52d667832dce0e5044d9d93c4efd563c1255b25a08314637c9"
+  },
+  "verify-readonly-journal.py": {
+    "bytes": 2957,
+    "sha256": "29eea65d147baad8791d5ece36acf0d083b06d3976307175164b4309b3adf997"
+  },
+  "readonly-journal-receipt.json": {
+    "bytes": 497,
+    "sha256": "13763c9809a4a941fcf3f0cfeb292d79abe3d14878f4324c32900df62c476bd2"
+  },
+  "repair-report.md": {
+    "bytes": 2957,
+    "sha256": "3e891ac9158cf2ce6cd14594eecdc132da4a19d7c2c9c95e5ff8ad67a2d0888b"
+  },
+  "source-after.json": {
+    "bytes": 268,
+    "sha256": "9d0e227464bfe271716cc4e2dcc3eee09a02d78cf92912bb3cd5138309cf9c60"
+  }
+}

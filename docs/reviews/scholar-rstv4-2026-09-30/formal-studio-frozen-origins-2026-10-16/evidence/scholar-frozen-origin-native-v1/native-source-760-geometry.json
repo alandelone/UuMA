@@ -1,0 +1,24 @@
+{
+  "checked": 0,
+  "dialog": [
+    {
+      "scrollWidth": 730,
+      "width": 730
+    }
+  ],
+  "sources": [
+    {
+      "scrollWidth": 670,
+      "selected": "本条成文对应的 Thought · thought_author_1\n\nCheck original sources only; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence.",
+      "text": "回查原思想 · Intent Research Context — SOFTWARE_FIXTURE intent label only · Thought thought_author_1\n\n固定成文 v7 · 作者原稿 r86\n\nIntroduction / G02 adopted software boundary: preserve the original thought and sources.\n\n原 Intent 全文：Research Context — SOFTWARE_FIXTURE intent label only\n\n本条成文对应的 Thought · thought_author_1\n\nCheck original sources only; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence.\n\n同一 Intent 的其他 Thought · thought_5f3edebed89d482cb0b2d9d42c4930d8\n\nG09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: retain this original boundary in the shared sentence and in the separate source-condition sentence.",
+      "width": 670
+    },
+    {
+      "scrollWidth": 670,
+      "selected": "本条成文对应的 Thought · thought_5f3edebed89d482cb0b2d9d42c4930d8\n\nG09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: retain this original boundary in the shared sentence and in the separate source-condition sentence.",
+      "text": "回查原思想 · Intent Research Context — SOFTWARE_FIXTURE intent label only · Thought thought_5f3edebed89d482cb0b2d9d42c4930d8\n\n固定成文 v7 · 作者原稿 r86\n\nIntroduction / G02 adopted software boundary: preserve the original thought and sources.\n\n原 Intent 全文：Research Context — SOFTWARE_FIXTURE intent label only\n\n同一 Intent 的其他 Thought · thought_author_1\n\nCheck original sources only; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence.\n\n本条成文对应的 Thought · thought_5f3edebed89d482cb0b2d9d42c4930d8\n\nG09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: retain this original boundary in the shared sentence and in the separate source-condition sentence.",
+      "width": 670
+    }
+  ],
+  "width": 760
+}

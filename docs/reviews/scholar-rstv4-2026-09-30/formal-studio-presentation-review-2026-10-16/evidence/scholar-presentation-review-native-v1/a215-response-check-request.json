@@ -1,0 +1,17 @@
+{
+  "request_id": "9615c41b-8e2f-4c49-b6d2-9dc140952e30",
+  "context_sha256": "cf5723aa7b112557eb890b210ae953508ef0f471e4d11a9dcc3ac5b2ed7006cb",
+  "outcome": "PRESENTATION_MODIFIED",
+  "claims": [
+    {
+      "start": 24,
+      "end": 126,
+      "text": "We changed only the page margins from standard to narrow and actually recompiled the fixed v6 content.",
+      "offset_unit": "utf16",
+      "evidence_ids": [
+        "b67783743ae77c546caac49b1aa5d7708b583fa4ff735a1c1fb429d6b17200da"
+      ]
+    }
+  ],
+  "acknowledged_all_assertions": true
+}

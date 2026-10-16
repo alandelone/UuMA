@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/health",
+  "query": "",
+  "status": 200,
+  "seconds": 0.0,
+  "response_sha256": "f5db97241a574b8e42505c28e9ea7fb5fdbc81064d696296da59c4d0cf39b60e",
+  "origin": null,
+  "request_json": null
+}

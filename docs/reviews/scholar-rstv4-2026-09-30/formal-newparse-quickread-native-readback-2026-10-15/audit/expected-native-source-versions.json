@@ -1,0 +1,31 @@
+{
+  "assessment": {
+    "assessment_id": "assessment_2663f1581433c6e731b80ff6eca5113f",
+    "input_digest": "43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd",
+    "prompt_version": "quick-read-v1",
+    "model_name": "gemini-3.5-flash-lite"
+  },
+  "parse": {
+    "parse_run_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "file_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+    "parser_name": "MinerU/magic-pdf",
+    "parser_version": "1.2.2",
+    "config_digest": "54d34c4958082ec6b9c1ef6635d98e4848a2c6e21d2dc28ea3915e4c6a110935",
+    "parse_status": "SUCCEEDED"
+  },
+  "skeleton": {
+    "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "paper_version_id": "paper_version_ec792722735b1f9b62bbdd3810d2282b",
+    "paper_version": 1,
+    "skeleton_id": "skeleton_ad1dc385a70f2dd67e89eb1ebec075cd",
+    "version": 1,
+    "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+    "parse_run_id": "parse_run_5de840df2a60a2b9d9705d6f92807413",
+    "content_digest": "9357201f0315c5c7e9a7ce95c9a88fee0661a6d49543ac28d9b31b023686c574",
+    "parsed_digest": "42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2",
+    "pdf_digest": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+    "extractor_model": "gemini-3.7-flash",
+    "prompt_version": "paper-skeleton-v1"
+  }
+}

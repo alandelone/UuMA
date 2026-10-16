@@ -1,0 +1,9 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat",
+  "query": "limit=100",
+  "status": 200,
+  "seconds": 0.14099999999598367,
+  "response_sha256": "160634394be1044bf68e476d2ea918f489862fff3ad26091aa73ba0b69d08edf",
+  "origin": "http://127.0.0.1:60073"
+}

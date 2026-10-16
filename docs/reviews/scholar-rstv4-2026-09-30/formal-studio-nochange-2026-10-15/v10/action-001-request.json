@@ -1,0 +1,8 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_7702027e5fd44006a5a11fba9c369462",
+  "content_type": "application/json",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE decision: Do not change the manuscript. The current synthetic request asks us to preserve the existing Alpha author wording, selected sources, conditions, and fixed v5; these remain unchanged. No new scientific evidence or requested substantive amendment is supplied in this software case. The reply therefore explains intentional preservation and makes no claim that an unperformed edit was implemented. This software acknowledgement is not scientific approval or an external reviewer decision.\",\"response_text\":\"SOFTWARE_FIXTURE reply: We intentionally retain the existing Alpha wording and fixed generated v5. No manuscript text, citation, source condition, or generated version was changed for this software acceptance case. This is an explicit no-change response, not a claim that a new scientific amendment or external review occurred.\",\"expected_content_sha256\":\"98cc389a9ffcf117532c0a7c75cd139a23494fac98f749cf1a86b169f8a28e65\"}",
+  "body_sha256": "259f84248ed4671763196733d89c0142b666c203c44d4ed963be6e7515a4b1c6",
+  "body_bytes": 973
+}

@@ -1,0 +1,70 @@
+{
+  "status": "PASS_ACTUAL_ORIGINAL_NEWPARSE_QUICK_READ_PRESERVATION_AUDIT",
+  "before_table_count": 105,
+  "after_table_count": 106,
+  "new_tables": [
+    "studio_submission_bindings"
+  ],
+  "new_table_empty": true,
+  "original_tables_exact": 96,
+  "changed_original_tables": [
+    "acquisition_attempts",
+    "acquisition_jobs",
+    "acquisition_model_call_events",
+    "acquisition_worker_presence",
+    "collection_budget_events",
+    "collections",
+    "paper_assessments",
+    "schema_version",
+    "sqlite_sequence"
+  ],
+  "all_old_append_rows_exact": true,
+  "other_ten_jobs_exact": true,
+  "gpu_attempt6_exact": true,
+  "historical_parses_references_source_files_scientific_rows_exact": true,
+  "old_model_events_exact": 32,
+  "new_model_events": 2,
+  "single_successful_attempt": "attempt_6539efae495a4b219372675e16189a44",
+  "final_live_equals_v4_after": true,
+  "budget_request_id": "g11-newparse-quickread-time-budget-v1",
+  "budget_applied_once": true,
+  "active_seconds_limit": 175828,
+  "other_limits_exact": true,
+  "worker_presence_all_stopped": true,
+  "deep_read_executed": false,
+  "new_jobs_queued": 0,
+  "original_non_database_files_exact": 10,
+  "new_files": [
+    ".rstv4-local/workers/model-g11-original-newparse-quickread-v3.lock",
+    "data/artifacts/model-delivery/9ac00145472fadc24da4569a74d01a1d23f8b3e341bce4028d3dbd13e5005809.json",
+    "data/catalog.pre-v14.bak"
+  ],
+  "source_vector_311_exact": true,
+  "source_pdf_bytes": 1827,
+  "source_pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+  "source_parse_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+  "source_block_count": 3,
+  "target_job_id": "job_fe4651959298eab54d88abd9edaf6760",
+  "model_contract": {
+    "actual_model": "gemini-3.5-flash-lite",
+    "delivery": "durable-run-v1",
+    "estimated_input_tokens": 117,
+    "prompt_version": "quick-read-v1",
+    "receipt_id": "acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+    "router_run_id": "run_1d896e58474643dc8a6528159fddc051",
+    "status": "SUCCESS",
+    "task": "quick_read",
+    "tier": "light",
+    "transport_operation_id": "rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+    "usage": {
+      "completion_tokens": 67,
+      "prompt_tokens": 279,
+      "total_tokens": 346
+    }
+  },
+  "assessment_id": "assessment_2663f1581433c6e731b80ff6eca5113f",
+  "scientific_content_all_null_empty": true,
+  "scientific_approval": false,
+  "original118_complete": false,
+  "integrated11_complete": false
+}

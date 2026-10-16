@@ -1,0 +1,55 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "--fix",
+      "src/rstv4/studio.py",
+      "src/rstv4/studio_read_views.py",
+      "src/rstv4/studio_history_origins.py",
+      "src/rstv4/studio_api.py",
+      "src/rstv4/studio_revision_mapping.py",
+      "tests/test_studio_historical_origins.py"
+    ],
+    "exit_code": 1,
+    "seconds": 0.10899999999674037,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-v1\\focused-0.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests/test_studio_historical_origins.py",
+      "tests/test_studio_revision_mapping.py",
+      "-q",
+      "--tb=short"
+    ],
+    "exit_code": 1,
+    "seconds": 60.42200000000594,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-v1\\focused-1.log"
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-response-review.cjs"
+    ],
+    "exit_code": 0,
+    "seconds": 0.4059999999954016,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-v1\\focused-2.log"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "exit_code": 2,
+    "seconds": 3.4219999999986612,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-legacy-origins-v1\\focused-3.log"
+  }
+]

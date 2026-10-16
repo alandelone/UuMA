@@ -1,0 +1,18 @@
+{
+  "status": "PREPARED_EXACT_FINAL_BYTES_AND_EXPLICIT_SYNTHETIC_PROOF",
+  "source": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\generated\\studio_job_de2856bae51842b38ed6342f3fca6b10\\manuscript.pdf",
+  "final": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-wf-native-files-v1\\SOFTWARE_FIXTURE-v5-final.pdf",
+  "proof": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-wf-native-files-v1\\SOFTWARE_FIXTURE-v5-local-proof.txt",
+  "files": {
+    "SOFTWARE_FIXTURE-v5-final.pdf": {
+      "sha256": "f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4",
+      "size_bytes": 13830
+    },
+    "SOFTWARE_FIXTURE-v5-local-proof.txt": {
+      "sha256": "319b444fb182840168b1d2e3e83f6da18c19aacf6b42044f4f3f2455d29e5ca1",
+      "size_bytes": 739
+    }
+  },
+  "original_source_unchanged": true,
+  "scientific_approval": false
+}

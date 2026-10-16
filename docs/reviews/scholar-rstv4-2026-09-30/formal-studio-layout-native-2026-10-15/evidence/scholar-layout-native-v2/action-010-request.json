@@ -1,0 +1,6 @@
+{
+  "method": "PATCH",
+  "path": "/api/comments/comment_f71edb5758ef41f3b0d96d8cdbed18d5",
+  "body_utf8": "{\"author_decision\":\"SOFTWARE_FIXTURE decision: Apply only the explicit page-margin setting. The fixed v6 realization is reused and recompiled without a model call; no author prose, scientific claim, source, condition or material identity is amended. This presentation change must not count as evidence of scientific text modification.\",\"response_text\":\"\",\"expected_content_sha256\":\"85b7063e019c1398f51103b4d9789a74372b2225b0fbc0fb9179165dc5ac866a\"}",
+  "body_sha256": "958086ccb2b4e2aa84eb8dc6935ccea8c9d5f0ba1180c613750ed7d1e73c0d91"
+}

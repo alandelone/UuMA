@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "pid": 13656,
+    "create_time": 1792048107.2363951,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-quickread-native-preview-v2.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 13528
+  },
+  "port": 54984,
+  "url": "http://127.0.0.1:54984/?view=all",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d",
+  "current311": true,
+  "no_models_workers_or_writes": true
+}

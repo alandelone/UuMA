@@ -1,0 +1,31 @@
+{
+  "status": "PASS_A206_NATIVE_SOFT_ARCHIVE_RESTORE_CURRENT_SOURCE_BOUNDED",
+  "comment_id": "comment_8ecd722c5ea041858723009b72fc4cce",
+  "comment_number": 206,
+  "archive_and_restore_native_clicks": true,
+  "successful_business_requests": 2,
+  "response_revision_sequence": [
+    6,
+    7,
+    8
+  ],
+  "only_two_tables_changed": [
+    "review_comments",
+    "studio_comment_response_state"
+  ],
+  "other108_tables_exact": true,
+  "other_comments_exact": true,
+  "original554_character_reply_exact": true,
+  "two_original_checks_and_four_original_links_exact": true,
+  "old_checks_not_reconfirmed": true,
+  "active_context_cleared_and_not_auto_restored": true,
+  "manuscript_author_revision62_workflow6_v5_round2_exact": true,
+  "source311_frontend91_dist76_original109_external25_exact": true,
+  "native_observations": 24,
+  "software_fixture_only": true,
+  "scientific_approval": false,
+  "overall118_complete": false,
+  "final_all11_integrated_complete": false,
+  "no_model_or_gpu_or_generation_execution": true,
+  "source_lineage": "same current HTML e573c377 and 310 unchanged backend files; same91 frontend source/76dist"
+}

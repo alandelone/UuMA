@@ -1,0 +1,57 @@
+{
+  "status": "PASS_NATIVE_NEAR_VIEWPORT_LAZY_LOAD",
+  "first_initially_unloaded_page": 3,
+  "initial_observation_utc": "2026-10-14T17:30:53.066Z",
+  "approaching_page_observation_utc": "2026-10-14T17:33:54.560Z",
+  "first_page3_requests": [
+    {
+      "sequence": 17,
+      "utc": "2026-10-14T17:33:54.500702+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/3/text",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 47.0
+    },
+    {
+      "sequence": 18,
+      "utc": "2026-10-14T17:33:54.572267+00:00",
+      "method": "GET",
+      "path": "/api/catalog/files/software_fixture_rv_main_file_abd70179dcff/pages/3.png",
+      "query": "",
+      "status": 200,
+      "elapsed_ms": 125.0
+    }
+  ],
+  "actual_page3_observation_utc": "2026-10-14T17:34:51.674Z",
+  "prior_server_never_requested_page3": true,
+  "no_direct_api_prefetch": true,
+  "source_sha256": "8624e2d3b632d885bd4dac28e3ea48ede79c0e07f56ee1bb4967d89668762ec3",
+  "source_excerpt": [
+    {
+      "line": 1459,
+      "text": "          if('IntersectionObserver' in window){"
+    },
+    {
+      "line": 1460,
+      "text": "            pdfReviewObserver=new IntersectionObserver(entries=>{"
+    },
+    {
+      "line": 1461,
+      "text": "              for(const entry of entries)if(entry.isIntersecting)loadPdfReviewPage(c,entry.target,token);"
+    },
+    {
+      "line": 1462,
+      "text": "            },{root:preview,rootMargin:'700px 0px'});"
+    },
+    {
+      "line": 1463,
+      "text": "            preview.querySelectorAll('[data-pdf-page]').forEach(page=>pdfReviewObserver.observe(page));"
+    },
+    {
+      "line": 1464,
+      "text": "          }else preview.querySelectorAll('[data-pdf-page]').forEach(page=>loadPdfReviewPage(c,page,token));"
+    }
+  ],
+  "scope": "Actual page 3 image/text requests followed native scrolling into the 700px preload margin; does not claim viewport-only loading."
+}

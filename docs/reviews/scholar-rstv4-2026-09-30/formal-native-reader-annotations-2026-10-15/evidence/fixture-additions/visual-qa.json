@@ -1,0 +1,11 @@
+{
+  "status": "PASS_OFFLINE_PDF_VISUAL_QA",
+  "pages_inspected": 3,
+  "clipped_text": false,
+  "overlapping_text": false,
+  "all_six_references_visible": true,
+  "software_fixture_labels_visible": true,
+  "source_title_and_doi_legible": true,
+  "native_browser_actions_by_preparation": 0,
+  "native_acceptance_complete": false
+}

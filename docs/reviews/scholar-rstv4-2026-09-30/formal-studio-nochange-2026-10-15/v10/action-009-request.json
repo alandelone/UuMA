@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/context",
+  "content_type": "application/json",
+  "body_utf8": "{\"module\":\"STUDIO\",\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"document_revision\":62}",
+  "body_sha256": "b8350a3ba98797c313e91d55a42257d1a2bce6ab093ede41343335b57ae1cfd5",
+  "body_bytes": 184
+}

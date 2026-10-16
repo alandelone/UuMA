@@ -1,0 +1,20 @@
+{
+  "status": "FAILED_RETAIN_ACTUAL_CONTEXT_NO_REPLAY",
+  "job_id": "job_fe4651959298eab54d88abd9edaf6760",
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "gpu_reexecuted": false,
+  "deep_read_executed": false,
+  "scientific_approval": false,
+  "budget_changed": true,
+  "worker_run_once_calls": 1,
+  "error_type": "AssertionError",
+  "error": "",
+  "gpu_job_and_original_pdf_exact": true,
+  "changed_tables_vs_before_initialization": [
+    "acquisition_worker_presence",
+    "collection_budget_events",
+    "collections",
+    "schema_version"
+  ],
+  "model_events": []
+}

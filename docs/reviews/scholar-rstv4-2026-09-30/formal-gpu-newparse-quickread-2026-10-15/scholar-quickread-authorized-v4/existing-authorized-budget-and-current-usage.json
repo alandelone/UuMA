@@ -1,0 +1,19 @@
+{
+  "event": {
+    "event_id": "budget_a92fe28e29c0d964b9283d96ca2cc213",
+    "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+    "request_id": "g11-newparse-quickread-time-budget-v1",
+    "request_json": "{\"collection_id\":\"collection_62ca47c927342115eb5f8fd870af9ca6\",\"expected_revision\":3,\"limits\":{\"max_active_seconds\":175828,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null},\"reason\":\"Human explicitly approved 30 additional runnable minutes for this original QuickRead after service recovery. Preserve all other limits and accumulated history; no GPU or deep read replay.\",\"request_id\":\"g11-newparse-quickread-time-budget-v1\"}",
+    "limits_json": "{\"max_active_seconds\":175828,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null}",
+    "result_json": "{\"collection_id\":\"collection_62ca47c927342115eb5f8fd870af9ca6\",\"limits\":{\"max_active_seconds\":175828,\"max_papers\":500,\"max_registered_pdf_bytes\":10737418240,\"max_task_attempts\":null},\"revision\":4,\"status\":\"ACTIVE\"}",
+    "created_at": "2026-10-15T06:46:47.758119+00:00"
+  },
+  "usage": {
+    "papers": 1,
+    "registered_pdf_bytes": 1827,
+    "task_attempts": 8,
+    "active_seconds": 174065.890399,
+    "stop_reason": null,
+    "observed_at": "2026-10-15T06:47:25.989215+00:00"
+  }
+}

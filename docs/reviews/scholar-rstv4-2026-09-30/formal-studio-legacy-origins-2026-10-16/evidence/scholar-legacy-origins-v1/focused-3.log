@@ -1,0 +1,7 @@
+components/studio-response-review.tsx(384,57): error TS2339: Property 'check_id' does not exist on type 'never'.
+components/studio-response-review.tsx(384,94): error TS2339: Property 'evidence_id' does not exist on type 'never'.
+components/studio-response-review.tsx(385,17): error TS2339: Property 'original_context_sha256' does not exist on type 'never'.
+components/studio-response-review.tsx(385,84): error TS2339: Property 'status' does not exist on type 'never'.
+components/studio-response-review.tsx(385,118): error TS2339: Property 'status' does not exist on type 'never'.
+components/studio-response-review.tsx(386,52): error TS2339: Property 'reason' does not exist on type 'never'.
+components/studio-response-review.tsx(386,80): error TS2339: Property 'reason' does not exist on type 'never'.

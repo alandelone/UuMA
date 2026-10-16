@@ -1,0 +1,42 @@
+{
+  "status": "STOP_CURRENT_NATIVE_BROWSER_POLICY",
+  "browser_policy_stop_as_reported_by_parent": "could not determine current browser URL on Windows with enough confidence to enforce policy",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "current_declared_backend311_exact": true,
+  "declared_html_sha256": "e573c3771cc6f4723be6c2611eabfb81bae3200722ccdd1ccac9018924e18447",
+  "other310_exact": true,
+  "frontend91_source_and_76_dist_exact": true,
+  "original109_tables_and_all_files_exact": true,
+  "external25_artifacts_exact": true,
+  "prepared110_tables_exact_startup": true,
+  "prepared_non_sidecar_bytes_exact_startup": true,
+  "no_business_action_receipts": true,
+  "native_A206_archive_restore_executed": false,
+  "native_explained_no_change_executed": false,
+  "native_submission_or_archive_executed": false,
+  "old_and_new_preparation_manifest_payloads_preserved": true,
+  "new_preparation_manifest_sha256": "b916b3cdfadd6824d15627bd06499f8cb6d45a07a2fc409c78d15b9062eac034",
+  "old_baseline_stop_seal_sha256": "34a32e0ff004de092bc6c6883c2825890729d93731906b60d77f6d86c5554e08",
+  "ports_free": [
+    8877,
+    63377
+  ],
+  "owned_pids_confirmed_gone": [
+    32848,
+    49108,
+    19092,
+    26532
+  ],
+  "models_executed": 0,
+  "workers_started": 0,
+  "business_posts": 0,
+  "no_restart_performed": true,
+  "prepared_root_preserved": true,
+  "no_UI_or_alternative_automation_by_this_agent": true,
+  "shared_session_closed": false,
+  "stop_receipts": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v3\\owned-stop-terminal.json": "8fe5b244cdbea34617bc64962de62d678105fe2b6874ec5360ff259a12de4bc8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v3\\backend-terminal.json": "8f290e3494366df469e8e419d381dfcb3b2d2a11a9be61244e8ce99268a4a6f7"
+  },
+  "all11_complete": false
+}

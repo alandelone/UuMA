@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/workspace",
+  "query": "",
+  "status": 200,
+  "seconds": 0.014999999999417923,
+  "response_sha256": "81e1f3ef5d1bbe657bd3cf5f7c67a918c30636868c164bf70ea014d7d8e1e337",
+  "origin": "http://127.0.0.1:56581",
+  "request_json": null
+}

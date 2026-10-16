@@ -1,0 +1,583 @@
+{
+  "acquisition_attempts": [],
+  "acquisition_jobs": [],
+  "acquisition_model_call_events": [],
+  "acquisition_worker_presence": [],
+  "approval_grants": [
+    {
+      "grant_id": "grant_b547c8205ece400cba71eb779728b5ac",
+      "proposal_id": "proposal_b367fce5fa274a4f85401286fdf4ae48",
+      "proposal_type": "decision",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "proposal_revision": 1,
+      "profile": "scholar",
+      "session_id": "formal-gate-fixture-only",
+      "message_id": "2882185cbe784045990e4b3a6bdd1cf9",
+      "user_message_digest": "3f357fdb4e2673d78891c9b7025b25933ff8262c4744d1d887e984ac5111b837",
+      "created_at": "2026-10-02T14:59:39.131199+00:00",
+      "consumed_at": "2026-10-02T14:59:39.138714+00:00"
+    },
+    {
+      "grant_id": "grant_d447779aa42048488ce2d9bf127aefff",
+      "proposal_id": "proposal_ce01906e6aba4e9a8ffd35823d59b14b",
+      "proposal_type": "decision",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "proposal_revision": 1,
+      "profile": "scholar",
+      "session_id": "formal-gate-fixture-only",
+      "message_id": "99faa7f254904c8387de6bedfcb8618f",
+      "user_message_digest": "2c0e5bd1384eebbe4f79a5ba288eb351836f9c87149ab400d8b33eda54a78b6b",
+      "created_at": "2026-10-02T14:59:39.161806+00:00",
+      "consumed_at": "2026-10-02T14:59:39.168312+00:00"
+    },
+    {
+      "grant_id": "grant_ad1a1b72e0454f5884a0d92ec104033c",
+      "proposal_id": "proposal_2f4d42cd46e9441c858587f9ebf6494e",
+      "proposal_type": "decision",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "proposal_revision": 1,
+      "profile": "scholar",
+      "session_id": "formal-gate-fixture-only",
+      "message_id": "2c07bf8c2cee41b3af6af25079c1c709",
+      "user_message_digest": "9d61ef0d87aea468654ba5fec405513fad1344f03091e1914c4fc3b0a476a535",
+      "created_at": "2026-10-02T14:59:39.193439+00:00",
+      "consumed_at": "2026-10-02T14:59:39.199945+00:00"
+    },
+    {
+      "grant_id": "grant_bbf3171b9f0b4da695704ea0274ecf24",
+      "proposal_id": "proposal_a62eadcdc80c4e708cf2981020ad462d",
+      "proposal_type": "experiment_plan",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "proposal_revision": 1,
+      "profile": "scholar",
+      "session_id": "formal-gate-fixture-only",
+      "message_id": "f76ee558bfac4627805f06bd1b5da29c",
+      "user_message_digest": "0ac5612e5c3f5c57e77cb9916dbbfd34649e589fe6390273e453e0f7175f84e8",
+      "created_at": "2026-10-02T14:59:39.236988+00:00",
+      "consumed_at": "2026-10-02T14:59:39.246494+00:00"
+    },
+    {
+      "grant_id": "grant_bed5fdb071a5466db4f39c391b45dd18",
+      "proposal_id": "proposal_4274b84da40146c3b87f7228180f72a4",
+      "proposal_type": "decision",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "proposal_revision": 1,
+      "profile": "scholar",
+      "session_id": "formal-gate-fixture-only",
+      "message_id": "e9ac365b206c499b98eeb97fe421a8ad",
+      "user_message_digest": "481c73d5c0d060d7cd3b6dba8fbc21485f4abf249f53978495c7e15aa75fe57a",
+      "created_at": "2026-10-02T14:59:39.280032+00:00",
+      "consumed_at": "2026-10-02T14:59:39.292033+00:00"
+    },
+    {
+      "grant_id": "grant_a1a0f12493624726b32f1797170fd870",
+      "proposal_id": "proposal_3797f64e571f4d84b9df1d36a46f632c",
+      "proposal_type": "experiment_plan",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "proposal_revision": 1,
+      "profile": "scholar",
+      "session_id": "formal-gate-fixture-only",
+      "message_id": "674863e19da649c0b8a98bdd64b38d08",
+      "user_message_digest": "1b0655d16cf9b49a9f6ce3971f35275f5c069896f824dd6643120f6ff6dc8e93",
+      "created_at": "2026-10-02T14:59:39.330062+00:00",
+      "consumed_at": "2026-10-02T14:59:39.337062+00:00"
+    }
+  ],
+  "blueprint_snapshots": [],
+  "browser_acquisition_requests": [],
+  "catalog_quarantine": [],
+  "catalog_review_actions": [],
+  "catalog_review_annotations": [],
+  "catalog_review_findings": [],
+  "citation_observations": [],
+  "collection_budget_events": [],
+  "collection_candidate_frontier": [],
+  "collection_memberships": [],
+  "collection_reference_frontier": [],
+  "collection_runtime_state": [],
+  "collection_seeds": [],
+  "collections": [],
+  "comment_changes": [],
+  "core_rankings": [],
+  "decisions": [
+    {
+      "proposal_id": "proposal_b367fce5fa274a4f85401286fdf4ae48",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_id": "method_578417c4dcfc42e99060150cccd53613",
+      "kind": "method",
+      "status": "APPROVED",
+      "approval_phrase": "APPROVE proposal_b367fce5fa274a4f85401286fdf4ae48",
+      "expected_revision": 1,
+      "confirmation_text": "{\"grant_id\":\"grant_b547c8205ece400cba71eb779728b5ac\",\"message_id\":\"2882185cbe784045990e4b3a6bdd1cf9\"}",
+      "rejection_reason": null,
+      "supersedes_node_id": null,
+      "created_at": "2026-10-02T14:59:39.119186+00:00",
+      "resolved_at": "2026-10-02T14:59:39.138714+00:00"
+    },
+    {
+      "proposal_id": "proposal_ce01906e6aba4e9a8ffd35823d59b14b",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_id": "claim_bb84d9ba73be4451a3b4222d941427e2",
+      "kind": "claim",
+      "status": "APPROVED",
+      "approval_phrase": "APPROVE proposal_ce01906e6aba4e9a8ffd35823d59b14b",
+      "expected_revision": 1,
+      "confirmation_text": "{\"grant_id\":\"grant_d447779aa42048488ce2d9bf127aefff\",\"message_id\":\"99faa7f254904c8387de6bedfcb8618f\"}",
+      "rejection_reason": null,
+      "supersedes_node_id": null,
+      "created_at": "2026-10-02T14:59:39.149798+00:00",
+      "resolved_at": "2026-10-02T14:59:39.168312+00:00"
+    },
+    {
+      "proposal_id": "proposal_2f4d42cd46e9441c858587f9ebf6494e",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+      "kind": "claim",
+      "status": "APPROVED",
+      "approval_phrase": "APPROVE proposal_2f4d42cd46e9441c858587f9ebf6494e",
+      "expected_revision": 1,
+      "confirmation_text": "{\"grant_id\":\"grant_ad1a1b72e0454f5884a0d92ec104033c\",\"message_id\":\"2c07bf8c2cee41b3af6af25079c1c709\"}",
+      "rejection_reason": null,
+      "supersedes_node_id": null,
+      "created_at": "2026-10-02T14:59:39.180820+00:00",
+      "resolved_at": "2026-10-02T14:59:39.199945+00:00"
+    },
+    {
+      "proposal_id": "proposal_4274b84da40146c3b87f7228180f72a4",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_id": "method_de9d256dcf294ac9a89822c4c8a10142",
+      "kind": "method",
+      "status": "APPROVED",
+      "approval_phrase": "APPROVE proposal_4274b84da40146c3b87f7228180f72a4",
+      "expected_revision": 1,
+      "confirmation_text": "{\"grant_id\":\"grant_bed5fdb071a5466db4f39c391b45dd18\",\"message_id\":\"e9ac365b206c499b98eeb97fe421a8ad\"}",
+      "rejection_reason": null,
+      "supersedes_node_id": "method_578417c4dcfc42e99060150cccd53613",
+      "created_at": "2026-10-02T14:59:39.262518+00:00",
+      "resolved_at": "2026-10-02T14:59:39.293033+00:00"
+    }
+  ],
+  "document_blocks": [],
+  "evidence": [],
+  "experiment_plans": [
+    {
+      "plan_id": "experiment_plan_81163acc4ada40c786e62a8e66576d9d",
+      "proposal_id": "proposal_a62eadcdc80c4e708cf2981020ad462d",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "method_node_id": "method_578417c4dcfc42e99060150cccd53613",
+      "status": "APPROVED",
+      "revision": 1,
+      "argv_json": "[\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\",\"-c\",\"from pathlib import Path; Path('C:\\\\\\\\Users\\\\\\\\ALANDE~1\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\scholar-formal-gates-z2aa267y\\\\\\\\old-method-must-not-run.txt').touch()\"]",
+      "working_directory": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y\\data\\artifacts\\track_19bd9c2c7abb40d48013dd0e0374e4fd\\experiments",
+      "script_path": null,
+      "script_sha256": null,
+      "timeout_seconds": 600,
+      "metrics_json_path": null,
+      "created_at": "2026-10-02T14:59:39.221966+00:00",
+      "approved_at": "2026-10-02T14:59:39.246494+00:00"
+    },
+    {
+      "plan_id": "experiment_plan_03a8d64eab544aca93b8a4f804e15364",
+      "proposal_id": "proposal_3797f64e571f4d84b9df1d36a46f632c",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "method_node_id": "method_de9d256dcf294ac9a89822c4c8a10142",
+      "status": "APPROVED",
+      "revision": 1,
+      "argv_json": "[\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\",\"-c\",\"print('ISOLATED_ACCEPTANCE_ONLY')\"]",
+      "working_directory": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y\\data\\artifacts\\track_19bd9c2c7abb40d48013dd0e0374e4fd\\experiments",
+      "script_path": null,
+      "script_sha256": null,
+      "timeout_seconds": 600,
+      "metrics_json_path": null,
+      "created_at": "2026-10-02T14:59:39.315546+00:00",
+      "approved_at": "2026-10-02T14:59:39.337062+00:00"
+    }
+  ],
+  "field_topics": [
+    {
+      "field_id": "field_5a513f17ec1349c8a05002bb42a0a93f",
+      "topic_id": "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+      "created_at": "2026-10-02T14:59:39.097667+00:00"
+    }
+  ],
+  "fieldkg_build_papers": [],
+  "fieldkg_builds": [],
+  "fieldkg_candidate_gaps": [],
+  "fieldkg_evidence_candidates": [],
+  "fieldkg_semantic_objects": [],
+  "fieldkg_semantic_runs": [],
+  "fieldkg_snapshot_members": [],
+  "fieldkg_snapshots": [],
+  "foundation_topics": [],
+  "foundation_versions": [],
+  "foundations": [],
+  "journal_metric_observations": [],
+  "legacy_migration_sources": [],
+  "legacy_paper_mappings": [],
+  "local_pdf_imports": [],
+  "manuscript_evidence": [],
+  "manuscript_nodes": [
+    {
+      "manuscript_id": "manuscript_fde24662e8b044c59e729f7516ad10ca",
+      "node_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+      "section": null,
+      "node_revision": 1
+    }
+  ],
+  "manuscript_projects": [],
+  "manuscript_scientific_review_events": [],
+  "manuscript_scientific_review_requests": [],
+  "manuscript_status_history": [
+    {
+      "history_id": "history_ee229981b46c4369a079398efa4b9283",
+      "manuscript_id": "manuscript_fde24662e8b044c59e729f7516ad10ca",
+      "status": "PLANNING",
+      "blocker": null,
+      "next_step": null,
+      "reason": "Created",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.209957+00:00"
+    },
+    {
+      "history_id": "history_264376e38c10446da4933062d3a64c4f",
+      "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+      "status": "PLANNING",
+      "blocker": null,
+      "next_step": null,
+      "reason": "Created",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.407056+00:00"
+    },
+    {
+      "history_id": "history_724beff19b824288aad36b3e96c1252d",
+      "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+      "status": "PLANNING",
+      "blocker": null,
+      "next_step": null,
+      "reason": "Created",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.439159+00:00"
+    },
+    {
+      "history_id": "history_90840ff9b58a49fcafbe929cd2734e15",
+      "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+      "status": "PLANNING",
+      "blocker": null,
+      "next_step": null,
+      "reason": "Created",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.471182+00:00"
+    },
+    {
+      "history_id": "history_ba617c060ee445559321c64b1d10cf17",
+      "manuscript_id": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+      "status": "PLANNING",
+      "blocker": null,
+      "next_step": null,
+      "reason": "Created",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.504109+00:00"
+    }
+  ],
+  "manuscript_versions": [],
+  "manuscripts": [
+    {
+      "manuscript_id": "manuscript_fde24662e8b044c59e729f7516ad10ca",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "title": "Indirect fixture manuscript",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "PLANNING",
+      "needs_scientific_review": 1,
+      "blocker": null,
+      "next_step": null,
+      "revision": 2,
+      "created_at": "2026-10-02T14:59:39.209957+00:00",
+      "updated_at": "2026-10-02T14:59:39.293033+00:00",
+      "workflow_stage": "PLANNING"
+    },
+    {
+      "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "title": "Zero versions WHOLE_PAPER_REVIEW",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "PLANNING",
+      "needs_scientific_review": 0,
+      "blocker": null,
+      "next_step": null,
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.407056+00:00",
+      "updated_at": "2026-10-02T14:59:39.407056+00:00",
+      "workflow_stage": "DRAFTING"
+    },
+    {
+      "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "title": "Zero versions FINALIZATION_SUBMISSION",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "PLANNING",
+      "needs_scientific_review": 0,
+      "blocker": null,
+      "next_step": null,
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.439159+00:00",
+      "updated_at": "2026-10-02T14:59:39.439159+00:00",
+      "workflow_stage": "WHOLE_PAPER_REVIEW"
+    },
+    {
+      "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "title": "Zero versions REVISION",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "PLANNING",
+      "needs_scientific_review": 0,
+      "blocker": null,
+      "next_step": null,
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.471182+00:00",
+      "updated_at": "2026-10-02T14:59:39.471182+00:00",
+      "workflow_stage": "FINALIZATION_SUBMISSION"
+    },
+    {
+      "manuscript_id": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "title": "Zero versions PUBLICATION",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "writing_status": "PLANNING",
+      "needs_scientific_review": 0,
+      "blocker": null,
+      "next_step": null,
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.504109+00:00",
+      "updated_at": "2026-10-02T14:59:39.504109+00:00",
+      "workflow_stage": "FINALIZATION_SUBMISSION"
+    }
+  ],
+  "metadata_observations": [],
+  "node_evidence": [],
+  "paper_assessments": [],
+  "paper_identities": [],
+  "paper_journal_links": [],
+  "paper_skeletons": [],
+  "paper_sources": [],
+  "paper_versions": [],
+  "papers": [],
+  "parse_runs": [],
+  "pipeline_runs": [
+    {
+      "run_id": "run_d79366ed2ce545f08eddb3aee9b5014f",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "project_id": null,
+      "operation": "experiment: [\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\", \"-c\", \"print('ISOLATED_ACCEPTANCE_ONLY')\"]",
+      "status": "COMPLETED",
+      "detail_json": "{\"argv\": [\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\", \"-c\", \"print('ISOLATED_ACCEPTANCE_ONLY')\"], \"exit_code\": 0, \"duration\": 0.03252816200256348, \"metrics\": {}, \"stdout_preview\": \"ISOLATED_ACCEPTANCE_ONLY\\n\", \"stderr_preview\": \"\"}",
+      "created_at": "2026-10-02T14:59:39Z",
+      "updated_at": "2026-10-02T14:59:39Z"
+    }
+  ],
+  "projection_outbox": [],
+  "projection_watermarks": [],
+  "projects": [],
+  "provider_cooldowns": [],
+  "reference_entries": [],
+  "research_edges": [
+    {
+      "edge_id": "edge_011910b16c684b5ab05f8e15074c97f7",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "source_node_id": "method_578417c4dcfc42e99060150cccd53613",
+      "target_node_id": "claim_bb84d9ba73be4451a3b4222d941427e2",
+      "relation": "MOTIVATES",
+      "created_at": "2026-10-02T14:59:39.149798+00:00"
+    },
+    {
+      "edge_id": "edge_7eb9190e62f64a98b6c73ab075e67c7b",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "source_node_id": "claim_bb84d9ba73be4451a3b4222d941427e2",
+      "target_node_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+      "relation": "MOTIVATES",
+      "created_at": "2026-10-02T14:59:39.180820+00:00"
+    }
+  ],
+  "research_fields": [
+    {
+      "field_id": "field_5a513f17ec1349c8a05002bb42a0a93f",
+      "normalized_name": "isolated field",
+      "name": "Isolated field",
+      "description": null,
+      "created_at": "2026-10-02T14:59:39.089164+00:00",
+      "updated_at": "2026-10-02T14:59:39.089164+00:00"
+    }
+  ],
+  "research_nodes": [
+    {
+      "node_id": "method_578417c4dcfc42e99060150cccd53613",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_type": "method",
+      "status": "SUPERSEDED",
+      "statement": "Isolated method 011d49e3a9ce43c696e8525ba6579412",
+      "rationale": "Fixture approval only",
+      "payload_json": "{\"evidence_ids\":[],\"upstream_node_ids\":[]}",
+      "revision": 2,
+      "created_at": "2026-10-02T14:59:39.119186+00:00",
+      "updated_at": "2026-10-02T14:59:39.293033+00:00"
+    },
+    {
+      "node_id": "claim_bb84d9ba73be4451a3b4222d941427e2",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_type": "claim",
+      "status": "STALE",
+      "statement": "Isolated claim 6644ada96ea349dd90e002aa8879f948",
+      "rationale": "Fixture approval only",
+      "payload_json": "{\"evidence_ids\":[],\"upstream_node_ids\":[\"method_578417c4dcfc42e99060150cccd53613\"]}",
+      "revision": 2,
+      "created_at": "2026-10-02T14:59:39.149798+00:00",
+      "updated_at": "2026-10-02T14:59:39.293033+00:00"
+    },
+    {
+      "node_id": "claim_5fdad5a7be7144aca7ff828926d00e11",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_type": "claim",
+      "status": "STALE",
+      "statement": "Isolated claim d8de1260d07540f7a0a2c849fb43b3d0",
+      "rationale": "Fixture approval only",
+      "payload_json": "{\"evidence_ids\":[],\"upstream_node_ids\":[\"claim_bb84d9ba73be4451a3b4222d941427e2\"]}",
+      "revision": 2,
+      "created_at": "2026-10-02T14:59:39.180820+00:00",
+      "updated_at": "2026-10-02T14:59:39.293033+00:00"
+    },
+    {
+      "node_id": "method_de9d256dcf294ac9a89822c4c8a10142",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "node_type": "method",
+      "status": "APPROVED",
+      "statement": "Isolated method 371c132798e14f1a9944167a43c692a9",
+      "rationale": "Fixture approval only",
+      "payload_json": "{\"evidence_ids\":[],\"upstream_node_ids\":[]}",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.262518+00:00",
+      "updated_at": "2026-10-02T14:59:39.293033+00:00"
+    }
+  ],
+  "research_tracks": [
+    {
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "field_id": "field_5a513f17ec1349c8a05002bb42a0a93f",
+      "primary_topic_id": "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+      "title": "Isolated track",
+      "scope": null,
+      "research_type": "conceptual_framework",
+      "status": "ACTIVE",
+      "mapping_status": "MAPPED",
+      "revision": 1,
+      "created_at": "2026-10-02T14:59:39.105669+00:00",
+      "updated_at": "2026-10-02T14:59:39.105669+00:00"
+    }
+  ],
+  "research_workspace_actions": [],
+  "retrieval_runs": [],
+  "review_comments": [],
+  "review_rounds": [],
+  "schema_version": [
+    {
+      "component": "catalog",
+      "version": 13,
+      "applied_at": "2026-10-13 14:12:39"
+    }
+  ],
+  "screening_input_snapshots": [],
+  "skeleton_checkpoints": [],
+  "skeleton_runs": [],
+  "skeleton_source_outlines": [],
+  "skeleton_triplets": [],
+  "skeleton_units": [],
+  "source_file_versions": [],
+  "sqlite_sequence": [],
+  "studio_artifacts": [],
+  "studio_assets": [],
+  "studio_change_link_events": [],
+  "studio_change_link_state": [],
+  "studio_changes": [],
+  "studio_chat_messages": [],
+  "studio_comment_response_state": [],
+  "studio_documents": [
+    {
+      "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+      "revision": 0,
+      "document_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_264202f005144e1ba60f8574c6637f70\",\"schema_version\":1,\"sections\":[{\"id\":\"section_d8710c6e78e8436192a94deaa2abe3d7\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_d2f71cbeea1f495eb01635502503c9ea\",\"intents\":[{\"id\":\"intent_99818ed1fe9a44279948e66ae8ab9668\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions WHOLE_PAPER_REVIEW\",\"venue\":\"\"}",
+      "active_generated_version_id": null,
+      "last_generated_revision": null,
+      "created_at": "2026-10-02T14:59:39.418586+00:00",
+      "updated_at": "2026-10-02T14:59:39.418586+00:00"
+    },
+    {
+      "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+      "revision": 0,
+      "document_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_d24e458d188e42449fb25c1d65affc29\",\"schema_version\":1,\"sections\":[{\"id\":\"section_a05bcd570ba14cd0ab66b81280d00b28\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_f3fd4bdd6d0e48cea1285d50fd9be83c\",\"intents\":[{\"id\":\"intent_3289ac01899f49bf91df511bb5a5356b\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions FINALIZATION_SUBMISSION\",\"venue\":\"\"}",
+      "active_generated_version_id": null,
+      "last_generated_revision": null,
+      "created_at": "2026-10-02T14:59:39.449663+00:00",
+      "updated_at": "2026-10-02T14:59:39.449663+00:00"
+    },
+    {
+      "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+      "revision": 0,
+      "document_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_ed7c93ebf4824ec48186d731583185c8\",\"schema_version\":1,\"sections\":[{\"id\":\"section_c2483e494e2f42cca43a2982fbcdbb16\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_8c804b8ad8b94cb8ac5eef885fb19f25\",\"intents\":[{\"id\":\"intent_69736e5768984ebe85cc69cc99690949\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions REVISION\",\"venue\":\"\"}",
+      "active_generated_version_id": null,
+      "last_generated_revision": null,
+      "created_at": "2026-10-02T14:59:39.482191+00:00",
+      "updated_at": "2026-10-02T14:59:39.482191+00:00"
+    },
+    {
+      "manuscript_id": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+      "revision": 0,
+      "document_json": "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_332d6e2945cd4c30b4d39fcae921e28a\",\"schema_version\":1,\"sections\":[{\"id\":\"section_30b194a5bc414d44aa217fc498030189\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_b9a35ab977b9404592bf15eea4c5fa98\",\"intents\":[{\"id\":\"intent_cce4e8ecef204271b34eb0539b3f28ab\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions PUBLICATION\",\"venue\":\"\"}",
+      "active_generated_version_id": null,
+      "last_generated_revision": null,
+      "created_at": "2026-10-02T14:59:39.514796+00:00",
+      "updated_at": "2026-10-02T14:59:39.514796+00:00"
+    }
+  ],
+  "studio_findings": [],
+  "studio_jobs": [],
+  "studio_model_calls": [],
+  "studio_operations": [],
+  "studio_response_checks": [],
+  "studio_review_round_baselines": [],
+  "studio_sample_candidates": [],
+  "studio_submission_packages": [],
+  "studio_suggestion_decisions": [],
+  "studio_template_instances": [],
+  "submission_events": [],
+  "topics": [
+    {
+      "topic_id": "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+      "normalized_name": "isolated topic",
+      "name": "Isolated topic",
+      "description": null,
+      "created_at": "2026-10-02T14:59:39.097667+00:00",
+      "updated_at": "2026-10-02T14:59:39.097667+00:00"
+    }
+  ],
+  "track_milestones": [],
+  "track_snapshot_adoptions": [],
+  "track_topics": [
+    {
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "topic_id": "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+      "role": "PRIMARY",
+      "created_at": "2026-10-02T14:59:39.105669+00:00"
+    }
+  ]
+}

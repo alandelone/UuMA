@@ -1,0 +1,13 @@
+{
+  "status": "PASS_REAL_READONLY_FULL_JOURNAL_PROJECTION",
+  "source_mode": "ro",
+  "source_rows": 28410,
+  "frozen_all_row_fields_sha256": "e8882ced288ee6aa6dd4781c65ef861189c16fa0f1f50c3ce46038fa4ce043bb",
+  "every_projected_row_fields_exact": true,
+  "source_rows_and_fields_exact_after_projection": true,
+  "projection_python_peak_bytes": 7028358,
+  "output_bytes": 3471527,
+  "handoff_body_not_printed": true,
+  "business_commands_replayed": 0,
+  "shared_session_closed": false
+}

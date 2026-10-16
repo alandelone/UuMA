@@ -1,0 +1,51 @@
+{
+  "status": "PREPARED_FOR_NATIVE_UI_NOT_ACCEPTED",
+  "pid": 13716,
+  "port": 52891,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8",
+  "db": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\catalog.db",
+  "source_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-publication-chain-2rsgo3jx",
+  "source_vector": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-rv-native-v1\\source-vector-311.json",
+  "source_file_count": 311,
+  "all_original_110_tables_and_rows_preserved": true,
+  "added_rows": {
+    "paper_identities": 3,
+    "papers": 3,
+    "source_file_versions": 2
+  },
+  "all_original_files_unchanged": true,
+  "original_stored_paths_preserved": true,
+  "fixture_kind": "SOFTWARE_FIXTURE",
+  "fixture_pdfs": {
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_three_page_annotation.pdf": "e36f5d3ee0ca0bf1a237cec37f36b185784fcd48e0a746640013d2991f9c4ba1",
+    "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_without_printed_doi.pdf": "cd7c1d6d6b39c089fdf28ef31cc180e3e726245504544e3c8fa60837845c5a84"
+  },
+  "main": {
+    "paper_id": "software_fixture_rv_main_paper_abd70179dcff",
+    "case_id": "software_fixture_rv_main_file_abd70179dcff",
+    "pdf": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_three_page_annotation.pdf",
+    "catalog_title_before": "SOFTWARE_FIXTURE Original Catalog Title abd70179dcff",
+    "selected_title": "Native PDF Annotation and Reversal Acceptance",
+    "catalog_doi_before": "10.9898/rv-original-abd70179dcff",
+    "selected_doi": "10.9898/rv-native-abd70179dcff",
+    "url": "http://127.0.0.1:52891/?view=review&case=software_fixture_rv_main_file_abd70179dcff"
+  },
+  "absent": {
+    "paper_id": "software_fixture_rv_absent_paper_abd70179dcff",
+    "case_id": "software_fixture_rv_absent_file_abd70179dcff",
+    "pdf": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-rv-native-w6ahcxx8\\data\\software-fixtures\\SOFTWARE_FIXTURE_without_printed_doi.pdf",
+    "catalog_doi_preserved": "10.9898/rv-known-abd70179dcff",
+    "url": "http://127.0.0.1:52891/?view=review&case=software_fixture_rv_absent_file_abd70179dcff"
+  },
+  "collision": {
+    "paper_id": "software_fixture_rv_collision_paper_abd70179dcff",
+    "doi": "10.9898/rv-collision-abd70179dcff",
+    "visible_source_page": 2
+  },
+  "lifespan": "off",
+  "workers_started": 0,
+  "model_calls": 0,
+  "jobs_executed": 0,
+  "annotations_posted_by_preparation": 0,
+  "native_acceptance_complete": false
+}

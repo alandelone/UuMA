@@ -203,6 +203,24 @@ class ChatGPTBrowser:
 
     def prepare(self, account: dict, request: dict, url: str | None):
         if account.get("chrome_profile"):
+            if (
+                self.extension is not None
+                and callable(getattr(self.extension, "connected", None))
+                and not self.extension.connected(account["alias"])
+            ):
+                try:
+                    open_chrome_profile(account["chrome_profile"])
+                    deadline = time.monotonic() + 15.0
+                    while time.monotonic() < deadline:
+                        if callable(getattr(self.extension, "connected", None)) and self.extension.connected(account["alias"]):
+                            break
+                        time.sleep(1.0)
+                except Exception as exc:  # noqa: BLE001
+                    LOGGER.warning(
+                        "Auto-launching Chrome profile %s failed: %s",
+                        account["chrome_profile"],
+                        exc,
+                    )
             result = self.extension_call(account["alias"], "prepare", {
                 # A new logical thread must begin on ChatGPT's new-chat page instead
                 # of silently reusing whichever conversation tab happens to be open.

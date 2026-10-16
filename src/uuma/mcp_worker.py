@@ -279,7 +279,17 @@ def propose_graph_operation(operation_json: str) -> dict[str, str]:
 
 @mcp.tool()
 def brainstormer_propose_transaction(transaction_json: str) -> dict[str, Any]:
-    """Propose a validated project/topic reasoning-state transaction."""
+    """Propose a validated Decision Map reasoning-state transaction.
+
+    The Decision Map organizes discussions into a DAG (Directed Acyclic Graph):
+    - Objects: 'project', 'topic', 'question', 'assumption', 'evidence', 'decision', 'checkpoint'.
+    - Actions: 'CREATE', 'UPDATE', 'LINK', 'UNLINK', 'RESOLVE', 'SUPERSEDE', 'CHECKPOINT'.
+    - Relations:
+      * Hierarchy (归属): 'subquestion' (Parent Question -> Subquestion), 'contains' (Topic -> Question).
+      * Grounding & Dependency (依据/依赖): 'grounds' (Assumption/Evidence -> Question or Decision),
+        'depends_on' (Question -> prerequisite Question), 'decides' (Question -> Decision).
+    - Invariants: Strict DAG. Links that form self-loops or directed cycles are rejected.
+    """
     actor = _require_brainstormer()
     transaction = StateTransaction.model_validate_json(transaction_json)
     return _brainstormer_store().propose(transaction, requested_by=actor)
@@ -287,7 +297,11 @@ def brainstormer_propose_transaction(transaction_json: str) -> dict[str, Any]:
 
 @mcp.tool()
 def brainstormer_commit_safe_transaction(proposal_id: str) -> dict[str, Any]:
-    """Commit only assumptions, questions, checkpoints, and other review-free state."""
+    """Commit only assumptions, questions, evidence, checkpoints, and safe links.
+
+    Structural entity changes (projects, topics, decisions) and supersessions require
+    Orchestrator review. Non-structural nodes and grounding/subquestion links commit immediately.
+    """
     return _brainstormer_store().commit_safe(proposal_id, actor_id=_require_brainstormer())
 
 
@@ -296,6 +310,31 @@ def brainstormer_get_context(project_id: str, topic_id: str = "") -> dict[str, A
     """Restore bounded structured state for one project or topic."""
     _require_brainstormer()
     return _brainstormer_store().get_context(project_id, topic_id or None)
+
+
+@mcp.tool()
+def brainstormer_get_decision_map(project_id: str, topic_id: str = "") -> dict[str, Any]:
+    """Retrieve full Decision Map projection including progression, hierarchy trees, and DAG edges.
+
+    Returns:
+    - 'nodes': List of nodes with readiness status ('is_ready', 'is_blocked', 'is_current', 'unresolved_dependencies').
+    - 'edges': Directed edges categorized into 'hierarchy' (solid) and 'dependency' (dashed).
+    - 'progression': 'active_question_id', 'recommended_next_question_id', 'ready_questions', 'blocked_questions'.
+    - 'hierarchy': Forest of topic/question/subquestion trees.
+    - 'summary': Counts of questions, evidence, assumptions, decisions, and ready/blocked states.
+    """
+    _require_brainstormer()
+    return _brainstormer_store().get_decision_map(project_id, topic_id or None)
+
+
+@mcp.tool()
+def brainstormer_set_active_question(project_id: str, question_id: str) -> dict[str, Any]:
+    """Set the currently focused discussion question in the Decision Map.
+
+    Updates active question tracking and records state history for live sync across Telegram and Live Voice.
+    """
+    actor = _require_brainstormer()
+    return _brainstormer_store().set_active_question(project_id, question_id, actor_id=actor)
 
 
 @mcp.tool()

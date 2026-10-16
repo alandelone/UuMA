@@ -1,0 +1,19 @@
+{
+  "status_code": 201,
+  "body": {
+    "asset_id": "asset_24bccb8186a54a578fb0b34410a085f3",
+    "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+    "filename": "SOFTWARE_FIXTURE-v5-local-proof.txt",
+    "media_type": "text/plain",
+    "size_bytes": 739,
+    "sha256": "319b444fb182840168b1d2e3e83f6da18c19aacf6b42044f4f3f2455d29e5ca1",
+    "storage_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4\\data\\writing-studio\\manuscript_56652adf9d054cb6ab3819efacf3475c\\assets\\319b444fb1828401-SOFTWARE_FIXTURE-v5-local-proof.txt",
+    "asset_kind": "DOCUMENT",
+    "status": "READY",
+    "created_at": "2026-10-15T06:55:00.844119+00:00",
+    "metadata": {
+      "encoding": "utf-8",
+      "preview": "SOFTWARE_FIXTURE LOCAL PUBLICATION WORKFLOW CHECK\nThis text file is a synthetic local proof fixture for UI archive binding tests.\nIt is not a publisher proof or a scientific approval.\nOriginal fixed generated version: manuscript_version_de30b95a2d6843059d3c8b420627bf58\nAuthor structure revision: 62\nFinal PDF SHA256: f3d27b83a2256d7cffa25e3162b67e060fc55c30311abcc6329c8d3394f0e0e4\nFinal PDF byte size: 13830\nThe test preserves the existing Alpha wording, citations, selected source conditions,\nand fixed generated v5. It does not assert external submission, acceptance,\npublication, DOI registration, new scientific evidence, or an unperformed amendment.\nThe local archive will bind these exact uploaded bytes and this explicit fixture.\n"
+    }
+  }
+}

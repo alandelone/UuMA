@@ -1,0 +1,298 @@
+[
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-001.json",
+    "method": "GET",
+    "path": "/",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-002.json",
+    "method": "GET",
+    "path": "/catalog-research-overview.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-003.json",
+    "method": "GET",
+    "path": "/catalog-track-decisions.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-004.json",
+    "method": "GET",
+    "path": "/catalog-experiments.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-005.json",
+    "method": "GET",
+    "path": "/catalog-research-workspaces.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-006.json",
+    "method": "GET",
+    "path": "/catalog-research-chat.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-007.json",
+    "method": "GET",
+    "path": "/catalog-collections.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-008.json",
+    "method": "GET",
+    "path": "/catalog-review-workflow.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-009.json",
+    "method": "GET",
+    "path": "/catalog-scientific-review.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-010.json",
+    "method": "GET",
+    "path": "/api/catalog/summary",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-011.json",
+    "method": "POST",
+    "path": "/api/catalog/papers/query",
+    "allowed": false,
+    "status_code": 403
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v1",
+    "serial": "request-012.json",
+    "method": "GET",
+    "path": "/favicon.ico",
+    "allowed": true,
+    "status_code": 404
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-001.json",
+    "method": "GET",
+    "path": "/",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-002.json",
+    "method": "GET",
+    "path": "/catalog-research-overview.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-003.json",
+    "method": "GET",
+    "path": "/catalog-track-decisions.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-004.json",
+    "method": "GET",
+    "path": "/catalog-experiments.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-005.json",
+    "method": "GET",
+    "path": "/catalog-research-workspaces.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-006.json",
+    "method": "GET",
+    "path": "/catalog-research-chat.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-007.json",
+    "method": "GET",
+    "path": "/catalog-collections.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-008.json",
+    "method": "GET",
+    "path": "/catalog-review-workflow.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-009.json",
+    "method": "GET",
+    "path": "/catalog-scientific-review.js",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-010.json",
+    "method": "GET",
+    "path": "/api/catalog/summary",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-011.json",
+    "method": "POST",
+    "path": "/api/catalog/papers/query",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-012.json",
+    "method": "GET",
+    "path": "/favicon.ico",
+    "allowed": true,
+    "status_code": 404
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-013.json",
+    "method": "GET",
+    "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-014.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/context",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-015.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/history",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-016.json",
+    "method": "GET",
+    "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9/model-calls/acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-017.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/context",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-018.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/history",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-019.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/context",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-020.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/history",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-021.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/context",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-022.json",
+    "method": "POST",
+    "path": "/api/catalog/discussion/history",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-023.json",
+    "method": "GET",
+    "path": "/api/catalog/research-overview",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-024.json",
+    "method": "GET",
+    "path": "/api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6",
+    "allowed": true,
+    "status_code": 200
+  },
+  {
+    "preview": "scholar-quickread-native-preview-v2",
+    "serial": "request-025.json",
+    "method": "GET",
+    "path": "/api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6/progress",
+    "allowed": true,
+    "status_code": 200
+  }
+]

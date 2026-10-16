@@ -1,0 +1,171 @@
+--- studio.py.before
++++ studio.py.after
+@@ -740,56 +740,73 @@
+         expected_revision: int,
+         reason: str,
+     ) -> dict[str, Any]:
++        with transaction(self.db_path) as conn:
++            conn.execute("BEGIN IMMEDIATE")
++            self._set_stage(
++                conn, manuscript_id, stage, expected_revision=expected_revision, reason=reason,
++            )
++        return self.get_workspace(manuscript_id)
++
++    def _set_stage(
++        self,
++        conn: Any,
++        manuscript_id: str,
++        stage: str,
++        *,
++        expected_revision: int,
++        reason: str,
++        preserve_same_stage: bool = False,
++    ) -> None:
+         if stage not in WORKFLOW_STAGES:
+             raise ValueError(f"Unknown workflow stage: {stage}")
+         next_revision = expected_revision + 1
+         timestamp = _now()
+-        with transaction(self.db_path) as conn:
+-            manuscript = conn.execute(
+-                "SELECT * FROM manuscripts WHERE manuscript_id=?", (manuscript_id,),
+-            ).fetchone()
+-            if manuscript is None:
+-                raise NotFoundError(f"Unknown manuscript: {manuscript_id}")
+-            current = manuscript["workflow_stage"] or "PLANNING"
+-            if stage != current and stage not in _ALLOWED_TRANSITIONS[current]:
+-                raise ValueError(f"Cannot move manuscript from {current} to {stage}")
+-            if manuscript["revision"] != expected_revision:
+-                raise RevisionConflictError("Manuscript revision changed")
+-            if stage not in {"PLANNING", "DRAFTING"}:
+-                self._require_successful_version(
+-                    conn, manuscript_id,
+-                    require_current=(
+-                        stage in {"FINALIZATION_SUBMISSION", "PUBLICATION"}
+-                        or (stage == "WHOLE_PAPER_REVIEW" and current != stage)
+-                    ),
+-                )
+-            if (
+-                stage in {"FINALIZATION_SUBMISSION", "PUBLICATION"}
+-                and manuscript["needs_scientific_review"]
+-            ):
+-                raise RSTV4Error(
+-                    "Review the manuscript's scientific dependencies before finalization"
+-                )
+-            conn.execute(
+-                """UPDATE manuscripts SET workflow_stage=?,writing_status=?,revision=?,updated_at=?
+-                   WHERE manuscript_id=?""",
+-                (stage, _STATUS_BY_STAGE[stage], next_revision, timestamp, manuscript_id),
+-            )
+-            conn.execute(
+-                """INSERT INTO manuscript_status_history
+-                   VALUES(?,?,?,?,?,?,?,?)""",
+-                (
+-                    new_id("history"),
+-                    manuscript_id,
+-                    _STATUS_BY_STAGE[stage],
+-                    None,
+-                    None,
+-                    reason,
+-                    next_revision,
+-                    timestamp,
++        manuscript = conn.execute(
++            "SELECT * FROM manuscripts WHERE manuscript_id=?", (manuscript_id,),
++        ).fetchone()
++        if manuscript is None:
++            raise NotFoundError(f"Unknown manuscript: {manuscript_id}")
++        current = manuscript["workflow_stage"] or "PLANNING"
++        if stage != current and stage not in _ALLOWED_TRANSITIONS[current]:
++            raise ValueError(f"Cannot move manuscript from {current} to {stage}")
++        if manuscript["revision"] != expected_revision:
++            raise RevisionConflictError("Manuscript revision changed")
++        if stage not in {"PLANNING", "DRAFTING"}:
++            self._require_successful_version(
++                conn, manuscript_id,
++                require_current=(
++                    stage in {"FINALIZATION_SUBMISSION", "PUBLICATION"}
++                    or (stage == "WHOLE_PAPER_REVIEW" and current != stage)
+                 ),
+             )
+-        return self.get_workspace(manuscript_id)
++        if (
++            stage in {"FINALIZATION_SUBMISSION", "PUBLICATION"}
++            and manuscript["needs_scientific_review"]
++        ):
++            raise RSTV4Error(
++                "Review the manuscript's scientific dependencies before finalization"
++            )
++        if preserve_same_stage and stage == current:
++            return
++        conn.execute(
++            """UPDATE manuscripts SET workflow_stage=?,writing_status=?,revision=?,updated_at=?
++               WHERE manuscript_id=?""",
++            (stage, _STATUS_BY_STAGE[stage], next_revision, timestamp, manuscript_id),
++        )
++        conn.execute(
++            """INSERT INTO manuscript_status_history
++               VALUES(?,?,?,?,?,?,?,?)""",
++            (
++                new_id("history"),
++                manuscript_id,
++                _STATUS_BY_STAGE[stage],
++                None,
++                None,
++                reason,
++                next_revision,
++                timestamp,
++            ),
++        )
+ 
+     @staticmethod
+     def _require_successful_version(
+@@ -1411,25 +1428,32 @@
+         status: str,
+         detail: str | None,
+     ) -> dict[str, Any]:
+-        event = self.track_service.record_submission(
+-            manuscript_id,
+-            SubmissionEventInput(
+-                venue=venue,
+-                round=round_number,
+-                status=status,
+-                detail=detail,
+-            ),
++        payload = SubmissionEventInput(
++            venue=venue, round=round_number, status=status, detail=detail,
+         )
+-        if status == "PUBLISHED":
+-            manuscript = self.track_service.get_manuscript(manuscript_id)
+-            if manuscript.get("workflow_stage") != "PUBLICATION":
+-                with transaction(self.db_path) as conn:
+-                    conn.execute(
+-                        """UPDATE manuscripts SET workflow_stage='PUBLICATION',revision=revision+1,
+-                           updated_at=? WHERE manuscript_id=?""",
+-                        (_now(), manuscript_id),
+-                    )
+-        return event
++        event_id = new_id("submission")
++        with transaction(self.db_path) as conn:
++            conn.execute("BEGIN IMMEDIATE")
++            manuscript = conn.execute(
++                "SELECT * FROM manuscripts WHERE manuscript_id=?", (manuscript_id,),
++            ).fetchone()
++            if manuscript is None:
++                raise NotFoundError(f"Unknown manuscript: {manuscript_id}")
++            if payload.status.value == "PUBLISHED":
++                self._set_stage(
++                    conn, manuscript_id, "PUBLICATION",
++                    expected_revision=manuscript["revision"],
++                    reason=payload.detail or f"Publication recorded for {payload.venue}, round {payload.round}",
++                    preserve_same_stage=True,
++                )
++            conn.execute(
++                "INSERT INTO submission_events VALUES(?,?,?,?,?,?,?)",
++                (event_id, manuscript_id, payload.venue, payload.round, payload.status.value,
++                 payload.detail, _now()),
++            )
++            return dict(conn.execute(
++                "SELECT * FROM submission_events WHERE event_id=?", (event_id,),
++            ).fetchone())
+ 
+     def import_comments(
+         self,

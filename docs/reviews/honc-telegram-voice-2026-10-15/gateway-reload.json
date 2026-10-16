@@ -1,0 +1,86 @@
+{
+  "activated_at": "2026-10-15T03:10:41.336311+00:00",
+  "state": "RELOADED_EXISTING_GATEWAY",
+  "idle_before_reload": true,
+  "old_pid": 39156,
+  "new_pid": 61844,
+  "served_profiles": [
+    "default",
+    "brainstormer",
+    "forge-lab-bot",
+    "honc",
+    "scholar",
+    "wisdom-oldman",
+    "yonc"
+  ],
+  "platforms": {
+    "telegram": {
+      "state": "connected",
+      "error_code": null,
+      "error_message": null,
+      "updated_at": "2026-10-15T03:09:38.612343+00:00",
+      "writer_pid": 61844,
+      "writer_start_time": 179203370373,
+      "needs_attention": false,
+      "retrying_since": null
+    },
+    "brainstormer:telegram": {
+      "state": "connected",
+      "error_code": null,
+      "error_message": null,
+      "needs_attention": false,
+      "retrying_since": null,
+      "updated_at": "2026-10-15T03:09:51.502863+00:00",
+      "writer_pid": 61844,
+      "writer_start_time": 179203370373
+    },
+    "honc:telegram": {
+      "state": "connected",
+      "error_code": null,
+      "error_message": null,
+      "needs_attention": false,
+      "retrying_since": null,
+      "updated_at": "2026-10-15T03:10:03.646549+00:00",
+      "writer_pid": 61844,
+      "writer_start_time": 179203370373
+    },
+    "scholar:telegram": {
+      "state": "connected",
+      "error_code": null,
+      "error_message": null,
+      "needs_attention": false,
+      "retrying_since": null,
+      "updated_at": "2026-10-15T03:10:15.579491+00:00",
+      "writer_pid": 61844,
+      "writer_start_time": 179203370373
+    },
+    "wisdom-oldman:telegram": {
+      "state": "connected",
+      "error_code": null,
+      "error_message": null,
+      "needs_attention": false,
+      "retrying_since": null,
+      "updated_at": "2026-10-15T03:10:27.508816+00:00",
+      "writer_pid": 61844,
+      "writer_start_time": 179203370373
+    },
+    "yonc:telegram": {
+      "state": "connected",
+      "error_code": null,
+      "error_message": null,
+      "needs_attention": false,
+      "retrying_since": null,
+      "updated_at": "2026-10-15T03:10:39.744898+00:00",
+      "writer_pid": 61844,
+      "writer_start_time": 179203370373
+    }
+  },
+  "official_pause_ack": {
+    "pausing": false,
+    "already_stopping": true,
+    "pid": 39156,
+    "drain_timeout": 0.0
+  },
+  "forced_process_kills": 0,
+  "second_gateway_started": false
+}

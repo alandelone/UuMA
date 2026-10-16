@@ -1,0 +1,18 @@
+{
+  "status": "PASS_NEW_ISOLATED_PRE_WF_COMPLEX_FIXTURE_RESTORED110_AND_ONLY25_PATHS_RELOCATED",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz",
+  "db": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-complex-native-qjbemsgz\\data\\catalog.db",
+  "checkpoint": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-studio-current-native-restart-v10\\action-002-all-tables.json",
+  "checkpoint_sha256": "d96d0f62e890264e5ac531b88c8eee973fd34b0360ef0de533986d730257a7cd",
+  "full110_before_relocation_exact": true,
+  "other109_tables_after_paths_exact": true,
+  "only_existing_cells_changed": 25,
+  "source311_frontend91_dist76_exact": true,
+  "source_and_publication_files_unchanged": true,
+  "models_workers_jobs_native_actions": 0,
+  "scientific_approval": false,
+  "all118_complete": false,
+  "final11_complete": false,
+  "preserved_publication_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-studio-current-native-v2-6jc613d4",
+  "next": "Native complex software fixture inputs on new isolated branch; no old actions replayed."
+}

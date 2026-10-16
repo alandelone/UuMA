@@ -1,0 +1,89 @@
+{
+  "baseline": {
+    "block": {
+      "kind": "paragraph",
+      "object_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "anchor_id": "manuscript_version_de30b95a2d6843059d3c8b420627bf58:paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "text": "Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8].",
+      "display_text": "Beta software paragraph cites original page 1 [1] and additional source [2].",
+      "label": "Introduction / \u6bb5\u843d 1",
+      "section_id": "section_949af22a4dd84679ba120bc5a8ed746f",
+      "thought_ids": [
+        "thought_009a96629cb14586b44697b3ec73f2bc"
+      ],
+      "formulas": [],
+      "group_id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce"
+    },
+    "realization": {
+      "paragraph_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_009a96629cb14586b44697b3ec73f2bc"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 158,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "Beta software paragraph cites original page 1 [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] and additional source [@evidence_6b169de2b78d452f919391b00916f2c8]."
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_G09_CURRENT_NATIVE",
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_7f126b3f786a4dd7a1fbd64ed7ddde49"
+    }
+  },
+  "target": {
+    "block": {
+      "kind": "paragraph",
+      "object_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "anchor_id": "manuscript_version_8732ec9497074d82ae2b4359a7c235e5:paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "text": "Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted. [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] [@evidence_3a2639ee8b5e432aafd7e3743c825f33]",
+      "display_text": "Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted. [1] [2]",
+      "label": "Introduction / \u6bb5\u843d 1",
+      "section_id": "section_949af22a4dd84679ba120bc5a8ed746f",
+      "thought_ids": [
+        "thought_009a96629cb14586b44697b3ec73f2bc"
+      ],
+      "formulas": [],
+      "group_id": "paragraph_group_1634c698-89c8-4dad-94d0-7c369ab790ce"
+    },
+    "realization": {
+      "paragraph_id": "paragraph_895901de3a694d6f9a4b996e5459feeb",
+      "sentence_mappings": [
+        {
+          "sentence": 0,
+          "thought_ids": [
+            "thought_009a96629cb14586b44697b3ec73f2bc"
+          ]
+        }
+      ],
+      "sentences": [
+        {
+          "end": 217,
+          "offset_unit": "unicode_codepoint",
+          "start": 0,
+          "text": "Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted. [@evidence_b5348fa59b3948ae9540b75a33ca9bd9] [@evidence_3a2639ee8b5e432aafd7e3743c825f33]"
+        }
+      ],
+      "sentence_positions_verified": true,
+      "model_contract": {
+        "actual_model": "TEST_FIXTURE_COMPLEX_CURRENT_NATIVE",
+        "external_model_executed": false,
+        "honest_software_fixture": true,
+        "scientific_approval": false,
+        "software_only": true,
+        "task": "paragraph_realization"
+      },
+      "model_call_id": "studio_model_call_0c95d698b0ec4c2a81f1503530d70391"
+    }
+  }
+}

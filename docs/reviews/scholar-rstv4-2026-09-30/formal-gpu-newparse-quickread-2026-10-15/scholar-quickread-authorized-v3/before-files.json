@@ -1,0 +1,13 @@
+{
+  ".rstv4-local/workers/pdf-paper_dde0a449e93444c2771e7b0edeb7daf9.lock": "5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9",
+  "data/catalog.db": "9e1e3f6ec4a59567c791ec0f5df7b32d26fbe27a5f41787bc7cf59c64b3fcc94",
+  "data/catalog.pre-v11.bak": "9bd859ed89024059e4401cb85994298c5b81f9235d981d57eabf131ff466d763",
+  "data/catalog.pre-v13.bak": "5e470cc45cabb2050bc2ee65c3edca571aae1ceaad83f5462db94382fa7545b7",
+  "data/artifacts/papers/paper_dde0a449e93444c2771e7b0edeb7daf9/85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99/review/job_76d39031d8cc329ec431e6a896a08f54-1/candidate.json": "c1c9470a6b2546a5e351b8ebeefd893ac8caed20d875ccfec1d75f0e96f20aa6",
+  "data/artifacts/papers/paper_dde0a449e93444c2771e7b0edeb7daf9/85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99/review/job_76d39031d8cc329ec431e6a896a08f54-6/candidate.json": "a5ef6a06f3e1125cd7d033e5fe2f9c55165abb475f3c0a2d8a9e82ee94bc02bd",
+  "m/attempt-fe7a7801c13b4aef867dc477a8224acd/out/model.json": "550a7e3a6ff76c91024679e6dd5c4e516798813575ec91fbaa321673e4aadf6d",
+  "m/attempt-fe7a7801c13b4aef867dc477a8224acd/out/rstv4-parse-result.json": "83b31928b6ca63703669c16eb749aa1a4df10bf386e2e875ef138d7439bacfad",
+  "m/attempt-fe7a7801c13b4aef867dc477a8224acd/out/source/source.md": "5c33febc5ccca79b45abae32c62ae35e9b7bb351fc6931bad69d812093bedda0",
+  "m/attempt-fe7a7801c13b4aef867dc477a8224acd/out/source/source_content_list.json": "4c0825533a9cdbcafee7390efe5d1d4d1ac7e40e114e109810f56e13ca3cf439",
+  "m/attempt-fe7a7801c13b4aef867dc477a8224acd/out/source/source_middle.json": "f94c4478ed99460cc918bf0bb26b23115930eeee6a9219f9f19ea8d2d72c5bb8"
+}

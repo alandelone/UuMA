@@ -1,0 +1,56 @@
+[
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "-m",
+      "pytest",
+      "tests/test_studio_frozen_origins.py",
+      "tests/test_studio_revision_mapping.py",
+      "tests/test_studio_response_checks.py",
+      "tests/test_studio_response_citation_display.py",
+      "-q",
+      "--tb=short"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 178.2039999999979,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-v1\\focused-v2-0.log"
+  },
+  {
+    "command": [
+      "node",
+      "tests/unit/studio-response-review.cjs"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 0.3430000000007567,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-v1\\focused-v2-1.log"
+  },
+  {
+    "command": [
+      "node",
+      "node_modules/typescript/bin/tsc",
+      "--noEmit"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio",
+    "exit_code": 0,
+    "seconds": 1.9530000000013388,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-v1\\focused-v2-2.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-m",
+      "ruff",
+      "check",
+      "src/rstv4/studio_revision_mapping.py",
+      "tests/test_studio_frozen_origins.py"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4",
+    "exit_code": 0,
+    "seconds": 0.09399999999732245,
+    "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-frozen-origin-v1\\focused-v2-3.log"
+  }
+]

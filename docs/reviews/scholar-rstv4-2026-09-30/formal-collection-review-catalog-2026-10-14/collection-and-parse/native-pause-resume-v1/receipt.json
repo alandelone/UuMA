@@ -1,0 +1,10 @@
+{
+  "status": "PASS_NATIVE_PAUSE_RESUME_EXACT_COLLECTION_AND_RUNTIME_ONLY",
+  "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+  "tables": 105,
+  "jobs_and_attempts_exact": true,
+  "model_calls_and_parse_publication_unchanged": true,
+  "old_paused_collection_exact": true,
+  "g11_complete": false,
+  "all11_complete": false
+}

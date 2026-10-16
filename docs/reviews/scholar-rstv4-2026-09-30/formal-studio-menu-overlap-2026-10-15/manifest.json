@@ -1,0 +1,162 @@
+{
+  "acceptance.md": {
+    "bytes": 3090,
+    "sha256": "118057d101a2196ce94f119e5e35a7b4021fc980357f75b433c0d796bf554eb8"
+  },
+  "execution/scholar-block-menu-build-v1.json": {
+    "bytes": 32673,
+    "sha256": "1103c8e2e2c409415ef044dbf67a0f2955450d9443e63c3ab635356249565551"
+  },
+  "execution/scholar-block-menu-build-v1.log": {
+    "bytes": 13873,
+    "sha256": "12d4057e77d807bfd28a018450a6a632d4bdaeb015a4534376f591382c98ecc9"
+  },
+  "execution/scholar-block-menu-native-audit-v1.py": {
+    "bytes": 3974,
+    "sha256": "95c4f9022ff8b6ac76d26aa4889445c7361b00c3dd339447cdfc382f7c4534b8"
+  },
+  "execution/scholar-block-menu-native-v1.py": {
+    "bytes": 3892,
+    "sha256": "d05e8f089b6bab30848c081cdb74ab0817668ee0b687a956fda56e7e1f0a5406"
+  },
+  "execution/scholar-block-menu-overlap-proposal-v1.patch": {
+    "bytes": 8054,
+    "sha256": "04a6a317a9a183090d8bec85bc99ab774a94257986340687749d313477c7221a"
+  },
+  "native/action-004-request.json": {
+    "bytes": 15343,
+    "sha256": "2a6bff6cef7986bf768e2cd1977a34e552c700323e3c97e1103eaab0284fa58d"
+  },
+  "native/action-004-response.json": {
+    "bytes": 25095,
+    "sha256": "0bc170ad03d1a1034fc9a4f3ddfaeb7e1063bc1a3b95e5fd3ec7b5d0a65c516f"
+  },
+  "native/action-008-request.json": {
+    "bytes": 16739,
+    "sha256": "dc845560ee74b3c33ef1f5f1178178d67feedd771b9864ca1e94e0da476a445c"
+  },
+  "native/action-008-response.json": {
+    "bytes": 27662,
+    "sha256": "94422ff4cfa4b06db4ba56ae7b3e477ab6475ee758ca46a73f47930871dd17f9"
+  },
+  "native/after-explicit-delete-undo110.json": {
+    "bytes": 8626122,
+    "sha256": "dc56775d2e53ad46b34745de999c801ddebfe275fcf31cce7eb14e50dcb1a7ff"
+  },
+  "native/before110-all-tables.json": {
+    "bytes": 8499656,
+    "sha256": "57fe043f6abbf293eb508bc754391e87ce639ce92294b5ed48b7fec312ebb92c"
+  },
+  "native/delete-undo-audit.json": {
+    "bytes": 718,
+    "sha256": "57f3e7e63949a71ba2450663e5ba830875e6f29b12f8f14933ac0e20e8f68f88"
+  },
+  "native/first-paragraph-geometry.json": {
+    "bytes": 791,
+    "sha256": "539976c6eafe53a4fa0cd7adb2b813569d501b0001f897deae65ef4610bb3202"
+  },
+  "native/menu-readonly-audit.json": {
+    "bytes": 280,
+    "sha256": "f6bd2f34896561c481ad7d38f069851908750f1b8d4c061bb42f1982e5c72459"
+  },
+  "native/native-hit-geometry.json": {
+    "bytes": 16509,
+    "sha256": "95bf2111da67ee5c03b283a8d9ddaef4cd45119b3dcb09b33e6ad5b99eda73eb"
+  },
+  "native/native-menu-final-wide-confirmed.png": {
+    "bytes": 80727,
+    "sha256": "5350cdea304265c097eb4706aeb7db2506813f98f46a5a42cd68c9ae1b60a72e"
+  },
+  "native/native-menu-fixed-measured-narrow760.png": {
+    "bytes": 30876,
+    "sha256": "0972849214eb4d0ee5a9125c009185669d4e31b186c1c049876c60969275393a"
+  },
+  "native/native-menu-fixed-narrow760.png": {
+    "bytes": 80727,
+    "sha256": "5350cdea304265c097eb4706aeb7db2506813f98f46a5a42cd68c9ae1b60a72e"
+  },
+  "native/native-menu-fixed-pointer-targets.png": {
+    "bytes": 80727,
+    "sha256": "5350cdea304265c097eb4706aeb7db2506813f98f46a5a42cd68c9ae1b60a72e"
+  },
+  "native/native-ui-log.json": {
+    "bytes": 240637,
+    "sha256": "bb64de86fbfc17ec735ed8c2cf999d39b200c9ffb450297229bb6c927aab2865"
+  },
+  "native/owned-stop-terminal.json": {
+    "bytes": 695,
+    "sha256": "8f94f81823345b367bd2c3ffb8af12e19ee1ff319ae6686f692a7ae0002082bc"
+  },
+  "native/ownership.json": {
+    "bytes": 1813,
+    "sha256": "edf4b17a85dd9797a509b830161f1d2e3c30ed5080e71a57c0b490af3d473d8b"
+  },
+  "native/ready.json": {
+    "bytes": 3400,
+    "sha256": "2c831e0d8930fecaede3dca4c43e9351a872e107537d92ae88aa94a923aef006"
+  },
+  "native/receipt.json": {
+    "bytes": 66693,
+    "sha256": "f3ecd21e9882d5ed0b8fab2d0cf26ad4fe522a4ac1ce39a0a7500a3f29aad7ca"
+  },
+  "scholar-block-menu-applied-v1/failed-before-CRLF-context.py": {
+    "bytes": 2068,
+    "sha256": "9306cccb766a0049183b9c4fad0746162e33963c2c81846f76e7a5743f0777b4"
+  },
+  "scholar-block-menu-applied-v1/receipt.json": {
+    "bytes": 1275,
+    "sha256": "f5d289fa8b3d298c6e28b0744d01dd1fd525e654e50fe85badb569415fcbbb3e"
+  },
+  "scholar-block-menu-applied-v1/before/app/globals.css": {
+    "bytes": 52013,
+    "sha256": "34e2e0aab21f5a13e8b9469fd393a35e18c403af9f0a56a4c346be6633aa9198"
+  },
+  "scholar-block-menu-applied-v1/before/components/studio-workspace.tsx": {
+    "bytes": 208169,
+    "sha256": "4aebf157c44544a9528f44cd30739221a86d417ba08a84e605c222678f08e42c"
+  },
+  "scholar-block-menu-checks-v1/receipt.json": {
+    "bytes": 1843,
+    "sha256": "6701cdccc65980d96cf6e6a174634037621d00ced7cae3b8e7943f6fed6f230e"
+  },
+  "scholar-block-menu-checks-v1/studio-block-controls.cjs.log": {
+    "bytes": 79,
+    "sha256": "a5986f79a6a07c214a288e32750eb494546c3a066a78a9b8399193c856dacd46"
+  },
+  "scholar-block-menu-checks-v1/studio-blocks.cjs.log": {
+    "bytes": 72,
+    "sha256": "49fa37cdb79f6b602f1ecb303fe13c40572b77acf62a9c8555f396bf9ac84e58"
+  },
+  "scholar-block-menu-checks-v1/studio-correspondence.cjs.log": {
+    "bytes": 783,
+    "sha256": "b1511e0542aa2a6ddd5633832cbccbdc73578cf5770fcad14c9c5caab26355d8"
+  },
+  "scholar-block-menu-checks-v1/studio-hierarchy.cjs.log": {
+    "bytes": 70,
+    "sha256": "1664d8266395f8aca5cce7ecc5a53cf5d304d203c72d46544acf322d82d48d24"
+  },
+  "scholar-block-menu-checks-v1/studio-response-review.cjs.log": {
+    "bytes": 430,
+    "sha256": "0f24c380def94ca1c92ebce00b2b69c258e7ef0882bfbda3e5e13e86cf359031"
+  },
+  "scholar-block-menu-checks-v1/studio-structure.cjs.log": {
+    "bytes": 151,
+    "sha256": "dc9ee34cc2a91ca311725099e50aaf391c00f491d1faa0fb6154affbf8d8ce38"
+  },
+  "scholar-block-menu-checks-v1/studio-template-placement.cjs.log": {
+    "bytes": 726,
+    "sha256": "49ae5a608b386f3a06b7f9e9cac9a87db6a925d2252dc526de5628e140b23250"
+  },
+  "scholar-block-menu-checks-v1/studio-undo-history.cjs.log": {
+    "bytes": 596,
+    "sha256": "464ce25c061cc8c1a619b881ae1c97dc3db438c9b3703478c542819b64d3acbe"
+  },
+  "source/app/globals.css": {
+    "bytes": 54627,
+    "sha256": "71a987ed9a401130e4f6fccf6051868a5f2def4e42396ed1f1329cf627170a58"
+  },
+  "source/components/studio-workspace.tsx": {
+    "bytes": 208379,
+    "sha256": "7efdb6f9f2a985cc189c0d7cc571b5febd4114964c3d338a48e1b0cfd547f031"
+  }
+}

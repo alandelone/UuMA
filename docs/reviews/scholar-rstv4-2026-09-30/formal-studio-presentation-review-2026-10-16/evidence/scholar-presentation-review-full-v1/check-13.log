@@ -1,0 +1,3 @@
+PASS a real 100-of-101 batch keeps the remaining opinion and original source positions
+PASS the second batch contains only opinion 101 and completion clears the finished preview
+PASS an excluded edited opinion keeps both texts and imported rows cannot be submitted twice

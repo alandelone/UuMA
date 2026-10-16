@@ -1,0 +1,55 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8888/
+    - link "文献库":
+      - /url: http://127.0.0.1:8888/?view=all
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8888/?view=fieldkg
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "科学依据复核":
+      - generic: 科学依据复核
+      - generic: ⌄
+  - region "所选 FieldKG 或 Track":
+    - heading "Indirect fixture manuscript · 科学依据复核" [level=1]
+    - paragraph: 当前稿件需要科学重审 · 修订 2
+    - heading "当前绑定" [level=2]
+    - strong: Isolated claim d8de1260d07540f7a0a2c849fb43b3d0
+    - paragraph: 节点修订 1 · 未放置章节
+    - text: claim_5fdad5a7be7144aca7ff828926d00e11
+    - paragraph: 尚无绑定。
+    - heading "提议的完整新绑定" [level=2]
+    - paragraph: 选择新审阅的节点与依据。应用提案会替换当前绑定集合，旧集合保存在历史记录中。
+    - checkbox "Isolated claim d8de1260d07540f7a0a2c849fb43b3d0 · STALE · 修订 2" [checked]
+    - text: Isolated claim d8de1260d07540f7a0a2c849fb43b3d0 · STALE · 修订 2
+    - generic: 所选节点的章节
+    - combobox "为所选科研节点选择章节":
+      - option "未放置章节" [selected]
+    - checkbox "Isolated claim 6644ada96ea349dd90e002aa8879f948 · STALE · 修订 2" [disabled]
+    - text: Isolated claim 6644ada96ea349dd90e002aa8879f948 · STALE · 修订 2
+    - generic: 所选节点的章节
+    - combobox "为所选科研节点选择章节" [disabled]:
+      - option "未放置章节" [selected]
+    - checkbox "Isolated method 011d49e3a9ce43c696e8525ba6579412 · SUPERSEDED · 修订 2" [disabled]
+    - text: Isolated method 011d49e3a9ce43c696e8525ba6579412 · SUPERSEDED · 修订 2
+    - generic: 所选节点的章节
+    - combobox "为所选科研节点选择章节" [disabled]:
+      - option "未放置章节" [selected]
+    - checkbox "Isolated method 371c132798e14f1a9944167a43c692a9 · APPROVED · 修订 1"
+    - text: Isolated method 371c132798e14f1a9944167a43c692a9 · APPROVED · 修订 1
+    - generic: 所选节点的章节
+    - combobox "为所选科研节点选择章节" [disabled]:
+      - option "未放置章节" [selected]
+    - paragraph: 没有可选择的来源依据。
+    - generic: 本次重审说明
+    - textbox "本次重审说明"
+    - button "保存完整新绑定提案"
+    - button "更新当前依据与批准状态"
+    - status
+    - heading "复核提案与历史" [level=2]
+    - paragraph: 还没有复核提案。
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

@@ -1,0 +1,8 @@
+{
+  "method": "POST",
+  "path": "/api/comments/comment_8ecd722c5ea041858723009b72fc4cce/restore",
+  "content_type": "application/json",
+  "body_utf8": "",
+  "body_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "body_bytes": 0
+}
