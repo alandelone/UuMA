@@ -463,6 +463,33 @@ def test_diary_preserves_original_text_and_rejects_model_rewrite(service):
     assert len(service.get_history(start_date=NOW.date(), end_date=NOW.date()).data["records"]) == 1
 
 
+def test_diary_allows_synthesized_content_when_setting_enabled(service):
+    bound_settings, s_ref = message(service, "update_settings", "降低权限，允许整理日记", "settings")
+    update_res = bound_settings.update_settings(
+        SettingsUpdateRequest(
+            request_ref=s_ref,
+            source_quote="降低权限",
+            expected_revision=0,
+            patch={"allow_synthesized_diary": True},
+        )
+    )
+    assert update_res.status == "APPLIED"
+
+    bound, ref = message(service, "save_diary", "记录今天一天的日记", "diary-synth")
+    synthesized = bound.save_diary(
+        DiaryRecordRequest(
+            request_ref=ref,
+            source_quote="记录今天一天的日记",
+            content="早上吃了扁米粉，下午吃了板面，喝了奶茶，晚上吃咖喱，睡前泡脚。",
+            diary_date=NOW.date(),
+        )
+    )
+    assert synthesized.status == "APPLIED"
+    assert synthesized.ok is True
+    records = service.get_history(start_date=NOW.date(), end_date=NOW.date()).data["records"]
+    assert any("早上吃了扁米粉" in r["payload"]["content"] for r in records)
+
+
 def test_body_related_record_links_never_cross_owner(service):
     _, _, original = body(service)
     other = LifeService(

@@ -92,7 +92,12 @@ class AdapterRegistry:
             health = adapter.probe_health()
             status = "IDLE"
             if items:
-                status = items[0].status
+                if any(it.status in {"RUNNING", "ACTIVE"} for it in items):
+                    status = "RUNNING" if any(it.status == "RUNNING" for it in items) else "ACTIVE"
+                elif any(isinstance(it.payload, dict) and it.payload.get("orbit_info", {}).get("runner_live") for it in items):
+                    status = "RUNNING"
+                else:
+                    status = items[0].status
 
             workspaces.append(
                 AgentWorkspace(

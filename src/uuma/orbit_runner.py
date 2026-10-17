@@ -110,7 +110,7 @@ def load_profile_environment(profile_home: Path) -> None:
         server = (payload.get("mcp_servers") or {}).get("wisdom-knowledge") or {}
         for key, value in (server.get("env") or {}).items():
             if isinstance(key, str) and isinstance(value, (str, int, float, bool)):
-                os.environ.setdefault(key, str(value))
+                os.environ[key] = str(value)
     secrets_path = Path(
         os.environ.get("UUMA_KAG_SECRETS_FILE", profile_home / ".env")
     ).expanduser()
@@ -120,8 +120,9 @@ def load_profile_environment(profile_home: Path) -> None:
             if not line or line.startswith("#") or "=" not in line:
                 continue
             key, value = line.split("=", 1)
-            if key.strip() in {"BRAVE_SEARCH_API_KEY", "UUMA_OPENALEX_MAILTO"}:
-                os.environ.setdefault(key.strip(), value.strip().strip("\"").strip("'"))
+            k = key.strip()
+            if k in {"BRAVE_SEARCH_API_KEY", "UUMA_OPENALEX_MAILTO", "OPENAI_API_KEY", "OPENAI_BASE_URL", "UUMA_KAG_LLM_MODEL"}:
+                os.environ[k] = value.strip().strip("\"").strip("'")
     os.environ.setdefault("UUMA_AGENT_ID", "wisdom-oldman")
 
 

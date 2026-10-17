@@ -37,7 +37,7 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
     ):
         grants.append("configure_habit")
     if re.search(
-        r"(?:改|调整|更新|设置).{0,16}(?:设置|起床|睡前|提醒|重要度)|起床.*改|睡前.*改|提醒.*次数|重要度.*改|改.*设置|(?:change|update|set).{0,20}(?:settings|wake|bedtime|reminder|importance)",
+        r"(?:改|调整|更新|设置|降低).{0,16}(?:设置|起床|睡前|提醒|重要度|权限)|起床.*改|睡前.*改|提醒.*次数|重要度.*改|改.*设置|降低权限|(?:change|update|set).{0,20}(?:settings|wake|bedtime|reminder|importance|permission)",
         value,
         re.IGNORECASE,
     ):
@@ -84,7 +84,7 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
             re.IGNORECASE,
         ):
             grants.append("record_body")
-        if re.search(r"日记|日誌|diary|journal", value, re.IGNORECASE):
+        if re.search(r"日记|日誌|diary|journal|生活记录|记录今天|总结今天|写下今天|整理今天", value, re.IGNORECASE):
             grants.append("save_diary")
     if re.search(r"不要记录|别记录|不用记录|不需要记录", value):
         return ()

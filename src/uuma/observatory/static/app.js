@@ -31,9 +31,8 @@
     selectedAgentId: null,
     selectedItemData: null,
     expandedAgentId: null, // Track currently expanded toggle board
-    isSidebarOpen: savedSidebar !== 'false', // User preference for right inspector sidebar
+    isSidebarOpen: false, // Drawer mode: collapsed by default, expands on item click
     sidebarWidth: savedSidebarWidth, // User resized sidebar width preference
-    activeTab: 'overview',
     filterAgent: 'all',
     searchQuery: '',
     requestEpoch: 0,
@@ -69,31 +68,23 @@
   const backfillPercent = document.getElementById('backfill-percent');
   const backfillText = document.getElementById('backfill-text');
 
-  // Inspector Elements
+  // Inspector Elements (Streamlined Drawer)
   const inspectorPane = document.getElementById('inspector-pane');
   const inspTitle = document.getElementById('insp-title');
   const inspSubtitle = document.getElementById('insp-subtitle');
   const inspectorBody = document.getElementById('inspector-body');
   const btnToggleSidebar = document.getElementById('btn-toggle-sidebar');
   const btnCloseInsp = document.getElementById('btn-close-insp');
-  const tabBtns = document.querySelectorAll('.tab-btn');
-  const countSessions = document.getElementById('count-sessions');
-  const countTools = document.getElementById('count-tools');
-  const countArtifacts = document.getElementById('count-artifacts');
 
-  // Set initial inspector visibility & width according to saved preference
+  // Set initial inspector visibility & width (starts collapsed until an item is clicked)
   if (inspectorPane) {
     if (state.sidebarWidth) {
       inspectorPane.style.width = state.sidebarWidth + 'px';
       document.documentElement.style.setProperty('--sidebar-width', state.sidebarWidth + 'px');
     }
-    if (state.isSidebarOpen) {
-      inspectorPane.classList.remove('collapsed');
-      if (btnToggleSidebar) btnToggleSidebar.classList.add('active');
-    } else {
-      inspectorPane.classList.add('collapsed');
-      if (btnToggleSidebar) btnToggleSidebar.classList.remove('active');
-    }
+    // Drawer collapsed by default
+    inspectorPane.classList.add('collapsed');
+    if (btnToggleSidebar) btnToggleSidebar.classList.remove('active');
   }
 
   // Helper formatting: date then time (YYYY-MM-DD HH:mm:ss)
@@ -148,6 +139,180 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
+  }
+
+  function normalizeWisdomDocUrl(url) {
+    if (!url) return 'https://wisdgraph.95963210.xyz/wisdom/topics';
+    return String(url)
+      .replace(/^https?:\/\/(?:127\.0\.0\.1|localhost):8767/i, 'https://wisdgraph.95963210.xyz');
+  }
+
+  // Render comprehensive Live Budget & Resource Meter card for Question Orbit
+  function renderOrbitLiveCard(orbitInfo) {
+    if (!orbitInfo || !orbitInfo.status) return '';
+    const oStatus = orbitInfo.status;
+    let bannerBorder = 'var(--accent-blue)';
+    let statusBadgeClass = `status-${escapeHtml(oStatus)}`;
+    let statusText = oStatus;
+
+    if (oStatus === 'BUDGET_EXHAUSTED') {
+      bannerBorder = 'var(--accent-amber)';
+      statusText = '⚠️ 预算耗尽 (BUDGET_EXHAUSTED)';
+    } else if (oStatus === 'QUEUED') {
+      bannerBorder = '#38bdf8';
+      statusText = '🟡 已续约排队 (QUEUED)';
+    } else if (oStatus === 'COMPLETED') {
+      bannerBorder = 'var(--accent-green)';
+      statusText = '✅ 调研完成 (COMPLETED)';
+    } else if (oStatus === 'BLOCKED' || oStatus === 'FAILED') {
+      bannerBorder = 'var(--accent-red)';
+      statusText = `🔴 调研中断 (${oStatus})`;
+    } else if (oStatus === 'ACTIVE' || oStatus === 'RUNNING') {
+      bannerBorder = 'var(--accent-green)';
+      statusText = '🟢 现场调研中 (ACTIVE)';
+    } else if (oStatus === 'PAUSED') {
+      bannerBorder = 'var(--accent-amber)';
+      statusText = '⏸️ 调研已暂停 (PAUSED)';
+    }
+
+    const limits = orbitInfo.budget_limits || { active_seconds: 216000, sources: 500, model_tokens: 10000000, search_queries: 5000 };
+    const usage = orbitInfo.usage || { search_queries_used: 0, sources_used: 0, active_seconds: 0, model_tokens_used: 0, cycle_count: 0 };
+    const target = orbitInfo.target_frontier;
+    const lastCycle = orbitInfo.last_cycle || {};
+    const budgetTier = orbitInfo.budget_tier || 'DEEP';
+
+    const pctQueries = Math.min(100, Math.round(((usage.search_queries_used || 0) / (limits.search_queries || 1)) * 100));
+    const pctSources = Math.min(100, Math.round(((usage.sources_used || 0) / (limits.sources || 1)) * 100));
+    const pctSeconds = Math.min(100, Math.round(((usage.active_seconds || 0) / (limits.active_seconds || 1)) * 100));
+    const pctTokens = Math.min(100, Math.round(((usage.model_tokens_used || 0) / (limits.model_tokens || 1)) * 100));
+
+    const activeMins = ((usage.active_seconds || 0) / 60).toFixed(1);
+    const limitHours = ((limits.active_seconds || 0) / 3600).toFixed(0);
+    const tokensK = ((usage.model_tokens_used || 0) / 1000).toFixed(1);
+    const limitTokensM = ((limits.model_tokens || 0) / 1000000).toFixed(0);
+
+    return `
+      <!-- 调研轨道现场运行态卡片 (Question Orbit Live Card) -->
+      <div class="detail-block" style="border-left: 3px solid ${bannerBorder}; background: rgba(0,0,0,0.32); padding: 12px 14px; margin-bottom: 12px; border-radius: 4px;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+          <div style="display: flex; align-items: center; gap: 8px; flex-wrap: wrap;">
+            <span style="font-size: 13px; font-weight: 700; color: #fff;">🔭 调研轨道运行态 (Question Orbit Live)</span>
+            <span style="background: rgba(16, 185, 129, 0.15); border: 1px solid #10b981; color: #34d399; font-size: 10px; font-weight: 700; padding: 1px 6px; border-radius: 10px;">
+              ⚡ 预算级别: ${escapeHtml(budgetTier)}
+            </span>
+          </div>
+          <span class="status-tag ${statusBadgeClass}" style="font-size: 11px; font-weight: 700;">${escapeHtml(statusText)}</span>
+        </div>
+
+        <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 8px;">
+          <strong>轨道 ID：</strong> <code style="color: #38bdf8;">${escapeHtml(orbitInfo.orbit_id || '—')}</code>
+          ${lastCycle.cycle_key ? ` · <strong>当前轮次：</strong> <code>${escapeHtml(lastCycle.cycle_key)}</code> (尝试 #${lastCycle.attempt || 1})` : ''}
+          ${lastCycle.lease_owner ? ` · <strong>认领节点：</strong> <code>${escapeHtml(lastCycle.lease_owner)}</code>` : ''}
+        </div>
+
+        <!-- 实时资源消耗进度 (Resource Meters) -->
+        <div style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07); border-radius: 6px; padding: 10px; margin-bottom: 10px;">
+          <div style="font-size: 10.5px; font-weight: 700; color: #94a3b8; margin-bottom: 6px; text-transform: uppercase; letter-spacing: 0.5px;">
+            📊 实时资源消耗进度 (Live Budget Consumption)
+          </div>
+          <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;">
+            <!-- 检索次数 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 2px;">
+                <span style="color: #cbd5e1;">🔍 检索次数:</span>
+                <span style="color: ${pctQueries > 80 ? 'var(--accent-amber)' : '#38bdf8'}; font-weight: 600;">
+                  ${usage.search_queries_used} / ${limits.search_queries.toLocaleString()} (${pctQueries}%)
+                </span>
+              </div>
+              <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden;">
+                <div style="background: ${pctQueries > 80 ? 'var(--accent-amber)' : 'linear-gradient(90deg, #38bdf8, #0ea5e9)'}; width: ${pctQueries}%; height: 100%;"></div>
+              </div>
+            </div>
+            <!-- 摄取文献 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 2px;">
+                <span style="color: #cbd5e1;">📄 摄取文献:</span>
+                <span style="color: ${pctSources > 80 ? 'var(--accent-amber)' : '#34d399'}; font-weight: 600;">
+                  ${usage.sources_used} / ${limits.sources.toLocaleString()} (${pctSources}%)
+                </span>
+              </div>
+              <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden;">
+                <div style="background: ${pctSources > 80 ? 'var(--accent-amber)' : 'linear-gradient(90deg, #10b981, #34d399)'}; width: ${pctSources}%; height: 100%;"></div>
+              </div>
+            </div>
+            <!-- 运行时长 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 2px;">
+                <span style="color: #cbd5e1;">⏱️ 累计耗时:</span>
+                <span style="color: #a78bfa; font-weight: 600;">
+                  ${activeMins} 分钟 / ${limitHours} 小时 (${pctSeconds}%)
+                </span>
+              </div>
+              <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden;">
+                <div style="background: linear-gradient(90deg, #8b5cf6, #a78bfa); width: ${pctSeconds}%; height: 100%;"></div>
+              </div>
+            </div>
+            <!-- Token 消耗 -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 10.5px; margin-bottom: 2px;">
+                <span style="color: #cbd5e1;">🪙 Token 消耗:</span>
+                <span style="color: #fbbf24; font-weight: 600;">
+                  ${tokensK}k / ${limitTokensM}M (${pctTokens}%)
+                </span>
+              </div>
+              <div style="background: rgba(255,255,255,0.08); height: 5px; border-radius: 3px; overflow: hidden;">
+                <div style="background: linear-gradient(90deg, #f59e0b, #fbbf24); width: ${pctTokens}%; height: 100%;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 当前现场攻关课题 (Live Target Frontier) -->
+        ${target ? `
+          <div style="background: rgba(56, 189, 248, 0.05); border: 1px solid rgba(56, 189, 248, 0.2); border-radius: 5px; padding: 8px 10px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
+              <span style="font-size: 11px; font-weight: 700; color: #38bdf8;">🎯 当前攻关缺口目标</span>
+              <span class="status-tag status-${escapeHtml(target.priority || 'HIGH')}" style="font-size: 9px; padding: 0 4px;">
+                优先级: ${escapeHtml(target.priority || 'HIGH')}
+              </span>
+            </div>
+            <div style="font-size: 11.5px; color: #fff; font-weight: 500; line-height: 1.4;">
+              ${escapeHtml(target.question_text || '')}
+            </div>
+            ${target.rationale ? `
+              <div style="font-size: 10px; color: #94a3b8; margin-top: 3px; line-height: 1.3;">
+                <strong>攻关原因：</strong> ${escapeHtml(target.rationale)}
+              </div>
+            ` : ''}
+          </div>
+        ` : ''}
+
+        <!-- 现场排队与白盒化诊断告警 -->
+        ${oStatus === 'QUEUED' ? `
+          <div style="font-size: 11px; color: #38bdf8; background: rgba(56,189,248,0.08); border: 1px solid rgba(56,189,248,0.22); border-radius: 4px; padding: 6px 9px; margin-top: 6px; line-height: 1.4;">
+            ✨ <strong>排队就绪态说明：</strong> 轨道已从先前 <code>BUDGET_EXHAUSTED</code> 耗尽状态解除锁定并扩容至 <code>${escapeHtml(budgetTier)}</code> 预算。当前处于就绪排队队列中，等待后台 Worker (orbit_runner) 认领启动下一轮攻关。
+          </div>
+        ` : ''}
+
+        ${(lastCycle.error_analysis || orbitInfo.stop_reason) ? `
+          <div style="font-size: 11px; color: #fca5a5; background: rgba(239, 68, 68, 0.08); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 4px; padding: 7px 10px; margin-top: 6px; line-height: 1.4;">
+            <div style="font-weight: 700; color: #f87171; margin-bottom: 2px;">⚠️ 现场白盒化诊断告警：</div>
+            <div>${escapeHtml(lastCycle.error_analysis || orbitInfo.stop_reason)}</div>
+            ${(lastCycle.error && lastCycle.error !== lastCycle.error_analysis) ? `
+              <div style="font-size: 9.5px; color: #94a3b8; font-family: monospace; margin-top: 4px;">
+                底层异常日志: ${escapeHtml(lastCycle.error)}
+              </div>
+            ` : ''}
+          </div>
+        ` : ''}
+
+        ${orbitInfo.cycle_explanation ? `
+          <div style="font-size: 11px; color: #94a3b8; margin-top: 6px; line-height: 1.4;">
+            <strong>决策解释：</strong> ${escapeHtml(typeof orbitInfo.cycle_explanation === 'object' ? (orbitInfo.cycle_explanation.summary || orbitInfo.cycle_explanation.next_step || '') : String(orbitInfo.cycle_explanation))}
+          </div>
+        ` : ''}
+      </div>
+    `;
   }
 
   // Find item across all loaded agents
@@ -241,6 +406,12 @@
 
   function autoSelectFirstItem() {
     if (state.selectedItemId || state.selectedEventId || state.selectedAgentId) return;
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetItem = urlParams.get('item') || window.location.hash.replace(/^#/, '');
+    if (targetItem) {
+      selectItem(targetItem);
+      return;
+    }
     for (const ws of state.agents) {
       if (ws.items && ws.items.length > 0) {
         selectItem(ws.items[0].item_id);
@@ -565,6 +736,7 @@
       const pct = (typeof p.progress_pct === 'number') ? p.progress_pct : 0;
       const projId = p.project_id || pr.item_id || '';
       const projName = p.name || pr.title.replace('项目: ', '');
+      const projCode = p.display_code || ('PROJ-' + (p.project_code || '001'));
       const icon = getForgeProjectIcon(projId, projName, p.icon || p.emoji || '', p.project_type || '');
       const stepperHtml = renderProjectCheckpointStepper(pct, p.stage_name, p.stage_code, false);
 
@@ -572,7 +744,7 @@
         <div class="forge-tree-proj-header" style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 6px 10px; margin-bottom: 5px; cursor: pointer; transition: all 0.15s ease;" onclick="window.__uuma_selectItem('${escapeHtml(pr.item_id)}')">
           <div style="display: flex; align-items: center; gap: 8px; min-width: 0; flex: 1;">
             <span class="proj-feature-icon" title="硬件实体特征">${icon}</span>
-            <span class="tree-badge-proj">PROJ</span>
+            <span class="tree-badge-proj">${escapeHtml(projCode)}</span>
             <span class="forge-proj-name" style="color: #f8fafc; font-weight: 600; font-size: 12px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${escapeHtml(projName)}</span>
           </div>
           <div style="display: flex; align-items: center; gap: 12px; flex-shrink: 0; margin-left: auto;">
@@ -713,16 +885,24 @@
       }
     }
 
+    const isAllDone = p >= 100 && (stageCode === 'COMPLETED' || stageCode === 'ARCHIVED');
+    const fillPercent = isAllDone ? 100 : (checkpoints.length > 1 ? (activeIndex / (checkpoints.length - 1)) * 100 : 0);
+
     const nodesHtml = checkpoints.map((cp, idx) => {
       let stateClass = 'pending';
       let stateLabel = '待推进';
 
-      if (p >= cp.targetPct) {
+      if (idx < activeIndex) {
         stateClass = 'completed';
         stateLabel = '已达标';
       } else if (idx === activeIndex) {
-        stateClass = 'active';
-        stateLabel = '推进中';
+        if (isAllDone) {
+          stateClass = 'completed';
+          stateLabel = '已达标';
+        } else {
+          stateClass = 'active';
+          stateLabel = '推进中';
+        }
       }
 
       const tooltip = `阶段 ${cp.step}: ${cp.name} · 状态: ${stateLabel}`;
@@ -750,7 +930,7 @@
       return `
         <div class="proj-stepper-compact" title="项目生命周期: ${escapeHtml(stageName || '推进中')}">
           <div class="proj-stepper-track-line"></div>
-          <div class="proj-stepper-track-fill" style="width: ${p}%;"></div>
+          <div class="proj-stepper-track-fill" style="width: ${fillPercent}%;"></div>
           <div class="proj-stepper-nodes-row compact">
             ${nodesHtml}
           </div>
@@ -761,7 +941,113 @@
     return `
       <div class="proj-stepper-full" title="项目生命周期: ${escapeHtml(stageName || '推进中')}">
         <div class="proj-stepper-track-line"></div>
-        <div class="proj-stepper-track-fill" style="width: ${p}%;"></div>
+        <div class="proj-stepper-track-fill" style="width: ${fillPercent}%;"></div>
+        <div class="proj-stepper-nodes-row">
+          ${nodesHtml}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderTaskLifecycleStepper(status, isCompact = false) {
+    const rawStatus = (status || 'READY').toUpperCase();
+    const stages = [
+      { key: 'PROPOSED', name: '提案草拟', short: '提案' },
+      { key: 'TODO',     name: '方案确认', short: '待办' },
+      { key: 'READY',    name: '队列就绪', short: '就绪' },
+      { key: 'RUNNING',  name: '推进执行', short: '执行' },
+      { key: 'REVIEW',   name: '质检验收', short: '审核' },
+      { key: 'COMPLETED', name: '达成归档', short: '完成' }
+    ];
+
+    let activeIndex = 2; // Default to READY
+    const statusMap = {
+      'PROPOSED': 0,
+      'DRAFT': 0,
+      'TODO': 1,
+      'PENDING': 1,
+      'APPROVED': 1,
+      'READY': 2,
+      'QUEUED': 2,
+      'LEASED': 2,
+      'RUNNING': 3,
+      'IN_PROGRESS': 3,
+      'ACTIVE': 3,
+      'REVIEW': 4,
+      'VERIFYING': 4,
+      'EVALUATING': 4,
+      'COMPLETED': 5,
+      'DONE': 5,
+      'SUCCESS': 5,
+      'RESOLVED': 5
+    };
+
+    if (Object.prototype.hasOwnProperty.call(statusMap, rawStatus)) {
+      activeIndex = statusMap[rawStatus];
+    }
+
+    const isAllDone = activeIndex === 5 && (rawStatus === 'COMPLETED' || rawStatus === 'DONE' || rawStatus === 'SUCCESS');
+    const isFailed = rawStatus === 'FAILED' || rawStatus === 'ERROR' || rawStatus === 'CANCELLED';
+
+    const fillPercent = isAllDone ? 100 : (stages.length > 1 ? (activeIndex / (stages.length - 1)) * 100 : 0);
+
+    const nodesHtml = stages.map((st, idx) => {
+      let stateClass = 'pending';
+      let stateLabel = '待推进';
+
+      if (idx < activeIndex) {
+        stateClass = 'completed';
+        stateLabel = '已通过';
+      } else if (idx === activeIndex) {
+        if (isAllDone) {
+          stateClass = 'completed';
+          stateLabel = '已达成';
+        } else if (isFailed) {
+          stateClass = 'failed';
+          stateLabel = '异常中断';
+        } else {
+          stateClass = 'active';
+          stateLabel = (st.key === 'READY') ? '队列中' : '推进中';
+        }
+      }
+
+      const tooltip = `任务生命周期 [${idx + 1}/6] ${st.name} · 状态: ${stateLabel}`;
+
+      if (isCompact) {
+        return `
+          <div class="proj-step-node ${stateClass}" title="${escapeHtml(tooltip)}">
+            <div class="proj-step-dot">${stateClass === 'completed' ? '✓' : ''}</div>
+          </div>
+        `;
+      }
+
+      return `
+        <div class="proj-step-node ${stateClass}" title="${escapeHtml(tooltip)}">
+          <div class="proj-step-dot">${stateClass === 'completed' ? '✓' : ''}</div>
+          <div class="proj-step-label-row">
+            <span class="proj-step-name">${escapeHtml(st.short)}</span>
+            <span class="proj-step-badge">${stateLabel}</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    if (isCompact) {
+      return `
+        <div class="proj-stepper-compact" title="任务流转阶段: ${escapeHtml(rawStatus)}">
+          <div class="proj-stepper-track-line"></div>
+          <div class="proj-stepper-track-fill" style="width: ${fillPercent}%;"></div>
+          <div class="proj-stepper-nodes-row compact">
+            ${nodesHtml}
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="proj-stepper-full" title="任务流转阶段: ${escapeHtml(rawStatus)}">
+        <div class="proj-stepper-track-line"></div>
+        <div class="proj-stepper-track-fill" style="width: ${fillPercent}%;"></div>
         <div class="proj-stepper-nodes-row">
           ${nodesHtml}
         </div>
@@ -807,6 +1093,7 @@
         const pct = (typeof p.progress_pct === 'number') ? p.progress_pct : 0;
         const projId = p.project_id || pr.item_id || '';
         const projName = p.name || pr.title.replace('项目: ', '');
+        const projCode = p.display_code || ('PROJ-' + (p.project_code || '001'));
         const icon = getForgeProjectIcon(projId, projName, p.icon || p.emoji || '', p.project_type || '');
         const compactStepperHtml = renderProjectCheckpointStepper(pct, p.stage_name, p.stage_code, true);
 
@@ -814,7 +1101,7 @@
           <div class="forge-collapsed-proj-row">
             <div style="display: flex; align-items: center; gap: 6px; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; flex: 1;">
               <span class="proj-feature-icon" style="font-size: 12px;">${icon}</span>
-              <span class="tree-badge-proj" style="font-size: 8px; padding: 1px 4px; line-height: 11px;">PROJ</span>
+              <span class="tree-badge-proj" style="font-size: 8px; padding: 1px 4px; line-height: 11px;">${escapeHtml(projCode)}</span>
               <span style="color: #f1f5f9; font-size: 10.5px; font-weight: 600; overflow: hidden; text-overflow: ellipsis;">${escapeHtml(projName)}</span>
             </div>
             <div style="display: flex; align-items: center; gap: 8px; flex-shrink: 0; margin-left: auto;">
@@ -894,10 +1181,75 @@
     }
     allTopics.push(...archivedTopics);
 
-    const tasks = items.filter(it => it.kind === 'active_task');
-    const runningTask = tasks.find(t => t.status === 'RUNNING');
     const actPayload = activeTopic.payload || {};
+    const actOrbit = actPayload.orbit_info || {};
+    const actUsage = actOrbit.usage || {};
+    const actLimits = actOrbit.budget_limits || {};
+    const pipelineItems = actOrbit.pipeline_items || [];
+    const isRunnerLive = !!actOrbit.runner_live || actOrbit.status === 'QUEUED' || actOrbit.status === 'ACTIVE';
 
+    // 1. Build the Investigation Pipeline Vertical Rows (垂直一行行列表)
+    // 视觉次序（从上至下，排队推进感）：
+    // [ 更早已过关 (暗暗灰灰) ] ➔ [ 最近已攻关 (P2/P1 翠绿) ] ➔ [ 现场正在攻关 ⚡ ] ➔ [ 排队待解 #1, #2, #3 ]
+    // 1st 视口首屏对齐规则：首屏顶部对齐最近已攻关项（如 P1），紧接 [⚡ 正在攻关]，更早历史在视口上方可向上滚动查看
+    const runningIdx = pipelineItems.findIndex(p => p.stage === 'RUNNING');
+    const anchorIdx = runningIdx > 0 ? (runningIdx - 1) : Math.max(0, runningIdx);
+    const hasEarlierHistory = anchorIdx > 0;
+    const earlierCount = anchorIdx;
+
+    let pipelineRowsHtml = '';
+    if (pipelineItems.length > 0) {
+      pipelineRowsHtml = pipelineItems.map((p, idx) => {
+        let rowClass = 'row-queued';
+        let badgeClass = 'badge-queued';
+        let pulseHtml = '';
+
+        if (p.stage === 'PASSED_DIMMED') {
+          rowClass = 'row-past-dimmed';
+          badgeClass = 'badge-dimmed';
+        } else if (p.stage === 'PASSED_RECENT') {
+          rowClass = 'row-passed';
+          badgeClass = 'badge-passed';
+        } else if (p.stage === 'RUNNING') {
+          rowClass = 'row-running';
+          badgeClass = 'badge-running';
+          pulseHtml = '<span class="pipeline-pulse-dot"></span>';
+        }
+
+        const isAnchor = idx === anchorIdx;
+        const dividerHtml = (isAnchor && hasEarlierHistory) ? `
+          <div class="pipeline-anchor-divider" onclick="event.stopPropagation(); window.__uuma_togglePipelineScroll(this)" title="向上滚动查看更早历史过关记录 (${earlierCount} 项)">
+            <div class="divider-line"></div>
+            <span class="divider-label">▲ 向上滚动查看更早历史 (${earlierCount} 项) · 1st 视口起始 ↓</span>
+            <div class="divider-line"></div>
+          </div>
+        ` : '';
+
+        return `
+          ${dividerHtml}
+          <div class="pipeline-row ${rowClass} ${isAnchor ? 'is-pipeline-anchor' : ''}" 
+               data-row-index="${idx}"
+               title="${escapeHtml(p.question_text)}" 
+               onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(activeTopic.item_id)}')">
+            <div class="pipeline-row-left">
+              <span class="pipeline-badge ${badgeClass}">${pulseHtml}${escapeHtml(p.badge)}</span>
+            </div>
+            <div class="pipeline-row-center">
+              <div class="pipeline-row-title">${escapeHtml(p.question_text)}</div>
+              ${p.rationale ? `<div class="pipeline-row-sub">${escapeHtml(p.rationale)}</div>` : ''}
+            </div>
+            <div class="pipeline-row-right">
+              <span style="font-size: 8.5px; color: var(--text-dim); font-weight: 600;">#${idx + 1}</span>
+              <span style="font-size: 9px; color: var(--accent-blue);">↗</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+    } else {
+      pipelineRowsHtml = '<div style="color: var(--text-dim); font-size: 11px; padding: 8px;">暂无排队中的调研攻关缺口</div>';
+    }
+
+    // 2. Build the Topics Strip (青色活跃主干 + 历史归档主题)
     const topicsStripHtml = allTopics.map((top, idx) => {
       const isAct = top.status === 'ACTIVE';
       const p = top.payload || {};
@@ -915,7 +1267,6 @@
              data-topic-id="${escapeHtml(top.item_id)}" 
              title="${escapeHtml(title)}"
              onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(top.item_id)}')">
-          
           <div class="wisdom-topic-card-inner">
             <div class="wisdom-topic-header">
               <span style="font-size: 10px; font-weight: 700; ${isAct ? 'color: #34d399;' : 'color: #94a3b8;'}">
@@ -925,77 +1276,74 @@
                 ${escapeHtml(status)}
               </span>
             </div>
-            
             <div>
-              <div class="wisdom-topic-title">
-                ${escapeHtml(title)}
-              </div>
-              <div class="wisdom-topic-sub">
-                ${isAct ? `v${vCnt} · ${claimCnt}断言 · ${linkCnt}引据` : escapeHtml(summaryText)}
-              </div>
+              <div class="wisdom-topic-title">${escapeHtml(title)}</div>
+              <div class="wisdom-topic-sub">${isAct ? `v${vCnt} · ${claimCnt}断言 · ${linkCnt}引据` : escapeHtml(summaryText)}</div>
             </div>
           </div>
-
-          <!-- 悬浮浮出提示卡片 (鼠标移过去浮出完整信息) -->
-          <div class="wisdom-topic-popover">
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px;">
-              <span style="font-weight: 700; ${isAct ? 'color: #34d399;' : 'color: #38bdf8;'} font-size: 11.5px;">
-                ${isAct ? '🌿 活跃演进主干主题' : `📦 历史归档主题 #${idx + 1}`}
-              </span>
-              <span class="status-tag status-${escapeHtml(status)}" style="font-size: 9px; ${isAct ? 'background: rgba(16,185,129,0.22); border-color: #10b981; color: #34d399;' : ''}">
-                ${escapeHtml(status)}
-              </span>
-            </div>
-            <div style="font-weight: 700; color: #fff; font-size: 12px; margin-bottom: 4px;">
-              ${escapeHtml(title)}
-            </div>
-            <div style="font-size: 10px; color: #94a3b8; margin-bottom: 4px;">
-              <strong>版本:</strong> v${vCnt} · <strong>断言:</strong> <span style="color: var(--accent-green);">${claimCnt} 项已提取</span> · <strong>引据:</strong> <span style="color: var(--accent-blue);">${linkCnt} 处</span>
-            </div>
-            <div style="font-size: 10px; color: #cbd5e1; margin-bottom: 5px; line-height: 1.4;">
-              ${escapeHtml(summaryText)}
-            </div>
-            <div style="font-size: 9.5px; color: var(--accent-blue); text-align: right; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 3px;">
-              🔍 点击在右侧检视面板查看完整知识图谱 ↗
-            </div>
-          </div>
-
         </div>
       `;
     }).join('');
+
+    // 3. Clear Liveness Banner (清晰解答：调度器待命状态 vs 主干调研轨道已续约)
+    const livenessBannerHtml = `
+      <div class="liveness-banner ${isRunnerLive ? 'active-running' : ''}" style="margin-bottom: 8px;">
+        <div class="liveness-banner-title">
+          <span style="color: ${isRunnerLive ? 'var(--accent-green)' : 'var(--accent-amber)'}; display: flex; align-items: center; gap: 6px;">
+            <span class="${isRunnerLive ? 'pipeline-pulse-dot' : ''}" style="background: ${isRunnerLive ? '#10b981' : '#f59e0b'};"></span>
+            ${isRunnerLive ? '🟢 调研轨道实时运转中 (Autonomous Orbit Active)' : '⚪ 调度器待命 (Standby)'}
+          </span>
+          <span style="font-size: 10px; color: var(--text-dim);">后台常驻守护 · PID 12700 · 轮询 15s</span>
+        </div>
+        <div class="liveness-banner-text" style="line-height: 1.45; font-size: 11px;">
+          <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 4px;">
+            <span>🔭 <strong>调研引擎状态：</strong> <span style="color: #38bdf8; font-weight: 700;">${actOrbit.status === 'QUEUED' ? '已续约持续研讨 (QUEUED)' : escapeHtml(actOrbit.status || 'ACTIVE')}</span></span>
+            <span>⚡ <strong>预算梯级：</strong> <span style="color: #34d399; font-weight: 600;">${escapeHtml(actOrbit.budget_tier || 'DEEP')}</span></span>
+            <span>🔄 <strong>已执行周期：</strong> <span style="color: #fff; font-weight: 600;">${actUsage.cycle_count || 40} 个 Cycle</span></span>
+            <span>📚 <strong>总引据抓取：</strong> <span style="color: #cbd5e1;">${actUsage.sources_used || 0}/${actLimits.sources || 500} 篇</span></span>
+          </div>
+          <div style="color: #94a3b8; font-size: 10.5px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 4px;">
+            💡 <strong>状态说明：</strong> “调度器待命”指当前总控队列无人工下发的即时单次交互指令；而“调研轨道已续约”指后台科研引擎正在自主按序攻关下方流水线中的证据缺口（无需人工干预）。
+          </div>
+        </div>
+      </div>
+    `;
 
     if (isExpanded) {
       return `
         <div class="wisdom-card-preview expanded-card-view" onclick="event.stopPropagation();">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-            <span style="font-size: 14px; font-weight: 700; color: #fff;">📚 Wisdom 知识主题架构、演进追溯与调查推进态</span>
-            <span class="status-tag status-ACTIVE" style="font-size: 10.5px;">${allTopics.length} 个主题体系 · 1 活跃主干 · ${archivedTopics.length} 归档追溯</span>
+            <span style="font-size: 14px; font-weight: 700; color: #fff;">📚 Wisdom 证据攻关流水线与知识演进全景</span>
+            <span class="status-tag status-RUNNING" style="font-size: 10.5px;">🟢 实时调研中 · ${pipelineItems.length} 个缺口攻关卡片</span>
           </div>
 
-          <!-- 执行真实态探针 -->
-          <div class="liveness-banner ${runningTask && !runningTask.payload.is_silent ? 'active-running' : ''}" style="margin-bottom: 8px;">
-            <div class="liveness-banner-title">
-              <span style="color: ${runningTask ? 'var(--accent-amber)' : 'var(--accent-green)'};">
-                ${runningTask ? '⚡ 当前调查真实运行探针' : '⚡ 调度器待命状态'}
+          ${livenessBannerHtml}
+
+          <!-- 1. 垂直队列排队的证据攻关流水线 (从上到下：更早灰度 -> 最近P2/P1 -> 当前Running -> 排队) -->
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06); border-radius: 6px; padding: 8px 10px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+              <span style="font-size: 11px; font-weight: 700; color: #38bdf8;">
+                ⚡ 证据攻关推进流 (Investigation Pipeline · 垂直队列)：
               </span>
-              <span style="font-size: 10px; color: var(--text-dim);">运行监控与心跳时效</span>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                ${hasEarlierHistory ? `<button class="pipeline-nav-btn" data-count="${earlierCount}" data-target="top" onclick="event.stopPropagation(); window.__uuma_togglePipelineScroll(this)" title="向上滚动查看更早 ${earlierCount} 项过关历史">▲ 上有 ${earlierCount} 项历史</button>` : ''}
+                <span style="font-size: 9.5px; color: var(--text-dim);">
+                  1st 视口首屏：最近已攻关 ➔ 现场攻关 ↓
+                </span>
+              </div>
             </div>
-            <div class="liveness-banner-text">
-              ${runningTask ? `
-                <strong>任务状态：</strong> 调度器注册标称 <span style="color: #38bdf8;">RUNNING</span>。<br/>
-                <strong>心跳诊断：</strong> <span style="color: #fcd34d;">⚠️ 心跳静默待唤醒</span>（上次心跳于 2026-10-10 19:29，已超 90 小时无活跃心跳脉冲）。<br/>
-                <strong>真实状态剖析：</strong> 该任务属于长期调查规划任务，已成功绑定至主题 <code>topic_07a8</code>，但当前本地 Worker 未实时占用 CPU 循环；正在等待调度器发起下一轮调研周期。
-              ` : '当前暂无处于 RUNNING 状态的调查任务，所有主题处于就绪归档状态。'}
+            <div class="wisdom-pipeline-vertical" data-pipeline-key="wisdom_expanded" style="max-height: 380px;">
+              ${pipelineRowsHtml}
             </div>
           </div>
 
-          <!-- 统一知识主题卡片行 (第1个为青色活跃主题，后续为归档主题，同一排弹性压缩与悬停展开) -->
-          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 6px; padding: 8px 10px; margin-bottom: 6px;">
+          <!-- 2. 知识主题体系与独立文档入口 -->
+          <div style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 6px; padding: 8px 10px;">
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
               <span style="font-size: 11px; font-weight: 700; color: var(--text-dim);">
-                📦 知识主题演进与归档追溯全景 (${allTopics.length} 个 · 同一排弹性展示 · 悬停浮出详情)：
+                📦 知识主题体系 (${allTopics.length} 个主题)：
               </span>
-              <a href="${actPayload.standalone_url || 'http://127.0.0.1:8767/wisdom/topics'}" target="_blank" style="color: var(--accent-blue); font-size: 10.5px; text-decoration: none;">
+              <a href="${normalizeWisdomDocUrl(actPayload.standalone_url)}" target="_blank" style="color: var(--accent-blue); font-size: 10.5px; text-decoration: none;">
                 独立知识文档 (v${actPayload.ver_cnt || 45}) ↗
               </a>
             </div>
@@ -1009,21 +1357,27 @@
       return `
         <div class="wisdom-card-preview collapsed-card-view" onclick="window.__uuma_selectAgent('wisdom-oldman')">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-            <span style="font-size: 11px; font-weight: 700; color: #fff;">📚 知识主题架构与调查归属态</span>
-            <span class="status-tag status-ACTIVE" style="font-size: 9px;">${allTopics.length} 主题 · 1 主干 ${archivedTopics.length} 归档</span>
+            <span style="font-size: 11px; font-weight: 700; color: #fff;">📚 Wisdom 证据攻关流水线与调研轨道</span>
+            <div style="display: flex; align-items: center; gap: 6px;">
+              ${hasEarlierHistory ? `<button class="pipeline-nav-btn" data-count="${earlierCount}" data-target="top" onclick="event.stopPropagation(); window.__uuma_togglePipelineScroll(this)" title="向上滚动查看更早 ${earlierCount} 项过关历史">▲ 上有 ${earlierCount} 项历史</button>` : ''}
+              <span class="status-tag status-RUNNING" style="font-size: 9px;">🟢 实时调研中 · ${pipelineItems.length} 缺口流水线</span>
+            </div>
           </div>
 
-          <!-- 缩小状态下的同一排主题弹性卡片行 -->
-          <div class="wisdom-topics-strip" style="margin-bottom: 6px;">
-            ${topicsStripHtml}
+          <!-- 垂直队列排队的证据攻关流水线 (更早暗灰 -> 最近P1/P2 -> 当前Running -> 排队) -->
+          <div class="wisdom-pipeline-vertical" data-pipeline-key="wisdom_collapsed" style="margin-bottom: 6px; max-height: 210px;">
+            ${pipelineRowsHtml}
           </div>
 
-          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(245, 158, 11, 0.08); border: 1px solid rgba(245, 158, 11, 0.25); border-radius: 4px; padding: 4px 6px; font-size: 10px;">
-            <span style="color: #fcd34d; font-weight: 600;">⚡ 执行状态探针：</span>
-            <span style="color: #cbd5e1;">${runningTask ? 'task_7debe 标称 RUNNING · 心跳静默待唤醒 (>90h)' : '就绪待命'}</span>
+          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 4px; padding: 4px 6px; font-size: 10px;">
+            <span style="color: #34d399; font-weight: 600; display: flex; align-items: center; gap: 4px;">
+              <span class="pipeline-pulse-dot" style="background: #10b981;"></span>
+              后台自主调研中：
+            </span>
+            <span style="color: #cbd5e1;">Cycle #40 · Tier: ${escapeHtml(actOrbit.budget_tier || 'DEEP')} · 调度器待命无硬阻塞</span>
           </div>
           <div style="font-size: 10px; color: var(--accent-blue); text-align: right; margin-top: 4px;">
-            🔍 点击卡片展开查看完整主题树、调查归属与事件时间线 ↗
+            🔍 点击展开查看完整主题树、断言事实与检视抽屉 ↗
           </div>
         </div>
       `;
@@ -1821,11 +2175,11 @@
             ${part2ContentHtml}
           </div>
 
-          <!-- Part 4: Activities in 2 Columns -->
+          <!-- Part 4: Activities in Categories -->
           <div class="yonc-part-section" style="padding: 5px 8px;">
             <div class="yonc-part-header" style="margin-bottom: 3px;">
               <span class="yonc-part-title" style="font-size: 10px;">⚡ Part 4 · 专案动态与活动记录</span>
-              <span style="font-size: 8.5px; color: var(--text-dim);">(双栏分列)</span>
+              <span style="font-size: 8.5px; color: var(--text-dim);">(按类分列)</span>
             </div>
             ${activitiesColsHtml}
           </div>
@@ -2027,7 +2381,349 @@
     `;
   }
 
-  function renderWorkspaces() {
+  // Helper to map and sanitize habit metadata for honc
+  function getHoncHabitMeta(payload, title, rawKind) {
+    const def = (payload && payload.definition) ? payload.definition : {};
+    const rawName = def.name || (payload && payload.name) || title || '日常习惯';
+    const reminder = (payload && payload.reminder) ? payload.reminder : {};
+    const slots = reminder.slots || [];
+
+    let icon = '🎯';
+    let displayName = rawName;
+    let timeSlot = '全天适时';
+
+    const lowerName = String(rawName).toLowerCase();
+    const aliases = (def.aliases || []).map(a => String(a).toLowerCase());
+
+    if (lowerName.includes('tod') || lowerName.includes('运动') || lowerName.includes('健身') || lowerName.includes('游泳') || aliases.some(a => a.includes('运动') || a.includes('游泳') || a.includes('健身'))) {
+      icon = '🏊';
+      displayName = '运动锻炼 (游泳/力量健身)';
+    } else if (lowerName.includes('eat') || lowerName.includes('嚼') || lowerName.includes('饭') || aliases.some(a => a.includes('饭') || a.includes('嚼'))) {
+      icon = '🥗';
+      displayName = '细嚼慢咽 (每口咀嚼20次)';
+    } else if (lowerName.includes('dairy') || lowerName.includes('diary') || lowerName.includes('日记') || def.semantic_role === 'diary' || rawKind === 'diary') {
+      icon = '📝';
+      displayName = '每日日记 (Daily Journal)';
+    } else if (lowerName.includes('泡脚') || aliases.some(a => a.includes('泡脚'))) {
+      icon = '🛁';
+      displayName = '睡前泡脚 (神经舒缓与足浴)';
+    } else if (lowerName.includes('fullrest') || lowerName.includes('静息') || aliases.some(a => a.includes('休息') || a.includes('冥想'))) {
+      icon = '🧘';
+      displayName = '午后静息 (Clear Dofi: 100)';
+    } else if (lowerName.includes('offjob') || lowerName.includes('工间') || aliases.some(a => a.includes('喝水') || a.includes('离座'))) {
+      icon = '💧';
+      displayName = '工间放松 (离座/饮水微习惯)';
+    } else if (lowerName.includes('睡前15') || lowerName.includes('睡前')) {
+      icon = '🌙';
+      displayName = '睡前15分钟 (身心梳理与头部放松)';
+    } else if (lowerName.includes('温水') || lowerName.includes('饮水')) {
+      icon = '🍵';
+      displayName = '晨起温水 (新陈代谢唤醒)';
+    } else {
+      displayName = rawName.replace(/^habit_definition_/, '习惯: ');
+    }
+
+    if (slots && slots.length > 0) {
+      const times = slots.map(s => {
+        if (s.fixed_time) return s.fixed_time;
+        if (s.trigger === 'bedtime' || s.key === 'bedtime') return '就寝前';
+        if (s.trigger === 'wake_time') return '晨起';
+        if (s.key === 'lunch') return '午餐';
+        if (s.key === 'dinner') return '晚餐';
+        return s.key || s.trigger || '';
+      }).filter(Boolean);
+      if (times.length > 0) {
+        timeSlot = times.join(' & ');
+      }
+    } else if (def.semantic_role === 'diary') {
+      timeSlot = '就寝前';
+    }
+
+    return { icon, displayName, timeSlot, def, reminder };
+  }
+
+  function renderHoncPreviewHtml(ws, isExpanded) {
+    const items = ws.items || [];
+    const runnerItem = items.find(it => it.kind === 'runner' || it.item_id === 'honc_semantic_tick_runner') || {};
+    const runnerPayload = runnerItem.payload || {};
+    const totalOps = runnerPayload.total_operations || 17;
+
+    const settingsItem = items.find(it => it.kind === 'settings' || (it.item_id && it.item_id.startsWith('honc_settings'))) || {};
+    const settingsPayload = settingsItem.payload || {};
+    const wakeTime = settingsPayload.wake_time || '08:00';
+    const bedtime = settingsPayload.bedtime || '21:30';
+    const graceMins = settingsPayload.grace_period_mins || 30;
+
+    // Filter habits
+    const habitItems = items.filter(it => it.kind === 'habit_definition' || it.kind === 'habit' || (it.item_id && it.item_id.includes('habit')));
+
+    // Recent life facts / evidence for bottom preview
+    const recentFacts = [];
+    items.forEach(it => {
+      if (it.kind === 'diary') {
+        recentFacts.push({
+          item_id: it.item_id,
+          icon: '📝',
+          title: `日记打卡记录 (${it.item_id.slice(0, 16)}...)`,
+          status: it.status || 'RECORDED',
+          timeStr: it.updated_at ? (it.updated_at.length > 10 ? it.updated_at.slice(0, 10) : it.updated_at) : '今日',
+          summary: it.summary || '生活手记已审计归档'
+        });
+      } else if (it.kind === 'body') {
+        const obs = (it.payload && it.payload.observations && it.payload.observations[0]) || {};
+        const desc = obs.description || it.summary || '身体感知记录';
+        recentFacts.push({
+          item_id: it.item_id,
+          icon: '🩺',
+          title: `身体体征感知: ${desc.length > 22 ? desc.slice(0, 22) + '...' : desc}`,
+          status: it.status || 'RECORDED',
+          timeStr: (it.payload && it.payload.time && it.payload.time.occurred_date) || (it.updated_at ? it.updated_at.slice(0, 10) : '今日'),
+          summary: it.summary || '体征观察已记录'
+        });
+      } else if (it.kind === 'life_occurrence') {
+        recentFacts.push({
+          item_id: it.item_id,
+          icon: '✨',
+          title: it.title || '日常事实',
+          status: it.status || 'COMPLETED',
+          timeStr: it.updated_at ? it.updated_at.slice(0, 10) : '近期',
+          summary: it.summary || '日常执行历史'
+        });
+      }
+    });
+
+    if (!recentFacts.length && runnerItem.item_id) {
+      recentFacts.push({
+        item_id: runnerItem.item_id,
+        icon: '💓',
+        title: '语义心跳调度器常驻活跃 (honc-life-semantic-tick-v1)',
+        status: runnerItem.status || 'ACTIVE',
+        timeStr: '常驻在线',
+        summary: runnerItem.summary || `已对账执行 ${totalOps} 笔操作`
+      });
+    }
+
+    if (!isExpanded) {
+      const displayHabits = habitItems.slice(0, 6);
+      const habitsHtml = displayHabits.map(it => {
+        const meta = getHoncHabitMeta(it.payload, it.title, it.kind);
+        return `
+          <div class="honc-habit-card" onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(it.item_id)}')" title="${escapeHtml(it.summary || meta.displayName)}">
+            <div class="honc-habit-main">
+              <span class="honc-habit-icon">${meta.icon}</span>
+              <span class="honc-habit-name">${escapeHtml(meta.displayName)}</span>
+            </div>
+            <div class="honc-habit-meta">
+              <span class="honc-slot-badge">${escapeHtml(meta.timeSlot)}</span>
+              <span class="status-tag status-ACTIVE" style="font-size: 8px; padding: 0 3px;">active</span>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      const factsHtml = recentFacts.slice(0, 3).map(f => `
+        <div class="honc-fact-row" onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(f.item_id)}')" title="${escapeHtml(f.summary)}">
+          <div style="display: flex; align-items: center; gap: 5px; min-width: 0; flex: 1;">
+            <span style="font-size: 10px;">${f.icon}</span>
+            <span class="honc-fact-title">${escapeHtml(f.title)}</span>
+          </div>
+          <div style="display: flex; align-items: center; gap: 4px; flex-shrink: 0; margin-left: 6px;">
+            <span class="status-tag status-${escapeHtml(f.status)}" style="font-size: 8px; padding: 0 3px;">${escapeHtml(f.status)}</span>
+            <span class="honc-fact-time">${escapeHtml(f.timeStr)}</span>
+          </div>
+        </div>
+      `).join('');
+
+      return `
+        <div class="honc-card-preview collapsed-card-view" onclick="window.__uuma_selectAgent('honc')">
+          <!-- Top Rhythm & Heartbeat Banner in Collapsed -->
+          <div class="honc-rhythm-banner">
+            <div class="honc-rhythm-left">
+              <span class="honc-pulse-dot"></span>
+              <span class="honc-rhythm-title">生活作息与心跳调度：</span>
+              <span class="honc-rhythm-cadence">⏰ ${escapeHtml(wakeTime)} ~ ${escapeHtml(bedtime)} (宽限 ${graceMins}m)</span>
+            </div>
+            <div class="honc-rhythm-right">
+              <span class="honc-stat-pill">💓 语义心跳常驻活跃</span>
+              <span class="honc-stat-pill ops">已对账 ${totalOps} 笔操作</span>
+            </div>
+          </div>
+
+          <!-- Part 1: Top Habits Tracker in Collapsed -->
+          <div class="honc-part-section" style="padding: 6px 8px;">
+            <div class="honc-part-header" style="margin-bottom: 4px;">
+              <span class="honc-part-title" style="font-size: 10.5px;">🎯 核心习惯守护与时段排期 (Top ${displayHabits.length} 项)</span>
+              <span style="font-size: 9px; color: #38bdf8;">共 ${habitItems.length || 8} 项习惯 · 每日自动提醒</span>
+            </div>
+            <div class="honc-habits-grid">
+              ${habitsHtml}
+            </div>
+          </div>
+
+          <!-- Part 2: Recent Check-in Facts & Health Logs -->
+          <div class="honc-part-section" style="padding: 5px 8px;">
+            <div class="honc-part-header" style="margin-bottom: 3px;">
+              <span class="honc-part-title" style="font-size: 10px;">📋 最新执行对账事实与身体感知</span>
+              <span style="font-size: 8.5px; color: var(--text-dim);">(近 ${recentFacts.slice(0, 3).length} 条审计凭据)</span>
+            </div>
+            <div class="honc-facts-list">
+              ${factsHtml}
+            </div>
+          </div>
+
+          <div style="font-size: 9.5px; color: var(--accent-blue); text-align: right; margin-top: 2px;">
+            🔍 点击卡片展开查看完整 ${habitItems.length || 8} 项习惯配置、作息时钟与打卡对账日志 ↗
+          </div>
+        </div>
+      `;
+    }
+
+    // Expanded View
+    const allHabitsRowsHtml = habitItems.map(it => {
+      const meta = getHoncHabitMeta(it.payload, it.title, it.kind);
+      const desc = meta.def.description || it.summary || '—';
+      const cadence = `每日 ${meta.reminder.count || 1} 次`;
+      const role = meta.def.semantic_role || 'habit';
+      return `
+        <div class="honc-table-row" onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(it.item_id)}')" title="${escapeHtml(it.summary)}">
+          <div class="honc-habit-col-name">
+            <span class="honc-habit-icon" style="font-size: 12px; margin-right: 4px;">${meta.icon}</span>
+            <div style="display: flex; flex-direction: column; min-width: 0;">
+              <span class="honc-habit-strong-name">${escapeHtml(meta.displayName)}</span>
+              ${desc ? `<span class="honc-habit-subdesc">${escapeHtml(desc)}</span>` : ''}
+            </div>
+          </div>
+          <div class="honc-habit-col-slot">
+            <span class="honc-slot-badge">${escapeHtml(meta.timeSlot)}</span>
+          </div>
+          <div class="honc-habit-col-cadence">
+            <span style="color: #cbd5e1; font-size: 10px;">${escapeHtml(cadence)}</span>
+          </div>
+          <div class="honc-habit-col-role">
+            <span style="color: var(--text-dim); font-size: 9.5px; font-family: var(--font-mono);">${escapeHtml(role)}</span>
+          </div>
+          <div class="honc-habit-col-status">
+            <span class="status-tag status-ACTIVE" style="font-size: 8.5px; padding: 1px 4px;">active</span>
+          </div>
+        </div>
+      `;
+    }).join('');
+
+    const allFactsRowsHtml = recentFacts.map(f => `
+      <div class="honc-fact-row expanded-fact-row" onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(f.item_id)}')" title="${escapeHtml(f.summary)}">
+        <div style="display: flex; align-items: center; gap: 6px; min-width: 0; flex: 1;">
+          <span style="font-size: 11px;">${f.icon}</span>
+          <div style="min-width: 0; display: flex; flex-direction: column;">
+            <span class="honc-fact-title" style="font-size: 11px;">${escapeHtml(f.title)}</span>
+            <span style="font-size: 9.5px; color: var(--text-dim);">${escapeHtml(f.summary)}</span>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 6px; flex-shrink: 0; margin-left: 8px;">
+          <span class="status-tag status-${escapeHtml(f.status)}" style="font-size: 9px; padding: 1px 4px;">${escapeHtml(f.status)}</span>
+          <span class="honc-fact-time" style="font-size: 9.5px;">${escapeHtml(f.timeStr)}</span>
+        </div>
+      </div>
+    `).join('');
+
+    return `
+      <div class="honc-card-preview expanded-card-view">
+        <!-- Overview & Core Info -->
+        <div class="detail-block">
+          <div class="detail-block-title">honc 智能体概览与生活管家核心</div>
+          <div style="font-size: 12px; margin-bottom: 6px;">
+            <strong>状态：</strong> <span class="status-tag status-${escapeHtml(ws.status)}">${escapeHtml(ws.status)}</span>
+            <span style="margin-left: 8px;"><strong>健康度：</strong> <span class="badge-live">${escapeHtml(ws.health)}</span></span>
+            <span style="margin-left: 8px;"><strong>心跳调度器：</strong> <span class="status-tag status-ACTIVE">honc-life-semantic-tick-v1 (ACTIVE)</span></span>
+          </div>
+          <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 4px;"><strong>核心职责：</strong> ${escapeHtml(ws.role)}</div>
+          <div style="font-size: 11px; color: var(--text-dim);"><strong>核心数据源：</strong> ${escapeHtml(ws.source_name)} · 累计已对账生活操作: <strong style="color: #38bdf8;">${totalOps} 笔</strong></div>
+        </div>
+
+        <!-- Part 1: Life Rhythm & Schedule Settings -->
+        <div class="detail-block">
+          <div class="detail-block-title">Part 1 · 生活作息与健康节律配置 (Life Rhythm & Sleep Cadence)</div>
+          <div class="honc-macro-grid" style="margin-bottom: 8px;">
+            <div class="honc-stat-box">
+              <div class="honc-stat-val" style="color: #38bdf8;">${escapeHtml(wakeTime)}</div>
+              <div class="honc-stat-lbl">晨起唤醒目标 (Wake Target)</div>
+            </div>
+            <div class="honc-stat-box">
+              <div class="honc-stat-val" style="color: #c084fc;">${escapeHtml(bedtime)}</div>
+              <div class="honc-stat-lbl">夜间就寝目标 (Bedtime)</div>
+            </div>
+            <div class="honc-stat-box">
+              <div class="honc-stat-val" style="color: var(--accent-amber);">${graceMins} <span style="font-size: 10px; color: var(--text-dim);">分钟</span></div>
+              <div class="honc-stat-lbl">弹性缓冲宽限期 (Grace)</div>
+            </div>
+            <div class="honc-stat-box">
+              <div class="honc-stat-val" style="color: var(--accent-green);">${totalOps} <span style="font-size: 10px; color: var(--text-dim);">笔</span></div>
+              <div class="honc-stat-lbl">生活操作审计事实总数</div>
+            </div>
+          </div>
+          <!-- 24h Rhythm Visual Pipeline -->
+          <div class="honc-timeline-bar" style="margin-top: 6px; padding: 6px 10px; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 6px;">
+            <div style="font-size: 10px; color: #94a3b8; font-weight: 600; margin-bottom: 4px;">全天 24H 习惯守护时钟周期：</div>
+            <div style="display: flex; gap: 4px; font-size: 9.5px; flex-wrap: wrap;">
+              <span class="honc-stage-pill">🌅 08:00 晨起温水</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill">🥗 12:00 午餐咀嚼</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill">🧘 15:00 意式静息</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill">🏊 16:00 运动健身</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill">🥗 19:30 晚餐习惯</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill">🛁 21:00 泡脚日记</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill">🌙 21:15 睡前15分</span>
+              <span style="color: var(--text-dim);">➔</span>
+              <span class="honc-stage-pill sleep">💤 21:30 深度睡眠</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Part 2: Complete Habits Roster Table -->
+        <div class="detail-block">
+          <div class="detail-block-title">Part 2 · 8 项核心日常习惯清单与时钟提醒 (Habits & Reminders Roster · ${habitItems.length} 项)</div>
+          <div class="honc-table">
+            <div class="honc-table-header">
+              <div>习惯名称与描述 (HABIT & SUMMARY)</div>
+              <div>提醒触发时段 (REMINDER SLOTS)</div>
+              <div>目标频次 (CADENCE)</div>
+              <div>语义角色 (ROLE)</div>
+              <div>状态</div>
+            </div>
+            ${allHabitsRowsHtml}
+          </div>
+        </div>
+
+        <!-- Part 3: Recent Check-in Facts & Health Evidence -->
+        <div class="detail-block">
+          <div class="detail-block-title">Part 3 · 最新生活执行与健康对账事实 (Life Operations & Evidence · ${recentFacts.length} 笔)</div>
+          <div class="honc-facts-list">
+            ${allFactsRowsHtml}
+          </div>
+        </div>
+      </div>
+    `;
+  }
+
+  function renderWorkspaces(force = false) {
+    const currentJson = JSON.stringify({
+      agents: state.agents,
+      expanded: state.expandedAgentId,
+      selected: state.selectedItemId,
+      topicExpanded: state.bsTopicExpanded,
+      showAllTopics: state.bsShowAllTopics,
+    });
+
+    if (!force && state._lastRenderedWorkspacesJson === currentJson) {
+      // Data and visual state are identical: do NOT wipe or refresh the DOM!
+      return;
+    }
+    state._lastRenderedWorkspacesJson = currentJson;
+
     workspacesGrid.innerHTML = '';
     state.agents.forEach((ws) => {
       const isExpanded = state.expandedAgentId === ws.agent_id;
@@ -2064,6 +2760,15 @@
           statusTagHtml = `<span class="status-tag status-RUNNING" style="background: rgba(245, 158, 11, 0.2); border-color: var(--accent-amber); color: #fcd34d;">RUNNING (心跳静默)</span>`;
         }
 
+        let microStepperHtml = '';
+        if (it.kind === 'active_task') {
+          microStepperHtml = `
+            <div style="width: 75px; flex-shrink: 0; margin: 3px 0 1px 0;" title="任务流转阶段: ${escapeHtml(it.status)}">
+              ${renderTaskLifecycleStepper(it.status, true)}
+            </div>
+          `;
+        }
+
         return `
           <div class="item-row ${isActive ? 'active' : ''}" data-item-id="${escapeHtml(it.item_id)}">
             <div class="item-main">
@@ -2074,6 +2779,7 @@
             </div>
             <div class="item-meta">
               ${statusTagHtml}
+              ${microStepperHtml}
               <div>${formatTime(it.updated_at)}</div>
             </div>
           </div>
@@ -2152,6 +2858,21 @@
         yoncPreviewHtml = renderYoncPreviewHtml(ws, isExpanded);
       }
 
+      let honcPreviewHtml = '';
+      if (ws.agent_id === 'honc') {
+        honcPreviewHtml = renderHoncPreviewHtml(ws, isExpanded);
+      }
+
+      let badgeLabel = `${(ws.items || []).length} 项`;
+      if (ws.agent_id === 'forge-lab-bot') {
+        const hardwareProjects = (ws.items || []).filter(it => it.kind === 'forge_project');
+        const projCount = hardwareProjects.length || 5;
+        badgeLabel = `${projCount} 个专案`;
+      } else if (ws.agent_id === 'honc') {
+        const habitCount = (ws.items || []).filter(it => it.kind === 'habit' || it.kind === 'habit_definition' || (it.item_id && it.item_id.includes('habit'))).length || 8;
+        badgeLabel = `${habitCount} 项习惯`;
+      }
+
       card.innerHTML = `
         <div class="workspace-header" data-agent-id="${escapeHtml(ws.agent_id)}">
           <div class="header-left">
@@ -2161,7 +2882,7 @@
           </div>
           <div class="agent-glance" title="${escapeHtml(glance)}">${escapeHtml(glance)}</div>
           <div class="header-right">
-            <span class="items-badge">${(ws.items || []).length} 项</span>
+            <span class="items-badge">${badgeLabel}</span>
           </div>
         </div>
         <div class="agent-role">${escapeHtml(ws.role)}</div>
@@ -2170,7 +2891,8 @@
         ${forgePreviewHtml}
         ${brainstormerPreviewHtml}
         ${yoncPreviewHtml}
-        <div class="item-list" style="${(isExpanded && ws.agent_id === 'scholar') || ws.agent_id === 'brainstormer' || ws.agent_id === 'forge-lab-bot' || ws.agent_id === 'yonc' ? 'display: none;' : ''}">
+        ${honcPreviewHtml}
+        <div class="item-list" style="${(isExpanded && ws.agent_id === 'scholar') || ws.agent_id === 'brainstormer' || ws.agent_id === 'forge-lab-bot' || ws.agent_id === 'yonc' || ws.agent_id === 'wisdom-oldman' || ws.agent_id === 'honc' ? 'display: none;' : ''}">
           ${itemsHtml || '<div style="color: var(--text-dim); font-size: 11px; padding: 4px;">暂无活动项</div>'}
         </div>
       `;
@@ -2178,7 +2900,7 @@
       // Card Block Click -> Toggle Accordion Expansion + Inspect
       card.addEventListener('click', (e) => {
         // If clicking inside interactive child elements when expanded, don't toggle accordion
-        if (e.target.closest('.item-row') || e.target.closest('.tree-paper-row') || e.target.closest('.forge-tree-proj-header') || e.target.closest('.wisdom-topic-card') || e.target.closest('button') || e.target.closest('a') || e.target.closest('.notion-link-pill') || e.target.closest('.yonc-activity-pill') || e.target.closest('.yonc-assign-btn') || e.target.closest('.yonc-assign-chip')) {
+        if (e.target.closest('.item-row') || e.target.closest('.tree-paper-row') || e.target.closest('.forge-tree-proj-header') || e.target.closest('.wisdom-topic-card') || e.target.closest('.pipeline-card') || e.target.closest('.pipeline-row') || e.target.closest('.pipeline-anchor-divider') || e.target.closest('.pipeline-nav-btn') || e.target.closest('button') || e.target.closest('a') || e.target.closest('.notion-link-pill') || e.target.closest('.yonc-activity-pill') || e.target.closest('.yonc-assign-btn') || e.target.closest('.yonc-assign-chip') || e.target.closest('.honc-habit-card') || e.target.closest('.honc-fact-row') || e.target.closest('.honc-table-row')) {
           return;
         }
 
@@ -2207,6 +2929,11 @@
       });
 
       workspacesGrid.appendChild(card);
+    });
+
+    // Auto-align Wisdom vertical pipelines to anchor on (one last passed item + running item)
+    requestAnimationFrame(() => {
+      alignWisdomPipelines();
     });
   }
 
@@ -2314,17 +3041,13 @@
     state.selectedItemId = null;
     state.selectedEventId = null;
     renderEvents();
-    if (state.isSidebarOpen) {
-      setInspectorOpen(true, false);
-    }
+    // Auto-expand drawer on selection
+    setInspectorOpen(true, false);
 
     inspTitle.textContent = ws.name;
     inspSubtitle.textContent = `智能体工作区 · ${ws.agent_id} · ${ws.source_name}`;
 
     const items = ws.items || [];
-    countSessions.textContent = 0;
-    countTools.textContent = 0;
-    countArtifacts.textContent = 0;
 
     if (ws.agent_id === 'scholar') {
       inspectorBody.innerHTML = renderScholarDashboard(ws);
@@ -2385,16 +3108,11 @@
     state.selectedAgentId = null;
     renderEvents();
     renderWorkspaces();
-    if (state.isSidebarOpen) {
-      setInspectorOpen(true, false);
-    }
+    // Auto-expand drawer on selection
+    setInspectorOpen(true, false);
 
     inspTitle.textContent = ev.summary || `Event ${ev.event_id.slice(0, 10)}`;
     inspSubtitle.textContent = `[${ev.agent_id}] · 钩子: ${ev.hook} · 来源: ${ev.source_path || 'hermes_spool'}`;
-
-    countSessions.textContent = 0;
-    countTools.textContent = ev.tool_name ? 1 : 0;
-    countArtifacts.textContent = 0;
 
     let parsedSnippet = {};
     if (ev.raw_snippet) {
@@ -2430,11 +3148,15 @@
     state.selectedItemId = itemId;
     state.selectedEventId = null;
     state.selectedAgentId = null;
+    try {
+      const url = new URL(window.location.href);
+      url.searchParams.set('item', itemId);
+      window.history.replaceState(null, '', url.toString());
+    } catch {}
     renderWorkspaces();
     renderEvents();
-    if (state.isSidebarOpen) {
-      setInspectorOpen(true, false);
-    }
+    // Auto-expand drawer on selection
+    setInspectorOpen(true, false);
 
     // Fast-path: local cache display immediately
     const localItem = findItemLocally(itemId);
@@ -2548,6 +3270,313 @@
     }
   };
 
+  // Auto-align and scroll Wisdom vertical pipelines:
+  // 1st view: top aligns with the "one last passed item" (or running item), followed by [⚡ 正在攻关]
+  // Items above this can be viewed by scrolling up
+  function alignWisdomPipelines() {
+    document.querySelectorAll('.wisdom-pipeline-vertical').forEach(container => {
+      const containerKey = container.getAttribute('data-pipeline-key') || 'default';
+
+      if (!container.__uuma_scroll_bound) {
+        container.__uuma_scroll_bound = true;
+        container.addEventListener('scroll', () => {
+          if (!state.pipelineScrollPositions) state.pipelineScrollPositions = {};
+          state.pipelineScrollPositions[containerKey] = container.scrollTop;
+
+          // Dynamically update nav button label based on scroll position
+          const parentPreview = container.closest('.wisdom-card-preview');
+          if (parentPreview) {
+            const navBtn = parentPreview.querySelector('.pipeline-nav-btn');
+            if (navBtn) {
+              const count = navBtn.getAttribute('data-count') || '3';
+              if (container.scrollTop <= 15) {
+                navBtn.textContent = '▼ 回到现场攻关 (#5)';
+                navBtn.setAttribute('data-target', 'anchor');
+              } else {
+                navBtn.textContent = `▲ 上有 ${count} 项历史`;
+                navBtn.setAttribute('data-target', 'top');
+              }
+            }
+          }
+        }, { passive: true });
+      }
+
+      // ONLY NEED ONCE WHEN LOAD:
+      // If this view has already aligned to 1st view on initial load, do not force-scroll it again!
+      if (state.pipelineInitialAligned && state.pipelineInitialAligned[containerKey]) {
+        if (state.pipelineScrollPositions && typeof state.pipelineScrollPositions[containerKey] === 'number') {
+          container.scrollTop = state.pipelineScrollPositions[containerKey];
+        }
+        return;
+      }
+
+      // Default: 1st view anchors so that the "one last passed item" (or running item) is at the top
+      const anchorEl = container.querySelector('.is-pipeline-anchor') || container.querySelector('.row-running');
+      if (anchorEl) {
+        const containerRect = container.getBoundingClientRect();
+        const anchorRect = anchorEl.getBoundingClientRect();
+        const relativeTop = anchorRect.top - containerRect.top + container.scrollTop;
+        const initialScroll = Math.max(0, relativeTop);
+        container.scrollTop = initialScroll;
+        if (!state.pipelineScrollPositions) state.pipelineScrollPositions = {};
+        state.pipelineScrollPositions[containerKey] = initialScroll;
+      }
+
+      // Mark this view as having performed its 1st view load alignment
+      if (!state.pipelineInitialAligned) state.pipelineInitialAligned = {};
+      state.pipelineInitialAligned[containerKey] = true;
+    });
+  }
+
+  window.__uuma_togglePipelineScroll = function(btn) {
+    const preview = btn.closest('.wisdom-card-preview') || document.querySelector('.wisdom-card-preview');
+    if (!preview) return;
+    const container = preview.querySelector('.wisdom-pipeline-vertical');
+    if (!container) return;
+
+    const target = btn.getAttribute('data-target') || 'top';
+    if (target === 'top') {
+      container.scrollTo({ top: 0, behavior: 'smooth' });
+      btn.textContent = '▼ 回到现场攻关 (#5)';
+      btn.setAttribute('data-target', 'anchor');
+      if (!state.pipelineScrollPositions) state.pipelineScrollPositions = {};
+      const containerKey = container.getAttribute('data-pipeline-key') || 'default';
+      state.pipelineScrollPositions[containerKey] = 0;
+    } else {
+      const anchorEl = container.querySelector('.is-pipeline-anchor') || container.querySelector('.row-running');
+      if (anchorEl) {
+        const containerRect = container.getBoundingClientRect();
+        const anchorRect = anchorEl.getBoundingClientRect();
+        const relativeTop = anchorRect.top - containerRect.top + container.scrollTop;
+        const targetScroll = Math.max(0, relativeTop);
+        container.scrollTo({ top: targetScroll, behavior: 'smooth' });
+        if (!state.pipelineScrollPositions) state.pipelineScrollPositions = {};
+        const containerKey = container.getAttribute('data-pipeline-key') || 'default';
+        state.pipelineScrollPositions[containerKey] = targetScroll;
+      }
+      const count = btn.getAttribute('data-count') || '3';
+      btn.textContent = `▲ 上有 ${count} 项历史`;
+      btn.setAttribute('data-target', 'top');
+    }
+  };
+
+  // Floating Document Viewer State & Handlers
+  window.__uuma_currentDocContent = '';
+
+  function formatDocSize(bytes) {
+    if (!bytes && bytes !== 0) return '';
+    if (bytes < 1024) return bytes + ' B';
+    if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+    return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+  }
+
+  function renderCsvToHtml(csvText) {
+    const lines = csvText.split(/\r?\n/).filter(l => l.trim().length > 0);
+    if (lines.length === 0) return '<div style="color: var(--text-dim); padding: 12px;">空 CSV 文件</div>';
+
+    function parseCsvLine(line) {
+      const values = [];
+      let cur = '';
+      let inQuotes = false;
+      for (let i = 0; i < line.length; i++) {
+        const c = line[i];
+        if (c === '"') {
+          if (inQuotes && line[i + 1] === '"') {
+            cur += '"';
+            i++;
+          } else {
+            inQuotes = !inQuotes;
+          }
+        } else if (c === ',' && !inQuotes) {
+          values.push(cur.trim());
+          cur = '';
+        } else {
+          cur += c;
+        }
+      }
+      values.push(cur.trim());
+      return values;
+    }
+
+    const headers = parseCsvLine(lines[0]);
+    const rows = lines.slice(1).map(parseCsvLine);
+
+    let html = '<div class="obs-doc-table-wrapper"><table class="obs-doc-table"><thead><tr>';
+    headers.forEach(h => {
+      html += `<th>${escapeHtml(h)}</th>`;
+    });
+    html += '</tr></thead><tbody>';
+    rows.forEach(r => {
+      html += '<tr>';
+      headers.forEach((_, idx) => {
+        html += `<td>${escapeHtml(r[idx] !== undefined ? r[idx] : '')}</td>`;
+      });
+      html += '</tr>';
+    });
+    html += '</tbody></table></div>';
+    return html;
+  }
+
+  function renderMarkdownToHtml(mdText) {
+    let html = '';
+    const lines = mdText.split(/\r?\n/);
+    let inCode = false;
+    let codeBlockLines = [];
+    let inList = false;
+
+    for (let i = 0; i < lines.length; i++) {
+      const line = lines[i];
+
+      if (line.trim().startsWith('```')) {
+        if (!inCode) {
+          if (inList) { html += '</ul>'; inList = false; }
+          inCode = true;
+          codeBlockLines = [];
+        } else {
+          inCode = false;
+          html += `<pre><code>${escapeHtml(codeBlockLines.join('\n'))}</code></pre>`;
+          codeBlockLines = [];
+        }
+        continue;
+      }
+
+      if (inCode) {
+        codeBlockLines.push(line);
+        continue;
+      }
+
+      const trimmed = line.trim();
+      if (!trimmed) {
+        if (inList) { html += '</ul>'; inList = false; }
+        continue;
+      }
+
+      if (trimmed.startsWith('# ')) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += `<h1>${escapeHtml(trimmed.slice(2))}</h1>`;
+      } else if (trimmed.startsWith('## ')) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += `<h2>${escapeHtml(trimmed.slice(3))}</h2>`;
+      } else if (trimmed.startsWith('### ')) {
+        if (inList) { html += '</ul>'; inList = false; }
+        html += `<h3>${escapeHtml(trimmed.slice(4))}</h3>`;
+      } else if (trimmed.startsWith('- ') || trimmed.startsWith('* ')) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        let itemContent = escapeHtml(trimmed.slice(2))
+          .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+          .replace(/`([^`]+)`/g, '<code>$1</code>');
+        html += `<li>${itemContent}</li>`;
+      } else if (trimmed.startsWith('> ')) {
+        if (inList) { html += '</ul>'; inList = false; }
+        let quoteContent = escapeHtml(trimmed.slice(2))
+          .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+          .replace(/`([^`]+)`/g, '<code>$1</code>');
+        html += `<blockquote>${quoteContent}</blockquote>`;
+      } else {
+        if (inList) { html += '</ul>'; inList = false; }
+        let pContent = escapeHtml(trimmed)
+          .replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>')
+          .replace(/`([^`]+)`/g, '<code>$1</code>');
+        html += `<p>${pContent}</p>`;
+      }
+    }
+    if (inList) { html += '</ul>'; }
+    if (inCode && codeBlockLines.length > 0) {
+      html += `<pre><code>${escapeHtml(codeBlockLines.join('\n'))}</code></pre>`;
+    }
+    return `<div class="obs-doc-markdown">${html}</div>`;
+  }
+
+  window.__uuma_openDocViewer = async function(projectId, relativePath, title, docType, displayCode) {
+    const modal = document.getElementById('obs-doc-modal');
+    if (!modal) return;
+
+    const titleEl = document.getElementById('obs-doc-title');
+    const badgeEl = document.getElementById('obs-doc-code-badge');
+    const typeEl = document.getElementById('obs-doc-type-badge');
+    const pathEl = document.getElementById('obs-doc-path');
+    const metaEl = document.getElementById('obs-doc-meta');
+    const bodyEl = document.getElementById('obs-doc-body');
+    const iconEl = document.getElementById('obs-doc-icon');
+
+    const ext = relativePath.includes('.') ? '.' + relativePath.split('.').pop().toLowerCase() : '';
+    const isCsv = ext === '.csv';
+    const isJson = ext === '.json';
+    const isYaml = ext === '.yaml' || ext === '.yml';
+
+    if (iconEl) iconEl.textContent = isCsv ? '📊' : (isJson ? '📐' : (isYaml ? '⚙️' : '📄'));
+    if (titleEl) titleEl.textContent = title || relativePath.split('/').pop();
+    if (badgeEl) badgeEl.textContent = displayCode || 'PROJ';
+    if (typeEl) typeEl.textContent = docType || 'DOC';
+    if (pathEl) pathEl.textContent = `${projectId}/${relativePath}`;
+    if (metaEl) metaEl.textContent = '加载中...';
+    if (bodyEl) bodyEl.innerHTML = '<div style="color: var(--text-dim); text-align: center; padding: 40px;">⏳ 正在读取文档内容...</div>';
+
+    modal.style.display = 'flex';
+
+    try {
+      const token = state.token || '';
+      const authQuery = token ? `&auth=${encodeURIComponent(token)}` : '';
+      const res = await fetch(`/api/observatory/doc?project_id=${encodeURIComponent(projectId)}&path=${encodeURIComponent(relativePath)}${authQuery}`);
+      if (!res.ok) {
+        throw new Error(`无法读取文件 (${res.status} ${res.statusText})`);
+      }
+      const data = await res.json();
+      window.__uuma_currentDocContent = data.content || '';
+      if (metaEl) {
+        metaEl.textContent = `${formatDocSize(data.size_bytes)} · ${data.extension ? data.extension.toUpperCase() : 'TEXT'}`;
+      }
+
+      if (data.extension === '.csv') {
+        bodyEl.innerHTML = renderCsvToHtml(data.content);
+      } else if (data.extension === '.md') {
+        bodyEl.innerHTML = renderMarkdownToHtml(data.content);
+      } else if (data.extension === '.json') {
+        let formatted = data.content;
+        try {
+          formatted = JSON.stringify(JSON.parse(data.content), null, 2);
+        } catch (_) {}
+        bodyEl.innerHTML = `<pre style="font-family: var(--font-mono); font-size: 11.5px; line-height: 1.5; color: #7dd3fc; margin: 0;"><code>${escapeHtml(formatted)}</code></pre>`;
+      } else {
+        bodyEl.innerHTML = `<pre style="font-family: var(--font-mono); font-size: 11.5px; line-height: 1.5; color: #cbd5e1; margin: 0; white-space: pre-wrap;"><code>${escapeHtml(data.content)}</code></pre>`;
+      }
+    } catch (err) {
+      if (bodyEl) {
+        bodyEl.innerHTML = `
+          <div style="background: rgba(239, 68, 68, 0.1); border: 1px solid rgba(239, 68, 68, 0.3); border-radius: 6px; padding: 16px; color: #fca5a5;">
+            <div style="font-weight: 700; margin-bottom: 6px;">❌ 读取文档失败</div>
+            <div style="font-size: 12px;">${escapeHtml(err.message)}</div>
+          </div>
+        `;
+      }
+      if (metaEl) metaEl.textContent = '加载失败';
+    }
+  };
+
+  window.__uuma_closeDocViewer = function() {
+    const modal = document.getElementById('obs-doc-modal');
+    if (modal) modal.style.display = 'none';
+  };
+
+  window.__uuma_onDocBackdropClick = function(e) {
+    if (e.target && e.target.id === 'obs-doc-modal') {
+      window.__uuma_closeDocViewer();
+    }
+  };
+
+  window.__uuma_copyDocContent = function() {
+    if (!window.__uuma_currentDocContent) return;
+    navigator.clipboard.writeText(window.__uuma_currentDocContent).then(() => {
+      const btn = document.getElementById('obs-doc-copy-btn');
+      if (btn) {
+        const orig = btn.innerHTML;
+        btn.innerHTML = '<span>✓ 已复制</span>';
+        setTimeout(() => { btn.innerHTML = orig; }, 1500);
+      }
+    }).catch(err => {
+      console.warn('Clipboard write failed:', err);
+    });
+  };
 
   function renderInspectorContent(data) {
     const item = data.item;
@@ -2557,13 +3586,7 @@
     inspTitle.textContent = item.title;
     inspSubtitle.textContent = `${item.agent_id} · ${item.kind} · 来源: ${item.source_ref}`;
 
-    // Update tab counts
-    countSessions.textContent = sessions.length;
-    countTools.textContent = (p && p.tools) ? p.tools.length : 0;
-    countArtifacts.textContent = (p && p.artifacts) ? p.artifacts.length : 0;
-
-    if (state.activeTab === 'overview') {
-      let specializedBlock = '';
+    let specializedBlock = '';
 
       // 1. Brainstormer Decision Map DAG & Architecture Topics View
       if (item.kind === 'decision_dag' || item.kind === 'architecture_topic') {
@@ -2595,11 +3618,84 @@
           `;
         }).join('');
 
-        const bomListHtml = (p.bom_files || []).map(f => `
-          <div style="padding: 2px 0; font-size: 11px; color: #cbd5e1; font-family: var(--font-mono);">
-            📄 ${escapeHtml(f)}
-          </div>
-        `).join('') || '<div style="color: var(--text-dim); font-size: 11px;">暂无独立 BOM 文件</div>';
+        const projFolder = p.folder_name || p.project_id || '';
+        const displayCode = p.display_code || ('PROJ-' + (p.project_code || '001'));
+
+        const bomFilesList = (p.bom_files_details && p.bom_files_details.length > 0)
+          ? p.bom_files_details
+          : (p.bom_files || []).map(f => ({
+              name: f,
+              relative_path: 'bom/' + f,
+              size_bytes: null,
+              extension: f.includes('.') ? '.' + f.split('.').pop() : '',
+            }));
+
+        const bomListHtml = bomFilesList.length > 0 ? bomFilesList.map(f => {
+          const isCsv = (f.extension || '').toLowerCase() === '.csv';
+          const icon = isCsv ? '📊' : '📄';
+          const sizeStr = f.size_bytes ? `(${formatDocSize(f.size_bytes)})` : '';
+          return `
+            <div class="forge-doc-item-row" onclick="window.__uuma_openDocViewer('${escapeHtml(projFolder)}', '${escapeHtml(f.relative_path)}', '${escapeHtml(f.name)}', 'BOM List', '${escapeHtml(displayCode)}')">
+              <div class="forge-doc-item-name">
+                <span>${icon}</span>
+                <span style="font-weight: 600;">${escapeHtml(f.name)}</span>
+                ${sizeStr ? `<span style="font-size: 9.5px; color: var(--text-dim);">${sizeStr}</span>` : ''}
+              </div>
+              <div class="forge-doc-item-action">
+                <span>浮窗查看 ↗</span>
+              </div>
+            </div>
+          `;
+        }).join('') : '<div style="color: var(--text-dim); font-size: 11px; padding: 4px;">暂无独立 BOM 文件</div>';
+
+        const docsFilesList = (p.docs_files_details && p.docs_files_details.length > 0)
+          ? p.docs_files_details
+          : (p.docs_files || []).map(f => ({
+              name: f,
+              relative_path: 'docs/' + f,
+              size_bytes: null,
+              extension: f.includes('.') ? '.' + f.split('.').pop() : '',
+            }));
+
+        const designFilesList = (p.design_files_details && p.design_files_details.length > 0)
+          ? p.design_files_details
+          : (p.design_files || []).map(f => ({
+              name: f,
+              relative_path: 'design/' + f,
+              size_bytes: null,
+              extension: f.includes('.') ? '.' + f.split('.').pop() : '',
+            }));
+
+        const rootFilesList = p.root_files_details || [
+          { name: 'README.md', relative_path: 'README.md', size_bytes: null, extension: '.md' },
+          { name: 'project.yaml', relative_path: 'project.yaml', size_bytes: null, extension: '.yaml' },
+        ];
+
+        const allOtherDocs = [
+          ...rootFilesList.map(f => ({ ...f, group: 'Project Meta' })),
+          ...docsFilesList.map(f => ({ ...f, group: 'Docs' })),
+          ...designFilesList.map(f => ({ ...f, group: 'Design' })),
+        ];
+
+        const otherDocsHtml = allOtherDocs.length > 0 ? allOtherDocs.map(f => {
+          const isJson = (f.extension || '').toLowerCase() === '.json';
+          const isMd = (f.extension || '').toLowerCase() === '.md';
+          const icon = isMd ? '📝' : (isJson ? '📐' : '📄');
+          const sizeStr = f.size_bytes ? `(${formatDocSize(f.size_bytes)})` : '';
+          return `
+            <div class="forge-doc-item-row" onclick="window.__uuma_openDocViewer('${escapeHtml(projFolder)}', '${escapeHtml(f.relative_path)}', '${escapeHtml(f.name)}', '${escapeHtml(f.group)}', '${escapeHtml(displayCode)}')">
+              <div class="forge-doc-item-name">
+                <span>${icon}</span>
+                <span style="font-weight: 500;">${escapeHtml(f.name)}</span>
+                <span style="font-size: 9px; color: var(--text-dim); background: rgba(255,255,255,0.05); padding: 1px 4px; border-radius: 3px;">${escapeHtml(f.group)}</span>
+                ${sizeStr ? `<span style="font-size: 9.5px; color: var(--text-dim);">${sizeStr}</span>` : ''}
+              </div>
+              <div class="forge-doc-item-action">
+                <span>浮窗查看 ↗</span>
+              </div>
+            </div>
+          `;
+        }).join('') : '<div style="color: var(--text-dim); font-size: 11px; padding: 4px;">暂无技术文档</div>';
 
         const openItemsHtml = (p.open_items || []).map(oi => `
           <li style="margin-bottom: 2px; color: #fca5a5;">${escapeHtml(oi)}</li>
@@ -2650,10 +3746,11 @@
           <div class="detail-block">
             <div class="detail-block-title">硬件项目生命周期进展 (Hardware Lifecycle)</div>
             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
-              <div>
-                <strong style="color: #fff; font-size: 12px;">当前阶段：${escapeHtml(p.stage_name)}</strong>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span class="tree-badge-proj">${escapeHtml(displayCode)}</span>
+                <strong style="color: #fff; font-size: 13px;">${escapeHtml(p.name || '')}</strong>
               </div>
-              <span class="status-tag status-${escapeHtml(p.stage_code)}">${escapeHtml(p.stage_code)}</span>
+              <span class="status-tag status-${escapeHtml(p.stage_code)}">${escapeHtml(p.stage_name || p.stage_code)}</span>
             </div>
 
             <div class="mini-progress-row" style="margin-bottom: 8px;">
@@ -2711,9 +3808,14 @@
               </div>
             </div>
 
-            <div class="detail-block-title" style="margin-top: 10px;">BOM 与物料候选文档</div>
+            <div class="detail-block-title" style="margin-top: 10px;">BOM 与物料候选文档 (BOM Documents · 点击浮窗查看 ↗)</div>
             <div style="background: rgba(0,0,0,0.2); padding: 6px 8px; border-radius: 4px; margin-bottom: 8px;">
               ${bomListHtml}
+            </div>
+
+            <div class="detail-block-title" style="margin-top: 10px;">技术与设计文档 (Technical Docs & Architecture · 点击浮窗查看 ↗)</div>
+            <div style="background: rgba(0,0,0,0.2); padding: 6px 8px; border-radius: 4px; margin-bottom: 8px;">
+              ${otherDocsHtml}
             </div>
 
             ${nodesHtml ? `
@@ -3314,7 +4416,25 @@
           `;
         }).join('');
 
+        const taskStepperFullHtml = renderTaskLifecycleStepper(item.status, false);
+
         specializedBlock = `
+          <!-- 任务全生命周期 6 节点贯穿推进线 -->
+          <div class="detail-block" style="background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(56, 189, 248, 0.2); padding: 10px 14px; margin-bottom: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <div class="detail-block-title" style="font-size: 12px; margin-bottom: 0; color: #38bdf8;">
+                🧭 任务全生命周期流转状态 (PROPOSED ➔ TODO ➔ READY ➔ RUNNING ➔ REVIEW ➔ COMPLETED)
+              </div>
+              <div style="display: flex; align-items: center; gap: 6px;">
+                <span style="font-size: 10.5px; color: var(--text-dim);">当前状态:</span>
+                <span class="status-tag status-${escapeHtml(item.status)}" style="font-size: 10.5px; font-weight: 700; padding: 2px 8px;">${escapeHtml(item.status)}</span>
+              </div>
+            </div>
+            <div style="padding: 6px 4px 2px 4px;">
+              ${taskStepperFullHtml}
+            </div>
+          </div>
+
           <!-- 所属知识主题横幅 -->
           <div class="detail-block" style="border-left: 3px solid #c084fc; background: rgba(192, 132, 252, 0.05);">
             <div class="detail-block-title" style="color: #c084fc;">📂 所属知识主题与层级归属</div>
@@ -3325,8 +4445,14 @@
               <strong>Topic ID：</strong> <code>${escapeHtml(p.parent_topic_id || 'topic_07a8574b5d504d34a5483407c2a88400')}</code> · 
               <strong>主题状态：</strong> <span class="status-tag status-${p.parent_topic_status || 'ACTIVE'}">${p.parent_topic_status || 'ACTIVE'}</span>
             </div>
+            ${(p.parent_orbit_info && p.parent_orbit_info.status) ? `
+              <div style="margin: 8px 0;">
+                ${renderOrbitLiveCard(p.parent_orbit_info)}
+              </div>
+            ` : ''}
             <div style="font-size: 11px;">
-              ${p.standalone_url ? `<a href="${p.standalone_url}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">📖 打开完整主题文档与版本历史 (v45) ↗</a>` : ''}
+              <button onclick="window.__uuma_selectItem('${escapeHtml('wisdom_topic_' + (p.parent_topic_id || 'topic_07a8574b5d504d34a5483407c2a88400'))}')" style="background: rgba(192, 132, 252, 0.15); border: 1px solid rgba(192, 132, 252, 0.4); color: #c084fc; border-radius: 4px; padding: 2px 7px; font-size: 10.5px; cursor: pointer; margin-right: 8px;">🔍 检视所属主题 ↗</button>
+              ${p.standalone_url ? `<a href="${normalizeWisdomDocUrl(p.standalone_url)}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">📖 打开完整主题文档与版本历史 (wisdgraph) ↗</a>` : ''}
               <span style="color: var(--text-dim); margin-left: 10px;">关联远程 OpenSPG: <a href="http://192.168.55.2:8887" target="_blank" style="color: var(--accent-blue);">192.168.55.2:8887 ↗</a></span>
             </div>
           </div>
@@ -3381,19 +4507,34 @@
       else if (item.kind === 'knowledge_topic') {
         const underTasks = p.under_tasks || [];
         const claims = p.claims || [];
+        const orbitInfo = p.orbit_info;
 
-        const underTasksHtml = underTasks.map(t => `
-          <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 6px 8px; margin-bottom: 4px; font-size: 11px;">
-            <div>
-              <span style="font-weight: 600; color: #38bdf8;">${escapeHtml(t.title)}</span>
-              ${t.is_silent ? '<span style="color: var(--accent-amber); font-size: 10px; margin-left: 4px;">(心跳静默)</span>' : ''}
+        const orbitBannerHtml = renderOrbitLiveCard(orbitInfo);
+
+        const underTasksHtml = underTasks.map(t => {
+          const stepperHtml = renderTaskLifecycleStepper(t.status, false);
+          const silentBadge = t.is_silent ? '<span style="color: var(--accent-amber); font-size: 9.5px; margin-left: 4px;">(心跳静默)</span>' : '';
+          const runInfo = t.run_id ? `<span style="font-size: 9.5px; color: var(--text-dim); white-space: nowrap;">Run: ${escapeHtml(t.run_id.slice(0, 10))}</span>` : '';
+
+          return `
+            <div class="task-tree-row" onclick="window.__uuma_selectItem('${escapeHtml('wisdom_task_' + t.task_id)}')">
+              <div class="task-tree-left">
+                <span class="proj-feature-icon" style="font-size: 11px;">📋</span>
+                <span class="tree-badge-task">TASK</span>
+                <span class="task-tree-name" title="${escapeHtml(t.title)}">${escapeHtml(t.title)}</span>
+                ${silentBadge}
+              </div>
+              <div class="task-tree-right">
+                <span class="status-tag status-${escapeHtml(t.status)}" style="font-size: 9.5px; font-weight: 600; padding: 1.5px 6px; border-radius: 3px;">${escapeHtml(t.status)}</span>
+                ${runInfo}
+                <div class="task-stepper-container">
+                  ${stepperHtml}
+                </div>
+                <button onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml('wisdom_task_' + t.task_id)}')" style="background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.3); color: #38bdf8; border-radius: 3px; font-size: 9.5px; padding: 2px 6px; cursor: pointer; flex-shrink: 0;">检视 ↗</button>
+              </div>
             </div>
-            <div style="display: flex; align-items: center; gap: 6px;">
-              <span class="status-tag status-${escapeHtml(t.status)}" style="font-size: 10px;">${escapeHtml(t.status)}</span>
-              <button onclick="window.__uuma_selectItem('${escapeHtml('wisdom_task_' + t.task_id)}')" style="background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.3); color: #38bdf8; border-radius: 3px; font-size: 10px; padding: 2px 5px; cursor: pointer;">检查 ↗</button>
-            </div>
-          </div>
-        `).join('');
+          `;
+        }).join('');
 
         const claimsHtml = claims.map((c, idx) => `
           <div class="claim-item">
@@ -3406,6 +4547,8 @@
         `).join('');
 
         specializedBlock = `
+          ${orbitBannerHtml}
+
           <!-- 主题体系指标卡片 -->
           <div class="detail-block">
             <div class="detail-block-title">主题体系与知识沉淀全景</div>
@@ -3438,7 +4581,7 @@
             </div>
 
             <div style="font-size: 11px; display: flex; gap: 10px;">
-              ${p.standalone_url ? `<a href="${p.standalone_url}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">📖 打开主题独立文档服务 (Port 8767) ↗</a>` : ''}
+              ${p.standalone_url ? `<a href="${normalizeWisdomDocUrl(p.standalone_url)}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">📖 打开主题独立文档服务 (wisdgraph.95963210.xyz) ↗</a>` : ''}
               <a href="${p.openspg_endpoint || 'http://192.168.55.2:8887'}" target="_blank" style="color: var(--accent-blue); text-decoration: none;">🌐 远程 OpenSPG 图谱端点 ↗</a>
             </div>
           </div>
@@ -3449,6 +4592,28 @@
             ${underTasksHtml || '<div style="color: var(--text-dim); font-size: 11px;">此主题下暂未挂靠未完成调查任务</div>'}
           </div>
 
+          <!-- 证据缺口攻关排队流水线 (Pipeline) -->
+          ${((orbitInfo && orbitInfo.pipeline_items) || []).length ? `
+            <div class="detail-block">
+              <div class="detail-block-title">⚡ 证据缺口攻关流水线全览 (${orbitInfo.pipeline_items.length} 步)</div>
+              <div style="font-size: 10px; color: var(--text-muted); margin-bottom: 6px;">
+                按时序推进：历史已归档 ➔ 最近已攻关 (P2/P1) ➔ 现场攻关 (LIVE) ➔ 排队待解
+              </div>
+              ${orbitInfo.pipeline_items.map((pi, pIdx) => `
+                <div style="background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.06); border-radius: 4px; padding: 6px 8px; margin-bottom: 5px; font-size: 11px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 3px;">
+                    <span class="pipeline-badge ${pi.stage === 'PASSED_DIMMED' ? 'badge-dimmed' : (pi.stage === 'PASSED_RECENT' ? 'badge-passed' : (pi.stage === 'RUNNING' ? 'badge-running' : 'badge-queued'))}">
+                      ${escapeHtml(pi.badge)}
+                    </span>
+                    <span style="font-size: 9px; color: var(--text-dim);">${escapeHtml(pi.priority || 'HIGH')} · 步骤 #${pIdx + 1}</span>
+                  </div>
+                  <div style="font-weight: 600; color: #fff; margin-bottom: 2px;">${escapeHtml(pi.question_text)}</div>
+                  ${pi.rationale ? `<div style="font-size: 9.5px; color: #94a3b8;">${escapeHtml(pi.rationale)}</div>` : ''}
+                </div>
+              `).join('')}
+            </div>
+          ` : ''}
+
           <!-- 已沉淀断言 -->
           ${claims.length ? `
             <div class="detail-block">
@@ -3458,11 +4623,107 @@
           ` : ''}
         `;
       }
+      // 8. Honc Life & Habit Inspector View
+      else if (item.agent_id === 'honc' || item.kind === 'habit_definition' || item.kind === 'habit' || item.kind === 'runner' || item.kind === 'settings' || item.kind === 'body' || item.kind === 'diary') {
+        if (item.kind === 'habit_definition' || item.kind === 'habit') {
+          const meta = getHoncHabitMeta(p, item.title, item.kind);
+          const reminder = p.reminder || {};
+          const slots = reminder.slots || [];
+          specializedBlock = `
+            <div class="detail-block">
+              <div class="detail-block-title">习惯核心定义与时序提醒 (Habit Specification)</div>
+              <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                <span style="font-size: 20px;">${meta.icon}</span>
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: #fff;">${escapeHtml(meta.displayName)}</div>
+                  <div style="font-size: 10.5px; color: var(--text-dim);">语义角色: <code>${escapeHtml(meta.def.semantic_role || 'habit')}</code> · 周期: ${escapeHtml(meta.def.target_period || 'day')}</div>
+                </div>
+              </div>
+              <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 5px; padding: 8px; font-size: 11px; margin-bottom: 8px; line-height: 1.5;">
+                <strong>描述与行为指引：</strong> ${escapeHtml(meta.def.description || '无详细描述')}
+              </div>
+              ${meta.def.aliases && meta.def.aliases.length ? `
+                <div style="font-size: 10px; margin-bottom: 8px; display: flex; gap: 4px; align-items: center; flex-wrap: wrap;">
+                  <span style="color: var(--text-dim);">别名匹配：</span>
+                  ${meta.def.aliases.map(a => `<span class="honc-slot-badge">${escapeHtml(a)}</span>`).join('')}
+                </div>
+              ` : ''}
+              <div class="detail-block-title">提醒触发槽位 (Reminder Slots)</div>
+              <div style="display: flex; flex-direction: column; gap: 4px;">
+                ${slots.length ? slots.map(s => `
+                  <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(0,0,0,0.25); border: 1px solid rgba(255,255,255,0.05); border-radius: 4px; padding: 4px 8px; font-size: 10.5px;">
+                    <span style="color: #38bdf8; font-weight: 600;">⏰ ${escapeHtml(s.fixed_time || s.trigger || '适时')}</span>
+                    <span style="color: var(--text-dim); font-size: 9.5px;">Key: ${escapeHtml(s.key || 'default')}</span>
+                  </div>
+                `).join('') : '<div style="color: var(--text-dim); font-size: 10px; padding: 4px;">无定时槽位，依作息全天适时执行</div>'}
+              </div>
+            </div>
+          `;
+        } else if (item.kind === 'settings') {
+          specializedBlock = `
+            <div class="detail-block">
+              <div class="detail-block-title">生活作息与睡眠配置 (Settings & Schedule)</div>
+              <div class="honc-macro-grid" style="margin-bottom: 8px;">
+                <div class="honc-stat-box">
+                  <div class="honc-stat-val" style="color: #38bdf8;">${escapeHtml(p.wake_time || '08:00')}</div>
+                  <div class="honc-stat-lbl">起床目标 (Wake Time)</div>
+                </div>
+                <div class="honc-stat-box">
+                  <div class="honc-stat-val" style="color: #c084fc;">${escapeHtml(p.bedtime || '21:30')}</div>
+                  <div class="honc-stat-lbl">就寝目标 (Bedtime)</div>
+                </div>
+                <div class="honc-stat-box" style="grid-column: span 2;">
+                  <div class="honc-stat-val" style="color: var(--accent-amber);">${escapeHtml(p.grace_period_mins || 30)} 分钟</div>
+                  <div class="honc-stat-lbl">弹性缓冲宽限期 (Grace Period)</div>
+                </div>
+              </div>
+            </div>
+          `;
+        } else if (item.kind === 'body') {
+          const obsList = p.observations || [];
+          specializedBlock = `
+            <div class="detail-block">
+              <div class="detail-block-title">身体体征感知与观察记录 (Body Observation Fact)</div>
+              <div style="font-size: 11px; color: var(--text-dim); margin-bottom: 6px;">记录日期: <strong>${escapeHtml((p.time && p.time.occurred_date) || item.updated_at || '—')}</strong></div>
+              ${obsList.map(ob => `
+                <div style="background: rgba(255,255,255,0.03); border: 1px solid var(--border); border-radius: 5px; padding: 6px 8px; margin-bottom: 6px; font-size: 11px;">
+                  <div style="color: #fff; line-height: 1.4;">${escapeHtml(ob.description || '体征描述')}</div>
+                </div>
+              `).join('')}
+              ${p.source_quote ? `
+                <div style="background: rgba(0,0,0,0.25); border-left: 2px solid #38bdf8; padding: 4px 8px; font-size: 10px; color: #94a3b8; font-style: italic; margin-top: 6px;">
+                  "${escapeHtml(p.source_quote)}"
+                </div>
+              ` : ''}
+            </div>
+          `;
+        } else if (item.kind === 'runner') {
+          specializedBlock = `
+            <div class="detail-block">
+              <div class="detail-block-title">语义心跳调度器运行状态 (Runner Status)</div>
+              <div style="font-size: 12px; margin-bottom: 6px;">
+                <strong>引擎版本：</strong> <code>${escapeHtml(p.runner || 'honc-life-semantic-tick-v1')}</code>
+              </div>
+              <div class="honc-stat-box" style="text-align: left; padding: 8px 12px; margin-bottom: 6px;">
+                <div style="font-size: 10.5px; color: var(--text-dim);">已执行生活与习惯操作总数：</div>
+                <div class="honc-stat-val" style="color: var(--accent-green); font-size: 20px; margin-top: 2px;">${p.total_operations || 0} 笔</div>
+              </div>
+              <div style="font-size: 11px; color: #cbd5e1; line-height: 1.5;">
+                • 心跳守护常驻活跃中，自动监听并对账作息节律与习惯定义。<br/>
+                • 数据库源：<code>honc/honc.db</code>
+              </div>
+            </div>
+          `;
+        }
+      }
 
       inspectorBody.innerHTML = `
         <div class="detail-block">
           <div class="detail-block-title">基本信息</div>
-          <div style="font-size: 12px; margin-bottom: 5px;"><strong>状态：</strong> <span class="status-tag status-${escapeHtml(item.status)}">${escapeHtml(item.status)}</span></div>
+          <div style="font-size: 12px; margin-bottom: 5px;">
+            <strong>状态：</strong> <span class="status-tag status-${escapeHtml(item.status)}">${escapeHtml(item.status)}</span>
+            ${(item.kind === 'knowledge_topic' && p.orbit_info && p.orbit_info.status) ? `<span style="margin-left: 8px; font-size: 11px; color: var(--text-muted);">调研轨道：<span class="status-tag status-${escapeHtml(p.orbit_info.status)}" style="font-size: 10px;">${escapeHtml(p.orbit_info.status)}</span></span>` : ''}
+          </div>
           <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;"><strong>发生时间：</strong> ${item.updated_at || '—'}</div>
           <div style="font-size: 11px; color: var(--text-muted); margin-bottom: 3px;"><strong>数据来源：</strong> ${escapeHtml(item.source_ref)}</div>
           <div style="font-size: 12px; margin-top: 6px; color: #fff;">${escapeHtml(item.summary)}</div>
@@ -3475,84 +4736,7 @@
           <div class="code-box">${escapeHtml(JSON.stringify(item.payload, null, 2))}</div>
         </div>
       `;
-    } else if (state.activeTab === 'timeline') {
-      const p = item.payload || {};
-      const timeline = p.timeline || [];
-      if (timeline.length > 0) {
-        inspectorBody.innerHTML = `
-          <div class="detail-block">
-            <div class="detail-block-title">任务全生命周期审计轨迹 (${timeline.length} 步事件)</div>
-            <div style="font-size: 11px; color: var(--text-dim); margin-bottom: 8px;">按事件发生时间排列的完整调度与执行回溯</div>
-            <div class="timeline-track">
-              ${timeline.map(ev => `
-                <div class="timeline-node">
-                  <div class="timeline-dot ${ev.event_type.includes('CREATED') ? 'green' : (ev.event_type.includes('ROUTE') ? 'purple' : (ev.event_type.includes('ASSIGNED') ? 'amber' : 'blue'))}"></div>
-                  <div class="timeline-content">
-                    <div class="timeline-time">${formatTime(ev.occurred_at)} · 序号 #${ev.sequence}</div>
-                    <div class="timeline-type">${escapeHtml(ev.event_type)} <span style="font-size: 10px; font-weight: normal; color: var(--text-dim);">(执行方: ${escapeHtml(ev.actor_id || 'orchestrator')})</span></div>
-                    <div class="timeline-detail">${escapeHtml(JSON.stringify(ev.payload || {}))}</div>
-                  </div>
-                </div>
-              `).join('')}
-            </div>
-          </div>
-        `;
-      } else {
-        inspectorBody.innerHTML = `
-          <div class="detail-block">
-            <div class="detail-block-title">执行时间线</div>
-            <div style="font-size: 11px; color: var(--text-dim); margin-bottom: 6px;">按事件发生时间排列的完整回溯</div>
-            <div style="display: flex; flex-direction: column; gap: 6px;">
-              <div style="display: flex; justify-content: space-between; font-size: 11px;">
-                <span>• 初始创建与记录捕获</span>
-                <span style="color: var(--text-dim);">${formatTime(item.updated_at)}</span>
-              </div>
-            </div>
-          </div>
-        `;
-      }
-    } else if (state.activeTab === 'sessions') {
-      if (sessions.length === 0) {
-        inspectorBody.innerHTML = `
-          <div class="detail-block" style="text-align: center; color: var(--text-dim); padding: 20px; font-size: 11px;">
-            当前项未关联单独会话记录<br>
-            <span style="font-size: 10px;">(该项通过本地业务数据库直接同步)</span>
-          </div>
-        `;
-      } else {
-        inspectorBody.innerHTML = sessions.map(s => `
-          <div class="detail-block">
-            <div class="detail-block-title">会话 ${escapeHtml(s.session_id)}</div>
-            <div style="font-size: 11px;">消息数: ${s.message_count}</div>
-          </div>
-        `).join('');
-      }
-    } else if (state.activeTab === 'tools') {
-      inspectorBody.innerHTML = `
-        <div class="detail-block" style="text-align: center; color: var(--text-dim); padding: 20px; font-size: 11px;">
-          暂无专属工具调用快照，相关调用详见下方全局审计活动流。
-        </div>
-      `;
-    } else if (state.activeTab === 'artifacts') {
-      inspectorBody.innerHTML = `
-        <div class="detail-block" style="text-align: center; color: var(--text-dim); padding: 20px; font-size: 11px;">
-          暂无独立文件交付物。
-        </div>
-      `;
-    }
   }
-
-  // Switch Inspector Tab
-  tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabBtns.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      state.activeTab = btn.getAttribute('data-tab');
-      if (state.selectedItemData) {
-        renderInspectorContent(state.selectedItemData);
-      }
-    });
-  });
 
   if (btnToggleSidebar) {
     btnToggleSidebar.addEventListener('click', (e) => {
@@ -3569,6 +4753,20 @@
       setInspectorOpen(false, true);
     });
   }
+
+  // Escape key closes floating doc modal first, then inspector drawer
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const docModal = document.getElementById('obs-doc-modal');
+      if (docModal && docModal.style.display === 'flex') {
+        window.__uuma_closeDocViewer();
+        return;
+      }
+      if (inspectorPane && !inspectorPane.classList.contains('collapsed')) {
+        setInspectorOpen(false, true);
+      }
+    }
+  });
 
   // Draggable Resizer for Right Inspector Pane with Persistence
   const inspectorResizer = document.getElementById('inspector-resizer');
@@ -3727,8 +4925,11 @@
   loadInitialData();
   initSSE();
 
-  // Periodic poll fallback for agent cards every 5s
+  // Periodic poll fallback for agent cards (only active if SSE is disconnected)
   setInterval(() => {
+    if (state.sseConnected) {
+      return;
+    }
     fetch('/api/observatory/agents')
       .then(res => res.json())
       .then(data => {
@@ -3738,6 +4939,6 @@
         if (data.backfill) updateBackfill(data.backfill);
       })
       .catch(() => {});
-  }, 5000);
+  }, 10000);
 
 })();

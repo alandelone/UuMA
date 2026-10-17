@@ -9,6 +9,7 @@ import pytest
 from fastapi.testclient import TestClient
 
 from uuma.observatory.adapters.forge import ForgeAdapter
+from uuma.observatory.adapters.honc import HoncAdapter
 from uuma.observatory.adapters.registry import AdapterRegistry
 from uuma.observatory.harvester import parse_spool_file
 from uuma.observatory.models import ActivityEvent, SourceFreshness
@@ -295,4 +296,122 @@ def test_specialized_adapters_and_endpoints(tmp_path: Path):
         assert payload["part3_macro_stats"]["total_projects"] >= 1
 
 
+def test_forge_project_codes_and_documents(tmp_path: Path):
+    ws_dir = tmp_path / "Hardware-Lab-Workspace"
+    proj_dir = ws_dir / "projects"
+    proj1 = proj_dir / "p1-alpha"
+    proj2 = proj_dir / "p2-beta"
+    proj1.mkdir(parents=True)
+    proj2.mkdir(parents=True)
+
+    # p1 has explicit code "001" and a BOM file
+    (proj1 / "project.yaml").write_text("project_id: p1-alpha\nproject_code: '001'\nname: Project Alpha\n", encoding="utf-8")
+    (proj1 / "bom").mkdir()
+    (proj1 / "bom" / "sample-bom.csv").write_text("part,qty\nresistor,10\n", encoding="utf-8")
+    (proj1 / "docs").mkdir()
+    (proj1 / "docs" / "arch.md").write_text("# Architecture\nDetails here.", encoding="utf-8")
+
+    # p2 has no code (should be auto-assigned "002" -> "PROJ-002")
+    (proj2 / "project.yaml").write_text("project_id: p2-beta\nname: Project Beta\n", encoding="utf-8")
+
+    adapter = ForgeAdapter(tmp_path)
+    adapter.workspace_dir = ws_dir
+    adapter.projects_dir = proj_dir
+
+    items = adapter.list_items()
+    projs = [it for it in items if it.kind == "forge_project"]
+    assert len(projs) == 2
+
+    p1_item = next(p for p in projs if p.payload["folder_name"] == "p1-alpha")
+    assert p1_item.payload["project_code"] == "001"
+    assert p1_item.payload["display_code"] == "PROJ-001"
+    assert "PROJ-001" in p1_item.title
+    assert len(p1_item.payload["bom_files_details"]) == 1
+    assert p1_item.payload["bom_files_details"][0]["name"] == "sample-bom.csv"
+    assert len(p1_item.payload["docs_files_details"]) == 1
+
+    p2_item = next(p for p in projs if p.payload["folder_name"] == "p2-beta")
+    assert p2_item.payload["project_code"] == "002"
+    assert p2_item.payload["display_code"] == "PROJ-002"
+    assert "PROJ-002" in p2_item.title
+
+
+def test_api_get_project_document(tmp_path: Path):
+    data_dir = tmp_path / "uuma_data"
+    data_dir.mkdir(parents=True)
+    ws_dir = tmp_path / "Hardware-Lab-Workspace"
+    proj_dir = ws_dir / "projects" / "test-sys"
+    proj_dir.mkdir(parents=True)
+    (proj_dir / "project.yaml").write_text("project_id: test-sys\nproject_code: '001'\nname: Test System\n", encoding="utf-8")
+    (proj_dir / "bom").mkdir()
+    (proj_dir / "bom" / "parts.csv").write_text("part,count\nmotor,2\n", encoding="utf-8")
+
+    settings = Settings(
+        data_dir=data_dir,
+        database_path=data_dir / "uuma.db",
+        artifact_dir=data_dir / "artifacts",
+        ingest_spool_dir=data_dir / "spool",
+        hermes_executable=tmp_path / "hermes.exe",
+    )
+    token = "secret-doc-token"
+    app = create_observatory_app(settings, auth_token=token)
+
+    # Point adapter to our test workspace
+    forge = app.state.registry.get_adapter("forge-lab-bot")
+    forge.workspace_dir = ws_dir
+    forge.projects_dir = ws_dir / "projects"
+
+    with TestClient(app) as client:
+        # 1. Fetch valid doc
+        res = client.get(f"/api/observatory/doc?project_id=test-sys&path=bom/parts.csv&auth={token}")
+        assert res.status_code == 200
+        doc = res.json()
+        assert doc["filename"] == "parts.csv"
+        assert "motor,2" in doc["content"]
+        assert doc["extension"] == ".csv"
+
+        # 2. Path traversal attack prevented
+        res = client.get(f"/api/observatory/doc?project_id=test-sys&path=../../secret.txt&auth={token}")
+        assert res.status_code == 400
+
+        # 3. Missing file returns 404
+        res = client.get(f"/api/observatory/doc?project_id=test-sys&path=bom/nonexistent.md&auth={token}")
+        assert res.status_code == 404
+
+
+def test_honc_adapter_and_endpoints(tmp_path: Path):
+    data_dir = tmp_path / "uuma_data"
+    data_dir.mkdir(parents=True)
+    honc_dir = data_dir / "honc"
+    honc_dir.mkdir(parents=True)
+    honc_db = honc_dir / "honc.db"
+
+    conn = sqlite3.connect(honc_db)
+    conn.execute("CREATE TABLE life_operations (operation_id TEXT PRIMARY KEY, recorded_at TEXT)")
+    conn.execute("CREATE TABLE life_objects (object_id TEXT PRIMARY KEY, kind TEXT, head_revision INTEGER)")
+    conn.execute("CREATE TABLE life_revisions (object_id TEXT, revision INTEGER, status TEXT, payload_json TEXT, recorded_at TEXT)")
+    conn.execute("INSERT INTO life_operations VALUES ('op_1', '2026-10-15T12:00:00Z')")
+    conn.execute("INSERT INTO life_objects VALUES ('settings_1', 'settings', 1)")
+    conn.execute(
+        "INSERT INTO life_revisions VALUES ('settings_1', 1, 'active', "
+        "'{\"wake_time\": \"08:00\", \"bedtime\": \"21:30\", \"grace_period_mins\": 30}', "
+        "'2026-10-15T12:00:00Z')"
+    )
+    conn.execute("INSERT INTO life_objects VALUES ('habit_1', 'habit_definition', 1)")
+    conn.execute(
+        "INSERT INTO life_revisions VALUES ('habit_1', 1, 'active', "
+        "'{\"definition\": {\"name\": \"运动健身\", \"semantic_role\": \"habit\"}, \"reminder\": {\"count\": 1, \"slots\": [{\"fixed_time\": \"16:00\"}]}}', "
+        "'2026-10-15T12:00:00Z')"
+    )
+    conn.commit()
+    conn.close()
+
+    adapter = HoncAdapter(data_dir)
+    items = adapter.list_items()
+    assert len(items) >= 3
+    assert any(it.kind == "runner" for it in items)
+    assert any(it.kind == "settings" for it in items)
+    assert any(it.kind == "habit_definition" for it in items)
+    runner = next(it for it in items if it.kind == "runner")
+    assert runner.payload["total_operations"] == 1
 

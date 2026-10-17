@@ -87,6 +87,21 @@ class ForgeAdapter(ObservatorySourceAdapter):
             )
 
     @staticmethod
+    def _scan_doc_files(dir_path: Path, prefix: str) -> list[dict[str, Any]]:
+        if not dir_path.exists() or not dir_path.is_dir():
+            return []
+        res: list[dict[str, Any]] = []
+        for f in sorted(dir_path.iterdir()):
+            if f.is_file():
+                res.append({
+                    "name": f.name,
+                    "relative_path": f"{prefix}/{f.name}" if prefix else f.name,
+                    "size_bytes": f.stat().st_size,
+                    "extension": f.suffix.lower(),
+                })
+        return res
+
+    @staticmethod
     def _parse_simple_yaml(text: str) -> dict[str, Any]:
         """Simple pure-python YAML parser for flat keys, 2-level dicts, and lists."""
         result: dict[str, Any] = {}
@@ -410,6 +425,10 @@ class ForgeAdapter(ObservatorySourceAdapter):
         total_design_files = 0
 
         if self.projects_dir and self.projects_dir.exists() and self.projects_dir.is_dir():
+            # Pass 1: Collect directories, read yaml metadata, and register explicit project codes
+            raw_projects: list[tuple[Path, str, dict[str, Any], str]] = []
+            used_code_nums: set[int] = set()
+
             for proj_path in sorted(self.projects_dir.iterdir()):
                 if not proj_path.is_dir():
                     continue
@@ -424,16 +443,58 @@ class ForgeAdapter(ObservatorySourceAdapter):
                     except (OSError, UnicodeDecodeError, ValueError):
                         meta = {}
 
-                # File counts
+                raw_code = str(meta.get("project_code") or meta.get("code") or "").strip()
+                if raw_code:
+                    clean_digits = raw_code.upper().replace("PROJ-", "").replace("PROJ", "").strip()
+                    if clean_digits.isdigit():
+                        used_code_nums.add(int(clean_digits))
+                raw_projects.append((proj_path, folder_name, meta, raw_code))
+
+            # Pass 2: Assign sequential codes to any projects without explicit code, ensuring 001, 002 format
+            next_code_seq = 1
+            for proj_path, folder_name, meta, raw_code in raw_projects:
+                if raw_code:
+                    clean_digits = raw_code.upper().replace("PROJ-", "").replace("PROJ", "").strip()
+                    if clean_digits.isdigit():
+                        c_num = int(clean_digits)
+                        proj_code = f"{c_num:03d}"
+                    else:
+                        proj_code = raw_code
+                else:
+                    while next_code_seq in used_code_nums:
+                        next_code_seq += 1
+                    used_code_nums.add(next_code_seq)
+                    proj_code = f"{next_code_seq:03d}"
+                    next_code_seq += 1
+
+                display_code = f"PROJ-{proj_code}" if not proj_code.startswith("PROJ") else proj_code
+
+                # File counts & detailed document file objects
                 bom_dir = proj_path / "bom"
                 docs_dir = proj_path / "docs"
                 design_dir = proj_path / "design"
                 worklogs_dir = proj_path / "worklogs"
 
-                bom_files = [f.name for f in bom_dir.iterdir() if f.is_file()] if bom_dir.exists() else []
-                docs_files = [f.name for f in docs_dir.iterdir() if f.is_file()] if docs_dir.exists() else []
-                design_files = [f.name for f in design_dir.iterdir() if f.is_file()] if design_dir.exists() else []
-                worklogs_files = [f.name for f in worklogs_dir.iterdir() if f.is_file()] if worklogs_dir.exists() else []
+                bom_details = self._scan_doc_files(bom_dir, "bom")
+                docs_details = self._scan_doc_files(docs_dir, "docs")
+                design_details = self._scan_doc_files(design_dir, "design")
+                worklogs_details = self._scan_doc_files(worklogs_dir, "worklogs")
+
+                root_files_details: list[dict[str, Any]] = []
+                for fname in ["README.md", "project.yaml"]:
+                    rf = proj_path / fname
+                    if rf.exists() and rf.is_file():
+                        root_files_details.append({
+                            "name": fname,
+                            "relative_path": fname,
+                            "size_bytes": rf.stat().st_size,
+                            "extension": rf.suffix.lower(),
+                        })
+
+                bom_files = [f["name"] for f in bom_details]
+                docs_files = [f["name"] for f in docs_details]
+                design_files = [f["name"] for f in design_details]
+                worklogs_files = [f["name"] for f in worklogs_details]
 
                 total_bom_files += len(bom_files)
                 total_design_files += len(design_files)
@@ -451,7 +512,6 @@ class ForgeAdapter(ObservatorySourceAdapter):
                     try:
                         with conn:
                             cursor = conn.cursor()
-                            # Match keywords e.g. 'rbc', 'vcore', 'solar', 'nas'
                             kw = folder_name.split("-")[0]
                             if len(kw) < 3 and len(folder_name.split("-")) > 1:
                                 kw = folder_name.split("-")[1]
@@ -514,7 +574,7 @@ class ForgeAdapter(ObservatorySourceAdapter):
 
                 # Compose project item
                 item_summary = (
-                    f"阶段: {stage_name} ({progress_pct}%){mat_str} · "
+                    f"[{display_code}] 阶段: {stage_name} ({progress_pct}%){mat_str} · "
                     f"BOM: {len(bom_files)}份 · 图纸: {len(design_files)}份"
                 )
 
@@ -522,7 +582,7 @@ class ForgeAdapter(ObservatorySourceAdapter):
                     ObservatoryItem(
                         agent_id=self.agent_id,
                         item_id=f"forge_proj_{folder_name.replace('-', '_')}",
-                        title=f"项目: {name}",
+                        title=f"项目 [{display_code}]: {name}",
                         kind="forge_project",
                         status=stage_code,
                         health="HEALTHY",
@@ -531,6 +591,8 @@ class ForgeAdapter(ObservatorySourceAdapter):
                         source_ref=f"Hardware-Lab-Workspace/projects/{folder_name}",
                         payload={
                             "project_id": project_id,
+                            "project_code": proj_code,
+                            "display_code": display_code,
                             "folder_name": folder_name,
                             "name": name,
                             "icon": str(meta.get("icon") or meta.get("emoji") or "").strip(),
@@ -542,11 +604,17 @@ class ForgeAdapter(ObservatorySourceAdapter):
                             "procurement_trace": proj_trace,
                             "bom_count": len(bom_files),
                             "bom_files": bom_files,
+                            "bom_files_details": bom_details,
                             "docs_count": len(docs_files),
                             "docs_files": docs_files,
+                            "docs_files_details": docs_details,
                             "design_count": len(design_files),
                             "design_files": design_files,
+                            "design_files_details": design_details,
                             "worklogs_count": len(worklogs_files) + len(db_worklogs),
+                            "worklogs_files": worklogs_files,
+                            "worklogs_files_details": worklogs_details,
+                            "root_files_details": root_files_details,
                             "resolved_parameters": meta.get("resolved_design_parameters") or {},
                             "open_items": meta.get("open_design_items") or [],
                             "nodes": meta.get("nodes") or {},
@@ -559,6 +627,8 @@ class ForgeAdapter(ObservatorySourceAdapter):
 
                 workspace_summary_info.append({
                     "project_id": project_id,
+                    "project_code": proj_code,
+                    "display_code": display_code,
                     "name": name,
                     "folder": folder_name,
                     "icon": str(meta.get("icon") or meta.get("emoji") or "").strip(),

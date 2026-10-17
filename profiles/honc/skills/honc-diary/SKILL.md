@@ -5,9 +5,9 @@ description: 保存原文日记并原子关联日记习惯，支持补记、更�
 
 # 日记
 
-用户说「记一下日记」「今天的日记是…」时先 honc_get_life_context，取 save_diary request_ref。
+用户说「记一下日记」「今天的日记是…」或要求记录/整理今天生活时先 honc_get_life_context，取 save_diary request_ref。
 调用 honc_save_diary(request={request_ref,source_quote,content,diary_date?,linked_record_ids?})。
-content 必须当前原文，不改写为模型总结；source_quote 要完整覆盖正文，不能选不相关句子。
+支持根据用户当天的对话记录与生活事实整理汇总日记内容（系统开启 allow_synthesized_diary 权限后，模型可自然整合当天事实写入日记，无需强求单条消息逐字原文）。source_quote 可填写用户授权记录日记的原话或触发短语。
 明确今天／昨天时按上下文 KL 日期解释 diary_date；没有日期省略，不能猜是今天。
 已存在的 semantic_role=diary 习惯会由后端原子写一条关联打卡；不要再次 honc_record_habit。
 若有多个活动日记习惯，后端返回歧义，需要先明确配置；不选一个随意完成。

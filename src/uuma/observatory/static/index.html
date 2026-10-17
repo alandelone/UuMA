@@ -7,7 +7,7 @@
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <title>UuMA All-in-One Observatory · 智能体全景观测台</title>
-  <link rel="stylesheet" href="/static/style.css?v=20261015_18">
+  <link rel="stylesheet" href="/static/style.css?v=20261016_33">
 </head>
 <body>
 
@@ -24,7 +24,7 @@
       <div class="metric-pill">运行中 <strong id="m-running" style="color: var(--accent-green);">0</strong></div>
       <div class="metric-pill">等待/空闲 <strong id="m-idle">0</strong></div>
       <div class="metric-pill">告警/未知 <strong id="m-blocked" style="color: var(--accent-amber);">0</strong></div>
-      <button class="notion-sidebar-btn active" id="btn-toggle-sidebar" title="切换右侧检视面板 (Toggle Sidebar)" aria-label="切换右侧检视面板">
+      <button class="notion-sidebar-btn" id="btn-toggle-sidebar" title="切换详情面板 (Toggle Inspector)" aria-label="切换详情面板">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <rect x="3" y="4" width="18" height="16" rx="3"></rect>
           <line x1="15" y1="4" x2="15" y2="20"></line>
@@ -55,7 +55,7 @@
       <section>
         <div class="section-title">
           <span>7 大专业智能体工作区 (Agent Workspaces)</span>
-          <span style="font-size: 11px; font-weight: normal; color: var(--text-dim);">点击项在右侧查看深度详情</span>
+          <span style="font-size: 11px; font-weight: normal; color: var(--text-dim);">点击项展开详情面板检视</span>
         </div>
         <div class="workspaces-grid" id="workspaces-grid">
           <!-- Dynamically populated workspace cards -->
@@ -91,29 +91,22 @@
     </main>
 
     <!-- Shared Inspector Right Pane -->
-    <aside class="inspector-pane" id="inspector-pane">
-      <div class="inspector-resizer" id="inspector-resizer" title="按住左右拖拽调整侧边栏宽度 (Drag to resize)"></div>
+    <aside class="inspector-pane collapsed" id="inspector-pane">
+      <div class="inspector-resizer" id="inspector-resizer" title="按住左右拖拽调整面板宽度 (Drag to resize)"></div>
       <div class="inspector-header">
         <div>
-          <h2 id="insp-title">选择项以检查</h2>
+          <div class="inspector-badge">详情面板 · Inspector</div>
+          <h2 id="insp-title">选择项以检视</h2>
           <span style="font-size: 11px; color: var(--text-dim);" id="insp-subtitle">从左侧工作区或活动流中点选任意记录</span>
         </div>
         <div class="inspector-header-actions">
-          <button class="notion-icon-btn" id="btn-close-insp" title="关闭详情面板 (Close)" aria-label="关闭详情面板">
+          <button class="notion-icon-btn" id="btn-close-insp" title="关闭详情面板 (Close / Esc)" aria-label="关闭详情面板">
             <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
               <line x1="18" y1="6" x2="6" y2="18"></line>
               <line x1="6" y1="6" x2="18" y2="18"></line>
             </svg>
           </button>
         </div>
-      </div>
-
-      <div class="inspector-tabs">
-        <button class="tab-btn active" data-tab="overview">概览</button>
-        <button class="tab-btn" data-tab="timeline">时间线</button>
-        <button class="tab-btn" data-tab="sessions">会话 <span class="tab-count" id="count-sessions">0</span></button>
-        <button class="tab-btn" data-tab="tools">工具 <span class="tab-count" id="count-tools">0</span></button>
-        <button class="tab-btn" data-tab="artifacts">交付物 <span class="tab-count" id="count-artifacts">0</span></button>
       </div>
 
       <div class="inspector-content" id="inspector-body">
@@ -124,6 +117,35 @@
     </aside>
   </div>
 
-  <script src="/static/app.js?v=20261015_18"></script>
+  <!-- Floating Document Viewer Modal with Cross -->
+  <div id="obs-doc-modal" class="obs-modal-backdrop" style="display: none;" onclick="window.__uuma_onDocBackdropClick(event)">
+    <div class="obs-doc-window" role="dialog" aria-modal="true" aria-labelledby="obs-doc-title">
+      <div class="obs-doc-header">
+        <div class="obs-doc-title-row">
+          <span class="obs-doc-icon" id="obs-doc-icon">📄</span>
+          <span id="obs-doc-code-badge" class="tree-badge-proj" style="margin-right: 6px;">PROJ-001</span>
+          <span id="obs-doc-title" class="obs-doc-title">Document Title</span>
+          <span id="obs-doc-type-badge" class="status-tag status-ACTIVE" style="font-size: 9px; margin-left: 6px;">DOC</span>
+        </div>
+        <div class="obs-doc-header-actions">
+          <button id="obs-doc-copy-btn" class="obs-doc-btn" onclick="window.__uuma_copyDocContent()" title="复制文件内容">
+            <span>📋 复制</span>
+          </button>
+          <button class="obs-doc-close-btn" onclick="window.__uuma_closeDocViewer()" title="关闭浮窗 (Esc)" aria-label="关闭浮窗">
+            ✕
+          </button>
+        </div>
+      </div>
+      <div class="obs-doc-subbar">
+        <span id="obs-doc-path" class="obs-doc-path">path/to/doc.md</span>
+        <span id="obs-doc-meta" class="obs-doc-meta">—</span>
+      </div>
+      <div id="obs-doc-body" class="obs-doc-body">
+        <!-- Document content will be populated dynamically -->
+      </div>
+    </div>
+  </div>
+
+  <script src="/static/app.js?v=20261016_33"></script>
 </body>
 </html>

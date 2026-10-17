@@ -86,20 +86,26 @@ def grounded_answer(answer: dict[str, Any]) -> dict[str, Any]:
 
 def is_progress_request(text: str) -> bool:
     """Recognize standalone operational questions; domain research is resolved separately."""
-    value = re.sub(r"[\s?.!？！。]+", " ", text.casefold()).strip()
+    value = re.sub(r"[\s?.!？！。，,]+", " ", text.casefold()).strip()
+    # Strip conversational filler prefixes (English & Chinese)
+    value = re.sub(r"^(?:so|well|hey|hello|hi|and|then|ok|okay)[,\s]+", "", value).strip()
+    value = re.sub(r"^(?:师傅|你好|您好|请问|请教|喂|那|那么|帮我看看|给我看看|查一下|看一下)[，,\s]*", "", value).strip()
     if re.fullmatch(
-        r"(?:please |pls )?(?:how (?:is|s) (?:the |your |our |my )?"
-        r"(?:research )?progress|(?:what is|what s) (?:the |your )?(?:research )?"
-        r"(?:status|progress)|(?:any|an?) (?:research )?(?:progress|updates?)|"
-        r"(?:show|list|view|review) (?:me )?(?:all |the |my |current )?"
-        r"(?:research )?(?:topics|progress|status)|what (?:are|is) (?:the |your |my )?topics)"
+        r"(?:please |pls )?(?:tell me |give me )?"
+        r"(?:how (?:is|s) (?:the |your |our |my )?(?:current |latest )?(?:research )?(?:progress|status)|"
+        r"(?:what is|what s) (?:the |your |our |my )?(?:current |latest )?(?:research )?(?:status|progress|update|updates)|"
+        r"(?:any|an?) (?:new |latest )?(?:research )?(?:progress|updates?|status)(?: updates?)?|"
+        r"(?:show|list|view|review|check|get) (?:me )?(?:all |the |my |current |latest )?"
+        r"(?:research )?(?:topics|progress|status|updates?)|"
+        r"what (?:are|is) (?:the |your |my )?topics|"
+        r"(?:current |latest )?(?:research )?(?:progress|status)(?: report| update| updates)?)"
         r"(?: now| so far| today)?",
         value.replace("'", " "),
     ):
         return True
     if re.fullmatch(
-        r"(?:请|帮我|我想)?(?:看看|查看|列出|显示|review)?(?:所有|全部|今天的|当前的)?"
-        r"(?:主题|研究主题|研究进度|进度|进展)(?:列表|怎样|怎么样|如何|到哪里了|呢|了吗)?",
+        r"(?:请|帮我|我想)?(?:看看|查看|列出|显示|review|check)?(?:所有|全部|今天的|当前的|现在的|现在|最新|目前的)?"
+        r"(?:研究|知识库)?(?:主题|研究主题|研究进度|进度|进展)(?:列表|报告|汇报|怎样|怎么样|如何|到哪里了|到哪了|到哪一步了|呢|了吗|怎样了|怎么样了|如何了|更新)?",
         value.replace(" ", ""),
     ):
         return True
@@ -108,10 +114,11 @@ def is_progress_request(text: str) -> bool:
     ) and any(marker in value for marker in ("什么", "哪些", "有", "what", "which")):
         return True
     return value in {
-        "how is your progress", "what is your progress", "any progress", "progress",
-        "status", "what is the status", "how is it going", "are you still researching",
-        "research status", "research progress", "进度", "研究进度", "现在进度怎样",
-        "进展如何", "有什么进展", "你研究到哪里了", "你做到哪里了", "还在研究吗",
+        "how is your progress", "how is the progress", "what is your progress", "what is the progress",
+        "any progress", "progress", "status", "what is the status", "how is it going",
+        "are you still researching", "research status", "research progress", "progress update",
+        "status update", "进度", "研究进度", "现在进度怎样", "进展如何", "有什么进展",
+        "你研究到哪里了", "你做到哪里了", "还在研究吗", "目前进展", "当前进度",
     }
 
 

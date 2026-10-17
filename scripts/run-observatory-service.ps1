@@ -1,4 +1,4 @@
-﻿# Resilience wrapper for UuMA All-in-One Observatory Service
+# Resilience wrapper for UuMA All-in-One Observatory Service
 param(
     [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
     [int]$Port = 8790,
@@ -9,6 +9,11 @@ $ErrorActionPreference = "Continue"
 
 Set-Location $ProjectRoot
 $python = Join-Path $ProjectRoot ".venv\Scripts\python.exe"
+
+$codexDir = "$env:LOCALAPPDATA\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\UuMA"
+if (Test-Path $codexDir) {
+    $env:UUMA_KNOWLEDGE_DATA_DIR = $codexDir
+}
 
 $logDir = "$env:LOCALAPPDATA\UuMA\logs"
 if (-not (Test-Path $logDir)) {

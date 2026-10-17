@@ -21,6 +21,7 @@ from uuma.wisdom_topics import (
     TopicKnowledgeService,
     ensure_view_token,
     grounded_answer,
+    is_progress_request,
     research_question_text,
 )
 from uuma.wisdom_view import create_wisdom_view_app
@@ -310,7 +311,7 @@ def test_topic_followup_does_not_reset_an_exhausted_budget(tmp_path: Path) -> No
         "runner",
         satisfaction_level=SatisfactionLevel.PROVISIONAL,
         satisfaction_rationale="More research remains.",
-        active_seconds=21_600,
+        active_seconds=216_000,
         actor_id="wisdom-oldman",
     )
     assert completed["orbit"]["status"] == "BUDGET_EXHAUSTED"
@@ -330,7 +331,7 @@ def test_topic_followup_does_not_reset_an_exhausted_budget(tmp_path: Path) -> No
     assert reused["orbit_id"] == started["orbit_id"]
     assert reused["orbit_status"] == "BUDGET_EXHAUSTED"
     state = orbits.get(started["orbit_id"])
-    assert state["research_run"]["active_seconds"] == 21_600
+    assert state["research_run"]["active_seconds"] == 216_000
 
 
 def test_topic_followup_preserves_user_stop(tmp_path: Path) -> None:
@@ -633,3 +634,27 @@ def test_local_topic_page_requires_independent_read_token(
     )
     assert "_" not in generated_url
     assert "%5F" in generated_url
+
+
+def test_is_progress_request_matches_conversational_and_english_phrasings() -> None:
+    assert is_progress_request("so how is the progress?")
+    assert is_progress_request("how is the progress")
+    assert is_progress_request("how is the progress?")
+    assert is_progress_request("so, how is the research progress today?")
+    assert is_progress_request("hey how is the progress")
+    assert is_progress_request("what is the progress")
+    assert is_progress_request("any progress updates?")
+    assert is_progress_request("show current progress")
+    assert is_progress_request("进度")
+    assert is_progress_request("进度怎样了")
+    assert is_progress_request("师傅，现在进度如何")
+    assert is_progress_request("你好，进度如何")
+    assert is_progress_request("有什么进展")
+    assert is_progress_request("查一下研究进度")
+
+    # Domain research queries must not be treated as progress requests
+    assert not is_progress_request("青葱气雾栽培生根时间是多久？")
+    assert not is_progress_request("How do I cultivate scallions using aeroponics?")
+    assert not is_progress_request("What is the optimal pH for aeroponics?")
+    assert not is_progress_request("我想研究大葱分株技术")
+    assert not is_progress_request("针对马铃薯脱毒苗的研究细节")

@@ -303,6 +303,62 @@ def create_observatory_app(
             "offset": offset,
         }
 
+    @app.get("/api/observatory/doc")
+    async def get_project_document(
+        project_id: str = Query(..., description="Project folder name or project_id"),
+        path: str = Query(..., description="Relative path of the document within the project"),
+        _authed: bool = Depends(verify_auth),
+    ):
+        forge_adapter = registry.get_adapter("forge-lab-bot")
+        projects_dir = getattr(forge_adapter, "projects_dir", None)
+        if not projects_dir or not projects_dir.exists():
+            raise HTTPException(status_code=404, detail="Hardware projects directory not found")
+
+        # Resolve target project folder
+        target_dir: Path | None = None
+        for p_dir in projects_dir.iterdir():
+            if not p_dir.is_dir():
+                continue
+            if (
+                p_dir.name == project_id
+                or p_dir.name.replace("-", "_") == project_id.replace("-", "_")
+                or f"forge_proj_{p_dir.name.replace('-', '_')}" == project_id
+            ):
+                target_dir = p_dir
+                break
+
+        if not target_dir:
+            raise HTTPException(status_code=404, detail=f"Project '{project_id}' not found")
+
+        # Sanitize relative path against directory traversal
+        norm_path = Path(path.lstrip("/\\"))
+        resolved_file = (target_dir / norm_path).resolve()
+        target_dir_resolved = target_dir.resolve()
+
+        if target_dir_resolved not in resolved_file.parents and resolved_file != target_dir_resolved:
+            raise HTTPException(status_code=400, detail="Invalid path: directory traversal attempt")
+
+        if not resolved_file.exists() or not resolved_file.is_file():
+            raise HTTPException(status_code=404, detail=f"Document '{path}' not found")
+
+        allowed_exts = {".md", ".csv", ".json", ".yaml", ".yml", ".txt", ".tsv", ".log", ".xml"}
+        if resolved_file.suffix.lower() not in allowed_exts:
+            raise HTTPException(status_code=403, detail=f"File extension '{resolved_file.suffix}' not permitted for viewing")
+
+        try:
+            content = resolved_file.read_text(encoding="utf-8", errors="replace")
+        except OSError as exc:
+            raise HTTPException(status_code=500, detail=f"Failed to read file: {exc}")
+
+        return {
+            "project_id": target_dir.name,
+            "path": str(norm_path).replace("\\", "/"),
+            "filename": resolved_file.name,
+            "extension": resolved_file.suffix.lower(),
+            "size_bytes": resolved_file.stat().st_size,
+            "content": content,
+        }
+
     @app.get("/api/observatory/sources")
     async def get_sources_status(_authed: bool = Depends(verify_auth)):
         return registry.probe_all_sources()

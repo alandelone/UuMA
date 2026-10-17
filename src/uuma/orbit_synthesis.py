@@ -273,6 +273,7 @@ class OrbitCompactSynthesizer:
                 headers={
                     "Authorization": "Bearer " + api_key,
                     "Content-Type": "application/json",
+                    "X-Hermes-Agent": "wisdom-oldman",
                 },
             )
             try:

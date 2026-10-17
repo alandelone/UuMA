@@ -27,38 +27,45 @@ class WisdomAdapter(ObservatorySourceAdapter):
         self.data_dir = Path(data_dir)
         self.db_path = self._resolve_wisdom_db(knowledge_path)
         self.uuma_db_path = self._resolve_uuma_db(uuma_db_path)
+        self.view_base_url = os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "https://wisdgraph.95963210.xyz").rstrip("/")
+        token_path = self.db_path.parent / "wisdom-view-token"
+        if token_path.is_file():
+            self.view_token = token_path.read_text(encoding="utf-8").strip()
+        else:
+            self.view_token = "nKqEa4j7FtpIR9IoTsmLma_u_yfBXs6hOdijYyfD1wI"
 
     def _resolve_wisdom_db(self, explicit_path: Path | str | None) -> Path:
-        if explicit_path and Path(explicit_path).exists():
-            return Path(explicit_path).resolve()
         local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
         candidates = [
             local_app_data / "Packages" / "OpenAI.Codex_2p2nqsd0c76g0" / "LocalCache" / "Local" / "UuMA" / "wisdom.db",
+            local_app_data / "UuMA" / "wisdom.db",
             self.data_dir / "wisdom.db",
             self.data_dir / ".." / ".uuma-local" / "wisdom.db",
-            local_app_data / "UuMA" / "wisdom.db",
         ]
+        if explicit_path:
+            candidates.append(Path(explicit_path))
         existing = [c.resolve() for c in candidates if c.exists()]
         if not existing:
             return (self.data_dir / "wisdom.db").resolve()
-        # Sort by file size descending to prioritize the canonical rich knowledge DB
-        existing.sort(key=lambda p: p.stat().st_size, reverse=True)
+        # Sort by mtime descending, then file size descending to prioritize the active live DB
+        existing.sort(key=lambda p: (p.stat().st_mtime, p.stat().st_size), reverse=True)
         return existing[0]
 
     def _resolve_uuma_db(self, explicit_path: Path | str | None) -> Path:
-        if explicit_path and Path(explicit_path).exists():
-            return Path(explicit_path).resolve()
         local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
         candidates = [
-            self.data_dir / "uuma.db",
-            local_app_data / "UuMA" / "uuma.db",
-            self.data_dir / ".." / ".uuma-local" / "uuma.db",
             local_app_data / "Packages" / "OpenAI.Codex_2p2nqsd0c76g0" / "LocalCache" / "Local" / "UuMA" / "uuma.db",
+            local_app_data / "UuMA" / "uuma.db",
+            self.data_dir / "uuma.db",
+            self.data_dir / ".." / ".uuma-local" / "uuma.db",
         ]
-        for c in candidates:
-            if c.exists():
-                return c.resolve()
-        return (self.data_dir / "uuma.db").resolve()
+        if explicit_path:
+            candidates.append(Path(explicit_path))
+        existing = [c.resolve() for c in candidates if c.exists()]
+        if not existing:
+            return (self.data_dir / "uuma.db").resolve()
+        existing.sort(key=lambda p: (p.stat().st_mtime, p.stat().st_size), reverse=True)
+        return existing[0]
 
     def probe_health(self) -> SourceFreshness:
         if not self.db_path.exists():
@@ -80,6 +87,13 @@ class WisdomAdapter(ObservatorySourceAdapter):
                 cursor.execute("SELECT MAX(occurred_at) FROM knowledge_events")
                 row = cursor.fetchone()
                 last_time = row[0] if row else None
+                try:
+                    cursor.execute("SELECT MAX(updated_at) FROM orbit_cycles")
+                    c_row = cursor.fetchone()
+                    if c_row and c_row[0] and (not last_time or c_row[0] > last_time):
+                        last_time = c_row[0]
+                except sqlite3.Error:
+                    pass
                 return SourceFreshness(
                     source_name=self.source_name,
                     is_available=True,
@@ -189,14 +203,15 @@ class WisdomAdapter(ObservatorySourceAdapter):
                             except sqlite3.Error:
                                 pass
 
-                            # Query Orbit and latest Cycle Explanation
+                            # Query Orbit, Budget Tier, Resource Usage, and latest Cycle Explanation
                             orbit_info = None
                             cycle_explanation = None
                             try:
                                 cursor.execute(
                                     """
-                                    SELECT qo.orbit_id, qo.status,
+                                    SELECT qo.orbit_id, qo.status, qo.record_json as orbit_json,
                                            json_extract(qo.record_json, '$.stop_reason') as stop_reason,
+                                           oc.orbit_cycle_id, oc.cycle_key, oc.attempt,
                                            oc.record_json as cycle_json
                                     FROM question_orbits qo
                                     LEFT JOIN orbit_cycles oc ON qo.orbit_id = oc.orbit_id
@@ -208,12 +223,160 @@ class WisdomAdapter(ObservatorySourceAdapter):
                                 )
                                 orb_row = cursor.fetchone()
                                 if orb_row:
+                                    orb_id = orb_row["orbit_id"]
+                                    o_rec = json.loads(orb_row["orbit_json"]) if orb_row["orbit_json"] else {}
                                     c_rec = json.loads(orb_row["cycle_json"]) if orb_row["cycle_json"] else {}
                                     cycle_explanation = c_rec.get("cycle_explanation")
+
+                                    budget_tier = o_rec.get("budget_tier") or "DEEP"
+                                    run_info = {
+                                        "search_queries_used": 0,
+                                        "sources_used": 0,
+                                        "active_seconds": 0.0,
+                                        "model_tokens_used": 0,
+                                        "cycle_count": 0,
+                                    }
+                                    try:
+                                        cursor.execute(
+                                            """
+                                            SELECT record_json FROM research_runs
+                                            WHERE json_extract(record_json, '$.orbit_id') = ?
+                                            LIMIT 1
+                                            """,
+                                            (orb_id,),
+                                        )
+                                        rr_row = cursor.fetchone()
+                                        if rr_row:
+                                            rr_rec = json.loads(rr_row["record_json"])
+                                            budget_tier = rr_rec.get("budget_tier") or budget_tier
+                                            run_info = {
+                                                "search_queries_used": rr_rec.get("search_queries_used", 0),
+                                                "sources_used": rr_rec.get("sources_used", 0),
+                                                "active_seconds": round(float(rr_rec.get("active_seconds", 0.0)), 1),
+                                                "model_tokens_used": rr_rec.get("model_tokens_used", 0),
+                                                "cycle_count": rr_rec.get("cycle_count", 0),
+                                            }
+                                    except sqlite3.Error:
+                                        pass
+
+                                    budget_limits_map = {
+                                        "QUICK": {"active_seconds": 3600, "sources": 30, "model_tokens": 500000, "search_queries": 250},
+                                        "STANDARD": {"active_seconds": 14400, "sources": 100, "model_tokens": 2000000, "search_queries": 1000},
+                                        "DEEP": {"active_seconds": 216000, "sources": 500, "model_tokens": 10000000, "search_queries": 5000},
+                                    }
+                                    budget_limits = budget_limits_map.get(budget_tier, budget_limits_map["DEEP"])
+
+                                    target_frontier = None
+                                    pipeline_items: list[dict] = []
+                                    try:
+                                        cursor.execute(
+                                            """
+                                            SELECT f.frontier_item_id, f.priority, f.status, f.record_json, f.updated_sequence,
+                                                   json_extract(q.record_json, '$.text') as question_text
+                                            FROM orbit_frontier f
+                                            LEFT JOIN questions q ON json_extract(f.record_json, '$.question_id') = q.question_id
+                                            WHERE f.orbit_id = ?
+                                            ORDER BY (CASE f.status WHEN 'FILLED' THEN 1 WHEN 'OPEN' THEN 2 ELSE 3 END),
+                                                     (CASE WHEN f.status='FILLED' THEN f.updated_sequence END) ASC,
+                                                     (CASE f.priority WHEN 'HIGH' THEN 1 WHEN 'MEDIUM' THEN 2 ELSE 3 END),
+                                                     f.updated_sequence ASC
+                                            """,
+                                            (orb_id,),
+                                        )
+                                        f_all = cursor.fetchall()
+                                        f_filled: list[dict] = []
+                                        f_open: list[dict] = []
+                                        for f in f_all:
+                                            f_rec = json.loads(f["record_json"]) if f["record_json"] else {}
+                                            it = {
+                                                "frontier_item_id": f["frontier_item_id"],
+                                                "priority": f["priority"],
+                                                "status": f["status"],
+                                                "question_text": f["question_text"] or f_rec.get("rationale") or "攻关当前研究证据缺口",
+                                                "rationale": f_rec.get("rationale"),
+                                            }
+                                            if f["status"] == "FILLED":
+                                                f_filled.append(it)
+                                            else:
+                                                f_open.append(it)
+
+                                        n_filled = len(f_filled)
+                                        for idx, it in enumerate(f_filled):
+                                            if idx < n_filled - 2:
+                                                it["stage"] = "PASSED_DIMMED"
+                                                it["badge"] = "✓ 已归档过关"
+                                                it["dimmed"] = True
+                                            else:
+                                                it["stage"] = "PASSED_RECENT"
+                                                it["badge"] = f"✅ 已攻关 (P{n_filled - idx})"
+                                                it["dimmed"] = False
+                                            pipeline_items.append(it)
+
+                                        for idx, it in enumerate(f_open):
+                                            if idx == 0:
+                                                it["stage"] = "RUNNING"
+                                                it["badge"] = "⚡ 正在攻关"
+                                                it["dimmed"] = False
+                                                it["is_current"] = True
+                                                target_frontier = {
+                                                    "frontier_item_id": it["frontier_item_id"],
+                                                    "priority": it["priority"],
+                                                    "rationale": it["rationale"],
+                                                    "question_text": it["question_text"],
+                                                }
+                                            else:
+                                                it["stage"] = "QUEUED"
+                                                it["badge"] = f"🟡 排队待解 #{idx}"
+                                                it["dimmed"] = False
+                                                it["is_queued"] = True
+                                            pipeline_items.append(it)
+                                    except sqlite3.Error:
+                                        pass
+
+                                    runner_live = False
+                                    runner_last_active = None
+                                    log_candidates = [
+                                        Path(os.environ.get("LOCALAPPDATA", "")) / "UuMA" / "orbit-runner.log",
+                                        self.data_dir / "orbit-runner.log",
+                                    ]
+                                    for lc in log_candidates:
+                                        if lc.is_file():
+                                            try:
+                                                mtime = lc.stat().st_mtime
+                                                age = (datetime.now(UTC) - datetime.fromtimestamp(mtime, tz=UTC)).total_seconds()
+                                                if age < 300:
+                                                    runner_live = True
+                                                    runner_last_active = datetime.fromtimestamp(mtime, tz=UTC).isoformat()
+                                                    break
+                                            except OSError:
+                                                pass
+
+                                    stop_reason = orb_row["stop_reason"]
+                                    last_error = c_rec.get("error")
+                                    error_analysis = None
+                                    if last_error and "HTTPError" in last_error:
+                                        error_analysis = f"LLM 合成模型请求受阻 ({last_error})。已配置通过 unlimited_llmapi (api.95963210.xyz) 自动级联重试。"
+                                    elif stop_reason and "budget limit" in stop_reason.lower():
+                                        error_analysis = "调研轨道达到配置预算上限 (BUDGET_EXHAUSTED)"
+
                                     orbit_info = {
-                                        "orbit_id": orb_row["orbit_id"],
+                                        "orbit_id": orb_id,
                                         "status": orb_row["status"],
-                                        "stop_reason": orb_row["stop_reason"],
+                                        "stop_reason": stop_reason,
+                                        "budget_tier": budget_tier,
+                                        "budget_limits": budget_limits,
+                                        "usage": run_info,
+                                        "target_frontier": target_frontier,
+                                        "pipeline_items": pipeline_items,
+                                        "runner_live": runner_live,
+                                        "runner_last_active": runner_last_active,
+                                        "last_cycle": {
+                                            "cycle_key": orb_row["cycle_key"],
+                                            "attempt": orb_row["attempt"],
+                                            "lease_owner": c_rec.get("lease_owner"),
+                                            "error": last_error,
+                                            "error_analysis": error_analysis,
+                                        },
                                         "cycle_explanation": cycle_explanation,
                                         "discovery_attempts": c_rec.get("discovery_attempts") or [],
                                     }
@@ -237,7 +400,7 @@ class WisdomAdapter(ObservatorySourceAdapter):
                                 "cycle_explanation": cycle_explanation,
                                 "under_tasks": [],
                                 "openspg_endpoint": "http://192.168.55.2:8887",
-                                "standalone_url": f"http://127.0.0.1:8767/wisdom/topics/{t_id}?token=nKqEa4j7FtpIR9IoTsmLma_u_yfBXs6hOdijYyfD1wI",
+                                "standalone_url": f"{self.view_base_url}/wisdom/topics/{t_id}?token={self.view_token}",
                             }
                 except sqlite3.Error:
                     pass
@@ -388,10 +551,15 @@ class WisdomAdapter(ObservatorySourceAdapter):
                                 "timeline": timeline,
                                 "objective": obj,
                                 "cycle_explanation": parent_topic.get("cycle_explanation") if parent_topic else None,
+                                "parent_orbit_info": parent_topic.get("orbit_info") if parent_topic else None,
                                 "discovery_attempts": (parent_topic.get("orbit_info") or {}).get("discovery_attempts", []) if parent_topic else [],
                                 "acceptance_checks": contract.get("acceptance_checks", []),
                                 "openspg_endpoint": "http://192.168.55.2:8887",
-                                "standalone_url": f"http://127.0.0.1:8767/wisdom/topics/{parent_topic_id}?token=nKqEa4j7FtpIR9IoTsmLma_u_yfBXs6hOdijYyfD1wI" if parent_topic_id else None,
+                                "standalone_url": (
+                                    f"{self.view_base_url}/wisdom/topics/{parent_topic_id}?token={self.view_token}"
+                                    if parent_topic_id
+                                    else None
+                                ),
                             }
 
                             task_items.append(
@@ -423,6 +591,7 @@ class WisdomAdapter(ObservatorySourceAdapter):
 
         # 3. Create ObservatoryItems for all Topics
         for t_id, top in topics_dict.items():
+            orb_status = f" · 调研轨道: {top['orbit_info']['status']}" if (top.get("orbit_info") and top["orbit_info"].get("status")) else ""
             topic_items.append(
                 ObservatoryItem(
                     agent_id=self.agent_id,
@@ -432,14 +601,16 @@ class WisdomAdapter(ObservatorySourceAdapter):
                     status=top["status"],
                     health="HEALTHY",
                     updated_at=None,
-                    summary=f"版本: v{top['ver_cnt']} · 沉淀断言: {top['claim_count']} 项 · 引据: {top['links_cnt']} 处 · 包含挂靠调查: {len(top['under_tasks'])} 项",
+                    summary=f"版本: v{top['ver_cnt']} · 沉淀断言: {top['claim_count']} 项 · 引据: {top['links_cnt']} 处 · 包含挂靠调查: {len(top['under_tasks'])} 项{orb_status}",
                     source_ref=f"wisdom.db ({t_id[:8]})",
                     payload=top,
                 )
             )
 
-        # Merge: Active tasks first, then topics (active first, then archived)
-        all_items = task_items + topic_items
+        # Merge: Truly running tasks first, then topics (active first, then archived), then standby tasks
+        running_tasks = [t for t in task_items if t.status == "RUNNING"]
+        other_tasks = [t for t in task_items if t.status != "RUNNING"]
+        all_items = running_tasks + topic_items + other_tasks
         if not all_items:
             all_items.append(
                 ObservatoryItem(

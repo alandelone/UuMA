@@ -62,8 +62,8 @@ class QuestionOrbitService:
                   "search_queries": 20},
         "STANDARD": {"active_seconds": 3_600, "sources": 30, "model_tokens": 250_000,
                      "search_queries": 75},
-        "DEEP": {"active_seconds": 21_600, "sources": 100, "model_tokens": 1_000_000,
-                 "search_queries": 250},
+        "DEEP": {"active_seconds": 216_000, "sources": 500, "model_tokens": 10_000_000,
+                 "search_queries": 5_000},
     }
 
     def __init__(

@@ -276,7 +276,12 @@ class LifeService:
                     return result.model_copy(update={"status": "ALREADY_APPLIED"})
                 quote = getattr(request, "source_quote", None)
                 if quote is not None:
-                    self._check_quote(source, quote)
+                    if operation_name == "save_diary":
+                        settings, _ = self._settings(connection)
+                        if not settings.allow_synthesized_diary:
+                            self._check_quote(source, quote)
+                    else:
+                        self._check_quote(source, quote)
                 now = require_aware(self.clock(), "server clock").astimezone(UTC).isoformat()
                 records, data = writer(connection, source, operation_id, now)
                 result = ToolResult(
@@ -694,7 +699,8 @@ class LifeService:
     def save_diary(self, request: DiaryRecordRequest) -> ToolResult:
         def writer(connection, source, operation_id, now):
             self._check_links(connection, request.linked_record_ids)
-            if request.content not in source["raw_content"]:
+            settings, _ = self._settings(connection)
+            if not settings.allow_synthesized_diary and request.content not in source["raw_content"]:
                 raise LifeRejected(
                     "DIARY_SOURCE_MISMATCH",
                     "Save the user text; rewriting needs a separate approved revision",
@@ -844,10 +850,12 @@ class LifeService:
                 and "corrected_text" in changes
                 and (not payload["content"] or payload["content"] not in source["raw_content"])
             ):
-                raise LifeRejected(
-                    "DIARY_SOURCE_MISMATCH",
-                    "Corrected diary text must come from the new user message",
-                )
+                settings, _ = self._settings(connection)
+                if not settings.allow_synthesized_diary:
+                    raise LifeRejected(
+                        "DIARY_SOURCE_MISMATCH",
+                        "Corrected diary text must come from the new user message",
+                    )
             payload["correction"] = {
                 "reason": request.reason,
                 "source_quote": request.source_quote,

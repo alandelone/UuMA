@@ -51,6 +51,7 @@ class LifeSettings(StrictModel):
     body_followup_enabled: StrictBool = False
     nightly_unchecked_habit_chase_enabled: StrictBool = False
     importance_does_not_change_count: StrictBool = True
+    allow_synthesized_diary: StrictBool = False
 
     @model_validator(mode="after")
     def preserve_behavior_boundaries(self) -> LifeSettings:

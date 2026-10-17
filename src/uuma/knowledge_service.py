@@ -52,7 +52,7 @@ class KnowledgeService:
     RESEARCH_BUDGETS: ClassVar[dict[str, tuple[float, int, int]]] = {
         "QUICK": (600, 10, 50_000),
         "STANDARD": (3_600, 30, 250_000),
-        "DEEP": (21_600, 100, 1_000_000),
+        "DEEP": (216_000, 500, 10_000_000),
     }
     ALWAYS_PROJECTED: ClassVar[set[str]] = {
         "sources",

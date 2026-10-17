@@ -9,6 +9,7 @@ operator can inspect, steer, or stop work already in flight.
 
 from __future__ import annotations
 
+import contextlib
 import json
 import logging
 import os
@@ -466,12 +467,13 @@ def _explicit_research_request(message: str) -> bool:
     if any(word in text for word in (
         "404", "error", "报错", "错误", "打不开", "无法访问", "进度", "研究中",
         "topic 在进行", "topic进行", "状态", "暂停", "停止", "恢复",
+        "progress", "status", "update", "updates", "pause", "resume", "stop",
     )):
         return False
     return any(word in text for word in (
         "我想了解", "我想知道", "请研究", "针对", "种植", "栽培", "如何", "怎么",
-        "怎样", "是什么", "要多少", "为什么", "细节", "研究", "how ", "what ",
-        "why ",
+        "怎样", "是什么", "要多少", "为什么", "细节",
+        "what is ", "what are ", "how to ", "how do ",
     ))
 
 
@@ -1459,6 +1461,131 @@ def _finalize_specialist(**kwargs: Any) -> None:
         _LOGGER.warning("Specialist result submission raised: %s", type(exc).__name__)
 
 
+def _handle_progress_command(raw_args: str = "") -> str:
+    """Handle /progress slash command."""
+    if _CONTEXT is None:
+        return "UuMA 插件上下文尚未就绪，请稍后重试。"
+    try:
+        receipt = _CONTEXT.call_mcp(
+            "wisdom-knowledge",
+            "knowledge_question_preflight",
+            {
+                "question": "progress",
+                "mode": "SIMPLE",
+                "recover_runtime": False,
+                "intent": "status",
+                "topic_creation_approved": False,
+            },
+            timeout=30,
+        )
+        if not receipt.get("ok"):
+            return f"查询研究进度失败：{receipt.get('error', '未知错误')}"
+        res = receipt.get("result")
+        if isinstance(res, str):
+            with contextlib.suppress(json.JSONDecodeError, TypeError):
+                res = json.loads(res)
+        status = res.get("global_status") or res.get("current_status")
+        state = _SessionState(wisdom_status=status, wisdom_message_intent="status")
+        reply = _wisdom_status_reply(state)
+        return reply or "当前没有正在运行的研究任务。"
+    except Exception as exc:  # noqa: BLE001
+        return f"查询研究进度出错：{exc}"
+
+
+def _handle_topics_command(raw_args: str = "") -> str:
+    """Handle /topics slash command."""
+    if _CONTEXT is None:
+        return "UuMA 插件上下文尚未就绪，请稍后重试。"
+    try:
+        receipt = _CONTEXT.call_mcp(
+            "wisdom-knowledge",
+            "knowledge_question_preflight",
+            {
+                "question": "show topics",
+                "mode": "SIMPLE",
+                "recover_runtime": False,
+                "intent": "status",
+                "topic_creation_approved": False,
+            },
+            timeout=30,
+        )
+        if not receipt.get("ok"):
+            return f"查询主题失败：{receipt.get('error', '未知错误')}"
+        res = receipt.get("result")
+        if isinstance(res, str):
+            with contextlib.suppress(json.JSONDecodeError, TypeError):
+                res = json.loads(res)
+        status = res.get("global_status") or res.get("current_status") or {}
+        topics_url = status.get("topics_url")
+        active = status.get("active") or []
+        paused = status.get("paused") or []
+        finished = status.get("finished") or []
+        lines = ["📚 知识库研究主题列表：\n"]
+        all_topics = active + paused + finished
+        if not all_topics:
+            lines.append("当前暂无已建立的研究主题。")
+        for item in all_topics:
+            if isinstance(item, dict):
+                title = item.get("topic_title") or "未命名主题"
+                st = item.get("status") or "UNKNOWN"
+                doc = item.get("document_url")
+                doc_str = f" - 文档：{doc}" if doc else ""
+                lines.append(f"- {title}（{st}）{doc_str}")
+        if topics_url:
+            lines.append(f"\n全部主题看板：{topics_url}")
+        return "\n".join(lines)
+    except Exception as exc:  # noqa: BLE001
+        return f"查询主题出错：{exc}"
+
+
+def _handle_research_command(raw_args: str = "") -> str:
+    """Handle /research <question> slash command."""
+    topic = raw_args.strip()
+    if not topic:
+        return (
+            "研究指令用法：\n"
+            "/research <你要研究的课题或问题>\n\n"
+            "示例：\n"
+            "/research 细香葱气雾栽培生根周期与温湿度控制\n"
+            "系统将针对该课题检索图谱、定位缺口或向您提议新建研究主题。"
+        )
+    if _CONTEXT is None:
+        return "UuMA 插件上下文尚未就绪，请稍后重试。"
+    try:
+        receipt = _CONTEXT.call_mcp(
+            "wisdom-knowledge",
+            "knowledge_question_preflight",
+            {
+                "question": topic,
+                "mode": "SIMPLE",
+                "recover_runtime": False,
+                "intent": "research",
+                "topic_creation_approved": False,
+            },
+            timeout=60,
+        )
+        if not receipt.get("ok"):
+            return f"研究预检失败：{receipt.get('error', '未知错误')}"
+        res = receipt.get("result")
+        if isinstance(res, str):
+            with contextlib.suppress(json.JSONDecodeError, TypeError):
+                res = json.loads(res)
+        if isinstance(res, dict) and res.get("requires_topic_approval"):
+            prop = res.get("proposed_topic", {})
+            q = prop.get("question") or topic
+            return (
+                f"建议建立新主题：{q}\n\n"
+                f"研究范围：{prop.get('scope') or q}\n\n"
+                "目前尚未创建主题或启动这项新研究。是否同意建立并开始研究？请回复“同意”，或告诉我你要修改的范围。"
+            )
+        elif isinstance(res, dict) and res.get("topic"):
+            t = res["topic"]
+            return f"已关联到已有主题：{t.get('title')}（ID: {t.get('topic_id')}）。您可以直接在会话中针对该主题提问或查看进度。"
+        return f"研究请求已受理：{topic}"
+    except Exception as exc:  # noqa: BLE001
+        return f"处理研究请求出错：{exc}"
+
+
 def register(ctx: Any) -> None:
     global _CONTEXT
     _CONTEXT = ctx
@@ -1469,3 +1596,7 @@ def register(ctx: Any) -> None:
     ctx.register_hook("post_llm_call", _finalize_specialist)
     ctx.register_hook("on_session_finalize", _clear_session)
     ctx.register_hook("on_session_reset", _clear_session)
+    if hasattr(ctx, "register_command"):
+        ctx.register_command("progress", _handle_progress_command, description="查看当前研究任务进度与文档", args_hint="[topic]")
+        ctx.register_command("topics", _handle_topics_command, description="查看全部研究主题列表与文档链接")
+        ctx.register_command("research", _handle_research_command, description="发起或指定一项新的领域知识研究", args_hint="[问题或方向]")

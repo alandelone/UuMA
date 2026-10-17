@@ -1099,3 +1099,51 @@ def test_other_specialists_cannot_mutate_files(monkeypatch) -> None:
     assert "Blocked by UuMA specialist policy: control, computer, file mutation" in res["message"]
 
 
+
+
+def test_explicit_research_request_does_not_overtrigger_on_progress_or_casual_mention():
+    assert not PLUGIN._explicit_research_request("so how is the progress?")
+    assert not PLUGIN._explicit_research_request("how is the progress")
+    assert not PLUGIN._explicit_research_request("what is the progress")
+    assert not PLUGIN._explicit_research_request("any progress updates?")
+    assert not PLUGIN._explicit_research_request("你好，师傅，我在继续啊，在做你的，就是这个研究。")
+    assert not PLUGIN._explicit_research_request("现在进度怎样")
+    assert not PLUGIN._explicit_research_request("status update")
+
+    # Real explicit requests still trigger
+    assert PLUGIN._explicit_research_request("What is a knowledge candidate?")
+    assert PLUGIN._explicit_research_request("what are the key factors for aeroponics")
+    assert PLUGIN._explicit_research_request("how to cultivate scallions")
+    assert PLUGIN._explicit_research_request("针对青葱的气雾栽培细节")
+    assert PLUGIN._explicit_research_request("我想了解水培番茄的EC值设定")
+
+
+def test_slash_commands_registration_and_execution():
+    context = Mock()
+    context.call_mcp.return_value = {
+        "ok": True,
+        "result": {
+            "current_status": {
+                "active": [{"topic_title": "青葱气雾栽培", "status": "ACTIVE", "document_url": "http://127.0.0.1/doc"}],
+                "topics_url": "http://127.0.0.1/topics",
+            }
+        }
+    }
+    registered_cmds = {}
+    context.register_command = lambda name, handler, **kwargs: registered_cmds.update({name: handler})
+    PLUGIN.register(context)
+
+    assert "progress" in registered_cmds
+    assert "topics" in registered_cmds
+    assert "research" in registered_cmds
+
+    progress_out = registered_cmds["progress"]("")
+    assert "青葱气雾栽培" in progress_out
+    assert "ACTIVE" in progress_out
+
+    topics_out = registered_cmds["topics"]("")
+    assert "青葱气雾栽培" in topics_out
+    assert "全部主题看板" in topics_out
+
+    research_empty = registered_cmds["research"]("")
+    assert "研究指令用法" in research_empty
