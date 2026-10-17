@@ -1,0 +1,12 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-native-ra3unsez",
+  "journal_mode": [
+    "wal"
+  ],
+  "checkpoint": [
+    0,
+    0,
+    0
+  ],
+  "sqlite_version": "3.53.4"
+}

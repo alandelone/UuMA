@@ -1,0 +1,5 @@
+Original frozen preparation succeeded once for all three existing data sources. Original source schema/rows/files, explicit empty-table migrations and every original raw record passed.
+
+The immediately following v2 read-only audit failed at line361 comparing an in-memory upstream binding with serialized JSON. Its stale_claim_ids uses the constant CLAIMS tuple; JSON serializes tuples as arrays and loads them as a list. No business state difference was found. Preserve original helper and its receipt-bound SHA. New independent v3 requires exact JSON canonical representation of every binding field, explicitly asserts only upstream tuple/list type representation, all other Python fields equal, and again requires all110/schema/files/originals exact. No helper/data/receipt rewrite, recopy, migration or successful business action replay.
+
+Native Collection/history/review/upstream reads and actual current four zero-version refusals plus one old-Method refusal still remain. Binding integrity is not native completion.

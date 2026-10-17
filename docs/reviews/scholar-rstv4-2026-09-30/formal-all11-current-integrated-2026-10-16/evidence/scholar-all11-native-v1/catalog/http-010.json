@@ -1,0 +1,6 @@
+{
+  "method": "GET",
+  "path": "/api/catalog/summary",
+  "query": "",
+  "status": 200
+}

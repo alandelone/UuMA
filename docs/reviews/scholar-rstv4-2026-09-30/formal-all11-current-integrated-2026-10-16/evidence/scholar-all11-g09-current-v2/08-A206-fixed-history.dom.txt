@@ -1,0 +1,653 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button [disabled]:
+  - button [disabled]:
+  - button:
+    - text: Done
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button: 关联意见
+  - region:
+    - button: 重新读取意见与轮次
+  - paragraph: Reviewer comments
+  - heading [level=2]: 意见 → 决定 → 修改 → 回复
+  - button: 🗃 已删除
+  - button: 📦 投稿包
+  - region:
+    - text: 返修轮次
+    - combobox
+    - paragraph: 固定被审稿 v3 / 作者结构 r10；本轮生成不会移动基线。
+    - button: 建立第 5 轮…
+  - textbox:
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+  - button: 👀 准备预览
+  - button: ➕ 单条新增
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button
+  - article:
+    - button:
+    - generic: A206
+    - generic: 第 2 轮 · 提出人未填写
+    - paragraph: "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline. Preserve every source and condition; link only the actual author change that answers this software request. No external reviewer or scientific judgment is asserted. G09 author preview note: this second-round opinion is a software fixture, not an external review."
+    - generic: 原意见与导入来源
+    - paragraph: "G09 round 2 software opinion: keep the original Alpha source and fixed v3 / r10 baseline. Preserve every source and condition; link only the actual author change that answers this software request. No external reviewer or scientific judgment is asserted."
+    - paragraph: 原始顺序：第 1 条
+    - paragraph: 导入批次：comment_import_3c39a6fab1d7498a92deba6e55d2fb28
+    - generic: 本次导入的完整原文
+    - textbox:
+      - /placeholder: 我的决定与理由
+      - text: "Software acceptance decision: add an explicit software boundary note in the original Alpha Intent, while retaining the original author thought and its selected sources and conditions. This software workflow response is not an external review or scientific approval."
+    - textbox:
+      - /placeholder: 回复内容
+      - text: "We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted. This review is limited to software behavior."
+    - combobox
+    - button: 保存回复
+    - button: 核对回复
+    - button: 查看核对历史
+    - paragraph: 回复、版本或关联已变化 · 需要重新核对
+    - generic: 4 条关联修改
+    - navigation:
+      - link:
+        - /url: "#change-change_b4d65900fbe541aeb4d597de70681d46"
+        - text: 查看修改 1
+      - link:
+        - /url: "#change-change_04be28ac6ebc4794ba88c63af36a5141"
+        - text: 查看修改 2
+      - link:
+        - /url: "#change-change_3b76086ebbb34c0aad859a42abf35527"
+        - text: 查看修改 3
+      - link:
+        - /url: "#change-change_4940fc17d3ca499eb10f550fb49d3a3e"
+        - text: 查看修改 4
+    - button:
+  - region:
+    - heading [level=3]: 已保存修改
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox
+    - button: 刷新修改历史
+    - article:
+      - strong: 作者修订 r0 → r1
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r1 → r2
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r2 → r3
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r3 → r4
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r4 → r5
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r5 → r6
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r6 → r7
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r7 → r8
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r8 → r9
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r9 → r10
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r10 → r11
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r11 → r12
+      - button: 分配／解除意见
+      - button: 撤销上次关联
+      - paragraph: A206 · 第 2 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 1 次后补决定
+    - article:
+      - strong: 作者修订 r12 → r13
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r13 → r14
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r14 → r15
+      - button: 分配／解除意见
+      - paragraph: A02 · 第 1 轮、A01 · 第 1 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r15 → r16
+      - button: 分配／解除意见
+      - paragraph: A02 · 第 1 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r16 → r17
+      - button: 分配／解除意见
+      - button: 撤销上次关联
+      - paragraph: A02 · 第 1 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 3 次后补决定
+    - article:
+      - strong: 作者修订 r17 → r18
+      - button: 分配／解除意见
+      - paragraph: A02 · 第 1 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r18 → r19
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r19 → r20
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r20 → r21
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r21 → r22
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r22 → r23
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r23 → r24
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r24 → r25
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r25 → r26
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r26 → r27
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r27 → r28
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r28 → r29
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r29 → r30
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r30 → r31
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r31 → r32
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r32 → r33
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r33 → r34
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r34 → r35
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r35 → r36
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r36 → r37
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r37 → r38
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r38 → r39
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r39 → r40
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r40 → r41
+      - button: 分配／解除意见
+      - paragraph: A206 · 第 2 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r41 → r42
+      - button: 分配／解除意见
+      - paragraph: A206 · 第 2 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r42 → r43
+      - button: 分配／解除意见
+      - paragraph: A206 · 第 2 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r43 → r44
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r44 → r45
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r45 → r46
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r46 → r47
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r47 → r48
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r48 → r49
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r49 → r50
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r50 → r51
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r51 → r52
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r52 → r53
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r53 → r54
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r54 → r55
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r55 → r56
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r56 → r57
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r57 → r58
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r58 → r59
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r59 → r60
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r60 → r61
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r61 → r62
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r62 → r63
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r63 → r64
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r64 → r65
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r65 → r66
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r66 → r67
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r67 → r68
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r68 → r69
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r69 → r70
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r70 → r71
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r71 → r72
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r72 → r73
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r73 → r74
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮、A214 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r74 → r75
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮、A214 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r75 → r76
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮、A214 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r76 → r77
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮、A214 · 第 3 轮、A212 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r77 → r78
+      - button: 分配／解除意见
+      - paragraph: A212 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r78 → r79
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r79 → r80
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r80 → r81
+      - button: 分配／解除意见
+      - paragraph: A213 · 第 3 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r81 → r82
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r82 → r83
+      - generic: 作者撤销／重做记录
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r83 → r84
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r84 → r85
+      - button: 分配／解除意见
+      - paragraph: 未关联意见
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+    - article:
+      - strong: 作者修订 r85 → r86
+      - button: 分配／解除意见
+      - paragraph: A215 · 第 4 轮
+      - generic: 查看实际修改前后对照
+      - generic: 意见关联历史 · 0 次后补决定
+  - region "已生成的投稿包":
+    - heading [level=3]: 投稿包
+    - button:
+      - text: 刷新
+    - paragraph: 每份文件固定到生成版本和被审轮次；旧包继续保留。
+    - article:
+      - strong: 成文 v5 · 第 2 轮 · 10/13/26, 1:05 PM
+      - button [disabled]:
+        - text: 下载整包
+      - paragraph: 这是保留的历史成文版本。
+      - paragraph: 3 项修改的最终位置尚未确认，详见位置表。
+      - alert: 固定文件已不可用。原包保留，请核对成文版本后生成新包。
+      - generic: 单独下载文件 · 16
+  - status
+  - button:
+    - text: 与 Agent 讨论
+    - text: 15 条 · Fixed citation source - software acceptance
+- dialog "A206 的核对历史":
+  - heading "A206 的核对历史" [level=2]
+  - paragraph: 保留作者当时核对的回复、理由、版本与实际改动。当前文件暂时不可用时，历史记录仍可查看。
+  - paragraph: Oct 13, 2026, 1:02 PM · 作者确认修改
+  - paragraph: 成文 v5
+  - paragraph: "Software acceptance decision: add an explicit software boundary note in the original Alpha Intent, while retaining the original author thought and its selected sources and conditions. This software workflow response is not an external review or scientific approval."
+  - paragraph: "We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted."
+  - paragraph: "已核对声明：We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted."
+  - paragraph: "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. · 当时的最终 PDF 第 1 页，可见文本第 8 行"
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想" [active]
+  - paragraph: Oct 13, 2026, 1:05 PM · 作者确认修改
+  - paragraph: 成文 v5
+  - paragraph: "Software acceptance decision: add an explicit software boundary note in the original Alpha Intent, while retaining the original author thought and its selected sources and conditions. This software workflow response is not an external review or scientific approval."
+  - paragraph: "We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted. This review is limited to software behavior."
+  - paragraph: "已核对声明：We added the following software boundary note to the Alpha paragraph: G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. The original Alpha author thought and selected source conditions remain intact. The note is additional software acceptance wording; it asserts no scientific finding. Round 2 retains the reviewed v3 / r10 baseline, and this reply is checked against generated v5 / author r62. No external reviewer or scientific judgment is asserted. This review is limited to software behavior."
+  - paragraph: "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. · 当时的最终 PDF 第 1 页，可见文本第 8 行"
+  - paragraph: 此依据未记录原思想快照；可只读补查当时固定输入。
+  - button "回查当时固定版本的原思想"
+  - button "返回"
+  - button "Close":
+    - generic: Close

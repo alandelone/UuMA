@@ -1,0 +1,6 @@
+{
+  "method": "GET",
+  "path": "/catalog-collections.js",
+  "query": "v=bib-read-20261014",
+  "status": 200
+}

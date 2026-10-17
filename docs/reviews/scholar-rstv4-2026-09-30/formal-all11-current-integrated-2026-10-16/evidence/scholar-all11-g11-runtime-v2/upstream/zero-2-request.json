@@ -1,0 +1,10 @@
+{
+  "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+  "original_stage": "WHOLE_PAPER_REVIEW",
+  "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_d24e458d188e42449fb25c1d65affc29/stage",
+  "body": {
+    "stage": "FINALIZATION_SUBMISSION",
+    "expected_revision": 1,
+    "reason": "G11 explicit zero-version software guard only"
+  }
+}

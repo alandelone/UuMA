@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/workspace",
+  "query": "",
+  "allowed": true,
+  "request_utf8": null,
+  "status": 200,
+  "complete": true,
+  "response_sha256": "9c84556d333a9aa9cdc795e1184593cd3ce5695354fa5564fdfffc723e709647"
+}

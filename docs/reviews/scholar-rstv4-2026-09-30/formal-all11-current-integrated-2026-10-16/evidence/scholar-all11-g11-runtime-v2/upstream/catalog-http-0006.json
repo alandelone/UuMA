@@ -1,0 +1,16 @@
+{
+  "serial": 6,
+  "component": "catalog",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:37:47.984990+00:00",
+  "method": "GET",
+  "path": "/api/catalog/summary",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 84,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "dbd342c83c15b8e44913a40dead58b1a044fd4065c5d67e30e72d6ea86c2ba89"
+}

@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "path": "/api/review-rounds/review_round_16b039af771747eb899cc0939c271cd4/comments",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:37:35.211564+00:00",
+  "body_utf8": "{\"source\":\"SINGLE\",\"comments\":[{\"text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\",\"original_text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\",\"include\":true}],\"import_metadata\":{\"original_text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\"}}",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "status": 201,
+  "final_body_sent": true,
+  "seconds": 0.031000000002677552,
+  "response_sha256": "146d2e45f2db46e5838832d575b148a89d9d18bc559df01013870ae722c00ea6",
+  "ended_at_utc": "2026-10-15T23:37:35.237094+00:00",
+  "response_utf8": "[{\"comment_id\":\"comment_81ae79f9b2ca40f7a0f620f990db5389\",\"review_round_id\":\"review_round_16b039af771747eb899cc0939c271cd4\",\"source\":\"SINGLE\",\"reviewer\":null,\"original_text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\",\"edited_text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\",\"author_decision\":null,\"response_text\":null,\"status\":\"PENDING\",\"archived_at\":null,\"created_at\":\"2026-10-15T23:37:35.229585+00:00\",\"updated_at\":\"2026-10-15T23:37:35.229585+00:00\",\"import_metadata\":{\"comment_number\":216,\"import_batch_id\":\"comment_import_cf8b2d5a610649ef9a36fed70aae8785\",\"original_index\":0,\"original_text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\",\"raw_import_text\":\"SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.\\n\\nSecond paragraph β belongs to this exact opinion.\\nRetain this newline; no scientific claim.\"},\"display_label\":\"A216\"}]"
+}

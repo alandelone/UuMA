@@ -1,0 +1,9 @@
+{
+  "exact_owned_services_retired": true,
+  "no_other_processes_stopped": true,
+  "ports_free": [
+    8877,
+    3000,
+    8875
+  ]
+}

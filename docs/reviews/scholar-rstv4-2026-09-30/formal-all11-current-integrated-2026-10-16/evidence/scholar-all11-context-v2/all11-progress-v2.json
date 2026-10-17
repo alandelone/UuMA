@@ -1,0 +1,196 @@
+{
+  "status": "CURRENT_SOURCE_INTEGRATED_ACCEPTANCE_REMAINS_OPEN",
+  "previous_goal_turn_classification": "PROGRESS",
+  "observed_at_utc": "2026-10-16T03:44:35.880786+00:00",
+  "source_count": 421,
+  "backend_source_unchanged_from_full1223": true,
+  "backend_1223_not_rerun_this_turn": true,
+  "frontend13_JS_TypeScript_targeted_lint_real_HTTP_and_build_passed": true,
+  "initial_fetch_gap_repaired_in_two_actual_native_loads": true,
+  "all118_original_scope_retained": true,
+  "requirements": [
+    {
+      "id": "G-01",
+      "original_text": "同稿两个生成段落分别讨论，刷新／改序／重新生成后旧消息仍指原版本原段；选区原文可回查",
+      "source_line": 485,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-two-paragraph-discussions-2026-10-12/acceptance.md",
+      "original_scoped_report_sha256": "fe0f20c9fe28243c3b21c24cc653b6f298420a4bbf315459ed4d5f528a7563d6",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "Current-source original software group complete; preserve evidence and do not replay successful actions.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\six-group-audit-receipt.json",
+        "sha256": "2e8b9ee14844d771d310506833109dbd2f11b21c4e0ecd8d874a1431e00044e4"
+      }
+    },
+    {
+      "id": "G-02",
+      "original_text": "切位置后打开旧讨论能定位旧对象／版本，作者可部分采用并保存修改来源",
+      "source_line": 486,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-typed-discussion-adoption-2026-10-12/acceptance.md",
+      "original_scoped_report_sha256": "b5423b4f0c01c1b222029f5b66ced2a91db7392142cfafb696775fae59ebcb8d",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "Current-source original software group complete; preserve evidence and do not replay successful actions.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\six-group-audit-receipt.json",
+        "sha256": "2e8b9ee14844d771d310506833109dbd2f11b21c4e0ecd8d874a1431e00044e4"
+      }
+    },
+    {
+      "id": "G-03",
+      "original_text": "待同步／断线时换区保留草稿；返回稿件恢复对象、滚动、折叠和偏好；总览手动更新不展开全部",
+      "source_line": 487,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-view-restore-offline-2026-10-12/acceptance.md",
+      "original_scoped_report_sha256": "6ba41c504d9e94e35a3a5dee663b20ed904cb4e32aa74a74be3cbf98684504d4",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "This current-source native group is complete within its original software definition. Preserve actual evidence and original failed observations; do not repeat its saved author operations or outage for bookkeeping.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-all11-native-v1/g03-g04-audit-receipt.json",
+        "sha256": "e462f73cf5230961ef3599d8379bbf60b4534391fc71a9feca73d8975965fe30"
+      }
+    },
+    {
+      "id": "G-04",
+      "original_text": "从正式生成稿改结构，有 Done 返回旧成文且收两栏；不生成、不清问题、不推进阶段",
+      "source_line": 488,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-stage3-done-2026-10-12/acceptance.md",
+      "original_scoped_report_sha256": "3ce65234bbe5c56d241288af85611ac5fcdfce4fdae5bbd663ac1ac6af838fc9",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "This current-source native group is complete within its original software definition. Preserve actual evidence and original failed observations; do not repeat its saved author operations or outage for bookkeeping.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-all11-native-v1/g03-g04-audit-receipt.json",
+        "sha256": "e462f73cf5230961ef3599d8379bbf60b4534391fc71a9feca73d8975965fe30"
+      }
+    },
+    {
+      "id": "G-05",
+      "original_text": "阅读显示 [1] / [2] 并对应参考文献；点击仍打开正确 Evidence，ID 留在数据层",
+      "source_line": 489,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-citation-source-2026-10-09/acceptance.md",
+      "original_scoped_report_sha256": "f9361fecc763c83af125d79ee1df142be9a6e1df35d44023027a9c154c82d130",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "Current-source original software group complete; preserve evidence and do not replay successful actions.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\six-group-audit-receipt.json",
+        "sha256": "2e8b9ee14844d771d310506833109dbd2f11b21c4e0ecd8d874a1431e00044e4"
+      }
+    },
+    {
+      "id": "G-06",
+      "original_text": "结构页显示关联意见、结束／增减关联；删除清活动上下文；后续改动不挂已删除意见；恢复同编号",
+      "source_line": 490,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-revision-comment-context-2026-10-12/acceptance.md",
+      "original_scoped_report_sha256": "e56a85d5e2d7ee1412f93be11c73da2d30c707310715f9c8216bc85027e182f5",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "Current-source original software group complete; preserve evidence and do not replay successful actions.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\six-group-audit-receipt.json",
+        "sha256": "2e8b9ee14844d771d310506833109dbd2f11b21c4e0ecd8d874a1431e00044e4"
+      }
+    },
+    {
+      "id": "G-07",
+      "original_text": "一条带空行仍为单条；重复提示由作者决定；101 条明确提示，剩余原文不丢",
+      "source_line": 491,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-comment-import-boundaries-2026-10-12/acceptance.md",
+      "original_scoped_report_sha256": "a6ae61eebcd42d8e6b486861ed3bbf687144e1dc8f1e2ea38884cb1e16070efa",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "Current-source original software group complete; preserve evidence and do not replay successful actions.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\six-group-audit-receipt.json",
+        "sha256": "2e8b9ee14844d771d310506833109dbd2f11b21c4e0ecd8d874a1431e00044e4"
+      }
+    },
+    {
+      "id": "G-08",
+      "original_text": "折叠不删除内容；拖模板加空槽不复制思想；更换模板保留引用和待安置内容；空容器可合法放入",
+      "source_line": 492,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-fold-group-template-2026-10-13/acceptance.md",
+      "original_scoped_report_sha256": "7c7e0d4834d66e6f312a6a0aed2e821c2d2ab715d54e07fb00e84854bf772ad6",
+      "original_software_group_sealed": true,
+      "current_composite_complete": true,
+      "next_actual_check": "Current-source original software group complete; preserve evidence and do not replay successful actions.",
+      "current_source_files": 421,
+      "current_native_audit": {
+        "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\six-group-audit-receipt.json",
+        "sha256": "2e8b9ee14844d771d310506833109dbd2f11b21c4e0ecd8d874a1431e00044e4"
+      }
+    },
+    {
+      "id": "G-09",
+      "original_text": "来源页段与版本可查；第二返修轮独立固定基线；原始意见、未关联改动、真实修改／回复材料能查",
+      "source_line": 493,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-source-round-reply-2026-10-13/acceptance.md",
+      "original_scoped_report_sha256": "37ddf37f0c733d4007495aabcb3ea45b969c1f2063ebc43b0099c60c9ffa929f",
+      "original_software_group_sealed": true,
+      "current_composite_complete": false,
+      "next_actual_check": "Read exact independent review baselines/old claims/history/current A215 and source provenance under421; final new combined package only after final author revision and genuine confirmation. Original21-file snapshot remains unchanged."
+    },
+    {
+      "id": "G-10",
+      "original_text": "用真实 ID 完成 Field → KG → Track → Manuscript → 来源往返，展示实际状态和阻塞，空态不伪造",
+      "source_line": 494,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-field-track-source-roundtrip-2026-10-13/acceptance.md",
+      "original_scoped_report_sha256": "f3a308aa539c305fc8dae2140801b2920151dbbace87f6d4593c3ca15bde4d55",
+      "original_software_group_sealed": true,
+      "current_composite_complete": false,
+      "next_actual_check": "Serve existing actual Energy Field/KG/Track/Manuscript/source fixture under current frozen backend/frontend after exact-root/source/ID preflight. Read actual blockers and other-field empty state; no new adoption/science approval."
+    },
+    {
+      "id": "G-11",
+      "original_text": "真 Collection 运行可追踪；审核复检恢复；上游失效传播、旧方法拒绝运行、零版本不可进 Stage 3 / Publication",
+      "source_line": 495,
+      "original_scoped_report": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-collection-review-catalog-2026-10-14/acceptance.md",
+      "original_scoped_report_sha256": "b4e32093ac71cf3cd7ddfafcbe21b7173744747398a8d86e2bf2bcf96875dbe0",
+      "original_software_group_sealed": true,
+      "current_composite_complete": false,
+      "next_actual_check": "Read original Collection and successful GPU/QuickRead attempts/leases/parse/source receipts, upstream invalidation and old Method rejection, plus actual zero-version stage guards under current source. No GPU/QuickRead/deepread/model/budget replay. Original8891/userStudio untouched."
+    }
+  ],
+  "not_prerequisite_by_original11_text": "Do not silently expand G09 complete reply flow into a requirement to treat Intent metadata, deleted objects or unlocated figures as scientific text modifications. Preserve all broader118 typed attribution/meaningful negative requirements; prove relevant ones at final118 audit rather than inventing completion.",
+  "remaining_broader118": "Read actual matrix118 named remaining clauses. Current typed design is unimplemented; A213/A214 remain pending and cannot be declared resolved. Both overall flags remain false.",
+  "final_deliverable": "One current-source combined all11 requirement-by-requirement report and original118 audit with explicit boundary/results, final package snapshot matching final checks, exact data/source/process evidence.",
+  "overall118_complete": false,
+  "final11_complete": false,
+  "current_composite_completed_groups": [
+    "G-01",
+    "G-02",
+    "G-03",
+    "G-04",
+    "G-05",
+    "G-06",
+    "G-07",
+    "G-08"
+  ],
+  "current_composite_remaining_groups": [
+    "G-09",
+    "G-10",
+    "G-11"
+  ],
+  "product_changes_this_turn": 0,
+  "current_mutable_branch_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-native-ra3unsez",
+  "current_mutable_branch_checkpoint": {
+    "tables": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\final110-all-tables.json",
+    "tables_sha256": "5d5d6553f0d9034ffbbee7ae273df8659caaad71910f22a4e8715f685ebd31c5",
+    "files": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\final-all-files.json",
+    "files_sha256": "18ad6aeef6fdcfc4f70974660babe0168b01217a06a55a4f4561cf478f650b6d",
+    "A_revision": 103,
+    "B_revision": 4,
+    "retained_generated_version": 7,
+    "generated_input_revision": 86
+  },
+  "next_execution": "Continue remaining G09/G10/G11 against current421. G06/G07/G08 complete and services retired; no copy/build/model/task replay. Preserve protected source A86/current A215 for original G09."
+}

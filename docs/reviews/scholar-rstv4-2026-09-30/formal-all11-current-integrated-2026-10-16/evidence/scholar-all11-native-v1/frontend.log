@@ -1,0 +1,12 @@
+
+  vinext start  (port 56582)
+
+[vinext] Production server running at http://127.0.0.1:56582
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/vinext-DerVUGZH.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/css/index.BiNms3OR.css: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/framework-A1pNZAzD.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/page-CgZIQj6A.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/index-DE_Hb0rF.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/framework-A1pNZAzD.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/page-CgZIQj6A.js: Premature close
+[vinext] Static file stream error for C:/Users/Alandelone/AppData/Local/Temp/scui-same-origin-build-cbehvgo4/writing-studio/dist/client/_next/static/chunks/vinext-DerVUGZH.js: Premature close

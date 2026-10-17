@@ -1,0 +1,30 @@
+{
+  "identity": {
+    "pid": 54104,
+    "create_time": 1792139808.7719083,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+      "serve",
+      "upstream",
+      "--component",
+      "studio"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 50568
+  },
+  "argv": [
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+    "-X",
+    "utf8",
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+    "serve",
+    "upstream",
+    "--component",
+    "studio"
+  ],
+  "port": 8877,
+  "node_heap_mib": null
+}

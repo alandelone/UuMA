@@ -1,0 +1,12 @@
+{
+  "status": "PASS_ACTUAL_CURRENT_CORE_REFUSAL",
+  "plan_id": "experiment_plan_81163acc4ada40c786e62a8e66576d9d",
+  "method_id": "method_578417c4dcfc42e99060150cccd53613",
+  "response": {
+    "exception_type": "RevisionConflictError",
+    "message": "The experiment method is no longer approved in this track"
+  },
+  "all110_files_originals_source_exact": true,
+  "marker_absent": true,
+  "new_runs_models_grants": 0
+}

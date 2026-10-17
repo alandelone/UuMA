@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/research/discussion/messages/research_message_6c62a0e6fc3b40878522e500dca1d861/context",
+  "query": "scope=%5B%22STUDIO%22%2C%22manuscript_56652adf9d054cb6ab3819efacf3475c%22%5D",
+  "started_at_utc": "2026-10-16T03:39:54.557632+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.01600000000325963,
+  "response_sha256": "6e70fc5e5caac3cfb8418f63142d5b697725658f8d96876f3e29eafeae705749",
+  "ended_at_utc": "2026-10-16T03:39:54.574662+00:00"
+}

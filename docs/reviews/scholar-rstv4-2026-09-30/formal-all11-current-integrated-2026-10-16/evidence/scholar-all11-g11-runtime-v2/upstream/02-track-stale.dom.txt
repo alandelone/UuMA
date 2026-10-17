@@ -1,0 +1,273 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8875/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_19bd9c2c7abb40d48013dd0e0374e4fd%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_5a513f17ec1349c8a05002bb42a0a93f%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:8875/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_19bd9c2c7abb40d48013dd0e0374e4fd%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_5a513f17ec1349c8a05002bb42a0a93f%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%22%7D
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8875/?view=fieldkg&field=field_5a513f17ec1349c8a05002bb42a0a93f&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%5B%5C%22track%5C%22%2C%5C%22track_19bd9c2c7abb40d48013dd0e0374e4fd%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_5a513f17ec1349c8a05002bb42a0a93f%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "Track 工作面":
+      - generic: Track 工作面
+      - generic: ⌄
+  - region "所选 FieldKG 或 Track":
+    - paragraph: Isolated field / Track
+    - heading "Isolated track" [level=1]
+    - paragraph:
+      - generic: ACTIVE
+      - text: · conceptual_framework · revision 1
+    - heading "Scope" [level=2]
+    - paragraph: 尚未设置研究范围。
+    - paragraph: MAPPED
+    - heading "来源复核记录" [level=2]
+    - paragraph: 没有来源撤回记录。
+    - heading "采用的 Snapshot" [level=2]
+    - paragraph: 该 Field 尚无 Snapshot；没有推断固定研究基础。
+    - heading "科研里程碑" [level=2]
+    - strong: SCOPE
+    - generic: 尚未记录
+    - strong: SNAPSHOT_ADOPTION
+    - generic: 尚未记录
+    - strong: GAP
+    - generic: 尚未记录
+    - strong: IDEA
+    - generic: 尚未记录
+    - strong: RESEARCH_QUESTION
+    - generic: 尚未记录
+    - strong: HYPOTHESIS
+    - generic: 尚未记录
+    - strong: METHOD
+    - generic: 尚未记录
+    - strong: EXPERIMENT
+    - generic: 尚未记录
+    - strong: CLAIM
+    - generic: 尚未记录
+    - heading "Research Graph" [level=2]
+    - group "当前范围的来源、概念、候选与证据关系；相同对象也可在下方列表选择":
+      - button "claim Isolated claim d8de1260d07540f7a0a2c849fb43b3d0"
+      - button "claim Isolated claim 6644ada96ea349dd90e002aa8879f948"
+      - button "method Isolated method 011d49e3a9ce43c696e8525ba6579412"
+      - button "method Isolated method 371c132798e14f1a9944167a43c692a9"
+    - button "claim Isolated claim d8de1260d07540f7a0a2c849fb43b3d0"
+    - button "claim Isolated claim 6644ada96ea349dd90e002aa8879f948"
+    - button "method Isolated method 011d49e3a9ce43c696e8525ba6579412"
+    - button "method Isolated method 371c132798e14f1a9944167a43c692a9"
+    - button "[\"node\",\"method_578417c4dcfc42e99060150cccd53613\"] → MOTIVATES → [\"node\",\"claim_bb84d9ba73be4451a3b4222d941427e2\"]"
+    - button "[\"node\",\"claim_bb84d9ba73be4451a3b4222d941427e2\"] → MOTIVATES → [\"node\",\"claim_5fdad5a7be7144aca7ff828926d00e11\"]"
+    - heading "科研操作" [level=2]
+    - paragraph: 每个科研对象独立提出与审阅。替代上游决定后，依赖节点与稿件将要求复核。
+    - status: 已读取当前科学依据。
+    - button "更新科研依据"
+    - heading "新建科研提案" [level=3]
+    - text: 科研对象类型
+    - combobox "科研对象类型":
+      - option "Gap" [selected]
+      - option "Idea"
+      - option "Research Question"
+      - option "Hypothesis"
+      - option "Method"
+      - option "Claim"
+    - text: 科学陈述
+    - textbox "科学陈述"
+    - text: 提出／替代理由
+    - textbox "提出／替代理由"
+    - group "选择依据：Track 证据或明确采用的 Snapshot":
+      - generic: 选择依据：Track 证据或明确采用的 Snapshot
+      - paragraph: 尚无证据，请先审阅来源并采用 Snapshot。
+    - group "选择已批准的上游科学节点":
+      - generic: 选择已批准的上游科学节点
+      - checkbox "Claim · STALE · Isolated claim d8de1260d07540f7a0a2c849fb43b3d0" [disabled]
+      - text: Claim · STALE · Isolated claim d8de1260d07540f7a0a2c849fb43b3d0
+      - button "查看该节点并带入 Chat"
+      - button "提出替代决定"
+      - checkbox "Claim · STALE · Isolated claim 6644ada96ea349dd90e002aa8879f948" [disabled]
+      - text: Claim · STALE · Isolated claim 6644ada96ea349dd90e002aa8879f948
+      - button "查看该节点并带入 Chat"
+      - button "提出替代决定"
+      - checkbox "Method · SUPERSEDED · Isolated method 011d49e3a9ce43c696e8525ba6579412" [disabled]
+      - text: Method · SUPERSEDED · Isolated method 011d49e3a9ce43c696e8525ba6579412
+      - button "查看该节点并带入 Chat"
+      - checkbox "Method · APPROVED · Isolated method 371c132798e14f1a9944167a43c692a9"
+      - text: Method · APPROVED · Isolated method 371c132798e14f1a9944167a43c692a9
+      - button "查看该节点并带入 Chat"
+      - button "提出替代决定"
+    - button "保存待审阅提案"
+    - button "开始新的提案"
+    - heading "全部提案与独立状态" [level=3]
+    - article:
+      - heading "Method · APPROVED" [level=3]
+      - paragraph: Isolated method 011d49e3a9ce43c696e8525ba6579412
+      - paragraph: Fixture approval only
+      - paragraph: 提案 proposal_b367fce5fa274a4f85401286fdf4ae48 · revision 2
+      - button "查看节点与来源"
+      - generic "固定依赖与原提案依据"
+      - paragraph: "{\"grant_id\":\"grant_b547c8205ece400cba71eb779728b5ac\",\"message_id\":\"2882185cbe784045990e4b3a6bdd1cf9\"}"
+    - article:
+      - heading "Claim · APPROVED" [level=3]
+      - paragraph: Isolated claim 6644ada96ea349dd90e002aa8879f948
+      - paragraph: Fixture approval only
+      - paragraph: 提案 proposal_ce01906e6aba4e9a8ffd35823d59b14b · revision 2
+      - button "查看节点与来源"
+      - generic "固定依赖与原提案依据"
+      - paragraph: "{\"grant_id\":\"grant_d447779aa42048488ce2d9bf127aefff\",\"message_id\":\"99faa7f254904c8387de6bedfcb8618f\"}"
+    - article:
+      - heading "Claim · APPROVED" [level=3]
+      - paragraph: Isolated claim d8de1260d07540f7a0a2c849fb43b3d0
+      - paragraph: Fixture approval only
+      - paragraph: 提案 proposal_2f4d42cd46e9441c858587f9ebf6494e · revision 2
+      - button "查看节点与来源"
+      - generic "固定依赖与原提案依据"
+      - paragraph: "{\"grant_id\":\"grant_ad1a1b72e0454f5884a0d92ec104033c\",\"message_id\":\"2c07bf8c2cee41b3af6af25079c1c709\"}"
+    - article:
+      - heading "Method · APPROVED" [level=3]
+      - paragraph: Isolated method 371c132798e14f1a9944167a43c692a9
+      - paragraph: Fixture approval only
+      - paragraph: 提案 proposal_4274b84da40146c3b87f7228180f72a4 · revision 1 · 替代 method_578417c4dcfc42e99060150cccd53613
+      - button "查看节点与来源"
+      - generic "固定依赖与原提案依据"
+      - paragraph: "{\"grant_id\":\"grant_bed5fdb071a5466db4f39c391b45dd18\",\"message_id\":\"e9ac365b206c499b98eeb97fe421a8ad\"}"
+    - heading "科研审阅提案" [level=2]
+    - paragraph:
+      - text: method ·
+      - generic: APPROVED
+      - text: · revision 1
+    - paragraph: 批准用语：APPROVE proposal_b367fce5fa274a4f85401286fdf4ae48
+    - paragraph: "{\"grant_id\":\"grant_b547c8205ece400cba71eb779728b5ac\",\"message_id\":\"2882185cbe784045990e4b3a6bdd1cf9\"}"
+    - paragraph:
+      - text: claim ·
+      - generic: APPROVED
+      - text: · revision 1
+    - paragraph: 批准用语：APPROVE proposal_ce01906e6aba4e9a8ffd35823d59b14b
+    - paragraph: "{\"grant_id\":\"grant_d447779aa42048488ce2d9bf127aefff\",\"message_id\":\"99faa7f254904c8387de6bedfcb8618f\"}"
+    - paragraph:
+      - text: claim ·
+      - generic: APPROVED
+      - text: · revision 1
+    - paragraph: 批准用语：APPROVE proposal_2f4d42cd46e9441c858587f9ebf6494e
+    - paragraph: "{\"grant_id\":\"grant_ad1a1b72e0454f5884a0d92ec104033c\",\"message_id\":\"2c07bf8c2cee41b3af6af25079c1c709\"}"
+    - paragraph:
+      - text: method ·
+      - generic: APPROVED
+      - text: · revision 1
+    - paragraph: 批准用语：APPROVE proposal_4274b84da40146c3b87f7228180f72a4
+    - paragraph: "{\"grant_id\":\"grant_bed5fdb071a5466db4f39c391b45dd18\",\"message_id\":\"e9ac365b206c499b98eeb97fe421a8ad\"}"
+    - heading "实施与实验计划" [level=2]
+    - status: 实验状态已读取。
+    - button "更新实验状态"
+    - generic "新建实施 Project"
+    - option "沿用 Track 类型" [selected]
+    - option "experimental"
+    - option "engineering_system"
+    - option "method_algorithm"
+    - option "systematic_review"
+    - option "sota_review"
+    - option "critical_review"
+    - option "bibliometric_review"
+    - option "conceptual_framework"
+    - option "case_study"
+    - heading "新建待审阅实验计划" [level=3]
+    - text: 实施归属
+    - combobox "实施归属":
+      - option "Track 直属" [selected]
+    - text: Method
+    - combobox "Method":
+      - option "选择已批准 Method" [selected]
+      - option "Isolated method 011d49e3a9ce43c696e8525ba6579412 · SUPERSEDED" [disabled]
+      - option "Isolated method 371c132798e14f1a9944167a43c692a9 · APPROVED"
+    - text: 工作目录
+    - textbox "工作目录": .
+    - button "读取实际文件"
+    - paragraph: 尚未读取目录。
+    - text: 脚本
+    - combobox "脚本":
+      - option "选择实际脚本" [selected]
+    - group "输入文件":
+      - generic: 输入文件
+      - paragraph: 先读取实际文件。
+    - text: Python 执行环境
+    - textbox "Python 执行环境": C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-collection-verification-v1\Scripts\python.exe
+    - text: 额外参数（JSON 字符串数组）
+    - textbox "额外参数（JSON 字符串数组）": "[]"
+    - text: 环境变量覆盖（JSON 字符串对象）
+    - textbox "环境变量覆盖（JSON 字符串对象）": "{}"
+    - text: 超时秒数
+    - spinbutton "超时秒数": "600"
+    - text: 指标文件
+    - textbox "指标文件": metrics.json
+    - text: 产物路径（每行一个）
+    - textbox "产物路径（每行一个）"
+    - button "核对完整文件与环境清单"
+    - button "保存待审阅计划" [disabled]
+    - button "开始新计划草稿"
+    - heading "计划与批准" [level=3]
+    - article:
+      - heading "实验计划 · APPROVED" [level=3]
+      - paragraph: experiment_plan_81163acc4ada40c786e62a8e66576d9d · Method method_578417c4dcfc42e99060150cccd53613 · Track 直属
+      - paragraph: 命令：C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Scripts\python.exe -c from pathlib import Path; Path('C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y\\old-method-must-not-run.txt').touch()
+      - paragraph: 旧计划未保留完整审阅清单，请提出新计划。
+      - button "执行此计划一次" [disabled]
+    - article:
+      - heading "实验计划 · APPROVED" [level=3]
+      - paragraph: experiment_plan_03a8d64eab544aca93b8a4f804e15364 · Method method_de9d256dcf294ac9a89822c4c8a10142 · Track 直属
+      - paragraph: 命令：C:\Users\Alandelone\CodeSpace_Local\RSTV4\.venv\Scripts\python.exe -c print('ISOLATED_ACCEPTANCE_ONLY')
+      - paragraph: 旧计划未保留完整审阅清单，请提出新计划。
+      - button "执行此计划一次" [disabled]
+    - heading "本次执行与结果证据" [level=3]
+    - paragraph: 尚无此工作台的执行回执。
+    - heading "Projects（各自唯一 Owner Track）" [level=2]
+    - paragraph: 此 Track 暂无 Project；综述／概念研究可以没有 Project。
+    - heading "Track 直属执行记录" [level=2]
+    - 'generic "experiment: [\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\", \"-c\", \"print(''ISOLATED_ACCEPTANCE_ONLY'')\"] · COMPLETED · 2026年10月2日 22:59"'
+    - heading "Track 证据" [level=2]
+    - paragraph: 尚无证据记录。
+    - heading "Manuscripts / 投稿事件" [level=2]
+    - article:
+      - link "Indirect fixture manuscript ↗":
+        - /url: http://127.0.0.1:3000/?manuscript=manuscript_fde24662e8b044c59e729f7516ad10ca&from=catalog&track=track_19bd9c2c7abb40d48013dd0e0374e4fd&return=http%3A%2F%2F127.0.0.1%3A8875%2F%3Ftrack%3Dtrack_19bd9c2c7abb40d48013dd0e0374e4fd%26overview_state%3D%257B%2522collapsed%2522%253A%255B%255D%252C%2522focus%2522%253A%2522%255B%255C%2522track%255C%2522%252C%255C%2522track_19bd9c2c7abb40d48013dd0e0374e4fd%255C%2522%255D%2522%252C%2522anchor%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_5a513f17ec1349c8a05002bb42a0a93f%255C%2522%255D%2522%252C%2522offset%2522%253A173%252C%2522scroll%2522%253A0%252C%2522workspace%2522%253A%25223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%2522%257D
+      - link "重审与替换当前依据":
+        - /url: /?view=scientific_review&manuscript=manuscript_fde24662e8b044c59e729f7516ad10ca
+      - paragraph:
+        - generic: PLANNING
+        - text: · 写作记录 PLANNING · 需要科学复核
+      - paragraph
+    - article:
+      - link "Zero versions WHOLE_PAPER_REVIEW ↗":
+        - /url: http://127.0.0.1:3000/?manuscript=manuscript_264202f005144e1ba60f8574c6637f70&from=catalog&track=track_19bd9c2c7abb40d48013dd0e0374e4fd&return=http%3A%2F%2F127.0.0.1%3A8875%2F%3Ftrack%3Dtrack_19bd9c2c7abb40d48013dd0e0374e4fd%26overview_state%3D%257B%2522collapsed%2522%253A%255B%255D%252C%2522focus%2522%253A%2522%255B%255C%2522track%255C%2522%252C%255C%2522track_19bd9c2c7abb40d48013dd0e0374e4fd%255C%2522%255D%2522%252C%2522anchor%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_5a513f17ec1349c8a05002bb42a0a93f%255C%2522%255D%2522%252C%2522offset%2522%253A173%252C%2522scroll%2522%253A0%252C%2522workspace%2522%253A%25223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%2522%257D
+      - link "重审与替换当前依据":
+        - /url: /?view=scientific_review&manuscript=manuscript_264202f005144e1ba60f8574c6637f70
+      - paragraph:
+        - generic: DRAFTING
+        - text: · 写作记录 PLANNING · 未标记科学复核
+      - paragraph
+    - article:
+      - link "Zero versions FINALIZATION_SUBMISSION ↗":
+        - /url: http://127.0.0.1:3000/?manuscript=manuscript_d24e458d188e42449fb25c1d65affc29&from=catalog&track=track_19bd9c2c7abb40d48013dd0e0374e4fd&return=http%3A%2F%2F127.0.0.1%3A8875%2F%3Ftrack%3Dtrack_19bd9c2c7abb40d48013dd0e0374e4fd%26overview_state%3D%257B%2522collapsed%2522%253A%255B%255D%252C%2522focus%2522%253A%2522%255B%255C%2522track%255C%2522%252C%255C%2522track_19bd9c2c7abb40d48013dd0e0374e4fd%255C%2522%255D%2522%252C%2522anchor%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_5a513f17ec1349c8a05002bb42a0a93f%255C%2522%255D%2522%252C%2522offset%2522%253A173%252C%2522scroll%2522%253A0%252C%2522workspace%2522%253A%25223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%2522%257D
+      - link "重审与替换当前依据":
+        - /url: /?view=scientific_review&manuscript=manuscript_d24e458d188e42449fb25c1d65affc29
+      - paragraph:
+        - generic: WHOLE_PAPER_REVIEW
+        - text: · 写作记录 PLANNING · 未标记科学复核
+      - paragraph
+    - article:
+      - link "Zero versions REVISION ↗":
+        - /url: http://127.0.0.1:3000/?manuscript=manuscript_ed7c93ebf4824ec48186d731583185c8&from=catalog&track=track_19bd9c2c7abb40d48013dd0e0374e4fd&return=http%3A%2F%2F127.0.0.1%3A8875%2F%3Ftrack%3Dtrack_19bd9c2c7abb40d48013dd0e0374e4fd%26overview_state%3D%257B%2522collapsed%2522%253A%255B%255D%252C%2522focus%2522%253A%2522%255B%255C%2522track%255C%2522%252C%255C%2522track_19bd9c2c7abb40d48013dd0e0374e4fd%255C%2522%255D%2522%252C%2522anchor%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_5a513f17ec1349c8a05002bb42a0a93f%255C%2522%255D%2522%252C%2522offset%2522%253A173%252C%2522scroll%2522%253A0%252C%2522workspace%2522%253A%25223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%2522%257D
+      - link "重审与替换当前依据":
+        - /url: /?view=scientific_review&manuscript=manuscript_ed7c93ebf4824ec48186d731583185c8
+      - paragraph:
+        - generic: FINALIZATION_SUBMISSION
+        - text: · 写作记录 PLANNING · 未标记科学复核
+      - paragraph
+    - article:
+      - link "Zero versions PUBLICATION ↗":
+        - /url: http://127.0.0.1:3000/?manuscript=manuscript_332d6e2945cd4c30b4d39fcae921e28a&from=catalog&track=track_19bd9c2c7abb40d48013dd0e0374e4fd&return=http%3A%2F%2F127.0.0.1%3A8875%2F%3Ftrack%3Dtrack_19bd9c2c7abb40d48013dd0e0374e4fd%26overview_state%3D%257B%2522collapsed%2522%253A%255B%255D%252C%2522focus%2522%253A%2522%255B%255C%2522track%255C%2522%252C%255C%2522track_19bd9c2c7abb40d48013dd0e0374e4fd%255C%2522%255D%2522%252C%2522anchor%2522%253A%2522%255B%255C%2522field%255C%2522%252C%255C%2522field_5a513f17ec1349c8a05002bb42a0a93f%255C%2522%255D%2522%252C%2522offset%2522%253A173%252C%2522scroll%2522%253A0%252C%2522workspace%2522%253A%25223bce425ff9e332f605c0b735a191a0a09c5cb15c152efbb18d64b890eba2b0db%2522%257D
+      - link "重审与替换当前依据":
+        - /url: /?view=scientific_review&manuscript=manuscript_332d6e2945cd4c30b4d39fcae921e28a
+      - paragraph:
+        - generic: FINALIZATION_SUBMISSION
+        - text: · 写作记录 PLANNING · 未标记科学复核
+      - paragraph
+- complementary "统一研究讨论":
+  - button "Chat · Isolated track"

@@ -1,0 +1,661 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button "关联意见"
+  - region "意见与轮次读取状态":
+    - button "重新读取意见与轮次"
+  - paragraph: Reviewer comments
+  - heading "意见 → 决定 → 修改 → 回复" [level=2]
+  - button "🗃 已删除"
+  - button "📦 投稿包"
+  - region "返修轮次与固定被审版本":
+    - text: 返修轮次
+    - combobox "选择返修轮次":
+      - option "请选择轮次…"
+      - option "第 1 轮 · G06 software acceptance — no external reviewer"
+      - option "第 2 轮 · G09 software acceptance - independent round 2; no external reviewer"
+      - option "第 3 轮 · G11 original118 native file import software acceptance — no external reviewer or scientific approval" [selected]
+      - option "第 4 轮 · SOFTWARE_FIXTURE pure layout acceptance — no external reviewer or scientific approval"
+    - paragraph: 固定被审稿 v5 / 作者结构 r62；本轮生成不会移动基线。
+    - button "建立第 5 轮…"
+  - textbox "审稿意见输入":
+    - /placeholder: 粘贴意见；空行分条。确认前不会写入。
+  - button "👀 准备预览"
+  - button "➕ 单条新增"
+  - text: 📄 TXT / MD / DOCX / PDF
+  - button "导入审稿意见文件"
+  - article:
+    - button "开始修改意见 A207":
+    - generic "comment_17fd0d630e4d4a709714d6d1921384c4": A207
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "G11 native TXT import: preserve this first line. Keep the second line inside the same opinion. Edited in native preview; original source stays unchanged."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A207":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A207":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A207":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A207":
+  - article:
+    - button "开始修改意见 A208":
+    - generic "comment_15d8bb0d41d34beb93739f444e3578db": A208
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: Native Markdown review opinion. Keep the source filename and original text.
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A208":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A208":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A208":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A208":
+  - article:
+    - button "开始修改意见 A209":
+    - generic "comment_fa0cc799e11a4cafa02bfeff7736200a": A209
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: Native DOCX review opinion. Preserve the original document source.
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A209":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A209":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A209":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A209":
+  - article:
+    - button "开始修改意见 A210":
+    - generic "comment_cea31df0e6d14212bb33fe5fa014ca97": A210
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: Native PDF review opinion. Preserve exact extracted source.
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A210":
+      - /placeholder: 我的决定与理由
+    - textbox "回复内容 A210":
+      - /placeholder: 回复内容
+    - combobox "意见状态 A210":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A210":
+  - article:
+    - button "开始修改意见 A211":
+    - generic "comment_7702027e5fd44006a5a11fba9c369462": A211
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "SOFTWARE_FIXTURE RE11 no-change acceptance v9: Please keep the original Alpha author wording, sources, conditions, and fixed generated v5. This test asks for an explicit reasoned no-change reply, not a new generated manuscript. No external reviewer or scientific approval is asserted."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A211":
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE decision: Do not change the manuscript. The current synthetic request asks us to preserve the existing Alpha author wording, selected sources, conditions, and fixed v5; these remain unchanged. No new scientific evidence or requested substantive amendment is supplied in this software case. The reply therefore explains intentional preservation and makes no claim that an unperformed edit was implemented. This software acknowledgement is not scientific approval or an external reviewer decision."
+    - textbox "回复内容 A211":
+      - /placeholder: 回复内容
+      - text: "SOFTWARE_FIXTURE reply: We intentionally retain the existing Alpha wording and fixed generated v5. No manuscript text, citation, source condition, or generated version was changed for this software acceptance case. This is an explicit no-change response, not a claim that a new scientific amendment or external review occurred."
+    - combobox "意见状态 A211":
+      - option "待处理"
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled] [selected]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复、版本或关联已变化 · 需要重新核对
+    - generic: 0 条关联修改
+    - button "移入已删除 A211":
+  - article:
+    - button "开始修改意见 A212":
+    - generic "comment_f39d35831bd0472bb9282ab116e90611": A212
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "1. SOFTWARE_FIXTURE C-MANY: Verify actual crossed mappings of two original Alpha author thoughts to multiple final compiled sentences. Preserve the original content, sources and qualifications; this is not external review or scientific approval."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A212":
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE decision: Accept the mechanical mapping request. Preserve both original Alpha thoughts, selected sources and qualifications. The local fixture generation v6/r79 was actually compiled; this is not external review or scientific approval."
+    - textbox "回复内容 A212":
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE reply. We clarified the source-only restriction of the first original Alpha thought in both the shared sentence and its own sentences. We clarified the original-source conditions of the second original Alpha thought in both the shared sentence and its own sentences. This verifies software provenance and compiled locations only; no scientific approval is asserted.
+    - combobox "意见状态 A212":
+      - option "待处理"
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled] [selected]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复、版本或关联已变化 · 需要重新核对
+    - generic: 2 条关联修改
+    - navigation "A212 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_a1353447cfd348ce9d732f461ed53dc1"
+      - link "查看修改 2":
+        - /url: "#change-change_fd5f8336b0bb4d09923ab48c708ec736"
+    - button "移入已删除 A212":
+  - article:
+    - button "开始修改意见 A213":
+    - generic "comment_0acc6bedbeeb4b8191786b5d1e59f3f5": A213
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "2. SOFTWARE_FIXTURE C-META: Verify the records for an Intent-only label change, software paragraph move and deletion, and a reverted software wording edit. Unmapped or reversed changes must not count as completed prose evidence."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A213":
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE pending review: retain the recorded Intent-label, move, deletion and reversal history. Do not treat unmapped or reversed changes as completed prose evidence. No completion acknowledgement or scientific approval is given."
+    - textbox "回复内容 A213":
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE pending reply. Intent-label, moved/deleted structure, citation identity and material changes are recorded, but a complete semantic attribution to final prose has not been established. The temporary wording was reverted and must not count as a completed prose amendment.
+    - combobox "意见状态 A213":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 18 条关联修改
+    - navigation "A213 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_99508413a70f406782d71fab2638566f"
+      - link "查看修改 2":
+        - /url: "#change-change_8e0b3363594442338ada3e5d34a46cd9"
+      - link "查看修改 3":
+        - /url: "#change-change_7b1598ac4de04664bcfa006ec0d037e2"
+      - link "查看修改 4":
+        - /url: "#change-change_f79e2bceb00a4f37b18c90c088b80538"
+      - link "查看修改 5":
+        - /url: "#change-change_a86ac9d5e27b49c09dc4b5d73cc80ae4"
+      - link "查看修改 6":
+        - /url: "#change-change_24ee1a3c11a7413eaecbb4a445fed479"
+      - link "查看修改 7":
+        - /url: "#change-change_678c9d935ff444238c4e5058ae588547"
+      - link "查看修改 8":
+        - /url: "#change-change_645c267c519447e8bf87dda503cf3878"
+      - link "查看修改 9":
+        - /url: "#change-change_bb49cfcf9046419fa1c44dcbdd8d5d64"
+      - link "查看修改 10":
+        - /url: "#change-change_950e8e19ccac41e4840674d44833faf0"
+      - link "查看修改 11":
+        - /url: "#change-change_d7d6ff79d3104cfeafaad193b8fda3d3"
+      - link "查看修改 12":
+        - /url: "#change-change_523ef7d3658a4fefa68a79f081fafd69"
+      - link "查看修改 13":
+        - /url: "#change-change_097542651611481e931f038c5e2d1c9e"
+      - link "查看修改 14":
+        - /url: "#change-change_5c1258e78fec4cd79883778d3ced665a"
+      - link "查看修改 15":
+        - /url: "#change-change_a1353447cfd348ce9d732f461ed53dc1"
+      - link "查看修改 16":
+        - /url: "#change-change_eb2dccc53af646c9a808f4b2a6e00e43"
+      - link "查看修改 17":
+        - /url: "#change-change_71d720bd4dfa4867a3e1347122e14d7a"
+      - link "查看修改 18":
+        - /url: "#change-change_293fdf411252491488ec5738cb2191b2"
+    - button "移入已删除 A213":
+  - article:
+    - button "开始修改意见 A214":
+    - generic "comment_342fc9f8af994f599623410886be6877": A214
+    - generic: 第 3 轮 · 提出人未填写
+    - paragraph: "3. SOFTWARE_FIXTURE C-SOURCE-MATERIAL: Verify citation identity and explicit fictional table/figure material changes independently from prose wording. Preserve original source records; no new scientific claim or external review is asserted."
+    - generic "原意见与导入来源"
+    - textbox "我的决定与理由 A214":
+      - /placeholder: 我的决定与理由
+      - text: "SOFTWARE_FIXTURE pending review: citation identity and fictional TABLE/FIGURE changes require separate provenance. Preserve the original source records. Do not mark material-only or source-only changes as completed scientific prose amendments."
+    - textbox "回复内容 A214":
+      - /placeholder: 回复内容
+      - text: SOFTWARE_FIXTURE pending reply. The Beta citation identity and the fictional table and figure are saved in v6, but their complete typed attribution to final prose remains unverified. No completed scientific amendment or scientific approval is asserted.
+    - combobox "意见状态 A214":
+      - option "待处理" [selected]
+      - option "已决定回应"
+      - option "修改中"
+      - option "待核对"
+      - option "已处理 · 需作者核对" [disabled]
+    - button "保存回复"
+    - button "核对回复"
+    - button "查看核对历史"
+    - paragraph: 回复尚未核对
+    - generic: 4 条关联修改
+    - navigation "A214 的真实修改记录":
+      - link "查看修改 1":
+        - /url: "#change-change_523ef7d3658a4fefa68a79f081fafd69"
+      - link "查看修改 2":
+        - /url: "#change-change_097542651611481e931f038c5e2d1c9e"
+      - link "查看修改 3":
+        - /url: "#change-change_5c1258e78fec4cd79883778d3ced665a"
+      - link "查看修改 4":
+        - /url: "#change-change_a1353447cfd348ce9d732f461ed53dc1"
+    - button "移入已删除 A214":
+  - region "已保存修改与意见关联":
+    - heading "已保存修改" [level=3]
+    - text: 查看实际前后对照，分配给一条或多条意见。
+    - text: 显示
+    - combobox "显示":
+      - option "全部修改"
+      - option "未关联意见" [selected]
+      - option "已关联意见"
+    - button "刷新修改历史"
+    - article:
+      - strong: 作者修订 r0 → r1
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r1 → r2
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r2 → r3
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r3 → r4
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r4 → r5
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r5 → r6
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r6 → r7
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r7 → r8
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r8 → r9
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r9 → r10
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r10 → r11
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r12 → r13
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r13 → r14
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r18 → r19
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r19 → r20
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r20 → r21
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r21 → r22
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r22 → r23
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r23 → r24
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r24 → r25
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r25 → r26
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r26 → r27
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r27 → r28
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r28 → r29
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r29 → r30
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r30 → r31
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r31 → r32
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r32 → r33
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r33 → r34
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r34 → r35
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r35 → r36
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r36 → r37
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r37 → r38
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r38 → r39
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r39 → r40
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r43 → r44
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r44 → r45
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r45 → r46
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r46 → r47
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r47 → r48
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r48 → r49
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r49 → r50
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r50 → r51
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r51 → r52
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r52 → r53
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r53 → r54
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r54 → r55
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r55 → r56
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r56 → r57
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r57 → r58
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r58 → r59
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r59 → r60
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r60 → r61
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r61 → r62
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r81 → r82
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r82 → r83
+      - generic: 作者撤销／重做记录
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r83 → r84
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+    - article:
+      - strong: 作者修订 r84 → r85
+      - button "分配／解除意见"
+      - paragraph: 未关联意见
+      - generic "查看实际修改前后对照"
+      - generic "意见关联历史 · 0 次后补决定"
+  - region "已生成的投稿包":
+    - heading "投稿包" [level=3]
+    - button "刷新":
+      - text: 刷新
+    - paragraph: 此轮还没有投稿包。按“投稿包”生成后可在这里下载。
+  - status
+  - button "与 Agent 讨论 15 条 · Fixed citation source - software acceptance":
+    - text: 与 Agent 讨论
+    - text: 15 条 · Fixed citation source - software acceptance

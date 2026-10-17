@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_8732ec9497074d82ae2b4359a7c235e5/materials/asset_65e4b91ba806497e9afd0c7c514c7d1b/render",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:06:37.950929+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.046000000002095476,
+  "response_sha256": "dff8a294011df4139da35677d14ff3ef1c3f5d66c0601533a33099c82215b4f3",
+  "ended_at_utc": "2026-10-15T23:06:38.003514+00:00"
+}

@@ -1,0 +1,31 @@
+- main:
+  - heading "WRITING STUDIO" [level=1]
+  - paragraph: Scholar · RSTV4 · Track → Paper
+  - button "重新读取 Track 与稿件":
+  - paragraph: 本机服务连接中断。请重新读取状态；刚才的操作可能已经保存，请勿重复提交。
+  - paragraph: 请确认本机 RSTV4 Writing Studio 服务已经启动；离线时不会创建假资料。
+  - heading "在 Track 中开始一篇 Paper" [level=2]
+  - combobox "选择 Track":
+    - option "Track" [selected]
+    - option "Writing Track"
+  - textbox "新稿件标题":
+    - /placeholder: Paper title
+  - button "＋ 新 Paper" [disabled]
+  - paragraph: Track → Paper
+  - heading "写作工作区" [level=2]
+  - generic: 2 篇稿件
+  - article:
+    - paragraph: Track
+    - heading "Track" [level=3]
+    - paragraph: 还没有 Paper。
+  - article:
+    - paragraph: Track
+    - heading "Writing Track" [level=3]
+    - button "Author-led paper WHOLE PAPER REVIEW":
+      - generic: Author-led paper
+      - generic: WHOLE PAPER REVIEW
+      - generic: →
+    - button "G03 B software draft isolation acceptance DRAFTING":
+      - generic: G03 B software draft isolation acceptance
+      - generic: DRAFTING
+      - generic: →

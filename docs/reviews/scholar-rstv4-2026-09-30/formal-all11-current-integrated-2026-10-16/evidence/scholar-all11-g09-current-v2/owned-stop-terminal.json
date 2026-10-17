@@ -1,0 +1,8 @@
+{
+  "all_owned_services_retired": true,
+  "ports_free": [
+    8877,
+    3000
+  ],
+  "protected_exact": true
+}

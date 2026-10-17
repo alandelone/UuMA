@@ -1,0 +1,10 @@
+{
+  "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+  "original_stage": "FINALIZATION_SUBMISSION",
+  "url": "http://127.0.0.1:8877/api/manuscripts/manuscript_ed7c93ebf4824ec48186d731583185c8/stage",
+  "body": {
+    "stage": "REVISION",
+    "expected_revision": 1,
+    "reason": "G11 explicit zero-version software guard only"
+  }
+}

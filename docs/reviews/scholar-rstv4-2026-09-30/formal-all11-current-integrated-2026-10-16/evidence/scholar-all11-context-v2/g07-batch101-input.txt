@@ -1,0 +1,201 @@
+SOFTWARE_FIXTURE ALL11 G07 batch 001: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 002: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 003: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 004: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 005: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 006: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 007: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 008: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 009: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 010: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 011: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 012: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 013: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 014: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 015: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 016: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 017: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 018: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 019: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 020: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 021: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 022: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 023: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 024: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 025: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 026: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 027: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 028: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 029: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 030: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 031: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 032: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 033: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 034: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 035: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 036: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 037: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 038: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 039: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 040: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 041: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 042: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 043: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 044: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 045: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 046: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 047: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 048: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 049: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 050: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 051: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 052: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 053: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 054: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 055: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 056: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 057: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 058: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 059: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 060: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 061: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 062: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 063: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 064: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 065: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 066: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 067: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 068: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 069: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 070: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 071: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 072: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 073: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 074: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 075: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 076: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 077: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 078: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 079: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 080: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 081: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 082: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 083: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 084: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 085: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 086: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 087: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 088: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 089: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 090: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 091: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 092: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 093: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 094: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 095: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 096: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 097: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 098: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 099: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 100: preserve original αβ text, order and provenance; no scientific claim.
+
+SOFTWARE_FIXTURE ALL11 G07 batch 101: preserve original αβ text, order and provenance; no scientific claim.

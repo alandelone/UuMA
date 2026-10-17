@@ -1,0 +1,16 @@
+{
+  "serial": 9,
+  "component": "catalog",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:37:56.389988+00:00",
+  "method": "POST",
+  "path": "/api/catalog/discussion/context",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": "{\"module\":\"TRACK\",\"track_id\":\"track_19bd9c2c7abb40d48013dd0e0374e4fd\",\"field_id\":\"field_5a513f17ec1349c8a05002bb42a0a93f\",\"object_kind\":\"track\",\"object_id\":\"track_19bd9c2c7abb40d48013dd0e0374e4fd\"}",
+  "response_body_bytes": 1028,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "516a0f5b1c986876ddc98c7fd8a895640dbe077be52af9490f1dee0277b38612"
+}

@@ -1,0 +1,21 @@
+{
+  "serial": 54,
+  "component": "studio",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:38:43.282856+00:00",
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_332d6e2945cd4c30b4d39fcae921e28a/stage",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+  "request_body_utf8": "{\"stage\": \"PUBLICATION\", \"expected_revision\": 1, \"reason\": \"G11 explicit zero-version software guard only\"}",
+  "response_body_bytes": 106,
+  "response_complete": true,
+  "status": 422,
+  "actual_refusal_body": {
+    "error": "studio_error",
+    "detail": "A successful generated version is required before advancing this stage"
+  },
+  "all110_and_files_exact_after_refusal": true,
+  "response_body_sha256": "2265e8460aff771dc5a4a6e72fd69a233e68083df277dad0e85d38ea11f8b7d1"
+}

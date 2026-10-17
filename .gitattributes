@@ -1,0 +1,4 @@
+# Preserve immutable Scholar acceptance evidence exactly as hashed in its manifest.
+docs/reviews/scholar-rstv4-2026-09-30/formal-all11-current-integrated-2026-10-16/** -text
+docs/reviews/scholar-rstv4-2026-09-30/all11-current-integrated-2026-10-16-verification.json -text
+docs/reviews/scholar-rstv4-2026-09-30/all11-current-integrated-2026-10-16.zip -text

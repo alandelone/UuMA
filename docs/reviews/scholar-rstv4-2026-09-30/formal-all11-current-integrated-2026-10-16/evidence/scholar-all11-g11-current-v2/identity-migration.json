@@ -1,0 +1,27 @@
+{
+  "old_tables": 105,
+  "current_tables": 110,
+  "new_empty_tables": [
+    "research_discussion_annotations",
+    "research_discussion_jobs",
+    "research_discussion_messages",
+    "research_discussion_requests",
+    "studio_submission_bindings"
+  ],
+  "all_old_schema_and_columns_exact": true,
+  "all_old_rows_exact_except_declared_schema_version": true,
+  "schema_version_before": [
+    {
+      "component": "catalog",
+      "version": 13,
+      "applied_at": "2026-10-13 06:14:22"
+    }
+  ],
+  "schema_version_after": [
+    {
+      "component": "catalog",
+      "version": 14,
+      "applied_at": "2026-10-16 03:59:15"
+    }
+  ]
+}

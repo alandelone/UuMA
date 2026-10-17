@@ -1,0 +1,16 @@
+{
+  "serial": 17,
+  "component": "catalog",
+  "role": "identity",
+  "at_utc": "2026-10-16T08:36:19.066332+00:00",
+  "method": "GET",
+  "path": "/api/catalog/files/source_file_491d18ddee7958c95deb123a188280d5/pdf-info",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 92,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "1c101fc93a864ea578d3ff6f2aaf43746409acb2f446a220b3f912bfa4d29120"
+}

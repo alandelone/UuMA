@@ -1,0 +1,16 @@
+{
+  "serial": 15,
+  "component": "catalog",
+  "role": "success",
+  "at_utc": "2026-10-16T08:35:30.815403+00:00",
+  "method": "GET",
+  "path": "/api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6",
+  "query": "offset=0",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 30366,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "52098bf2076d29683ee0bd9da801410924eae480af819e0bcf1f87c8aa0e423e"
+}

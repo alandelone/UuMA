@@ -1,0 +1,62 @@
+{
+  "status": "PASS_CURRENT_SOURCE_G03_AND_G04_NATIVE_COMPOSITE",
+  "source_files": 421,
+  "product_changes_this_turn": 0,
+  "A_author_revision": [
+    86,
+    87
+  ],
+  "B_author_revision": [
+    2,
+    3
+  ],
+  "actual_saved_author_operations": [
+    {
+      "operation_id": "operation_318e3cb8c44c4596a3781a029a89c4f5",
+      "manuscript_id": "manuscript_bea23f3050174ed1a0df075a32c25e13",
+      "base_revision": 2,
+      "resulting_revision": 3
+    },
+    {
+      "operation_id": "operation_3235633e45474dbf95c1b44522aeb68d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 86,
+      "resulting_revision": 87
+    }
+  ],
+  "Done_all110_tables_exact": true,
+  "all5_original_OPEN_findings_exact": true,
+  "findings_fixed_version": 4,
+  "displayed_unchanged_generated_version": 7,
+  "same_old_generated_PDF_retained": true,
+  "no_new_model_job_generation_package_or_confirmation": true,
+  "one_declined_review_job_request_no_job_created": true,
+  "real_backend_outage_and_same_root_resume": true,
+  "offline_B_server_unchanged_until_resume": true,
+  "B_recovered_once_and_refresh_retained": true,
+  "A_B_discussion_drafts_unsent_and_isolated": true,
+  "A_restored_object_folds_panels_and_scroll_exact": {
+    "paragraph": [
+      2133,
+      2133
+    ],
+    "thought": [
+      2373,
+      2373
+    ]
+  },
+  "initial52_pixel_observation_retained_not_counted_as_pass": true,
+  "initial52_exact_cause_not_proved": true,
+  "overview_two_folds_and_all10_row_states_exact": true,
+  "overview_scroll72_to0_not_claimed_preserved": true,
+  "catalog_all110_exact": true,
+  "only6_declared_tables_changed_other104_and_full_schema_exact": true,
+  "all_original_ops_changes_links_checks_sources_and_models_exact": true,
+  "cache16_to24_full_source_payloads_and_request_times_verified": true,
+  "all_non_database_files_exact": true,
+  "protected_source_root_all110_and_all_bytes_exact": true,
+  "all_exact_owned_services_retired": true,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-native-ra3unsez",
+  "overall118_complete": false,
+  "final11_complete": false
+}

@@ -1,0 +1,6 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_14aef3be6a534016bf456a15dc865892/comments",
+  "query": "include_archived=true",
+  "status": 200
+}

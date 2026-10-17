@@ -1,0 +1,21 @@
+{
+  "serial": 51,
+  "component": "studio",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:38:39.387036+00:00",
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_264202f005144e1ba60f8574c6637f70/stage",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": "manuscript_264202f005144e1ba60f8574c6637f70",
+  "request_body_utf8": "{\"stage\": \"WHOLE_PAPER_REVIEW\", \"expected_revision\": 1, \"reason\": \"G11 explicit zero-version software guard only\"}",
+  "response_body_bytes": 106,
+  "response_complete": true,
+  "status": 422,
+  "actual_refusal_body": {
+    "error": "studio_error",
+    "detail": "A successful generated version is required before advancing this stage"
+  },
+  "all110_and_files_exact_after_refusal": true,
+  "response_body_sha256": "2265e8460aff771dc5a4a6e72fd69a233e68083df277dad0e85d38ea11f8b7d1"
+}

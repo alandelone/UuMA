@@ -1,0 +1,267 @@
+{
+  "formal-field-track-source-roundtrip-2026-10-13": {
+    "manifest_sha256": "4a46578799ca15604271789c3a6bbf86ab65ea4cd8a0c01a40f929d4437d484d",
+    "report_sha256": "f3a308aa539c305fc8dae2140801b2920151dbbace87f6d4593c3ca15bde4d55",
+    "payloads_checked": 659
+  },
+  "formal-research-overview-2026-10-04": {
+    "manifest_sha256": "76d10b911cec42ae0e9751514c03d7e307b029bf5db86abb2aec92a3b01b9464",
+    "report_sha256": "89d95756d12150cd1aab761200c462c18db00f7ac283fe3cbfaa4144e5f44cf6",
+    "payloads_checked": 10
+  },
+  "formal-view-restore-offline-2026-10-12": {
+    "manifest_sha256": "6aea1e176885064304caabf986e53b8efd52d02d4ba4eae7cc4736ed05c14682",
+    "report_sha256": "6ba41c504d9e94e35a3a5dee663b20ed904cb4e32aa74a74be3cbf98684504d4",
+    "payloads_checked": 116
+  },
+  "formal-collection-review-catalog-2026-10-14": {
+    "manifest_sha256": "bfc4f99fe49cd82dd637329f18b35568c4ab7e5f098fd500863f839e5cfe9d2b",
+    "report_sha256": "b4e32093ac71cf3cd7ddfafcbe21b7173744747398a8d86e2bf2bcf96875dbe0",
+    "payloads_checked": 241
+  },
+  "formal-scope-literature-2026-10-07": {
+    "manifest_sha256": "ac2d50aae4be759df8c465b03db2bb1dac6ff97b638af84a485f45aed7fc9db8",
+    "report_sha256": "9d1e95c631a70da1677660830c303a770c6aa5a476a0edea81bc05532d670573",
+    "payloads_checked": 34
+  },
+  "formal-revision-comment-context-2026-10-12": {
+    "manifest_sha256": "caa4645aa44da36492ca873d9fd9f235f2123cc9496ae4c0e9d41bcefa1796b5",
+    "report_sha256": "e56a85d5e2d7ee1412f93be11c73da2d30c707310715f9c8216bc85027e182f5",
+    "payloads_checked": 62
+  },
+  "formal-gpu-parser-recovery-2026-10-14": {
+    "manifest_sha256": "afa2f100b6332d94877e8d12c28c2bb6bb91869ae7807e1641272d94bd50174b",
+    "report_sha256": "49c1dbfbe892e5d8ef417c9fa455ac73c7055fe30dfb3d7b42ba41080c0d7e81",
+    "payloads_checked": 70
+  },
+  "formal-deep-read-pipeline-2026-10-07": {
+    "manifest_sha256": "fcfe8d13afbc048b999e12b508bd2c826e36db6ff6489390f3fd8820a2471ae0",
+    "report_sha256": "6e188ddac69298b11d53e8e58a69a73d53a9a06ea2bf9175b3fe4bf851b8900f",
+    "payloads_checked": 35
+  },
+  "formal-discussion-navigation-2026-10-05": {
+    "manifest_sha256": "86fc0b39a3dfc96e910f920d1672ffc629819bce8a272635ff2c26567324273e",
+    "report_sha256": "b2b540823fc40852fb323c6490a3692733387b9979916b6bacbc3aa96c240922",
+    "payloads_checked": 20
+  },
+  "formal-review-recovery-2026-10-06": {
+    "manifest_sha256": "705c1d39c3ac281ce6f8bd887ebe309b4bbc2c9bdae9e5417b58a4032ddce255",
+    "report_sha256": "a903cd91b501fe59967954b8146a5b97fc35f18973bdcf773b5e8e18b53216f9",
+    "payloads_checked": 24
+  },
+  "formal-pdf-annotation-retries-2026-10-15": {
+    "manifest_sha256": "fca2d3d54807daeaea11fd5c9947d45ab8125a7c492599db7c87996df24e213c",
+    "report_sha256": "b0aea5971365e8ab560a3f1cc59340e8b706499c9b373571e68813a4d52485e9",
+    "payloads_checked": 66
+  },
+  "formal-source-withdrawal-2026-10-06": {
+    "manifest_sha256": "19a7ede9d1923e2b33c5e4b76a3db31109eee62161b9abad097e1e5d933893e2",
+    "report_sha256": "482ab9bc6043e4f8870ab9d21b833788d8e396e6820dc8c48045eaf9be923c89",
+    "payloads_checked": 25
+  },
+  "formal-collection-workflow-2026-10-06": {
+    "manifest_sha256": "0dd55e1a7cce9ce5e8cc02958e1354d950ef97b60ae1fc2dd7ac432001776f4e",
+    "report_sha256": "9eb94893ac545e34fd8c47ae76a45eb4c4878a945046fdae4b3d2b3336bb15fd",
+    "payloads_checked": 30
+  },
+  "formal-import-read-recovery-2026-10-14": {
+    "manifest_sha256": "6c3b7f75358d2ba0893853baacd998773a59faf6e3fcaf3e1067e6add45929a9",
+    "report_sha256": "f554f3a1fcbbcd8a2f9998a4f1f0a46b93ae38c8dec35b10aa9bce78342d478e",
+    "payloads_checked": 114
+  },
+  "formal-catalog-selection-2026-10-07": {
+    "manifest_sha256": "27260a42befbfb1d87ea515dde17a7f35e79a28f4c56b39f7bf20c330cb1a3b7",
+    "report_sha256": "b31c10b87812c5dcca5784ad8ccf67d76f3626a262a5f290855c595a2e11006a",
+    "payloads_checked": 28
+  },
+  "formal-collection-frontier-2026-10-07": {
+    "manifest_sha256": "8a96e06fef77876fe745fd2a0a0c56f0678dc269c524dff910d3e31b197be8b2",
+    "report_sha256": "bc654fbee73e3fc1f3649f436e56383413b5d0516bec67465f130336d37eb751",
+    "payloads_checked": 24
+  },
+  "formal-fieldkg-semantics-2026-10-07": {
+    "manifest_sha256": "ee31d46bd9d5272859ed8bb771cecd0f0de66b044e31a79ca35052143a3f5b96",
+    "report_sha256": "b78341d39b9d530ad7e262fa329ff8850d8bb98d3d9ac85a47dd3b051755cb53",
+    "payloads_checked": 55
+  },
+  "formal-fieldkg-workspace-2026-10-05": {
+    "manifest_sha256": "ce29a155ab3cfbdc4776e6bab0a7f491ac6e53ead39c770c2872486eee0acbaf",
+    "report_sha256": "b1527019d1cf25d12a23a520be93a2ec6e509240eb5c1391b9d104c4a20a831e",
+    "payloads_checked": 15
+  },
+  "formal-research-chat-2026-10-05": {
+    "manifest_sha256": "86116340ee055206e2a884df19ce8e682bf29cab326f5885565a6ce0b8fb8652",
+    "report_sha256": "3c6dddc70cac20a1adb413b38802af3170439246fb5074b81003d77e12a7493d",
+    "payloads_checked": 15
+  },
+  "formal-track-decisions-2026-10-07": {
+    "manifest_sha256": "22c8bcb61be64f24e56eaa10f6e3551804282b425a559e9d39d6139348cd9954",
+    "report_sha256": "82647cf2be8cc6116a62b8496df03ffaad079da127a0c8ace70709f9d43d090a",
+    "payloads_checked": 40
+  },
+  "formal-experiment-controls-2026-10-08": {
+    "manifest_sha256": "f509d85b3e54e3e66c574e95aa4bd70602bf305c200ef8106f0f12481389822c",
+    "report_sha256": "13b35eebf936f2b611ac552ff2483e062a16f6cf9c50bf4180349ac5440cf8f6",
+    "payloads_checked": 48
+  },
+  "formal-experiment-artifacts-2026-10-08": {
+    "manifest_sha256": "fc257faa56eaff742335c11bd4b1df1691115c65c7b72ca78a8bd4c4bddca74a",
+    "report_sha256": "d52e29308a060d39a56a31509626f5c9f15183686a646915bf9e3b94f9aada23",
+    "payloads_checked": 30
+  },
+  "formal-scientific-binding-2026-10-06": {
+    "manifest_sha256": "411657f5ab040f27a778658974b1d7b7e5e829b84b0afc1d291aff5f0d1afff0",
+    "report_sha256": "f2f10ffc6df2c604f63d6d416f761319c96d3ce19620ebadcc6dfa3f821e6288",
+    "payloads_checked": 26
+  },
+  "formal-fold-group-template-2026-10-13": {
+    "manifest_sha256": "7166ae748503aba904585be239b3bafde7402570cbcd55bfecfa8b71786a8059",
+    "report_sha256": "7c7e0d4834d66e6f312a6a0aed2e821c2d2ab715d54e07fb00e84854bf772ad6",
+    "payloads_checked": 97
+  },
+  "formal-source-round-reply-2026-10-13": {
+    "manifest_sha256": "328be9dee1f26c51ecad1cc9ebf087b783f67a8a6b881c53b8dc36e349c28d91",
+    "report_sha256": "37ddf37f0c733d4007495aabcb3ea45b969c1f2063ebc43b0099c60c9ffa929f",
+    "payloads_checked": 130
+  },
+  "formal-stage3-done-2026-10-12": {
+    "manifest_sha256": "9e9ef837fafbbc63d11d9931a192e2b5b7eafd343c64641756aa2cfba0fd55b4",
+    "report_sha256": "3ce65234bbe5c56d241288af85611ac5fcdfce4fdae5bbd663ac1ac6af838fc9",
+    "payloads_checked": 62
+  },
+  "formal-hierarchy-2026-10-08": {
+    "manifest_sha256": "1e166415c3da94f88cdb1d14f9cf1e322065b2ce616f8c8e12e9e69f233b52b1",
+    "report_sha256": "8958463a13b46973e3ddddc3ad190d8ab8439bbcbaebd2030c791413bf043581",
+    "payloads_checked": 177
+  },
+  "formal-intent-correspondence-2026-10-09": {
+    "manifest_sha256": "38716fbe0f6afdd95a11ab4f262ec2b8e4784258864e986037be44ed2d0d2f5a",
+    "report_sha256": "bc8eb969fe545e4c468307989cdff15d8262ae789d430895e6bd4e367f46b124",
+    "payloads_checked": 872
+  },
+  "formal-template-mapping-2026-10-09": {
+    "manifest_sha256": "62148d0aecf9898775a130e370fc0647422115570f6cc974c71751b632b662ba",
+    "report_sha256": "c9f07455139e1f8ab9b284a47980f38419a88b8f9bb6093a5e3990ad74c088e1",
+    "payloads_checked": 275
+  },
+  "formal-typed-discussion-adoption-2026-10-12": {
+    "manifest_sha256": "34d9be29306d39d7e13a4fe6ddc232b908910a8fdcc8753d34763224e2550a27",
+    "report_sha256": "b5423b4f0c01c1b222029f5b66ced2a91db7392142cfafb696775fae59ebcb8d",
+    "payloads_checked": 109
+  },
+  "formal-citation-source-2026-10-09": {
+    "manifest_sha256": "9e09f263ca8b5675b420632e626bab97da682f4defb459e92cb97e05a8238a12",
+    "report_sha256": "f9361fecc763c83af125d79ee1df142be9a6e1df35d44023027a9c154c82d130",
+    "payloads_checked": 207
+  },
+  "formal-generated-materials-2026-10-09": {
+    "manifest_sha256": "bb3d0afef8e81d55d91f37881cf59adc456cfd6dfb0cf09cb026230ea8cb2093",
+    "report_sha256": "2981e545c4e4a3fdee528695a22dbef2a6a2f35e83f8e2a1f23c8b13c6c5679f",
+    "payloads_checked": 240
+  },
+  "formal-two-paragraph-discussions-2026-10-12": {
+    "manifest_sha256": "19d542081da500f2cd71d972fa99bac1e5534b1b95499e8daf2806e92431cfe9",
+    "report_sha256": "fe0f20c9fe28243c3b21c24cc653b6f298420a4bbf315459ed4d5f528a7563d6",
+    "payloads_checked": 118
+  },
+  "formal-whole-review-2026-10-04": {
+    "manifest_sha256": "da091d8ea74d6153f98c348d2d26af07c91a70dcc0ef2dc8231091a782319d7c",
+    "report_sha256": "be73340345566b8b6323ab2d66e4f08738a745cd2bb1c09c40b317325ea7446e",
+    "payloads_checked": 6
+  },
+  "formal-fixed-submission-archive-2026-10-14": {
+    "manifest_sha256": "04bf961ee0fd3945836f97396041b0e92d638c6aa0b86efcc22f753b7dbf3859",
+    "report_sha256": "c6030a825168bb8a61aadcf0de7665b3219a95d8a3d8d5acb3cecea189f2529e",
+    "payloads_checked": 69
+  },
+  "formal-publication-event-guard-2026-10-14": {
+    "manifest_sha256": "c4fc7cb17ef3b1a60420f48105a5810ce5d84257b0816095ddbf2b28d6a42c24",
+    "report_sha256": "1c93945514cca8ffe70d40b3b1bdda8aefef6ce1cba43042ac8b3979e57721c6",
+    "payloads_checked": 42
+  },
+  "formal-rounds-verified-2026-10-04": {
+    "manifest_sha256": "76285b76dbf6a79c7cbd0b524ca801ebd89119c6c24b9cf220b71914b999347a",
+    "report_sha256": "6181e879aa3cf148262844b7a0a081591119942b6f63169bda7f86171696be77",
+    "payloads_checked": 6
+  },
+  "formal-comment-import-boundaries-2026-10-12": {
+    "manifest_sha256": "34cef68a5c310dcad63c56a85acca706a7aa47ea0bba50d6093cd24ee274c82a",
+    "report_sha256": "a6ae61eebcd42d8e6b486861ed3bbf687144e1dc8f1e2ea38884cb1e16070efa",
+    "payloads_checked": 86
+  },
+  "formal-reply-archive-http-2026-10-14": {
+    "manifest_sha256": "66b380c34ba7d71fbcf0810dee9c7734e76d5e2ee2d3a4363b567af4f4e3e26e",
+    "report_sha256": "ade16bf3f27b99aaa0e255ae4e06960b1f4982598cef616fc5be69bf3d2f0e57",
+    "payloads_checked": 37
+  },
+  "formal-research-conversation-2026-10-05": {
+    "manifest_sha256": "55c7ea1100f8a3c5e5cec1e02e99c1b636ce640e6763e35229e51af9e9b62c37",
+    "report_sha256": "125824d12d1149a889ed6725f548ef686cc34accced80ac575671fae10276d75",
+    "payloads_checked": 15
+  },
+  "formal-studio-history-2026-10-05": {
+    "manifest_sha256": "ab9bededcb3d8860880df12dec4f247477a2ba762c5950430e16736f53756231",
+    "report_sha256": "2dd129e646e67b75c67cf37c91e560f824d13acff9b4513ee5196b1cc808991e",
+    "payloads_checked": 20
+  },
+  "formal-native-reader-annotations-2026-10-15": {
+    "manifest_sha256": "36bc9a19124e4ef627119b4aed3b39122c96cda715fd2204a5b6f6a9c1b4593c",
+    "report_sha256": "ee193e9ed69befbe09b8109a9d1c47dfcf4eceee43e2cf889c5ca001a5e0cc47",
+    "payloads_checked": 68
+  },
+  "formal-studio-native-archive-architecture-2026-10-15": {
+    "manifest_sha256": "5c73749b10456339c3a507ea9fc5dee5936069f293b9a2f5f8152cb5813eaeb7",
+    "report_sha256": "4e26b1ed004ca2b98515be1659ccc34870c304f8f0b7c93ca8f1e866cd394481",
+    "payloads_checked": 45
+  },
+  "formal-studio-nochange-2026-10-15": {
+    "manifest_sha256": "1b1dead0a569013e1625ce2ea1b39661a294432e6f03b1ca7703dec198d569e1",
+    "report_sha256": "3bcee01554afdcff18a651147a523e9675ebbbea3194924818e03e4241e7c74b",
+    "payloads_checked": 114
+  },
+  "formal-gpu-newparse-quickread-2026-10-15": {
+    "manifest_sha256": "8e43d4d21e62542002b888aef706d63b320aa4cb588ba44a7a8d6e00b520dd13",
+    "report_sha256": "03fa1a112b15b0baf270b56a310543ec0026c69fdd362733fdbfa88b6c9c1b4e",
+    "payloads_checked": 35
+  },
+  "formal-studio-native-publication-2026-10-15": {
+    "manifest_sha256": "e3553f605f621db7479b819dfe06f2b115c063d2b2e2cdfaf2b88e4699abb83d",
+    "report_sha256": "3482ec473b7f157bd8e83f833bad27e19ce4532904cd15b430b2a8252e668ff0",
+    "payloads_checked": 85
+  },
+  "formal-newparse-quickread-native-readback-2026-10-15": {
+    "manifest_sha256": "077f3e523fd20350dab76b2a0570cfb7723bce1146d9c6ddd38e03eb580e606f",
+    "report_sha256": "4d5bc693b941cec966c67fe5c9afa6777606fa4112237943ff06084dd7aca241",
+    "payloads_checked": 122
+  },
+  "formal-studio-complex-native-2026-10-15": {
+    "manifest_sha256": "1582e9de623fec343b7d8f21fd95af91d73958cef7390a91e581c89f9d3f5f3f",
+    "report_sha256": "672ef0af36757985d3d63a4db40fb9cfc31c133d763597fc201a16fadcc11cec",
+    "payloads_checked": 164
+  },
+  "formal-studio-menu-overlap-2026-10-15": {
+    "manifest_sha256": "d6b319d6bbe3539dd8541c68c25570c55910832cbc10718cf751a99a68302f41",
+    "report_sha256": "118057d101a2196ce94f119e5e35a7b4021fc980357f75b433c0d796bf554eb8",
+    "payloads_checked": 40
+  },
+  "formal-studio-layout-native-2026-10-15": {
+    "manifest_sha256": "872ba44e64f47314539447104f511766ba2408470b1c148fe08981f27c8351f7",
+    "report_sha256": "1ba4931f1253ceb33f283e986c67cf6276fc8b4864c7d9c26c544c5026a032b7",
+    "payloads_checked": 316
+  },
+  "formal-studio-frozen-origins-2026-10-16": {
+    "manifest_sha256": "d7c48bed8ba9537599eb3e2da955c346d46715a1f25492367a8889b875fff272",
+    "report_sha256": "3addd97e3d0140e85873b0026289e183c69ca37132544b40385b8f5ff35e1315",
+    "payloads_checked": 125
+  },
+  "formal-studio-presentation-review-2026-10-16": {
+    "manifest_sha256": "6c7d8b1d15f239798406e4173b023dd5100ecb482959d1fd2e5b17eb3a6d4d67",
+    "report_sha256": "514a7b402f907e0013c6d98aed5bfb91e664128e3a50675e4dd3739e1cd8b81b",
+    "payloads_checked": 116
+  },
+  "formal-studio-legacy-origins-2026-10-16": {
+    "manifest_sha256": "308bcd165c48905fb8cefcc078836694454ac3415349b71f92afb65adcdcd9ca",
+    "report_sha256": "3fb4061204d5e6b2fb5e0c85de4889a33cc6c5acef090cffef74b59877d206e9",
+    "payloads_checked": 138
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/history",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:05:40.303421+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.09399999999732245,
+  "response_sha256": "a5a84dd00123c42b1a72df4b09104012e7e05d068df862f2eb683a7397183786",
+  "ended_at_utc": "2026-10-15T23:05:40.386056+00:00"
+}

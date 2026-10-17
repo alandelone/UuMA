@@ -1,0 +1,9 @@
+{
+  "same_root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-native-ra3unsez",
+  "all110_and_files_exact": true,
+  "new_copy_build_migration": false,
+  "A_revision": 87,
+  "B_revision": 3,
+  "allow": "Owned A/B author saves; A01/A02 archive/restore; SOFTWARE_FIXTURE G07 round1 import; A template adoption",
+  "deny": "All models/jobs/generation/stages/submission/science decisions and comment response confirmations"
+}

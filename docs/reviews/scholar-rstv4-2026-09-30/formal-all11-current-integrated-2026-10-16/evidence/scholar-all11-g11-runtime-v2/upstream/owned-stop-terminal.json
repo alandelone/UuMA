@@ -1,0 +1,63 @@
+{
+  "status": "EXACT_OWNED_ROLE_STOPPED_PORTS_FREE",
+  "role": "upstream",
+  "identities": {
+    "catalog": {
+      "pid": 3772,
+      "create_time": 1792139806.8319747,
+      "cmdline": [
+        "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+        "serve",
+        "upstream",
+        "--component",
+        "catalog"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+      "parent_pid": 56696
+    },
+    "studio": {
+      "pid": 43600,
+      "create_time": 1792139808.7882326,
+      "cmdline": [
+        "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+        "serve",
+        "upstream",
+        "--component",
+        "studio"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+      "parent_pid": 54104
+    },
+    "frontend": {
+      "pid": 58968,
+      "create_time": 1792139810.7348754,
+      "cmdline": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+        "start",
+        "--port",
+        "3000",
+        "--hostname",
+        "127.0.0.1"
+      ],
+      "cwd": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+      "parent_pid": 50568
+    }
+  },
+  "ports": {
+    "catalog": 8875,
+    "studio": 8877,
+    "frontend": 3000
+  },
+  "all_owned_identities_absent": true,
+  "all110_and_files_exact": true,
+  "source421_and_originals_exact": true,
+  "no_other_processes_stopped": true,
+  "native_group_complete": false
+}

@@ -1,0 +1,18 @@
+{
+  "status": "CATALOG_STOPPED_ALL110_EXACT",
+  "identity": {
+    "pid": 44224,
+    "create_time": 1792106223.221959,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-catalog-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 16688
+  },
+  "all110_exact": true,
+  "source_original110_and_files_exact": true
+}

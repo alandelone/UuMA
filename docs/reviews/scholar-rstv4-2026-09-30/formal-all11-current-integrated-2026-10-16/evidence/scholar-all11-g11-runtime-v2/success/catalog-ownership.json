@@ -1,0 +1,34 @@
+{
+  "launcher": {
+    "pid": 43132,
+    "create_time": 1792139686.0367103,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-collection-verification-v1\\Scripts\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+      "serve",
+      "success",
+      "--component",
+      "catalog"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 25676
+  },
+  "serving": {
+    "pid": 43916,
+    "create_time": 1792139686.0551684,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+      "serve",
+      "success",
+      "--component",
+      "catalog"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 43132
+  }
+}

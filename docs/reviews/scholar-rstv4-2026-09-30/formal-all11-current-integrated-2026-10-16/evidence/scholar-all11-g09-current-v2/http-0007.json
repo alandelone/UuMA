@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_8732ec9497074d82ae2b4359a7c235e5",
+  "query": "",
+  "allowed": true,
+  "request_utf8": null,
+  "status": 200,
+  "complete": true,
+  "response_sha256": "525f847b074f884e61ebcea86e6aa1e7c9d5c25b5b241167d778c4364eb2f003"
+}

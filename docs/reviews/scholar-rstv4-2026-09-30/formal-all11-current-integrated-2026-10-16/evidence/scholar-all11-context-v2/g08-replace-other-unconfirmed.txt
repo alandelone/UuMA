@@ -1,0 +1,888 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button:
+  - button [disabled]:
+  - button:
+    - text: Done
+  - button: 仅重新排版
+  - button:
+    - text: Generate
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+    - generic: 结构已变化 · 旧成文保留
+  - alert:
+    - generic: 已插入所选空结构，原思想、引用和编号保持。
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button: 关联意见
+  - complementary:
+    - text: Skeleton / Samples
+    - generic: Fixed citation source - software acceptance
+    - paragraph: 拖入结构，或点击采用 · 内容仍由作者填写
+    - generic: 2 / 4
+    - generic: Software_Test
+    - blockquote: New original software source body.
+    - paragraph: Other selected source
+    - button: ←
+    - button: →
+    - button: ＋ 预览完整模板
+    - button:
+      - text: 拖入模板
+    - paragraph: 放到整篇入口，或章节、段落、Intent 后方；先预览，确认后再采用。
+  - generic "结构选择与移动":
+    - button: 多选／分组
+    - status: 已移动原内容，引用和编号保留；可撤销。
+  - text: 成文页边距
+  - combobox
+  - textbox: Fixed citation source - software acceptance
+  - textbox:
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+  - button: SECTION 1
+  - button:
+  - button [expanded]:
+  - textbox: Other software source
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+    - figure:
+      - table:
+        - rowgroup:
+          - row:
+            - cell: SOFTWARE_FIXTURE
+            - cell: fictional_value
+            - cell: qualification
+          - row:
+            - cell: alpha_demo
+            - cell: "1"
+            - cell: Software rendering test only; no scientific measurement
+          - row:
+            - cell: beta_demo
+            - cell: "2"
+            - cell: Software rendering test only; no scientific measurement
+      - link:
+        - /url: http://127.0.0.1:8877/api/assets/asset_ea004de6f5da423ba6ab98710d9a9458/content
+        - text: software-only-table.csv
+      - generic: READY
+    - figure:
+      - link:
+        - /url: http://127.0.0.1:8877/api/assets/asset_65e4b91ba806497e9afd0c7c514c7d1b/content
+        - text: software-only-figure.svg
+      - generic: READY
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 2
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Other software source / Introduction
+  - textbox: Introduction
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Motivation
+  - generic: •••
+  - button: GROUP
+  - button:
+  - button [expanded]:
+  - textbox:
+    - /placeholder: 段落组用途可以暂时未定
+    - text: G08 preserved Beta + Alpha group
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+      - text: "SOFTWARE_FIXTURE ALL11 G06 archived A01: subsequent edit links only A02."
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+      - text: Original source comparison
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software distinct source context
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted.
+    - button:
+      - generic: "2"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - article:
+    - button: P2
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+      - text: "G02 adopted software boundary: preserve the original thought and sources."
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Research Context — SOFTWARE_FIXTURE intent label only
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "Check original sources only; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence."
+    - button:
+      - generic: "2"
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: retain this original boundary in the shared sentence and in the separate source-condition sentence."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - article:
+    - button: P3
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: 放入 Other software source / Introduction / G08 preserved Beta + Alpha group / 未定段落 / Software_Test 里面
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - article:
+    - button: P4
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: 组内段落
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 3
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Other software source / Software source section 3
+  - textbox: Software source section 3
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 4
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Other software source / Software source section 1
+  - textbox: Software source section 1
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software acceptance retained section
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 5
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Other software source / Software source section 2
+  - textbox: Software source section 2
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 6
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Other software source / Software source section 3
+  - textbox: Software source section 3
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SUBSECTION 7
+  - button:
+  - button [expanded]:
+  - generic: 子章节 · Other software source / New section
+  - textbox: New section
+  - textbox:
+    - /placeholder: 章节作用
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button: GROUP
+  - button:
+  - button [expanded]:
+  - textbox:
+    - /placeholder: 段落组用途可以暂时未定
+    - text: G09 retained software template paragraph
+  - generic: •••
+  - article:
+    - button: P2
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software acceptance preservation
+    - generic: •••
+    - button:
+    - textbox:
+      - /placeholder: 写下你要表达的原子思想…
+      - text: "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted."
+    - button:
+      - generic: "0"
+    - generic: •••
+    - button:
+      - text: 思想
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: 组内段落
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SECTION 8
+  - button:
+  - button [expanded]:
+  - textbox: Software source section 1
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: 放入 Software source section 1 / 未定段落 / Software_Test 里面
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SECTION 9
+  - button:
+  - button [expanded]:
+  - textbox: Software source section 2
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: 放入 Software source section 2 / 未定段落 / Software_Test 里面
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button: SECTION 10
+  - button:
+  - button [expanded]:
+  - textbox: Software source section 3
+  - textbox:
+    - /placeholder: 章节作用
+    - text: Software_Test
+  - generic: •••
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - generic: 放入 Software source section 3 里面
+  - button: SECTION 11
+  - button:
+  - button [expanded]:
+  - textbox: New section
+  - textbox:
+    - /placeholder: 章节作用
+  - generic: •••
+  - article:
+    - button: P1
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: 这个段落要完成什么？
+    - textbox:
+      - /placeholder: 范式：Funnel / MEAL / 自定义
+    - generic: •••
+    - button: INTENT
+    - button:
+    - button [expanded]:
+    - textbox:
+      - /placeholder: Intent 可以暂时未定
+      - text: Software_Test
+    - generic: •••
+    - button:
+      - text: 思想
+    - generic: 放入 New section / 未定段落 / Software_Test 里面
+    - button:
+      - text: Intent
+    - button: ∑ 公式
+    - text: 图／表
+  - button:
+    - text: Paragraph
+  - button: ＋ 子章节
+  - button:
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox:
+      - /placeholder: 找资料、依据、反证…
+    - article:
+      - button:
+        - generic: SUPPORTS
+        - generic: 90%
+        - strong: New original software source body.
+        - generic: New original software source body.
+      - generic: Other selected source
+      - generic: 查看完整来源
+    - article:
+      - button:
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 2.
+        - generic: Original software source body 2.
+      - generic: Refreshed live catalog title - software
+      - generic: 查看完整来源
+    - article:
+      - button:
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 1.
+        - generic: Original software source body 1.
+      - generic: Refreshed live catalog title - software
+      - generic: 查看完整来源
+  - status: Draggable item template-skeleton_7fdfaa3452584457753a03697f4a3f27 was dropped over droppable area drop-paper-manuscript_56652adf9d054cb6ab3819efacf3475c-inside
+  - button [expanded]:
+    - text: 与 Agent 讨论
+    - text: 15 条 · Fixed citation source - software acceptance
+  - button: 整篇历史
+  - button [disabled]: 当前对象 · 此版本
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: Annotation：Software acceptance only. Keep the original page 2 source fixed to generated v1.
+    - paragraph: "Check these original numbered citations after regeneration: preserve the original source and version."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: verify original numbered citations [1] and [2] using generated v1 fixed sources."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: after generated v2, continue this original v1 quote and its original [1] page 2 source."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: "G01 ALPHA original discussion: preserve this first paragraph, exact selected text and generated v3 after reordering."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: "G01 BETA original discussion: preserve this second paragraph, exact original source and selected text when it moves to first position."
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: "G02 SOFTWARE PARTIAL: propose a paragraph purpose and an extra Intent for this original v3 Alpha object. I will adopt only the purpose, retain the original thought and sources, and leave the extra Intent unadopted."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: Software fixture proposes two structure changes for author comparison. No author change is applied by this reply. The original v3 paragraph, quote and sources stay fixed.
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+    - region:
+      - paragraph: 结构建议
+      - paragraph: G02 software partial adoption
+      - paragraph: Select only the paragraph purpose. Keep the proposed extra Intent unadopted, and retain the original author thought and sources.
+      - button: 比较与决定 · 2 项
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: "G02 SOFTWARE SOURCE: use the added original v1 page 2 evidence as an unselected source candidate for this original Beta v3 thought. Keep the two original selected citations and author text unchanged."
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - region:
+      - paragraph: 来源候选
+      - paragraph: G02 software source candidate
+      - paragraph: Add this existing owned page 2 source as an unselected candidate. Keep both original selected sources and the original author text.
+      - button: 比较与决定 · 1 项
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: "G02 SOFTWARE WORDING: propose replacing only the original word Check with Review for explicit author rejection. Retain all original thought text, citations, objects and versions when rejected."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - region:
+      - paragraph: 措辞建议
+      - paragraph: G02 software wording rejection
+      - paragraph: Offer a five-character wording edit for explicit rejection. Preserve the original author thought when rejected.
+      - button: 比较与决定 · 1 项
+  - generic: 当前选择：Fixed citation source - software acceptance
+  - strong: "草稿对象：Introduction / SOFTWARE_FIXTURE ALL11 G04 Done: retain generated v7, original thoughts, sources and open findings. · 结构 r87"
+  - generic: 点击其他对象保留草稿原对象。
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - region:
+    - paragraph: 新选：Fixed citation source - software acceptance · 结构 r95。当前问题仍绑定原对象。
+    - button: 保留并固定原对象
+    - button: 改用新对象并保留问题
+    - button: 加入比较来源
+  - generic: 固定对象的完整原文与版本
+  - status: 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+  - textbox:
+    - /placeholder: "讨论：Introduction / SOFTWARE_FIXTURE ALL11 G04 Done: retain generated v7, original thoughts, sources and open findings."
+    - text: SOFTWARE_FIXTURE ALL11 G03 A discussion draft α — keep unsent and separate.
+  - textbox:
+    - /placeholder: Annotation（可选）
+    - text: SOFTWARE_FIXTURE ALL11 G03 A annotation α
+  - button:
+  - button: 保存讨论批注
+  - button: 更新讨论历史
+- dialog "采用模板结构":
+  - heading "采用模板结构" [level=2]
+  - paragraph: 整篇论文 · 模板提供空槽，思想由作者填写。
+  - paragraph: Other selected source · Paper v1 / Skeleton v1
+  - generic "完整模板与部分采用":
+    - heading "Other software source" [level=3]
+    - 'checkbox "Paragraph 1 → Intent: Software_Test → 空思想槽 作用：Software_Test · L2：{}" [checked]'
+    - text: "Paragraph 1 → Intent: Software_Test → 空思想槽"
+    - generic: "作用：Software_Test · L2：{}"
+  - text: 采用范围
+  - combobox "模板采用范围":
+    - option "整篇论文" [selected]
+    - option "章节 1：Other software source"
+    - option "章节 1：Other software source / 段落 1"
+    - option "章节 1：Other software source / 段落 1 / Intent 1：Software_Test"
+    - option "子章节 2：Other software source / Introduction"
+    - option "子章节 2：Other software source / Introduction / 段落 1"
+    - option "子章节 2：Other software source / Introduction / 段落 1 / Intent 1：Software distinct source context"
+    - option "子章节 2：Other software source / Introduction / 段落 2"
+    - option "子章节 2：Other software source / Introduction / 段落 2 / Intent 1：Research Context — SOFTWARE_FIXTURE intent label only"
+    - option "子章节 2：Other software source / Introduction / 段落 3"
+    - option "子章节 2：Other software source / Introduction / 段落 3 / Intent 1：Software_Test"
+    - option "子章节 2：Other software source / Introduction / 段落 4"
+    - option "子章节 2：Other software source / Introduction / 段落 4 / Intent 1：Software_Test"
+    - option "子章节 3：Other software source / Software source section 3"
+    - option "子章节 3：Other software source / Software source section 3 / 段落 1"
+    - option "子章节 3：Other software source / Software source section 3 / 段落 1 / Intent 1：Software_Test"
+    - option "子章节 4：Other software source / Software source section 1"
+    - option "子章节 4：Other software source / Software source section 1 / 段落 1"
+    - option "子章节 4：Other software source / Software source section 1 / 段落 1 / Intent 1：Software acceptance retained section"
+    - option "子章节 5：Other software source / Software source section 2"
+    - option "子章节 5：Other software source / Software source section 2 / 段落 1"
+    - option "子章节 5：Other software source / Software source section 2 / 段落 1 / Intent 1：Software_Test"
+    - option "子章节 6：Other software source / Software source section 3"
+    - option "子章节 6：Other software source / Software source section 3 / 段落 1"
+    - option "子章节 6：Other software source / Software source section 3 / 段落 1 / Intent 1：Software_Test"
+    - option "子章节 7：Other software source / New section"
+    - option "子章节 7：Other software source / New section / 段落 1"
+    - option "子章节 7：Other software source / New section / 段落 1 / Intent 1：Software_Test"
+    - option "子章节 7：Other software source / New section / 段落 2"
+    - option "子章节 7：Other software source / New section / 段落 2 / Intent 1：Software acceptance preservation"
+    - option "章节 8：Software source section 1"
+    - option "章节 8：Software source section 1 / 段落 1"
+    - option "章节 8：Software source section 1 / 段落 1 / Intent 1：Software_Test"
+    - option "章节 9：Software source section 2"
+    - option "章节 9：Software source section 2 / 段落 1"
+    - option "章节 9：Software source section 2 / 段落 1 / Intent 1：Software_Test"
+    - option "章节 10：Software source section 3"
+    - option "章节 11：New section"
+    - option "章节 11：New section / 段落 1"
+    - option "章节 11：New section / 段落 1 / Intent 1：Software_Test"
+  - text: 采用方式
+  - combobox "模板采用方式":
+    - option "插入空结构（默认）"
+    - option "替换结构，保留原内容到待安置" [selected]
+  - checkbox "我确认替换所选结构；原思想、引用和编号保留到待安置，由我重新放置。"
+  - text: 我确认替换所选结构；原思想、引用和编号保留到待安置，由我重新放置。
+  - paragraph: 已选择 1 个单元。段落目的与组织范式留待作者填写。
+  - button "取消" [active]
+  - button "确认替换并保留原内容" [disabled]
+  - button "Close":
+    - generic: Close

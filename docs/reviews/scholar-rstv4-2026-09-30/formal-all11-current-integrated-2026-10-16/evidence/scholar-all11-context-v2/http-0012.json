@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/samples",
+  "query": "layer=thought&anchor_id=thought_eec81dfb504c445f85eaddcb74a87c68&intent=Software+acceptance+preservation",
+  "started_at_utc": "2026-10-15T23:30:19.411375+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.34399999999732245,
+  "response_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945",
+  "ended_at_utc": "2026-10-15T23:30:19.745434+00:00"
+}

@@ -1,0 +1,23 @@
+{
+  "files": {
+    "allowed-author-documents.json": "c271f9133f76b0d4460c064ef7b9c6ac05313f2afc601e667af1114335ca179e",
+    "backend-launched.json": "916d029f5d6fe8a29c7553c249758074c9b4b2b2c1ec8673a8b2a5ae40e85dd9",
+    "backend-ready.json": "45758e5316bb1949bdfd516fd9936d878f5f8d709d906cdba5927faac037db7a",
+    "before-all-files.json": "2973f982cfb4abbab36d42757de810355b3a0b70fb3f73cc536979de6aa81901",
+    "before110-all-files.json": "2973f982cfb4abbab36d42757de810355b3a0b70fb3f73cc536979de6aa81901",
+    "before110-all-tables.json": "9f4820beff91e2850323556401b19c9225c3b2e9376d171d1caee0d34050b244",
+    "frontend-launched.json": "e3daead45b9f7369fc031785e6d7628cd7d6d6aa37b404b7d92aff52146db375",
+    "initial-workspace.json": "6c0225c9cb004c82bc8ce0b09fe98e52f81c475b7871985dc9176221d0ca53cc",
+    "ownership.json": "d591c895608e98591656bf328d0200b6cfe30155bfc69f24e8d3f12005b8d1bf",
+    "preflight.json": "55b38b09a011a741fddbf8977a4ea9fc1b35128a2ce10cbb50294a881771b240",
+    "prepare-checkpoint-diagnostic.json": "3004d6b44c1f16dd2c1119aa3d850c88c733c6b5675c6ab6848ffe1dd019dc8e",
+    "prepare-recovery-complete.json": "7eec3a9df0ed66122cff182f1a74d0beed3b343b037f112552d6dcb7d7a8771d",
+    "protected-source-all-files.json": "111c76733f203be5ea123a454815addda80aef9e83452e885a9d34f091a24e16",
+    "protected-source110.json": "8f544eb9d4bc37ae5160267f440c8e2275a23ebbd5b4a976c946a8c2f9434ecb",
+    "ready.json": "06b08e6c065b861944a078f48a17f41b627f887007a94c6ae33ffcaaeb7a1969",
+    "receipt.json": "04dc82cafa33ad7984689b64ace02f8126f0366889e8645a7d72a187eacb7866",
+    "relocations37.json": "a4bf899911be50ec8e6c70a29bc154ef4be3fdd6da994722588a31f4ba7bd620"
+  },
+  "late_observer_failure_retained": true,
+  "no_service_or_task_replay": true
+}

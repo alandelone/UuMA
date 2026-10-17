@@ -1,0 +1,7 @@
+PASS full author snapshots survive storage round trip, including citations, assets, formula and relations
+PASS server key order changes do not erase a semantically equal stack
+PASS foreign manuscript, changed revision and changed author word or array ordering are rejected
+PASS unreadable or malformed stacks and foreign snapshot stay unusable without mutating the saved raw
+PASS history is bounded to the most recent 100 complete operations
+PASS undo and redo stacks can each resume after a different saved revision
+6 durable undo storage binding and preservation cases passed; no browser used.

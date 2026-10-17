@@ -1,0 +1,46 @@
+{
+  "status": "PASS_FOUR_REAL_CURRENT_HTTP_REFUSALS",
+  "responses": [
+    {
+      "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+      "target": "WHOLE_PAPER_REVIEW",
+      "status": 422,
+      "body": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "all110_files_originals_source_exact": true
+    },
+    {
+      "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+      "target": "FINALIZATION_SUBMISSION",
+      "status": 422,
+      "body": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "all110_files_originals_source_exact": true
+    },
+    {
+      "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+      "target": "REVISION",
+      "status": 422,
+      "body": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "all110_files_originals_source_exact": true
+    },
+    {
+      "manuscript_id": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+      "target": "PUBLICATION",
+      "status": 422,
+      "body": {
+        "error": "studio_error",
+        "detail": "A successful generated version is required before advancing this stage"
+      },
+      "all110_files_originals_source_exact": true
+    }
+  ],
+  "new_stages_versions_jobs_approvals": 0
+}

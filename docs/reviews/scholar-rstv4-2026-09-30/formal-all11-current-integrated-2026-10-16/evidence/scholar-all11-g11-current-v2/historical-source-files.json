@@ -1,0 +1,10 @@
+{
+  "data/catalog.db": {
+    "sha256": "67b46849c0dc6f2ffc1629411f01e65390a5d533ed34b28b369293c18e0e0d6c",
+    "bytes": 970752
+  },
+  "http-service.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  }
+}

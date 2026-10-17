@@ -1,0 +1,26 @@
+{
+  "status": "OWNED_ASGI_STOPPED_ALL110_AND_FILES_EXACT",
+  "identity": {
+    "pid": 51164,
+    "create_time": 1792139759.275046,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+      "serve",
+      "identity",
+      "--component",
+      "catalog"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 58892
+  },
+  "role": "identity",
+  "component": "catalog",
+  "port": 8875,
+  "stop_nonce": "e79004fd1b764b4ca284df9227352641",
+  "all110_and_files_exact": true,
+  "models_workers_jobs_approval_mutations": 0,
+  "http_observations": 23
+}

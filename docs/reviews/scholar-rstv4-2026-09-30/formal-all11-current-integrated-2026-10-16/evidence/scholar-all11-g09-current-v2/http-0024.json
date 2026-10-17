@@ -1,0 +1,11 @@
+{
+  "method": "POST",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/jobs",
+  "query": "",
+  "allowed": true,
+  "request_utf8": "{\"kind\":\"SUBMISSION_PACKAGE\",\"input_revision\":86,\"request\":{\"review_round_id\":\"review_round_72931d507bda4bdb813dc14988444892\"}}",
+  "status": 202,
+  "complete": true,
+  "response_sha256": "0c4bae1598c6e1389baef2882d0e5040a045b6051934cb6682798e4907d2053e",
+  "response_utf8": "{\"job_id\":\"studio_job_c972cbaca0e840d3bb491c65e590ed11\",\"manuscript_id\":\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"job_kind\":\"SUBMISSION_PACKAGE\",\"status\":\"QUEUED\",\"input_revision\":86,\"created_at\":\"2026-10-16T08:45:28.440733+00:00\",\"started_at\":null,\"completed_at\":null,\"request\":{\"review_round_id\":\"review_round_72931d507bda4bdb813dc14988444892\"},\"result\":null,\"error\":null}"
+}

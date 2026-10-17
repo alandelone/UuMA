@@ -1,0 +1,26 @@
+{
+  "marks": [
+    {
+      "html": "<mark>First source [1]. Next [2]. Repeat [1].</mark>",
+      "text": "First source [1]. Next [2]. Repeat [1]."
+    }
+  ],
+  "paragraphs": [
+    {
+      "id": null,
+      "text": "Fixed citation source - software acceptance💬 讨论此节讨论选区"
+    },
+    {
+      "id": null,
+      "text": "Introduction💬 讨论此节讨论选区"
+    },
+    {
+      "id": null,
+      "text": "First source [1]. Next [2]. Repeat [1].💬 讨论此段讨论选区修改此段原始结构"
+    },
+    {
+      "id": null,
+      "text": "Beta software paragraph cites original page 1 [2] and additional source [1].💬 讨论此段讨论选区修改此段原始结构"
+    }
+  ]
+}

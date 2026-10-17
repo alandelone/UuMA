@@ -1,0 +1,60 @@
+{
+  "status": "READY_G03_G04_EXISTING_PAIR_VERIFIED_NO_RELAUNCH",
+  "url": "http://127.0.0.1:56582/?manuscript=manuscript_56652adf9d054cb6ab3819efacf3475c&view=revision&left=0&right=0&chat=1&round=review_round_e4845ca796d74594b33b86fb529b4404",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-native-ra3unsez",
+  "backend_identity": {
+    "pid": 45264,
+    "create_time": 1792105391.9022653,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-native-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 23208
+  },
+  "frontend_identity": {
+    "pid": 47976,
+    "create_time": 1792105393.3101144,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "56582",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+    "parent_pid": 48584
+  },
+  "listeners": [
+    {
+      "pid": 45264,
+      "port": 8877
+    },
+    {
+      "pid": 47976,
+      "port": 56582
+    }
+  ],
+  "backend_source_count": 318,
+  "frontend_source_count": 93,
+  "dist_count": 77,
+  "served_assets_sha256": {
+    "/_next/static/chunks/framework-A1pNZAzD.js": "1689b3b0b697b77eb884f6c301fac43ee6654a7d0f31703bf1feebd28fe38077",
+    "/_next/static/chunks/page-CgZIQj6A.js": "1a2936ebe10ccd0f816bcba1503a73a4cb07b2424df55313709fe55bc9995efa",
+    "/_next/static/chunks/vinext-DerVUGZH.js": "bb12702585f8c2dc69b57b719fa34f4fd7608a5bb29522843af99977970069d5",
+    "/_next/static/chunks/layout-segment-context-CAPn8t7g.js": "88b6fbdd869a0667d829afa2dc38560f79fd387d1a86d921955b1954789b1cfa",
+    "/_next/static/css/index.BiNms3OR.css": "0c87647b9a6f4a8097fcdf14ae064dad21e096306cd06c4e185c6fdefe726478",
+    "/_next/static/chunks/index-DE_Hb0rF.js": "b157bff69c125955465eff7d6220289c8aace113a0a1f66799dea03f27eb5caf",
+    "/_next/static/chunks/rolldown-runtime-hePW80VL.js": "580ad8c58061a4dde99bde0a56905e382f0568516ee2f5b84dbfb52085709021"
+  },
+  "startup110_exact": true,
+  "source_root110_and_all_bytes_exact": true,
+  "actual_vinext_ssr": true,
+  "new_model_job_generation": 0,
+  "all11_complete": false
+}

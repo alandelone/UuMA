@@ -1,0 +1,23 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:62147/?overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a99d1e2148bdcf8080515fb0ef84d0bb513943e391388ee9ad6b9575f6d6973%22%7D
+    - link "文献库":
+      - /url: http://127.0.0.1:62147/?view=all&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a99d1e2148bdcf8080515fb0ef84d0bb513943e391388ee9ad6b9575f6d6973%22%7D
+    - link "知识图谱" [active]:
+      - /url: http://127.0.0.1:62147/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a99d1e2148bdcf8080515fb0ef84d0bb513943e391388ee9ad6b9575f6d6973%22%7D
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "知识图谱":
+      - generic: 知识图谱
+      - generic: ⌄
+  - region "所选 FieldKG 或 Track":
+    - heading "选择一个 Field" [level=2]
+    - link "Energy":
+      - /url: http://127.0.0.1:62147/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a99d1e2148bdcf8080515fb0ef84d0bb513943e391388ee9ad6b9575f6d6973%22%7D&field=field_6242993287f547549daa4ded97914f3c
+    - link "Other":
+      - /url: http://127.0.0.1:62147/?view=fieldkg&overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a99d1e2148bdcf8080515fb0ef84d0bb513943e391388ee9ad6b9575f6d6973%22%7D&field=field_9ecc9f28d2ff460ea8c4105327361727
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

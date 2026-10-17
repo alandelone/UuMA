@@ -1,0 +1,26 @@
+{
+  "identity": {
+    "pid": 43916,
+    "create_time": 1792139686.0551684,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+      "serve",
+      "success",
+      "--component",
+      "catalog"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 43132
+  },
+  "role": "success",
+  "component": "catalog",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-success-dguvh2si",
+  "port": 8875,
+  "all110_exact_on_startup": true,
+  "lifespan": "off",
+  "models_workers_started": 0,
+  "stop_nonce": "d3b09541e21c455db5da29c06b845ca8"
+}

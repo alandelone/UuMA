@@ -1,0 +1,13 @@
+# Final all11 execution context, 2026-10-16
+
+G11 runtime ownership was corrected before first launch: distinguish Windows launcher from real serving descendant; record exact known conhost children. All three first launches succeeded and exact ownership/ports checks passed. No broad process termination.
+
+G09 preparation first failed before creating its exclusive folder: the established Studio file map is path -> SHA including SQLite sidecars, while G11 map is path -> {sha256,bytes} excluding sidecars. Independent strict adapter compares every payload path and main-DB SHA, explicitly excludes only SQLite WAL/SHM, then verifies full110/schema separately. Original source/table snapshots were not modified. The guessed response-check table name was corrected from saved schema before the next execution; no copies/jobs had been created by the failed preflight.
+
+G09 first audit v2 verified full110 with only one appended job/package and A215 CURRENT, then the product delivery function rejected the old round2 package because its original payload folder is absent from this inherited checkpoint. The new21 and oldround4 ZIPs had already been serialized and remained intact. Preserve v2 failure. Independent audit v3 uses the exact original sealed round2 ZIP (SHA42cca3508fdba2b6bd39527bbc4820514b2bd4c73415cd677a8a76f39634484c), validates all16 members against the unchanged current historical manifest, and compares the retained two ZIPs byte-exact before reuse. No deletion, invented package regeneration, database rollback, or re-confirmation. This explicitly does not assert oldround2 download availability in the current temporary app copy.
+
+Several immediate native snapshots preceded asynchronous history loading; retain them. Final A212 dialog was observed through DOM after the actual GET200; no duplicate write or confirmation occurred. A212 five page/line rows and one original fixed input read, A206 both history versions and thought, A215 unique current presentation review all retained.
+
+G11 identity UI PNGs were intentionally denied to prevent caches beside historical originals. Both403 observations and native cannot-display labels are preserved; PDF rendering is not claimed by this readback. Original PDF SHA/bytes and previously sealed native visual proof remain unchanged.
+
+Shared managed session was closed/replaced by unrelated Hermes/Wisdom work. Rejected run commands stopped before execution; official start/resume and mission/HANDOFF reread followed. Fresh foreign HANDOFF must be preserved alongside the full verified prior Scholar backup when finalizing. No mission/gate status was advanced.

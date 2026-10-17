@@ -1,0 +1,28 @@
+{
+  "status": "PASS_INDEPENDENT_11_GROUP_COMPLETION_AND_ARCHIVE_AUDIT",
+  "at_utc": "2026-10-16T09:00:00.409671+00:00",
+  "directory": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\formal-all11-current-integrated-2026-10-16",
+  "manifest_sha256": "916e56835f81670ffe8228cf9d460f6a43399dff551f9b8ded4492ae2723a5f7",
+  "payloads_verified": 1387,
+  "original_groups": 11,
+  "exact_original_requirements": 118,
+  "old_formal_reports": 53,
+  "historical_payloads": 5723,
+  "owned_process_identities_checked": 32,
+  "owned_ports_free": [
+    8875,
+    8877,
+    3000
+  ],
+  "archive": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\all11-current-integrated-2026-10-16.zip",
+  "archive_sha256": "3cf81520a900ef85dc9a9a9ab1a901648110d31f173eb93202b87bf284869d90",
+  "archive_bytes": 55691136,
+  "final11_complete": true,
+  "overall118_complete": false,
+  "scientific_acceptance": false,
+  "mission_gate_unchanged": {
+    "current": "stage-gates/04-verification-report.md",
+    "status": "pending_review",
+    "blocked_by": null
+  }
+}

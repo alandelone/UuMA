@@ -1,0 +1,16 @@
+{
+  "serial": 21,
+  "component": "catalog",
+  "role": "identity",
+  "at_utc": "2026-10-16T08:36:19.087430+00:00",
+  "method": "GET",
+  "path": "/api/catalog/files/source_file_491d18ddee7958c95deb123a188280d5/pages/2/text",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 6356,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "3b110b5ddcf2c7d9b2d5e1c07433483ab7ed696841cc8d17e406083a094e7754"
+}

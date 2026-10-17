@@ -1,0 +1,28 @@
+{
+  "role": "upstream",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-upstream-ddwz2de_",
+  "components": [
+    "catalog",
+    "studio",
+    "frontend"
+  ],
+  "runtime_sha256": "c833bb904f3b14f05a7a9169ba865793bd8ee8e3a34cea8b25054794c9485e14",
+  "receipt_sha256": "692ef046d71807b5b3892ef351697e5775df85f4a49d4fc909fcd297e87cfc19",
+  "nonce": "3587aef62dc046768295ab5c8167716a",
+  "ports": {
+    "catalog": 8875,
+    "studio": 8877,
+    "frontend": 3000
+  },
+  "models_workers_started": 0,
+  "zero_refusals_only": true,
+  "source421": {
+    "count": 421,
+    "vector_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\source-before.json",
+    "vector_sha256": "ee86dac7772f18f52b6d6de979fcd6c9ab3c95bbd44a3154b7c396d207baa7e9",
+    "context_receipt_sha256": "b4a120d709a4d0ee3dda16e2169907ff8fe44d140fa1bfe83ee037cb2c5b0401",
+    "helper_sha256": "00348f6c109f67c2dcddca5589871179b8dd73337018e3893af45ebd916b1f1a",
+    "schema_reference_sha256": "8f544eb9d4bc37ae5160267f440c8e2275a23ebbd5b4a976c946a8c2f9434ecb"
+  },
+  "frontend_root": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio"
+}

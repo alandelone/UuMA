@@ -1,0 +1,16 @@
+{
+  "serial": 29,
+  "component": "studio",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:38:33.681450+00:00",
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_ed7c93ebf4824ec48186d731583185c8/chat",
+  "query": "limit=100",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 2,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+}

@@ -1,0 +1,51 @@
+{
+  "status": "PASS_G10_CURRENT421_ORIGINAL_SOFTWARE_DEFINITION",
+  "current_source_files": 421,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g10-current-ehsvcl0f",
+  "original_g10_source_all109_and_files_exact": true,
+  "compatibility_copy_empty_submission_bindings_only_schema13_to14": true,
+  "configured8875_Field_KG_Snapshot_Track_Manuscript_source_and_return_native": true,
+  "actual_ids": {
+    "field_id": "field_6242993287f547549daa4ded97914f3c",
+    "other_field_id": "field_9ecc9f28d2ff460ea8c4105327361727",
+    "track_id": "track_cd1adda6220f47b787f409e983c00947",
+    "snapshot_id": "fieldkg_snapshot_b2ed01c7c6004e4c9f9000ba266247ca",
+    "manuscript_id": "manuscript_14aef3be6a534016bf456a15dc865892"
+  },
+  "other_field_zero_papers_empty_KG_Build_Snapshot_Track_native": true,
+  "source_page3_paper1_skeleton1_parse_and_PDF_unknown_honestly_shown": true,
+  "current_author2_DRAFTING_no_generated_versions_source_still_unselected": true,
+  "all109_non_cache_tables_and_full_schema_exact_during_native": true,
+  "only2_paper_samples_revision0_to2_and_time_refreshed_full_payloads_exact": true,
+  "entire110_exact_during_configured8875_roundtrip": true,
+  "no_new_model_job_author_annotation_adoption_approval_or_science_progress": true,
+  "non_database_files_exact_and_all_exact_owned_services_retired": true,
+  "prior_random62147_return_refusal_preserved_and_not_counted_as_success": true,
+  "prior_stop_observer_race_preserved_actual_terminals_and_absence_verified": true,
+  "configured_interval_unexplained_nonbusiness_root400_and_favicon404_preserved": [
+    {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": "",
+      "status": 404,
+      "file": "catalog-http-0012.json"
+    },
+    {
+      "method": "GET",
+      "path": "/favicon.ico",
+      "query": "",
+      "status": 404,
+      "file": "catalog-http-0013.json"
+    },
+    {
+      "method": "GET",
+      "path": "/",
+      "query": "",
+      "status": 400,
+      "file": "catalog-http-0026.json"
+    }
+  ],
+  "return_scroll0_and_no_selection_not_claimed_as_exact_focus_restore": true,
+  "overall118_complete": false,
+  "final11_complete": false
+}

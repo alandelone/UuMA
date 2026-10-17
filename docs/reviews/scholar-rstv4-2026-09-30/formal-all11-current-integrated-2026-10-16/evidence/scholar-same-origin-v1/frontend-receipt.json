@@ -1,0 +1,150 @@
+{
+  "status": "PASS",
+  "results": [
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\review-comment-preview.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.18800000000192085,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-00.log",
+      "log_sha256": "1ed55f252fe04f3807d9381a56c2de87e2b40bfeb56a9e667165a80ba418844e"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-block-controls.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.18699999999807915,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-01.log",
+      "log_sha256": "a5986f79a6a07c214a288e32750eb494546c3a066a78a9b8399193c856dacd46"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-blocks.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.21899999999732245,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-02.log",
+      "log_sha256": "49fa37cdb79f6b602f1ecb303fe13c40572b77acf62a9c8555f396bf9ac84e58"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-correspondence.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.25,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-03.log",
+      "log_sha256": "b1511e0542aa2a6ddd5633832cbccbdc73578cf5770fcad14c9c5caab26355d8"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-discussion-history.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17200000000593718,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-04.log",
+      "log_sha256": "6afa8ce07dfcba3f6df4e5cd29663f8dc3c311092f0a5416e1811808cd7f5527"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-downloads.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.21899999999732245,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-05.log",
+      "log_sha256": "8b8536c2c9bbcb10e227bf2414e01a431e993cd6830db7e1057ca51cb277ee7c"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-hierarchy.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.20300000000133878,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-06.log",
+      "log_sha256": "1664d8266395f8aca5cce7ecc5a53cf5d304d203c72d46544acf322d82d48d24"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-response-review.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.375,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-07.log",
+      "log_sha256": "90ca8f377f4d3316e1fb42085f10f22d58d16e92094d1765b991b087df389364"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-structure.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2190000000045984,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-08.log",
+      "log_sha256": "dc9ee34cc2a91ca311725099e50aaf391c00f491d1faa0fb6154affbf8d8ce38"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-template-placement.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2180000000007567,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-09.log",
+      "log_sha256": "49ae5a608b386f3a06b7f9e9cac9a87db6a925d2252dc526de5628e140b23250"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-transport.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2819999999992433,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-10.log",
+      "log_sha256": "e94b358ef938102e94e10e794b6c7161ebdb2d9a03708695e00ac4d6f7b78d5e"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-undo-history.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.2180000000007567,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-11.log",
+      "log_sha256": "464ce25c061cc8c1a619b881ae1c97dc3db438c9b3703478c542819b64d3acbe"
+    },
+    {
+      "command": [
+        "node",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\tests\\unit\\studio-view-state.cjs"
+      ],
+      "exit_code": 0,
+      "seconds": 0.17199999999866122,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-12.log",
+      "log_sha256": "2eee0ad961f8413c9254041f42bb9de093cbf61bb1f68b0025fbcecf64a3ed2a"
+    },
+    {
+      "command": [
+        "node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit"
+      ],
+      "exit_code": 0,
+      "seconds": 3.312000000005355,
+      "log": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\frontend-13.log",
+      "log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "source_count": 421,
+  "changed_during_run": [],
+  "backend_newly_rerun": false,
+  "backend_1223_sources_exact": true
+}

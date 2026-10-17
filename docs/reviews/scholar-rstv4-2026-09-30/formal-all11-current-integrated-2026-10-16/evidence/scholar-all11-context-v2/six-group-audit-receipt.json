@@ -1,0 +1,204 @@
+{
+  "status": "PASS_CURRENT_SOURCE_G01_G02_G05_G06_G07_G08_COMPOSITE",
+  "current_source_files": 421,
+  "new_product_changes_builds_models_jobs_generations_science_approvals": 0,
+  "native_new_G06_G07_G08_and_current_G01_G02_G05_history_reads": true,
+  "A_author_revision": [
+    87,
+    103
+  ],
+  "B_author_revision": [
+    3,
+    4
+  ],
+  "author_operations": [
+    {
+      "operation_id": "operation_be4f74260f3446e2b61c295d2c62173d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 87,
+      "resulting_revision": 88,
+      "operation_kind": "EDIT"
+    },
+    {
+      "operation_id": "operation_d4077a956d51424e893341891d01d9cf",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 88,
+      "resulting_revision": 89,
+      "operation_kind": "EDIT"
+    },
+    {
+      "operation_id": "operation_b3381bb141324b589eda75aa69494102",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 89,
+      "resulting_revision": 90,
+      "operation_kind": "EDIT"
+    },
+    {
+      "operation_id": "operation_fc163c5d676f49f5a2b933171689c401",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 90,
+      "resulting_revision": 91,
+      "operation_kind": "EDIT"
+    },
+    {
+      "operation_id": "template_0c1c0a1e93364057916bb7262dc9032f",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 91,
+      "resulting_revision": 92,
+      "operation_kind": "ADOPT_TEMPLATE"
+    },
+    {
+      "operation_id": "operation_c76d4aa339374edd9208f5334d05ac03",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 92,
+      "resulting_revision": 93,
+      "operation_kind": "ADD_SECTION"
+    },
+    {
+      "operation_id": "operation_898e56ee512549a290720db0c6c2cef0",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 93,
+      "resulting_revision": 94,
+      "operation_kind": "MOVE_BLOCKS"
+    },
+    {
+      "operation_id": "template_b266795359864a34a2337204d97e6ab9",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 94,
+      "resulting_revision": 95,
+      "operation_kind": "ADOPT_TEMPLATE"
+    },
+    {
+      "operation_id": "template_fabbc4086a1247ff9145efc65cfc075c",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 95,
+      "resulting_revision": 96,
+      "operation_kind": "ADOPT_TEMPLATE"
+    },
+    {
+      "operation_id": "operation_57800092f845407395cf159a4a62a1a4",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 96,
+      "resulting_revision": 97,
+      "operation_kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_d9f87c9d924043af9cde2e5e630ef30a",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 97,
+      "resulting_revision": 98,
+      "operation_kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_6c132d868ada4283a595c73d3935cd5b",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 98,
+      "resulting_revision": 99,
+      "operation_kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_d66d5b72e00043d7a951ca6562127aa4",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 99,
+      "resulting_revision": 100,
+      "operation_kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_1ac192a14be34d0587b423bb5472b339",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 100,
+      "resulting_revision": 101,
+      "operation_kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_adb953b8c4ed4bf586373d8dd0a2555e",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 101,
+      "resulting_revision": 102,
+      "operation_kind": "REDO"
+    },
+    {
+      "operation_id": "operation_94bd0781f2834bcdbb4325f12b46411d",
+      "manuscript_id": "manuscript_56652adf9d054cb6ab3819efacf3475c",
+      "base_revision": 102,
+      "resulting_revision": 103,
+      "operation_kind": "UNDO"
+    },
+    {
+      "operation_id": "operation_52b94efc7a91485795ff2274f9e517db",
+      "manuscript_id": "manuscript_bea23f3050174ed1a0df075a32c25e13",
+      "base_revision": 3,
+      "resulting_revision": 4,
+      "operation_kind": "EDIT"
+    }
+  ],
+  "all_old_operations_changes_links_template_instances_and215_comment_payloads_preserved": true,
+  "A01_same_ID_number_restored_only_updated_at_and_response_state_revision_plus2": true,
+  "G06_save_contexts": [
+    [
+      "comment_f7969d2589c14c6a9e3d1c923bd1b381",
+      "comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1"
+    ],
+    [
+      "comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1"
+    ],
+    [],
+    [
+      "comment_49f64aa1ab3f4bdca2c74fd0aa84c8a1"
+    ]
+  ],
+  "G06_B_comment_context_empty": true,
+  "G07_new_comments": 103,
+  "G07_single_and_duplicate_exact": true,
+  "G07_actual_import_counts": [
+    1,
+    1,
+    100,
+    1
+  ],
+  "G07_all_raw_text_indices_and_stable_numbers_216_to318_exact": true,
+  "G08_fold_author_document_unchanged": true,
+  "G08_drag_3unit_partial1_other_source_replace1": true,
+  "G08_empty_section_accepts_original_empty_paragraph_exactly_once": true,
+  "G08_all_original_thoughts_and_citations_exact_at_every_saved_revision": true,
+  "G08_original_11_sections_unplaced_during_replace": true,
+  "G08_undo_redo_exact_documents": [
+    [
+      97,
+      95
+    ],
+    [
+      98,
+      94
+    ],
+    [
+      99,
+      93
+    ],
+    [
+      100,
+      92
+    ],
+    [
+      101,
+      91
+    ],
+    [
+      102,
+      92
+    ],
+    [
+      103,
+      91
+    ]
+  ],
+  "G01_original_move_r10_to11_v3_to4_validated_and_current_two_exact_marks": true,
+  "G02_three_original_decisions_and_operations_and_fixed_v3_sources_verified_no_resubmit": true,
+  "G05_current_v7_number1_page1_number2_page2_and_old_v1_page2_verified": true,
+  "other100_tables_and_full_schema_exact": true,
+  "all_non_database_files_exact": true,
+  "cache_refresh_source_payload_query_time_and_changed_block_invalidation_verified": true,
+  "protected_original_complex_all110_and_all_files_exact": true,
+  "all_exact_owned_services_retired": true,
+  "remaining_original118_and_final11_complete": false
+}

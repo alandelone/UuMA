@@ -1,0 +1,16 @@
+{
+  "serial": 18,
+  "component": "catalog",
+  "role": "identity",
+  "at_utc": "2026-10-16T08:36:19.072408+00:00",
+  "method": "GET",
+  "path": "/api/catalog/review/cases/source_file_491d18ddee7958c95deb123a188280d5/annotations",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 1366,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "4f0c2c1234db86212e4f5cebdac18150d792568e6245195ff5a6cd8257f96ea5"
+}

@@ -1,0 +1,6 @@
+PASS untrusted origins, credential destinations, traversal and file endpoints never reach backend
+PASS real loopback HTTP preserves query, exact UTF16 JSON, CAS, operation identity and 409 body
+PASS read-only discussion POST and backend error status retain one exact request without retries
+PASS redirects, empty and non-JSON upstream responses cannot masquerade as workspace data
+PASS browser JSON uses the page origin; server configuration and draft namespace stay exact
+5 same-origin transport contracts passed, including actual loopback HTTP.

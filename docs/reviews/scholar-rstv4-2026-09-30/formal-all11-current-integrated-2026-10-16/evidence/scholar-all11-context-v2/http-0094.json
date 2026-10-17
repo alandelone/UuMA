@@ -1,0 +1,16 @@
+{
+  "method": "POST",
+  "path": "/api/research/discussion/context",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:37:13.755521+00:00",
+  "body_utf8": "{\"module\":\"STUDIO\",\"manuscript_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"document_revision\":2}",
+  "headers": {
+    "content-type": "application/json"
+  },
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.0,
+  "response_sha256": "b7fae2814fedb74e1b4e1fbc4ff735fe49b4a341188a028ffb6981b0cbad9c20",
+  "ended_at_utc": "2026-10-15T23:37:13.762036+00:00",
+  "response_utf8": "{\"target\":{\"module\":\"STUDIO\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"paper_id\":null,\"field_id\":null,\"track_id\":null,\"snapshot_id\":null,\"part\":null,\"page_number\":null,\"manuscript_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"document_revision\":2},\"scope_key\":\"[\\\"STUDIO\\\",\\\"manuscript_bea23f3050174ed1a0df075a32c25e13\\\"]\",\"label\":\"G03 B software draft isolation acceptance\",\"object_text\":\"G03 B software draft isolation acceptance\\nG03 B offline author abstract — keep locally during disconnection; software acceptance only, no scientific claim. G06 cross-manuscript edit has no A01/A02 context.\\n\",\"record\":{\"snapshot\":{\"manuscript_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"revision\":2,\"document\":{\"abstract\":\"G03 B offline author abstract — keep locally during disconnection; software acceptance only, no scientific claim. G06 cross-manuscript edit has no A01/A02 context.\",\"manuscript_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"schema_version\":1,\"sections\":[{\"id\":\"section_627cd43bfd8b4c19803e735aed09d118\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_263f6af268b24ae980dfa17dfa2fc928\",\"intents\":[{\"id\":\"intent_aee0d78ad59b4390893975858e3ea651\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"G03 B software draft isolation acceptance\",\"venue\":\"\"}}},\"versions\":[{\"manuscript_id\":\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"author_revision\":2}],\"context_sha256\":\"6726abf5363def9a23e53a192845381937e138ef8d9bf0e018a76cd9254ca5b0\"}"
+}

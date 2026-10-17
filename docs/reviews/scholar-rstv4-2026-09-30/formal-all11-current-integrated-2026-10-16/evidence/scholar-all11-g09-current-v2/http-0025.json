@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/jobs/studio_job_c972cbaca0e840d3bb491c65e590ed11",
+  "query": "",
+  "allowed": true,
+  "request_utf8": null,
+  "status": 200,
+  "complete": true,
+  "response_sha256": "4783465d9776417b4b9faa251f118c1c2412dce0cbe133937f98eddff36d6d2e"
+}

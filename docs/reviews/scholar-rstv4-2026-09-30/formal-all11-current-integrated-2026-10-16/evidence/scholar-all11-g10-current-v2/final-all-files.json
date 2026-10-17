@@ -1,0 +1,8 @@
+{
+  "data/catalog.db": "a5f8876f4d49f76ccef2a0a0ecddda09a538d655027b0054ff251248bd37d9f3",
+  "data/catalog.db-shm": "fd4c9fda9cd3f9ae7c962b0ddf37232294d55580e1aa165aa06129b8549389eb",
+  "data/catalog.db-wal": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "data/catalog.pre-v13.bak": "8cc1a8598ef6e3a5af9b87ba3ec56456a450f9256c3a64509dfbad3bb292d0ee",
+  "data/catalog.pre-v14.bak": "f5f6fc278be28910451f6afca43eedaee257d34bf5b50c1c4b07a4596d8219f6",
+  "pool.db": "0690124bf83e3d1596b396516ade5984aed2acb21de33a18e315e271cc85ce20"
+}

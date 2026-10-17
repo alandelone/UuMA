@@ -1,0 +1,3556 @@
+{
+  "schema": [
+    [
+      "index",
+      "idx_acq_jobs_claim",
+      "acquisition_jobs",
+      "CREATE INDEX idx_acq_jobs_claim\n  ON acquisition_jobs(status, queue_class, available_at, priority, created_at)"
+    ],
+    [
+      "index",
+      "idx_catalog_review_actions_case",
+      "catalog_review_actions",
+      "CREATE INDEX idx_catalog_review_actions_case\n  ON catalog_review_actions(case_id,created_at)"
+    ],
+    [
+      "index",
+      "idx_catalog_review_annotations_case",
+      "catalog_review_annotations",
+      "CREATE INDEX idx_catalog_review_annotations_case\n  ON catalog_review_annotations(case_id, field_name, created_at)"
+    ],
+    [
+      "index",
+      "idx_catalog_review_findings_case",
+      "catalog_review_findings",
+      "CREATE INDEX idx_catalog_review_findings_case\n  ON catalog_review_findings(case_id, issue_type, created_at)"
+    ],
+    [
+      "index",
+      "idx_citation_cited",
+      "citation_observations",
+      "CREATE INDEX idx_citation_cited\n  ON citation_observations(cited_paper_id, citing_paper_id)"
+    ],
+    [
+      "index",
+      "idx_collection_members_paper",
+      "collection_memberships",
+      "CREATE INDEX idx_collection_members_paper\n  ON collection_memberships(paper_id, collection_id)"
+    ],
+    [
+      "index",
+      "idx_evidence_field",
+      "evidence",
+      "CREATE INDEX idx_evidence_field ON evidence(field_id)"
+    ],
+    [
+      "index",
+      "idx_fieldkg_build_field",
+      "fieldkg_builds",
+      "CREATE INDEX idx_fieldkg_build_field ON fieldkg_builds(field_id)"
+    ],
+    [
+      "index",
+      "idx_fieldkg_semantic_objects_build",
+      "fieldkg_semantic_objects",
+      "CREATE INDEX idx_fieldkg_semantic_objects_build\n ON fieldkg_semantic_objects(build_id, object_id)"
+    ],
+    [
+      "index",
+      "idx_local_pdf_imports_status",
+      "local_pdf_imports",
+      "CREATE INDEX idx_local_pdf_imports_status\n  ON local_pdf_imports(status, source_path)"
+    ],
+    [
+      "index",
+      "idx_nodes_track",
+      "research_nodes",
+      "CREATE INDEX idx_nodes_track ON research_nodes(track_id)"
+    ],
+    [
+      "index",
+      "idx_outbox_status",
+      "projection_outbox",
+      "CREATE INDEX idx_outbox_status ON projection_outbox(status, created_at)"
+    ],
+    [
+      "index",
+      "idx_projects_track",
+      "projects",
+      "CREATE INDEX idx_projects_track ON projects(track_id)"
+    ],
+    [
+      "index",
+      "idx_reference_target",
+      "reference_entries",
+      "CREATE INDEX idx_reference_target\n  ON reference_entries(target_paper_id, citing_paper_id)"
+    ],
+    [
+      "index",
+      "idx_research_workspace_actions_object",
+      "research_workspace_actions",
+      "CREATE INDEX idx_research_workspace_actions_object\n  ON research_workspace_actions(object_type, object_id, action_seq)"
+    ],
+    [
+      "index",
+      "idx_review_comments_round",
+      "review_comments",
+      "CREATE INDEX idx_review_comments_round\n  ON review_comments(review_round_id, status, created_at)"
+    ],
+    [
+      "index",
+      "idx_studio_change_link_events_change",
+      "studio_change_link_events",
+      "CREATE INDEX idx_studio_change_link_events_change\n  ON studio_change_link_events(change_id,resulting_link_revision)"
+    ],
+    [
+      "index",
+      "idx_studio_chat_manuscript",
+      "studio_chat_messages",
+      "CREATE INDEX idx_studio_chat_manuscript\n  ON studio_chat_messages(manuscript_id, created_at)"
+    ],
+    [
+      "index",
+      "idx_studio_jobs_status",
+      "studio_jobs",
+      "CREATE INDEX idx_studio_jobs_status\n  ON studio_jobs(status, created_at)"
+    ],
+    [
+      "index",
+      "idx_studio_model_calls_owner",
+      "studio_model_calls",
+      "CREATE INDEX idx_studio_model_calls_owner\n  ON studio_model_calls(manuscript_id,job_id,started_at)"
+    ],
+    [
+      "index",
+      "idx_studio_operations_manuscript",
+      "studio_operations",
+      "CREATE INDEX idx_studio_operations_manuscript\n  ON studio_operations(manuscript_id, resulting_revision)"
+    ],
+    [
+      "index",
+      "idx_studio_response_checks_comment",
+      "studio_response_checks",
+      "CREATE INDEX idx_studio_response_checks_comment ON studio_response_checks(comment_id)"
+    ],
+    [
+      "index",
+      "idx_studio_samples_anchor",
+      "studio_sample_candidates",
+      "CREATE INDEX idx_studio_samples_anchor\n  ON studio_sample_candidates(manuscript_id, anchor_id, document_revision)"
+    ],
+    [
+      "index",
+      "idx_studio_suggestion_decisions_message",
+      "studio_suggestion_decisions",
+      "CREATE INDEX idx_studio_suggestion_decisions_message\n  ON studio_suggestion_decisions(message_id, created_at)"
+    ],
+    [
+      "index",
+      "idx_tracks_field",
+      "research_tracks",
+      "CREATE INDEX idx_tracks_field ON research_tracks(field_id)"
+    ],
+    [
+      "index",
+      "sqlite_autoindex_acquisition_attempts_1",
+      "acquisition_attempts",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_acquisition_jobs_1",
+      "acquisition_jobs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_acquisition_jobs_2",
+      "acquisition_jobs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_acquisition_model_call_events_1",
+      "acquisition_model_call_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_acquisition_worker_presence_1",
+      "acquisition_worker_presence",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_approval_grants_1",
+      "approval_grants",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_approval_grants_2",
+      "approval_grants",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_blueprint_snapshots_1",
+      "blueprint_snapshots",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_blueprint_snapshots_2",
+      "blueprint_snapshots",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_browser_acquisition_requests_1",
+      "browser_acquisition_requests",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_browser_acquisition_requests_2",
+      "browser_acquisition_requests",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_quarantine_1",
+      "catalog_quarantine",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_review_actions_1",
+      "catalog_review_actions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_review_actions_2",
+      "catalog_review_actions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_review_annotations_1",
+      "catalog_review_annotations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_review_annotations_2",
+      "catalog_review_annotations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_review_findings_1",
+      "catalog_review_findings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_catalog_review_findings_2",
+      "catalog_review_findings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_citation_observations_1",
+      "citation_observations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_citation_observations_2",
+      "citation_observations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_budget_events_1",
+      "collection_budget_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_budget_events_2",
+      "collection_budget_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_candidate_frontier_1",
+      "collection_candidate_frontier",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_memberships_1",
+      "collection_memberships",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_reference_frontier_1",
+      "collection_reference_frontier",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_runtime_state_1",
+      "collection_runtime_state",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_seeds_1",
+      "collection_seeds",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collection_seeds_2",
+      "collection_seeds",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_collections_1",
+      "collections",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_comment_changes_1",
+      "comment_changes",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_core_rankings_1",
+      "core_rankings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_core_rankings_2",
+      "core_rankings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_decisions_1",
+      "decisions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_decisions_2",
+      "decisions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_document_blocks_1",
+      "document_blocks",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_document_blocks_2",
+      "document_blocks",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_evidence_1",
+      "evidence",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_experiment_plans_1",
+      "experiment_plans",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_experiment_plans_2",
+      "experiment_plans",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_field_topics_1",
+      "field_topics",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_build_papers_1",
+      "fieldkg_build_papers",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_builds_1",
+      "fieldkg_builds",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_candidate_gaps_1",
+      "fieldkg_candidate_gaps",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_evidence_candidates_1",
+      "fieldkg_evidence_candidates",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_semantic_objects_1",
+      "fieldkg_semantic_objects",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_semantic_runs_1",
+      "fieldkg_semantic_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_semantic_runs_2",
+      "fieldkg_semantic_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_snapshot_members_1",
+      "fieldkg_snapshot_members",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_snapshots_1",
+      "fieldkg_snapshots",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_snapshots_2",
+      "fieldkg_snapshots",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_fieldkg_snapshots_3",
+      "fieldkg_snapshots",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_foundation_topics_1",
+      "foundation_topics",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_foundation_versions_1",
+      "foundation_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_foundation_versions_2",
+      "foundation_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_foundations_1",
+      "foundations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_journal_metric_observations_1",
+      "journal_metric_observations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_journal_metric_observations_2",
+      "journal_metric_observations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_legacy_migration_sources_1",
+      "legacy_migration_sources",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_legacy_paper_mappings_1",
+      "legacy_paper_mappings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_local_pdf_imports_1",
+      "local_pdf_imports",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_evidence_1",
+      "manuscript_evidence",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_nodes_1",
+      "manuscript_nodes",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_projects_1",
+      "manuscript_projects",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_scientific_review_events_1",
+      "manuscript_scientific_review_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_scientific_review_events_2",
+      "manuscript_scientific_review_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_scientific_review_requests_1",
+      "manuscript_scientific_review_requests",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_scientific_review_requests_2",
+      "manuscript_scientific_review_requests",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_status_history_1",
+      "manuscript_status_history",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_versions_1",
+      "manuscript_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscript_versions_2",
+      "manuscript_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_manuscripts_1",
+      "manuscripts",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_metadata_observations_1",
+      "metadata_observations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_metadata_observations_2",
+      "metadata_observations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_node_evidence_1",
+      "node_evidence",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_assessments_1",
+      "paper_assessments",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_assessments_2",
+      "paper_assessments",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_identities_1",
+      "paper_identities",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_identities_2",
+      "paper_identities",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_journal_links_1",
+      "paper_journal_links",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_skeletons_1",
+      "paper_skeletons",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_skeletons_2",
+      "paper_skeletons",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_skeletons_3",
+      "paper_skeletons",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_sources_1",
+      "paper_sources",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_sources_2",
+      "paper_sources",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_versions_1",
+      "paper_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_versions_2",
+      "paper_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_paper_versions_3",
+      "paper_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_papers_1",
+      "papers",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_papers_2",
+      "papers",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_papers_3",
+      "papers",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_parse_runs_1",
+      "parse_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_parse_runs_2",
+      "parse_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_pipeline_runs_1",
+      "pipeline_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_projection_outbox_1",
+      "projection_outbox",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_projection_watermarks_1",
+      "projection_watermarks",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_projects_1",
+      "projects",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_projects_2",
+      "projects",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_provider_cooldowns_1",
+      "provider_cooldowns",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_reference_entries_1",
+      "reference_entries",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_reference_entries_2",
+      "reference_entries",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_edges_1",
+      "research_edges",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_edges_2",
+      "research_edges",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_fields_1",
+      "research_fields",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_fields_2",
+      "research_fields",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_nodes_1",
+      "research_nodes",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_tracks_1",
+      "research_tracks",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_research_workspace_actions_1",
+      "research_workspace_actions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_retrieval_runs_1",
+      "retrieval_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_review_comments_1",
+      "review_comments",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_review_rounds_1",
+      "review_rounds",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_review_rounds_2",
+      "review_rounds",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_schema_version_1",
+      "schema_version",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_screening_input_snapshots_1",
+      "screening_input_snapshots",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_checkpoints_1",
+      "skeleton_checkpoints",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_checkpoints_2",
+      "skeleton_checkpoints",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_runs_1",
+      "skeleton_runs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_source_outlines_1",
+      "skeleton_source_outlines",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_triplets_1",
+      "skeleton_triplets",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_units_1",
+      "skeleton_units",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_skeleton_units_2",
+      "skeleton_units",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_source_file_versions_1",
+      "source_file_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_source_file_versions_2",
+      "source_file_versions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_artifacts_1",
+      "studio_artifacts",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_assets_1",
+      "studio_assets",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_assets_2",
+      "studio_assets",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_change_link_events_1",
+      "studio_change_link_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_change_link_events_2",
+      "studio_change_link_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_change_link_state_1",
+      "studio_change_link_state",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_changes_1",
+      "studio_changes",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_chat_messages_1",
+      "studio_chat_messages",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_comment_response_state_1",
+      "studio_comment_response_state",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_documents_1",
+      "studio_documents",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_findings_1",
+      "studio_findings",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_jobs_1",
+      "studio_jobs",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_model_calls_1",
+      "studio_model_calls",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_operations_1",
+      "studio_operations",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_response_checks_1",
+      "studio_response_checks",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_response_checks_2",
+      "studio_response_checks",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_review_round_baselines_1",
+      "studio_review_round_baselines",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_sample_candidates_1",
+      "studio_sample_candidates",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_submission_packages_1",
+      "studio_submission_packages",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_suggestion_decisions_1",
+      "studio_suggestion_decisions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_studio_template_instances_1",
+      "studio_template_instances",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_submission_events_1",
+      "submission_events",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_topics_1",
+      "topics",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_topics_2",
+      "topics",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_track_milestones_1",
+      "track_milestones",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_track_snapshot_adoptions_1",
+      "track_snapshot_adoptions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_track_snapshot_adoptions_2",
+      "track_snapshot_adoptions",
+      null
+    ],
+    [
+      "index",
+      "sqlite_autoindex_track_topics_1",
+      "track_topics",
+      null
+    ],
+    [
+      "table",
+      "acquisition_attempts",
+      "acquisition_attempts",
+      "CREATE TABLE acquisition_attempts (\n  attempt_id TEXT PRIMARY KEY,\n  job_id TEXT NOT NULL REFERENCES acquisition_jobs(job_id),\n  fencing_token INTEGER NOT NULL,\n  worker_id TEXT NOT NULL,\n  status TEXT NOT NULL,\n  started_at TEXT NOT NULL,\n  completed_at TEXT,\n  detail_json TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "acquisition_jobs",
+      "acquisition_jobs",
+      "CREATE TABLE acquisition_jobs (\n  job_id TEXT PRIMARY KEY,\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  paper_id TEXT REFERENCES papers(paper_id),\n  job_type TEXT NOT NULL,\n  queue_class TEXT NOT NULL,\n  status TEXT NOT NULL,\n  priority INTEGER NOT NULL,\n  idempotency_key TEXT NOT NULL UNIQUE,\n  input_json TEXT NOT NULL,\n  input_digest TEXT NOT NULL,\n  rule_version TEXT NOT NULL,\n  attempts INTEGER NOT NULL DEFAULT 0,\n  available_at TEXT NOT NULL,\n  lease_owner TEXT,\n  lease_expires_at TEXT,\n  fencing_token INTEGER NOT NULL DEFAULT 0,\n  last_error_code TEXT,\n  last_error_detail TEXT,\n  result_json TEXT,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "acquisition_model_call_events",
+      "acquisition_model_call_events",
+      "CREATE TABLE acquisition_model_call_events (\n event_seq INTEGER PRIMARY KEY AUTOINCREMENT,\n call_id TEXT NOT NULL,\n event_kind TEXT NOT NULL,\n job_id TEXT NOT NULL REFERENCES acquisition_jobs(job_id),\n paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n fencing_token INTEGER NOT NULL,\n task TEXT NOT NULL,\n input_json TEXT NOT NULL,\n source_json TEXT NOT NULL,\n output_json TEXT,\n contract_json TEXT,\n error_type TEXT,\n created_at TEXT NOT NULL,\n UNIQUE(call_id,event_kind)\n)"
+    ],
+    [
+      "table",
+      "acquisition_worker_presence",
+      "acquisition_worker_presence",
+      "CREATE TABLE acquisition_worker_presence (\n  worker_id TEXT PRIMARY KEY,\n  instance_id TEXT NOT NULL,\n  role TEXT NOT NULL,\n  hostname TEXT NOT NULL,\n  process_id INTEGER NOT NULL,\n  state TEXT NOT NULL,\n  job_id TEXT,\n  started_at TEXT NOT NULL,\n  observed_at TEXT NOT NULL,\n  expires_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "approval_grants",
+      "approval_grants",
+      "CREATE TABLE approval_grants (\n  grant_id TEXT PRIMARY KEY,\n  proposal_id TEXT NOT NULL,\n  proposal_type TEXT NOT NULL,\n  track_id TEXT NOT NULL,\n  project_id TEXT,\n  proposal_revision INTEGER NOT NULL,\n  profile TEXT NOT NULL,\n  session_id TEXT NOT NULL,\n  message_id TEXT NOT NULL,\n  user_message_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  consumed_at TEXT,\n  UNIQUE(profile, session_id, message_id, proposal_id)\n)"
+    ],
+    [
+      "table",
+      "blueprint_snapshots",
+      "blueprint_snapshots",
+      "CREATE TABLE blueprint_snapshots (\n  blueprint_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  revision INTEGER NOT NULL,\n  payload_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(track_id, revision)\n)"
+    ],
+    [
+      "table",
+      "browser_acquisition_requests",
+      "browser_acquisition_requests",
+      "CREATE TABLE browser_acquisition_requests (\n  request_id TEXT PRIMARY KEY,\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  idempotency_key TEXT NOT NULL UNIQUE,\n  action_id TEXT,\n  action_version TEXT,\n  execution_id TEXT,\n  status TEXT NOT NULL,\n  expected_identity_json TEXT NOT NULL,\n  target_directory TEXT NOT NULL,\n  output_refs_json TEXT NOT NULL,\n  error_json TEXT,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "catalog_quarantine",
+      "catalog_quarantine",
+      "CREATE TABLE catalog_quarantine (\n  paper_id TEXT PRIMARY KEY REFERENCES papers(paper_id),\n  reason TEXT NOT NULL,\n  source_path TEXT NOT NULL,\n  quarantined_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "catalog_review_actions",
+      "catalog_review_actions",
+      "CREATE TABLE catalog_review_actions (\n  action_id TEXT PRIMARY KEY,\n  request_id TEXT NOT NULL UNIQUE,\n  case_id TEXT NOT NULL,\n  file_version_id TEXT NOT NULL REFERENCES source_file_versions(file_version_id),\n  action_kind TEXT NOT NULL,\n  reviewer_label TEXT NOT NULL,\n  reason TEXT NOT NULL,\n  request_json TEXT NOT NULL,\n  context_json TEXT NOT NULL,\n  result_json TEXT NOT NULL,\n  supersedes_action_id TEXT REFERENCES catalog_review_actions(action_id),\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "catalog_review_annotations",
+      "catalog_review_annotations",
+      "CREATE TABLE catalog_review_annotations (\n  annotation_id TEXT PRIMARY KEY,\n  submission_id TEXT NOT NULL UNIQUE,\n  case_id TEXT NOT NULL,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  file_version_id TEXT NOT NULL REFERENCES source_file_versions(file_version_id),\n  field_name TEXT NOT NULL,\n  decision TEXT NOT NULL,\n  selected_text TEXT,\n  page_number INTEGER,\n  word_start INTEGER,\n  word_end INTEGER,\n  comment TEXT NOT NULL DEFAULT '',\n  value_before TEXT,\n  value_after TEXT,\n  canonical_key_before TEXT,\n  canonical_key_after TEXT,\n  reviewer_label TEXT NOT NULL,\n  supersedes_annotation_id TEXT REFERENCES catalog_review_annotations(annotation_id),\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "catalog_review_findings",
+      "catalog_review_findings",
+      "CREATE TABLE catalog_review_findings (\n  finding_id TEXT PRIMARY KEY,\n  submission_id TEXT NOT NULL UNIQUE,\n  case_id TEXT NOT NULL,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  file_version_id TEXT REFERENCES source_file_versions(file_version_id),\n  issue_type TEXT NOT NULL,\n  assessment TEXT NOT NULL,\n  proposed_value TEXT,\n  evidence_page INTEGER,\n  evidence_quote TEXT,\n  note TEXT,\n  reviewer_label TEXT NOT NULL,\n  supersedes_finding_id TEXT REFERENCES catalog_review_findings(finding_id),\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "citation_observations",
+      "citation_observations",
+      "CREATE TABLE citation_observations (\n  citation_id TEXT PRIMARY KEY,\n  citing_paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  cited_paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  reference_entry_id TEXT NOT NULL REFERENCES reference_entries(reference_entry_id),\n  role TEXT NOT NULL,\n  source TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(citing_paper_id, cited_paper_id, reference_entry_id)\n)"
+    ],
+    [
+      "table",
+      "collection_budget_events",
+      "collection_budget_events",
+      "CREATE TABLE collection_budget_events (\n  event_id TEXT PRIMARY KEY,\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  request_id TEXT NOT NULL UNIQUE,\n  request_json TEXT NOT NULL,\n  limits_json TEXT NOT NULL,\n  result_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "collection_candidate_frontier",
+      "collection_candidate_frontier",
+      "CREATE TABLE collection_candidate_frontier (\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  state TEXT NOT NULL,\n  metadata_json TEXT NOT NULL,\n  updated_at TEXT NOT NULL,\n  PRIMARY KEY(collection_id,paper_id)\n)"
+    ],
+    [
+      "table",
+      "collection_memberships",
+      "collection_memberships",
+      "CREATE TABLE collection_memberships (\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  discovery_kind TEXT NOT NULL,\n  discovered_from_paper_id TEXT REFERENCES papers(paper_id),\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  PRIMARY KEY(collection_id, paper_id)\n)"
+    ],
+    [
+      "table",
+      "collection_reference_frontier",
+      "collection_reference_frontier",
+      "CREATE TABLE collection_reference_frontier (\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  reference_entry_id TEXT NOT NULL REFERENCES reference_entries(reference_entry_id),\n  state TEXT NOT NULL,\n  updated_at TEXT NOT NULL,\n  PRIMARY KEY(collection_id,reference_entry_id)\n)"
+    ],
+    [
+      "table",
+      "collection_runtime_state",
+      "collection_runtime_state",
+      "CREATE TABLE collection_runtime_state (\n  collection_id TEXT PRIMARY KEY REFERENCES collections(collection_id),\n  active_seconds REAL NOT NULL DEFAULT 0,\n  active_since TEXT,\n  stop_reason_json TEXT,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "collection_seeds",
+      "collection_seeds",
+      "CREATE TABLE collection_seeds (\n  seed_id TEXT PRIMARY KEY,\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  seed_type TEXT NOT NULL,\n  raw_value TEXT NOT NULL,\n  normalized_value TEXT NOT NULL,\n  paper_id TEXT REFERENCES papers(paper_id),\n  created_at TEXT NOT NULL,\n  UNIQUE(collection_id, seed_type, normalized_value)\n)"
+    ],
+    [
+      "table",
+      "collections",
+      "collections",
+      "CREATE TABLE collections (\n  collection_id TEXT PRIMARY KEY,\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  track_id TEXT REFERENCES research_tracks(track_id),\n  name TEXT NOT NULL,\n  scope_json TEXT NOT NULL,\n  scope_version INTEGER NOT NULL,\n  status TEXT NOT NULL,\n  revision INTEGER NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n, topic_id TEXT REFERENCES topics(topic_id), creation_request_json TEXT)"
+    ],
+    [
+      "table",
+      "comment_changes",
+      "comment_changes",
+      "CREATE TABLE comment_changes (\n  comment_id TEXT NOT NULL REFERENCES review_comments(comment_id),\n  change_id TEXT NOT NULL REFERENCES studio_changes(change_id),\n  PRIMARY KEY(comment_id, change_id)\n)"
+    ],
+    [
+      "table",
+      "core_rankings",
+      "core_rankings",
+      "CREATE TABLE core_rankings (\n  ranking_id TEXT PRIMARY KEY,\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  scope_kind TEXT NOT NULL,\n  scope_id TEXT NOT NULL,\n  rank INTEGER NOT NULL,\n  relevance_group TEXT NOT NULL,\n  seed_coverage REAL NOT NULL,\n  direct_citations INTEGER NOT NULL,\n  quartile TEXT,\n  labels_json TEXT NOT NULL,\n  explanation_json TEXT NOT NULL,\n  graph_digest TEXT NOT NULL,\n  algorithm_version TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(collection_id, paper_id, scope_kind, scope_id, graph_digest, algorithm_version)\n)"
+    ],
+    [
+      "table",
+      "decisions",
+      "decisions",
+      "CREATE TABLE decisions (\n  proposal_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  node_id TEXT NOT NULL UNIQUE REFERENCES research_nodes(node_id),\n  kind TEXT NOT NULL,\n  status TEXT NOT NULL,\n  approval_phrase TEXT NOT NULL,\n  expected_revision INTEGER NOT NULL,\n  confirmation_text TEXT,\n  rejection_reason TEXT,\n  supersedes_node_id TEXT,\n  created_at TEXT NOT NULL,\n  resolved_at TEXT\n)"
+    ],
+    [
+      "table",
+      "document_blocks",
+      "document_blocks",
+      "CREATE TABLE document_blocks (\n  block_id TEXT PRIMARY KEY,\n  parse_run_id TEXT NOT NULL REFERENCES parse_runs(parse_run_id),\n  sequence INTEGER NOT NULL,\n  page_number INTEGER,\n  section TEXT,\n  block_type TEXT NOT NULL,\n  text TEXT NOT NULL,\n  location_json TEXT NOT NULL,\n  content_digest TEXT NOT NULL,\n  UNIQUE(parse_run_id, sequence)\n)"
+    ],
+    [
+      "table",
+      "evidence",
+      "evidence",
+      "CREATE TABLE evidence (\n  evidence_id TEXT PRIMARY KEY,\n  scope_kind TEXT NOT NULL CHECK(scope_kind IN ('FIELDKG','TRACK')),\n  field_id TEXT REFERENCES research_fields(field_id),\n  track_id TEXT REFERENCES research_tracks(track_id),\n  paper_id TEXT REFERENCES papers(paper_id),\n  paper_version_id TEXT,\n  experiment_run_id TEXT,\n  statement TEXT NOT NULL,\n  excerpt TEXT NOT NULL,\n  location_json TEXT NOT NULL,\n  relation TEXT NOT NULL,\n  confidence REAL NOT NULL,\n  extractor_model TEXT,\n  prompt_version TEXT,\n  content_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "experiment_plans",
+      "experiment_plans",
+      "CREATE TABLE experiment_plans (\n  plan_id TEXT PRIMARY KEY,\n  proposal_id TEXT NOT NULL UNIQUE,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  project_id TEXT REFERENCES projects(project_id),\n  method_node_id TEXT NOT NULL REFERENCES research_nodes(node_id),\n  status TEXT NOT NULL,\n  revision INTEGER NOT NULL DEFAULT 1,\n  argv_json TEXT NOT NULL,\n  working_directory TEXT NOT NULL,\n  script_path TEXT,\n  script_sha256 TEXT,\n  timeout_seconds INTEGER NOT NULL,\n  metrics_json_path TEXT,\n  created_at TEXT NOT NULL,\n  approved_at TEXT\n)"
+    ],
+    [
+      "table",
+      "field_topics",
+      "field_topics",
+      "CREATE TABLE field_topics (\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  topic_id TEXT NOT NULL REFERENCES topics(topic_id),\n  created_at TEXT NOT NULL,\n  PRIMARY KEY(field_id, topic_id)\n)"
+    ],
+    [
+      "table",
+      "fieldkg_build_papers",
+      "fieldkg_build_papers",
+      "CREATE TABLE fieldkg_build_papers (\n  build_id TEXT NOT NULL REFERENCES fieldkg_builds(build_id),\n  paper_version_id TEXT NOT NULL REFERENCES paper_versions(paper_version_id),\n  skeleton_id TEXT REFERENCES paper_skeletons(skeleton_id),\n  status TEXT NOT NULL,\n  detail TEXT,\n  PRIMARY KEY(build_id, paper_version_id)\n)"
+    ],
+    [
+      "table",
+      "fieldkg_builds",
+      "fieldkg_builds",
+      "CREATE TABLE fieldkg_builds (\n  build_id TEXT PRIMARY KEY,\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  status TEXT NOT NULL,\n  retrieval_scope_json TEXT NOT NULL,\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "fieldkg_candidate_gaps",
+      "fieldkg_candidate_gaps",
+      "CREATE TABLE fieldkg_candidate_gaps (\n  candidate_gap_id TEXT PRIMARY KEY,\n  build_id TEXT NOT NULL REFERENCES fieldkg_builds(build_id),\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  statement TEXT NOT NULL,\n  rationale TEXT NOT NULL,\n  evidence_ids_json TEXT NOT NULL,\n  counterevidence_ids_json TEXT NOT NULL,\n  conditions_json TEXT NOT NULL,\n  generator_model TEXT,\n  prompt_version TEXT,\n  status TEXT NOT NULL DEFAULT 'PROPOSED',\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  reviewed_at TEXT\n)"
+    ],
+    [
+      "table",
+      "fieldkg_evidence_candidates",
+      "fieldkg_evidence_candidates",
+      "CREATE TABLE fieldkg_evidence_candidates (\n  candidate_id TEXT PRIMARY KEY,\n  build_id TEXT NOT NULL REFERENCES fieldkg_builds(build_id),\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  unit_id TEXT NOT NULL REFERENCES skeleton_units(unit_id),\n  statement TEXT NOT NULL,\n  excerpt TEXT NOT NULL,\n  relation TEXT NOT NULL,\n  confidence REAL NOT NULL,\n  status TEXT NOT NULL DEFAULT 'PROPOSED',\n  rationale TEXT,\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  reviewed_at TEXT\n)"
+    ],
+    [
+      "table",
+      "fieldkg_semantic_objects",
+      "fieldkg_semantic_objects",
+      "CREATE TABLE fieldkg_semantic_objects (\n object_id TEXT PRIMARY KEY,\n run_id TEXT NOT NULL REFERENCES fieldkg_semantic_runs(run_id),\n field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n build_id TEXT NOT NULL REFERENCES fieldkg_builds(build_id),\n kind TEXT NOT NULL,\n statement TEXT NOT NULL,\n rationale TEXT NOT NULL,\n references_json TEXT NOT NULL,\n conditions_json TEXT NOT NULL,\n confidence REAL NOT NULL,\n status TEXT NOT NULL,\n revision INTEGER NOT NULL,\n model_contract_json TEXT NOT NULL,\n content_digest TEXT NOT NULL,\n reviewed_at TEXT,\n created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "fieldkg_semantic_runs",
+      "fieldkg_semantic_runs",
+      "CREATE TABLE fieldkg_semantic_runs (\n run_id TEXT PRIMARY KEY,\n request_id TEXT NOT NULL UNIQUE,\n field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n build_id TEXT NOT NULL REFERENCES fieldkg_builds(build_id),\n request_json TEXT NOT NULL,\n input_json TEXT NOT NULL,\n input_digest TEXT NOT NULL,\n status TEXT NOT NULL,\n result_json TEXT NOT NULL,\n router_run_id TEXT,\n error_type TEXT,\n created_at TEXT NOT NULL,\n updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "fieldkg_snapshot_members",
+      "fieldkg_snapshot_members",
+      "CREATE TABLE fieldkg_snapshot_members (\n  snapshot_id TEXT NOT NULL REFERENCES fieldkg_snapshots(snapshot_id),\n  member_type TEXT NOT NULL,\n  member_id TEXT NOT NULL,\n  member_digest TEXT NOT NULL,\n  PRIMARY KEY(snapshot_id, member_type, member_id)\n)"
+    ],
+    [
+      "table",
+      "fieldkg_snapshots",
+      "fieldkg_snapshots",
+      "CREATE TABLE fieldkg_snapshots (\n  snapshot_id TEXT PRIMARY KEY,\n  field_id TEXT REFERENCES research_fields(field_id),\n  version INTEGER NOT NULL,\n  build_id TEXT REFERENCES fieldkg_builds(build_id),\n  status TEXT NOT NULL,\n  manifest_json TEXT NOT NULL,\n  content_digest TEXT NOT NULL,\n  mapping_status TEXT NOT NULL DEFAULT 'MAPPED',\n  created_at TEXT NOT NULL,\n  UNIQUE(field_id, version),\n  UNIQUE(field_id, content_digest)\n)"
+    ],
+    [
+      "table",
+      "foundation_topics",
+      "foundation_topics",
+      "CREATE TABLE foundation_topics (\n  foundation_id TEXT NOT NULL,\n  version INTEGER NOT NULL,\n  topic_id TEXT NOT NULL REFERENCES topics(topic_id),\n  PRIMARY KEY(foundation_id, version, topic_id),\n  FOREIGN KEY(foundation_id, version)\n    REFERENCES foundation_versions(foundation_id, version)\n)"
+    ],
+    [
+      "table",
+      "foundation_versions",
+      "foundation_versions",
+      "CREATE TABLE foundation_versions (\n  foundation_id TEXT NOT NULL REFERENCES foundations(foundation_id),\n  version INTEGER NOT NULL,\n  payload_json TEXT NOT NULL,\n  content_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  PRIMARY KEY(foundation_id, version),\n  UNIQUE(foundation_id, content_digest)\n)"
+    ],
+    [
+      "table",
+      "foundations",
+      "foundations",
+      "CREATE TABLE foundations (\n  foundation_id TEXT PRIMARY KEY,\n  title TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "journal_metric_observations",
+      "journal_metric_observations",
+      "CREATE TABLE journal_metric_observations (\n  metric_id TEXT PRIMARY KEY,\n  issn TEXT NOT NULL,\n  source TEXT NOT NULL,\n  metric_year INTEGER NOT NULL,\n  category TEXT NOT NULL,\n  quartile TEXT,\n  metric_name TEXT NOT NULL,\n  metric_value REAL,\n  payload_json TEXT NOT NULL,\n  observed_at TEXT NOT NULL,\n  UNIQUE(issn, source, metric_year, category, metric_name)\n)"
+    ],
+    [
+      "table",
+      "legacy_migration_sources",
+      "legacy_migration_sources",
+      "CREATE TABLE legacy_migration_sources (\n  source_path TEXT PRIMARY KEY,\n  source_digest TEXT NOT NULL,\n  project_id TEXT,\n  default_track_id TEXT,\n  status TEXT NOT NULL,\n  detail_json TEXT NOT NULL,\n  migrated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "legacy_paper_mappings",
+      "legacy_paper_mappings",
+      "CREATE TABLE legacy_paper_mappings (\n  source_database TEXT NOT NULL,\n  legacy_id INTEGER NOT NULL,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  file_version_id TEXT REFERENCES source_file_versions(file_version_id),\n  status TEXT NOT NULL,\n  detail_json TEXT NOT NULL,\n  imported_at TEXT NOT NULL,\n  PRIMARY KEY(source_database, legacy_id)\n)"
+    ],
+    [
+      "table",
+      "local_pdf_imports",
+      "local_pdf_imports",
+      "CREATE TABLE local_pdf_imports (\n  source_path TEXT PRIMARY KEY,\n  root_path TEXT NOT NULL,\n  size_bytes INTEGER NOT NULL,\n  sha256 TEXT,\n  title_candidate TEXT NOT NULL,\n  doi_candidate TEXT,\n  paper_id TEXT REFERENCES papers(paper_id),\n  file_version_id TEXT REFERENCES source_file_versions(file_version_id),\n  status TEXT NOT NULL,\n  detail_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "manuscript_evidence",
+      "manuscript_evidence",
+      "CREATE TABLE manuscript_evidence (\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  evidence_id TEXT NOT NULL REFERENCES evidence(evidence_id),\n  evidence_digest TEXT NOT NULL,\n  PRIMARY KEY(manuscript_id, evidence_id)\n)"
+    ],
+    [
+      "table",
+      "manuscript_nodes",
+      "manuscript_nodes",
+      "CREATE TABLE manuscript_nodes (\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  node_id TEXT NOT NULL REFERENCES research_nodes(node_id),\n  section TEXT,\n  node_revision INTEGER NOT NULL,\n  PRIMARY KEY(manuscript_id, node_id)\n)"
+    ],
+    [
+      "table",
+      "manuscript_projects",
+      "manuscript_projects",
+      "CREATE TABLE manuscript_projects (\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  project_id TEXT NOT NULL REFERENCES projects(project_id),\n  PRIMARY KEY(manuscript_id, project_id)\n)"
+    ],
+    [
+      "table",
+      "manuscript_scientific_review_events",
+      "manuscript_scientific_review_events",
+      "CREATE TABLE manuscript_scientific_review_events (\n  event_id TEXT PRIMARY KEY,\n  review_id TEXT NOT NULL UNIQUE REFERENCES manuscript_scientific_review_requests(review_id),\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  grant_id TEXT NOT NULL REFERENCES approval_grants(grant_id),\n  before_json TEXT NOT NULL,\n  after_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "manuscript_scientific_review_requests",
+      "manuscript_scientific_review_requests",
+      "CREATE TABLE manuscript_scientific_review_requests (\n  review_id TEXT PRIMARY KEY,\n  request_id TEXT NOT NULL UNIQUE,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  expected_revision INTEGER NOT NULL,\n  request_json TEXT NOT NULL,\n  context_json TEXT NOT NULL,\n  context_sha256 TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "manuscript_status_history",
+      "manuscript_status_history",
+      "CREATE TABLE manuscript_status_history (\n  history_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  status TEXT NOT NULL,\n  blocker TEXT,\n  next_step TEXT,\n  reason TEXT NOT NULL,\n  revision INTEGER NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "manuscript_versions",
+      "manuscript_versions",
+      "CREATE TABLE manuscript_versions (\n  manuscript_version_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  version INTEGER NOT NULL,\n  content TEXT NOT NULL,\n  inputs_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(manuscript_id, version)\n)"
+    ],
+    [
+      "table",
+      "manuscripts",
+      "manuscripts",
+      "CREATE TABLE manuscripts (\n  manuscript_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  title TEXT NOT NULL,\n  scope TEXT,\n  research_type TEXT NOT NULL,\n  writing_status TEXT NOT NULL,\n  needs_scientific_review INTEGER NOT NULL DEFAULT 0,\n  blocker TEXT,\n  next_step TEXT,\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n, workflow_stage TEXT NOT NULL DEFAULT 'PLANNING')"
+    ],
+    [
+      "table",
+      "metadata_observations",
+      "metadata_observations",
+      "CREATE TABLE metadata_observations (\n  observation_id TEXT PRIMARY KEY,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  provider TEXT NOT NULL,\n  retrieved_at TEXT NOT NULL,\n  status TEXT NOT NULL,\n  payload_json TEXT NOT NULL,\n  payload_digest TEXT NOT NULL,\n  UNIQUE(paper_id, provider, payload_digest)\n)"
+    ],
+    [
+      "table",
+      "node_evidence",
+      "node_evidence",
+      "CREATE TABLE node_evidence (\n  node_id TEXT NOT NULL REFERENCES research_nodes(node_id),\n  evidence_id TEXT NOT NULL REFERENCES evidence(evidence_id),\n  PRIMARY KEY(node_id, evidence_id)\n)"
+    ],
+    [
+      "table",
+      "paper_assessments",
+      "paper_assessments",
+      "CREATE TABLE paper_assessments (\n  assessment_id TEXT PRIMARY KEY,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  field_id TEXT NOT NULL REFERENCES research_fields(field_id),\n  track_id TEXT REFERENCES research_tracks(track_id),\n  assessment_type TEXT NOT NULL,\n  status TEXT NOT NULL,\n  result_json TEXT NOT NULL,\n  evidence_json TEXT NOT NULL,\n  rule_version TEXT NOT NULL,\n  model_tier TEXT,\n  model_name TEXT,\n  prompt_version TEXT,\n  input_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(paper_id, field_id, track_id, assessment_type, rule_version, input_digest)\n)"
+    ],
+    [
+      "table",
+      "paper_identities",
+      "paper_identities",
+      "CREATE TABLE paper_identities (\n  identity_id TEXT PRIMARY KEY,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  scheme TEXT NOT NULL,\n  normalized_value TEXT NOT NULL,\n  status TEXT NOT NULL,\n  source TEXT NOT NULL,\n  observed_at TEXT NOT NULL,\n  UNIQUE(scheme, normalized_value)\n)"
+    ],
+    [
+      "table",
+      "paper_journal_links",
+      "paper_journal_links",
+      "CREATE TABLE paper_journal_links (\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  issn TEXT NOT NULL,\n  provider TEXT NOT NULL,\n  observed_at TEXT NOT NULL,\n  PRIMARY KEY(paper_id, issn, provider)\n)"
+    ],
+    [
+      "table",
+      "paper_skeletons",
+      "paper_skeletons",
+      "CREATE TABLE paper_skeletons (\n  skeleton_id TEXT PRIMARY KEY,\n  paper_version_id TEXT NOT NULL REFERENCES paper_versions(paper_version_id),\n  version INTEGER NOT NULL,\n  extractor_model TEXT,\n  prompt_version TEXT,\n  content_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(paper_version_id, version),\n  UNIQUE(paper_version_id, content_digest)\n)"
+    ],
+    [
+      "table",
+      "paper_sources",
+      "paper_sources",
+      "CREATE TABLE paper_sources (\n  paper_source_id TEXT PRIMARY KEY,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  provider TEXT NOT NULL,\n  external_id TEXT,\n  retrieved_at TEXT NOT NULL,\n  raw_json TEXT NOT NULL,\n  UNIQUE(provider, external_id)\n)"
+    ],
+    [
+      "table",
+      "paper_versions",
+      "paper_versions",
+      "CREATE TABLE paper_versions (\n  paper_version_id TEXT PRIMARY KEY,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  version INTEGER NOT NULL,\n  pdf_path TEXT,\n  pdf_digest TEXT,\n  parsed_path TEXT,\n  parsed_digest TEXT,\n  source_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(paper_id, version),\n  UNIQUE(paper_id, pdf_digest, parsed_digest)\n)"
+    ],
+    [
+      "table",
+      "papers",
+      "papers",
+      "CREATE TABLE papers (\n  paper_id TEXT PRIMARY KEY,\n  canonical_key TEXT NOT NULL UNIQUE,\n  doi TEXT UNIQUE,\n  normalized_title TEXT NOT NULL,\n  title TEXT NOT NULL,\n  authors_json TEXT NOT NULL,\n  published_year INTEGER,\n  abstract TEXT,\n  landing_url TEXT,\n  pdf_url TEXT,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "parse_runs",
+      "parse_runs",
+      "CREATE TABLE parse_runs (\n  parse_run_id TEXT PRIMARY KEY,\n  file_version_id TEXT NOT NULL REFERENCES source_file_versions(file_version_id),\n  parser_name TEXT NOT NULL,\n  parser_version TEXT NOT NULL,\n  config_digest TEXT NOT NULL,\n  status TEXT NOT NULL,\n  artifact_manifest_json TEXT NOT NULL,\n  started_at TEXT NOT NULL,\n  completed_at TEXT,\n  UNIQUE(file_version_id, parser_name, parser_version, config_digest)\n)"
+    ],
+    [
+      "table",
+      "pipeline_runs",
+      "pipeline_runs",
+      "CREATE TABLE pipeline_runs (\n  run_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  project_id TEXT REFERENCES projects(project_id),\n  operation TEXT NOT NULL,\n  status TEXT NOT NULL,\n  detail_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "projection_outbox",
+      "projection_outbox",
+      "CREATE TABLE projection_outbox (\n  job_id TEXT PRIMARY KEY,\n  aggregate_type TEXT NOT NULL,\n  aggregate_id TEXT NOT NULL,\n  field_id TEXT NOT NULL,\n  operation TEXT NOT NULL,\n  payload_json TEXT NOT NULL,\n  status TEXT NOT NULL DEFAULT 'PENDING',\n  attempts INTEGER NOT NULL DEFAULT 0,\n  last_error TEXT,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "projection_watermarks",
+      "projection_watermarks",
+      "CREATE TABLE projection_watermarks (\n  projection_name TEXT PRIMARY KEY,\n  last_job_id TEXT,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "projects",
+      "projects",
+      "CREATE TABLE projects (\n  project_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  slug TEXT NOT NULL UNIQUE,\n  title TEXT NOT NULL,\n  research_type TEXT NOT NULL,\n  type_payload_json TEXT NOT NULL,\n  scope TEXT,\n  status TEXT NOT NULL,\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "provider_cooldowns",
+      "provider_cooldowns",
+      "CREATE TABLE provider_cooldowns (\n  provider TEXT PRIMARY KEY,\n  cooldown_until TEXT NOT NULL,\n  reason TEXT NOT NULL,\n  failure_count INTEGER NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "reference_entries",
+      "reference_entries",
+      "CREATE TABLE reference_entries (\n  reference_entry_id TEXT PRIMARY KEY,\n  citing_paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  file_version_id TEXT NOT NULL REFERENCES source_file_versions(file_version_id),\n  raw_text TEXT NOT NULL,\n  page_number INTEGER,\n  location_json TEXT NOT NULL,\n  target_paper_id TEXT REFERENCES papers(paper_id),\n  resolution_status TEXT NOT NULL,\n  content_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(file_version_id, content_digest)\n)"
+    ],
+    [
+      "table",
+      "research_edges",
+      "research_edges",
+      "CREATE TABLE research_edges (\n  edge_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  source_node_id TEXT NOT NULL REFERENCES research_nodes(node_id),\n  target_node_id TEXT NOT NULL REFERENCES research_nodes(node_id),\n  relation TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(source_node_id, target_node_id, relation)\n)"
+    ],
+    [
+      "table",
+      "research_fields",
+      "research_fields",
+      "CREATE TABLE research_fields (\n  field_id TEXT PRIMARY KEY,\n  normalized_name TEXT NOT NULL UNIQUE,\n  name TEXT NOT NULL,\n  description TEXT,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "research_nodes",
+      "research_nodes",
+      "CREATE TABLE research_nodes (\n  node_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  node_type TEXT NOT NULL,\n  status TEXT NOT NULL,\n  statement TEXT NOT NULL,\n  rationale TEXT NOT NULL,\n  payload_json TEXT NOT NULL,\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "research_tracks",
+      "research_tracks",
+      "CREATE TABLE research_tracks (\n  track_id TEXT PRIMARY KEY,\n  field_id TEXT REFERENCES research_fields(field_id),\n  primary_topic_id TEXT REFERENCES topics(topic_id),\n  title TEXT NOT NULL,\n  scope TEXT,\n  research_type TEXT NOT NULL,\n  status TEXT NOT NULL,\n  mapping_status TEXT NOT NULL DEFAULT 'MAPPED',\n  revision INTEGER NOT NULL DEFAULT 1,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "research_workspace_actions",
+      "research_workspace_actions",
+      "CREATE TABLE research_workspace_actions (\n  action_seq INTEGER PRIMARY KEY AUTOINCREMENT,\n  request_id TEXT NOT NULL UNIQUE,\n  request_json TEXT NOT NULL,\n  object_type TEXT NOT NULL,\n  object_id TEXT NOT NULL,\n  result_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "retrieval_runs",
+      "retrieval_runs",
+      "CREATE TABLE retrieval_runs (\n  retrieval_id TEXT PRIMARY KEY,\n  query TEXT NOT NULL,\n  provider TEXT NOT NULL,\n  status TEXT NOT NULL,\n  detail TEXT,\n  started_at TEXT NOT NULL,\n  completed_at TEXT\n)"
+    ],
+    [
+      "table",
+      "review_comments",
+      "review_comments",
+      "CREATE TABLE review_comments (\n  comment_id TEXT PRIMARY KEY,\n  review_round_id TEXT NOT NULL REFERENCES review_rounds(review_round_id),\n  source TEXT NOT NULL,\n  reviewer TEXT,\n  original_text TEXT NOT NULL,\n  edited_text TEXT NOT NULL,\n  author_decision TEXT,\n  response_text TEXT,\n  status TEXT NOT NULL,\n  archived_at TEXT,\n  import_metadata_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "review_rounds",
+      "review_rounds",
+      "CREATE TABLE review_rounds (\n  review_round_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  round_number INTEGER NOT NULL,\n  baseline_artifact_id TEXT REFERENCES studio_artifacts(artifact_id),\n  venue TEXT,\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(manuscript_id, round_number)\n)"
+    ],
+    [
+      "table",
+      "schema_version",
+      "schema_version",
+      "CREATE TABLE schema_version (\n  component TEXT PRIMARY KEY,\n  version INTEGER NOT NULL,\n  applied_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "screening_input_snapshots",
+      "screening_input_snapshots",
+      "CREATE TABLE screening_input_snapshots (\n  assessment_id TEXT PRIMARY KEY REFERENCES paper_assessments(assessment_id),\n  collection_id TEXT NOT NULL REFERENCES collections(collection_id),\n  context_sha256 TEXT NOT NULL,\n  context_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "skeleton_checkpoints",
+      "skeleton_checkpoints",
+      "CREATE TABLE skeleton_checkpoints (\n  checkpoint_id TEXT PRIMARY KEY,\n  skeleton_run_id TEXT NOT NULL REFERENCES skeleton_runs(skeleton_run_id),\n  section_key TEXT NOT NULL,\n  layer INTEGER NOT NULL CHECK(layer BETWEEN 1 AND 4),\n  input_digest TEXT NOT NULL,\n  output_json TEXT,\n  status TEXT NOT NULL,\n  model_name TEXT,\n  prompt_version TEXT NOT NULL,\n  updated_at TEXT NOT NULL,\n  UNIQUE(skeleton_run_id, section_key, layer, input_digest)\n)"
+    ],
+    [
+      "table",
+      "skeleton_runs",
+      "skeleton_runs",
+      "CREATE TABLE \"skeleton_runs\" (\n  skeleton_run_id TEXT PRIMARY KEY,\n  parse_run_id TEXT NOT NULL REFERENCES parse_runs(parse_run_id),\n  model_tier TEXT NOT NULL,\n  model_name TEXT,\n  prompt_version TEXT NOT NULL,\n  context_builder_version TEXT NOT NULL,\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  completed_at TEXT\n)"
+    ],
+    [
+      "table",
+      "skeleton_source_outlines",
+      "skeleton_source_outlines",
+      "CREATE TABLE skeleton_source_outlines (\n  skeleton_id TEXT PRIMARY KEY REFERENCES paper_skeletons(skeleton_id),\n  parse_run_id TEXT NOT NULL REFERENCES parse_runs(parse_run_id),\n  outline_json TEXT NOT NULL,\n  content_digest TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "skeleton_triplets",
+      "skeleton_triplets",
+      "CREATE TABLE skeleton_triplets (\n  triplet_id TEXT PRIMARY KEY,\n  unit_id TEXT NOT NULL REFERENCES skeleton_units(unit_id),\n  subject TEXT NOT NULL,\n  predicate TEXT NOT NULL,\n  object TEXT NOT NULL,\n  content_digest TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "skeleton_units",
+      "skeleton_units",
+      "CREATE TABLE skeleton_units (\n  unit_id TEXT PRIMARY KEY,\n  skeleton_id TEXT NOT NULL REFERENCES paper_skeletons(skeleton_id),\n  seq_idx INTEGER NOT NULL,\n  page_idx INTEGER,\n  section TEXT,\n  raw_text TEXT NOT NULL,\n  layer1_json TEXT NOT NULL,\n  layer2_json TEXT NOT NULL,\n  layer3_json TEXT NOT NULL,\n  layer4 TEXT,\n  content_digest TEXT NOT NULL,\n  UNIQUE(skeleton_id, seq_idx)\n)"
+    ],
+    [
+      "table",
+      "source_file_versions",
+      "source_file_versions",
+      "CREATE TABLE source_file_versions (\n  file_version_id TEXT PRIMARY KEY,\n  paper_id TEXT NOT NULL REFERENCES papers(paper_id),\n  sha256 TEXT NOT NULL,\n  size_bytes INTEGER NOT NULL,\n  mime_type TEXT NOT NULL,\n  storage_path TEXT NOT NULL,\n  acquisition_method TEXT NOT NULL,\n  source_url TEXT,\n  identity_status TEXT NOT NULL,\n  validation_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(paper_id, sha256)\n)"
+    ],
+    [
+      "table",
+      "sqlite_sequence",
+      "sqlite_sequence",
+      "CREATE TABLE sqlite_sequence(name,seq)"
+    ],
+    [
+      "table",
+      "studio_artifacts",
+      "studio_artifacts",
+      "CREATE TABLE studio_artifacts (\n  artifact_id TEXT PRIMARY KEY,\n  job_id TEXT NOT NULL REFERENCES studio_jobs(job_id),\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  document_revision INTEGER NOT NULL,\n  artifact_kind TEXT NOT NULL,\n  storage_path TEXT NOT NULL,\n  sha256 TEXT NOT NULL,\n  size_bytes INTEGER NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_assets",
+      "studio_assets",
+      "CREATE TABLE studio_assets (\n  asset_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  filename TEXT NOT NULL,\n  media_type TEXT NOT NULL,\n  size_bytes INTEGER NOT NULL,\n  sha256 TEXT NOT NULL,\n  storage_path TEXT NOT NULL,\n  asset_kind TEXT NOT NULL,\n  status TEXT NOT NULL,\n  metadata_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  UNIQUE(manuscript_id, sha256)\n)"
+    ],
+    [
+      "table",
+      "studio_change_link_events",
+      "studio_change_link_events",
+      "CREATE TABLE studio_change_link_events (\n  event_id TEXT PRIMARY KEY,\n  request_id TEXT NOT NULL UNIQUE,\n  change_id TEXT NOT NULL REFERENCES studio_changes(change_id),\n  base_link_revision INTEGER NOT NULL,\n  resulting_link_revision INTEGER NOT NULL,\n  before_comment_ids_json TEXT NOT NULL,\n  after_comment_ids_json TEXT NOT NULL,\n  reverses_event_id TEXT REFERENCES studio_change_link_events(event_id),\n  request_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_change_link_state",
+      "studio_change_link_state",
+      "CREATE TABLE studio_change_link_state (\n  change_id TEXT PRIMARY KEY REFERENCES studio_changes(change_id),\n  initial_comment_ids_json TEXT NOT NULL,\n  initial_origin TEXT NOT NULL,\n  link_revision INTEGER NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_changes",
+      "studio_changes",
+      "CREATE TABLE studio_changes (\n  change_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  operation_id TEXT NOT NULL REFERENCES studio_operations(operation_id),\n  before_json TEXT NOT NULL,\n  after_json TEXT NOT NULL,\n  is_compensating INTEGER NOT NULL DEFAULT 0,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_chat_messages",
+      "studio_chat_messages",
+      "CREATE TABLE studio_chat_messages (\n  message_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  parent_message_id TEXT REFERENCES studio_chat_messages(message_id),\n  role TEXT NOT NULL,\n  content TEXT NOT NULL,\n  anchor_type TEXT NOT NULL,\n  anchor_id TEXT,\n  anchor_revision INTEGER NOT NULL,\n  quoted_json TEXT NOT NULL,\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_comment_response_state",
+      "studio_comment_response_state",
+      "CREATE TABLE studio_comment_response_state (\n  comment_id TEXT PRIMARY KEY REFERENCES review_comments(comment_id),\n  revision INTEGER NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_documents",
+      "studio_documents",
+      "CREATE TABLE studio_documents (\n  manuscript_id TEXT PRIMARY KEY REFERENCES manuscripts(manuscript_id),\n  revision INTEGER NOT NULL DEFAULT 0,\n  document_json TEXT NOT NULL,\n  active_generated_version_id TEXT,\n  last_generated_revision INTEGER,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_findings",
+      "studio_findings",
+      "CREATE TABLE studio_findings (\n  finding_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  generated_version_id TEXT NOT NULL,\n  finding_kind TEXT NOT NULL,\n  severity TEXT NOT NULL,\n  anchor_json TEXT NOT NULL,\n  detail TEXT NOT NULL,\n  source TEXT NOT NULL,\n  status TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  resolved_at TEXT\n)"
+    ],
+    [
+      "table",
+      "studio_jobs",
+      "studio_jobs",
+      "CREATE TABLE studio_jobs (\n  job_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  job_kind TEXT NOT NULL,\n  status TEXT NOT NULL,\n  input_revision INTEGER NOT NULL,\n  request_json TEXT NOT NULL,\n  result_json TEXT,\n  error_json TEXT,\n  created_at TEXT NOT NULL,\n  started_at TEXT,\n  completed_at TEXT\n)"
+    ],
+    [
+      "table",
+      "studio_model_calls",
+      "studio_model_calls",
+      "CREATE TABLE studio_model_calls (\n  call_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  job_id TEXT REFERENCES studio_jobs(job_id),\n  message_id TEXT REFERENCES studio_chat_messages(message_id),\n  task TEXT NOT NULL,\n  input_revision INTEGER NOT NULL,\n  input_sha256 TEXT NOT NULL,\n  input_json TEXT NOT NULL,\n  output_json TEXT,\n  contract_json TEXT,\n  status TEXT NOT NULL,\n  error_json TEXT,\n  started_at TEXT NOT NULL,\n  completed_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_operations",
+      "studio_operations",
+      "CREATE TABLE studio_operations (\n  operation_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  base_revision INTEGER NOT NULL,\n  resulting_revision INTEGER NOT NULL,\n  operation_kind TEXT NOT NULL,\n  payload_json TEXT NOT NULL,\n  inverse_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_response_checks",
+      "studio_response_checks",
+      "CREATE TABLE studio_response_checks (\n  check_id TEXT PRIMARY KEY,\n  request_id TEXT NOT NULL UNIQUE,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  comment_id TEXT NOT NULL REFERENCES review_comments(comment_id),\n  generated_version_id TEXT NOT NULL REFERENCES manuscript_versions(manuscript_version_id),\n  state_sha256 TEXT NOT NULL,\n  context_sha256 TEXT NOT NULL,\n  outcome TEXT NOT NULL,\n  request_json TEXT NOT NULL,\n  context_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_review_round_baselines",
+      "studio_review_round_baselines",
+      "CREATE TABLE studio_review_round_baselines (\n  review_round_id TEXT PRIMARY KEY REFERENCES review_rounds(review_round_id),\n  baseline_manuscript_version_id TEXT REFERENCES manuscript_versions(manuscript_version_id),\n  content_sha256 TEXT,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_sample_candidates",
+      "studio_sample_candidates",
+      "CREATE TABLE studio_sample_candidates (\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  anchor_id TEXT NOT NULL,\n  document_revision INTEGER NOT NULL,\n  query_key TEXT NOT NULL,\n  candidate_id TEXT NOT NULL,\n  sample_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  PRIMARY KEY(manuscript_id, anchor_id, query_key, candidate_id)\n)"
+    ],
+    [
+      "table",
+      "studio_submission_packages",
+      "studio_submission_packages",
+      "CREATE TABLE studio_submission_packages (\n  package_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  review_round_id TEXT REFERENCES review_rounds(review_round_id),\n  job_id TEXT NOT NULL REFERENCES studio_jobs(job_id),\n  manifest_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_suggestion_decisions",
+      "studio_suggestion_decisions",
+      "CREATE TABLE studio_suggestion_decisions (\n  decision_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  message_id TEXT NOT NULL REFERENCES studio_chat_messages(message_id),\n  suggestion_id TEXT NOT NULL,\n  outcome TEXT NOT NULL,\n  operation_id TEXT REFERENCES studio_operations(operation_id),\n  request_json TEXT NOT NULL,\n  provenance_json TEXT NOT NULL,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "studio_template_instances",
+      "studio_template_instances",
+      "CREATE TABLE studio_template_instances (\n  template_instance_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  source_skeleton_id TEXT,\n  source_version TEXT,\n  adopted_json TEXT NOT NULL,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "submission_events",
+      "submission_events",
+      "CREATE TABLE submission_events (\n  event_id TEXT PRIMARY KEY,\n  manuscript_id TEXT NOT NULL REFERENCES manuscripts(manuscript_id),\n  venue TEXT NOT NULL,\n  round INTEGER NOT NULL,\n  status TEXT NOT NULL,\n  detail TEXT,\n  created_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "topics",
+      "topics",
+      "CREATE TABLE topics (\n  topic_id TEXT PRIMARY KEY,\n  normalized_name TEXT NOT NULL UNIQUE,\n  name TEXT NOT NULL,\n  description TEXT,\n  created_at TEXT NOT NULL,\n  updated_at TEXT NOT NULL\n)"
+    ],
+    [
+      "table",
+      "track_milestones",
+      "track_milestones",
+      "CREATE TABLE track_milestones (\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  milestone TEXT NOT NULL,\n  status TEXT NOT NULL,\n  blocker TEXT,\n  revision INTEGER NOT NULL DEFAULT 1,\n  updated_at TEXT NOT NULL,\n  PRIMARY KEY(track_id, milestone)\n)"
+    ],
+    [
+      "table",
+      "track_snapshot_adoptions",
+      "track_snapshot_adoptions",
+      "CREATE TABLE track_snapshot_adoptions (\n  adoption_id TEXT PRIMARY KEY,\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  snapshot_id TEXT NOT NULL REFERENCES fieldkg_snapshots(snapshot_id),\n  snapshot_digest TEXT NOT NULL,\n  adopted_at TEXT NOT NULL,\n  UNIQUE(track_id, snapshot_id)\n)"
+    ],
+    [
+      "table",
+      "track_topics",
+      "track_topics",
+      "CREATE TABLE track_topics (\n  track_id TEXT NOT NULL REFERENCES research_tracks(track_id),\n  topic_id TEXT NOT NULL REFERENCES topics(topic_id),\n  role TEXT NOT NULL CHECK(role IN ('PRIMARY','SECONDARY')),\n  created_at TEXT NOT NULL,\n  PRIMARY KEY(track_id, topic_id)\n)"
+    ]
+  ],
+  "tables": {
+    "acquisition_attempts": {
+      "columns": [
+        "attempt_id",
+        "job_id",
+        "fencing_token",
+        "worker_id",
+        "status",
+        "started_at",
+        "completed_at",
+        "detail_json"
+      ],
+      "rows": []
+    },
+    "acquisition_jobs": {
+      "columns": [
+        "job_id",
+        "collection_id",
+        "paper_id",
+        "job_type",
+        "queue_class",
+        "status",
+        "priority",
+        "idempotency_key",
+        "input_json",
+        "input_digest",
+        "rule_version",
+        "attempts",
+        "available_at",
+        "lease_owner",
+        "lease_expires_at",
+        "fencing_token",
+        "last_error_code",
+        "last_error_detail",
+        "result_json",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "acquisition_model_call_events": {
+      "columns": [
+        "event_seq",
+        "call_id",
+        "event_kind",
+        "job_id",
+        "paper_id",
+        "fencing_token",
+        "task",
+        "input_json",
+        "source_json",
+        "output_json",
+        "contract_json",
+        "error_type",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "acquisition_worker_presence": {
+      "columns": [
+        "worker_id",
+        "instance_id",
+        "role",
+        "hostname",
+        "process_id",
+        "state",
+        "job_id",
+        "started_at",
+        "observed_at",
+        "expires_at"
+      ],
+      "rows": []
+    },
+    "approval_grants": {
+      "columns": [
+        "grant_id",
+        "proposal_id",
+        "proposal_type",
+        "track_id",
+        "project_id",
+        "proposal_revision",
+        "profile",
+        "session_id",
+        "message_id",
+        "user_message_digest",
+        "created_at",
+        "consumed_at"
+      ],
+      "rows": [
+        [
+          "grant_a1a0f12493624726b32f1797170fd870",
+          "proposal_3797f64e571f4d84b9df1d36a46f632c",
+          "experiment_plan",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          1,
+          "scholar",
+          "formal-gate-fixture-only",
+          "674863e19da649c0b8a98bdd64b38d08",
+          "1b0655d16cf9b49a9f6ce3971f35275f5c069896f824dd6643120f6ff6dc8e93",
+          "2026-10-02T14:59:39.330062+00:00",
+          "2026-10-02T14:59:39.337062+00:00"
+        ],
+        [
+          "grant_ad1a1b72e0454f5884a0d92ec104033c",
+          "proposal_2f4d42cd46e9441c858587f9ebf6494e",
+          "decision",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          1,
+          "scholar",
+          "formal-gate-fixture-only",
+          "2c07bf8c2cee41b3af6af25079c1c709",
+          "9d61ef0d87aea468654ba5fec405513fad1344f03091e1914c4fc3b0a476a535",
+          "2026-10-02T14:59:39.193439+00:00",
+          "2026-10-02T14:59:39.199945+00:00"
+        ],
+        [
+          "grant_b547c8205ece400cba71eb779728b5ac",
+          "proposal_b367fce5fa274a4f85401286fdf4ae48",
+          "decision",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          1,
+          "scholar",
+          "formal-gate-fixture-only",
+          "2882185cbe784045990e4b3a6bdd1cf9",
+          "3f357fdb4e2673d78891c9b7025b25933ff8262c4744d1d887e984ac5111b837",
+          "2026-10-02T14:59:39.131199+00:00",
+          "2026-10-02T14:59:39.138714+00:00"
+        ],
+        [
+          "grant_bbf3171b9f0b4da695704ea0274ecf24",
+          "proposal_a62eadcdc80c4e708cf2981020ad462d",
+          "experiment_plan",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          1,
+          "scholar",
+          "formal-gate-fixture-only",
+          "f76ee558bfac4627805f06bd1b5da29c",
+          "0ac5612e5c3f5c57e77cb9916dbbfd34649e589fe6390273e453e0f7175f84e8",
+          "2026-10-02T14:59:39.236988+00:00",
+          "2026-10-02T14:59:39.246494+00:00"
+        ],
+        [
+          "grant_bed5fdb071a5466db4f39c391b45dd18",
+          "proposal_4274b84da40146c3b87f7228180f72a4",
+          "decision",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          1,
+          "scholar",
+          "formal-gate-fixture-only",
+          "e9ac365b206c499b98eeb97fe421a8ad",
+          "481c73d5c0d060d7cd3b6dba8fbc21485f4abf249f53978495c7e15aa75fe57a",
+          "2026-10-02T14:59:39.280032+00:00",
+          "2026-10-02T14:59:39.292033+00:00"
+        ],
+        [
+          "grant_d447779aa42048488ce2d9bf127aefff",
+          "proposal_ce01906e6aba4e9a8ffd35823d59b14b",
+          "decision",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          1,
+          "scholar",
+          "formal-gate-fixture-only",
+          "99faa7f254904c8387de6bedfcb8618f",
+          "2c0e5bd1384eebbe4f79a5ba288eb351836f9c87149ab400d8b33eda54a78b6b",
+          "2026-10-02T14:59:39.161806+00:00",
+          "2026-10-02T14:59:39.168312+00:00"
+        ]
+      ]
+    },
+    "blueprint_snapshots": {
+      "columns": [
+        "blueprint_id",
+        "track_id",
+        "revision",
+        "payload_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "browser_acquisition_requests": {
+      "columns": [
+        "request_id",
+        "collection_id",
+        "paper_id",
+        "idempotency_key",
+        "action_id",
+        "action_version",
+        "execution_id",
+        "status",
+        "expected_identity_json",
+        "target_directory",
+        "output_refs_json",
+        "error_json",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "catalog_quarantine": {
+      "columns": [
+        "paper_id",
+        "reason",
+        "source_path",
+        "quarantined_at"
+      ],
+      "rows": []
+    },
+    "catalog_review_actions": {
+      "columns": [
+        "action_id",
+        "request_id",
+        "case_id",
+        "file_version_id",
+        "action_kind",
+        "reviewer_label",
+        "reason",
+        "request_json",
+        "context_json",
+        "result_json",
+        "supersedes_action_id",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "catalog_review_annotations": {
+      "columns": [
+        "annotation_id",
+        "submission_id",
+        "case_id",
+        "paper_id",
+        "file_version_id",
+        "field_name",
+        "decision",
+        "selected_text",
+        "page_number",
+        "word_start",
+        "word_end",
+        "comment",
+        "value_before",
+        "value_after",
+        "canonical_key_before",
+        "canonical_key_after",
+        "reviewer_label",
+        "supersedes_annotation_id",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "catalog_review_findings": {
+      "columns": [
+        "finding_id",
+        "submission_id",
+        "case_id",
+        "paper_id",
+        "file_version_id",
+        "issue_type",
+        "assessment",
+        "proposed_value",
+        "evidence_page",
+        "evidence_quote",
+        "note",
+        "reviewer_label",
+        "supersedes_finding_id",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "citation_observations": {
+      "columns": [
+        "citation_id",
+        "citing_paper_id",
+        "cited_paper_id",
+        "reference_entry_id",
+        "role",
+        "source",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "collection_budget_events": {
+      "columns": [
+        "event_id",
+        "collection_id",
+        "request_id",
+        "request_json",
+        "limits_json",
+        "result_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "collection_candidate_frontier": {
+      "columns": [
+        "collection_id",
+        "paper_id",
+        "state",
+        "metadata_json",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "collection_memberships": {
+      "columns": [
+        "collection_id",
+        "paper_id",
+        "discovery_kind",
+        "discovered_from_paper_id",
+        "status",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "collection_reference_frontier": {
+      "columns": [
+        "collection_id",
+        "reference_entry_id",
+        "state",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "collection_runtime_state": {
+      "columns": [
+        "collection_id",
+        "active_seconds",
+        "active_since",
+        "stop_reason_json",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "collection_seeds": {
+      "columns": [
+        "seed_id",
+        "collection_id",
+        "seed_type",
+        "raw_value",
+        "normalized_value",
+        "paper_id",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "collections": {
+      "columns": [
+        "collection_id",
+        "field_id",
+        "track_id",
+        "name",
+        "scope_json",
+        "scope_version",
+        "status",
+        "revision",
+        "created_at",
+        "updated_at",
+        "topic_id",
+        "creation_request_json"
+      ],
+      "rows": []
+    },
+    "comment_changes": {
+      "columns": [
+        "comment_id",
+        "change_id"
+      ],
+      "rows": []
+    },
+    "core_rankings": {
+      "columns": [
+        "ranking_id",
+        "collection_id",
+        "paper_id",
+        "scope_kind",
+        "scope_id",
+        "rank",
+        "relevance_group",
+        "seed_coverage",
+        "direct_citations",
+        "quartile",
+        "labels_json",
+        "explanation_json",
+        "graph_digest",
+        "algorithm_version",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "decisions": {
+      "columns": [
+        "proposal_id",
+        "track_id",
+        "node_id",
+        "kind",
+        "status",
+        "approval_phrase",
+        "expected_revision",
+        "confirmation_text",
+        "rejection_reason",
+        "supersedes_node_id",
+        "created_at",
+        "resolved_at"
+      ],
+      "rows": [
+        [
+          "proposal_2f4d42cd46e9441c858587f9ebf6494e",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "claim_5fdad5a7be7144aca7ff828926d00e11",
+          "claim",
+          "APPROVED",
+          "APPROVE proposal_2f4d42cd46e9441c858587f9ebf6494e",
+          1,
+          "{\"grant_id\":\"grant_ad1a1b72e0454f5884a0d92ec104033c\",\"message_id\":\"2c07bf8c2cee41b3af6af25079c1c709\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.180820+00:00",
+          "2026-10-02T14:59:39.199945+00:00"
+        ],
+        [
+          "proposal_4274b84da40146c3b87f7228180f72a4",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "method_de9d256dcf294ac9a89822c4c8a10142",
+          "method",
+          "APPROVED",
+          "APPROVE proposal_4274b84da40146c3b87f7228180f72a4",
+          1,
+          "{\"grant_id\":\"grant_bed5fdb071a5466db4f39c391b45dd18\",\"message_id\":\"e9ac365b206c499b98eeb97fe421a8ad\"}",
+          null,
+          "method_578417c4dcfc42e99060150cccd53613",
+          "2026-10-02T14:59:39.262518+00:00",
+          "2026-10-02T14:59:39.293033+00:00"
+        ],
+        [
+          "proposal_b367fce5fa274a4f85401286fdf4ae48",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "method_578417c4dcfc42e99060150cccd53613",
+          "method",
+          "APPROVED",
+          "APPROVE proposal_b367fce5fa274a4f85401286fdf4ae48",
+          1,
+          "{\"grant_id\":\"grant_b547c8205ece400cba71eb779728b5ac\",\"message_id\":\"2882185cbe784045990e4b3a6bdd1cf9\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.119186+00:00",
+          "2026-10-02T14:59:39.138714+00:00"
+        ],
+        [
+          "proposal_ce01906e6aba4e9a8ffd35823d59b14b",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "claim_bb84d9ba73be4451a3b4222d941427e2",
+          "claim",
+          "APPROVED",
+          "APPROVE proposal_ce01906e6aba4e9a8ffd35823d59b14b",
+          1,
+          "{\"grant_id\":\"grant_d447779aa42048488ce2d9bf127aefff\",\"message_id\":\"99faa7f254904c8387de6bedfcb8618f\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.149798+00:00",
+          "2026-10-02T14:59:39.168312+00:00"
+        ]
+      ]
+    },
+    "document_blocks": {
+      "columns": [
+        "block_id",
+        "parse_run_id",
+        "sequence",
+        "page_number",
+        "section",
+        "block_type",
+        "text",
+        "location_json",
+        "content_digest"
+      ],
+      "rows": []
+    },
+    "evidence": {
+      "columns": [
+        "evidence_id",
+        "scope_kind",
+        "field_id",
+        "track_id",
+        "paper_id",
+        "paper_version_id",
+        "experiment_run_id",
+        "statement",
+        "excerpt",
+        "location_json",
+        "relation",
+        "confidence",
+        "extractor_model",
+        "prompt_version",
+        "content_digest",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "experiment_plans": {
+      "columns": [
+        "plan_id",
+        "proposal_id",
+        "track_id",
+        "project_id",
+        "method_node_id",
+        "status",
+        "revision",
+        "argv_json",
+        "working_directory",
+        "script_path",
+        "script_sha256",
+        "timeout_seconds",
+        "metrics_json_path",
+        "created_at",
+        "approved_at"
+      ],
+      "rows": [
+        [
+          "experiment_plan_03a8d64eab544aca93b8a4f804e15364",
+          "proposal_3797f64e571f4d84b9df1d36a46f632c",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          "method_de9d256dcf294ac9a89822c4c8a10142",
+          "APPROVED",
+          1,
+          "[\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\",\"-c\",\"print('ISOLATED_ACCEPTANCE_ONLY')\"]",
+          "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y\\data\\artifacts\\track_19bd9c2c7abb40d48013dd0e0374e4fd\\experiments",
+          null,
+          null,
+          600,
+          null,
+          "2026-10-02T14:59:39.315546+00:00",
+          "2026-10-02T14:59:39.337062+00:00"
+        ],
+        [
+          "experiment_plan_81163acc4ada40c786e62a8e66576d9d",
+          "proposal_a62eadcdc80c4e708cf2981020ad462d",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          "method_578417c4dcfc42e99060150cccd53613",
+          "APPROVED",
+          1,
+          "[\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\",\"-c\",\"from pathlib import Path; Path('C:\\\\\\\\Users\\\\\\\\ALANDE~1\\\\\\\\AppData\\\\\\\\Local\\\\\\\\Temp\\\\\\\\scholar-formal-gates-z2aa267y\\\\\\\\old-method-must-not-run.txt').touch()\"]",
+          "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y\\data\\artifacts\\track_19bd9c2c7abb40d48013dd0e0374e4fd\\experiments",
+          null,
+          null,
+          600,
+          null,
+          "2026-10-02T14:59:39.221966+00:00",
+          "2026-10-02T14:59:39.246494+00:00"
+        ]
+      ]
+    },
+    "field_topics": {
+      "columns": [
+        "field_id",
+        "topic_id",
+        "created_at"
+      ],
+      "rows": [
+        [
+          "field_5a513f17ec1349c8a05002bb42a0a93f",
+          "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+          "2026-10-02T14:59:39.097667+00:00"
+        ]
+      ]
+    },
+    "fieldkg_build_papers": {
+      "columns": [
+        "build_id",
+        "paper_version_id",
+        "skeleton_id",
+        "status",
+        "detail"
+      ],
+      "rows": []
+    },
+    "fieldkg_builds": {
+      "columns": [
+        "build_id",
+        "field_id",
+        "status",
+        "retrieval_scope_json",
+        "revision",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "fieldkg_candidate_gaps": {
+      "columns": [
+        "candidate_gap_id",
+        "build_id",
+        "field_id",
+        "statement",
+        "rationale",
+        "evidence_ids_json",
+        "counterevidence_ids_json",
+        "conditions_json",
+        "generator_model",
+        "prompt_version",
+        "status",
+        "revision",
+        "created_at",
+        "reviewed_at"
+      ],
+      "rows": []
+    },
+    "fieldkg_evidence_candidates": {
+      "columns": [
+        "candidate_id",
+        "build_id",
+        "field_id",
+        "unit_id",
+        "statement",
+        "excerpt",
+        "relation",
+        "confidence",
+        "status",
+        "rationale",
+        "revision",
+        "created_at",
+        "reviewed_at"
+      ],
+      "rows": []
+    },
+    "fieldkg_semantic_objects": {
+      "columns": [
+        "object_id",
+        "run_id",
+        "field_id",
+        "build_id",
+        "kind",
+        "statement",
+        "rationale",
+        "references_json",
+        "conditions_json",
+        "confidence",
+        "status",
+        "revision",
+        "model_contract_json",
+        "content_digest",
+        "reviewed_at",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "fieldkg_semantic_runs": {
+      "columns": [
+        "run_id",
+        "request_id",
+        "field_id",
+        "build_id",
+        "request_json",
+        "input_json",
+        "input_digest",
+        "status",
+        "result_json",
+        "router_run_id",
+        "error_type",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "fieldkg_snapshot_members": {
+      "columns": [
+        "snapshot_id",
+        "member_type",
+        "member_id",
+        "member_digest"
+      ],
+      "rows": []
+    },
+    "fieldkg_snapshots": {
+      "columns": [
+        "snapshot_id",
+        "field_id",
+        "version",
+        "build_id",
+        "status",
+        "manifest_json",
+        "content_digest",
+        "mapping_status",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "foundation_topics": {
+      "columns": [
+        "foundation_id",
+        "version",
+        "topic_id"
+      ],
+      "rows": []
+    },
+    "foundation_versions": {
+      "columns": [
+        "foundation_id",
+        "version",
+        "payload_json",
+        "content_digest",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "foundations": {
+      "columns": [
+        "foundation_id",
+        "title",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "journal_metric_observations": {
+      "columns": [
+        "metric_id",
+        "issn",
+        "source",
+        "metric_year",
+        "category",
+        "quartile",
+        "metric_name",
+        "metric_value",
+        "payload_json",
+        "observed_at"
+      ],
+      "rows": []
+    },
+    "legacy_migration_sources": {
+      "columns": [
+        "source_path",
+        "source_digest",
+        "project_id",
+        "default_track_id",
+        "status",
+        "detail_json",
+        "migrated_at"
+      ],
+      "rows": []
+    },
+    "legacy_paper_mappings": {
+      "columns": [
+        "source_database",
+        "legacy_id",
+        "paper_id",
+        "file_version_id",
+        "status",
+        "detail_json",
+        "imported_at"
+      ],
+      "rows": []
+    },
+    "local_pdf_imports": {
+      "columns": [
+        "source_path",
+        "root_path",
+        "size_bytes",
+        "sha256",
+        "title_candidate",
+        "doi_candidate",
+        "paper_id",
+        "file_version_id",
+        "status",
+        "detail_json",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "manuscript_evidence": {
+      "columns": [
+        "manuscript_id",
+        "evidence_id",
+        "evidence_digest"
+      ],
+      "rows": []
+    },
+    "manuscript_nodes": {
+      "columns": [
+        "manuscript_id",
+        "node_id",
+        "section",
+        "node_revision"
+      ],
+      "rows": [
+        [
+          "manuscript_fde24662e8b044c59e729f7516ad10ca",
+          "claim_5fdad5a7be7144aca7ff828926d00e11",
+          null,
+          1
+        ]
+      ]
+    },
+    "manuscript_projects": {
+      "columns": [
+        "manuscript_id",
+        "project_id"
+      ],
+      "rows": []
+    },
+    "manuscript_scientific_review_events": {
+      "columns": [
+        "event_id",
+        "review_id",
+        "manuscript_id",
+        "grant_id",
+        "before_json",
+        "after_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "manuscript_scientific_review_requests": {
+      "columns": [
+        "review_id",
+        "request_id",
+        "manuscript_id",
+        "track_id",
+        "expected_revision",
+        "request_json",
+        "context_json",
+        "context_sha256",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "manuscript_status_history": {
+      "columns": [
+        "history_id",
+        "manuscript_id",
+        "status",
+        "blocker",
+        "next_step",
+        "reason",
+        "revision",
+        "created_at"
+      ],
+      "rows": [
+        [
+          "history_264376e38c10446da4933062d3a64c4f",
+          "manuscript_264202f005144e1ba60f8574c6637f70",
+          "PLANNING",
+          null,
+          null,
+          "Created",
+          1,
+          "2026-10-02T14:59:39.407056+00:00"
+        ],
+        [
+          "history_724beff19b824288aad36b3e96c1252d",
+          "manuscript_d24e458d188e42449fb25c1d65affc29",
+          "PLANNING",
+          null,
+          null,
+          "Created",
+          1,
+          "2026-10-02T14:59:39.439159+00:00"
+        ],
+        [
+          "history_90840ff9b58a49fcafbe929cd2734e15",
+          "manuscript_ed7c93ebf4824ec48186d731583185c8",
+          "PLANNING",
+          null,
+          null,
+          "Created",
+          1,
+          "2026-10-02T14:59:39.471182+00:00"
+        ],
+        [
+          "history_ba617c060ee445559321c64b1d10cf17",
+          "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+          "PLANNING",
+          null,
+          null,
+          "Created",
+          1,
+          "2026-10-02T14:59:39.504109+00:00"
+        ],
+        [
+          "history_ee229981b46c4369a079398efa4b9283",
+          "manuscript_fde24662e8b044c59e729f7516ad10ca",
+          "PLANNING",
+          null,
+          null,
+          "Created",
+          1,
+          "2026-10-02T14:59:39.209957+00:00"
+        ]
+      ]
+    },
+    "manuscript_versions": {
+      "columns": [
+        "manuscript_version_id",
+        "manuscript_id",
+        "version",
+        "content",
+        "inputs_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "manuscripts": {
+      "columns": [
+        "manuscript_id",
+        "track_id",
+        "title",
+        "scope",
+        "research_type",
+        "writing_status",
+        "needs_scientific_review",
+        "blocker",
+        "next_step",
+        "revision",
+        "created_at",
+        "updated_at",
+        "workflow_stage"
+      ],
+      "rows": [
+        [
+          "manuscript_264202f005144e1ba60f8574c6637f70",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "Zero versions WHOLE_PAPER_REVIEW",
+          null,
+          "conceptual_framework",
+          "PLANNING",
+          0,
+          null,
+          null,
+          1,
+          "2026-10-02T14:59:39.407056+00:00",
+          "2026-10-02T14:59:39.407056+00:00",
+          "DRAFTING"
+        ],
+        [
+          "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "Zero versions PUBLICATION",
+          null,
+          "conceptual_framework",
+          "PLANNING",
+          0,
+          null,
+          null,
+          1,
+          "2026-10-02T14:59:39.504109+00:00",
+          "2026-10-02T14:59:39.504109+00:00",
+          "FINALIZATION_SUBMISSION"
+        ],
+        [
+          "manuscript_d24e458d188e42449fb25c1d65affc29",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "Zero versions FINALIZATION_SUBMISSION",
+          null,
+          "conceptual_framework",
+          "PLANNING",
+          0,
+          null,
+          null,
+          1,
+          "2026-10-02T14:59:39.439159+00:00",
+          "2026-10-02T14:59:39.439159+00:00",
+          "WHOLE_PAPER_REVIEW"
+        ],
+        [
+          "manuscript_ed7c93ebf4824ec48186d731583185c8",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "Zero versions REVISION",
+          null,
+          "conceptual_framework",
+          "PLANNING",
+          0,
+          null,
+          null,
+          1,
+          "2026-10-02T14:59:39.471182+00:00",
+          "2026-10-02T14:59:39.471182+00:00",
+          "FINALIZATION_SUBMISSION"
+        ],
+        [
+          "manuscript_fde24662e8b044c59e729f7516ad10ca",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "Indirect fixture manuscript",
+          null,
+          "conceptual_framework",
+          "PLANNING",
+          1,
+          null,
+          null,
+          2,
+          "2026-10-02T14:59:39.209957+00:00",
+          "2026-10-02T14:59:39.293033+00:00",
+          "PLANNING"
+        ]
+      ]
+    },
+    "metadata_observations": {
+      "columns": [
+        "observation_id",
+        "paper_id",
+        "provider",
+        "retrieved_at",
+        "status",
+        "payload_json",
+        "payload_digest"
+      ],
+      "rows": []
+    },
+    "node_evidence": {
+      "columns": [
+        "node_id",
+        "evidence_id"
+      ],
+      "rows": []
+    },
+    "paper_assessments": {
+      "columns": [
+        "assessment_id",
+        "paper_id",
+        "field_id",
+        "track_id",
+        "assessment_type",
+        "status",
+        "result_json",
+        "evidence_json",
+        "rule_version",
+        "model_tier",
+        "model_name",
+        "prompt_version",
+        "input_digest",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "paper_identities": {
+      "columns": [
+        "identity_id",
+        "paper_id",
+        "scheme",
+        "normalized_value",
+        "status",
+        "source",
+        "observed_at"
+      ],
+      "rows": []
+    },
+    "paper_journal_links": {
+      "columns": [
+        "paper_id",
+        "issn",
+        "provider",
+        "observed_at"
+      ],
+      "rows": []
+    },
+    "paper_skeletons": {
+      "columns": [
+        "skeleton_id",
+        "paper_version_id",
+        "version",
+        "extractor_model",
+        "prompt_version",
+        "content_digest",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "paper_sources": {
+      "columns": [
+        "paper_source_id",
+        "paper_id",
+        "provider",
+        "external_id",
+        "retrieved_at",
+        "raw_json"
+      ],
+      "rows": []
+    },
+    "paper_versions": {
+      "columns": [
+        "paper_version_id",
+        "paper_id",
+        "version",
+        "pdf_path",
+        "pdf_digest",
+        "parsed_path",
+        "parsed_digest",
+        "source_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "papers": {
+      "columns": [
+        "paper_id",
+        "canonical_key",
+        "doi",
+        "normalized_title",
+        "title",
+        "authors_json",
+        "published_year",
+        "abstract",
+        "landing_url",
+        "pdf_url",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "parse_runs": {
+      "columns": [
+        "parse_run_id",
+        "file_version_id",
+        "parser_name",
+        "parser_version",
+        "config_digest",
+        "status",
+        "artifact_manifest_json",
+        "started_at",
+        "completed_at"
+      ],
+      "rows": []
+    },
+    "pipeline_runs": {
+      "columns": [
+        "run_id",
+        "track_id",
+        "project_id",
+        "operation",
+        "status",
+        "detail_json",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": [
+        [
+          "run_d79366ed2ce545f08eddb3aee9b5014f",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          null,
+          "experiment: [\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\", \"-c\", \"print('ISOLATED_ACCEPTANCE_ONLY')\"]",
+          "COMPLETED",
+          "{\"argv\": [\"C:\\\\Users\\\\Alandelone\\\\CodeSpace_Local\\\\RSTV4\\\\.venv\\\\Scripts\\\\python.exe\", \"-c\", \"print('ISOLATED_ACCEPTANCE_ONLY')\"], \"exit_code\": 0, \"duration\": 0.03252816200256348, \"metrics\": {}, \"stdout_preview\": \"ISOLATED_ACCEPTANCE_ONLY\\n\", \"stderr_preview\": \"\"}",
+          "2026-10-02T14:59:39Z",
+          "2026-10-02T14:59:39Z"
+        ]
+      ]
+    },
+    "projection_outbox": {
+      "columns": [
+        "job_id",
+        "aggregate_type",
+        "aggregate_id",
+        "field_id",
+        "operation",
+        "payload_json",
+        "status",
+        "attempts",
+        "last_error",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "projection_watermarks": {
+      "columns": [
+        "projection_name",
+        "last_job_id",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "projects": {
+      "columns": [
+        "project_id",
+        "track_id",
+        "slug",
+        "title",
+        "research_type",
+        "type_payload_json",
+        "scope",
+        "status",
+        "revision",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "provider_cooldowns": {
+      "columns": [
+        "provider",
+        "cooldown_until",
+        "reason",
+        "failure_count",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "reference_entries": {
+      "columns": [
+        "reference_entry_id",
+        "citing_paper_id",
+        "file_version_id",
+        "raw_text",
+        "page_number",
+        "location_json",
+        "target_paper_id",
+        "resolution_status",
+        "content_digest",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "research_edges": {
+      "columns": [
+        "edge_id",
+        "track_id",
+        "source_node_id",
+        "target_node_id",
+        "relation",
+        "created_at"
+      ],
+      "rows": [
+        [
+          "edge_011910b16c684b5ab05f8e15074c97f7",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "method_578417c4dcfc42e99060150cccd53613",
+          "claim_bb84d9ba73be4451a3b4222d941427e2",
+          "MOTIVATES",
+          "2026-10-02T14:59:39.149798+00:00"
+        ],
+        [
+          "edge_7eb9190e62f64a98b6c73ab075e67c7b",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "claim_bb84d9ba73be4451a3b4222d941427e2",
+          "claim_5fdad5a7be7144aca7ff828926d00e11",
+          "MOTIVATES",
+          "2026-10-02T14:59:39.180820+00:00"
+        ]
+      ]
+    },
+    "research_fields": {
+      "columns": [
+        "field_id",
+        "normalized_name",
+        "name",
+        "description",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": [
+        [
+          "field_5a513f17ec1349c8a05002bb42a0a93f",
+          "isolated field",
+          "Isolated field",
+          null,
+          "2026-10-02T14:59:39.089164+00:00",
+          "2026-10-02T14:59:39.089164+00:00"
+        ]
+      ]
+    },
+    "research_nodes": {
+      "columns": [
+        "node_id",
+        "track_id",
+        "node_type",
+        "status",
+        "statement",
+        "rationale",
+        "payload_json",
+        "revision",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": [
+        [
+          "claim_5fdad5a7be7144aca7ff828926d00e11",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "claim",
+          "STALE",
+          "Isolated claim d8de1260d07540f7a0a2c849fb43b3d0",
+          "Fixture approval only",
+          "{\"evidence_ids\":[],\"upstream_node_ids\":[\"claim_bb84d9ba73be4451a3b4222d941427e2\"]}",
+          2,
+          "2026-10-02T14:59:39.180820+00:00",
+          "2026-10-02T14:59:39.293033+00:00"
+        ],
+        [
+          "claim_bb84d9ba73be4451a3b4222d941427e2",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "claim",
+          "STALE",
+          "Isolated claim 6644ada96ea349dd90e002aa8879f948",
+          "Fixture approval only",
+          "{\"evidence_ids\":[],\"upstream_node_ids\":[\"method_578417c4dcfc42e99060150cccd53613\"]}",
+          2,
+          "2026-10-02T14:59:39.149798+00:00",
+          "2026-10-02T14:59:39.293033+00:00"
+        ],
+        [
+          "method_578417c4dcfc42e99060150cccd53613",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "method",
+          "SUPERSEDED",
+          "Isolated method 011d49e3a9ce43c696e8525ba6579412",
+          "Fixture approval only",
+          "{\"evidence_ids\":[],\"upstream_node_ids\":[]}",
+          2,
+          "2026-10-02T14:59:39.119186+00:00",
+          "2026-10-02T14:59:39.293033+00:00"
+        ],
+        [
+          "method_de9d256dcf294ac9a89822c4c8a10142",
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "method",
+          "APPROVED",
+          "Isolated method 371c132798e14f1a9944167a43c692a9",
+          "Fixture approval only",
+          "{\"evidence_ids\":[],\"upstream_node_ids\":[]}",
+          1,
+          "2026-10-02T14:59:39.262518+00:00",
+          "2026-10-02T14:59:39.293033+00:00"
+        ]
+      ]
+    },
+    "research_tracks": {
+      "columns": [
+        "track_id",
+        "field_id",
+        "primary_topic_id",
+        "title",
+        "scope",
+        "research_type",
+        "status",
+        "mapping_status",
+        "revision",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": [
+        [
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "field_5a513f17ec1349c8a05002bb42a0a93f",
+          "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+          "Isolated track",
+          null,
+          "conceptual_framework",
+          "ACTIVE",
+          "MAPPED",
+          1,
+          "2026-10-02T14:59:39.105669+00:00",
+          "2026-10-02T14:59:39.105669+00:00"
+        ]
+      ]
+    },
+    "research_workspace_actions": {
+      "columns": [
+        "action_seq",
+        "request_id",
+        "request_json",
+        "object_type",
+        "object_id",
+        "result_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "retrieval_runs": {
+      "columns": [
+        "retrieval_id",
+        "query",
+        "provider",
+        "status",
+        "detail",
+        "started_at",
+        "completed_at"
+      ],
+      "rows": []
+    },
+    "review_comments": {
+      "columns": [
+        "comment_id",
+        "review_round_id",
+        "source",
+        "reviewer",
+        "original_text",
+        "edited_text",
+        "author_decision",
+        "response_text",
+        "status",
+        "archived_at",
+        "import_metadata_json",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "review_rounds": {
+      "columns": [
+        "review_round_id",
+        "manuscript_id",
+        "round_number",
+        "baseline_artifact_id",
+        "venue",
+        "status",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "schema_version": {
+      "columns": [
+        "component",
+        "version",
+        "applied_at"
+      ],
+      "rows": [
+        [
+          "catalog",
+          13,
+          "2026-10-13 14:12:39"
+        ]
+      ]
+    },
+    "screening_input_snapshots": {
+      "columns": [
+        "assessment_id",
+        "collection_id",
+        "context_sha256",
+        "context_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "skeleton_checkpoints": {
+      "columns": [
+        "checkpoint_id",
+        "skeleton_run_id",
+        "section_key",
+        "layer",
+        "input_digest",
+        "output_json",
+        "status",
+        "model_name",
+        "prompt_version",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "skeleton_runs": {
+      "columns": [
+        "skeleton_run_id",
+        "parse_run_id",
+        "model_tier",
+        "model_name",
+        "prompt_version",
+        "context_builder_version",
+        "status",
+        "created_at",
+        "completed_at"
+      ],
+      "rows": []
+    },
+    "skeleton_source_outlines": {
+      "columns": [
+        "skeleton_id",
+        "parse_run_id",
+        "outline_json",
+        "content_digest",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "skeleton_triplets": {
+      "columns": [
+        "triplet_id",
+        "unit_id",
+        "subject",
+        "predicate",
+        "object",
+        "content_digest"
+      ],
+      "rows": []
+    },
+    "skeleton_units": {
+      "columns": [
+        "unit_id",
+        "skeleton_id",
+        "seq_idx",
+        "page_idx",
+        "section",
+        "raw_text",
+        "layer1_json",
+        "layer2_json",
+        "layer3_json",
+        "layer4",
+        "content_digest"
+      ],
+      "rows": []
+    },
+    "source_file_versions": {
+      "columns": [
+        "file_version_id",
+        "paper_id",
+        "sha256",
+        "size_bytes",
+        "mime_type",
+        "storage_path",
+        "acquisition_method",
+        "source_url",
+        "identity_status",
+        "validation_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "sqlite_sequence": {
+      "columns": [
+        "name",
+        "seq"
+      ],
+      "rows": []
+    },
+    "studio_artifacts": {
+      "columns": [
+        "artifact_id",
+        "job_id",
+        "manuscript_id",
+        "document_revision",
+        "artifact_kind",
+        "storage_path",
+        "sha256",
+        "size_bytes",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_assets": {
+      "columns": [
+        "asset_id",
+        "manuscript_id",
+        "filename",
+        "media_type",
+        "size_bytes",
+        "sha256",
+        "storage_path",
+        "asset_kind",
+        "status",
+        "metadata_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_change_link_events": {
+      "columns": [
+        "event_id",
+        "request_id",
+        "change_id",
+        "base_link_revision",
+        "resulting_link_revision",
+        "before_comment_ids_json",
+        "after_comment_ids_json",
+        "reverses_event_id",
+        "request_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_change_link_state": {
+      "columns": [
+        "change_id",
+        "initial_comment_ids_json",
+        "initial_origin",
+        "link_revision",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_changes": {
+      "columns": [
+        "change_id",
+        "manuscript_id",
+        "operation_id",
+        "before_json",
+        "after_json",
+        "is_compensating",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_chat_messages": {
+      "columns": [
+        "message_id",
+        "manuscript_id",
+        "parent_message_id",
+        "role",
+        "content",
+        "anchor_type",
+        "anchor_id",
+        "anchor_revision",
+        "quoted_json",
+        "status",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_comment_response_state": {
+      "columns": [
+        "comment_id",
+        "revision"
+      ],
+      "rows": []
+    },
+    "studio_documents": {
+      "columns": [
+        "manuscript_id",
+        "revision",
+        "document_json",
+        "active_generated_version_id",
+        "last_generated_revision",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": [
+        [
+          "manuscript_264202f005144e1ba60f8574c6637f70",
+          0,
+          "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_264202f005144e1ba60f8574c6637f70\",\"schema_version\":1,\"sections\":[{\"id\":\"section_d8710c6e78e8436192a94deaa2abe3d7\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_d2f71cbeea1f495eb01635502503c9ea\",\"intents\":[{\"id\":\"intent_99818ed1fe9a44279948e66ae8ab9668\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions WHOLE_PAPER_REVIEW\",\"venue\":\"\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.418586+00:00",
+          "2026-10-02T14:59:39.418586+00:00"
+        ],
+        [
+          "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+          0,
+          "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_332d6e2945cd4c30b4d39fcae921e28a\",\"schema_version\":1,\"sections\":[{\"id\":\"section_30b194a5bc414d44aa217fc498030189\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_b9a35ab977b9404592bf15eea4c5fa98\",\"intents\":[{\"id\":\"intent_cce4e8ecef204271b34eb0539b3f28ab\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions PUBLICATION\",\"venue\":\"\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.514796+00:00",
+          "2026-10-02T14:59:39.514796+00:00"
+        ],
+        [
+          "manuscript_d24e458d188e42449fb25c1d65affc29",
+          0,
+          "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_d24e458d188e42449fb25c1d65affc29\",\"schema_version\":1,\"sections\":[{\"id\":\"section_a05bcd570ba14cd0ab66b81280d00b28\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_f3fd4bdd6d0e48cea1285d50fd9be83c\",\"intents\":[{\"id\":\"intent_3289ac01899f49bf91df511bb5a5356b\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions FINALIZATION_SUBMISSION\",\"venue\":\"\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.449663+00:00",
+          "2026-10-02T14:59:39.449663+00:00"
+        ],
+        [
+          "manuscript_ed7c93ebf4824ec48186d731583185c8",
+          0,
+          "{\"abstract\":\"\",\"manuscript_id\":\"manuscript_ed7c93ebf4824ec48186d731583185c8\",\"schema_version\":1,\"sections\":[{\"id\":\"section_c2483e494e2f42cca43a2982fbcdbb16\",\"paragraphs\":[{\"asset_ids\":[],\"formulas\":[],\"id\":\"paragraph_8c804b8ad8b94cb8ac5eef885fb19f25\",\"intents\":[{\"id\":\"intent_69736e5768984ebe85cc69cc99690949\",\"label\":\"Research Context\",\"thoughts\":[]}],\"paradigm\":\"\",\"purpose\":\"\"}],\"role\":\"Motivation\",\"title\":\"Introduction\"}],\"title\":\"Zero versions REVISION\",\"venue\":\"\"}",
+          null,
+          null,
+          "2026-10-02T14:59:39.482191+00:00",
+          "2026-10-02T14:59:39.482191+00:00"
+        ]
+      ]
+    },
+    "studio_findings": {
+      "columns": [
+        "finding_id",
+        "manuscript_id",
+        "generated_version_id",
+        "finding_kind",
+        "severity",
+        "anchor_json",
+        "detail",
+        "source",
+        "status",
+        "created_at",
+        "resolved_at"
+      ],
+      "rows": []
+    },
+    "studio_jobs": {
+      "columns": [
+        "job_id",
+        "manuscript_id",
+        "job_kind",
+        "status",
+        "input_revision",
+        "request_json",
+        "result_json",
+        "error_json",
+        "created_at",
+        "started_at",
+        "completed_at"
+      ],
+      "rows": []
+    },
+    "studio_model_calls": {
+      "columns": [
+        "call_id",
+        "manuscript_id",
+        "job_id",
+        "message_id",
+        "task",
+        "input_revision",
+        "input_sha256",
+        "input_json",
+        "output_json",
+        "contract_json",
+        "status",
+        "error_json",
+        "started_at",
+        "completed_at"
+      ],
+      "rows": []
+    },
+    "studio_operations": {
+      "columns": [
+        "operation_id",
+        "manuscript_id",
+        "base_revision",
+        "resulting_revision",
+        "operation_kind",
+        "payload_json",
+        "inverse_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_response_checks": {
+      "columns": [
+        "check_id",
+        "request_id",
+        "manuscript_id",
+        "comment_id",
+        "generated_version_id",
+        "state_sha256",
+        "context_sha256",
+        "outcome",
+        "request_json",
+        "context_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_review_round_baselines": {
+      "columns": [
+        "review_round_id",
+        "baseline_manuscript_version_id",
+        "content_sha256",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_sample_candidates": {
+      "columns": [
+        "manuscript_id",
+        "anchor_id",
+        "document_revision",
+        "query_key",
+        "candidate_id",
+        "sample_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_submission_packages": {
+      "columns": [
+        "package_id",
+        "manuscript_id",
+        "review_round_id",
+        "job_id",
+        "manifest_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_suggestion_decisions": {
+      "columns": [
+        "decision_id",
+        "manuscript_id",
+        "message_id",
+        "suggestion_id",
+        "outcome",
+        "operation_id",
+        "request_json",
+        "provenance_json",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "studio_template_instances": {
+      "columns": [
+        "template_instance_id",
+        "manuscript_id",
+        "source_skeleton_id",
+        "source_version",
+        "adopted_json",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "submission_events": {
+      "columns": [
+        "event_id",
+        "manuscript_id",
+        "venue",
+        "round",
+        "status",
+        "detail",
+        "created_at"
+      ],
+      "rows": []
+    },
+    "topics": {
+      "columns": [
+        "topic_id",
+        "normalized_name",
+        "name",
+        "description",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": [
+        [
+          "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+          "isolated topic",
+          "Isolated topic",
+          null,
+          "2026-10-02T14:59:39.097667+00:00",
+          "2026-10-02T14:59:39.097667+00:00"
+        ]
+      ]
+    },
+    "track_milestones": {
+      "columns": [
+        "track_id",
+        "milestone",
+        "status",
+        "blocker",
+        "revision",
+        "updated_at"
+      ],
+      "rows": []
+    },
+    "track_snapshot_adoptions": {
+      "columns": [
+        "adoption_id",
+        "track_id",
+        "snapshot_id",
+        "snapshot_digest",
+        "adopted_at"
+      ],
+      "rows": []
+    },
+    "track_topics": {
+      "columns": [
+        "track_id",
+        "topic_id",
+        "role",
+        "created_at"
+      ],
+      "rows": [
+        [
+          "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+          "topic_7716c3de97fe4ac797ab2d2d7c9ff656",
+          "PRIMARY",
+          "2026-10-02T14:59:39.105669+00:00"
+        ]
+      ]
+    }
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "serial": 8,
+  "component": "catalog",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:37:56.375968+00:00",
+  "method": "GET",
+  "path": "/api/catalog/tracks/track_19bd9c2c7abb40d48013dd0e0374e4fd/workspace",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 10420,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "fdd186d3e3a59d3ee793868dbe46110fad267f7693f55729b7d6515bbe9e8292"
+}

@@ -1,0 +1,95 @@
+{
+  "status": "PASS_CURRENT421_THREE_COMPATIBLE_COPIES_AND_FROZEN_ORIGINALS",
+  "source421": {
+    "count": 421,
+    "vector_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\source-before.json",
+    "vector_sha256": "ee86dac7772f18f52b6d6de979fcd6c9ab3c95bbd44a3154b7c396d207baa7e9",
+    "context_receipt_sha256": "b4a120d709a4d0ee3dda16e2169907ff8fe44d140fa1bfe83ee037cb2c5b0401",
+    "helper_sha256": "00348f6c109f67c2dcddca5589871179b8dd73337018e3893af45ebd916b1f1a",
+    "schema_reference_sha256": "8f544eb9d4bc37ae5160267f440c8e2275a23ebbd5b4a976c946a8c2f9434ecb"
+  },
+  "bindings": {
+    "success": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-success-dguvh2si",
+      "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+      "gpu_job_id": "job_76d39031d8cc329ec431e6a896a08f54",
+      "quickread_job_id": "job_fe4651959298eab54d88abd9edaf6760",
+      "quickread_status_in_this_root": "SUCCEEDED",
+      "parse_run_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+      "original_pdf_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+      "original_pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+      "do_not_reexecute_models_or_approval": true
+    },
+    "identity": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-identity-y0zd2spd",
+      "paper_id": "paper_dde0a449e93444c2771e7b0edeb7daf9",
+      "file_version_id": "source_file_491d18ddee7958c95deb123a188280d5",
+      "collection_id": "collection_62ca47c927342115eb5f8fd870af9ca6",
+      "gpu_job_id": "job_76d39031d8cc329ec431e6a896a08f54",
+      "quickread_job_id": "job_fe4651959298eab54d88abd9edaf6760",
+      "quickread_status_in_this_root": "READY",
+      "parse_run_id": "parse_run_bb2661e7c11bb18dd684661073472d71",
+      "original_pdf_path": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-review-recovery-2026-10-06-3xtv51bn\\data\\artifacts\\papers\\paper_dde0a449e93444c2771e7b0edeb7daf9\\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\\source.pdf",
+      "original_pdf_sha256": "85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99",
+      "do_not_reexecute_models_or_approval": true
+    },
+    "upstream": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-upstream-ddwz2de_",
+      "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+      "method_id": "method_578417c4dcfc42e99060150cccd53613",
+      "stale_claim_ids": [
+        "claim_bb84d9ba73be4451a3b4222d941427e2",
+        "claim_5fdad5a7be7144aca7ff828926d00e11"
+      ],
+      "review_manuscript_id": "manuscript_fde24662e8b044c59e729f7516ad10ca",
+      "old_plan_id": "experiment_plan_81163acc4ada40c786e62a8e66576d9d",
+      "zero_version_cases": [
+        {
+          "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+          "retained_stage": "DRAFTING",
+          "target": "WHOLE_PAPER_REVIEW",
+          "expected_revision": 1,
+          "endpoint": "/api/manuscripts/manuscript_264202f005144e1ba60f8574c6637f70/stage",
+          "expected_status": 422,
+          "reason": "G11 explicit zero-version software guard only"
+        },
+        {
+          "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+          "retained_stage": "WHOLE_PAPER_REVIEW",
+          "target": "FINALIZATION_SUBMISSION",
+          "expected_revision": 1,
+          "endpoint": "/api/manuscripts/manuscript_d24e458d188e42449fb25c1d65affc29/stage",
+          "expected_status": 422,
+          "reason": "G11 explicit zero-version software guard only"
+        },
+        {
+          "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+          "retained_stage": "FINALIZATION_SUBMISSION",
+          "target": "REVISION",
+          "expected_revision": 1,
+          "endpoint": "/api/manuscripts/manuscript_ed7c93ebf4824ec48186d731583185c8/stage",
+          "expected_status": 422,
+          "reason": "G11 explicit zero-version software guard only"
+        },
+        {
+          "manuscript_id": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+          "retained_stage": "FINALIZATION_SUBMISSION",
+          "target": "PUBLICATION",
+          "expected_revision": 1,
+          "endpoint": "/api/manuscripts/manuscript_332d6e2945cd4c30b4d39fcae921e28a/stage",
+          "expected_status": 422,
+          "reason": "G11 explicit zero-version software guard only"
+        }
+      ],
+      "native_experiment_button_disabled_is_distinct_from_core_refusal": true,
+      "successful_terminal_run_do_not_repeat": "run_d79366ed2ce545f08eddb3aee9b5014f"
+    }
+  },
+  "all_original_and_copied_tables_schema_files_exact": true,
+  "original_v2_helper_and_receipt_SHA_unchanged": true,
+  "upstream_tuple_to_JSON_array_contract_only_correction": true,
+  "new_model_job_gpu_quickread_approval_or_business_action": 0,
+  "current_native_and_guard_acceptance_complete": false
+}

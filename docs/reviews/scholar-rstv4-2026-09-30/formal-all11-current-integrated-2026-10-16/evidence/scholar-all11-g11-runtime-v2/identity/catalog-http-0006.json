@@ -1,0 +1,16 @@
+{
+  "serial": 6,
+  "component": "catalog",
+  "role": "identity",
+  "at_utc": "2026-10-16T08:36:09.688178+00:00",
+  "method": "POST",
+  "path": "/api/catalog/papers/query",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": "{\"scope\":null,\"filter\":null,\"sorts\":[{\"field\":\"updated_at\",\"direction\":\"desc\"}],\"page\":1,\"page_size\":50}",
+  "response_body_bytes": 638,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "ecf46ac0e4f5bab77d125937aa1f7ec73510b0f0d255a31e8733f667e214350e"
+}

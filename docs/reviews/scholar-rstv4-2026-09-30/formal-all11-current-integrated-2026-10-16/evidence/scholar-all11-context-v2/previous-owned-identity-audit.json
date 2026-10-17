@@ -1,0 +1,66 @@
+{
+  "status": "EXACT_OWNED_G03_G04_PHASES_AND_CATALOG_RETIRED",
+  "frontend": {
+    "pid": 47976,
+    "create_time": 1792105393.3101144,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "56582",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+    "parent_pid": 48584
+  },
+  "backend_phase0": {
+    "pid": 45264,
+    "create_time": 1792105391.9022653,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-native-v1.py",
+      "serve"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 23208
+  },
+  "backend_phase1": {
+    "pid": 47500,
+    "create_time": 1792105790.728535,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-native-v1.py",
+      "serve",
+      "1"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 47824
+  },
+  "known_console": [
+    {
+      "pid": 46304,
+      "create_time": 1792105393.3164592,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 47976
+    }
+  ],
+  "ports_free": [
+    8877,
+    56582,
+    51629
+  ],
+  "root_preserved": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-native-ra3unsez",
+  "protected_source_root_all_files_and110_exact": true,
+  "no_other_processes_stopped": true,
+  "model_job_replay": false
+}

@@ -1,0 +1,29 @@
+{
+  "identity": {
+    "pid": 52344,
+    "create_time": 1792140178.821413,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "3000",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+    "parent_pid": 55924
+  },
+  "console_children": [
+    {
+      "pid": 41012,
+      "create_time": 1792140178.8262136,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 52344
+    }
+  ]
+}

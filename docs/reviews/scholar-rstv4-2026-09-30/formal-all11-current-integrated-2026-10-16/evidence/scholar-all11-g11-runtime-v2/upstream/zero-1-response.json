@@ -1,0 +1,10 @@
+{
+  "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+  "target": "WHOLE_PAPER_REVIEW",
+  "status": 422,
+  "body": {
+    "error": "studio_error",
+    "detail": "A successful generated version is required before advancing this stage"
+  },
+  "all110_files_originals_source_exact": true
+}

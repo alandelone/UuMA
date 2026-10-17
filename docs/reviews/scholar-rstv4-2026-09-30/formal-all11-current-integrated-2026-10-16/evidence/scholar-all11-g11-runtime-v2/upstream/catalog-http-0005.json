@@ -1,0 +1,16 @@
+{
+  "serial": 5,
+  "component": "catalog",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:37:47.982985+00:00",
+  "method": "POST",
+  "path": "/api/catalog/discussion/history",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": "{\"target\":{\"module\":\"CATALOG\",\"object_kind\":\"paper\",\"object_id\":\"paper_dde0a449e93444c2771e7b0edeb7daf9\",\"paper_id\":\"paper_dde0a449e93444c2771e7b0edeb7daf9\",\"field_id\":null,\"track_id\":null,\"snapshot_id\":null,\"part\":null,\"page_number\":null},\"limit\":30,\"current_object_only\":false}",
+  "response_body_bytes": 49,
+  "response_complete": true,
+  "status": 404,
+  "response_body_sha256": "c1685f06501491de238f6d9130647fd3a671db86ea4637b11c3e534a4f9989f3"
+}

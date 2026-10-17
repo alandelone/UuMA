@@ -1,0 +1,138 @@
+{
+  "source421": {
+    "count": 421,
+    "vector_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-same-origin-v1\\source-before.json",
+    "vector_sha256": "ee86dac7772f18f52b6d6de979fcd6c9ab3c95bbd44a3154b7c396d207baa7e9",
+    "context_receipt_sha256": "b4a120d709a4d0ee3dda16e2169907ff8fe44d140fa1bfe83ee037cb2c5b0401",
+    "helper_sha256": "00348f6c109f67c2dcddca5589871179b8dd73337018e3893af45ebd916b1f1a",
+    "schema_reference_sha256": "8f544eb9d4bc37ae5160267f440c8e2275a23ebbd5b4a976c946a8c2f9434ecb"
+  },
+  "originals": {
+    "success": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-native-22n_zg_d",
+      "sealed_snapshot": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-quickread-native-preview-v2\\terminal106-all-tables.json",
+      "sealed_snapshot_sha256": "0ec66a7d5a5a0ad4c7eae79b0b25a7da681cb69aac430a2b886a222aa009ab01"
+    },
+    "identity": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-identity-20jvto03",
+      "sealed_snapshot": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-identity-native-v1\\final-all-tables.json",
+      "sealed_snapshot_sha256": "02010b409a5d0381ccc6f2a315410440c7ab895e8ea2bb8eb392fded7e9317b9"
+    },
+    "upstream": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-upstream-copy-j6xdmqml",
+      "sealed_snapshot": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-upstream-native-prepare-v1\\owned-after-refusal-all-tables.json",
+      "sealed_snapshot_sha256": "92d3cee46b8275c6f9a4c8b5820985be835b35674d54b9dbdb00db6092e20714"
+    },
+    "historical": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scholar-formal-gates-z2aa267y",
+      "sealed_snapshot": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-g11-upstream-native-prepare-v1\\historical-all-tables.json",
+      "sealed_snapshot_sha256": "bd4fc6804cc90ce7d4c63903a938680111a4ce924d62ac72e858b526ffe8f7a7"
+    }
+  },
+  "copies": {
+    "success": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-success-dguvh2si",
+      "tables": 110,
+      "migration": {
+        "old_tables": 106,
+        "current_tables": 110,
+        "new_empty_tables": [
+          "research_discussion_annotations",
+          "research_discussion_jobs",
+          "research_discussion_messages",
+          "research_discussion_requests"
+        ],
+        "all_old_schema_and_columns_exact": true,
+        "all_old_rows_exact_except_declared_schema_version": true,
+        "schema_version_before": [
+          {
+            "component": "catalog",
+            "version": 14,
+            "applied_at": "2026-10-15 06:46:47"
+          }
+        ],
+        "schema_version_after": [
+          {
+            "component": "catalog",
+            "version": 14,
+            "applied_at": "2026-10-15 06:46:47"
+          }
+        ]
+      },
+      "new_derived_files": []
+    },
+    "identity": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-identity-y0zd2spd",
+      "tables": 110,
+      "migration": {
+        "old_tables": 105,
+        "current_tables": 110,
+        "new_empty_tables": [
+          "research_discussion_annotations",
+          "research_discussion_jobs",
+          "research_discussion_messages",
+          "research_discussion_requests",
+          "studio_submission_bindings"
+        ],
+        "all_old_schema_and_columns_exact": true,
+        "all_old_rows_exact_except_declared_schema_version": true,
+        "schema_version_before": [
+          {
+            "component": "catalog",
+            "version": 13,
+            "applied_at": "2026-10-13 06:14:22"
+          }
+        ],
+        "schema_version_after": [
+          {
+            "component": "catalog",
+            "version": 14,
+            "applied_at": "2026-10-16 03:59:15"
+          }
+        ]
+      },
+      "new_derived_files": [
+        "data/catalog.pre-v14.bak"
+      ]
+    },
+    "upstream": {
+      "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g11-upstream-ddwz2de_",
+      "tables": 110,
+      "migration": {
+        "old_tables": 105,
+        "current_tables": 110,
+        "new_empty_tables": [
+          "research_discussion_annotations",
+          "research_discussion_jobs",
+          "research_discussion_messages",
+          "research_discussion_requests",
+          "studio_submission_bindings"
+        ],
+        "all_old_schema_and_columns_exact": true,
+        "all_old_rows_exact_except_declared_schema_version": true,
+        "schema_version_before": [
+          {
+            "component": "catalog",
+            "version": 13,
+            "applied_at": "2026-10-13 14:12:39"
+          }
+        ],
+        "schema_version_after": [
+          {
+            "component": "catalog",
+            "version": 14,
+            "applied_at": "2026-10-16 03:59:16"
+          }
+        ]
+      },
+      "new_derived_files": [
+        "data/catalog.pre-v14.bak"
+      ]
+    }
+  },
+  "models_workers_jobs_approvals_executed": 0,
+  "native_acceptance_executed": false,
+  "final_integrated_proven": false,
+  "all118_complete": false,
+  "status": "PREPARED_THREE_SOURCE421_COPIES_NO_NATIVE_ACCEPTANCE"
+}

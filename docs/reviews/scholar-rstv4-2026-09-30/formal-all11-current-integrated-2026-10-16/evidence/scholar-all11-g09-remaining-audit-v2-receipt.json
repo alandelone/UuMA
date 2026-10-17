@@ -1,0 +1,684 @@
+{
+  "schema_version": 1,
+  "status": "PASS_EXACT_ORIGINAL118_AND11_TEXT_READONLY",
+  "source": {
+    "path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/ui-requirements-preservation.md",
+    "sha256": "bba5a66c27e2f5214e9f957fdf05ae31fed1a19b34b93771cce3cca37b2a5f71"
+  },
+  "matrix": {
+    "path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/docs/reviews/scholar-rstv4-2026-09-30/formal-original118-evidence-matrix-2026-10-15/matrix.json",
+    "schema_version": 13,
+    "sha256": "9be38952766207a4f9adb193f87074452302302ace7ea65bbefbc0853053464d"
+  },
+  "audit": {
+    "path": "C:/Users/Alandelone/CodeSpace_Local/UuMA/.tmp/scholar-all11-g09-remaining-audit-v2.md",
+    "sha256": "dd0d841b3c6a9eb05c8fff956cde4eb447e2a74d56419535a564d3ff3aafd3f9"
+  },
+  "checks": {
+    "requirements": 118,
+    "unique_requirement_ids": 118,
+    "groups": 11,
+    "requirements_text_source_line_exact": true,
+    "groups_text_source_line_exact": true,
+    "source_line_order_strictly_increasing": true
+  },
+  "identity_digest_contract": "SHA256(UTF8(JSON.stringify(array))) with exact field order id,original_text,source_line; no sorting or normalization",
+  "original118_identity_sha256": "772d86963784cd7f7f18fc5e3f17b85a514ea06cde71b557343cdf3f3152fa55",
+  "original11_identity_sha256": "27d177ebb4ae27481b0ca80a704ee1889c59fcc429c531dcb1fb0771480a3dac",
+  "requirements": [
+    {
+      "id": "OV-01",
+      "original_text": "默认首屏可看到全部 Field；展开 Field → Topic → Track → RQ → 写作 Paper",
+      "source_line": 298
+    },
+    {
+      "id": "OV-02",
+      "original_text": "不重复放大标题、列标题；Field 更像组 header；蓝色由深到浅，行高约 76 / 67 / 59 / 52 / 46 px",
+      "source_line": 299
+    },
+    {
+      "id": "OV-03",
+      "original_text": "折叠父级隐藏全部后代；展开、返回恢复原位置和展开范围",
+      "source_line": 300
+    },
+    {
+      "id": "OV-04",
+      "original_text": "中间只有图标＋文献数按钮；右边单个摘要状态；＋采集在 Topic / Track 行 hover、focus 或触屏可见",
+      "source_line": 301
+    },
+    {
+      "id": "OV-05",
+      "original_text": "文献数按唯一 paper_id，父级取并集；同一论文可关联多 Topic / Track，不复制记录",
+      "source_line": 302
+    },
+    {
+      "id": "OV-06",
+      "original_text": "点击文献数打开该范围论文，能看到归属理由与候选／确认区别",
+      "source_line": 303
+    },
+    {
+      "id": "OV-07",
+      "original_text": "Manuscript 直接归 Track；RQ 下是可选展示分组；未关联 RQ 的稿件直接列在 Track 下",
+      "source_line": 304
+    },
+    {
+      "id": "OV-08",
+      "original_text": "每篇稿件显示自己的阶段；点击实际 manuscript ID 进入自己的 Studio",
+      "source_line": 305
+    },
+    {
+      "id": "OV-09",
+      "original_text": "从 Studio 返回原 Track；同一 Track 多篇稿件保存内容互不覆盖",
+      "source_line": 306
+    },
+    {
+      "id": "OV-10",
+      "original_text": "数据为空可显示布局示例，明确标注只读；真实 Field 存在就读取真实结构",
+      "source_line": 307
+    },
+    {
+      "id": "OV-11",
+      "original_text": "返回或手动“更新状态”读最新状态；不自动轮询打断层级展开；任务状态不是 worker 心跳",
+      "source_line": 308
+    },
+    {
+      "id": "CA-01",
+      "original_text": "白底、灰属性图标、宽文字表头、清楚行距、细分隔；无明显表头方框或粗边框",
+      "source_line": 316
+    },
+    {
+      "id": "CA-02",
+      "original_text": "紧凑视图按钮、Filter、Sort、Columns、刷新；有待办才显示轻量核对提示",
+      "source_line": 317
+    },
+    {
+      "id": "CA-03",
+      "original_text": "一行一篇可见唯一论文；PDF 版本、来源观测、ParseRun 不算论文数；隔离记录排除",
+      "source_line": 318
+    },
+    {
+      "id": "CA-04",
+      "original_text": "标题、作者、年份、DOI、来源、摘要、PDF 状态／数、Parse 状态／数、References、QuickRead、Skeleton、Review、Collection、创建／更新时间可配置",
+      "source_line": 319
+    },
+    {
+      "id": "CA-05",
+      "original_text": "列显示／隐藏、上／下移动、拖边界或输入宽度；多列横向滚动；浏览器保存列偏好",
+      "source_line": 320
+    },
+    {
+      "id": "CA-06",
+      "original_text": "Filter：字段→运算符→值；增删规则／组，AND / OR 可嵌套；文字／数值／日期按类型处理",
+      "source_line": 321
+    },
+    {
+      "id": "CA-07",
+      "original_text": "多条 Sort 支持不同方向与优先级；默认更新倒序，相同值按 paper_id 稳定排序；每页 50 篇",
+      "source_line": 322
+    },
+    {
+      "id": "CA-08",
+      "original_text": "点击标题打开详情，查元数据、全部 PDF 版本／路径、QuickRead 字段、解析与前 10 条 References、Skeleton 版本数、处理历史",
+      "source_line": 323
+    },
+    {
+      "id": "CA-09",
+      "original_text": "点可审核状态跳对应案件；从详情／证据能回到原目录状态与位置",
+      "source_line": 324
+    },
+    {
+      "id": "RV-01",
+      "original_text": "左队列按标题／DOI 搜索，类型全部／PDF 身份／解析质量；两类真实待办数分别显示，空队列明确",
+      "source_line": 332
+    },
+    {
+      "id": "RV-02",
+      "original_text": "中间展示 Catalog DOI／标题，只对自动检查指出的字段给核对提示与动作",
+      "source_line": 333
+    },
+    {
+      "id": "RV-03",
+      "original_text": "右侧原 PDF 连续滚动、临近可见页懒加载、放大、文字选择／复制；窄屏 PDF 优先",
+      "source_line": 334
+    },
+    {
+      "id": "RV-04",
+      "original_text": "同页选完整 DOI → 浮动“标为 DOI” → 立即保存页／词范围，必要时同步 Catalog DOI 与身份键",
+      "source_line": 335
+    },
+    {
+      "id": "RV-05",
+      "original_text": "“PDF 没有 DOI”是本文件结论；保留 Catalog 已知 DOI，撤回本文件刚造成的 DOI 修正",
+      "source_line": 336
+    },
+    {
+      "id": "RV-06",
+      "original_text": "同页选完整标题 → 标为标题 → 保存来源定位并修正标题／规范化标题",
+      "source_line": 337
+    },
+    {
+      "id": "RV-07",
+      "original_text": "“PDF 不是该论文”撤回同一文件造成的 DOI／标题修改；必须撤回判定后才能再标注；不删除文件",
+      "source_line": 338
+    },
+    {
+      "id": "RV-08",
+      "original_text": "可选批注约 700 ms 停顿或 blur 自动保存；只有服务确认才显示保存成功；失败显示原因",
+      "source_line": 339
+    },
+    {
+      "id": "RV-09",
+      "original_text": "高亮重开仍在原文；每次改选／备注／撤回记录对象、文件版本、来源位置、审核人、时间、前后值；DOI 冲突拒绝",
+      "source_line": 340
+    },
+    {
+      "id": "RV-10",
+      "original_text": "身份修正后的复核批准→VERIFIED→恢复解析，及解析质量修正→复检→发布新版本分别验收",
+      "source_line": 341
+    },
+    {
+      "id": "AC-01",
+      "original_text": "从 Topic／Track ＋采集进入，带入归属；Field／RQ 不直接采集，输入页不用重新填范围",
+      "source_line": 349
+    },
+    {
+      "id": "AC-02",
+      "original_text": "DOI、BibTeX、检索词三栏可任填或混合；DOI 每行、支持链接；关键词每行一条",
+      "source_line": 350
+    },
+    {
+      "id": "AC-03",
+      "original_text": ".bib 读入文本框、本地预览，不当作另一次上传；超过当前 5 MB 提示",
+      "source_line": 351
+    },
+    {
+      "id": "AC-04",
+      "original_text": "即时预览唯一 DOI、Bib 条目、检索式、重复与无效行；检查输入不创建任务",
+      "source_line": 352
+    },
+    {
+      "id": "AC-05",
+      "original_text": "服务查重、已有论文与文件复用；待核对文件保留人工分支，缺失才重新获取",
+      "source_line": 353
+    },
+    {
+      "id": "AC-06",
+      "original_text": "开始创建持久 Collection、返回 ID，然后回原 Topic／Track；右侧状态打开详情",
+      "source_line": 354
+    },
+    {
+      "id": "AC-07",
+      "original_text": "详情显示任务数／阶段／失败／人工项、最近活动、同 Track 其他 Collection；手动刷新",
+      "source_line": 355
+    },
+    {
+      "id": "AC-08",
+      "original_text": "元数据／筛选／获取→身份验证→解析→质量门→发布→QuickRead→按需 Skeleton／Assessment；成功结果和引文新候选回写同一 Catalog",
+      "source_line": 356
+    },
+    {
+      "id": "AC-09",
+      "original_text": "引文前沿去重，未解析条目保留原文／位置／失败原因；用户可暂停恢复／调整预算，触限报告部分完成；无固定深度截止",
+      "source_line": 357
+    },
+    {
+      "id": "KG-01",
+      "original_text": "进入所选 Field；正常查询携带 field_id；跨 Field 必须显式提出",
+      "source_line": 365
+    },
+    {
+      "id": "KG-02",
+      "original_text": "查看 Papers、Concepts、Methods、Findings、Evidence Candidates、Gaps、Counterevidence、Debates、Citation Network、Idea Mergers",
+      "source_line": 366
+    },
+    {
+      "id": "KG-03",
+      "original_text": "图谱与列表均可读；选择节点／边／证据显示原文、条件、论文／文件／解析版本、页码／句子、审阅状态",
+      "source_line": 367
+    },
+    {
+      "id": "KG-04",
+      "original_text": "Build 分开显示 Collecting、Downloading、Parsing、Skeleton、Forge、Evidence、Gaps、Ready for Review、Sealed",
+      "source_line": 368
+    },
+    {
+      "id": "KG-05",
+      "original_text": "机器提 Evidence Candidate；用户接受／拒绝；Candidate Gap 不自动变为科学批准 Gap",
+      "source_line": 369
+    },
+    {
+      "id": "KG-06",
+      "original_text": "审阅后 SEALED Snapshot 为不可变版本；能看版本、来源和被哪些 Track 采用",
+      "source_line": 370
+    },
+    {
+      "id": "KG-07",
+      "original_text": "Track 明确采用某版本，可多快照；Living 更新不会替换已采用依据",
+      "source_line": 371
+    },
+    {
+      "id": "KG-08",
+      "original_text": "查询投影失效显示健康／待同步；权威研究内容仍由 RSTV4 保存",
+      "source_line": 372
+    },
+    {
+      "id": "KG-09",
+      "original_text": "节点／边／证据／Snapshot 的点击、selection、annotation 进入 Chat，并可回查原来源",
+      "source_line": 373
+    },
+    {
+      "id": "TR-01",
+      "original_text": "Track 从总览进入，展示 Scope、采用 Snapshot、Research Graph、Projects、Manuscripts、阻塞与待复核",
+      "source_line": 374
+    },
+    {
+      "id": "TR-02",
+      "original_text": "Gap／Idea／RQ／Hypothesis／Method／Experiment／Claim 独立状态，可并行、阻塞、重开",
+      "source_line": 375
+    },
+    {
+      "id": "TR-03",
+      "original_text": "Project 只有一个 Owner Track；保存实施目标、地点／数据、时间、计划、Run、产物和证据",
+      "source_line": 376
+    },
+    {
+      "id": "TR-04",
+      "original_text": "科学决定与实验计划通过真实用户审阅授权；点讨论、拖资料、采用模板不算科学批准",
+      "source_line": 377
+    },
+    {
+      "id": "TR-05",
+      "original_text": "上游决定被替代时下游失效／复核；受影响 Manuscript 显示 needs_scientific_review",
+      "source_line": 378
+    },
+    {
+      "id": "TR-06",
+      "original_text": "执行计划时核对所用 Method 仍有效；运行结果保留脚本／输入／环境与证据，再提出 Claim",
+      "source_line": 379
+    },
+    {
+      "id": "TR-07",
+      "original_text": "Manuscript 归 Track，可选绑定同 Track 的多个 Project；发表一篇／完成 Project 不结束整条 Track",
+      "source_line": 380
+    },
+    {
+      "id": "ST-01",
+      "original_text": "独立应用，Track → Paper → 同一稿件；RSTV4 保存权威研究／稿件状态，浏览器不直连 DB／模型凭证",
+      "source_line": 388
+    },
+    {
+      "id": "ST-02",
+      "original_text": "再次打开同一稿件恢复编辑位置、展开范围、界面偏好",
+      "source_line": 389
+    },
+    {
+      "id": "ST-03",
+      "original_text": "左样例／中作者结构／右证据／底部对象 Chat 四区；正文占主要空间",
+      "source_line": 390
+    },
+    {
+      "id": "ST-04",
+      "original_text": "左右栏独立收起，空出空间给正文；按钮有名称、状态点；无“场景演示”控件",
+      "source_line": 391
+    },
+    {
+      "id": "ST-05",
+      "original_text": "Section / Subsection → Paragraph（可有 Paragraph Group）→ Intent → Thought；思想与成文句子多对多，L1–L4 不是四层物理容器",
+      "source_line": 392
+    },
+    {
+      "id": "ST-06",
+      "original_text": "连续读写与折叠；未定结构可折叠预留；分组／移动不改变原意、引用或来源",
+      "source_line": 393
+    },
+    {
+      "id": "ST-07",
+      "original_text": "Section、Paragraph、Intent、Thought 用六点拖动；明确前／后／里面预览、合法落点；键盘可操作",
+      "source_line": 394
+    },
+    {
+      "id": "ST-08",
+      "original_text": "Enter 添加同级思想，Shift+Enter 留在同思想换行；输入行不强制等于一句／一个命题",
+      "source_line": 395
+    },
+    {
+      "id": "ST-09",
+      "original_text": "可先写思想后补结构；保存允许未定；未定与不适用不同，Generate 不能悄悄排除缺项",
+      "source_line": 396
+    },
+    {
+      "id": "ST-10",
+      "original_text": "侧边角色标签紧凑，中文竖排直立；长标签可展开；支持方向设置和自定义 Intent",
+      "source_line": 397
+    },
+    {
+      "id": "ST-11",
+      "original_text": "段落 purpose 与组织 paradigm 分开；L2 高级关系按需设置，不常驻挤正文",
+      "source_line": 398
+    },
+    {
+      "id": "ST-12",
+      "original_text": "选中 Section 看章节范式，Paragraph 看段落样本，Intent 看表达例；样本轮播、固定来源／版本，提纲变化使候选过期并定向刷新",
+      "source_line": 399
+    },
+    {
+      "id": "ST-13",
+      "original_text": "完整模板／单 Intent 插入结构与空槽，作者填写观点；保留来源；部分采用可行",
+      "source_line": 400
+    },
+    {
+      "id": "ST-14",
+      "original_text": "默认插入；替换明确；模板换版保留思想／引用／ID，无法对应留待安置区，不能静默重分配",
+      "source_line": 401
+    },
+    {
+      "id": "ST-15",
+      "original_text": "来源观点拖入只成为 source card／citation 候选；不复制作者观点、不自动勾选",
+      "source_line": 402
+    },
+    {
+      "id": "ST-16",
+      "original_text": "来源可看摘录、上下文、全文、精确位置与版本；不可用明确标记，不能由模型补假原文",
+      "source_line": 403
+    },
+    {
+      "id": "ST-17",
+      "original_text": "思想右上书签打开候选勾选和“不需外部引用”；关闭只留数量／pending 标记，无常驻引用行",
+      "source_line": 404
+    },
+    {
+      "id": "ST-18",
+      "original_text": "未选择=PENDING，取消保留候选；明确 NONE 与已选 SELECTED 分开；候选不自动用于所有句子",
+      "source_line": 405
+    },
+    {
+      "id": "ST-19",
+      "original_text": "图／表支持正式 SVG、PNG、JPEG、CSV、XLSX、Markdown，段内小预览懒加载；公式有稳定锚点、说明",
+      "source_line": 406
+    },
+    {
+      "id": "ST-20",
+      "original_text": "删除整块及其子项／关联可撤销；Delete 输入中只编辑文字，非编辑选择时删块",
+      "source_line": 407
+    },
+    {
+      "id": "ST-21",
+      "original_text": "Undo / Redo 按钮与 Ctrl+Z、Ctrl+Y、Ctrl+Shift+Z；不撤销独立 Chat 历史",
+      "source_line": 408
+    },
+    {
+      "id": "ST-22",
+      "original_text": "文字、结构、排序、Intent、引用、批注自动保存；pending／saving／saved／failed 清楚，服务确认才 saved",
+      "source_line": 409
+    },
+    {
+      "id": "ST-23",
+      "original_text": "断线保留待同步内容；两标签冲突不最后写入者覆盖；可保留本地副本和重新载入服务版本",
+      "source_line": 410
+    },
+    {
+      "id": "ST-24",
+      "original_text": "跳模块／返回 Track 前处理未同步稿件，草稿、选区、引用决定和历史不丢",
+      "source_line": 411
+    },
+    {
+      "id": "ST-25",
+      "original_text": "全文阅读主内容是生成稿；默认收两栏；点修改回同一套原作者结构并打开两栏",
+      "source_line": 412
+    },
+    {
+      "id": "ST-26",
+      "original_text": "修改结构后保留旧生成稿与旧问题，标过期；成功再生成才换正式版本",
+      "source_line": 413
+    },
+    {
+      "id": "ST-27",
+      "original_text": "Stage 3 结构修改里的 Done 返回阅读并收两栏；Done 不生成、不表示已检查完",
+      "source_line": 414
+    },
+    {
+      "id": "ST-28",
+      "original_text": "成文引用显示数字编号，点引用主动打开右资料；成文段落讨论固定生成版本与段落",
+      "source_line": 415
+    },
+    {
+      "id": "ST-29",
+      "original_text": "Stage 3 问题关联原思想／Intent／引用／图表及跨位置，可定位、比较、部分采用、自行改或有意保留；不让作者确认每个无问题句子",
+      "source_line": 416
+    },
+    {
+      "id": "WF-01",
+      "original_text": "每稿 Planning → Drafting → 全文检查 → 定稿／投稿 → Revision → Publication 六阶段；成品在 Studio 内",
+      "source_line": 424
+    },
+    {
+      "id": "WF-02",
+      "original_text": "Planning 选范围、来源骨架与模板，映射本研究已批准节点／证据；作者开始编辑进入 Drafting",
+      "source_line": 425
+    },
+    {
+      "id": "WF-03",
+      "original_text": "Generate 作者点击后固定整篇输入修订、模板、思想、引用、素材和模型版本；先同步再校验",
+      "source_line": 426
+    },
+    {
+      "id": "WF-04",
+      "original_text": "一次尽量返回全部缺项：具体对象、原因、需补什么；点错误打开对应位置；不能造思想／删缺项",
+      "source_line": 427
+    },
+    {
+      "id": "WF-05",
+      "original_text": "未完整不提供局部成段／编译绕过；信息不足、模型失败、排版失败分开",
+      "source_line": 428
+    },
+    {
+      "id": "WF-06",
+      "original_text": "生成保持作者命题、条件与强度；检查覆盖／原意／所选引用；全部产物成功才原子登记版本并进 Stage 3",
+      "source_line": 429
+    },
+    {
+      "id": "WF-07",
+      "original_text": "输入变动报版本冲突；失败留 Drafting、旧成功版本不变；重复幂等请求不重复产物；任务可取消",
+      "source_line": 430
+    },
+    {
+      "id": "WF-08",
+      "original_text": "Stage 3 固定不可变版本，检查跨位置复用、矛盾、图表／Abstract／方法结果一致性；Drafting 不自动同步相同命题",
+      "source_line": 431
+    },
+    {
+      "id": "WF-09",
+      "original_text": "Stage 4 按目标期刊／会议定稿、产出 LaTeX / BibTeX / PDF / 投稿包；记录投稿事件；作者决定终稿与提交",
+      "source_line": 432
+    },
+    {
+      "id": "WF-10",
+      "original_text": "Revision 生成仍在 Revision，不重置首次写作；Stage 6 接收后终稿／校样／发表／归档，以完成事件结束，不加第七阶段",
+      "source_line": 433
+    },
+    {
+      "id": "RE-01",
+      "original_text": "每轮固定原被审版本，后续 Generate 不移动基线；新轮次显式建立",
+      "source_line": 441
+    },
+    {
+      "id": "RE-02",
+      "original_text": "保留原始意见、reviewer／editor、轮次、原始顺序、可选父意见；拆分不漏要求",
+      "source_line": 442
+    },
+    {
+      "id": "RE-03",
+      "original_text": "TXT / MD 或粘贴空行分条、段内换行保留；预览可改、取消选项，显式确认才追加",
+      "source_line": 443
+    },
+    {
+      "id": "RE-04",
+      "original_text": "➕ 单条意见整段输入，不按空行切；重复只警示不自动合并；每批最多 100 条，超限明确",
+      "source_line": 444
+    },
+    {
+      "id": "RE-05",
+      "original_text": "原始文件名、batch、原文和预览编辑后的文本分别留存；导入不猜稿件位置",
+      "source_line": 445
+    },
+    {
+      "id": "RE-06",
+      "original_text": "每条稳定 ID／可读编号；铅笔放编号前、同一行、有名称、激活颜色及整行强调",
+      "source_line": 446
+    },
+    {
+      "id": "RE-07",
+      "original_text": "点铅笔显式开始为该意见改原结构，编辑自动关联意见；可同时关联多条；明确结束上下文",
+      "source_line": 447
+    },
+    {
+      "id": "RE-08",
+      "original_text": "未关联改动可事后补关联；误选意见可解除；切稿不携带错误上下文",
+      "source_line": 448
+    },
+    {
+      "id": "RE-09",
+      "original_text": "文字、Intent、结构移动删除、citation、图表变化都留修改记录；多对多关联，撤销修改不再作为完成证据",
+      "source_line": 449
+    },
+    {
+      "id": "RE-10",
+      "original_text": "意见软删除保留回复／修改链接，清活动上下文；已删除可恢复同 ID；撤销／历史可追",
+      "source_line": 450
+    },
+    {
+      "id": "RE-11",
+      "original_text": "待处理→已决定回应→修改中→待核对→已处理；作者确认才完成；失败或未解决不能自动已处理",
+      "source_line": 451
+    },
+    {
+      "id": "RE-12",
+      "original_text": "生成实际 baseline→target 文本 diff，结构输入到多句输出映射可回查；布局变动单独标记，无法归因明确",
+      "source_line": 452
+    },
+    {
+      "id": "RE-13",
+      "original_text": "回复每个“已修改”断言对应真实 diff；拒绝也可理由回应，不强迫改；最终页／行来自最终编译稿",
+      "source_line": 453
+    },
+    {
+      "id": "RE-14",
+      "original_text": "交付干净稿、标注对照、逐条回复、意见—修改表、最终定位、未解决清单；仍在同一 Studio",
+      "source_line": 454
+    },
+    {
+      "id": "CH-01",
+      "original_text": "Studio 点 Section／Paragraph／Intent／Thought，对象高亮，Chat 显示当前对象；继续写／发送以该对象为上下文",
+      "source_line": 462
+    },
+    {
+      "id": "CH-02",
+      "original_text": "拖选一段文字可以作为 selection 加入 Chat，显示引用原文；可追加 annotation，作者能看到作用对象",
+      "source_line": 463
+    },
+    {
+      "id": "CH-03",
+      "original_text": "Catalog 论文／详情区块、PDF 选区、Parse／QuickRead／Skeleton 内容均可选为讨论对象",
+      "source_line": 464
+    },
+    {
+      "id": "CH-04",
+      "original_text": "FieldKG 的节点、边、Evidence、Candidate Gap、Snapshot 及其来源段落可选／批注进 Chat",
+      "source_line": 465
+    },
+    {
+      "id": "CH-05",
+      "original_text": "Chat 中显示来源标签／原文摘录、对象类型、层级路径、文件／解析／Snapshot／稿件版本；可移除选区",
+      "source_line": 466
+    },
+    {
+      "id": "CH-06",
+      "original_text": "可跟随当前对象／固定对象；发送时固定对象、版本、引用；换页或新选择不改写旧消息",
+      "source_line": 467
+    },
+    {
+      "id": "CH-07",
+      "original_text": "selection 锚定内容与稳定 ID；移动仍找到；版本变动标旧版；删除保留原对象历史，不接邻居",
+      "source_line": 468
+    },
+    {
+      "id": "CH-08",
+      "original_text": "底部 Chat 可展开收起；整篇历史／当前对象筛选／更早消息；草稿保留；Undo 不撤聊天",
+      "source_line": 469
+    },
+    {
+      "id": "CH-09",
+      "original_text": "点击历史消息能返回原对象与当时引用；多条来源分别列出；来源不可用如实显示",
+      "source_line": 470
+    },
+    {
+      "id": "CH-10",
+      "original_text": "普通讨论／结构建议／来源候选／措辞建议分清；全部／部分采用／拒绝显式；Chat 不自动改稿、批准科学决定或关闭审核",
+      "source_line": 471
+    }
+  ],
+  "groups": [
+    {
+      "id": "G-01",
+      "original_text": "同稿两个生成段落分别讨论，刷新／改序／重新生成后旧消息仍指原版本原段；选区原文可回查",
+      "source_line": 485
+    },
+    {
+      "id": "G-02",
+      "original_text": "切位置后打开旧讨论能定位旧对象／版本，作者可部分采用并保存修改来源",
+      "source_line": 486
+    },
+    {
+      "id": "G-03",
+      "original_text": "待同步／断线时换区保留草稿；返回稿件恢复对象、滚动、折叠和偏好；总览手动更新不展开全部",
+      "source_line": 487
+    },
+    {
+      "id": "G-04",
+      "original_text": "从正式生成稿改结构，有 Done 返回旧成文且收两栏；不生成、不清问题、不推进阶段",
+      "source_line": 488
+    },
+    {
+      "id": "G-05",
+      "original_text": "阅读显示 [1] / [2] 并对应参考文献；点击仍打开正确 Evidence，ID 留在数据层",
+      "source_line": 489
+    },
+    {
+      "id": "G-06",
+      "original_text": "结构页显示关联意见、结束／增减关联；删除清活动上下文；后续改动不挂已删除意见；恢复同编号",
+      "source_line": 490
+    },
+    {
+      "id": "G-07",
+      "original_text": "一条带空行仍为单条；重复提示由作者决定；101 条明确提示，剩余原文不丢",
+      "source_line": 491
+    },
+    {
+      "id": "G-08",
+      "original_text": "折叠不删除内容；拖模板加空槽不复制思想；更换模板保留引用和待安置内容；空容器可合法放入",
+      "source_line": 492
+    },
+    {
+      "id": "G-09",
+      "original_text": "来源页段与版本可查；第二返修轮独立固定基线；原始意见、未关联改动、真实修改／回复材料能查",
+      "source_line": 493
+    },
+    {
+      "id": "G-10",
+      "original_text": "用真实 ID 完成 Field → KG → Track → Manuscript → 来源往返，展示实际状态和阻塞，空态不伪造",
+      "source_line": 494
+    },
+    {
+      "id": "G-11",
+      "original_text": "真 Collection 运行可追踪；审核复检恢复；上游失效传播、旧方法拒绝运行、零版本不可进 Stage 3 / Publication",
+      "source_line": 495
+    }
+  ],
+  "source_count_at_current_composite": 421,
+  "final11_complete": false,
+  "overall118_complete": false,
+  "scientific_approval": false,
+  "gate_changed": false,
+  "business_or_product_mutations": 0,
+  "execution": "File reads only; no shell/session writer/browser/service/model/job/decision execution. Final statuses require parent acceptance."
+}

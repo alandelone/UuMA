@@ -1,0 +1,16 @@
+{
+  "serial": 12,
+  "component": "catalog",
+  "role": "success",
+  "at_utc": "2026-10-16T08:35:09.799591+00:00",
+  "method": "POST",
+  "path": "/api/catalog/discussion/context",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": "{\"module\":\"CATALOG\",\"paper_id\":\"paper_dde0a449e93444c2771e7b0edeb7daf9\",\"object_kind\":\"skeleton\",\"object_id\":\"skeleton_ad1dc385a70f2dd67e89eb1ebec075cd\"}",
+  "response_body_bytes": 6549,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "212650480f84d57a1462b60655c8bc6ac5161068d9610f78f235cfee219c07c1"
+}

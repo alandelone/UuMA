@@ -1,0 +1,19 @@
+{
+  "identity": {
+    "pid": 42844,
+    "create_time": 1792122556.6871843,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g10-current-v2.py",
+      "serve",
+      "catalog"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 21012
+  },
+  "port": 62147,
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g10-current-ehsvcl0f",
+  "models_workers_mutations_allowed": 0
+}

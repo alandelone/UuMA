@@ -1,0 +1,16 @@
+{
+  "serial": 1,
+  "component": "studio",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:38:11.242667+00:00",
+  "method": "GET",
+  "path": "/api/tracks",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 1556,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "ddced60573c9fd8bcead4f2506a94eb3f292dd1a8afb077cf8afe3e8f6750e65"
+}

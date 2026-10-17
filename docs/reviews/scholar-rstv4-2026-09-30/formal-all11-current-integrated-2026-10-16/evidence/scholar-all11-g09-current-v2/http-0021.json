@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_8ecd722c5ea041858723009b72fc4cce/response-checks/response_check_1fed5930d1e542eda690f30def12323a/origins/366d86bc698dbdbb8c868bba3868173e7c770f8d186fb0992e0e8dab7366af75",
+  "query": "",
+  "allowed": true,
+  "request_utf8": null,
+  "status": 200,
+  "complete": true,
+  "response_sha256": "43462ef614da7ee2a050844e121bdc5251049a418b97b3bd8d7b65ea3ee6529b"
+}

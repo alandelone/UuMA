@@ -1,0 +1,254 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:8875/
+    - link "文献库":
+      - /url: http://127.0.0.1:8875/?view=all
+    - link "知识图谱":
+      - /url: http://127.0.0.1:8875/?view=fieldkg
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "论文目录":
+      - generic: 论文目录
+      - generic: ⌄
+  - button "☰ Filter"
+  - button "↕ Sort"
+  - button "▤ Columns"
+  - button "Refresh catalog": ↻
+  - table "Paper Catalog":
+    - rowgroup:
+      - row "Name Resize Name column Created Resize Created column Year Resize Year column Last Updated Resize Last Updated column Authors Resize Authors column DOI Resize DOI column Source Resize Source column PDF status Resize PDF status column PDF files Resize PDF files column PDFs to review Resize PDFs to review column Parse Resize Parse column References Resize References column QuickRead Resize QuickRead column Skeleton Resize Skeleton column Review Resize Review column":
+        - columnheader "Name Resize Name column":
+          - generic: Aa
+          - text: Name
+          - separator "Resize Name column"
+        - columnheader "Created Resize Created column":
+          - generic: ◷
+          - text: Created
+          - separator "Resize Created column"
+        - columnheader "Year Resize Year column":
+          - generic: ▣
+          - text: Year
+          - separator "Resize Year column"
+        - columnheader "Last Updated Resize Last Updated column":
+          - generic: ◷
+          - text: Last Updated
+          - separator "Resize Last Updated column"
+        - columnheader "Authors Resize Authors column":
+          - generic: Aa
+          - text: Authors
+          - separator "Resize Authors column"
+        - columnheader "DOI Resize DOI column":
+          - generic: Aa
+          - text: DOI
+          - separator "Resize DOI column"
+        - columnheader "Source Resize Source column":
+          - generic: Aa
+          - text: Source
+          - separator "Resize Source column"
+        - columnheader "PDF status Resize PDF status column":
+          - generic: ◆
+          - text: PDF status
+          - separator "Resize PDF status column"
+        - columnheader "PDF files Resize PDF files column":
+          - generic: "#"
+          - text: PDF files
+          - separator "Resize PDF files column"
+        - columnheader "PDFs to review Resize PDFs to review column":
+          - generic: "#"
+          - text: PDFs to review
+          - separator "Resize PDFs to review column"
+        - columnheader "Parse Resize Parse column":
+          - generic: ◆
+          - text: Parse
+          - separator "Resize Parse column"
+        - columnheader "References Resize References column":
+          - generic: "#"
+          - text: References
+          - separator "Resize References column"
+        - columnheader "QuickRead Resize QuickRead column":
+          - generic: ◆
+          - text: QuickRead
+          - separator "Resize QuickRead column"
+        - columnheader "Skeleton Resize Skeleton column":
+          - generic: ◆
+          - text: Skeleton
+          - separator "Resize Skeleton column"
+        - columnheader "Review Resize Review column":
+          - generic: ◆
+          - text: Review
+          - separator "Resize Review column"
+    - rowgroup:
+      - row "Software review identity title October 6, 2026 at 8:57 AM — October 6, 2026 at 8:57 AM 10.1234/corrected Local PDF VERIFIED 1 0 PARSED 6 AVAILABLE AVAILABLE CLEAR":
+        - cell "Software review identity title":
+          - button "Software review identity title"
+        - cell "October 6, 2026 at 8:57 AM"
+        - cell "—"
+        - cell "October 6, 2026 at 8:57 AM"
+        - cell
+        - cell "10.1234/corrected"
+        - cell "Local PDF"
+        - cell "VERIFIED":
+          - generic: VERIFIED
+        - cell "1"
+        - cell "0"
+        - cell "PARSED":
+          - generic: PARSED
+        - cell "6"
+        - cell "AVAILABLE":
+          - generic: AVAILABLE
+        - cell "AVAILABLE":
+          - generic: AVAILABLE
+        - cell "CLEAR":
+          - generic: CLEAR
+  - generic: 1 papers
+  - button "← Previous" [disabled]
+  - generic: Page 1 · 50 per page
+  - button "Next →" [disabled]
+- complementary "详情":
+  - heading "Software review identity title" [level=2]
+  - text: · —
+  - button "Close paper details": ✕
+  - heading "Identity" [level=3]
+  - paragraph:
+    - button "讨论这篇论文"
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "DOI:"
+    - text: 10.1234/corrected
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "Catalog:"
+    - text: ACTIVE
+  - paragraph:
+    - strong: "Abstract:"
+    - text: —
+    - button "讨论此部分"
+  - heading "PDF versions (1)" [level=3]
+  - generic: VERIFIED
+  - text: SOFTWARE_FIXTURE · 2026-10-06T00:57:19.326735+00:00
+  - text: C:\Users\Alandelone\AppData\Local\Temp\scholar-review-recovery-2026-10-06-3xtv51bn\data\artifacts\papers\paper_dde0a449e93444c2771e7b0edeb7daf9\85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\source.pdf
+  - link "Open PDF":
+    - /url: /api/catalog/files/source_file_491d18ddee7958c95deb123a188280d5/pdf
+  - link "复核当前文件与记录":
+    - /url: /?view=review&case=source_file_491d18ddee7958c95deb123a188280d5
+  - heading "Content brief" [level=3]
+  - paragraph:
+    - strong: "question:"
+    - text: —
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "method:"
+    - text: —
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "materials:"
+    - text: —
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "author contribution:"
+    - text: —
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "results:"
+    - text: —
+    - button "讨论此部分"
+  - paragraph:
+    - strong: "limitations:"
+    - text: —
+    - button "讨论此部分"
+  - heading "Parse and references" [level=3]
+  - paragraph: 2 parse run(s) · 6 reference entries
+  - paragraph:
+    - text: MinerU/magic-pdf · 1.2.2 · SUCCEEDED
+    - button "打开解析原文并讨论"
+  - paragraph:
+    - text: MinerU/magic-pdf · 1.2.2 · SUCCEEDED
+    - button "打开解析原文并讨论"
+  - paragraph: "[1] Reference author 1. Distinct software citation experiment validation 1. 2026. (p. 2)"
+  - paragraph: "[2] Reference author 2. Distinct software citation experiment validation 2. 2026. (p. 2)"
+  - paragraph: "[3] Reference author 3. Distinct software citation experiment validation 3. 2026. (p. 2)"
+  - paragraph: "[4] Reference author 4. Distinct software citation experiment validation 4. 2026. (p. 2)"
+  - paragraph: "[5] Reference author 5. Distinct software citation experiment validation 5. 2026. (p. 2)"
+  - paragraph: "[6] Reference author 6. Distinct software citation experiment validation 6. 2026. (p. 2)"
+  - heading "PaperSkeleton" [level=3]
+  - paragraph: 1 version(s) available
+  - button "讨论 Skeleton v1"
+  - heading "按需深读" [level=3]
+  - paragraph: 使用所选解析版本请求深读。暂停的采集会保留请求，明确继续后才执行。
+  - text: 所属采集
+  - combobox "所属采集":
+    - option "选择采集" [selected]
+    - option "审核恢复软件 Topic · 文献采集 · ACTIVE"
+    - option "审核恢复软件 Collection · PAUSED"
+  - text: 解析版本
+  - combobox "解析版本":
+    - option "选择已完成的解析版本" [selected]
+    - option "MinerU/magic-pdf · 1.2.2 · parse_run_bb2661e7c11bb18dd684661073472d71"
+    - option "MinerU/magic-pdf · 1.2.2 · parse_run_5de840df2a60a2b9d9705d6f92807413"
+  - text: 深读理由
+  - textbox "深读理由"
+  - status
+  - button "请求深读"
+  - heading "实际模型调用" [level=3]
+  - generic "screen · RETURNED · gemini-flash-lite"
+  - generic "quick_read · RETURNED · gemini-flash-lite"
+  - generic "skeleton_layer_1 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_2 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_3 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_4 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_1 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_2 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_3 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_4 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_1 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_2 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_3 · RETURNED · gemini-3.7-flash"
+  - generic "skeleton_layer_4 · RETURNED · gemini-3.7-flash"
+  - generic "assessment · RETURNED · gemini-3.7-flash"
+  - generic "screen · RETURNED · TEST_FIXTURE_G11_CURRENT_NATIVE_SCREEN"
+  - generic "quick_read · RETURNED · gemini-3.5-flash-lite"
+  - status: "{ \"source\": { \"collection_id\": \"collection_62ca47c927342115eb5f8fd870af9ca6\", \"file_version_id\": \"source_file_491d18ddee7958c95deb123a188280d5\", \"job_input_digest\": \"43424a11330f700b4879a4c444340c5192af85d5f73ff830f6a835c7a6c651cd\", \"paper_id\": \"paper_dde0a449e93444c2771e7b0edeb7daf9\", \"parse_run_id\": \"parse_run_bb2661e7c11bb18dd684661073472d71\", \"pdf_sha256\": \"85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\" }, \"input\": { \"blocks\": [ { \"block_id\": \"block_64153f2d69fdb26b0ee5302911bd5503\", \"section\": null, \"text\": \"Software review identity title\" }, { \"block_id\": \"block_cba63dccbd51d23a840357b5cfd86cfe\", \"section\": null, \"text\": \"DOI 10.1234/corrected\" }, { \"block_id\": \"block_8dcf145baedc07eb0d747751d07e73eb\", \"section\": null, \"text\": \"serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so\" } ] }, \"output\": { \"_contract\": { \"actual_model\": \"gemini-3.5-flash-lite\", \"delivery\": \"durable-run-v1\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"usage\": { \"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346 } }, \"author_contribution\": null, \"deep_read_reasons\": [], \"evidence_quotes\": [], \"limitations\": null, \"materials\": null, \"method\": null, \"question\": null, \"results\": null }, \"contract\": { \"actual_model\": \"gemini-3.5-flash-lite\", \"delivery\": \"durable-run-v1\", \"estimated_input_tokens\": 117, \"prompt_version\": \"quick-read-v1\", \"receipt_id\": \"acquisition-call-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"router_run_id\": \"run_1d896e58474643dc8a6528159fddc051\", \"status\": \"SUCCESS\", \"task\": \"quick_read\", \"tier\": \"light\", \"transport_operation_id\": \"rstv4-model-57ed124b5066bed2f2fb9a4137f607d68ffc83b527a590ef12bf8f1f9b30175c\", \"usage\": { \"completion_tokens\": 67, \"prompt_tokens\": 279, \"total_tokens\": 346 } }, \"error_type\": null }"
+  - heading "Processing history" [level=3]
+  - paragraph: QUICK_READ · SUCCEEDED
+  - paragraph: PARSE_PDF · SUCCEEDED
+  - paragraph: LOCATE_PDF · SUCCEEDED
+  - paragraph: SCREEN · SUCCEEDED
+  - paragraph: ASSESS · SUCCEEDED
+  - paragraph: SKELETON · SUCCEEDED
+  - paragraph: QUICK_READ · SUCCEEDED
+  - paragraph: PARSE_PDF · SUCCEEDED
+  - paragraph: SCREEN · SUCCEEDED
+  - paragraph: LOCATE_PDF · READY
+- complementary "统一研究讨论":
+  - button "Chat · Software review identity title / Skeleton v1" [expanded]
+  - region "研究讨论":
+    - strong: 研究讨论
+    - button "收起"
+    - status: 已选此对象。可拖选下方原文，或直接提问。
+    - generic: CATALOG / skeleton · Software review identity title / Skeleton v1
+    - checkbox "固定当前对象"
+    - text: 固定当前对象
+    - generic "原文与版本 · 可拖选文字" [active]
+    - paragraph: "paper_id: paper_dde0a449e93444c2771e7b0edeb7daf9 · paper_version_id: paper_version_ec792722735b1f9b62bbdd3810d2282b · paper_version: 1 · skeleton_id: skeleton_ad1dc385a70f2dd67e89eb1ebec075cd · version: 1 · file_version_id: source_file_491d18ddee7958c95deb123a188280d5 · parse_run_id: parse_run_5de840df2a60a2b9d9705d6f92807413 · content_digest: 9357201f0315c5c7e9a7ce95c9a88fee0661a6d49543ac28d9b31b023686c574 · parsed_digest: 42b27248284b40f334d698784b43b7fa74f43b3188eb93e0ca677bc98fac57a2 · pdf_digest: 85f4078a0ae99a5c0b13894ce4bbf511c7e9302958512e738b7180dae1110f99 · extractor_model: gemini-3.7-flash · prompt_version: paper-skeleton-v1"
+    - generic "当前固定对象的完整原文": Software review identity title DOI 10.1234/corrected serves source, ownership and exact references. Software fixture body preserves source, ownership and exact references. Software fixture body preserves so
+    - generic "选择独立原文单元（3）"
+    - checkbox "明确允许比较不同研究范围的所选来源"
+    - text: 明确允许比较不同研究范围的所选来源
+    - paragraph: 下一条问题将开始新讨论。
+    - text: 问题
+    - textbox "问题":
+      - /placeholder: 针对上方固定对象提问
+    - text: 讨论批注
+    - textbox "讨论批注":
+      - /placeholder: 保留原对象、原文和版本
+    - button "保存讨论批注"
+    - button "发送问题"
+    - region "当前研究范围的讨论历史":
+      - strong: 讨论与批注历史
+      - checkbox "只看当前对象"
+      - text: 只看当前对象
+      - button "更新历史"
+      - paragraph: 此研究范围尚无讨论或批注。

@@ -1,0 +1,22 @@
+{
+  "app/api/studio/[...path]/route.ts": {
+    "sha256": "2d9f10929db8faa6612c218f73664e1840d9f804f79f88e2433690b2908b2abe",
+    "bytes": 439,
+    "before_sha256": null
+  },
+  "lib/studio-api.ts": {
+    "sha256": "0f9e3d859f2ab7b0217df89c9736bae9df6dea95d904db93e0519e67d5edc185",
+    "bytes": 13608,
+    "before_sha256": "e19f8f9e805014808fab5aba70f1ff37826769bc1b98e3640c98e45b9dff0b2d"
+  },
+  "lib/studio-transport.ts": {
+    "sha256": "138ce4cfc8f1a7a69d1fcc22e7ce8a7fbea774615e238cf2e0a0fc448732c941",
+    "bytes": 3114,
+    "before_sha256": null
+  },
+  "tests/unit/studio-transport.cjs": {
+    "sha256": "e56713778b5193c60e496cc96438e66977b5aa95b249a77ede8fda7b5315cb52",
+    "bytes": 8732,
+    "before_sha256": null
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/samples",
+  "query": "layer=paper",
+  "allowed": true,
+  "request_utf8": null,
+  "status": 200,
+  "complete": true,
+  "response_sha256": "6665e6c5d0167a3123673c65ad3bc208d7035c56fa45a0667b38f32fd427cb34"
+}

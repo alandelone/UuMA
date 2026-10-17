@@ -1,0 +1,20 @@
+{
+  "identity": {
+    "pid": 58968,
+    "create_time": 1792139810.7348754,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "3000",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+    "parent_pid": 50568
+  },
+  "all_owned_identity_absent": true,
+  "build_vectors93_77_exact": true,
+  "explicit_owned_termination_or_prior_absence": true
+}

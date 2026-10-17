@@ -1,0 +1,39 @@
+{
+  "files": {
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\receipt.json": {
+      "sha256": "b4a120d709a4d0ee3dda16e2169907ff8fe44d140fa1bfe83ee037cb2c5b0401"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\reuse-preflight.json": {
+      "sha256": "c7cacee107bc81f268452b16521fdca1db0352c5e883bf197fd300f9f403d7f4"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\before110-all-tables.json": {
+      "sha256": "544c6c91b90e80b9a57da60be2615303d2d26aa85dad7e474a24ac899295c332"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\before110-all-files.json": {
+      "sha256": "2576e2e369ec6b6508b3bb0a062ca821ab74d4808ecf6e219500cadf3d065b84"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\previous-owned-identity-audit.json": {
+      "sha256": "78a93a467b549a5a2c082334a7b3427b0c95eff2b46c8b11e1a008d528eeb7cc"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\ownership.json": {
+      "sha256": "3c3667688ed956855955305eb531657c6110e3aeb984be1ce30e600176b7d10c"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\ready.json": {
+      "sha256": "e4b0e1368cbd189c37e055f69c9d4c5bae88dce0388d07fda1d8694b94da3cd6"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\backend-launched.json": {
+      "sha256": "2fb1d9122b5bc71fc6f4d251237b9ccc7a345dbcc4ab1abb08cf7fe049f902fb"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\backend-ready.json": {
+      "sha256": "adadf03f730a422834718d1a366f177f5462d461b6e4303cbd803b49a436d431"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\frontend-launched.json": {
+      "sha256": "08b32f5ed765432c5e4fc101b282726c003dc0192cdd2ce64dbb0f330509e411"
+    },
+    "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-context-v2\\initial-workspace.json": {
+      "sha256": "61cf9f7337f952eb44e8c5f88be1933b119f00d114cddc81fed0c1911b5637f8"
+    }
+  },
+  "v5_runner_sha256": "69f1ea6a60deee33eef3d9aa8e821d142a0fcde1d90ccec2bc2363618576d24b",
+  "prior_v4_failed_before_services": true
+}

@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments",
+  "query": "include_archived=true",
+  "started_at_utc": "2026-10-15T23:37:35.342082+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.13999999999941792,
+  "response_sha256": "36fb6e2bb3c5bf6d0158a8fb2d7479fe20690bd9e8037037e062e455b16b5bb3",
+  "ended_at_utc": "2026-10-15T23:37:35.488867+00:00"
+}

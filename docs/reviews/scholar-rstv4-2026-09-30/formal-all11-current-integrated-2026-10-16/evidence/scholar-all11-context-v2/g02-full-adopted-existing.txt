@@ -1,0 +1,363 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Fixed citation source - software acceptance · RSTV4
+  - status: 已自动保存
+  - button:
+  - button:
+  - button:
+    - text: Done
+  - navigation:
+    - button:
+      - text: Track
+    - generic: 1 Planning
+    - generic: 2 Drafting
+    - generic: 3 全文检查
+    - generic: 4 定稿／投稿
+    - generic: 5 Revision
+    - generic: 6 Publication
+    - button: 🧩 结构
+    - button: 📄 成文
+    - button: ✍️ Revision
+    - button:
+    - button:
+    - generic: 结构已变化 · 旧成文保留
+  - generic "当前意见关联":
+    - strong: 普通编辑
+    - generic: 后续修改不关联审稿意见
+    - button: 关联意见
+  - article:
+    - generic: 当前显示旧生成快照；结构修改尚未重新生成。
+    - button:
+      - text: 修改原始结构
+    - button: 🔎 全文检查
+    - link:
+      - /url: /api/studio-files/artifacts/artifact_6dd014ba2f3f4783a9f1eba6b7037a30
+      - text: Markdown
+    - link:
+      - /url: /api/studio-files/artifacts/artifact_5e195cc5a2824b83aed1ce93d222b676
+      - text: 成文与来源记录
+    - link:
+      - /url: /api/studio-files/artifacts/artifact_bcdaf5cabed94367b6095ac8b03c9a23
+      - text: LaTeX
+    - link:
+      - /url: /api/studio-files/artifacts/artifact_1a9dada3abdb4ad3aefa3738a2e3640c
+      - text: 参考文献
+    - link:
+      - /url: /api/studio-files/artifacts/artifact_9ed9f4d6283d4aeb80f5bdd6bba9a7db
+      - text: 📎 PDF
+    - button: 进入定稿 →
+    - heading [level=1]: Fixed citation source - software acceptance
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - heading [level=2]: Other software source
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph: "G09 software acceptance slot 1: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - figure:
+      - table:
+        - caption: software-only-table.csv
+        - rowgroup:
+          - row:
+            - cell: SOFTWARE_FIXTURE
+            - cell: fictional_value
+            - cell: qualification
+          - row:
+            - cell: alpha_demo
+            - cell: "1"
+            - cell: Software rendering test only; no scientific measurement
+          - row:
+            - cell: beta_demo
+            - cell: "2"
+            - cell: Software rendering test only; no scientific measurement
+      - link:
+        - /url: http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_8732ec9497074d82ae2b4359a7c235e5/materials/asset_ea004de6f5da423ba6ab98710d9a9458/source
+        - text: 原素材：software-only-table.csv
+      - text: · 此成文版本的固定素材
+    - figure:
+      - link:
+        - /url: http://127.0.0.1:8877/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/generated-versions/manuscript_version_8732ec9497074d82ae2b4359a7c235e5/materials/asset_65e4b91ba806497e9afd0c7c514c7d1b/source
+        - text: 原素材：software-only-figure.svg
+      - text: · 此成文版本的固定素材
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - heading [level=2]: Introduction
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph:
+      - text: Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted.
+      - button: "[1]"
+      - button: "[2]"
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - paragraph:
+      - text: "SOFTWARE_FIXTURE: Check original sources only and preserve their original conditions without asserting any scientific claim; retain both original source-only and source-condition boundaries in this shared sentence and in their separate sentences."
+      - button: "[1]"
+      - button: "[3]"
+      - text: "Check original sources only; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: preserve this source-only restriction in the shared sentence and in the separate source-check sentence."
+      - button: "[1]"
+      - button: "[3]"
+      - text: "G09 software boundary: preserve the original sources and their conditions; no scientific claim is asserted. SOFTWARE_FIXTURE C-MANY author clarification: retain this original boundary in the shared sentence and in the separate source-condition sentence."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - paragraph: "G09 software acceptance slot 2: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - heading [level=2]: Software source section 3
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph: "G09 software acceptance slot 3: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - heading [level=2]: Software source section 1
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph: "G09 software acceptance slot 9: this paragraph preserves the original empty section in the generated workflow; no scientific claim is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - heading [level=2]: Software source section 2
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph: "G09 software acceptance slot 5: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - heading [level=2]: Software source section 3
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph: "G09 software acceptance slot 6: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - heading [level=2]: New section
+    - button: 💬 讨论此节
+    - button: 讨论选区
+    - paragraph: "G09 software acceptance slot 7: this author note fills a template slot only; no scientific claim or external source is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - paragraph: "G09 software acceptance slot 8: the original empty paragraph is retained and filled for this workflow test; no scientific claim is asserted."
+    - button: 💬 讨论此段
+    - button: 讨论选区
+    - button: 修改此段原始结构
+    - region:
+      - heading [level=2]: References
+      - list:
+        - button: "[1]"
+        - text: Fixture Author (2026). Refreshed live catalog title - software
+        - button: "[2]"
+        - text: Fixture Author (2026). Refreshed live catalog title - software
+        - button: "[3]"
+        - text: Fixture Author (2026). Other selected source · 10.1234/other
+  - status
+  - button [expanded]:
+    - text: 与 Agent 讨论
+    - text: 15 条 · Fixed citation source - software acceptance
+  - button: 整篇历史
+  - button [disabled]: 当前对象 · 此版本
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: Annotation：Software acceptance only. Keep the original page 2 source fixed to generated v1.
+    - paragraph: "Check these original numbered citations after regeneration: preserve the original source and version."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: verify original numbered citations [1] and [2] using generated v1 fixed sources."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "zzzNoLiveMatch2026: after generated v2, continue this original v1 quote and its original [1] page 2 source."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v1 / 结构 r1
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Software source check: keep this original generated paragraph and source version. No author change is applied."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: "G01 ALPHA original discussion: preserve this first paragraph, exact selected text and generated v3 after reordering."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G01 ALPHA: real selected numeric citation text from paragraph 1, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: "G01 BETA original discussion: preserve this second paragraph, exact original source and selected text when it moves to first position."
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：G01 BETA: real selected numeric citation text from paragraph 2, generated v3."
+    - paragraph: Software discussion keeps the original generated v3 paragraph and its exact original quote; no author edit is applied.
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: "G02 SOFTWARE PARTIAL: propose a paragraph purpose and an extra Intent for this original v3 Alpha object. I will adopt only the purpose, retain the original thought and sources, and leave the extra Intent unadopted."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：G02 software-only partial adoption from original v3 / r10: only purpose is eligible for adoption."
+    - paragraph: Software fixture proposes two structure changes for author comparison. No author change is applied by this reply. The original v3 paragraph, quote and sources stay fixed.
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - button: 📚 引用来源 2
+    - region:
+      - paragraph: 结构建议
+      - paragraph: G02 software partial adoption
+      - paragraph: Select only the paragraph purpose. Keep the proposed extra Intent unadopted, and retain the original author thought and sources.
+      - button: 比较与决定 · 2 项
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: "G02 SOFTWARE SOURCE: use the added original v1 page 2 evidence as an unselected source candidate for this original Beta v3 thought. Keep the two original selected citations and author text unchanged."
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: Beta software paragraph cites original page 1 [2] and additional source [1].
+    - paragraph: "Annotation：Software source candidate test: Beta v3 primary, Alpha v1 additional fixed source; no scientific approval."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button: 定位原对象 · Introduction / 段落 2
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - button: 📚 引用来源 1
+    - region:
+      - paragraph: 来源候选
+      - paragraph: G02 software source candidate
+      - paragraph: Add this existing owned page 2 source as an unselected candidate. Keep both original selected sources and the original author text.
+      - button: 比较与决定 · 1 项
+  - article:
+    - generic: 你
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: "G02 SOFTWARE WORDING: propose replacing only the original word Check with Review for explicit author rejection. Retain all original thought text, citations, objects and versions when rejected."
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 查看原调用记录
+  - article:
+    - generic: Scholar
+    - button: 原对象 · 成文 v3 / 结构 r10
+    - blockquote: First source [1]. Next [2]. Repeat [1].
+    - paragraph: "Annotation：Software wording test: reject the exact UTF-16 range 0..5; preserve the original Alpha author thought."
+    - paragraph: Software-only typed suggestion for author review. The reply does not change the manuscript or approve scientific evidence.
+    - button: 定位原对象 · Introduction / 段落 1
+    - button: 继续这段讨论
+    - button: 查看原调用记录
+    - region:
+      - paragraph: 措辞建议
+      - paragraph: G02 software wording rejection
+      - paragraph: Offer a five-character wording edit for explicit rejection. Preserve the original author thought when rejected.
+      - button: 比较与决定 · 1 项
+  - generic: 当前选择：Fixed citation source - software acceptance
+  - strong: "草稿对象：Introduction / SOFTWARE_FIXTURE ALL11 G04 Done: retain generated v7, original thoughts, sources and open findings. · 结构 r87"
+  - generic: 点击其他对象保留草稿原对象。
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - region:
+    - paragraph: 新选：Fixed citation source - software acceptance · 结构 r103。当前问题仍绑定原对象。
+    - button: 保留并固定原对象
+    - button: 改用新对象并保留问题
+    - button: 加入比较来源
+  - generic: 固定对象的完整原文与版本
+  - status: 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+  - textbox:
+    - /placeholder: "讨论：Introduction / SOFTWARE_FIXTURE ALL11 G04 Done: retain generated v7, original thoughts, sources and open findings."
+    - text: SOFTWARE_FIXTURE ALL11 G03 A discussion draft α — keep unsent and separate.
+  - textbox:
+    - /placeholder: Annotation（可选）
+    - text: SOFTWARE_FIXTURE ALL11 G03 A annotation α
+  - button:
+  - button: 保存讨论批注
+  - button: 更新讨论历史
+- dialog "来源候选 · G02 software source candidate":
+  - heading "来源候选 · G02 software source candidate" [level=2]
+  - paragraph: 原对象：Introduction / 段落 2 · 结构 r10；当前保存版本 r103。勾选要采用的改动，再记录决定。
+  - checkbox "1. Software distinct source context / Beta software original paragraph. Keep this second paragraph" [disabled]
+  - checkbox [disabled]
+  - generic: 1. Software distinct source context / Beta software original paragraph. Keep this second paragraph
+  - heading "建议依据的原文" [level=3]
+  - paragraph: Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted.
+  - heading "当前原文" [level=3]
+  - paragraph: Beta software original paragraph. Keep this second paragraph's original source and conditions; no scientific claim is asserted.
+  - heading "拟采用内容" [level=3]
+  - paragraph: Catalog selected source Original software source body 2. Original software source body 2.
+  - paragraph: 这项已采纳，原决定保留在记录中。可从编辑器撤销或重做。
+  - paragraph: 加入未选中的来源候选；请在思想块的引用菜单中决定是否引用。
+  - region "作者决定记录":
+    - heading "决定记录" [level=3]
+    - paragraph:
+      - text: 完整采纳 · 1 项 · 结构 r12 ·
+      - time: 10/12/2026, 11:19:46 AM
+  - status
+  - button "完整采纳" [disabled]
+  - button "采纳勾选项（部分）" [disabled]
+  - button "拒绝建议" [active]
+  - button "刷新比较"
+  - button "Close":
+    - generic: Close

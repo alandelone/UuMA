@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "/api/catalog/discussion/history",
+  "query": "",
+  "status": 200
+}

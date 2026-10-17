@@ -1,0 +1,16 @@
+{
+  "serial": 23,
+  "component": "studio",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:38:33.201779+00:00",
+  "method": "POST",
+  "path": "/api/research/discussion/context",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": "{\"module\":\"STUDIO\",\"manuscript_id\":\"manuscript_d24e458d188e42449fb25c1d65affc29\",\"object_kind\":\"paper\",\"object_id\":\"manuscript_d24e458d188e42449fb25c1d65affc29\",\"document_revision\":0}",
+  "response_body_bytes": 1251,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "c2e627a0e803b5204a48a841033eb5b9b289cd55fc3fa88447c75fdda5dad642"
+}

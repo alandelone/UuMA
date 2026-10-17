@@ -1,0 +1,16 @@
+{
+  "serial": 10,
+  "component": "catalog",
+  "role": "identity",
+  "at_utc": "2026-10-16T08:36:18.986694+00:00",
+  "method": "GET",
+  "path": "/",
+  "query": "view=review&case=source_file_491d18ddee7958c95deb123a188280d5",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 201274,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "e573c3771cc6f4723be6c2611eabfb81bae3200722ccdd1ccac9018924e18447"
+}

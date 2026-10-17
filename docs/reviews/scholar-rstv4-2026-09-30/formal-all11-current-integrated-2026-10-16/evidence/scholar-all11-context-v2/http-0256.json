@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat/research_message_c2144d23b63f49198ad1820105d896e1/suggestions/suggestion_97f90e418dd944c29b47c379adb116b2/preview",
+  "query": "",
+  "started_at_utc": "2026-10-16T03:38:53.305898+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.01600000000325963,
+  "response_sha256": "2482b5b5b35399c8b51594f8b4f8a2bd76107136d4a2ebeef47f015e756b6b21",
+  "ended_at_utc": "2026-10-16T03:38:53.327566+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "catalog": {
+    "pid": 42844,
+    "create_time": 1792122556.6871843,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g10-current-v2.py",
+      "serve",
+      "catalog"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 21012
+  },
+  "studio": {
+    "pid": 45264,
+    "create_time": 1792122558.1091812,
+    "cmdline": [
+      "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+      "-X",
+      "utf8",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g10-current-v2.py",
+      "serve",
+      "studio"
+    ],
+    "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+    "parent_pid": 14164
+  },
+  "frontend": {
+    "pid": 49900,
+    "create_time": 1792122559.405716,
+    "cmdline": [
+      "C:\\Program Files\\nodejs\\node.EXE",
+      "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+      "start",
+      "--port",
+      "3000",
+      "--hostname",
+      "127.0.0.1"
+    ],
+    "cwd": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+    "parent_pid": 46132
+  },
+  "console": [
+    {
+      "pid": 25544,
+      "create_time": 1792122559.4108047,
+      "cmdline": [
+        "\\??\\C:\\Windows\\system32\\conhost.exe",
+        "0x4"
+      ],
+      "cwd": "C:\\Windows",
+      "parent_pid": 49900
+    }
+  ]
+}

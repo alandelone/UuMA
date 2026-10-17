@@ -1,0 +1,51 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: Zero versions PUBLICATION · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做" [disabled]:
+  - button "Done":
+    - text: Done
+  - navigation "稿件视图":
+    - button "返回 研究总览":
+      - text: 研究总览
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文" [active]
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本":
+      - button "显示或隐藏右侧资料":
+  - heading "还没有成文版本" [level=2]
+  - paragraph: 回到结构编辑，补齐作者思想与引用决定后按 Generate。
+  - button "修改原始结构":
+    - text: 修改原始结构
+  - status
+  - button "与 Agent 讨论 0 条 · Zero versions PUBLICATION" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Zero versions PUBLICATION
+  - button "整篇历史"
+  - button "当前对象 · 此版本" [disabled]
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - generic: 当前选择：Zero versions PUBLICATION
+  - strong: 草稿对象：Zero versions PUBLICATION · 结构 r0
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - generic "固定对象的完整原文与版本"
+  - status: 已选此对象。可拖选下方原文，或直接提问。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：Zero versions PUBLICATION
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+  - button "发送讨论" [disabled]:
+  - button "保存讨论批注" [disabled]
+  - button "更新讨论历史"

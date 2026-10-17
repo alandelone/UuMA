@@ -1,0 +1,16 @@
+{
+  "serial": 16,
+  "component": "studio",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:38:33.152539+00:00",
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_d24e458d188e42449fb25c1d65affc29/workspace",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 1629,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "62d3ab94e718f3e5c793d083e48d2f28b47c4a93bf4b3216d77747be3b9c73ff"
+}

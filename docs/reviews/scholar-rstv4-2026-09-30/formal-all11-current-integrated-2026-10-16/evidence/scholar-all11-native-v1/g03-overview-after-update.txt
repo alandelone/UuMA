@@ -1,0 +1,94 @@
+- main:
+  - navigation "Scholar 工作区":
+    - strong: Scholar
+    - link "研究总览":
+      - /url: http://127.0.0.1:51629/
+    - link "文献库":
+      - /url: http://127.0.0.1:51629/?view=all
+    - link "知识图谱":
+      - /url: http://127.0.0.1:51629/?view=fieldkg
+    - link "论文工作台":
+      - /url: http://127.0.0.1:3000/
+  - navigation "Catalog views":
+    - button "研究总览":
+      - generic: 研究总览
+      - generic: ⌄
+  - region "研究总览":
+    - status: 真实研究结构 · 文献按唯一论文去重，父级取所属范围并集；明确关联与候选分别说明。写作 Paper 属于 Track。
+    - button "↻ 更新状态"
+    - button "＋ Field"
+    - tree "Field、Topic、Track、研究问题与写作 Paper":
+      - treeitem "Scientific Writing" [expanded] [level=1]:
+        - button "收起 Scientific Writing" [expanded]: ⌄
+        - generic: ◇
+        - generic "Scientific Writing"
+        - generic: Field
+        - link "查看 Scientific Writing 的 0 篇关联论文":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=all&scope_kind=field&scope_field_id=field_792bb631f3f74deb8a42c496907730e0&scope_object_id=field_792bb631f3f74deb8a42c496907730e0
+          - generic: ▤
+          - text: "0"
+        - generic: 研究领域
+      - treeitem "Argumentation" [expanded] [level=2]:
+        - button "收起 Argumentation" [expanded]: ⌄
+        - generic: ◈
+        - generic "Argumentation"
+        - generic: Topic
+        - link "查看 Argumentation 的 0 篇关联论文":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=all&scope_kind=topic&scope_field_id=field_792bb631f3f74deb8a42c496907730e0&scope_object_id=topic_16772a566f3d45d39f5cffdbcb8d2f26
+          - generic: ▤
+          - text: "0"
+        - generic: 尚无采集
+      - treeitem "Writing Track" [level=3]:
+        - button "展开 Writing Track": ⌄
+        - generic: ↗
+        - link "Writing Track ↗":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=track&field=field_792bb631f3f74deb8a42c496907730e0&track=track_8fc0672591694b79bb747470d402772d
+        - generic: Track
+        - link "查看 Writing Track 的 0 篇关联论文":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=all&scope_kind=track&scope_field_id=field_792bb631f3f74deb8a42c496907730e0&scope_object_id=track_8fc0672591694b79bb747470d402772d
+          - generic: ▤
+          - text: "0"
+        - generic: 尚无采集
+      - treeitem "f1" [active] [level=1]:
+        - button "展开 f1": ⌄
+        - generic: ◇
+        - generic "f1"
+        - generic: Field
+        - button "修改 f1": 编辑
+        - link "FieldKG ↗":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=fieldkg&field=f1
+        - button "＋ Topic"
+        - button "关联 Topic"
+        - link "查看 f1 的 2 篇关联论文":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=all&scope_kind=field&scope_field_id=f1&scope_object_id=f1
+          - generic: ▤
+          - text: "2"
+        - generic: 研究领域
+      - treeitem "f2" [expanded] [level=1]:
+        - button "收起 f2" [expanded]: ⌄
+        - generic: ◇
+        - generic "f2"
+        - generic: Field
+        - link "查看 f2 的 0 篇关联论文":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=all&scope_kind=field&scope_field_id=f2&scope_object_id=f2
+          - generic: ▤
+          - text: "0"
+        - generic: 研究领域
+      - treeitem "t2" [level=2]:
+        - generic: ◈
+        - generic "t2"
+        - generic: Topic
+        - link "查看 t2 的 0 篇关联论文":
+          - /url: http://127.0.0.1:51629/?overview_state=%7B%22collapsed%22%3A%5B%22%5B%5C%22track%5C%22%2C%5C%22track_8fc0672591694b79bb747470d402772d%5C%22%5D%22%2C%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%5D%2C%22focus%22%3A%22%5B%5C%22field%5C%22%2C%5C%22f1%5C%22%5D%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_792bb631f3f74deb8a42c496907730e0%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%2245488d2889e3ea77a61028f3c83d2e09679163959fcbd780d573d5678ac6bc54%22%7D&view=all&scope_kind=topic&scope_field_id=f2&scope_object_id=t2
+          - generic: ▤
+          - text: "0"
+        - generic: 尚无采集
+    - generic: ▤
+    - generic: Paper Catalog
+    - generic: 全部可见论文
+    - button "打开全部论文目录":
+      - generic: ▤
+      - generic: "2"
+    - generic: 目录
+- complementary "统一研究讨论":
+  - button "Chat · 选择内容以讨论"

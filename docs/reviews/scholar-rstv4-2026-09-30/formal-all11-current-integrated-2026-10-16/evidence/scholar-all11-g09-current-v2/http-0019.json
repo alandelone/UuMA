@@ -1,0 +1,10 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/comments/comment_f71edb5758ef41f3b0d96d8cdbed18d5/response-checks",
+  "query": "",
+  "allowed": true,
+  "request_utf8": null,
+  "status": 200,
+  "complete": true,
+  "response_sha256": "72abfb59520913406300cdb3d32d00166fb60c7ae80efdba32248bb15f64e233"
+}

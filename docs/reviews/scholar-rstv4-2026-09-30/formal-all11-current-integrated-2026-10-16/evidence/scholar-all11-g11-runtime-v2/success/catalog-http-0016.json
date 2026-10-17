@@ -1,0 +1,16 @@
+{
+  "serial": 16,
+  "component": "catalog",
+  "role": "success",
+  "at_utc": "2026-10-16T08:35:30.831447+00:00",
+  "method": "GET",
+  "path": "/api/catalog/collections/collection_62ca47c927342115eb5f8fd870af9ca6/progress",
+  "query": "reference_offset=0",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 9473,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "00f19281379f10bc3bf61c28b3464d3cdcd58684faabe4a8bc6ac5c86aca8a14"
+}

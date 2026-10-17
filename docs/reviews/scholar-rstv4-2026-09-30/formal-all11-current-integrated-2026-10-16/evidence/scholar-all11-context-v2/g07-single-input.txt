@@ -1,0 +1,4 @@
+SOFTWARE_FIXTURE ALL11 G07 single opinion α: keep both paragraphs in one record.
+
+Second paragraph β belongs to this exact opinion.
+Retain this newline; no scientific claim.

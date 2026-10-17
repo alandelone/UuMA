@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/templates/skeleton_7fdfaa3452584457753a03697f4a3f27",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:40:35.683227+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.014999999999417923,
+  "response_sha256": "7276ce1b48a5624d94fcea0596ecdcfba400bd312940362f5674ca0acb000940",
+  "ended_at_utc": "2026-10-15T23:40:35.694729+00:00"
+}

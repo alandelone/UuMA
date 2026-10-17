@@ -1,0 +1,10 @@
+{
+  "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+  "target": "REVISION",
+  "status": 422,
+  "body": {
+    "error": "studio_error",
+    "detail": "A successful generated version is required before advancing this stage"
+  },
+  "all110_files_originals_source_exact": true
+}

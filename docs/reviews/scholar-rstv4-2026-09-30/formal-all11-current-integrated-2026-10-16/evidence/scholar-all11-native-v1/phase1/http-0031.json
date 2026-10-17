@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/tracks",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:12:05.665178+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.014999999999417923,
+  "response_sha256": "dbeae9825076e599678a343ca4c21c882c3705428b8a26bffcd5866d844b8b21",
+  "ended_at_utc": "2026-10-15T23:12:05.675694+00:00"
+}

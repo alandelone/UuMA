@@ -1,0 +1,16 @@
+{
+  "serial": 7,
+  "component": "catalog",
+  "role": "success",
+  "at_utc": "2026-10-16T08:34:59.620106+00:00",
+  "method": "GET",
+  "path": "/api/catalog/papers/paper_dde0a449e93444c2771e7b0edeb7daf9",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 46800,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "567be3ee7addf2aae009fa68ccc13b69afb43d5ee416fcb3818ca9ee07ee083e"
+}

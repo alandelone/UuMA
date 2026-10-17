@@ -1,0 +1,104 @@
+- main:
+  - generic: WRITING STUDIO
+  - generic: G03 B software draft isolation acceptance · RSTV4
+  - status: 已自动保存
+  - button "撤销" [disabled]:
+  - button "重做" [disabled]:
+  - button "仅重新排版" [disabled]
+  - button "Generate":
+    - text: Generate
+  - navigation "稿件视图":
+    - button "返回 Track":
+      - text: Track
+    - generic "Paper workflow stage":
+      - generic: 1 Planning
+      - generic: 2 Drafting
+      - generic: 3 全文检查
+      - generic: 4 定稿／投稿
+      - generic: 5 Revision
+      - generic: 6 Publication
+    - generic "稿件内容视图":
+      - button "🧩 结构"
+      - button "📄 成文"
+      - button "✍️ Revision"
+    - generic "面板显示":
+      - button "显示或隐藏左侧样本" [active]:
+      - button "显示或隐藏右侧资料":
+  - generic "结构选择与移动":
+    - button "多选／分组"
+    - status
+  - text: 成文页边距
+  - combobox "成文页边距":
+    - option "标准（1 英寸）" [selected]
+    - option "窄（0.75 英寸）"
+  - textbox "Paper title": G03 B software draft isolation acceptance
+  - textbox "作者摘要":
+    - /placeholder: Abstract 可以现在写，也可以先留到结构完整后补。
+    - text: G03 B offline author abstract — keep locally during disconnection; software acceptance only, no scientific claim. G06 cross-manuscript edit has no A01/A02 context.
+  - button "选择并设置 Introduction": SECTION 1
+  - button "拖动章节 Introduction":
+  - button "展开 Introduction":
+  - textbox "章节标题": Introduction
+  - textbox "章节作用": Motivation
+  - generic "章节操作": •••
+  - paragraph: 1 个段落 · 0 个段落组 · 0 个子章节
+  - button "添加章节":
+    - text: 添加章节
+  - complementary:
+    - text: FieldKG / Evidence
+    - generic: 真实资料
+    - textbox "找资料、依据、反证…"
+    - article:
+      - button "将证据加入当前思想：New original software source body.":
+        - generic: SUPPORTS
+        - generic: 90%
+        - strong: New original software source body.
+        - generic: New original software source body.
+      - generic: Other selected source
+      - generic "查看完整来源"
+    - article:
+      - button "将证据加入当前思想：Original software source body 2.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 2.
+        - generic: Original software source body 2.
+      - generic: Refreshed live catalog title - software
+      - generic "查看完整来源"
+    - article:
+      - button "将证据加入当前思想：Original software source body 1.":
+        - generic: SUPPORTS
+        - generic: 80%
+        - strong: Original software source body 1.
+        - generic: Original software source body 1.
+      - generic: Refreshed live catalog title - software
+      - generic "查看完整来源"
+  - status
+  - button "与 Agent 讨论 0 条 · Introduction" [expanded]:
+    - text: 与 Agent 讨论
+    - text: 0 条 · Introduction
+  - button "整篇历史"
+  - button "当前对象 · 此版本"
+  - paragraph: 讨论会固定到当前对象与版本；点击文字不会自动发送。
+  - generic: 当前选择：Introduction
+  - strong: 草稿对象：G03 B software draft isolation acceptance · 结构 r2
+  - generic: 点击其他对象保留草稿原对象。
+  - button "将草稿绑定到当前对象／选区"
+  - checkbox "固定当前讨论对象"
+  - checkbox
+  - text: 固定当前讨论对象
+  - region "比较新选对象与原草稿":
+    - paragraph: 新选：Introduction · 结构 r2。当前问题仍绑定原对象。
+    - button "保留并固定原对象"
+    - button "改用新对象并保留问题"
+    - button "加入比较来源"
+  - generic "固定对象的完整原文与版本"
+  - status: 新选对象已列在下面；当前问题仍绑定原对象，请明确选择。
+  - textbox "讨论草稿":
+    - /placeholder: 讨论：G03 B software draft isolation acceptance
+    - text: SOFTWARE_FIXTURE ALL11 G03 B discussion draft β — keep unsent and separate.
+  - textbox "当前讨论的 annotation":
+    - /placeholder: Annotation（可选）
+    - text: SOFTWARE_FIXTURE ALL11 G03 B annotation β
+  - button "发送讨论":
+  - button "保存讨论批注"
+  - button "更新讨论历史"

@@ -1,0 +1,9 @@
+{
+  "status": "ONE_G10_COPY_DECLARED_EMPTY_PUBLICATION_TABLE_AND_SCHEMA13_TO14",
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-all11-g10-current-ehsvcl0f",
+  "old109_preserved_except_version_marker": true,
+  "new_empty_table": "studio_submission_bindings",
+  "all_old_schema_entries_exact": true,
+  "original_source_files_and109_exact": true,
+  "new_build_seed_models_jobs": false
+}

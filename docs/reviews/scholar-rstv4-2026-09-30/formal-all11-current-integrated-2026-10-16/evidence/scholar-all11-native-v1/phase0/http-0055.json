@@ -1,0 +1,11 @@
+{
+  "method": "GET",
+  "path": "/api/manuscripts/manuscript_56652adf9d054cb6ab3819efacf3475c/chat",
+  "query": "limit=100",
+  "started_at_utc": "2026-10-15T23:08:08.155520+00:00",
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.062000000005355105,
+  "response_sha256": "160634394be1044bf68e476d2ea918f489862fff3ad26091aa73ba0b69d08edf",
+  "ended_at_utc": "2026-10-15T23:08:08.225661+00:00"
+}

@@ -1,0 +1,18 @@
+{
+  "data/catalog.db": {
+    "sha256": "fc0d38a73ad312bff7939d081dfb3520790e7b7cbc778f136c591c362d883fdf",
+    "bytes": 1269760
+  },
+  "data/catalog.pre-v13.bak": {
+    "sha256": "6623805c7086dea3f761d56ad8192b81f94dee5fcfac453fbe686c13ac3620fc",
+    "bytes": 970752
+  },
+  "data/catalog.pre-v14.bak": {
+    "sha256": "955ebfcb5d2f33ab4f1c46374da27d2c453e2d45faccfd4a6ade90ebfbab24a6",
+    "bytes": 1224704
+  },
+  "http-service.log": {
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "bytes": 0
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "serial": 10,
+  "component": "catalog",
+  "role": "upstream",
+  "at_utc": "2026-10-16T08:37:56.390988+00:00",
+  "method": "GET",
+  "path": "/api/catalog/tracks/track_19bd9c2c7abb40d48013dd0e0374e4fd/scientific-context",
+  "query": "",
+  "allowed": true,
+  "zero_version_manuscript": null,
+  "request_body_utf8": null,
+  "response_body_bytes": 11203,
+  "response_complete": true,
+  "status": 200,
+  "response_body_sha256": "7a3aa0c595b9fc5292281d5e28a7f40af8296ef22b73a6ecfb73d58b2dfed507"
+}

@@ -1,0 +1,51 @@
+{
+  "root": "C:\\Users\\Alandelone\\AppData\\Local\\Temp\\scui-g11-upstream-copy-j6xdmqml",
+  "track_id": "track_19bd9c2c7abb40d48013dd0e0374e4fd",
+  "method_id": "method_578417c4dcfc42e99060150cccd53613",
+  "stale_claim_ids": [
+    "claim_bb84d9ba73be4451a3b4222d941427e2",
+    "claim_5fdad5a7be7144aca7ff828926d00e11"
+  ],
+  "review_manuscript_id": "manuscript_fde24662e8b044c59e729f7516ad10ca",
+  "old_plan_id": "experiment_plan_81163acc4ada40c786e62a8e66576d9d",
+  "zero_version_cases": [
+    {
+      "manuscript_id": "manuscript_264202f005144e1ba60f8574c6637f70",
+      "retained_stage": "DRAFTING",
+      "target": "WHOLE_PAPER_REVIEW",
+      "expected_revision": 1,
+      "endpoint": "/api/manuscripts/manuscript_264202f005144e1ba60f8574c6637f70/stage",
+      "expected_status": 422,
+      "reason": "G11 explicit zero-version software guard only"
+    },
+    {
+      "manuscript_id": "manuscript_d24e458d188e42449fb25c1d65affc29",
+      "retained_stage": "WHOLE_PAPER_REVIEW",
+      "target": "FINALIZATION_SUBMISSION",
+      "expected_revision": 1,
+      "endpoint": "/api/manuscripts/manuscript_d24e458d188e42449fb25c1d65affc29/stage",
+      "expected_status": 422,
+      "reason": "G11 explicit zero-version software guard only"
+    },
+    {
+      "manuscript_id": "manuscript_ed7c93ebf4824ec48186d731583185c8",
+      "retained_stage": "FINALIZATION_SUBMISSION",
+      "target": "REVISION",
+      "expected_revision": 1,
+      "endpoint": "/api/manuscripts/manuscript_ed7c93ebf4824ec48186d731583185c8/stage",
+      "expected_status": 422,
+      "reason": "G11 explicit zero-version software guard only"
+    },
+    {
+      "manuscript_id": "manuscript_332d6e2945cd4c30b4d39fcae921e28a",
+      "retained_stage": "FINALIZATION_SUBMISSION",
+      "target": "PUBLICATION",
+      "expected_revision": 1,
+      "endpoint": "/api/manuscripts/manuscript_332d6e2945cd4c30b4d39fcae921e28a/stage",
+      "expected_status": 422,
+      "reason": "G11 explicit zero-version software guard only"
+    }
+  ],
+  "native_experiment_button_disabled_is_distinct_from_core_refusal": true,
+  "successful_terminal_run_do_not_repeat": "run_d79366ed2ce545f08eddb3aee9b5014f"
+}

@@ -1,0 +1,63 @@
+{
+  "catalog_url": "http://127.0.0.1:8875/",
+  "studio_url": "http://127.0.0.1:3000/?manuscript=manuscript_14aef3be6a534016bf456a15dc865892&view=structure&left=0&right=1&chat=0",
+  "owned": {
+    "catalog": {
+      "pid": 46640,
+      "create_time": 1792122919.760782,
+      "cmdline": [
+        "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g10-current-v3.py",
+        "serve",
+        "catalog"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+      "parent_pid": 49616
+    },
+    "studio": {
+      "pid": 49480,
+      "create_time": 1792122921.1729944,
+      "cmdline": [
+        "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g10-current-v3.py",
+        "serve",
+        "studio"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+      "parent_pid": 23116
+    },
+    "frontend": {
+      "pid": 25960,
+      "create_time": 1792122922.3726795,
+      "cmdline": [
+        "C:\\Program Files\\nodejs\\node.EXE",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\writing-studio\\node_modules\\vinext\\dist\\cli.js",
+        "start",
+        "--port",
+        "3000",
+        "--hostname",
+        "127.0.0.1"
+      ],
+      "cwd": "C:\\Users\\ALANDE~1\\AppData\\Local\\Temp\\scui-same-origin-build-cbehvgo4\\writing-studio",
+      "parent_pid": 37512
+    },
+    "console": [
+      {
+        "pid": 27204,
+        "create_time": 1792122922.37912,
+        "cmdline": [
+          "\\??\\C:\\Windows\\system32\\conhost.exe",
+          "0x4"
+        ],
+        "cwd": "C:\\Windows",
+        "parent_pid": 25960
+      }
+    ]
+  },
+  "source421": true,
+  "new_build_models_jobs": 0
+}

@@ -1,0 +1,40 @@
+{
+  "rows": [
+    {
+      "class": "overview-row",
+      "current": null,
+      "id": null,
+      "label": "Energy",
+      "selected": null
+    },
+    {
+      "class": "overview-row",
+      "current": null,
+      "id": null,
+      "label": "Trading",
+      "selected": null
+    },
+    {
+      "class": "overview-row",
+      "current": null,
+      "id": null,
+      "label": "Track",
+      "selected": null
+    },
+    {
+      "class": "overview-row",
+      "current": null,
+      "id": null,
+      "label": "G10 source roundtrip software acceptance — no scientific claim",
+      "selected": null
+    },
+    {
+      "class": "overview-row",
+      "current": null,
+      "id": null,
+      "label": "Other",
+      "selected": null
+    }
+  ],
+  "scrollY": 0
+}

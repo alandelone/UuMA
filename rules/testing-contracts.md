@@ -670,3 +670,12 @@ Do not weaken product tests, source provenance, rejection or approval assertions
 2026-10-16 G10 current-source deployment contract: reused frontend421 configures Catalog origin8875; catalog-return.ts intentionally rejects a random62147 return origin and falls back to8875, whose absent server caused a real refused return. Preserve failure; do not loosen trusted-origin checks or count partial navigation as full roundtrip. Verify8875 free, retire only exact owned v2 services, reuse same G10 copy/migrated110/build at configured8875, then repeat only read navigation. No schema/data/model/author/approval replay. Internal error-page data URL is policy blocked: leave it alone; never inspect it through a different browser or tool.
 
 2026-10-16 G11 compatible-copy binding audit contract: preparation fully succeeded, then immutable helper v2 audit compared upstream CLAIMS tuple with its JSON array/list and failed line361. Keep that helper/receipt SHA frozen. Independent v3 must compare the complete canonical JSON contract, explicitly verify this sole tuple/list representation difference and all other binding fields exact, and keep every110 table/schema/file plus all four original roots exact. Never recopy/migrate or replay GPU/QuickRead/identity approval to fix an observer serialization error. Integrity-only pass does not prove native reads or new current-code refusals.
+
+
+## All11 final readback: immutable maps and inherited packages (2026-10-16)
+
+Keep file-map representations explicit: path-to-SHA and path-to-SHA/size are not Python-equal. Compare all payload path/hash pairs including the main database; only SQLite-managed WAL/SHM are outside payload byte claims, and independently compare full schema/rows. Never replace a stored baseline to hide a difference.
+
+An inherited submission-package row does not prove its payload directory was copied. Preserve actual PackageUnavailableError and original records. For combined historical evidence, bind an existing sealed ZIP by its original digest and every member against the historical manifest; explicitly state current-copy payload unavailability. Do not regenerate an old job or silently repair a frozen package. A new final package must match actual current author/generated revisions and selected review round.
+
+For native asynchronous history dialogs, require the loaded DOM and actual read response; an early snapshot is not proof that the action failed or succeeded. Avoid repeating business writes to compensate for observation timing.

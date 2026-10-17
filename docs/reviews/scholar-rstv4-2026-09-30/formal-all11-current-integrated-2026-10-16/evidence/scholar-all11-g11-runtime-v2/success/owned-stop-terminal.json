@@ -1,0 +1,30 @@
+{
+  "status": "EXACT_OWNED_ROLE_STOPPED_PORTS_FREE",
+  "role": "success",
+  "identities": {
+    "catalog": {
+      "pid": 43916,
+      "create_time": 1792139686.0551684,
+      "cmdline": [
+        "C:\\Users\\Alandelone\\anaconda3\\python.exe",
+        "-X",
+        "utf8",
+        "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\scholar-all11-g11-runtime-v2.py",
+        "serve",
+        "success",
+        "--component",
+        "catalog"
+      ],
+      "cwd": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA",
+      "parent_pid": 43132
+    }
+  },
+  "ports": {
+    "catalog": 8875
+  },
+  "all_owned_identities_absent": true,
+  "all110_and_files_exact": true,
+  "source421_and_originals_exact": true,
+  "no_other_processes_stopped": true,
+  "native_group_complete": false
+}

@@ -1,0 +1,85 @@
+{
+  "rows": [
+    {
+      "display": "grid",
+      "expanded": "true",
+      "hidden": false,
+      "id": "[\"field\",\"field_792bb631f3f74deb8a42c496907730e0\"]",
+      "label": "Scientific Writing",
+      "parent": null
+    },
+    {
+      "display": "grid",
+      "expanded": "true",
+      "hidden": false,
+      "id": "[\"topic\",\"field_792bb631f3f74deb8a42c496907730e0\",\"topic_16772a566f3d45d39f5cffdbcb8d2f26\"]",
+      "label": "Argumentation",
+      "parent": "[\"field\",\"field_792bb631f3f74deb8a42c496907730e0\"]"
+    },
+    {
+      "display": "grid",
+      "expanded": "false",
+      "hidden": false,
+      "id": "[\"track\",\"track_8fc0672591694b79bb747470d402772d\"]",
+      "label": "Writing Track",
+      "parent": "[\"topic\",\"field_792bb631f3f74deb8a42c496907730e0\",\"topic_16772a566f3d45d39f5cffdbcb8d2f26\"]"
+    },
+    {
+      "display": "none",
+      "expanded": null,
+      "hidden": true,
+      "id": "[\"paper\",\"manuscript_bea23f3050174ed1a0df075a32c25e13\",\"[\\\"track\\\",\\\"track_8fc0672591694b79bb747470d402772d\\\"]\"]",
+      "label": "G03 B software draft isolation acceptance",
+      "parent": "[\"track\",\"track_8fc0672591694b79bb747470d402772d\"]"
+    },
+    {
+      "display": "none",
+      "expanded": null,
+      "hidden": true,
+      "id": "[\"paper\",\"manuscript_56652adf9d054cb6ab3819efacf3475c\",\"[\\\"track\\\",\\\"track_8fc0672591694b79bb747470d402772d\\\"]\"]",
+      "label": "Author-led paper",
+      "parent": "[\"track\",\"track_8fc0672591694b79bb747470d402772d\"]"
+    },
+    {
+      "display": "grid",
+      "expanded": "false",
+      "hidden": false,
+      "id": "[\"field\",\"f1\"]",
+      "label": "f1",
+      "parent": null
+    },
+    {
+      "display": "none",
+      "expanded": "true",
+      "hidden": true,
+      "id": "[\"topic\",\"f1\",\"t1\"]",
+      "label": "t1",
+      "parent": "[\"field\",\"f1\"]"
+    },
+    {
+      "display": "none",
+      "expanded": null,
+      "hidden": true,
+      "id": "[\"track\",\"tr1\"]",
+      "label": "Track",
+      "parent": "[\"topic\",\"f1\",\"t1\"]"
+    },
+    {
+      "display": "grid",
+      "expanded": "true",
+      "hidden": false,
+      "id": "[\"field\",\"f2\"]",
+      "label": "f2",
+      "parent": null
+    },
+    {
+      "display": "grid",
+      "expanded": null,
+      "hidden": false,
+      "id": "[\"topic\",\"f2\",\"t2\"]",
+      "label": "t2",
+      "parent": "[\"field\",\"f2\"]"
+    }
+  ],
+  "scrollY": 72
+}

@@ -1,0 +1,6 @@
+{
+  "method": "POST",
+  "path": "/api/catalog/papers/query",
+  "query": "",
+  "status": 200
+}

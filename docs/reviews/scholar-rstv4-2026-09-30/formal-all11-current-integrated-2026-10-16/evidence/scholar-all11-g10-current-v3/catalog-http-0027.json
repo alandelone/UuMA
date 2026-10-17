@@ -1,0 +1,6 @@
+{
+  "method": "GET",
+  "path": "/",
+  "query": "overview_state=%7B%22collapsed%22%3A%5B%5D%2C%22focus%22%3A%22%22%2C%22anchor%22%3A%22%5B%5C%22field%5C%22%2C%5C%22field_6242993287f547549daa4ded97914f3c%5C%22%5D%22%2C%22offset%22%3A173%2C%22scroll%22%3A0%2C%22workspace%22%3A%229a99d1e2148bdcf8080515fb0ef84d0bb513943e391388ee9ad6b9575f6d6973%22%7D&track=track_cd1adda6220f47b787f409e983c00947",
+  "status": 200
+}

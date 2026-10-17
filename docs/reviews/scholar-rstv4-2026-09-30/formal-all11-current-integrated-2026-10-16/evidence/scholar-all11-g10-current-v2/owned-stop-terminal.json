@@ -1,0 +1,12 @@
+{
+  "exact_owned_services_retired": true,
+  "no_other_processes_stopped": true,
+  "ports_free": [
+    8877,
+    3000,
+    62147
+  ],
+  "original_stop_failed_after_all_services_had_exited": true,
+  "actual_both_server_terminals_and_all_saved_identity_absence_verified": true,
+  "no_second_stop_or_business_replay": true
+}

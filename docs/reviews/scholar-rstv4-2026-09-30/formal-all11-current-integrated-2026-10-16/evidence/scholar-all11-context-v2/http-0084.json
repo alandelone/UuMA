@@ -1,0 +1,14 @@
+{
+  "method": "POST",
+  "path": "/api/comments/comment_f7969d2589c14c6a9e3d1c923bd1b381/restore",
+  "query": "",
+  "started_at_utc": "2026-10-15T23:36:56.856772+00:00",
+  "body_utf8": "",
+  "headers": {},
+  "status": 200,
+  "final_body_sent": true,
+  "seconds": 0.01600000000325963,
+  "response_sha256": "1bfb8edbafd30b71eaa3336c29fceeda31a1b1979bd15efddd421b248452a201",
+  "ended_at_utc": "2026-10-15T23:36:56.880433+00:00",
+  "response_utf8": "{\"comment_id\":\"comment_f7969d2589c14c6a9e3d1c923bd1b381\",\"review_round_id\":\"review_round_16b039af771747eb899cc0939c271cd4\",\"source\":\"PASTED\",\"reviewer\":null,\"original_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\",\"edited_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\",\"author_decision\":null,\"response_text\":null,\"status\":\"PENDING\",\"archived_at\":null,\"created_at\":\"2026-10-12T07:26:02.810065+00:00\",\"updated_at\":\"2026-10-15T23:36:56.873930+00:00\",\"import_metadata\":{\"comment_number\":1,\"import_batch_id\":\"comment_import_9ade0bc310b540ab8530380b14b29739\",\"original_index\":0,\"original_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\",\"raw_import_text\":\"G06 A software comment: associate this exact original Beta structure edit with comment A; no scientific request.\\n\\nG06 B software comment: keep independent context and stable number when comment A is archived and restored.\"},\"display_label\":\"A01\"}"
+}
