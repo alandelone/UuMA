@@ -1,0 +1,68 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "1d21eb88-b615-4f3e-b83c-e172019e8011",
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+    "sha256": "4850b609fb011ff3f2e7df433ab186a00f20969a7a98d7ad51b48a4dd6437ae6",
+    "bytes": 835387
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-MuMFFh\".",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-MuMFFh"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "receipt": "wisdom-class.browser-check.json",
+    "files": []
+  },
+  "error": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-MuMFFh\"."
+}

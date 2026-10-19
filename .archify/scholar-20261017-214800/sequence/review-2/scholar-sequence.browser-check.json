@@ -1,0 +1,69 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "browser-check",
+  "evidenceKind": "automated-browser",
+  "status": "fail",
+  "visualReview": "not-requested",
+  "provenance": "current",
+  "deliveryReceiptId": "58aa872e-3214-49df-8d62-ce0acae7ce89",
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\scholar-20261017-214800\\sequence\\scholar-sequence.html",
+    "sha256": "d165a6205098102fed59add891cc378dd705f071bc30f7c028b11a4347e1d5c3",
+    "bytes": 827778
+  },
+  "state": {
+    "detail": "read",
+    "motion": "still"
+  },
+  "chrome": {
+    "status": "available",
+    "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\scholar-20261017-214800\\sequence\\scholar-sequence.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-WyXU9d\".",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-WyXU9d"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "containment": {
+    "status": "fail",
+    "policy": "fit-or-reader-declared-readable-vertical-scroll",
+    "viewports": []
+  },
+  "themeStates": {
+    "status": "fail",
+    "viewports": []
+  },
+  "readability": {
+    "status": "fail",
+    "minimumProjectedNodeTextPx": 6,
+    "viewports": []
+  },
+  "viewerChrome": {
+    "status": "fail",
+    "viewports": []
+  },
+  "captures": {
+    "status": "not-requested",
+    "screenshots": [],
+    "contactSheet": null
+  },
+  "sidecars": {
+    "directory": "C:\\test_codespace\\UuMA\\.archify\\scholar-20261017-214800\\sequence\\review-2",
+    "receipt": "scholar-sequence.browser-check.json",
+    "files": []
+  },
+  "error": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-WyXU9d\"."
+}

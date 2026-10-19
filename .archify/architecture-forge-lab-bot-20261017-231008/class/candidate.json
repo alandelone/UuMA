@@ -1,0 +1,442 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "Forge · 核心类与代码接线",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/architecture-forge-lab-bot-20261017-231008/class/forge-class.html",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+      "link_mode": "web"
+    }
+  },
+  "layout": {
+    "mode": "grid",
+    "gapX": 95,
+    "gapY": 100,
+    "typeW": 230,
+    "typeMaxW": 300
+  },
+  "types": [
+    {
+      "id": "host",
+      "label": "NativeHost",
+      "kind": "class",
+      "row": 0,
+      "col": 0,
+      "sources": [
+        {
+          "path": "src/uuma/native_host/host.py",
+          "line": 64,
+          "end_line": 143
+        }
+      ],
+      "sublabel": "浏览器后端入口",
+      "methods": [
+        {
+          "name": "handle_request",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "label": "CommerceControlStore",
+      "kind": "class",
+      "row": 0,
+      "col": 1,
+      "sources": [
+        {
+          "path": "src/uuma/commerce_control.py",
+          "line": 46,
+          "end_line": 73
+        },
+        {
+          "path": "src/uuma/commerce_control.py",
+          "line": 115,
+          "end_line": 156
+        }
+      ],
+      "sublabel": "uuma.db 控制状态",
+      "methods": [
+        {
+          "name": "create_task",
+          "visibility": "public"
+        },
+        {
+          "name": "claim_command",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "commerce",
+      "label": "CommerceStore",
+      "kind": "class",
+      "row": 0,
+      "col": 2,
+      "sources": [
+        {
+          "path": "src/uuma/commerce_store.py",
+          "line": 29,
+          "end_line": 63
+        },
+        {
+          "path": "src/uuma/commerce_store.py",
+          "line": 142,
+          "end_line": 194
+        }
+      ],
+      "sublabel": "lab.db 订单与归档",
+      "methods": [
+        {
+          "name": "ingest_batch",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "runner",
+      "label": "ForgeJournalRunner",
+      "kind": "class",
+      "row": 1,
+      "col": 0,
+      "sources": [
+        {
+          "path": "src/uuma/forge_journal_runner.py",
+          "line": 461,
+          "end_line": 477
+        },
+        {
+          "path": "src/uuma/forge_journal_runner.py",
+          "line": 479,
+          "end_line": 570
+        }
+      ],
+      "sublabel": "同步编排",
+      "methods": [
+        {
+          "name": "reconcile",
+          "visibility": "public"
+        },
+        {
+          "name": "process_one",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "journal",
+      "label": "ForgeJournalStore",
+      "kind": "class",
+      "row": 1,
+      "col": 1,
+      "sources": [
+        {
+          "path": "src/uuma/forge_journal.py",
+          "line": 52,
+          "end_line": 80
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 147,
+          "end_line": 151
+        }
+      ],
+      "sublabel": "lab.db 同步账本",
+      "methods": [
+        {
+          "name": "queue_write",
+          "visibility": "public"
+        },
+        {
+          "name": "register_snapshot",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "notion",
+      "label": "NotionJournalClient",
+      "kind": "class",
+      "row": 1,
+      "col": 2,
+      "sources": [
+        {
+          "path": "src/uuma/forge_journal_runner.py",
+          "line": 177,
+          "end_line": 220
+        },
+        {
+          "path": "src/uuma/forge_journal_runner.py",
+          "line": 240,
+          "end_line": 270
+        }
+      ],
+      "sublabel": "Notion HTTP 客户端",
+      "methods": [
+        {
+          "name": "snapshot",
+          "visibility": "public"
+        },
+        {
+          "name": "create_page",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "registry",
+      "label": "AdapterRegistry",
+      "kind": "class",
+      "row": 2,
+      "col": 0,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 24,
+          "end_line": 44
+        },
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 88,
+          "end_line": 112
+        }
+      ],
+      "sublabel": "API 的适配器入口",
+      "methods": [
+        {
+          "name": "get_fleet_workspaces",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "forge",
+      "label": "ForgeAdapter",
+      "kind": "class",
+      "row": 2,
+      "col": 1,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/forge.py",
+          "line": 14,
+          "end_line": 51
+        },
+        {
+          "path": "src/uuma/observatory/adapters/forge.py",
+          "line": 922,
+          "end_line": 926
+        }
+      ],
+      "sublabel": "业务只读投影",
+      "methods": [
+        {
+          "name": "list_items",
+          "visibility": "public"
+        },
+        {
+          "name": "get_item",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "base",
+      "label": "ObservatorySourceAdapter",
+      "kind": "abstract",
+      "row": 2,
+      "col": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 11,
+          "end_line": 46
+        }
+      ],
+      "sublabel": "只读适配器抽象",
+      "methods": [
+        {
+          "name": "safe_sqlite_connect",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "inventory",
+      "label": "InventoryStore",
+      "kind": "class",
+      "row": 3,
+      "col": 0,
+      "sources": [
+        {
+          "path": "src/uuma/lab_inventory.py",
+          "line": 50,
+          "end_line": 60
+        },
+        {
+          "path": "src/uuma/lab_inventory.py",
+          "line": 520,
+          "end_line": 624
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 744,
+          "end_line": 765
+        }
+      ],
+      "sublabel": "库存 / Build / 经验",
+      "methods": [
+        {
+          "name": "governed_receive",
+          "visibility": "public"
+        },
+        {
+          "name": "check_bom_shortage",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "procure",
+      "label": "ProcurementStore",
+      "kind": "class",
+      "row": 3,
+      "col": 1,
+      "sources": [
+        {
+          "path": "src/uuma/lab_procurement.py",
+          "line": 27,
+          "end_line": 37
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 1141,
+          "end_line": 1171
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 1202,
+          "end_line": 1236
+        }
+      ],
+      "sublabel": "需求与报价",
+      "methods": [
+        {
+          "name": "create_requirement",
+          "visibility": "public"
+        },
+        {
+          "name": "evaluate_sourcing",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "bridge",
+      "label": "ESchematicBridge",
+      "kind": "class",
+      "row": 3,
+      "col": 2,
+      "sources": [
+        {
+          "path": "src/uuma/eschematic_bridge.py",
+          "line": 19,
+          "end_line": 44
+        },
+        {
+          "path": "src/uuma/eschematic_bridge.py",
+          "line": 65,
+          "end_line": 105
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 744,
+          "end_line": 751
+        }
+      ],
+      "sublabel": "外部设计运行时",
+      "methods": [
+        {
+          "name": "normalize_and_resolve_bom",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "host-control",
+      "from": "host",
+      "to": "control",
+      "kind": "association",
+      "label": "持有并调用"
+    },
+    {
+      "id": "host-commerce",
+      "from": "host",
+      "to": "commerce",
+      "kind": "association",
+      "label": "持有并调用"
+    },
+    {
+      "id": "runner-journal",
+      "from": "runner",
+      "to": "journal",
+      "kind": "association",
+      "label": "持有并调用",
+      "labelDy": 48
+    },
+    {
+      "id": "runner-notion",
+      "from": "runner",
+      "to": "notion",
+      "kind": "association",
+      "label": "持有并调用"
+    },
+    {
+      "id": "registry-forge",
+      "from": "registry",
+      "to": "forge",
+      "kind": "composition",
+      "label": "初始化与持有"
+    },
+    {
+      "id": "forge-base",
+      "from": "forge",
+      "to": "base",
+      "kind": "inheritance"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Worker MCP 是函数模块",
+      "items": [
+        "mcp_worker.py 的 _inventory / _procurement / _journal / _eschematic 工厂返回对应实例；它不是一个 Worker 类。",
+        "lab_analyze_bom → ESchematicBridge.normalize_and_resolve_bom → InventoryStore.check_bom_shortage。",
+        "lab_journal_capture_chat → InventoryStore.record_worklog + ForgeJournalStore 队列。",
+        "底排三个类由 Worker MCP 分别调用；不虚构它们之间的继承或依赖。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "UI 到代码的定位",
+      "items": [
+        "app.js 的 renderForgePreviewHtml / renderForgeDashboard / renderForgeFullView 负责专用视图。",
+        "app.js selectItem → server.py /items/{id} → ForgeAdapter.get_item；文件预览走 /doc。",
+        "server.py create_observatory_app 持有 AdapterRegistry；get_fleet_workspaces 汇总只读条目。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "图的范围",
+      "items": [
+        "仅列选定的真实类、关键方法和引用关系；函数入口保留在说明卡中。",
+        "来源链接固定到当前 HEAD；未把独立 labbot-commerce 前端声明为已检查代码。"
+      ]
+    }
+  ]
+}

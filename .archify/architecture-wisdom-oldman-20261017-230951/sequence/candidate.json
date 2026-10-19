@@ -1,0 +1,341 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Wisdom-Oldman · 请求、后台研究与 UI 读取时序",
+    "output": ".archify/architecture-wisdom-oldman-20261017-230951/sequence/wisdom-sequence.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "participants": [
+    {
+      "id": "chat",
+      "type": "external",
+      "label": "会话入口",
+      "sublabel": "Wisdom-Oldman",
+      "sources": [
+        {
+          "path": "profiles/wisdom-oldman/SOUL.md",
+          "line": 29,
+          "end_line": 66
+        }
+      ]
+    },
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "语义运行时",
+      "sublabel": "MCP / 合成器",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 510,
+          "end_line": 605
+        },
+        {
+          "path": "src/uuma/orbit_synthesis.py",
+          "line": 41,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "id": "services",
+      "type": "backend",
+      "label": "主题与 Orbit",
+      "sublabel": "知识服务",
+      "sources": [
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 778,
+          "end_line": 825
+        },
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 892,
+          "end_line": 949
+        },
+        {
+          "path": "src/uuma/question_orbit.py",
+          "line": 1593,
+          "end_line": 1662
+        }
+      ]
+    },
+    {
+      "id": "kag",
+      "type": "cloud",
+      "label": "KAG",
+      "sublabel": "图谱语义 HTTP",
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 334,
+          "end_line": 365
+        },
+        {
+          "path": "src/uuma/knowledge_runtime.py",
+          "line": 97,
+          "end_line": 130
+        }
+      ]
+    },
+    {
+      "id": "runner",
+      "type": "backend",
+      "label": "后台 Runner",
+      "sublabel": "租约与证据研究",
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 328,
+          "end_line": 407
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 580,
+          "end_line": 618
+        }
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "wisdom.db",
+      "sublabel": "持久化知识与版本",
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_store.py",
+          "line": 441,
+          "end_line": 485
+        },
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 892,
+          "end_line": 925
+        }
+      ]
+    },
+    {
+      "id": "views",
+      "type": "frontend",
+      "label": "只读展示",
+      "sublabel": "Observatory / 文档页",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 109,
+          "end_line": 127
+        },
+        {
+          "path": "src/uuma/wisdom_view.py",
+          "line": 73,
+          "end_line": 107
+        },
+        {
+          "path": "src/uuma/wisdom_web.py",
+          "line": 625,
+          "end_line": 684
+        }
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "from": 145,
+      "to": 550,
+      "label": "前台：批准新主题后，或直接复用已有主题"
+    },
+    {
+      "from": 565,
+      "to": 855,
+      "label": "条件分支：Orbit 启用且证据不足时，异步研究"
+    },
+    {
+      "from": 870,
+      "to": 1060,
+      "label": "独立读取：UI 查看持久化结果"
+    }
+  ],
+  "messages": [
+    {
+      "id": "m175",
+      "from": "chat",
+      "to": "mcp",
+      "y": 175,
+      "label": "research 意图与问题",
+      "variant": "emphasis"
+    },
+    {
+      "id": "m215",
+      "from": "mcp",
+      "to": "services",
+      "y": 215,
+      "label": "解析 / 复用已批准主题",
+      "variant": "default",
+      "note": "新主题未获批准时在此返回待确认"
+    },
+    {
+      "id": "m280",
+      "from": "services",
+      "to": "db",
+      "y": 280,
+      "label": "保留 Topic 与 Question 关联",
+      "variant": "default"
+    },
+    {
+      "id": "m315",
+      "from": "mcp",
+      "to": "kag",
+      "y": 315,
+      "label": "就绪检查与图谱检索",
+      "variant": "security"
+    },
+    {
+      "id": "m350",
+      "from": "kag",
+      "to": "mcp",
+      "y": 350,
+      "label": "图谱引用与推理结果",
+      "variant": "return",
+      "note": "失败则阻塞知识回答；不返回纯文本降级结果"
+    },
+    {
+      "id": "m420",
+      "from": "mcp",
+      "to": "services",
+      "y": 420,
+      "label": "条件满足时创建 / 复用 Orbit",
+      "variant": "default"
+    },
+    {
+      "id": "m455",
+      "from": "services",
+      "to": "db",
+      "y": 455,
+      "label": "QUEUED、缺口与通知路由",
+      "variant": "default"
+    },
+    {
+      "id": "m490",
+      "from": "mcp",
+      "to": "services",
+      "y": 490,
+      "label": "发布当前有据回答",
+      "variant": "default"
+    },
+    {
+      "id": "m525",
+      "from": "services",
+      "to": "db",
+      "y": 525,
+      "label": "追加 topic_document_versions",
+      "variant": "default"
+    },
+    {
+      "id": "m580",
+      "from": "mcp",
+      "to": "chat",
+      "y": 580,
+      "label": "即时回答 + 版本链接 + Orbit 状态",
+      "variant": "return"
+    },
+    {
+      "id": "m625",
+      "from": "runner",
+      "to": "db",
+      "y": 625,
+      "label": "通过 Orbit 服务领取持久化租约",
+      "variant": "default"
+    },
+    {
+      "id": "m665",
+      "from": "runner",
+      "to": "kag",
+      "y": 665,
+      "label": "检查图谱与读取当前知识",
+      "variant": "default"
+    },
+    {
+      "id": "m710",
+      "from": "runner",
+      "to": "db",
+      "y": 710,
+      "label": "经摄入服务保存来源、切块与证据",
+      "variant": "default",
+      "note": "此后台路径使用 located_evidence_only=True"
+    },
+    {
+      "id": "m780",
+      "from": "runner",
+      "to": "services",
+      "y": 780,
+      "label": "完成周期、预算与缺口评估",
+      "variant": "default"
+    },
+    {
+      "id": "m825",
+      "from": "services",
+      "to": "db",
+      "y": 825,
+      "label": "追加文档版本、周期状态与通知",
+      "variant": "default"
+    },
+    {
+      "id": "m915",
+      "from": "views",
+      "to": "db",
+      "y": 915,
+      "label": "经 Adapter / Topic 服务只读查询",
+      "variant": "default"
+    },
+    {
+      "id": "m950",
+      "from": "db",
+      "to": "views",
+      "y": 950,
+      "label": "主题、版本、证据与研究状态",
+      "variant": "return",
+      "note": "Observatory 还独立读取 uuma.db 的 tasks / runs"
+    },
+    {
+      "id": "m1025",
+      "from": "views",
+      "to": "chat",
+      "y": 1025,
+      "label": "卡片 / 检视抽屉 / 文档与图谱",
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "知识权限边界",
+      "items": [
+        "新断言必须保持 CANDIDATE；Wisdom-Oldman 可提案，只有 Orchestrator 身份能 apply / reject / reverse。",
+        "主题文档发布不等于断言已获审批；uuma.db、wisdom.db 与 Hermes state.db 各自独立。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前运行路径",
+      "items": [
+        "OrbitRunner 调用 located_evidence_only=True，保存来源、文档、切块及定位证据；完整 KAG 实体/关系抽取是另行调用的能力。",
+        "图谱或推理失败会阻止知识回答；状态、文档查看及暂停/继续仍可使用持久化记录。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "时序阅读说明",
+      "items": [
+        "按调用先后编排，未记录真实耗时；后台分支和 UI 读取并非一个原子事务。",
+        "此图聚合了 MCP 与合成器、主题与 Orbit 服务。所有写入均经领域服务；UI 不直接发起研究或知识审批。",
+        "状态查看与暂停/继续走操作分支，不需要先恢复 KAG；主图展示已批准的研究请求。"
+      ]
+    }
+  ]
+}

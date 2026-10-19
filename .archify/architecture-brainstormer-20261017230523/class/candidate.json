@@ -1,0 +1,328 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "Brainstormer · 代码类型与调用关系",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-brainstormer-20261017230523/class/brainstormer-class.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "layout": {
+    "mode": "grid",
+    "gapX": 95,
+    "gapY": 90,
+    "typeMaxW": 260
+  },
+  "types": [
+    {
+      "id": "op",
+      "label": "StateOperation",
+      "kind": "class",
+      "row": 0,
+      "col": 0,
+      "sublabel": "brainstormer_state.py",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 127,
+          "end_line": 141
+        }
+      ],
+      "methods": [],
+      "attributes": [
+        {
+          "name": "action"
+        },
+        {
+          "name": "kind"
+        },
+        {
+          "name": "expected_revision"
+        }
+      ]
+    },
+    {
+      "id": "tx",
+      "label": "StateTransaction",
+      "kind": "class",
+      "row": 0,
+      "col": 1,
+      "sublabel": "brainstormer_state.py",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 144,
+          "end_line": 148
+        }
+      ],
+      "methods": [],
+      "attributes": [
+        {
+          "name": "project_id"
+        },
+        {
+          "name": "operations"
+        },
+        {
+          "name": "source_refs"
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "label": "BrainstormerStore",
+      "kind": "class",
+      "row": 1,
+      "col": 1,
+      "sublabel": "brainstormer_state.py",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 295
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 629,
+          "end_line": 647
+        }
+      ],
+      "methods": [
+        {
+          "name": "propose"
+        },
+        {
+          "name": "review"
+        },
+        {
+          "name": "commit_safe"
+        },
+        {
+          "name": "get_decision_map"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "id": "daemon",
+      "label": "StateDaemon",
+      "kind": "class",
+      "row": 1,
+      "col": 0,
+      "sublabel": "state_daemon.py",
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 156,
+          "end_line": 169
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_project_lock"
+        }
+      ],
+      "attributes": [
+        {
+          "name": "store"
+        },
+        {
+          "name": "db"
+        }
+      ]
+    },
+    {
+      "id": "database",
+      "label": "DatabaseManager",
+      "kind": "class",
+      "row": 2,
+      "col": 0,
+      "sublabel": "state_daemon.py",
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 47,
+          "end_line": 95
+        },
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 125,
+          "end_line": 153
+        }
+      ],
+      "methods": [
+        {
+          "name": "set_binding"
+        },
+        {
+          "name": "record_turn"
+        },
+        {
+          "name": "record_receipt"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "id": "adapter",
+      "label": "BrainstormerAdapter",
+      "kind": "class",
+      "row": 1,
+      "col": 2,
+      "sublabel": "adapters/brainstormer.py",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 71,
+          "end_line": 83
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 178,
+          "end_line": 242
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 280,
+          "end_line": 330
+        }
+      ],
+      "methods": [
+        {
+          "name": "list_items"
+        },
+        {
+          "name": "probe_health"
+        },
+        {
+          "name": "get_item"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "id": "base",
+      "label": "ObservatorySourceAdapter",
+      "kind": "abstract",
+      "row": 0,
+      "col": 2,
+      "sublabel": "adapters/base.py",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 11,
+          "end_line": 46
+        }
+      ],
+      "methods": [
+        {
+          "name": "list_items"
+        },
+        {
+          "name": "get_item"
+        },
+        {
+          "name": "probe_health"
+        }
+      ],
+      "attributes": []
+    },
+    {
+      "id": "registry",
+      "label": "AdapterRegistry",
+      "kind": "class",
+      "row": 2,
+      "col": 2,
+      "sublabel": "adapters/registry.py",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 19,
+          "end_line": 44
+        },
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 88,
+          "end_line": 114
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_fleet_workspaces"
+        }
+      ],
+      "attributes": []
+    }
+  ],
+  "relationships": [
+    {
+      "id": "c1",
+      "from": "tx",
+      "to": "op",
+      "kind": "composition",
+      "label": "operations"
+    },
+    {
+      "id": "c2",
+      "from": "store",
+      "to": "tx",
+      "kind": "dependency",
+      "label": "验证 / 应用"
+    },
+    {
+      "id": "c3",
+      "from": "daemon",
+      "to": "store",
+      "kind": "composition",
+      "label": "store"
+    },
+    {
+      "id": "c4",
+      "from": "daemon",
+      "to": "database",
+      "kind": "composition",
+      "label": "db"
+    },
+    {
+      "id": "c5",
+      "from": "adapter",
+      "to": "base",
+      "kind": "inheritance"
+    },
+    {
+      "id": "c6",
+      "from": "registry",
+      "to": "adapter",
+      "kind": "composition",
+      "label": "注册 / 读取"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "模块调用入口",
+      "items": [
+        "mcp_worker.py 的 brainstormer_* 函数直接调用 BrainstormerStore；mcp_control.py 的审核函数调用 review。",
+        "state_daemon.py 的 HTTP 路由使用 daemon.store 和 daemon.db；它是并行入口，不是 Worker MCP 的中间层。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "UI 路径",
+      "items": [
+        "Observatory server → AdapterRegistry → BrainstormerAdapter.list_items → JSON。",
+        "app.js 的 renderBrainstormerPreviewHtml 与 renderBrainstormerInspector 消费 API 投影；不依赖 Store 类，也未调用 8772。",
+        "Adapter 没有调用 BrainstormerStore.get_decision_map，当前 UI 分组展示与完整推进队列投影要区分。"
+      ]
+    }
+  ]
+}

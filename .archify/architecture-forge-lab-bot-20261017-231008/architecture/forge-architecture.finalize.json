@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-17T15:10:52.230Z",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\candidate.json",
+    "sha256": "5c9facd5daf0465eaf9b02236bf3c1c70bb5e6adbc92f2959322180e31d76d86",
+    "bytes": 10231
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+    "sha256": "796ae5c9f37f8ea6bc2a2314a1cdbd7b9e298fa81d77e8e8860ac62d967f3394",
+    "bytes": 835222
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.EXE",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\candidate.json",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\test_codespace\\UuMA",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "5c9facd5daf0465eaf9b02236bf3c1c70bb5e6adbc92f2959322180e31d76d86",
+          "bytes": 10231
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 5432,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.EXE",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\candidate.json",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\test_codespace\\UuMA",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "cf5ece0a-7898-4c11-a8b1-406ef2f4152c",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\candidate.json",
+        "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+        "specification": {
+          "sha256": "5c9facd5daf0465eaf9b02236bf3c1c70bb5e6adbc92f2959322180e31d76d86",
+          "bytes": 10231
+        },
+        "artifact": {
+          "sha256": "796ae5c9f37f8ea6bc2a2314a1cdbd7b9e298fa81d77e8e8860ac62d967f3394",
+          "bytes": 835222
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "https://github.com/alandelone/UuMA",
+          "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+          "references": 28
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 789,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.EXE",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+        "artifact": {
+          "sha256": "796ae5c9f37f8ea6bc2a2314a1cdbd7b9e298fa81d77e8e8860ac62d967f3394",
+          "bytes": 835222
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 4.6,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 7.5,
+            "maxBends": 2,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 24,
+            "minInteriorSegmentPx": 186,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 40,
+            "emptyTopRatio": 0.051,
+            "occupiedTop": 40,
+            "viewBoxTop": 0,
+            "canvasHeight": 782,
+            "typicalNodeHeight": 74,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "recognized-declared-wide",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 1143.75,
+            "actualBudgetPx": 1143.75,
+            "actualReaderWidth": 1173.75,
+            "desiredReaderWidth": 1173.75,
+            "viewportCap": 1376,
+            "limit": "source-size",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": true,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "edge",
+              "id": "chat-forge",
+              "from": "chat",
+              "to": "forge"
+            },
+            "minimumSourceTextPx": 8,
+            "minimumProjectedTextPx": 7.5,
+            "semanticTextCount": 35
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "cf5ece0a-7898-4c11-a8b1-406ef2f4152c"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 10437,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.EXE",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "cf5ece0a-7898-4c11-a8b1-406ef2f4152c",
+        "artifact": {
+          "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+          "sha256": "796ae5c9f37f8ea6bc2a2314a1cdbd7b9e298fa81d77e8e8860ac62d967f3394",
+          "bytes": 835222
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/temp-cleanup-incomplete",
+            "severity": "error",
+            "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+            "subject": {
+              "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html"
+            },
+            "evidence": {
+              "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ\".",
+              "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ"
+            },
+            "supportedFixes": [
+              "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "forge-architecture.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ\"."
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ\".",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-17T15:11:10.555Z",
+  "durationMs": 18324,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "sequence",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\candidate.json",
+    "sha256": "1e144ba40615f2a6444c746e09ea7bb876db0bfbc0262bb9b9d58f7c0d7d5f30",
+    "bytes": 8312
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+    "sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+    "bytes": 827165
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html"
+      },
+      "evidence": {
+        "reason": "Temporary directory cleanup failed; retained path \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\": EBUSY: resource busy or locked, unlink 'C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\\Default\\Network\\Cookies'",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 16615
+}

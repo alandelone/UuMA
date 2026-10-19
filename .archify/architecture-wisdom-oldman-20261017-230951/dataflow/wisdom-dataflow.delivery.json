@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "e25a013f-7d44-40b7-a671-becd19fac1a5",
+  "status": "current",
+  "command": "deliver",
+  "type": "dataflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\dataflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\dataflow\\wisdom-dataflow.html",
+  "specification": {
+    "sha256": "813e7e1bc82b0940b633168b0f74e9aa695900e4f9632ee427953fca4ad83184",
+    "bytes": 10879
+  },
+  "artifact": {
+    "sha256": "4d2fe45c367d3be4d51780f6a824d9a784ac89cd6cfd93ace93e0c789912b3c9",
+    "bytes": 837989
+  }
+}

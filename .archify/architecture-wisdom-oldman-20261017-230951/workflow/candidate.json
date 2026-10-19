@@ -1,0 +1,593 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Wisdom-Oldman · 研究闭环与审批流程",
+    "output": ".archify/architecture-wisdom-oldman-20261017-230951/workflow/wisdom-workflow.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "lanes": [
+    {
+      "id": "intake",
+      "label": "请求与当前回答"
+    },
+    {
+      "id": "exception",
+      "label": "条件与阻塞",
+      "variant": "exception"
+    },
+    {
+      "id": "research",
+      "label": "后台证据研究"
+    },
+    {
+      "id": "review",
+      "label": "独立知识审阅与展示"
+    }
+  ],
+  "mainPath": [
+    "request",
+    "intent",
+    "resolve",
+    "ready",
+    "answer",
+    "published"
+  ],
+  "nodes": [
+    {
+      "id": "request",
+      "lane": "intake",
+      "col": 0,
+      "type": "external",
+      "label": "用户问题",
+      "sublabel": "保留会话上下文",
+      "sources": [
+        {
+          "path": "profiles/wisdom-oldman/SOUL.md",
+          "line": 29,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "id": "intent",
+      "lane": "intake",
+      "col": 1,
+      "type": "backend",
+      "label": "识别意图",
+      "sublabel": "auto 默认只读",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 449,
+          "end_line": 509
+        }
+      ]
+    },
+    {
+      "id": "resolve",
+      "lane": "intake",
+      "col": 2,
+      "type": "backend",
+      "label": "解析主题",
+      "sublabel": "复用或申请新建",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 510,
+          "end_line": 525
+        }
+      ]
+    },
+    {
+      "id": "ready",
+      "lane": "intake",
+      "col": 3,
+      "type": "security",
+      "label": "图谱就绪？",
+      "sublabel": "检查项目与图读取",
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_runtime.py",
+          "line": 97,
+          "end_line": 130
+        }
+      ]
+    },
+    {
+      "id": "answer",
+      "lane": "intake",
+      "col": 4,
+      "type": "backend",
+      "label": "KAG 当前回答",
+      "sublabel": "引文相关性检查",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 526,
+          "end_line": 539
+        }
+      ]
+    },
+    {
+      "id": "published",
+      "lane": "intake",
+      "col": 5,
+      "type": "database",
+      "label": "发布当前版本",
+      "sublabel": "即时回答与文档链接",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 571,
+          "end_line": 605
+        }
+      ]
+    },
+    {
+      "id": "status",
+      "lane": "exception",
+      "col": 1,
+      "type": "frontend",
+      "label": "查看或控制",
+      "sublabel": "进度 / 会话 / 暂停继续",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 474,
+          "end_line": 509
+        }
+      ]
+    },
+    {
+      "id": "consent",
+      "lane": "exception",
+      "col": 2,
+      "type": "security",
+      "label": "等待主题批准",
+      "sublabel": "后续明确确认才创建",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 460,
+          "end_line": 465
+        },
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 510,
+          "end_line": 525
+        }
+      ]
+    },
+    {
+      "id": "blocked",
+      "lane": "exception",
+      "col": 3,
+      "type": "security",
+      "label": "知识回答阻塞",
+      "sublabel": "查看和会话仍可用",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 526,
+          "end_line": 535
+        },
+        {
+          "path": "profiles/wisdom-oldman/SOUL.md",
+          "line": 73,
+          "end_line": 78
+        }
+      ]
+    },
+    {
+      "id": "acquire",
+      "lane": "research",
+      "col": 0,
+      "type": "messagebus",
+      "label": "领取研究周期",
+      "sublabel": "启用且回答不足时排队",
+      "sources": [
+        {
+          "path": "src/uuma/question_orbit.py",
+          "line": 1593,
+          "end_line": 1662
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 328,
+          "end_line": 355
+        }
+      ]
+    },
+    {
+      "id": "discover",
+      "lane": "research",
+      "col": 1,
+      "type": "cloud",
+      "label": "检索研究来源",
+      "sublabel": "先查图谱与当前证据",
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 440,
+          "end_line": 483
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 927,
+          "end_line": 945
+        }
+      ]
+    },
+    {
+      "id": "ingest",
+      "lane": "research",
+      "col": 2,
+      "type": "backend",
+      "label": "摄入与去重",
+      "sublabel": "来源 / 文档 / 切块",
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 580,
+          "end_line": 611
+        },
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 177,
+          "end_line": 236
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "lane": "research",
+      "col": 3,
+      "type": "backend",
+      "label": "保存定位证据",
+      "sublabel": "此路径不抽实体关系",
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 612,
+          "end_line": 620
+        },
+        {
+          "path": "src/uuma/knowledge_construction.py",
+          "line": 51,
+          "end_line": 59
+        }
+      ]
+    },
+    {
+      "id": "cycle",
+      "lane": "research",
+      "col": 4,
+      "type": "backend",
+      "label": "完成周期",
+      "sublabel": "评估缺口与预算",
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 622,
+          "end_line": 653
+        },
+        {
+          "path": "src/uuma/question_orbit.py",
+          "line": 1062,
+          "end_line": 1080
+        }
+      ]
+    },
+    {
+      "id": "versions",
+      "lane": "research",
+      "col": 5,
+      "type": "database",
+      "label": "追加主题版本",
+      "sublabel": "保留状态与来源引用",
+      "sources": [
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 892,
+          "end_line": 949
+        }
+      ]
+    },
+    {
+      "id": "proposal",
+      "lane": "review",
+      "col": 2,
+      "type": "backend",
+      "label": "提议知识补丁",
+      "sublabel": "完整抽取需另行调用",
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_construction.py",
+          "line": 60,
+          "end_line": 80
+        },
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 570,
+          "end_line": 584
+        }
+      ]
+    },
+    {
+      "id": "reviewer",
+      "lane": "review",
+      "col": 3,
+      "type": "security",
+      "label": "Orchestrator 审阅",
+      "sublabel": "批准 / 拒绝 / 补偿反转",
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 586,
+          "end_line": 705
+        }
+      ]
+    },
+    {
+      "id": "canonical-change",
+      "lane": "review",
+      "col": 4,
+      "type": "database",
+      "label": "审阅后知识变更",
+      "sublabel": "校验旧值并追加事件",
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 589,
+          "end_line": 627
+        }
+      ]
+    },
+    {
+      "id": "display",
+      "lane": "review",
+      "col": 5,
+      "type": "frontend",
+      "label": "只读 UI 展示",
+      "sublabel": "Observatory / 知识中心",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 229,
+          "end_line": 269
+        },
+        {
+          "path": "src/uuma/wisdom_view.py",
+          "line": 73,
+          "end_line": 107
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "request-intent",
+      "from": "request",
+      "to": "intent",
+      "label": "进入",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "intent-resolve",
+      "from": "intent",
+      "to": "resolve",
+      "label": "research",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "resolve-ready",
+      "from": "resolve",
+      "to": "ready",
+      "label": "已复用 / 获批准",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "ready-answer",
+      "from": "ready",
+      "to": "answer",
+      "label": "就绪",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "answer-published",
+      "from": "answer",
+      "to": "published",
+      "label": "有效图谱结果",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "intent-status",
+      "from": "intent",
+      "to": "status",
+      "label": "操作意图",
+      "role": "branch",
+      "variant": "default"
+    },
+    {
+      "id": "resolve-consent",
+      "from": "resolve",
+      "to": "consent",
+      "label": "新主题未批准",
+      "role": "branch",
+      "variant": "security"
+    },
+    {
+      "id": "consent-resolve",
+      "from": "consent",
+      "to": "resolve",
+      "label": "明确确认",
+      "role": "return",
+      "variant": "security"
+    },
+    {
+      "id": "ready-blocked",
+      "from": "ready",
+      "to": "blocked",
+      "label": "不可用",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "answer-blocked",
+      "from": "answer",
+      "to": "blocked",
+      "label": "推理失败",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "published-acquire",
+      "from": "published",
+      "to": "acquire",
+      "label": "启用且不足",
+      "role": "async",
+      "variant": "dashed"
+    },
+    {
+      "id": "acquire-discover",
+      "from": "acquire",
+      "to": "discover",
+      "label": "持租约执行",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "discover-ingest",
+      "from": "discover",
+      "to": "ingest",
+      "label": "有新来源",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "ingest-evidence",
+      "from": "ingest",
+      "to": "evidence",
+      "label": "文档切块",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "evidence-cycle",
+      "from": "evidence",
+      "to": "cycle",
+      "label": "相关定位证据",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "discover-cycle",
+      "from": "discover",
+      "to": "cycle",
+      "label": "无需或没有新来源",
+      "role": "branch",
+      "variant": "default"
+    },
+    {
+      "id": "cycle-versions",
+      "from": "cycle",
+      "to": "versions",
+      "label": "发布有据进展",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "versions-acquire",
+      "from": "versions",
+      "to": "acquire",
+      "label": "仍有缺口且有预算",
+      "role": "return",
+      "variant": "default"
+    },
+    {
+      "id": "cycle-blocked",
+      "from": "cycle",
+      "to": "blocked",
+      "label": "运行阻塞 / 预算停顿",
+      "role": "error",
+      "variant": "security"
+    },
+    {
+      "id": "versions-display",
+      "from": "versions",
+      "to": "display",
+      "label": "读取版本",
+      "role": "main",
+      "variant": "default"
+    },
+    {
+      "id": "proposal-reviewer",
+      "from": "proposal",
+      "to": "reviewer",
+      "label": "待审 diff",
+      "role": "branch",
+      "variant": "security"
+    },
+    {
+      "id": "reviewer-canonical-change",
+      "from": "reviewer",
+      "to": "canonical-change",
+      "label": "仅获批准",
+      "role": "branch",
+      "variant": "security"
+    },
+    {
+      "id": "canonical-change-display",
+      "from": "canonical-change",
+      "to": "display",
+      "label": "审计与投影状态",
+      "role": "main",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "知识权限边界",
+      "items": [
+        "新断言必须保持 CANDIDATE；Wisdom-Oldman 可提案，只有 Orchestrator 身份能 apply / reject / reverse。",
+        "主题文档发布不等于断言已获审批；uuma.db、wisdom.db 与 Hermes state.db 各自独立。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前运行路径",
+      "items": [
+        "OrbitRunner 调用 located_evidence_only=True，保存来源、文档、切块及定位证据；完整 KAG 实体/关系抽取是另行调用的能力。",
+        "图谱或推理失败会阻止知识回答；状态、文档查看及暂停/继续仍可使用持久化记录。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "并行的两种成果",
+      "items": [
+        "研究文档可先发布有来源的暂定回答；Canonical claim 是否被接受，由独立补丁审批决定。",
+        "拒绝补丁会保留提案；反转只针对已应用补丁，并追加补偿历史。并非每轮研究都会形成补丁。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "预算与异常",
+      "items": [
+        "自动 preflight 使用配置预算档位与 policy_authorized 路径；手动 Wisdom 启动高于 QUICK 的 Orbit 会被限制。",
+        "runner 使用持久化租约、心跳和重试；QUEUED 只表示等待，不能单独证明执行。"
+      ]
+    }
+  ]
+}

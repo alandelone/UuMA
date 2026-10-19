@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "a10f7ae3-8f06-4f6b-801c-0bf53114d0fc",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\scholar-20261017-214800\\workflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\scholar-20261017-214800\\workflow\\scholar-workflow.html",
+  "specification": {
+    "sha256": "ccd942d74891a4db8d39bb4ba2345c71946fbb4d9111832b2c5a37b0e9846bd9",
+    "bytes": 8815
+  },
+  "artifact": {
+    "sha256": "7430248f30d75148b426f67093706cffae776798fd28a2d8a2adb714cad68253",
+    "bytes": 831681
+  }
+}

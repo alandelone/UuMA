@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "workflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\candidate.json",
+    "sha256": "020e08568d55d1ca970b748cfb1b38b55e78f870ae2d01e7435dbdf1559bfac3",
+    "bytes": 13774
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\wisdom-workflow.html",
+    "sha256": "a70534b30c61b2c6e8068b0ee041d9294da612d6ddb0682c404d08f18a211fe7",
+    "bytes": 853178
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\wisdom-workflow.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-3oFm5J\".",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-3oFm5J"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\wisdom-workflow.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\wisdom-workflow.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\wisdom-workflow.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 24528
+}

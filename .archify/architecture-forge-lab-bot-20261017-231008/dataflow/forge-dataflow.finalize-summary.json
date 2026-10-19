@@ -1,0 +1,83 @@
+{
+  "schemaVersion": 1,
+  "ok": true,
+  "command": "finalize",
+  "status": "pass",
+  "type": "dataflow",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\candidate.json",
+    "sha256": "231c6836028989a260d38381f14ca97c6e9f6e824c173400b1423352388f0c72",
+    "bytes": 10354
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\forge-dataflow.html",
+    "sha256": "0107f9bc7343f85bbb5686c9168006d775698164555623a452c54baba979510f",
+    "bytes": 835313
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "pass"
+  },
+  "diagnostics": [],
+  "diagnosticSummary": {
+    "total": 0,
+    "shown": 0,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\forge-dataflow.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\forge-dataflow.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\forge-dataflow.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 16808,
+  "visualReviewRecommendation": {
+    "action": "inspect-route-readability",
+    "signals": {
+      "resolvedCrossovers": 1
+    },
+    "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+    "affectedRoutes": {
+      "crossings": [
+        {
+          "left": {
+            "id": "workbook-review",
+            "from": "workbook",
+            "to": "review",
+            "label": "用户审阅值",
+            "collectionIndex": 4,
+            "artifactIndex": 5
+          },
+          "right": {
+            "id": "commerce-adapter",
+            "from": "commerce",
+            "to": "adapter",
+            "label": "采购流水",
+            "collectionIndex": 12,
+            "artifactIndex": 13
+          },
+          "point": [
+            637.5,
+            271
+          ]
+        }
+      ],
+      "detours": [],
+      "truncated": false
+    },
+    "repair": "Advisory only: this mode places or routes these relationships itself. Report them; do not remove relationships or meaning to reduce crossings."
+  }
+}

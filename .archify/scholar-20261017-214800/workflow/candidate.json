@@ -1,0 +1,377 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Scholar 科研生命周期：文档契约与审阅关口",
+    "locale": "zh-CN",
+    "output": ".archify/scholar-20261017-214800/workflow/scholar-workflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "lanes": [
+    {
+      "id": "knowledge",
+      "label": "文献与知识"
+    },
+    {
+      "id": "decision",
+      "label": "用户科学决策"
+    },
+    {
+      "id": "output",
+      "label": "实验与论文"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "start",
+      "lane": "knowledge",
+      "col": 0,
+      "type": "external",
+      "label": "想法或文献",
+      "sublabel": "双入口；先验证真实 Gap",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 99,
+          "end_line": 162
+        }
+      ]
+    },
+    {
+      "id": "pool",
+      "lane": "knowledge",
+      "col": 1,
+      "type": "backend",
+      "label": "文献与集合",
+      "sublabel": "DOI / BibTeX / 选入 Collection",
+      "sources": [
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 25,
+          "end_line": 29
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 325,
+          "end_line": 335
+        }
+      ]
+    },
+    {
+      "id": "quality",
+      "lane": "knowledge",
+      "col": 2,
+      "type": "security",
+      "label": "PDF 与解析门",
+      "sublabel": "身份核验 / 正文 / 参考文献",
+      "sources": [
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 25,
+          "end_line": 29
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 319,
+          "end_line": 341
+        }
+      ]
+    },
+    {
+      "id": "candidate",
+      "lane": "knowledge",
+      "col": 3,
+      "type": "backend",
+      "label": "骨架与候选",
+      "sublabel": "QuickRead / Layer 1–4 / Gap",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 506,
+          "end_line": 508
+        }
+      ]
+    },
+    {
+      "id": "snapshot",
+      "lane": "knowledge",
+      "col": 4,
+      "type": "security",
+      "label": "复核并密封",
+      "sublabel": "复核通过才有 Snapshot vN",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 616,
+          "end_line": 619
+        },
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 506,
+          "end_line": 508
+        }
+      ]
+    },
+    {
+      "id": "adopt",
+      "lane": "knowledge",
+      "col": 5,
+      "type": "backend",
+      "label": "Track 采纳",
+      "sublabel": "显式固定版本；不导入批准",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 493,
+          "end_line": 500
+        }
+      ]
+    },
+    {
+      "id": "proposal",
+      "lane": "decision",
+      "col": 3,
+      "type": "backend",
+      "label": "科学提案",
+      "sublabel": "Gap / RQ / 假说 / 方法 / Claim",
+      "sources": [
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 17,
+          "end_line": 20
+        },
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 64,
+          "end_line": 83
+        }
+      ]
+    },
+    {
+      "id": "approval",
+      "lane": "decision",
+      "col": 4,
+      "type": "security",
+      "label": "用户批准",
+      "sublabel": "可信消息 APPROVE 提案ID",
+      "sources": [
+        {
+          "path": "integrations/hermes/uuma_audit/__init__.py",
+          "line": 207,
+          "end_line": 242
+        },
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 19,
+          "end_line": 27
+        }
+      ]
+    },
+    {
+      "id": "hold",
+      "lane": "decision",
+      "col": 5,
+      "type": "security",
+      "label": "等待或修订",
+      "sublabel": "未批准不执行；变化重新审阅",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 74,
+          "end_line": 83
+        },
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 50,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "id": "execute",
+      "lane": "output",
+      "col": 4,
+      "type": "backend",
+      "label": "批准计划执行",
+      "sublabel": "版本 / 脚本摘要 / 产物证据",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 19,
+          "end_line": 27
+        },
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 393,
+          "end_line": 407
+        }
+      ]
+    },
+    {
+      "id": "write",
+      "lane": "output",
+      "col": 3,
+      "type": "backend",
+      "label": "图表与写作",
+      "sublabel": "证据 → Blueprint → 稿件",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 409,
+          "end_line": 435
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "lane": "output",
+      "col": 2,
+      "type": "security",
+      "label": "审阅与返修",
+      "sublabel": "反证 / 引文 / 科学一致性",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 421,
+          "end_line": 448
+        }
+      ]
+    },
+    {
+      "id": "publish",
+      "lane": "output",
+      "col": 1,
+      "type": "backend",
+      "label": "投稿与归档",
+      "sublabel": "用户发布决策 / 保留历史",
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 437,
+          "end_line": 450
+        },
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 17,
+          "end_line": 20
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "s-p",
+      "from": "start",
+      "to": "pool"
+    },
+    {
+      "id": "p-q",
+      "from": "pool",
+      "to": "quality"
+    },
+    {
+      "id": "q-c",
+      "from": "quality",
+      "to": "candidate",
+      "label": "通过",
+      "variant": "security"
+    },
+    {
+      "id": "c-s",
+      "from": "candidate",
+      "to": "snapshot",
+      "label": "复核通过",
+      "variant": "security"
+    },
+    {
+      "id": "s-a",
+      "from": "snapshot",
+      "to": "adopt",
+      "label": "显式采纳"
+    },
+    {
+      "id": "a-p",
+      "from": "adopt",
+      "to": "proposal",
+      "label": "证据支援"
+    },
+    {
+      "id": "p-a",
+      "from": "proposal",
+      "to": "approval",
+      "label": "请求批准",
+      "variant": "security"
+    },
+    {
+      "id": "a-e",
+      "from": "approval",
+      "to": "execute",
+      "label": "批准计划",
+      "variant": "security"
+    },
+    {
+      "id": "a-h",
+      "from": "approval",
+      "to": "hold",
+      "label": "未批准",
+      "variant": "security",
+      "role": "branch"
+    },
+    {
+      "id": "e-w",
+      "from": "execute",
+      "to": "write",
+      "label": "结果与证据"
+    },
+    {
+      "id": "w-r",
+      "from": "write",
+      "to": "review"
+    },
+    {
+      "id": "r-p",
+      "from": "review",
+      "to": "publish",
+      "label": "用户发布决策",
+      "variant": "security"
+    },
+    {
+      "id": "r-new",
+      "from": "review",
+      "to": "proposal",
+      "label": "科学变更重审",
+      "role": "return",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "这是一张逻辑流程图",
+      "items": [
+        "RSTV4 的内核源码不在本工作区；图中科研链路表示 Scholar SOUL、已记录设计及集成契约，不代表本次重新执行或科学批准。",
+        "文献、实验、写作可以同时推进；审稿意见或新证据可重开前序工作。PDF 身份/解析不通过时等待人工或资源，不能跳过门控。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "运行前后也有软件关口",
+      "items": [
+        "安全直接对话通过 Worker MCP 登记 Direct Run；知识工作先预检 ScholarFieldKG，失败报告 BLOCKED。",
+        "提交 COMPLETED 时再次检查图谱与任务 acceptance_checks。软件完成和科学接受是两种不同判断。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "在 UI 中呈现",
+      "items": [
+        "Catalog 承担文献、Collection、来源与研究对象操作；Studio 承担稿件、讨论和审阅；此处只按仓库契约列出，不编造服务端口。",
+        "Observatory 是只读概览：卡片的六阶段文献处理链不是 Scholar 全科研生命周期，也不是不可逆的六步状态机。"
+      ]
+    }
+  ]
+}

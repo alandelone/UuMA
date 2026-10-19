@@ -1,0 +1,358 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Scholar 在 Observatory 中的读取与展示时序",
+    "locale": "zh-CN",
+    "output": ".archify/scholar-20261017-214800/sequence/scholar-sequence.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "participants": [
+    {
+      "id": "human",
+      "type": "external",
+      "label": "研究者",
+      "sublabel": "点击与查看",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 2900,
+          "end_line": 2919
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Observatory UI",
+      "sublabel": "卡片 / Inspector / 活动流",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 386,
+          "end_line": 405
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3038,
+          "end_line": 3054
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 4863,
+          "end_line": 4942
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "GET / SSE",
+      "sublabel": "FastAPI 路由",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 257
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 366,
+          "end_line": 409
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 98,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "id": "registry",
+      "type": "backend",
+      "label": "AdapterRegistry",
+      "sublabel": "工作区与健康探测",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 37,
+          "end_line": 44
+        },
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 88,
+          "end_line": 121
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "ScholarAdapter",
+      "sublabel": "四类 Item + 最近 Run",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 60,
+          "end_line": 82
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 399,
+          "end_line": 547
+        },
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 19,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "源 SQLite",
+      "sublabel": "catalog.db / uuma.db",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 228,
+          "end_line": 260
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 352,
+          "end_line": 397
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 506,
+          "end_line": 538
+        }
+      ]
+    },
+    {
+      "id": "harvest",
+      "type": "messagebus",
+      "label": "Harvester",
+      "sublabel": "后台新增事件",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 306,
+          "end_line": 338
+        }
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "from": 142,
+      "to": 558,
+      "label": "首次 GET：与 SSE 连接并发启动，此处单独展开"
+    },
+    {
+      "from": 576,
+      "to": 672,
+      "label": "点击 Scholar：使用已载入的 state，无需新 GET"
+    },
+    {
+      "from": 698,
+      "to": 1038,
+      "label": "独立 SSE 握手、活动推送与条件轮询"
+    }
+  ],
+  "messages": [
+    {
+      "id": "get",
+      "from": "ui",
+      "to": "api",
+      "y": 166,
+      "label": "GET /api/observatory/agents",
+      "variant": "emphasis"
+    },
+    {
+      "id": "fleet",
+      "from": "api",
+      "to": "registry",
+      "y": 202,
+      "label": "get_fleet_workspaces + probe_all_sources"
+    },
+    {
+      "id": "list",
+      "from": "registry",
+      "to": "adapter",
+      "y": 238,
+      "label": "list_items + probe_health"
+    },
+    {
+      "id": "sql-c",
+      "from": "adapter",
+      "to": "db",
+      "y": 274,
+      "label": "mode=ro：层级 / 文献 / FieldKG"
+    },
+    {
+      "id": "ret-c",
+      "from": "db",
+      "to": "adapter",
+      "y": 312,
+      "label": "查询结果",
+      "variant": "return"
+    },
+    {
+      "id": "sql-u",
+      "from": "adapter",
+      "to": "db",
+      "y": 350,
+      "label": "Scholar 最近 Run + 健康事件"
+    },
+    {
+      "id": "ret-u",
+      "from": "db",
+      "to": "adapter",
+      "y": 388,
+      "label": "runs / tasks / events",
+      "variant": "return"
+    },
+    {
+      "id": "ret-i",
+      "from": "adapter",
+      "to": "registry",
+      "y": 426,
+      "label": "ObservatoryItem + SourceFreshness",
+      "variant": "return"
+    },
+    {
+      "id": "ret-w",
+      "from": "registry",
+      "to": "api",
+      "y": 464,
+      "label": "AgentWorkspace[] + sources",
+      "variant": "return"
+    },
+    {
+      "id": "ret-f",
+      "from": "api",
+      "to": "ui",
+      "y": 502,
+      "label": "FleetOverview JSON",
+      "variant": "return"
+    },
+    {
+      "id": "shown",
+      "from": "ui",
+      "to": "human",
+      "y": 540,
+      "label": "renderWorkspaces：显示收起卡片",
+      "variant": "return"
+    },
+    {
+      "id": "click",
+      "from": "human",
+      "to": "ui",
+      "y": 602,
+      "label": "点击 Scholar 卡片"
+    },
+    {
+      "id": "expand",
+      "from": "ui",
+      "to": "human",
+      "y": 644,
+      "label": "展开全景 + Inspector 四块详情",
+      "variant": "return"
+    },
+    {
+      "id": "sse",
+      "from": "ui",
+      "to": "api",
+      "y": 730,
+      "label": "EventSource /api/observatory/stream"
+    },
+    {
+      "id": "rebuild",
+      "from": "api",
+      "to": "registry",
+      "y": 768,
+      "label": "握手重新获取工作区与来源"
+    },
+    {
+      "id": "reg-ret",
+      "from": "registry",
+      "to": "api",
+      "y": 806,
+      "label": "工作区快照",
+      "variant": "return"
+    },
+    {
+      "id": "init",
+      "from": "api",
+      "to": "ui",
+      "y": 844,
+      "label": "init：state.agents + 渲染卡片",
+      "variant": "return"
+    },
+    {
+      "id": "new",
+      "from": "harvest",
+      "to": "api",
+      "y": 882,
+      "label": "on_new_event → broadcaster",
+      "variant": "dashed"
+    },
+    {
+      "id": "activity",
+      "from": "api",
+      "to": "ui",
+      "y": 920,
+      "label": "activity：仅追加活动流",
+      "variant": "dashed"
+    },
+    {
+      "id": "fallback",
+      "from": "ui",
+      "to": "api",
+      "y": 958,
+      "label": "SSE 断开时：每 10 秒 GET /agents"
+    },
+    {
+      "id": "poll-return",
+      "from": "api",
+      "to": "ui",
+      "y": 996,
+      "label": "更新 state.agents 并重画卡片",
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "时序的读取方式",
+      "items": [
+        "这是调用顺序示意，不是采样跟踪或耗时测量。初始 loadInitialData() 与 initSSE() 在代码中连续启动，彼此不等待；按功能分段展示。",
+        "源库读取由 ScholarAdapter 完成。GET /agents 与 SSE init 都经 Registry 重建工作区；不从 observatory.db 读取科研卡片数据。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "刷新边界",
+      "items": [
+        "activity 消息只更新活动流，不刷新 Scholar 的源数据库计数。连接正常时不会触发定时 GET /agents。",
+        "断线后 5 秒重连 SSE；fallback setInterval 实际为 10000ms。界面写着“轮询同步 (5s)”，与代码间隔不一致。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "当前实现限制",
+      "items": [
+        "真实 research_fields 分支只返回 Field 行，threads_count / papers_count 为 0；完整树主要来自演示分支。",
+        "getAgentGlance、收起卡片和部分阶段数值为固定内容；即使新 GET 成功，也不能把它们当成实时研究进度。",
+        "Catalog/Studio 是另一个系统的工作台，Scholar Inspector 当前没有自动导航到它们。"
+      ]
+    }
+  ]
+}

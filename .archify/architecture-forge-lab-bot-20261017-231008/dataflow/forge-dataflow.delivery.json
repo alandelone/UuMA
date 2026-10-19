@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "ac30e229-d283-4680-b219-a33495e920cd",
+  "status": "current",
+  "command": "deliver",
+  "type": "dataflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\dataflow\\forge-dataflow.html",
+  "specification": {
+    "sha256": "231c6836028989a260d38381f14ca97c6e9f6e824c173400b1423352388f0c72",
+    "bytes": 10354
+  },
+  "artifact": {
+    "sha256": "0107f9bc7343f85bbb5686c9168006d775698164555623a452c54baba979510f",
+    "bytes": 835313
+  }
+}

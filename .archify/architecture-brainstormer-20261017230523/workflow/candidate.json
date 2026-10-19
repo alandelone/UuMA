@@ -1,0 +1,337 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Brainstormer · 从讨论到持久状态与展示",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-brainstormer-20261017230523/workflow/brainstormer-workflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "lanes": [
+    {
+      "id": "reason",
+      "label": "讨论与提案"
+    },
+    {
+      "id": "persist",
+      "label": "状态管理"
+    },
+    {
+      "id": "review",
+      "label": "审核 / 异常",
+      "variant": "exception"
+    },
+    {
+      "id": "display",
+      "label": "Observatory 展示"
+    }
+  ],
+  "mainPath": [
+    "restore",
+    "think",
+    "propose",
+    "gate",
+    "safe",
+    "persisted",
+    "view"
+  ],
+  "nodes": [
+    {
+      "id": "restore",
+      "lane": "reason",
+      "col": 0,
+      "type": "backend",
+      "label": "恢复上下文",
+      "sublabel": "get_context / search_topics",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 281,
+          "end_line": 344
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 54,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "id": "think",
+      "lane": "reason",
+      "col": 1,
+      "type": "backend",
+      "label": "理解与收敛",
+      "sublabel": "假设 / 备选 / 决策 / 检查点",
+      "sources": [
+        {
+          "path": "profiles/brainstormer/SOUL.md",
+          "line": 31,
+          "end_line": 78
+        }
+      ]
+    },
+    {
+      "id": "propose",
+      "lane": "reason",
+      "col": 2,
+      "type": "backend",
+      "label": "生成事务提案",
+      "sublabel": "模型校验 + DAG 检查",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 281,
+          "end_line": 344
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 54,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "id": "gate",
+      "lane": "persist",
+      "col": 2,
+      "type": "security",
+      "label": "判定审核需求",
+      "sublabel": "PROJECT / TOPIC / DECISION",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 746,
+          "end_line": 763
+        }
+      ]
+    },
+    {
+      "id": "safe",
+      "lane": "persist",
+      "col": 4,
+      "type": "backend",
+      "label": "应用获准变更",
+      "sublabel": "安全提交 / 审核批准",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 295
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 629,
+          "end_line": 647
+        }
+      ]
+    },
+    {
+      "id": "persisted",
+      "lane": "persist",
+      "col": 5,
+      "type": "database",
+      "label": "写入新版本",
+      "sublabel": "r+1 · history · JSON 原子替换",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 295
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 629,
+          "end_line": 647
+        }
+      ]
+    },
+    {
+      "id": "approve",
+      "lane": "review",
+      "col": 3,
+      "type": "security",
+      "label": "显式审核",
+      "sublabel": "Orchestrator / 用户",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_control.py",
+          "line": 110,
+          "end_line": 121
+        }
+      ]
+    },
+    {
+      "id": "reject",
+      "lane": "review",
+      "col": 5,
+      "type": "security",
+      "label": "拒绝并保留提案",
+      "sublabel": "canonical 状态不变",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 267
+        }
+      ]
+    },
+    {
+      "id": "error",
+      "lane": "review",
+      "col": 1,
+      "type": "security",
+      "label": "停止并纠正输入",
+      "sublabel": "循环 / 缺对象 / 版本冲突",
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 325,
+          "end_line": 333
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 649,
+          "end_line": 679
+        }
+      ]
+    },
+    {
+      "id": "view",
+      "lane": "display",
+      "col": 5,
+      "type": "frontend",
+      "label": "读回并展示",
+      "sublabel": "卡片 → 主题 → 检查抽屉",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1387,
+          "end_line": 1435
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1545,
+          "end_line": 1580
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1860,
+          "end_line": 1918
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "w1",
+      "from": "restore",
+      "to": "think",
+      "label": "恢复",
+      "variant": "default"
+    },
+    {
+      "id": "w2",
+      "from": "think",
+      "to": "propose",
+      "label": "提取",
+      "variant": "default"
+    },
+    {
+      "id": "w3",
+      "from": "propose",
+      "to": "gate",
+      "label": "有效提案",
+      "variant": "emphasis"
+    },
+    {
+      "id": "w4",
+      "from": "gate",
+      "to": "safe",
+      "label": "安全变更",
+      "variant": "emphasis"
+    },
+    {
+      "id": "w5",
+      "from": "gate",
+      "to": "approve",
+      "label": "需要审核",
+      "variant": "security"
+    },
+    {
+      "id": "w6",
+      "from": "approve",
+      "to": "safe",
+      "label": "批准后 apply",
+      "variant": "security"
+    },
+    {
+      "id": "w7",
+      "from": "approve",
+      "to": "reject",
+      "label": "拒绝",
+      "variant": "security"
+    },
+    {
+      "id": "w8",
+      "from": "safe",
+      "to": "persisted",
+      "label": "检查对象修订",
+      "variant": "default"
+    },
+    {
+      "id": "w9",
+      "from": "persisted",
+      "to": "view",
+      "label": "重新读取",
+      "variant": "default"
+    },
+    {
+      "id": "w10",
+      "from": "propose",
+      "to": "error",
+      "label": "DAG / schema 无效",
+      "variant": "security"
+    },
+    {
+      "id": "w11",
+      "from": "safe",
+      "to": "error",
+      "label": "应用冲突",
+      "variant": "security"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "两条提交路径",
+      "items": [
+        "安全路径调用 commit_safe；审核路径直接调用 review(approve=True) 后 apply。图中两条分支在“提交”位置汇合。",
+        "SUPERSEDE 及涉及既有决策的 LINK / UNLINK 也需要审核。",
+        "失败保留错误；修改输入或恢复最新对象修订后重新提案，不自动重放。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "展示条件",
+      "items": [
+        "正式状态必须落在 Observatory 实际使用的 UUMA_DATA_DIR 下。",
+        "卡片与抽屉是只读视图；点击展开仅改变浏览器展示状态。"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\candidate.json",
+    "sha256": "5c9facd5daf0465eaf9b02236bf3c1c70bb5e6adbc92f2959322180e31d76d86",
+    "bytes": 10231
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html",
+    "sha256": "796ae5c9f37f8ea6bc2a2314a1cdbd7b9e298fa81d77e8e8860ac62d967f3394",
+    "bytes": 835222
+  },
+  "gates": {
+    "validate": "pass",
+    "deliver": "pass",
+    "check": "pass",
+    "browser-check": "fail"
+  },
+  "failedStage": "browser-check",
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ\".",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-Ox5hdQ"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "diagnosticSummary": {
+    "total": 1,
+    "shown": 1,
+    "truncated": false
+  },
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\architecture\\forge-architecture.browser-check.json"
+  },
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  },
+  "visualReview": "not-requested",
+  "durationMs": 18324
+}

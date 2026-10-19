@@ -1,0 +1,22 @@
+[
+  {
+    "type": "architecture",
+    "exit_code": 0
+  },
+  {
+    "type": "workflow",
+    "exit_code": 1
+  },
+  {
+    "type": "sequence",
+    "exit_code": 0
+  },
+  {
+    "type": "dataflow",
+    "exit_code": 0
+  },
+  {
+    "type": "class",
+    "exit_code": 0
+  }
+]

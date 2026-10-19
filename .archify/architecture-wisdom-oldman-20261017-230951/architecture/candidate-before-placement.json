@@ -1,0 +1,467 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Wisdom-Oldman · 系统架构与 UI 入口",
+    "output": ".archify/architecture-wisdom-oldman-20261017-230951/architecture/wisdom-architecture.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "components": [
+    {
+      "id": "agent",
+      "type": "external",
+      "label": "Wisdom-Oldman",
+      "sublabel": "Hermes 专家身份",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "profiles/wisdom-oldman/SOUL.md",
+          "line": 3,
+          "end_line": 17
+        }
+      ]
+    },
+    {
+      "id": "semantic",
+      "type": "backend",
+      "label": "语义知识运行时",
+      "sublabel": "MCP / Service / Topics",
+      "pos": [
+        360,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 214,
+          "end_line": 270
+        },
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 449,
+          "end_line": 590
+        },
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 586,
+          "end_line": 627
+        }
+      ]
+    },
+    {
+      "id": "canonical",
+      "type": "database",
+      "label": "wisdom.db",
+      "sublabel": "知识 / Orbit / 版本 / 事件",
+      "pos": [
+        700,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/settings.py",
+          "line": 58,
+          "end_line": 64
+        },
+        {
+          "path": "src/uuma/knowledge_store.py",
+          "line": 441,
+          "end_line": 485
+        }
+      ]
+    },
+    {
+      "id": "documents",
+      "type": "frontend",
+      "label": "独立知识中心",
+      "sublabel": "文档 / 版本 / 关系图谱",
+      "pos": [
+        1020,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/wisdom_view.py",
+          "line": 73,
+          "end_line": 107
+        },
+        {
+          "path": "src/uuma/wisdom_web.py",
+          "line": 625,
+          "end_line": 684
+        }
+      ]
+    },
+    {
+      "id": "sources",
+      "type": "cloud",
+      "label": "外部研究来源",
+      "sublabel": "按配置启用检索 Provider",
+      "pos": [
+        40,
+        260
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 927,
+          "end_line": 945
+        }
+      ]
+    },
+    {
+      "id": "runner",
+      "type": "backend",
+      "label": "Question Orbit Runner",
+      "sublabel": "租约 / 心跳 / 预算 / 重试",
+      "pos": [
+        360,
+        260
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 328,
+          "end_line": 407
+        },
+        {
+          "path": "src/uuma/question_orbit.py",
+          "line": 57,
+          "end_line": 79
+        }
+      ]
+    },
+    {
+      "id": "formation",
+      "type": "backend",
+      "label": "摄入与知识形成",
+      "sublabel": "当前 runner：定位证据",
+      "pos": [
+        700,
+        260
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 580,
+          "end_line": 618
+        },
+        {
+          "path": "src/uuma/knowledge_construction.py",
+          "line": 26,
+          "end_line": 80
+        },
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 177,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "id": "observatory-api",
+      "type": "backend",
+      "label": "Observatory 读取层",
+      "sublabel": "WisdomAdapter / HTTP API",
+      "pos": [
+        1020,
+        260
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 109,
+          "end_line": 127
+        },
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 408,
+          "end_line": 425
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 229,
+          "end_line": 269
+        }
+      ]
+    },
+    {
+      "id": "kag",
+      "type": "cloud",
+      "label": "OpenSPG KAG",
+      "sublabel": "语义 HTTP / 可重建投影",
+      "pos": [
+        40,
+        480
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 298,
+          "end_line": 365
+        },
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 382,
+          "end_line": 419
+        }
+      ]
+    },
+    {
+      "id": "content",
+      "type": "database",
+      "label": "wisdom-content",
+      "sublabel": "按 SHA-256 保存原始内容",
+      "pos": [
+        700,
+        480
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 177,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "id": "observatory-ui",
+      "type": "frontend",
+      "label": "Observatory UI",
+      "sublabel": "流水线 / 主题 / 检视抽屉",
+      "pos": [
+        1020,
+        480
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1174,
+          "end_line": 1240
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1312,
+          "end_line": 1380
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 4506,
+          "end_line": 4586
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "type": "database",
+      "label": "uuma.db",
+      "sublabel": "独立的 tasks / runs",
+      "pos": [
+        700,
+        700
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 408,
+          "end_line": 425
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 904,
+          "end_line": 924
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "agent-semantic",
+      "from": "agent",
+      "to": "semantic",
+      "label": "语义工具",
+      "variant": "default"
+    },
+    {
+      "id": "semantic-canonical",
+      "from": "semantic",
+      "to": "canonical",
+      "label": "候选与审阅后变更",
+      "variant": "default"
+    },
+    {
+      "id": "documents-canonical",
+      "from": "documents",
+      "to": "canonical",
+      "label": "主题只读",
+      "variant": "default"
+    },
+    {
+      "id": "semantic-runner",
+      "from": "semantic",
+      "to": "runner",
+      "label": "启用时唤醒",
+      "variant": "dashed"
+    },
+    {
+      "id": "runner-semantic",
+      "from": "runner",
+      "to": "semantic",
+      "label": "周期与版本",
+      "variant": "default"
+    },
+    {
+      "id": "runner-sources",
+      "from": "runner",
+      "to": "sources",
+      "label": "按配置检索",
+      "variant": "default"
+    },
+    {
+      "id": "runner-formation",
+      "from": "runner",
+      "to": "formation",
+      "label": "来源摄入",
+      "variant": "default"
+    },
+    {
+      "id": "formation-canonical",
+      "from": "formation",
+      "to": "canonical",
+      "label": "证据与候选",
+      "variant": "default"
+    },
+    {
+      "id": "formation-content",
+      "from": "formation",
+      "to": "content",
+      "label": "原始字节",
+      "variant": "default"
+    },
+    {
+      "id": "runner-kag",
+      "from": "runner",
+      "to": "kag",
+      "label": "就绪与检索",
+      "variant": "default"
+    },
+    {
+      "id": "semantic-kag",
+      "from": "semantic",
+      "to": "kag",
+      "label": "检索 / 显式投影",
+      "variant": "default"
+    },
+    {
+      "id": "observatory-api-canonical",
+      "from": "observatory-api",
+      "to": "canonical",
+      "label": "只读",
+      "variant": "default"
+    },
+    {
+      "id": "observatory-ui-observatory-api",
+      "from": "observatory-ui",
+      "to": "observatory-api",
+      "label": "HTTP / SSE",
+      "variant": "default"
+    },
+    {
+      "id": "observatory-api-control",
+      "from": "observatory-api",
+      "to": "control",
+      "label": "独立只读",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "知识权限边界",
+      "items": [
+        "新断言必须保持 CANDIDATE；Wisdom-Oldman 可提案，只有 Orchestrator 身份能 apply / reject / reverse。",
+        "主题文档发布不等于断言已获审批；uuma.db、wisdom.db 与 Hermes state.db 各自独立。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前运行路径",
+      "items": [
+        "OrbitRunner 调用 located_evidence_only=True，保存来源、文档、切块及定位证据；完整 KAG 实体/关系抽取是另行调用的能力。",
+        "图谱或推理失败会阻止知识回答；状态、文档查看及暂停/继续仍可使用持久化记录。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "如何在 UI 查看",
+      "items": [
+        "Observatory：选择 Wisdom-Oldman，展开卡片，点击流水线或主题进入检视抽屉，再打开独立文档。",
+        "知识中心：/wisdom/topics → 主题页 → 知识文档 / 关系图谱；访问需要现有只读 token，图中不包含凭据。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "架构阅读范围",
+      "items": [
+        "图中“语义知识运行时”聚合 MCP、KnowledgeService、TopicKnowledgeService；代码关系图展开具体依赖。",
+        "未验证当前运行实例或外部端点在线状态；此图来自固定提交的实现。Observatory 的活跃提示含启发式与固定展示文案。"
+      ]
+    }
+  ]
+}

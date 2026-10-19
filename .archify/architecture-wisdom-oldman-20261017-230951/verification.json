@@ -1,0 +1,104 @@
+{
+  "title": "Wisdom-Oldman 五图与 UI 导览",
+  "repository": {
+    "url": "https://github.com/alandelone/UuMA.git",
+    "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+  },
+  "date": "2026-10-17",
+  "timezone": "Asia/Kuala_Lumpur",
+  "scope": "源码解释与图示；无产品 UI 或业务数据库修改",
+  "diagrams": [
+    {
+      "diagram": "architecture",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "architecture/wisdom-architecture.html",
+      "artifact_sha256": "c3cf541a8a2315ecbb82a1b70605b2eeb0bd16bd5b0cbb69a8c76d6c71c93f9c",
+      "candidate_sha256": "197b52942f4e8d6ee421543dd4cfb4970df2c09ebd9d0d83be365b576c5046c9",
+      "receipt": "architecture/review-3/wisdom-architecture.finalize-summary.json",
+      "visual_review": "not_requested",
+      "routing_advisory": null
+    },
+    {
+      "diagram": "workflow",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "workflow/wisdom-workflow.html",
+      "artifact_sha256": "a70534b30c61b2c6e8068b0ee041d9294da612d6ddb0682c404d08f18a211fe7",
+      "candidate_sha256": "020e08568d55d1ca970b748cfb1b38b55e78f870ae2d01e7435dbdf1559bfac3",
+      "receipt": "workflow/review-2/wisdom-workflow.finalize-summary.json",
+      "visual_review": "not_requested",
+      "routing_advisory": null
+    },
+    {
+      "diagram": "sequence",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "sequence/wisdom-sequence.html",
+      "artifact_sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+      "candidate_sha256": "1e144ba40615f2a6444c746e09ea7bb876db0bfbc0262bb9b9d58f7c0d7d5f30",
+      "receipt": "sequence/review-2/wisdom-sequence.finalize-summary.json",
+      "visual_review": "not_requested",
+      "routing_advisory": null
+    },
+    {
+      "diagram": "dataflow",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "dataflow/wisdom-dataflow.html",
+      "artifact_sha256": "4d2fe45c367d3be4d51780f6a824d9a784ac89cd6cfd93ace93e0c789912b3c9",
+      "candidate_sha256": "813e7e1bc82b0940b633168b0f74e9aa695900e4f9632ee427953fca4ad83184",
+      "receipt": "dataflow/wisdom-dataflow.finalize-summary.json",
+      "visual_review": "not_requested",
+      "routing_advisory": {
+        "resolvedCrossovers": 7,
+        "routesOverSuggestedBends": 3
+      }
+    },
+    {
+      "diagram": "class",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "class/wisdom-class.html",
+      "artifact_sha256": "d50217f4ad2895b2acf9b97433875c476135e9ac104d41baeec3a21b6080282f",
+      "candidate_sha256": "b7b775e668cdab273e3ae8e4a3762d882662a04673644a805e2fb191d46fb51c",
+      "receipt": "class/review-3/wisdom-class.finalize-summary.json",
+      "visual_review": "not_requested",
+      "routing_advisory": {
+        "resolvedCrossovers": 6,
+        "routesOverSuggestedBends": 4,
+        "routesOverSuggestedStretch": 1
+      }
+    }
+  ],
+  "ui_scope": "Observatory 与独立 Wisdom 主题文档/关系图谱；OpenSPG 仅确认现有外部链接，不声明在线状态",
+  "limitations": [
+    "仅验证生成图的浏览器显示，未探测产品实时服务。",
+    "Observatory 存在全局 claims/gaps、固定文案/默认计数、预算副本与活跃推断，详见总览。"
+  ]
+}

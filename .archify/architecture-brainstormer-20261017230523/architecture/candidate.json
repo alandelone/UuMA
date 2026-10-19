@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Brainstormer · 系统架构与 UI 入口",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-brainstormer-20261017230523/architecture/brainstormer-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "components": [
+    {
+      "id": "agent",
+      "type": "backend",
+      "label": "Brainstormer",
+      "sublabel": "Hermes 持久专家 profile",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "profiles/brainstormer/SOUL.md",
+          "line": 31,
+          "end_line": 78
+        }
+      ]
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "Worker MCP",
+      "sublabel": "身份校验 · 上下文 / 提案",
+      "pos": [
+        350,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 281,
+          "end_line": 344
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 54,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "type": "backend",
+      "label": "BrainstormerStore",
+      "sublabel": "验证 · 审核门 · 版本化提交",
+      "pos": [
+        680,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 295
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 629,
+          "end_line": 647
+        }
+      ]
+    },
+    {
+      "id": "json",
+      "type": "database",
+      "label": "讨论 JSON",
+      "sublabel": "项目 state / proposals",
+      "pos": [
+        1010,
+        40
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 765,
+          "end_line": 800
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "type": "security",
+      "label": "Orchestrator",
+      "sublabel": "批准 / 拒绝结构与决策变更",
+      "pos": [
+        350,
+        250
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/mcp_control.py",
+          "line": 110,
+          "end_line": 121
+        }
+      ]
+    },
+    {
+      "id": "daemon",
+      "type": "backend",
+      "label": "State Daemon :8772",
+      "sublabel": "HTTP 接口 · 进程内项目锁",
+      "pos": [
+        680,
+        250
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 156,
+          "end_line": 169
+        },
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 268,
+          "end_line": 330
+        },
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 336,
+          "end_line": 367
+        }
+      ]
+    },
+    {
+      "id": "control_db",
+      "type": "database",
+      "label": "uuma.db",
+      "sublabel": "绑定 / 讨论轮次 / 提交回执",
+      "pos": [
+        680,
+        360
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 47,
+          "end_line": 95
+        },
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 125,
+          "end_line": 153
+        }
+      ]
+    },
+    {
+      "id": "bridge",
+      "type": "frontend",
+      "label": "Bridge 管理页 :8787",
+      "sublabel": "可选 · 绑定 ChatGPT 会话",
+      "pos": [
+        40,
+        560
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/chatgpt_dashboard.html",
+          "line": 30,
+          "end_line": 34
+        },
+        {
+          "path": "src/uuma/chatgpt_server.py",
+          "line": 82,
+          "end_line": 87
+        },
+        {
+          "path": "src/uuma/chatgpt_server.py",
+          "line": 285,
+          "end_line": 292
+        }
+      ]
+    },
+    {
+      "id": "obs_ui",
+      "type": "frontend",
+      "label": "Observatory :8790",
+      "sublabel": "Brainstormer 卡片 / 检查抽屉",
+      "pos": [
+        350,
+        560
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1387,
+          "end_line": 1435
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1545,
+          "end_line": 1580
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1860,
+          "end_line": 1918
+        }
+      ]
+    },
+    {
+      "id": "obs_api",
+      "type": "backend",
+      "label": "Observatory API",
+      "sublabel": "只读投影 · 活动 SSE",
+      "pos": [
+        680,
+        560
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 74,
+          "end_line": 124
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 227
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 366,
+          "end_line": 408
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "BrainstormerAdapter",
+      "sublabel": "直接读取项目 JSON",
+      "pos": [
+        1010,
+        560
+      ],
+      "size": [
+        174,
+        72
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 71,
+          "end_line": 83
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 178,
+          "end_line": 242
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 280,
+          "end_line": 330
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "agent_worker",
+      "from": "agent",
+      "to": "worker",
+      "label": "工具调用",
+      "variant": "emphasis"
+    },
+    {
+      "id": "worker_store",
+      "from": "worker",
+      "to": "store",
+      "label": "事务 / 查询",
+      "variant": "emphasis"
+    },
+    {
+      "id": "store_json",
+      "from": "store",
+      "to": "json",
+      "label": "原子替换",
+      "variant": "emphasis"
+    },
+    {
+      "id": "review_store",
+      "from": "review",
+      "to": "store",
+      "label": "显式审核",
+      "variant": "security"
+    },
+    {
+      "id": "daemon_store",
+      "from": "daemon",
+      "to": "store",
+      "label": "复用存储",
+      "variant": "default"
+    },
+    {
+      "id": "daemon_db",
+      "from": "daemon",
+      "to": "control_db",
+      "label": "写绑定 / 回执",
+      "variant": "default"
+    },
+    {
+      "id": "json_adapter",
+      "from": "json",
+      "to": "adapter",
+      "label": "读取状态",
+      "variant": "default"
+    },
+    {
+      "id": "adapter_api",
+      "from": "adapter",
+      "to": "obs_api",
+      "label": "主题与 DAG 摘要",
+      "variant": "default"
+    },
+    {
+      "id": "api_ui",
+      "from": "obs_api",
+      "to": "obs_ui",
+      "label": "GET / SSE",
+      "variant": "default"
+    },
+    {
+      "id": "agent_bridge",
+      "from": "agent",
+      "to": "bridge",
+      "label": "可选咨询绑定",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "边界",
+      "items": [
+        "讨论状态由 BrainstormerStore 写 JSON；Worker MCP 直接调用 Store，并未经过 State Daemon。",
+        "Daemon 为另一条 HTTP 访问路径；锁是进程内锁，不能视为全系统单写者。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "UI 的实际能力",
+      "items": [
+        "8790 直接读取 JSON 展示；未接入 8772 的提交、审核和当前问题操作。",
+        "8787 是账号与 ChatGPT 会话绑定管理页，不展示 Brainstormer Decision Map。",
+        "本次仅依据仓库实现；未证明 Telegram / Live Voice 客户端已部署。"
+      ]
+    }
+  ]
+}

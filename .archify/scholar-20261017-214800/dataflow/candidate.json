@@ -1,0 +1,449 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Scholar：科研读模型与审计事件的数据流",
+    "locale": "zh-CN",
+    "output": ".archify/scholar-20261017-214800/dataflow/scholar-dataflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "stages": [
+    {
+      "label": "来源"
+    },
+    {
+      "label": "处理"
+    },
+    {
+      "label": "持久化或默认值"
+    },
+    {
+      "label": "观测服务"
+    },
+    {
+      "label": "界面消费"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "papers",
+      "type": "external",
+      "label": "论文 / DOI / PDF",
+      "sublabel": "用户研究输入",
+      "stage": 0,
+      "row": 0,
+      "sources": [
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 25,
+          "end_line": 29
+        }
+      ]
+    },
+    {
+      "id": "rst",
+      "type": "backend",
+      "label": "RSTV4 处理",
+      "sublabel": "Collection / Skeleton",
+      "stage": 1,
+      "row": 0,
+      "sources": [
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 493,
+          "end_line": 508
+        },
+        {
+          "path": "scripts/configure-hermes-profile.py",
+          "line": 171,
+          "end_line": 188
+        }
+      ],
+      "tag": "外部·文档契约"
+    },
+    {
+      "id": "cat",
+      "type": "database",
+      "label": "catalog.db",
+      "sublabel": "文献 / FieldKG / Snapshot",
+      "stage": 2,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 228,
+          "end_line": 260
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 352,
+          "end_line": 397
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "ScholarAdapter",
+      "sublabel": "只读 SQL → 四类 Item",
+      "stage": 3,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 399,
+          "end_line": 503
+        },
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 19,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "id": "card",
+      "type": "frontend",
+      "label": "科研卡片与详情",
+      "sublabel": "GET /agents 与 SSE init",
+      "stage": 4,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 257
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 442,
+          "end_line": 458
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3023,
+          "end_line": 3054
+        }
+      ]
+    },
+    {
+      "id": "defaults",
+      "type": "backend",
+      "label": "演示 / 固定值",
+      "sublabel": "缺数据回退 + 固定状态",
+      "stage": 2,
+      "row": 1,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 60,
+          "end_line": 96
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 211,
+          "end_line": 227
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 464,
+          "end_line": 503
+        }
+      ]
+    },
+    {
+      "id": "workbench",
+      "type": "frontend",
+      "label": "Catalog / Studio",
+      "sublabel": "文献操作 / 写作 / 讨论",
+      "stage": 4,
+      "row": 1,
+      "sources": [
+        {
+          "path": "rules/scholar-ui-verification.md",
+          "line": 47,
+          "end_line": 56
+        },
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 493,
+          "end_line": 508
+        }
+      ],
+      "tag": "独立 UI·文档契约"
+    },
+    {
+      "id": "uuma",
+      "type": "database",
+      "label": "uuma.db",
+      "sublabel": "控制事件 + Scholar Run",
+      "stage": 0,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/service.py",
+          "line": 298,
+          "end_line": 386
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 346,
+          "end_line": 374
+        }
+      ]
+    },
+    {
+      "id": "spool",
+      "type": "database",
+      "label": "审计 spool JSON",
+      "sublabel": "带 profile 的 hook 事件",
+      "stage": 0,
+      "row": 3,
+      "sources": [
+        {
+          "path": "integrations/hermes/uuma_audit/__init__.py",
+          "line": 185,
+          "end_line": 197
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 141,
+          "end_line": 168
+        }
+      ]
+    },
+    {
+      "id": "harvest",
+      "type": "backend",
+      "label": "Harvester",
+      "sublabel": "规范化 / 去重 / 回填",
+      "stage": 1,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 141,
+          "end_line": 168
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 254,
+          "end_line": 301
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 306,
+          "end_line": 338
+        }
+      ]
+    },
+    {
+      "id": "obsdb",
+      "type": "database",
+      "label": "observatory.db",
+      "sublabel": "activity_events + FTS5",
+      "stage": 2,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 17,
+          "end_line": 75
+        },
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 79,
+          "end_line": 131
+        }
+      ]
+    },
+    {
+      "id": "events",
+      "type": "backend",
+      "label": "事件查询 API",
+      "sublabel": "按 agent_id / query 查询",
+      "stage": 3,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 283,
+          "end_line": 304
+        },
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 133,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "id": "push",
+      "type": "messagebus",
+      "label": "SSE 广播",
+      "sublabel": "新增 activity / 回填进度",
+      "stage": 3,
+      "row": 3,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 33,
+          "end_line": 65
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 98,
+          "end_line": 110
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "type": "frontend",
+      "label": "活动流与事件详情",
+      "sublabel": "筛选 Scholar / 搜索 / 点选",
+      "stage": 4,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 2940,
+          "end_line": 2955
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3104,
+          "end_line": 3143
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 4886,
+          "end_line": 4902
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "raw",
+      "from": "papers",
+      "to": "rst",
+      "label": "研究输入",
+      "variant": "emphasis"
+    },
+    {
+      "id": "canonical",
+      "from": "rst",
+      "to": "cat",
+      "label": "结构化研究",
+      "classification": "文档契约"
+    },
+    {
+      "id": "read",
+      "from": "cat",
+      "to": "adapter",
+      "label": "只读计数"
+    },
+    {
+      "id": "fallback",
+      "from": "defaults",
+      "to": "adapter",
+      "label": "回退与固定值"
+    },
+    {
+      "id": "items",
+      "from": "adapter",
+      "to": "card",
+      "label": "展示模型",
+      "variant": "emphasis"
+    },
+    {
+      "id": "views",
+      "from": "cat",
+      "to": "workbench",
+      "label": "研究视图",
+      "classification": "文档契约"
+    },
+    {
+      "id": "control",
+      "from": "uuma",
+      "to": "harvest",
+      "label": "最近控制事件"
+    },
+    {
+      "id": "audit",
+      "from": "spool",
+      "to": "harvest",
+      "label": "hook 载荷"
+    },
+    {
+      "id": "index",
+      "from": "harvest",
+      "to": "obsdb",
+      "label": "事件索引"
+    },
+    {
+      "id": "query",
+      "from": "obsdb",
+      "to": "events",
+      "label": "查询结果"
+    },
+    {
+      "id": "rest",
+      "from": "events",
+      "to": "feed",
+      "label": "分页 JSON"
+    },
+    {
+      "id": "broadcast",
+      "from": "harvest",
+      "to": "push",
+      "label": "新增事件",
+      "variant": "dashed"
+    },
+    {
+      "id": "live",
+      "from": "push",
+      "to": "feed",
+      "label": "SSE activity",
+      "variant": "dashed"
+    },
+    {
+      "id": "run-items",
+      "from": "uuma",
+      "to": "adapter",
+      "label": "Run / 健康"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "两条独立的数据路径",
+      "items": [
+        "科研卡片：Adapter 直接读取源库，再经 Registry / GET /agents 或 SSE init 到前端；不经过事件索引。Adapter 还读取 uuma.db 的最近三条 Scholar Run。",
+        "活动流：UuMA 事件与 Hermes spool → Harvester → observatory.db，历史 GET 查询与新增 SSE 广播分别消费。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "来源与转换的边界",
+      "items": [
+        "RSTV4 输入、处理和 Catalog/Studio 消费属于仓库文档记录的外部契约；本次未读取外部实现。不要把该箭头当成已执行的写库证明。",
+        "源库不存在时，演示值/固定字段仍可进入展示模型；前端本身也包含固定摘要及 || 默认值。",
+        "原始 hook 的参数仅以截断 snippet 进入事件缓存；科研全文和领域图谱没有复制到 observatory.db。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "不跨越权威与批准",
+      "items": [
+        "catalog.db 是 Scholar 研究权威；OpenSPG/KAG 是可重建查询投影，Track 固定 Snapshot 版本。候选产生与人工批准分开。",
+        "observatory.db 为缓存与全文搜索；uuma.db 为控制面；Hermes state.db 与 Wisdom wisdom.db 各自隔离。没有将它们合成一个数据库。"
+      ]
+    }
+  ]
+}

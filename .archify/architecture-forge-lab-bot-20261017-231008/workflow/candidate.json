@@ -1,0 +1,407 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "Forge-Lab-Bot · 实验室业务流程",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/architecture-forge-lab-bot-20261017-231008/workflow/forge-workflow.html",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+      "link_mode": "web"
+    }
+  },
+  "lanes": [
+    {
+      "id": "plan",
+      "label": "设计与采购"
+    },
+    {
+      "id": "physical",
+      "label": "人工实物操作"
+    },
+    {
+      "id": "record",
+      "label": "记录与复核"
+    },
+    {
+      "id": "display",
+      "label": "Observatory 展示"
+    }
+  ],
+  "mainPath": [
+    "bom",
+    "resolve",
+    "stock",
+    "source",
+    "human"
+  ],
+  "nodes": [
+    {
+      "id": "bom",
+      "lane": "plan",
+      "col": 0,
+      "type": "external",
+      "label": "设计 BOM",
+      "sublabel": "输入与版本引用",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 743,
+          "end_line": 765
+        }
+      ]
+    },
+    {
+      "id": "resolve",
+      "lane": "plan",
+      "col": 1,
+      "type": "backend",
+      "label": "规范与解析",
+      "sublabel": "未知元件待复核",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 744,
+          "end_line": 751
+        }
+      ]
+    },
+    {
+      "id": "stock",
+      "lane": "plan",
+      "col": 2,
+      "type": "backend",
+      "label": "核查可用库存",
+      "sublabel": "比较需求与余额",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 748,
+          "end_line": 752
+        },
+        {
+          "path": "src/uuma/lab_inventory.py",
+          "line": 789,
+          "end_line": 823
+        }
+      ]
+    },
+    {
+      "id": "source",
+      "lane": "plan",
+      "col": 3,
+      "type": "backend",
+      "label": "采购建议",
+      "sublabel": "需求 / 报价 / 比较",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 1141,
+          "end_line": 1171
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 1202,
+          "end_line": 1236
+        }
+      ]
+    },
+    {
+      "id": "human",
+      "lane": "physical",
+      "col": 3,
+      "type": "external",
+      "label": "用户购买与验收",
+      "sublabel": "付款和硬件动作由人执行",
+      "sources": [
+        {
+          "path": "profiles/forge-lab-bot/SOUL.md",
+          "line": 53,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "id": "receipt",
+      "lane": "physical",
+      "col": 2,
+      "type": "security",
+      "label": "确认收货入库",
+      "sublabel": "订单路径须 self + electronics",
+      "sources": [
+        {
+          "path": "src/uuma/lab_inventory.py",
+          "line": 520,
+          "end_line": 587
+        },
+        {
+          "path": "src/uuma/lab_inventory.py",
+          "line": 589,
+          "end_line": 680
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 579,
+          "end_line": 607
+        }
+      ]
+    },
+    {
+      "id": "build",
+      "lane": "physical",
+      "col": 1,
+      "type": "backend",
+      "label": "Build 与 As-Built",
+      "sublabel": "绑定设计版本并记录实物",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 755,
+          "end_line": 805
+        },
+        {
+          "path": "src/uuma/lab_inventory.py",
+          "line": 327,
+          "end_line": 356
+        }
+      ]
+    },
+    {
+      "id": "worklog",
+      "lane": "record",
+      "col": 1,
+      "type": "backend",
+      "label": "工作与故障记录",
+      "sublabel": "来源 / 观察 / 原因分开",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 880,
+          "end_line": 946
+        },
+        {
+          "path": "profiles/forge-lab-bot/SOUL.md",
+          "line": 7,
+          "end_line": 14
+        }
+      ]
+    },
+    {
+      "id": "candidate",
+      "lane": "record",
+      "col": 2,
+      "type": "backend",
+      "label": "候选工程经验",
+      "sublabel": "保留适用范围和证据",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 1070,
+          "end_line": 1109
+        },
+        {
+          "path": "profiles/forge-lab-bot/SOUL.md",
+          "line": 50,
+          "end_line": 51
+        }
+      ]
+    },
+    {
+      "id": "review",
+      "lane": "record",
+      "col": 3,
+      "type": "security",
+      "label": "用户或指定复核者",
+      "sublabel": "采纳 / 驳回 / 更正的决策边界",
+      "sources": [
+        {
+          "path": "profiles/forge-lab-bot/SOUL.md",
+          "line": 50,
+          "end_line": 63
+        }
+      ]
+    },
+    {
+      "id": "notion",
+      "lane": "record",
+      "col": 0,
+      "type": "cloud",
+      "label": "Notion 同步",
+      "sublabel": "排队 / 重试 / 冲突待处理",
+      "sources": [
+        {
+          "path": "src/uuma/forge_journal_runner.py",
+          "line": 479,
+          "end_line": 570
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 937,
+          "end_line": 946
+        }
+      ]
+    },
+    {
+      "id": "blocked",
+      "lane": "plan",
+      "col": 4,
+      "type": "security",
+      "label": "补充信息与复核",
+      "sublabel": "NEEDS_COMPONENT_REVIEW",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 748,
+          "end_line": 750
+        }
+      ]
+    },
+    {
+      "id": "observe",
+      "lane": "display",
+      "col": 1,
+      "type": "frontend",
+      "label": "只读观测",
+      "sublabel": "项目 / 采购 / 日志详情",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 710,
+          "end_line": 719
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3039,
+          "end_line": 3059
+        }
+      ]
+    }
+  ],
+  "edges": [
+    {
+      "id": "bom-resolve",
+      "from": "bom",
+      "to": "resolve",
+      "label": "输入",
+      "variant": "emphasis"
+    },
+    {
+      "id": "resolve-stock",
+      "from": "resolve",
+      "to": "stock",
+      "label": "已解析",
+      "variant": "emphasis"
+    },
+    {
+      "id": "resolve-blocked",
+      "from": "resolve",
+      "to": "blocked",
+      "label": "未解析",
+      "variant": "security",
+      "role": "branch"
+    },
+    {
+      "id": "stock-source",
+      "from": "stock",
+      "to": "source",
+      "label": "有缺料",
+      "variant": "default"
+    },
+    {
+      "id": "source-human",
+      "from": "source",
+      "to": "human",
+      "label": "给出建议",
+      "variant": "default"
+    },
+    {
+      "id": "human-receipt",
+      "from": "human",
+      "to": "receipt",
+      "label": "已验收",
+      "variant": "default",
+      "role": "return"
+    },
+    {
+      "id": "receipt-build",
+      "from": "receipt",
+      "to": "build",
+      "label": "可用物料",
+      "variant": "default",
+      "role": "return"
+    },
+    {
+      "id": "stock-build",
+      "from": "stock",
+      "to": "build",
+      "label": "物料已足",
+      "variant": "emphasis",
+      "role": "branch"
+    },
+    {
+      "id": "build-worklog",
+      "from": "build",
+      "to": "worklog",
+      "label": "记录实际结果",
+      "variant": "default"
+    },
+    {
+      "id": "worklog-candidate",
+      "from": "worklog",
+      "to": "candidate",
+      "label": "形成候选",
+      "variant": "default"
+    },
+    {
+      "id": "candidate-review",
+      "from": "candidate",
+      "to": "review",
+      "label": "申请复核",
+      "variant": "security"
+    },
+    {
+      "id": "worklog-notion",
+      "from": "worklog",
+      "to": "notion",
+      "label": "投递日志",
+      "variant": "dashed",
+      "role": "async"
+    },
+    {
+      "id": "worklog-observe",
+      "from": "worklog",
+      "to": "observe",
+      "label": "读取记录",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "这是一条业务操作路径",
+      "items": [
+        "各能力由用户或智能体按需调用；代码没有把整个闭环串成一键自动流水线。",
+        "库存充足可跳过采购；未解析的元件停在复核分支。",
+        "采购流水不会自动变成库存；订单收货先核对归属、类别、数量及确认信息。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "记录与批准",
+      "items": [
+        "聊天采集先写本地工作记录，再排队 CREATE_LOG；排队或失败不能声称已同步。",
+        "工程经验的采纳属于用户或指定复核者；本图不虚构一套已实现的自动审批 UI。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "UI 的位置",
+      "items": [
+        "Observatory 读取已落地记录；不会执行付款、物理安装或经验批准。",
+        "图中的步骤顺序表达业务依赖，并不表示所有用户必须执行所有分支。"
+      ]
+    }
+  ]
+}

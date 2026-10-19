@@ -1,0 +1,383 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "sequence",
+  "quality": "showcase",
+  "startedAt": "2026-10-17T15:14:31.266Z",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\candidate.json",
+    "sha256": "1e144ba40615f2a6444c746e09ea7bb876db0bfbc0262bb9b9d58f7c0d7d5f30",
+    "bytes": 8312
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+    "sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+    "bytes": 827165
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "sequence",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\candidate.json",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\test_codespace\\UuMA",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "1e144ba40615f2a6444c746e09ea7bb876db0bfbc0262bb9b9d58f7c0d7d5f30",
+          "bytes": 8312
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 3564,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "sequence",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\candidate.json",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\test_codespace\\UuMA",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "e48f97b7-b3d6-4592-b71b-d05cf966af6b",
+        "ok": true,
+        "command": "deliver",
+        "type": "sequence",
+        "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\candidate.json",
+        "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+        "specification": {
+          "sha256": "1e144ba40615f2a6444c746e09ea7bb876db0bfbc0262bb9b9d58f7c0d7d5f30",
+          "bytes": 8312
+        },
+        "artifact": {
+          "sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+          "bytes": 827165
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "https://github.com/alandelone/UuMA",
+          "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+          "references": 15
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 538,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+        "artifact": {
+          "sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+          "bytes": 827165
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 0,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 15,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.8,
+            "maxBends": 0,
+            "routesOverSuggestedBends": 0,
+            "maxStretch": 1,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 107.3,
+            "minInteriorSegmentPx": null,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [],
+            "detours": []
+          },
+          "leadingSpace": {
+            "measured": false,
+            "reviewSuggested": false
+          },
+          "sequenceColumnSpace": {
+            "measured": true,
+            "columnFit": "spread",
+            "participantCount": 7,
+            "occupiedRight": 903,
+            "viewBoxLeft": 0,
+            "canvasWidth": 920,
+            "emptyRightPx": 17,
+            "emptyRightRatio": 0.018,
+            "typicalParticipantWidth": 90,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": null,
+            "requestedTargetMet": null,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "node",
+              "id": "views"
+            },
+            "minimumSourceTextPx": 6.8,
+            "minimumProjectedTextPx": 6.8,
+            "semanticTextCount": 36
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "e48f97b7-b3d6-4592-b71b-d05cf966af6b"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 10801,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+        "--json",
+        "--require-provenance"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "e48f97b7-b3d6-4592-b71b-d05cf966af6b",
+        "artifact": {
+          "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+          "sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+          "bytes": 827165
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/temp-cleanup-incomplete",
+            "severity": "error",
+            "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+            "subject": {
+              "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html"
+            },
+            "evidence": {
+              "reason": "Temporary directory cleanup failed; retained path \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\": EBUSY: resource busy or locked, unlink 'C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\\Default\\Network\\Cookies'",
+              "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV"
+            },
+            "supportedFixes": [
+              "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "receipt": "wisdom-sequence.browser-check.json",
+          "files": []
+        },
+        "error": "Temporary directory cleanup failed; retained path \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\": EBUSY: resource busy or locked, unlink 'C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\\Default\\Network\\Cookies'"
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html"
+      },
+      "evidence": {
+        "reason": "Temporary directory cleanup failed; retained path \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\": EBUSY: resource busy or locked, unlink 'C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV\\Default\\Network\\Cookies'",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-rVtRwV"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-17T15:14:47.882Z",
+  "durationMs": 16615,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "342ff7b2-7528-4352-9388-d60690488cec",
+  "status": "current",
+  "command": "deliver",
+  "type": "sequence",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\sequence\\wisdom-sequence.html",
+  "specification": {
+    "sha256": "1e144ba40615f2a6444c746e09ea7bb876db0bfbc0262bb9b9d58f7c0d7d5f30",
+    "bytes": 8312
+  },
+  "artifact": {
+    "sha256": "13d976d57c10567ae22d04958124b44c5e76ffde0376784999f0722eb1af6688",
+    "bytes": 827165
+  }
+}

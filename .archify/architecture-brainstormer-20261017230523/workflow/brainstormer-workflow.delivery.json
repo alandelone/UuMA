@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "ec4fb3f3-fd97-4620-9acf-0708632018b3",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-brainstormer-20261017230523\\workflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-brainstormer-20261017230523\\workflow\\brainstormer-workflow.html",
+  "specification": {
+    "sha256": "2c6a51bd635e1f1d3d2e9f6dee2f8232c4829d8e684fce648363a04c8e2236f5",
+    "bytes": 7527
+  },
+  "artifact": {
+    "sha256": "395c3b1f3a5ac28afbb0c2e973ef6c70c9ae707bd7af8736292f24ab55c7f49c",
+    "bytes": 827914
+  }
+}

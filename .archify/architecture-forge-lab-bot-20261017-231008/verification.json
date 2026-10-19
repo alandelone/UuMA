@@ -1,0 +1,175 @@
+{
+  "repository": {
+    "url": "https://github.com/alandelone/UuMA.git",
+    "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+    "link_mode": "web"
+  },
+  "diagrams": [
+    {
+      "type": "architecture",
+      "title": "Forge-Lab-Bot · 系统架构",
+      "artifact": "architecture/forge-architecture.html",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "architecture/review-2/forge-architecture.finalize-summary.json",
+      "visualReview": "not-requested",
+      "advisory": null
+    },
+    {
+      "type": "workflow",
+      "title": "Forge-Lab-Bot · 实验室业务流程",
+      "artifact": "workflow/forge-workflow.html",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "workflow/forge-workflow.finalize-summary.json",
+      "visualReview": "not-requested",
+      "advisory": null
+    },
+    {
+      "type": "sequence",
+      "title": "Forge · Observatory 展示时序",
+      "artifact": "sequence/forge-sequence.html",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "sequence/forge-sequence.finalize-summary.json",
+      "visualReview": "not-requested",
+      "advisory": null
+    },
+    {
+      "type": "dataflow",
+      "title": "Forge · 数据来源、落地与展示",
+      "artifact": "dataflow/forge-dataflow.html",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "dataflow/forge-dataflow.finalize-summary.json",
+      "visualReview": "not-requested",
+      "advisory": {
+        "action": "inspect-route-readability",
+        "signals": {
+          "resolvedCrossovers": 1
+        },
+        "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+        "affectedRoutes": {
+          "crossings": [
+            {
+              "left": {
+                "id": "workbook-review",
+                "from": "workbook",
+                "to": "review",
+                "label": "用户审阅值",
+                "collectionIndex": 4,
+                "artifactIndex": 5
+              },
+              "right": {
+                "id": "commerce-adapter",
+                "from": "commerce",
+                "to": "adapter",
+                "label": "采购流水",
+                "collectionIndex": 12,
+                "artifactIndex": 13
+              },
+              "point": [
+                637.5,
+                271
+              ]
+            }
+          ],
+          "detours": [],
+          "truncated": false
+        },
+        "repair": "Advisory only: this mode places or routes these relationships itself. Report them; do not remove relationships or meaning to reduce crossings."
+      }
+    },
+    {
+      "type": "class",
+      "title": "Forge · 核心类与代码接线",
+      "artifact": "class/forge-class.html",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "class/forge-class.finalize-summary.json",
+      "visualReview": "not-requested",
+      "advisory": {
+        "action": "inspect-route-readability",
+        "signals": {
+          "routesOverSuggestedBends": 2
+        },
+        "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+        "affectedRoutes": {
+          "crossings": [],
+          "detours": [
+            {
+              "relationship": {
+                "id": "host-commerce",
+                "from": "host",
+                "to": "commerce",
+                "label": "持有并调用",
+                "collectionIndex": 1,
+                "artifactIndex": 2
+              },
+              "bends": 4,
+              "stretch": 1.176,
+              "directCorridorBlockers": [
+                {
+                  "id": "control",
+                  "label": "CommerceControlStore",
+                  "box": [
+                    357,
+                    40,
+                    247,
+                    84
+                  ]
+                }
+              ]
+            },
+            {
+              "relationship": {
+                "id": "runner-notion",
+                "from": "runner",
+                "to": "notion",
+                "label": "持有并调用",
+                "collectionIndex": 3,
+                "artifactIndex": 4
+              },
+              "bends": 4,
+              "stretch": 1.233,
+              "directCorridorBlockers": [
+                {
+                  "id": "journal",
+                  "label": "ForgeJournalStore",
+                  "box": [
+                    365.5,
+                    224,
+                    230,
+                    84
+                  ]
+                }
+              ]
+            }
+          ],
+          "truncated": false
+        },
+        "repair": "Advisory only: this mode places or routes these relationships itself. Report them; do not remove relationships or meaning to reduce crossings."
+      }
+    }
+  ]
+}

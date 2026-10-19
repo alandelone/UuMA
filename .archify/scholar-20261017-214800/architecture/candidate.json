@@ -1,0 +1,412 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Scholar：研究运行与 Observatory 展示",
+    "locale": "zh-CN",
+    "output": ".archify/scholar-20261017-214800/architecture/scholar-architecture.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "components": [
+    {
+      "id": "human",
+      "type": "external",
+      "label": "研究者",
+      "sublabel": "拥有科学决策与发布权",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        170,
+        74
+      ],
+      "sources": [
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 17,
+          "end_line": 20
+        }
+      ]
+    },
+    {
+      "id": "scholar",
+      "type": "backend",
+      "label": "Scholar / Hermes",
+      "sublabel": "SOUL + 独立研究身份",
+      "pos": [
+        355,
+        40
+      ],
+      "size": [
+        190,
+        74
+      ],
+      "sources": [
+        {
+          "path": "profiles/scholar/SOUL.md",
+          "line": 1,
+          "end_line": 39
+        },
+        {
+          "path": "scripts/configure-hermes-profile.py",
+          "line": 309,
+          "end_line": 348
+        }
+      ]
+    },
+    {
+      "id": "rst",
+      "type": "backend",
+      "label": "RSTV4 研究系统",
+      "sublabel": "独立 MCP · Catalog / Studio",
+      "pos": [
+        715,
+        40
+      ],
+      "size": [
+        220,
+        74
+      ],
+      "sources": [
+        {
+          "path": "scripts/configure-hermes-profile.py",
+          "line": 171,
+          "end_line": 188
+        },
+        {
+          "path": "rules/scholar-ui-verification.md",
+          "line": 47,
+          "end_line": 56
+        },
+        {
+          "path": "docs/agents/scholar.md",
+          "line": 493,
+          "end_line": 508
+        }
+      ],
+      "tag": "外部源码未在此工作区"
+    },
+    {
+      "id": "catalog",
+      "type": "database",
+      "label": "catalog.db",
+      "sublabel": "研究权威 · FieldKG / 文献",
+      "pos": [
+        715,
+        230
+      ],
+      "size": [
+        220,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 228,
+          "end_line": 260
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 352,
+          "end_line": 397
+        }
+      ],
+      "tag": "可配置但注册时未传入路径"
+    },
+    {
+      "id": "worker",
+      "type": "backend",
+      "label": "Worker MCP",
+      "sublabel": "登记 / 进度 / 阻塞 / 结果",
+      "pos": [
+        355,
+        230
+      ],
+      "size": [
+        190,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 216,
+          "end_line": 277
+        }
+      ]
+    },
+    {
+      "id": "graph",
+      "type": "security",
+      "label": "ScholarFieldKG 预检",
+      "sublabel": "核对桥接 / 项目 / schema / 读",
+      "pos": [
+        40,
+        230
+      ],
+      "size": [
+        195,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_runtime.py",
+          "line": 49,
+          "end_line": 94
+        },
+        {
+          "path": "src/uuma/knowledge_runtime.py",
+          "line": 97,
+          "end_line": 130
+        }
+      ],
+      "tag": "失败 → BLOCKED"
+    },
+    {
+      "id": "control",
+      "type": "backend",
+      "label": "UuMA ControlPlane",
+      "sublabel": "验收契约 + 追加事件",
+      "pos": [
+        355,
+        435
+      ],
+      "size": [
+        190,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/service.py",
+          "line": 63,
+          "end_line": 71
+        },
+        {
+          "path": "src/uuma/service.py",
+          "line": 298,
+          "end_line": 386
+        }
+      ]
+    },
+    {
+      "id": "uuma",
+      "type": "database",
+      "label": "uuma.db",
+      "sublabel": "Scholar runs / tasks / events",
+      "pos": [
+        715,
+        435
+      ],
+      "size": [
+        220,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/service.py",
+          "line": 63,
+          "end_line": 69
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 506,
+          "end_line": 538
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Observatory UI",
+      "sublabel": "收起卡片 / 展开全景 / 详情",
+      "pos": [
+        40,
+        680
+      ],
+      "size": [
+        195,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 2791,
+          "end_line": 2835
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3023,
+          "end_line": 3054
+        }
+      ],
+      "tag": "只读监控 · 默认 :8790"
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "Observatory 后端",
+      "sublabel": "GET /agents + SSE 动态流",
+      "pos": [
+        355,
+        680
+      ],
+      "size": [
+        190,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 69,
+          "end_line": 110
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 257
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 366,
+          "end_line": 409
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "ScholarAdapter",
+      "sublabel": "组装四类展示项 + 最近 Run",
+      "pos": [
+        715,
+        680
+      ],
+      "size": [
+        220,
+        74
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 399,
+          "end_line": 503
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 506,
+          "end_line": 547
+        },
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 19,
+          "end_line": 30
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "h-s",
+      "from": "human",
+      "to": "scholar",
+      "label": "研究请求",
+      "variant": "emphasis"
+    },
+    {
+      "id": "s-r",
+      "from": "scholar",
+      "to": "rst",
+      "label": "rstv4-worker",
+      "variant": "emphasis"
+    },
+    {
+      "id": "r-c",
+      "from": "rst",
+      "to": "catalog",
+      "label": "研究状态（文档契约）"
+    },
+    {
+      "id": "s-w",
+      "from": "scholar",
+      "to": "worker",
+      "label": "uuma-worker"
+    },
+    {
+      "id": "w-g",
+      "from": "worker",
+      "to": "graph",
+      "label": "图谱就绪检查",
+      "variant": "security"
+    },
+    {
+      "id": "w-c",
+      "from": "worker",
+      "to": "control",
+      "label": "结构化报告"
+    },
+    {
+      "id": "c-u",
+      "from": "control",
+      "to": "uuma",
+      "label": "追加事件"
+    },
+    {
+      "id": "ui-api",
+      "from": "ui",
+      "to": "api",
+      "label": "GET / SSE",
+      "variant": "emphasis"
+    },
+    {
+      "id": "api-ad",
+      "from": "api",
+      "to": "adapter",
+      "label": "Registry 调用"
+    },
+    {
+      "id": "ad-u",
+      "from": "adapter",
+      "to": "uuma",
+      "label": "只读 Run 查询"
+    },
+    {
+      "id": "ad-ca",
+      "from": "adapter",
+      "to": "catalog",
+      "label": "只读计数 / 层级"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "界面如何查看",
+      "items": [
+        "Observatory 默认入口 http://127.0.0.1:8790/；点击 Scholar 卡片展开，同步打开右侧 Inspector。",
+        "四块内容：研究层级、文献六阶段流水线、FieldKG、研发进度；活动流可按 Scholar 筛选。",
+        "Catalog 与 Studio 属于独立 RSTV4 工作台；当前 Scholar 卡片没有嵌入 iframe 或跳转这两者的链接。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "读图边界",
+      "items": [
+        "本图以 UuMA 当前提交为证据；RSTV4 内部处理与 catalog.db 的权威关系来自本仓库文档契约，外部源码未在此工作区。",
+        "Adapter 默认 Catalog 路径仍指向 C:/Users/Alandelone/CodeSpace_Local/RSTV4/data/catalog.db；Registry 仅传 uuma.db，未覆盖该路径。",
+        "研究层级缺数据会返回演示树；流水线部分计数、阶段、测试通过数字和 UI 摘要为固定值。不能据此认定服务正在运行或科学验收通过。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "权责与隔离",
+      "items": [
+        "用户批准科学问题、方法、结论与发布；可信 APPROVE 消息转交 rstv4.approval_capture。Worker 不具备批准图操作的接口。",
+        "RSTV4 研究状态、UuMA 控制状态、Hermes state.db 分离；Scholar 不复用 Wisdom-Oldman 的可变知识库。",
+        "Observatory 对源库使用 mode=ro；另有 observatory.db 存事件缓存，详见数据流图。"
+      ]
+    }
+  ]
+}

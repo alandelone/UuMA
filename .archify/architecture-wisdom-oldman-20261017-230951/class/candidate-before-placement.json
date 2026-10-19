@@ -1,0 +1,445 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Wisdom-Oldman · 代码类型依赖与 UI 适配",
+    "output": ".archify/architecture-wisdom-oldman-20261017-230951/class/wisdom-class.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "components": [
+    {
+      "id": "runner",
+      "type": "backend",
+      "label": "OrbitRunner",
+      "sublabel": "orbit_runner.py · 后台执行",
+      "pos": [
+        430,
+        40
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 298,
+          "end_line": 325
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 947,
+          "end_line": 955
+        }
+      ]
+    },
+    {
+      "id": "orbit",
+      "type": "backend",
+      "label": "QuestionOrbitService",
+      "sublabel": "question_orbit.py · 租约 / 预算",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/question_orbit.py",
+          "line": 57,
+          "end_line": 79
+        },
+        {
+          "path": "src/uuma/question_orbit.py",
+          "line": 81,
+          "end_line": 105
+        }
+      ]
+    },
+    {
+      "id": "topics",
+      "type": "backend",
+      "label": "TopicKnowledgeService",
+      "sublabel": "wisdom_topics.py · 主题 / 版本",
+      "pos": [
+        820,
+        40
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 193,
+          "end_line": 218
+        },
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 778,
+          "end_line": 825
+        },
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 892,
+          "end_line": 949
+        }
+      ]
+    },
+    {
+      "id": "ingestor",
+      "type": "backend",
+      "label": "KnowledgeIngestor",
+      "sublabel": "knowledge_ingest.py · 原始资料",
+      "pos": [
+        40,
+        230
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 30,
+          "end_line": 55
+        },
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 177,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "id": "service",
+      "type": "backend",
+      "label": "KnowledgeService",
+      "sublabel": "knowledge_service.py · 语义与权限",
+      "pos": [
+        430,
+        230
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 98,
+          "end_line": 140
+        },
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 586,
+          "end_line": 627
+        }
+      ]
+    },
+    {
+      "id": "constructor",
+      "type": "backend",
+      "label": "KnowledgeConstructor",
+      "sublabel": "knowledge_construction.py · 候选形成",
+      "pos": [
+        820,
+        230
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_construction.py",
+          "line": 19,
+          "end_line": 80
+        }
+      ]
+    },
+    {
+      "id": "synth",
+      "type": "backend",
+      "label": "OrbitCompactSynthesizer",
+      "sublabel": "orbit_synthesis.py · 引文合成",
+      "pos": [
+        40,
+        420
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/orbit_synthesis.py",
+          "line": 41,
+          "end_line": 74
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "type": "database",
+      "label": "KnowledgeStore",
+      "sublabel": "knowledge_store.py · SQLite 与事件",
+      "pos": [
+        430,
+        420
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_store.py",
+          "line": 54,
+          "end_line": 85
+        },
+        {
+          "path": "src/uuma/knowledge_store.py",
+          "line": 441,
+          "end_line": 485
+        }
+      ]
+    },
+    {
+      "id": "projection",
+      "type": "backend",
+      "label": "KagProjectionWorker",
+      "sublabel": "kag_adapter.py · outbox 同步",
+      "pos": [
+        820,
+        420
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 368,
+          "end_line": 419
+        }
+      ]
+    },
+    {
+      "id": "backend",
+      "type": "backend",
+      "label": "OpenSpgKagBackend",
+      "sublabel": "kag_adapter.py · 语义 HTTP",
+      "pos": [
+        40,
+        610
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 298,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "id": "base",
+      "type": "security",
+      "label": "ObservatorySourceAdapter",
+      "sublabel": "base.py · 只读适配契约",
+      "pos": [
+        430,
+        610
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 11,
+          "end_line": 46
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "WisdomAdapter",
+      "sublabel": "wisdom.py · 读取两个独立数据库",
+      "pos": [
+        820,
+        610
+      ],
+      "size": [
+        240,
+        80
+      ],
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 15,
+          "end_line": 29
+        },
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 109,
+          "end_line": 127
+        },
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 408,
+          "end_line": 425
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "runner-orbit",
+      "from": "runner",
+      "to": "orbit"
+    },
+    {
+      "id": "runner-ingestor",
+      "from": "runner",
+      "to": "ingestor"
+    },
+    {
+      "id": "runner-constructor",
+      "from": "runner",
+      "to": "constructor"
+    },
+    {
+      "id": "runner-synth",
+      "from": "runner",
+      "to": "synth"
+    },
+    {
+      "id": "runner-projection",
+      "from": "runner",
+      "to": "projection"
+    },
+    {
+      "id": "orbit-topics",
+      "from": "orbit",
+      "to": "topics"
+    },
+    {
+      "id": "orbit-service",
+      "from": "orbit",
+      "to": "service"
+    },
+    {
+      "id": "topics-service",
+      "from": "topics",
+      "to": "service"
+    },
+    {
+      "id": "ingestor-service",
+      "from": "ingestor",
+      "to": "service"
+    },
+    {
+      "id": "constructor-service",
+      "from": "constructor",
+      "to": "service"
+    },
+    {
+      "id": "constructor-backend",
+      "from": "constructor",
+      "to": "backend"
+    },
+    {
+      "id": "service-store",
+      "from": "service",
+      "to": "store",
+      "label": "创建并持有"
+    },
+    {
+      "id": "synth-service",
+      "from": "synth",
+      "to": "service"
+    },
+    {
+      "id": "synth-backend",
+      "from": "synth",
+      "to": "backend"
+    },
+    {
+      "id": "projection-service",
+      "from": "projection",
+      "to": "service"
+    },
+    {
+      "id": "projection-backend",
+      "from": "projection",
+      "to": "backend"
+    },
+    {
+      "id": "adapter-base",
+      "from": "adapter",
+      "to": "base",
+      "label": "继承"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "代码关系图的粒度",
+      "items": [
+        "节点是实际 Python 类型；箭头从依赖方指向被依赖方，非 HTTP 或研究数据流。继承与对象创建关系单独标注。",
+        "仅展开相关类型；完整方法签名、更多辅助类型和导入列表可从节点源码引用查看。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "入口模块与真实装配",
+      "items": [
+        "mcp_knowledge.py 的 _service / _topics / _orbits / _reasoner 等工厂绑定这些对象；build_runner 另行装配后台依赖。",
+        "runner 持有的依赖以构造函数注入；KnowledgeService 创建并拥有 KnowledgeStore。图只显示与本请求有关的类型与部分方法。"
+      ]
+    },
+    {
+      "dot": "violet",
+      "title": "UI 模块调用关系",
+      "items": [
+        "observatory/adapters/registry.py → WisdomAdapter → ObservatoryItem；server.py 暴露读取 API。",
+        "observatory/static/app.js：renderWisdomPreviewHtml 绘制卡片；knowledge_topic 分支绘制检视抽屉。",
+        "wisdom_view.py → TopicKnowledgeService → wisdom_web.py 的 render_topic_page / render_topic_index；页内请求 graph API。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "知识权限边界",
+      "items": [
+        "新断言必须保持 CANDIDATE；Wisdom-Oldman 可提案，只有 Orchestrator 身份能 apply / reject / reverse。",
+        "主题文档发布不等于断言已获审批；uuma.db、wisdom.db 与 Hermes state.db 各自独立。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前运行路径",
+      "items": [
+        "OrbitRunner 调用 located_evidence_only=True，保存来源、文档、切块及定位证据；完整 KAG 实体/关系抽取是另行调用的能力。",
+        "图谱或推理失败会阻止知识回答；状态、文档查看及暂停/继续仍可使用持久化记录。"
+      ]
+    }
+  ]
+}

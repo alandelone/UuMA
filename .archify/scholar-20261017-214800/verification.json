@@ -1,0 +1,250 @@
+{
+  "repository": "https://github.com/alandelone/UuMA.git",
+  "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+  "verified_diagrams": [
+    {
+      "type": "architecture",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "architecture/scholar-architecture.html",
+      "receipt": "architecture/review-3/scholar-architecture.finalize-summary.json",
+      "visual_review": "not-requested",
+      "layout_advice": {
+        "action": "inspect-route-readability",
+        "signals": {
+          "resolvedCrossovers": 1
+        },
+        "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+        "affectedRoutes": {
+          "crossings": [
+            {
+              "left": {
+                "id": "c-u",
+                "from": "control",
+                "to": "uuma",
+                "label": "追加事件",
+                "collectionIndex": 6,
+                "artifactIndex": 7
+              },
+              "right": {
+                "id": "ad-ca",
+                "from": "adapter",
+                "to": "catalog",
+                "label": "只读计数 / 层级",
+                "collectionIndex": 10,
+                "artifactIndex": 11
+              },
+              "point": [
+                691,
+                472
+              ]
+            }
+          ],
+          "detours": [],
+          "truncated": false
+        },
+        "hints": [
+          "control → uuma crosses adapter → catalog: move the node of whichever is a branch, return, or second entrance to the other side of the main path, so that relationship runs through an empty corridor."
+        ],
+        "repair": "Trace these relationships at the desktop viewport. For Architecture, use references/architecture-layout-repair.md: reflow a blocked main path or tangled connected scene, and repair an isolated defect locally only when the surrounding composition is accepted. Preserve all semantic content and user-fixed geometry. Rerun finalize once after the edit."
+      },
+      "update": {
+        "status": "current",
+        "installedVersion": "3.1.0",
+        "availableVersion": "3.1.0",
+        "releaseNotes": null,
+        "checkedAt": "2026-10-17T15:07:17.425Z",
+        "source": "cache",
+        "noticeRequired": false,
+        "noticeText": null
+      }
+    },
+    {
+      "type": "workflow",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "workflow/scholar-workflow.html",
+      "receipt": "workflow/scholar-workflow.finalize-summary.json",
+      "visual_review": "not-requested",
+      "layout_advice": null,
+      "update": {
+        "status": "current",
+        "installedVersion": "3.1.0",
+        "availableVersion": "3.1.0",
+        "releaseNotes": null,
+        "checkedAt": "2026-10-17T15:07:17.425Z",
+        "source": "cache",
+        "noticeRequired": false,
+        "noticeText": null
+      }
+    },
+    {
+      "type": "sequence",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "sequence/scholar-sequence.html",
+      "receipt": "sequence/review-3/scholar-sequence.finalize-summary.json",
+      "visual_review": "not-requested",
+      "layout_advice": null,
+      "update": {
+        "status": "current",
+        "installedVersion": "3.1.0",
+        "availableVersion": "3.1.0",
+        "releaseNotes": null,
+        "checkedAt": "2026-10-17T15:07:17.425Z",
+        "source": "cache",
+        "noticeRequired": false,
+        "noticeText": null
+      }
+    },
+    {
+      "type": "dataflow",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "dataflow/scholar-dataflow.html",
+      "receipt": "dataflow/review-3/scholar-dataflow.finalize-summary.json",
+      "visual_review": "not-requested",
+      "layout_advice": {
+        "action": "inspect-route-readability",
+        "signals": {
+          "resolvedCrossovers": 2,
+          "routesOverSuggestedBends": 2
+        },
+        "reason": "Automated gates passed, but crossings or detours still need perceptual review before claiming visual quality.",
+        "affectedRoutes": {
+          "crossings": [
+            {
+              "left": {
+                "id": "fallback",
+                "from": "defaults",
+                "to": "adapter",
+                "label": "回退与固定值",
+                "collectionIndex": 3,
+                "artifactIndex": 4
+              },
+              "right": {
+                "id": "views",
+                "from": "cat",
+                "to": "workbench",
+                "label": "研究视图",
+                "collectionIndex": 5,
+                "artifactIndex": 6
+              },
+              "point": [
+                629.5,
+                166
+              ]
+            },
+            {
+              "left": {
+                "id": "views",
+                "from": "cat",
+                "to": "workbench",
+                "label": "研究视图",
+                "collectionIndex": 5,
+                "artifactIndex": 6
+              },
+              "right": {
+                "id": "run-items",
+                "from": "uuma",
+                "to": "adapter",
+                "label": "Run / 健康",
+                "collectionIndex": 13,
+                "artifactIndex": 14
+              },
+              "point": [
+                637.5,
+                227
+              ]
+            }
+          ],
+          "detours": [
+            {
+              "relationship": {
+                "id": "read",
+                "from": "cat",
+                "to": "adapter",
+                "label": "只读计数",
+                "collectionIndex": 2,
+                "artifactIndex": 3
+              },
+              "bends": 4,
+              "stretch": 1.3
+            },
+            {
+              "relationship": {
+                "id": "run-items",
+                "from": "uuma",
+                "to": "adapter",
+                "label": "Run / 健康",
+                "collectionIndex": 13,
+                "artifactIndex": 14
+              },
+              "bends": 4,
+              "stretch": 1
+            }
+          ],
+          "truncated": false
+        },
+        "repair": "Advisory only: this mode places or routes these relationships itself. Report them; do not remove relationships or meaning to reduce crossings."
+      },
+      "update": {
+        "status": "current",
+        "installedVersion": "3.1.0",
+        "availableVersion": "3.1.0",
+        "releaseNotes": null,
+        "checkedAt": "2026-10-17T15:07:17.425Z",
+        "source": "cache",
+        "noticeRequired": false,
+        "noticeText": null
+      }
+    },
+    {
+      "type": "class",
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "artifact": "class/scholar-code.html",
+      "receipt": "class/scholar-code.finalize-summary.json",
+      "visual_review": "not-requested",
+      "layout_advice": null,
+      "update": {
+        "status": "current",
+        "installedVersion": "3.1.0",
+        "availableVersion": "3.1.0",
+        "releaseNotes": null,
+        "checkedAt": "2026-10-17T15:07:17.425Z",
+        "source": "cache",
+        "noticeRequired": false,
+        "noticeText": null
+      }
+    }
+  ],
+  "source_scope": "UuMA implementation; RSTV4 internals are external documented contracts.",
+  "product_source_modified": false,
+  "service_runtime_verified": false
+}

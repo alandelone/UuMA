@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "ok": false,
+  "command": "finalize",
+  "status": "fail",
+  "type": "architecture",
+  "quality": "showcase",
+  "startedAt": "2026-10-17T15:19:46.017Z",
+  "specification": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\candidate.json",
+    "sha256": "06fbcfb236d2a683981600293360983f008ab1b04dfa24e614284c7e95c64da2",
+    "bytes": 9951
+  },
+  "artifact": {
+    "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+    "sha256": "4850b609fb011ff3f2e7df433ab186a00f20969a7a98d7ad51b48a4dd6437ae6",
+    "bytes": 835387
+  },
+  "stages": {
+    "validate": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": null,
+      "execution": "embedded-in-deliver",
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\candidate.json",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\test_codespace\\UuMA",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": true,
+        "command": "validate",
+        "specification": {
+          "sha256": "06fbcfb236d2a683981600293360983f008ab1b04dfa24e614284c7e95c64da2",
+          "bytes": 9951
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        }
+      }
+    },
+    "deliver": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 5154,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "deliver",
+        "architecture",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\candidate.json",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+        "--quality",
+        "showcase",
+        "--repo-root",
+        "C:\\test_codespace\\UuMA",
+        "--json"
+      ],
+      "receipt": {
+        "schemaVersion": 1,
+        "receiptId": "afbab360-29a1-41f7-9cc1-4b208ea1359c",
+        "ok": true,
+        "command": "deliver",
+        "type": "architecture",
+        "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\candidate.json",
+        "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+        "specification": {
+          "sha256": "06fbcfb236d2a683981600293360983f008ab1b04dfa24e614284c7e95c64da2",
+          "bytes": 9951
+        },
+        "artifact": {
+          "sha256": "4850b609fb011ff3f2e7df433ab186a00f20969a7a98d7ad51b48a4dd6437ae6",
+          "bytes": 835387
+        },
+        "validation": {
+          "checksPassed": 9,
+          "checkCount": 9,
+          "compositionProfile": "showcase",
+          "compositionStatus": "pass",
+          "errors": 0,
+          "warnings": 0
+        },
+        "evidence": {
+          "verified": true,
+          "repository": "https://github.com/alandelone/UuMA",
+          "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+          "references": 21
+        },
+        "update": {
+          "status": "unavailable",
+          "installedVersion": null,
+          "availableVersion": null,
+          "releaseNotes": null,
+          "checkedAt": null,
+          "source": null,
+          "noticeRequired": false,
+          "noticeText": null,
+          "reason": "disabled"
+        }
+      }
+    },
+    "check": {
+      "status": "pass",
+      "exitCode": 0,
+      "durationMs": 641,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "check",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+        "--require-provenance"
+      ],
+      "receipt": {
+        "ok": true,
+        "file": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+        "artifact": {
+          "sha256": "4850b609fb011ff3f2e7df433ab186a00f20969a7a98d7ad51b48a4dd6437ae6",
+          "bytes": 835387
+        },
+        "checks": [
+          {
+            "name": "single_svg",
+            "ok": true,
+            "details": [
+              "found 1 <svg> block(s)"
+            ]
+          },
+          {
+            "name": "finite_svg",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "orthogonal_arrows",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "label_route_clearance",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_crossings",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "relationship_corridors",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "container_border_runs",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "route_rhythm",
+            "ok": true,
+            "details": []
+          },
+          {
+            "name": "legend_clearance",
+            "ok": true,
+            "details": []
+          }
+        ],
+        "composition": {
+          "schemaVersion": 1,
+          "profile": "showcase",
+          "status": "pass",
+          "summary": {
+            "errors": 0,
+            "warnings": 0
+          },
+          "metrics": {
+            "properCrossings": 0,
+            "resolvedCrossovers": 15,
+            "ambiguousCorridors": 0,
+            "arrowheadCollisions": 0,
+            "containerBorderRuns": 0,
+            "labelRouteClearanceIssues": 0,
+            "labelCanvasOverflowIssues": 0,
+            "minLabelRouteClearance": 45,
+            "desktopReadabilityIssues": 0,
+            "viewportHeightIssues": 0,
+            "minProjectedNodeTextPx": 6.763636363636364,
+            "maxBends": 4,
+            "routesOverSuggestedBends": 4,
+            "maxStretch": 1.106,
+            "routesOverSuggestedStretch": 0,
+            "minSegmentPx": 24,
+            "minInteriorSegmentPx": 29,
+            "shortSegmentCount": 0,
+            "shortEndpointSegmentCount": 0,
+            "shortInteriorSegmentCount": 0,
+            "microSegmentCount": 0
+          },
+          "suggestedLimits": {
+            "bendsPerRelationship": 2,
+            "stretch": 1.35,
+            "segmentPx": 16,
+            "microSegmentPx": 8
+          },
+          "routeReview": {
+            "crossings": [
+              {
+                "left": {
+                  "id": "runner-orbit",
+                  "from": "runner",
+                  "to": "orbit",
+                  "label": "",
+                  "collectionIndex": 0,
+                  "artifactIndex": 1
+                },
+                "right": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "point": [
+                  390,
+                  80
+                ],
+                "sharedNode": "runner"
+              },
+              {
+                "left": {
+                  "id": "runner-ingestor",
+                  "from": "runner",
+                  "to": "ingestor",
+                  "label": "",
+                  "collectionIndex": 1,
+                  "artifactIndex": 2
+                },
+                "right": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "point": [
+                  390,
+                  175
+                ],
+                "sharedNode": "runner"
+              },
+              {
+                "left": {
+                  "id": "runner-ingestor",
+                  "from": "runner",
+                  "to": "ingestor",
+                  "label": "",
+                  "collectionIndex": 1,
+                  "artifactIndex": 2
+                },
+                "right": {
+                  "id": "orbit-service",
+                  "from": "orbit",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "point": [
+                  406,
+                  175
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-constructor",
+                  "from": "runner",
+                  "to": "constructor",
+                  "label": "",
+                  "collectionIndex": 2,
+                  "artifactIndex": 3
+                },
+                "right": {
+                  "id": "topics-service",
+                  "from": "topics",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "point": [
+                  694,
+                  175
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "right": {
+                  "id": "orbit-topics",
+                  "from": "orbit",
+                  "to": "topics",
+                  "label": "",
+                  "collectionIndex": 5,
+                  "artifactIndex": 6
+                },
+                "point": [
+                  550,
+                  37
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "right": {
+                  "id": "orbit-service",
+                  "from": "orbit",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 6,
+                  "artifactIndex": 7
+                },
+                "point": [
+                  390,
+                  94
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "right": {
+                  "id": "ingestor-service",
+                  "from": "ingestor",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 8,
+                  "artifactIndex": 9
+                },
+                "point": [
+                  390,
+                  270
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "right": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  390,
+                  417
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-projection",
+                  "from": "runner",
+                  "to": "projection",
+                  "label": "",
+                  "collectionIndex": 4,
+                  "artifactIndex": 5
+                },
+                "right": {
+                  "id": "topics-service",
+                  "from": "topics",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 7,
+                  "artifactIndex": 8
+                },
+                "point": [
+                  694,
+                  227
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-projection",
+                  "from": "runner",
+                  "to": "projection",
+                  "label": "",
+                  "collectionIndex": 4,
+                  "artifactIndex": 5
+                },
+                "right": {
+                  "id": "constructor-service",
+                  "from": "constructor",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 9,
+                  "artifactIndex": 10
+                },
+                "point": [
+                  796,
+                  270
+                ]
+              },
+              {
+                "left": {
+                  "id": "runner-projection",
+                  "from": "runner",
+                  "to": "projection",
+                  "label": "",
+                  "collectionIndex": 4,
+                  "artifactIndex": 5
+                },
+                "right": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "point": [
+                  796,
+                  417
+                ]
+              },
+              {
+                "left": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "service-store",
+                  "from": "service",
+                  "to": "store",
+                  "label": "创建并持有",
+                  "collectionIndex": 11,
+                  "artifactIndex": 12
+                },
+                "point": [
+                  550,
+                  417
+                ]
+              },
+              {
+                "left": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "synth-service",
+                  "from": "synth",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 12,
+                  "artifactIndex": 13
+                },
+                "point": [
+                  398,
+                  417
+                ]
+              },
+              {
+                "left": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "projection-service",
+                  "from": "projection",
+                  "to": "service",
+                  "label": "",
+                  "collectionIndex": 14,
+                  "artifactIndex": 15
+                },
+                "point": [
+                  745,
+                  417
+                ]
+              },
+              {
+                "left": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "right": {
+                  "id": "projection-backend",
+                  "from": "projection",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 15,
+                  "artifactIndex": 16
+                },
+                "point": [
+                  304,
+                  555
+                ],
+                "sharedNode": "backend"
+              }
+            ],
+            "detours": [
+              {
+                "relationship": {
+                  "id": "runner-synth",
+                  "from": "runner",
+                  "to": "synth",
+                  "label": "",
+                  "collectionIndex": 3,
+                  "artifactIndex": 4
+                },
+                "bends": 3,
+                "stretch": 1.07
+              },
+              {
+                "relationship": {
+                  "id": "runner-projection",
+                  "from": "runner",
+                  "to": "projection",
+                  "label": "",
+                  "collectionIndex": 4,
+                  "artifactIndex": 5
+                },
+                "bends": 3,
+                "stretch": 1
+              },
+              {
+                "relationship": {
+                  "id": "orbit-topics",
+                  "from": "orbit",
+                  "to": "topics",
+                  "label": "",
+                  "collectionIndex": 5,
+                  "artifactIndex": 6
+                },
+                "bends": 4,
+                "stretch": 1.106,
+                "directCorridorBlockers": [
+                  {
+                    "id": "runner",
+                    "label": "OrbitRunner",
+                    "box": [
+                      430,
+                      40,
+                      240,
+                      80
+                    ]
+                  }
+                ]
+              },
+              {
+                "relationship": {
+                  "id": "constructor-backend",
+                  "from": "constructor",
+                  "to": "backend",
+                  "label": "",
+                  "collectionIndex": 10,
+                  "artifactIndex": 11
+                },
+                "bends": 3,
+                "stretch": 1
+              }
+            ]
+          },
+          "leadingSpace": {
+            "measured": true,
+            "emptyTopPx": 16,
+            "emptyTopRatio": 0.021,
+            "occupiedTop": 16,
+            "viewBoxTop": 0,
+            "canvasHeight": 758,
+            "typicalNodeHeight": 80,
+            "reviewSuggested": false
+          },
+          "desktopReadability": {
+            "budgetBasis": "legacy-930",
+            "readerContract": "declared-wide-v1",
+            "availableDiagramWidth": 930,
+            "actualBudgetPx": 930,
+            "limit": "legacy",
+            "requestedTargetPx": 7.5,
+            "requestedTargetMet": false,
+            "hardFloorPx": 6,
+            "hardFloorMet": true,
+            "minimumOwner": {
+              "kind": "edge",
+              "id": "service-store",
+              "from": "service",
+              "to": "store"
+            },
+            "minimumSourceTextPx": 8,
+            "minimumProjectedTextPx": 6.763636363636364,
+            "semanticTextCount": 26
+          },
+          "issues": []
+        },
+        "provenance": "current",
+        "deliveryReceiptId": "afbab360-29a1-41f7-9cc1-4b208ea1359c"
+      }
+    },
+    "browser-check": {
+      "status": "fail",
+      "exitCode": 1,
+      "durationMs": 10611,
+      "command": [
+        "C:\\Users\\Ling's\\AppData\\Local\\hermes\\node\\node.exe",
+        "C:\\Users\\Ling's\\.codex\\skills\\archify\\bin\\archify.mjs",
+        "browser-check",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+        "--json",
+        "--require-provenance",
+        "--out-dir",
+        "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\review-2"
+      ],
+      "execution": "in-process",
+      "receipt": {
+        "schemaVersion": 1,
+        "ok": false,
+        "command": "browser-check",
+        "evidenceKind": "automated-browser",
+        "status": "fail",
+        "visualReview": "not-requested",
+        "provenance": "current",
+        "deliveryReceiptId": "afbab360-29a1-41f7-9cc1-4b208ea1359c",
+        "artifact": {
+          "path": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html",
+          "sha256": "4850b609fb011ff3f2e7df433ab186a00f20969a7a98d7ad51b48a4dd6437ae6",
+          "bytes": 835387
+        },
+        "state": {
+          "detail": "read",
+          "motion": "still"
+        },
+        "chrome": {
+          "status": "available",
+          "executable": "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe"
+        },
+        "diagnostics": [
+          {
+            "code": "viewer/temp-cleanup-incomplete",
+            "severity": "error",
+            "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+            "subject": {
+              "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html"
+            },
+            "evidence": {
+              "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-LG4Zwu\".",
+              "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-LG4Zwu"
+            },
+            "supportedFixes": [
+              "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+            ]
+          }
+        ],
+        "containment": {
+          "status": "fail",
+          "policy": "fit-or-reader-declared-readable-vertical-scroll",
+          "viewports": []
+        },
+        "themeStates": {
+          "status": "fail",
+          "viewports": []
+        },
+        "readability": {
+          "status": "fail",
+          "minimumProjectedNodeTextPx": 6,
+          "viewports": []
+        },
+        "viewerChrome": {
+          "status": "fail",
+          "viewports": []
+        },
+        "captures": {
+          "status": "not-requested",
+          "screenshots": [],
+          "contactSheet": null
+        },
+        "sidecars": {
+          "directory": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\review-2",
+          "receipt": "wisdom-class.browser-check.json",
+          "files": []
+        },
+        "error": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-LG4Zwu\"."
+      }
+    }
+  },
+  "diagnostics": [
+    {
+      "code": "viewer/temp-cleanup-incomplete",
+      "severity": "error",
+      "message": "Browser cleanup could not safely finish; inspect the reported retained path.",
+      "subject": {
+        "artifact": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\wisdom-class.html"
+      },
+      "evidence": {
+        "reason": "Chrome did not exit; retained temporary profile \"C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-LG4Zwu\".",
+        "retainedDirectory": "C:\\Users\\Ling's\\AppData\\Local\\Temp\\archify-visual-check-profile-LG4Zwu"
+      },
+      "supportedFixes": [
+        "resolve the reported process or filesystem failure; verify directory ownership before manual cleanup"
+      ]
+    }
+  ],
+  "evidence": {
+    "receipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\review-2\\wisdom-class.finalize.json",
+    "summaryReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\review-2\\wisdom-class.finalize-summary.json",
+    "browserCheckReceipt": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\class\\review-2\\wisdom-class.browser-check.json"
+  },
+  "visualReview": "not-requested",
+  "failedStage": "browser-check",
+  "finishedAt": "2026-10-17T15:20:04.208Z",
+  "durationMs": 18191,
+  "update": {
+    "status": "current",
+    "installedVersion": "3.1.0",
+    "availableVersion": "3.1.0",
+    "releaseNotes": null,
+    "checkedAt": "2026-10-17T15:07:17.425Z",
+    "source": "cache",
+    "noticeRequired": false,
+    "noticeText": null
+  }
+}

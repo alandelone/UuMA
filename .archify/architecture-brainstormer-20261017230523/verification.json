@@ -1,0 +1,65 @@
+{
+  "repository": {
+    "url": "https://github.com/alandelone/UuMA.git",
+    "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+  },
+  "diagrams": [
+    {
+      "type": "architecture",
+      "html": "architecture/brainstormer-architecture.html",
+      "receipt": "architecture/review-2/brainstormer-architecture.finalize-summary.json",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      }
+    },
+    {
+      "type": "workflow",
+      "html": "workflow/brainstormer-workflow.html",
+      "receipt": "workflow/brainstormer-workflow.finalize-summary.json",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      }
+    },
+    {
+      "type": "sequence",
+      "html": "sequence/brainstormer-sequence.html",
+      "receipt": "sequence/brainstormer-sequence.finalize-summary.json",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      }
+    },
+    {
+      "type": "dataflow",
+      "html": "dataflow/brainstormer-dataflow.html",
+      "receipt": "dataflow/brainstormer-dataflow.finalize-summary.json",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      }
+    },
+    {
+      "type": "class",
+      "html": "class/brainstormer-class.html",
+      "receipt": "class/brainstormer-class.finalize-summary.json",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      }
+    }
+  ],
+  "visualReview": "not-requested",
+  "liveServices": "not-tested"
+}

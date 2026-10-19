@@ -1,0 +1,464 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Wisdom-Oldman · 数据血缘、存储与 UI 消费",
+    "output": ".archify/architecture-wisdom-oldman-20261017-230951/dataflow/wisdom-dataflow.html",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "stages": [
+    {
+      "label": "输入"
+    },
+    {
+      "label": "摄入与定位"
+    },
+    {
+      "label": "独立持久化"
+    },
+    {
+      "label": "派生与读取"
+    },
+    {
+      "label": "UI 消费"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "source",
+      "type": "cloud",
+      "label": "研究资料",
+      "sublabel": "网页 / 文件 / 文本",
+      "stage": 0,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 43,
+          "end_line": 58
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 580,
+          "end_line": 594
+        }
+      ]
+    },
+    {
+      "id": "ingest",
+      "type": "backend",
+      "label": "摄入服务",
+      "sublabel": "摘要哈希与去重",
+      "stage": 1,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 177,
+          "end_line": 236
+        }
+      ]
+    },
+    {
+      "id": "bytes",
+      "type": "database",
+      "label": "wisdom-content",
+      "sublabel": "内容寻址原始字节",
+      "stage": 2,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_ingest.py",
+          "line": 187,
+          "end_line": 191
+        }
+      ]
+    },
+    {
+      "id": "evidence",
+      "type": "backend",
+      "label": "定位证据形成",
+      "sublabel": "runner 不抽实体关系",
+      "stage": 1,
+      "row": 1,
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_construction.py",
+          "line": 26,
+          "end_line": 59
+        },
+        {
+          "path": "src/uuma/orbit_runner.py",
+          "line": 611,
+          "end_line": 620
+        }
+      ]
+    },
+    {
+      "id": "wisdom",
+      "type": "database",
+      "label": "wisdom.db",
+      "sublabel": "来源 / 证据 / 事件 / Orbit",
+      "stage": 2,
+      "row": 1,
+      "sources": [
+        {
+          "path": "src/uuma/settings.py",
+          "line": 58,
+          "end_line": 64
+        },
+        {
+          "path": "src/uuma/knowledge_store.py",
+          "line": 441,
+          "end_line": 485
+        },
+        {
+          "path": "src/uuma/knowledge_service.py",
+          "line": 143,
+          "end_line": 178
+        }
+      ]
+    },
+    {
+      "id": "projection",
+      "type": "backend",
+      "label": "投影同步",
+      "sublabel": "显式调用 outbox worker",
+      "stage": 3,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 382,
+          "end_line": 419
+        },
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 728,
+          "end_line": 732
+        }
+      ]
+    },
+    {
+      "id": "graph",
+      "type": "cloud",
+      "label": "KAG 运行时",
+      "sublabel": "可重建的图谱投影",
+      "stage": 4,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 340,
+          "end_line": 365
+        }
+      ]
+    },
+    {
+      "id": "question",
+      "type": "external",
+      "label": "研究问题",
+      "sublabel": "真实 research 意图",
+      "stage": 0,
+      "row": 3,
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 449,
+          "end_line": 465
+        }
+      ]
+    },
+    {
+      "id": "preflight",
+      "type": "security",
+      "label": "意图与主题门控",
+      "sublabel": "新主题须明确批准",
+      "stage": 1,
+      "row": 3,
+      "sources": [
+        {
+          "path": "src/uuma/mcp_knowledge.py",
+          "line": 510,
+          "end_line": 535
+        }
+      ]
+    },
+    {
+      "id": "synthesis",
+      "type": "backend",
+      "label": "有据回答",
+      "sublabel": "图谱引用 + 相关摘录",
+      "stage": 2,
+      "row": 3,
+      "sources": [
+        {
+          "path": "src/uuma/orbit_synthesis.py",
+          "line": 45,
+          "end_line": 74
+        },
+        {
+          "path": "src/uuma/orbit_synthesis.py",
+          "line": 95,
+          "end_line": 134
+        }
+      ]
+    },
+    {
+      "id": "published",
+      "type": "backend",
+      "label": "版本发布",
+      "sublabel": "写入同一 wisdom.db",
+      "stage": 3,
+      "row": 3,
+      "sources": [
+        {
+          "path": "src/uuma/wisdom_topics.py",
+          "line": 892,
+          "end_line": 949
+        }
+      ]
+    },
+    {
+      "id": "doc",
+      "type": "frontend",
+      "label": "知识中心",
+      "sublabel": "文档 / 版本 / 图谱",
+      "stage": 4,
+      "row": 3,
+      "sources": [
+        {
+          "path": "src/uuma/wisdom_view.py",
+          "line": 73,
+          "end_line": 107
+        },
+        {
+          "path": "src/uuma/wisdom_web.py",
+          "line": 625,
+          "end_line": 684
+        }
+      ]
+    },
+    {
+      "id": "control",
+      "type": "database",
+      "label": "uuma.db",
+      "sublabel": "tasks / runs / 心跳",
+      "stage": 2,
+      "row": 4,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 408,
+          "end_line": 425
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "WisdomAdapter",
+      "sublabel": "分库只读并组装",
+      "stage": 3,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 109,
+          "end_line": 127
+        },
+        {
+          "path": "src/uuma/observatory/adapters/wisdom.py",
+          "line": 408,
+          "end_line": 425
+        },
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 19,
+          "end_line": 30
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Observatory",
+      "sublabel": "卡片与检视抽屉",
+      "stage": 4,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 229,
+          "end_line": 269
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 4506,
+          "end_line": 4586
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "source-ingest",
+      "from": "source",
+      "to": "ingest",
+      "label": "原始内容",
+      "variant": "emphasis"
+    },
+    {
+      "id": "ingest-bytes",
+      "from": "ingest",
+      "to": "bytes",
+      "label": "原始字节",
+      "variant": "default"
+    },
+    {
+      "id": "ingest-wisdom",
+      "from": "ingest",
+      "to": "wisdom",
+      "label": "来源与切块",
+      "variant": "emphasis"
+    },
+    {
+      "id": "wisdom-evidence",
+      "from": "wisdom",
+      "to": "evidence",
+      "label": "文档切块",
+      "variant": "default"
+    },
+    {
+      "id": "evidence-wisdom",
+      "from": "evidence",
+      "to": "wisdom",
+      "label": "定位证据",
+      "variant": "default"
+    },
+    {
+      "id": "wisdom-projection",
+      "from": "wisdom",
+      "to": "projection",
+      "label": "待投影任务",
+      "variant": "default"
+    },
+    {
+      "id": "projection-graph",
+      "from": "projection",
+      "to": "graph",
+      "label": "语义投影",
+      "variant": "emphasis"
+    },
+    {
+      "id": "question-preflight",
+      "from": "question",
+      "to": "preflight",
+      "label": "问题与意图",
+      "variant": "default"
+    },
+    {
+      "id": "preflight-synthesis",
+      "from": "preflight",
+      "to": "synthesis",
+      "label": "批准后问题",
+      "variant": "security"
+    },
+    {
+      "id": "graph-synthesis",
+      "from": "graph",
+      "to": "synthesis",
+      "label": "图谱引用",
+      "variant": "default"
+    },
+    {
+      "id": "wisdom-synthesis",
+      "from": "wisdom",
+      "to": "synthesis",
+      "label": "相关证据摘录",
+      "variant": "default"
+    },
+    {
+      "id": "synthesis-published",
+      "from": "synthesis",
+      "to": "published",
+      "label": "回答与引文",
+      "variant": "emphasis"
+    },
+    {
+      "id": "published-wisdom",
+      "from": "published",
+      "to": "wisdom",
+      "label": "文档新版本",
+      "variant": "default"
+    },
+    {
+      "id": "wisdom-doc",
+      "from": "wisdom",
+      "to": "doc",
+      "label": "只读主题数据",
+      "variant": "default"
+    },
+    {
+      "id": "wisdom-adapter",
+      "from": "wisdom",
+      "to": "adapter",
+      "label": "知识研究状态",
+      "variant": "default"
+    },
+    {
+      "id": "control-adapter",
+      "from": "control",
+      "to": "adapter",
+      "label": "独立任务记录",
+      "variant": "default"
+    },
+    {
+      "id": "adapter-ui",
+      "from": "adapter",
+      "to": "ui",
+      "label": "HTTP 数据",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "知识权限边界",
+      "items": [
+        "新断言必须保持 CANDIDATE；Wisdom-Oldman 可提案，只有 Orchestrator 身份能 apply / reject / reverse。",
+        "主题文档发布不等于断言已获审批；uuma.db、wisdom.db 与 Hermes state.db 各自独立。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "当前运行路径",
+      "items": [
+        "OrbitRunner 调用 located_evidence_only=True，保存来源、文档、切块及定位证据；完整 KAG 实体/关系抽取是另行调用的能力。",
+        "图谱或推理失败会阻止知识回答；状态、文档查看及暂停/继续仍可使用持久化记录。"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "数据血缘与投影",
+      "items": [
+        "证据保留 source / document / chunk 的位置引用；版本包含 source_ids、evidence_ids 与研究状态。",
+        "投影 outbox 按对象类型筛选：来源与证据可投影；候选 claim/entity/relation 只有 ACCEPTED 后才投影。",
+        "KAG 返回图谱引用，合成器另从 canonical store 读取相关摘录，避免把检索引用误当成完整证据内容。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "UI 数据准确性限制",
+      "items": [
+        "Adapter 的 claims 与 gaps 查询当前未按 topic 过滤；卡片不能据此证明主题专属断言总数。",
+        "UI 存在固定 Cycle 文案、非零默认计数与启发式活跃提示；推荐以真实记录、租约和时间戳呈现。"
+      ]
+    }
+  ]
+}

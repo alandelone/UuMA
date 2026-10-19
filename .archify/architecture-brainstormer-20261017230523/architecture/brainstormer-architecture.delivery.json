@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "51a61bfa-2c8f-4346-9ce5-7aad9911e157",
+  "status": "current",
+  "command": "deliver",
+  "type": "architecture",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-brainstormer-20261017230523\\architecture\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-brainstormer-20261017230523\\architecture\\brainstormer-architecture.html",
+  "specification": {
+    "sha256": "3f2a5e20e767e77eb7e311f1a921b419a82095886addc1beb3849bbe82eb9116",
+    "bytes": 8683
+  },
+  "artifact": {
+    "sha256": "b5458fcb61693a91fce896c0f26c543332241a8f53518859076fa819590d0cfd",
+    "bytes": 831060
+  }
+}

@@ -1,0 +1,355 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "Brainstormer · 讨论状态与观测数据流",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-brainstormer-20261017230523/dataflow/brainstormer-dataflow.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "stages": [
+    {
+      "label": "输入入口"
+    },
+    {
+      "label": "管理 / 控制"
+    },
+    {
+      "label": "正式状态 / 采集"
+    },
+    {
+      "label": "投影 / 缓存"
+    },
+    {
+      "label": "界面消费"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "mcp",
+      "type": "backend",
+      "label": "Worker MCP",
+      "sublabel": "transaction / source_refs",
+      "stage": 0,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 281,
+          "end_line": 344
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 54,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "id": "daemon",
+      "type": "backend",
+      "label": "Daemon HTTP",
+      "sublabel": "user / topic / turn",
+      "stage": 0,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 156,
+          "end_line": 169
+        },
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 268,
+          "end_line": 330
+        },
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 336,
+          "end_line": 367
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "type": "backend",
+      "label": "State Manager",
+      "sublabel": "提案与审核门",
+      "stage": 1,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 295
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 629,
+          "end_line": 647
+        }
+      ]
+    },
+    {
+      "id": "udb",
+      "type": "database",
+      "label": "uuma.db",
+      "sublabel": "控制 events / 绑定回执",
+      "stage": 1,
+      "row": 2,
+      "sources": [
+        {
+          "path": "src/uuma/state_daemon.py",
+          "line": 47,
+          "end_line": 95
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 346,
+          "end_line": 373
+        }
+      ]
+    },
+    {
+      "id": "json",
+      "type": "database",
+      "label": "讨论 JSON",
+      "sublabel": "objects / links / history",
+      "stage": 2,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 765,
+          "end_line": 800
+        }
+      ]
+    },
+    {
+      "id": "project",
+      "type": "backend",
+      "label": "Adapter + API",
+      "sublabel": "主题 / 对象 / 修订号",
+      "stage": 3,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 71,
+          "end_line": 83
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 178,
+          "end_line": 242
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 227
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "决策视图",
+      "sublabel": "卡片 / Topic / 抽屉",
+      "stage": 4,
+      "row": 0,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1387,
+          "end_line": 1435
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1545,
+          "end_line": 1580
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1860,
+          "end_line": 1918
+        }
+      ]
+    },
+    {
+      "id": "spool",
+      "type": "database",
+      "label": "Hermes spool",
+      "sublabel": "profile / hook / tool",
+      "stage": 1,
+      "row": 4,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 141,
+          "end_line": 168
+        }
+      ]
+    },
+    {
+      "id": "harvest",
+      "type": "backend",
+      "label": "Harvester",
+      "sublabel": "2 秒采集 / 去重",
+      "stage": 2,
+      "row": 4,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 306,
+          "end_line": 338
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 346,
+          "end_line": 373
+        }
+      ]
+    },
+    {
+      "id": "odb",
+      "type": "database",
+      "label": "observatory.db",
+      "sublabel": "activity_events / FTS5",
+      "stage": 3,
+      "row": 4,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 17,
+          "end_line": 75
+        },
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 79,
+          "end_line": 131
+        }
+      ]
+    },
+    {
+      "id": "feed",
+      "type": "frontend",
+      "label": "活动流",
+      "sublabel": "筛选 / 搜索 / 详情",
+      "stage": 4,
+      "row": 4,
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 283,
+          "end_line": 304
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 4886,
+          "end_line": 4905
+        }
+      ]
+    }
+  ],
+  "flows": [
+    {
+      "id": "d1",
+      "from": "mcp",
+      "to": "store",
+      "label": "事务",
+      "variant": "emphasis"
+    },
+    {
+      "id": "d2",
+      "from": "daemon",
+      "to": "store",
+      "label": "验证提案",
+      "variant": "default"
+    },
+    {
+      "id": "d3",
+      "from": "daemon",
+      "to": "udb",
+      "label": "绑定与回执",
+      "variant": "default"
+    },
+    {
+      "id": "d4",
+      "from": "store",
+      "to": "json",
+      "label": "获准状态",
+      "variant": "emphasis"
+    },
+    {
+      "id": "d5",
+      "from": "json",
+      "to": "project",
+      "label": "JSON",
+      "variant": "emphasis"
+    },
+    {
+      "id": "d6",
+      "from": "project",
+      "to": "ui",
+      "label": "工作区快照",
+      "variant": "emphasis"
+    },
+    {
+      "id": "d7",
+      "from": "udb",
+      "to": "harvest",
+      "label": "events 表",
+      "variant": "default"
+    },
+    {
+      "id": "d8",
+      "from": "spool",
+      "to": "harvest",
+      "label": "Hook 事件",
+      "variant": "default"
+    },
+    {
+      "id": "d9",
+      "from": "harvest",
+      "to": "odb",
+      "label": "标准活动",
+      "variant": "default"
+    },
+    {
+      "id": "d10",
+      "from": "odb",
+      "to": "feed",
+      "label": "GET events",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "数据所有权",
+      "items": [
+        "JSON 是 Brainstormer 推理状态；uuma.db 是控制状态；observatory.db 是独立的活动缓存。",
+        "同名 uuma.db 内的 events 由 Harvester 读取；此路径不读取 Daemon 的 commit_receipts 表。",
+        "Activity 还可经 on_new_event → SSE 推送 UI；工作区 JSON 快照与活动流是两种数据。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "来源与真实性",
+      "items": [
+        "未保存正式 JSON 时，Adapter 可退到 Hermes state.db 只读会话查询，再退到内置待机条目。",
+        "前端也含示例 topics / project_id / revision 回退值，不能将它们当作实际进展证据。",
+        "Hermes state.db 仅作为只读来源；没有复用或合并业务数据库。"
+      ]
+    }
+  ]
+}

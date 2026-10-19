@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Forge · Observatory 展示时序",
+    "locale": "zh-CN",
+    "quality_profile": "showcase",
+    "output": ".archify/architecture-forge-lab-bot-20261017-231008/sequence/forge-sequence.html",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319",
+      "link_mode": "web"
+    }
+  },
+  "participants": [
+    {
+      "id": "user",
+      "type": "external",
+      "label": "用户",
+      "sublabel": "查看 Forge",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3039,
+          "end_line": 3059
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Observatory UI",
+      "sublabel": "app.js",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3158,
+          "end_line": 3186
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 4863,
+          "end_line": 4942
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 3500,
+          "end_line": 3553
+        }
+      ]
+    },
+    {
+      "id": "api",
+      "type": "backend",
+      "label": "Observatory API",
+      "sublabel": "server.py",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 269
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 306,
+          "end_line": 359
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 366,
+          "end_line": 409
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "ForgeAdapter",
+      "sublabel": "经 AdapterRegistry",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 88,
+          "end_line": 112
+        },
+        {
+          "path": "src/uuma/observatory/adapters/forge.py",
+          "line": 386,
+          "end_line": 428
+        },
+        {
+          "path": "src/uuma/observatory/adapters/forge.py",
+          "line": 678,
+          "end_line": 745
+        }
+      ]
+    },
+    {
+      "id": "db",
+      "type": "database",
+      "label": "lab.db",
+      "sublabel": "只读连接",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 19,
+          "end_line": 30
+        },
+        {
+          "path": "src/uuma/observatory/adapters/forge.py",
+          "line": 707,
+          "end_line": 745
+        }
+      ]
+    },
+    {
+      "id": "files",
+      "type": "database",
+      "label": "项目文件",
+      "sublabel": "Hardware 工作区",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/forge.py",
+          "line": 428,
+          "end_line": 481
+        },
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 306,
+          "end_line": 359
+        }
+      ]
+    }
+  ],
+  "messages": [
+    {
+      "from": "user",
+      "to": "ui",
+      "y": 160,
+      "label": "打开页面",
+      "variant": "emphasis"
+    },
+    {
+      "from": "ui",
+      "to": "api",
+      "y": 195,
+      "label": "GET /api/observatory/agents"
+    },
+    {
+      "from": "api",
+      "to": "adapter",
+      "y": 230,
+      "label": "get_fleet_workspaces()"
+    },
+    {
+      "from": "adapter",
+      "to": "db",
+      "y": 265,
+      "label": "只读查询采购与日志"
+    },
+    {
+      "from": "db",
+      "to": "adapter",
+      "y": 300,
+      "label": "记录与同步作业状态",
+      "variant": "return"
+    },
+    {
+      "from": "adapter",
+      "to": "files",
+      "y": 335,
+      "label": "扫描 project.yaml / 文档目录"
+    },
+    {
+      "from": "files",
+      "to": "adapter",
+      "y": 370,
+      "label": "项目字段与文件清单",
+      "variant": "return"
+    },
+    {
+      "from": "adapter",
+      "to": "api",
+      "y": 405,
+      "label": "ObservatoryItem 列表",
+      "variant": "return"
+    },
+    {
+      "from": "api",
+      "to": "ui",
+      "y": 440,
+      "label": "FleetOverview JSON",
+      "variant": "return"
+    },
+    {
+      "from": "ui",
+      "to": "api",
+      "y": 475,
+      "label": "GET /api/observatory/stream",
+      "variant": "dashed",
+      "note": "连接后再次读取工作区并发送 init；活动与回填更新通过 SSE 推送。"
+    },
+    {
+      "from": "api",
+      "to": "ui",
+      "y": 565,
+      "label": "event: init / activity",
+      "variant": "dashed"
+    },
+    {
+      "from": "user",
+      "to": "ui",
+      "y": 600,
+      "label": "点击 Forge 卡片",
+      "note": "用当前工作区数据打开 Forge 专用抽屉。"
+    },
+    {
+      "from": "user",
+      "to": "ui",
+      "y": 670,
+      "label": "点击项目 / 采购 / 日志项"
+    },
+    {
+      "from": "ui",
+      "to": "api",
+      "y": 705,
+      "label": "GET /items/{item_id}"
+    },
+    {
+      "from": "api",
+      "to": "adapter",
+      "y": 740,
+      "label": "get_item() → list_items()"
+    },
+    {
+      "from": "adapter",
+      "to": "api",
+      "y": 775,
+      "label": "重新读取后的条目",
+      "variant": "return",
+      "note": "复用前述数据库与文件读取；前端忽略已过期的异步返回。"
+    },
+    {
+      "from": "api",
+      "to": "ui",
+      "y": 855,
+      "label": "item + sessions",
+      "variant": "return"
+    },
+    {
+      "from": "user",
+      "to": "ui",
+      "y": 890,
+      "label": "点击 BOM 或工程文档"
+    },
+    {
+      "from": "ui",
+      "to": "api",
+      "y": 925,
+      "label": "GET /doc?project_id=…&path=…"
+    },
+    {
+      "from": "api",
+      "to": "files",
+      "y": 960,
+      "label": "验证路径和扩展名后读取"
+    },
+    {
+      "from": "files",
+      "to": "api",
+      "y": 995,
+      "label": "UTF-8 文本",
+      "variant": "return"
+    },
+    {
+      "from": "api",
+      "to": "ui",
+      "y": 1030,
+      "label": "CSV / Markdown / JSON 预览",
+      "variant": "return"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "同步实际行为",
+      "items": [
+        "GET /agents 与 SSE 连接会各自读取一份工作区快照，时序只展开首次读取。",
+        "SSE 的 activity 更新活动流；源码没有持续广播完整 Forge 工作区。",
+        "SSE 断开后 5 秒尝试重连；卡片兜底轮询的实际间隔是 10 秒，界面文字写的是 5s。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "只读与限制",
+      "items": [
+        "所有 API 经过本机环回或查看凭据检查。",
+        "业务数据库以 mode=ro 打开；文档仅允许规定扩展名并拒绝目录穿越。",
+        "纵向间距仅表示调用先后，不表示测量耗时。"
+      ]
+    }
+  ]
+}

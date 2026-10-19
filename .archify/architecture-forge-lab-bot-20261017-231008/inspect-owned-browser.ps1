@@ -1,0 +1,1 @@
+Get-CimInstance Win32_Process | Where-Object { $_.Name -eq 'chrome.exe' -and $_.CommandLine -like '*archify-visual-check-profile-Ox5hdQ*' } | Select-Object ProcessId,ParentProcessId,CommandLine | ConvertTo-Json -Depth 2

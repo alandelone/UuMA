@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "b2c4a195-d1aa-4f3d-b9d7-7d5aaf01f4ad",
+  "status": "current",
+  "command": "deliver",
+  "type": "dataflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-brainstormer-20261017230523\\dataflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-brainstormer-20261017230523\\dataflow\\brainstormer-dataflow.html",
+  "specification": {
+    "sha256": "ddf2a3eca9ca547e44a3fb1ff261c70c16b1808b340f2e1ffdd1ff81de68ef97",
+    "bytes": 8002
+  },
+  "artifact": {
+    "sha256": "dbd09c6059e16fc17740b425a194112e617d6ea2a69a95328ee69e496fc7c3b1",
+    "bytes": 823992
+  }
+}

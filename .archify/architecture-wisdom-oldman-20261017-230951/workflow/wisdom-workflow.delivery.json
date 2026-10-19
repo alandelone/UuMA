@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "bf13e973-cc7a-454d-b663-f7005f1d0347",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-wisdom-oldman-20261017-230951\\workflow\\wisdom-workflow.html",
+  "specification": {
+    "sha256": "020e08568d55d1ca970b748cfb1b38b55e78f870ae2d01e7435dbdf1559bfac3",
+    "bytes": 13774
+  },
+  "artifact": {
+    "sha256": "a70534b30c61b2c6e8068b0ee041d9294da612d6ddb0682c404d08f18a211fe7",
+    "bytes": 853178
+  }
+}

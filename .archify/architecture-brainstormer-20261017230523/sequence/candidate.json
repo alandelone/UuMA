@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Brainstormer · 审核事务到 Observatory 读回",
+    "locale": "zh-CN",
+    "output": ".archify/architecture-brainstormer-20261017230523/sequence/brainstormer-sequence.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "participants": [
+    {
+      "id": "brain",
+      "type": "backend",
+      "label": "Brainstormer",
+      "sublabel": "Worker MCP",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 281,
+          "end_line": 344
+        },
+        {
+          "path": "src/uuma/mcp_worker.py",
+          "line": 54,
+          "end_line": 97
+        }
+      ]
+    },
+    {
+      "id": "store",
+      "type": "backend",
+      "label": "State Manager",
+      "sublabel": "BrainstormerStore",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 248,
+          "end_line": 295
+        },
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 629,
+          "end_line": 647
+        }
+      ]
+    },
+    {
+      "id": "json",
+      "type": "database",
+      "label": "讨论 JSON",
+      "sublabel": "proposals / state",
+      "sources": [
+        {
+          "path": "src/uuma/brainstormer_state.py",
+          "line": 765,
+          "end_line": 800
+        }
+      ]
+    },
+    {
+      "id": "reviewer",
+      "type": "security",
+      "label": "Orchestrator",
+      "sublabel": "显式审核",
+      "sources": [
+        {
+          "path": "src/uuma/mcp_control.py",
+          "line": 110,
+          "end_line": 121
+        }
+      ]
+    },
+    {
+      "id": "obs",
+      "type": "backend",
+      "label": "Observatory",
+      "sublabel": "API + Adapter",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/server.py",
+          "line": 210,
+          "end_line": 227
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 71,
+          "end_line": 83
+        },
+        {
+          "path": "src/uuma/observatory/adapters/brainstormer.py",
+          "line": 178,
+          "end_line": 242
+        }
+      ]
+    },
+    {
+      "id": "ui",
+      "type": "frontend",
+      "label": "Observatory UI",
+      "sublabel": "卡片 / 抽屉",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1387,
+          "end_line": 1435
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1545,
+          "end_line": 1580
+        },
+        {
+          "path": "src/uuma/observatory/static/app.js",
+          "line": 1860,
+          "end_line": 1918
+        }
+      ]
+    }
+  ],
+  "segments": [
+    {
+      "from": 145,
+      "to": 360,
+      "label": "提交结构或决策变更"
+    },
+    {
+      "from": 370,
+      "to": 540,
+      "label": "显式批准与应用"
+    },
+    {
+      "from": 550,
+      "to": 790,
+      "label": "UI 重新读取正式状态"
+    }
+  ],
+  "messages": [
+    {
+      "id": "s1",
+      "from": "brain",
+      "to": "store",
+      "y": 170,
+      "label": "propose(StateTransaction)",
+      "variant": "emphasis"
+    },
+    {
+      "id": "s2",
+      "from": "store",
+      "to": "json",
+      "y": 215,
+      "label": "保存 PROPOSED 提案",
+      "variant": "default"
+    },
+    {
+      "id": "s3",
+      "from": "store",
+      "to": "brain",
+      "y": 260,
+      "label": "proposal_id + review_required",
+      "variant": "return"
+    },
+    {
+      "id": "s4",
+      "from": "reviewer",
+      "to": "store",
+      "y": 400,
+      "label": "review(id, approve=True, note)",
+      "variant": "security"
+    },
+    {
+      "id": "s5",
+      "from": "store",
+      "to": "json",
+      "y": 445,
+      "label": "校验修订后写 r+1 / history",
+      "variant": "emphasis"
+    },
+    {
+      "id": "s6",
+      "from": "store",
+      "to": "json",
+      "y": 485,
+      "label": "保存 APPROVED 审核记录",
+      "variant": "default"
+    },
+    {
+      "id": "s7",
+      "from": "store",
+      "to": "reviewer",
+      "y": 525,
+      "label": "project_revision / reviewed_by",
+      "variant": "return"
+    },
+    {
+      "id": "s8",
+      "from": "ui",
+      "to": "obs",
+      "y": 580,
+      "label": "GET /api/observatory/agents",
+      "variant": "emphasis"
+    },
+    {
+      "id": "s9",
+      "from": "obs",
+      "to": "json",
+      "y": 625,
+      "label": "Adapter 直接读取 state.json",
+      "variant": "default"
+    },
+    {
+      "id": "s10",
+      "from": "json",
+      "to": "obs",
+      "y": 670,
+      "label": "objects / links / revision",
+      "variant": "return"
+    },
+    {
+      "id": "s11",
+      "from": "obs",
+      "to": "ui",
+      "y": 715,
+      "label": "主题分组 / DAG 摘要",
+      "variant": "return"
+    },
+    {
+      "id": "s12",
+      "from": "ui",
+      "to": "obs",
+      "y": 765,
+      "label": "选择项目项 → GET items/{id}",
+      "variant": "default"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "这张图的场景",
+      "items": [
+        "展示需审核且获批准的事务；未批准时不会写入新的 canonical 状态。",
+        "安全事务通过 commit_safe 进入同一 apply 逻辑；无效输入、DAG 循环和对象修订冲突会终止应用。",
+        "上下间距表达调用顺序，不代表测量耗时。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "刷新语义",
+      "items": [
+        "SSE 初连发送工作区快照；后续推送 activity / backfill / ping。",
+        "已连接 SSE 时前端不持续轮询卡片；重新加载 / 重连才会重新获取快照。",
+        "Observatory 未调用 State Daemon 审核 API；这张图不意味着 UI 自带批准按钮。"
+      ]
+    }
+  ]
+}

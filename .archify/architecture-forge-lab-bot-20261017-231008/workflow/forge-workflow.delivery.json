@@ -1,0 +1,17 @@
+{
+  "schemaVersion": 1,
+  "receiptId": "e711e42b-97d0-471c-a0b8-c25f5c6198e2",
+  "status": "current",
+  "command": "deliver",
+  "type": "workflow",
+  "input": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\workflow\\candidate.json",
+  "output": "C:\\test_codespace\\UuMA\\.archify\\architecture-forge-lab-bot-20261017-231008\\workflow\\forge-workflow.html",
+  "specification": {
+    "sha256": "6fe8d66648ffc3389a8e23af8bf8b062434fc062913fc1840f494e2e94f07312",
+    "bytes": 9287
+  },
+  "artifact": {
+    "sha256": "c5cbb8e78962d6139fbf640d211add7d755bcaa3ae4be6ecd4e7f3a08ed153a7",
+    "bytes": 835313
+  }
+}

@@ -1,0 +1,389 @@
+{
+  "schema_version": 1,
+  "diagram_type": "class",
+  "meta": {
+    "title": "Scholar 代码关系：UuMA 适配、事件与图谱运行时",
+    "locale": "zh-CN",
+    "output": ".archify/scholar-20261017-214800/class/scholar-code.html",
+    "quality_profile": "showcase",
+    "repository": {
+      "url": "https://github.com/alandelone/UuMA.git",
+      "revision": "0e273c8dce5f846dd1ffebd78e0d9e60ce8d3319"
+    }
+  },
+  "layout": {
+    "mode": "grid",
+    "gapX": 100,
+    "gapY": 125,
+    "typeMaxW": 300
+  },
+  "types": [
+    {
+      "id": "registry",
+      "label": "AdapterRegistry",
+      "kind": "class",
+      "row": 0,
+      "col": 0,
+      "sublabel": "注册与聚合工作区",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 19,
+          "end_line": 44
+        },
+        {
+          "path": "src/uuma/observatory/adapters/registry.py",
+          "line": 88,
+          "end_line": 121
+        }
+      ],
+      "methods": [
+        {
+          "name": "get_fleet_workspaces",
+          "returns": "list[AgentWorkspace]",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "scholar",
+      "label": "ScholarAdapter",
+      "kind": "class",
+      "row": 0,
+      "col": 1,
+      "sublabel": "Scholar 专用源数据适配",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 12,
+          "end_line": 28
+        },
+        {
+          "path": "src/uuma/observatory/adapters/scholar.py",
+          "line": 399,
+          "end_line": 547
+        }
+      ],
+      "methods": [
+        {
+          "name": "list_items",
+          "returns": "list[ObservatoryItem]",
+          "visibility": "public"
+        },
+        {
+          "name": "probe_health",
+          "returns": "SourceFreshness",
+          "visibility": "public"
+        },
+        {
+          "name": "get_item",
+          "returns": "ObservatoryItem | None",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "base",
+      "label": "ObservatorySourceAdapter",
+      "kind": "abstract",
+      "row": 0,
+      "col": 2,
+      "sublabel": "只读来源契约",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/adapters/base.py",
+          "line": 11,
+          "end_line": 46
+        }
+      ],
+      "methods": [
+        {
+          "name": "safe_sqlite_connect",
+          "returns": "Connection | None",
+          "visibility": "public"
+        },
+        {
+          "name": "list_items",
+          "returns": "list[ObservatoryItem]",
+          "abstract": true
+        }
+      ]
+    },
+    {
+      "id": "workspace",
+      "label": "AgentWorkspace",
+      "kind": "class",
+      "row": 1,
+      "col": 0,
+      "sublabel": "聚合状态与 items",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/models.py",
+          "line": 77,
+          "end_line": 85
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "item",
+      "label": "ObservatoryItem",
+      "kind": "class",
+      "row": 1,
+      "col": 1,
+      "sublabel": "kind / status / payload",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/models.py",
+          "line": 26,
+          "end_line": 37
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "fresh",
+      "label": "SourceFreshness",
+      "kind": "class",
+      "row": 1,
+      "col": 2,
+      "sublabel": "可用性与最近事件时间",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/models.py",
+          "line": 18,
+          "end_line": 23
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "harvester",
+      "label": "Harvester",
+      "kind": "class",
+      "row": 2,
+      "col": 0,
+      "sublabel": "spool / uuma.db 事件采集",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 174,
+          "end_line": 208
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 306,
+          "end_line": 338
+        }
+      ],
+      "methods": [
+        {
+          "name": "start",
+          "returns": "None",
+          "visibility": "public"
+        },
+        {
+          "name": "stop",
+          "returns": "None",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "storage",
+      "label": "ObservatoryStorage",
+      "kind": "class",
+      "row": 2,
+      "col": 1,
+      "sublabel": "独立 observatory.db 与 FTS",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 17,
+          "end_line": 35
+        },
+        {
+          "path": "src/uuma/observatory/storage.py",
+          "line": 79,
+          "end_line": 141
+        }
+      ],
+      "methods": [
+        {
+          "name": "insert_events",
+          "returns": "int",
+          "visibility": "public"
+        },
+        {
+          "name": "query_events",
+          "returns": "tuple[list[ActivityEvent], int]",
+          "visibility": "public"
+        }
+      ]
+    },
+    {
+      "id": "event",
+      "label": "ActivityEvent",
+      "kind": "class",
+      "row": 2,
+      "col": 2,
+      "sublabel": "规范化审计事件",
+      "sources": [
+        {
+          "path": "src/uuma/observatory/models.py",
+          "line": 40,
+          "end_line": 49
+        },
+        {
+          "path": "src/uuma/observatory/harvester.py",
+          "line": 141,
+          "end_line": 168
+        }
+      ],
+      "methods": []
+    },
+    {
+      "id": "runtime",
+      "label": "ScholarRuntime",
+      "kind": "class",
+      "row": 3,
+      "col": 1,
+      "sublabel": "启动独立 rstv4.fieldkg_bridge",
+      "sources": [
+        {
+          "path": "src/uuma/knowledge_runtime.py",
+          "line": 26,
+          "end_line": 46
+        },
+        {
+          "path": "src/uuma/knowledge_runtime.py",
+          "line": 49,
+          "end_line": 68
+        }
+      ],
+      "methods": [
+        {
+          "name": "_ensure_bridge_process",
+          "returns": "None",
+          "visibility": "protected"
+        }
+      ]
+    },
+    {
+      "id": "kag",
+      "label": "KagRuntimeManager",
+      "kind": "class",
+      "row": 3,
+      "col": 2,
+      "sublabel": "通用桥接运行恢复",
+      "sources": [
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 77,
+          "end_line": 85
+        },
+        {
+          "path": "src/uuma/kag_adapter.py",
+          "line": 157,
+          "end_line": 190
+        }
+      ],
+      "methods": [
+        {
+          "name": "recover",
+          "returns": "dict",
+          "visibility": "public"
+        }
+      ]
+    }
+  ],
+  "relationships": [
+    {
+      "id": "register",
+      "from": "registry",
+      "to": "scholar",
+      "kind": "dependency",
+      "label": "实例化 / 调用"
+    },
+    {
+      "id": "inherit",
+      "from": "scholar",
+      "to": "base",
+      "kind": "inheritance"
+    },
+    {
+      "id": "workspace",
+      "from": "registry",
+      "to": "workspace",
+      "kind": "dependency",
+      "label": "构造工作区"
+    },
+    {
+      "id": "new-item",
+      "from": "scholar",
+      "to": "item",
+      "kind": "dependency",
+      "label": "构造 Item"
+    },
+    {
+      "id": "health",
+      "from": "scholar",
+      "to": "fresh",
+      "kind": "dependency",
+      "label": "返回健康度"
+    },
+    {
+      "id": "w-items",
+      "from": "workspace",
+      "to": "item",
+      "kind": "association",
+      "label": "items[]"
+    },
+    {
+      "id": "harvest-save",
+      "from": "harvester",
+      "to": "storage",
+      "kind": "dependency",
+      "label": "写入 / 回填"
+    },
+    {
+      "id": "storage-event",
+      "from": "storage",
+      "to": "event",
+      "kind": "dependency",
+      "label": "写入与查询"
+    },
+    {
+      "id": "runtime-base",
+      "from": "runtime",
+      "to": "kag",
+      "kind": "inheritance"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "前端函数链",
+      "items": [
+        "static/app.js：loadInitialData → state.agents → renderWorkspaces；点击 Scholar → selectAgent → renderScholarDashboard → renderScholarFullView。",
+        "server.py 的闭包 create_observatory_app 创建 Registry / Storage / Harvester / SSEBroadcaster；这些函数没有伪装成代码类。"
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "图的代码范围",
+      "items": [
+        "类图仅覆盖当前 UuMA 源码中 Scholar 的可见集成点。RSTV4 本体不在当前工作区，未虚构 Catalog/Studio 的内部类。",
+        "Worker MCP 的 register_direct_run / report_progress / submit_result 调用 ControlPlane；knowledge_runtime_preflight 调用 ensure_knowledge_graph，再配置 ScholarRuntime 并核对独立 ScholarFieldKG。"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "依赖不是数据所有权",
+      "items": [
+        "ScholarAdapter 继承只读源契约；Registry 聚合工作区；Storage 写入的是 observatory.db 缓存，没有写入研究源库。",
+        "SourceFreshness 代表可达性与事件时间；不代表科学证据充分、数据新鲜度达标或模型语义已获批准。"
+      ]
+    }
+  ]
+}
