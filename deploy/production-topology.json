@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "server": {
+    "node_id": "alandelone-server-001",
+    "agents": [
+      "brainstormer",
+      "yonc",
+      "honc",
+      "wisdom-oldman",
+      "forge-lab-bot"
+    ],
+    "control_owner": true,
+    "control_port": 8765,
+    "graph_port": 8766,
+    "a2a_port": 8768,
+    "semantic_mcp_port": 8769,
+    "wisdom_view_port": 8767,
+    "wisdom_cpu_kag_port": 8891,
+    "scholar_fieldkg_port": 8892,
+    "scholar_fieldkg_namespace": "ScholarFieldKG",
+    "scholar_fieldkg_project_id": "2",
+    "scholar_embedding_port": 8893,
+    "scholar_embedding_bind": "docker_bridge_gateway_only"
+  },
+  "workstation": {
+    "agents": [
+      "orchestrator",
+      "scholar"
+    ],
+    "retained": [
+      "browser_profiles",
+      "interactive_login",
+      "desktop_hardware_tools",
+      "procurement_browser",
+      "notion_authorization"
+    ],
+    "reverse_forwards": [
+      8770,
+      8774,
+      8775,
+      8787
+    ]
+  },
+  "workspace_manifest": "deploy/forge-workspace.json",
+  "publishing": "manual_component_preview_then_apply",
+  "data_ownership": "one_domain_owner; no shared SQLite file across hosts",
+  "secrets": "node-local; no credentials in this manifest"
+}

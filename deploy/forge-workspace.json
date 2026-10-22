@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "component": "forge-workspace",
+  "repository": "Hardware-Lab-Workspace",
+  "windows_path": "Z:/Hardware-Lab-Workspace",
+  "server_path": "/mnt/nas/Hardware-Lab-Workspace",
+  "share": "\\\\192.168.55.2\\NAS",
+  "single_writer_required": true,
+  "publishing": "manual",
+  "notes": "Both paths refer to the same NAS directory. Use the path for the runtime host. Keep Git metadata with the workspace; do not run simultaneous Git mutations from both hosts."
+}

@@ -537,7 +537,10 @@ class ForgeJournalRunner:
             return None
         journal = self.store.get_page(str(job["journal_id"]))
         try:
-            return self._execute(job, journal)
+            from contextlib import nullcontext
+            execution = getattr(self.notion, "execution", None)
+            with execution(str(job["sync_job_id"])) if execution else nullcontext():
+                return self._execute(job, journal)
         except NotionApiError as exc:
             conflict = exc.status == 409
             result = self.store.finish_write(
@@ -560,11 +563,13 @@ class ForgeJournalRunner:
             self._best_effort_status(journal, "Conflict")
             return result
         except Exception as exc:  # noqa: BLE001 - retries belong in the durable queue.
+            from .forge_notion_relay import NotionRelayError
             result = self.store.finish_write(
                 str(job["sync_job_id"]),
                 succeeded=False,
                 worker_id=self.worker_id,
                 error=str(exc),
+                conflict=isinstance(exc, NotionRelayError),
             )
             self._best_effort_status(journal, str(result["status"]).title())
             return result
@@ -936,18 +941,29 @@ def build_runner(
     logs_data_source: str,
     candidates_data_source: str,
 ) -> ForgeJournalRunner:
-    database = data_dir / "forge-lab-bot" / "lab.db"
-    headers = load_notion_connection(default_hermes_home / "config.yaml")
+    database = Path(
+        os.environ.get("LAB_DATABASE_PATH") or data_dir / "forge-lab-bot" / "lab.db"
+    ).expanduser()
+    if os.environ.get("UUMA_FORGE_NOTION_RELAY_URL"):
+        from .forge_notion_relay import NotionRelayClient
+
+        notion = NotionRelayClient.from_env()
+    else:
+        headers = load_notion_connection(default_hermes_home / "config.yaml")
+        notion = NotionJournalClient(headers)
     store = ForgeJournalStore(database)
     resolver = HermesRouteResolver(
         [profile_home / "state.db", default_hermes_home / "state.db"],
         explicit_target=os.environ.get("FORGE_JOURNAL_NOTIFY_TO", ""),
     )
-    hermes = default_hermes_home / "hermes-agent" / "venv" / "Scripts" / "hermes.exe"
+    hermes = Path(
+        os.environ.get("UUMA_HERMES_EXECUTABLE")
+        or default_hermes_home / "hermes-agent" / "venv" / "Scripts" / "hermes.exe"
+    ).expanduser()
     dispatcher = ForgeJournalNotificationDispatcher(store, hermes, profile_home, resolver)
     return ForgeJournalRunner(
         store,
-        NotionJournalClient(headers),
+        notion,
         dispatcher,
         logs_data_source=logs_data_source,
         candidates_data_source=candidates_data_source,

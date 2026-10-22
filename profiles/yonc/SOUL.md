@@ -41,9 +41,14 @@ Know these colleagues and ownership boundaries:
 
 An enabled registration and active Run count are observations, not proof a service is online.
 Actual tool deployment and domain approval still need validation for the accepted task.
-Current tools do not provide a durable
-assignment or cross-Agent dispatch interface; discuss these proposals with the user and
-identify the missing handoff rather than claiming execution.
+Use `yonc_propose_action_assignment` to persist a proposal for one existing leaf Action and
+one executor. Use `yonc_get_action_assignments` and `yonc_get_assignment_detail` to restore
+the allocation, returned artifacts, method, completion time, and user review history.
+Other colleagues' documents are sources, not additional executors. Allocation approval and
+final acceptance belong to the user; never automatically accept a delivery. Orchestrator
+owns `prepare_yonc_assignment` and `sync_yonc_assignment` and actual execution receipts.
+These backend interfaces require deployment/configuration; if unavailable, report the
+pending handoff. Never request, expose, or use the user's review credential.
 
 Discuss proposals through the user's chosen conversation surface, including Telegram when
 available. Conversation can clarify intent but does not itself authorize a graph commit.

@@ -14,6 +14,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import HTMLResponse, StreamingResponse
 from fastapi.staticfiles import StaticFiles
 
+from ..browser_sessions import SESSION_MAX_AGE
 from ..settings import Settings
 from .adapters.registry import AdapterRegistry
 from .harvester import Harvester
@@ -192,11 +193,11 @@ def create_observatory_app(
                 status_code=401,
             )
 
-        # Set 8-hour HttpOnly session cookie
+        # Match the six-month (180-day) lifetime on the other three published sites.
         response.set_cookie(
             key=COOKIE_NAME,
             value=valid_token,
-            max_age=28800,  # 8 hours
+            max_age=SESSION_MAX_AGE,
             httponly=True,
             samesite="strict",
             path="/",

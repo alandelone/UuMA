@@ -7,7 +7,9 @@ from typing import Any
 
 from mcp.server.fastmcp import FastMCP
 
+from .brainstormer_client import BrainstormerClient
 from .brainstormer_state import BrainstormerStore
+from .control_client import ControlClient, control_backend
 from .diagnostics import (
     DiagnosticBackend,
     DiagnosticEngine,
@@ -22,15 +24,15 @@ mcp = FastMCP("uuma-control")
 
 
 @lru_cache(maxsize=1)
-def _brainstormer_store() -> BrainstormerStore:
+def _brainstormer_store() -> BrainstormerStore | BrainstormerClient:
+    if os.environ.get("UUMA_BRAINSTORMER_MCP_URL"):
+        return BrainstormerClient.from_env()
     return BrainstormerStore.from_env()
 
 
 @lru_cache(maxsize=1)
-def _control_plane() -> ControlPlane:
-    control_plane = ControlPlane()
-    control_plane.bootstrap()
-    return control_plane
+def _control_plane() -> ControlPlane | ControlClient:
+    return control_backend()
 
 
 def _assert_orchestrator() -> None:
@@ -59,6 +61,24 @@ def assign_task(task_id: str, agent_id: str, user_approved: bool = False) -> dic
     _assert_orchestrator()
     _control_plane().assign_task(task_id, agent_id, user_approved=user_approved)
     return {"task_id": task_id, "agent_id": agent_id, "status": "READY"}
+
+
+@mcp.tool()
+def prepare_yonc_assignment(assignment_id: str) -> dict[str, Any]:
+    """Create, route and assign an accepted Graph Action; does not start execution."""
+    _assert_orchestrator()
+    from .yonc_assignments import YoncAssignmentBridge, YoncAssignmentClient
+    return YoncAssignmentBridge(_control_plane(), YoncAssignmentClient.from_env()).prepare(
+        assignment_id
+    )
+
+
+@mcp.tool()
+def sync_yonc_assignment(assignment_id: str) -> dict[str, Any]:
+    """Return execution evidence to Graph; all project acceptance remains with the user."""
+    _assert_orchestrator()
+    from .yonc_assignments import YoncAssignmentBridge, YoncAssignmentClient
+    return YoncAssignmentBridge(_control_plane(), YoncAssignmentClient.from_env()).sync(assignment_id)
 
 
 @mcp.tool()
@@ -148,6 +168,22 @@ def system_health() -> dict[str, Any]:
     """Verify the immutable event chain and return projection counts."""
     _assert_orchestrator()
     return _control_plane().health()
+
+
+@mcp.tool()
+def dispatch_run(run_id: str) -> dict[str, Any]:
+    """Dispatch an existing assigned Run through its trusted A2A endpoint; never approve or resume."""
+    _assert_orchestrator()
+    from .a2a_client import send_run
+    from .runtime_registry import RuntimeRegistry
+    control = _control_plane()
+    run = control.require_run(run_id)
+    if isinstance(control, ControlClient):
+        from urllib.parse import quote
+        binding = control.request("GET", f"/registry/agents/{quote(run['agent_id'], safe='')}/endpoint")
+    else:
+        binding = RuntimeRegistry(control).get(run["agent_id"])
+    return send_run(binding, run)
 
 
 @lru_cache(maxsize=1)
@@ -260,6 +296,10 @@ def apply_remediation(
 
 
 def main() -> None:
+    if os.environ.get("UUMA_REMOTE_MCP_URL"):
+        from .remote_mcp import run_stdio_proxy
+        run_stdio_proxy("control")
+        return
     mcp.run()
 
 

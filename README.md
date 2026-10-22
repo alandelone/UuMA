@@ -1,5 +1,14 @@
 # UuMA
 
+## Two-node migration work in progress
+
+The target placement is five specialists (Brainstormer, Yonc, Honc, Wisdom and Forge) on
+`alandelone-server-001`, with Orchestrator, Scholar and desktop/browser sessions on the workstation.
+The control API uses port **8765**; Yonc Graph retains **8766**. Deployment remains manual and
+component-based. Production cutover has **not** occurred.
+See [implementation status](docs/architecture/distributed-implementation-status-2026-10-21.zh-CN.md)
+for implemented interfaces, validation evidence and remaining deployment requirements.
+
 UuMA is a local-first control plane for a Hermes multi-agent system. The
 original Hermes profile acts as the Orchestrator. Four specialized profiles
 provide bounded domain work:

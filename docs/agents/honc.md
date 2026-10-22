@@ -103,3 +103,29 @@ Telegram receipt. Live state and actual production-model evaluation are recorded
 [the setup review](../reviews/honc-architecture-2026-10-13/live-setup-review.zh-CN.md) and its linked
 JSON receipts. Earlier foundation sections describe their historical state and are not current
 deployment status. The mission verification gate remains pending review.
+
+## 7. Telegram operating guide and Graph audit (2026-10-20)
+
+`/honc` now provides local, read-only guide pages for habits, rest, work, history and Graph
+writeback. Examples explain adding a habit, changing its reminder, recording actual rest,
+pausing focus without counting break time, and preserving correction history.
+See the [operating guide and audit](../honc-telegram-guide.md).
+
+Graph writeback is narrower than the mission statement above: ordinary `record_execution`
+appends to honc's ledger and returns `NOT_REQUESTED`; it does not publish every progress
+report to Project Graph. The completion/focus clients exist, but this deployment audit found
+honc still defaults to unavailable localhost:8000 while Yonc's actual Graph is healthy at
+127.0.0.1:8766. No production completion receipt or task snapshot was present. Task context
+currently reads stored snapshots, rather than fetching a fresh Graph node. Adding the guide
+does not repair these Graph integration gaps or alter existing project state.
+
+## 8. Authenticated completion synchronization (2026-10-20)
+
+The user subsequently requested automatic Graph checkoff for explicit completion reports and
+confirmed that old tasks without `done_when` must get criteria before checkoff. The host now
+resolves the latest task, preserves the report as `USER_REPORTED`, submits through Graph's
+existing execution protocol and confirms both receipt and current `DONE` node. It binds the
+actual Graph URL/database identity and blocks duplicate model-generated completion calls.
+Existing reminder ticks reconcile uncertain operations; known conflicts are kept for review.
+Task context now fetches fresh Graph nodes. Models, credentials, life settings and the existing
+scheduler job are preserved. See [implementation and user decisions](../honc-graph-completion.md).

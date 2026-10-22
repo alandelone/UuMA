@@ -6,6 +6,11 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+if (Test-Path -LiteralPath (Join-Path $DataDir "wisdom.db.remote-owner.json")) {
+    & $PythonExe (Join-Path $ProjectRoot "scripts/start-distributed-workstation.py") --profile (Join-Path $ProjectRoot ".uuma-local/workstation-node-production-20261022")
+    exit 0
+}
+
 
 # Resolve packaged-app LocalAppData redirection before configuring environment
 $resolvedDataDir = (Resolve-Path -LiteralPath $DataDir).Path

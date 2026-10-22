@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "server": "alandelone-server-001",
+  "ssh_target": "192.168.55.2",
+  "control_owner": "server",
+  "nodes": {
+    "server": {"agents": ["brainstormer", "yonc", "honc", "wisdom-oldman", "forge-lab-bot"], "a2a_port": 8768},
+    "workstation": {"agents": ["orchestrator", "scholar"], "a2a_port": 8770, "desktop": true}
+  },
+  "ports": {"control": 8765, "graph": 8766, "wisdom_view": 8767, "server_a2a": 8768, "semantic_mcp": 8769, "workstation_a2a": 8770},
+  "consultation": {"participants": 3, "rounds": 3, "seconds": 600, "recursive_delegation": false},
+  "desktop_request_ttl_seconds": 1800,
+  "resources": {"max_model_runs": 2, "max_embedding_jobs": 1, "embedding_device": "cpu"},
+  "migration_order": ["control", "brainstormer", "yonc", "honc", "wisdom-oldman", "forge-lab-bot"],
+  "preserve_paused_agents": ["scholar"]
+}

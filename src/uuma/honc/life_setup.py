@@ -266,6 +266,8 @@ def install(
         "scheduler_job_id": prior.get("scheduler_job_id"),
         "config_path": str(runtime_path),
     }
+    if "work_completion" in prior:
+        runtime["work_completion"] = prior["work_completion"]
     plugin = runtime_path.parent
     shutil.copytree(
         repository / "integrations/hermes/honc_life",

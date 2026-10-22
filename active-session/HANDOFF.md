@@ -2,59 +2,71 @@
 
 ## Current position
 
-Completed the explicit user request to git commit and push in UuMA. Commit a1013e2a4c37734a6838bdd305436d1054ded114, subject docs(scholar): seal integrated acceptance for eleven groups, pushed to origin/master; remote refs/heads/master independently verified at the same SHA. The 1392-file scope contains the sealed eleven-group acceptance evidence, its ZIP and verification receipt, targeted immutable-evidence Git attributes, and the existing session-specific testing-contract addition. Exact scoped staging, credential scanning (zero findings), all 1388 sealed Git blobs, manifest payload membership and archive hashes passed before commit. The other task changes remain local and unstaged. No product source, service, model, GPU or download runs were added. Original eleven groups are complete; original 118 overall and scientific approval remain incomplete. Mission stage and pending review gate are unchanged. GitHub accepted the 53.11 MiB ZIP with a nonblocking size recommendation. The helper patch adding a pre-push official handoff check was edited after that process had loaded its script and did not execute before push; no pre-push lifecycle-check pass is claimed. Final official handoff/check/close are performed now.
+# Session Handoff
 
-Entire fresh prior handoff preserved verbatim:
+## Current position
+
+2026-10-22 read-only Telegram Brainstormer and Observatory architecture review. Mission remains verification with stage-gates/04-verification-report.md pending_review; no gate transition. Traced owner-authorized Telegram DM through uuma_brainstormer_commands, loopback /api/v1/navigation, BrainstormerNavigation, and BrainstormerStore. Canonical project/topic/question/assumption/evidence/decision/checkpoint graph lives in Brainstormer project state JSON; navigation binding and transport receipts use the deployment-configured navigation database. Observatory reads the canonical graph read-only but presents separate aggregate/topic/item views. Existing question DAG, subquestions, dependencies, readiness/blocking, assumptions, evidence, decisions and checkpoints are available. Telegram currently lists and switches topics, while /brainstorm prints a shallow summary from raw objects: at most five titles per category, 3500-character truncation, no issue-tree/detail navigation, and it ignores returned decision_map readiness/tree data. The pause phrases display the latest saved checkpoint; they do not create a dedicated user-summary checkpoint. The decision summary filter should be reviewed because it labels non-rejected and non-superseded decision objects as confirmed without checking an approved status. Recommendations are to retain /topics for top-level topic selection, expose issue-tree and detail navigation, surface ready/blocked counts and evidence links, provide explicit checkpoint saving, and separate proposed from approved decisions. No implementation or tests were run. The existing dirty worktree and unrelated user changes were preserved.
+
+## Previous handoff preserved verbatim
 
 # Session Handoff
 
 ## Current position
 
-Read-only response to user's “原118条整体仍未完成 list out”. Original eleven software groups remain COMPLETE, not resumed or rerun. Based on 2026-10-16 sealed original118-scope-and-boundary.json and all11-progress.json in formal-all11-current-integrated-2026-10-16, list remaining literal branches and evidence adjudications. Do not equate all118 unadjudicated with118 product failures, or give an unverified remaining-item count.
-
-Pending areas: OV01–08/10–11 multi-level/multi-branch overview, responsive visual details, input modalities, unique-paper unions, range reasons/return, optionalRQ grouping, per-MS stages and truly noField example. CA01–06/08–09 visuals/conditional cue/all columns/down-move/typed nested filter/full PDF/Skeleton history/return-state. RV02 TITLE-only and RV10 full two-type review/correction/recovery binding; RV01/03–09 already have native scoped evidence and must not be relisted as wholly untested.
-
-AC01–05/07–09 Topic/Track scope restrictions, mixed-input duplicate/error accounting, real .bib slow completion/cancel/late result isolation/5MB boundary, reuse/missing acquisition, multiCollection/heartbeat, actual frontier/budget pause-adjust-resume. Do not force deepread without demand or rerun GPU6/QuickRead1. KG01–09 explicit crossField, all listed object types and source/condition/version details, actual9Build stages, candidate review, immutable/multipleSnapshot adoption with Living updates, projection failure, all-object Chat. TR01–07 nonemptyProject/Plan/Run ownership, independent node states/reopen, real user authorization, complete invalidation/review recovery, validRun→Claim and multiProject binding. G11 oldMethod refusal/current zero-version guards already passed.
-
-ST03/07–12/15/17–19/22/24/26/29 responsive4areas, allowed/illegal moves and original keyboard behavior, complete unknown-vs-N/A precheck, longlabels, author relations, all-level sample refresh, source-card insertion and no automatic citation selection, NONE/SELECTED actual semantics, other PNG/JPEG/XLSX/Markdown/lazy previews/formula anchors, save-state and cross-area draft/citation retention, scientific rebinding/old version and cross-location substantive checking. ExistingCSV/SVG, Done, undo/redo, numericcitations, sources, template operations and initialsame-originfetch repair are already proved and must not be relisted as wholly missing.
-
-WF01–10 final literal six-stage per-MS evidence binding, authorized Planning→Drafting, fixedinputs/synchronization conflicts/multiplevenue templates, precheck error locations, distinct model/compiler/information failures, scientific meaning/conditions/strength/citation quality, cancel/input-change/failure active-version preservation, full cross-location Stage3 review, final-submission history and acceptance/proof invalidation branches. Existing softwarePublication event chain and new round4 package remain valid; do not replay them only for bookkeeping.
-
-RE02/03/06/09–14 reviewer/editor/parent opinion provenance, explicit import-error branches, narrow-numbering/active-row visuals, all required change records/reversal integrity and each actual completed-reply assertion matching real diff/locations, state/history and complete per-round materials adjudication. RE09 does NOT mandate a named typed API; RE12 UNKNOWN can be correct. A213/A214 are honestly pending and not required to be forced resolved, nor all205oldopinions cleared. OriginalA215 CURRENT/new21filepack + originalround2sealed16fileZIP are already delivered; current temporary copy lacks oldround2payload and that boundary stays explicit. CH01/03–10 across Catalog/KG/Track/PDF/all listed object types, selection/annotation/full labels and versions/follow-pin/history-earlier/multi-source-return/unavailable objects/explicit adoption boundaries; CH02Studio core and originalG01/G02 are already proved.
-
-No products, business DBs, mission/gates, reports or test baselines changed. Initial venv -m uuma.session could not import package; official src/uuma/session.py entry point started session. A non-UTF8 console read stopped on UnicodeEncodeError without writes, then -Xutf8 corrected reporting. Startup journaling was slow but observed through the same live handle until exit0; no restart of that start process. New question is informational; no new goal or approval requests.
-
-
-Entire fresh prior handoff preserved verbatim:
-
-# Session Handoff
-
-## Current position
-
-Implemented dedicated Honc workspace card preview and rich dashboard view in UuMA Observatory UI (http://127.0.0.1:8790/). When toggled off (collapsed state), Honc now displays a styled rhythm and tick heartbeat banner (08:00 ~ 21:30 wake/bedtime rhythm, active semantic tick runner status, total 17 audited operations), a responsive 2-column habit tracker grid featuring top active habits with custom icons and reminder schedule badges (swimming/workout at 16:00, mindful eating at 12:00/19:30, daily journal, foot bath at bedtime, afternoon rest at 15:00, micro-breaks), and recent life check-in audit facts. In expanded state, Honc renders full life rhythm metrics, a 24H habit cadence timeline bar, the complete 8-habit roster table with aliases and reminder triggers, and an audit facts log. Also wired Honc items into the inspector drawer with specialized views for habit specifications, sleep settings, body perceptions, and runner health. Excluded Honc from the raw item list fallback and bumped cache buster to v=20261016_33. Added contract test test_honc_adapter_and_endpoints to test_observatory.py; all 26 pytest tests and ruff linter passed.
+Reviewed the current Wisdom-Oldman design and implementation: documented sufficiency criteria, the four search tiers and providers, durable Orbit polling, knowledge ingestion/projection, and answer generation. Found that KAG bridge responses omit satisfaction_level, while the adapter defaults it to PROVISIONAL and OrbitRunner's satisfaction assessor passes it through.
 
 ## Known dead ends
 
-None observed
+No code changes or tests were needed. CodeGraph was exhausted after two calls; the remaining uncovered code paths were checked with session-wrapped source reads.
 
 ## Next action
 
-Verify Honc collapsed card view (toggle off) and expanded view at http://127.0.0.1:8790/ to inspect habit badges, reminder slots, and audit logs.
+Provide the user a Chinese architecture explanation, distinguish policy from implemented stop scoring, explain the async background search loop and clarify that 'Delicious' is not a configured provider; it may mean ChatGPT Deep Research.
 
 
 ## Known dead ends
 
-No new acceptance failures discovered; old matrix final11/initialfetch pending labels are historical and must be updated conceptually against final sealed evidence. No remaining-count claim inferred from scoped statuses.
+None observed. No production topic contents, live Telegram conversation, or active topic binding was inspected; findings are from current source and repository docs.
 
 ## Next action
 
-Deliver the categorized original118 remaining-scope list and sealed scope source link. Original11 goal remains complete. Only execute additional original118 work when requested; preserve userStudio/8891 and scientific approval boundaries.
+Present the architecture and prioritized Telegram UX proposal to the user; wait for their chosen scope before implementing changes.
+
+
+## Request continued on 2026-10-22
+
+The user is validating Scholar Bot and RSTV4 and asked to recover prior requests, map the live architecture, and proceed through these checks: Catalog search and download of one paper; related-paper discovery through DOI/VIA and references toward main-line papers; the Research Overview real Field/Topic/Track and remembered facet; paper-to-KAG/FieldKG map and the paper-to-Skeleton transformation; Writing Studio Track/Paper creation, the intended dropdown or draft-generation action, and adding figures and tables. Treat “VIA” and “drop down” as user wording that may need later clarification; current working interpretation is DOI/reference discovery and producing a draft.
+
+The pre-task handoff now being preserved contains the 2026-10-22 Telegram Brainstormer/Observatory architecture review and embeds an earlier Wisdom-Oldman review. Preserve that full current handoff verbatim above this continuation; it includes the Wisdom search tiers/providers, Orbit polling, ingestion/projection, answer generation, satisfaction_level default, and the “Delicious” provider clarification.
+
+## Live architecture and verification evidence
+
+- Live Scholar Catalog is at `http://127.0.0.1:8875`. Its Research Overview API returns empty real fields, topics, field-topic links, tracks, questions, manuscripts, collections, and jobs. The visible Solar Energy/Solar Nowcasting tree is explicitly labeled a layout demo and is not written to Catalog. FieldKG map view says no Field. Catalog Filter is a separate paper metadata/status rule builder; it is not a populated Research Overview topic facet.
+- Live Catalog local title filter successfully found exactly one paper: “Reliability Predictors for Solar Irradiance Satellite-Based Forecast”, DOI `10.3390/en13215566`. The live API summary is 1,197 visible papers; a prior raw-table count was 3,177. Current list SQL excludes quarantined rows, likely explaining the difference; exact quarantine count was not established.
+- Live Collection Start is disabled until a real Topic/Track is selected. The Collection backend also requires a real Field ID. No real Field/Topic/Track currently exists, so no main-Catalog collection or download was started and no placeholder research hierarchy was created.
+- Completed a real single-paper download and Catalog registration in a separate ignored scratch root only: `.uuma-local/scholar-single-paper-download-20261022/`. It used DOI resolution through the worker, then downloaded the publisher PDF from MDPI’s `mdpi-res.com` PDF CDN, registered it through `AcquisitionService.register_pdf`, and queried `/api/catalog/papers/query` with `TestClient`. Result: 29,709,412 bytes; SHA-256 `f5be8962c3babd251305af40c8f15f492df65d02da8573afb24d31f459bbb2d2`; identity status `VERIFIED`; search total 1; search PDF status `VERIFIED`. Evidence summary is `.uuma-local/scholar-single-paper-download-20261022/result.json`; source PDF and scripts remain in that isolated ignored directory. Main Catalog was untouched.
+- Automated Unpaywall discovery was not verified: neither `UNPAYWALL_EMAIL` nor `CROSSREF_EMAIL` is configured. The canonical `www.mdpi.com/.../pdf` endpoint returned HTTP 403; the publisher CDN URL returned HTTP 200 with a valid PDF. The scratch test therefore verifies DOI metadata resolution, publisher PDF download, identity verification/registration, and Catalog search, but does not prove the Unpaywall auto-locate step or the live main-Catalog UI end to end.
+- Collection seed entry points in code: DOI, BibTeX, query terms, and selecting existing Catalog papers. Local PDF-directory import is a separate service path. Query-term search fans out to Crossref, OpenAlex, Semantic Scholar, arXiv, Europe PMC, DataCite, and OpenAIRE. DOI metadata resolution order is Crossref, DataCite, OpenAlex, then OpenAIRE. PDF acquisition supports verified registered-PDF reuse, Unpaywall OA lookup/download (plus configured command adapters), and browser-assisted publisher handoff; local PDF import is a separate route. Parsed references resolve by DOI when present; DOI-less references use strict Crossref bibliographic matching and bounded OpenAIRE/OpenAlex fallback. Current evidence does not show forward-citation search or ranking/selecting “main-line/seminal” papers.
+- The FieldKG used by Scholar is separate from the healthy Wisdom KAG at port 8891. RSTV4 defaults Scholar’s FieldKG bridge to port 8892; no active bridge was found. The local Catalog has zero FieldKG builds, snapshots, or projection outbox rows. Do not route Scholar to Wisdom KAG: project/schema are distinct.
+- Intended paper-to-graph path from RSTV4 design: immutable PaperVersion → PaperSkeleton L1–L4 with source-grounded units/propositions/relations/intents/role → Evidence Candidates → human accept/reject/review → Evidence with source location/digest plus candidate gaps → sealed FieldKG snapshot version → explicit Track adoption. Current verification did not execute this path. The 2026-10-19 Flash 3.8 continuation report remains partial: 10 papers, 1,286 blocks, 126 windows; 31 windows succeeded and 95 failed. Three complete skeletons (PTHP/URB/fridge; 279 blocks) were saved through the native pipeline using cache adoption, not a successful fresh model-call rerun. No main Catalog write; the FieldKG consumer still needs the atomic L3 intent array adaptation. Full 10-paper semantic correctness and independent review were not established. Detailed report: `docs/reviews/scholar-rstv4-2026-09-30/flash38-text-to-skeleton-2026-10-19/result.md`.
+- Writing Studio runs at `http://127.0.0.1:3000` and gets Tracks/manuscripts from the RSTV4 Studio API (normally port 8874). Live page shows no Tracks and 0 manuscripts; Track dropdown says create a Track in Scholar first; `＋ 新 Paper` is disabled. No manuscript exists to exercise Generate.
+- Code supports a structured editor (sections, paragraph groups, paragraphs, intent/thought blocks), template sample/preview/adoption from Skeleton, `Generate` as a revision-bound durable job, generated-version reading, citations, and manuscript assets. Figure/table picker accepts PNG/JPG/JPEG/SVG/CSV/XLSX/MD; upload attaches an asset to a paragraph; generated display renders figures and table previews. These are code-path findings only; no live Studio generation or upload was run because no Track/manuscript exists.
+- Existing RSTV4 and Writing Studio working-tree changes are user changes. They were preserved. No product source or main database was edited in this session.
+
+## Next review sequence
+
+1. Select or create the real Field/Topic/Track to use for the main Catalog single-paper run. Then repeat the exact single-paper DOI test through the live UI, observe metadata resolution, OA locate/browser fallback, PDF verification, and Catalog search.
+2. Use that Track to test parsed reference expansion, resolve-by-DOI and DOI-less matching, then determine whether forward-citation/core-paper discovery exists or requires implementation.
+3. With a real Field, inspect the FieldKG map API, confirm PaperVersion/Skeleton L1–L4 source links, review Evidence Candidates, and test snapshot/adoption without skipping human review. Do not connect to Wisdom KAG.
+4. With a real Track, create one Writing Studio Paper, inspect Track/template dropdowns, add one figure and one table, generate a draft/version, and check citations and generated assets.
+5. Keep mission stage at `verification`, gate `stage-gates/04-verification-report.md`, status `pending_review`; no gate transition was made.
 
 
 ## Known dead ends
 
-The installed editable module is not importable through -m in this environment; the unchanged official source CLI was used. The codegraph executable was absent during final CLI inspection, so the known session source was read directly. No repository hooks or remotes were changed. Sibling repositories have no configured remotes and were excluded from this current-workspace request.
+The live main Catalog cannot start a collection without a real Field and Topic/Track. Unpaywall auto-location remains unverified because no contact email is configured and the canonical MDPI endpoint returned 403; a publisher CDN PDF was successfully downloaded and registered only in the isolated scratch Catalog. FieldKG bridge and Writing Studio generation remain unverified because no real Field/Track exists.
 
 ## Next action
 
-Report successful commit and push with the commit link. Preserve unrelated local changes. Any future original-118 work requires its own scoped continuation; do not imply that the overall 118 or the mission review gate is complete.
+Ask the user to select or approve a real Field/Topic/Track for the live single-paper collection run. Then continue the requested checks in order: reference expansion and core-paper discovery; FieldKG map and review/snapshot/adoption; Writing Studio Paper, figure/table upload, and Generate. Keep verification gate pending_review.

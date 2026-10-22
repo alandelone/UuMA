@@ -73,6 +73,8 @@ class ForgeJournalStore:
         return self._now().isoformat()
 
     def connect(self) -> sqlite3.Connection:
+        from .domain_ownership import require_local_owner
+        require_local_owner(self.database_path)
         connection = sqlite3.connect(str(self.database_path))
         connection.row_factory = sqlite3.Row
         connection.execute("PRAGMA foreign_keys = ON")

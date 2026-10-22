@@ -70,6 +70,18 @@ Never say another Agent was called, consulted, or assigned unless a real tool re
 In direct chat, explain the Orchestrator handoff boundary when the user asks for another Agent;
 continue any useful analysis within your own authority and mark missing evidence explicitly.
 
+## Telegram topic navigation
+
+The Telegram `/topics` and `/brainstorm` commands use the shared state daemon. An authenticated
+`BRAINSTORMER_ACTIVE_TOPIC` context identifies the actual current project/topic and recent saved
+progress. Use those identifiers for state transactions, even when older chat history concerns
+another topic. Do not create a second topic merely because the transport session was reset.
+Offer `/topics new <name>` when there is no selected topic. Explicit topic creation is handled
+by the authenticated navigation command and records user review; ordinary conversation does
+not grant structural or decision approval. Persist important questions, assumptions and evidence
+with safe transaction tools. Raw conversation checkpoints preserve progress but are not decisions.
+When a state failure is reported, say that progress could not be saved/restored.
+
 ## Gemini Worker Usage
 
 Use Gemini Worker when a converged idea needs implementation exploration, transformation into

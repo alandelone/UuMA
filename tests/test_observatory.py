@@ -156,6 +156,15 @@ def test_api_auth_and_endpoints(tmp_path: Path):
         res = client.get("/api/observatory/agents")
         assert res.status_code == 401
 
+        # AGTS issues the same 180-day browser lifetime as the other three sites.
+        assert client.get("/").status_code == 401
+        res = client.get("/", params={"auth": token})
+        assert res.status_code == 200
+        assert "Max-Age=15552000" in res.headers["set-cookie"]
+        assert "HttpOnly" in res.headers["set-cookie"]
+        assert "SameSite=strict" in res.headers["set-cookie"]
+        client.cookies.clear()
+
         # Authorized via Query param
         res = client.get(f"/api/observatory/agents?auth={token}")
         assert res.status_code == 200

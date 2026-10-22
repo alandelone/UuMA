@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="zh-Hant"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>伺服器模型帳戶池</title>
+<style>
+:root{font:16px/1.6 system-ui,sans-serif;color:#1e293b;background:#f5f6f8}body{max-width:850px;margin:48px auto;padding:0 22px}h1{font-size:28px}h2{font-size:20px}section,article{background:white;border:1px solid #dce1e8;border-radius:12px;padding:22px;margin:16px 0}button,input{font:inherit;padding:9px 13px;border:1px solid #bcc5d0;border-radius:6px}button{cursor:pointer;background:#f4f6f8;margin:5px}button.primary{background:#2046be;color:white;border-color:#2046be}button:disabled{opacity:.5;cursor:wait}input{max-width:90%;background:white}a{color:#2046be}small,.muted{color:#64748b}#message{white-space:pre-wrap}#code{width:90%}.row{display:flex;justify-content:space-between;gap:16px;align-items:center;flex-wrap:wrap}[hidden]{display:none!important}
+</style>
+<h1>伺服器模型帳戶池</h1>
+<p class="muted">五個伺服器 Agent 共用可用帳戶。每個帳戶獨立授權，瀏覽器登入仍留在工作站。</p>
+<p id="message" role="status" aria-live="polite"></p>
+<section id="login" hidden><h2>登入帳戶</h2><p id="loginStatus"></p>
+<div id="auth" hidden><p><a id="authLink" target="_blank" rel="noreferrer noopener">開啟 Google 授權頁</a></p>
+<p id="authInstructions">選擇要加入的 Google 帳戶並同意授權。完成後會自動返回；不用複製或貼上授權碼。</p>
+<button id="cancelLogin">取消這次登入</button>
+<div id="legacyCode" hidden>
+<label for="code">2. Google 授權碼</label><br><input id="code" type="password" autocomplete="off" spellcheck="false">
+<button id="sendCode" class="primary">完成登入</button></div></div></section>
+<section><h2>帳戶</h2><p id="summary" class="muted">正在讀取…</p><div id="accounts"></div></section>
+<section><h2>新增帳戶</h2><label for="label">帳戶名稱（方便自己辨認）</label><br>
+<input id="label" placeholder="例如：主要帳戶、備用帳戶" maxlength="120"><button id="add" class="primary">新增並登入</button></section>
+<p class="muted">登入過程不發送模型提示。停用帳戶會阻止新請求選用它；正在執行的請求會繼續完成。</p>
+<script>
+const token = location.hash.slice(1); history.replaceState(null, '', location.pathname);
+let attempt = '', activeStatus = '', refreshing = false;
+const $ = id => document.getElementById(id);
+const names = {READY:'可用',NEEDS_LOGIN:'等待登入',DISABLED:'已停用',COOLDOWN:'額度冷卻中'};
+async function api(path, data) {
+ const r = await fetch('/api/'+path, {method:data?'POST':'GET',headers:{Authorization:'Bearer '+token,...(data?{'Content-Type':'application/json'}:{})},...(data?{body:JSON.stringify(data)}:{})});
+ const value = await r.json(); if(!r.ok) throw new Error(value.error || '操作失敗'); return value;
+}
+function button(text, action) {const b=document.createElement('button');b.textContent=text;b.onclick=async()=>{b.disabled=true;b.textContent=text==='檢查授權'?'檢查中…':text;try{await act(action);}finally{b.disabled=false;b.textContent=text;}};return b;}
+async function act(action) {try{$('message').textContent='正在處理…';const result=await action();$('message').textContent=result?.message||'';await refresh();}catch(e){$('message').textContent=e.message;}}
+async function refresh() {
+ if(refreshing)return;refreshing=true;
+ try {
+  const d=await api('status'); $('summary').textContent=d.accounts.filter(a=>a.status==='READY').length+' 個可用／'+d.accounts.length+' 個帳戶';
+  $('accounts').replaceChildren();
+  for(const a of [...d.accounts].sort((a,b)=>a.priority-b.priority)) {
+   const row=document.createElement('article'); const title=document.createElement('strong');title.textContent=a.label;
+   const state=document.createElement('p');state.textContent=names[a.status]||a.status;row.append(title,state);
+   if(!a.has_credential)row.append(button('登入',()=>api('login',{account_id:a.id})));
+   row.append(button('檢查授權',()=>api('check',{account_id:a.id})));
+   row.append(button('設為首選',()=>api('prefer',{account_id:a.id})));
+   row.append(button(a.enabled?'停用':'啟用',()=>api('enabled',{account_id:a.id,enabled:!a.enabled})));$('accounts').append(row);
+  }
+  const s=d.login;activeStatus=s.status;attempt=s.attempt_id||'';
+  $('login').hidden=s.status==='IDLE';$('auth').hidden=!['WAITING_FOR_CODE','WAITING_FOR_BROWSER'].includes(s.status);
+  $('legacyCode').hidden=s.mode==='callback';
+  $('loginStatus').textContent=({STARTING:'正在啟動登入…',WAITING_FOR_CODE:'請開啟授權頁。',WAITING_FOR_BROWSER:'等待你在 Google 完成授權（五分鐘內有效）。',AUTHORIZING:s.phase||'正在確認授權…',SUCCEEDED:'已加入帳戶池，可以繼續新增下一個帳戶。',FAILED:s.error||'登入未完成。請重新按「登入」。'})[s.status]||'';
+  if(s.url)$('authLink').href=s.url;
+ } catch(e){$('message').textContent=e.message;} finally{refreshing=false;}
+}
+$('add').onclick=()=>act(async()=>{const label=$('label').value.trim();if(!label)throw new Error('請先輸入帳戶名稱。');const a=await api('accounts',{label});$('label').value='';await api('login',{account_id:a.account_id});});
+$('sendCode').onclick=()=>act(async()=>{const code=$('code').value.trim();$('code').value='';await api('code',{code,attempt_id:attempt});});
+$('cancelLogin').onclick=()=>act(()=>api('cancel',{}));
+if(!token)$('message').textContent='請使用工作站開啟的完整管理入口連結。';else{refresh();setInterval(refresh,1500);}
+</script></html>

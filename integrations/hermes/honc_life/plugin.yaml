@@ -1,11 +1,12 @@
 name: honc_life
-version: "1.0.0"
-description: Bind actual honc user turns to versioned life records and reminder context.
+version: "1.1.0"
+description: Bind authenticated honc turns to life records and verified Graph completion.
 author: UuMA
 hooks:
   - pre_gateway_dispatch
   - pre_llm_call
   - pre_tool_call
+  - transform_llm_output
   - post_llm_call
   - on_session_finalize
   - on_session_reset

@@ -3,11 +3,14 @@ from __future__ import annotations
 import pytest
 from fastapi.testclient import TestClient
 
-from uuma.state_daemon import StateDaemon, app
-
 
 @pytest.fixture
 def client(tmp_path, monkeypatch):
+    # The module constructs a daemon on import. Bind it to test storage before
+    # importing, so collecting/running tests never opens the user's real data.
+    monkeypatch.setenv("UUMA_DATA_DIR", str(tmp_path))
+    from uuma.state_daemon import StateDaemon, app
+
     test_daemon = StateDaemon(data_dir=tmp_path)
     monkeypatch.setattr("uuma.state_daemon.daemon", test_daemon)
     return TestClient(app)

@@ -1,0 +1,240 @@
+{
+  "observed_at_utc": "2026-10-20T08:23:07.280618+00:00",
+  "status": "ANTIGRAVITY_ROUTE_APPLIED_AND_ALL4_REAL_WINDOW_VERIFIED_CONTINUATION_RUNNING",
+  "scope": "this original ten-paper batch continuation; default native engine and other profiles unchanged",
+  "original_base_url": "https://api.95963210.xyz/v1",
+  "original_requested_profile": "standard",
+  "original_actual_response_model": "gemini-3.8-flash",
+  "new_base_url": "http://192.168.55.2:8080/v1",
+  "new_requested_profile": "antigravity",
+  "new_provider": "antigravity-oauth",
+  "new_router_model": "gemini-3.8-flash",
+  "new_actual_response_model": "gemini-3.8-flash-medium",
+  "reasoning_effort": "medium",
+  "raw_model_response_relabelled": false,
+  "unsupported_sampling_and_token_limit_options_sent": false,
+  "original_frozen_successful_windows_preserved": 31,
+  "first_recovered_window_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\record.json",
+  "first_recovered_window_all4_original_source_schema_and_exact_wire_replay_passed": true,
+  "final_accepted_layer_bindings": [
+    {
+      "layer": 1,
+      "origin": "ADOPTED_COMPLETED_PRIOR_ANTIGRAVITY_MEDIUM_RESPONSE",
+      "request_key": "34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v1\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v1\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v1\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_a5203e70850644c7a2746faf44cf8407"
+    },
+    {
+      "layer": 2,
+      "origin": "ANTIGRAVITY_DURABLE_RESPONSE",
+      "request_key": "f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_918820342f0f47e7a7b451c86370d13d"
+    },
+    {
+      "layer": 3,
+      "origin": "ANTIGRAVITY_DURABLE_RESPONSE",
+      "request_key": "baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_2b3ba912ce1041e38f861977f8303177"
+    },
+    {
+      "layer": 4,
+      "origin": "ANTIGRAVITY_DURABLE_RESPONSE",
+      "request_key": "2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_6f14056e2d164b51b669a0076b33c030"
+    }
+  ],
+  "retained_all_attempt_bindings": [
+    {
+      "layer": 1,
+      "origin": "REUSED_ORIGINAL_COMPLETED_RESPONSE",
+      "request_key": "7fee3eaa562a277221643ec0f79f2711dab5dd734f6f75de37304024d73bff89",
+      "endpoint": "https://api.95963210.xyz/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\7fee3eaa562a277221643ec0f79f2711dab5dd734f6f75de37304024d73bff89.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\7fee3eaa562a277221643ec0f79f2711dab5dd734f6f75de37304024d73bff89.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\7fee3eaa562a277221643ec0f79f2711dab5dd734f6f75de37304024d73bff89.json",
+      "actual_provider": "gemini",
+      "actual_model": "gemini-3.8-flash",
+      "run_id": "run_daaf477023e74c3dbe757756299e3fa4"
+    },
+    {
+      "layer": 1,
+      "origin": "ADOPTED_COMPLETED_PRIOR_ANTIGRAVITY_MEDIUM_RESPONSE",
+      "request_key": "34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v1\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v1\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v1\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\34db3abfb7afb479f1a6fef5204d159616e23ef3f362db50fbe1b5353627de02.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_a5203e70850644c7a2746faf44cf8407"
+    },
+    {
+      "layer": 2,
+      "origin": "ANTIGRAVITY_DURABLE_RESPONSE",
+      "request_key": "f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\f551b102b8c1eb2494ccf3cc27a8884e707358c839a58b04c967b9276cfd99ef.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_918820342f0f47e7a7b451c86370d13d"
+    },
+    {
+      "layer": 3,
+      "origin": "ANTIGRAVITY_DURABLE_RESPONSE",
+      "request_key": "baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\baef2635bd48275ec549f3af813c3245afbd97a63a855965334c6c19cde81db5.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_2b3ba912ce1041e38f861977f8303177"
+    },
+    {
+      "layer": 4,
+      "origin": "ANTIGRAVITY_DURABLE_RESPONSE",
+      "request_key": "2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c",
+      "endpoint": "http://192.168.55.2:8080/v1",
+      "request_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\requests\\2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c.json",
+      "response_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\responses\\2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c.json",
+      "run_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\cases\\paper_19f55daa7f17ede2858b\\000\\student-lm\\runs\\2e4b007b1cad6658c704c45f78283e734c75d589b4f298130d94a95fc73c7e5c.json",
+      "actual_provider": "antigravity-oauth",
+      "actual_model": "gemini-3.8-flash-medium",
+      "run_id": "run_6f14056e2d164b51b669a0076b33c030"
+    }
+  ],
+  "first_completed_antigravity_response_reused_without_second_inference": true,
+  "active_batch_snapshot": {
+    "request_model": "antigravity",
+    "base_url": "http://192.168.55.2:8080/v1",
+    "required_actual_model": "gemini-3.8-flash-medium",
+    "original_successes_preserved": 31,
+    "new_successful_windows": 3,
+    "all4_windows_passed_and_wire_verified": 34,
+    "remaining_windows": 92,
+    "declared_windows": 126,
+    "all10_native_browser_acceptance_complete": false,
+    "scientific_gain_claimed": false,
+    "halted": false
+  },
+  "active_batch_status_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\status.json",
+  "active_client_config_path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\antigravity-continuation-20261020-v2\\client-config.json",
+  "inference_worker_pid": 47640,
+  "inference_worker_alive": true,
+  "native_persistence_observer_pid": 56508,
+  "native_persistence_observer_alive": true,
+  "native_persistence_snapshot": {
+    "whole_papers_native_verified": 3,
+    "native_units_verified": 279,
+    "declared_papers": 10,
+    "declared_units": 1286,
+    "all10_native_persistence_complete": false,
+    "actual_browser_new_seven_papers_verified": false,
+    "all10_stability_acceptance_complete": false,
+    "independent_semantic_or_scientific_gain_claimed": false,
+    "model_inference_calls_by_this_coordinator": 0,
+    "active_batch": {
+      "request_model": "antigravity",
+      "base_url": "http://192.168.55.2:8080/v1",
+      "required_actual_model": "gemini-3.8-flash-medium",
+      "original_successes_preserved": 31,
+      "new_successful_windows": 3,
+      "all4_windows_passed_and_wire_verified": 34,
+      "remaining_windows": 92,
+      "declared_windows": 126,
+      "all10_native_browser_acceptance_complete": false,
+      "scientific_gain_claimed": false,
+      "halted": false
+    },
+    "papers": [
+      {
+        "paper_id": "paper_95eebae164cc42fd6005",
+        "units": 162,
+        "source": "preserved_original_native_publication",
+        "publication": {
+          "skeleton_id": "skeleton_97df4778dceaa5bae40383d8ff29d935",
+          "skeleton_run_id": "skeleton_run_acebc712bc3ed1fb424a097b99adddcf",
+          "units": 162
+        }
+      },
+      {
+        "paper_id": "paper_964b88669cfe422e7aef",
+        "units": 60,
+        "source": "preserved_original_native_publication",
+        "publication": {
+          "skeleton_id": "skeleton_f2151d371a909614e04bffa22c9af1ef",
+          "skeleton_run_id": "skeleton_run_535682364d4467073bb228cc3c001658",
+          "units": 60
+        }
+      },
+      {
+        "paper_id": "paper_ad7ea2de394ae32d2ed2",
+        "units": 57,
+        "source": "preserved_original_native_publication",
+        "publication": {
+          "skeleton_id": "skeleton_36b74d5667cebe18186e109f30b5ab2d",
+          "skeleton_run_id": "skeleton_run_16755f5c79cbaf9d45fa00bec7fe58c3",
+          "units": 57
+        }
+      }
+    ]
+  },
+  "native_observer_new_model_calls_allowed": false,
+  "inference_failure": null,
+  "native_persistence_failure": null,
+  "original_batch_or_old_failures_overwritten": false,
+  "old_and_new_protocols_scientifically_pooled": false,
+  "full_scientific_evaluation_or_gain_claimed": false,
+  "all10_native_browser_acceptance_complete": false,
+  "production_catalog_or_existing_api_routes_modified": false,
+  "api_keys_included": false,
+  "diagnostic_paths": {
+    "actual_batch_base_url": "https://api.95963210.xyz/v1",
+    "endpoint_and_request_fingerprints_verified": 175,
+    "actual_router_paths": [
+      "GET https://api.95963210.xyz/v1/router/status",
+      "POST https://api.95963210.xyz/v1/runs",
+      "GET https://api.95963210.xyz/v1/runs/{run_id}"
+    ],
+    "all126_diagnostic_statuses": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\flash38-text-to-skeleton-2026-10-19\\flash38-all126-window-status.json",
+    "original126_plan": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\plan.json",
+    "original_all126_terminal_results": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\record.json",
+    "original_execution_events": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\execution-events.jsonl",
+    "original_worker_stdout": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\worker-stdout.log",
+    "original_worker_stderr": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\worker-stderr.log",
+    "per_window_record_pattern": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-extraction\\cases\\<paper_id>\\<window_index:03d>\\record.json",
+    "http530_correlation_index": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\diagnosis-log-index-20261019-v1\\http530-window-correlation-index.json",
+    "remaining95_manifest": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\diagnosis-log-index-20261019-v1\\remaining95-resume-manifest.json",
+    "all95_failure_list": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\docs\\reviews\\scholar-rstv4-2026-09-30\\flash38-text-to-skeleton-2026-10-19\\flash38-all95-failures.md",
+    "recovery1_503": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-recovery-20261019-v1\\halted.json",
+    "recovery2_503": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.tmp\\flash38-skeleton-stability-20261017-v1\\full10-recovery-20261019-v2\\halted.json",
+    "new_network_calls": 0,
+    "api_keys_read_or_exported": false
+  },
+  "original_note": "HTTP530 count54 is terminal windows, not a complete HTTP attempt census; correlation timestamps are original window/logical-call events."
+}

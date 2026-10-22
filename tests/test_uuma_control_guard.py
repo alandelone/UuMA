@@ -430,6 +430,27 @@ def test_delegation_is_blocked_until_full_control_preflight(monkeypatch) -> None
     assert PLUGIN._pre_tool_call(**call)["action"] == "block"
 
 
+def test_yonc_preparation_grants_one_delegation_credit_and_replay_cannot_spawn_again(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "orchestrator")
+    call = {"tool_name": "delegate_task", "args": {"tasks": [{"goal": "write report"}]},
+            "session_id": "yonc-allocation"}
+    result = {"task_id": "accepted-task", "status": "READY", "execution_started": False}
+    _record("mcp__uuma_control__prepare_yonc_assignment", {}, result, "yonc-allocation")
+    assert PLUGIN._pre_tool_call(**call) is None
+    _record("delegate_task", call["args"], {"status": "dispatched"}, "yonc-allocation")
+    _record("mcp__uuma_control__prepare_yonc_assignment", {}, result, "yonc-allocation")
+    assert PLUGIN._pre_tool_call(**call)["action"] == "block"
+
+
+def test_yonc_nonready_or_failed_handoff_cannot_authorize_a_spawn(monkeypatch):
+    monkeypatch.setenv("HERMES_PROFILE", "orchestrator")
+    for result in ({"error": "handoff failed"}, {"task_id": "running", "status": "RUNNING",
+                                               "execution_started": True}):
+        _record("mcp__uuma_control__prepare_yonc_assignment", {}, result, "yonc-not-ready")
+    assert PLUGIN._pre_tool_call(tool_name="delegate_task", args={"tasks": [{}]},
+                                session_id="yonc-not-ready")["action"] == "block"
+
+
 def test_batch_delegation_requires_one_ready_task_per_child(monkeypatch) -> None:
     monkeypatch.setenv("HERMES_PROFILE", "orchestrator")
     for task_id in ("task-1", "task-2"):
@@ -964,7 +985,7 @@ def test_forge_file_mutation_allowed_in_hardware_workspace(monkeypatch) -> None:
     PLUGIN._state("forge-sess").direct_run_id = "run-forge-1"
 
     # write_file to Hardware-Lab-Workspace/projects
-    path1 = "C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace/projects/scallion/plan.md"
+    path1 = str(PLUGIN._forge_default_cwd() / "projects/scallion/plan.md")
     res1 = PLUGIN._pre_tool_call(
         tool_name="write_file",
         args={"path": path1, "content": "# Plan"},
@@ -973,7 +994,7 @@ def test_forge_file_mutation_allowed_in_hardware_workspace(monkeypatch) -> None:
     assert res1 is None
 
     # edit_file in Hardware-Lab-Workspace/outputs
-    path2 = "C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace/outputs/bom.json"
+    path2 = str(PLUGIN._forge_default_cwd() / "outputs/bom.json")
     res2 = PLUGIN._pre_tool_call(
         tool_name="edit_file",
         args={"file_path": path2, "content": "{}"},
@@ -997,7 +1018,7 @@ def test_forge_file_mutation_allowed_in_kanban_workspace(monkeypatch) -> None:
     state.direct_run_id = "kanban:t_29be449d"
 
     # Absolute Windows path in kanban workspace
-    path_win = r"C:\Users\Alandelone\AppData\Local\hermes\kanban\workspaces\t_29be449d\系统设计文档.md"
+    path_win = str(PLUGIN._forge_default_cwd({"task_id": "t_29be449d"}) / "系统设计文档.md")
     assert PLUGIN._pre_tool_call(
         tool_name="write_file",
         args={"path": path_win, "content": "# Design"},
@@ -1006,7 +1027,11 @@ def test_forge_file_mutation_allowed_in_kanban_workspace(monkeypatch) -> None:
     ) is None
 
     # Git Bash posix path in kanban workspace
-    path_posix = "/c/Users/Alandelone/AppData/Local/hermes/kanban/workspaces/t_29be449d/硬件清单与预算.md"
+    path_posix = (
+        "/c/Users/Alandelone/AppData/Local/hermes/kanban/workspaces/t_29be449d/硬件清单与预算.md"
+        if PLUGIN.os.name == "nt"
+        else str(PLUGIN._forge_default_cwd({"task_id": "t_29be449d"}) / "硬件清单与预算.md")
+    )
     assert PLUGIN._pre_tool_call(
         tool_name="write_file",
         args={"path": path_posix, "content": "# Budget"},

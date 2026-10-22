@@ -20,10 +20,12 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, ConfigDict
 
 from .kag_lifecycle import KagIdleTracker, runtime_lock
+from .kag_llm_runtime import configure_kag_llm_runtime
 
 app = FastAPI(title="UuMA OpenSPG KAG bridge", version="0.1.0")
 _init_lock = threading.Lock()
 _initialized = False
+_llm_runtime: dict[str, Any] | None = None
 _idle_tracker: KagIdleTracker | None = None
 _bge_runtime: dict[str, Any] = {
     "backend": "unconfigured",
@@ -314,7 +316,7 @@ class ExtractRequest(BaseModel):
 
 
 def _init_kag() -> None:
-    global _initialized
+    global _initialized, _llm_runtime
     if _initialized:
         return
     with _init_lock:
@@ -325,6 +327,7 @@ def _init_kag() -> None:
                 os.environ["OPENAI_API_KEY"] = os.environ["OPENROUTER_API_KEY"]
             from kag.common.conf import init_env
 
+            _llm_runtime = configure_kag_llm_runtime()
             _configure_local_bge_runtime()
             config_file = os.environ.get("UUMA_KAG_CONFIG")
             init_env(config_file=config_file)
@@ -521,6 +524,7 @@ def health() -> dict[str, Any]:
             "project_id": KAG_PROJECT_CONF.project_id,
             "host_addr": KAG_PROJECT_CONF.host_addr,
             "embedding": dict(_bge_runtime),
+            "llm_policy": _llm_runtime,
         }
     except Exception as exc:  # noqa: BLE001 -- Health reports optional KAG initialization failures.
         return {"ready": False, "runtime": "OpenSPG/KAG", "error": str(exc)}

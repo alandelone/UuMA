@@ -3,7 +3,10 @@ from __future__ import annotations
 import json
 import os
 import re
-import threading
+import tempfile
+import time
+from collections.abc import Iterator
+from contextlib import contextmanager
 from copy import deepcopy
 from datetime import UTC, datetime
 from enum import Enum
@@ -13,7 +16,28 @@ from uuid import uuid4
 
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
+from .brainstormer_lock import BrainstormerProcessLock
+
 _IDENTIFIER = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
+_WINDOWS_ATOMIC_REPLACE = os.name == "nt"
+
+
+def _replace_json_file(temporary: Path, destination: Path) -> None:
+    # Windows can briefly deny replacement while another process/virus scanner
+    # holds a destination handle. Retry only those OS codes, with a fixed bound;
+    # a persistent permissions problem must still fail and keep the old JSON.
+    for attempt in range(10):
+        try:
+            temporary.replace(destination)
+            return
+        except OSError as error:
+            if (
+                not _WINDOWS_ATOMIC_REPLACE
+                or getattr(error, "winerror", None) not in {5, 32, 33}
+                or attempt == 9
+            ):
+                raise
+            time.sleep(min(0.01 * (2 ** attempt), 0.1))
 
 
 def _now() -> str:
@@ -151,13 +175,19 @@ class StateTransaction(StrictModel):
 class BrainstormerStore:
     """Versioned project JSON managed through validated transaction proposals."""
 
-    def __init__(self, root: str | Path) -> None:
+    def __init__(self, root: str | Path, *, lock_timeout_seconds: float = 30) -> None:
         self.root = Path(root).resolve()
         self.projects = self.root / "projects"
         self.proposals = self.root / "proposals"
-        self._lock = threading.RLock()
+        self._lock = BrainstormerProcessLock(self.root, timeout_seconds=lock_timeout_seconds)
         self.projects.mkdir(parents=True, exist_ok=True)
         self.proposals.mkdir(parents=True, exist_ok=True)
+
+    @contextmanager
+    def transaction(self) -> Iterator[BrainstormerStore]:
+        """Hold the root lock across related calls; this adds no crash rollback."""
+        with self._lock:
+            yield self
 
     @classmethod
     def from_env(cls) -> BrainstormerStore:
@@ -267,12 +297,13 @@ class BrainstormerStore:
             return proposal
 
     def commit_safe(self, proposal_id: str, *, actor_id: str) -> dict[str, Any]:
-        proposal = self.get_proposal(proposal_id)
-        if proposal["review_required"]:
-            raise PermissionError("This transaction requires Orchestrator/user review")
-        return self.review(
-            proposal_id, actor_id=actor_id, approve=True, note="validated safe state"
-        )
+        with self._lock:
+            proposal = self.get_proposal(proposal_id)
+            if proposal["review_required"]:
+                raise PermissionError("This transaction requires Orchestrator/user review")
+            return self.review(
+                proposal_id, actor_id=actor_id, approve=True, note="validated safe state"
+            )
 
     def get_context(self, project_id: str, topic_id: str | None = None) -> dict[str, Any]:
         with self._lock:
@@ -290,8 +321,10 @@ class BrainstormerStore:
                 "objects": objects,
                 "links": state["links"],
                 "active_question_id": state.get("active_question_id"),
-                "latest_checkpoint": next(
-                    (item for item in reversed(objects) if item["kind"] == "checkpoint"), None
+                "latest_checkpoint": max(
+                    (item for item in objects if item["kind"] == "checkpoint"),
+                    key=lambda item: (item.get("updated_at", ""), item["id"]),
+                    default=None,
                 ),
             }
 
@@ -792,10 +825,18 @@ class BrainstormerStore:
     @staticmethod
     def _atomic_json(path: Path, payload: dict[str, Any]) -> None:
         path.parent.mkdir(parents=True, exist_ok=True)
-        temporary = path.with_suffix(path.suffix + ".tmp")
-        with open(temporary, "w", encoding="utf-8") as f:
-            json.dump(payload, f, ensure_ascii=False, indent=2, sort_keys=True)
-            f.flush()
-            os.fsync(f.fileno())
-        temporary.replace(path)
+        temporary = None
+        try:
+            with tempfile.NamedTemporaryFile(
+                mode="w", encoding="utf-8", dir=path.parent,
+                prefix=f".{path.name}.", suffix=".tmp", delete=False,
+            ) as handle:
+                temporary = Path(handle.name)
+                json.dump(payload, handle, ensure_ascii=False, indent=2, sort_keys=True)
+                handle.flush()
+                os.fsync(handle.fileno())
+            _replace_json_file(temporary, path)
+        finally:
+            if temporary is not None:
+                temporary.unlink(missing_ok=True)
 

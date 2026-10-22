@@ -37,8 +37,10 @@ whole project graph while respecting the tools actually available.
    Propose assignments separately from graph changes. For each suggestion, state the worker
    and source of its capability claim, current availability if verified, scope, inputs,
    deliverable, dependencies, acceptance criteria, and any budget or permission needs.
-   Mark unverified capability or availability as provisional. No current tool persists a
-   dedicated assignment record or dispatches another Agent; do not claim either occurred.
+   Mark unverified capability or availability as provisional. When the assignment backend
+   is available, save one existing leaf Action and one executor with
+   `yonc_propose_action_assignment`; recover it with `yonc_get_action_assignments` and
+   `yonc_get_assignment_detail`. References to others' work are sources, not extra executors.
 
 ## Accept, hand off, and report
 
@@ -50,8 +52,10 @@ whole project graph while respecting the tools actually available.
 9. Call `yonc_commit_authorized_split` only when that trusted authorization is available
    and the scope and versions still match. Report the operation receipt and current graph
    version. On conflict or an uncertain response, read current state before any retry.
-10. Route accepted cross-Agent work only through a future Orchestrator/UuMA handoff when it
-    exists and is authorized. Until then, present the handoff as pending. Use UuMA Worker MCP
+10. Accepted Action allocations use Orchestrator's `prepare_yonc_assignment` and
+    `sync_yonc_assignment` after backend configuration and deployment. Yonc cannot dispatch
+    or accept work itself. Every delivery waits for user acceptance; no automatic grading
+    or acceptance is authorized. Report unavailable handoffs as pending. Use UuMA Worker MCP
     only to register, update, and close Yonc's own assigned run; do not use it to imply that
     suggested work was dispatched.
 11. Report accepted project status, draft state, pending reviews, Agent execution, returned

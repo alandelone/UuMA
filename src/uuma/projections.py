@@ -82,6 +82,9 @@ class Projector:
     def on_task_approved(self, conn: sqlite3.Connection, event: EventEnvelope) -> None:
         self._update_task(conn, event, status="TODO")
 
+    def on_task_cancelled(self, conn: sqlite3.Connection, event: EventEnvelope) -> None:
+        self._update_task(conn, event, status="CANCELLED")
+
     def on_task_assigned(self, conn: sqlite3.Connection, event: EventEnvelope) -> None:
         self._update_task(
             conn,
@@ -92,6 +95,7 @@ class Projector:
 
     def on_run_registered(self, conn: sqlite3.Connection, event: EventEnvelope) -> None:
         registration = event.payload["registration"]
+        initial_status = registration.get("initial_status", "RUNNING")
         task = conn.execute(
             "SELECT execution_epoch FROM tasks WHERE task_id=?",
             (registration["task_id"],),
@@ -103,7 +107,7 @@ class Projector:
             "run_id": registration["run_id"],
             "task_id": registration["task_id"],
             "agent_id": registration["agent_id"],
-            "status": "RUNNING",
+            "status": initial_status,
             "completed_steps": 0,
             "total_steps": None,
             "current_step": None,
@@ -121,12 +125,13 @@ class Projector:
                 external_run_ref, execution_epoch, progress_json, result_json,
                 result_digest, result_version, updated_sequence
             )
-            VALUES (?, ?, ?, 'RUNNING', ?, ?, ?, ?, ?, NULL, NULL, 0, ?)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, NULL, NULL, 0, ?)
             """,
             (
                 registration["run_id"],
                 registration["task_id"],
                 registration["agent_id"],
+                initial_status,
                 registration["source"],
                 registration["execution_class"],
                 registration.get("external_run_ref"),
@@ -138,11 +143,12 @@ class Projector:
         conn.execute(
             """
             UPDATE tasks
-            SET status='RUNNING', assignee=?, current_run_id=?, execution_epoch=?,
+            SET status=?, assignee=?, current_run_id=?, execution_epoch=?,
                 state_version=state_version + 1, updated_sequence=?
             WHERE task_id=?
             """,
             (
+                "READY" if initial_status == "PENDING" else "RUNNING",
                 registration["agent_id"],
                 registration["run_id"],
                 execution_epoch,

@@ -1,5 +1,54 @@
 # Findings
 
+## 2026-10-22 Scholar FieldKG server deployment context
+
+The FieldKG bridge belongs to a separate ScholarFieldKG project, not Wisdom's
+project1. Actual OpenSPG project creation checks an embedding provider; old mock
+vectorizer metadata is not a working provider. Use the authenticated server CPU
+BGE-M3 endpoint and its real1024-dimensional vectors. Never modify project1 to
+work around project creation. The knext SDK caches a pre-commit empty schema;
+verify the committed schema in a fresh process, preserving the original failure.
+RSTV4 package initialization imports models, so deploy the complete declared
+source package rather than only fieldkg_bridge.py. Preserve failed source pins.
+Windows PowerShell's default execution policy rejected the bootstrap script
+before its owner guard ran. Operational guard verification must execute the
+script with process-only ExecutionPolicy Bypass and still assert the exact
+server-owner rejection; no machine/user execution policy is changed.
+See rules/scholar-fieldkg-deployment.md and the private cutover receipts.
+
+## 2026-10-20 Antigravity API bridge runtime context
+
+The user authorized the existing five-account pool as an optional provider in
+unlimited_llmapi, reachable through its Ubuntu API using a Windows bridge.
+Unit/HTTP tests and one real Ubuntu-to-Windows JSON model call passed. Background
+startup is still under investigation: scheduled bridge child reports FileNotFound
+for the protected token path although the current interactive process confirms the
+same normalized path exists. Preserve bootstrap diagnostics; do not weaken token
+authentication or claim deployment complete. Task stop/start is asynchronous;
+wait for supervisor mutex release, and own child lifetimes through a Windows job
+before testing recovery. See rules/antigravity-bridge-runtime.md.
+
+Context fix: both processes had the same user SID and normalized path, but the
+AppData directory file identities differed (interactive 150589112540384671,
+scheduled child 12947848929273977). The scheduled view lacked the token and state
+receipt. Retained diagnostics establish this discrepancy without proving its OS
+cause. Moving the protected service state to the project's ignored
+logs/antigravity-bridge directory made the scheduled bridge listen successfully.
+Authentication/ACL requirements remain intact. Resume verification from the
+pending verification gate; require actual scheduled/tunnel health and recovery
+before promotion, and preserve the previous successful model-call evidence.
+
+Final verification: 76 local tests passed on Python3.12; the full Linux regression
+also passed before service activation. Commit f317bbc pushed to origin/master and
+deployed by fast-forward (no reset); existing remote untracked .venv preserved.
+Protected bridge environment mode0600 plus additive systemd drop-in activated.
+Actual Ubuntu API lists antigravity and real streamed reply returned OK through
+the private Windows tunnel. Controlled termination of owned bridge child37228
+recovered to39132 and tunnel61084; subsequent Ubuntu bridge health confirmed5
+accounts. Windows bridge task Running, old Windows router task Disabled; Ubuntu
+8080 router,8081 bundled web and loopback18084 tunnel all listening. No migration,
+existing-route changes, credential export or Hermes restart. Gate remains pending.
+
 ## 2026-10-15 Scholar actual pure-layout continuation
 
 Final receipt: the CSS wrap repair passed a new production build and all21 file
@@ -3537,3 +3586,36 @@ Do not weaken product tests, source provenance, rejection or approval assertions
 2026-10-16 all11 fixed-generation preflight context: the owned37-path copy and baseline completed, but helper incorrectly passed catalog root to pure generated_version(storage_root). Actual StudioService passes root/data/writing-studio. Both originalmaterial files already copied and byte-exact; no missing data or production verifier defect. Retain the unavailable-material failure; correct ONLY helper argument and finish read-only preflight in existing copy, no second copy, SQL/path/model/UI replay. Require full original v7/input86 verifier and all110 unchanged before launch.
 
 2026-10-16 all11 runtime ready recovery: original common launch started both verified services and completed HTML/assets/workspace/110 startup reads, then helper expected before110-all-files.json while preparation saved before-all-files.json. Actual data/bytes remain exact. Record both names same digest, finish readiness/ownership of the EXISTING exact PIDs only; never launch a second pair, rebuild or copy data on this late observer failure. Current helper preparation now uses canonical name.
+
+
+2026-10-19 Flash3.8 ten-paper native verification found distinct valid hash encodings: native fieldkg compact JSON versus DSPy experiment standard JSON. All162 first-paper source texts, locations, first3 layer payloads, L4 roles and native HTTP data were exact, and all recorded native hashes match fieldkg.digest. Original failures and complete proofs: .tmp/flash38-skeleton-stability-20261017-v1/native-digest-failure-context-v2. The original126-window model worker is terminal:31 passed and95 failed due to service quota/cooldown/transport errors. Preserve original records and do not rerun completed inference for this verifier correction.
+
+
+2026-10-19 Flash3.8 continuation context: original126-window batch is terminal31passed/95service failures (54HTTP530,15explicit429quota,26cooldown-only). All successful31cases replay from unchanged wire caches; three whole papers/279blocks passed native publication, HTTP/checkpoint/idempotence and actual browser DOM source/all4 checks. First declared failed-window recovery retained its parent run, made one new idempotent request and stopped on upstream503high demand. After at least300seconds, allow one final separately declared bounded probe with the same model/provider/input/prompts/strict guards; stop at first failure and retain every prior request and terminal result. No retry of successful model work or silent source substitution. Native three-paper cache job claim correctly stopped because the acceptance Catalog had accumulated191435seconds against its86400second limit. Full failed source and native DB retained. Correct continuation must append a normal finite budget event adding3600seconds beyond measured elapsed, resume via original service, adopt exactly the three verified cached outputs with fenced leases, then restorePAUSED. Do not remove the budget check or fabricate model-call events, mark seven incomplete papers complete or approve scientific/mission gates. Context: .tmp/flash38-skeleton-stability-20261017-v1/bounded-continuation-context-20261019-v2.
+
+
+## FLASH38_PARTIAL_NATIVE_CONTINUATION_20261019_V1
+
+Continued the authorized original10papers/126windows/1286blocks with pinnedFlash3.8 and frozen all4DSPy prompts. Original batch is terminal31passed/95service failures:54HTTP530,15explicit429quota,26cooldown-only. All31successes passed exact wire replay with unchanged original artifacts and no new inference. Native digest verification was corrected to its original native hash namespace with full162unit proof, preserving failed sources and all exact source/layer/checkpoint/HTTP/idempotence checks. PTHP,URB,fridge are saved in the separate real native acceptance Catalog8893:3papers/279units/1116full4checkpoints. Actual officialBrowser checks compared all279DOM original texts and stored all4structures, observed each paper all4sections, saved screenshots and reopened all3pages with exact readback and no console errors. Three nativeSkeleton jobs nowSUCCEEDED by truthful cached adoption, no fabricated native model-call entries. Ten nativeParse jobs had alreadySUCCEEDED via verified cache. Collection budget correctly stopped at191435active seconds versus86400; full failure/database snapshot kept, normal finite budget event added3600seconds beyond measured elapsed, adoption completed andPAUSED restored. Two declared recovery probes more than300seconds apart both stopped at the first pinned3.8request with actual upstream503high demand. No current background model batch or automation is sending requests. Original31successful windows were never rerun.
+
+TEN-PAPER STABILITY AND FULL3.8SCIENTIFIC EVALUATION ARE NOT COMPLETE. The current external blocker is the3.8service. Production mainCatalog was not written by this pipeline; its original4NEEDS_REVIEW states and10PDF digests were read-only reconfirmed. Default native engine andFieldKG atomic-intent consumer unchanged. Original3.7 scientific reportSHA 057ce2fd94ceb06294f286f08cfec247e7015f696a07ff3c50969f4cbb766ca1 unchanged. All40source-unaccepted/7missing-extraction/2unresolved windows are now listed explicitly with complete original records; all8original failed cases including1source overlap retained. No scientific scores, approval, gain claim or mission gate transition. Existing12native Python checks andJS renderer safety/recovery checks retain exact unchanged sourceSHA; fresh actual native checks, browser checks andgit diff --check passed.
+
+Report: docs/reviews/scholar-rstv4-2026-09-30/flash38-text-to-skeleton-2026-10-19/result.md and result.json. Ready full4layer export: ready-three-paper-skeletons.json. All126case statuses/95failures and old40/7/2 lists included. Latest pipeline-status.json corrected from stale failed-coordinator projection; complete old projection preserved. Original118/all11/Honc/Studio and other concurrent Windows/Hermes work remain outside this scoped acceptance and untouched.
+
+
+2026-10-20 Antigravity model contract: user selected explicit8080profileantigravity. First real durable request run_a5203e70850644c7a2746faf44cf8407 completed, providerantigravity-oauth, router requested gemini-3.8-flash, actual raw response gemini-3.8-flash-medium. The installed plugin models.resolve_model_and_effort explicitly maps Flash3.8+medium to that concrete CLI ID. Preserve the failed strict-base-name verifier, complete request/response/run and plugin mapping source. New declared protocol must send reasoning_effort=medium, strictly check the literal medium response model and base route model separately, retain originalgemini3.8 cache provenance separately, and reuse the already-completed medium response without reissuing it. No raw response relabeling, suffix wildcard acceptance, source/schema relaxation or fair old/new scientific protocol equivalence. Sampling and token caps unsupported by CLI remain explicitly omitted. Context: .tmp/flash38-skeleton-stability-20261017-v1/antigravity-model-contract-context-20261020-v2.
+
+
+2026-10-20 Antigravity native readback context: the new source/model transport is separate from the owned acceptance preview8893. Its first coordinator readback found no listener; failed source/trace retained at .tmp/flash38-skeleton-stability-20261017-v1/antigravity-native-persistence-20261020-v1. Restore only the same owned preview with hidden console after proving8893unbound; do not restart the successful Antigravity inference worker or modify production8875. Coordinatorv2 also reads one fixed JSONL snapshot and waits for the unfinished EOFline; every newline-terminated event must still parse and all HTTP/source/layer/checkpoint assertions remain. No partial-paper or scientific pass is allowed.
+
+
+2026-10-20 Antigravity reporting contract: first recovered PHSwindow0 retains five wire attempts: the original cached Gemini L1attempt, which the unchanged strict program rejects, followed by the already-completed Antigravity L1repair and three new Antigravity L2-L4responses. All four FINAL accepted layer bindings are strictly antigravity-oauth/gemini-3.8-flash-medium. The report must distinguish complete attempt history from the last accepted binding for each stage; preserve all rejected attempts and no raw response or model relabeling. The first report draft assertion assumed every historical attempt usedAntigravity and was rejected. Complete draft/source/first-case proof retained under api-report-attempt-lineage-context-20261020-v2. No client, source/schema, extraction result or model checks changed; zero new model calls.
+
+
+2026-10-20 Antigravity read-only audit context: the first adopted pre-v2 request run_a5203e70850644c7a2746faf44cf8407 omitted reasoning_effort and returned actual medium, as retained in its original request/response. New v2 requests explicitly send medium. An audit-only KeyError incorrectly assumed the adopted request already had the v2 field. Keep that failed audit and original request SHA; successor audit distinguishes exactly this one adopted run by origin/runID/raw SHA and still strictly checks every actual response model/provider and explicit medium on all new requests. Active extraction, strict source/schema/model guards and all saved results remain unchanged; zero inference. Context: .tmp/flash38-skeleton-stability-20261017-v1/antigravity-live-audit-context-20261020-v4.
+
+
+2026-10-20 Windows headless API bridge context: actual nested agy --version update checks opened WindowsTerminal despite hidden parents. API child env disables auto update; bridge hosted in conhost headless with verified inherited console and exact JSON pipes. Do not put the terminal directly in the JSON stream (VT/echo/stderr/exitcode altered). Nested Python test snippets require repr, retain first missing-report and syntax-error diagnostics without weakening output/exit assertions. An idle socket snapshot is NOT caller quiescence: maintenance restart raced a new single-attempt Scholar run and halted it at46/126; failed run_e3cc0b22920144b59b4bf16644281fba and all successes retained, user recovery decision pending. Future maintenance must explicitly drain/pause ingress. Rule: rules/windows-headless-bridge-validation.md; evidence .uuma-local/dash-agy-fix-20261020/result.md.
+
+
+2026-10-21 published-access validation context: isolated WebSocket fixture requires explicit wss host for Secure cookie; default TestClient ws testserver correctly rejected. Real Live root returns302 /live/; Scholar read endpoint is /api/catalog/research-overview. Initial preflight assumptions failed before any tunnel change; strict auth and final200 assertions retained after declaring exact native navigation/endpoints. See rules/public-access-validation.md and .uuma-local/public-access-20261021. No inference or application restart.

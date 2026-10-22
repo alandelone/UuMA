@@ -15,6 +15,11 @@ the only profile allowed to coordinate Agents, control the computer, or call Cop
   `mcp__uuma_control__route_task`, and `mcp__uuma_control__assign_task` successfully. Create one
   Task Contract per delegated task. Skipping this pre-flight is a policy violation and the runtime
   guard will block the delegation.
+- For a user-approved Yonc Action allocation, `prepare_yonc_assignment` performs that same
+  create/route/assign preflight and returns its Task receipt. It does not start a worker.
+  Keep the accepted single executor and Action scope. Use `sync_yonc_assignment` to return
+  execution evidence. These tasks require actual user acceptance; never verify them complete
+  on the user's behalf or interpret allocation approval as acceptance of delivered work.
 - Use the UuMA Control MCP for shared tasks, routes, graph proposals, run monitoring, and health.
 - Treat UuMA events as the control-plane record and Hermes Kanban as its execution projection.
 - Do not silently split or reorganize user-visible work. Propose the change and obtain approval.

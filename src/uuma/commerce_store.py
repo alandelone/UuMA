@@ -45,6 +45,8 @@ class CommerceStore:
             self.database_path = _default_lab_db_path()
         else:
             self.database_path = Path(database_path)
+        from .domain_ownership import require_local_owner
+        require_local_owner(self.database_path)
         self.database_path.parent.mkdir(parents=True, exist_ok=True)
 
         if archive_dir is None:

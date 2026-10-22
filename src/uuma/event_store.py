@@ -26,6 +26,10 @@ def task_request_digest(contract: dict[str, Any]) -> str:
     material = dict(contract)
     material.pop("task_id", None)
     material.pop("created_at", None)
+    # The historical contract implicitly used independent verification. Adding
+    # its explicit default must not break existing task idempotency receipts.
+    if material.get("acceptance_authority") == "INDEPENDENT":
+        material.pop("acceptance_authority")
     for set_field in ("required_capabilities", "required_tools"):
         values = material.get(set_field)
         if isinstance(values, list):

@@ -16,6 +16,8 @@ _PENDING: dict[tuple[str, ...], tuple[str, datetime, str]] = {}
 _TURNS: dict[tuple[str, str], str] = {}
 _BROKER = None
 _CONFIG: dict[str, Any] = {}
+_WORK = None
+_WORK_RESULTS: dict[tuple[str, str], dict[str, Any]] = {}
 
 
 def _profile() -> str:
@@ -118,6 +120,18 @@ def _pre_llm_call(**kwargs):
     )
     with _LOCK:
         _TURNS[(session, turn)] = token
+    work = None
+    if _WORK is not None:
+        work = _WORK.report(
+            text=raw,
+            owner_id=actor,
+            session_id=session,
+            source_event_id=transport,
+            input_kind=input_kind,
+        )
+        if work:
+            with _LOCK:
+                _WORK_RESULTS[(session, turn)] = work
     return {
         "context": "HONC_LIFE_CURRENT_MESSAGE\n"
         + json.dumps(
@@ -126,8 +140,11 @@ def _pre_llm_call(**kwargs):
                 "request_refs": receipt["request_refs"],
                 "today": received.astimezone(LOCAL_TIMEZONE).date().isoformat(),
                 "timezone": "Asia/Kuala_Lumpur",
+                "work_completion": work,
                 "instructions": "先读 honc_get_life_context；工具的 context_ref 由宿主注入，别自己填写。"
-                "只能用当前 request_refs，保留原文与未知字段。身体记录不追问。日记只调用 save_diary，别重复打卡。",
+                "只能用当前 request_refs，保留原文与未知字段。身体记录不追问。日记只调用 save_diary，别重复打卡。"
+                "work_completion 非空时，宿主已处理本轮完成报告；直接说明其 reply，不重复记录或提交完成。"
+                "只有 graph_verified=true 才能说 Graph 已完成。",
             },
             ensure_ascii=False,
         )
@@ -157,6 +174,14 @@ def _pre_tool_call(tool_name="", args=None, **kwargs):
         return None
     operation = name.split("__")[-1]
     values = dict(args or {})
+    if operation == "honc_apply_completion" and _WORK is not None:
+        return {
+            "action": "block",
+            "message": "任务完成由当前真实用户消息的宿主流程处理，不能由模型另造完成凭据。",
+        }
+    work_key = (str(kwargs.get("session_id") or ""), str(kwargs.get("turn_id") or ""))
+    if operation == "honc_record_execution" and work_key in _WORK_RESULTS:
+        return {"action": "block", "message": "本轮完成报告已由宿主保存，不重复写入。"}
     if operation == "honc_check_habit" or (
         operation == "honc_record_execution" and values.get("habit_id")
     ):
@@ -205,11 +230,19 @@ def _close(**kwargs):
         keys = [key for key in _TURNS if key[0] == session and (not turn or key[1] == turn)]
         for key in keys:
             _TURNS.pop(key, None)
+            _WORK_RESULTS.pop(key, None)
             _BROKER.close_turn(*key)
 
 
+def _work_output(response_text="", **kwargs):
+    key = (str(kwargs.get("session_id") or ""), str(kwargs.get("turn_id") or ""))
+    with _LOCK:
+        work = _WORK_RESULTS.pop(key, None)
+    return work["reply"] if work else None
+
+
 def register(ctx):
-    global _BROKER, _CONFIG
+    global _BROKER, _CONFIG, _WORK
     path = Path(__file__).parent / "runtime.json"
     if not path.is_file():
         _LOGGER.warning("honc_life has no installed runtime binding; remaining disabled")
@@ -219,8 +252,18 @@ def register(ctx):
     from uuma.honc.life_context import LifeContextBroker
 
     _BROKER = LifeContextBroker(_CONFIG)
+    graph = _CONFIG.get("work_completion", {})
+    if graph.get("enabled"):
+        from uuma.honc.graph_client import GraphExecutionClient
+        from uuma.honc.work_completion import WorkCompletion
+
+        _WORK = WorkCompletion(
+            _BROKER.store.ledger,
+            GraphExecutionClient(base_url=graph["url"], database_id=graph["database_id"]),
+        )
     ctx.register_hook("pre_gateway_dispatch", _pre_gateway_dispatch)
     ctx.register_hook("pre_llm_call", _pre_llm_call)
     ctx.register_hook("pre_tool_call", _pre_tool_call)
+    ctx.register_hook("transform_llm_output", _work_output)
     for event in ("post_llm_call", "on_session_finalize", "on_session_reset"):
         ctx.register_hook(event, _close)

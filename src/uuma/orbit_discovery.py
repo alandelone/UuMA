@@ -591,7 +591,7 @@ class ChatGPTDiscoveryProvider:
 
     def __init__(
         self,
-        base_url: str = "http://127.0.0.1:8787",
+        base_url: str | None = None,
         *,
         agent: str = "wisdom-oldman",
         token: str | None = None,
@@ -603,7 +603,10 @@ class ChatGPTDiscoveryProvider:
         poll_interval: float = 2.0,
         opener: Any | None = None,
     ) -> None:
-        self.base_url = base_url.rstrip("/")
+        self.base_url = (
+            base_url if base_url is not None
+            else os.environ.get("UUMA_CHATGPT_BRIDGE_URL", "http://127.0.0.1:8787")
+        ).rstrip("/")
         self.agent = agent
         self.token = token
         self.mode = mode
@@ -623,6 +626,15 @@ class ChatGPTDiscoveryProvider:
             return json.loads(response.read().decode("utf-8"))
 
     def _resolve_token(self) -> str | None:
+        token_file = os.environ.get("UUMA_CHATGPT_AGENT_TOKEN_FILE", "").strip()
+        if token_file:
+            try:
+                from pathlib import Path
+
+                return Path(token_file).expanduser().read_text(encoding="utf-8").strip() or None
+            except OSError:
+                LOGGER.warning("Configured ChatGPT Agent token file is unavailable")
+                return None  # Never fall back to a workstation's unrelated legacy credentials.
         token = self.token
         if not token:
             try:

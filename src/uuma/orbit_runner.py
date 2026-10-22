@@ -16,6 +16,7 @@ from typing import Any, Self
 
 from ruamel.yaml import YAML
 
+from .control_client import ControlClient, control_backend
 from .kag_adapter import (
     KagProjectionWorker,
     KagUnavailableError,
@@ -856,25 +857,43 @@ class OrbitRunner:
 
 
 def _ensure_runner_run(
-    control_plane: ControlPlane, orbit_id: str, question: str
+    control_plane: ControlPlane | ControlClient, orbit_id: str, question: str
 ) -> str | None:
     try:
-        with control_plane.connect() as db:
-            row = db.execute(
-                "SELECT run_id FROM runs WHERE agent_id='wisdom-oldman' "
-                "AND status IN ('PENDING', 'RUNNING') ORDER BY id DESC LIMIT 1"
-            ).fetchone()
-            if row:
+        if isinstance(control_plane, ControlClient):
+            matches = [
+                row for row in control_plane.list_runs(agent_id="wisdom-oldman")
+                if row.get("agent_id") == "wisdom-oldman"
+                and row.get("external_run_ref") == orbit_id
+            ]
+            if len(matches) > 1:
+                raise ValueError("Question Orbit has ambiguous remote Run bindings")
+            if matches:
+                row = control_plane.require_run(str(matches[0]["run_id"]))
+                if (row.get("agent_id") != "wisdom-oldman"
+                        or row.get("external_run_ref") != orbit_id):
+                    raise PermissionError("Question Orbit remote Run binding changed")
+                if row.get("status") not in {"PENDING", "RUNNING"}:
+                    return None  # Terminal or paused work must never be implicitly resumed.
                 return str(row["run_id"])
+        else:
+            with control_plane.connect() as db:
+                row = db.execute(
+                    "SELECT run_id FROM runs WHERE agent_id='wisdom-oldman' "
+                    "AND status IN ('PENDING', 'RUNNING') ORDER BY id DESC LIMIT 1"
+                ).fetchone()
+                if row:
+                    return str(row["run_id"])
         from .models import ExecutionClass, RiskLevel, TaskContract
 
         contract = TaskContract(
             title=f"Question Orbit: {question[:50]}",
-            description=f"Autonomous Question Orbit research for {orbit_id}",
-            task_type="research",
-            execution_class=ExecutionClass.SAFE,
-            risk_level=RiskLevel.LOW,
-            target_path=f"wisdom/orbits/{orbit_id}",
+            objective=f"Perform authorized Question Orbit research for {orbit_id}: {question}",
+            source="direct",
+            execution_class=ExecutionClass.BACKGROUND,
+            risk_level=RiskLevel.READ_ONLY,
+            external_project_ref="wisdom/orbits",
+            external_task_ref=orbit_id,
         )
         reg = control_plane.register_direct_run(
             "wisdom-oldman", contract, external_run_ref=orbit_id
@@ -901,8 +920,12 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     dispatcher = OrbitNotificationDispatcher(
         orbits, settings.hermes_executable, profile_home
     )
-    control_plane = ControlPlane(settings)
-    control_plane.bootstrap()
+    if (os.environ.get("UUMA_CONTROL_URL", "").strip()
+            or os.environ.get("UUMA_REQUIRE_REMOTE_CONTROL") == "1"):
+        control_plane = control_backend()
+    else:
+        control_plane = ControlPlane(settings)
+        control_plane.bootstrap()
 
     runner_active_cycle: list[dict[str, Any] | None] = [None]
 
@@ -917,6 +940,12 @@ def build_runner(profile_home: Path) -> OrbitRunner:
             orbit_data = orbits.get(orbit_id)
             existing = orbit_data.get("orbit", {}).get("uuma_run_id")
             if existing:
+                if isinstance(control_plane, ControlClient):
+                    bound = control_plane.require_run(str(existing))
+                    if bound.get("agent_id") != "wisdom-oldman":
+                        raise PermissionError("Question Orbit Run belongs to another Agent")
+                    if bound.get("status") not in {"PENDING", "RUNNING"}:
+                        return None
                 return str(existing)
             question = knowledge._require("questions", cycle["question_id"])["text"]
             return _ensure_runner_run(control_plane, orbit_id, question)
@@ -929,7 +958,10 @@ def build_runner(profile_home: Path) -> OrbitRunner:
     }
     chatgpt_provider = None
     if chatgpt_enabled:
-        token = settings.load_tokens().get("wisdom-oldman")
+        token = (
+            None if os.environ.get("UUMA_CHATGPT_AGENT_TOKEN_FILE")
+            else settings.load_tokens().get("wisdom-oldman")
+        )
         chatgpt_provider = ChatGPTDiscoveryProvider(
             base_url=os.environ.get("UUMA_CHATGPT_BRIDGE_URL", "http://127.0.0.1:8787"),
             agent="wisdom-oldman",

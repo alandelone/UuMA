@@ -9,6 +9,16 @@ $ErrorActionPreference = "Continue"
 
 Set-Location $ProjectRoot
 $python = Join-Path $ProjectRoot ".venv\Scripts\python.exe"
+# Login tasks do not inherit an editable package installation or this shell's path.
+$env:PYTHONPATH = Join-Path $ProjectRoot "src"
+$env:PYTHONUTF8 = "1"
+if (-not $env:UUMA_HARDWARE_WORKSPACE_DIR) {
+    $workspaceManifestPath = Join-Path $ProjectRoot 'deploy\forge-workspace.json'
+    if (Test-Path -LiteralPath $workspaceManifestPath) {
+        $workspaceManifest = Get-Content -LiteralPath $workspaceManifestPath -Raw | ConvertFrom-Json
+        $env:UUMA_HARDWARE_WORKSPACE_DIR = $workspaceManifest.windows_path
+    }
+}
 
 $codexDir = "$env:LOCALAPPDATA\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\UuMA"
 if (Test-Path $codexDir) {
@@ -58,7 +68,7 @@ while ($true) {
         -ArgumentList "-m", "uuma.observatory", "--host", $HostAddress, "--port", $Port `
         -WorkingDirectory $ProjectRoot `
         -PassThru `
-        -NoNewWindow `
+        -WindowStyle Hidden `
         -RedirectStandardOutput (Join-Path $logDir "observatory.stdout.log") `
         -RedirectStandardError (Join-Path $logDir "observatory.stderr.log")
 

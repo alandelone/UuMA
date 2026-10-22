@@ -1,5 +1,20 @@
 # Testing and Recovery Contract
 
+2026-10-22 Honc server verification context: preserve the missing-policy-fixture
+collection failure and the subsequent 259-pass/2-fail/2-skip result. The latter
+failures lacked the configure-hermes-profile helper and assumed a Windows-only
+native interpreter path. Ship those declared resources and supply explicit
+UUMA_HERMES_TEST_ROOT/UUMA_HERMES_TEST_PYTHON pointing to the pinned engine code
+and interpreter. The probe keeps HERMES_HOME and every database under tmp_path;
+retain its complete source/receipt assertions and mock model/notification calls.
+Restart verification from the current pending-review gate without approving it.
+
+2026-10-22 final profile snapshot context: a read-only SQLite opening can create
+an empty WAL beside a quiescent database. Preserve failed snapshot manifests,
+record explicit owner freeze and any checkpoint, prime the read-only connection,
+then require stable main and WAL fingerprints for the complete final snapshot.
+Do not ignore WAL files or weaken a changed-source assertion.
+
 2026-10-15 native Samples GET cache context: opening the structure's Samples panel
 refreshes document_revision85->86 AND created_at for four existing paper candidates.
 The candidate count16, every identity and every sample_json byte remain exact;
@@ -679,3 +694,54 @@ Keep file-map representations explicit: path-to-SHA and path-to-SHA/size are not
 An inherited submission-package row does not prove its payload directory was copied. Preserve actual PackageUnavailableError and original records. For combined historical evidence, bind an existing sealed ZIP by its original digest and every member against the historical manifest; explicitly state current-copy payload unavailability. Do not regenerate an old job or silently repair a frozen package. A new final package must match actual current author/generated revisions and selected review round.
 
 For native asynchronous history dialogs, require the loaded DOM and actual read response; an early snapshot is not proof that the action failed or succeeded. Avoid repeating business writes to compensate for observation timing.
+
+## Windows service recovery observer context (2026-10-19)
+
+PowerShell HTTP mocks must declare `UseBasicParsing` as a switch, matching the real
+command's parameter contract. An absent-deployment-state regression must mock the
+watchdog pause flag as absent too; returning true for every unrelated `Test-Path`
+incorrectly exercises the intentionally paused branch. Preserve the first failed
+readiness and DOWN/OK assertions as observer failures. Isolated test-process mock
+state must remain visible across invoked script scopes; use a uniquely named
+fixture object rather than dynamic `$script:` state. Correct these mocks only;
+retain the requirements for both listening ports plus HTTP readiness, missing
+state never implying health, dry runs never starting tasks, and refusing to stop
+unrelated processes. Resume verification at the unchanged pending review gate.
+
+
+2026-10-19 Flash3.8 native digest namespaces: PaperSkeleton native content_digest uses rstv4.fieldkg.digest (compact JSON separators and default=str); frozen DSPy lineage uses rstv4.skeleton_contract.digest (standard JSON separators). First publication verification failed because the experiment hash was compared with a native unit hash. Preserve the complete failed publisher/coordinator and all162 exact payload/hash proofs. Compare native content_digest with the original native digest function; keep experiment digests for frozen input/candidate lineage and retain every full source/layer/checkpoint/HTTP/idempotence assertion. Re-observe the already-published immutable version, never rerun completed inference or erase the failure.
+
+
+2026-10-19 Flash3.8 continuation context: original126-window batch is terminal31passed/95service failures (54HTTP530,15explicit429quota,26cooldown-only). All successful31cases replay from unchanged wire caches; three whole papers/279blocks passed native publication, HTTP/checkpoint/idempotence and actual browser DOM source/all4 checks. First declared failed-window recovery retained its parent run, made one new idempotent request and stopped on upstream503high demand. After at least300seconds, allow one final separately declared bounded probe with the same model/provider/input/prompts/strict guards; stop at first failure and retain every prior request and terminal result. No retry of successful model work or silent source substitution. Native three-paper cache job claim correctly stopped because the acceptance Catalog had accumulated191435seconds against its86400second limit. Full failed source and native DB retained. Correct continuation must append a normal finite budget event adding3600seconds beyond measured elapsed, resume via original service, adopt exactly the three verified cached outputs with fenced leases, then restorePAUSED. Do not remove the budget check or fabricate model-call events, mark seven incomplete papers complete or approve scientific/mission gates. Context: .tmp/flash38-skeleton-stability-20261017-v1/bounded-continuation-context-20261019-v2.
+
+
+2026-10-20 Antigravity model contract: user selected explicit8080profileantigravity. First real durable request run_a5203e70850644c7a2746faf44cf8407 completed, providerantigravity-oauth, router requested gemini-3.8-flash, actual raw response gemini-3.8-flash-medium. The installed plugin models.resolve_model_and_effort explicitly maps Flash3.8+medium to that concrete CLI ID. Preserve the failed strict-base-name verifier, complete request/response/run and plugin mapping source. New declared protocol must send reasoning_effort=medium, strictly check the literal medium response model and base route model separately, retain originalgemini3.8 cache provenance separately, and reuse the already-completed medium response without reissuing it. No raw response relabeling, suffix wildcard acceptance, source/schema relaxation or fair old/new scientific protocol equivalence. Sampling and token caps unsupported by CLI remain explicitly omitted. Context: .tmp/flash38-skeleton-stability-20261017-v1/antigravity-model-contract-context-20261020-v2.
+
+
+2026-10-20 Antigravity native readback context: the new source/model transport is separate from the owned acceptance preview8893. Its first coordinator readback found no listener; failed source/trace retained at .tmp/flash38-skeleton-stability-20261017-v1/antigravity-native-persistence-20261020-v1. Restore only the same owned preview with hidden console after proving8893unbound; do not restart the successful Antigravity inference worker or modify production8875. Coordinatorv2 also reads one fixed JSONL snapshot and waits for the unfinished EOFline; every newline-terminated event must still parse and all HTTP/source/layer/checkpoint assertions remain. No partial-paper or scientific pass is allowed.
+
+
+2026-10-20 Antigravity reporting contract: first recovered PHSwindow0 retains five wire attempts: the original cached Gemini L1attempt, which the unchanged strict program rejects, followed by the already-completed Antigravity L1repair and three new Antigravity L2-L4responses. All four FINAL accepted layer bindings are strictly antigravity-oauth/gemini-3.8-flash-medium. The report must distinguish complete attempt history from the last accepted binding for each stage; preserve all rejected attempts and no raw response or model relabeling. The first report draft assertion assumed every historical attempt usedAntigravity and was rejected. Complete draft/source/first-case proof retained under api-report-attempt-lineage-context-20261020-v2. No client, source/schema, extraction result or model checks changed; zero new model calls.
+
+
+2026-10-20 Antigravity read-only audit context: the first adopted pre-v2 request run_a5203e70850644c7a2746faf44cf8407 omitted reasoning_effort and returned actual medium, as retained in its original request/response. New v2 requests explicitly send medium. An audit-only KeyError incorrectly assumed the adopted request already had the v2 field. Keep that failed audit and original request SHA; successor audit distinguishes exactly this one adopted run by origin/runID/raw SHA and still strictly checks every actual response model/provider and explicit medium on all new requests. Active extraction, strict source/schema/model guards and all saved results remain unchanged; zero inference. Context: .tmp/flash38-skeleton-stability-20261017-v1/antigravity-live-audit-context-20261020-v4.
+
+
+## Five-Agent migration: actual assigned execution (2026-10-21)
+
+A real Control API → A2A SDK → Hermes pilot exposed two execution-contract gaps.
+Registration previously always projected RUNNING, while first A2A dispatch requires
+PENDING. Keep the rejected dispatch and empty journal proof; prepare an explicit
+control-authorized PENDING Run and preserve the superseded unstarted epoch. Direct
+registration and historical events retain their RUNNING semantics.
+
+The model successfully read the copied Brainstormer context but repeatedly guessed
+the opaque submit_result JSON envelope. Preserve every failed model/tool attempt,
+stop and confirm that exact Hermes Run, and verify all domain snapshot hashes before
+continuation. Publish the actual strict ResultContract and RunProgress object schemas
+through MCP while retaining legacy JSON strings. Task-specific output belongs in
+partial_state; do not accept extra envelope fields or auto-approve a result. Require
+real MCP schema and real Control API dispatch regressions. Continue only the bounded
+read-only acceptance task under a new fenced epoch after the original execution is
+confirmed stopped. Do not restart successful login verification, resume Scholar,
+start a second Telegram receiver, reset pending_review, or claim production migration.

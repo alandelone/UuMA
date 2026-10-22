@@ -53,7 +53,9 @@ from a source document's historical status heading.
 3. Specify worker, reason, bounded work, inputs and sources, dependencies, deliverable, acceptance
    criteria, timing/budget if known, permission needs and proposed project effects.
 4. Show the proposal for user review. Separate acceptance of graph changes from assignment items.
-   Execution requires Orchestrator validation and an actual dispatch receipt. Current Yonc tools
-   do not dispatch or persist a dedicated assignment record; describe that handoff as pending.
-5. Check returned evidence against acceptance criteria. A finished Agent Run alone does not
-   complete a project node. Preserve source ownership and unresolved review issues.
+   Persist a proposal for one existing leaf Action and one executor through the assignment
+   backend when deployed. Execution requires Orchestrator validation and a Task/Run receipt.
+   Keep unavailable handoffs pending; proposal persistence alone does not dispatch work.
+5. Explain returned evidence to the user. Every delivery requires the user's acceptance;
+   no automated acceptance is authorized. A finished Agent Run alone does not complete a
+   project node. Preserve source ownership and unresolved review issues.

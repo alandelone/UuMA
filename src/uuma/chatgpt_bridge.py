@@ -1,8 +1,9 @@
-"""Durable, identity-scoped ChatGPT consultation queue in the control database."""
+"""Durable, identity-scoped browser queue with authoritative Run authorization."""
 from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import sqlite3
 import time
@@ -46,9 +47,19 @@ def conversation_url(value: str) -> str:
     return value
 
 
+def bridge_database_path(data_dir: Path) -> Path:
+    explicit = os.environ.get("UUMA_CHATGPT_DATABASE_PATH", "")
+    if explicit:
+        return Path(explicit).expanduser()
+    if os.environ.get("UUMA_CONTROL_URL") or os.environ.get("UUMA_REQUIRE_REMOTE_CONTROL") == "1":
+        return data_dir / "desktop" / "chatgpt.db"
+    return data_dir / "uuma.db"
+
+
 class BridgeStore:
-    def __init__(self, database: Path):
+    def __init__(self, database: Path, *, control_factory=None):
         self.database = database
+        self.control_factory = control_factory
         database.parent.mkdir(parents=True, exist_ok=True)
         with self.connect() as db:
             db.executescript("""
@@ -115,11 +126,29 @@ class BridgeStore:
         if agent not in PERMISSIONS or (mode and mode not in PERMISSIONS[agent]):
             raise PermissionError("This identity is not allowed to use this bridge capability.")
 
-    @staticmethod
-    def require_run(db, agent: str, run_id: str):
-        row = db.execute("""SELECT r.agent_id,r.status,t.current_run_id,t.status AS task_status
-            FROM runs r JOIN tasks t ON t.task_id=r.task_id WHERE r.run_id=?""",
-                         (run_id,)).fetchone()
+    def require_run(self, db, agent: str, run_id: str):
+        remote = os.environ.get("UUMA_CONTROL_URL", "")
+        if self.control_factory or remote:
+            from .control_client import ControlClient
+
+            if self.control_factory:
+                control = self.control_factory(agent)
+            else:
+                token_dir = os.environ.get("UUMA_IDENTITY_TOKEN_DIR", "")
+                if not token_dir:
+                    raise PermissionError("Desktop bridge requires scoped control credentials")
+                token = (Path(token_dir) / (agent + ".token")).read_text(encoding="utf-8").strip()
+                control = ControlClient(remote, agent, token)
+            run = control.require_run(run_id)
+            task = control.require_task(run["task_id"])
+            row = {"agent_id": run["agent_id"], "status": run["status"],
+                   "current_run_id": task["current_run_id"], "task_status": task["status"]}
+        else:
+            if os.environ.get("UUMA_REQUIRE_REMOTE_CONTROL") == "1":
+                raise PermissionError("Remote control unavailable; refusing stale local task state")
+            row = db.execute("""SELECT r.agent_id,r.status,t.current_run_id,t.status AS task_status
+                FROM runs r JOIN tasks t ON t.task_id=r.task_id WHERE r.run_id=?""",
+                             (run_id,)).fetchone()
         if (not row or row["agent_id"] != agent or row["current_run_id"] != run_id
                 or row["status"] not in {"PENDING", "RUNNING", "PAUSED", "BLOCKED"}
                 or row["task_status"] in {"COMPLETED", "CANCELLED"}):

@@ -79,7 +79,8 @@ def main():
             uvicorn.run(create_app(args.data_dir, port=args.port), host="127.0.0.1",
                         port=args.port, access_log=False, log_config=None)
         return
-    store = BridgeStore(args.data_dir / "uuma.db")
+    from .chatgpt_bridge import bridge_database_path
+    store = BridgeStore(bridge_database_path(args.data_dir))
     if args.command == "bind":
         store.bind(args.agent, args.account)
     elif args.action == "list":

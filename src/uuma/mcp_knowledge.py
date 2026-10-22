@@ -64,7 +64,7 @@ def _wake_orbit_runner(status: str) -> dict[str, Any]:
     if status != "QUEUED":
         return {"requested": False}
     profile_home = os.environ.get("UUMA_QUESTION_ORBIT_PROFILE_HOME", "").strip()
-    if os.name == "nt" and profile_home:
+    if profile_home:
         profile_home = str(Path(profile_home).resolve())
         python = Path(sys.executable).with_name("pythonw.exe")
         runner_environment = os.environ.copy()
@@ -78,19 +78,23 @@ def _wake_orbit_runner(status: str) -> dict[str, Any]:
             f"{uuma_src}{os.pathsep}{current_pythonpath}"
             if current_pythonpath else uuma_src
         )
+        launch_options: dict[str, Any] = {"close_fds": True}
+        if os.name == "nt":
+            launch_options["creationflags"] = (
+                getattr(subprocess, "CREATE_NO_WINDOW", 0)
+                | getattr(subprocess, "DETACHED_PROCESS", 0)
+            )
+        else:
+            launch_options["start_new_session"] = True
         try:
             process = subprocess.Popen(
-                [str(python if python.is_file() else sys.executable),
+                [str(python if os.name == "nt" and python.is_file() else sys.executable),
                  "-m", "uuma.orbit_runner", "--profile-home", profile_home],
                 env=runner_environment,
                 stdin=subprocess.DEVNULL,
                 stdout=subprocess.DEVNULL,
                 stderr=subprocess.DEVNULL,
-                close_fds=True,
-                creationflags=(
-                    getattr(subprocess, "CREATE_NO_WINDOW", 0)
-                    | getattr(subprocess, "DETACHED_PROCESS", 0)
-                ),
+                **launch_options,
             )
         except OSError:
             pass  # The installed scheduled task can still wake the durable queue.
@@ -811,6 +815,10 @@ def knowledge_reverse_patch(patch_id: str, review_note: str) -> dict[str, Any]:
 
 
 def main() -> None:
+    if os.environ.get("UUMA_REMOTE_MCP_URL"):
+        from .remote_mcp import run_stdio_proxy
+        run_stdio_proxy("knowledge")
+        return
     mcp.run()
 
 

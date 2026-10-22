@@ -38,6 +38,7 @@ from .colleague_directory import colleague_capabilities
 from .commerce_control import CommerceControlStore
 from .commerce_review import commit_review, preview_review_workbook
 from .commerce_store import CommerceStore
+from .control_client import ControlClient, control_backend
 from .eschematic_bridge import ESchematicBridge
 from .forge_journal import ForgeJournalStore
 from .knowledge_runtime import ensure_knowledge_graph
@@ -57,10 +58,8 @@ def _brainstormer_store() -> BrainstormerStore:
 
 
 @lru_cache(maxsize=1)
-def _control_plane() -> ControlPlane:
-    control_plane = ControlPlane()
-    control_plane.bootstrap()
-    return control_plane
+def _control_plane() -> ControlPlane | ControlClient:
+    return control_backend()
 
 
 def _agent_id() -> str:
@@ -86,6 +85,10 @@ def yonc_get_colleague_capabilities(agent_id: str = "", capability: str = "") ->
     if _agent_id() != "yonc":
         raise PermissionError("Colleague capability lookup is restricted to Yonc.")
     # Do not bootstrap: a lookup must preserve disabled Agents and operator registry changes.
+    if os.environ.get("UUMA_CONTROL_URL") or os.environ.get("UUMA_REQUIRE_REMOTE_CONTROL") == "1":
+        from urllib.parse import urlencode
+        query = urlencode({"agent_id": agent_id, "capability": capability})
+        return _control_plane().request("GET", "/registry/colleagues?" + query)
     return colleague_capabilities(ControlPlane(), agent_id=agent_id, capability=capability)
 
 
@@ -206,6 +209,10 @@ def _queue_journal_write(payload: dict[str, Any]) -> dict[str, Any]:
 
 @lru_cache(maxsize=1)
 def _crawler_engine() -> SourcingCrawlerEngine:
+    if os.environ.get("UUMA_PROCUREMENT_MCP_URL"):
+        from .procurement_client import RemoteSourcingCrawlerEngine
+
+        return RemoteSourcingCrawlerEngine.from_env()
     local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
     data_dir = Path(os.environ.get("UUMA_DATA_DIR", local_app_data / "UuMA"))
     profile_dir = data_dir / "chrome_profiles" / "procurement"
@@ -231,18 +238,37 @@ def register_direct_run(contract_json: str, external_run_ref: str = "") -> dict[
 
 
 @mcp.tool()
-def get_assignment(task_id: str) -> dict[str, Any]:
+def get_assignment(
+    task_id: str, run_id: str | None = None, execution_epoch: int | None = None,
+) -> dict[str, Any]:
     """Read a task only when it is assigned to the current Worker."""
     task = _control_plane().require_task(task_id)
     if task["assignee"] != _agent_id():
         raise PermissionError("This task is not assigned to the current Worker.")
+    if run_id is not None or execution_epoch is not None:
+        if not run_id or execution_epoch is None:
+            raise PermissionError("Assigned runtime binding requires both Run and execution epoch")
+        run = _control_plane().require_run(run_id)
+        if (
+            task.get("current_run_id") != run_id or run["task_id"] != task_id
+            or run["agent_id"] != _agent_id()
+            or run["status"] not in {"PENDING", "RUNNING"}
+            or int(run.get("execution_epoch", 0)) != execution_epoch
+            or int(task.get("execution_epoch", 0)) != execution_epoch
+        ):
+            raise PermissionError("Assigned execution is stale, paused, or owned by another Agent")
+        return {**task, "runtime_binding": {
+            "run_id": run_id, "execution_epoch": execution_epoch, "agent_id": _agent_id(),
+            "authorized": True,
+        }}
     return task
 
 
 @mcp.tool()
-def report_progress(progress_json: str) -> dict[str, str]:
+def report_progress(progress_json: str | RunProgress) -> dict[str, str]:
     """Report structured progress and heartbeat for the current Worker's Run."""
-    progress = RunProgress.model_validate_json(progress_json)
+    progress = (RunProgress.model_validate_json(progress_json) if isinstance(progress_json, str)
+                else RunProgress.model_validate(progress_json))
     _control_plane().report_progress(progress, actor_id=_agent_id())
     return {"run_id": progress.run_id, "status": progress.status.value}
 
@@ -256,9 +282,15 @@ def block_run(progress_json: str) -> dict[str, str]:
 
 
 @mcp.tool()
-def submit_result(result_json: str) -> dict[str, str]:
-    """Submit a contract-validated result for the current Worker's Run."""
-    result = ResultContract.model_validate_json(result_json)
+def submit_result(result_json: str | ResultContract) -> dict[str, str]:
+    """Submit the current Run's ResultContract, as an object or legacy JSON string.
+
+    Put task-specific structured output in partial_state. Preserve run_id, task_id
+    and agent_id from the assignment; outcome and summary are required. A result
+    submission is subject to UuMA acceptance and does not approve its own checks.
+    """
+    result = (ResultContract.model_validate_json(result_json) if isinstance(result_json, str)
+              else ResultContract.model_validate(result_json))
     if _agent_id() in {"scholar", "wisdom-oldman"} and result.outcome.value == "COMPLETED":
         readiness = ensure_knowledge_graph(_agent_id(), recover=False)
         if readiness.get("ready") is not True:
@@ -393,45 +425,46 @@ def brainstormer_propose_project_topic(
         (project_id + ":" + topic_title.strip().casefold()).encode()
     ).hexdigest()[:12]
     store = _brainstormer_store()
-    existing = {item["id"] for item in store.get_context(project_id)["objects"]}
-    if topic_id in existing:
-        return {
-            "project_id": project_id,
-            "topic_id": topic_id,
-            "status": "ALREADY_EXISTS",
-            "review_required": False,
-        }
-    pending = store.find_pending_topic_proposal(project_id, topic_id)
-    if pending:
-        return {"project_id": project_id, "topic_id": topic_id, **pending}
-    operations = []
-    if project_id not in existing:
+    with store.transaction():
+        existing = {item["id"] for item in store.get_context(project_id)["objects"]}
+        if topic_id in existing:
+            return {
+                "project_id": project_id,
+                "topic_id": topic_id,
+                "status": "ALREADY_EXISTS",
+                "review_required": False,
+            }
+        pending = store.find_pending_topic_proposal(project_id, topic_id)
+        if pending:
+            return {"project_id": project_id, "topic_id": topic_id, **pending}
+        operations = []
+        if project_id not in existing:
+            operations.append(
+                StateOperation(
+                    action=TransactionAction.CREATE,
+                    kind=ObjectKind.PROJECT,
+                    target_id=project_id,
+                    expected_revision=0,
+                    values={"title": project_title.strip(), "objective": project_objective.strip()},
+                )
+            )
         operations.append(
             StateOperation(
                 action=TransactionAction.CREATE,
-                kind=ObjectKind.PROJECT,
-                target_id=project_id,
+                kind=ObjectKind.TOPIC,
+                target_id=topic_id,
                 expected_revision=0,
-                values={"title": project_title.strip(), "objective": project_objective.strip()},
+                values={"title": topic_title.strip(), "problem": topic_problem.strip()},
             )
         )
-    operations.append(
-        StateOperation(
-            action=TransactionAction.CREATE,
-            kind=ObjectKind.TOPIC,
-            target_id=topic_id,
-            expected_revision=0,
-            values={"title": topic_title.strip(), "problem": topic_problem.strip()},
+        transaction = StateTransaction(
+            project_id=project_id,
+            rationale="Preserve a substantial new Brainstormer discussion for review and re-entry.",
+            source_refs=[source_ref.strip()],
+            operations=operations,
         )
-    )
-    transaction = StateTransaction(
-        project_id=project_id,
-        rationale="Preserve a substantial new Brainstormer discussion for review and re-entry.",
-        source_refs=[source_ref.strip()],
-        operations=operations,
-    )
-    proposal = store.propose(transaction, requested_by=actor)
-    return {"project_id": project_id, "topic_id": topic_id, **proposal}
+        proposal = store.propose(transaction, requested_by=actor)
+        return {"project_id": project_id, "topic_id": topic_id, **proposal}
 
 
 @mcp.tool()

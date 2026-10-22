@@ -56,6 +56,8 @@ class KnowledgeStore:
 
     def __init__(self, path: str | Path) -> None:
         self.path = Path(path)
+        from .domain_ownership import require_local_owner
+        require_local_owner(self.path)
         self.path.parent.mkdir(parents=True, exist_ok=True)
         self._lock = threading.RLock()
         self._fts5 = False

@@ -215,8 +215,16 @@ class ControlPlane:
         actor_id: str,
         takeover: bool = False,
     ) -> RunRegistration:
+        if registration.initial_status == "PENDING" and (
+            actor_id != "orchestrator"
+            or registration.source not in {"orchestrator", "kanban"}
+            or registration.external_run_ref is not None
+        ):
+            raise PolicyDeniedError("Only control may prepare an unstarted assigned execution")
         self.require_agent(registration.agent_id)
         with self.events.transaction() as conn:
+            from .deployment_admission import require_open
+            require_open(conn, registration.agent_id)
             task_row = conn.execute(
                 "SELECT * FROM tasks WHERE task_id=?", (registration.task_id,)
             ).fetchone()
@@ -442,6 +450,8 @@ class ControlPlane:
             ).fetchone()
             task = TaskContract.model_validate_json(task_row["contract_json"])
             acceptance_digest = _canonical_digest(task.acceptance_checks)
+            if task.acceptance_authority == "USER" and actor_id != "user":
+                raise PolicyDeniedError("This task requires actual user result acceptance.")
             if decision.acceptance_digest != acceptance_digest:
                 raise ConflictError("Acceptance conditions changed before verification.")
             if decision.result_digest != run["result_digest"]:
@@ -486,6 +496,22 @@ class ControlPlane:
                 conn=conn,
             )
             return record
+
+    def cancel_unstarted_task(self, task_id: str, *, decision_ref: str) -> None:
+        """Retire an accepted allocation before any Run can register, retaining its history."""
+        with self.events.transaction() as conn:
+            task = conn.execute("SELECT * FROM tasks WHERE task_id=?", (task_id,)).fetchone()
+            if task is None:
+                raise NotFoundError(f"Unknown Task: {task_id}")
+            if task["status"] == "CANCELLED" and not task["current_run_id"]:
+                return
+            if task["current_run_id"] or task["status"] not in {"PROPOSED", "TODO", "READY"}:
+                raise ConflictError("Task already has execution; cancel its current Run instead.")
+            self.events.append(
+                event_type="TASK_CANCELLED", aggregate_type="task", aggregate_id=task_id,
+                actor_type="agent", actor_id="orchestrator",
+                payload={"user_decision_ref": decision_ref}, correlation_id=task_id, conn=conn,
+            )
 
     def request_cancel(self, run_id: str, *, actor_id: str = "orchestrator") -> None:
         with self.events.transaction() as conn:

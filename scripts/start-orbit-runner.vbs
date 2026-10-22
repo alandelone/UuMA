@@ -1,6 +1,7 @@
 ' UuMA Question Orbit Runner - 100% Silent Windowless Background Launcher
 Option Explicit
 Dim WshShell, objEnv
+If CreateObject("Scripting.FileSystemObject").FileExists("C:\Users\Alandelone\AppData\Local\UuMA\wisdom.db.remote-owner.json") Then WScript.Quit 0
 Set WshShell = CreateObject("WScript.Shell")
 Set objEnv = WshShell.Environment("PROCESS")
 

@@ -1,0 +1,4 @@
+name: uuma_brainstormer_commands
+version: "0.1.0"
+description: Durable Brainstormer topic navigation and progress restoration.
+author: UuMA

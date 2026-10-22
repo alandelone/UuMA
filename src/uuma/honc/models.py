@@ -66,6 +66,7 @@ class EventType:
 
 
 class AssessmentResult:
+    USER_REPORTED = "USER_REPORTED"
     SATISFIED = "SATISFIED"
     INSUFFICIENT = "INSUFFICIENT"
     UNKNOWN = "UNKNOWN"

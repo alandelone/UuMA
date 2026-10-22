@@ -95,7 +95,21 @@ def run_tick(
         runtime.dispatch(
             group["group_id"], group["fence"], now, delivery.deliver, allocate=delivery.allocate
         )
-    return {"prepared_groups": len(groups)}
+    result = {"prepared_groups": len(groups)}
+    work = config.get("work_completion", {})
+    if work.get("enabled"):
+        from .graph_client import GraphExecutionClient
+        from .work_completion import WorkCompletion
+
+        completion = WorkCompletion(
+            broker.store.ledger,
+            GraphExecutionClient(base_url=work["url"], database_id=work["database_id"]),
+        )
+        counts = completion.reconcile_pending()
+        result.update(
+            work_completion_verified=counts["verified"], work_completion_pending=counts["pending"]
+        )
+    return result
 
 
 def main(config_path: Path) -> None:

@@ -1,10 +1,10 @@
 # Yonc
 
-Status: colleague capability lookup implemented; broader management lifecycle remains proposed\
+Status: colleague lookup and Action assignment backend deployed; UI unchanged\
 Agent type: customized persistent Hermes profile  
 Primary role: project management across the user's Graph Project System  
 Parent: Hermes Orchestrator for Agent execution and coordination  
-Latest product clarification: user discussion in this UuMA task, 2026-09-30\
+Latest product clarification: user discussion in this UuMA task, 2026-10-20\
 Sources: existing Yonc design and integration documents; see section 22
 
 ## 1. Mission
@@ -31,6 +31,14 @@ User objectives + current project graph + relevant sources
 Task decomposition is one capability within this broader project management role.
 
 ## 2. Decision status and implementation boundary
+
+**2026-10-20 update:** the user confirmed one executor per existing leaf Action, all delivered
+work awaiting actual user acceptance, no automatic acceptance, and backend-first work with no
+UI changes. The additive allocation/delivery/review backend and Orchestrator handoff are now
+deployed with separate Planner/Orchestrator/user credentials and refreshed runtime profiles.
+UI and later manual human entry remain separate. See
+[Action assignment backend](../yonc-action-assignments.md). Historical
+proposals below describe the broader management design; this update governs the implemented subset.
 
 This document follows the organization of [Brainstormer](brainstormer.md), adapted to Yonc's
 project ownership. It records product intent, inherited contracts, and proposed mechanisms separately.
@@ -412,3 +420,6 @@ also invokes it when an existing Yonc profile is present.
 This enables sourced assignment proposals with bounded inputs, deliverables and acceptance
 criteria. Dedicated persisted assignment records, accepted-assignment dispatch and trusted
 Telegram project authorization remain open implementation work under sections 10-13 and 21.
+
+The 2026-10-20 backend implementation supersedes the assignment-record/handoff part of that
+historical boundary. It does not implement trusted Telegram acceptance or change the UI.

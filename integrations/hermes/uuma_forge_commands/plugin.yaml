@@ -1,0 +1,4 @@
+name: uuma_forge_commands
+version: "0.1.0"
+description: Local Forge Lab slash commands backed by semantic UuMA reads.
+author: UuMA

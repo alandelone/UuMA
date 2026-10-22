@@ -3,6 +3,7 @@ param(
     [string]$PythonExe = (Get-Command python).Source,
     [string]$ProjectRoot = (Split-Path -Parent $PSScriptRoot),
     [string]$DataDir = "$env:LOCALAPPDATA\UuMA",
+    [string]$HardwareWorkspaceRoot = $env:UUMA_HARDWARE_WORKSPACE_DIR,
     [string[]]$GeminiAllowedRoots = @((Split-Path -Parent $ProjectRoot), $DataDir),
     [string]$ESchematicRoot = (Join-Path (Split-Path -Parent $ProjectRoot) "eSchematic_skillset"),
     [string]$ESchematicPython = "",
@@ -28,6 +29,13 @@ param(
 )
 
 $ErrorActionPreference = "Stop"
+if (Test-Path -LiteralPath (Join-Path $DataDir "wisdom.db.remote-owner.json")) {
+    throw "Production specialists belong to the server. Use the manual component release workflow; use an isolated DataDir for staging. This workstation deployer cannot recreate production receivers."
+}
+if (-not $HardwareWorkspaceRoot) {
+    $workspaceManifest = Get-Content -LiteralPath (Join-Path $ProjectRoot 'deploy\forge-workspace.json') -Raw | ConvertFrom-Json
+    $HardwareWorkspaceRoot = $workspaceManifest.windows_path
+}
 $HermesExe = (Resolve-Path -LiteralPath $HermesExe).Path
 $PythonExe = (Resolve-Path -LiteralPath $PythonExe).Path
 $sourcePath = Join-Path $ProjectRoot "src"
@@ -434,6 +442,11 @@ foreach ($profile in $profiles) {
     }
     if ($id -eq "forge-lab-bot") {
         Install-ForgeLabSkills -ProfileHome $profileHome
+        & $PythonExe (Join-Path $ProjectRoot "scripts\deploy-forge-commands.py") `
+            --profile-home $profileHome `
+            --workspace $HardwareWorkspaceRoot `
+            --backup (Join-Path $resolvedSkillQuarantineRoot "forge-commands")
+        if ($LASTEXITCODE -ne 0) { throw "Failed to deploy native Forge slash commands." }
     }
     if ($id -in @("brainstormer", "wisdom-oldman", "forge-lab-bot")) {
         Install-ChatGPTConsultationSkill -ProfileHome $profileHome

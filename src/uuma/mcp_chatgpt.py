@@ -45,7 +45,8 @@ def _start_local_bridge():
 def _wake_profile_extension(base: str, agent: str) -> None:
     """Open the routed Chrome profile on a short-lived authenticated dashboard URL."""
     settings = Settings.from_env()
-    store = BridgeStore(settings.database_path)
+    from .chatgpt_bridge import bridge_database_path
+    store = BridgeStore(bridge_database_path(settings.data_dir))
     route = next((row for row in store.routes() if row["agent"] == agent), None)
     if route is None:
         return
@@ -98,7 +99,13 @@ def call(path: str, payload: dict | None = None):
     parsed = urlsplit(base)
     if parsed.scheme != "http" or parsed.hostname not in {"127.0.0.1", "localhost"}:
         raise ValueError("Bridge must use local loopback HTTP")
-    token = Settings.from_env().load_tokens().get(agent)
+    if os.environ.get("UUMA_IDENTITY_TOKEN_FILE"):
+        from .control_client import credential
+        identity, token = credential()
+        if identity != agent:
+            raise PermissionError("ChatGPT credential identity mismatch")
+    else:
+        token = Settings.from_env().load_tokens().get(agent)
     if not token:
         raise PermissionError("Missing configured UuMA agent credential")
     request = Request(base.rstrip("/") + path,
@@ -158,6 +165,10 @@ def chatgpt_list_threads() -> list:
 
 
 def main():
+    if os.environ.get("UUMA_REMOTE_MCP_URL"):
+        from .remote_mcp import run_stdio_proxy
+        run_stdio_proxy("chatgpt")
+        return
     BridgeStore.authorize(os.environ.get("UUMA_AGENT_ID", ""))
     mcp.run()
 

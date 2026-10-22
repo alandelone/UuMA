@@ -10,6 +10,7 @@ import json
 import logging
 import os
 import sqlite3
+import sys
 import threading
 from collections import defaultdict
 from contextlib import asynccontextmanager
@@ -19,8 +20,9 @@ from typing import Any
 from uuid import uuid4
 
 import uvicorn
-from fastapi import FastAPI, HTTPException, status
+from fastapi import FastAPI, HTTPException, Request, status
 from pydantic import BaseModel, Field
+from starlette.responses import JSONResponse
 
 from uuma.brainstormer_state import (
     BrainstormerError,
@@ -29,6 +31,8 @@ from uuma.brainstormer_state import (
     RevisionConflict,
     StateTransaction,
 )
+
+from .auth import TokenRegistry
 
 logger = logging.getLogger("uuma.state_daemon")
 
@@ -153,20 +157,117 @@ class DatabaseManager:
         return commit_id
 
 
+def migrate_navigation_database(source: Path, destination: Path) -> dict[str, int]:
+    """Copy only navigation tables into a new standalone database, leaving source untouched.
+
+    Call against a frozen source or a consistent snapshot after all navigation writers drain.
+    Never copy the control-plane schema or reuse an existing destination.
+    """
+    source, destination = source.resolve(strict=True), destination.resolve()
+    if source == destination or destination.exists():
+        raise FileExistsError("Navigation migration requires a new destination")
+    if destination.name.lower() in {"uuma.db", "wisdom.db", "state.db"}:
+        raise ValueError("Navigation migration requires an independent database name")
+    tables = ("user_bindings", "discussion_turns", "commit_receipts")
+    from .migration import quoted
+
+    with sqlite3.connect(source.as_uri() + "?mode=ro", uri=True) as origin:
+        origin.execute("BEGIN")
+        schemas = {}
+        for table in tables:
+            row = origin.execute(
+                "SELECT sql FROM sqlite_master WHERE type='table' AND name=?", (table,)
+            ).fetchone()
+            if not row or not row[0]:
+                raise ValueError(f"Navigation source is missing {table}")
+            schemas[table] = row[0]
+        destination.parent.mkdir(parents=True, exist_ok=True)
+        with destination.open("xb"):
+            pass
+        counts = {}
+        with sqlite3.connect(destination) as target:
+            for table, schema in schemas.items():
+                target.execute(schema)
+                cursor = origin.execute(f"SELECT * FROM {quoted(table)}")
+                placeholders = ",".join("?" for _ in cursor.description)
+                rows = cursor.fetchall()
+                target.executemany(f"INSERT INTO {quoted(table)} VALUES ({placeholders})", rows)
+                counts[table] = len(rows)
+                for (index_sql,) in origin.execute(
+                    "SELECT sql FROM sqlite_master WHERE type='index' AND tbl_name=? "
+                    "AND sql IS NOT NULL", (table,)
+                ):
+                    target.execute(index_sql)
+            if target.execute("PRAGMA integrity_check").fetchone()[0] != "ok":
+                raise ValueError("Navigation migration failed integrity validation")
+    return counts
+
+
 class StateDaemon:
     """Core daemon managing project state, locks, and persistence."""
 
-    def __init__(self, data_dir: Path | None = None) -> None:
+    def __init__(
+        self, data_dir: Path | None = None, *, navigation_database_path: Path | None = None,
+    ) -> None:
         local = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
         self.data_dir = data_dir or Path(os.environ.get("UUMA_DATA_DIR", local / "UuMA"))
+        registry = os.environ.get("UUMA_NAVIGATION_TOKEN_REGISTRY", "").strip()
+        self.navigation_tokens = None
+        if registry:
+            registry_path = Path(registry).expanduser()
+            if not registry_path.is_file():
+                raise FileNotFoundError("Navigation identity registry must already exist")
+            self.navigation_tokens = TokenRegistry(registry_path)
+            registered = self.navigation_tokens.load()
+            if not all(registered.get(identity) for identity in ("orchestrator", "brainstormer")):
+                raise ValueError("Navigation registry must contain both authorized identities")
+        configured = navigation_database_path or os.environ.get("UUMA_NAVIGATION_DATABASE_PATH")
+        separate = os.environ.get("UUMA_REQUIRE_SEPARATE_NAVIGATION_DB") == "1"
+        if separate and not configured:
+            raise RuntimeError("Server navigation requires an explicit independent database")
+        navigation_path = Path(configured).expanduser() if configured else self.data_dir / "uuma.db"
+        if separate and (
+            navigation_path.resolve() == (self.data_dir / "uuma.db").resolve()
+            or navigation_path.resolve().name.lower() in {"uuma.db", "wisdom.db", "state.db"}
+        ):
+            raise ValueError("Navigation database must be separate from control, knowledge and Hermes")
         self.store = BrainstormerStore(self.data_dir / "brainstormer")
-        self.db = DatabaseManager(self.data_dir / "uuma.db")
+        self.db = DatabaseManager(navigation_path)
+        self.navigation_commands = None
+        command_secret = os.environ.get("UUMA_NAVIGATION_COMMAND_SECRET_FILE", "").strip()
+        if command_secret:
+            if self.navigation_tokens is None:
+                raise ValueError("Human topic command authorization requires navigation authentication")
+            from .navigation_auth import CommandAuthorizer
+
+            allowed_users = {
+                user.strip() for user in os.environ.get("UUMA_NAVIGATION_COMMAND_USERS", "").split(",")
+                if user.strip()
+            }
+            self.navigation_commands = CommandAuthorizer(
+                navigation_path, Path(command_secret).expanduser(), allowed_users,
+            )
         self._project_locks: dict[str, threading.Lock] = defaultdict(threading.Lock)
         self._global_lock = threading.Lock()
+        from uuma.brainstormer_navigation import BrainstormerNavigation
+
+        self.navigation = BrainstormerNavigation(self)
 
     def get_project_lock(self, project_id: str) -> threading.Lock:
         with self._global_lock:
             return self._project_locks[project_id]
+
+
+# Migration exits before constructing the legacy import-time daemon, so it cannot
+# initialize an accidental control database just by loading this module.
+if __name__ == "__main__" and "--migrate-navigation" in sys.argv:
+    import argparse
+
+    migration_parser = argparse.ArgumentParser(description="Copy only navigation state to a new DB")
+    migration_parser.add_argument("--migrate-navigation", nargs=2, type=Path, required=True)
+    migration_args = migration_parser.parse_args()
+    print(json.dumps(migrate_navigation_database(*migration_args.migrate_navigation)))
+    raise SystemExit(0)
 
 
 # Global Daemon instance
@@ -211,6 +312,87 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(title="UuMA State Daemon", version="0.1.0", lifespan=lifespan)
+
+
+@app.middleware("http")
+async def navigation_authentication(request: Request, call_next):
+    registry = daemon.navigation_tokens
+    if registry is None:
+        return await call_next(request)
+    identity = request.headers.get("x-uuma-identity", "")
+    authorization = request.headers.get("authorization", "")
+    role = "control" if identity == "orchestrator" else "worker"
+    try:
+        authorized = (
+            identity in {"orchestrator", "brainstormer"}
+            and authorization.startswith("Bearer ")
+            and registry.verify(identity, authorization[7:], role)
+        )
+    except (OSError, ValueError):
+        authorized = False
+    if not authorized:
+        return JSONResponse({"detail": "Invalid navigation identity"}, status_code=403)
+    if request.url.path.rstrip("/") == "/api/v1/review" and identity != "orchestrator":
+        return JSONResponse({"detail": "Review requires Orchestrator authority"}, status_code=403)
+    request.state.navigation_identity = identity
+    if request.method == "POST" and request.url.path.rstrip("/") == "/api/v1/navigation":
+        try:
+            request.state.navigation_payload = await request.json()
+        except ValueError:
+            return JSONResponse({"detail": "Invalid navigation payload"}, status_code=400)
+    return await call_next(request)
+
+
+def _request_actor(request: Request | None, legacy_actor: str) -> str:
+    if daemon.navigation_tokens is None:
+        return legacy_actor
+    identity = getattr(getattr(request, "state", None), "navigation_identity", "")
+    if identity not in {"orchestrator", "brainstormer"}:
+        raise HTTPException(status_code=403, detail="Invalid navigation identity")
+    return identity
+
+
+class NavigationRequest(BaseModel):
+    action: str = Field(pattern=r"^(list|context|switch|create|turn)$")
+    user_id: str = Field(min_length=1, max_length=128)
+    selector: str = Field(default="", max_length=260)
+    title: str = Field(default="", max_length=160)
+    source_ref: str = Field(default="", max_length=512)
+    project_id: str | None = None
+    topic_id: str | None = None
+    text: str = Field(default="", max_length=100000)
+    role: str = "user"
+
+
+@app.post("/api/v1/navigation")
+def navigate_discussion(req: NavigationRequest, request: Request = None) -> dict[str, Any]:
+    actor = _request_actor(request, req.user_id)
+    nonce = None
+    payload = req.model_dump()
+    if daemon.navigation_tokens is not None:
+        if req.action == "create" and actor != "orchestrator":
+            if daemon.navigation_commands is None:
+                raise HTTPException(status_code=403, detail="A signed human command is required")
+            try:
+                nonce, receipt = daemon.navigation_commands.reserve(
+                    request.state.navigation_payload, request.headers,
+                )
+            except (PermissionError, OSError, ValueError) as exc:
+                raise HTTPException(status_code=403, detail="Invalid human topic command") from exc
+            except RuntimeError as exc:
+                raise HTTPException(status_code=409, detail="Reconcile original topic command") from exc
+            if receipt is not None:
+                return receipt
+            actor = "user"
+        payload["authenticated_actor"] = actor
+    try:
+        result = daemon.navigation.execute(payload)
+        if nonce is not None:
+            daemon.navigation_commands.complete(nonce, result)
+        return result
+    except (BrainstormerError, ValueError, OSError) as exc:
+        logger.warning("Discussion navigation failed: %s", type(exc).__name__)
+        raise HTTPException(status_code=409, detail="议题状态操作失败，请重试。") from exc
 
 
 @app.get("/health")
@@ -266,7 +448,8 @@ def bind_user(req: BindRequest) -> dict[str, Any]:
 
 
 @app.post("/api/v1/commit")
-def commit_transaction(req: CommitRequest) -> dict[str, Any]:
+def commit_transaction(req: CommitRequest, request: Request = None) -> dict[str, Any]:
+    actor = _request_actor(request, req.requested_by)
     with daemon.get_project_lock(req.project_id):
         try:
             tx = StateTransaction.model_validate(req.transaction)
@@ -280,14 +463,14 @@ def commit_transaction(req: CommitRequest) -> dict[str, Any]:
             )
 
         try:
-            proposal = daemon.store.propose(tx, requested_by=req.requested_by)
+            proposal = daemon.store.propose(tx, requested_by=actor)
             proposal_id = proposal["proposal_id"]
 
             if proposal["review_required"]:
                 # Invariant: Structural modifications (project, topic, decision, supersede)
                 # MUST require explicit human confirmation. Auto-approval is forbidden.
                 commit_id = daemon.db.record_receipt(
-                    req.project_id, req.topic_id, 0, "PENDING_REVIEW", req.requested_by
+                    req.project_id, req.topic_id, 0, "PENDING_REVIEW", actor
                 )
                 if req.turn_text:
                     daemon.db.record_turn(req.user_id, req.project_id, req.topic_id, req.source, req.turn_text)
@@ -302,10 +485,10 @@ def commit_transaction(req: CommitRequest) -> dict[str, Any]:
                 }
 
             # Only safe, non-structural proposals may be committed automatically
-            committed = daemon.store.commit_safe(proposal_id, actor_id=req.requested_by)
+            committed = daemon.store.commit_safe(proposal_id, actor_id=actor)
             rev = committed["project_revision"]
 
-            commit_id = daemon.db.record_receipt(req.project_id, req.topic_id, rev, "COMMITTED", req.requested_by)
+            commit_id = daemon.db.record_receipt(req.project_id, req.topic_id, rev, "COMMITTED", actor)
             if req.turn_text:
                 daemon.db.record_turn(req.user_id, req.project_id, req.topic_id, req.source, req.turn_text)
 
@@ -334,19 +517,22 @@ def commit_transaction(req: CommitRequest) -> dict[str, Any]:
 
 
 @app.post("/api/v1/review")
-def review_proposal(req: ReviewRequest) -> dict[str, Any]:
+def review_proposal(req: ReviewRequest, request: Request = None) -> dict[str, Any]:
+    actor = _request_actor(request, req.actor_id)
+    if daemon.navigation_tokens is not None and actor != "orchestrator":
+        raise HTTPException(status_code=403, detail="Review requires Orchestrator authority")
     with daemon.get_project_lock(req.project_id):
         try:
             reviewed = daemon.store.review(
                 req.proposal_id,
-                actor_id=req.actor_id,
+                actor_id=actor,
                 approve=req.approve,
                 note=req.note,
             )
             status_text = "COMMITTED" if req.approve else "REJECTED"
             rev = reviewed.get("project_revision")
             commit_id = daemon.db.record_receipt(
-                req.project_id, req.topic_id, rev or 0, status_text, req.actor_id
+                req.project_id, req.topic_id, rev or 0, status_text, actor
             )
             if req.topic_id and req.approve:
                 daemon.db.set_binding(req.user_id, req.project_id, req.topic_id)
@@ -358,7 +544,7 @@ def review_proposal(req: ReviewRequest) -> dict[str, Any]:
                 "topic_id": req.topic_id,
                 "status": "committed" if req.approve else "rejected",
                 "revision": rev,
-                "reviewed_by": req.actor_id,
+                "reviewed_by": actor,
                 "review_note": req.note,
             }
         except RevisionConflict as rc:
@@ -413,11 +599,12 @@ def get_active_question(project_id: str) -> dict[str, Any]:
 
 
 @app.post("/api/v1/active-question")
-def set_active_question(req: ActiveQuestionRequest) -> dict[str, Any]:
+def set_active_question(req: ActiveQuestionRequest, request: Request = None) -> dict[str, Any]:
+    actor = _request_actor(request, req.user_id)
     with daemon.get_project_lock(req.project_id):
         try:
             result = daemon.store.set_active_question(
-                req.project_id, req.question_id, actor_id=req.user_id
+                req.project_id, req.question_id, actor_id=actor
             )
             return {"status": "ok", **result}
         except BrainstormerError as be:

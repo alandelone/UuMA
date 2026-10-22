@@ -112,6 +112,7 @@ class TaskContract(StrictModel):
     input_refs: list[str] = Field(default_factory=list)
     output_schema: dict[str, Any] = Field(default_factory=dict)
     acceptance_checks: list[str] = Field(default_factory=list)
+    acceptance_authority: Literal["INDEPENDENT", "USER"] = "INDEPENDENT"
     external_project_ref: str | None = None
     external_task_ref: str | None = None
     idempotency_key: str | None = None
@@ -147,6 +148,7 @@ class RunRegistration(StrictModel):
     agent_id: str
     execution_class: ExecutionClass
     source: Literal["orchestrator", "direct", "kanban", "scheduled"]
+    initial_status: Literal["PENDING", "RUNNING"] = "RUNNING"
     external_run_ref: str | None = None
     execution_epoch: int = Field(default=0, ge=0)
     started_at: datetime = Field(default_factory=utc_now)

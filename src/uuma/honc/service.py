@@ -21,6 +21,7 @@ from .models import (
     RoundSegment,
     RoundStatus,
     TargetSystem,
+    TaskSnapshot,
     TrustedInput,
     canonical_json,
     compute_digest,
@@ -114,13 +115,25 @@ class HoncService:
         habits = self.store.list_habits()
 
         task_snapshot_data = None
+        graph_error = None
         if task_id:
             # Check local snapshot or fetch from graph if available
             snapshot = None
+            if self.graph_client:
+                try:
+                    health = self.graph_client.get_health()
+                    node = self.graph_client.get_node(task_id)
+                    snapshot = self.store.save_task_snapshot(TaskSnapshot(
+                        graph_database_id=health["database_id"], node_id=node["id"],
+                        portfolio_role=node.get("portfolio_role"),
+                        graph_version=health["graph_version"], task_status=node["status"],
+                        title=node["title"], done_when=node.get("done_when"),
+                    ))
+                except (httpx.HTTPError, OSError, ValueError, KeyError) as exc:
+                    graph_error = type(exc).__name__
             if self.graph_client and self.graph_client.database_id:
-                snapshot = self.store.get_latest_task_snapshot(
-                    self.graph_client.database_id, task_id
-                )
+                snapshot = snapshot or self.store.get_latest_task_snapshot(
+                    self.graph_client.database_id, task_id)
             if not snapshot:
                 # Try finding any snapshot matching task_id
                 with self.store.connect() as conn:
@@ -149,6 +162,8 @@ class HoncService:
             "user_id": uid,
             "task_id": task_id,
             "task_snapshot": task_snapshot_data,
+            "graph_context_error": graph_error,
+            "task_snapshot_fresh": bool(task_snapshot_data and not graph_error and self.graph_client),
             "active_round": (
                 {
                     "round_id": active_round.round_id,
@@ -864,6 +879,18 @@ class HoncService:
         for item in pending:
             if item.target_system == TargetSystem.GRAPH and self.graph_client:
                 try:
+                    import json
+
+                    from .work_completion import PROTOCOL, WorkCompletion
+
+                    if json.loads(item.receipt_json or "{}").get("protocol") == PROTOCOL:
+                        self.graph_client.get_health()
+                        result = WorkCompletion(self.store, self.graph_client).reconcile(item)
+                        if result["graph_verified"]:
+                            reconciled += 1
+                        else:
+                            still_pending += 1
+                        continue
                     # Query existing receipt first to see if operation already succeeded
                     receipt = self.graph_client.get_receipt(item.operation_id)
                     if receipt:

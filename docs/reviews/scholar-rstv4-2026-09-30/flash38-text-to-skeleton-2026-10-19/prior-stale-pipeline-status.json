@@ -1,0 +1,38 @@
+{
+  "all10_native_persistence_passed": false,
+  "all126_original_windows_terminal": false,
+  "browser_visual_verification_complete": false,
+  "extraction": {
+    "completed_windows": 16,
+    "declared_windows": 126,
+    "failures_retained": 0,
+    "logical_model_invocations_started": 67,
+    "native_publication_complete": false,
+    "passed_original_all4_contract": 16,
+    "stability_acceptance_complete": false
+  },
+  "independent_scientific_accuracy_rejudged": false,
+  "independent_wire_audit": {
+    "audited_passed": 16,
+    "declared_windows": 126,
+    "native_publication_complete": false,
+    "network_inference_calls": 0,
+    "original_extraction_failures_retained": 0,
+    "pending_windows": 110,
+    "stability_acceptance_complete": false
+  },
+  "native_publication": {
+    "all10_native_persistence_complete": false,
+    "browser_visual_verification_complete": false,
+    "declared_original_papers": 10,
+    "native_paper_page_urls": [],
+    "original_blocks_native_verified": 0,
+    "production_catalog_modified": false,
+    "scientific_accuracy_or_optimization_gain_independently_rejudged": false,
+    "whole_papers_published_and_http_verified": 0
+  },
+  "new_inference_calls_by_coordinator": 0,
+  "original_batch_restarted": false,
+  "stability_acceptance_complete": false,
+  "time_unix": 1792230777.1417928
+}

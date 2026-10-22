@@ -28,9 +28,25 @@ class GraphExecutionClient:
         resp = self._client.get(f"{self.base_url}/api/v2/health")
         resp.raise_for_status()
         data = resp.json()
+        if self.database_id and data.get("database_id") != self.database_id:
+            raise ValueError("Graph database identity changed")
         if "database_id" in data and not self.database_id:
             self.database_id = data["database_id"]
         return data
+
+    def get_graph(self) -> dict[str, Any]:
+        response = self._client.get(f"{self.base_url}/api/v2/graph", headers=self._headers())
+        response.raise_for_status()
+        return response.json()
+
+    def submit_verified_completion(self, payload: dict[str, Any]) -> dict[str, Any]:
+        response = self._client.post(
+            f"{self.base_url}/api/v2/execution/action-decisions",
+            headers=self._headers(),
+            json=payload,
+        )
+        response.raise_for_status()
+        return response.json()
 
     def get_node(self, node_id: str) -> dict[str, Any]:
         resp = self._client.get(

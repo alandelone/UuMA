@@ -1,0 +1,4 @@
+name: uuma_wisdom_commands
+version: "0.1.0"
+description: Read-only Wisdom-Oldman topic and research progress commands.
+author: UuMA

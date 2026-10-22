@@ -81,8 +81,15 @@ def admin_secret(data_dir: Path):
 
 def create_app(data_dir: Path, *, port: int = 8787, start_worker: bool = True,
                browser=None) -> FastAPI:
-    store = BridgeStore(data_dir / "uuma.db")
-    tokens = TokenRegistry(data_dir / "tokens.json")
+    from .chatgpt_bridge import bridge_database_path
+    registry_override = os.environ.get("UUMA_CHATGPT_TOKEN_REGISTRY", "").strip()
+    registry_path = (
+        Path(registry_override).expanduser() if registry_override else data_dir / "tokens.json"
+    )
+    if registry_override and not registry_path.is_file():
+        raise ValueError("Configured ChatGPT identity registry must already exist")
+    store = BridgeStore(bridge_database_path(data_dir))
+    tokens = TokenRegistry(registry_path)
     secret = admin_secret(data_dir)
     extension = ExtensionBroker(data_dir / "chatgpt-bridge" / "extension-pairs.json")
     extension_path = Path(__file__).parents[2] / "integrations" / "chrome" / "uuma-chatgpt-bridge"

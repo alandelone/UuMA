@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "engine_versions": {
+    "hermes": {
+      "source_commit": "274bc7b8f613c299b4f59160bacf8a19010f7003",
+      "source_id": "a74e08df016459c43d9f97cb36a87cbcee5afad13c1430ac0d71c8c16ec9bfd9",
+      "archive_sha256": "b3134d6a0d9ce254a6878c46d12b0d908cb4f519f5c67987b5ce9087286dc9fa"
+    },
+    "yonc-graph": {
+      "source_commit": "7785b4fdc65f80223a5fa9ce1f5725a21e8d3d28",
+      "source_id": "ac2c5ba701dff4f188dd0dee147e163150e060de6f75ba198d7e83174fac4843",
+      "archive_sha256": "7e9c64b265ccd138acda333976a8324acc25f6d7e5a48ebaf1ad5a654b557879"
+    },
+    "eschematic": {
+      "source_commit": "c89aa52806b1dc8360512c6c5c8afbb3debbf39a",
+      "source_id": "4e5a0ae6210fa38e2f112b4339592fa420d6cf3387517297775dae008c1fdf08",
+      "archive_sha256": "5cc95e317a6ff23bc44aca8d230e1f80ef54a9f36c5a69c797f2a8a4cd6737a5"
+    },
+    "rstv4": {
+      "source_commit": "6f778da0419e8261803a16ed2d8f3d9241d4e41c",
+      "source_id": "fed188e7d1e21e9f4e35995611157cc480d67d8aee686188b27c9f90a5e6e527",
+      "archive_sha256": "e8472d8d41ccaf457c2a59d2ac50667d00b55107d31c90e18f119cc66972d0fe"
+    },
+    "openspg-kag": {
+      "source_commit": "de777280584fec0c3d888804eaafa86f169f13db",
+      "source_id": "7d64e116cb3a559d1d312e37629c4a5b5ec666735740c4a3b811f394bebc96f1",
+      "archive_sha256": "ca2fe41686c778d16f08d80064b6c82845a4383f611e3e7d123f9f2791336787"
+    }
+  },
+  "components": {
+    "control": {
+      "node": "server",
+      "paths": [
+        "src/uuma/api.py",
+        "src/uuma/service.py",
+        "src/uuma/event_store.py",
+        "src/uuma/projections.py",
+        "src/uuma/models.py",
+        "src/uuma/policy.py",
+        "src/uuma/router.py",
+        "src/uuma/auth.py",
+        "src/uuma/artifacts.py",
+        "src/uuma/settings.py",
+        "pyproject.toml",
+        "src/uuma/runtime_registry.py",
+        "src/uuma/deployment_admission.py"
+      ]
+    },
+    "worker-common": {
+      "node": "dependency",
+      "paths": [
+        "src/uuma/mcp_worker.py",
+        "src/uuma/control_client.py",
+        "src/uuma/models.py",
+        "src/uuma/settings.py",
+        "pyproject.toml"
+      ]
+    },
+    "bounded-worker": {
+      "node": "dependency",
+      "paths": [
+        "src/uuma/gemini_worker.py",
+        "src/uuma/mcp_gemini.py"
+      ]
+    },
+    "a2a-common": {
+      "node": "dependency",
+      "paths": [
+        "src/uuma/a2a_node.py",
+        "src/uuma/node_journal.py",
+        "src/uuma/hermes.py",
+        "src/uuma/remote_mcp.py",
+        "pyproject.toml",
+        "src/uuma/a2a_client.py"
+      ],
+      "depends_on": [
+        "worker-common"
+      ]
+    },
+    "knowledge": {
+      "node": "server",
+      "paths": [
+        "src/uuma/knowledge*.py",
+        "src/uuma/mcp_knowledge.py",
+        "src/uuma/kag*.py",
+        "src/uuma/orbit*.py",
+        "src/uuma/question_orbit.py",
+        "src/uuma/wisdom*.py",
+        "scripts/prepare-wisdom-cpu.py",
+        "scripts/prepare-wisdom-bridge-deps.py",
+        "deploy/wisdom/*"
+      ],
+      "depends_on": [
+        "worker-common"
+      ],
+      "engines": [
+        "openspg-kag"
+      ]
+    },
+    "brainstormer-domain": {
+      "node": "server",
+      "paths": [
+        "src/uuma/brainstormer*.py",
+        "src/uuma/mcp_brainstormer.py"
+      ],
+      "depends_on": [
+        "worker-common"
+      ]
+    },
+    "honc-domain": {
+      "node": "server",
+      "paths": [
+        "src/uuma/honc/*"
+      ],
+      "depends_on": [
+        "worker-common"
+      ]
+    },
+    "forge-domain": {
+      "node": "server",
+      "paths": [
+        "src/uuma/forge*.py",
+        "src/uuma/lab*.py",
+        "src/uuma/eschematic_bridge.py",
+        "src/uuma/commerce*.py",
+        "src/uuma/order_workbook.py"
+      ],
+      "depends_on": [
+        "worker-common"
+      ],
+      "engines": [
+        "eschematic"
+      ]
+    },
+    "yonc-domain": {
+      "node": "server",
+      "paths": [
+        "src/uuma/yonc*.py",
+        "src/uuma/colleague_directory.py"
+      ],
+      "depends_on": [
+        "worker-common"
+      ],
+      "engines": [
+        "yonc-graph"
+      ]
+    },
+    "brainstormer": {
+      "node": "server",
+      "paths": [
+        "profiles/brainstormer/*"
+      ],
+      "depends_on": [
+        "brainstormer-domain",
+        "a2a-common",
+        "bounded-worker"
+      ]
+    },
+    "yonc": {
+      "node": "server",
+      "paths": [
+        "profiles/yonc/*"
+      ],
+      "depends_on": [
+        "yonc-domain",
+        "a2a-common"
+      ]
+    },
+    "honc": {
+      "node": "server",
+      "paths": [
+        "profiles/honc/*"
+      ],
+      "depends_on": [
+        "honc-domain",
+        "a2a-common"
+      ]
+    },
+    "wisdom-oldman": {
+      "node": "server",
+      "paths": [
+        "profiles/wisdom-oldman/*"
+      ],
+      "depends_on": [
+        "knowledge",
+        "a2a-common",
+        "bounded-worker"
+      ]
+    },
+    "forge-lab-bot": {
+      "node": "server",
+      "paths": [
+        "profiles/forge-lab-bot/*"
+      ],
+      "depends_on": [
+        "forge-domain",
+        "a2a-common",
+        "bounded-worker"
+      ]
+    },
+    "orchestrator": {
+      "node": "workstation",
+      "paths": [
+        "profiles/orchestrator/*",
+        "src/uuma/mcp_control.py"
+      ],
+      "depends_on": [
+        "a2a-common",
+        "bounded-worker"
+      ]
+    },
+    "scholar": {
+      "node": "workstation",
+      "paths": [
+        "profiles/scholar/*"
+      ],
+      "depends_on": [
+        "worker-common",
+        "a2a-common",
+        "bounded-worker"
+      ],
+      "engines": [
+        "rstv4",
+        "openspg-kag"
+      ]
+    },
+    "desktop": {
+      "node": "workstation",
+      "paths": [
+        "src/uuma/desktop_connector.py",
+        "src/uuma/mcp_chatgpt.py",
+        "src/uuma/workstation_node.py",
+        "src/uuma/chatgpt_*.py",
+        "src/uuma/chrome_profiles.py"
+      ],
+      "depends_on": [
+        "a2a-common"
+      ]
+    },
+    "server-provider-pool": {
+      "node": "server",
+      "paths": [
+        "src/uuma/provider_pool.py",
+        "src/uuma/provider_oauth.py",
+        "src/uuma/provider_pool_web.py",
+        "src/uuma/provider_pool.html",
+        "scripts/bind-server-provider-pool.py"
+      ]
+    },
+    "server-gateway": {
+      "node": "server",
+      "paths": [
+        "integrations/hermes/*",
+        "scripts/configure-hermes-profile.py",
+        "deploy/distributed/*",
+        "scripts/prepare-hermes-pilot.py",
+        "scripts/configure-pool-worker.py",
+        "src/uuma/source_snapshot.py"
+      ],
+      "depends_on": [
+        "a2a-common",
+        "server-provider-pool"
+      ],
+      "restart_group": "server-gateway",
+      "engines": [
+        "hermes"
+      ]
+    },
+    "workstation-gateway": {
+      "node": "workstation",
+      "paths": [
+        "integrations/hermes/*",
+        "scripts/configure-hermes-profile.py",
+        "deploy/distributed/*"
+      ],
+      "depends_on": [
+        "a2a-common"
+      ],
+      "restart_group": "workstation-gateway",
+      "engines": [
+        "hermes"
+      ]
+    }
+  },
+  "gateway_members": {
+    "server-gateway": [
+      "brainstormer",
+      "yonc",
+      "honc",
+      "wisdom-oldman",
+      "forge-lab-bot"
+    ],
+    "workstation-gateway": [
+      "orchestrator",
+      "scholar"
+    ]
+  }
+}

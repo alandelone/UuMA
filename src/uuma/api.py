@@ -19,6 +19,7 @@ from .models import (
     TaskContract,
     VerificationDecision,
 )
+from .runtime_registry import EndpointBinding, RuntimeRegistry
 from .service import (
     ConflictError,
     ContractValidationError,
@@ -51,6 +52,12 @@ class RegisterRunRequest(BaseModel):
     takeover: bool = False
 
 
+class IntakeRequest(BaseModel):
+    agents: list[str] = Field(min_length=1, max_length=7)
+    plan_id: str = Field(pattern=r"^(?:fresh-control:)?[a-f0-9]{64}$")
+    paused: bool
+
+
 def create_app(settings: Settings | None = None) -> FastAPI:
     settings = settings or Settings.from_env()
     control_plane = ControlPlane(settings)
@@ -61,7 +68,11 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     app.state.control_plane = control_plane
     app.state.tokens = tokens
     wisdom_view_token = ensure_view_token(settings.data_dir)
-    wisdom_topics = TopicKnowledgeService(
+    knowledge_pending = (
+        os.environ.get("UUMA_KNOWLEDGE_REQUIRE_EXISTING") == "1"
+        and not settings.knowledge_database_path().is_file()
+    )
+    wisdom_topics = None if knowledge_pending else TopicKnowledgeService(
         KnowledgeService(settings.knowledge_database_path()),
         view_base_url=os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "http://127.0.0.1:8767"),
         view_token=wisdom_view_token,
@@ -99,7 +110,92 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     worker_auth = require("worker")
     ingest_auth = require("ingest")
 
+    def member_auth(request: Request) -> str:
+        identity = request.headers.get("x-uuma-identity", "")
+        role = "control" if identity == "orchestrator" else "worker"
+        authorization = request.headers.get("authorization", "")
+        if (not authorization.startswith("Bearer ")
+                or not tokens.verify(identity, authorization[7:], role)):
+            raise HTTPException(status_code=403, detail="Invalid Agent identity")
+        return identity
+
+    @app.get("/registry/agents")
+    def registry_agents(_identity: str = Depends(member_auth)) -> list[dict[str, Any]]:
+        return [agent.model_dump(mode="json") for agent in control_plane.list_agents()]
+
+    @app.post("/control/deployment/intake")
+    def deployment_intake(body: IntakeRequest, _identity: str = Depends(control_auth)):
+        from .deployment_admission import set_admission
+        set_admission(control_plane, body.agents, body.plan_id, body.paused)
+        return {"plan_id": body.plan_id, "agents": body.agents, "paused": body.paused}
+
+    @app.get("/worker/intake")
+    def worker_intake(identity: str = Depends(worker_auth)):
+        from .deployment_admission import current
+        with control_plane.events.transaction() as conn:
+            state = current(conn, identity)
+        return {"agent_id": identity, "accepting": not state["paused"]}
+
+    @app.get("/registry/colleagues")
+    def registry_colleagues(
+        agent_id: str = "", capability: str = "", identity: str = Depends(member_auth),
+    ) -> dict[str, Any]:
+        if identity not in {"orchestrator", "yonc"}:
+            raise HTTPException(status_code=403, detail="Colleague lookup not permitted")
+        from .colleague_directory import colleague_capabilities
+        return colleague_capabilities(control_plane, agent_id=agent_id, capability=capability)
+
+    @app.get("/registry/agents/{agent_id}/endpoint")
+    def agent_endpoint(agent_id: str, _identity: str = Depends(member_auth)):
+        return RuntimeRegistry(control_plane).get(agent_id)
+
+    @app.put("/control/agents/{agent_id}/endpoint")
+    def bind_agent_endpoint(
+        agent_id: str, body: EndpointBinding, identity: str = Depends(control_auth),
+    ):
+        if body.agent_id != agent_id:
+            raise HTTPException(status_code=400, detail="Agent binding identity mismatch")
+        return RuntimeRegistry(control_plane).bind(body, actor_id=identity)
+
+    @app.get("/control/fleet")
+    def distributed_fleet(_identity: str = Depends(control_auth)):
+        return {"bindings": RuntimeRegistry(control_plane).list(),
+                "runs": control_plane.list_runs(),
+                "control_owner": os.environ.get("UUMA_NODE_ID", "unconfigured")}
+
+    @app.get("/control/tasks/{task_id}")
+    def control_task(task_id: str, _identity: str = Depends(control_auth)) -> dict[str, Any]:
+        return control_plane.require_task(task_id)
+
+    @app.get("/worker/runs")
+    def worker_runs(
+        status: str | None = None,
+        agent_id: str | None = None,
+        identity: str = Depends(worker_auth),
+    ) -> list[dict[str, Any]]:
+        if agent_id is not None and agent_id != identity:
+            raise HTTPException(status_code=403, detail="Runs belong to another Agent")
+        return control_plane.list_runs(status=status, agent_id=identity)
+
+    @app.get("/worker/runs/{run_id}")
+    def worker_run(run_id: str, identity: str = Depends(worker_auth)) -> dict[str, Any]:
+        run = control_plane.require_run(run_id)
+        if run["agent_id"] != identity:
+            raise HTTPException(status_code=403, detail="Run belongs to another Agent")
+        return run
+
+    @app.post("/worker/operations")
+    def worker_operation(
+        operation: GraphOperation, identity: str = Depends(worker_auth),
+    ) -> dict[str, str]:
+        if operation.requested_by != identity:
+            raise HTTPException(status_code=403, detail="Operation requester mismatch")
+        control_plane.propose_operation(operation, actor_id=identity)
+        return {"operation_id": operation.operation_id, "status": "PROPOSED"}
+
     def require_wisdom_view(request: Request) -> None:
+        if knowledge_pending:
+            raise HTTPException(status_code=503, detail="Knowledge data migration is pending")
         supplied = request.query_params.get("token", "")
         authorization = request.headers.get("authorization", "")
         if authorization.startswith("Bearer "):
@@ -312,7 +408,7 @@ def main() -> None:
         "uuma.api:create_app",
         factory=True,
         host=os.environ.get("UUMA_HOST", "127.0.0.1"),
-        port=int(os.environ.get("UUMA_PORT", "8766")),
+        port=int(os.environ.get("UUMA_PORT", "8765")),
     )
 
 

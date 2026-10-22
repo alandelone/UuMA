@@ -32,6 +32,7 @@ class _SessionState:
     created: set[str] = field(default_factory=set)
     routed: set[str] = field(default_factory=set)
     ready: list[str] = field(default_factory=list)
+    dispatched: set[str] = field(default_factory=set)
     last_health_check: float = 0.0
     health_ok: bool = False
     direct_run_id: str | None = None
@@ -154,7 +155,7 @@ def _control_operation(tool_name: Any) -> str | None:
     name = _normalized_tool_name(tool_name)
     if "uuma_control" not in name:
         return None
-    for operation in ("create_task", "route_task", "assign_task"):
+    for operation in ("create_task", "route_task", "assign_task", "prepare_yonc_assignment"):
         if name.endswith(operation):
             return operation
     return None
@@ -233,6 +234,22 @@ def _find_task_id(value: Any) -> str | None:
         for item in value:
             found = _find_task_id(item)
             if found:
+                return found
+    return None
+
+
+def _prepared_task_id(value: Any) -> str | None:
+    value = _decoded(value)
+    if isinstance(value, dict):
+        if value.get("status") == "READY" and value.get("execution_started") is False:
+            task_id = value.get("task_id")
+            return task_id.strip() if isinstance(task_id, str) and task_id.strip() else None
+        for key in ("structuredContent", "structured_content", "result", "content"):
+            if key in value and (found := _prepared_task_id(value[key])):
+                return found
+    if isinstance(value, list):
+        for item in value:
+            if found := _prepared_task_id(item):
                 return found
     return None
 
@@ -624,9 +641,37 @@ def _extract_kanban_task_id(kwargs: dict[str, Any]) -> str | None:
     return None
 
 
+def _assigned_binding(kwargs: dict[str, Any]) -> dict[str, Any] | None:
+    session = _session_key(kwargs)
+    if not session.startswith("uuma-assigned:"):
+        return None
+    parts = session.split(":")
+    if len(parts) != 4 or not parts[3].isdigit() or int(parts[3]) < 1 or _CONTEXT is None:
+        raise PermissionError("Assigned runtime context is invalid")
+    _prefix, task_id, run_id, epoch = parts
+    receipt = _CONTEXT.call_mcp(
+        "uuma-worker", "get_assignment",
+        {"task_id": task_id, "run_id": run_id, "execution_epoch": int(epoch)}, timeout=20,
+    )
+    binding = _result_field(receipt, "runtime_binding")
+    if (
+        not receipt.get("ok") or _contains_error(receipt) or not isinstance(binding, dict)
+        or binding.get("authorized") is not True or binding.get("agent_id") != _profile()
+        or binding.get("run_id") != run_id or binding.get("execution_epoch") != int(epoch)
+        or _find_task_id(receipt) != task_id
+    ):
+        raise PermissionError("Control service did not authorize this assigned execution")
+    return {"task_id": task_id, "run_id": run_id, "execution_epoch": int(epoch)}
+
+
 def _health_context(**kwargs: Any) -> dict[str, str] | None:
     if _profile() in _DIRECT_SPECIALISTS:
         profile = _profile()
+        try:
+            assigned = _assigned_binding(kwargs)
+        except Exception:  # noqa: BLE001 -- failed authority lookup cannot create a Direct Run
+            return {"context": "Assigned execution authorization failed. Stop and report the blocker. "
+                    "Do not register a replacement Direct Run or use domain tools."}
         is_kanban = _is_kanban_worker(kwargs)
         kanban_task_id = _extract_kanban_task_id(kwargs) if is_kanban else None
         with _LOCK:
@@ -658,6 +703,9 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 state.forge_purchase_attempted = False
                 state.forge_purchase_result = None
                 state.yonc_colleagues = None
+            if assigned:
+                state.direct_run_id = assigned["run_id"]
+                state.direct_task_id = assigned["task_id"]
             if state.is_kanban:
                 tid = kanban_task_id or state.direct_task_id or "kanban"
                 state.direct_run_id = f"kanban:{tid}"
@@ -1024,7 +1072,7 @@ def _forge_allowed_project_roots(kwargs: dict[str, Any] | None = None) -> list[P
                 roots.append(Path(p.strip()).resolve(strict=False))
 
     userprofile = os.environ.get("USERPROFILE") or os.environ.get("HOME") or "C:/Users/Alandelone"
-    hw_ws = Path(userprofile) / "CodeSpace_Local" / "Hardware-Lab-Workspace"
+    hw_ws = Path(userprofile) / ("CodeSpace_Local" if os.name == "nt" else "workspaces") / "Hardware-Lab-Workspace"
     roots.append(hw_ws.resolve(strict=False))
 
     localappdata = os.environ.get("LOCALAPPDATA") or str(Path(userprofile) / "AppData" / "Local")
@@ -1048,13 +1096,17 @@ def _forge_allowed_project_roots(kwargs: dict[str, Any] | None = None) -> list[P
 
 
 def _forge_default_cwd(kwargs: dict[str, Any] | None = None) -> Path:
+    explicit = os.environ.get("FORGE_LAB_PROJECT_ROOTS") or os.environ.get("UUMA_FORGE_PROJECT_ROOTS")
+    if explicit and not _extract_kanban_task_id(kwargs or {}):
+        return Path(explicit.split(os.pathsep)[0]).expanduser().resolve(strict=False)
     userprofile = os.environ.get("USERPROFILE") or os.environ.get("HOME") or "C:/Users/Alandelone"
     localappdata = os.environ.get("LOCALAPPDATA") or str(Path(userprofile) / "AppData" / "Local")
     if kwargs:
         task_id = _extract_kanban_task_id(kwargs)
         if task_id:
             return (Path(localappdata) / "hermes" / "kanban" / "workspaces" / task_id).resolve(strict=False)
-    return (Path(userprofile) / "CodeSpace_Local" / "Hardware-Lab-Workspace").resolve(strict=False)
+    return (Path(userprofile) / ("CodeSpace_Local" if os.name == "nt" else "workspaces")
+            / "Hardware-Lab-Workspace").resolve(strict=False)
 
 
 def _normalize_target_path(raw_path: str, default_cwd: Path | None = None) -> Path:
@@ -1077,14 +1129,23 @@ def _normalize_target_path(raw_path: str, default_cwd: Path | None = None) -> Pa
 def _is_allowed_forge_file_path(raw_path: str, kwargs: dict[str, Any] | None = None) -> bool:
     if not raw_path or not str(raw_path).strip():
         return False
+    if os.name != "nt" and (
+        re.match(r"^[a-zA-Z]:[/\\]", raw_path.strip().strip("'\""))
+        or re.match(r"^/[a-zA-Z]/", raw_path.strip().strip("'\""))
+    ):
+        return False  # A Windows absolute path must never become a relative Linux workspace path.
     cwd = _forge_default_cwd(kwargs)
     target = _normalize_target_path(str(raw_path), default_cwd=cwd)
     roots = _forge_allowed_project_roots(kwargs)
     try:
-        target_str = str(target.resolve(strict=False)).lower()
+        target_str = str(target.resolve(strict=False))
+        if os.name == "nt":
+            target_str = target_str.lower()
         target_parts = Path(target_str).parts
         for root in roots:
-            root_str = str(root.resolve(strict=False)).lower()
+            root_str = str(root.resolve(strict=False))
+            if os.name == "nt":
+                root_str = root_str.lower()
             root_parts = Path(root_str).parts
             if len(target_parts) >= len(root_parts) and target_parts[:len(root_parts)] == root_parts:
                 return True
@@ -1094,6 +1155,13 @@ def _is_allowed_forge_file_path(raw_path: str, kwargs: dict[str, Any] | None = N
 
 
 def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict[str, str] | None:
+    if _session_key(kwargs).startswith("uuma-assigned:") and _profile() in _DIRECT_SPECIALISTS:
+        if _normalized_tool_name(tool_name).endswith("register_direct_run"):
+            return {"action": "block", "message": "An assigned execution cannot create a Direct Run."}
+        try:
+            _assigned_binding(kwargs)
+        except Exception:  # noqa: BLE001 -- fail closed across epoch changes or control outages
+            return {"action": "block", "message": "Assigned execution is no longer authorized."}
     bridge_tool = "chatgpt_bridge" in _normalized_tool_name(tool_name)
     if bridge_tool and (
         _profile() in {"scholar", "yonc"}
@@ -1162,6 +1230,19 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
                     "via mcp__uuma_worker__get_assignment, before using other tools."
                 ),
             }
+        file_policy = os.environ.get("UUMA_SPECIALIST_FILE_ROOTS_JSON")
+        if file_policy is not None and name in {"read_file", "search_files"}:
+            try:
+                from uuma.specialist_file_guard import file_read_decision
+
+                decision = file_read_decision(_profile(), name, args, file_policy)
+            except Exception:  # noqa: BLE001 -- a missing policy helper must fail closed
+                decision = {
+                    "action": "block",
+                    "message": "Specialist file roots could not be verified; file access denied.",
+                }
+            if decision is not None:
+                return decision
         if _profile() in {"scholar", "wisdom-oldman"}:
             if (_profile() == "wisdom-oldman" and name.endswith("knowledge_question_preflight")
                     and (args or {}).get("intent", "auto") != "research"):
@@ -1279,16 +1360,24 @@ def _post_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> Non
             task_id = _find_task_id(kwargs.get("result"))
             if task_id:
                 state.created.add(task_id)
+        elif operation == "prepare_yonc_assignment":
+            result = kwargs.get("result")
+            task_id = _prepared_task_id(result)
+            if task_id and task_id not in state.ready and task_id not in state.dispatched:
+                state.created.add(task_id)
+                state.routed.add(task_id)
+                state.ready.append(task_id)
         elif operation == "route_task":
             task_id = str((args or {}).get("task_id") or "").strip()
             if task_id in state.created:
                 state.routed.add(task_id)
         elif operation == "assign_task":
             task_id = str((args or {}).get("task_id") or "").strip()
-            if task_id in state.routed and task_id not in state.ready:
+            if task_id in state.routed and task_id not in state.ready and task_id not in state.dispatched:
                 state.ready.append(task_id)
         elif _is_delegation_spawn(tool_name, args):
             count = _delegation_count(args)
+            state.dispatched.update(state.ready[:count])
             del state.ready[:count]
 
 

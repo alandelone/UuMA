@@ -22,8 +22,12 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
+distributed = ["a2a-sdk[http-server]==1.2.3", "httpx>=0.28,<1", "PyYAML>=6,<7"]
+workstation = ["psutil==7.2.2"]
+public-access = ["httpx>=0.28,<1", "websockets>=15,<18"]
 chatgpt = ["playwright>=1.51,<2"]
 dev = [
+  "PyYAML>=6,<7",
   "pytest>=8,<10",
   "pytest-asyncio>=0.24,<2",
   "ruff>=0.11,<1",
@@ -43,9 +47,18 @@ uuma-kag-bridge = "uuma.kag_bridge:main"
 uuma-orbit-runner = "uuma.orbit_runner:main"
 uuma-chatgpt-bridge = "uuma.chatgpt_cli:main"
 uuma-chatgpt-mcp = "uuma.mcp_chatgpt:main"
+uuma-a2a = "uuma.a2a_node:main"
+uuma-remote-mcp = "uuma.remote_mcp:main"
+uuma-release = "uuma.release:main"
+uuma-migration = "uuma.migration:main"
+uuma-node-bootstrap = "uuma.node_bootstrap:main"
+uuma-source-snapshot = "uuma.source_snapshot:main"
+uuma-profile-migration = "uuma.profile_migration:main"
+uuma-provider-pool = "uuma.provider_pool:main"
+uuma-provider-pool-web = "uuma.provider_pool_web:main"
 
 [tool.setuptools.package-data]
-uuma = ["chatgpt_dashboard.html", "chatgpt_dashboard.js"]
+uuma = ["chatgpt_dashboard.html", "chatgpt_dashboard.js", "provider_pool.html"]
 
 [tool.setuptools.packages.find]
 where = ["src"]

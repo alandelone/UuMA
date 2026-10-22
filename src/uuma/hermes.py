@@ -169,8 +169,9 @@ class HermesRunClient:
         self.api_key = api_key
         self.timeout = timeout
 
-    def start(self, payload: dict[str, Any]) -> dict[str, Any]:
-        return self._request("POST", "/v1/runs", payload)
+    def start(self, payload: dict[str, Any], *, idempotency_key: str = "") -> dict[str, Any]:
+        headers = {"Idempotency-Key": idempotency_key} if idempotency_key else None
+        return self._request("POST", "/v1/runs", payload, extra_headers=headers)
 
     def get(self, run_id: str) -> dict[str, Any]:
         return self._request("GET", f"/v1/runs/{run_id}")
@@ -190,8 +191,11 @@ class HermesRunClient:
         method: str,
         path: str,
         body: dict[str, Any] | None = None,
+        *,
+        extra_headers: dict[str, str] | None = None,
     ) -> dict[str, Any]:
         headers = {"Accept": "application/json"}
+        headers.update(extra_headers or {})
         data = None
         if body is not None:
             headers["Content-Type"] = "application/json"
