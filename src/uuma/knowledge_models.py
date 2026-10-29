@@ -442,6 +442,7 @@ class ResearchRun(StrictModel):
     current_question_id: str | None = None
     cycle_count: int = Field(default=0, ge=0)
     search_queries_used: int = Field(default=0, ge=0)
+    latest_cycle_explanation: dict[str, Any] | None = None
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
 
@@ -461,6 +462,8 @@ class QuestionOrbitRecord(StrictModel):
     satisfaction_rationale: str = Field(min_length=1, max_length=8000)
     stop_reason: str | None = Field(default=None, max_length=8000)
     notification_route: dict[str, str] = Field(default_factory=dict)
+    quota_resume_at: datetime | None = None
+    quota_wait_kind: str | None = None
     created_at: datetime = Field(default_factory=utc_now)
     updated_at: datetime = Field(default_factory=utc_now)
 
@@ -490,7 +493,8 @@ class OrbitCycleRecord(StrictModel):
     frontier_item_id: str
     question_id: str
     status: OrbitCycleStatus = OrbitCycleStatus.RUNNING
-    attempt: int = Field(default=1, ge=1, le=3)
+    attempt: int = Field(default=1, ge=1, le=10)
+    quota_wait: bool = False
     lease_owner: str = Field(min_length=1, max_length=500)
     lease_expires_at: datetime
     heartbeat_at: datetime = Field(default_factory=utc_now)
@@ -501,6 +505,8 @@ class OrbitCycleRecord(StrictModel):
     generated_question_ids: list[str] = Field(default_factory=list)
     decision: str | None = Field(default=None, max_length=200)
     error: str | None = Field(default=None, max_length=8000)
+    cycle_explanation: dict[str, Any] | None = None
+    discovery_attempts: list[dict[str, Any]] = Field(default_factory=list)
     started_at: datetime = Field(default_factory=utc_now)
     completed_at: datetime | None = None
     created_at: datetime = Field(default_factory=utc_now)
@@ -527,7 +533,7 @@ class OrbitNotificationRecord(StrictModel):
     route: dict[str, str] = Field(default_factory=dict)
     payload: dict[str, Any] = Field(default_factory=dict)
     status: OrbitNotificationStatus = OrbitNotificationStatus.PENDING
-    attempts: int = Field(default=0, ge=0, le=3)
+    attempts: int = Field(default=0, ge=0, le=10)
     available_at: datetime = Field(default_factory=utc_now)
     sent_at: datetime | None = None
     last_error: str | None = Field(default=None, max_length=8000)

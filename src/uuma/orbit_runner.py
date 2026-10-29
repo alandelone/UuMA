@@ -44,9 +44,11 @@ from .orbit_discovery import (
 from .orbit_planner import AdaptiveResearchPlanner
 from .orbit_synthesis import OrbitCompactSynthesizer
 from .question_orbit import QuestionOrbitService
+from .research_quota import quota_delay
 from .safe_web import RetryAfterError, SafeWebFetcher
 from .service import ControlPlane
 from .settings import Settings
+from .wisdom_critic import WisdomCritic
 from .wisdom_topics import TopicKnowledgeService, ensure_view_token, grounded_answer
 
 LOGGER = logging.getLogger(__name__)
@@ -122,7 +124,14 @@ def load_profile_environment(profile_home: Path) -> None:
                 continue
             key, value = line.split("=", 1)
             k = key.strip()
-            if k in {"BRAVE_SEARCH_API_KEY", "UUMA_OPENALEX_MAILTO", "OPENAI_API_KEY", "OPENAI_BASE_URL", "UUMA_KAG_LLM_MODEL"}:
+            if k in {
+                "BRAVE_SEARCH_API_KEY", "UUMA_OPENALEX_MAILTO", "OPENAI_API_KEY",
+                "OPENAI_BASE_URL", "UUMA_KAG_LLM_MODEL", "UUMA_ORBIT_FEED_URLS",
+                "UUMA_ORBIT_CHATGPT_MODE", "UUMA_WISDOM_CRITIC_BASE_URL",
+                "UUMA_WISDOM_CRITIC_MODEL", "UUMA_WISDOM_CRITIC_API_KEY",
+                "UUMA_WISDOM_CRITIC_TIMEOUT_SECONDS",
+                "UUMA_WISDOM_CRITIC_MAX_CONTEXT_CHARACTERS",
+            }:
                 os.environ[k] = value.strip().strip("\"").strip("'")
     os.environ.setdefault("UUMA_AGENT_ID", "wisdom-oldman")
 
@@ -310,6 +319,7 @@ class OrbitRunner:
         owner_id: str | None = None,
         heartbeat_interval: float = 45,
         sources_per_cycle: int = 2,
+        critic: WisdomCritic | None = None,
     ) -> None:
         self.knowledge = knowledge
         self.orbits = orbits
@@ -322,9 +332,9 @@ class OrbitRunner:
         self.owner_id = owner_id or f"{socket.gethostname()}:{os.getpid()}"
         self.heartbeat_interval = heartbeat_interval
         self.sources_per_cycle = max(1, min(sources_per_cycle, 5))
+        self.critic = critic
         self._idle_logged = False
         self.planner = AdaptiveResearchPlanner(self.providers)
-        self._active_discovery_requests: dict[str, str] = {}
 
     def run_once(self) -> bool:
         LOGGER.debug("Polling for a runnable Orbit cycle owner=%s", self.owner_id)
@@ -371,7 +381,9 @@ class OrbitRunner:
                 self.owner_id,
                 str(exc),
                 retry_after_seconds=exc.retry_after_seconds,
-                blocked=int(cycle["attempt"]) >= 3,
+                quota_wait=quota_delay(exc) is not None,
+                discovery_state=getattr(self, "_research_cursor", None),
+                blocked=int(cycle["attempt"]) >= getattr(self.orbits, "max_cycle_attempts", 5) and quota_delay(exc) is None,
             )
         except KagUnavailableError as exc:
             heartbeat.stop()
@@ -380,7 +392,7 @@ class OrbitRunner:
             self.orbits.fail_cycle(
                 cycle["orbit_cycle_id"], self.owner_id,
                 "图谱检索服务暂时不可用；当前研究成果已保留。",
-                retry_after_seconds=300, blocked=int(cycle["attempt"]) >= 3,
+                retry_after_seconds=300, blocked=int(cycle["attempt"]) >= getattr(self.orbits, "max_cycle_attempts", 5),
             )
         except PermissionError as exc:
             heartbeat.stop()
@@ -396,7 +408,12 @@ class OrbitRunner:
         except Exception as exc:
             heartbeat.stop()
             LOGGER.exception("Question Orbit cycle failed")
-            self.orbits.fail_cycle(cycle["orbit_cycle_id"], self.owner_id, str(exc))
+            delay = quota_delay(exc)
+            self.orbits.fail_cycle(
+                cycle["orbit_cycle_id"], self.owner_id, str(exc),
+                retry_after_seconds=delay or 30, quota_wait=delay is not None,
+                discovery_state=getattr(self, "_research_cursor", None),
+            )
         else:
             heartbeat.stop()
             LOGGER.info(
@@ -442,6 +459,11 @@ class OrbitRunner:
         if hasattr(self, "_cycle_hook") and callable(self._cycle_hook):
             self._cycle_hook(cycle)
         self._active_cycle = cycle
+        self._active_cycle_started = started
+        self._critic_receipts: list[dict[str, Any]] = []
+        self._research_cursor = self.orbits.discovery_state(
+            cycle["orbit_id"], cycle["question_id"]
+        )
         readiness = ensure_knowledge_graph("wisdom-oldman", recover=True)
         if not readiness["ready"]:
             reason = str(readiness.get("reason") or "Graph readiness could not be verified")
@@ -466,6 +488,11 @@ class OrbitRunner:
             )
         if not citations_fit_question(self.knowledge, question, current.get("citations") or []):
             current = grounded_answer(current | {"citations": []})
+        if self.critic is not None:
+            current = current | {
+                "satisfaction_level": "PROVISIONAL",
+                "satisfaction_rationale": "Awaiting independent coverage review after research.",
+            }
         self._publish_first_grounded_answer(cycle, current)
         current_level = SatisfactionLevel(current["satisfaction_level"])
         if current_level in {SatisfactionLevel.SUFFICIENT, SatisfactionLevel.STRONG}:
@@ -494,25 +521,36 @@ class OrbitRunner:
                 artifacts.append(artifact)
                 cached_locators.add(source["locator"])
         orbit_id = cycle["orbit_id"]
-        pending_req_id = self._active_discovery_requests.get(orbit_id)
+        pending_req_id = self._research_cursor.get("pending_request_id")
+        research_query = self._research_cursor.get("next_query") or question
         discovered, traces, next_pending_req_id = self.planner.execute_discovery(
-            question,
+            research_query,
             limit=5,
             pending_request_id=pending_req_id,
+            pending_provider=self._research_cursor.get("pending_provider"),
             deep_research_allowed=True,
+            start_tier=int(self._research_cursor.get("next_tier", 1)),
             is_provider_throttled=lambda name: (
                 name == "brave"
                 and self.orbits.discovery_usage(provider="brave")["requests"] >= self.BRAVE_MONTHLY_LIMIT
             ),
         )
-        if next_pending_req_id:
-            self._active_discovery_requests[orbit_id] = next_pending_req_id
-        elif orbit_id in self._active_discovery_requests:
-            del self._active_discovery_requests[orbit_id]
+        last_tier = max((trace.tier for trace in traces), default=4)
+        attempted = set(self._research_cursor.get("attempted_providers") or [])
+        attempted.update(trace.provider for trace in traces)
+        self._research_cursor = {
+            "next_tier": (last_tier if next_pending_req_id else
+                          1 if last_tier == 4 else last_tier + 1),
+            "pending_request_id": next_pending_req_id,
+            "pending_provider": traces[-1].provider if next_pending_req_id and traces else None,
+            "next_query": research_query,
+            "attempted_providers": sorted(attempted),
+        }
 
         discovery_queries: list[str] = []
         search_queries_used = 0
         retry_delays: list[int] = []
+        quota_refused = False
         provider_limit_reached = False
 
         for trace in traces:
@@ -521,9 +559,12 @@ class OrbitRunner:
                 continue
             if "retry_after_seconds" in trace.metadata:
                 retry_delays.append(trace.metadata["retry_after_seconds"])
+                quota_refused = quota_refused or bool(trace.metadata.get("quota_wait"))
                 continue
-            if trace.status in {"SUCCESS", "EMPTY"}:
+            if trace.status in {"SUCCESS", "EMPTY", "IN_PROGRESS"}:
                 discovery_queries.append(trace.query)
+                if trace.metadata.get("request_phase") == "poll":
+                    continue
                 if trace.provider != "canonical-citations":
                     search_queries_used += 1
                 self.orbits.record_discovery_usage(
@@ -557,8 +598,9 @@ class OrbitRunner:
         )
 
         budget = orbit_state["budget"]
-        run = orbit_state["research_run"]
-        source_capacity = max(0, int(budget["sources"]) - int(run["sources_used"]))
+        remaining_sources = budget["remaining"]["sources"]
+        source_capacity = (self.sources_per_cycle if remaining_sources is None
+                           else max(0, int(remaining_sources)))
         source_ids: list[str] = []
         evidence_ids: list[str] = []
         model_input_characters = len(str(current.get("answer") or ""))
@@ -595,6 +637,7 @@ class OrbitRunner:
                     )
             except RetryAfterError as exc:
                 retry_delays.append(exc.retry_after_seconds)
+                quota_refused = quota_refused or quota_delay(exc) is not None
                 continue
             except PermissionError as exc:
                 LOGGER.warning("Discovery artifact %s was inaccessible: %s", artifact.locator, exc)
@@ -623,11 +666,19 @@ class OrbitRunner:
         if not source_ids and source_capacity > 0:
             if retry_delays and not discovery_queries:
                 raise RetryAfterError(
-                    "All available discovery providers requested retry later.", max(retry_delays)
+                    "All available discovery providers requested retry later.", max(retry_delays),
+                    quota_wait=quota_refused,
                 )
             if provider_limit_reached and not discovery_queries:
                 raise PermissionError("The available search provider has reached its monthly limit.")
-            reusable = self._assess_satisfaction(current, source_ids=[], evidence_ids=[])
+            reusable = current if next_pending_req_id else self._assess_satisfaction(
+                current, source_ids=[], evidence_ids=[]
+            )
+            if next_pending_req_id:
+                reusable = reusable | {
+                    "satisfaction_level": "PROVISIONAL",
+                    "satisfaction_rationale": "Asynchronous research is still running; its durable request will be polled.",
+                }
             explanation = self.planner.compute_cycle_explanation(
                 question, traces, status=current.get("status") or "ACTIVE"
             )
@@ -636,7 +687,7 @@ class OrbitRunner:
                 int(current.get("projection_watermark") or 0),
                 search_queries_used=search_queries_used,
                 model_input_characters=model_input_characters,
-                no_new_source=True,
+                no_new_source=not bool(next_pending_req_id),
                 cycle_explanation=explanation.to_dict(),
                 discovery_attempts=[a.to_dict() for a in explanation.attempts],
             )
@@ -788,6 +839,21 @@ class OrbitRunner:
         discovery_attempts: list[dict[str, Any]] | None = None,
     ) -> dict[str, Any]:
         answer_text = str(answer.get("answer") or "")
+        cycle_explanation = dict(cycle_explanation or {})
+        cursor = getattr(self, "_research_cursor", {})
+        if cursor:
+            cycle_explanation["discovery_state"] = cursor
+            attempted = set(cursor.get("attempted_providers") or [])
+            next_tier = cursor.get("next_tier", 1)
+            if next_tier == 1:
+                cycle_explanation["untried_paths"] = [
+                    name for name in cycle_explanation.get("untried_paths", [])
+                    if name not in attempted
+                ]
+        receipts = getattr(self, "_critic_receipts", [])
+        if receipts:
+            cycle_explanation["critic"] = receipts
+        critic_tokens = sum(int(item.get("tokens_used", 0)) for item in receipts)
         estimated_tokens = max(
             1,
             (
@@ -808,7 +874,7 @@ class OrbitRunner:
             generated_question_ids=generated_question_ids,
             discovery_queries=discovery_queries,
             search_queries_used=search_queries_used,
-            model_tokens_used=estimated_tokens,
+            model_tokens_used=estimated_tokens + critic_tokens,
             kag_watermark=kag_watermark,
             decision=(
                 "COMPLETE"
@@ -819,6 +885,10 @@ class OrbitRunner:
             no_new_source=no_new_source,
             cycle_explanation=cycle_explanation,
             discovery_attempts=discovery_attempts,
+            quota_retry_after_seconds=max(
+                (int(r["retry_after_seconds"]) for r in receipts if r.get("quota_wait")),
+                default=0,
+            ),
         )
 
     @staticmethod
@@ -845,15 +915,74 @@ class OrbitRunner:
         overlap = len(before_words & after_words) / len(before_words | after_words)
         return overlap < 0.75
 
-    @staticmethod
     def _assess_satisfaction(
-        answer: dict[str, Any], *, source_ids: list[str], evidence_ids: list[str]
+        self, answer: dict[str, Any], *, source_ids: list[str], evidence_ids: list[str]
     ) -> dict[str, Any]:
-        # Two located citations establish traceability, not completeness. In particular,
-        # an answer can cite two studies while explicitly lacking the user's requested
-        # equipment settings. Only an explicit coverage assessment may close a gap.
-        _ = source_ids, evidence_ids
-        return answer
+        if self.critic is None:
+            # Explicitly injected legacy reasoners may supply their own assessment.
+            return answer
+        cycle = self._active_cycle
+        state = self.orbits.get(cycle["orbit_id"])
+        question = self.knowledge._require("questions", cycle["question_id"])["text"]
+        evidence: list[dict[str, Any]] = []
+        seen: set[str] = set()
+
+        def add_excerpt(ref: str, kind: str, expected_source: str | None = None) -> None:
+            if not ref or ref in seen:
+                return
+            record = self.knowledge.store.get_record(kind, ref)
+            if not record:
+                return
+            source_id = record.get("source_id")
+            if not source_id and record.get("document_id"):
+                document = self.knowledge.store.get_record("documents", record["document_id"])
+                source_id = (document or {}).get("source_id")
+            if expected_source and source_id != expected_source:
+                return
+            source = self.knowledge.store.get_record("sources", source_id) if source_id else None
+            text = record.get("excerpt") or record.get("text")
+            if not source or not text:
+                return
+            seen.add(ref)
+            evidence.append({
+                "ref": ref, "source_id": source_id, "title": source["title"],
+                "locator": source["locator"], "source_type": source.get("source_type"),
+                "location": record.get("location"), "text": text,
+            })
+
+        for citation in answer.get("citations", []):
+            if citation.get("evidence_id"):
+                add_excerpt(citation["evidence_id"], "evidence", citation.get("source_id"))
+            if citation.get("chunk_id"):
+                add_excerpt(citation["chunk_id"], "chunks", citation.get("source_id"))
+        for ref in evidence_ids:
+            add_excerpt(ref, "evidence")
+        run, budget = state["research_run"], state["budget"]
+        root = self.knowledge._require("questions", state["orbit"]["root_question_id"])
+        gaps = [self.knowledge.store.get_record("gaps", ref)
+                for ref in answer.get("remaining_gap_ids", [])[:30]]
+        elapsed = max(0, time.monotonic() - self._active_cycle_started)
+        receipt = self.critic.assess({
+            "question": question, "root_question": root["text"],
+            "purpose": run.get("purpose") or run.get("objective"),
+            "answer": answer, "evidence": evidence,
+            "new_source_ids": source_ids, "budget": budget,
+            "remaining_gap_ids": answer.get("remaining_gap_ids", []),
+            "gaps": [gap for gap in gaps if gap],
+        }, remaining_tokens=(65_536 if budget["remaining"]["model_tokens"] is None
+                             else int(budget["remaining"]["model_tokens"])),
+            remaining_seconds=(getattr(self.critic, "timeout", 90)
+                               if budget["remaining"]["active_seconds"] is None
+                               else max(0, budget["remaining"]["active_seconds"] - elapsed)))
+        self._critic_receipts.append(receipt)
+        questions = receipt.get("remaining_questions") or []
+        if questions:
+            self._research_cursor["next_query"] = str(questions[0])[:8000]
+        sufficient = receipt["status"] == "REVIEWED" and receipt["verdict"] == "SUFFICIENT"
+        return answer | {
+            "satisfaction_level": "SUFFICIENT" if sufficient else "PROVISIONAL",
+            "satisfaction_rationale": receipt["rationale"],
+        }
 
 
 def _ensure_runner_run(
@@ -940,15 +1069,47 @@ def build_runner(profile_home: Path) -> OrbitRunner:
             orbit_data = orbits.get(orbit_id)
             existing = orbit_data.get("orbit", {}).get("uuma_run_id")
             if existing:
-                if isinstance(control_plane, ControlClient):
-                    bound = control_plane.require_run(str(existing))
-                    if bound.get("agent_id") != "wisdom-oldman":
-                        raise PermissionError("Question Orbit Run belongs to another Agent")
-                    if bound.get("status") not in {"PENDING", "RUNNING"}:
-                        return None
-                return str(existing)
+                try:
+                    if isinstance(control_plane, ControlClient):
+                        bound = control_plane.require_run(str(existing))
+                        if bound.get("agent_id") != "wisdom-oldman":
+                            raise PermissionError("Question Orbit Run belongs to another Agent")
+                        if bound.get("status") in {"PENDING", "RUNNING"}:
+                            return str(existing)
+                    else:
+                        with control_plane.connect() as db:
+                            row = db.execute(
+                                "SELECT run_id FROM runs WHERE run_id = ? "
+                                "AND agent_id = 'wisdom-oldman' "
+                                "AND status IN ('PENDING', 'RUNNING')",
+                                (existing,),
+                            ).fetchone()
+                            if row:
+                                return str(row["run_id"])
+                except Exception as lookup_err:  # noqa: BLE001
+                    LOGGER.warning(
+                        "Existing run_id %s not active/reusable (%s); acquiring fresh run",
+                        existing,
+                        lookup_err,
+                    )
             question = knowledge._require("questions", cycle["question_id"])["text"]
-            return _ensure_runner_run(control_plane, orbit_id, question)
+            fresh_run = _ensure_runner_run(control_plane, orbit_id, question)
+            if fresh_run and fresh_run != existing:
+                try:
+                    with knowledge.store.transaction() as conn:
+                        before = knowledge._require("question_orbits", orbit_id, conn)
+                        if before.get("uuma_run_id") != fresh_run:
+                            orbits._update(
+                                conn,
+                                "question_orbits",
+                                before,
+                                before | {"uuma_run_id": fresh_run, "updated_at": datetime.now(UTC).isoformat()},
+                                "QUESTION_ORBIT_RUN_BOUND",
+                                "wisdom-oldman",
+                            )
+                except Exception as update_err:  # noqa: BLE001
+                    LOGGER.warning("Could not persist updated uuma_run_id on orbit: %s", update_err)
+            return fresh_run
         except Exception as exc:  # noqa: BLE001
             LOGGER.warning("Failed resolving run_id for ChatGPT discovery: %s", exc)
             return None
@@ -966,14 +1127,14 @@ def build_runner(profile_home: Path) -> OrbitRunner:
             base_url=os.environ.get("UUMA_CHATGPT_BRIDGE_URL", "http://127.0.0.1:8787"),
             agent="wisdom-oldman",
             token=token,
-            mode=os.environ.get("UUMA_ORBIT_CHATGPT_MODE", "search"),
+            mode=os.environ.get("UUMA_ORBIT_CHATGPT_MODE", "deep_research"),
             run_id_getter=_get_active_run_id,
         )
 
     all_providers = [
         CanonicalCitationProvider(knowledge),
         *([chatgpt_provider] if chatgpt_provider else []),
-        *configured_providers(fetcher),
+        *configured_providers(fetcher, profile_home=profile_home),
     ]
 
     runner = OrbitRunner(
@@ -985,7 +1146,9 @@ def build_runner(profile_home: Path) -> OrbitRunner:
         KnowledgeConstructor(knowledge, backend),
         KagProjectionWorker(knowledge, backend),
         dispatcher,
+        critic=WisdomCritic.from_env(),
     )
+    LOGGER.info("Independent coverage critic configured model=%s", runner.critic.model)
     runner._cycle_hook = lambda cycle: runner_active_cycle.__setitem__(0, cycle)
     return runner
 
@@ -1044,6 +1207,7 @@ def main() -> None:
                     last_work_time = now
                 elif (
                     args.idle_timeout_seconds > 0
+                    and not runner.orbits.has_quota_wait()
                     and (now - last_work_time) >= args.idle_timeout_seconds
                 ):
                     LOGGER.info(

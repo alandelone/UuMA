@@ -1018,9 +1018,39 @@ def test_recoverable_cycle_fails_after_three_attempts(tmp_path: Path, monkeypatc
     assert terminal["orbit"]["status"] == "FAILED"
 
 
-def test_budget_upgrade_requires_orchestrator_and_resumes_exhausted_orbit(
-    tmp_path: Path,
+def test_configurable_max_cycle_attempts_allows_five_to_ten_retries(tmp_path: Path, monkeypatch) -> None:
+    monkeypatch.setattr(question_orbit_module, "datetime", _Clock)
+    monkeypatch.setenv("UUMA_ORBIT_MAX_CYCLE_ATTEMPTS", "6")
+    _, orbits, _ = _started_orbit(tmp_path)
+    assert orbits.max_cycle_attempts == 6
+    cycle = orbits.acquire_cycle("runner-1")
+    assert cycle is not None
+
+    for attempt in range(1, 6):
+        result = orbits.fail_cycle(
+            cycle["orbit_cycle_id"],
+            f"runner-{attempt}",
+            f"Failure {attempt}.",
+            retry_after_seconds=30,
+        )
+        assert result["retry"]
+        _Clock.current += timedelta(seconds=31)
+        cycle = orbits.acquire_cycle(f"runner-{attempt + 1}")
+        assert cycle is not None
+        assert cycle["attempt"] == attempt + 1
+
+    terminal = orbits.fail_cycle(
+        cycle["orbit_cycle_id"], "runner-6", "Sixth failure."
+    )
+    assert not terminal["retry"]
+    assert terminal["cycle"]["attempt"] == 6
+    assert terminal["orbit"]["status"] == "FAILED"
+
+
+def test_tier_review_requires_orchestrator_and_does_not_reset_daily_quota(
+    tmp_path: Path, monkeypatch,
 ) -> None:
+    monkeypatch.setenv("UUMA_RESEARCH_DAILY_LIMITS_JSON", '{"active_seconds":600}')
     service, orbits, orbit_id = _started_orbit(tmp_path)
     extra_gap = service.add_gap(
         GapRecord(
@@ -1052,8 +1082,10 @@ def test_budget_upgrade_requires_orchestrator_and_resumes_exhausted_orbit(
         orbits.set_budget(orbit_id, BudgetTier.STANDARD, actor_id="wisdom-oldman")
 
     reviewed = orbits.set_budget(orbit_id, BudgetTier.STANDARD, actor_id="orchestrator")
-    assert reviewed["orbit"]["status"] == "QUEUED"
+    assert reviewed["orbit"]["status"] == "BUDGET_EXHAUSTED"
     assert reviewed["research_run"]["budget_tier"] == "STANDARD"
+    assert reviewed["research_run"]["active_seconds"] == 600
+    assert orbits.acquire_cycle("runner") is None
 
 
 def test_notification_deduplication_and_route_target(tmp_path: Path) -> None:
@@ -1237,6 +1269,119 @@ class _Dispatcher:
         return False
 
 
+def test_independent_critic_controls_durable_tier_progression_after_runner_restart(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    from uuma.knowledge_ingest import KnowledgeIngestor
+
+    monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {"ready": True})
+    _Clock.current = datetime.now(UTC) + timedelta(minutes=1)
+    monkeypatch.setattr(question_orbit_module, "datetime", _Clock)
+    service, orbits, orbit_id = _started_orbit(tmp_path)
+    calls = []
+    ingestor = KnowledgeIngestor(service, tmp_path / "content")
+
+    class Ingestor:
+        def ingest_web(self, url, **kwargs):
+            return ingestor.ingest_text(locator=url, title="Battery ageing paper",
+                                        text="Battery ageing depends on cycling temperature.",
+                                        actor_id="wisdom-oldman")
+
+    class Reasoner:
+        def answer(self, question, **kwargs):
+            sources = service.list_records("source")["records"]
+            chunks = service.list_records("chunk")["records"]
+            answer = _Reasoner().answer(question)
+            if sources and chunks:
+                chunk = chunks[-1]
+                doc = service.store.get_record("documents", chunk["document_id"])
+                source = service.store.get_record("sources", doc["source_id"])
+                answer |= {"answer": "Battery ageing depends on cycling temperature.",
+                           "citations": [{"source_id": source["source_id"],
+                                          "chunk_id": chunk["chunk_id"], "locator": source["locator"]}]}
+            return answer
+
+    class Provider:
+        def __init__(self, name):
+            self.name = name
+
+        def discover(self, query, **kwargs):
+            calls.append(self.name)
+            if self.name == "chatgpt-bridge":
+                assert kwargs["mode"] == "deep_research"
+            return DiscoveryResponse([DiscoveryArtifact(
+                "https://example.com/" + self.name, "Battery ageing paper", self.name,
+            )])
+
+    class Critic:
+        def __init__(self):
+            self.reviews = []
+
+        def assess(self, context, **kwargs):
+            self.reviews.append(context)
+            assert context["evidence"] and context["evidence"][0]["location"]
+            return {"status": "REVIEWED", "verdict": (
+                "CONTINUE" if len(self.reviews) == 1 else "SUFFICIENT"
+            ), "rationale": "A targeted academic check is worthwhile." if len(self.reviews) == 1
+                else "The requested scope has located support.",
+                "tokens_used": 17, "remaining_questions": []}
+
+    critic = Critic()
+
+    def runner():
+        return OrbitRunner(service, orbits, Reasoner(),
+                           [Provider("chatgpt-bridge"), Provider("openalex")],
+                           Ingestor(), _Constructor(), _Projection(), _Dispatcher(),
+                           owner_id="critic-test", heartbeat_interval=0, critic=critic)
+
+    assert runner().run_once()
+    first = orbits.get(orbit_id)
+    assert first["orbit"]["status"] == "QUEUED"
+    assert orbits.discovery_state(orbit_id, first["current_cycle"]["question_id"])["next_tier"] == 2
+    assert first["current_cycle"]["cycle_explanation"]["critic"][0]["tokens_used"] == 17
+    _Clock.current += timedelta(minutes=5)
+    assert runner().run_once()
+    assert calls == ["chatgpt-bridge", "openalex"]
+    assert orbits.get(orbit_id)["orbit"]["status"] == "COMPLETED"
+    assert orbits.get(orbit_id)["research_run"]["model_tokens_used"] >= 34
+    assert service.history()["chain_valid"]
+
+
+def test_pending_research_survives_restart_without_no_source_penalty_or_duplicate_search(
+    tmp_path: Path, monkeypatch,
+) -> None:
+    monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {"ready": True})
+    _Clock.current = datetime.now(UTC) + timedelta(minutes=1)
+    monkeypatch.setattr(question_orbit_module, "datetime", _Clock)
+    service, orbits, orbit_id = _started_orbit(tmp_path)
+    submissions = []
+
+    class Pending:
+        name = "chatgpt-bridge"
+
+        def discover(self, query, **kwargs):
+            submissions.append(kwargs.get("pending_request_id"))
+            return DiscoveryResponse([], request_id="dr-1", in_progress=True)
+
+    class NoCritic:
+        def assess(self, *args, **kwargs):
+            raise AssertionError("An unfinished research batch must not be certified")
+
+    def runner():
+        return OrbitRunner(service, orbits, _Reasoner(), [Pending()], _Ingestor(service),
+                           _Constructor(), _Projection(), _Dispatcher(),
+                           owner_id="pending-test", heartbeat_interval=0, critic=NoCritic())
+
+    assert runner().run_once()
+    _Clock.current += timedelta(minutes=5)
+    assert runner().run_once()
+    assert submissions == [None, "dr-1"]
+    state = orbits.get(orbit_id)
+    assert state["orbit"]["status"] == "QUEUED"
+    assert state["research_run"]["search_queries_used"] == 1
+    assert all(item.get("no_source_attempts", 0) == 0 for item in state["frontier"])
+
+
 def test_runner_executes_one_durable_cycle(tmp_path: Path, monkeypatch) -> None:
     monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {"ready": True})
     service, orbits, orbit_id = _started_orbit(tmp_path)
@@ -1302,6 +1447,8 @@ def test_one_throttled_provider_does_not_retry_successful_empty_discovery(
 
 
 def test_runner_does_not_treat_citation_count_as_answer_completeness() -> None:
+    runner = object.__new__(OrbitRunner)
+    runner.critic = None
     answer = {
         "answer": "Supported answer.",
         "satisfaction_level": "PROVISIONAL",
@@ -1310,20 +1457,20 @@ def test_runner_does_not_treat_citation_count_as_answer_completeness() -> None:
         "conflicts": [],
     }
 
-    assessed = OrbitRunner._assess_satisfaction(
+    assessed = runner._assess_satisfaction(
         answer, source_ids=["src-a", "src-b"], evidence_ids=["ev-a", "ev-b"]
     )
-    conflicted = OrbitRunner._assess_satisfaction(
+    conflicted = runner._assess_satisfaction(
         answer | {"conflicts": ["The sources disagree."]},
         source_ids=["src-a", "src-b"],
         evidence_ids=["ev-a", "ev-b"],
     )
-    one_source = OrbitRunner._assess_satisfaction(
+    one_source = runner._assess_satisfaction(
         answer,
         source_ids=["src-a"],
         evidence_ids=["ev-a", "ev-b"],
     )
-    reused = OrbitRunner._assess_satisfaction(
+    reused = runner._assess_satisfaction(
         answer | {"citations": [
             {"source_id": "src-a", "chunk_id": "chunk-a"},
             {"source_id": "src-b", "chunk_id": "chunk-b"},

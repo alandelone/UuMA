@@ -104,7 +104,7 @@ class TaskContract(StrictModel):
     title: str = Field(min_length=1, max_length=240)
     objective: str = Field(min_length=1, max_length=8000)
     requested_by: str = "user"
-    source: Literal["orchestrator", "direct", "scheduled", "system"] = "orchestrator"
+    source: Literal["orchestrator", "direct", "scheduled", "system", "consultation"] = "orchestrator"
     required_capabilities: set[str] = Field(default_factory=set)
     required_tools: set[str] = Field(default_factory=set)
     risk_level: RiskLevel = RiskLevel.READ_ONLY
@@ -147,7 +147,7 @@ class RunRegistration(StrictModel):
     task_id: str
     agent_id: str
     execution_class: ExecutionClass
-    source: Literal["orchestrator", "direct", "kanban", "scheduled"]
+    source: Literal["orchestrator", "direct", "kanban", "scheduled", "consultation"]
     initial_status: Literal["PENDING", "RUNNING"] = "RUNNING"
     external_run_ref: str | None = None
     execution_epoch: int = Field(default=0, ge=0)
@@ -164,7 +164,7 @@ class RunProgress(StrictModel):
     current_step: str | None = Field(default=None, max_length=1000)
     last_heartbeat: datetime = Field(default_factory=utc_now)
     blocker: str | None = Field(default=None, max_length=4000)
-    attempt: int = Field(default=1, ge=1, le=3)
+    attempt: int = Field(default=1, ge=1, le=10)
     elapsed_seconds: float = Field(default=0, ge=0)
     artifact_refs: list[str] = Field(default_factory=list)
     eta_seconds: float | None = Field(default=None, ge=0)

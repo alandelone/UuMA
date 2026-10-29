@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 import os
 import re
+import time
 from collections import defaultdict
 from typing import Any
 from urllib.error import URLError
@@ -232,7 +233,10 @@ class OrbitCompactSynthesizer:
         if not base_url or not api_key or not model:
             raise RuntimeError("Compact research synthesis model is not configured.")
         last_failure = "invalid JSON"
-        for compact in (False, True):
+        timeout = int(os.environ.get("UUMA_SYNTHESIS_TIMEOUT", "240"))
+        max_attempts = max(2, int(os.environ.get("UUMA_SYNTHESIS_ATTEMPTS", "3")))
+        compact_plan = [False] + [True] * (max_attempts - 1)
+        for attempt_idx, compact in enumerate(compact_plan):
             selected = snippets[:6] if compact else snippets
             context = "\n\n".join(
                 f"{item['key']} | {item['title']} | {item['location']}\n{item['text']}"
@@ -277,10 +281,11 @@ class OrbitCompactSynthesizer:
                 },
             )
             try:
-                with urlopen(request, timeout=120) as response:
+                with urlopen(request, timeout=timeout) as response:
                     result = json.load(response)
             except (URLError, TimeoutError, OSError, json.JSONDecodeError) as exc:
                 last_failure = type(exc).__name__
+                time.sleep(1)
                 continue
             raw_content = result["choices"][0]["message"].get("content") or ""
             content = (
@@ -303,5 +308,5 @@ class OrbitCompactSynthesizer:
                 return points
             last_failure = "missing source-linked points"
         raise ValueError(
-            f"The synthesis model did not return source-linked JSON after two attempts: {last_failure}."
+            f"The synthesis model did not return source-linked JSON after {len(compact_plan)} attempts: {last_failure}."
         )

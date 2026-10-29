@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
 import re
 import unicodedata
 from datetime import UTC, datetime, timedelta
@@ -28,6 +29,7 @@ from .knowledge_models import (
 )
 from .knowledge_service import KnowledgeService, json_record
 from .knowledge_store import TABLE_IDS
+from .research_quota import ResearchQuota
 from .wisdom_topics import TopicKnowledgeService
 
 RUNNING_ORBIT_STATUSES = {
@@ -63,7 +65,7 @@ class QuestionOrbitService:
         "STANDARD": {"active_seconds": 3_600, "sources": 30, "model_tokens": 250_000,
                      "search_queries": 75},
         "DEEP": {"active_seconds": 216_000, "sources": 500, "model_tokens": 10_000_000,
-                 "search_queries": 5_000},
+                 "search_queries": 15_000},
     }
 
     def __init__(
@@ -72,11 +74,67 @@ class QuestionOrbitService:
         *,
         topics: TopicKnowledgeService | None = None,
         automatic_budget_tier: BudgetTier = BudgetTier.QUICK,
+        max_cycle_attempts: int | None = None,
     ) -> None:
         self.knowledge = knowledge
         self.store = knowledge.store
         self.topics = topics or TopicKnowledgeService(knowledge)
         self.automatic_budget_tier = automatic_budget_tier
+        self.quota = ResearchQuota.from_env()
+        self.max_cycle_attempts = (
+            max_cycle_attempts
+            if max_cycle_attempts is not None
+            else max(3, min(10, int(os.environ.get("UUMA_ORBIT_MAX_CYCLE_ATTEMPTS", "3"))))
+        )
+
+    def budget(self, conn=None, *, now=None, pending=None) -> dict[str, Any]:
+        now = now or datetime.now(UTC)
+        if conn is not None:
+            return self.quota.snapshot(conn, now=now, pending=pending)
+        with self.store.connect() as opened:
+            return self.quota.snapshot(opened, now=now, pending=pending)
+
+    def has_quota_wait(self) -> bool:
+        with self.store.connect() as conn:
+            return conn.execute(
+                "SELECT 1 FROM question_orbits WHERE status IN ('QUEUED','ACTIVE',"
+                "'BUDGET_EXHAUSTED') AND json_extract(record_json, '$.quota_resume_at') "
+                "IS NOT NULL LIMIT 1"
+            ).fetchone() is not None
+
+    def _wait_daily(self, conn, orbit, daily, now, actor_id):
+        reason = "Today's configured research ceiling is reached; waiting for " + daily["reset_at"]
+        waiting = orbit | {"status": "BUDGET_EXHAUSTED", "quota_wait_kind": "daily_limit",
+                           "quota_resume_at": daily["reset_at"], "stop_reason": reason,
+                           "updated_at": now.isoformat()}
+        self._update(conn, "question_orbits", orbit, waiting,
+                     "QUESTION_ORBIT_DAILY_QUOTA_WAIT", actor_id)
+        run = self.knowledge._require("research_runs", orbit["research_run_id"], conn)
+        self._update(conn, "research_runs", run,
+                     run | {"status": "BUDGET_EXHAUSTED", "stop_reason": reason,
+                            "updated_at": now.isoformat()},
+                     "RESEARCH_RUN_DAILY_QUOTA_WAIT", actor_id)
+
+    def _refresh_daily_waits(self, conn, now, actor_id):
+        rows = conn.execute(
+            "SELECT record_json FROM question_orbits WHERE status='BUDGET_EXHAUSTED' "
+            "AND json_extract(record_json, '$.quota_wait_kind')='daily_limit' "
+            "AND json_extract(record_json, '$.quota_resume_at') <= ?", (now.isoformat(),),
+        ).fetchall()
+        if not rows or self.budget(conn, now=now)["exhausted"]:
+            return
+        for row in rows:
+            before = json.loads(row[0])
+            after = before | {"status": "QUEUED", "stop_reason": None,
+                              "quota_resume_at": None, "quota_wait_kind": None,
+                              "updated_at": now.isoformat()}
+            self._update(conn, "question_orbits", before, after,
+                         "QUESTION_ORBIT_DAILY_QUOTA_REFRESHED", actor_id)
+            run = self.knowledge._require("research_runs", before["research_run_id"], conn)
+            self._update(conn, "research_runs", run,
+                         run | {"status": "ACTIVE", "stop_reason": None,
+                                "updated_at": now.isoformat()},
+                         "RESEARCH_RUN_DAILY_QUOTA_REFRESHED", actor_id)
 
     def start(
         self,
@@ -178,13 +236,8 @@ class QuestionOrbitService:
                     ),
                     "updated_at": now.isoformat(),
                 }
-                budget = self.BUDGETS[existing_orbit["budget_tier"]]
-                exhausted = (
-                    float(run_before.get("active_seconds", 0)) >= budget["active_seconds"]
-                    or int(run_before.get("sources_used", 0)) >= budget["sources"]
-                    or int(run_before.get("model_tokens_used", 0)) >= budget["model_tokens"]
-                    or int(run_before.get("search_queries_used", 0)) >= budget["search_queries"]
-                )
+                budget = self.budget(conn, now=now)
+                exhausted = budget["exhausted"]
                 restartable = existing_orbit["status"] in {
                     OrbitStatus.COMPLETED.value,
                     OrbitStatus.BLOCKED.value,
@@ -288,7 +341,7 @@ class QuestionOrbitService:
             "created": True,
             "reused": False,
             "orbit": json_record(orbit),
-            "budget": self.BUDGETS[budget_tier.value],
+            "budget": self.budget(),
         }
 
     def _insert(self, conn, table: str, model, event_type: str, actor_id: str) -> None:
@@ -373,11 +426,27 @@ class QuestionOrbitService:
             "orbit": orbit,
             "research_run": self.knowledge._require("research_runs", orbit["research_run_id"]),
             "frontier": self.frontier(orbit_id)["records"],
-            "budget": self.BUDGETS[orbit["budget_tier"]],
+            "budget": self.budget(),
             "current_cycle": json.loads(cycle_row["record_json"]) if cycle_row else None,
             "recent_discovery_usage": recent_usage,
             "attempted_routes": attempted_routes,
         }
+
+    def discovery_state(self, orbit_id: str, question_id: str) -> dict[str, Any]:
+        """Resume this question's source tier and pending request after worker restarts."""
+        with self.store.connect() as conn:
+            rows = conn.execute(
+                "SELECT record_json FROM orbit_cycles WHERE orbit_id = ? "
+                "AND status IN ('COMPLETED','RETRY','RUNNING') "
+                "ORDER BY updated_sequence DESC", (orbit_id,),
+            )
+            for row in rows:
+                record = json.loads(row["record_json"])
+                if record.get("question_id") == question_id:
+                    state = (record.get("cycle_explanation") or {}).get("discovery_state")
+                    if isinstance(state, dict):
+                        return state
+        return {}
 
     def list(self, status: str | None = None, limit: int = 100) -> dict[str, Any]:
         records = self.store.list_records("question_orbits", status=status, limit=limit)
@@ -471,10 +540,13 @@ class QuestionOrbitService:
                 "PAUSED": {"QUEUED", "STOPPED"},
                 "BLOCKED": {"QUEUED", "STOPPED"},
                 "FAILED": {"QUEUED", "STOPPED"},
+                "BUDGET_EXHAUSTED": {"QUEUED", "PAUSED", "STOPPED"},
             }
             if status.value not in allowed.get(before["status"], set()):
                 raise ValueError(f"Invalid orbit transition: {before['status']} -> {status.value}")
             now = datetime.now(UTC)
+            if status == OrbitStatus.QUEUED and self.budget(conn, now=now)["exhausted"]:
+                raise ValueError("Today's research ceiling is reached; wait for the daily reset.")
             if status == OrbitStatus.QUEUED and before["status"] == "PAUSED":
                 rows = conn.execute(
                     "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? AND status = 'OPEN'",
@@ -492,7 +564,7 @@ class QuestionOrbitService:
             if status in {OrbitStatus.PAUSED, OrbitStatus.STOPPED}:
                 cycle_rows = conn.execute(
                     "SELECT record_json FROM orbit_cycles "
-                    "WHERE orbit_id = ? AND status = 'RUNNING'",
+                    "WHERE orbit_id = ? AND status IN ('RUNNING','RETRY')",
                     (orbit_id,),
                 ).fetchall()
                 for row in cycle_rows:
@@ -532,6 +604,8 @@ class QuestionOrbitService:
                 "status": status.value,
                 "updated_at": now.isoformat(),
                 "stop_reason": None if status.value in RUNNING_ORBIT_STATUSES else reason,
+                "quota_resume_at": None,
+                "quota_wait_kind": None,
             }
             event = self.store.append_event(
                 conn,
@@ -644,6 +718,7 @@ class QuestionOrbitService:
         now = datetime.now(UTC)
         lease_expires_at = now + timedelta(seconds=lease_seconds)
         with self.store.transaction() as conn:
+            self._refresh_daily_waits(conn, now, actor_id)
             active = conn.execute(
                 "SELECT record_json FROM orbit_cycles WHERE status = 'RUNNING' "
                 "AND lease_expires_at > ? ORDER BY updated_sequence LIMIT 1",
@@ -653,16 +728,24 @@ class QuestionOrbitService:
                 return None
 
             expired = conn.execute(
-                "SELECT record_json FROM orbit_cycles WHERE status IN ('RUNNING', 'RETRY') "
-                "AND lease_expires_at <= ? ORDER BY updated_sequence LIMIT 1",
+                "SELECT c.record_json FROM orbit_cycles c JOIN question_orbits o "
+                "ON o.orbit_id=c.orbit_id WHERE c.status IN ('RUNNING', 'RETRY') "
+                "AND o.status IN ('QUEUED','ACTIVE') AND c.lease_expires_at <= ? "
+                "ORDER BY c.updated_sequence LIMIT 1",
                 (now.isoformat(),),
             ).fetchone()
             if expired:
                 before = json.loads(expired["record_json"])
-                if int(before["attempt"]) < 3:
+                daily = self.budget(conn, now=now)
+                if daily["exhausted"]:
+                    orbit = self.knowledge._require("question_orbits", before["orbit_id"], conn)
+                    self._wait_daily(conn, orbit, daily, now, actor_id)
+                    return None
+                if before.get("quota_wait") or int(before["attempt"]) < self.max_cycle_attempts:
                     after = before | {
                         "status": OrbitCycleStatus.RUNNING.value,
-                        "attempt": int(before["attempt"]) + 1,
+                        "attempt": int(before["attempt"]) + (0 if before.get("quota_wait") else 1),
+                        "quota_wait": False,
                         "lease_owner": owner_id,
                         "lease_expires_at": lease_expires_at.isoformat(),
                         "heartbeat_at": now.isoformat(),
@@ -684,6 +767,8 @@ class QuestionOrbitService:
                         orbit_after = orbit_before | {
                             "status": OrbitStatus.ACTIVE.value,
                             "stop_reason": None,
+                            "quota_resume_at": None,
+                            "quota_wait_kind": None,
                             "updated_at": now.isoformat(),
                         }
                         self._update(
@@ -699,11 +784,17 @@ class QuestionOrbitService:
 
             row = conn.execute(
                 "SELECT record_json FROM question_orbits WHERE status = 'QUEUED' "
-                "ORDER BY updated_sequence LIMIT 1"
+                "AND (json_extract(record_json, '$.quota_resume_at') IS NULL "
+                "OR json_extract(record_json, '$.quota_resume_at') <= ?) "
+                "ORDER BY updated_sequence LIMIT 1", (now.isoformat(),),
             ).fetchone()
             if not row:
                 return None
             orbit_before = json.loads(row["record_json"])
+            daily = self.budget(conn, now=now)
+            if daily["exhausted"]:
+                self._wait_daily(conn, orbit_before, daily, now, actor_id)
+                return None
             frontier_rows = conn.execute(
                 "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? AND status = 'OPEN'",
                 (orbit_before["orbit_id"],),
@@ -802,7 +893,7 @@ class QuestionOrbitService:
         *,
         actor_id: str,
     ) -> dict[str, Any]:
-        """Apply an explicit Orchestrator/user-review budget decision and resume if exhausted."""
+        """Review a legacy tier label; this cannot reset or raise a configured daily ceiling."""
         self.knowledge.require_reviewer(actor_id)
         now = datetime.now(UTC)
         with self.store.transaction() as conn:
@@ -814,7 +905,8 @@ class QuestionOrbitService:
             run_status = run_before["status"]
             stop_reason = orbit_before.get("stop_reason")
             run_stop_reason = run_before.get("stop_reason")
-            if orbit_status == OrbitStatus.BUDGET_EXHAUSTED.value:
+            if (orbit_status == OrbitStatus.BUDGET_EXHAUSTED.value
+                    and not self.budget(conn, now=now)["exhausted"]):
                 orbit_status = OrbitStatus.QUEUED.value
                 run_status = ResearchRunStatus.ACTIVE.value
                 stop_reason = None
@@ -839,7 +931,7 @@ class QuestionOrbitService:
                     orbit_after,
                     "QUESTION_ORBIT_BUDGET_REVIEWED",
                     actor_id,
-                    extra={"budget": self.BUDGETS[budget_tier.value]},
+                    extra={"budget": self.budget(conn, now=now)},
                 )
             if run_after != run_before:
                 self._update(
@@ -853,7 +945,7 @@ class QuestionOrbitService:
             return {
                 "orbit": orbit_after,
                 "research_run": run_after,
-                "budget": self.BUDGETS[budget_tier.value],
+                "budget": self.budget(conn, now=now),
             }
 
     def _terminalize_expired_cycle(
@@ -861,7 +953,7 @@ class QuestionOrbitService:
     ) -> None:
         cycle_after = cycle_before | {
             "status": OrbitCycleStatus.FAILED.value,
-            "error": cycle_before.get("error") or "Cycle lease expired after three attempts.",
+            "error": cycle_before.get("error") or f"Cycle lease expired after {self.max_cycle_attempts} attempts.",
             "completed_at": now.isoformat(),
             "updated_at": now.isoformat(),
         }
@@ -1080,8 +1172,11 @@ class QuestionOrbitService:
         actor_id: str = "wisdom-oldman",
         cycle_explanation: Any | None = None,
         discovery_attempts: list[dict[str, Any]] | None = None,
+        quota_retry_after_seconds: int = 0,
     ) -> dict[str, Any]:
         self.knowledge.require_writer(actor_id)
+        if any(v < 0 for v in (active_seconds, search_queries_used, model_tokens_used)):
+            raise ValueError("Recorded research usage cannot be negative")
         source_ids = list(dict.fromkeys(source_ids or []))
         evidence_ids = list(dict.fromkeys(evidence_ids or []))
         generated_question_ids = list(dict.fromkeys(generated_question_ids or []))
@@ -1193,13 +1288,8 @@ class QuestionOrbitService:
                     else dict(cycle_explanation)
                 )
                 run_after["latest_cycle_explanation"] = exp_dict
-            budget = self.BUDGETS[orbit_before["budget_tier"]]
-            exhausted = (
-                run_after["active_seconds"] >= budget["active_seconds"]
-                or run_after["sources_used"] >= budget["sources"]
-                or run_after["model_tokens_used"] >= budget["model_tokens"]
-                or run_after["search_queries_used"] >= budget["search_queries"]
-            )
+            budget = self.budget(conn, now=now, pending=self.quota.delta(run_before, run_after))
+            exhausted = budget["exhausted"]
             open_rows = conn.execute(
                 "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? AND status = 'OPEN'",
                 (orbit_before["orbit_id"],),
@@ -1218,6 +1308,8 @@ class QuestionOrbitService:
             )
             untried = exp_dict.get("untried_paths") or []
             blocked_paths = exp_dict.get("blocked_paths") or []
+            next_tier = (exp_dict.get("discovery_state") or {}).get("next_tier", 1)
+            deeper_tiers_remain = next_tier in {2, 3, 4}
 
             if satisfied:
                 orbit_status = OrbitStatus.COMPLETED
@@ -1226,16 +1318,20 @@ class QuestionOrbitService:
             elif exhausted:
                 orbit_status = OrbitStatus.BUDGET_EXHAUSTED
                 run_status = ResearchRunStatus.BUDGET_EXHAUSTED
-                stop_reason = "The Orbit reached at least one configured research budget limit."
+                stop_reason = "Today's configured research ceiling is reached; waiting for " + budget["reset_at"]
+            elif quota_retry_after_seconds:
+                orbit_status = OrbitStatus.QUEUED
+                run_status = ResearchRunStatus.ACTIVE
+                stop_reason = "Provider quota/rate limit; progress saved, waiting before retry."
             elif not open_frontier:
                 orbit_status = OrbitStatus.BLOCKED
                 run_status = ResearchRunStatus.PAUSED
                 stop_reason = "No open research frontier remains while knowledge is still incomplete."
-            elif blocked_paths and not untried and no_new_source:
+            elif blocked_paths and not untried and not deeper_tiers_remain and no_new_source:
                 orbit_status = OrbitStatus.BLOCKED
                 run_status = ResearchRunStatus.PAUSED
                 stop_reason = f"All available discovery providers are blocked ({', '.join(blocked_paths)}); awaiting credentials or quota recovery."
-            elif no_new_source and not untried and open_frontier and all(
+            elif no_new_source and not untried and not deeper_tiers_remain and open_frontier and all(
                 int(item.get("no_source_attempts", 0)) >= 2 for item in open_frontier
             ):
                 orbit_status = OrbitStatus.PAUSED
@@ -1265,11 +1361,20 @@ class QuestionOrbitService:
             )
             orbit_after = orbit_before | {
                 "status": orbit_status.value,
+                "quota_wait_kind": "daily_limit" if exhausted and not satisfied else None,
+                "quota_resume_at": budget["reset_at"] if exhausted and not satisfied else None,
                 "satisfaction_level": satisfaction_level.value,
                 "satisfaction_rationale": satisfaction_rationale,
                 "stop_reason": stop_reason,
                 "updated_at": now.isoformat(),
             }
+            if quota_retry_after_seconds and not satisfied and not exhausted:
+                orbit_after |= {
+                    "quota_wait_kind": "provider",
+                    "quota_resume_at": (now + timedelta(
+                        seconds=max(1, min(quota_retry_after_seconds, 86_400))
+                    )).isoformat(),
+                }
             self._update(
                 conn,
                 "question_orbits",
@@ -1360,6 +1465,8 @@ class QuestionOrbitService:
         recoverable: bool = True,
         blocked: bool = False,
         retry_after_seconds: int = 30,
+        quota_wait: bool = False,
+        discovery_state: dict[str, Any] | None = None,
         actor_id: str = "wisdom-oldman",
     ) -> dict[str, Any]:
         self.knowledge.require_writer(actor_id)
@@ -1376,12 +1483,13 @@ class QuestionOrbitService:
                 raise ValueError("Only a running cycle can fail.")
             if cycle_before["lease_owner"] != owner_id:
                 raise PermissionError("Cycle lease belongs to another runner.")
-            retry = recoverable and not blocked and int(cycle_before["attempt"]) < 3
+            retry = recoverable and not blocked and (quota_wait or int(cycle_before["attempt"]) < self.max_cycle_attempts)
             cycle_status = OrbitCycleStatus.RETRY if retry else (
                 OrbitCycleStatus.BLOCKED if blocked else OrbitCycleStatus.FAILED
             )
             cycle_after = cycle_before | {
                 "status": cycle_status.value,
+                "quota_wait": quota_wait and retry,
                 "error": error,
                 "lease_expires_at": (
                     now + timedelta(seconds=max(1, min(retry_after_seconds, 86_400)))
@@ -1390,6 +1498,11 @@ class QuestionOrbitService:
                 "completed_at": None if retry else now.isoformat(),
                 "updated_at": now.isoformat(),
             }
+            if discovery_state is not None:
+                cycle_after["cycle_explanation"] = {
+                    **(cycle_before.get("cycle_explanation") or {}),
+                    "discovery_state": discovery_state,
+                }
             self._update(
                 conn,
                 "orbit_cycles",
@@ -1401,12 +1514,14 @@ class QuestionOrbitService:
             orbit_before = self.knowledge._require(
                 "question_orbits", cycle_before["orbit_id"], conn
             )
-            orbit_status = OrbitStatus.ACTIVE if retry else (
+            orbit_status = (OrbitStatus.QUEUED if quota_wait else OrbitStatus.ACTIVE) if retry else (
                 OrbitStatus.BLOCKED if blocked else OrbitStatus.FAILED
             )
             orbit_after = orbit_before | {
                 "status": orbit_status.value,
-                "stop_reason": None if retry else error,
+                "stop_reason": error if quota_wait or not retry else None,
+                "quota_resume_at": cycle_after["lease_expires_at"] if quota_wait and retry else None,
+                "quota_wait_kind": "provider" if quota_wait and retry else None,
                 "updated_at": now.isoformat(),
             }
             self._update(
