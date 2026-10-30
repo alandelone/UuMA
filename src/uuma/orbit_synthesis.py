@@ -299,11 +299,23 @@ class OrbitCompactSynthesizer:
             if start < 0 or end <= start:
                 last_failure = "empty or truncated JSON"
                 continue
-            try:
-                points = json.loads(content[start:end + 1]).get("points")
-            except (json.JSONDecodeError, AttributeError):
+            candidate = content[start:end + 1]
+            parsed = None
+            for attempt_cand in (
+                candidate,
+                re.sub(r",\s*([}\]])", r"\1", candidate),
+            ):
+                try:
+                    data = json.loads(attempt_cand, strict=False)
+                    if isinstance(data, dict):
+                        parsed = data
+                        break
+                except (json.JSONDecodeError, ValueError):
+                    continue
+            if parsed is None:
                 last_failure = "malformed JSON"
                 continue
+            points = parsed.get("points")
             if isinstance(points, list) and points:
                 return points
             last_failure = "missing source-linked points"

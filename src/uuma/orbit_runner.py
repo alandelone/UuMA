@@ -124,14 +124,17 @@ def load_profile_environment(profile_home: Path) -> None:
                 continue
             key, value = line.split("=", 1)
             k = key.strip()
-            if k in {
-                "BRAVE_SEARCH_API_KEY", "UUMA_OPENALEX_MAILTO", "OPENAI_API_KEY",
-                "OPENAI_BASE_URL", "UUMA_KAG_LLM_MODEL", "UUMA_ORBIT_FEED_URLS",
-                "UUMA_ORBIT_CHATGPT_MODE", "UUMA_WISDOM_CRITIC_BASE_URL",
-                "UUMA_WISDOM_CRITIC_MODEL", "UUMA_WISDOM_CRITIC_API_KEY",
-                "UUMA_WISDOM_CRITIC_TIMEOUT_SECONDS",
-                "UUMA_WISDOM_CRITIC_MAX_CONTEXT_CHARACTERS",
-            }:
+            if (
+                k.startswith(("UUMA_", "OPENAI_", "BRAVE_", "OPENROUTER_", "GEMINI_"))
+                or k in {
+                    "BRAVE_SEARCH_API_KEY", "UUMA_OPENALEX_MAILTO", "OPENAI_API_KEY",
+                    "OPENAI_BASE_URL", "UUMA_KAG_LLM_MODEL", "UUMA_ORBIT_FEED_URLS",
+                    "UUMA_ORBIT_CHATGPT_MODE", "UUMA_WISDOM_CRITIC_BASE_URL",
+                    "UUMA_WISDOM_CRITIC_MODEL", "UUMA_WISDOM_CRITIC_API_KEY",
+                    "UUMA_WISDOM_CRITIC_TIMEOUT_SECONDS",
+                    "UUMA_WISDOM_CRITIC_MAX_CONTEXT_CHARACTERS",
+                }
+            ):
                 os.environ[k] = value.strip().strip("\"").strip("'")
     os.environ.setdefault("UUMA_AGENT_ID", "wisdom-oldman")
 
