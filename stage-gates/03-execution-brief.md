@@ -911,3 +911,61 @@ same16 cache keys, exactly2 named v3 anchors*4 candidates with only revision/tim
 changes, complete raw sample_json exact, timestamps within actual samples requests,
 all non-database files exact and current raw author/calls/jobs/checks/packages exact.
 Do not weaken product tests, source provenance, rejection or approval assertions.
+# Scholar Skeleton interpretation continuation, 2026-10-24
+
+The approved deep-reading framework includes shared Skeleton-bound content views
+and separate purpose-dependent judgments. Declare two dependent Catalog job kinds,
+SKELETON_VIEW and SKELETON_PURPOSE, after the one compatible SKELETON extraction.
+Different purposes reuse the same extraction AND shared content view. They may
+create separate purpose jobs. New requests explicitly bind that interpretation
+scope; historical requests without it do not gain new execution consent.
+
+Preserve the one-extraction/no-duplicate-model-call assertions, source identity,
+lease fencing, pause/stop, original rows and immutable receipts. Tests counting all
+Catalog jobs must now distinguish the declared dependent jobs rather than treating
+them as repeated extraction. The semantic MCP inventory adds one read-only bound-
+view operation. New foreign keys protect view consent; adversarial isolated tests
+must remove dependent fixture rows before testing missing-parent-consent dispatch.
+No scientific approval, production release or mission gate transition is granted.
+
+
+### 2026-10-24 Catalog Skeleton Theme integration scope
+
+Continue the authorized open-vocabulary candidate workflow: independently reconcile every normalized deep Theme against the whole-paper overview, preserving all local roles and original native evidence. Schema20 additively links shared Theme observations to their real immutable content view, without fabricating an initial run. Global search/counts/review/correction and source-version editing must accept both provenance kinds. Preserve distinct-paper counts, accepted-only aliases, candidate default, immutable source/history, scoped consent and pause/cached replay assertions. Frozen v1 requests do not authorize new inference; no automatic backfill of unreconciled local roles. This declares implementation scope and does not approve a stage gate or live deployment.
+
+
+### 2026-10-24 complete deep content and task presentation
+
+Expose immutable shared content, source/version eligibility, dimension observations, original heading/writing-role/intent maps, argument evidence and purpose judgments in the opted-in Catalog drawer. Historical and invalidated artifacts remain distinguishable. The Reading stage column reports actual source/content/purpose work rather than only initial reconciliation; DEEP_CONTENT_CANDIDATE is a source-valid candidate view, not scientific completion. Explicit purpose submission reuses existing exact-source extraction/content; opening, refreshing or switching versions never queues inference or resumes paused/stopped work. Keep initial disposition, source-count completeness guard, optimistic controls, source history and original preservation assertions. No schema change, gate approval or production rollout is implied.
+
+
+### 2026-10-24 all-queue observational overview
+
+Expose registered-source/initial-reading discovery gaps separately from durable jobs across global source, global reading and Collection queues. Count distinct papers and exact recorded states; derive night/manual/consent/parent/lease waiting reasons from the existing policies without claiming live workers, source validity or semantic completion. Overview reads must not initialize intents, schedule work, hash every PDF or resume paused tasks. Add readonly HTTP overview and compatible include_papers=False option to the existing semantic status tool; keep the tool inventory and per-paper behavior. Preserve all timestamps/history/records. This scope does not approve a gate or production migration.
+
+
+### 2026-10-24 dispatchable manual foreground work
+
+Align foreground priority and actual Collection claim admission: future READY/retry/resource records do not block or run before available_at; quarantined paper work remains held and cannot outrank a valid paper. Live/recoverable RUNNING manual work retains priority and all lease/fencing/paused-state behavior remains. Preserve exact due-time, quarantine and background-wins tests rather than accepting another selected job. This is a runtime correctness increment, not permission to activate production or approve a mission gate.
+
+
+### 2026-10-24 frozen parser engine and shared resource owner
+
+Separate optional MinerU engine_root/resource_root from its data root. Default behavior stays identical; an isolated real-paper acceptance run may use frozen bridge/legacy source, isolated artifacts/data and the actual shared parser lock owner. Explicit constructor paths override environment defaults. Do not use separate staging locks to bypass live capacity, alter model/device settings, copy credentials, or mutate the canonical Catalog during acceptance.
+
+
+2026-10-24 scoped Scholar execution amendment: the first real complete-PDF initial read returned a durable gemini-flash-lite answer using exact_quote/source_evidence/start_offset instead of the admitted quote/evidence/start/end wire keys. Preserve the original model response, run identity and NEEDS_HUMAN job. Supply a versioned explicit JSON response schema in every new quick-read payload, pin that schema revision in newly allocated global job input and identity, and preserve legacy payloads for already-frozen jobs. Valid existing initial publications remain reusable. Do not reinterpret aliases, repair quotations, reset failed jobs, weaken source assertions, or approve the pending mission gate. A new bounded isolated acceptance may reuse the actual successful parser artifact under a new schema-bound job while retaining every original receipt.
+
+
+2026-10-24 scoped Scholar source-binding amendment: current v3 real answer completed all22dimensions but four exact-quote checks failed because the model inserted ellipses. Preserve original run_99621f9e6e404d7cb431618685194c07, literal response model gemini-3.5-flash-lite, every raw quote and held job. Reuse original PaperSkeleton source_spans/resolve_source_quote for initial evidence selection, with native span IDs and exact raw offsets supplied losslessly. Resolve selected consecutive own-block spans into a separate canonical card; never normalize or repair literal model quotations. New prompt/schema/job identities must remain distinct, valid v2/v3 publications reusable, and malformed/foreign/reversed/duplicate/gapped span selections rejected. The1459pass full suite proves the preceding schema-v3 checkpoint; new span changes need successor evidence and do not inherit that full-suite claim.
+
+
+2026-10-25 scoped execution amendment: preserve v6 first-part real success and malformed second-part reply. New v7 uses one compact source_ref field with a frozen per-payload registry binding to original PaperSkeleton span IDs, exact text and codepoint offsets. All raw text and old legacy rejection guards remain. Remove all three stale quote-output instructions consistently. Whole-paper synthesis now selects supplied evidence_id values resolved by the application, instead of reproducing literal quotations/offsets. Do not infer fields from the old malformed block_id or rewrite frozen v6 outputs. A separately frozen bounded manual acceptance may reuse the existing successful actual parser result and retain all6held jobs/events. No canonical migration, scientific approval or gate transition is implied.
+
+
+2026-10-25 bounded recovery amendment: actual v7 passed all4source parts and3digest groups. The fourth digest summary was2004characters, exceeding the unchanged2000limit. Preserve its raw answer and all successful receipts. Add exactly one recorded candidate-summary compression call with target1000/max2000, requiring identical ordered coverage/evidence IDs and rejecting failed repairs. Keep original digest prompt/version unchanged so successful earlier calls remain reusable. A job-scoped, idempotent, source-validated/fenced retry may reactivate only the selected held current-context initial job; it must not resume paused/stopped/quarantined/legacy work or approve science. Also unify newly parsed child identities/schema inputs with reconciliation, preserving manual priority. Recover the same private data root under a new frozen source directory, never overwrite the original frozen v7 source or reparse/reinfer successful earlier phases.
+
+
+### 2026-10-26 Scholar graph task native verification context
+
+Keep verification/pending_review unchanged. Scoped acceptance requires one logical launcher/base-interpreter ancestry tree with exact guardian arguments, a fresh healthy checker receipt, unchanged graph readiness and exact Task Scheduler restart fields. Exported XML child ordering is presentation; compare all restart child tag/value pairs with multiplicity, not their sequence. No unrelated process/SSH listener/server/Bot may be stopped. Preserve the initial denied registration and both failed readback audits, and remove only the recorded hash-matching Startup entry after the task is actually verified.

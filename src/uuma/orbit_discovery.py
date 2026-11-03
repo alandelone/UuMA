@@ -10,6 +10,7 @@ import xml.etree.ElementTree as ET
 from collections.abc import Callable
 from dataclasses import dataclass, field
 from enum import StrEnum
+from pathlib import Path
 from typing import Any, Protocol
 from urllib.error import HTTPError, URLError
 from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
@@ -782,8 +783,8 @@ class ChatGPTDiscoveryProvider:
                 LOGGER.info("Prior ChatGPT request %s ended with status %s", pending_request_id, status)
                 return DiscoveryResponse(
                     [],
-                    request_id=pending_request_id,
-                    outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                    request_id=None,
+                    outcome=DiscoveryOutcome.NO_MATCH if status == "PAUSED" else DiscoveryOutcome.FAILED,
                     error_detail=f"Prior request status {status}",
                     duration_ms=(time.monotonic() - t0) * 1000,
                 )
@@ -901,11 +902,14 @@ class ChatGPTDiscoveryProvider:
             in_prog = bool(
                 last_state and last_state.get("status") in {"PREFLIGHT", "SENDING", "RUNNING", "QUEUED"}
             )
-            outcome = DiscoveryOutcome.SUCCESS if in_prog else DiscoveryOutcome.TRANSIENT_FAILURE
+            outcome = DiscoveryOutcome.SUCCESS if in_prog else (
+                DiscoveryOutcome.NO_MATCH if last_state and last_state.get("status") == "PAUSED"
+                else DiscoveryOutcome.TRANSIENT_FAILURE
+            )
             detail = "In progress" if in_prog else f"Request status: {last_state.get('status') if last_state else 'timeout'}"
             return DiscoveryResponse(
                 [],
-                request_id=req_id,
+                request_id=req_id if in_prog else None,
                 in_progress=in_prog,
                 outcome=outcome,
                 error_detail=detail,
@@ -928,10 +932,17 @@ def configured_providers(
     fetcher: SafeWebFetcher | None = None,
     *,
     chatgpt_provider: DiscoveryProvider | None = None,
+    profile_home: Path | None = None,
 ) -> list[DiscoveryProvider]:
     providers: list[DiscoveryProvider] = []
     if chatgpt_provider is not None:
         providers.append(chatgpt_provider)
+    if profile_home is not None:
+        from .orbit_mcp_discovery import XhsMCPDiscoveryProvider
+
+        xhs = XhsMCPDiscoveryProvider.from_profile(profile_home)
+        if xhs is not None:
+            providers.append(xhs)
     seeds = [
         value.strip()
         for value in os.environ.get("UUMA_ORBIT_FEED_URLS", "").split(",")

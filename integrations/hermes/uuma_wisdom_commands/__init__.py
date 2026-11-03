@@ -100,13 +100,17 @@ def progress_overview(rows: list[dict[str, Any]]) -> str:
         if group != previous_group:
             lines.extend(["", group])
             previous_group = group
-        lines.extend(["", f"{index}. {task_title(row)}", f"   {LABELS.get(status, status)}"])
+        lines.extend(["", f"{index}. {task_title(row)} [/progress_{index}]", f"   {LABELS.get(status, status)}"])
         reason = reason_summary(row)
         if reason:
             lines.append("   " + reason)
     if len(rows) > 8:
-        lines.extend(["", "仅展开前 8 项，可用 /progress page 2 查看更多。"])
-    lines.extend(["", "查看议题：/topics", "查看第 1 项原始记录：/progress detail 1"])
+        lines.extend(["", "仅展开前 8 项，可用 /progress page 2 [/progress_page_2] 查看更多。"])
+    lines.extend([
+        "",
+        "查看议题：/topics",
+        "查看第 1 项原始记录：/progress detail 1 [/progress_1]",
+    ])
     return "\n".join(lines)
 
 
@@ -160,14 +164,33 @@ class WisdomCommands:
 
     def run(self, command: str, args: str = "") -> str:
         try:
+            # Handle 1-tap unspaced slash subcommands
+            norm_cmd = command.replace("-", "_")
+            if norm_cmd.startswith("progress_page_"):
+                return self.run("progress", f"page {norm_cmd[14:]}")
+            if norm_cmd.startswith("progress_"):
+                return self.run("progress", f"detail {norm_cmd[9:]}")
+            if norm_cmd.startswith("topics_page_"):
+                return self.run("topics", f"{norm_cmd[12:]}")
+            if norm_cmd.startswith("topics_"):
+                idx = int(norm_cmd[7:])
+                topic_rows = self.read("knowledge_topic_list", limit=500)["records"]
+                if 1 <= idx <= len(topic_rows):
+                    return self.run("progress", str(topic_rows[idx - 1]["topic_id"]))
+                return "找不到该编号的议题。用 /topics 查看列表。"
             if command not in {"topics", "progress", "wisdom"}:
                 raise ValueError("Unknown command")
             if command == "wisdom":
                 return (
-                    "Wisdom-Oldman · 研究进度\n\n/topics [页码] 查看已有议题\n"
-                    "/progress 查看研究总览\n/progress 议题名称或ID 查看该议题进度\n"
-                    "/progress detail 1 查看列表第1项的原始记录\n\n"
-                    "以上入口只查询已保存状态，不启动研究。"
+                    "🦉 Wisdom-Oldman · 研究进度操作指南\n\n"
+                    "👉 快捷命令（点击直接发送）：\n"
+                    "• /topics ：查看已保存的研究议题\n"
+                    "• /progress ：查看研究总览\n\n"
+                    "👉 点击复制发送，查询详情：\n"
+                    "`/topics 2` （查看议题第 2 页）\n"
+                    "`/progress detail 1` （查看列表第 1 项的原始记录）\n"
+                    "`/progress 议题名称或ID` （查看指定议题进度）\n\n"
+                    "以上入口只查询已保存状态，不启动或修改研究。"
                 )
             if command == "topics":
                 page = int(args.strip() or "1")
@@ -178,11 +201,12 @@ class WisdomCommands:
                 if page > pages:
                     return f"没有这一页。请使用 /topics {pages}"
                 lines = [f"研究议题（已读取 {len(rows)} 个，第 {page}/{pages} 页）"]
-                for row in rows[(page - 1) * 8 : page * 8]:
+                for idx, row in enumerate(rows[(page - 1) * 8 : page * 8], start=1):
+                    item_num = (page - 1) * 8 + idx
                     lines.extend(
                         [
-                            f"• {text(row['title'])}〔{text(row.get('status'))}〕",
-                            f"/progress {row['topic_id']}",
+                            f"• {item_num}. {text(row['title'])}〔{text(row.get('status'))}〕 [/topics_{item_num}]",
+                            f"  /progress {row['topic_id']}",
                         ]
                     )
                 if not rows:
@@ -190,7 +214,7 @@ class WisdomCommands:
                 if len(rows) == 500:
                     lines.append("仅显示最近500个议题，可用已知ID直接查询。")
                 if page < pages:
-                    lines.append(f"下一页：/topics {page + 1}")
+                    lines.append(f"下一页：/topics {page + 1} [/topics_page_{page + 1}]")
                 return "\n".join(lines)[:3500]
             selector = args.strip()
             detail = re.fullmatch(r"detail\s+([1-9]\d*)", selector, flags=re.IGNORECASE)
@@ -224,7 +248,12 @@ class WisdomCommands:
                     if start + 8 < len(ordered):
                         lines.extend(["", f"下一页：/progress page {index + 1}"])
                     lines.extend(
-                        ["", f"原始记录：/progress detail {start + 1}", "/progress 返回总览"]
+                        [
+                            "",
+                            f"原始记录：/progress detail {start + 1}",
+                            f"👉 点击复制：`/progress detail {start + 1}`",
+                            "/progress 返回总览",
+                        ]
                     )
                     return "\n".join(lines)[:3500]
                 return progress_overview(rows)[:3500]
@@ -290,8 +319,33 @@ def register(ctx: Any) -> None:
         ("topics", "查看已保存的研究议题", "[页码]"),
         ("progress", "查看研究任务或议题进度", "[议题名称或ID]"),
     ]:
-
-        async def handler(raw_args: str = "", command: str = name) -> str:
-            return await asyncio.to_thread(commands.run, command, raw_args)
-
+        handler = lambda raw_args="", c=name: asyncio.to_thread(commands.run, c, raw_args)
         ctx.register_command(name, handler, description=description, args_hint=hint)
+
+    # 1-tap direct progress detail items (/progress_1 to /progress_16)
+    for i in range(1, 17):
+        desc = f"查看第 {i} 项研究任务详情"
+        h_prog = lambda raw_args="", i=i: asyncio.to_thread(commands.run, f"progress_{i}", raw_args)
+        ctx.register_command(f"progress_{i}", h_prog, description=desc)
+        ctx.register_command(f"progress-{i}", h_prog, description=desc)
+
+    # 1-tap direct progress page items (/progress_page_2 to /progress_page_5)
+    for p in range(2, 6):
+        desc = f"查看研究记录第 {p} 页"
+        h_page = lambda raw_args="", p=p: asyncio.to_thread(commands.run, f"progress_page_{p}", raw_args)
+        ctx.register_command(f"progress_page_{p}", h_page, description=desc)
+        ctx.register_command(f"progress-page-{p}", h_page, description=desc)
+
+    # 1-tap direct topics items (/topics_1 to /topics_16)
+    for i in range(1, 17):
+        desc = f"查看第 {i} 个议题详情与研究任务"
+        h_top = lambda raw_args="", i=i: asyncio.to_thread(commands.run, f"topics_{i}", raw_args)
+        ctx.register_command(f"topics_{i}", h_top, description=desc)
+        ctx.register_command(f"topics-{i}", h_top, description=desc)
+
+    # 1-tap direct topics page items (/topics_page_2 to /topics_page_5)
+    for p in range(2, 6):
+        desc = f"查看研究议题第 {p} 页"
+        h_tpage = lambda raw_args="", p=p: asyncio.to_thread(commands.run, f"topics_page_{p}", raw_args)
+        ctx.register_command(f"topics_page_{p}", h_tpage, description=desc)
+        ctx.register_command(f"topics-page-{p}", h_tpage, description=desc)

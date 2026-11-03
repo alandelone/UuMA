@@ -1,0 +1,14 @@
+{
+  "contract_version": "brainstormer-wisdom-v1",
+  "profile": "brainstormer",
+  "mcp_server": "uuma-worker",
+  "tools_include_additions": [
+    "brainstormer_ask_wisdom",
+    "brainstormer_wisdom_status"
+  ],
+  "new_skill": "wisdom-consultation",
+  "default_research_if_unknown": false,
+  "publication_status": "deployed_and_verified",
+  "production_release": "f68069659e53bca5877dba472d6ac711e2a4728f23ffcd2313df32f75a278753",
+  "wisdom_retention_component": "5ed701334adfc131ae8a45c5924351b46d601a40567f12f5805b0a5986e22d63"
+}

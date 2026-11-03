@@ -353,7 +353,9 @@ def _request_actor(request: Request | None, legacy_actor: str) -> str:
 
 
 class NavigationRequest(BaseModel):
-    action: str = Field(pattern=r"^(list|context|switch|create|turn)$")
+    action: str = Field(
+        pattern=r"^(list|context|switch|create|question|checkpoint|turn)$"
+    )
     user_id: str = Field(min_length=1, max_length=128)
     selector: str = Field(default="", max_length=260)
     title: str = Field(default="", max_length=160)
@@ -370,7 +372,10 @@ def navigate_discussion(req: NavigationRequest, request: Request = None) -> dict
     nonce = None
     payload = req.model_dump()
     if daemon.navigation_tokens is not None:
-        if req.action == "create" and actor != "orchestrator":
+        if (
+            req.action in {"create", "question", "checkpoint"}
+            and actor != "orchestrator"
+        ):
             if daemon.navigation_commands is None:
                 raise HTTPException(status_code=403, detail="A signed human command is required")
             try:
@@ -378,7 +383,9 @@ def navigate_discussion(req: NavigationRequest, request: Request = None) -> dict
                     request.state.navigation_payload, request.headers,
                 )
             except (PermissionError, OSError, ValueError) as exc:
-                raise HTTPException(status_code=403, detail="Invalid human topic command") from exc
+                raise HTTPException(
+                    status_code=403, detail="Invalid signed human navigation command"
+                ) from exc
             except RuntimeError as exc:
                 raise HTTPException(status_code=409, detail="Reconcile original topic command") from exc
             if receipt is not None:

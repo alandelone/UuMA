@@ -35,6 +35,15 @@ classes. Name tests `test_<behavior>`. Knowledge-contract changes require focuse
 permission, event-chain, patch, and reversal tests. With no commit history yet, use concise
 Conventional Commit subjects. Pull requests state scope, tests, schema impact, and evidence.
 
+## Scholar research content language
+
+Use English for authored Scholar research content and project artifacts, including Field, Topic,
+and Track names; descriptions and scopes; research questions and rationales; notes; and reports.
+Conversation may follow the user's preferred language. The user clarified that this preference
+does not request a change to the existing interface language. Preserve original source quotations
+and immutable historical receipts, and retain translation history when updating existing records.
+See `repomemory/scholar-language-policy.md` for the user decision and completed translation.
+
 ## Absolute prohibitions
 
 - Keep control state in `uuma.db`, Wisdom-Oldman knowledge in `wisdom.db`, and never repurpose Hermes
@@ -49,3 +58,15 @@ Conventional Commit subjects. Pull requests state scope, tests, schema impact, a
   the current gate.
 - Never destructively reset or clean a workspace without a verified committed baseline and explicit
   user authorization. Preserve and report unrelated user changes.
+
+## Distributed Agent development and manual publishing
+
+Before editing or deploying any specialist Agent, read
+[the development and publishing runbook](docs/operations/agent-development-and-release.md).
+It records source locations, production ownership, SSH access, Git baseline issues,
+component impact, shared-gateway maintenance, receipts and rollback requirements.
+The five specialists run on alandelone-server-001; local definitions are development
+sources. A Git commit does not deploy them. Publish manually only within the user's
+requested scope. Never recreate migrated workstation databases or receivers.
+Forge Z:/Hardware-Lab-Workspace and server /mnt/nas/Hardware-Lab-Workspace are the
+same live workspace: coordinate a single writer before editing or using Git there.

@@ -12,6 +12,7 @@ import hashlib
 import json
 import os
 import re
+import signal
 import subprocess
 import sys
 import threading
@@ -177,6 +178,13 @@ class AccountPool:
             # native CLI token file. An unset DBUS address can discover a shared bus.
             "DBUS_SESSION_BUS_ADDRESS": "unix:path=" + str(home / ".no-session-bus"),
         })
+        timestamp_file = home / ".gemini" / "antigravity-cli" / "last_check.timestamp"
+        if timestamp_file.parent.is_dir():
+            try:
+                timestamp_file.touch(exist_ok=True)
+                os.utime(timestamp_file, (time.time() + 86400 * 365, time.time() + 86400 * 365))
+            except OSError:
+                pass
         return environment
 
     def status(self) -> dict:
@@ -184,13 +192,21 @@ class AccountPool:
         accounts = []
         for account in data["accounts"]:
             present = self.token(account["id"]) is not None
+            busy = False
+            try:
+                with file_lock(self.home(account["id"]).parent / "lease.lock", blocking=False):
+                    pass
+            except BlockingIOError:
+                busy = True
             accounts.append({
                 "id": account["id"], "label": account["label"],
                 "priority": account["priority"], "enabled": account["enabled"],
                 "status": "NEEDS_LOGIN" if not present or not account["authorized"] else (
                     "DISABLED" if not account["enabled"] else
-                    "COOLDOWN" if account["cooldown_until"] > time.time() else "READY"
+                    "COOLDOWN" if account["cooldown_until"] > time.time() else
+                    "BUSY" if busy else "READY"
                 ),
+                "busy": busy,
                 "cooldown_until": account["cooldown_until"],
             })
         return {"accounts": accounts, "verification": data["verification"]}
@@ -210,27 +226,42 @@ class AccountPool:
         ], key=lambda account: (account["priority"], account["last_selected"], account["id"]))
 
     @contextlib.contextmanager
-    def lease(self):
+    def lease(self, *, wait_timeout: float = 0.0, poll_interval: float = 0.5):
+        deadline = time.monotonic() + max(0.0, wait_timeout)
         with contextlib.ExitStack() as locks:
-            with file_lock(self.root / "metadata.lock"):
-                data = self._read()
-                selected = None
-                for account in self._eligible(data):
-                    if not self.token(account["id"]):
-                        continue
-                    try:
-                        descriptor = locks.enter_context(file_lock(
-                            self.home(account["id"]).parent / "lease.lock", blocking=False
-                        ))
-                    except BlockingIOError:
-                        continue
-                    selected = account
-                    selected["last_selected"] = time.time()
-                    atomic_json(self.index, data)
-                    break
-                if selected is None:
+            while True:
+                with file_lock(self.root / "metadata.lock"):
+                    data = self._read()
+                    eligible = self._eligible(data)
+                    selected = None
+                    for account in eligible:
+                        if not self.token(account["id"]):
+                            continue
+                        try:
+                            descriptor = locks.enter_context(file_lock(
+                                self.home(account["id"]).parent / "lease.lock", blocking=False
+                            ))
+                        except BlockingIOError:
+                            continue
+                        selected = account
+                        selected["last_selected"] = time.time()
+                        atomic_json(self.index, data)
+                        break
+
+                    if selected is not None:
+                        command = self._command(data)
+                        break
+
+                    # Fail fast if no accounts are registered and enabled at all
+                    if not any(a.get("enabled", False) for a in data.get("accounts", [])):
+                        raise PoolError("No authorized account is ready; accounts may be busy or cooling down")
+
+                remaining = deadline - time.monotonic()
+                if remaining <= 0:
                     raise PoolError("No authorized account is ready; accounts may be busy or cooling down")
-                command = self._command(data)
+
+                time.sleep(min(poll_interval, remaining))
+
             yield selected, command, descriptor
 
     def login(self, account_id: str, *, verify_once: bool = False) -> int:
@@ -260,6 +291,7 @@ class AccountPool:
                 ).returncode
             finally:
                 os.umask(previous_umask)
+                self._reap_lease_holders(self.home(account_id).parent / "lease.lock")
             authorized = self._check(account_id, descriptor)
             if verify_once:
                 with file_lock(self.root / "metadata.lock"):
@@ -291,23 +323,69 @@ class AccountPool:
                 authorized = result.returncode == 0 and bool(result.stdout.strip())
             except subprocess.TimeoutExpired:
                 pass
+            finally:
+                self._reap_lease_holders(self.home(account_id).parent / "lease.lock")
         with file_lock(self.root / "metadata.lock"):
             data = self._read()
             self._account(data, account_id)["authorized"] = authorized
             atomic_json(self.index, data)
         return authorized
 
-    def run(self, arguments: list[str]) -> int:
+    def _reap_lease_holders(self, lock_path: Path) -> None:
+        """Terminate any orphaned processes that inherited the lease lock descriptor.
+
+        Third-party binaries (such as agy) may spawn background daemon processes
+        (such as --bg-updater) that inherit open file descriptors across fork/exec.
+        When the primary inference process exits, any surviving background process
+        holding the lock descriptor keeps the kernel flock active indefinitely,
+        preventing subsequent leases on this account.
+        """
+        if sys.platform != "linux":
+            return
+        resolved = lock_path.resolve()
+        current_pid = os.getpid()
+        proc_path = Path("/proc")
+        if not proc_path.is_dir():
+            return
+        for entry in proc_path.iterdir():
+            if not entry.name.isdigit():
+                continue
+            pid = int(entry.name)
+            if pid == current_pid:
+                continue
+            try:
+                fd_dir = entry / "fd"
+                if not fd_dir.is_dir():
+                    continue
+                for fd_link in fd_dir.iterdir():
+                    try:
+                        if fd_link.resolve() == resolved:
+                            os.kill(pid, signal.SIGKILL)
+                            break
+                    except (OSError, FileNotFoundError):
+                        pass
+            except (PermissionError, FileNotFoundError):
+                pass
+
+    def run(self, arguments: list[str], *, wait_timeout: float | None = None) -> int:
         # Authentication belongs to the operator. Agent calls cannot open login automatically.
         if not arguments or any(arg in {"--continue", "-c", "--conversation"} for arg in arguments):
             raise PoolError("Pool execution requires a fresh provider turn or metadata command")
-        with self.lease() as (account, command, descriptor):
-            # Preserve the caller's private workspace and stream exactly once. The account HOME
-            # is exclusive for the full process lifetime, including OAuth refresh writes.
-            process = subprocess.Popen(
-                [command, *arguments], env=self.environment(account["id"]),
-                stderr=subprocess.PIPE, pass_fds=(descriptor,),
-            )
+        if wait_timeout is None:
+            wait_timeout = float(os.getenv("UUMA_AGY_POOL_LEASE_TIMEOUT", "60.0"))
+        timeout = float(os.getenv("UUMA_AGY_POOL_EXECUTION_TIMEOUT", "900"))
+        if not 0 < timeout <= 3600:
+            raise PoolError("Provider execution timeout must be finite and at most 3600 seconds")
+        guard = Path(__file__).with_name("provider_guard.py" if __package__ else
+                                         "uuma_provider_guard.py")
+        if not guard.is_file():
+            raise PoolError("Pinned provider process supervisor is missing")
+        with self.lease(wait_timeout=wait_timeout) as (account, command, descriptor):
+            # Only the guardian inherits the lease. The lifetime pipe's sole writer belongs to
+            # this wrapper: even SIGKILL closes it and triggers descendant cleanup in the guardian.
+            lifetime_read, lifetime_write = os.pipe()
+            process = None
+            reader = None
             errors = bytearray()
 
             def forward_errors():
@@ -318,20 +396,40 @@ class AccountPool:
                     sys.stderr.buffer.write(chunk)
                     sys.stderr.buffer.flush()
 
-            reader = threading.Thread(target=forward_errors, daemon=True)
-            reader.start()
-            code = process.wait()
-            reader.join()
-            process.stderr.close()
+            try:
+                process = subprocess.Popen(
+                    [sys.executable, str(guard), "--lease-fd", str(descriptor),
+                     "--lifetime-fd", str(lifetime_read), "--timeout", str(timeout),
+                     "--", command, *arguments],
+                    env=self.environment(account["id"]), stderr=subprocess.PIPE,
+                    pass_fds=(descriptor, lifetime_read), start_new_session=True,
+                )
+                os.close(lifetime_read)
+                lifetime_read = None
+                reader = threading.Thread(target=forward_errors, daemon=True)
+                reader.start()
+                code = process.wait()
+            finally:
+                os.close(lifetime_write)
+                if lifetime_read is not None:
+                    os.close(lifetime_read)
+                if process is not None:
+                    # EOF asks the guardian to kill and reap its descendants before releasing
+                    # the lease. Do not kill the guardian and release a still-live account.
+                    process.wait()
+                    if reader is not None:
+                        reader.join(timeout=5)
+                    process.stderr.close()
             # Only explicit provider quota codes cool an account. Never replay this turn:
             # a failed response may follow an already performed external action.
             quota_error = re.search(
                 rb'RESOURCE_EXHAUSTED|"(?:status|code)"\s*:\s*429\b|HTTP\s+429\b', errors
             )
             if code and quota_error:
+                cooldown_seconds = int(os.getenv("UUMA_AGY_POOL_COOLDOWN_SECONDS", "60"))
                 with file_lock(self.root / "metadata.lock"):
                     data = self._read()
-                    self._account(data, account["id"])["cooldown_until"] = time.time() + 1800
+                    self._account(data, account["id"])["cooldown_until"] = time.time() + cooldown_seconds
                     atomic_json(self.index, data)
             return code
 

@@ -14,6 +14,11 @@ from uuma.commerce_store import CommerceStore
 PROTOCOL_VERSION = "1.0"
 MAX_MESSAGE_BYTES = 1024 * 1024  # 1 MiB Chrome Native Messaging limit
 DEFAULT_ALLOWED_ORIGIN = "chrome-extension://knldjmfmopnflpmmkcfjedmhhajpkgcl/"
+DEFAULT_ALLOWED_ORIGINS = {
+    "chrome-extension://ddgplcfilihohjdldgbcbempdfdiomlc",
+    "chrome-extension://knldjmfmopnflpmmkcfjedmhhajpkgcl",
+    "chrome-extension://mipahoghglfapomaagaobnfojpgacfog",
+}
 
 
 class NativeMessagingError(ValueError):
@@ -72,15 +77,21 @@ class NativeHost:
     ):
         self.in_stream = in_stream or sys.stdin.buffer
         self.out_stream = out_stream or sys.stdout.buffer
-        self.allowed_origin = allowed_origin or os.environ.get("UUMA_ALLOWED_ORIGIN", DEFAULT_ALLOWED_ORIGIN)
+        if allowed_origin is not None:
+            self.allowed_origins = {allowed_origin.strip().rstrip("/")}
+        elif os.environ.get("UUMA_ALLOWED_ORIGIN"):
+            self.allowed_origins = {os.environ["UUMA_ALLOWED_ORIGIN"].strip().rstrip("/")}
+        else:
+            self.allowed_origins = set(DEFAULT_ALLOWED_ORIGINS)
+        self.allowed_origin = next(iter(self.allowed_origins)) if self.allowed_origins else None
         self.control_store = control_store or CommerceControlStore()
         self.commerce_store = commerce_store or CommerceStore()
         self.worker_id = f"native_host_{os.getpid()}"
 
     def validate_origin(self, origin: str) -> bool:
-        if not self.allowed_origin:
+        if not self.allowed_origins:
             return True
-        return origin.strip().rstrip("/") == self.allowed_origin.strip().rstrip("/")
+        return origin.strip().rstrip("/") in self.allowed_origins
 
     def handle_request(self, req: dict[str, Any]) -> dict[str, Any]:
         req_id = req.get("request_id", "")

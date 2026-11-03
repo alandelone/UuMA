@@ -7,15 +7,18 @@
       "yonc",
       "honc",
       "wisdom-oldman",
-      "forge-lab-bot"
+      "forge-lab-bot",
+      "librarian"
     ],
     "control_owner": true,
     "control_port": 8765,
     "graph_port": 8766,
+    "forge_notion_relay_port": 8776,
     "a2a_port": 8768,
     "semantic_mcp_port": 8769,
     "wisdom_view_port": 8767,
     "wisdom_cpu_kag_port": 8891,
+    "openspg_port": 8887,
     "scholar_fieldkg_port": 8892,
     "scholar_fieldkg_namespace": "ScholarFieldKG",
     "scholar_fieldkg_project_id": "2",
@@ -32,16 +35,20 @@
       "interactive_login",
       "desktop_hardware_tools",
       "procurement_browser",
-      "notion_authorization"
+      "other_workstation_notion_integrations"
     ],
     "reverse_forwards": [
       8770,
       8774,
-      8775,
       8787
+    ],
+    "scholar_graph_local_forwards": [
+      8887,
+      8892
     ]
   },
   "workspace_manifest": "deploy/forge-workspace.json",
+  "forge_notion_relay_manifest": "deploy/forge-notion-relay.json",
   "publishing": "manual_component_preview_then_apply",
   "data_ownership": "one_domain_owner; no shared SQLite file across hosts",
   "secrets": "node-local; no credentials in this manifest"

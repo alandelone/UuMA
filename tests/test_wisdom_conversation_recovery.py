@@ -156,7 +156,11 @@ def test_deployed_runner_builds_real_control_and_knowledge_stores(monkeypatch, t
     monkeypatch.setenv("UUMA_KNOWLEDGE_DATA_DIR", str(tmp_path / "knowledge"))
     monkeypatch.setenv("UUMA_ORBIT_CHATGPT_DISCOVERY", "false")
     monkeypatch.setattr(orbit_runner.OpenSpgKagBackend, "from_env", lambda **kwargs: Mock())
-    monkeypatch.setattr(orbit_runner, "configured_providers", lambda fetcher: [])
+    def configured_providers(fetcher, *, profile_home):
+        assert profile_home == tmp_path / "profile"
+        return []
+
+    monkeypatch.setattr(orbit_runner, "configured_providers", configured_providers)
     runner = orbit_runner.build_runner(tmp_path / "profile")
     assert runner.knowledge.store.path == tmp_path / "knowledge/wisdom.db"
     assert (tmp_path / "control/uuma.db").is_file()

@@ -13,6 +13,7 @@ TOKEN_ROLES = {
     "forge-lab-bot": "worker",
     "yonc": "worker",
     "honc": "worker",
+    "librarian": "worker",
     "audit": "ingest",
 }
 

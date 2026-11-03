@@ -22,7 +22,7 @@
 const token = location.hash.slice(1); history.replaceState(null, '', location.pathname);
 let attempt = '', activeStatus = '', refreshing = false;
 const $ = id => document.getElementById(id);
-const names = {READY:'可用',NEEDS_LOGIN:'等待登入',DISABLED:'已停用',COOLDOWN:'額度冷卻中'};
+const names = {BUSY:'使用中',READY:'可用',NEEDS_LOGIN:'等待登入',DISABLED:'已停用',COOLDOWN:'額度冷卻中'};
 async function api(path, data) {
  const r = await fetch('/api/'+path, {method:data?'POST':'GET',headers:{Authorization:'Bearer '+token,...(data?{'Content-Type':'application/json'}:{})},...(data?{body:JSON.stringify(data)}:{})});
  const value = await r.json(); if(!r.ok) throw new Error(value.error || '操作失敗'); return value;

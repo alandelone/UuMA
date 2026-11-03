@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "fixture-daily-20261028",
+  "published_at": "2026-10-28T00:01:00+08:00",
+  "sources": [
+    {
+      "source_id": "fixture-source",
+      "owner_agent": "librarian",
+      "readers": [
+        "orchestrator",
+        "yonc",
+        "librarian"
+      ],
+      "capture_status": "PARTIAL",
+      "captured_at": "2026-10-28T00:00:00+08:00",
+      "source_as_of": "fixture-only: no live source",
+      "verification": "HASH_VERIFIED",
+      "evidence_refs": [
+        "fixture-only"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "record_id": "example-question",
+      "version_id": "v1",
+      "source_id": "fixture-source",
+      "readers": [
+        "orchestrator",
+        "yonc",
+        "librarian"
+      ],
+      "project_ids": [
+        "example-project"
+      ],
+      "kind": "question",
+      "title": "Example unresolved question",
+      "original_status": "OPEN",
+      "original_ref": "fixture:example-question:v1",
+      "captured_at": "2026-10-27T00:00:00+08:00",
+      "is_summary": false,
+      "derived_from": [],
+      "content_sha256": "dd849b5b2bb3838e29b4db7a662625059eca8a8947e65f04ede63c2ddb1af41a",
+      "content_bytes": 52,
+      "media_type": "text/plain"
+    },
+    {
+      "record_id": "example-question",
+      "version_id": "v2",
+      "source_id": "fixture-source",
+      "readers": [
+        "orchestrator",
+        "yonc",
+        "librarian"
+      ],
+      "project_ids": [
+        "example-project"
+      ],
+      "kind": "question",
+      "title": "Example unresolved question",
+      "original_status": "OPEN",
+      "original_ref": "fixture:example-question:v2",
+      "captured_at": "2026-10-28T00:00:00+08:00",
+      "is_summary": false,
+      "derived_from": [],
+      "content_sha256": "69ddb3b8025e06e04426ead3c7b34cefad1f744114d9950d24fa64dea87a0861",
+      "content_bytes": 51,
+      "media_type": "text/plain"
+    },
+    {
+      "record_id": "example-checkpoint",
+      "version_id": "v1",
+      "source_id": "fixture-source",
+      "readers": [
+        "orchestrator",
+        "yonc",
+        "librarian"
+      ],
+      "project_ids": [
+        "example-project"
+      ],
+      "kind": "checkpoint",
+      "title": "Example discussion checkpoint",
+      "original_status": "DRAFT",
+      "original_ref": "fixture:example-checkpoint:v1",
+      "captured_at": "2026-10-28T00:00:00+08:00",
+      "is_summary": false,
+      "derived_from": [],
+      "content_sha256": "bbe3926801578be94b9f2eb73144ed4a99e681c0017a7ebd388b17f0424b3b12",
+      "content_bytes": 56,
+      "media_type": "text/plain"
+    }
+  ]
+}

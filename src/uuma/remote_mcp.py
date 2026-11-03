@@ -31,6 +31,7 @@ MODULES = {
     "brainstormer": "uuma.mcp_brainstormer",
     "control": "uuma.mcp_control", "knowledge": "uuma.mcp_knowledge",
     "chatgpt": "uuma.mcp_chatgpt",
+    "librarian": "uuma.mcp_librarian",
     "xhs": "workstation_external_xhs",
     "procurement": "uuma.mcp_procurement",
 }
@@ -38,6 +39,10 @@ ALLOWED = {
     "brainstormer": {"orchestrator", "brainstormer"},
     "control": {"orchestrator"}, "knowledge": {"orchestrator", "wisdom-oldman"},
     "chatgpt": set(CHATGPT_PERMISSIONS),
+    # Authentication admits known agents to the transport only. The archive
+    # reader independently enforces explicit source and record grants.
+    "librarian": {"orchestrator", "brainstormer", "yonc", "forge-lab-bot", "honc",
+                  "wisdom-oldman", "scholar", "librarian"},
     "xhs": {"orchestrator", "wisdom-oldman"},
     "procurement": {"forge-lab-bot"},
 }
@@ -100,6 +105,10 @@ async def owner_session(service: str):
         script = os.environ.get("UUMA_DESKTOP_XHS_SCRIPT", "")
         if not executable or not script or not Path(script).is_file():
             raise RuntimeError("Workstation XHS connector is not configured")
+        # This external MCP owns its Conda runtime. UuMA's copied Python dependency
+        # path can otherwise mix incompatible pydantic/pydantic_core binaries.
+        for key in ("PYTHONPATH", "PYTHONHOME", "VIRTUAL_ENV"):
+            environment.pop(key, None)
         params = StdioServerParameters(command=executable, args=[script], env=environment)
     else:
         params = StdioServerParameters(

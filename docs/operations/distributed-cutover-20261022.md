@@ -1,3 +1,5 @@
+> **2026-10-22 cleanup:** Verified old C copies and local final snapshots have been deleted by user request; server/NAS originals remain. [Cleanup record](migrated-source-cleanup-20261022.md) supersedes earlier local rollback-copy notes.
+
 # Production cutover checkpoint: 2026-10-22
 
 | Component | Actual owner | Status |

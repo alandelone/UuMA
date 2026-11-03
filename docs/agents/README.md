@@ -1,7 +1,7 @@
 # UuMA Agent Design Archive
 
 Status: working design archive  
-Last updated: 2026-09-26 (Yonc project management design added)
+Last updated: 2026-10-28 (Librarian architecture and read-only MCP component added)
 
 This directory consolidates agent design conversations and related project specifications into durable project documents. The files are design records, not verbatim transcripts: later decisions override earlier proposals, accepted boundaries are separated from open questions, and each document records its sources.
 
@@ -17,6 +17,7 @@ Hermes original profile (Orchestrator / Commander)
         +-- Scholar
         +-- Wisdom-Oldman
         +-- Yonc (Project Management / Graph Project System)
+        +-- Librarian (server-side archive design; read-only MCP component tested)
         +-- 锻造Lab_Bot (Physical Lab & Engineering Memory)
         |    +-- forge_lab_skillset
         |    +-- Procurement (sub-capability / sourcing)
@@ -50,6 +51,7 @@ The Live Interface at `C:\Users\Alandelone\CodeSpace_Local\livechat_agent` is an
 | [锻造Lab_Bot](./forge-lab-bot.md) | Hardware lab operations, inventory, build traceability, procurement, and engineering lessons | `chatgpt-conversation://6a8d3f19-c4c4-83ec-8342-bbd5d823e0a3` |
 | [Brainstormer](./brainstormer.md) | Persistent reasoning partner that explores, challenges, converges, and turns discussion into build-ready artifacts | `chatgpt-conversation://6a87c452-df88-83ec-ad5d-661a9d73e337` |
 | [Yonc](./yonc.md) | Project management, proactive decomposition, capability-informed assignment proposals, and progress review | User clarification 2026-09-26 and linked Yonc design documents |
+| [Librarian](./librarian.md) | Server-side archive design for agent records and two-Windows history/project files; tested read-only MCP component, collection/deployment pending | [Agent memory discussion](https://chatgpt.com/c/6ae14601-5608-83ec-ae5a-b6a5af1fee39) and combined user review 2026-10-28 |
 | [Multi-Agent Logic Graphs](../logic-graphs.md) | Multi-Agent orchestration, decision trees, and profile workflows | Architecture & Implementation baseline |
 
 ## Naming decisions
@@ -58,6 +60,7 @@ The Live Interface at `C:\Users\Alandelone\CodeSpace_Local\livechat_agent` is an
 - `锻造Lab_Bot` is the canonical system and display name. `forge-lab-bot.md` is only its ASCII file slug.
 - `Scholar` is the customized agent name. Its source discussion sometimes used `Researcher` as the role description.
 - `Brainstormer` remains the canonical name even though its function is broader than idea generation.
+- `Librarian` is the canonical name accepted on 2026-10-28; `Library` is the historical name. Its read-only MCP component is implemented and isolated-tested; collection and production deployment remain pending.
 
 ## Cross-system ownership
 
@@ -68,6 +71,7 @@ The specialist profiles have distinct ownership and collaboration responsibiliti
 | Routing, monitoring, delegation, final coordination | Hermes Orchestrator |
 | Discussion state, assumptions, decisions, design convergence | Brainstormer |
 | User project graph management, decomposition, assignment proposals, and progress review | Yonc; accepted project state belongs to the Yonc backend |
+| Project memory archive, cross-computer backup coverage, provenance, and contextual retrieval | Librarian; existing project and domain authorities retain ownership; production integration pending |
 | Scientific questions, methods, experiments, claims, publication lifecycle | Scholar |
 | Reusable world/domain knowledge, evidence map, knowledge gaps | Wisdom-Oldman |
 | Component definitions, schematics, design BOMs, design revisions | eSchematic |

@@ -23,3 +23,10 @@ Do not resume the paused Scholar research queue, rebuild projection jobs, repair
 the retained control database, or restart the shared Telegram gateway merely to
 verify this graph service migration. Distinguish graph transport readiness from
 the separately observed `database disk image is malformed` task-tracking failure.
+
+The existing Worker preflight reads the graph server's reported loopback8887
+after checking bridge8892. For the current SSH placement, persist both local
+forwards,8887->server8887 and8892->server8892. Require the full unchanged Worker
+preflight, including project/schema/absent-ID storage read, and the real MCP
+response accepted by the installed specialist guard. Bridge health or invalid
+request422 checks alone do not demonstrate that Scholar can pass its own guard.

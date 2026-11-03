@@ -79,11 +79,26 @@ class DispatchCoordinator:
             raise PermissionError("Agent is not hosted by this node")
         return run, task
 
-    async def dispatch(self, agent_id: str, run_id: str, epoch: int, a2a_id: str) -> dict:
+    async def dispatch(
+        self, agent_id: str, run_id: str, epoch: int, a2a_id: str,
+        *, requester: str = "orchestrator",
+    ) -> dict:
         _run, task = await asyncio.to_thread(self.authorize, agent_id, run_id, epoch)
+        if requester != "orchestrator":
+            from .wisdom_consultation import KnowledgeConsultationBroker
+
+            if requester != "brainstormer":
+                raise PermissionError("Only Brainstormer has the direct knowledge consultation grant")
+            if agent_id != "wisdom-oldman":
+                raise PermissionError("Brainstormer may only consult Wisdom")
+            await asyncio.to_thread(
+                KnowledgeConsultationBroker(self.control).authorize_dispatch,
+                _run, task, actor_id=requester,
+            )
         key = f"dispatch:{agent_id}:{run_id}:{epoch}"
         if self.journal.get(key) is None and (
-            _run["status"] != "PENDING" or _run.get("source") not in {"orchestrator", "kanban"}
+            _run["status"] != "PENDING"
+            or _run.get("source") not in {"orchestrator", "kanban", "consultation"}
         ):
             raise PermissionError("Only a pending assigned execution can start a new runtime")
         material = {
@@ -142,6 +157,11 @@ class DispatchCoordinator:
             ),
             "cancel_requested": current.get("phase") == "CANCEL_REQUESTED",
         }
+        if run.get("source") == "consultation" and run.get("result"):
+            observation["consultation_response"] = (
+                run["result"].get("partial_state") or {}
+            ).get("consultation")
+            observation["canonical_knowledge_approved"] = False
         try:
             runtime = await self.adapters[current["agent_id"]].get(current["runtime_ref"])
         except Exception:  # noqa: BLE001 -- adapter failures must remain an unknown execution
@@ -276,14 +296,15 @@ def create_app(control, journal: NodeJournal, tokens: TokenRegistry, bindings: d
             self.agent = agent
 
         async def execute(self, context, event_queue):
-            if CALLER.get() != "orchestrator":
+            requester = CALLER.get()
+            if requester not in {"orchestrator", "brainstormer"}:
                 raise PermissionError("Task dispatch requires Orchestrator authority")
             metadata = context.metadata
             run_id, epoch = metadata.get("uuma_run_id"), metadata.get("execution_epoch")
             if not run_id or epoch is None:
                 raise ValueError("A current UuMA Run and execution epoch are required")
             record = await coordinator.dispatch(
-                self.agent, str(run_id), int(epoch), context.task_id
+                self.agent, str(run_id), int(epoch), context.task_id, requester=requester,
             )
             if context.current_task is None:
                 await event_queue.enqueue_event(
@@ -311,6 +332,8 @@ def create_app(control, journal: NodeJournal, tokens: TokenRegistry, bindings: d
         async def cancel(self, context, event_queue):
             from google.protobuf.json_format import MessageToDict
 
+            if CALLER.get() != "orchestrator":
+                raise PermissionError("Execution cancellation requires Orchestrator authority")
             record = MessageToDict(context.current_task.metadata)
             await asyncio.to_thread(control.request_cancel, record["run_id"])
             await coordinator.request_cancel(record)
@@ -350,7 +373,17 @@ def create_app(control, journal: NodeJournal, tokens: TokenRegistry, bindings: d
                     description="Execute an existing authorized UuMA Run",
                     tags=["uuma"],
                 )
-            ],
+            ] + ([
+                AgentSkill(
+                    id="brainstormer-knowledge-consultation",
+                    name="Brainstormer knowledge consultation",
+                    description=(
+                        "Answer an authorized Brainstormer knowledge question with provenance, "
+                        "or retain an unanswered question for research."
+                    ),
+                    tags=["knowledge", "consultation"],
+                ),
+            ] if agent == "wisdom-oldman" else []),
         )
         handler = LegacyRequestHandler(Executor(agent), DurableTasks(agent), card)
         app = Starlette(
@@ -367,7 +400,25 @@ def create_app(control, journal: NodeJournal, tokens: TokenRegistry, bindings: d
     routes.append(Route("/receipts", receipts))
     app = Starlette(routes=routes)
     app.state.coordinator = coordinator
-    app.add_middleware(AgentAuthentication, tokens=tokens)
+
+    class ConsultationRouteBoundary:
+        def __init__(self, app):
+            self.app = app
+
+        async def __call__(self, scope, receive, send):
+            if (
+                scope["type"] == "http" and CALLER.get() == "brainstormer"
+                and not scope["path"].startswith("/agents/wisdom-oldman/")
+            ):
+                return await JSONResponse(
+                    {"detail": "Only Wisdom consultation is permitted"}, 403,
+                )(scope, receive, send)
+            return await self.app(scope, receive, send)
+
+    app.add_middleware(ConsultationRouteBoundary)
+    app.add_middleware(
+        AgentAuthentication, tokens=tokens, allowed={"orchestrator", "brainstormer"},
+    )
     return app
 
 

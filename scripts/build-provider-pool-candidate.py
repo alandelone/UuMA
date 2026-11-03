@@ -12,7 +12,7 @@ from pathlib import Path
 def main():
     root = Path(__file__).resolve().parents[1]
     files = {"source/uuma/__init__.py": b""}
-    for name in ["provider_pool", "provider_pool_web", "provider_oauth"]:
+    for name in ["provider_pool", "provider_pool_web", "provider_oauth", "provider_guard"]:
         body = (root / "src" / "uuma" / (name + ".py")).read_bytes()
         files[f"source/uuma/{name}.py"] = body
         files[f"source/uuma_{name}.py"] = body
@@ -22,6 +22,7 @@ def main():
         "scripts/bind-server-provider-pool.py", "scripts/build-provider-pool-candidate.py",
         "tests/test_provider_pool.py", "tests/test_provider_pool_binding.py",
         "tests/test_provider_pool_web.py", "tests/test_provider_oauth.py",
+        "tests/test_provider_pool_supervision.py",
     ]:
         files[relative] = (root / relative).read_bytes()
     hashes = {name: hashlib.sha256(body).hexdigest() for name, body in files.items()}

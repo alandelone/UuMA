@@ -147,6 +147,8 @@ def plugin():
 
 def test_commands_are_explicit_and_normal_discussion_is_untouched(plugin):
     assert plugin.parse_command("/topics@my_bot 咖啡店") == ("topics", "咖啡店")
+    assert plugin.parse_command("/topics_1") == ("topics", "index 1")
+    assert plugin.parse_command("/topics_page_2") == ("topics", "page 2")
     assert plugin.parse_command("切换到 实验田") == ("topics", "实验田")
     assert plugin.parse_command("新建议题：预算") == ("topics", "new 预算")
     assert plugin.parse_command("如果以后切换到咖啡店，要多少钱？") is None
@@ -186,7 +188,8 @@ def test_actual_plugin_command_roundtrip_and_no_inferred_decisions(plugin, navig
     text, _ = commands.command("topics", "new 咖啡店", "msg:1")
     assert "咖啡店" in text and "暂无记录" in text
     text, buttons = commands.command("topics", "", "msg:2")
-    assert ["切换到 咖啡店"] in buttons
+    assert buttons == []
+    assert "切换：/topics 咖啡店" in text
     assert "1 个" in text
     text, _ = commands.command("topics", "不存在", "msg:3")
     assert "找不到" in text
@@ -275,8 +278,17 @@ assert invalid.status_code == 422
     assert (tmp_path / "uuma.db").is_file()
 
 
-def test_authenticated_inbound_delivers_topic_keyboard(plugin, navigation):
+@pytest.mark.parametrize("backend_failure", [False, True])
+def test_authenticated_delivery_removes_persistent_keyboard(
+    plugin, navigation, monkeypatch, backend_failure,
+):
     import asyncio
+    import sys
+
+    monkeypatch.setitem(
+        sys.modules, "telegram",
+        SimpleNamespace(ReplyKeyboardRemove=lambda: {"remove_keyboard": True}),
+    )
 
     create(navigation, "A", "msg:1")
     commands = plugin.BrainstormerCommands(
@@ -285,10 +297,15 @@ def test_authenticated_inbound_delivers_topic_keyboard(plugin, navigation):
     commands.rpc = lambda action, **kw: navigation.execute(
         {"action": action, "user_id": "owner", **kw}
     )
+    if backend_failure:
+        def fail_backend(*args, **kwargs):
+            raise OSError("isolated backend unavailable")
+
+        commands.rpc = fail_backend
     delivered = []
 
-    async def send(chat_id, text):
-        delivered.append((chat_id, text))
+    async def send(chat_id, text, **kwargs):
+        delivered.append((chat_id, text, kwargs))
         return SimpleNamespace(success=True)
 
     source = SimpleNamespace(
@@ -303,7 +320,7 @@ def test_authenticated_inbound_delivers_topic_keyboard(plugin, navigation):
     gateway = SimpleNamespace(
         _is_user_authorized_for_source=lambda *a, **kw: True,
         _check_slash_access=lambda *a: None,
-        _delivery_adapter_for=lambda source: SimpleNamespace(send=send),
+        _delivery_adapter_for=lambda source: SimpleNamespace(_send_control_message=send),
     )
 
     async def run():
@@ -312,7 +329,9 @@ def test_authenticated_inbound_delivers_topic_keyboard(plugin, navigation):
         await asyncio.gather(*commands.tasks)
 
     asyncio.run(run())
-    assert delivered[0][0] == "1" and "A" in delivered[0][1]
+    assert delivered[0][0] == "1"
+    assert ("暂时无法" if backend_failure else "A") in delivered[0][1]
+    assert delivered[0][2]["reply_markup"] == {"remove_keyboard": True}
 
 
 def test_deployment_preserves_model_and_unrelated_config(tmp_path):

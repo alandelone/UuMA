@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "component": "forge-notion-relay",
+  "node_id": "alandelone-server-001",
+  "service": "uuma-forge-notion-relay.service",
+  "bind": "127.0.0.1",
+  "port": 8776,
+  "allowed_identity": "forge-lab-bot",
+  "credential_config": "~/.config/uuma/forge-notion-relay/connection.json",
+  "identity_registry": "~/.config/uuma/forge-notion-relay/tokens.json",
+  "receipt_database": "~/.local/share/uuma/production/forge-lab-bot/notion/relay-receipts.db",
+  "consumer_service": "uuma-forge-journal.service",
+  "consumer_endpoint": "http://127.0.0.1:8776",
+  "workstation_required": false,
+  "shared_gateway_restart_required": false,
+  "publishing": "manual; preserve current receipts and pinned source; never replay uncertain requests",
+  "secrets": "server-private files only; no credentials in this manifest"
+}

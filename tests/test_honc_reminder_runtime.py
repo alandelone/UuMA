@@ -767,3 +767,21 @@ def test_reminder_and_anchor_history_is_append_only(setup):
         pytest.raises(sqlite3.IntegrityError, match="immutable"),
     ):
         connection.execute("DELETE FROM life_reminder_events")
+
+
+def test_reminder_content_format_with_job_id(setup):
+    service, _ = setup
+    runtime = ReminderRuntime(
+        service.store,
+        owner_id="owner",
+        delivery_target_id="bound-private-chat",
+        scheduler_job_id="3381ec71b9d2",
+    )
+    add_habit(service)
+    sink = []
+    tick(runtime, at("08:00"), sink)
+    assert len(sink) == 1
+    content = sink[0]["content"]
+    assert "• 晨仪（晨间）" in content
+    assert "\n────────\n🔔 honc 习惯提醒 (job_id: 3381ec71b9d2)" in content
+

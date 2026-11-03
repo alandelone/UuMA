@@ -18,10 +18,12 @@ dependencies = [
   "pypdf>=5,<7",
   "python-docx>=1.1,<2",
   "ruamel.yaml>=0.18,<1",
+  "tzdata>=2024.1; platform_system == 'Windows'",
   "uvicorn>=0.24,<1",
 ]
 
 [project.optional-dependencies]
+librarian = ["cryptography==50.0.1"]
 distributed = ["a2a-sdk[http-server]==1.2.3", "httpx>=0.28,<1", "PyYAML>=6,<7"]
 workstation = ["psutil==7.2.2"]
 public-access = ["httpx>=0.28,<1", "websockets>=15,<18"]
@@ -43,6 +45,8 @@ uuma-control-mcp = "uuma.mcp_control:main"
 uuma-worker-mcp = "uuma.mcp_worker:main"
 uuma-gemini-mcp = "uuma.mcp_gemini:main"
 uuma-knowledge-mcp = "uuma.mcp_knowledge:main"
+uuma-librarian-mcp = "uuma.mcp_librarian:main"
+uuma-librarian-intake = "uuma.librarian_ssh:main"
 uuma-kag-bridge = "uuma.kag_bridge:main"
 uuma-orbit-runner = "uuma.orbit_runner:main"
 uuma-chatgpt-bridge = "uuma.chatgpt_cli:main"

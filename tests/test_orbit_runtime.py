@@ -4,6 +4,7 @@ import io
 import json
 import sqlite3
 from datetime import UTC, datetime, timedelta
+from datetime import time as dt_time
 from email.message import Message
 from pathlib import Path
 from types import SimpleNamespace
@@ -40,7 +41,13 @@ from uuma.orbit_discovery import (
     discovery_queries,
     discovery_query,
 )
-from uuma.orbit_runner import OrbitNotificationDispatcher, OrbitRunner, _RunnerInstanceLock
+from uuma.orbit_runner import (
+    OrbitNotificationDispatcher,
+    OrbitRunner,
+    _RunnerInstanceLock,
+    is_time_in_window,
+    parse_time_window,
+)
 from uuma.orbit_synthesis import OrbitCompactSynthesizer
 from uuma.question_orbit import QuestionOrbitService
 from uuma.safe_web import FetchedResource, RetryAfterError, SafeWebFetcher, UnsafeUrlError
@@ -368,6 +375,58 @@ def test_compact_synthesis_retries_once_after_network_reset(monkeypatch) -> None
 
     assert len(calls) == 2
     assert points[0]["certainty"] == "inference"
+
+
+def test_compact_synthesis_recovers_from_markdown_and_malformed_json() -> None:
+    # 1. Markdown code block
+    m1 = "```json\n{\"points\": [{\"text\": \"观点一\", \"sources\": [\"S1\"], \"certainty\": \"evidence\"}]}\n```"
+    p1 = OrbitCompactSynthesizer._parse_synthesis_points(m1)
+    assert p1 and len(p1) == 1
+    assert p1[0]["text"] == "观点一"
+
+    # 2. Trailing commas
+    m2 = "{\"points\": [{\"text\": \"观点二\", \"sources\": [\"S1\",],},],}"
+    p2 = OrbitCompactSynthesizer._parse_synthesis_points(m2)
+    assert p2 and len(p2) == 1
+    assert p2[0]["text"] == "观点二"
+
+    # 3. Unescaped quotes inside string
+    m3 = "{\"points\": [{\"text\": \"研究表明\"气雾培\"生长良好\", \"sources\": [\"S1\"]}]}"
+    p3 = OrbitCompactSynthesizer._parse_synthesis_points(m3)
+    assert p3 and len(p3) == 1
+    assert "气雾培" in p3[0]["text"]
+
+
+def test_compact_synthesis_escalates_to_fallback_model_on_final_attempt(monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_BASE_URL", "https://example.org/v1")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-only-key")
+    monkeypatch.setenv("UUMA_KAG_LLM_MODEL", "primary-lite")
+    monkeypatch.setenv("UUMA_KAG_LLM_FALLBACK_MODEL", "fallback-pro")
+    monkeypatch.setenv("UUMA_SYNTHESIS_ATTEMPTS", "2")
+    models_called = []
+
+    def response(request, timeout):
+        body = json.loads(request.data.decode("utf-8"))
+        models_called.append(body.get("model"))
+        if len(models_called) == 1:
+            # First attempt returns invalid output
+            return io.BytesIO(b'{"choices": [{"message": {"content": "no json here"}}]}')
+        # Final attempt with escalated model succeeds
+        return io.BytesIO(json.dumps({
+            "choices": [{"message": {"content": json.dumps({"points": [{
+                "text": "高阶模型合成成功。", "sources": ["S1"], "certainty": "evidence",
+            }]})}}]
+        }).encode())
+
+    monkeypatch.setattr("uuma.orbit_synthesis.urlopen", response)
+    points = OrbitCompactSynthesizer._generate("青葱气雾培参数", [{
+        "key": "S1", "title": "Allium trial",
+        "location": "Abstract", "text": "Located evidence.",
+    }])
+    assert len(models_called) == 2
+    assert models_called[0] == "primary-lite"
+    assert models_called[1] == "fallback-pro"
+    assert points[0]["text"] == "高阶模型合成成功。"
 
 
 def test_ingestor_deduplicates_identical_content_across_locators(tmp_path: Path) -> None:
@@ -1838,3 +1897,59 @@ def test_configured_providers_includes_chatgpt_first() -> None:
     assert providers[0] is mock_chatgpt
     assert any(p.name == "openalex" for p in providers)
     assert any(p.name == "ddgs" for p in providers)
+
+
+def test_parse_time_window() -> None:
+    assert parse_time_window("19:00-07:00") == (dt_time(19, 0), dt_time(7, 0))
+    assert parse_time_window("  07:00 - 19:00  ") == (dt_time(7, 0), dt_time(19, 0))
+    assert parse_time_window("") is None
+    assert parse_time_window("   ") is None
+    assert parse_time_window("invalid") is None
+    assert parse_time_window("25:00-07:00") is None
+    assert parse_time_window("19:00") is None
+
+
+def test_is_time_in_window() -> None:
+    # Overnight window: 19:00 - 07:00
+    w_start, w_end = dt_time(19, 0), dt_time(7, 0)
+    assert not is_time_in_window(dt_time(12, 0), w_start, w_end)
+    assert not is_time_in_window(dt_time(18, 59), w_start, w_end)
+    assert is_time_in_window(dt_time(19, 0), w_start, w_end)
+    assert is_time_in_window(dt_time(23, 59), w_start, w_end)
+    assert is_time_in_window(dt_time(0, 0), w_start, w_end)
+    assert is_time_in_window(dt_time(6, 59), w_start, w_end)
+    assert not is_time_in_window(dt_time(7, 0), w_start, w_end)
+
+    # Daytime window: 07:00 - 19:00
+    d_start, d_end = dt_time(7, 0), dt_time(19, 0)
+    assert not is_time_in_window(dt_time(6, 59), d_start, d_end)
+    assert is_time_in_window(dt_time(7, 0), d_start, d_end)
+    assert is_time_in_window(dt_time(12, 0), d_start, d_end)
+    assert is_time_in_window(dt_time(18, 59), d_start, d_end)
+    assert not is_time_in_window(dt_time(19, 0), d_start, d_end)
+
+
+def test_orbit_runner_active_window_guards(
+    tmp_path: Path, monkeypatch: pytest.MonkeyPatch
+) -> None:
+    knowledge = KnowledgeService(tmp_path / "wisdom.db")
+    orbits = QuestionOrbitService(knowledge)
+    runner = OrbitRunner(
+        knowledge,
+        orbits,
+        reasoner=_Reasoner(),
+        providers=[_Provider()],
+        ingestor=_Ingestor(knowledge),
+        constructor=_Constructor(),
+        projection_worker=_Projection(),
+        dispatcher=_Dispatcher(),
+        active_window="19:00-07:00",
+    )
+    local_tz = datetime.now().astimezone().tzinfo
+    dt_day = datetime(2026, 11, 3, 12, 0, tzinfo=local_tz)
+    dt_night = datetime(2026, 11, 3, 21, 0, tzinfo=local_tz)
+    assert not runner.is_in_active_window(dt_day)
+    assert runner.is_in_active_window(dt_night)
+
+    monkeypatch.setattr(runner, "is_in_active_window", lambda: False)
+    assert not runner.run_once()

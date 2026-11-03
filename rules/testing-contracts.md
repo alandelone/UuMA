@@ -1,5 +1,92 @@
 # Testing and Recovery Contract
 
+2026-11-02 compact synthesis first integration: preserve the 48-pass/4-fail
+result. Four existing whole-paper worker fixtures recognize only the original
+task names and were created without a synthesis-protocol input; changing the
+default new-job contract caused their workers to return RESOURCE_WAIT before
+their original pause, repair, pinned contract and source-change scenarios.
+Retain every original assertion and run those cases using their explicit legacy
+execution context. Add separately scoped compact-protocol worker fixtures that
+recognize actual compact task names and retain the same source, pause, receipt,
+coverage and publication assertions before selecting compact as a production
+default. No production release or previously enqueued job is changed by this
+execution-context correction. Resume at verification/pending_review.
+
+2026-11-02 held initial-theme duplicate-evidence replay context: preserve the
+v600 and v601 failed replays. Both stopped at the first quick_read because that
+part has an existing separately recorded initial_json_recovery reply, rather
+than a successful quick_read reply. A successor read-only replay may map only
+the original input of an actual recovery response after calling the existing
+validate_returned against its exact controller grant, job, request, receipt
+and task; retain the recovery's real contract and all strict source, evidence,
+coverage and baseline-error assertions. Never relabel the stored event, invoke
+a model, accept scientific content, or treat replay success as production admission.
+
+2026-10-31 partial-observation Web activation context: preserve both v582
+preflight aborts. They stopped before the task or release pointer changed because
+the old guard counted every established connection. The live Web has exactly one
+listener on 8875 and two reciprocal 127.0.0.1 ephemeral sockets owned by the same
+Web process; the normal Windows asyncio loop uses an internal socket pair. A
+successor boundary may exclude only this exact reciprocal pair after checking
+both endpoints, owner, loopback, ephemeral ports and the sole 8875 listener.
+Any active HTTP connection, external connection, unmatched/extra connection,
+other listener or transitional socket must still block the Web restart. The
+separate Reading task, its pointer, and the shared gateway remain running; no
+database or scientific admission check is relaxed. Restart verification from
+the current pending-review gate and retain the earlier aborted activation.
+
+2026-10-28 private Catalog HTTP context: retain copied-catalog-http-v60 and its
+startup traceback. Windows asyncio initializes an internal self-pipe using
+socket._fallback_socketpair, whose connect is local loopback and is not an
+external model request. Permit only the exact stdlib socketpair frame, its
+actual csock object and actual listening endpoint after verifying loopback;
+keep all other connects, DNS and urllib requests denied. Use a fresh isolated
+HTTP-copy receipt, preserve all database-equality and no-model/job assertions,
+and leave production untouched. No product assertion or transport is changed.
+
+2026-10-27 canonical copy migration context: preserve canonical-migration-rehearsal-v52,
+its failed receipt and traceback. Migration14->20, old-row/column/FK/object checks,
+backup checks and second initialization completed before read-only owner admission
+was blocked by the rehearsal's SQLite audit hook. The real read_collection_db
+uses resolve().as_uri()+?mode=ro for that same copied database. Continue only
+readback on the existing copy with explicit read-only URIs for the canonical,
+copied and preserved backup databases. Do not rerun the completed migration,
+admit writable canonical access or enable network/model dispatch. Keep all
+original source, physical main/WAL, row identity, schema and provenance checks.
+
+2026-10-27 effective replacement replay context: retain the120-pass/1-fail
+expanded recovery run and exact pre-fix module. An unanswered authorized semantic
+replacement has an older malformed RETURNED at the same task/payload. Determine
+the first missing step using the effective authorized semantic/transport call
+identity before consulting historical replies; do not parse the superseded answer
+as current or repeat it. Keep both metadata chains, existing semantic caps, strict
+source/request/registry checks and the complete failing assertion. No real model
+request or production change was made. Resume at verification/pending-review.
+
+2026-10-27 Scholar upstream-notice fixture context: retain the initial29-test
+execution (28failed/1passed) and exact original test source. ModelRunPending is
+persisted as RESOURCE_WAIT by the existing reading scheduler, not WAITING_RETRY.
+Use that actual state both in the fixture assertion and its bounded clock advance;
+do not change production scheduling or relax pending/reuse/source/receipt assertions.
+Use the real gateway operation-ID calculation with a software-only URL so the
+new transport authorization can verify the original durable identity and prompt.
+Resume verification from the unchanged pending-review gate.
+
+The next recovery run retained28passes/1failure: the unchanged ViewGateway's
+actual model identity is software-fixture. Preserve that exact test version and
+require software-fixture on the new actual RETURNED receipt, keeping the distinct
+actual-fixture-model identity of the original failed provider response. Do not
+relabel either original model or loosen provenance/source/history assertions.
+
+2026-10-26 Brainstormer/Wisdom consultation acceptance: retain the first live response whose
+question/gap writes failed strict record validation, and the second response whose claimed IDs
+failed actual knowledge_get. Role instructions alone did not prove retention. The corrected
+execution contract puts bounded question/gap retention and readback in Wisdom's submit_result
+path through the configured owner semantic MCP, before a result is submitted. Stable per-run
+record IDs, exact existing-record checks and original model response preservation are required.
+Knowledge backend failure must block submission; never weaken readback or approve the model's
+claims to pass. Restart verification from the current pending-review gate, without approving it.
+
 2026-10-22 Honc server verification context: preserve the missing-policy-fixture
 collection failure and the subsequent 259-pass/2-fail/2-skip result. The latter
 failures lacked the configure-hermes-profile helper and assumed a Windows-only
@@ -745,3 +832,67 @@ real MCP schema and real Control API dispatch regressions. Continue only the bou
 read-only acceptance task under a new fenced epoch after the original execution is
 confirmed stopped. Do not restart successful login verification, resume Scholar,
 start a second Telegram receiver, reset pending_review, or claim production migration.
+
+
+2026-10-24 real Catalog initial-reading execution context: preserve both completed real durable answers and their NEEDS_HUMAN jobs. The first used exact_quote/source_evidence/offset aliases; the explicit-shape successor returned only two of22required shared dimensions. New initial inputs must declare exact quote/evidence/start/end schema and every shared dimension key, with explicit UNKNOWN/NOT_ASSESSED/NOT_APPLICABLE where appropriate. Revise prompt and response-schema identities, retain failed historical jobs/receipts, reuse successful full-PDF parsing without another parser/model replay, and bound each separately declared real acceptance. Existing valid legacy publications remain compatible; never fill missing model assessments, normalize quotations, reset failed work or weaken complete-dimension/evidence checks. An old pending job needs its original pinned prompt worker, not silent execution under a new prompt.
+
+
+2026-10-24 real standard-tier initial source contract: preserve the completed run_48be67b1b1b34da7b7761ed0726553c5 and its fifth NEEDS_HUMAN job. It returned22dimensions/3Themes but three evidence entries selected nonconsecutive native span IDs; the original resolve_source_quote correctly rejected them. New initial wire protocol selects exactly one source_span_id per evidence entry, allowing multiple separate evidence entries without pretending that separated sentences form a continuous quotation. Keep every old gapped/reversed/duplicate-list rejection assertion, exact Unicode/original-offset checks and raw response unchanged. Do not concatenate nonadjacent spans, fill gaps or relabel old output as a new successful prompt. Declare a new prompt/schema/job identity and bounded real acceptance; preserve successful PDF parsing and all prior failed records.1474full-pass proves the preceding360-file v5 checkpoint, not this later v6 source.
+
+
+2026-10-25 Scholar final-synthesis recovery context: all four real compact-reference source parts passed exact native source checks. Preserve the raw2004character digest and its single1208character bounded repair with identical ordered coverage/evidence IDs. The final synthesis then emitted dimension_key instead of key, correctly holding publication. Specify key/state/rationale/evidence explicitly under a new final-task version; do not rename old output fields or weaken stable-key validation. Recovery must retain the same held job and every original model event, reusing successful source/digest/repair calls.1506full-pass/361unchanged-file evidence precedes this new final prompt revision; require separate current verification and exact durable operation identity tests.
+
+
+2026-10-25 Catalog runtime Windows invocation context: retain catalog-runtime-guards-v1 (65passed/3failed plus2explicit subprocess-check lint findings). All three native script failures occurred before script execution because the test omitted the per-process -ExecutionPolicy Bypass setting already declared by the scheduled-task action and existing deployment launcher convention. Use the SAME process arguments as that actual action; do not change machine/user execution policy, skip native checks, weaken read-only/schema assertions or report the denied invocation as runtime validation. Add explicit check=False for subprocesses whose nonzero results are deliberately asserted. Reverify all68focused cases and both script hashes.
+
+
+2026-10-25 actual whole-initial readback context: the complete14Theme/22dimension publication succeeded. Preserve the first readback failure, which applied strict initial validation to content_json alone. The accepted storage contract intentionally separates source content from LIBRARY_OVERVIEW purpose judgments. Reconstruct a temporary validation card only by joining the unique stored judgment on the SAME run_id and exact purpose, assert its three allowed judgment keys, and validate all source evidence and disposition strictly. Never disable strict validation, modify stored data, or rerun the successful model pipeline to fix a readback helper.
+
+
+2026-10-25 temporary preview retirement context: preserve the first owner-guard failure before any termination. The verified process tree includes a Windows conhost child in C:/Windows as well as the Python launcher and actual rstv4.catalog_web server. Do not treat that console host as the web server or relax Python cwd/module/root/birth checks. Verify its direct parent/name/inherited owner separately, terminate only the two verified Python web processes, and allow normal already-exited races after terminating the actual child. Preserve all data/logs and compare business counts before retirement.
+
+
+2026-10-26 Scholar connector task native context: Windows venv pythonw starts a launcher and base interpreter with identical script arguments. Require exactly one ancestor tree, expected executables/arguments, original guardian absence, live checker receipt and registered task XML; do not count its parent/child as two independent supervisors. Task Scheduler can reorder RestartOnFailure child elements in exported XML. Compare the exact multiset of child tag/value pairs (including duplicates), retaining count3, intervalPT1M, unlimited execution and IgnoreNew. Preserve both failed ownership/order audits; no live listener, process-owner, source hash or healthy-cycle guard is weakened.
+
+
+2026-10-26 Scholar missing-Theme-definition execution context: the actual skeleton_view_part producer contract already requires definitions, yet the original answer and its one explicitly authorized same-prompt replacement both omitted them. This is an output-contract failure, not evidence that definitions are optional or that a new scientific decision is needed. Preserve both raw answers and successful earlier parts. Do not repeat the same replacement or weaken the validator. Add a separate bounded source-bound definition-completion task with its real receipt and deterministic replay/publication provenance, as specified in docs/operations/catalog-theme-definition-repair-contract.md. Resume from the current verification/pending-review gate, with focused provenance/permission/event/source/reversal tests and complete regression.
+
+
+2026-10-28 Catalog private HTTP verification context: preserve v60 socketpair denial and v61 paper-count assertion failure. The existing PAPER_ROWS_SQL intentionally excludes catalog_quarantine while the understanding query covers all catalog papers. Verify the ordinary paper list against independent NOT EXISTS SQL, all 1197 exact visible IDs across complete pagination, and exclusion of all 1980 quarantined IDs; retain the separate understanding total3177 and unchanged copied data. Windows TestClient may use only the actual stdlib socket._fallback_socketpair csock/lsock loopback self-pipe; all external connects, DNS and urllib requests remain denied. No product code or filters changed, no production listener or model requests. Resume verification at the unchanged pending-review gate.
+
+
+2026-10-28 Skeleton evidence completion context: preserve focused v69 (17passed/2failed). Both held before the software model because the new separately versioned task was absent from the worker explicit task allowlist. Admit exactly skeleton_dimension_evidence only for SKELETON_VIEW, retaining payload-plan/source/lease/grant checks and forbidding it for native or purpose jobs. Keep the full failed test states and original assertions. Initial whole-package lint also found unchanged legacy findings; lint every actual changed file and new test, preserving unrelated sources. Actual original part18 evidence map includes the Electron Smart Meter Data Privacy quote (evidence-219cc74e3616adbf29bf5b85bedfc2ed6f69e7f972165178cf63516e91c208fb); do not insert that ID manually or fabricate a model receipt. The real job remains held until current successor verification and explicit real durable completion.
+
+
+2026-10-28 actual supported-evidence rehearsal context: retain v74 private DB and FAILED_RETAINED receipt, zero models. The evidence-only task carried25958characters of full native record metadata against its unchanged15488character context limit. Project records deterministically to their original IDs, kind, source-evidence ID, unit and section path; keep EVERY original source_evidence entry, exact quote, Unicode offset, condition and parent/source/purpose binding. Do not enlarge the budget, truncate quotations, select evidence manually, alter the original supported observation or relax source validation. Preserve the preprojection module source and rerun on a fresh independent copy before current immutable full regression and actual recovery.
+
+
+2026-10-28 binding-echo projection continuation context: retain v91(46passed/1failed) and its full original fixture/log. Explicit echo projection succeeded, then evidence completion replay omitted the same frozen binding-echo grant and stopped at the old unsupported-field error. Pass that authorization through the evidence-completion request replay as already done for worker, publisher, payload admission and other repair paths. Keep the later-evidence regression, strict source/receipt/fence checks and original three-replacement budget. No raw field stripping, source mutation, new prompt or fabricated model receipt is allowed. Resume at verification/pending_review.
+
+
+2026-10-28 list snapshot review-epoch fixture context: preserve v102(22passed/1failed) and lint unused-binding finding. The source guard did not fail; the software fixture guessed nonexistent catalog_review_actions.actor and omitted actual required request/case/reviewer/JSON columns. Use the existing twelve-column action schema and retain the exact reopened-epoch/source-review assertion. No production schema or physical source guard changes. Read-only snapshots must still reject known quarantine, identity and review-epoch barriers; explicit detail and workers remain physical.
+
+
+## 2026-10-28 Catalog registered snapshot verification
+
+The explicit list/detail source boundary is documented in docs/operations/catalog-list-source-verification.md. Private v109 retained 132 passing Python checks, three old list-source expectations failing, and 11 passing frontend checks. The three existing physical verification assertions remain: they now run after explicit presentation-detail GET, while new list assertions require zero PDF verification and visibly unchecked snapshots. A separate focused rerun passed all three cases (2.09s). This is an execution-contract correction, not relaxed source integrity: strict detail still detects changed PDF bytes. Real-data HTTP v108 verified all 1197 nonquarantined IDs, five new columns, 3177 understanding query records, unchanged logical DB, no PDF opens or external networking in 1.813s. v106 failed only because the pinned stdlib names its exact socket self-pipe socketpair; v107 failed because the test looked for the documented nested snapshot flag at the top level. Both retained; no product guard changed. These are private focused/readback results, not a full immutable release or production/browser activation.
+
+
+## 2026-10-28 Selective evidence import and lighter live rollout
+
+v123 initial-copy verification failed correctly while the original NAS PDF was unavailable after reboot; no guard was relaxed. Reconnected the existing Z: mapping to the configured NAS with existing credentials, and original110016-byte PDF SHA remained cad2c7cd590728783e6112cb8e584419b155683956f8c44fd20508d873c3dd6f. v127 runpy lacked the helper directory on sys.path; corrected only execution context. v128 caught missing catalog_run_themes membership transfer: fourteen records were stored but zero rendered. Added the missing membership dependency and a commit-time rendering assertion, retaining the fourteen-theme acceptance assertion. v129 passed eight real-copy INITIAL transfer/replay/FULL-gate/foreign-scope/late-conflict rollback/source-change/PDF-damage/unfinished-job checks in3.61s. The human subsequently directed shipping first with lighter verification. Reused full1758/frontend11, performed live Web and eight-tool MCP handshake/status checks and verified one canonical worker. No complete-suite rerun for these operational checks. FULL transfer remains separately unverified; candidate output is not scientific approval.
+
+
+## 2026-11-03 Catalog manual resume test context
+
+Preserve the initial 34-pass/1-fail queue-regression run and the identical failure on the active
+catalog-ee40f7e22480 release. The long-paper manual-resume fixture delegates to a legacy-only
+SynthesisGateway, while newly frozen jobs use the compact synthesis protocol; the retained fixture
+reported `AssertionError: initial_digest_compact`. Use the existing CompactGateway for this one
+test and preserve all original status, coverage, source and receipt assertions. The original test
+is retained as `test-catalog-reading-before-compact-gateway-v642.py`. This changes the test's
+execution context only, not the production protocol or assertion strength.
+
+## 2026-10-29 Catalog historical execution-origin snapshot context
+
+Preserve full-registry-dependency-rehearsal-v214, its missing-file result, exact two copied registries and effective-original-identity failure. Classify the latter as missing historical execution context. A model operation nonce includes the original execution root, while a detached snapshot has another physical location. Keep the original nonce/call/registry/request/raw-response and source guards unchanged. Any snapshot origin context must be explicitly created from already verified source history, match the immutable copied job/model/authorization scope and snapshot bytes, apply only to a query-only connection, and be cleared on exit/error. Do not accept origin fields from model output or use a snapshot context for live dispatch. Default live-owner validation must continue deriving its physical root. Persistent history adoption requires a separate validated controller record, append-only provenance/reversal and an actual positive FULL import rehearsal; copied files alone are insufficient. This context does not expand retry caps or approve the pending role-format recovery. Resume verification at the unchanged pending-review gate; use affected checks under the user's lighter-verification release boundary.

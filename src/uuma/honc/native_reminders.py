@@ -43,6 +43,7 @@ class HermesReminderDelivery:
             "execution_id": identifier,
             "no_agent": True,
             "attach_to_session": False,
+            "wrap_response": False,
         }
         self.queue.enqueue(identifier, job, group["content"])
         return self.lookup(identifier) or {"state": "QUEUED", "native_execution_id": identifier}

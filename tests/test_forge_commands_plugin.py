@@ -45,9 +45,12 @@ def context(tmp_path):
 
 def test_profile_isolation_and_no_builtin_overrides(context):
     PLUGIN.register(context)
-    assert {"inventory", "projects", "shortages", "worklog", "forge", "cancel"} == set(
-        context.commands
-    )
+    base_commands = {"inventory", "projects", "shortages", "worklog", "forge", "cancel"}
+    assert base_commands.issubset(set(context.commands))
+    assert "projects_1" in context.commands
+    assert "inventory_1" in context.commands
+    assert "shortages_1" in context.commands
+    assert "worklog_1" in context.commands
     assert not {"model", "help", "new", "stop"} & context.commands.keys()
     context.profile_name = "yonc"
     assert "仅供 forge-lab-bot" in context.commands["inventory"]("")

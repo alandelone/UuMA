@@ -60,7 +60,9 @@ def test_registration_only_for_wisdom_and_no_builtin_override(module):
     assert ctx.commands == {}
     ctx.profile_name = "wisdom-oldman"
     module.register(ctx)
-    assert set(ctx.commands) == {"topics", "progress", "wisdom"}
+    assert {"topics", "progress", "wisdom"}.issubset(set(ctx.commands))
+    assert "progress_1" in ctx.commands
+    assert "topics_1" in ctx.commands
     assert "只查询" in asyncio.run(ctx.commands["wisdom"]())
 
 
@@ -68,6 +70,10 @@ def test_list_and_progress_use_only_read_tools(module):
     ctx = Context()
     module.register(ctx)
     assert "/progress topic_a" in asyncio.run(ctx.commands["topics"]())
+    assert "topics_1" in ctx.commands
+    assert "progress_1" in ctx.commands
+    assert "验证成本" in asyncio.run(ctx.commands["progress_1"]())
+    assert "咖啡" in asyncio.run(ctx.commands["topics_1"]())
     assert "受阻" in asyncio.run(ctx.commands["progress"]())
     detail = asyncio.run(ctx.commands["progress"]("咖啡"))
     assert "缺少来源" in detail and "租金多少" in detail and "版本：2" in detail

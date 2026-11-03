@@ -12,6 +12,7 @@ from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
 
+import httpx
 from pydantic import BaseModel, Field, field_validator
 
 AUTHORIZED_AGENTS = {
@@ -71,6 +72,7 @@ class GeminiWorkerSettings:
     backend: str = "gemini_cli"
     model: str = "gemini-3.8-flash-medium"
     reasoning_effort: str = "medium"
+    base_url: str = ""
 
     @classmethod
     def from_env(cls) -> GeminiWorkerSettings:
@@ -90,7 +92,7 @@ class GeminiWorkerSettings:
         if approval_mode not in {"plan", "auto_edit"}:
             raise ValueError("GEMINI_WORKER_APPROVAL_MODE must be 'plan' or 'auto_edit'.")
         backend = os.environ.get("GEMINI_WORKER_BACKEND", "gemini_cli").strip()
-        if backend not in {"gemini_cli", "account_pool"}:
+        if backend not in {"gemini_cli", "account_pool", "router_api"}:
             raise ValueError("Unsupported Gemini worker backend")
         executable = os.environ.get("GEMINI_WORKER_EXECUTABLE", "").strip()
         if backend == "account_pool" and (not executable or approval_mode != "plan"):
@@ -104,6 +106,7 @@ class GeminiWorkerSettings:
             backend=backend,
             model=os.environ.get("GEMINI_WORKER_MODEL", "gemini-3.8-flash-medium"),
             reasoning_effort=os.environ.get("GEMINI_WORKER_REASONING_EFFORT", "medium"),
+            base_url=os.environ.get("GEMINI_WORKER_BASE_URL", ""),
         )
 
 
@@ -131,6 +134,8 @@ class GeminiWorker:
         if requested_by not in AUTHORIZED_AGENTS:
             raise PermissionError("Gemini Worker requires an authorized Hermes profile identity.")
         cwd = self._resolve_working_directory(package.working_directory)
+        if self.settings.backend == "router_api":
+            return self._run_router(package, requested_by, cwd)
         if self.settings.backend == "account_pool":
             return self._run_pool(package, requested_by, cwd)
         if self.settings.backend != "gemini_cli":
@@ -209,6 +214,100 @@ class GeminiWorker:
         log_payload = {**base_log, **result, "finished_at": datetime.now(UTC).isoformat()}
         log_path = self._write_log(task_id, log_payload)
         return {**result, "log_path": str(log_path)}
+
+    def _run_router(self, package: GeminiTask, requested_by: str, cwd: Path) -> dict[str, Any]:
+        """Analyze supplied material using one durable router run, without tools."""
+        from urllib.parse import quote, urlsplit
+
+        endpoint = self.settings.base_url.rstrip("/")
+        url = urlsplit(endpoint)
+        if (url.scheme not in {"http", "https"} or not url.hostname
+                or url.username or url.password or url.query or url.fragment
+                or url.path != "/v1"):
+            raise ValueError("Router worker requires an explicit /v1 base URL")
+        if self.settings.approval_mode != "plan":
+            raise PermissionError("Router analysis worker requires plan mode")
+        if not self.settings.model.strip() or not 1 <= self.settings.timeout_seconds <= 3600:
+            raise ValueError("Router worker requires a model and a bounded timeout")
+        task_id = f"gw-{datetime.now(UTC):%Y%m%d}-{uuid.uuid4().hex[:8]}"
+        started = time.monotonic()
+        receipt: dict[str, Any] = {
+            "task_id": task_id, "requested_by": requested_by,
+            "backend": "router_api", "requested_model": self.settings.model,
+            "started_at": datetime.now(UTC).isoformat(), "working_directory": str(cwd),
+            "task": package.task, "approval_mode": "plan", "status": "submitted",
+            "execution_outcome": "requires_reconciliation", "idempotency_key": task_id,
+        }
+        self._write_log(task_id, receipt)
+        result: dict[str, Any]
+        try:
+            with httpx.Client(timeout=min(30, self.settings.timeout_seconds),
+                              trust_env=False) as client:
+                headers = {"X-Request-ID": task_id, "Idempotency-Key": task_id,
+                           "X-Hermes-Agent": requested_by}
+                key = os.environ.get("GEMINI_WORKER_API_KEY", "").strip()
+                if key:
+                    headers["Authorization"] = f"Bearer {key}"
+                response = client.post(endpoint + "/runs", headers=headers, json={
+                    "model": self.settings.model, "max_tokens": 4096, "max_attempts": 1,
+                    "messages": [
+                        {"role": "system", "content": (
+                            "You are a bounded analysis delegate with no tools or file access. "
+                            "Use only the supplied material. Distinguish assumptions, evidence "
+                            "and unknowns. Do not claim to have researched or retrieved anything. "
+                            "You cannot approve decisions or apply changes."
+                        )},
+                        {"role": "user", "content": build_prompt(package)},
+                    ],
+                })
+                response.raise_for_status()
+                run = response.json()
+                remote_id = run.get("id")
+                if not isinstance(remote_id, str) or not remote_id:
+                    raise ValueError("Router omitted durable run identity")
+                receipt["external_run_id"] = remote_id
+                self._write_log(task_id, receipt)
+                while run.get("status") in {"queued", "running", "retrying"}:
+                    remaining = self.settings.timeout_seconds - (time.monotonic() - started)
+                    if remaining <= 0:
+                        raise TimeoutError("Router run remains available for reconciliation")
+                    time.sleep(min(1, remaining))
+                    response = client.get(endpoint + "/runs/" + quote(remote_id, safe=""),
+                                          headers=headers, timeout=min(30, remaining))
+                    response.raise_for_status()
+                    run = response.json()
+            receipt["router_status"] = run.get("status")
+            receipt["router_attempts"] = run.get("attempts")
+            if run.get("status") != "completed":
+                raise ValueError("Router analysis did not complete")
+            payload = run.get("response") or {}
+            choices = payload.get("choices") or []
+            choice = choices[0] if choices else {}
+            message = choice.get("message") or {}
+            content = message.get("content")
+            if (payload.get("error") or message.get("tool_calls") or message.get("refusal")
+                    or not isinstance(content, str) or not content.strip()
+                    or choice.get("finish_reason") != "stop"):
+                raise ValueError("Router returned an incomplete or invalid analysis")
+            result = {
+                "status": "completed", "execution_outcome": "completed", "result": content,
+                "actual_model": payload.get("model"), "response_id": payload.get("id"),
+                "stats": payload.get("usage"), "files_created": [], "files_modified": [],
+                "warnings": ["Analysis uses supplied material only; no tools or file access."],
+            }
+        except httpx.HTTPStatusError as exc:
+            result = {"status": "error", "execution_outcome": "requires_reconciliation",
+                      "error": f"Router returned status {exc.response.status_code}; not resubmitted"}
+        except (httpx.RequestError, ValueError, TypeError, KeyError, AttributeError,
+                TimeoutError) as exc:
+            # Provider responses and exception text may contain credentials; do not log them.
+            result = {"status": "error", "execution_outcome": "requires_reconciliation",
+                      "error": f"Router analysis unavailable ({type(exc).__name__}); not resubmitted"}
+        receipt.update(result)
+        receipt.update(duration_seconds=round(time.monotonic() - started, 3),
+                       finished_at=datetime.now(UTC).isoformat())
+        path = self._write_log(task_id, receipt)
+        return {**receipt, "log_path": str(path)}
 
     def _run_pool(self, package: GeminiTask, requested_by: str, cwd: Path) -> dict[str, Any]:
         """Run one native Antigravity plan through the reviewed account-pool wrapper.

@@ -3,6 +3,7 @@ from __future__ import annotations
 import argparse
 import shutil
 from pathlib import Path
+from urllib.parse import urlsplit
 
 from ruamel.yaml import YAML
 from ruamel.yaml.comments import CommentedMap, CommentedSeq
@@ -75,6 +76,9 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--yonc-root", default="")
     parser.add_argument("--yonc-python", default="")
     parser.add_argument("--yonc-api-url", default="http://127.0.0.1:8765")
+    parser.add_argument("--librarian-mcp-url", default="")
+    parser.add_argument("--control-url", default="")
+    parser.add_argument("--identity-token-file", default="")
     return parser.parse_args()
 
 
@@ -231,6 +235,14 @@ def yonc_server(args: argparse.Namespace) -> CommentedMap:
 
 def main() -> None:
     args = parse_args()
+    if args.agent_id == "librarian":
+        if args.role != "worker" or not Path(args.identity_token_file).is_absolute():
+            raise ValueError("Librarian requires a worker role and an absolute scoped token path")
+        for value in (args.librarian_mcp_url, args.control_url):
+            parsed = urlsplit(value)
+            if (parsed.scheme != "http" or parsed.hostname not in {"127.0.0.1", "localhost", "::1"}
+                    or parsed.username or parsed.password or parsed.query or parsed.fragment or parsed.path not in {"", "/"}):
+                raise ValueError("Librarian service endpoints must be explicit loopback HTTP bases")
     yaml = YAML()
     yaml.preserve_quotes = True
     yaml.width = 100
@@ -306,6 +318,24 @@ def main() -> None:
                     mcp_servers.pop(name, None)
         else:
             mcp_servers.pop("yonc-project", None)
+        if args.agent_id == "librarian":
+            map_at(mcp_servers["uuma-worker"], "tools")["include"] = CommentedSeq(HONC_WORKER_TOOLS)
+            map_at(map_at(config, "tools"), "tool_search")["enabled"] = "off"
+            mcp_servers["uuma-librarian-read"] = server(args, "uuma.mcp_librarian")
+            for name in list(mcp_servers):
+                if name not in {"uuma-worker", "uuma-librarian-read"}:
+                    mcp_servers.pop(name, None)
+            for name in ("uuma-worker", "uuma-librarian-read"):
+                env = map_at(mcp_servers[name], "env")
+                env.update(UUMA_CONTROL_URL=args.control_url,
+                           UUMA_REQUIRE_REMOTE_CONTROL="1",
+                           UUMA_IDENTITY_TOKEN_FILE=args.identity_token_file)
+                map_at(mcp_servers[name], "tools").update(resources=False, prompts=False)
+            map_at(mcp_servers["uuma-librarian-read"], "env")["UUMA_REMOTE_MCP_URL"] = args.librarian_mcp_url
+            for toolsets in map_at(config, "platform_toolsets").values():
+                if isinstance(toolsets, list):
+                    toolsets[:] = [value for value in toolsets
+                                   if value not in {"cronjob", "connections", "file", "kanban"}]
         if args.agent_id == "scholar":
             # Scholar experiments must pass through RSTV4's approved-plan
             # executor. A general coding worker would be an unenforced path.
@@ -337,7 +367,7 @@ def main() -> None:
             enabled.append("uuma_control_guard")
         guard = map_at(entries, "uuma_control_guard")
         guard["mcp_allowlist"] = CommentedSeq(["uuma-control"])
-    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc", "honc"}:
+    elif args.agent_id in {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc", "honc", "librarian"}:
         if "uuma_control_guard" not in enabled:
             enabled.append("uuma_control_guard")
         guard = map_at(entries, "uuma_control_guard")
@@ -350,6 +380,8 @@ def main() -> None:
             if args.agent_id == "honc"
             else ["uuma-worker", "yonc-project"]
             if args.agent_id == "yonc"
+            else ["uuma-worker", "uuma-librarian-read"]
+            if args.agent_id == "librarian"
             else ["uuma-worker"]
         )
     else:

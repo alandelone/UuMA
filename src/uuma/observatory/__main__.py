@@ -7,9 +7,11 @@ import sys
 import uvicorn
 
 from .server import create_observatory_app
+from .windows_compat import patch_proactor_accept_windows
 
 
 def main() -> None:
+    patch_proactor_accept_windows()
     if sys.stdout and hasattr(sys.stdout, "reconfigure"):
         sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     if sys.stderr and hasattr(sys.stderr, "reconfigure"):

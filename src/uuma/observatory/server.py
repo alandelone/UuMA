@@ -24,6 +24,7 @@ from .models import (
     FleetOverview,
 )
 from .storage import ObservatoryStorage
+from .windows_compat import patch_proactor_accept_windows
 
 logger = logging.getLogger("uuma.observatory.server")
 
@@ -72,6 +73,7 @@ def create_observatory_app(
     auth_token: str | None = None,
     allow_loopback_without_auth: bool = True,
 ) -> FastAPI:
+    patch_proactor_accept_windows()
     settings = settings or Settings.from_env()
     settings.ensure_directories()
 
@@ -167,7 +169,7 @@ def create_observatory_app(
             raise HTTPException(status_code=401, detail="Unauthorized Observatory Access")
         return True
 
-    @app.get("/", response_class=HTMLResponse)
+    @app.api_route("/", methods=["GET", "HEAD"], response_class=HTMLResponse)
     async def serve_index(
         request: Request,
         response: Response,
@@ -180,6 +182,8 @@ def create_observatory_app(
         token = auth or uuma_obs_token
         is_authed = is_loopback or (token and secrets.compare_digest(token, valid_token))
         if not is_authed:
+            if request.method == "HEAD":
+                return Response(status_code=401)
             return HTMLResponse(
                 content="""<!doctype html><html><head><meta charset='utf-8'><title>Observatory 验证</title></head>
                 <body style='font-family:sans-serif;display:flex;height:100vh;align-items:center;justify-content:center;background:#0f172a;color:#f8fafc'>
@@ -202,6 +206,8 @@ def create_observatory_app(
             samesite="strict",
             path="/",
         )
+        if request.method == "HEAD":
+            return Response(status_code=200, headers=dict(response.headers))
         index_file = STATIC_DIR / "index.html"
         if index_file.exists():
             content = index_file.read_text(encoding="utf-8")
@@ -252,7 +258,11 @@ def create_observatory_app(
             "role": adapter.role,
             "source_name": adapter.source_name,
             "health": "HEALTHY" if health.is_available else "WARNING",
-            "status": items[0].status if items else "IDLE",
+            "status": (
+                adapter.workspace_status(items)
+                if callable(getattr(adapter, "workspace_status", None))
+                else (items[0].status if items else "IDLE")
+            ),
             "items": [it.model_dump() for it in items],
             "total_items": len(items),
         }

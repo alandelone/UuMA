@@ -60,11 +60,12 @@ class _SessionState:
     forge_purchase_result: dict[str, Any] | None = None
     yonc_colleagues: dict[str, Any] | None = None
     is_kanban: bool = False
+    is_cron: bool = False
 
 
 _SESSIONS: OrderedDict[str, _SessionState] = OrderedDict()
 _CONTEXT: Any = None
-_DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc", "honc"}
+_DIRECT_SPECIALISTS = {"brainstormer", "wisdom-oldman", "scholar", "forge-lab-bot", "yonc", "honc", "librarian"}
 _DOMAIN_PREFLIGHT = {
     "brainstormer": ("uuma-worker", "brainstormer_search_topics"),
     "wisdom-oldman": ("wisdom-knowledge", "knowledge_question_preflight"),
@@ -72,6 +73,7 @@ _DOMAIN_PREFLIGHT = {
     "forge-lab-bot": ("uuma-worker", "inventory_status"),
     "yonc": ("yonc-project", "yonc_status"),
     "honc": ("honc-execution", "honc_status"),
+    "librarian": ("uuma-librarian-read", "librarian_get_backup_status"),
 }
 _SPECIALIST_FORBIDDEN_TOOLS = {
     "delegate_task",
@@ -641,6 +643,17 @@ def _extract_kanban_task_id(kwargs: dict[str, Any]) -> str | None:
     return None
 
 
+def _is_cron_session(kwargs: dict[str, Any]) -> bool:
+    session_id = str(kwargs.get("session_id") or kwargs.get("task_id") or "").lower()
+    if session_id.startswith("cron_") or ":cron:" in session_id:
+        return True
+    for key in ("platform", "session_source", "source"):
+        if str(kwargs.get(key) or "").strip().lower() == "cron":
+            return True
+    user_msg = str(kwargs.get("user_message") or "").strip()
+    return user_msg.startswith("[IMPORTANT: You are running as a scheduled cron job.")
+
+
 def _assigned_binding(kwargs: dict[str, Any]) -> dict[str, Any] | None:
     session = _session_key(kwargs)
     if not session.startswith("uuma-assigned:"):
@@ -674,10 +687,13 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                     "Do not register a replacement Direct Run or use domain tools."}
         is_kanban = _is_kanban_worker(kwargs)
         kanban_task_id = _extract_kanban_task_id(kwargs) if is_kanban else None
+        is_cron = _is_cron_session(kwargs)
         with _LOCK:
             state = _state(_session_key(kwargs))
             if is_kanban:
                 state.is_kanban = True
+            if is_cron:
+                state.is_cron = True
             turn_id = str(kwargs.get("turn_id") or "")
             new_turn = bool(turn_id and state.direct_turn_id != turn_id)
             if new_turn:
@@ -709,6 +725,14 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
             if state.is_kanban:
                 tid = kanban_task_id or state.direct_task_id or "kanban"
                 state.direct_run_id = f"kanban:{tid}"
+                state.direct_task_id = tid
+                state.domain_checked = True
+                state.wisdom_intent_resolved = True
+                state.direct_attempted = True
+                return None
+            if getattr(state, "is_cron", False):
+                tid = _session_key(kwargs)
+                state.direct_run_id = f"cron:{tid}"
                 state.direct_task_id = tid
                 state.domain_checked = True
                 state.wisdom_intent_resolved = True
@@ -1220,7 +1244,7 @@ def _pre_tool_call(tool_name: str = "", args: Any = None, **kwargs: Any) -> dict
             return None
         with _LOCK:
             state = _state(_session_key(kwargs))
-            registered = bool(state.direct_run_id) or state.is_kanban or _is_kanban_worker(kwargs)
+            registered = bool(state.direct_run_id) or state.is_kanban or _is_kanban_worker(kwargs) or getattr(state, "is_cron", False) or _is_cron_session(kwargs)
         if not registered:
             return {
                 "action": "block",
@@ -1395,9 +1419,11 @@ def _clear_session(**kwargs: Any) -> None:
 def _guard_specialist_output(response_text: str = "", **kwargs: Any) -> str | None:
     if _profile() not in _DIRECT_SPECIALISTS or not response_text:
         return None
+    if response_text.strip() == "[SILENT]":
+        return None
     with _LOCK:
         state = _state(_session_key(kwargs))
-        if state.is_kanban or _is_kanban_worker(kwargs):
+        if state.is_kanban or _is_kanban_worker(kwargs) or getattr(state, "is_cron", False) or _is_cron_session(kwargs):
             return None
         operational = state.wisdom_message_intent in {
             "status", "feedback", "conversation", "resume", "pause", "stop",
@@ -1504,7 +1530,7 @@ def _finalize_specialist(**kwargs: Any) -> None:
         return
     with _LOCK:
         state = _state(_session_key(kwargs))
-        if state.is_kanban or _is_kanban_worker(kwargs):
+        if state.is_kanban or _is_kanban_worker(kwargs) or getattr(state, "is_cron", False) or _is_cron_session(kwargs):
             return
         if state.result_submitted or not state.direct_run_id or not state.direct_task_id:
             return

@@ -1,0 +1,14 @@
+--- antigravity-oauth/models.py
++++ antigravity-oauth/models.py
+@@ -85,7 +85,10 @@
+         return f"{base_model}-{concrete_effort}", concrete_effort
+     elif base_model.startswith("gemini-") and "flash" in base_model:
+         concrete_effort = effort if effort in ("low", "medium", "high") else "medium"
+-        return f"{base_model}-{concrete_effort}", concrete_effort
++        # The deployed CLI advertises Gemini 3.8 Flash effort in the model ID and
++        # rejects a separate --effort flag. Older Gemini contracts stay unchanged.
++        separate_effort = None if base_model == "gemini-3.8-flash" else concrete_effort
++        return f"{base_model}-{concrete_effort}", separate_effort
+     else:
+         # Local patch: agy rejects --effort for non-Gemini models (claude-*, gpt-oss-*):
+         # "--effort is not supported for model ...". Their effort, if any, is baked into the id.

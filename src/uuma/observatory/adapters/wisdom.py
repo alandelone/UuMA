@@ -10,6 +10,7 @@ from pathlib import Path
 
 from ..models import ObservatoryItem, SourceFreshness
 from .base import ObservatorySourceAdapter
+from .wisdom_remote import RemoteWisdomReader, snapshot_items
 
 
 class WisdomAdapter(ObservatorySourceAdapter):
@@ -27,6 +28,8 @@ class WisdomAdapter(ObservatorySourceAdapter):
         self.data_dir = Path(data_dir)
         self.db_path = self._resolve_wisdom_db(knowledge_path)
         self.uuma_db_path = self._resolve_uuma_db(uuma_db_path)
+        marker = self.db_path.with_name(self.db_path.name + ".remote-owner.json")
+        self.remote_reader = RemoteWisdomReader(marker) if marker.is_file() else None
         self.view_base_url = os.environ.get("UUMA_WISDOM_VIEW_BASE_URL", "https://wisdgraph.95963210.xyz").rstrip("/")
         token_path = self.db_path.parent / "wisdom-view-token"
         if token_path.is_file():
@@ -35,6 +38,8 @@ class WisdomAdapter(ObservatorySourceAdapter):
             self.view_token = "nKqEa4j7FtpIR9IoTsmLma_u_yfBXs6hOdijYyfD1wI"
 
     def _resolve_wisdom_db(self, explicit_path: Path | str | None) -> Path:
+        if explicit_path is not None:
+            return Path(explicit_path).resolve()
         local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
         candidates = [
             local_app_data / "Packages" / "OpenAI.Codex_2p2nqsd0c76g0" / "LocalCache" / "Local" / "UuMA" / "wisdom.db",
@@ -52,6 +57,8 @@ class WisdomAdapter(ObservatorySourceAdapter):
         return existing[0]
 
     def _resolve_uuma_db(self, explicit_path: Path | str | None) -> Path:
+        if explicit_path is not None:
+            return Path(explicit_path).resolve()
         local_app_data = Path(os.environ.get("LOCALAPPDATA", Path.home() / "AppData" / "Local"))
         candidates = [
             local_app_data / "Packages" / "OpenAI.Codex_2p2nqsd0c76g0" / "LocalCache" / "Local" / "UuMA" / "uuma.db",
@@ -68,6 +75,14 @@ class WisdomAdapter(ObservatorySourceAdapter):
         return existing[0]
 
     def probe_health(self) -> SourceFreshness:
+        if self.remote_reader:
+            snapshot = self.remote_reader.read()
+            return SourceFreshness(
+                source_name="Wisdom-Oldman @ alandelone-server-001 (read-only)",
+                is_available=snapshot is not None and self.remote_reader.error is None,
+                last_event_at=(snapshot or {}).get("last_event_at"),
+                error_message=self.remote_reader.error,
+            )
         if not self.db_path.exists():
             return SourceFreshness(
                 source_name=self.source_name,
@@ -107,6 +122,17 @@ class WisdomAdapter(ObservatorySourceAdapter):
             )
 
     def list_items(self, limit: int = 30, offset: int = 0) -> list[ObservatoryItem]:
+        if self.remote_reader:
+            snapshot = self.remote_reader.read()
+            if snapshot is None:
+                return []
+            return [
+                ObservatoryItem(**item, health="WARNING" if (
+                    self.remote_reader.error
+                    or (snapshot.get("runtime") or {}).get("kag_status") == "UNAVAILABLE"
+                ) else "HEALTHY")
+                for item in snapshot_items(snapshot, self.view_base_url, self.view_token)
+            ][offset:offset + limit]
         task_items: list[ObservatoryItem] = []
         topic_items: list[ObservatoryItem] = []
 
@@ -262,7 +288,7 @@ class WisdomAdapter(ObservatorySourceAdapter):
                                     budget_limits_map = {
                                         "QUICK": {"active_seconds": 3600, "sources": 30, "model_tokens": 500000, "search_queries": 250},
                                         "STANDARD": {"active_seconds": 14400, "sources": 100, "model_tokens": 2000000, "search_queries": 1000},
-                                        "DEEP": {"active_seconds": 216000, "sources": 500, "model_tokens": 10000000, "search_queries": 5000},
+                                        "DEEP": {"active_seconds": 216000, "sources": 500, "model_tokens": 10000000, "search_queries": 15000},
                                     }
                                     budget_limits = budget_limits_map.get(budget_tier, budget_limits_map["DEEP"])
 
@@ -634,3 +660,34 @@ class WisdomAdapter(ObservatorySourceAdapter):
             if it.item_id == item_id:
                 return it
         return None
+
+    def workspace_status(self, items: list[ObservatoryItem]) -> str:
+        """A maintained knowledge topic is not a running research worker."""
+        if not items or (self.remote_reader and self.remote_reader.error):
+            return "UNKNOWN"
+        runtime = ((self.remote_reader.snapshot or {}).get("runtime") or {}) if self.remote_reader else {}
+        if runtime.get("kag_status") == "UNAVAILABLE":
+            return "BLOCKED"
+        investigations = []
+        for item in items:
+            if item.kind != "knowledge_topic" or item.status != "ACTIVE":
+                continue
+            payload = item.payload
+            investigations.extend(payload.get("investigations") or (
+                [payload["orbit_info"]] if payload.get("orbit_info") else []
+            ))
+        if any(orbit.get("runner_live") for orbit in investigations):
+            return "RUNNING"
+        if any(orbit.get("status") == "ACTIVE" for orbit in investigations):
+            return "UNKNOWN"
+        if any(orbit.get("status") == "QUEUED" for orbit in investigations):
+            return "WAITING"
+        for status in ("FAILED", "BLOCKED", "PAUSED", "BUDGET_EXHAUSTED"):
+            if any(orbit.get("status") == status for orbit in investigations):
+                return status
+        tasks = [item for item in items if item.kind == "active_task"]
+        if any(item.status == "RUNNING" for item in tasks):
+            return "UNKNOWN"
+        if any(item.status == "READY" for item in tasks):
+            return "WAITING"
+        return "IDLE"

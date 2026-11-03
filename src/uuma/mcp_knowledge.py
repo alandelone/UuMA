@@ -186,13 +186,15 @@ def _control_existing_research(
         if route:
             _topics().bind_existing_topic(target, route=route, actor_id=actor_id)
         transitions = {
-            "resume": ({"PAUSED", "BLOCKED", "FAILED"}, OrbitStatus.QUEUED),
-            "pause": ({"QUEUED", "ACTIVE"}, OrbitStatus.PAUSED),
-            "stop": ({"QUEUED", "ACTIVE", "PAUSED", "BLOCKED"}, OrbitStatus.STOPPED),
+            "resume": ({"PAUSED", "BLOCKED", "FAILED", "BUDGET_EXHAUSTED"}, OrbitStatus.QUEUED),
+            "pause": ({"QUEUED", "ACTIVE", "BUDGET_EXHAUSTED"}, OrbitStatus.PAUSED),
+            "stop": ({"QUEUED", "ACTIVE", "PAUSED", "BLOCKED", "BUDGET_EXHAUSTED"}, OrbitStatus.STOPPED),
         }
         allowed, destination = transitions[intent]
         for orbit in context["orbits"]:
             if orbit["status"] in allowed:
+                if intent == "resume" and _orbits().budget()["exhausted"]:
+                    continue
                 _orbits().transition(orbit["orbit_id"], destination, actor_id=actor_id,
                                      reason=f"User requested {intent} of existing research.")
                 changed.append(orbit["orbit_id"])
@@ -200,7 +202,7 @@ def _control_existing_research(
     global_status["control_message"] = (
         "请选择要操作的已有主题；这次没有更改研究任务。" if not target else
         "已按指令更新原研究任务；没有建立新主题或重置预算。" if changed else
-        "现有任务无需切换，或已停止／预算已用完；这次没有启动新研究或追加预算。"
+        "现有任务无需切换、已停止或正在等待当日额度恢复；这次没有启动新研究或清空用量。"
     )
     wake = _wake_orbit_runner("QUEUED") if changed and intent == "resume" else None
     return {
@@ -210,7 +212,7 @@ def _control_existing_research(
         "current_status": _topics().conversation_status(route), "global_status": global_status,
         "research_continues": bool(global_status["active"]),
         "instruction": "Report durable state. No new topic or budget was created. "
-                       "Stopped or exhausted tasks cannot resume automatically. "
+                       "Human stop/pause must be honored. Daily quota waits cannot bypass the reset. "
                        "If target is ambiguous, ask which existing topic the user means.",
     }
 
@@ -709,7 +711,7 @@ def knowledge_orbit_stop(orbit_id: str, reason: str) -> dict[str, Any]:
 
 @mcp.tool()
 def knowledge_orbit_set_budget(orbit_id: str, budget_tier: str) -> dict[str, Any]:
-    """Apply an explicit Orchestrator/user-review budget tier and resume an exhausted Orbit."""
+    """Review a legacy tier label without resetting or raising any configured daily ceiling."""
     orbit = _orbits().set_budget(
         orbit_id, BudgetTier(budget_tier.upper()), actor_id=_actor()
     )

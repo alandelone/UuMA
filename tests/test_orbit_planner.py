@@ -10,6 +10,7 @@ from uuma.knowledge_models import GapRecord, GapType, SatisfactionLevel
 from uuma.knowledge_service import KnowledgeService
 from uuma.orbit_discovery import (
     DiscoveryArtifact,
+    DiscoveryOutcome,
     DiscoveryResponse,
     artifact_is_relevant,
 )
@@ -50,7 +51,7 @@ class _MockProvider:
 
 
 def test_planner_multi_tier_escalation_flow():
-    # Tier 1 fails, Tier 2 succeeds
+    # Deep Research and academic sources are empty; general web succeeds.
     scholarly = _MockProvider("openalex", artifacts=[])
     web = _MockProvider(
         "ddgs",
@@ -69,11 +70,13 @@ def test_planner_multi_tier_escalation_flow():
     tiers_attempted = [t.tier for t in traces]
     assert 1 in tiers_attempted
     assert 2 in tiers_attempted
-    # Tier 2 found results, so Tier 3 did not need to run
-    assert 3 not in tiers_attempted
+    assert 3 in tiers_attempted
+    assert next(t for t in traces if t.provider == "chatgpt-bridge").tier == 1
+    assert next(t for t in traces if t.provider == "openalex").tier == 2
+    assert next(t for t in traces if t.provider == "ddgs").tier == 3
 
 
-def test_planner_escalates_to_chatgpt_when_scholarly_and_web_empty():
+def test_planner_starts_with_chatgpt_before_academic_and_web():
     scholarly = _MockProvider("openalex", artifacts=[])
     web = _MockProvider("ddgs", artifacts=[])
     chatgpt = _MockProvider(
@@ -88,8 +91,9 @@ def test_planner_escalates_to_chatgpt_when_scholarly_and_web_empty():
     assert artifacts[0].locator == "https://example.com/cgpt-ref"
     tiers_attempted = [t.tier for t in traces]
     assert 1 in tiers_attempted
-    assert 2 in tiers_attempted
-    assert 3 in tiers_attempted
+    assert 2 not in tiers_attempted
+    assert 3 not in tiers_attempted
+    assert scholarly.queries_received == web.queries_received == []
 
 
 def test_planner_async_deep_research_pending_and_retrieval():
@@ -157,6 +161,97 @@ def test_planner_async_deep_research_pending_and_retrieval():
     assert "气雾栽培喷雾周期" in artifacts_3[0].metadata["full_text"]
     assert pending_req_3 is None
     assert any(t.status == "SUCCESS" for t in traces_3)
+
+
+def test_planner_pending_paused_request_clears_and_escalates_to_next_tier():
+    class _MockChatGptPaused:
+        name = "chatgpt-bridge"
+        mode = "deep_research"
+
+        def discover(self, query: str, *, limit: int = 5, pending_request_id: str | None = None, mode: str = "search") -> DiscoveryResponse:
+            assert pending_request_id == "cgpt_paused_123"
+            return DiscoveryResponse(
+                [],
+                request_id=None,
+                in_progress=False,
+                outcome=DiscoveryOutcome.NO_MATCH,
+                error_detail="Prior request status PAUSED",
+            )
+
+    academic = _MockProvider(
+        "openalex",
+        artifacts=[DiscoveryArtifact("https://example.com/allium-paper", "Allium fistulosum aeroponics", "openalex")],
+    )
+    planner = AdaptiveResearchPlanner([_MockChatGptPaused(), academic])
+
+    artifacts, traces, pending_req = planner.execute_discovery(
+        "青葱气雾栽培参数", pending_request_id="cgpt_paused_123", deep_research_allowed=True
+    )
+
+    # Must clear pending request and escalate to academic tier
+    assert pending_req is None
+    assert len(artifacts) == 1
+    assert artifacts[0].locator == "https://example.com/allium-paper"
+    assert {t.tier for t in traces} == {1, 2}
+
+
+def test_planner_pending_transient_failure_preserves_request_without_attribute_error():
+    class _MockChatGptTimeout:
+        name = "chatgpt-bridge"
+        mode = "deep_research"
+
+        def discover(self, query: str, *, limit: int = 5, pending_request_id: str | None = None, mode: str = "search") -> DiscoveryResponse:
+            assert pending_request_id == "cgpt_timeout_456"
+            return DiscoveryResponse(
+                [],
+                request_id="cgpt_timeout_456",
+                in_progress=False,
+                outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                error_detail="timed out",
+            )
+
+    planner = AdaptiveResearchPlanner([_MockChatGptTimeout()])
+    artifacts, traces, pending_req = planner.execute_discovery(
+        "青葱气雾栽培参数", pending_request_id="cgpt_timeout_456", deep_research_allowed=True
+    )
+
+    # Must preserve pending request on transient failure without raising AttributeError
+    assert artifacts == []
+    assert pending_req == "cgpt_timeout_456"
+    assert len(traces) == 1
+    assert traces[0].error_detail == "timed out"
+    assert traces[0].outcome == DiscoveryOutcome.TRANSIENT_FAILURE
+
+
+def test_critic_escalation_skips_an_already_reviewed_research_tier():
+    deep = _MockProvider("chatgpt-bridge", artifacts=[
+        DiscoveryArtifact("https://example.com/deep", "Battery ageing", "chatgpt-bridge")
+    ])
+    academic = _MockProvider("openalex", artifacts=[
+        DiscoveryArtifact("https://example.com/paper", "Battery ageing", "openalex")
+    ])
+    artifacts, traces, _ = AdaptiveResearchPlanner([deep, academic]).execute_discovery(
+        "Battery ageing", start_tier=2,
+    )
+    assert artifacts[0].provider == "openalex"
+    assert deep.queries_received == [] and {trace.tier for trace in traces} == {2}
+
+
+def test_pending_xhs_job_is_polled_by_xhs_without_starting_deep_research():
+    deep = _MockProvider("chatgpt-bridge")
+
+    class Xhs:
+        name = "xhs"
+
+        def discover(self, query, **kwargs):
+            assert kwargs["pending_request_id"] == "xhs-job"
+            return DiscoveryResponse([], request_id="xhs-job", in_progress=True)
+
+    _, traces, pending = AdaptiveResearchPlanner([deep, Xhs()]).execute_discovery(
+        "Battery ageing", start_tier=4, pending_provider="xhs", pending_request_id="xhs-job",
+    )
+    assert pending == "xhs-job" and deep.queries_received == []
+    assert traces[0].tier == 4 and traces[0].metadata["request_phase"] == "poll"
 
 
 def test_deep_research_report_ingestion_and_claim_extraction(tmp_path: Path):
@@ -273,7 +368,7 @@ def test_question_orbit_status_exposes_attempted_routes(tmp_path: Path):
 
 def test_compute_cycle_explanation_structure_and_dynamic_untried_paths():
     p1 = _MockProvider("openalex", artifacts=[])
-    # 5 artifacts satisfies discovery capacity so subsequent web provider (brave) and chatgpt are untried
+    # Five web results leave Brave untried after ChatGPT and academia were tried.
     p2 = _MockProvider(
         "ddgs",
         artifacts=[DiscoveryArtifact(f"https://example.com/{i}", f"Test {i}", "ddgs") for i in range(5)],
@@ -282,7 +377,7 @@ def test_compute_cycle_explanation_structure_and_dynamic_untried_paths():
     p4 = _MockProvider("chatgpt-bridge", artifacts=[])
 
     planner = AdaptiveResearchPlanner([p1, p2, p3, p4])
-    _artifacts, traces, _ = planner.execute_discovery("青葱气雾栽培", limit=5)
+    _artifacts, traces, _ = planner.execute_discovery("Test", limit=5)
     explanation = planner.compute_cycle_explanation("青葱气雾栽培", traces, status="ACTIVE")
 
     assert explanation.status == "ACTIVE"
@@ -296,9 +391,9 @@ def test_compute_cycle_explanation_structure_and_dynamic_untried_paths():
     assert p2_attempt.outcome == "SUCCESS"
     assert p2_attempt.artifacts_found == 5
 
-    # Untried paths should dynamically include brave and chatgpt-bridge since search satisfied at p2
+    # ChatGPT was tried first; only the later Brave route remains untried.
     assert "brave" in explanation.untried_paths
-    assert "chatgpt-bridge" in explanation.untried_paths
+    assert "chatgpt-bridge" not in explanation.untried_paths
     assert "下阶段将调度待探索途径" in explanation.next_step
 
 

@@ -17,5 +17,14 @@ Architecture: `docs/architecture/system-architecture.md`. Multi-Agent Logic Grap
 `docs/architecture/graph-engineering.md` and `docs/architecture/wisdom-kag.md`. MCP contracts:
 `docs/contracts/mcp-boundaries.md`.
 
+Agent design conversations and specifications: [Agent Design Archive](agents/README.md).
+The [Librarian design](agents/librarian.md) records the server-side memory
+agent, Windows conversations/development/project files, and the expanded all-agent durable-data
+scope. Verified domain locations and record families are in the
+[Librarian source coverage inventory](architecture/library-source-coverage-2026-10-28.md).
+The [complete architecture](architecture/librarian-architecture-v1.md) fixes daily midnight
+capture and existing A2A/read-only MCP roles. The isolated read-only MCP component is implemented;
+collection and production deployment remain future work.
+
 For the active mission, follow `mission_status.json`; then open only its named gate and the rules
 linked by that gate.

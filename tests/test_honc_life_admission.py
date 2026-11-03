@@ -12,7 +12,10 @@ def test_current_body_report_and_future_habit_plan_keep_separate_grants():
 
 def test_authenticated_voice_wrapper_and_spacing_preserve_domain_admission():
     spoken = '"早上 吃 了 早餐，精神 一点 累，鼻子 流 鼻涕"'
-    assert allowed_operations(spoken) == ()
+    assert allowed_operations(spoken) == (
+        "record_body",
+        "record_habit",
+    )
     assert allowed_operations(spoken, input_kind="voice_transcript") == (
         "record_body",
         "record_habit",
@@ -29,7 +32,7 @@ def test_authenticated_voice_wrapper_and_spacing_preserve_domain_admission():
         '"他说，今天肚子痛"',
         '"明天计划运动"',
         '"不要记录今天鼻塞"',
-        '""今天肚子痛""',
+        '"别人说今天肚子痛"',
         '"查看身体历史"',
         '"如果今天肚子痛"',
     ],

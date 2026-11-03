@@ -27,8 +27,10 @@ def delegate_to_gemini(
 ) -> dict[str, Any]:
     """Run a bounded stateless task with the configured worker backend.
 
-    Server profiles may use the shared account pool in plan mode. The requesting
-    Agent retains responsibility for scope, decisions and reviewing the result.
+    Server profiles may use the shared account pool or a durable router analysis
+    endpoint (including the complex alias) in plan mode. Router analysis uses
+    supplied context only and has no tools or file access. The requesting Agent
+    retains responsibility for decisions and reviewing the result.
     """
     package = GeminiTask(
         task=task,

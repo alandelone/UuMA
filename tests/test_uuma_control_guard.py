@@ -1172,3 +1172,36 @@ def test_slash_commands_registration_and_execution():
 
     research_empty = registered_cmds["research"]("")
     assert "研究指令用法" in research_empty
+
+
+def test_wisdom_silent_output_is_preserved_without_interception(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    state = PLUGIN._state("silent-sess")
+    state.direct_run_id = "run-silent"
+    state.domain_checked = True
+    state.wisdom_intent_resolved = False
+
+    # [SILENT] must be preserved as None (no transformation), not rewritten
+    assert PLUGIN._guard_specialist_output("[SILENT]", session_id="silent-sess") is None
+    assert PLUGIN._guard_specialist_output("  [SILENT]\n", session_id="silent-sess") is None
+
+
+def test_wisdom_cron_session_bypasses_direct_chat_and_preserves_output(monkeypatch) -> None:
+    monkeypatch.setenv("HERMES_PROFILE", "wisdom-oldman")
+    context = Mock()
+    PLUGIN._CONTEXT = context
+
+    kwargs = {
+        "session_id": "cron_cef6302a8e23_20261027_215808",
+        "turn_id": "turn-cron",
+        "user_message": "[IMPORTANT: You are running as a scheduled cron job. ...]",
+    }
+    reminder = PLUGIN._health_context(**kwargs)
+    assert reminder is None
+    state = PLUGIN._state("cron_cef6302a8e23_20261027_215808")
+    assert state.is_cron is True
+    assert state.direct_run_id.startswith("cron:")
+
+    # Operational status report is preserved, not intercepted with "????????"
+    status_report = "?Wisdom ????????????????"
+    assert PLUGIN._guard_specialist_output(status_report, **kwargs) is None

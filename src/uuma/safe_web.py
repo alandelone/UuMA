@@ -20,9 +20,10 @@ class UnsafeUrlError(ValueError):
 
 
 class RetryAfterError(RuntimeError):
-    def __init__(self, message: str, retry_after_seconds: int) -> None:
+    def __init__(self, message: str, retry_after_seconds: int, *, quota_wait: bool = False) -> None:
         super().__init__(message)
         self.retry_after_seconds = max(1, retry_after_seconds)
+        self.quota_wait = quota_wait
 
 
 @dataclass(frozen=True)
@@ -110,7 +111,8 @@ class SafeWebFetcher:
                 if exc.code in {429, 503}:
                     retry_after = self._retry_after_seconds(exc.headers.get("Retry-After"))
                     raise RetryAfterError(
-                        f"Remote host requested a retry after HTTP {exc.code}.", retry_after
+                        f"Remote host requested a retry after HTTP {exc.code}.", retry_after,
+                        quota_wait=exc.code == 429,
                     ) from exc
                 raise
             except URLError:

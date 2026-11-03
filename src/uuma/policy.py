@@ -37,6 +37,8 @@ class PolicyEngine:
         *,
         user_approved: bool = False,
     ) -> PolicyDecision:
+        if not agent.enabled:
+            return PolicyDecision(False, reason=f"Agent {agent.agent_id} is disabled.")
         forbidden = task.required_capabilities & PROHIBITED_CAPABILITIES
         if task.risk_level is RiskLevel.PROHIBITED or forbidden:
             return PolicyDecision(False, reason="The task contains a permanently prohibited action.")
@@ -191,5 +193,14 @@ def default_agents() -> list[AgentDefinition]:
                 "habit_tracking",
             },
             tools={"worker_mcp", "honc_execution"},
+        ),
+        AgentDefinition(
+            agent_id="librarian",
+            display_name="Librarian",
+            description="Finds authorized project and agent history with provenance and retained versions.",
+            capabilities={"archive_retrieval", "project_context", "backup_status"},
+            tools={"worker_mcp", "librarian_read"},
+            maximum_risk=RiskLevel.READ_ONLY,
+            enabled=False,  # Enable only after its server runtime and A2A endpoint are verified.
         ),
     ]

@@ -139,7 +139,7 @@ class ControlPlaneTestCase(unittest.TestCase):
             conn.close()
 
     def test_bootstrap_and_hash_chain(self) -> None:
-        self.assertEqual(len(self.control.list_agents()), 7)
+        self.assertEqual(len(self.control.list_agents()), 8)
         health = self.control.health()
         self.assertEqual(health["status"], "ok")
         self.assertTrue(health["event_chain_valid"])
@@ -167,6 +167,15 @@ class ControlPlaneTestCase(unittest.TestCase):
         )
         decision = self.control.route_task(task.task_id)
         self.assertEqual(decision.selected_agent, "yonc")
+
+    def test_disabled_librarian_is_not_routed_or_directly_assigned(self) -> None:
+        task = self.control.create_task(
+            self.task(required_capabilities={"archive_retrieval"}, required_tools={"librarian_read"}),
+            actor_id="orchestrator",
+        )
+        self.assertIsNone(self.control.route_task(task.task_id).selected_agent)
+        with self.assertRaises(PolicyDeniedError):
+            self.control.assign_task(task.task_id, "librarian", actor_id="orchestrator")
 
     def test_mixed_orchestrator_tool_contract_requires_split(self) -> None:
         task = self.control.create_task(
@@ -335,7 +344,7 @@ class ControlPlaneTestCase(unittest.TestCase):
             self.control.propose_operation(stale)
         event_count = self.control.health()["counts"]["events"]
         self.assertEqual(self.control.events.rebuild_projections(), event_count)
-        self.assertEqual(self.control.health()["counts"]["agents"], 7)
+        self.assertEqual(self.control.health()["counts"]["agents"], 8)
 
     def test_heartbeat_cannot_write_terminal_or_review_status(self) -> None:
         task = self.task(source="direct")

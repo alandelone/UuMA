@@ -62,12 +62,27 @@ try {
             Write-ServiceLog "Scholar is already listening; skipping."
             exit 0
         }
-        $env:PYTHONPATH = "$(Join-Path $root 'src');$(Join-Path $ProjectRoot 'src')"
-        $env:RSTV4_ROOT = $root
+        $activeRelease = Join-Path $ProjectRoot '.uuma-local\scholar-catalog-runtime\active-release.json'
+        if (Test-Path -LiteralPath $activeRelease -PathType Leaf) {
+            $resolver = Join-Path $PSScriptRoot 'resolve-scholar-catalog-runtime.ps1'
+            $runtimeText = & $resolver -ManifestPath $activeRelease -ExpectedDataRoot $root -ProjectRoot $ProjectRoot
+            $runtime = ($runtimeText -join [Environment]::NewLine) | ConvertFrom-Json
+            $root = $runtime.data_root
+            $executable = $runtime.python
+            $env:RSTV4_CATALOG_UNDERSTANDING_UI = '1'
+            Write-ServiceLog "Using fixed Scholar release $($runtime.package_sha256)."
+        } else {
+            $env:PYTHONPATH = "$(Join-Path $root 'src');$(Join-Path $ProjectRoot 'src')"
+            $env:RSTV4_ROOT = $root
+            $executable = Join-Path $root ".venv\Scripts\python.exe"
+            $ownerCheck = & $executable -m rstv4.catalog_runtime --root $root --engine-root $root
+            if ($LASTEXITCODE -ne 0) {
+                throw 'Scholar owner admission failed; use the scoped upgrade without implicit migration.'
+            }
+        }
         $env:RSTV4_CATALOG_HOST = "0.0.0.0"
         $env:RSTV4_CATALOG_PORT = "8875"
         $env:RSTV4_ALLOWED_HOSTS = "*"
-        $executable = Join-Path $root ".venv\Scripts\python.exe"
         $arguments = @("-u", "-m", "rstv4.catalog_web")
     } else {
         $root = Join-Path $workspace "livechat_agent"

@@ -52,22 +52,23 @@ class CommandAuthorizer:
     def reserve(
         self, payload: dict, headers, *, now: float | None = None,
     ) -> tuple[str, dict | None]:
-        """Authenticate one narrow intent, then reserve it before any business write."""
+        """Authenticate one signed navigation intent before any business write."""
         user = headers.get("x-uuma-command-user", "")
         nonce = headers.get("x-uuma-command-nonce", "")
         timestamp = headers.get("x-uuma-command-timestamp", "")
         signature = headers.get("x-uuma-command-signature", "")
         if (
-            payload.get("action") != "create" or user not in self.allowed_users
+            payload.get("action") not in {"create", "question", "checkpoint"}
+            or user not in self.allowed_users
             or not 16 <= len(nonce) <= 128
             or not 1 <= len(timestamp) <= 12 or not timestamp.isascii()
             or not timestamp.isdigit() or len(signature) != 64
             or any(character not in "0123456789abcdef" for character in signature)
         ):
-            raise PermissionError("Invalid human topic command")
+            raise PermissionError("Invalid signed human navigation command")
         expected = sign_command(self._secret(), payload, timestamp, nonce, user)
         if not hmac.compare_digest(expected, signature):
-            raise PermissionError("Invalid human topic command")
+            raise PermissionError("Invalid signed human navigation command")
         digest = hashlib.sha256(json.dumps(
             {"payload": payload, "user": user}, sort_keys=True,
             separators=(",", ":"), ensure_ascii=False,

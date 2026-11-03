@@ -32,6 +32,7 @@ from .knowledge_models import (
     SourceRecord,
 )
 from .knowledge_store import TABLE_IDS, KnowledgeStore
+from .research_quota import ResearchQuota
 
 
 class KnowledgeAuthorizationError(PermissionError):
@@ -527,7 +528,7 @@ class KnowledgeService:
             for gap_id in after["active_gap_ids"]:
                 self._require("gaps", gap_id, conn)
             after_model = ResearchRun.model_validate(after)
-            after = json_record(self._enforce_research_budget(after_model))
+            after = json_record(self._enforce_research_budget(after_model, conn=conn, before=before))
             event = self.store.append_event(
                 conn,
                 event_type="RESEARCH_RUN_UPDATED",
@@ -545,25 +546,24 @@ class KnowledgeService:
             )
         return after
 
-    @classmethod
-    def _enforce_research_budget(cls, run: ResearchRun) -> ResearchRun:
-        if run.status.value not in {"PLANNED", "ACTIVE", "PAUSED"}:
+    def _enforce_research_budget(self, run: ResearchRun, *, conn=None, before=None) -> ResearchRun:
+        if run.status.value not in {"PLANNED", "ACTIVE"}:
             return run
-        seconds, sources, tokens = cls.RESEARCH_BUDGETS[run.budget_tier.value]
-        exhausted = []
-        if run.active_seconds >= seconds:
-            exhausted.append(f"active time {run.active_seconds:g}/{seconds:g} seconds")
-        if run.sources_used >= sources:
-            exhausted.append(f"sources {run.sources_used}/{sources}")
-        if run.model_tokens_used >= tokens:
-            exhausted.append(f"model tokens {run.model_tokens_used}/{tokens}")
-        if not exhausted:
+        quota = ResearchQuota.from_env()
+        pending = quota.delta(before or {}, json_record(run))
+        if conn is None:
+            with self.store.connect() as opened:
+                budget = quota.snapshot(opened, pending=pending)
+        else:
+            budget = quota.snapshot(conn, pending=pending)
+        if not budget["exhausted"]:
             return run
         return ResearchRun.model_validate(
             run.model_dump()
             | {
                 "status": ResearchRunStatus.BUDGET_EXHAUSTED,
-                "stop_reason": "Research budget exhausted: " + ", ".join(exhausted) + ".",
+                "stop_reason": "Today's configured research ceiling is reached; waiting for "
+                               + budget["reset_at"],
             }
         )
 

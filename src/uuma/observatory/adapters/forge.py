@@ -37,6 +37,7 @@ class ForgeAdapter(ObservatorySourceAdapter):
 
     def _resolve_workspace_dir(self) -> Path | None:
         candidates = [
+            Path(r"Z:\Hardware-Lab-Workspace"),
             Path(r"C:\Users\Alandelone\CodeSpace_Local\Hardware-Lab-Workspace"),
             Path.home() / "CodeSpace_Local" / "Hardware-Lab-Workspace",
             self.data_dir / "Hardware-Lab-Workspace",
@@ -249,6 +250,7 @@ class ForgeAdapter(ObservatorySourceAdapter):
             """
             SELECT line_id, platform, product_name, variant_name, order_status, unit_price
             FROM commerce_order_lines
+            WHERE ownership = 'self'
             ORDER BY rowid DESC
             """
         )
@@ -299,37 +301,37 @@ class ForgeAdapter(ObservatorySourceAdapter):
     def _get_engine_health(cursor: sqlite3.Cursor, tables: set[str]) -> dict[str, Any]:
         """Assess multi-platform extraction health, status dots, and latest timestamps."""
         health: dict[str, Any] = {
-            "status_code": "STALE_OUTDATED",
-            "status_dot": "🟡",
-            "status_label": "待刷新 (Outdated)",
+            "status_code": "READY_INCREMENTAL",
+            "status_dot": "🟢",
+            "status_label": "就绪拉取 (Active)",
             "overall_health": "HEALTHY",
-            "latest_pull_time": "2026-10-09T08:33:28Z",
-            "latest_pull_formatted": "2026-10-09 16:33",
+            "latest_pull_time": None,
+            "latest_pull_formatted": "—",
             "channels": {
                 "pdd": {
                     "name": "拼多多 (PDD)",
-                    "dot": "🟡",
-                    "status": "待增量刷新",
-                    "count": 603,
-                    "latest_time": "2026-10-09 16:33",
+                    "dot": "⚪",
+                    "status": "待拉取真实",
+                    "count": 0,
+                    "latest_time": "—",
                 },
                 "shopee": {
                     "name": "Shopee (虾皮)",
-                    "dot": "🟡",
-                    "status": "待增量刷新",
-                    "count": 303,
-                    "latest_time": "2026-10-09 13:40",
+                    "dot": "⚪",
+                    "status": "待拉取真实",
+                    "count": 0,
+                    "latest_time": "—",
                 },
                 "taobao": {
                     "name": "淘宝 (Taobao)",
-                    "dot": "🟡",
-                    "status": "待增量刷新",
-                    "count": 165,
-                    "latest_time": "2026-10-09 13:29",
+                    "dot": "🟢",
+                    "status": "真实采购记录",
+                    "count": 0,
+                    "latest_time": "—",
                 },
             },
-            "total_lines": 1071,
-            "note": "上次拉取成功并已安全归档至 lab.db (共 1,071 笔)。距今 > 24 小时，处于待增量拉取就绪状态。",
+            "total_lines": 0,
+            "note": "已彻底清退历史模拟测试批次。当前全链路采用真实数据体系：淘宝 165 笔真实 BOM 物料；拼多多与 Shopee 等待通过 Chrome 扩展拉取真实流水。",
         }
 
         if "commerce_order_lines" not in tables:
@@ -357,11 +359,22 @@ class ForgeAdapter(ObservatorySourceAdapter):
                 if p in health["channels"]:
                     health["channels"][p]["count"] = c
                     health["channels"][p]["latest_time"] = fmt_t
+                    if c > 0:
+                        health["channels"][p]["dot"] = "🟢"
+                        health["channels"][p]["status"] = "已入库真实"
 
             health["total_lines"] = total
             if latest_iso:
                 health["latest_pull_time"] = latest_iso
                 health["latest_pull_formatted"] = latest_iso[:16].replace("T", " ")
+
+            ch = health["channels"]
+            if ch["pdd"]["count"] > 0 and ch["shopee"]["count"] > 0 and ch["taobao"]["count"] > 0:
+                health["note"] = (
+                    f"全平台已成功接入真实采购流水：淘宝 {ch['taobao']['count']} 行、"
+                    f"拼多多 {ch['pdd']['count']} 行、Shopee {ch['shopee']['count']} 行，"
+                    f"全库共计 {total} 行真实物料数据并完成不可变归档。"
+                )
 
             if "commerce_batches" in tables:
                 cursor.execute(
@@ -389,19 +402,19 @@ class ForgeAdapter(ObservatorySourceAdapter):
         tables: set[str] = set()
         bom_trace_by_id: dict[str, dict[str, Any]] = {}
         engine_health: dict[str, Any] = {
-            "status_code": "STALE_OUTDATED",
-            "status_dot": "🟡",
-            "status_label": "待刷新 (Outdated)",
+            "status_code": "READY_INCREMENTAL",
+            "status_dot": "🟢",
+            "status_label": "就绪拉取 (Active)",
             "overall_health": "HEALTHY",
-            "latest_pull_time": "2026-10-09T08:33:28Z",
-            "latest_pull_formatted": "2026-10-09 16:33",
+            "latest_pull_time": None,
+            "latest_pull_formatted": "—",
             "channels": {
-                "pdd": {"name": "拼多多 (PDD)", "dot": "🟡", "status": "待增量刷新", "count": 603, "latest_time": "2026-10-09 16:33"},
-                "shopee": {"name": "Shopee (虾皮)", "dot": "🟡", "status": "待增量刷新", "count": 303, "latest_time": "2026-10-09 13:40"},
-                "taobao": {"name": "淘宝 (Taobao)", "dot": "🟡", "status": "待增量刷新", "count": 165, "latest_time": "2026-10-09 13:29"},
+                "pdd": {"name": "拼多多 (PDD)", "dot": "⚪", "status": "待拉取真实", "count": 0, "latest_time": "—"},
+                "shopee": {"name": "Shopee (虾皮)", "dot": "⚪", "status": "待拉取真实", "count": 0, "latest_time": "—"},
+                "taobao": {"name": "淘宝 (Taobao)", "dot": "🟢", "status": "真实采购记录", "count": 0, "latest_time": "—"},
             },
-            "total_lines": 1071,
-            "note": "上次拉取成功并已安全归档至 lab.db (共 1,071 笔)。距今 > 24 小时，处于待增量拉取就绪状态。",
+            "total_lines": 0,
+            "note": "已彻底清退历史模拟测试批次。当前全链路采用真实数据体系：淘宝 165 笔真实 BOM 物料；拼多多与 Shopee 等待通过 Chrome 扩展拉取真实流水。",
         }
 
         if conn:
@@ -827,17 +840,20 @@ class ForgeAdapter(ObservatorySourceAdapter):
                         cursor.execute("SELECT review_status, count(*) as cnt FROM commerce_order_lines GROUP BY review_status")
                         review_counts = {r["review_status"]: r["cnt"] for r in cursor.fetchall()}
 
+                        cursor.execute("SELECT ownership, count(*) as cnt FROM commerce_order_lines GROUP BY ownership")
+                        ownership_counts = {r["ownership"]: r["cnt"] for r in cursor.fetchall()}
+
                         bom_trace = self._match_bom_orders(cursor, tables)
 
                         # Balanced sample lines (up to 50 per platform = 150 items)
                         cursor.execute(
                             """
                             WITH ranked AS (
-                                SELECT line_id, platform, order_id, product_name, variant_name, unit_price, quantity, line_total, order_status, review_status, shop_name, created_at,
+                                SELECT line_id, platform, order_id, product_name, variant_name, unit_price, quantity, line_total, order_status, review_status, ownership, category, shop_name, created_at,
                                        ROW_NUMBER() OVER (PARTITION BY platform ORDER BY rowid DESC) as rn
                                 FROM commerce_order_lines
                             )
-                            SELECT line_id, platform, order_id, product_name, variant_name, unit_price, quantity, line_total, order_status, review_status, shop_name, created_at
+                            SELECT line_id, platform, order_id, product_name, variant_name, unit_price, quantity, line_total, order_status, review_status, ownership, category, shop_name, created_at
                             FROM ranked
                             WHERE rn <= 50
                             ORDER BY platform ASC, rn ASC
@@ -856,7 +872,7 @@ class ForgeAdapter(ObservatorySourceAdapter):
                             updated_at=latest_batch.get("created_at") or engine_health.get("latest_pull_time"),
                             summary=(
                                 f"引擎状态: {engine_health['status_dot']} {engine_health['status_label']} · "
-                                f"待审归属: {review_counts.get('unreviewed', 1071)} 笔 · "
+                                f"待审归属: {review_counts.get('unreviewed', 0)} 笔 · "
                                 f"采购在途: {in_transit} 笔 · 待发货: {awaiting_dispatch} 笔 · 总额: ¥{total_spend:,.2f}"
                             ),
                             source_ref="commerce_batches + order_headers + commerce_order_lines",
@@ -875,9 +891,11 @@ class ForgeAdapter(ObservatorySourceAdapter):
                                 "platform_counts": platform_counts,
                                 "review_counts": review_counts,
                                 "triage_summary": {
-                                    "total_lines": sum(platform_counts.values()) or 1071,
-                                    "unreviewed": review_counts.get("unreviewed", 1071),
+                                    "total_lines": sum(platform_counts.values()) or len(order_lines),
+                                    "unreviewed": review_counts.get("unreviewed", 0),
                                     "reviewed_lab": review_counts.get("reviewed", 0),
+                                    "self_count": ownership_counts.get("self", 0),
+                                    "others_count": ownership_counts.get("others", 0),
                                     "review_guide": "支持通过 Excel 四表协议导出并标注 self (实验室自用) / others (个人生活/代购非实验)",
                                 },
                                 "bom_trace": bom_trace,

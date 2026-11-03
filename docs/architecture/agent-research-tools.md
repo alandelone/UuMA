@@ -1,3 +1,5 @@
+> 2026-10-22 implementation update: Deep Research → academic → general web → supplemental sources, with an independent coverage critic between batches. See [Wisdom research critic](wisdom-research-critic.md) for the current contract; older reproduction notes below describe their historical route.
+
 # Agent 研究工具与可解释的持续研究
 
 状态：2026-10-02 用户要求的架构更新；运行实现差距见末节。

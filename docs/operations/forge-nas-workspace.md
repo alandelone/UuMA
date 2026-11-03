@@ -1,3 +1,5 @@
+> **2026-10-22 cleanup:** Verified old C copies and local final snapshots have been deleted by user request; server/NAS originals remain. [Cleanup record](migrated-source-cleanup-20261022.md) supersedes earlier local rollback-copy notes.
+
 # Forge workspace on NAS
 
 ## Active ownership
@@ -7,11 +9,12 @@ These are the same directory on `\\192.168.55.2\NAS`, including `.git`.
 `deploy/forge-workspace.json` records the host paths used by deployment and Observatory.
 Only one host may perform Git writes or modify the workspace at a time.
 
-The original `C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace` is retained as a
-rollback copy. Do not continue development in that copy. After new NAS writes, switching
-back requires reconciling them first; do not copy the old tree over the active workspace.
-Forge's terminal, command plugin and project registry now use Z. The Forge Agent itself
-still runs on the workstation pending its separate domain and eSchematic cutover.
+The original `C:/Users/Alandelone/CodeSpace_Local/Hardware-Lab-Workspace` was deleted
+on 2026-10-22 after verification and explicit user authorization. Forge now runs on the
+server; its workspace uses the Linux NAS path. Windows development uses Z. Restore or
+rollback must reconcile new NAS/server writes and use retained server backups.
+See [Agent development and publishing](agent-development-and-release.md) before edits
+or deployment.
 
 ## Git and availability
 

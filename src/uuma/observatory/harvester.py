@@ -140,6 +140,13 @@ def _format_event_summary(hook: str, tool_name: str | None, data: dict[str, Any]
 
 def parse_spool_file(file_path: Path) -> ActivityEvent | None:
     try:
+        try:
+            if file_path.stat().st_size > 512_000:
+                logger.debug("Skipping oversized spool file (%s bytes): %s", file_path.stat().st_size, file_path.name)
+                return None
+        except OSError:
+            return None
+
         content = file_path.read_text(encoding="utf-8", errors="replace")
         payload = json.loads(content)
         data = payload.get("data") or {}
@@ -166,7 +173,7 @@ def parse_spool_file(file_path: Path) -> ActivityEvent | None:
             source_path=str(file_path),
             raw_snippet=raw_snippet,
         )
-    except (json.JSONDecodeError, OSError, ValueError) as exc:
+    except Exception as exc:
         logger.debug("Failed to parse spool file %s: %s", file_path, exc)
         return None
 
@@ -224,9 +231,12 @@ class Harvester:
             entries = []
             for entry in os.scandir(self.spool_dir):
                 if entry.name.endswith(".json") and entry.is_file():
-                    stat = entry.stat()
-                    if stat.st_mtime >= cutoff:
-                        entries.append((stat.st_mtime, Path(entry.path)))
+                    try:
+                        stat = entry.stat()
+                        if stat.st_size <= 512_000 and stat.st_mtime >= cutoff:
+                            entries.append((stat.st_mtime, Path(entry.path)))
+                    except OSError:
+                        continue
 
             entries.sort(key=lambda x: x[0], reverse=True)
             recent_files = [p for _, p in entries[:500]]
@@ -248,7 +258,7 @@ class Harvester:
                     last_event_at=events[0].captured_at if events else None,
                 )
             )
-        except (OSError, ValueError) as exc:
+        except Exception as exc:
             logger.error("Fast initial harvest error: %s", exc)
 
     def _run_backfill(self) -> None:
@@ -266,6 +276,16 @@ class Harvester:
             total = len(all_files)
             self.progress.total_files = total
 
+            cursor = self.storage.get_cursor("hermes_spool_backfill")
+            if cursor and cursor.get("last_timestamp"):
+                # History is already backfilled; skip full disk scan and mark complete
+                self.progress.indexed_files = total
+                self.progress.percent = 100.0
+                self.progress.is_complete = True
+                if self.on_progress:
+                    self.on_progress(self.progress)
+                return
+
             all_files.sort(key=lambda p: p.stat().st_mtime, reverse=True)
 
             batch: list[ActivityEvent] = []
@@ -277,6 +297,9 @@ class Harvester:
                 if ev:
                     batch.append(ev)
                     self._known_event_ids.add(ev.event_id)
+
+                if len(self._known_event_ids) > 10000:
+                    self._known_event_ids.clear()
 
                 if len(batch) >= 200:
                     self.storage.insert_events(batch)
@@ -297,10 +320,15 @@ class Harvester:
             self.progress.indexed_files = total
             self.progress.percent = 100.0
             self.progress.is_complete = True
+            self.storage.update_cursor(
+                "hermes_spool_backfill",
+                last_file=all_files[0].name if all_files else "",
+                last_timestamp=datetime.now(UTC).isoformat(),
+            )
             if self.on_progress:
                 self.on_progress(self.progress)
 
-        except (OSError, ValueError) as exc:
+        except Exception as exc:
             logger.error("Backfill error: %s", exc)
 
     def _run_periodic_poll(self) -> None:

@@ -1,5 +1,237 @@
 # Findings
 
+## 2026-10-25 fresh Scholar parser dependency startup exceeds its preflight window
+
+Confirmed nested-device gap after the controlled same-job retry: five-page
+analysis progressed past formula detection and failed in RapidTable's
+rapidocr_paddle.PaddleInferSession with GPU0 ResourceExhaustedError. Preserve
+resume-parser-child-v3.json (RESOURCE_WAIT,attempts3/fence3,79.813s), no completed
+parse/initial child. Installed MinerU1.2.2 RapidTableModel chooses RapidOCR from
+torch.cuda.is_available() and explicitly sets det_use_cuda/cls_use_cuda/rec_use_cuda
+True even when get_device() is cpu. Existing bridge compatibility only wraps
+ModifiedPaddleOCR, so it does not cover this nested factory. Prepare a CPU-scoped
+RapidOCR constructor wrapper forcing all three flags False, preserving explicit
+CUDA configuration and all model/page/formula/table work. Optional absent
+rapidocr_paddle may retain the existing CPU ONNX path; a broken transitive import
+must still fail. Candidate is isolated under cpu-ocr-compat-candidate-v1; do not
+edit the source frozen by running full-v7. Validate candidate wiring, then actual
+whole-PDF recovery with an explicit no-GPU-predictor guard and current full source.
+
+Separate later failure: the corrected startup120-second source passed admission
+and entered actual full-PDF CPU analysis. The second page's YOLOv8 formula
+detector then crashed in torch.nn.Conv2d/_conv_forward with Windows access
+violation3221225477. First-page analysis completed; no complete model.json,
+parse_run or initial child published. Preserve resume-parser-child-v2.json and
+real-fresh-parser-child-driver-v3.log. This is not another startup timeout.
+Diagnose the exact source images, pinned formula weights and CPU convolution
+backend in bounded separate processes before another whole-PDF attempt. Keep
+formula/table processing, all pages and version/source checks; no dependency
+upgrade, excerpt fallback or success claim is justified by this crash alone.
+
+Control outcome: isolated formula detection on the same two native image hashes
+passed with both MKLDNN enabled and disabled. Resource-gated original full-model
+loading/order plus those same two pages also completed with both settings:
+40.188seconds enabled/47.266disabled, torch threads1, same pinned models/source.
+These controls do not reproduce the original access violation or establish a
+backend defect; do not flip the product backend speculatively. They are partial
+diagnostics, not a five-page parse. Preserve formula-full-context-controls-v2 and
+both raw logs/model outputs. Resume the SAME unparsed source job once through
+the unchanged corrected startup engine/default backend and the measured control
+environment (dependency automatic-update probes disabled). Require complete
+five-page/source-quality acceptance, one compatible initial child, unchanged old
+events and repeat-request/reconciliation identity before claiming recovery.
+
+Measured context: import-step-diagnostic-v1 completed successfully in81.609seconds,
+with identical pinned versions and the actual pdf_parse_main import at80.547seconds.
+Compatibility installation took3.016seconds. Timed stacks progressed from Paddle
+core.init_devices through Torch bytecode and further module loading; this is not
+evidence of a permanent device deadlock. The configured MinerU device is cpu.
+Use a bounded120-second dependency-startup window, distinct from PDF processing
+timeouts, retaining version/import/source checks and timeout failure propagation.
+Verify the same unparsed source job with the corrected explicitly recorded engine;
+do not report the diagnostic itself as parser-child success.
+
+The current1525-test/367-file full source passed unchanged, but a different real
+PDF's first parser attempt stopped in MinerUParser.check before parsing. The
+original pinned dependency-import subprocess exceeded30seconds and the same
+source job correctly remained RESOURCE_WAIT. An independent unchanged30-second
+check reproduced TimeoutExpired; no PDF parse or model request occurred. Preserve
+real-reading-fresh-child-v2/run.json, startup-diagnostic-v1.json and both driver
+logs under the private Scholar implementation receipts. The cause is not yet
+established: do not assume an absent PDF, broken model or merely cold startup.
+
+Before another parser retry, run one bounded step-timed dependency diagnostic
+with stack traces to identify the slow import. A longer diagnostic observation
+window is not a changed product timeout or successful parser acceptance. Preserve
+the exact magic-pdf1.2.2/transformers4.42.4 assertions, import compatibility and
+actual pdf_parse_main import, source integrity and original task identity. Record
+the measured missing execution context before changing any runtime budget. Follow
+rules/scholar-reading-verification.md; resume verification/pending_review without
+approving the gate or replaying completed initial/native work.
+
+## 2026-10-24 Skeleton view batching needs the model serializer, not identity JSON
+
+Recovery: the original long-source and immutable native-argument checks passed,
+followed by190 related checks and the complete1403-test backend suite. All351
+source/test hashes remained unchanged and match the final checkpoint. Full source
+coverage, original records, layer bindings, publication replay and gateway budgets
+were preserved; no compact/native identity namespace was changed for admission.
+
+Skeleton-views-v4 retained97passes/one valid long-view failure. New part planning
+used Catalog's compact identity JSON while Synthesis/UnlimitedLLMGateway serialize
+spaced sorted JSON for input admission. The compact estimate undercounted request
+metadata. Preserve the full-source success assertion, failure log and every source
+record. Use the exact model serialization for batching; keep compact/native digest
+namespaces unchanged. Include task/actual/limit in overflow diagnostics, then rerun
+the original narrow case and broader/full verification. No budget increase,
+truncation, source substitution or weakened coverage assertion is authorized.
+
+## 2026-10-24 located Skeleton windows need a serialized dependency budget
+
+Recovery evidence: original pause and complete expansion checks both passed in
+located-v6; related183 checks and final complete1386-test suite passed with all348
+source/test files unchanged and equal to the final checkpoint. Complete original
+source, every prior layer and all scientific fields remain; only duplicate copies
+are represented by exact source references. This proves software execution and
+mechanical grounding, not whole-document semantic or scientific acceptance.
+
+The additional located-deep-v5 pause fixture was93-pass/one-failure: a denser
+2000-character window still stopped before L4, with three returned call inputs
+14261/27255/27976 characters. Preserve that failure and its isolated read-only
+diagnostic. Budget planning must also remove duplicate copies of source-span
+text and L1 quotations through a reversible reference encoding. The raw source,
+span offsets/IDs, every scientific field and all preceding layer outputs remain;
+an exact expansion test must reproduce the entire original input. Version this
+context encoding and dependent prompts; do not weaken the pause/call-count test.
+
+The valid long-Unicode-source success assertion failed in located-deep-v2 and
+v3; both52-pass/one-failure logs are retained. Raw-window length alone omitted
+source-span metadata, repeated opaque segment/atom IDs and preceding L1-L3
+outputs. A no-model diagnostic of the first2000-character fixture window measured
+L1 input14287, L2 input26726, L3 input27527 and L4 input32865 characters, exceeding
+the existing L4 admission budget31488. L1 output was13928 and L3 output5770;
+the long hash-based IDs recur throughout these records. This is missing execution
+context, not an incorrect full-source/quotation/coverage assertion.
+
+Keep the complete source, original layer schemas, every dependency and both
+failures. Account for full serialized payloads and use compact collision-checked
+window-local segment IDs with original parent/range provenance. Keep full receipt
+and source digests. Do not raise the declared model budget, truncate text, remove
+layers or mark an unfinished overview complete. Diagnose exact payload sizes
+before rerunning the narrow failure, then the broader/full regression from the
+unchanged verification/pending_review gate. Narrow policy:
+`rules/scholar-reading-verification.md`. Diagnostic helper and retained logs:
+`.uuma-local/scholar-catalog-implementation-20261023/`.
+
+## 2026-10-23 Scholar reading verification needs an explicit night clock
+
+Core reading implementation now enforces the user's00:00-08:00Asia/Kuala_Lumpur
+window and manual-request priority. The initial test run exposed absent Windows
+tzdata (19failed/4passed); the dependency was declared/installed, with original
+failure evidence retained. Subsequent native-pipeline tests lacked an in-window
+clock and assumed reasons automatically authorize deep work. Declare night clock
+and explicit per-Collection opt-in for those automatic scenarios. A foreign-source
+immediate-request fixture now records user_requested, preserving all original
+source rejection/no-model/receipt assertions. Scoped successors passed26,41and51.
+The broader successor retained70passes/6Catalog-selection failures: its scope/
+metadata/lease tests also omitted the automatic reading clock, so their model
+job correctly remained unclaimed during daytime. This is missing execution
+context, not an incorrect safety assertion. Preserve all unchanged assertions
+and add explicit night context to the affected tests. Narrow instruction:
+`rules/scholar-reading-verification.md`. Resume current verification/pending_review
+without approving the gate or resetting shared work. Private before files and
+logs: `.uuma-local/scholar-catalog-implementation-20261023/`.
+
+## 2026-10-23 Wisdom quota implemented; misplaced Brainstormer policy reversed
+
+The user explicitly requested deleting the Brainstormer change and applying the
+quota adjustment to Wisdom, referencing the independent critic conversation.
+Release `ab2861c799c316346bb22d5de61f7eb377cbe19950d7bf584c3458cdd64e12e9`
+was applied and verified at 16:41 Asia/Kuala_Lumpur. This supersedes the earlier
+discussion-only target correction below; preserve all historical receipts.
+
+Brainstormer's misplaced SOUL section and its empty cache default are removed,
+with compensating version history. Its existing Menu/navigation and concurrent
+`complex` worker configuration remain. Wisdom's actual code now separates
+cumulative reporting from optional combined daily ceilings, with no custom ceiling
+currently enabled (`{}`). Explicit provider quota/RPM waits retain the retry time,
+frontier/cursor and original pending request without consuming the ordinary
+three-attempt failure allowance. A quota-waiting worker stays available through
+its idle timeout. Human pause/stop overrides waiting; no historical research was
+restarted. Old cumulative budget stops can explicitly continue without clearing
+counters or escalating a tier. Provider reset times remain unknown unless supplied;
+a local backoff is not a confirmed daily reset.
+
+The four-tier search order, `complex` independent critic's prompt/evidence/verdict
+checks and canonical knowledge review boundary remain in place. All 3,696 cycles
+and five Orbits/research runs validated on an isolated canonical backup. Related
+116 checks passed and the final ten quota checks passed after MCP continuation
+changes; failed diagnostic runs were preserved. Live verification confirmed exact
+canonical records and a valid event chain, new source import, five Telegram
+connections and reopened intake. Only Wisdom view restarted; no shared gateway
+restart, domain schema/history reset, new inference or Telegram send. See
+`docs/operations/wisdom-daily-quota-20261023.md` and scoped local/server receipts.
+
+## 2026-10-23 quota discussion target correction: Wisdom-Oldman
+
+The user clarified that the budget/daily-refresh discussion starting with the
+Thursday 10:42 PM hard-budget answer belonged to Wisdom-Oldman in another chat.
+The assistant incorrectly applied prompt guidance to Brainstormer. Prior statements
+that this Brainstormer publication completed the intended daily-quota work are
+superseded by this correction. Keep the original receipts as historical evidence.
+
+Actual release3dcf764d changed only Brainstormer SOUL guidance, an explicit empty
+disabled_toolsets default for cache invalidation and version metadata. It introduced
+no runtime daily accounting, reset or recovery scheduler. Brainstormer had no custom
+cumulative spending stop; it still uses the provider account's actual limits.
+
+Read-only server audit confirmed Wisdom Question Orbit's deployed code still checks
+cumulative research-run time, sources, tokens and searches against QUICK/STANDARD/DEEP
+limits. It has no daily reset in those checks. Do not claim the requested Wisdom
+daily-quota policy is implemented, or that Brainstormer has unlimited upstream quota.
+The intended future implementation target is Wisdom-Oldman: retain cumulative
+receipts, distinguish actual upstream availability from any custom per-day ceiling,
+preserve progress and explicit human pauses, and continue after the applicable quota
+window recovers. This clarification/audit made no production runtime/state changes,
+did not revert the historical Brainstormer release, and did not resume research.
+
+## 2026-10-23 Brainstormer quota policy deployed and confirmed
+
+The user authorized applying the refreshing-quota policy to the server Brainstormer.
+Release `3dcf764da23a2773dd8faf0cdc1f9e9de8a873d7f9cf1529ddbb00e92125186c`
+was published on 2026-10-22 and read-only reconfirmed on 2026-10-23.
+Cumulative usage is reporting only; no custom spending ceiling is introduced.
+True provider quota/RPM failures are temporary availability conditions. Continue the
+saved topic on the next user message/retry after recovery; no automatic resume
+scheduler was added. Future user-defined ceilings must be daily with explicit scope
+and timezone. No Brainstormer lifetime spending stop existed to remove; Wisdom's
+Question Orbit budgets remain separate. This deployment supersedes the earlier
+discussion-only status below.
+
+Published only the SOUL policy section, an explicit empty config default that refreshes
+the existing prompt cache, and version metadata. No gateway restart or database change.
+Initial restart and stale-environment previews were not applied; current unrelated
+provider/plugin changes and other agents' runs were preserved. Actual runtime SOUL
+loading, cache-signature change, five connected adapters and reopened intake were
+confirmed without new inference, Telegram sends or task replay. See
+`docs/operations/brainstormer-quota-policy.md` and its scoped deployment receipts.
+
+## 2026-10-22 Daily provider quota clarification
+
+The user clarified that provider usage is governed by a daily quota that refreshes.
+Preserve saved task progress and cumulative usage receipts across quota windows;
+temporary quota unavailability should be represented as waiting for refreshed
+capacity. Keep this separate from explicit cumulative task limits and human
+pause/stop state. The provider's actual reset timestamp, timezone, model and account
+scope have not been established by this discussion.
+
+Read-only source investigation found two different mechanisms: AccountPool applies
+a generic 30-minute cooldown after explicit quota errors, while QuestionOrbit
+accumulates active time, sources, tokens and searches against task-tier limits.
+Those mechanisms do not constitute daily-window quota tracking and task recovery.
+This clarification has been recorded; no quota implementation, production settings,
+task limits or historical task states were changed in this discussion.
+
 ## 2026-10-22 Scholar FieldKG server deployment context
 
 The FieldKG bridge belongs to a separate ScholarFieldKG project, not Wisdom's
@@ -3619,3 +3851,236 @@ Report: docs/reviews/scholar-rstv4-2026-09-30/flash38-text-to-skeleton-2026-10-1
 
 
 2026-10-21 published-access validation context: isolated WebSocket fixture requires explicit wss host for Secure cookie; default TestClient ws testserver correctly rejected. Real Live root returns302 /live/; Scholar read endpoint is /api/catalog/research-overview. Initial preflight assumptions failed before any tunnel change; strict auth and final200 assertions retained after declaring exact native navigation/endpoints. See rules/public-access-validation.md and .uuma-local/public-access-20261021. No inference or application restart.
+
+
+## 2026-10-23 Observatory Wisdom history and remote-owner readback
+
+The empty investigation list was a display/source bug, not deleted research: the old UI used only the first ACTIVE topic's latest Orbit, and the reader still searched workstation databases after the server migration. Explicit paths must not be overridden by mtime heuristics. The live read-only fix preserves all 4 topics, 5 Orbits and 18 frontier records (6 FILLED / 12 unfinished), with no live cycle and Fleet/agent status IDLE. Restarted only the local Observatory, not the server agents. All five detail-owner reads and served-source equality passed; 18 Python and 4 JS checks passed. Actual browser visuals remain unverified because this session has no browser-control tool.
+
+Failure context retained: missing editable package required PYTHONPATH=src for the managed session; explicit-path selection initially broke an isolated old API fixture and was fixed in the product without weakening its assertion; a standalone remote reader needed its own module-level json import; Windows test subprocess stdin required explicit UTF-8 like the real SSH transport. Reader script execution now asserts successful child exit and preserves fixture DB bytes. See rules/observatory-readonly-sources.md and docs/observability/wisdom-investigation-history-fix-2026-10-23.md. All unrelated ongoing work and the pending mission gate remain preserved.
+
+
+## Scholar Catalog successor verification, 2026-10-24
+
+The frozen RSTV4 v3 full run retained1284 passes/1 failure: a hard-coded v14 migration target after the additive schema15 change. The successor uses CATALOG_VERSION and additionally compares the complete backup to the pre-migration snapshot. A queue test also required distinct queued timestamps because Windows can assign consecutive inserts one tick. All original integrity assertions remain. The15-file successor passed181 checks; import-only formatting then passed27 checks and scoped Ruff. Original failed receipts remain, and this is not a green full-suite claim. See rules/scholar-reading-verification.md and the dedicated implementation memory. Goal and verification gate remain open.
+
+
+## 2026-10-24 Skeleton Theme global integration v1 recovery
+
+Retained private catalog-skeleton-themes-v1: 3 failed / 59 passed. New reconciliation was after skeleton_view_final, invalidating the existing pause-at-final recovery expectation (two genuinely new calls remained). Move reconciliation before the final checkpoint; keep the original no-extra-call assertion. Source-backed observation arrays used insertion order while corrections canonicalize by block/start/end; publish the same canonical order, retaining every original reference, and keep exact evidence equality. The new no-fabricated-initial test incorrectly assumed library() has no initial run; its actual implementation explicitly publishes one. Compare every original initial-run row before/after deep work instead; no initial records may be added or mutated. No scientific/assertion/lease/source requirements relaxed. Schema20 adds only a deep-view/observation association; v1 local-role artifacts are not auto-backfilled or silently granted v2 inference scope.
+
+
+Skeleton Themes v2 recovery: 95 passed / 1 newly added HTTP correction failed. StrictModel inherits str_strip_whitespace=True; HTTP ThemeEvidence trimmed a real atom quotation ending in a space, while its immutable end offset remained unchanged. Direct semantic correction preserved the quote and passed. Override trimming only on the source-evidence wire model, keep extra-field rejection, exact quotations, source offsets and native identity checks. Do not strip source text or relax offset assertions. The existing new HTTP test retains its source-space reproduction.
+
+
+Final Theme checkpoint v1 is retained as insufficient evidence: the Windows verifier decoded native Node UTF8 output as GBK, producing a background UnicodeDecodeError and null stdout despite child exit0. Do not accept that checkpoint as complete. Successor verifier explicitly decodes UTF8 and requires the actual six-pass output, retaining identical product/test source and original assertions.
+
+
+## 2026-10-24 deep-details final check recovery
+
+Related v2=238passed; final all-rules Ruff exposed TRY004 in the cached source-eligibility exception path. The earlier import-only lint did not exercise this rule. Rethrow the actual cached ValueError/OSError instead of replacing it based on an isinstance check, preserving the original source failure and caller catch semantics. Keep all source/history/negative integrity tests unchanged. Rebind regression/native source evidence after this one-line source change; never claim the earlier frozen preview manifest equals the successor source.
+
+
+Final deep-details preview recovery: retained first v2 freeze attempt stopped only its verified-owned v1 process and copied final source, then correctly failed the one-file difference assertion because Windows rg returns mixed separators (src/rstv4\\catalog_skeleton_views.py). V1 is terminal; do not restart that handle or delete the partial frozen directory. Successor resumes that exact unowned prepared v2 source, verifies all copied hashes, normalizes only comparison separators, and retains the strict one-file/one-line source-difference proof before consistent isolated backup and server registration.
+
+
+## 2026-10-24 all-queue overview fixture recovery
+
+Retained catalog-reading-overview-v1:1 failed/31 passed. New cross-queue test created jobs at the real evening UTC instant but observed an earlier fixed noon/night clock, so manual work correctly reported future retry rather than READY. Set all test-fixture available_at values explicitly before both observation instants, keeping the original exact manual-ready/day/night/priority assertions and production time policy unchanged. No source or assertion relaxation.
+
+
+Real isolated canonical schema14to20 overview audit revealed3177papers/3140registered-fulltext papers/1980quarantined and0jobs or intents. These are registered versions, not all runnable candidates. Preserve all original105table column values and quarantine decisions, show quarantined separately and exclude them plus non-VERIFIED receipts from automatic initial candidates. A queued quarantined paper must report effective SOURCE_REVIEW_REQUIRED while keeping its raw status/history untouched. Positive real-copy HTTP+actual MCP reads verified0PDFchecks,0dispatches,0modelcalls and no mutations. Run successor source/copy evidence after this concrete-data correction; do not relabel v1 counters as scheduling eligibility.
+
+
+## 2026-10-24 foreground admission recovery
+
+Retained catalog-foreground-admission-v1:2failed/52passed. Source inspection confirms actual Collection claim bypassed available_at for READY and lacked the quarantine exclusion presumed in the earlier handoff; correcting only foreground_reading_pending was insufficient. Keep both new exact automatic-job assertions. Apply the same due/quarantine predicates to manual queue prioritization and the actual claim query, while preserving RUNNING recovery, fencing, priority and stored held records. The previous assumption that Collection claim already excluded quarantine is superseded by current verbatim source evidence.
+
+
+2026-10-24 real initial-reading wire contract: real six-page microgrid/blockchain review parsed successfully (85 blocks, 43 references,104.98s) in an isolated canonical copy. Its first durable quick_read run run_614dcb236dfa47149d1032d475a17828 completed as gemini-flash-lite but returned exact_quote, source_evidence and start_offset/end_offset aliases; publication correctly stopped at NEEDS_HUMAN. The first diagnostic traversed only records containing both block_id and quote and therefore reported zero mismatches; the retained successor inspected missing keys and exposed the actual schema mismatch. Correct the model execution context with an explicit schema; never claim zero mismatches proved validity or silently normalize the raw answer. Production remains schema14 and queues inactive.
+
+
+2026-10-24 schema-v3 regression context:15fail/69pass retained. Expanded per-key JSON Schema repetition exceeded the deliberately small2500-token fixture budget before semantic assertions; compact the schema while retaining minItems22, an explicit complete key list, strict downstream one-assessment-per-key validation and the original source/budget assertions. The pause/cached-receipt fixture returned its historical v2 contract for a new v3 model task; make that current-task fake report the actual declared prompt, and add separate real legacy-publication reuse and legacy-pending-worker refusal checks. Do not relax cache receipt matching or increase the fixture budget to mask schema overhead.
+
+
+2026-10-24 actual quote selection: schema-v3 completed once in732.78seconds (raw response model gemini-3.5-flash-lite) and returned22dimensions/3Themes. Exact source diagnosis found four quotations containing inserted ellipses. Keep this distinct from the earlier wire-alias and missing-dimension failures. The new initial source protocol uses the existing native PaperSkeleton source_spans/resolve_source_quote; do not fuzzy-match or strip ellipses from raw model text. Raw responses and all three held jobs remain immutable. New span selections resolve into separate exact original quotations and offsets, with explicit segment-span provenance.117related checks passed before one import formatting change.1459full-pass is the preceding schema-v3 checkpoint, not a full result for the new360-file span source. Canonical14 and automatic queues remain unmodified.
+
+
+2026-10-24 native-span first real wire result: run_5dfbfb413c194afb857ccc1edec32cda completed once but its raw gemini-flash-lite answer inserted illegal .reminder: false text inside JSON. Original raw durable reply retained; JSON parsing correctly stopped at NEEDS_HUMAN. No sanitizer, field stripping or scientific/source-check exception was added. Inspecting actual configured router code found generic request-option forwarding but no declared native structured-JSON guarantee; local source is CodeSpace_Local/unlimited_llmapi, not the absent yonc_agent/unlimited_llmapi path. Full22-dimension initial understanding/reduction/synthesis/Theme reconciliation now explicitly use standard tier with new prompt revisions; screening retains light. This is a declared execution-tier correction, not a successful initial publication. All four held jobs and the single successful actual parser result remain retained.
+
+
+2026-10-24 standard actual source-validation result: v5 run_48be67b1b1b34da7b7761ed0726553c5 completed once with valid JSON/22dimensions/3Themes, actual gemini-3.8-flash, but source resolution rejected three nonconsecutive lists (including abstract s3+s5 and s4+s6). This was not a completed initial read. V6 uses one native source_span_id per evidence entry; separate nonadjacent citations remain separate exact quotations. Legacy consecutive-list resolution and every nonconsecutive-list rejection remain unchanged. New schema/prompt versions and job identity preserve old5held jobs. Latest1474full/20dependency-warning/724.66sec source checkpoint precedes this v6 change; use current single-span regression and distinct frozen acceptance for current claims. Canonical owner15:49UTC confirms actual8875root via process environment/CWD, originalSSH8887/8892and unrelated62204owners, schema14/no reading tables/no reading workers.
+
+
+2026-10-25 KL actual v6 source-validation outcome (16:02UTC Oct24): first of4parts passed strict native source/evidence checks,22dimensions/4Themes, actual gemini-3.8-flash. Same job progressed to original second run_6a5c43a53fc34fba9e6d2b5455b4cd8a without replaying first inference. Second-part failure is exactly dimensions[2].evidence[1]={block_id:full-span-ID}; source_span_id missing. Frozen materialization diagnosis retained. Literal-quote-only traversal misleadingly found0mismatches because this reference had no quote. No full initial publication exists; all6jobs nowheld. Current quick_read instruction still contains3legacy block_id/quote phrases contradicting its selector schema; clean under a new prompt revision. Prefer one compact source-ref selection resolved via a frozen native span registry to remove redundant long IDs, keep original legacy rejections and never auto-repair the v6 bad field. Continue runtime work; no further human design/proceed approval needed.
+
+
+2026-10-25 runtime follow-up found during frozen v7 real acceptance: catalog_sources.complete_parse still builds its initial child with the older job ID and omits response_schema_version. _reconcile_one uses the new schema-pinned identity. This can create duplicate or legacy-context initial children after a fresh successful parser job, even though manual request_initial on an already parsed paper works. Fix through one shared initial job identity/payload factory after the current frozen acceptance; retain manual inheritance, source events, paused intents and exact existing source guards. Add an integration regression proving fresh automatic/manual parse children carry the current response schema and reconciliation reuses the same job. Do not reparse the already successful real review to test this; use the retained source/parse receipt or a separate source case. This remains required before canonical/night activation.
+
+
+### Scholar actual parse, night batches and candidate mappings, 2026-10-26
+
+PROGRESS, full goal ACTIVE. Both complete five-page backend controls passed with identical model SHA1994bbf32109af213e84f223382eb8be1ade613d1969761fd460ad5dfb12cba7 and20CPU OCR returns each. No backend flip applied; native failure cause remains unresolved. Actual default analysis and successful unchanged bridge materialization were reused after strict samefile/source/model/bridge verification of an MSIX path-alias audit error. Same source job nowSUCCEEDED; parse49body blocks/all5pages/24726chars/2tables/25alignedrefs. Exactly one READY current-profile manual initial child/attempt0, repeated original request/reconciliation reuse it; no new LLM calls. Keep every old failure and the failed lexical-path auditor. Source real-reading-fresh-child-v2/cpu-parser-publication-v6.json.
+
+Actual04:30KL3177-paper-copy night discovery passed two bounded3-paper batches, advancing cursors,1automatic source job, immediate manual preemption/claim/fencing and stop; all1980quarantine/source/parse/history and original successful library unchanged,0inference. Separate immutable-initial-backup copy verified14candidateThemes,2separate pending Field/Topic proposals for one Theme,13unmapped Themes still visible/searchable,ALL1unique paper/14groups,duplicate reuse and invalidtarget rejection; allother tables unchanged,0modelcalls/no scientific approval. First mapping auditor's topics.field_id assumption failed before writes; successor uses actual field_topics many-to-many relation, product schema unchanged. Human approval/reversal is not claimed by candidate-proposal acceptance.
+
+Original manual deep job continues through hidden bounded observerv11 on the exact original operations/frozen engine, not a production scheduler. Revalidate its PID/birth/cmdline and same remote handle before any continuation; do not start a duplicate. New final checkpointv13 records current369hash full1533, original history, actualfresh-child/batch/mapping, native status and production schema14. No production migration/task registration/activation/gate approval/outbound message. Next finish original21nativewindows,22/extensiblewholepaper views and separatepurpose judgment, then fullremainingpreservedcanonicalrollout/runtime/manual-nightacceptance. Nonewproceedpermissionneeded.
+
+
+### Scholar selective evidence transfer rehearsal, 2026-10-26
+
+PROGRESS; full goal ACTIVE. Current tested operator tool catalog_evidence_transfer_v2.py SHA79023b824e8bfff50e4614355067e1e5df9e14cd26f954f18751147cc9177c7f, rehearsal f874f63c0c5a1d462e6fc12a0510458595759ddb8a66d1d83c3f772a30511a86; exact unchanged hashes recorded in evidence-transfer-rehearsal-v2/receipt.json. No tested product code changed: full1533/369hash evidence remains current, subject to revalidation.
+
+Initial archive evidence-transfer-artifacts-v3 retained262original source/parser/engine/registry files and48actual completed remote run responses viaGETonly. Earlier archiverv1 assumed all registries belonged to the latest runtime, v2 used a lexical mixed-separator source-manifest lookup; both stopped before copying/network. v3 resolved exact operation-hash filenames withrg, checkedrun/operation/requestSHA across historicalroots and normalized only path separators while retaining originalmanifestbytes/per-filehashes. No fabricatedregistry/modelrerun or assertionweakening.
+
+Real consistent canonical-copy14->20 preserves everyoldtablecolumn/row; selectiveINITIAL transfer reproduces85blocks/43refs/14CANDIDATEThemes/exactcontent/purpose/quotes and190model events, preserving anunrelatedmanualrequest andall existingdestinationrows. Sequence maps and bundle/archive provenance are appended in oneatomicEVIDENCE_IMPORTED event; repeatimport addsnorows. WrongPDFidentity, conflictingPKcontent, a forgedpayloadwithrecomputedbundleSHA, andINITIALagainstexplicitFULLreleasecontract eachrejectedwithoutrowchanges. Currentproductionstill14/3177/1980; norealcanonicalmigration/import.
+
+PARSE-only scope separately archives the actual5pageparse's model/CPUguard/controls/bridge+legacycode and transfers onlypaper_versions/parse_runs/document_blocks/reference_entries. It nevercopiesprivate manualrequests orqueuedoperations. Actualtwo-private-targetchecks proveexistingparse reusedwithnoparser/modelcalls; normalreconciliation createsoneautomaticREADYchild onordinarytarget; preexistingPAUSEDtargetstayspaused/nojob. Per-paperreleasecontractsallowPARSE/INITIAL/FULL asrequested; doNOTrequireeverypapertodeepread. ThisoriginalexplicitdeepacceptancesamplestillrequiresFULL, soinitialrehearsal isnotreleaseapproval. Originalartifactpathsremainruntimeownersandmustnotdelete; contentaddressedretainedcopiesdonotimplementrelocation/fallback.
+
+Nativev11 observer ended normally20:56:17UTC withsame18thwindowL2run pending; 17wholewindows hadvalidatedall4layers. Itsfinishedreceipt andexactPIDabsence werecheckedbeforev12spawn. Newhiddenboundedv12PID114860/birth1792961854.474042/source33c9636b... reusesSAMEoriginaldeepjob/frozenengine; firstGETconsumedcompletedrun_cd308560a48546d69c4f818a5b1fe53b, no duplicateinference. RevalidatecurrentPID/birth/cmdline/SAMEremotehandlebeforecontinuation. DoNOTstartanotherobserverwhilelive; nextunusedv13afterv12terminal. Stillneedall21windows/wholepaper22contentviews/separatepurpose/sourceinspection, thenfullsnapshot/archive/transfer/scopedHTTP-MCP-UI-Bot/fixedruntime/canonicalrelease/supervisednightactivation. Nooutboundmessages orscientificgateapproval.
+
+
+### Scholar completed native Skeleton, fixed runtime and current two failure boundaries, 2026-10-26
+
+PROGRESS; fullgoalACTIVE. Native21/21windows and84L1-L4stages completed21:35:04UTC, sameoriginaljob/source/parse/frozenengine,1paper_skeletons. Nativev13observerterminalSUCCEEDED, no replay. Consistent skeleton-before-views-v1.db SHA23489d84d4c9b779cab9b457237f80d6b1e93eccb698e55d8584aee25170bd98 preservescompletednative+initial+alloldmodelhistory. Contentobserverv1 startedPID37464/birth1792964400.7253497/source88dfe30c... under originalrequest, thenTERMINALNEEDS_HUMAN21:45:55UTC. Firstpartvalid; secondrun_833804b9ecbc4ca69c54af63805f034e RETURNEDextra binding, strictunsupportedfields. No content/purposepublished. Allnative/initial/protectedhistoryexact. Thisisnotexternalhumanapprovalblocker; implementboundedfailed-stage retry withdistinctoperationidentity, leavevalidatorsunchanged andreuseall successes.
+
+Read-onlyliveinspection catalog-production-binding-readonly-v1.json: canonical14/3177/1980, web70oldroutes/noglobalunderstanding; currentweb15348(parent83424),oldMCP84832(parent82608),allfrommutableRSTV4src. ProfileconfigSHAe75e0f88... rootAppDataLocalhermes/profiles/scholar; no toolwhitelist, flagRSTV4_CATALOG_GLOBAL_TOOLSmissing. FieldKG8892ready/project2/schema. Reobserveallbeforeactualscopedrelease. No liveconfig/restart/write.
+
+UuMA Scholarlauncher nowopt-infixedactivepointer .uuma-local/scholar-catalog-runtime/active-release.json (ABSENT). Resolvercheckscompletesource+legacy/owner/schema/read-only/Pythonexe+cfg+base/version/dependencies.19nativeWindowscasespassed; actualupgradedowneradmittedreadonlyandcanonical14refusedwithoutmigration; sharedWindowsrecoverypassed; LiveAgentbranchbyteidentical. FirstGetFileHashunavailablefixedvia.NETSHA256. DependencyguardeditsourcehadJSreplacementmetacharacter syntaxerror, caughtbeforechildexecution; preservedandreconstructedwithliteralcallbacks. No assertionremoved.
+
+Newisolatedruntime C:/Users/Alandelone/CodeSpace_Local/RSTV4/.uuma-local/python/catalog-59405452ce28,96exacteffectiveversions,noinheritedsystemsitepackages. Sourcecandidate .uuma-local/releases/catalog-8ad09c9c17b1, packageSHA5c8ad3ed...; PREPARED_NOT_ACTIVATED isonlypreparation, NOTreleaseapproval. OldproductionvenvmissesPillow/resvg/DSPyandotherdepsdiffer. Source-onlypreparerv1failedonenumeratinginheritedduplicatemetadata(noenvinstall); v2locksdeclaredmarker/extras-awareclosureusingeffectivePythondistributionlookup, retainedoriginsandconstraints, preparedclean96exactversions. DoNOTreruneitherpreparer; candidates/envmustnotbereset.
+
+Fullisolatedv9TERMINALFAILED1532passed/1failed/21warnings970.33s. ActualfailedtestTaskpreviewUTF8readerUnicodeDecodeError(stdoutholderNone), notmodelcode/dependencyfailure. WorktreetestnowstrictlydecodesrawbytesandforceslegacyCP936/nonASCIItaskname; redreproducedUnicodeDecodeError, bothPSlaunchersnowexplicitConsole/pipeUTF8, all7runtimecasespassed. Mutablecore369has3changedfiles(v8historical):scripts/start-catalog-reading-worker.ps1,scripts/install-catalog-reading-task.ps1,tests/test_catalog_runtime.py. Expectedfullnow1534beforeanynewretrytests. Frozen8adsourceisREJECTEDforrelease; keepunchanged. Neednewsourcefreeze/fullsuccessorafterfailed-viewrecoveryimplementation, samecleanruntimecanbereusedifdepsunchanged. Noarbitrarytesttimeoutincrease/replacementdecode/ignoredfailure.
+
+NewUuMA scripts/run-scholar-catalog-mcp.py testedactualMCPstdio againstprivateevidence-transfer-rehearsal-v2/library:8newglobaltools,77total,14unmappedCandidates/ALL1/14groups/status/deepabsence/allDBrowsunchanged,0models/messages,allstagingchildrenexitedwithoutmanualcleanup. SHA6eb18c6eb4b1a632187b671ac11327db065c5751385a99b37cb996e0b67861f8. Resolverdiagnosticscaptured;binaryprotocolhandlespreserved;globalflagsetafteradmission. LiveprofileSTILLold; softreload/actualBotbindingstillneedscurrentevidence, NEVERrestartsharedHermesblindly. SourceRSTV4skills/rstv4-research/SKILL.md nowdocumentsfullPDF/globalinitial/openunmappedThemes/overlapcounts/night/manual/optionaldeep/originalL1-L4/22views/separatepurpose/language; installedprofileguideunchanged.
+
+Remainingentiregoal: exactfailedcontentstageboundedretry(no21native/firstpartreplay), fullcontent22/extensibleviewsandpurpose/sourceinspection; freshcurrentfullregression/fixedcandidate; fullsnapshot/archive/semanticartifacttransfer; preservedcanonical14->20/fullreadinessHTTP-MCP-UI-Bot; dedicatedtaskregistration/restart/liveness/night/manualresourceacceptance. Initial/PARSErehearsals/archivescompletedbutnotFULLproductionimport. No productionactivepointer/taskactivation/Scientificapproval/outboundmessage/gateapproval.
+
+
+## Scholar Catalog continuation: tested successor and bounded content retry (2026-10-26)
+
+The prior percentage-only response was no progress; this continuation made source and evidence progress. Actual web/MCP entry points and the workstation fallback now reject missing/schema14 owners before implicit initialization or migration. UTF-8 worker/task output handles a CP936 caller and Chinese task name. CatalogReading.retry_skeleton_part replays the exact failed content stage, preserves raw answers and successful native/initial work, requires active source-bound consent/quarantine/fence checks, and records a distinct durable replacement operation with one replacement per failed call and three per job. Observation waits and cache reuse retain that operation; no response fields are silently discarded and no scientific approval is granted.
+
+Historical fixed candidate catalog-8ad09c9c17b1 remains rejected after 1532 passed/1 failed (task-preview UTF-8 decode). Current immutable successor catalog-6af31751be6b and the unchanged worktree passed 42 focused tests and the complete 1552-test regression (20 existing warnings,988.65s) in the clean pinned 96-dependency Python runtime. Admission v2 verified package a4b1d8bc15561a88624148168c98cf570918ab25889ff7dffc676a356299e526,394 admitted files, staging20 read-only, canonical14 refusal without mutation, unchanged Live Agent branch and shared Windows recovery regression. Scoped Ruff passed after import ordering corrections. Full-v8/1533 and full-v9/failure remain historical evidence. A successor inventory bootstrap initially compared Python-only disk files with Python+JavaScript entries and stopped before copying/tests; corrected v11 retains all JavaScript entries and both failed helper/evidence.
+
+Native21/21 windows and84 L1–L4 stages are complete. The actual content child had returned an extra top-level binding field; old failed raw call catalogdeepmodelcall_abfab53dc3f3237e5daf04988b258e8bc1dac64d2e77256bc554ed6bb663bcea is retained. A consistent pre-retry DB backup SHA6860b9e50e8276856939a288c69931956bb0bea7a526700bd60a02a169ec943a preceded one scoped retry. Observer v2 PID83788/birth1792978025.397414, source SHAdcbf579331e7fd341bd083733c1445b715fd584ff6fe105c3e38968bf735f0ae, consumes the existing child and purpose only using the tested successor; actual replacement run_a244a30cbdf44a7bb55ae8eaa87938ba was observed RUNNING. Reobserve the same owner/remote operation; never restart on a timeout or rerun native extraction. Whole content/purpose, finished FULL archive/transfer, canonical additive upgrade, fixed profile/UI/MCP/Bot binding and dedicated supervised task activation are still required. Active-release pointer and production schema remain unchanged. No outbound messages/shared gateway restart/old Collection activation/scientific approval.
+
+Both FieldKG forwards8892/8887, Scholar project2/schema and intentionally absent graph storage read passed again with no recovery or model call. Existing Hermes source inspection shows MCP reconcile removes disabled/removed names and adds missing names, but does not reload an already live same-named server after command/env changes. Do not assume editing the Scholar YAML refreshes cached tools. Resolve a scoped reload and verify live identity without shared gateway restart or sending a Telegram message.
+
+Final-check correction: checkpoint v15 initially failed its strict complete graph preflight. Independent8892 fetch also failed, while SSH readback proved both server services active. The existing owned connector started ONLY scholar_fieldkg_tunnel (8892); scholar_graph_probe_tunnel (8887) stayed running. Verified PID114496/birth1792978301.3234375 and retained8887 PID90536/birth1792680245.49247. The main startup process ledger was updated under its existing lock for those two matching configurations, preserving every unrelated entry and a raw-byte backup. Complete unchanged ensure_knowledge_graph(scholar,recover=False) passed afterward. See scholar-graph-owned-connector-recovery-v2.json. No server/gateway restart, model call, outbound message or Catalog write. Earlier no-production-mutation wording excludes this subsequent owned workstation-forward recovery. Inspect existing connector supervision before claiming durable reconnection after future disconnects. The failed checkpoint source/digest and failure receipt are retained; successor v15_v2 keeps all source/history/graph assertions.
+
+
+## Scholar connector supervision and view-plan observation (2026-10-26)
+
+Prior turn PROGRESS; current continuation adds actual infrastructure supervision while the same manual content job runs. Read-only require_view/_records/_parts planned28content parts from362source records; at01:36UTC3distinct returned parts and run_d8f5a667cc9a40f884fd14c57ef7461d RUNNING, later01:45UTC6returned and run_6f63b04456d7468495aea9e6e83da448 RUNNING. No extra model requests/extraction were created by observation. Native21/21 and initial remain complete. Observerv2 remains PID83788/birth1792978025.397414, bounded1800seconds from01:27UTC; inspect actual state after01:57, never assume timeout means model failure.
+
+New scripts/check-scholar-graph-connector.py pins the two existing loopback SSH commands, expected server owner, configuration/launcher SHA; rejects foreign listeners and broader scope, starts only existing connector profile.9focused tests passed. Watch mode uses distinct existing-style OS process lock, checks60seconds and records failures without stopping server/Bot/Catalog. Task Scheduler registration from a concrete limited-user preview FAILED Access denied; no task installed. Retain v1preview, source-only frozen runner and install logs. Do not claim task acceptance.
+
+Interim current-user Startup guardian is actually active: graph-connector-supervision-v2/receipt.json, PID96008/birth1792979130.7240376, fixed runner and args/SHA in launch.json. Startup VBS path/hash is recorded and byte-verified; two cycles01:45:31 and01:46:31 verified, duplicate launch rejected without receipt changes. No live SSH tunnel forced down, no server/gateway restart, model call, external message or Catalog mutation. This is login persistence plus a live guardian, not completed Task Scheduler registration; guardian crash restart remains limited. Keep explicit task-registration limitation in remaining scope. Source/code startup supports active user only.
+
+MCP investigation confirmed a gateway profile-scoped reload implementation exists in gateway/run_turn.py::_execute_mcp_reload, including refresh of that profile cached agents, but no exposed local control route confirmed. tui_gateway reload.mcp is a separate runtime and has an unscoped shutdown path; do not mistake it for safe Telegram-gateway Scholar-only reload. No live configuration or MCP process was changed.
+
+
+## 2026-10-26 current guardian prerequisite supersedes the earlier denied task state
+
+Native Task Scheduler registration in graph-connector-supervision-v3 succeeded under the current execution context using the current user SID, LeastPrivilege, watch mode, unlimited execution, IgnoreNew and3one-minute restarts. The registration helper then failed its readback because Windows venv exposes launcher+base interpreter with identical script arguments. A subsequent auditor also assumed exported restart-child ordering; both failures are retained. These were audit failures AFTER registration, not a failed registration.
+
+Fresh strictly READONLY verification graph-connector-supervision-v3/readonly-task-verification-v6.json proves task UuMA Scholar Graph Connector INSTALLED and Running, one ancestry tree (launcher122972/birth1792996722.7114353; base86688/birth1792996722.7249265), exact task action/source hashes/restart fields, old guardian96008 absent, fresh healthy60-second cycles and complete unchanged graph preflight ready. Startup VBS remains untouched and has an exact backup. The first attempted cleanup was rejected by automatic approval review because retained context still said no task existed; the rejected cleanup command did not execute. Do not bypass that rejection. Any renewed request must use the fresh native task proof and immediately recheck it, then target only the exact hash-matching, backed-up Startup file; never stop SSH/server/Bot/model tasks. Earlier handoff no-task statements are now historical.
+
+
+## 2026-10-26 bounded Catalog MCP, real Hermes bridge and repeated Theme-definition hold
+
+Full successor v12/catalog-ebb0910310ce passed1564tests/20existingwarnings/979.61s,60focused. Actual isolated Hermes registration exposed a1,417,472-character transport return for one paper (inner prettyJSON1,343,793characters); metadata and nested local/source observations were duplicated. New catalog_mcp_views.py compact previews, separately paginated facets and mandatory-hash lossless JSON detail pages reduced the same actual transport to17,652characters. Sourcequotes/Unicode/qualifications remain available, changed source/artifact versions reject mixed pages, status defaults globalfastoverview, and no schema/modelprompt changed.12new pagination tests included in1564. The source guide documents exact section/offset/hash use.
+
+Actual Hermes filtered staging v1 correctly registered8tools but its auditor expected direct JSON instead of the actual result-string envelope; v2 expected internal mcp-rstv4-catalog in platform tools, where the real alias is bare rstv4-catalog. v3/v4 expected8eager agent tools, while actual default deferral presents tool_search/tool_describe/tool_call. These diagnostic failures and original payloads remain. Do not force eager mode or weaken exposure guards. verify_hermes_catalog_filtered_v5.py actually passed using the genuine deferred bridge: exact8backendtools (legacyCollections excluded), all8describable/reachable, actual bridge read14unmappedCANDIDATE Themes, ALL1unique paper, original dimension evidence reconstructed exactly, repeated cached refresh idempotent, all business tables exact,0models/messages/liveprofilewrites. Real _get_platform_tools merge preserved all existingTelegram toolsets and changed _agent_config_signature, so adding a new curated Catalog server can trigger a next-turn cache rebuild without sharedgatewayrestart. Actual live profile/addition/discovery aftercanonical20 is still NOT done.
+
+Native21/21 completed. v2 observer endednormally01:57:08UTC/OBSERVATION_WINDOW_ENDED after same run_bac15b9820a647d192af4d4d35342682 completed; v3PID127464/birth1792979872.8179493 resumed that same operation, then held at02:22:40UTC on missing definitions in Share&Charge Platform Mechanics, NRGcoin Decentralized Energy Trading, Ethereum Smart Contract Integration. Original failedcall8bf601a2bc2ed562be630fc8d1878025d90d07009db432a5462503c0d896c875/event590 retained. Narrow retry eligibility was extended only to this actual reproduced error (exact declared/replayed error match), and no-native-call assertions now use the real TASKS registry. Two added tests plus old15/17cases passed32focused; allaffectedRuffpassed.
+
+Current fixed successor v13/catalog-e01ea4ba05d1 passed62focused and complete1566tests/20existingwarnings/910.35s, immutable376source/395source+legacy/396admittedfiles. During broad regression, one actual private manual retry was started only after62focusedpasses; formalproduction remainedinactive. Backup skeleton-before-definition-retry-v4.db SHA16696228bf3cc663b17c26dcea618b09a10e05980d925a3361042e19887846e8. Request manual-original-theme-definition-part-retry-v4 atfence19->20, replacementcalla6864654099d0cbbfdebd6a5013755eb882a377f86cd68f076243cef5c79c94d/operationcatalogviewretry_64af03aea88fc1ce2a4bea85765876d081d78feb47cb400495ed97a92924db3f. Observerv4PID127416/birth1792996305.0539353/scriptSHA428de724499964976c55111faa282edcb8ef2679557c8f5100047c4f43a05c69 usede01. Actualrun_a39f783b794447aba11041154541d919 completed with the SAME missing-definition error; v4terminal06:38:13UTC NEEDS_HUMAN, protectednative/initial/historyexact. No model or observer is currently waiting; do not claim background inference continues or launch a third identical replacement. New source-bound definition-completion contract is recorded in docs/operations/catalog-theme-definition-repair-contract.md; implementation and actualcompletionremain required. No external scientific approval impasse; fullgoal ACTIVE.
+
+Guardian task native registration/readback now succeeded. After fresh read-only task proof, automatic review approved a renewed narrowly scoped cleanup; finalize_graph_guardian_startup_v7.py removed ONLY the recorded backed-up/hash-matching Startup VBS. Task Running/one launcher-tree/freshcycles/fullgraphready remained verified. Prior rejection was based on historical no-task context and is retained, not bypassed. Receipt graph-connector-supervision-v3/receipt.json supersedes v2Startupguard. Catalog/schema/profile/gateway/server unchanged.
+
+
+## 2026-10-27 Scholar definition completion: full pass and source delivery
+
+catalog-c4bbd9570415 passed1602full/98affected tests and Ruff. Nine verified files delivered to RSTV4 with raw backups; all379source files match fixed engine and unrelated Git state/staging/HEAD unchanged. Same exact401-file bundle retained under RSTV4 releases without activation. Actual definition task succeeded; the original paper continues from the same admitted part16 retry, with current status in fresh checkpoint and native/initial/602old events preserved. Full archive, canonical14->20/selectiveFULL import and actualUI/MCP/Bot/night worker rollout remain required. See catalog-reading-runtime-checkpoint-v19.json and docs/operations/catalog-theme-definition-repair-contract.md. GoalACTIVE, notcomplete.
+
+
+## 2026-10-27 Scholar interim evidence retention and exact response proof
+
+interim-skeleton-evidence-v21 retained767files/152actualGETs,151completed1running at snapshot,150actualRETURNED outputs and4completion/retryauthorizationevents. Independent verification matched all retained hashes and every150businessJSON/actualmodel identity to provider responses exactly. Strictly INTERIM_NOT_FINISHED_FULL, production_readyfalse. v20 helper schema assumption failed before remote/archive and was retained; v21 uses actual parse_runs→source_file_versions→paper association. Same part16 handle observed without resubmission; dependency local source path absent, no fallback created. No product source/production changes or model submissions. See checkpointv22 and docs/operations/catalog-theme-definition-repair-contract.md; fullgoalACTIVE.
+
+
+## 2026-10-27 Scholar dimension repair succeeded; next upstream UI failure
+
+catalog-744dd29929a4 passed1635full/131affected/Ruff;11verifiedfiles delivered and404file snapshotretained,382sourcefilesmatched/unrelatedGitexact. Actual20dimensioncompletion succeeded(gemini-3.8-flash,event610),validprefix16/28. Followingpart17run263returned the exact59char gemini_web genericerror withremotecompleted/actualgemini-3.7-flash andnoJSON; jobheldfence33,v7terminal. Earliermisattributiontocompletioncorrectedusing actualeventtasks/GETs. No livewait. Next implement scopedboundedtransportrecovery per docs/operations/catalog-view-upstream-ui-recovery-contract.md; preservesemantic retrylimits/rawerrors,nofakeRETURNEDorappUNKNOWNfill. FreshKGtaskRunning/fullpreflight readytrue,0restarts. Finalarchivev29preparednotexecuted/notready;v23disabledwithbackup. GoalACTIVE/fullactivationpending; checkpointv33.
+
+
+## 2026-10-27 Scholar upstream UI recovery implementation
+
+Implemented six-file source-bound bounded transport recovery in private successor catalog-4e47823dfbfd, preserving all prompt contracts and original failures. Fixed effective first-missing replacement replay, retained120-pass/1-fail source. Development and frozen clean-runtime focused checks each passed121; real-copy part17 rehearsal passed with16valid prefix reused, all original614model rows and source data exact, zero model submissions. Full1672-test regression launched with exact handle145272/birth1793040639.624992; fresh checkpointv41 records status. Realjob remains held33; observerv8 prepared only/full-pass guarded. Old v29 final archive disabled with exact source backup because new final evidence must retain all actual native/v15/v16/v17 engines. No production activation; full goal active.
+
+
+## 2026-10-27 Scholar full regression and source delivery; model egress approval
+
+Immutablev17/catalog-4e47823dfbfd passed1672full and121focused in the pinned runtime. Six-file source delta delivered,384source/406retained files verified and unrelated Git exact. Originalpart17 recovery process creation was rejected by automatic approval review because specific destination consent to https://api.95963210.xyz/v1 was not established. No model/grant/backup/observer ran; original614events/heldfence33/valid16of28 retained. Required async user permission is pending; no retry/bypass. Finalrecipev45 prepared with native/v15/v16/v17 engines and original failed/successful GETs; actual guard NOT_READY until content+purpose finish. Fresh canonicalcomponent14,3177papers1980quarantine, 106user/107total tables,0FKerrors; GraphConnector/ScholarWebRunning, no reading task or activepointer. No canonical migration, scientificapproval or production activation. Full goal active.
+
+
+## 2026-10-27 Canonical catalog migration rehearsal and curated reads
+
+Migrated a consistent PRIVATE copy of actual3177papers/1980quarantine from14to20, 107to129tables. Retained v52 owner-readback audit URI failure after completed migration; v53 continued READONLY on the same copy without rerunning migration and proved allold columns/values/rowids/FKs/schemaobjects and exactbackup preserved, originallogicalrows and main/WAL duringreadback exact. v54 registered8actualcuratedhandlers and invoked3read handlers on the real-data copy; querytotal3177/bounded670chars, fullcopylogicalhash exact and0reading/model jobs or intents created, networkdenied/0attempts. No canonical upgrade, profile activation or model dispatch. Gatewayapproval to api.95963210.xyz remains pending, second consecutive turn with that condition; fullgoalactive, originalstageheld33/614events and16validof28parts. Full1672/focused121/source384/retained406 proofs unchanged.
+
+
+## 2026-10-27 Third-turn gateway approval block audit
+
+Fresh local auditv56 revalidated full1672/focused121, delivered384source/406retained files, real3177-paper schema14to20 COPY migration and3curated readhandlers. Originalstage remainsheld33/614events/16validof28; no live model/test and no v8grant or process. Same automatic-review refusal of egress to api.95963210.xyz has persisted for3consecutivegoalturns without a human destination/scope reply. Meaningful unaffected prerequisites are complete; actualFULLsample and final archive/import/live rollout require the blocked dispatch. Auditthreshold satisfied: close session then set goal BLOCKED, not complete or userpaused. Preserve pendingpermission/fullscope/allprogress; no retry/bypass until actualhumanconsent or externalapprovalchange.
+
+
+## 2026-10-28 Human gateway consent and actual part17 recovery
+
+Human answered yes to the explicit configuredgateway paper/Skeleton/evaluation-context egress request; consentv58retained, oldpermissionholdresolved. Same guardedfull1672/121 v8launcher ranonce afterbackupSHA29051179afaa5ea9b4a91e4a4aa6948241076547fb9f5ea6800f8eed63e3463f. One transportgrant/claim35, actualrun107b2522b40e4d8ab8ac2db29625ad34 accepted andrunning; observerPID124644/birth1793152822.9064813 verifiedlive viafreshcheckpointv47. Original614rows/16validprefix/native/initial/bothrepairs retained; no bulkreading or productionactivation/scientificapproval. Await same stableoperation, not anotherPOST. FullgoalACTIVE and unchanged; currentcheckpoint determines latestactualprogress.
+
+
+## 2026-10-28 Human gateway consent and actual part17 recovery
+
+Human answered yes to the explicit configuredgateway paper/Skeleton/evaluation-context egress request; consentv58retained, oldpermissionholdresolved. Same guardedfull1672/121 v8launcher ranonce afterbackupSHA29051179afaa5ea9b4a91e4a4aa6948241076547fb9f5ea6800f8eed63e3463f. One transportgrant/claim35, actualrun107b2522b40e4d8ab8ac2db29625ad34 accepted andrunning; observerPID124644/birth1793152822.9064813 verifiedlive viafreshcheckpointv47. Original614rows/16validprefix/native/initial/bothrepairs retained; no bulkreading or productionactivation/scientificapproval. Await same stableoperation, not anotherPOST. FullgoalACTIVE and unchanged; currentcheckpoint determines latestactualprogress.
+
+
+## 2026-10-28 Source-bound evidence completion successor
+
+Original part17 recovered; part18 held on ethics_governance SUPPORTED without evidence. Exact original source paragraph found; retained raw answer, no manual citation insertion. New separate bounded evidence-only task implemented in isolated successor, all prior prompts exact. Affected147tests passed; real-copy v75admission passed11999/15488chars,0models and originalhistory unchanged. Immutable catalog-b15c1e116928 current-focused163/full1714 verification started; current checkpoint authoritative. No actual evidence grant or production activation. Dedicated foreground reading launcher passed19admission+4nativecases after preserving Get-FileHash fixture failure and using .NET SHA. HTTP copy pagination unproven while actualhandlelive. Full deployment/import/UI/MCP/Bot/night worker scope remains active.
+
+
+## 2026-10-28 Exact v18 full pass and real evidence-completion continuation
+
+Immutable catalog-b15c1e116928 passed full1714/focused163 and all388source/410retainedfiles were delivered with13targetbackups and unrelatedGit/staging/HEAD preserved. One bounded actual evidence grant recovered part18 via run_e4c0b6fdbbdc4a75946bcef28b14cf1e actualgemini-3.8-flash; originalnative/initial/17parts preserved, part19thenpassed and laterworkcontinues. Latestv83checkpoint authoritative. Native taskinstaller4cases plus inherited19+4passed with real scheduler doubled; not installed. v84finishedarchive recipe now retains allfiveactualengines/allfiverepaireventkinds/consent and requires28parts+independentpurpose+terminalv10. Read-only v79diagnostic located slow list PDFrehashing; responsive snapshot-vs-physicalverification design recorded, implementationpending. Fullproduction migration/import/UI-MCP-Bot/night supervision remains open; no scientificapproval or missiongate transition.
+
+
+## 2026-10-28 Exact binding-echo projection recovery
+
+Original20only repeatedexactpaper/parse/Skeleton IDs;19priorparts valid/3originalretriesexhausted. Implemented explicit source-bound metadata projection, not a budgetextension or science-field filter. v92passed47; realcopyv90validated20/admitted21 with0models/scientificvalues/modelhistory/retriesexact. Immutable catalog-468831d9c218 passedfull1746/focused195;12filesdelivered/391source/413retained, unrelatedGitpreserved. Actualv11grant appliedonceafterbackupSHA d3c7d5a335dfd0b4fa2a810234f3d61051f2f2c018b677529af31411f29034ef; freshv97checkpoint determines actualprefix/handle. HTTP530GETobservationfailure retainedandtreatedunavailable, notnewmodelrequest. Responsive list snapshot/strictdetail boundary stillneedsimplementation; finalnewworkflowrequires6enginearchive, canonicalmigration/selectiveFULLimport/UI-MCP-Bot/night-supervision. No productionactivation/scientificapproval.
+
+
+## 2026-10-28 Real multi-Theme list and actual browser verification
+
+Private real-source copy v111 preserves all fourteen actual candidate Theme records byte-equivalent at the JSON-value level; each Theme filter finds the same single paper, and ALL fourteen still count one paper. No PDF bytes were opened in list verification and the copied DB remained logically unchanged. Actual browser v115 used frozen catalog-f23432549cac: seven default columns, three displayed Theme badges plus eleven, initial status/source-unknown badge, strict detail fourteen definitions/quotes, unmapped candidate and night/manual policy text visible; no console errors observed. Screenshots and complete AX records retained; copied DB unchanged. Exact owned preview process stopped, old diagnosed v64 test already terminal, scientific worker untouched. Freeze v20 first stopped on existing test import order; corrected only import sorting, retained original lint log, then v20b froze nine-file delta/393 source files and started one full1758 suite plus existing frontend checks in clean pinned runtime. Scientific actual execution remains v19. No duplicate focused scientific suite. Prepared six-actual-engine finished archive v116; readiness correctly remains NOT_READY for original content/purpose, no archive created. Full activation remains open.
+
+
+## 2026-10-28 Catalog snapshot release delivered after full verification
+
+Frozen catalog-f23432549cac passed1758 Python tests in930.80seconds and11 existing frontend checks; manifest stayed exact. Nine changes delivered with raw source backups; all393 source files and415 retained bundle files verified, unrelated Git/index/HEAD unchanged. No runtime switch or schema migration. Fresh v118 canonical preview observed schema14/106tables/0FKerrors, existing Scholar Web HTTP200 PID15348/birth1792666956.0534377 on8875, Web/Graph Connector tasks running, no Catalog Reading task/pointer. Actual returned-prefix retention v119 saved/reused163 completed GET bodies; all163 original business JSON values and actual model names exactly match original RETURNED events,0newmodelsubmissions. This is current prefix only, not FULL acceptance. Prepared cached finished archive worker v120 using existing strict guardv116 and all6 actual scientific engines. Original content/purpose/terminal protected receipt remain required. Selective finished evidence import still needs implementation/rehearsal; do not replace entire DB or transfer pending private queues.
+
+
+## 2026-10-28 Scholar initial workflow activated
+
+Human explicitly removed the original FULL sample as a blocker for initial rollout. Fixed v20 pointer, new UI, selective INITIAL evidence, curated8-tool Scholar connection, installed research guide and dedicated night worker are now live. Actual HTTP list/detail shows fourteen candidate Themes; every old canonical record/schema object survived transfer. Canonical schema was already20 before this cutover. Source and integration/profile/task backups retained under live-initial-cutover-v132. Web/GraphConnector/CatalogReading tasks running; shared gateway and graph services were not restarted. Full scientific sample continues on originalv19 engine via v15 observer; its previousv14 observation window ended in VERIFIED_LIVE_WAIT, not cancellation. Independent stronger semantic reviewer model selection and FULL archive/import remain open.
+
+
+## 2026-10-28 Independent thinking-profile semantic review returned
+
+Existing approved gateway /models reported light/standard/thinking/complex/live/stt/ocr/antigravity. One manual bounded three-of-fourteen Theme spot check used thinking and returned actual model gemini-3.1-pro. Exact original Unicode quote spans and corresponding immutable PaperSkeleton L1-L4 units were included; no repeated extraction or canonical update. All three sampled observations were returned SUPPORTED, with explicit concern that local context cannot fully establish whole-paper centrality. Actual completed GET body/model/JSON match verified, rawSHA0f1b516ad7ddbf67c0013227abb4a8f9246d1cc7398844b5bb046849a48e2515. This satisfies a real independent sampled model check, not full-paper approval. Initial Web/MCP/night workflow stays live; original FULL interpretation/purpose/import remains open.
+
+
+## 2026-10-29 Catalog detached history needs explicit execution-origin context
+
+Read-only v209 proved canonical old transport code cannot verify the original scoped digest-recovery history; the scientific v21 engine verifies both existing transport grants. A separate canonical proof-extension development copy passed affected transport tests and lint (v213), without production changes or model calls. The real isolated database-copy rehearsal v214 first failed on absent operation registries. Copying their exact verified bytes then correctly failed the effective original model identity check. The gateway nonce includes the original execution root; deriving it from a copied database's physical root is missing context, not an incorrect source assertion. Retain both failures, all exact registry/request/reply hashes and the strict identity assertion. Add a narrowly verified read-only snapshot origin context, bound to immutable job/model/authorization history and snapshot bytes. Keep live execution's physical-root behavior. Persistent canonical adoption additionally needs an explicit controller receipt, provenance events, reversal and positive FULL rehearsal. No origin context authorizes dispatch or extra semantic retries. Original role run5ab returned prose with shortened IDs and remains held; its one-role proposal is awaiting the asynchronous explicit user decision. Initial patch cutover proceeds independently, retaining the already checked package and actual PDF job.

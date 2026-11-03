@@ -17,6 +17,7 @@ from uuid import uuid4
 from pydantic import BaseModel, ConfigDict, Field, model_validator
 
 from .brainstormer_lock import BrainstormerProcessLock
+from .brainstormer_topic_groups import topic_group_title
 
 _IDENTIFIER = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.-]{0,127}$")
 _WINDOWS_ATOMIC_REPLACE = os.name == "nt"
@@ -436,6 +437,12 @@ class BrainstormerStore:
                     if p_id not in parent_questions[q_id]:
                         parent_questions[q_id].append(p_id)
 
+            scoped_question_ids = {
+                q_id
+                for q_id, question in questions.items()
+                if not topic_id
+                or (question.get("topic_id") or "topic_general_architecture") == topic_id
+            }
             q_progression: dict[str, dict[str, Any]] = {}
             for q_id, q in questions.items():
                 is_resolved = q.get("status") in {"RESOLVED", "DECIDED"}
@@ -452,7 +459,10 @@ class BrainstormerStore:
                 ]
                 is_blocked = (len(unresolved_prereqs) > 0) and not is_resolved
                 is_ready = (not is_blocked) and (not is_resolved) and (q.get("status") != "SUPERSEDED")
-                is_current = bool(q.get("is_current") or q_id == active_q_id)
+                is_current = bool(
+                    q_id in scoped_question_ids
+                    and (q.get("is_current") or q_id == active_q_id)
+                )
 
                 q_progression[q_id] = {
                     "is_resolved": is_resolved,
@@ -469,13 +479,21 @@ class BrainstormerStore:
                     current_q_id = q_id
                     break
 
-            ready_list = [q_id for q_id, p in q_progression.items() if p["is_ready"]]
+            ready_list = [
+                q_id
+                for q_id, p in q_progression.items()
+                if q_id in scoped_question_ids and p["is_ready"]
+            ]
             blocked_list = [
                 {"id": q_id, "blocked_by": p["unresolved_prereqs"]}
                 for q_id, p in q_progression.items()
-                if p["is_blocked"]
+                if q_id in scoped_question_ids and p["is_blocked"]
             ]
-            resolved_list = [q_id for q_id, p in q_progression.items() if p["is_resolved"]]
+            resolved_list = [
+                q_id
+                for q_id, p in q_progression.items()
+                if q_id in scoped_question_ids and p["is_resolved"]
+            ]
 
             def _q_sort_key(q_id: str) -> tuple:
                 q = questions[q_id]
@@ -498,17 +516,32 @@ class BrainstormerStore:
             )
 
             hierarchy: list[dict[str, Any]] = []
-            topic_items = (
-                list(topics.values())
-                if topics
-                else [{"id": "topic-general", "title": "General"}]
-            )
+            if topic_id:
+                topic_items = [
+                    topics.get(topic_id)
+                    or {"id": topic_id, "title": topic_group_title(topic_id)}
+                ]
+            else:
+                topic_items = list(topics.values())
+                known_topic_ids = set(topics)
+                inferred_topic_ids = {
+                    obj.get("topic_id") or "topic_general_architecture"
+                    for obj in all_objects.values()
+                    if obj.get("kind") != ObjectKind.TOPIC.value
+                }
+                topic_items.extend(
+                    {"id": group_id, "title": topic_group_title(group_id)}
+                    for group_id in sorted(inferred_topic_ids - known_topic_ids)
+                )
+                if not topic_items:
+                    topic_items = [{"id": "topic-general", "title": "General"}]
+
             for t in topic_items:
                 t_id = t["id"]
                 t_questions = [
                     q_id
                     for q_id, q in questions.items()
-                    if q.get("topic_id") == t_id or not q.get("topic_id")
+                    if (q.get("topic_id") or "topic_general_architecture") == t_id
                 ]
                 root_qs = [q_id for q_id in t_questions if not parent_questions.get(q_id)]
 
@@ -605,6 +638,14 @@ class BrainstormerStore:
             summary = {
                 "total_objects": len(all_objects),
                 "topics_count": len(topics),
+                "topic_groups_count": len(
+                    {
+                        obj.get("topic_id") or "topic_general_architecture"
+                        for obj in all_objects.values()
+                        if obj.get("kind") != ObjectKind.TOPIC.value
+                    }
+                    - set(topics)
+                ),
                 "questions_count": len(questions),
                 "ready_questions_count": len(ready_list),
                 "blocked_questions_count": len(blocked_list),

@@ -8,7 +8,7 @@ from pathlib import Path
 
 import pytest
 
-from uuma.provider_pool import AccountPool, PoolError, file_lock
+from uuma.provider_pool import AccountPool, PoolError
 
 pytestmark = pytest.mark.skipif(sys.platform != "linux", reason="Linux account leases")
 
@@ -30,6 +30,11 @@ def pool(tmp_path):
         ' import time\n'
         ' pathlib.Path(os.environ["CHILD_READY"]).write_text("ready")\n'
         ' time.sleep(2)\n'
+        'elif "--spawn-orphan" in sys.argv:\n'
+        ' import time\n'
+        ' if os.fork() == 0:\n'
+        '  time.sleep(5); sys.exit(0)\n'
+        ' sys.exit(0)\n'
         'else:\n'
         ' token = home / ".gemini/antigravity-cli/jetski-standalone-oauth-token"\n'
         ' token.parent.mkdir(parents=True, exist_ok=True)\n'
@@ -149,7 +154,7 @@ def test_explicit_account_environment_drops_inherited_credentials(pool, monkeypa
     assert environment["HOME"] == str(pool.home("account-01"))
 
 
-def test_child_retains_account_lease_if_wrapper_is_killed(pool, tmp_path):
+def test_killed_wrapper_cleans_child_before_releasing_account(pool, tmp_path):
     authorize(pool)
     ready = tmp_path / "child-ready"
     environment = dict(os.environ, CHILD_READY=str(ready))
@@ -166,12 +171,54 @@ def test_child_retains_account_lease_if_wrapper_is_killed(pool, tmp_path):
         assert ready.exists()
         wrapper.kill()
         wrapper.wait(timeout=5)
-        with (
-            pytest.raises(BlockingIOError),
-            file_lock(pool.home("account-01").parent / "lease.lock", blocking=False),
-        ):
-            pytest.fail("The surviving provider child must still own its lease")
+        # The guardian keeps ownership until the cancelled child is gone; the account then
+        # becomes available without leaving the old provider alive indefinitely.
+        with pool.lease(wait_timeout=5) as (account, _, _):
+            assert account["id"] == "account-01"
     finally:
         if wrapper.poll() is None:
             wrapper.kill()
         wrapper.wait(timeout=5)
+
+
+def test_lease_queues_and_acquires_when_account_freed(pool):
+    import threading
+    import time
+    authorize(pool, priority=0)
+
+    def hold_and_release():
+        with pool.lease(wait_timeout=0.0):
+            time.sleep(0.4)
+
+    t = threading.Thread(target=hold_and_release)
+    t.start()
+    time.sleep(0.1)
+
+    with pool.lease(wait_timeout=2.0, poll_interval=0.1) as (second, _, _):
+        assert second["id"] == "account-01"
+
+    t.join()
+
+
+def test_run_queues_waiting_for_busy_account(pool):
+    import threading
+    import time
+    authorize(pool, priority=0)
+
+    def hold():
+        with pool.lease(wait_timeout=0.0):
+            time.sleep(0.4)
+
+    t = threading.Thread(target=hold)
+    t.start()
+    time.sleep(0.1)
+
+    assert pool.run(["models"], wait_timeout=2.0) == 0
+    t.join()
+
+
+def test_run_reaps_orphaned_holder_so_account_is_immediately_free(pool):
+    authorize(pool, priority=0)
+    assert pool.run(["--spawn-orphan"]) == 0
+    with pool.lease(wait_timeout=0.0) as (account, _, _):
+        assert account["id"] == "account-01"

@@ -98,6 +98,8 @@ class AdapterRegistry:
                     status = "RUNNING"
                 else:
                     status = items[0].status
+            if callable(getattr(adapter, "workspace_status", None)):
+                status = adapter.workspace_status(items)
 
             workspaces.append(
                 AgentWorkspace(

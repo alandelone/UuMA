@@ -10,6 +10,7 @@ import subprocess
 import threading
 import time
 from datetime import UTC, datetime
+from datetime import time as dt_time
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
 from typing import Any, Self
@@ -52,6 +53,36 @@ from .wisdom_critic import WisdomCritic
 from .wisdom_topics import TopicKnowledgeService, ensure_view_token, grounded_answer
 
 LOGGER = logging.getLogger(__name__)
+
+
+def parse_time_window(window_str: str) -> tuple[dt_time, dt_time] | None:
+    """Parse 'HH:MM-HH:MM' string into start and end time objects."""
+    if not window_str or not window_str.strip():
+        return None
+    try:
+        parts = window_str.strip().split("-")
+        if len(parts) != 2:
+            return None
+        start_h, start_m = map(int, parts[0].strip().split(":"))
+        end_h, end_m = map(int, parts[1].strip().split(":"))
+        return dt_time(start_h, start_m), dt_time(end_h, end_m)
+    except (ValueError, TypeError, IndexError):
+        LOGGER.warning(
+            "Invalid active hours window: %r; ignoring active window restriction",
+            window_str,
+        )
+        return None
+
+
+def is_time_in_window(
+    current_time: dt_time,
+    start: dt_time,
+    end: dt_time,
+) -> bool:
+    """Check if current_time falls within [start, end), handling overnight wrap."""
+    if start <= end:
+        return start <= current_time < end
+    return current_time >= start or current_time < end
 
 
 class _RunnerInstanceLock:
@@ -323,6 +354,7 @@ class OrbitRunner:
         heartbeat_interval: float = 45,
         sources_per_cycle: int = 2,
         critic: WisdomCritic | None = None,
+        active_window: str | None = None,
     ) -> None:
         self.knowledge = knowledge
         self.orbits = orbits
@@ -338,8 +370,46 @@ class OrbitRunner:
         self.critic = critic
         self._idle_logged = False
         self.planner = AdaptiveResearchPlanner(self.providers)
+        self.active_window = (
+            active_window
+            if active_window is not None
+            else os.environ.get("UUMA_ORBIT_ACTIVE_HOURS", "").strip()
+        )
+        self._parsed_window = (
+            parse_time_window(self.active_window) if self.active_window else None
+        )
+        self._window_pause_logged = False
+
+    def is_in_active_window(self, now: datetime | None = None) -> bool:
+        if not self._parsed_window:
+            return True
+        if now is None:
+            check_dt = datetime.now().astimezone()
+        elif now.tzinfo is not None:
+            check_dt = now.astimezone()
+        else:
+            check_dt = now
+        check_time = dt_time(check_dt.hour, check_dt.minute)
+        start, end = self._parsed_window
+        return is_time_in_window(check_time, start, end)
 
     def run_once(self) -> bool:
+        if not self.is_in_active_window():
+            if not self._window_pause_logged:
+                LOGGER.info(
+                    "Current time is outside active research window (%s); sleeping owner=%s",
+                    self.active_window,
+                    self.owner_id,
+                )
+                self._window_pause_logged = True
+            return False
+        if self._window_pause_logged:
+            LOGGER.info(
+                "Entered active research window (%s); resuming research owner=%s",
+                self.active_window,
+                self.owner_id,
+            )
+            self._window_pause_logged = False
         LOGGER.debug("Polling for a runnable Orbit cycle owner=%s", self.owner_id)
         cycle = self.orbits.acquire_cycle(
             self.owner_id, lease_seconds=max(180, int(self.heartbeat_interval * 3))
@@ -1036,7 +1106,9 @@ def _ensure_runner_run(
         return None
 
 
-def build_runner(profile_home: Path) -> OrbitRunner:
+def build_runner(
+    profile_home: Path, *, active_window: str | None = None
+) -> OrbitRunner:
     load_profile_environment(profile_home)
     settings = Settings.from_env()
     settings.ensure_directories()
@@ -1150,6 +1222,7 @@ def build_runner(profile_home: Path) -> OrbitRunner:
         KagProjectionWorker(knowledge, backend),
         dispatcher,
         critic=WisdomCritic.from_env(),
+        active_window=active_window,
     )
     LOGGER.info("Independent coverage critic configured model=%s", runner.critic.model)
     runner._cycle_hook = lambda cycle: runner_active_cycle.__setitem__(0, cycle)
@@ -1166,6 +1239,11 @@ def main() -> None:
     )
     parser.add_argument("--once", action="store_true")
     parser.add_argument("--poll-seconds", type=float, default=15)
+    parser.add_argument(
+        "--active-hours",
+        default=os.environ.get("UUMA_ORBIT_ACTIVE_HOURS", ""),
+        help="Permitted daily research hours window (e.g. '19:00-07:00'). Empty = 24/7.",
+    )
     parser.add_argument(
         "--idle-timeout-seconds",
         type=float,
@@ -1190,7 +1268,7 @@ def main() -> None:
     LOGGER.setLevel(logging.INFO)
     try:
         with _RunnerInstanceLock(settings.data_dir / "orbit-runner.lock"):
-            runner = build_runner(args.profile_home)
+            runner = build_runner(args.profile_home, active_window=args.active_hours or None)
             LOGGER.info(
                 "Question Orbit runner started owner=%s poll_seconds=%s profile=%s database=%s",
                 runner.owner_id,
@@ -1198,6 +1276,8 @@ def main() -> None:
                 args.profile_home,
                 runner.knowledge.store.path.resolve(),
             )
+            if runner.active_window:
+                LOGGER.info("Active research window configured: %s", runner.active_window)
             if args.once:
                 runner.run_once()
                 return
@@ -1210,6 +1290,7 @@ def main() -> None:
                     last_work_time = now
                 elif (
                     args.idle_timeout_seconds > 0
+                    and runner.is_in_active_window()
                     and not runner.orbits.has_quota_wait()
                     and (now - last_work_time) >= args.idle_timeout_seconds
                 ):

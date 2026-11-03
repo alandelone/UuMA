@@ -16,6 +16,7 @@ from uuma.knowledge_models import (
 )
 from uuma.knowledge_service import KnowledgeService
 from uuma.question_orbit import QuestionOrbitService
+from uuma.research_quota import ResearchQuota
 from uuma.settings import Settings
 from uuma.wisdom_topics import (
     TopicKnowledgeService,
@@ -235,6 +236,7 @@ def test_deep_preflight_reuses_topic_orbit_without_resetting_budget(tmp_path: Pa
         topics=topics,
         automatic_budget_tier=BudgetTier.DEEP,
     )
+    orbits.quota = ResearchQuota({'active_seconds': 100_000})
     route = {"platform": "telegram", "chat_id": "one"}
     root = resolve_approved(topics, "我想了解种青葱", actor_id="wisdom-oldman", route=route)
     answer = {
@@ -285,6 +287,7 @@ def test_topic_followup_does_not_reset_an_exhausted_budget(tmp_path: Path) -> No
         topics=topics,
         automatic_budget_tier=BudgetTier.DEEP,
     )
+    orbits.quota = ResearchQuota({'active_seconds': 100_000})
     route = {"platform": "telegram", "chat_id": "one"}
     root = resolve_approved(topics, "我想了解种青葱", actor_id="wisdom-oldman", route=route)
     answer = {

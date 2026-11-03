@@ -90,8 +90,16 @@ def _format_reminder_label(definition: dict[str, Any], member: ReminderOccurrenc
 
 
 class ReminderRuntime:
-    def __init__(self, store: LifeStore, *, owner_id: str, delivery_target_id: str) -> None:
+    def __init__(
+        self,
+        store: LifeStore,
+        *,
+        owner_id: str,
+        delivery_target_id: str,
+        scheduler_job_id: str | None = None,
+    ) -> None:
         self.store, self.owner_id, self.delivery_target_id = store, owner_id, delivery_target_id
+        self.scheduler_job_id = scheduler_job_id
         with store.transaction() as connection:
             for statement in (
                 """CREATE TABLE IF NOT EXISTS life_occurrences (
@@ -485,7 +493,11 @@ class ReminderRuntime:
                             }
                         ),
                     )
-                content = "🔔 honc 习惯提醒：\n" + "\n".join(f"• {value}" for value in descriptions)
+                items_text = "\n".join(f"• {value}" for value in descriptions)
+                footer = "🔔 honc 习惯提醒"
+                if self.scheduler_job_id:
+                    footer += f" (job_id: {self.scheduler_job_id})"
+                content = f"{items_text}\n────────\n{footer}"
                 fence = uuid4().hex
                 connection.execute(
                     "INSERT INTO life_reminder_groups VALUES (?, ?, ?, 'RESERVED', ?, ?, ?, ?, NULL, NULL) "

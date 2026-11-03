@@ -99,7 +99,7 @@ def _pre_llm_call(**kwargs):
                 "context": "生活记录入口尚未核实这条真实消息。只读，不要编造 request_ref 或宣称保存。"
             }
         authored, received, media_type = pending
-        if media_type in {"voice", "audio"} and not authored.strip():
+        if media_type in {"voice", "audio"}:
             input_kind = "voice_transcript"
         raw = authored if authored.strip() else raw
         transport = f"{platform}:{chat}:{mid}"

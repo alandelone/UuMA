@@ -1,0 +1,211 @@
+{
+  "$defs": {
+    "ArchiveRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version_id": {
+          "title": "Version Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "readers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Readers",
+          "type": "array"
+        },
+        "project_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Project Ids",
+          "type": "array"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "original_status": {
+          "title": "Original Status",
+          "type": "string"
+        },
+        "original_ref": {
+          "title": "Original Ref",
+          "type": "string"
+        },
+        "captured_at": {
+          "format": "date-time",
+          "title": "Captured At",
+          "type": "string"
+        },
+        "is_summary": {
+          "default": false,
+          "title": "Is Summary",
+          "type": "boolean"
+        },
+        "derived_from": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Derived From",
+          "type": "array"
+        },
+        "content_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Content Sha256",
+          "type": "string"
+        },
+        "content_bytes": {
+          "minimum": 0,
+          "title": "Content Bytes",
+          "type": "integer"
+        },
+        "media_type": {
+          "default": "text/plain",
+          "title": "Media Type",
+          "type": "string"
+        }
+      },
+      "required": [
+        "record_id",
+        "version_id",
+        "source_id",
+        "readers",
+        "kind",
+        "title",
+        "original_status",
+        "original_ref",
+        "captured_at",
+        "content_sha256",
+        "content_bytes"
+      ],
+      "title": "ArchiveRecord",
+      "type": "object"
+    },
+    "ArchiveSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "owner_agent": {
+          "title": "Owner Agent",
+          "type": "string"
+        },
+        "readers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Readers",
+          "type": "array"
+        },
+        "capture_status": {
+          "enum": [
+            "NOT_COLLECTED",
+            "COMPLETE",
+            "PARTIAL",
+            "UNAVAILABLE"
+          ],
+          "title": "Capture Status",
+          "type": "string"
+        },
+        "captured_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Captured At"
+        },
+        "source_as_of": {
+          "default": "",
+          "title": "Source As Of",
+          "type": "string"
+        },
+        "verification": {
+          "default": "UNVERIFIED",
+          "enum": [
+            "UNVERIFIED",
+            "HASH_VERIFIED",
+            "RESTORE_VERIFIED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_id",
+        "owner_agent",
+        "readers",
+        "capture_status"
+      ],
+      "title": "ArchiveSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "snapshot_id": {
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "published_at": {
+      "format": "date-time",
+      "title": "Published At",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/ArchiveSource"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/ArchiveRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "published_at",
+    "sources",
+    "records"
+  ],
+  "title": "ArchiveCatalog",
+  "type": "object"
+}

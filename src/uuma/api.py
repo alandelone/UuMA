@@ -29,6 +29,7 @@ from .service import (
     PolicyDeniedError,
 )
 from .settings import Settings
+from .wisdom_consultation import KnowledgeConsultationBroker, KnowledgeConsultationRequest
 from .wisdom_topics import TopicKnowledgeService, ensure_view_token
 from .wisdom_web import render_topic_index, render_topic_page
 
@@ -56,6 +57,10 @@ class IntakeRequest(BaseModel):
     agents: list[str] = Field(min_length=1, max_length=7)
     plan_id: str = Field(pattern=r"^(?:fresh-control:)?[a-f0-9]{64}$")
     paused: bool
+
+
+class ConsultationDispatchRequest(BaseModel):
+    execution_epoch: int = Field(ge=1)
 
 
 def create_app(settings: Settings | None = None) -> FastAPI:
@@ -339,6 +344,37 @@ def create_app(settings: Settings | None = None) -> FastAPI:
     ) -> dict[str, str]:
         control_plane.reject_operation(operation_id, reason=body.reason, actor_id=identity)
         return {"operation_id": operation_id, "status": "REJECTED"}
+
+    @app.post("/control/consultations/wisdom/{run_id}/dispatch-authorization")
+    def authorize_wisdom_dispatch(
+        run_id: str, body: ConsultationDispatchRequest,
+        _identity: str = Depends(control_auth),
+    ) -> dict[str, bool]:
+        run = control_plane.require_run(run_id)
+        task = control_plane.require_task(run["task_id"])
+        if (
+            run["execution_epoch"] != body.execution_epoch
+            or run["status"] not in {"PENDING", "RUNNING"}
+            or task["current_run_id"] != run_id
+        ):
+            raise ConflictError("Consultation is not the current pending/running execution")
+        KnowledgeConsultationBroker(control_plane).authorize_dispatch(
+            run, task, actor_id="brainstormer",
+        )
+        return {"authorized": True}
+
+    @app.post("/worker/consultations/wisdom")
+    def ask_wisdom(
+        body: KnowledgeConsultationRequest,
+        identity: str = Depends(worker_auth),
+    ) -> dict[str, Any]:
+        return KnowledgeConsultationBroker(control_plane).register(body, actor_id=identity)
+
+    @app.get("/worker/consultations/wisdom/{run_id}")
+    def wisdom_consultation_status(
+        run_id: str, identity: str = Depends(worker_auth),
+    ) -> dict[str, Any]:
+        return KnowledgeConsultationBroker(control_plane).status(run_id, actor_id=identity)
 
     @app.post("/worker/runs/direct")
     def register_direct_run(

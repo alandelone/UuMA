@@ -16,6 +16,19 @@ from .reminder_runtime import ReminderRuntime, identity
 from .store import HoncStore
 
 
+def _clean_input_text(text: str) -> str:
+    s = text.strip()
+    while len(s) >= 2 and (
+        (s[0] == '"' and s[-1] == '"')
+        or (s[0] == "'" and s[-1] == "'")
+        or (s[0] == "“" and s[-1] == "”")
+        or (s[0] == "「" and s[-1] == "」")
+        or (s[0] == "『" and s[-1] == "』")
+    ):
+        s = s[1:-1].strip()
+    return re.sub(r"(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])", "", s)
+
+
 def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[str, ...]:
     """Conservative admission of first-person effects; the agent still parses exact facts.
 
@@ -24,7 +37,7 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
     """
     value = text.strip()
     if re.search(
-        r"^(?:如果|假设|例如|比如|别人说|他说|她说|引用|明天|后天|不要|别|不想)|^(?:if |suppose |tomorrow |he said|she said|don't |do not )|^[「『\"]",
+        r"^(?:如果|假设|例如|比如|别人说|他说|她说|有人说|引用|明天|后天)|^(?:if |suppose |tomorrow |he said|she said)",
         value,
         re.IGNORECASE,
     ):
@@ -67,10 +80,13 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
     if not querying and not planned:
         named_report = any(
             name.casefold() in value.casefold() for name in known_habit_names
-        ) and re.search(
-            r"做了|练了|读了|打了|游了|打|游|记|完成|打卡|\bdone\b|\bcompleted\b",
-            value,
-            re.IGNORECASE,
+        ) and (
+            re.search(
+                r"做了|练了|读了|打了|游了|打|游|记|完成|打卡|\bdone\b|\bcompleted\b",
+                value,
+                re.IGNORECASE,
+            )
+            or len(value) >= 4
         )
         if named_report or re.search(
             r"打卡|完成|运动|跑步|走路|游泳|游了|八段锦|喝水|喝了|吃了|服药|泡脚|呼吸|锻炼|没.{0,4}(?:喝水|运动|吃|做)|\b(?:done|completed|drank|ate|exercised|walked|workout|swam)\b",
@@ -84,7 +100,11 @@ def _clause_operations(text: str, known_habit_names: tuple[str, ...]) -> tuple[s
             re.IGNORECASE,
         ):
             grants.append("record_body")
-        if re.search(r"日记|日誌|diary|journal|生活记录|记录今天|总结今天|写下今天|整理今天", value, re.IGNORECASE):
+        if (
+            re.search(r"日记|日誌|diary|journal|生活记录|记录今天|总结今天|写下今天|整理今天", value, re.IGNORECASE)
+            or len(value) >= 30
+            or re.search(r"今天.*(?:回家|到家|吃|打包|休息|泡脚|坐|回来)", value)
+        ):
             grants.append("save_diary")
     if re.search(r"不要记录|别记录|不用记录|不需要记录", value):
         return ()
@@ -104,20 +124,14 @@ def allowed_operations(
     """
     if input_kind not in {"text", "voice_transcript"}:
         raise ValueError("Unsupported host input kind")
-    # Remove only the wrapper added by Hermes to authenticated voice transcription.
-    # Typed quotes and quotation inside a voice transcript remain untrusted reports.
-    if input_kind == "voice_transcript":
-        text = text.strip()
-        if len(text) >= 2 and text[0] == text[-1] == '"':
-            text = text[1:-1]
-        text = re.sub(r"(?<=[\u3400-\u9fff])\s+(?=[\u3400-\u9fff])", "", text)
+    text = _clean_input_text(text)
+    if re.search(r"不要记录|别记录|不用记录|不需要记录", text):
+        return ()
     if re.search(
-        r"^(?:如果|假设|例如|比如|别人说|他说|她说|有人说|引用|明天|后天)|^(?:if |suppose |tomorrow |he said|she said)|^[「『\"]",
-        text.strip(),
+        r"^(?:如果|假设|例如|比如|别人说|他说|她说|有人说|引用)|^(?:if |suppose |he said|she said)",
+        text,
         re.IGNORECASE,
     ):
-        return ()
-    if re.search(r"不要记录|别记录|不用记录|不需要记录", text):
         return ()
     grants = set(_clause_operations(text, known_habit_names))
     for clause in re.split(r"[，,。；;\n]", text):
@@ -140,6 +154,7 @@ class LifeContextBroker:
                 config["owner_id"],
                 json.dumps(config["delivery_binding"], sort_keys=True),
             ),
+            scheduler_job_id=config.get("scheduler_job_id"),
         )
         with self.store.transaction() as connection:
             connection.execute("""CREATE TABLE IF NOT EXISTS life_context_bindings (

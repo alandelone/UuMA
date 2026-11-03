@@ -42,15 +42,39 @@ def test_guide_is_honc_only_and_preserves_native_commands(plugin):
         assert not ctx.commands
     ctx = Context()
     plugin.register(ctx)
-    assert set(ctx.commands) == {"honc"}
+    expected_commands = {
+        "honc",
+        "honc_habits",
+        "honc-habits",
+        "honc_rest",
+        "honc-rest",
+        "honc_work",
+        "honc-work",
+        "honc_history",
+        "honc-history",
+        "honc_graph",
+        "honc-graph",
+    }
+    assert expected_commands.issubset(set(ctx.commands))
+    assert "honc_1" in ctx.commands
+    assert "honc_habits_1" in ctx.commands
     for page in ("", *plugin.SECTIONS):
         text = ctx.commands["honc"]["handler"](page)
+        assert text and len(text) < 3500
+    for cmd in ctx.commands:
+        text = ctx.commands[cmd]["handler"]()
         assert text and len(text) < 3500
 
 
 def test_guide_does_not_execute_example_or_arbitrary_arguments(plugin):
     assert plugin.guide(" REST ") == plugin.REST
+    assert plugin.guide("honc_rest") == plugin.REST
+    assert plugin.guide("honc-rest") == plugin.REST
     assert plugin.guide("习惯") == plugin.HABITS
+    assert plugin.guide("honc_habits") == plugin.HABITS
+    assert plugin.guide("honc-habits") == plugin.HABITS
+    assert plugin.guide("honc_graph") == plugin.GRAPH
+    assert plugin.guide("honc-graph") == plugin.GRAPH
     assert plugin.guide("help") == plugin.GUIDE
     text = plugin.guide("新增一个习惯：午休，按分钟记录，不设提醒。")
     assert "另发一条" in text and "已新增" not in text

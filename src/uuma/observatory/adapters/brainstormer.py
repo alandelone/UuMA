@@ -2,12 +2,15 @@
 from __future__ import annotations
 
 import json
+import os
 import sqlite3
 from pathlib import Path
 from typing import Any
 
+from ...brainstormer_topic_groups import TOPIC_GROUP_METADATA
 from ..models import ObservatoryItem, SourceFreshness
 from .base import ObservatorySourceAdapter
+from .brainstormer_remote import RemoteBrainstormerReader, snapshot_items
 
 
 class BrainstormerAdapter(ObservatorySourceAdapter):
@@ -18,6 +21,19 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
 
     def __init__(self, data_dir: Path | str, hermes_dir: Path | str | None = None) -> None:
         self.data_dir = Path(data_dir)
+        configured_owner = os.environ.get("UUMA_OBSERVATORY_BRAINSTORMER_OWNER")
+        marker = Path(configured_owner) if configured_owner else (
+            self.data_dir / "brainstormer.remote-owner.json"
+        )
+        if not configured_owner and not marker.is_file():
+            # Codex's packaged filesystem redirects writes under LOCALAPPDATA.
+            marker = (
+                Path.home() / "AppData/Local/Packages/OpenAI.Codex_2p2nqsd0c76g0"
+                / "LocalCache/Local/UuMA/brainstormer.remote-owner.json"
+            )
+        self.remote_reader = (
+            RemoteBrainstormerReader(marker) if configured_owner or marker.is_file() else None
+        )
         self.projects_dir = self._resolve_projects_dir()
         self.hermes_dir = (
             Path(hermes_dir)
@@ -37,6 +53,14 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
         return (self.data_dir / "brainstormer" / "projects").resolve()
 
     def probe_health(self) -> SourceFreshness:
+        if self.remote_reader is not None:
+            snapshot = self.remote_reader.read()
+            return SourceFreshness(
+                source_name="alandelone-server-001:Brainstormer navigation API",
+                is_available=snapshot is not None,
+                last_event_at=snapshot.get("read_at") if snapshot else None,
+                error_message=self.remote_reader.error,
+            )
         has_state = self.projects_dir.exists() and any(self.projects_dir.iterdir())
         hermes_state = self.hermes_dir / "state.db"
         is_avail = has_state or hermes_state.exists()
@@ -48,24 +72,16 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
         )
 
     def list_items(self, limit: int = 15, offset: int = 0) -> list[ObservatoryItem]:
-        TOPIC_METADATA = {
-            "topic_state_daemon": {
-                "title": "本地状态守护与持久化单写者队列 (State Daemon & Storage Queue)",
-                "description": "解决本地高并发读写、防数据踩踏与单写者排队同步机制，保障 SQLite 与 JSON 状态原子刷新与无锁并发读取",
-                "icon": "⚡",
-            },
-            "topic_dag_rendering": {
-                "title": "架构决策图谱可视化与抽屉交互 (DAG Flow & Inspector UX)",
-                "description": "基于 @xyflow/react 与 dagre 拓扑布局的决策 DAG 交互渲染，支持多层级折叠展开与 Notion 风格侧边栏检查",
-                "icon": "🎨",
-            },
-            "topic_voice_telegram": {
-                "title": "双入口语音与即时通信接入 (Dual-Entry Voice & Telegram)",
-                "description": "探索多模态语音输入流与 Telegram 即时审计通道的无缝接入与意图路由",
-                "icon": "🎙️",
-            },
-        }
-
+        if self.remote_reader is not None:
+            snapshot = self.remote_reader.read()
+            if snapshot is None:
+                return [ObservatoryItem(
+                    agent_id=self.agent_id, item_id="bs_server_unavailable",
+                    title="服务器议题暂不可用", kind="source_status", status="UNAVAILABLE",
+                    health="WARNING", summary=self.remote_reader.error or "等待服务器连接。",
+                    source_ref="alandelone-server-001:brainstormer:navigation",
+                )][offset:offset + limit]
+            return [ObservatoryItem(**row) for row in snapshot_items(snapshot)][offset:offset + limit]
         items: list[ObservatoryItem] = []
 
         # 1. Search for projects in self.projects_dir (both */state.json and *.json)
@@ -109,11 +125,15 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                     )
                     status = obj.get("status", "open")
                     title = obj.get("title") or obj_id
-                    topic_id = obj.get("topic_id") or "topic_general_architecture"
+                    topic_id = (
+                        obj_id
+                        if o_type == "topic"
+                        else obj.get("topic_id") or "topic_general_architecture"
+                    )
 
                     # Resolve Topic Info
                     if topic_id not in topics_map:
-                        meta = TOPIC_METADATA.get(topic_id, {})
+                        meta = TOPIC_GROUP_METADATA.get(topic_id, {})
                         # If there is a topic object in objects
                         topic_obj = objects.get(topic_id, {})
                         top_title = meta.get("title") or topic_obj.get("title") or topic_id.replace("_", " ").title()
@@ -124,6 +144,7 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                             "title": top_title,
                             "description": top_desc,
                             "icon": top_icon,
+                            "is_canonical_topic": topic_obj.get("kind") == "topic",
                             "latest_updated_at": "",
                             "decisions": [],
                             "questions": [],
@@ -176,11 +197,16 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                 )
 
                 # Add Master Project Decision Map Item
+                canonical_topic_count = sum(
+                    1 for topic in topics_list if topic["is_canonical_topic"]
+                )
+                inferred_topic_group_count = len(topics_list) - canonical_topic_count
                 summary = (
-                    f"架构决策图 (DAG) 状态: {len(topics_list)}个架构议题 (Topics) · "
+                    f"架构决策图 (DAG) 状态: {inferred_topic_group_count}个未建档主题组 · "
+                    f"正式 Topic {canonical_topic_count} 个 · "
                     f"已决议 {len(discussed_decisions)} 项 · "
                     f"待讨论 {len(open_questions)} 个问题 · "
-                    f"底层假设 {len(assumptions)} 项 · 修订版本 r{revision}"
+                    f"假设记录 {len(assumptions)} 项 · 修订版本 r{revision}"
                 )
 
                 items.append(
@@ -200,7 +226,8 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                             "updated_at": updated_at,
                             "summary": summary,
                             "topics": topics_list,
-                            "topics_count": len(topics_list),
+                            "topics_count": canonical_topic_count,
+                            "topic_groups_count": inferred_topic_group_count,
                             "discussed_decisions": discussed_decisions,
                             "open_questions": open_questions,
                             "assumptions": assumptions,
@@ -218,19 +245,29 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                         ObservatoryItem(
                             agent_id=self.agent_id,
                             item_id=f"bs_top_{proj_id}_{top['topic_id']}",
-                            title=f"架构议题: {top['title']}",
+                            title=(
+                                f"架构议题: {top['title']}"
+                                if top["is_canonical_topic"]
+                                else f"未建档主题组: {top['title']}"
+                            ),
                             kind="architecture_topic",
-                            status="ACTIVE",
+                            status="ACTIVE" if top["is_canonical_topic"] else "INFERRED",
                             health="HEALTHY",
                             updated_at=updated_at,
                             summary=(
-                                f"架构议题 · 已决议 {len(top['decisions'])} 项 · "
+                                (
+                                    "正式 Topic · "
+                                    if top["is_canonical_topic"]
+                                    else "由记录的 topic_id 推断；尚无正式 Topic 对象 · "
+                                )
+                                + f"决定 {len(top['decisions'])} 项 · "
                                 f"待研讨 {len(top['questions'])} 个问题 · "
-                                f"底层假设 {len(top['assumptions'])} 项 · 关联专案: {proj_id}"
+                                f"假设记录 {len(top['assumptions'])} 项 · 关联专案: {proj_id}"
                             ),
                             source_ref=f"decision_dag:{top['topic_id']}",
                             payload={
                                 "topic": top,
+                                "is_canonical_topic": top["is_canonical_topic"],
                                 "project_id": proj_id,
                                 "revision": revision,
                                 "all_topics": [
@@ -292,11 +329,25 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                             tbl = cursor.fetchone()
                             if tbl:
                                 tbl_name = tbl[0]
+                                cols = {
+                                    c[1]
+                                    for c in cursor.execute(
+                                        f"PRAGMA table_info({tbl_name})"
+                                    ).fetchall()
+                                }
+                                id_col = "session_id" if "session_id" in cols else "id"
+                                time_col = (
+                                    "updated_at"
+                                    if "updated_at" in cols
+                                    else ("last_activity_at" if "last_activity_at" in cols else id_col)
+                                )
+                                where_clause = "WHERE profile_name = 'brainstormer'" if "profile_name" in cols else ""
                                 cursor.execute(
                                     f"""
-                                    SELECT session_id, title, updated_at
+                                    SELECT {id_col} AS session_id, title, {time_col} AS updated_at
                                     FROM {tbl_name}
-                                    ORDER BY updated_at DESC LIMIT ? OFFSET ?
+                                    {where_clause}
+                                    ORDER BY {time_col} DESC LIMIT ? OFFSET ?
                                     """,
                                     (limit, offset),
                                 )
@@ -305,7 +356,7 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                                         ObservatoryItem(
                                             agent_id=self.agent_id,
                                             item_id=f"session_{r['session_id']}",
-                                            title=r["title"] or f"Discussion {r['session_id'][:8]}",
+                                            title=r["title"] or f"Discussion {str(r['session_id'])[:8]}",
                                             kind="discussion_session",
                                             status="ACTIVE",
                                             updated_at=r["updated_at"],
@@ -322,16 +373,38 @@ class BrainstormerAdapter(ObservatorySourceAdapter):
                 ObservatoryItem(
                     agent_id=self.agent_id,
                     item_id="bs_standby",
-                    title="Observatory Architecture & Specialization",
+                    title="专案架构研讨 (就绪待命)",
                     kind="decision_dag",
-                    status="ACTIVE",
-                    summary="All-in-One 观测台架构与数据接入研讨检查点",
-                    source_ref="brainstormer:checkpoint",
-                    payload={"topic": "Observatory Architecture", "checkpoint": "Round 2 completed"},
+                    status="IDLE",
+                    health="HEALTHY",
+                    summary="暂无活跃架构议题 · 等待提出新研讨主题",
+                    source_ref="brainstormer:standby",
+                    payload={
+                        "project_id": None,
+                        "revision": None,
+                        "topics": [],
+                        "topics_count": 0,
+                        "topic_groups_count": 0,
+                        "discussed_decisions": [],
+                        "open_questions": [],
+                        "assumptions": [],
+                        "evidences": [],
+                        "checkpoints": [],
+                        "dag_links": [],
+                        "raw_objects_count": 0,
+                    },
                 )
             )
 
         return items[offset : offset + limit]
+
+    def workspace_status(self, items: list[ObservatoryItem]) -> str:
+        """An active saved discussion is not evidence of a currently running worker."""
+        if self.remote_reader is not None:
+            return "ACTIVE" if self.remote_reader.error is None and any(
+                item.kind == "decision_dag" for item in items
+            ) else ("WARNING" if self.remote_reader.error else "IDLE")
+        return items[0].status if items else "IDLE"
 
     def get_item(self, item_id: str) -> ObservatoryItem | None:
         items = self.list_items(limit=100)

@@ -353,6 +353,9 @@ class ControlPlane:
 
     def submit_result(self, result: ResultContract, *, actor_id: str) -> str:
         task = TaskContract.model_validate(self.require_task(result.task_id)["contract"])
+        from .wisdom_consultation import validate_consultation_result
+
+        validate_consultation_result(task, result)
         declared_checks = {check.name: check for check in result.checks}
         missing = [name for name in task.acceptance_checks if name not in declared_checks]
         failed = [name for name in task.acceptance_checks if name in declared_checks and not declared_checks[name].passed]

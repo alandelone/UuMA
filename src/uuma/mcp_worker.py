@@ -295,6 +295,19 @@ def submit_result(result_json: str | ResultContract) -> dict[str, str]:
         readiness = ensure_knowledge_graph(_agent_id(), recover=False)
         if readiness.get("ready") is not True:
             raise RuntimeError("Knowledge graph unavailable; report BLOCKED or FAILED, not COMPLETED")
+    if _agent_id() == "wisdom-oldman":
+        task = _control_plane().require_task(result.task_id)
+        if task["contract"].get("source") == "consultation":
+            run = _control_plane().require_run(result.run_id)
+            if (task.get("current_run_id") != result.run_id
+                    or run["agent_id"] != "wisdom-oldman"
+                    or run["status"] not in {"PENDING", "RUNNING", "PAUSED"}):
+                raise PermissionError("Consultation is no longer the current active Wisdom run")
+            from .consultation_retention import retain_consultation_result
+
+            result = retain_consultation_result(
+                result, task, os.environ.get("UUMA_CONSULTATION_KNOWLEDGE_PROFILE", ""),
+            )
     event_type = _control_plane().submit_result(result, actor_id=_agent_id())
     return {"run_id": result.run_id, "event_type": event_type}
 
@@ -342,6 +355,79 @@ def brainstormer_get_context(project_id: str, topic_id: str = "") -> dict[str, A
     """Restore bounded structured state for one project or topic."""
     _require_brainstormer()
     return _brainstormer_store().get_context(project_id, topic_id or None)
+
+
+@mcp.tool()
+def brainstormer_ask_wisdom(
+    parent_run_id: str,
+    parent_execution_epoch: int,
+    project_id: str,
+    topic_id: str,
+    question: str,
+    purpose: str,
+    idempotency_key: str,
+    source_refs_json: str,
+    context_json: str = "[]",
+    research_if_unknown: bool = False,
+) -> dict[str, Any]:
+    """Ask Wisdom directly through A2A; retain unknowns and return a durable reply handle.
+
+    Send only relevant context and source locators. Leave research_if_unknown false unless
+    the user requested research. Reuse the same key only for the identical question/context.
+    """
+    import json
+
+    from .a2a_client import send_knowledge_consultation
+    from .wisdom_consultation import KnowledgeConsultationBroker, KnowledgeConsultationRequest
+
+    actor = _require_brainstormer()
+    request = KnowledgeConsultationRequest(
+        parent_run_id=parent_run_id, parent_execution_epoch=parent_execution_epoch,
+        project_id=project_id, topic_id=topic_id, question=question, purpose=purpose,
+        idempotency_key=idempotency_key, source_refs=json.loads(source_refs_json),
+        context=json.loads(context_json), research_if_unknown=research_if_unknown,
+    )
+    context = _brainstormer_store().get_context(project_id, topic_id)
+    if not context["objects"]:
+        raise ValueError("Restore an existing discussion topic before consulting Wisdom")
+    control = _control_plane()
+    if isinstance(control, ControlClient):
+        receipt = control.request(
+            "POST", "/worker/consultations/wisdom", request.model_dump(mode="json"),
+        )
+    else:
+        receipt = KnowledgeConsultationBroker(control).register(request, actor_id=actor)
+    # Reading an existing receipt never restarts a completed, paused or uncertain execution.
+    if receipt["run_status"] != "PENDING":
+        return receipt
+    try:
+        if isinstance(control, ControlClient):
+            binding = control.request("GET", "/registry/agents/wisdom-oldman/endpoint")
+        else:
+            from .runtime_registry import RuntimeRegistry
+
+            binding = RuntimeRegistry(control).get("wisdom-oldman")
+        transport_receipt = send_knowledge_consultation(binding, receipt)
+    except (OSError, RuntimeError, TimeoutError) as exc:
+        return receipt | {
+            "dispatch_status": "UNCONFIRMED", "dispatch_error_type": type(exc).__name__,
+            "instruction": "Keep this run/key. Observe its status; do not create a replacement.",
+        }
+    return receipt | {"dispatch_status": "SUBMITTED", "a2a_receipt": transport_receipt}
+
+
+@mcp.tool()
+def brainstormer_wisdom_status(run_id: str) -> dict[str, Any]:
+    """Read the response to Brainstormer's own Wisdom question; never start or resume work."""
+    from urllib.parse import quote
+
+    from .wisdom_consultation import KnowledgeConsultationBroker
+
+    actor = _require_brainstormer()
+    control = _control_plane()
+    if isinstance(control, ControlClient):
+        return control.request("GET", "/worker/consultations/wisdom/" + quote(run_id, safe=""))
+    return KnowledgeConsultationBroker(control).status(run_id, actor_id=actor)
 
 
 @mcp.tool()

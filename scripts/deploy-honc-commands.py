@@ -35,7 +35,20 @@ def deploy(profile: Path, backup: Path) -> dict:
         .setdefault("command_menu", {})
     )
     menu["priority"] = list(
-        dict.fromkeys(["honc", *menu.get("priority", []), "model", "new", "stop", "help", "status"])
+        dict.fromkeys([
+            "honc",
+            "honc_habits",
+            "honc_rest",
+            "honc_work",
+            "honc_history",
+            "honc_graph",
+            *menu.get("priority", []),
+            "model",
+            "new",
+            "stop",
+            "help",
+            "status",
+        ])
     )
     menu["priority_mode"] = "prepend"
     menu.setdefault("max_commands", 24)

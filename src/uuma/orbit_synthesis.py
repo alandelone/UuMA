@@ -226,12 +226,75 @@ class OrbitCompactSynthesizer:
         return chosen
 
     @staticmethod
+    def _parse_synthesis_points(content: str) -> list[dict[str, Any]] | None:
+        if not content or not content.strip():
+            return None
+        cleaned = content.strip()
+        if "```" in cleaned:
+            m = re.search(r"```(?:json)?\s*([\s\S]*?)\s*```", cleaned, re.IGNORECASE)
+            if m:
+                cleaned = m.group(1).strip()
+        start, end = cleaned.find("{"), cleaned.rfind("}")
+        if start >= 0 and end > start:
+            candidate = cleaned[start:end + 1]
+            for attempt_cand in (
+                candidate,
+                re.sub(r",\s*([}\]])", r"\1", candidate),
+                re.sub(r"[\x00-\x1f\x7f-\x9f]", " ", candidate),
+            ):
+                try:
+                    data = json.loads(attempt_cand, strict=False)
+                    if isinstance(data, dict):
+                        pts = data.get("points")
+                        if isinstance(pts, list) and pts:
+                            valid = [p for p in pts if isinstance(p, dict)]
+                            if valid:
+                                return valid
+                except (json.JSONDecodeError, ValueError):
+                    continue
+        points: list[dict[str, Any]] = []
+        pat1 = re.compile(
+            r'\{\s*"text"\s*:\s*"(?P<text>[\s\S]*?)"\s*,\s*"sources"\s*:\s*\[(?P<sources>[\s\S]*?)\]'
+            r'(?:\s*,\s*"certainty"\s*:\s*"(?P<certainty>[\s\S]*?)")?\s*\}'
+        )
+        for m in pat1.finditer(cleaned):
+            t = m.group("text").replace('\\"', '"').strip()
+            srcs = [
+                s.strip().strip('"\'')
+                for s in m.group("sources").split(",")
+                if s.strip().strip('"\'')
+            ]
+            cert = (m.group("certainty") or "evidence").strip()
+            if t and srcs:
+                points.append({"text": t, "sources": srcs, "certainty": cert})
+        if points:
+            return points
+        pat2 = re.compile(
+            r'\{\s*"sources"\s*:\s*\[(?P<sources>[\s\S]*?)\]\s*,\s*"text"\s*:\s*"(?P<text>[\s\S]*?)"'
+            r'(?:\s*,\s*"certainty"\s*:\s*"(?P<certainty>[\s\S]*?)")?\s*\}'
+        )
+        for m in pat2.finditer(cleaned):
+            t = m.group("text").replace('\\"', '"').strip()
+            srcs = [
+                s.strip().strip('"\'')
+                for s in m.group("sources").split(",")
+                if s.strip().strip('"\'')
+            ]
+            cert = (m.group("certainty") or "evidence").strip()
+            if t and srcs:
+                points.append({"text": t, "sources": srcs, "certainty": cert})
+        if points:
+            return points
+        return None
+
+    @staticmethod
     def _generate(question: str, snippets: list[dict[str, str]]) -> list[dict[str, Any]]:
         base_url = os.environ.get("OPENAI_BASE_URL", "").rstrip("/")
         api_key = os.environ.get("OPENAI_API_KEY") or os.environ.get("OPENROUTER_API_KEY")
-        model = os.environ.get("UUMA_KAG_LLM_MODEL")
-        if not base_url or not api_key or not model:
+        primary_model = os.environ.get("UUMA_KAG_LLM_MODEL")
+        if not base_url or not api_key or not primary_model:
             raise RuntimeError("Compact research synthesis model is not configured.")
+        fallback_model = os.environ.get("UUMA_KAG_LLM_FALLBACK_MODEL") or "gemini-3.8-flash"
         last_failure = "invalid JSON"
         timeout = int(os.environ.get("UUMA_SYNTHESIS_TIMEOUT", "240"))
         max_attempts = max(2, int(os.environ.get("UUMA_SYNTHESIS_ATTEMPTS", "3")))
@@ -262,8 +325,13 @@ class OrbitCompactSynthesizer:
                 "clearly labelled inference. Output nothing outside JSON. "
                 f"Question: {question}\n\nExcerpts:\n{context}"
             )
-            payload = {
-                "model": model,
+            current_model = (
+                fallback_model
+                if (attempt_idx == len(compact_plan) - 1 and primary_model != fallback_model)
+                else primary_model
+            )
+            payload: dict[str, Any] = {
+                "model": current_model,
                 "messages": [
                     {"role": "system", "content": "你是中文研究写作者。只输出合法 JSON。"},
                     {"role": "user", "content": prompt},
@@ -295,30 +363,11 @@ class OrbitCompactSynthesizer:
                 )
                 if isinstance(raw_content, list) else str(raw_content)
             )
-            start, end = content.find("{"), content.rfind("}")
-            if start < 0 or end <= start:
-                last_failure = "empty or truncated JSON"
-                continue
-            candidate = content[start:end + 1]
-            parsed = None
-            for attempt_cand in (
-                candidate,
-                re.sub(r",\s*([}\]])", r"\1", candidate),
-            ):
-                try:
-                    data = json.loads(attempt_cand, strict=False)
-                    if isinstance(data, dict):
-                        parsed = data
-                        break
-                except (json.JSONDecodeError, ValueError):
-                    continue
-            if parsed is None:
-                last_failure = "malformed JSON"
-                continue
-            points = parsed.get("points")
-            if isinstance(points, list) and points:
+            points = OrbitCompactSynthesizer._parse_synthesis_points(content)
+            if points:
                 return points
-            last_failure = "missing source-linked points"
+            last_failure = "malformed JSON or missing source-linked points"
         raise ValueError(
-            f"The synthesis model did not return source-linked JSON after {len(compact_plan)} attempts: {last_failure}."
+            f"The synthesis model did not return source-linked JSON after "
+            f"{len(compact_plan)} attempts: {last_failure}."
         )
