@@ -1,0 +1,4 @@
+name: uuma_librarian_commands
+version: "0.1.0"
+description: Read-only Librarian backup overview and one-tap source details.
+author: UuMA

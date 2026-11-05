@@ -20,7 +20,14 @@ The independent `uuma-librarian-read` MCP exposes seven semantic read tools. Rec
 intake remains separate from the semantic catalog; receipt of encrypted recovery
 objects does not grant agents access to their plaintext or index all source records.
 
-Apply the explicit CLI and API toolset scope in `tools.yaml`. Configuring only CLI
+`uuma-librarian-operations` adds read-only intake/publication receipt status for the
+Librarian identity. Its explicit profile and guard allowlists are required. The
+`uuma_librarian_commands` plugin supplies `/library`, `/library_sources` and
+`/library_issues`, with stable source links and pagination. Refresh its deployment
+inventory when enrolling new sources. See `librarian-overview-20261105.md` for scope
+and verification evidence.
+
+Apply the explicit CLI, API and Telegram toolset scope in `tools.yaml`. Configuring only CLI
 toolsets leaves the API platform's default toolsets in effect. Do not expose shell,
 file mutation, computer control, or unrelated MCP servers through that fallback.
 
@@ -37,8 +44,15 @@ On Windows, inspect the actual task user context: packaged desktop applications
 can virtualize AppData paths. Validate the private SSH key ACL in the scheduled
 task's context rather than relying on a desktop-process probe.
 
-On November 3, the NAS hardware issue was explicitly deferred by the user. Keep
-its existing publication pause; do not interpret that deferral as a repair or a
-successful recovery publication. The second workstation is prepared for manual
+The user replaced the NAS disks and authorized publication resumption. Publication
+has resumed with separate hash and recovery receipts. Check current receipts for
+coverage rather than reapplying the historical November 3 pause. The second workstation is prepared for manual
 installation by the user, not remotely enrolled. Independent recovery-key custody
 remains a required final user action.
+
+Telegram is enabled for `@uulibrarian_bot` using profile-local credentials and the
+existing owner's allowlist. The profile shares the server Hermes gateway with the
+other specialists. Retain its independent identity, scoped MCP commands and guard.
+The model/provider configuration follows the verified Forge configuration at the
+November 5 deployment. Connection health and actual model/tool responses require
+separate verification. See the dated Telegram deployment operations record.

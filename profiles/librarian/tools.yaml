@@ -3,6 +3,12 @@ platform_toolsets:
   cli:
     - uuma-worker
     - uuma-librarian-read
+    - uuma-librarian-operations
   api_server:
     - uuma-worker
     - uuma-librarian-read
+    - uuma-librarian-operations
+  telegram:
+    - uuma-worker
+    - uuma-librarian-read
+    - uuma-librarian-operations

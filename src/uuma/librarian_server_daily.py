@@ -65,10 +65,22 @@ def owner_matches(spec: dict[str, Any]) -> bool:
 
 def _tree(path: Path) -> tuple[list[Path], frozenset[Path]]:
     """Enumerate a stable source without following links or silently excluding files."""
+    from .librarian_discovery import discover
+
     cursor = None
     records: list[dict[str, Any]] = []
     for _ in range(100):
-        page = discover_page(path, cursor=cursor, max_entries=1000)
+        try:
+            page = discover_page(path, cursor=cursor, max_entries=10000)
+        except ValueError as exc:
+            if "restart its inventory" in str(exc) or "changed" in str(exc):
+                walked = discover(path, max_files=100000, max_seconds=60)
+                if any(iss.get("error_type") == "SYMLINK_NOT_FOLLOWED" for iss in walked.get("issues", [])):
+                    raise ValueError("Source inventory contains inaccessible or unsupported entries") from exc
+                records = walked["files"]
+                cursor = None
+                break
+            raise
         if page["issues"]:
             raise ValueError("Source inventory contains inaccessible or unsupported entries")
         records.extend(page["files"])

@@ -147,15 +147,17 @@ def chatgpt_thread_indices(
 
             # Count requests for this thread by status
             reqs = conn.execute(
-                "SELECT status FROM chatgpt_requests WHERE thread=?",
-                (thread_id,),
+                "SELECT status FROM chatgpt_requests "
+                "WHERE account=? AND agent=? AND project=? AND thread=?",
+                (account, agent, project, thread_id),
             ).fetchall()
             status_counts = Counter(r[0] for r in reqs if r[0] is not None)
 
-            clean_thread_id = re.sub(r"[^A-Za-z0-9_.:-]", "_", str(thread_id))
-            rec_id = f"chatgpt-thread:{clean_thread_id}"
-            if len(rec_id) > 160:
-                rec_id = rec_id[:160]
+            binding = json.dumps(
+                [account, agent, project, thread_id], ensure_ascii=False, separators=(",", ":")
+            ).encode("utf-8")
+            binding_digest = hashlib.sha256(binding).hexdigest()
+            rec_id = f"chatgpt-thread:{binding_digest}"
 
             body = {
                 "record_type": "chatgpt-thread-structural-index",
@@ -169,11 +171,11 @@ def chatgpt_thread_indices(
             }
             content = json.dumps(body, sort_keys=True, ensure_ascii=False).encode("utf-8")
             digest = hashlib.sha256(content).hexdigest()
-            source_ref = f"workstation:chatgpt-thread:{clean_thread_id}"
+            source_ref = f"workstation:chatgpt-thread:{binding_digest}"
 
             record = {
                 "record_id": rec_id,
-                "version_id": f"t:{source_digest[:16]}:{clean_thread_id[:8]}",
+                "version_id": f"t:{source_digest}:{binding_digest}",
                 "source_id": "chatgpt-bridge-state",
                 "readers": readers,
                 "project_ids": [str(project or "default")],

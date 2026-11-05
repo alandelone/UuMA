@@ -3,6 +3,7 @@
 import json
 import sqlite3
 import tempfile
+from contextlib import closing
 from datetime import UTC, datetime
 from pathlib import Path
 
@@ -12,7 +13,7 @@ from uuma.librarian_chatgpt_index import (
     chatgpt_bridge_summary_index,
     chatgpt_thread_indices,
 )
-from uuma.librarian_read import ArchiveRecord
+from uuma.librarian_read import ArchiveRecord, LibrarianReader
 
 
 @pytest.fixture
@@ -127,7 +128,7 @@ def test_chatgpt_thread_indices_generates_thread_records(sample_chatgpt_db_bytes
     )
     assert len(results) == 2
 
-    thread_1 = next(r for r in results if r["record"]["record_id"] == "chatgpt-thread:thread-001")
+    thread_1 = next(r for r in results if json.loads(r["content"])["thread_id"] == "thread-001")
     body_1 = json.loads(thread_1["content"].decode("utf-8"))
     assert body_1["thread_id"] == "thread-001"
     assert body_1["agent"] == "orchestrator"
@@ -141,6 +142,95 @@ def test_chatgpt_thread_indices_generates_thread_records(sample_chatgpt_db_bytes
     assert rec_1.kind == "thread-index"
     assert rec_1.project_ids == ["project-apollo"]
     assert rec_1.readers == readers
+
+
+@pytest.mark.parametrize("different_field,different_value", [
+    ("account", "account-beta"),
+    ("agent", "brainstormer"),
+    ("project", "project-gemini"),
+])
+def test_default_thread_bindings_keep_identity_and_requests_separate(
+    sample_chatgpt_db_bytes, tmp_path, different_field, different_value,
+):
+    database = tmp_path / "bridge.db"
+    database.write_bytes(sample_chatgpt_db_bytes)
+    first = {"account": "account-alpha", "agent": "orchestrator", "project": "project-apollo"}
+    second = first | {different_field: different_value}
+    with closing(sqlite3.connect(database)) as conn:
+        for old_thread, binding in [("thread-001", first), ("thread-002", second)]:
+            values = (binding["account"], binding["agent"], binding["project"], "main", old_thread)
+            for table in ["chatgpt_threads", "chatgpt_requests"]:
+                conn.execute(
+                    f"UPDATE {table} SET account=?,agent=?,project=?,thread=? WHERE thread=?",
+                    values,
+                )
+        conn.commit()
+
+    captured_at = datetime(2026, 11, 5, tzinfo=UTC)
+    results = chatgpt_thread_indices(
+        database.read_bytes(), readers=["librarian"], captured_at=captured_at,
+    )
+    keys = {(r["record"]["record_id"], r["record"]["version_id"]) for r in results}
+    assert len(keys) == 2
+    for result, expected_count, binding in zip(results, [2, 1], [first, second], strict=True):
+        body = json.loads(result["content"])
+        assert body["account_alias"] == binding["account"]
+        assert body["agent"] == binding["agent"]
+        assert body["project"] == binding["project"]
+        assert body["total_requests"] == expected_count
+        assert sum(body["request_counts"].values()) == expected_count
+
+    archive = tmp_path / "archive"
+    archive.mkdir()
+    for result in results:
+        digest = result["record"]["content_sha256"]
+        path = archive / "objects" / digest[:2] / digest
+        path.parent.mkdir(parents=True, exist_ok=True)
+        path.write_bytes(result["content"])
+    (archive / "catalog.json").write_text(json.dumps({
+        "schema_version": 1, "snapshot_id": "fixture-scoped-bindings",
+        "published_at": captured_at.isoformat(),
+        "sources": [{"source_id": "chatgpt-bridge-state", "owner_agent": "orchestrator",
+                     "readers": ["librarian"], "capture_status": "PARTIAL"}],
+        "records": [r["record"] for r in results],
+    }), encoding="utf-8")
+    reader = LibrarianReader(archive, "librarian")
+    assert reader.search_records(source_id="chatgpt-bridge-state")["total"] == 2
+    for result in results:
+        record = result["record"]
+        read = reader.read_record(record["record_id"], record["version_id"])
+        assert read["content_verified"] is True
+        assert json.loads(read["text"]) == json.loads(result["content"])
+
+    with closing(sqlite3.connect(database)) as conn:
+        conn.execute("UPDATE chatgpt_requests SET status='COMPLETED'")
+        conn.commit()
+    revised = chatgpt_thread_indices(
+        database.read_bytes(), readers=["librarian"], captured_at=captured_at,
+    )
+    assert [r["record"]["record_id"] for r in revised] == [r["record"]["record_id"] for r in results]
+    assert all(new["record"]["version_id"] != old["record"]["version_id"]
+               for new, old in zip(revised, results, strict=True))
+
+
+@pytest.mark.parametrize("thread_names", [("a/b", "a?b"), ("a" * 99 + "x", "a" * 99 + "y")])
+def test_thread_identity_preserves_punctuation_and_long_names(
+    sample_chatgpt_db_bytes, tmp_path, thread_names,
+):
+    database = tmp_path / "bridge.db"
+    database.write_bytes(sample_chatgpt_db_bytes)
+    with closing(sqlite3.connect(database)) as conn:
+        for old_thread, name in zip(["thread-001", "thread-002"], thread_names, strict=True):
+            conn.execute("UPDATE chatgpt_threads SET account='a',agent='orchestrator',"
+                         "project='p',thread=? WHERE thread=?", (name, old_thread))
+        conn.commit()
+    results = chatgpt_thread_indices(
+        database.read_bytes(), readers=["librarian"], captured_at=datetime(2026, 11, 5, tzinfo=UTC),
+    )
+    assert len({r["record"]["record_id"] for r in results}) == 2
+    assert len({r["record"]["original_ref"] for r in results}) == 2
+    assert all(len(r["record"]["record_id"]) <= 160
+               and len(r["record"]["version_id"]) <= 160 for r in results)
 
 
 def test_invalid_inputs_and_missing_tables_fail_closed():

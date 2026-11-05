@@ -1,5 +1,87 @@
 # Librarian refined acceptance report review — 2026-11-05
 
+## ChatGPT index repair — 2026-11-05
+
+The user authorized repair of G1 and G2 after the subsequent review below.
+Thread record identity and source reference now use a SHA-256 digest of the JSON
+array `[account, agent, project, thread]`. Version identity includes the complete
+database digest and binding digest. Request counts filter the same four fields.
+The summary record format and output bodies retain their existing fields.
+
+Regression cases cover reused `main` bindings that differ by account, agent or
+project, punctuation and long thread names, stable record identity across database
+versions, and real `LibrarianReader` catalog loading plus digest-verified reads.
+The default-name cases produce separate counts of two and one. Existing tests now
+select thread output by its retained original thread ID rather than assuming the
+old record naming convention.
+
+Focused index/reader verification passed **27 tests**, with one Windows symlink
+permission skip. Affected-file Ruff checks passed. G1 and G2 are resolved in the
+development source. The live semantic catalog observed during the preceding review
+still has two sources and 59 records. Publishing the new adapter's output and
+verifying production MCP consumption remain within item 15's PARTIAL work.
+
+## Subsequent Git and ChatGPT index review — 2026-11-05
+
+The acceptance report and machine receipt hashes still match the 11:00 revision
+reviewed below. Repeated comparison against the fourteen server manifests passed
+14/14. The five restore fault-injection cases passed again.
+
+Two local commits have appeared, `93759c3` for the phase report and runtime changes,
+and `bfb9270` for the ChatGPT bridge index adapter. At this observation, the remote
+HEAD and master still pointed to `bfad28af15a583ff9ff8730d58ae247f70eea772`.
+
+### G1 — P1. Default thread names generate duplicate catalog identities
+
+`src/uuma/librarian_chatgpt_index.py` lines 155–176 build `record_id` and
+`version_id` from the thread string and the database digest. The authoritative
+bridge identifies thread bindings by `(account, agent, project, thread)` and permits
+the default name `main` in many bindings. Two bindings called `main` in the same
+database therefore produce the same catalog record/version key. `LibrarianReader`
+rejects duplicate keys when loading a published catalog.
+
+A synthetic fixture with two different accounts and projects generated two rows
+with only one unique record/version key. The resulting index cannot reliably
+preserve both bindings for later publication. Character replacement and record-ID
+truncation introduce additional collision possibilities in the same identity logic.
+
+The index should derive stable identity and provenance from the full binding tuple,
+using an unambiguous encoding or collision-resistant digest. Coverage should include
+reused default thread names, account/project/agent differences, and sanitization.
+
+### G2 — P1. Per-thread request counts mix account, agent and project scopes
+
+At lines 149–151 the request query filters only `WHERE thread=?`. In the same
+synthetic fixture, project Apollo has two requests and project Gemini has one.
+Both generated summaries reported three requests. The indexed account and project
+labels therefore accompany counts that include another binding's activity.
+
+The request filter should use the full canonical binding tuple used by the bridge.
+The current three tests pass with distinct thread strings, which leaves this case
+uncovered. The reproducer uses the existing synthetic fixture and is retained at
+`.uuma-local/librarian-implementation-20261029/probe-chatgpt-index-scope-20261105.py`.
+Its initial run exposed a file-handle leak in the review fixture itself. The fixture
+now explicitly closes its temporary SQLite connection and the reproduction exits 0.
+
+### Current operational evidence and version-control boundary
+
+- The adapter's three existing tests and affected-file Ruff checks passed.
+- The live semantic catalog still has two PARTIAL sources and 59 records. The new
+  ChatGPT adapter needs publication and real reader validation before item 15 can
+  advance beyond its existing PARTIAL status.
+- NAS intake and publication now each contain 207 revisions across 205 batches,
+  with zero unmatched revisions. All 207 NAS manifest hashes were read back and
+  matched. Complete ciphertext rehashing was outside this metadata audit.
+- Commit `93759c3` includes the acceptance documentation and worker/guard changes.
+  The restore verifier, fault-injection suite and raw execution JSON under ignored
+  `.uuma-local/` are absent from that commit. The handoff's claim that those helpers
+  and machine receipts were committed needs to reflect the actual tracked files.
+  Private data should retain its existing handling, while reusable sanitized
+  verification code needs an explicit reproducible source location.
+
+This round reviewed the new adapter and retained the resolved status of the prior
+four report findings. Source changes and publication remain follow-up work.
+
 ## Latest recheck — 2026-11-05, report timestamp 11:00 UTC+8
 
 **The four findings below are resolved in the rechecked report revision.** They remain
