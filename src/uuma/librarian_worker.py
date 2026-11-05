@@ -27,10 +27,13 @@ def worker_intake_status() -> dict[str, Any]:
 
 
 @mcp.tool()
-def register_direct_run(contract_json: str, external_run_ref: str = "") -> dict[str, Any]:
+def register_direct_run(
+    contract_json: str | TaskContract, external_run_ref: str = "",
+) -> dict[str, Any]:
     """Register a read-only retrieval requested in the current conversation."""
     control = client()
-    task = TaskContract.model_validate_json(contract_json)
+    task = (TaskContract.model_validate_json(contract_json)
+            if isinstance(contract_json, str) else contract_json)
     if task.risk_level.value != "READ_ONLY" or task.user_visible_structure_change:
         raise PermissionError("Librarian only accepts read-only retrieval work")
     return control.register_direct_run(
@@ -65,15 +68,16 @@ def get_assignment(
     return task
 
 
-def owned_progress(progress_json: str) -> RunProgress:
-    progress = RunProgress.model_validate_json(progress_json)
+def owned_progress(progress_json: str | RunProgress) -> RunProgress:
+    progress = (RunProgress.model_validate_json(progress_json)
+                if isinstance(progress_json, str) else progress_json)
     if progress.agent_id != "librarian":
         raise PermissionError("Progress belongs to another agent")
     return progress
 
 
 @mcp.tool()
-def report_progress(progress_json: str) -> dict[str, str]:
+def report_progress(progress_json: str | RunProgress) -> dict[str, str]:
     """Report progress to the sole control authority."""
     control = client()
     progress = owned_progress(progress_json)
@@ -82,7 +86,7 @@ def report_progress(progress_json: str) -> dict[str, str]:
 
 
 @mcp.tool()
-def block_run(progress_json: str) -> dict[str, str]:
+def block_run(progress_json: str | RunProgress) -> dict[str, str]:
     """Retain a blocked execution without inventing successful retrieval."""
     control = client()
     progress = owned_progress(progress_json)
@@ -91,10 +95,11 @@ def block_run(progress_json: str) -> dict[str, str]:
 
 
 @mcp.tool()
-def submit_result(result_json: str) -> dict[str, str]:
+def submit_result(result_json: str | ResultContract) -> dict[str, str]:
     """Submit the retrieval result for independent acceptance; never approve it here."""
     control = client()
-    result = ResultContract.model_validate_json(result_json)
+    result = (ResultContract.model_validate_json(result_json)
+              if isinstance(result_json, str) else result_json)
     if result.agent_id != "librarian":
         raise PermissionError("Result belongs to another agent")
     event = control.submit_result(result, actor_id="librarian")

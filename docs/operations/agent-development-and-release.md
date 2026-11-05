@@ -111,7 +111,10 @@ Agent 可独立改进，各组件不用拥有相同 commit；记录实际内容�
 这些是既定服务器端口，工作站转发端口可能不同，以当前隧道配置为准。
 Scholar 当前的完整图谱检查需要工作站 loopback8887 和8892 均转发至服务器同号端口；
 只验证8892健康会遗漏 project/schema/底层只读检查。见 scholar-fieldkg-server-20261022.md。
-工作站桌面入口 8770，STT 8774，ChatGPT bridge 8787。
+工作站桌面入口 8770，ChatGPT bridge 8787。语音转写直接调用服务器 UnlimitedLLM API：
+服务器 Agent 使用 `http://127.0.0.1:8080/v1/audio/transcriptions`，工作站客户端使用
+`http://192.168.55.2:8080/v1/audio/transcriptions`。原工作站 STT 8774 中继及其反向转发
+已退役，不为语音重新创建该依赖。详见 [语音直连运维记录](speech-server-direct-20261104.md)。
 Forge 原工作站 Notion relay 8775 已停止，并从当前启动清单移除。
 服务器使用 loopback8776；现存共享8787隧道中的旧8775转发通道在下次重连时退役，
 当前 Forge 不使用该通道。不要为此中断仍在运行的 ChatGPT bridge 工作。

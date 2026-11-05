@@ -51,3 +51,28 @@ def test_no_domain_or_approval_tools_are_exposed():
         "worker_intake_status", "register_direct_run", "get_assignment",
         "report_progress", "block_run", "submit_result",
     }
+
+
+def test_mcp_publishes_required_progress_and_result_fields():
+    import asyncio
+
+    tools = {tool.name: tool for tool in asyncio.run(worker.mcp.list_tools())}
+    progress = tools['report_progress'].inputSchema['$defs']['RunProgress']
+    assert {'run_id', 'task_id', 'agent_id'}.issubset(progress['required'])
+    assert 'current_step' in progress['properties']
+    assert progress['additionalProperties'] is False
+    result = tools['submit_result'].inputSchema['$defs']['ResultContract']
+    assert {'run_id', 'task_id', 'agent_id', 'summary'}.issubset(result['required'])
+    assert result['additionalProperties'] is False
+
+
+def test_structured_progress_preserves_identity_check(monkeypatch):
+    from uuma.models import RunProgress
+
+    control = Mock()
+    monkeypatch.setattr(worker, 'client', lambda: control)
+    progress = RunProgress(run_id='r', task_id='t', agent_id='librarian', current_step='Reading')
+    assert worker.report_progress(progress)['status'] == 'RUNNING'
+    control.report_progress.assert_called_once_with(progress, actor_id='librarian')
+    with pytest.raises(PermissionError):
+        worker.report_progress(progress.model_copy(update={'agent_id': 'honc'}))

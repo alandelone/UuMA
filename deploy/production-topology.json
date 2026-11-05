@@ -12,6 +12,8 @@
     ],
     "control_owner": true,
     "control_port": 8765,
+    "speech_api_url": "http://127.0.0.1:8080/v1/audio/transcriptions",
+    "speech_owner": "unlimited-router.service",
     "graph_port": 8766,
     "forge_notion_relay_port": 8776,
     "a2a_port": 8768,
@@ -39,9 +41,9 @@
     ],
     "reverse_forwards": [
       8770,
-      8774,
       8787
     ],
+    "speech_api_url": "http://192.168.55.2:8080/v1/audio/transcriptions",
     "scholar_graph_local_forwards": [
       8887,
       8892

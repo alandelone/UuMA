@@ -1,3 +1,85 @@
+## Current deployment verification, 2026-11-04
+
+Librarian runs on `alandelone-server-001`. The scoped worker and seven-tool read MCP
+are active. Its default model is `gpt-oss-120b-medium` through the existing
+Antigravity provider. Only Librarian's model/configuration and profile-local guard
+and audit plugins were changed. The shared gateway was restarted at a verified idle
+boundary; all six configured platform connections recovered.
+
+The final fresh A2A Run `run_f0cae36792894e6c8a6f8c0879f58ab6` executed
+`get_assignment`, `librarian_get_backup_status`, `librarian_list_sources`,
+`report_progress`, and `submit_result`. All five actual tool completions were
+verified without weakening the original acceptance assertion. A2A is COMPLETED;
+control is REVIEW, accepted=false, pending USER review. The semantic catalog read
+contains only the recorded Brainstormer and Yonc sources; this is not the live
+backup collector inventory. Twenty-two matching raw audit records were found;
+HTTP audit ingestion into the control database remains unverified.
+
+The deployment exposed and repaired two genuine integration defects: configured
+plugin names did not install profile-local plugin files, and the guard interpreted
+an `error` field definition inside a Task's output schema as an execution failure.
+Regression coverage preserves rejection of real errors and stale authority.
+Seventy focused tests and Ruff passed. Earlier failed acceptance Runs are retained.
+The Gemini 3.8 model/effort compatibility patch is retained separately; other models'
+effort mappings were preserved.
+
+The server midnight collector actually completed on November 4 at 00:02 UTC+8
+with its original 36 sources. A new immutable capture release now preserves those
+36 and adds six Librarian sources: native history, logs, memories, cron, config,
+and SOUL. Its first real execution exited 0, incomplete=0, with 42 configured
+sources. Librarian memories are explicitly EMPTY; its other five new sources
+were COMPLETE/DELIVERED. Existing daily batches were reused with their real original
+capture times. The timer remains midnight UTC+8. No database schema changed.
+
+Current Windows: all six pending November 3 batches were delivered. The actual
+November 4 midnight execution delivered eight batches but retained a PARTIAL
+Antigravity core batch for one inaccessible presence lock. The broad package
+LocalCache source exceeded inventory bounds; it was replaced by three explicit
+Codex app directories. A separate owned repair task delivered app-local (87 files)
+and app-openai (one file); app-roaming remained RUNNING at the latest observation.
+The main daily task is Ready with its midnight trigger preserved. A later manual
+core retry remains pending; the original delivered partial revision is retained.
+Do not describe this as a zero-error Windows daily acceptance.
+
+A real Codex-state sample was retrieved from server intake, decrypted with the
+native DPAPI-protected recovery key, matched against the snapshot digest, and
+passed SQLite integrity_check. Temporary plaintext was removed. This proves that
+sample's recovery; it does not prove independent offline-key custody.
+
+The read-only local project inventory found 530,537 regular files / 85,089,761,637
+bytes and 145 issues, including links that were not followed. No project-file
+capture was performed by that inventory. Full first-PC project coverage, evolving
+project-to-catalog mappings, fresh Notion synchronization, and broader semantic
+indexing remain unfinished. Server free capacity was about 129 GiB; an unbounded
+daily full copy of the observed project tree cannot provide sustainable retained
+history. A capacity-aware incremental capture plan is required before enabling it;
+do not silently exclude development dependencies, linked targets, or private data.
+The existing observed inventory now has a prepared 133-shard baseline plan, with
+all 145 issues retained. It grants no server access and schedules no new capture.
+
+The second Windows v9 handover ZIP is prepared for the user to run. It includes
+the public recovery key, verified server SSH host key, preparation launcher and
+digest. It contains no private SSH key or bearer token. Actual second-PC enrollment,
+first capture/restore and midnight scheduling are still pending. The first-PC
+interactive recovery-key export launcher is also prepared; the user has not yet
+confirmed an independently recoverable export. Do not obtain its password in chat.
+
+The NAS hardware issue remains deferred by explicit user instruction and the NAS
+publisher remains disabled. Server intake success does not imply NAS publication.
+The overall mission gate remains verification / pending_review.
+
+Evidence (private operational receipts; paths relative to the server UuMA root):
+
+- `operations/librarian-a2a-guard-fixed-verified-20261104.json`
+- `operations/librarian-a2a-guard-fixed-audit-20261104.json`
+- `operations/librarian-gateway-reload-a0470937d5944580a6c66e7364915cd3/receipt.json`
+- `production/librarian/releases/hooks-3474fb2a39c89c2f88dcb2d4a2c44bc20380f3090e92e120a0137ee8ec837a43/receipt.json`
+- `production/librarian/releases/server-self-capture-20261104-66dfacc1a69e4dfd9e8e4a6639ac9abe/receipt.json`
+- That release's `status/run-6c9a2742f0fc46c58d407636d47e2daa.json`
+
+Local private receipts and launchers are under `.uuma-local/librarian-implementation-20261029/`.
+The following dated sections are retained historical observations.
+
 ## Deployment continuation, 2026-11-03
 
 The user authorized implementation after the independent audit and explicitly deferred

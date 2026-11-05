@@ -1,0 +1,8 @@
+# Merge this scope into the node-local profile with its separately pinned MCP commands.
+platform_toolsets:
+  cli:
+    - uuma-worker
+    - uuma-librarian-read
+  api_server:
+    - uuma-worker
+    - uuma-librarian-read

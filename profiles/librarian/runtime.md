@@ -20,6 +20,17 @@ The independent `uuma-librarian-read` MCP exposes seven semantic read tools. Rec
 intake remains separate from the semantic catalog; receipt of encrypted recovery
 objects does not grant agents access to their plaintext or index all source records.
 
+Apply the explicit CLI and API toolset scope in `tools.yaml`. Configuring only CLI
+toolsets leaves the API platform's default toolsets in effect. Do not expose shell,
+file mutation, computer control, or unrelated MCP servers through that fallback.
+
+Install the actual `uuma_control_guard` and `uuma_audit` plugin files into this
+profile's `plugins/` directory as verified immutable releases. Listing their names
+in configuration alone does not install them. The guard needs the scoped MCP
+allowlist and must validate current assignment authority before domain reads.
+Schema definitions of an `error` field are data, while actual MCP execution errors
+continue to fail closed. Verify loaded hooks and real tool executions after reload.
+
 Collectors operate without an LLM at midnight UTC+8. Retain version history,
 unavailable sources, source age, real capture times, and missed-day evidence.
 On Windows, inspect the actual task user context: packaged desktop applications

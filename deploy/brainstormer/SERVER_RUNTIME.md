@@ -8,7 +8,9 @@ proposals still require Orchestrator/user review. An explicit human `/topics new
 command keeps its existing behavior through the authenticated command plugin.
 
 The Gemini worker uses the server account pool with its existing task, directory
-and receipt limits. ChatGPT consultation and voice transcription use the workstation
+and receipt limits. Voice transcription calls the server UnlimitedLLM API directly
+at loopback port 8080 with the profile's own client identity. It does not use the
+retired workstation speech relay on port 8774. ChatGPT consultation uses the workstation
 connector. If that connector is unavailable, explain the waiting condition; do not
 claim completion or replay an uncertain external action.
 

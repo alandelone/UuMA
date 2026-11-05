@@ -1,5 +1,13 @@
 # Librarian architecture v1
 
+> Production update, 2026-11-04: server intake, scoped worker/read MCP, guarded A2A
+> retrieval and midnight collectors are active. Server capture now registers 42
+> sources. NAS publication remains disabled at the user's direction. Second-PC
+> enrollment, offline-key export, full project-file capture and broader semantic
+> indexing remain unfinished. The dated design below is preserved; consult the
+> [current deployment evidence](../operations/librarian-implementation-status.md)
+> before interpreting its earlier pending-implementation statements.
+
 Updated: 2026-10-28, Asia/Singapore (UTC+8).  
 Product decisions accepted in the user's combined review; this document supplies concrete
 technical choices for one complete implementation design. Read-only MCP component implemented;

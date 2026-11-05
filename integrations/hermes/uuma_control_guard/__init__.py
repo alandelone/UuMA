@@ -295,7 +295,12 @@ def _contains_error(value: Any) -> bool:
             return True
         if "error" in value and value.get("error") not in (None, "", False):
             return True
-        return any(_contains_error(item) for item in value.values())
+        # Tool/task schemas describe fields named "error"; those definitions are
+        # data, not an execution failure. Continue checking actual result envelopes.
+        return any(
+            _contains_error(item) for key, item in value.items()
+            if key not in {"output_schema", "input_schema", "inputSchema"}
+        )
     if isinstance(value, list):
         return any(_contains_error(item) for item in value)
     return False
@@ -893,6 +898,7 @@ def _health_context(**kwargs: Any) -> dict[str, str] | None:
                 "forge-lab-bot": {},
                 "yonc": {},
                 "honc": {},
+                "librarian": {},
             }[profile]
             try:
                 timeout = 420 if profile == "wisdom-oldman" else 20

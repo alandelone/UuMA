@@ -1,5 +1,13 @@
 # Librarian
 
+> Current production update, 2026-11-04: server Librarian, scoped Worker MCP,
+> seven-tool read MCP and guarded A2A execution are deployed and verified.
+> Server daily capture has 42 registered sources. First-PC collection is active;
+> partial files, app repair, project-file coverage, second-PC enrollment and offline
+> key custody remain explicit unfinished work. NAS publication remains paused.
+> See [current implementation status](../operations/librarian-implementation-status.md).
+> Earlier status statements below are historical.
+
 > Status update, 2026-10-30: Restricted server intake, a NAS publication timer,
 > and initial encrypted captures are now deployed; full Librarian agent/A2A/MCP
 > integration and daily capture schedules remain unfinished. See the current
