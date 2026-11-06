@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import json
+import logging
 import os
 import re
 import time
@@ -23,6 +24,8 @@ from .knowledge_models import (
 )
 from .knowledge_service import KnowledgeService
 from .orbit_discovery import DiscoveryArtifact, artifact_is_relevant, artifact_priority
+
+LOGGER = logging.getLogger(__name__)
 
 
 class OrbitCompactSynthesizer:
@@ -72,7 +75,15 @@ class OrbitCompactSynthesizer:
                 projection_watermark=watermark,
             ).model_dump(mode="json")
 
-        points = self._generate(question, snippets)
+        try:
+            points = self._generate(question, snippets)
+        except (ValueError, RuntimeError) as exc:
+            LOGGER.warning(
+                "Synthesis model generation failed for question %r (%s); treating as insufficient evidence",
+                question,
+                exc,
+            )
+            points = []
         by_key = {item["key"]: item for item in snippets}
         paragraphs: list[str] = []
         citations: dict[str, AnswerCitation] = {}
@@ -246,10 +257,18 @@ class OrbitCompactSynthesizer:
                     data = json.loads(attempt_cand, strict=False)
                     if isinstance(data, dict):
                         pts = data.get("points")
-                        if isinstance(pts, list) and pts:
+                        if isinstance(pts, list):
+                            if not pts:
+                                return []
                             valid = [p for p in pts if isinstance(p, dict)]
                             if valid:
                                 return valid
+                        if (
+                            data.get("evidence_gap")
+                            or data.get("gap")
+                            or data.get("evidence_gaps")
+                        ):
+                            return []
                 except (json.JSONDecodeError, ValueError):
                     continue
         points: list[dict[str, Any]] = []
@@ -336,6 +355,7 @@ class OrbitCompactSynthesizer:
                     {"role": "system", "content": "你是中文研究写作者。只输出合法 JSON。"},
                     {"role": "user", "content": prompt},
                 ],
+                "response_format": {"type": "json_object"},
                 "temperature": 0,
                 "max_tokens": 3000 if compact else 3600,
             }
@@ -364,7 +384,7 @@ class OrbitCompactSynthesizer:
                 if isinstance(raw_content, list) else str(raw_content)
             )
             points = OrbitCompactSynthesizer._parse_synthesis_points(content)
-            if points:
+            if points is not None:
                 return points
             last_failure = "malformed JSON or missing source-linked points"
         raise ValueError(

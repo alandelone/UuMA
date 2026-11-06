@@ -396,6 +396,16 @@ def test_compact_synthesis_recovers_from_markdown_and_malformed_json() -> None:
     assert p3 and len(p3) == 1
     assert "气雾培" in p3[0]["text"]
 
+    # 4. Empty points list (evidence gap acknowledged by model)
+    m4 = '{"points": []}'
+    p4 = OrbitCompactSynthesizer._parse_synthesis_points(m4)
+    assert p4 == []
+
+    # 5. Top-level evidence gap without points
+    m5 = '{"evidence_gap": "审阅文献未包含气雾培喷雾间隔参数。"}'
+    p5 = OrbitCompactSynthesizer._parse_synthesis_points(m5)
+    assert p5 == []
+
 
 def test_compact_synthesis_escalates_to_fallback_model_on_final_attempt(monkeypatch) -> None:
     monkeypatch.setenv("OPENAI_BASE_URL", "https://example.org/v1")
@@ -427,6 +437,56 @@ def test_compact_synthesis_escalates_to_fallback_model_on_final_attempt(monkeypa
     assert models_called[0] == "primary-lite"
     assert models_called[1] == "fallback-pro"
     assert points[0]["text"] == "高阶模型合成成功。"
+
+
+def test_compact_synthesis_handles_empty_points_and_enforces_json_format(monkeypatch) -> None:
+    monkeypatch.setenv("OPENAI_BASE_URL", "https://example.org/v1")
+    monkeypatch.setenv("OPENROUTER_API_KEY", "test-only-key")
+    monkeypatch.setenv("UUMA_KAG_LLM_MODEL", "primary-lite")
+    requests_sent = []
+
+    def response(request, timeout):
+        body = json.loads(request.data.decode("utf-8"))
+        requests_sent.append(body)
+        return io.BytesIO(b'{"choices": [{"message": {"content": "{\\"points\\": []}"}}]}')
+
+    monkeypatch.setattr("uuma.orbit_synthesis.urlopen", response)
+    points = OrbitCompactSynthesizer._generate("青葱气雾培参数", [{
+        "key": "S1", "title": "Allium trial",
+        "location": "Abstract", "text": "Located evidence.",
+    }])
+    assert points == []
+    assert len(requests_sent) == 1
+    assert requests_sent[0]["response_format"] == {"type": "json_object"}
+
+
+def test_compact_synthesis_answer_degrades_gracefully_on_synthesis_error(
+    monkeypatch, tmp_path: Path
+) -> None:
+    service = KnowledgeService(tmp_path / "wisdom.db")
+    paper = KnowledgeIngestor(service, tmp_path / "content").ingest_text(
+        locator="https://research.example.edu/allium-transplant.pdf",
+        title="Allium fistulosum transplant establishment",
+        text="The abstract reviews Allium fistulosum transplant establishment.",
+        media_type="application/pdf", actor_id="wisdom-oldman",
+    )
+
+    class Graph:
+        def retrieve_context(self, question: str):
+            return {"result_refs": [paper["chunks"][0]["chunk_id"]]}
+
+    def failing_generate(question, snippets):
+        raise ValueError("The synthesis model did not return source-linked JSON after 3 attempts")
+
+    monkeypatch.setattr(
+        OrbitCompactSynthesizer, "_generate", staticmethod(failing_generate)
+    )
+    answer = OrbitCompactSynthesizer(service, Graph()).answer(
+        "青葱分株后缓苗要多久？", actor_id="wisdom-oldman"
+    )
+    assert answer["satisfaction_level"] == "INSUFFICIENT"
+    assert "不足以形成可核查的直接回答" in answer["answer"]
+    assert answer["citations"] == []
 
 
 def test_ingestor_deduplicates_identical_content_across_locators(tmp_path: Path) -> None:
