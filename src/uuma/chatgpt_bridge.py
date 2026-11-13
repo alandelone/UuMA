@@ -343,7 +343,65 @@ class BridgeStore:
                              (rid, agent)).fetchone()
             if not row:
                 raise PermissionError("Request not available to this identity.")
-            return self.decode(row)
+            result = self.decode(row)
+            if row["status"] == "QUEUED":
+                result["queue"] = self._queue_status(db, row, private_to=agent)
+            return result
+
+    @staticmethod
+    def _queue_status(db, row, *, private_to: str | None = None) -> dict[str, Any]:
+        account = db.execute(
+            "SELECT enabled,status FROM chatgpt_accounts WHERE alias=?", (row["account"],)
+        ).fetchone()
+        blocker = db.execute(
+            "SELECT id,agent,status,error FROM chatgpt_requests WHERE account=? "
+            "AND status IN ('PREFLIGHT','SENDING','RUNNING','PAUSED','NEEDS_REVIEW',"
+            "'AWAITING_INPUT') ORDER BY created LIMIT 1", (row["account"],)
+        ).fetchone()
+        reason = (
+            "ACCOUNT_DISABLED" if not account or not account["enabled"] else
+            "ACCOUNT_NOT_READY" if account["status"] != "READY" else
+            "ACCOUNT_REQUEST_BLOCKED" if blocker else "AWAITING_DISPATCH"
+        )
+        visible_blocker = blocker and (private_to is None or blocker["agent"] == private_to)
+        return {
+            "reason": reason,
+            "age_seconds": max(0, int(time.time() - row["created"])),
+            "blocker_present": blocker is not None,
+            "blocker": (
+                {key: blocker[key] for key in ("id", "status", "error")}
+                if visible_blocker else None
+            ),
+        }
+
+    def reassign_unsent(self, rid: str, account: str) -> dict[str, Any]:
+        """Human-directed account migration; never move sent or uncertain browser work."""
+        with self.connect() as db:
+            row = db.execute("SELECT * FROM chatgpt_requests WHERE id=?", (rid,)).fetchone()
+            if (
+                not row or row["status"] != "QUEUED" or row["submitted"] is not None
+                or row["url"] or row["result"]
+            ):
+                raise ValueError("Only an unsubmitted queued request can change accounts.")
+            target = db.execute(
+                "SELECT * FROM chatgpt_accounts WHERE alias=?", (account,)
+            ).fetchone()
+            if not target or not target["enabled"] or target["status"] != "READY":
+                raise ValueError("The destination account must be enabled and verified READY.")
+            if row["mode"] not in json.loads(target["capabilities"]):
+                raise ValueError("The destination account does not support this request mode.")
+            self.require_run(db, row["agent"], row["run_id"])
+            if row["account"] != account:
+                db.execute(
+                    "UPDATE chatgpt_requests SET account=?,updated=? WHERE id=?",
+                    (account, time.time(), rid),
+                )
+                self.event(db, rid, "human", "UNSENT_ACCOUNT_REASSIGNED", {
+                    "previous_account": row["account"], "account": account,
+                })
+            return self.decode(db.execute(
+                "SELECT * FROM chatgpt_requests WHERE id=?", (rid,)
+            ).fetchone())
 
     def recent(self):
         with self.connect() as db:

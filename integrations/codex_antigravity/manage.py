@@ -8,6 +8,7 @@ import importlib.util
 import json
 import os
 import re
+import secrets
 import signal
 import subprocess
 import sys
@@ -61,16 +62,28 @@ def start():
         (STATE / "gateway.stdout.log").open("ab") as output,
         (STATE / "gateway.stderr.log").open("ab") as error,
     ):
-        process = subprocess.Popen(
-            [str(python), str(SOURCE / "gateway.py")],
-            cwd=ROOT,
-            env=env,
-            stdin=subprocess.DEVNULL,
-            stdout=output,
-            stderr=error,
-            creationflags=flags,
-            close_fds=True,
-        )
+        try:
+            process = subprocess.Popen(
+                [str(python), str(SOURCE / "gateway.py")],
+                cwd=ROOT,
+                env=env,
+                stdin=subprocess.DEVNULL,
+                stdout=output,
+                stderr=error,
+                creationflags=flags | (0x01000000 if os.name == "nt" else 0),
+                close_fds=True,
+            )
+        except OSError:
+            process = subprocess.Popen(
+                [str(python), str(SOURCE / "gateway.py")],
+                cwd=ROOT,
+                env=env,
+                stdin=subprocess.DEVNULL,
+                stdout=output,
+                stderr=error,
+                creationflags=flags,
+                close_fds=True,
+            )
     receipt = {
         "pid": process.pid,
         "executable": str(python),
@@ -127,6 +140,7 @@ def stop():
         expected = {
             Path(receipt["executable"]).resolve(),
             (Path(sys.base_prefix) / "pythonw.exe").resolve(),
+            (Path(sys.base_prefix) / "python.exe").resolve(),
         }
         if (
             Path(process["ExecutablePath"]).resolve() not in expected
@@ -231,11 +245,100 @@ def restore():
     print("Previous routing restored; unrelated settings preserved. Restart the desktop app.")
 
 
+def independent_auth():
+    """Use a protected loopback credential rather than the ChatGPT auth mode."""
+    original = CONFIG.read_bytes()
+    text = original.decode("utf-8")
+    parsed = tomllib.loads(text)
+    provider = parsed.get("model_providers", {}).get(PROVIDER, {})
+    if parsed.get("model_provider") != PROVIDER or provider.get("base_url") != (
+        f"http://127.0.0.1:{settings()['port']}/v1"
+    ):
+        raise RuntimeError("Independent authentication requires the installed loopback provider")
+    if provider.get("auth"):
+        raise RuntimeError(
+            "Provider already has command authentication; inspect before changing it"
+        )
+    if provider.get("env_key") or provider.get("experimental_bearer_token"):
+        raise RuntimeError("Existing provider credential must be reviewed before changing it")
+    key = STATE / "gateway-token"
+    created = not key.exists()
+    if created:
+        key.touch(exist_ok=False)
+        if os.name == "nt":
+            result = subprocess.run(
+                [
+                    "powershell",
+                    "-NoProfile",
+                    "-Command",
+                    "[System.Security.Principal.WindowsIdentity]::GetCurrent().User.Value",
+                ],
+                capture_output=True,
+                text=True,
+                check=True,
+            )
+            sid = result.stdout.strip()
+            if not re.fullmatch(r"S-1-[0-9-]+", sid):
+                raise RuntimeError("Cannot identify the local credential owner")
+            subprocess.run(
+                ["icacls", str(key), "/inheritance:r", "/grant:r", f"*{sid}:(F)", "*S-1-5-18:(F)"],
+                capture_output=True,
+                check=True,
+            )
+        else:
+            key.chmod(0o600)
+        key.write_text(secrets.token_urlsafe(48), encoding="utf-8")
+    token = key.read_text(encoding="utf-8").strip()
+    if len(token) < 32 or any(character.isspace() for character in token):
+        raise RuntimeError("Invalid existing local credential; no configuration changed")
+    pattern = re.compile(
+        re.escape(BEGIN)
+        + r"\r?\n\[model_providers\."
+        + re.escape(PROVIDER)
+        + r"\]\r?\n.*?"
+        + re.escape(END),
+        re.DOTALL,
+    )
+    matches = list(pattern.finditer(text))
+    if len(matches) != 1:
+        raise RuntimeError("Expected exactly one bounded provider block")
+    block = matches[0].group()
+    block = re.sub(r"(?m)^requires_openai_auth\s*=.*\r?\n", "", block)
+    auth_table = (
+        f"[model_providers.{PROVIDER}.auth]\n"
+        f"command = {json.dumps(sys.executable)}\n"
+        f"args = [{json.dumps(str(SOURCE / 'local_auth.py'))}]\n"
+        "timeout_ms = 10000\nrefresh_interval_ms = 300000\n"
+    )
+    block = block.removesuffix(END) + auth_table + END
+    updated = text[: matches[0].start()] + block + text[matches[0].end() :]
+    check = tomllib.loads(updated)
+    assert not check["model_providers"][PROVIDER].get("requires_openai_auth", False)
+    if CONFIG.read_bytes() != original:
+        raise RuntimeError("Configuration changed during preparation; no overwrite performed")
+    backup = STATE / f"config.before-independent-auth-{time.time_ns()}.toml"
+    backup.write_bytes(original)
+    CONFIG.write_text(updated, encoding="utf-8", newline="\n")
+    receipt = {
+        "backup": str(backup),
+        "provider": PROVIDER,
+        "requires_openai_auth": False,
+        "credential_created": created,
+        "config_sha256": hashlib.sha256(CONFIG.read_bytes()).hexdigest(),
+    }
+    (STATE / "independent-auth-installation.json").write_text(
+        json.dumps(receipt, indent=2), encoding="utf-8"
+    )
+    print(json.dumps(receipt))
+
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("action", choices=["install", "start", "stop", "status", "restore"])
+    parser.add_argument(
+        "action", choices=["install", "start", "stop", "status", "restore", "independent-auth"]
+    )
     args = parser.parse_args()
     if args.action == "status":
         print(json.dumps(status(), indent=2))
     else:
-        globals()[args.action]()
+        globals()[args.action.replace("-", "_")]()

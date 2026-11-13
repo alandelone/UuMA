@@ -183,6 +183,7 @@ def rstv4_server(args: argparse.Namespace) -> CommentedMap:
                 {
                     "PYTHONPATH": str(Path(args.rstv4_root) / "src"),
                     "RSTV4_ROOT": args.rstv4_root,
+                    "RSTV4_CATALOG_GLOBAL_TOOLS": "1",
                 }
             ),
             "timeout": 180,
@@ -374,7 +375,7 @@ def main() -> None:
         guard["mcp_allowlist"] = CommentedSeq(
             ["uuma-worker", "wisdom-knowledge"]
             if args.agent_id == "wisdom-oldman"
-            else ["uuma-worker", "rstv4-worker"]
+            else ["uuma-worker", "rstv4-worker", "scholar-catalog"]
             if args.agent_id == "scholar"
             else ["uuma-worker", "honc-execution"]
             if args.agent_id == "honc"

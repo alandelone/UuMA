@@ -34,10 +34,12 @@ def librarian_list_sources(expected_snapshot_id: str = "") -> dict[str, Any]:
 def librarian_search_records(
     query: str = "", project_id: str = "", source_id: str = "", kind: str = "",
     limit: int = 50, offset: int = 0, expected_snapshot_id: str = "",
+    category: str = "",
 ) -> dict[str, Any]:
     """Search archived metadata, including historical versions, within the caller's scope."""
     return _reader().search_records(
         query, project_id, source_id, kind, limit, offset, expected_snapshot_id,
+        category=category,
     )
 
 

@@ -1,0 +1,13 @@
+# Daily Focus restoration and connected project tree
+
+Opening or refreshing Daily reads the server's current Focus and centers its L4 card in the task pane. This works across computers without storing a separate local Focus. Each pane scrolls independently: today's Activity opens at the live line. Focus restoration runs after the task list loads and when the active task or grouping changes, without resetting manual browsing on every polling update. Keyboard focus and notes remain untouched.
+
+By project uses a 16px L2 title with a full-width bottom rule, bordered L3 headings and nested continuous trunks connecting sibling L4 cards. Branch height follows actual content, including expanded notes. Final branches terminate at their last card; mobile indentation remains smaller. Headings remain expanded. By type ordering and the title-tail note control remain unchanged.
+
+The release overlays five frontend files on the exact previously published daily-tree source, plus rebuilt assets. Backend, dependencies and database schema remain unchanged. 116 frontend tests and TypeScript/Vite build passed, including pane-only Focus scrolling and sibling/parentless branch grouping. Browser visual verification remains unavailable because Work settings disable browser access; no new screenshot or actual visual/hover verification is claimed.
+
+Publication receipts are under `.uuma-local/yonc-daily-focus-tree-20261111/`. Guarded publication checks the precise source, canonical database identity, active task state and single data owner, backs up current data, restarts only Graph, and verifies all persisted tables plus the original active manual interval. Roll back code only after checking newer writes; never restore a prior database over live data.
+
+Published November 11, 2026 at 20:40 UTC+08. Exact source: `/home/alandelone/.local/share/uuma/production/yonc/releases/daily-focus-tree-20261111-d141ba17b216/source`; archive SHA256 `d141ba17b2160fd3ea9d5065657641cc4c406d50eaca89f65bebf3e62fb55eb5`. Only Graph restarted, PID 563366 to 567639. All 28 persisted tables, graph version 518, 953 nodes, 899 edges and 50 Daily tasks remained unchanged. The same active manual Focus and Daily interval IDs and original start times were preserved. Independent health, Daily and exact HTML/asset checks passed.
+
+Consistent backup: `/home/alandelone/.local/share/uuma/production/yonc/releases/daily-focus-tree-20261111-d141ba17b216/backup-20261111T123957Z/project_graph.sqlite3`, SHA256 `868073ad0b69a757481a2e5f10a9a4f170ef90d9e32240e32aaa68fdac0d5125`. No database restore or schema migration occurred. Refresh [Daily](https://yonc.95963210.xyz/daily) to load the new bundle.

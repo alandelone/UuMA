@@ -13,11 +13,23 @@ const currentUrl = () => {
   return url.href;
 };
 
+function findComposer() {
+  // The current composer no longer has prompt-textarea's legacy ID/test ID.
+  // Keep discovery scoped to known prompt editors, never a generic textbox.
+  const candidates = [...document.querySelectorAll(
+    '#prompt-textarea, [data-testid="prompt-textarea"], ' +
+    'form[data-chatgpt-composer] [data-composer-markdown][contenteditable="true"][role="textbox"]'
+  )].filter(element => visible(element) && !element.disabled &&
+    element.getAttribute("aria-disabled") !== "true" &&
+    !element.closest('[inert], [aria-hidden="true"], fieldset[disabled]'));
+  if (candidates.length > 1) fail("COMPOSER_AMBIGUOUS");
+  return candidates[0] || null;
+}
+
 async function waitForComposer(timeout = 15000) {
   const deadline = Date.now() + timeout;
   while (Date.now() < deadline) {
-    const composer = document.querySelector("#prompt-textarea") ||
-      document.querySelector('[data-testid="prompt-textarea"]');
+    const composer = findComposer();
     if (visible(composer)) return composer;
     await pause(250);
   }
@@ -69,8 +81,7 @@ function findAddButton() {
   // The current ChatGPT composer renders the visible + control without a
   // stable label or test id. Resolve the nearest button just left of the
   // editable prompt area instead of depending on its presentation markup.
-  const composer = document.querySelector("#prompt-textarea") ||
-    document.querySelector('[data-testid="prompt-textarea"]');
+  const composer = findComposer();
   if (visible(composer)) {
     const box = composer.getBoundingClientRect();
     const candidates = [...document.querySelectorAll('button, [role="button"]')]
@@ -99,6 +110,55 @@ function openMenuItems() {
     'button, [role="menuitem"], [role="menuitemradio"], [role="option"], ' +
     '[data-radix-collection-item]'
   )].filter(visible);
+}
+
+async function researchMenuOption(timeout = 3000) {
+  const deadline = Date.now() + timeout;
+  while (Date.now() < deadline) {
+    // The current tool picker exposes ordinary buttons, outside the legacy
+    // Radix menu surface. Match its observed option label, never arbitrary text.
+    const candidates = [...new Set([...openMenuItems(), ...document.querySelectorAll("button")])]
+      .filter(element => visible(element) && !element.disabled &&
+        element.getAttribute("aria-disabled") !== "true" &&
+        /^(deep[\s_-]?research|深度研究)(?:\s|$)/i.test(
+          (element.innerText || element.textContent || "").trim()
+        ));
+    if (candidates.length > 1) fail("RESEARCH_MODE_AMBIGUOUS");
+    if (candidates.length === 1) return candidates[0];
+    await pause(150);
+  }
+  return null;
+}
+
+async function activateResearchForPrompt(composer, prompt) {
+  // A slash string alone is ordinary text. Fill the prompt first, then insert
+  // the native research chip so textContent assignment cannot erase that chip.
+  setComposerText(composer, prompt);
+  await pause(200);
+  const add = findAddButton();
+  if (!add) fail("CAPABILITY_UNAVAILABLE");
+  add.click();
+  const option = await researchMenuOption();
+  if (!option) fail("CAPABILITY_UNAVAILABLE");
+  option.click();
+  const deadline = Date.now() + 4000;
+  while (Date.now() < deadline) {
+    if (findDeepResearchButton()) return;
+    const text = composer.textContent || "";
+    const inner = composer.innerText || "";
+    const cleanText = text.replace(/\s+/g, " ");
+    const cleanPrompt = prompt.replace(/\s+/g, " ");
+    const hasChip = /(deep[\s_-]?research|深度研究)/i.test(text.replace(prompt, "")) ||
+                    /(deep[\s_-]?research|深度研究)/i.test(text) ||
+                    /(deep[\s_-]?research|深度研究)/i.test(inner);
+    const hasPrompt = text.includes(prompt) ||
+                      inner.includes(prompt) ||
+                      cleanText.includes(cleanPrompt) ||
+                      cleanText.length >= cleanPrompt.length * 0.9;
+    if (hasChip && hasPrompt) return;
+    await pause(150);
+  }
+  fail(`RESEARCH_MODE_UNVERIFIED: text=${JSON.stringify(composer.textContent || "")} inner=${JSON.stringify(composer.innerText || "")} chip=${Boolean(findDeepResearchButton())}`);
 }
 
 function setComposerText(composer, value) {
@@ -195,7 +255,7 @@ async function verify(payload) {
   }
 
   // Method 4: If prompt textarea is visible and no login button exists
-  const composer = document.querySelector("#prompt-textarea") || document.querySelector('[data-testid="prompt-textarea"]');
+  const composer = findComposer();
   if (visible(composer)) {
     console.log("[UuMA Bridge chatgpt.js] Verified via visible composer without login button");
     return true;
@@ -240,7 +300,7 @@ async function capabilities(payload) {
       const text = items.map(x => (x.innerText || x.textContent || x.getAttribute("aria-label") || "").trim());
       console.log("[UuMA Bridge chatgpt.js] Tools menu items:", text);
       if (text.some(value => /(Web search|Search|网页搜索|搜索)/i.test(value))) caps.push("search");
-      if (text.some(value => /(deep[\s_-]?research|深度研究)/i.test(value)) && !caps.includes("deep_research")) {
+      if (await researchMenuOption() && !caps.includes("deep_research")) {
         caps.push("deep_research");
       }
       document.dispatchEvent(new KeyboardEvent("keydown", {key: "Escape", bubbles: true}));
@@ -331,7 +391,13 @@ async function prepare(payload) {
 async function send(payload) {
   const composer = await waitForComposer();
   if (!visible(composer)) fail("COMPOSER_UNAVAILABLE");
-  setComposerText(composer, payload.prompt);
+  const researchPrefix = /^\/Deepresearch\s+/i;
+  const research = researchPrefix.test(payload.prompt || "");
+  if (research) {
+    await activateResearchForPrompt(composer, payload.prompt.replace(researchPrefix, ""));
+  } else {
+    setComposerText(composer, payload.prompt);
+  }
   await pause(200);
   const testIdBtn = document.querySelector('button[data-testid="send-button"]');
   const button = (visible(testIdBtn) && !testIdBtn.disabled) ? testIdBtn :
@@ -339,11 +405,19 @@ async function send(payload) {
   if (!button || button.disabled) fail("SEND_UNVERIFIED");
   button.click();
   for (let index = 0; index < 40 && !location.pathname.startsWith("/c/"); index++) await pause(250);
-  return {url: currentUrl()};
+  return {url: currentUrl(), ...(research ? {
+    mode: "deep_research", mode_selection_verified: true
+  } : {})};
 }
 async function observe(payload) {
   await verify(payload);
-  const users = [...document.querySelectorAll('[data-message-author-role="user"]')];
+  if (payload.url) {
+    const expected = new URL(payload.url);
+    if (expected.origin !== location.origin || expected.pathname !== location.pathname) {
+      fail("CONVERSATION_CHANGED");
+    }
+  }
+  const users = messageNodes("user");
   const marker = `[UuMA consultation ${payload.request_id}]`;
   if (!users.some(node => node.innerText.includes(marker)) || !users.at(-1)?.innerText.includes(marker)) {
     fail("CONVERSATION_CHANGED");
@@ -354,9 +428,13 @@ async function observe(payload) {
     ))) {
     return {pending: true, url: currentUrl()};
   }
-  const answers = [...document.querySelectorAll('[data-message-author-role="assistant"]')];
+  const answers = messageNodes("assistant");
   if (!answers.length) return {pending: true, url: currentUrl()};
-  const answer = answers.at(-1); const text = answer.innerText.trim();
+  const latest = answers.at(-1);
+  const answer = latest.matches('[data-message-author-role="assistant"]') ? latest :
+    latest.querySelector('[data-markdown-text-style="assistant-message"]');
+  if (!answer) return {pending: true, url: currentUrl()};
+  const text = answer.innerText.trim();
   if (!text) return {pending: true, url: currentUrl()};
   // Completion is confirmed by the bridge only after this text stays unchanged for
   // five seconds. Requiring ChatGPT's optional Copy control made finished answers
@@ -365,6 +443,13 @@ async function observe(payload) {
     .filter(link => /^https?:/.test(link.url));
   return {pending: false, answer: text, citations, conversation_url: currentUrl(),
     needs_input: text.includes("UUMA_NEEDS_INPUT")};
+}
+function messageNodes(role) {
+  const legacy = [...document.querySelectorAll(`[data-message-author-role="${role}"]`)];
+  if (legacy.length) return legacy;
+  // New page role headings contain only "You said" / "ChatGPT said".
+  // Use the actual message unit, then the assistant's rendered body.
+  return [...document.querySelectorAll(`[data-chatgpt-search-unit-key$=":${role}"]`)];
 }
 chrome.runtime.onMessage.addListener((command, _sender, respond) => {
   (async () => {

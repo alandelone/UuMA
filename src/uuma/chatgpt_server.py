@@ -32,6 +32,11 @@ class ActionInput(BaseModel):
     action: str
 
 
+class RequestAccountInput(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    account: str = Field(min_length=1, max_length=40)
+
+
 class BrowserProfileInput(BaseModel):
     profile: str = Field(default="", max_length=80)
 
@@ -318,6 +323,10 @@ def create_app(data_dir: Path, *, port: int = 8787, start_worker: bool = True,
         agent=Depends(agent_auth),  # noqa: B008 - FastAPI dependency injection
     ):
         return store.request(agent, body)
+
+    @app.post("/human/requests/{rid}/account", dependencies=[Depends(human_auth)])
+    def reassign_unsent_request(rid: str, body: RequestAccountInput):
+        return store.reassign_unsent(rid, body.account)
 
     @app.get("/agent/requests/{rid}")
     def result(

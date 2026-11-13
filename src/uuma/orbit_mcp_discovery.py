@@ -86,23 +86,46 @@ class XhsMCPDiscoveryProvider:
         query: str | None = None,
     ) -> DiscoveryResponse:
         job = payload.get("job") or payload.get("current_job") or payload
+        if not isinstance(job, dict):
+            return DiscoveryResponse(
+                [], request_id=pending, outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                error_detail="XHS returned a malformed search job",
+            )
         status = str(job.get("status") or payload.get("status") or "").lower()
         error = str(job.get("error_code") or payload.get("error_code") or "").lower()
         stage = str(payload.get("stage") or job.get("stage") or "").lower()
         if payload.get("status") == "offline" or status in {
             "offline", "login_required", "awaiting_scan", "auth_required",
-        } or any(word in stage for word in ("unpaired", "offline", "awaiting_scan")) or any(
+        } or any(word in stage for word in (
+            "unpaired", "offline", "awaiting_scan", "needs_login", "needs_verification",
+        )) or any(
             word in error for word in ("offline", "login", "pair", "auth")
         ):
-            return DiscoveryResponse([], request_id=pending, outcome=DiscoveryOutcome.AUTH_REQUIRED,
-                                     error_detail="XHS requires its paired Chrome extension or login")
+            return DiscoveryResponse(
+                [], request_id=pending, outcome=DiscoveryOutcome.AUTH_REQUIRED,
+                error_detail="XHS requires its paired Chrome extension, login or verification",
+            )
+        request_id = job.get("job_id") or payload.get("job_id")
+        if pending and (
+            request_id != pending
+            or (payload.get("job_id") and payload["job_id"] != pending)
+        ):
+            return DiscoveryResponse(
+                [], request_id=pending, outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                error_detail="XHS status did not confirm the requested search job ID",
+            )
         if query and job.get("query") and job["query"] != query:
             return DiscoveryResponse([], request_id=pending,
                                      outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
                                      error_detail="XHS returned a different search job")
-        request_id = job.get("job_id") or payload.get("job_id") or pending
+        if status in {"error", "failed", "cancelled"}:
+            return DiscoveryResponse(
+                [], request_id=request_id, outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                error_detail=str(job.get("message") or payload.get("message") or "XHS search failed"),
+            )
         items = job.get("results") or payload.get("results") or []
         artifacts = []
+        seen = set()
         for item in items[:max(1, min(limit, 10))]:
             if not isinstance(item, dict):
                 continue
@@ -114,13 +137,25 @@ class XhsMCPDiscoveryProvider:
                 continue
             # Signed browsing tokens remain in the desktop connector, not canonical records.
             locator = urlunsplit((url.scheme, url.netloc, url.path, "", ""))
+            if locator in seen:
+                continue
+            seen.add(locator)
             artifacts.append(DiscoveryArtifact(
                 locator=locator, title=str(item.get("title") or locator), provider=cls.name,
                 snippet=str(item.get("description") or ""),
                 metadata={"note_id": item.get("note_id"), "author": item.get("author"),
                           "discovery_only": True, "source_class": "community_post"},
             ))
-        in_progress = bool(request_id) and status in {
+        waiting_states = {
             "queued", "pending", "running", "searching", "browser_opening", "started",
+            "in_progress",
         }
-        return DiscoveryResponse(artifacts, request_id=request_id, in_progress=in_progress)
+        in_progress = bool(request_id) and (
+            status in waiting_states
+            or (stage in waiting_states and status not in {"success", "completed"})
+        )
+        return DiscoveryResponse(
+            artifacts, request_id=request_id, in_progress=in_progress,
+            outcome=(DiscoveryOutcome.WAITING if in_progress else
+                     DiscoveryOutcome.SUCCESS if artifacts else DiscoveryOutcome.NO_MATCH),
+        )

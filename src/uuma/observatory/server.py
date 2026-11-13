@@ -215,7 +215,7 @@ def create_observatory_app(
         return HTMLResponse("<h2>Observatory 前端静态文件构建中...</h2>")
 
     @app.get("/api/observatory/agents", response_model=FleetOverview)
-    async def get_agents_overview(_authed: bool = Depends(verify_auth)):
+    def get_agents_overview(_authed: bool = Depends(verify_auth)):
         workspaces = registry.get_fleet_workspaces()
         sources = registry.probe_all_sources()
 
@@ -234,7 +234,7 @@ def create_observatory_app(
         )
 
     @app.get("/api/observatory/agents/{agent_id}/items")
-    async def get_agent_items(
+    def get_agent_items(
         agent_id: str,
         limit: int = Query(default=10, ge=1, le=50),
         offset: int = Query(default=0, ge=0),
@@ -245,7 +245,7 @@ def create_observatory_app(
         return {"agent_id": agent_id, "items": items, "count": len(items)}
 
     @app.get("/api/observatory/agents/{agent_id}")
-    async def get_agent_overview(
+    def get_agent_overview(
         agent_id: str,
         _authed: bool = Depends(verify_auth),
     ):
@@ -268,7 +268,7 @@ def create_observatory_app(
         }
 
     @app.get("/api/observatory/items/{item_id}")
-    async def get_item_detail(
+    def get_item_detail(
         item_id: str,
         _authed: bool = Depends(verify_auth),
     ):
@@ -371,7 +371,7 @@ def create_observatory_app(
         }
 
     @app.get("/api/observatory/sources")
-    async def get_sources_status(_authed: bool = Depends(verify_auth)):
+    def get_sources_status(_authed: bool = Depends(verify_auth)):
         return registry.probe_all_sources()
 
     @app.get("/api/observatory/stream")

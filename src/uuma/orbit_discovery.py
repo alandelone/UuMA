@@ -24,6 +24,8 @@ LOGGER = logging.getLogger(__name__)
 
 class DiscoveryOutcome(StrEnum):
     SUCCESS = "SUCCESS"
+    WAITING = "WAITING"
+    FAILED = "FAILED"
     NO_MATCH = "NO_MATCH"
     TRANSIENT_FAILURE = "TRANSIENT_FAILURE"
     AUTH_REQUIRED = "AUTH_REQUIRED"
@@ -97,6 +99,8 @@ class DiscoveryResponse:
     duration_ms: float = 0.0
 
     def resolve_outcome(self) -> DiscoveryOutcome:
+        if self.in_progress:
+            return DiscoveryOutcome.WAITING
         if self.outcome is not None:
             return self.outcome
         return DiscoveryOutcome.SUCCESS if self.artifacts else DiscoveryOutcome.NO_MATCH
@@ -758,6 +762,13 @@ class ChatGPTDiscoveryProvider:
         # 1. If checking an existing pending request, poll it directly
         if pending_request_id:
             state = self.check_status(pending_request_id, token=token)
+            if not state:
+                return DiscoveryResponse(
+                    [], request_id=pending_request_id,
+                    outcome=DiscoveryOutcome.TRANSIENT_FAILURE,
+                    error_detail="Existing request status is unavailable; preserve its ID.",
+                    duration_ms=(time.monotonic() - t0) * 1000,
+                )
             if state:
                 status = state.get("status")
                 if status == "COMPLETED":
@@ -773,18 +784,29 @@ class ChatGPTDiscoveryProvider:
                         duration_ms=(time.monotonic() - t0) * 1000,
                     )
                 if status in {"PREFLIGHT", "SENDING", "RUNNING", "QUEUED"}:
+                    queue = state.get("queue") or {}
+                    blocker = queue.get("blocker") or {}
                     return DiscoveryResponse(
                         [],
                         request_id=pending_request_id,
                         in_progress=True,
-                        outcome=DiscoveryOutcome.SUCCESS,
+                        outcome=DiscoveryOutcome.WAITING,
+                        error_detail=(
+                            f"Request {status}; {queue.get('reason', 'awaiting provider')}; "
+                            f"blocker={blocker.get('status', 'none')} "
+                            f"{blocker.get('error') or ''}"
+                        ).strip(),
                         duration_ms=(time.monotonic() - t0) * 1000,
                     )
                 LOGGER.info("Prior ChatGPT request %s ended with status %s", pending_request_id, status)
                 return DiscoveryResponse(
                     [],
-                    request_id=None,
-                    outcome=DiscoveryOutcome.NO_MATCH if status == "PAUSED" else DiscoveryOutcome.FAILED,
+                    request_id=pending_request_id,
+                    outcome=(
+                        DiscoveryOutcome.AUTH_REQUIRED
+                        if status in {"PAUSED", "NEEDS_REVIEW", "AWAITING_INPUT"}
+                        else DiscoveryOutcome.FAILED
+                    ),
                     error_detail=f"Prior request status {status}",
                     duration_ms=(time.monotonic() - t0) * 1000,
                 )
@@ -902,14 +924,15 @@ class ChatGPTDiscoveryProvider:
             in_prog = bool(
                 last_state and last_state.get("status") in {"PREFLIGHT", "SENDING", "RUNNING", "QUEUED"}
             )
-            outcome = DiscoveryOutcome.SUCCESS if in_prog else (
-                DiscoveryOutcome.NO_MATCH if last_state and last_state.get("status") == "PAUSED"
+            outcome = DiscoveryOutcome.WAITING if in_prog else (
+                DiscoveryOutcome.AUTH_REQUIRED if last_state and last_state.get("status")
+                in {"PAUSED", "NEEDS_REVIEW", "AWAITING_INPUT"}
                 else DiscoveryOutcome.TRANSIENT_FAILURE
             )
             detail = "In progress" if in_prog else f"Request status: {last_state.get('status') if last_state else 'timeout'}"
             return DiscoveryResponse(
                 [],
-                request_id=req_id if in_prog else None,
+                request_id=req_id,
                 in_progress=in_prog,
                 outcome=outcome,
                 error_detail=detail,

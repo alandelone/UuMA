@@ -1,0 +1,14 @@
+[Unit]
+Description=Librarian Semantic Intelligence Pipeline (LSIP) Nightly Run
+After=network.target
+
+[Service]
+Type=oneshot
+WorkingDirectory=/home/alandelone/.local/share/uuma/production/librarian
+ExecStart=/usr/bin/bash /home/alandelone/.local/share/uuma/production/librarian/run-nightly-lsip.sh
+StandardOutput=journal
+StandardError=journal
+TimeoutStartSec=1800
+
+[Install]
+WantedBy=default.target

@@ -1472,6 +1472,7 @@ def test_pending_research_survives_restart_without_no_source_penalty_or_duplicat
     monkeypatch.setattr("uuma.orbit_runner.ensure_knowledge_graph", lambda *a, **k: {"ready": True})
     _Clock.current = datetime.now(UTC) + timedelta(minutes=1)
     monkeypatch.setattr(question_orbit_module, "datetime", _Clock)
+    monkeypatch.setattr("uuma.orbit_wait.datetime", _Clock)
     service, orbits, orbit_id = _started_orbit(tmp_path)
     submissions = []
 

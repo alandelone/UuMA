@@ -383,24 +383,33 @@
     return items.length > 0 ? items[0].title : ws.role;
   }
 
-  // Fetch initial fleet data
-  async function loadInitialData() {
-    try {
-      const res = await fetch('/api/observatory/agents');
-      if (res.ok) {
+  // SSE carries activity events; it does not continuously refresh research snapshots.
+  let fleetRefreshPending = null;
+  function refreshFleetData() {
+    if (fleetRefreshPending) return fleetRefreshPending;
+    fleetRefreshPending = (async () => {
+      try {
+        const res = await fetch('/api/observatory/agents');
+        if (!res.ok) throw new Error(`Fleet source returned ${res.status}`);
         const data = await res.json();
-        state.agents = data.agents || [];
+        if (!Array.isArray(data.agents)) throw new Error('Invalid fleet snapshot');
+        state.agents = data.agents;
         state.sources = data.sources || {};
         updateMetrics(data);
         renderWorkspaces();
         if (data.backfill) updateBackfill(data.backfill);
-
-        // Auto-select first item if none selected
         autoSelectFirstItem();
+      } catch (err) {
+        console.warn('Fleet refresh failed; retaining the last known records:', err);
+      } finally {
+        fleetRefreshPending = null;
       }
-    } catch (err) {
-      console.warn('Initial fleet load failed:', err);
-    }
+    })();
+    return fleetRefreshPending;
+  }
+
+  async function loadInitialData() {
+    await refreshFleetData();
     loadEvents();
   }
 
@@ -1171,22 +1180,52 @@
     `;
   }
 
-  function renderWisdomPreviewHtml(ws, isExpanded) {
-    const items = ws.items || [];
-    const activeTopic = items.find(it => it.kind === 'knowledge_topic' && it.status === 'ACTIVE') || {};
-    const archivedTopics = items.filter(it => it.kind === 'knowledge_topic' && it.status === 'ARCHIVED');
-    const allTopics = [];
-    if (activeTopic.item_id) {
-      allTopics.push(activeTopic);
+  function getWisdomPipelineView(items, sourceAvailable = true) {
+    const allTopics = items.filter(it => it.kind === 'knowledge_topic')
+      .sort((a, b) => Number(b.status === 'ACTIVE') - Number(a.status === 'ACTIVE'));
+    const entries = [];
+    const seen = new Set();
+    for (const owner of [...allTopics, ...items.filter(it => it.kind === 'knowledge_orbit')]) {
+      const payload = owner.payload || {};
+      const orbits = payload.investigations?.length ? payload.investigations
+        : payload.orbit_info ? [payload.orbit_info] : [];
+      for (const orbit of orbits) {
+        const key = orbit.orbit_id || `${owner.item_id}:${entries.length}`;
+        if (seen.has(key)) continue;
+        seen.add(key);
+        entries.push({owner, orbit});
+      }
     }
-    allTopics.push(...archivedTopics);
-
+    const primary = entries.find(e => e.orbit.runner_live)
+      || entries.find(e => ['QUEUED', 'ACTIVE'].includes(e.orbit.status))
+      || entries.find(e => e.owner.status === 'ACTIVE') || entries[0];
+    const activeTopic = primary?.owner || allTopics[0] || {};
     const actPayload = activeTopic.payload || {};
-    const actOrbit = actPayload.orbit_info || {};
+    const actOrbit = primary?.orbit || {};
+    const pipelineItems = entries.flatMap(({owner, orbit}) =>
+      (orbit.pipeline_items || []).map(item => ({...item,
+        owner_item_id: owner.item_id,
+        ...(item.stage === 'RUNNING' && (!sourceAvailable || orbit.runner_live !== true) ? {
+          stage: 'QUEUED', badge: '待执行 · 无实时执行证据', is_current: false
+        } : {})
+      })));
+    return {allTopics, activeTopic, actPayload, actOrbit, pipelineItems,
+      isRunnerLive: sourceAvailable && entries.some(e => e.orbit.runner_live === true)};
+  }
+
+  function renderWisdomPreviewHtml(ws, isExpanded, source) {
+    const items = ws.items || [];
+    const missingSource = source?.is_available === false ||
+      (!source && !items.length && ws.health && ws.health !== 'HEALTHY');
+    const {allTopics, activeTopic, actPayload, actOrbit, pipelineItems, isRunnerLive}
+      = getWisdomPipelineView(items, !missingSource);
     const actUsage = actOrbit.usage || {};
-    const actLimits = actOrbit.budget_limits || {};
-    const pipelineItems = actOrbit.pipeline_items || [];
-    const isRunnerLive = !!actOrbit.runner_live || actOrbit.status === 'QUEUED' || actOrbit.status === 'ACTIVE';
+    const researchStatus = actOrbit.status || 'UNKNOWN';
+    const statusLabel = isRunnerLive ? '现场研究执行中'
+      : missingSource ? (allTopics.length || pipelineItems.length ? '研究来源暂不可用 · 显示上次读取记录' : '研究数据暂不可用')
+      : researchStatus === 'QUEUED' ? '研究已排队 · 当前无执行轮次'
+      : researchStatus === 'UNKNOWN' ? '研究数据尚未加载'
+      : `研究状态：${researchStatus} · 当前无执行轮次`;
 
     // 1. Build the Investigation Pipeline Vertical Rows (垂直一行行列表)
     // 视觉次序（从上至下，排队推进感）：
@@ -1230,7 +1269,7 @@
           <div class="pipeline-row ${rowClass} ${isAnchor ? 'is-pipeline-anchor' : ''}" 
                data-row-index="${idx}"
                title="${escapeHtml(p.question_text)}" 
-               onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(activeTopic.item_id)}')">
+               onclick="event.stopPropagation(); window.__uuma_selectItem('${escapeHtml(p.owner_item_id || activeTopic.item_id)}')">
             <div class="pipeline-row-left">
               <span class="pipeline-badge ${badgeClass}">${pulseHtml}${escapeHtml(p.badge)}</span>
             </div>
@@ -1246,7 +1285,7 @@
         `;
       }).join('');
     } else {
-      pipelineRowsHtml = '<div style="color: var(--text-dim); font-size: 11px; padding: 8px;">暂无排队中的调研攻关缺口</div>';
+      pipelineRowsHtml = `<div style="color: var(--text-dim); font-size: 11px; padding: 8px;">${missingSource ? '研究数据读取失败，将自动重试。' : '尚未加载研究缺口记录，请等待下次刷新。'}</div>`;
     }
 
     // 2. Build the Topics Strip (青色活跃主干 + 历史归档主题)
@@ -1255,11 +1294,11 @@
       const p = top.payload || {};
       const title = p.title || (top.title ? top.title.replace('知识主题: ', '') : `主题 ${top.item_id}`);
       const status = top.status || (isAct ? 'ACTIVE' : 'ARCHIVED');
-      const vCnt = p.ver_cnt || 45;
-      const claimCnt = p.claim_count || 8;
-      const linkCnt = p.links_cnt || 20;
+      const vCnt = p.ver_cnt ?? '—';
+      const claimCnt = p.claim_count ?? '—';
+      const linkCnt = p.links_cnt ?? '—';
       const summaryText = p.superseded_by_topic_id 
-        ? '已合并至主干 topic_07a8' 
+        ? `已合并至 ${p.superseded_by_topic_id}`
         : (p.summary || (isAct ? '气雾栽培核心要素、分株成活与喷雾间隔' : '历史排查与撤回审计记录'));
 
       return `
@@ -1291,19 +1330,19 @@
         <div class="liveness-banner-title">
           <span style="color: ${isRunnerLive ? 'var(--accent-green)' : 'var(--accent-amber)'}; display: flex; align-items: center; gap: 6px;">
             <span class="${isRunnerLive ? 'pipeline-pulse-dot' : ''}" style="background: ${isRunnerLive ? '#10b981' : '#f59e0b'};"></span>
-            ${isRunnerLive ? '🟢 调研轨道实时运转中 (Autonomous Orbit Active)' : '⚪ 调度器待命 (Standby)'}
+            ${escapeHtml(statusLabel)}
           </span>
-          <span style="font-size: 10px; color: var(--text-dim);">后台常驻守护 · PID 12700 · 轮询 15s</span>
+          <span style="font-size: 10px; color: var(--text-dim);">每 15 秒同步研究记录 · 执行状态以当前租约为准</span>
         </div>
         <div class="liveness-banner-text" style="line-height: 1.45; font-size: 11px;">
           <div style="display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 4px;">
-            <span>🔭 <strong>调研引擎状态：</strong> <span style="color: #38bdf8; font-weight: 700;">${actOrbit.status === 'QUEUED' ? '已续约持续研讨 (QUEUED)' : escapeHtml(actOrbit.status || 'ACTIVE')}</span></span>
-            <span>⚡ <strong>预算梯级：</strong> <span style="color: #34d399; font-weight: 600;">${escapeHtml(actOrbit.budget_tier || 'DEEP')}</span></span>
-            <span>🔄 <strong>已执行周期：</strong> <span style="color: #fff; font-weight: 600;">${actUsage.cycle_count || 40} 个 Cycle</span></span>
-            <span>📚 <strong>总引据抓取：</strong> <span style="color: #cbd5e1;">${actUsage.sources_used || 0}/${actLimits.sources || 500} 篇</span></span>
+            <span>🔭 <strong>调研引擎状态：</strong> <span style="color: #38bdf8; font-weight: 700;">${escapeHtml(researchStatus)}</span></span>
+            <span>⚡ <strong>预算梯级：</strong> <span style="color: #34d399; font-weight: 600;">${escapeHtml(actOrbit.budget_tier ?? '—')}</span></span>
+            <span>🔄 <strong>已执行周期：</strong> <span style="color: #fff; font-weight: 600;">${actUsage.cycle_count ?? '—'} 个 Cycle</span></span>
+            <span>📚 <strong>总引据抓取：</strong> <span style="color: #cbd5e1;">${actUsage.sources_used ?? '—'} 篇（本研究累计）</span></span>
           </div>
           <div style="color: #94a3b8; font-size: 10.5px; border-top: 1px solid rgba(255,255,255,0.06); padding-top: 4px;">
-            💡 <strong>状态说明：</strong> “调度器待命”指当前总控队列无人工下发的即时单次交互指令；而“调研轨道已续约”指后台科研引擎正在自主按序攻关下方流水线中的证据缺口（无需人工干预）。
+            💡 <strong>状态说明：</strong> 排队、等待外部结果和现场执行分别显示。只有当前运行轮次及有效租约才表示正在执行；已有主题和历史缺口会保留。
           </div>
         </div>
       </div>
@@ -1314,7 +1353,7 @@
         <div class="wisdom-card-preview expanded-card-view" onclick="event.stopPropagation();">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
             <span style="font-size: 14px; font-weight: 700; color: #fff;">📚 Wisdom 证据攻关流水线与知识演进全景</span>
-            <span class="status-tag status-RUNNING" style="font-size: 10.5px;">🟢 实时调研中 · ${pipelineItems.length} 个缺口攻关卡片</span>
+            <span class="status-tag status-${isRunnerLive ? 'RUNNING' : 'WAITING'}" style="font-size: 10.5px;">${escapeHtml(statusLabel)} · ${pipelineItems.length} 项缺口（含历史）</span>
           </div>
 
           ${livenessBannerHtml}
@@ -1343,9 +1382,9 @@
               <span style="font-size: 11px; font-weight: 700; color: var(--text-dim);">
                 📦 知识主题体系 (${allTopics.length} 个主题)：
               </span>
-              <a href="${normalizeWisdomDocUrl(actPayload.standalone_url)}" target="_blank" style="color: var(--accent-blue); font-size: 10.5px; text-decoration: none;">
-                独立知识文档 (v${actPayload.ver_cnt || 45}) ↗
-              </a>
+              ${actPayload.standalone_url ? `<a href="${normalizeWisdomDocUrl(actPayload.standalone_url)}" target="_blank" style="color: var(--accent-blue); font-size: 10.5px; text-decoration: none;">
+                独立知识文档 (v${actPayload.ver_cnt ?? '—'}) ↗
+              </a>` : '<span style="font-size: 10.5px; color: var(--text-dim);">文档数据尚未加载</span>'}
             </div>
             <div class="wisdom-topics-strip">
               ${topicsStripHtml}
@@ -1360,7 +1399,7 @@
             <span style="font-size: 11px; font-weight: 700; color: #fff;">📚 Wisdom 证据攻关流水线与调研轨道</span>
             <div style="display: flex; align-items: center; gap: 6px;">
               ${hasEarlierHistory ? `<button class="pipeline-nav-btn" data-count="${earlierCount}" data-target="top" onclick="event.stopPropagation(); window.__uuma_togglePipelineScroll(this)" title="向上滚动查看更早 ${earlierCount} 项过关历史">▲ 上有 ${earlierCount} 项历史</button>` : ''}
-              <span class="status-tag status-RUNNING" style="font-size: 9px;">🟢 实时调研中 · ${pipelineItems.length} 缺口流水线</span>
+              <span class="status-tag status-${isRunnerLive ? 'RUNNING' : 'WAITING'}" style="font-size: 9px;">${escapeHtml(statusLabel)} · ${pipelineItems.length} 项缺口</span>
             </div>
           </div>
 
@@ -1371,10 +1410,10 @@
 
           <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(16, 185, 129, 0.08); border: 1px solid rgba(16, 185, 129, 0.25); border-radius: 4px; padding: 4px 6px; font-size: 10px;">
             <span style="color: #34d399; font-weight: 600; display: flex; align-items: center; gap: 4px;">
-              <span class="pipeline-pulse-dot" style="background: #10b981;"></span>
-              后台自主调研中：
+              ${isRunnerLive ? '<span class="pipeline-pulse-dot" style="background: #10b981;"></span>' : ''}
+              ${escapeHtml(statusLabel)}
             </span>
-            <span style="color: #cbd5e1;">Cycle #40 · Tier: ${escapeHtml(actOrbit.budget_tier || 'DEEP')} · 调度器待命无硬阻塞</span>
+            <span style="color: #cbd5e1;">Cycle ${actUsage.cycle_count ?? '—'} · Tier: ${escapeHtml(actOrbit.budget_tier ?? '—')}</span>
           </div>
           <div style="font-size: 10px; color: var(--accent-blue); text-align: right; margin-top: 4px;">
             🔍 点击展开查看完整主题树、断言事实与检视抽屉 ↗
@@ -1931,21 +1970,19 @@
     const coreItem = items.find(it => it.kind === 'project_graph') || items[0] || {};
     const p = coreItem.payload || {};
     const timelineProjects = p.part1_timeline_projects || [];
+    const sourceWarning = p.source_available === false
+      ? `<div role="status" style="color: var(--accent-orange); padding: 8px;">${escapeHtml(p.source_error || 'Project Graph 数据暂不可用，请检查连接。')}</div>` : '';
+
     const assignSuggestions = p.part2_assign_suggestions || [];
     const stats = p.part3_macro_stats || {
-      total_projects: 58,
-      completed_projects: 0,
-      l4_decomposed_projects: 11,
-      l4_pct: 19.0,
-      timeline_assigned_count: 9,
-      total_nodes: 691,
-      total_edges: 638,
-      level_breakdown: { L1: 58, L2: 94, L3: 232, L4: 307 },
-      status_breakdown: { TODO: 642, DONE: 14, CANCELLED: 35 }
+      total_projects: 0, completed_projects: 0, l4_decomposed_projects: 0,
+      fully_l4_projects: 0, partial_l4_projects: 0, timeline_assigned_count: 0,
+      total_nodes: 0, total_edges: 0,
+      level_breakdown: { L1: 0, L2: 0, L3: 0, L4: 0 }, status_breakdown: {}
     };
     const activities = p.part4_activities || [];
     const l1Break = stats.level_breakdown || {};
-    const totalNodes = stats.total_nodes || 691;
+    const totalNodes = stats.total_nodes ?? 0;
 
     // Part 4: Activities Split into 2 Columns (Sessions vs Tasks/Topology)
     const sessionActs = activities.filter(a => a.kind === 'session');
@@ -2075,9 +2112,10 @@
         <div class="yonc-card-preview expanded-card-view" onclick="event.stopPropagation();">
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2px;">
             <span style="font-size: 15px; font-weight: 700; color: #fff;">📊 Yonc 专案图谱、时间线推进、跨 Agent 分工建议与宏观全景</span>
-            <span class="status-tag status-ACTIVE" style="font-size: 11px;">已放大展示 · 全图 58 专案 · 9 个排期中 · 6 大 Agent 协同</span>
+            <span class="status-tag status-ACTIVE" style="font-size: 11px;">已放大展示 · 全图 ${stats.total_projects} 专案 · ${timelineProjects.length} 个排期中 · ${(p.coordination_agents || []).length} 大 Agent 协同</span>
           </div>
 
+          ${sourceWarning}
           <!-- Part 1: Timeline Projects Table -->
           <div class="yonc-part-section">
             <div class="yonc-part-header">
@@ -2121,7 +2159,7 @@
                 <div class="yonc-stat-lbl">已完成专案 (全图14节点已验)</div>
               </div>
               <div class="yonc-stat-box">
-                <div class="yonc-stat-val" style="color: #38bdf8;">${stats.fully_l4_projects !== undefined ? stats.fully_l4_projects : 1} <span style="font-size: 10px; font-weight: normal; color: var(--text-dim);">完全 / ${stats.partial_l4_projects !== undefined ? stats.partial_l4_projects : 10} 部分</span></div>
+                <div class="yonc-stat-val" style="color: #38bdf8;">${stats.fully_l4_projects !== undefined ? stats.fully_l4_projects : 0} <span style="font-size: 10px; font-weight: normal; color: var(--text-dim);">完全 / ${stats.partial_l4_projects !== undefined ? stats.partial_l4_projects : 0} 部分</span></div>
                 <div class="yonc-stat-lbl">L4 深度拆解 (58个专案)</div>
               </div>
               <div class="yonc-stat-box">
@@ -2152,7 +2190,7 @@
           <!-- Part 3 Quick Stats Banner in Collapsed -->
           <div style="display: flex; justify-content: space-between; align-items: center; background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.07); border-radius: 4px; padding: 4px 8px; font-size: 10px;">
             <span style="color: #38bdf8; font-weight: 600;">🌐 专案图谱全局：</span>
-            <span style="color: #cbd5e1;">${stats.total_projects} 专案 · <strong>${stats.fully_l4_projects !== undefined ? stats.fully_l4_projects : 1}完全/${stats.partial_l4_projects !== undefined ? stats.partial_l4_projects : 10}部分已拆至 L4</strong> · <strong>${stats.timeline_assigned_count} 个排期中</strong> · ${stats.completed_projects} 完成</span>
+            <span style="color: #cbd5e1;">${stats.total_projects} 专案 · <strong>${stats.fully_l4_projects !== undefined ? stats.fully_l4_projects : 0}完全/${stats.partial_l4_projects !== undefined ? stats.partial_l4_projects : 0}部分已拆至 L4</strong> · <strong>${stats.timeline_assigned_count} 个排期中</strong> · ${stats.completed_projects} 完成</span>
           </div>
 
           <!-- Part 1: Top Timeline Projects in Collapsed -->
@@ -2197,21 +2235,19 @@
     const coreItem = items.find(it => it.kind === 'project_graph') || items[0] || {};
     const p = coreItem.payload || {};
     const timelineProjects = p.part1_timeline_projects || [];
+    const sourceWarning = p.source_available === false
+      ? `<div role="status" style="color: var(--accent-orange); padding: 8px;">${escapeHtml(p.source_error || 'Project Graph 数据暂不可用，请检查连接。')}</div>` : '';
+
     const assignSuggestions = p.part2_assign_suggestions || [];
     const stats = p.part3_macro_stats || {
-      total_projects: 58,
-      completed_projects: 0,
-      l4_decomposed_projects: 11,
-      l4_pct: 19.0,
-      timeline_assigned_count: 9,
-      total_nodes: 691,
-      total_edges: 638,
-      level_breakdown: { L1: 58, L2: 94, L3: 232, L4: 307 },
-      status_breakdown: { TODO: 642, DONE: 14, CANCELLED: 35 }
+      total_projects: 0, completed_projects: 0, l4_decomposed_projects: 0,
+      fully_l4_projects: 0, partial_l4_projects: 0, timeline_assigned_count: 0,
+      total_nodes: 0, total_edges: 0,
+      level_breakdown: { L1: 0, L2: 0, L3: 0, L4: 0 }, status_breakdown: {}
     };
     const activities = p.part4_activities || [];
     const l1Break = stats.level_breakdown || {};
-    const totalNodes = stats.total_nodes || 691;
+    const totalNodes = stats.total_nodes ?? 0;
 
     // Part 4: Activities Split into 2 Columns (Sessions vs Tasks/Topology)
     const sessionActs = activities.filter(a => a.kind === 'session');
@@ -2313,6 +2349,7 @@
     `).join('');
 
     return `
+      ${sourceWarning}
       <div class="detail-block">
         <div class="detail-block-title">Yonc 智能体概览与专案图谱核心</div>
         <div style="font-size: 12px; margin-bottom: 6px;">
@@ -2333,10 +2370,10 @@
           </div>
           <div class="yonc-stat-box">
             <div class="yonc-stat-val" style="color: var(--accent-green);">${stats.completed_projects} <span style="font-size: 10px; color: var(--text-dim);">个</span></div>
-            <div class="yonc-stat-lbl">已完成专案 (14节点验)</div>
+            <div class="yonc-stat-lbl">已完成专案</div>
           </div>
           <div class="yonc-stat-box">
-            <div class="yonc-stat-val" style="color: #38bdf8;">${stats.fully_l4_projects !== undefined ? stats.fully_l4_projects : 1} <span style="font-size: 10px; color: var(--text-dim);">完全 / ${stats.partial_l4_projects !== undefined ? stats.partial_l4_projects : 10} 部分</span></div>
+            <div class="yonc-stat-val" style="color: #38bdf8;">${stats.fully_l4_projects !== undefined ? stats.fully_l4_projects : 0} <span style="font-size: 10px; color: var(--text-dim);">完全 / ${stats.partial_l4_projects !== undefined ? stats.partial_l4_projects : 0} 部分</span></div>
             <div class="yonc-stat-lbl">L4 深度拆解专案</div>
           </div>
           <div class="yonc-stat-box">
@@ -2840,7 +2877,7 @@
 
       let wisdomPreviewHtml = '';
       if (ws.agent_id === 'wisdom-oldman') {
-        wisdomPreviewHtml = renderWisdomPreviewHtml(ws, isExpanded);
+        wisdomPreviewHtml = renderWisdomPreviewHtml(ws, isExpanded, state.sources?.[ws.agent_id]);
       }
 
       let forgePreviewHtml = '';
@@ -4925,20 +4962,8 @@
   loadInitialData();
   initSSE();
 
-  // Periodic poll fallback for agent cards (only active if SSE is disconnected)
-  setInterval(() => {
-    if (state.sseConnected) {
-      return;
-    }
-    fetch('/api/observatory/agents')
-      .then(res => res.json())
-      .then(data => {
-        state.agents = data.agents || [];
-        updateMetrics(data);
-        renderWorkspaces();
-        if (data.backfill) updateBackfill(data.backfill);
-      })
-      .catch(() => {});
-  }, 10000);
+  // Refresh snapshots even when the event stream remains connected. A failed
+  // initial SSH read must not leave an empty Wisdom panel indefinitely.
+  setInterval(refreshFleetData, 15000);
 
 })();

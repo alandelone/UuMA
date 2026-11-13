@@ -29,6 +29,9 @@ class ArchiveSource(ArchiveModel):
     owner_agent: StrictStr
     readers: list[StrictStr]
     capture_status: Literal["NOT_COLLECTED", "COMPLETE", "PARTIAL", "UNAVAILABLE"]
+    device: StrictStr = "server"
+    category_default: StrictStr = "Knowledge"
+    privacy_tier: StrictStr = "internal"
     captured_at: AwareDatetime | None = None
     source_as_of: StrictStr = ""
     verification: Literal["UNVERIFIED", "HASH_VERIFIED", "RESTORE_VERIFIED"] = "UNVERIFIED"
@@ -41,8 +44,12 @@ class ArchiveRecord(ArchiveModel):
     source_id: StrictStr
     readers: list[StrictStr]
     project_ids: list[StrictStr] = Field(default_factory=list)
+    category: StrictStr | None = None
     kind: StrictStr
     title: StrictStr
+    summary: StrictStr = ""
+    assertion_status: StrictStr = "proposed"
+    superseded_by: StrictStr | None = None
     original_status: StrictStr
     original_ref: StrictStr
     captured_at: AwareDatetime
@@ -51,6 +58,8 @@ class ArchiveRecord(ArchiveModel):
     content_sha256: str = Field(pattern=r"^[a-f0-9]{64}$")
     content_bytes: int = Field(strict=True, ge=0)
     media_type: StrictStr = "text/plain"
+    evidence: list[dict[str, Any]] = Field(default_factory=list)
+    entities: list[StrictStr] = Field(default_factory=list)
 
 
 class ArchiveCatalog(ArchiveModel):
@@ -83,7 +92,11 @@ class LibrarianReader:
         self.root = Path(root).resolve(strict=True)
         if not self.root.is_dir():
             raise ValueError("Configured archive root is not a directory")
-        path = self.root / "catalog.json"
+        primary_path = self.root / "librarian_semantic_catalog.json"
+        legacy_path = self.root / "catalog.json"
+        path = primary_path if primary_path.exists() else legacy_path
+        if not path.exists():
+            raise FileNotFoundError(f"Neither {primary_path.name} nor {legacy_path.name} exists in archive root")
         if path.is_symlink():
             raise ValueError("Archive catalog must be a regular published file")
         with path.open("rb") as handle:
@@ -160,6 +173,7 @@ class LibrarianReader:
         self, query: str = "", project_id: str = "", source_id: str = "",
         kind: str = "", limit: int = 50, offset: int = 0,
         expected_snapshot_id: str = "", latest_only: bool = False,
+        category: str = "",
     ) -> dict[str, Any]:
         self._snapshot(expected_snapshot_id)
         if type(limit) is not int or not 1 <= limit <= 100:
@@ -184,9 +198,12 @@ class LibrarianReader:
             records = [record for record in records if project_id in record.project_ids]
         if kind:
             records = [record for record in records if record.kind == kind]
+        if category:
+            records = [record for record in records if record.category == category]
         folded = query.casefold()
         records = [record for record in records if folded in (
-            f"{record.record_id} {record.title} {record.kind} {record.original_status}"
+            f"{record.record_id} {record.title} {record.kind} {record.original_status} "
+            f"{record.summary} {record.category or ''}"
         ).casefold()]
         records.sort(key=lambda record: (
             record.captured_at, record.record_id, record.version_id

@@ -445,8 +445,32 @@ class QuestionOrbitService:
                 if record.get("question_id") == question_id:
                     state = (record.get("cycle_explanation") or {}).get("discovery_state")
                     if isinstance(state, dict):
+                        request_id = state.get("pending_request_id")
+                        if (request_id and state.get("pending_provider") == "xhs"
+                                and not state.get("pending_query")):
+                            query = self._submitted_xhs_query(conn, record["orbit_cycle_id"], request_id)
+                            if query:
+                                return state | {"pending_query": query}
                         return state
         return {}
+
+    def _submitted_xhs_query(self, conn, cycle_id: str, request_id: str) -> str | None:
+        """Recover the original query for a wait saved before cursors kept it."""
+        events = conn.execute(
+            "SELECT payload_json FROM knowledge_events WHERE aggregate_type = ? "
+            "AND aggregate_id = ? AND event_type = 'ORBIT_CYCLE_WAITING_EXTERNAL' "
+            "ORDER BY sequence",
+            (self.knowledge.AGGREGATE_TYPES["orbit_cycles"], cycle_id),
+        )
+        for row in events:
+            record = json.loads(row["payload_json"]).get("after") or {}
+            for attempt in record.get("discovery_attempts") or []:
+                if (attempt.get("provider") == "xhs" and attempt.get("request_id") == request_id
+                        and (attempt.get("metadata") or {}).get("request_phase") == "submit"):
+                    query = attempt.get("query")
+                    if isinstance(query, str) and query:
+                        return query
+        return None
 
     def list(self, status: str | None = None, limit: int = 100) -> dict[str, Any]:
         records = self.store.list_records("question_orbits", status=status, limit=limit)
@@ -741,11 +765,18 @@ class QuestionOrbitService:
                     orbit = self.knowledge._require("question_orbits", before["orbit_id"], conn)
                     self._wait_daily(conn, orbit, daily, now, actor_id)
                     return None
-                if before.get("quota_wait") or int(before["attempt"]) < self.max_cycle_attempts:
+                external_wait = (
+                    before["status"] == "RETRY" and before.get("decision") == "WAITING_EXTERNAL"
+                )
+                if (before.get("quota_wait") or external_wait
+                        or int(before["attempt"]) < self.max_cycle_attempts):
                     after = before | {
                         "status": OrbitCycleStatus.RUNNING.value,
-                        "attempt": int(before["attempt"]) + (0 if before.get("quota_wait") else 1),
+                        "attempt": int(before["attempt"]) + (
+                            0 if before.get("quota_wait") or external_wait else 1
+                        ),
                         "quota_wait": False,
+                        "decision": None,
                         "lease_owner": owner_id,
                         "lease_expires_at": lease_expires_at.isoformat(),
                         "heartbeat_at": now.isoformat(),
@@ -786,6 +817,15 @@ class QuestionOrbitService:
                 "SELECT record_json FROM question_orbits WHERE status = 'QUEUED' "
                 "AND (json_extract(record_json, '$.quota_resume_at') IS NULL "
                 "OR json_extract(record_json, '$.quota_resume_at') <= ?) "
+                "AND (NOT EXISTS (SELECT 1 FROM orbit_cycles w WHERE "
+                "w.orbit_id=question_orbits.orbit_id AND w.status='RETRY' "
+                "AND json_extract(w.record_json, '$.decision')='WAITING_EXTERNAL') "
+                "OR EXISTS (SELECT 1 FROM orbit_frontier f "
+                "WHERE f.orbit_id=question_orbits.orbit_id AND f.status='OPEN' AND NOT EXISTS "
+                "(SELECT 1 FROM orbit_cycles w WHERE w.orbit_id=f.orbit_id "
+                "AND json_extract(w.record_json, '$.question_id')="
+                "json_extract(f.record_json, '$.question_id') AND w.status='RETRY' "
+                "AND json_extract(w.record_json, '$.decision')='WAITING_EXTERNAL'))) "
                 "ORDER BY updated_sequence LIMIT 1", (now.isoformat(),),
             ).fetchone()
             if not row:
@@ -796,7 +836,11 @@ class QuestionOrbitService:
                 self._wait_daily(conn, orbit_before, daily, now, actor_id)
                 return None
             frontier_rows = conn.execute(
-                "SELECT record_json FROM orbit_frontier WHERE orbit_id = ? AND status = 'OPEN'",
+                "SELECT f.record_json FROM orbit_frontier f WHERE f.orbit_id = ? "
+                "AND f.status = 'OPEN' AND NOT EXISTS (SELECT 1 FROM orbit_cycles w "
+                "WHERE w.orbit_id=f.orbit_id AND json_extract(w.record_json, '$.question_id')="
+                "json_extract(f.record_json, '$.question_id') AND w.status='RETRY' "
+                "AND json_extract(w.record_json, '$.decision')='WAITING_EXTERNAL')",
                 (orbit_before["orbit_id"],),
             ).fetchall()
             frontier = self._ordered_frontier(
@@ -1296,10 +1340,15 @@ class QuestionOrbitService:
             ).fetchall()
             open_frontier = [json.loads(row["record_json"]) for row in open_rows]
             high_open = any(item["priority"] == FrontierPriority.HIGH.value for item in open_frontier)
+            external_pending = conn.execute(
+                "SELECT 1 FROM orbit_cycles WHERE orbit_id = ? AND status = 'RETRY' "
+                "AND json_extract(record_json, '$.decision') = 'WAITING_EXTERNAL' LIMIT 1",
+                (orbit_before["orbit_id"],),
+            ).fetchone() is not None
             satisfied = satisfaction_level in {
                 SatisfactionLevel.SUFFICIENT,
                 SatisfactionLevel.STRONG,
-            } and not high_open
+            } and not high_open and not external_pending
 
             exp_dict = (
                 cycle_explanation.to_dict()
@@ -1323,6 +1372,10 @@ class QuestionOrbitService:
                 orbit_status = OrbitStatus.QUEUED
                 run_status = ResearchRunStatus.ACTIVE
                 stop_reason = "Provider quota/rate limit; progress saved, waiting before retry."
+            elif external_pending:
+                orbit_status = OrbitStatus.QUEUED
+                run_status = ResearchRunStatus.ACTIVE
+                stop_reason = "Waiting for an existing external research request."
             elif not open_frontier:
                 orbit_status = OrbitStatus.BLOCKED
                 run_status = ResearchRunStatus.PAUSED
@@ -1455,6 +1508,64 @@ class QuestionOrbitService:
                 "research_run": run_after,
                 "document_version": document_version,
             }
+
+    def defer_external_cycle(
+        self, orbit_cycle_id: str, owner_id: str, *,
+        discovery_state: dict[str, Any], explanation: dict[str, Any],
+        active_seconds: float = 0, search_queries_used: int = 0, model_tokens_used: int = 0,
+        actor_id: str = "wisdom-oldman",
+    ) -> dict[str, Any]:
+        """Release a waiting cycle without completing research or consuming a retry."""
+        self.knowledge.require_writer(actor_id)
+        if any(v < 0 for v in (active_seconds, search_queries_used, model_tokens_used)):
+            raise ValueError("Recorded research usage cannot be negative")
+        wait = discovery_state.get("external_wait") or {}
+        if (not discovery_state.get("pending_request_id")
+                or wait.get("request_id") != discovery_state["pending_request_id"]
+                or not discovery_state.get("pending_provider")
+                or wait.get("provider") != discovery_state["pending_provider"]):
+            raise ValueError("External wait must retain the exact provider request identity.")
+        now = datetime.now(UTC)
+        next_check = datetime.fromisoformat(wait["next_check_at"])
+        if not now < next_check <= now + timedelta(days=1, minutes=1):
+            raise ValueError("External wait deadline must be within the next day.")
+        with self.store.transaction() as conn:
+            before = self.knowledge._require("orbit_cycles", orbit_cycle_id, conn)
+            orbit = self.knowledge._require("question_orbits", before["orbit_id"], conn)
+            if orbit["status"] in {"PAUSED", "STOPPED"}:
+                return {"cycle": before, "orbit": orbit, "deferred": False}
+            if before["status"] != "RUNNING":
+                raise ValueError("Only a running cycle can defer external work.")
+            if before["lease_owner"] != owner_id:
+                raise PermissionError("Cycle lease belongs to another runner.")
+            if datetime.fromisoformat(before["lease_expires_at"]) <= now:
+                raise PermissionError("Cycle lease expired before external wait was saved.")
+            after = before | {
+                "status": "RETRY", "decision": "WAITING_EXTERNAL", "quota_wait": False,
+                "error": str(wait.get("reason") or "Waiting for external research")[:8000],
+                "lease_expires_at": next_check.isoformat(), "completed_at": None,
+                "cycle_explanation": explanation | {"discovery_state": discovery_state},
+                "discovery_attempts": explanation.get("attempts") or [],
+                "updated_at": now.isoformat(),
+            }
+            self._update(conn, "orbit_cycles", before, after,
+                         "ORBIT_CYCLE_WAITING_EXTERNAL", actor_id)
+            queued = orbit | {"status": "QUEUED", "updated_at": now.isoformat()}
+            self._update(conn, "question_orbits", orbit, queued,
+                         "QUESTION_ORBIT_EXTERNAL_WAIT", actor_id)
+            run = self.knowledge._require("research_runs", orbit["research_run_id"], conn)
+            updated_run = run | {
+                "active_seconds": float(run.get("active_seconds", 0)) + active_seconds,
+                "search_queries_used": int(run.get("search_queries_used", 0)) + search_queries_used,
+                "model_tokens_used": int(run.get("model_tokens_used", 0)) + model_tokens_used,
+                "latest_cycle_explanation": after["cycle_explanation"],
+                "updated_at": now.isoformat(),
+            }
+            # This existing event participates in daily usage accounting; a wait
+            # charges actual work without incrementing the completed cycle count.
+            self._update(conn, "research_runs", run, updated_run,
+                         "RESEARCH_RUN_UPDATED", actor_id)
+            return {"cycle": after, "orbit": queued, "deferred": True}
 
     def fail_cycle(
         self,

@@ -134,9 +134,10 @@ def test_library_issues_filters_expired_sources(tmp_path):
     mod = load_commands()
     intake = tmp_path / "intake"
     intake.mkdir()
+    today_str = datetime.now(ZoneInfo("Asia/Kuala_Lumpur")).strftime("%Y-%m-%d")
     # Source A: COMPLETE and fresh
-    mA = {"device": "workstation", "source": "srcA", "scheduled_date": "2026-11-05",
-          "batch_id": "librarian:workstation:srcA:2026-11-05", "revision": 1,
+    mA = {"device": "workstation", "source": "srcA", "scheduled_date": today_str,
+          "batch_id": f"librarian:workstation:srcA:{today_str}", "revision": 1,
           "coverage": "COMPLETE", "entries": [{"status": "CAPTURED"}]}
     # Source B: COMPLETE but EXPIRED (2026-10-20)
     mB = {"device": "workstation", "source": "srcB", "scheduled_date": "2026-10-20",

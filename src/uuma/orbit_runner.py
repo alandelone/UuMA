@@ -42,8 +42,9 @@ from .orbit_discovery import (
     configured_providers,
     urls_in_question,
 )
-from .orbit_planner import AdaptiveResearchPlanner
+from .orbit_planner import AdaptiveResearchPlanner, RouteAttempt
 from .orbit_synthesis import OrbitCompactSynthesizer
+from .orbit_wait import external_wait_state
 from .question_orbit import QuestionOrbitService
 from .research_quota import quota_delay
 from .safe_web import RetryAfterError, SafeWebFetcher
@@ -534,9 +535,22 @@ class OrbitRunner:
         self._active_cycle = cycle
         self._active_cycle_started = started
         self._critic_receipts: list[dict[str, Any]] = []
+        self._discovery_result_cursor = None
         self._research_cursor = self.orbits.discovery_state(
             cycle["orbit_id"], cycle["question_id"]
         )
+        # Waiting on an existing request needs no graph/model work. Poll its exact
+        # owner first and return the lease to the scheduler if it is still waiting.
+        prepolled = None
+        if self._research_cursor.get("pending_request_id"):
+            question = self.knowledge._require("questions", cycle["question_id"])["text"]
+            prepolled = self._discover(question)
+            if prepolled[2] and not prepolled[0]:
+                submitted = self._record_submitted_discovery(cycle["orbit_id"], prepolled[1])
+                self._defer_external(
+                    cycle, started, question, prepolled[1], search_queries_used=submitted,
+                )
+                return
         readiness = ensure_knowledge_graph("wisdom-oldman", recover=True)
         if not readiness["ready"]:
             reason = str(readiness.get("reason") or "Graph readiness could not be verified")
@@ -594,31 +608,7 @@ class OrbitRunner:
                 artifacts.append(artifact)
                 cached_locators.add(source["locator"])
         orbit_id = cycle["orbit_id"]
-        pending_req_id = self._research_cursor.get("pending_request_id")
-        research_query = self._research_cursor.get("next_query") or question
-        discovered, traces, next_pending_req_id = self.planner.execute_discovery(
-            research_query,
-            limit=5,
-            pending_request_id=pending_req_id,
-            pending_provider=self._research_cursor.get("pending_provider"),
-            deep_research_allowed=True,
-            start_tier=int(self._research_cursor.get("next_tier", 1)),
-            is_provider_throttled=lambda name: (
-                name == "brave"
-                and self.orbits.discovery_usage(provider="brave")["requests"] >= self.BRAVE_MONTHLY_LIMIT
-            ),
-        )
-        last_tier = max((trace.tier for trace in traces), default=4)
-        attempted = set(self._research_cursor.get("attempted_providers") or [])
-        attempted.update(trace.provider for trace in traces)
-        self._research_cursor = {
-            "next_tier": (last_tier if next_pending_req_id else
-                          1 if last_tier == 4 else last_tier + 1),
-            "pending_request_id": next_pending_req_id,
-            "pending_provider": traces[-1].provider if next_pending_req_id and traces else None,
-            "next_query": research_query,
-            "attempted_providers": sorted(attempted),
-        }
+        discovered, traces, next_pending_req_id = prepolled or self._discover(question)
 
         discovery_queries: list[str] = []
         search_queries_used = 0
@@ -638,14 +628,16 @@ class OrbitRunner:
                 discovery_queries.append(trace.query)
                 if trace.metadata.get("request_phase") == "poll":
                     continue
-                if trace.provider != "canonical-citations":
-                    search_queries_used += 1
-                self.orbits.record_discovery_usage(
-                    orbit_id,
-                    trace.provider,
-                    result_count=trace.result_count,
-                    provider_request_id=trace.request_id,
-                )
+                search_queries_used += self._record_submitted_discovery(orbit_id, [trace])
+
+        if next_pending_req_id and not discovered:
+            self._defer_external(
+                cycle, started, question, traces,
+                search_queries_used=search_queries_used,
+                model_tokens_used=max(1, (len(str(current.get("answer") or ""))
+                                         + sum(map(len, discovery_queries))) // 4),
+            )
+            return
 
         artifacts.extend(discovered)
 
@@ -894,6 +886,87 @@ class OrbitRunner:
         )
         self.dispatcher.dispatch_one()
 
+    def _record_submitted_discovery(self, orbit_id: str, traces: list[RouteAttempt]) -> int:
+        count = 0
+        for trace in traces:
+            if (trace.status not in {"SUCCESS", "EMPTY", "IN_PROGRESS"}
+                    or trace.metadata.get("request_phase") == "poll"):
+                continue
+            count += int(trace.provider != "canonical-citations")
+            self.orbits.record_discovery_usage(
+                orbit_id, trace.provider, result_count=trace.result_count,
+                provider_request_id=trace.request_id,
+            )
+        return count
+
+    def _discover(
+        self, question: str,
+    ) -> tuple[list[DiscoveryArtifact], list[RouteAttempt], str | None]:
+        """Advance discovery once, preserving the cursor until its result is durable."""
+        cursor = self._research_cursor
+        research_query = cursor.get("next_query") or question
+        result = self.planner.execute_discovery(
+            research_query, limit=5,
+            pending_request_id=cursor.get("pending_request_id"),
+            pending_provider=cursor.get("pending_provider"),
+            pending_query=cursor.get("pending_query"),
+            deep_research_allowed=True,
+            start_tier=int(cursor.get("next_tier", 1)),
+            is_provider_throttled=lambda name: (
+                name == "brave"
+                and self.orbits.discovery_usage(provider="brave")["requests"]
+                >= self.BRAVE_MONTHLY_LIMIT
+            ),
+        )
+        _, traces, pending = result
+        last_tier = max((trace.tier for trace in traces), default=4)
+        attempted = set(cursor.get("attempted_providers") or [])
+        attempted.update(trace.provider for trace in traces)
+        updated = cursor | {
+            "next_tier": last_tier if pending else 1 if last_tier == 4 else last_tier + 1,
+            "pending_request_id": pending,
+            "pending_provider": traces[-1].provider if pending and traces else None,
+            "next_query": research_query,
+            "attempted_providers": sorted(attempted),
+        }
+        if pending and pending != cursor.get("pending_request_id"):
+            updated["pending_query"] = traces[-1].query
+        elif not pending:
+            updated.pop("pending_query", None)
+            updated.pop("external_wait", None)
+        if cursor.get("pending_request_id") and not pending:
+            # Until ingestion/completion succeeds, retries must read the same
+            # completed remote request rather than submit another search.
+            self._discovery_result_cursor = updated
+        else:
+            self._research_cursor = updated
+        return result
+
+    def _defer_external(
+        self, cycle: dict[str, Any], started: float, question: str,
+        traces: list[RouteAttempt], *, search_queries_used: int = 0, model_tokens_used: int = 0,
+    ) -> None:
+        cursor = self._research_cursor
+        trace = traces[-1]
+        wait = external_wait_state(
+            cursor.get("external_wait"), request_id=cursor["pending_request_id"],
+            provider=cursor["pending_provider"], outcome=trace.outcome.value,
+            reason=trace.error_detail or trace.reason,
+            minimum_delay_seconds=trace.metadata.get("retry_after_seconds", 0),
+        )
+        self._research_cursor = cursor | {"external_wait": wait}
+        explanation = self.planner.compute_cycle_explanation(question, traces, status="WAITING")
+        explanation = explanation.to_dict() | {
+            "status": wait["status"], "summary": wait["reason"],
+            "next_step": f"Check the same request at {wait['next_check_at']}",
+        }
+        self.orbits.defer_external_cycle(
+            cycle["orbit_cycle_id"], self.owner_id,
+            discovery_state=self._research_cursor, explanation=explanation,
+            active_seconds=max(0.0, time.monotonic() - started),
+            search_queries_used=search_queries_used, model_tokens_used=model_tokens_used,
+        )
+
     def _complete(
         self,
         cycle: dict[str, Any],
@@ -913,7 +986,9 @@ class OrbitRunner:
     ) -> dict[str, Any]:
         answer_text = str(answer.get("answer") or "")
         cycle_explanation = dict(cycle_explanation or {})
-        cursor = getattr(self, "_research_cursor", {})
+        cursor = getattr(self, "_discovery_result_cursor", None)
+        if cursor is None:
+            cursor = getattr(self, "_research_cursor", {})
         if cursor:
             cycle_explanation["discovery_state"] = cursor
             attempted = set(cursor.get("attempted_providers") or [])

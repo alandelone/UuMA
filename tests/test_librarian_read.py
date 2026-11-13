@@ -288,3 +288,61 @@ def test_binary_chunks_preserve_acl_and_verify_entire_object(archive):
     (root / "objects" / digest[:2] / digest).write_bytes(b"tampered")
     with pytest.raises(ValueError, match="digest check"):
         reader.read_binary_chunk("farm-question", "v1", limit=1)
+
+
+def test_reader_prioritizes_librarian_semantic_catalog(tmp_path):
+    root = tmp_path / "semantic_archive"
+    root.mkdir()
+    legacy_catalog = {
+        "schema_version": 1,
+        "snapshot_id": "legacy-snap",
+        "published_at": "2026-10-28T00:00:00+08:00",
+        "sources": [{
+            "source_id": "s1", "owner_agent": "librarian", "readers": ["librarian"],
+            "capture_status": "COMPLETE",
+        }],
+        "records": [{
+            "record_id": "r1", "version_id": "v1", "source_id": "s1",
+            "readers": ["librarian"], "project_ids": ["p1"], "kind": "test",
+            "title": "Legacy Title", "original_status": "OK", "original_ref": "ref",
+            "captured_at": "2026-10-28T00:00:00+08:00", "content_sha256": "0" * 64,
+            "content_bytes": 0,
+        }],
+    }
+    semantic_catalog = {
+        "schema_version": 1,
+        "snapshot_id": "semantic-snap",
+        "published_at": "2026-11-12T00:00:00+08:00",
+        "sources": [{
+            "source_id": "s1", "owner_agent": "librarian", "readers": ["librarian"],
+            "capture_status": "COMPLETE", "device": "server", "category_default": "Knowledge",
+        }],
+        "records": [{
+            "record_id": "r1", "version_id": "v2", "source_id": "s1",
+            "readers": ["librarian"], "project_ids": ["p1"], "category": "Knowledge",
+            "kind": "test", "title": "Semantic Title", "summary": "Semantic summary",
+            "assertion_status": "confirmed", "original_status": "OK", "original_ref": "ref",
+            "captured_at": "2026-11-12T00:00:00+08:00", "content_sha256": "0" * 64,
+            "content_bytes": 0, "evidence": [], "entities": [],
+        }],
+    }
+
+    # Only legacy exists
+    (root / "catalog.json").write_text(json.dumps(legacy_catalog), encoding="utf-8")
+    reader_legacy = LibrarianReader(root, "librarian")
+    assert reader_legacy.catalog.snapshot_id == "legacy-snap"
+    assert reader_legacy.records[("r1", "v1")].title == "Legacy Title"
+
+    # Both exist: librarian_semantic_catalog.json takes priority
+    (root / "librarian_semantic_catalog.json").write_text(json.dumps(semantic_catalog), encoding="utf-8")
+    reader_semantic = LibrarianReader(root, "librarian")
+    assert reader_semantic.catalog.snapshot_id == "semantic-snap"
+    assert reader_semantic.records[("r1", "v2")].title == "Semantic Title"
+    assert reader_semantic.records[("r1", "v2")].category == "Knowledge"
+
+    # Category filter in search_records
+    res = reader_semantic.search_records(category="Knowledge")
+    assert res["total"] == 1
+    res_none = reader_semantic.search_records(category="Decision")
+    assert res_none["total"] == 0
+

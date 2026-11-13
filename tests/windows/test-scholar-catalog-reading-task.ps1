@@ -23,8 +23,8 @@ function New-ScheduledTaskSettingsSet {
     return [pscustomobject]$PSBoundParameters
 }
 function New-ScheduledTaskTrigger {
-    param([switch]$AtLogOn,$User)
-    return [pscustomobject]@{ AtLogOn=$AtLogOn.IsPresent; User=$User; Delay='' }
+    param([switch]$AtLogOn,$User,[switch]$Daily,$At)
+    return [pscustomobject]@{ AtLogOn=$AtLogOn.IsPresent; User=$User; Daily=$Daily.IsPresent; At=$At; Delay='' }
 }
 function New-ScheduledTaskAction {
     param($Execute,$WorkingDirectory,$Argument)
@@ -45,6 +45,7 @@ $preview = (& $installer -ManifestPath $case.Path -DataRoot $case.Owner -Project
 Assert-True (-not $preview.installed -and -not $preview.started) 'Preview changed task state.'
 Assert-True ($global:CatalogReadingTaskFixture.Lookups -eq 0 -and $global:CatalogReadingTaskFixture.Registered -eq 0) 'Preview accessed scheduler state.'
 Assert-True ($preview.automatic_window -eq '00:00-08:00 Asia/Kuala_Lumpur' -and $preview.manual_priority) 'Task changed the authorized reading policy.'
+Assert-True ($preview.daily_start -eq '00:00') 'Preview omitted the daily recovery trigger.'
 $receipts = Join-Path $FixtureRoot 'task receipts'
 $installed = (& $installer -ManifestPath $case.Path -DataRoot $case.Owner -ProjectRoot $repo -ReceiptRoot $receipts -Apply) | ConvertFrom-Json
 $definition = $global:CatalogReadingTaskFixture.Definition
@@ -53,7 +54,11 @@ Assert-True ($definition.TaskName -eq 'UuMA Scholar Catalog Reading') 'Installer
 Assert-True ($definition.Action.Execute -eq 'conhost.exe' -and $definition.Action.Arguments -like '*-WindowStyle Hidden*') 'Task does not use a hidden foreground supervisor.'
 Assert-True ($definition.Settings.MultipleInstances -eq 'IgnoreNew' -and $definition.Settings.RestartCount -eq 3) 'Task lost singleton or bounded restart supervision.'
 Assert-True ($definition.Settings.RestartInterval.TotalSeconds -eq 60 -and $definition.Settings.ExecutionTimeLimit.TotalSeconds -eq 0) 'Task lost its persistent-worker timing contract.'
-Assert-True ($definition.Trigger.Delay -eq 'PT45S' -and $definition.Principal.LogonType -eq 'Interactive') 'Task lost the explicit user startup identity.'
+$logonTriggers = @($definition.Trigger | Where-Object { $_.AtLogOn })
+$dailyTriggers = @($definition.Trigger | Where-Object { $_.Daily })
+Assert-True (@($definition.Trigger).Count -eq 2 -and $logonTriggers.Count -eq 1 -and $dailyTriggers.Count -eq 1) 'Task must recover at midnight as well as at login.'
+Assert-True ($dailyTriggers[0].At -eq '00:00') 'Daily recovery must start at the night window boundary.'
+Assert-True ($logonTriggers[0].Delay -eq 'PT45S' -and $definition.Principal.LogonType -eq 'Interactive') 'Task lost the explicit user startup identity.'
 Assert-True (Test-Path -LiteralPath (Join-Path $installed.receipt_root 'installed.xml')) 'Installation receipt is missing.'
 
 $global:CatalogReadingTaskFixture.Existing = [pscustomobject]@{ State='Ready'; Actions=@([pscustomobject]@{

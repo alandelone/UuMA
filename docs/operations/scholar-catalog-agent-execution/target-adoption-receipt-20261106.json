@@ -1,0 +1,89 @@
+{
+  "receipt_id": "scholar-catalog-target-adoption-20261106154932",
+  "item_id": "W30",
+  "finding_id": "F07",
+  "status": "VERIFIED",
+  "created_at": "2026-11-06T15:49:32.093987+00:00",
+  "target_database": {
+    "path": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-catalog-implementation-20261023\\target_owner_delivery\\data\\catalog.db",
+    "schema_version": 21,
+    "seed_paper_id": "paper_test_owner_seed_001",
+    "seed_intent_id": "intent_test_owner_seed_001"
+  },
+  "carrier": {
+    "archive_dir": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-catalog-implementation-20261023\\delivery-archive-20261106",
+    "packet_sha256": "04764b75ff791aa01f4e77953472cddd1407b0c5e3da6ac956c29870bfdd22dc",
+    "manifest_sha256": "abfd0fdcebfa1dfefdd26da186bdcccb4f2bdf8dc3ee034ddd1dab1aa08bae7d"
+  },
+  "adoption_lifecycle": {
+    "adopt_request_id": "adopt-scholar-delivery-w30-04764b75ff79",
+    "scopes_verified": [
+      "skeletonviewjob_1216bde784964dc42990bbd92b55cd7431a23a60a43d94a05fe1bd58c6ec81e6"
+    ],
+    "adopt_events_appended": {
+      "catalog_reading_requests": [
+        16
+      ],
+      "catalog_reading_events": [
+        723
+      ]
+    },
+    "idempotent_duplicate_result": {},
+    "origin_state_during_adoption": {
+      "content_job": {
+        "state": "ADOPTED",
+        "eligible": true,
+        "request_id": "adopt-scholar-delivery-w30-04764b75ff79"
+      },
+      "purpose_job": {
+        "state": "ADOPTED",
+        "eligible": true,
+        "request_id": "adopt-scholar-delivery-w30-04764b75ff79"
+      }
+    },
+    "byte_invariance_verified": true,
+    "foreign_key_violations": 0,
+    "integrity_check": "ok"
+  },
+  "reversal_lifecycle": {
+    "reverse_request_id": "rev-scholar-delivery-w30-04764b75ff79",
+    "reverse_events_appended": {
+      "catalog_reading_requests": [
+        17
+      ],
+      "catalog_reading_events": [
+        724
+      ]
+    },
+    "idempotent_duplicate_reversal_result": {},
+    "fail_closed_reader_verified": true,
+    "origin_state_post_reversal": {
+      "content_job": {
+        "state": "REVERSED",
+        "eligible": false,
+        "request_ids": [
+          "adopt-scholar-delivery-w30-04764b75ff79"
+        ],
+        "detail": "The controller reversed this imported history origin binding; retained artifacts remain available for historical inspection."
+      },
+      "purpose_job": {
+        "state": "REVERSED",
+        "eligible": false,
+        "request_ids": [
+          "adopt-scholar-delivery-w30-04764b75ff79"
+        ],
+        "detail": "The controller reversed this imported history origin binding; retained artifacts remain available for historical inspection."
+      }
+    },
+    "non_destructive_evidence_preserved": {
+      "papers_count": 1,
+      "content_views_count": 1,
+      "skeleton_units_count": 85
+    },
+    "post_reversal_byte_invariance_verified": true
+  },
+  "table_vectors_summary": {
+    "total_tables_checked": 129,
+    "all_pre_existing_tables_byte_invariant": true
+  }
+}

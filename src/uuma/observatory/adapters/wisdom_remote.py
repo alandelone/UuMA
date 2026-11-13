@@ -82,6 +82,13 @@ def read_wisdom_snapshot(database: str) -> dict:
             ).fetchall()
             filled = [r for r in rows if r["status"] == "FILLED"]
             others = [r for r in rows if r["status"] != "FILLED"]
+            attempted = set()
+            if any(row["status"] == "OPEN" for row in others):
+                attempted = {row[0] for row in connection.execute(
+                    "SELECT DISTINCT json_extract(record_json,'$.frontier_item_id') "
+                    "FROM orbit_cycles WHERE orbit_id=? AND status IN ('COMPLETED','FAILED')",
+                    (orbit_id,),
+                )}
             for index, row in enumerate(filled + others):
                 record = json.loads(row["record_json"])
                 question = questions.get(record.get("question_id"), {})
@@ -105,6 +112,10 @@ def read_wisdom_snapshot(database: str) -> dict:
                     reason = {"STOPPED": "轨道已停止", "FAILED": "轨道失败",
                               "BUDGET_EXHAUSTED": "预算耗尽", "PAUSED": "轨道暂停"}[orbit["status"]]
                     item.update(stage="PAUSED", badge=f"⏸ 未完成 · {reason}", dimmed=False)
+                elif row["status"] == "OPEN" and record.get("no_source_attempts", 0) > 0:
+                    item.update(stage="ATTEMPTED", badge="已尝试 · 证据不足", dimmed=False)
+                elif row["status"] == "OPEN" and row["frontier_item_id"] in attempted:
+                    item.update(stage="ATTEMPTED", badge="已尝试 · 未完成", dimmed=False)
                 else:
                     item.update(stage="QUEUED", badge="待执行", dimmed=False)
                 orbit["pipeline_items"].append(item)

@@ -10,6 +10,32 @@ from cryptography.hazmat.primitives.asymmetric import rsa
 from uuma.librarian_server_daily import _tree, owner_matches, run_sources
 
 
+def test_changed_inventory_restarts_with_complete_walk(tmp_path, monkeypatch):
+    def changed(*args, **kwargs):
+        raise ValueError("Discovery directory changed; restart its inventory")
+
+    (tmp_path / "record.txt").write_text("preserved")
+    monkeypatch.setattr("uuma.librarian_server_daily.discover_page", changed)
+    files, sqlite_paths = _tree(tmp_path)
+    assert files == [tmp_path / "record.txt"]
+    assert not sqlite_paths
+
+
+@pytest.mark.parametrize("reason", [
+    "INVENTORY_BOUND_REACHED", "INVENTORY_DEADLINE", "PermissionError", "SYMLINK_NOT_FOLLOWED",
+])
+def test_changed_inventory_never_silently_accepts_incomplete_walk(tmp_path, monkeypatch, reason):
+    def changed(*args, **kwargs):
+        raise ValueError("Discovery directory changed; restart its inventory")
+
+    monkeypatch.setattr("uuma.librarian_server_daily.discover_page", changed)
+    monkeypatch.setattr("uuma.librarian_discovery.discover", lambda *a, **k: {
+        "files": [], "issues": [{"error_type": reason}],
+    })
+    with pytest.raises(ValueError, match="Fallback inventory is incomplete"):
+        _tree(tmp_path)
+
+
 @pytest.fixture(scope="module")
 def public():
     return rsa.generate_private_key(public_exponent=65537, key_size=3072).public_key().public_bytes(

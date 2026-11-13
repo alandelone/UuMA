@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "UuMA ChatGPT Bridge",
-  "version": "0.1.4",
+  "version": "0.1.8",
   "description": "Connects an already signed-in ChatGPT tab to the local UuMA bridge without reading cookies.",
   "permissions": ["storage", "tabs"],
   "host_permissions": [

@@ -1,5 +1,121 @@
 # Codex Antigravity compatibility audit
 
+## Independent provider authentication (2026-11-11)
+
+The original custom provider used `requires_openai_auth=true` and the user's
+ChatGPT access token for loopback authentication. Antigravity inference itself
+did not consume OpenAI quota, but this unnecessarily retained the OpenAI login
+requirement at the client/provider boundary.
+
+`manage.py independent-auth` now migrates the installed bounded provider block to
+[Codex command-backed provider authentication](https://learn.chatgpt.com/docs/config-file/config-advanced)
+with `local_auth.py` and a protected, ignored local bearer credential. The helper
+does not use an OpenAI token. Windows ACLs allow only the current user and SYSTEM.
+OpenAI login state and unrelated configuration are preserved. The gateway
+continues accepting old ChatGPT-authenticated sessions while the desktop reloads.
+For GPT requests, it substitutes the normal local OpenAI token and preserves the
+official backend's quota response; the independent credential never goes there.
+
+Fourteen focused tests passed, including rejecting missing/incorrect/non-loopback
+authentication, accepting Antigravity without an OpenAI auth file, and a mocked
+official response proving token separation and unchanged HTTP 429 quota error.
+The first quota fixture used an already-consumed response body and failed its
+exact body assertion; the fixture now uses an unread byte stream, and the same
+status/body assertions pass without weakening them. Two pre-existing lint
+findings in the unrelated official streaming exception handler remain separate.
+
+A native isolated Codex home contained no OpenAI auth file before or after the
+check, no OpenAI API-key environment variable, and a local credential helper.
+`account/read` returned `account=null, requiresOpenaiAuth=false`; an ephemeral
+native `hi` completed successfully with a real Antigravity greeting. The combined
+check took 17.12 seconds. These establish the independent model/auth path, rather
+than a guarantee about every desktop UI state. The actual user configuration
+was then migrated after verifying the candidate, preserving its selected model,
+all unrelated values and the exact OpenAI login file bytes.
+
+The desktop must be fully restarted once to load the new provider authentication.
+Select Antigravity in a chat already using the gateway (or a provider-aware fork).
+Exhausted-plan Enter/button behavior is not visually verified; do not claim that
+the app's cached quota UI has been tested or patched. The app-server can now run
+the provider without OpenAI credentials. No OpenAI quota is extended or bypassed.
+Some hosted/account features still require their usual login and entitlement.
+
+Private evidence: `independent-auth-focused-checks-20261111.json`,
+`independent-auth-verification-20261111.json`,
+`independent-auth-candidate-installation.json` and
+`independent-auth-installation.json`. The latter references the actual user-config
+backup. The independent token is not included in these receipts or in Git.
+
+## Desktop reference context without a call ID (2026-11-11)
+
+An actual new desktop chat, `Respond to greeting`, failed before inference with
+HTTP 400 `"'call_id'"`. Its history included named `function_call_output` items
+for `codex_apps_open_page` and `codex_apps_selected_page_part_1_of_1`. These carry
+client-provided reference context, not results of model-requested calls, and have
+an item ID but no `call_id`. The adapter incorrectly required a call ID for them.
+
+Named outputs without a call ID now remain in order as explicitly untrusted user
+reference context, preserving their name, namespace and textual output. No
+assistant call or result pairing is fabricated. Normal paired outputs retain
+their call IDs; missing IDs on actual calls, unidentified outputs and invalid IDs
+still reject with explicit errors. Eleven focused protocol checks cover both
+this input shape and the earlier additional-tools repair.
+
+The current-path minimal request completed in 9.84 seconds. A separate ephemeral
+native Codex `hi`, at the saved High effort with core tools, completed in 24.59
+seconds with no tool execution (55,292 upstream input tokens). Neither reproduces
+the complete desktop tool configuration. Existing long task failures and the GPT
+usage-limit errors in the troubleshooting chat are separate evidence, not proof
+that a greeting is still pending. Slow response time remains a limitation.
+
+Private receipts use the `current-path-diagnostic-20261111`,
+`native-greeting-20261111`, `context-output-local-replay-20261111` and
+`context-output-release-20261111` prefixes in the bridge state directory.
+The original eight-item desktop history reproduces the failure against a source
+snapshot whose hash matches the pre-fix running process, and passes translation
+after the fix. Gateway PID 80492 loaded source hash
+`714d7a273c10f24e3b23123dfe87e536dac0d58ccb03579726fd54781d72fa93`.
+The subsequent real-provider probe with both unpaired context items returned
+HTTP 200 and a greeting in 8.31 seconds; its receipt is
+`live-context-output-20261111-result.json`. That probe used Low effort, no tools
+and synthetic null-page values. The user's full desktop retry remains separate.
+
+## Additional tool definitions (2026-11-06)
+
+Codex can place `additional_tools` items in the replayed input, as documented in
+[OpenAI's tool-search guide](https://developers.openai.com/api/docs/guides/tools-tool-search).
+The old bridge rejected these items before inference with HTTP 400
+`Unsupported Antigravity input item: additional_tools`.
+
+The adapter now merges their function/custom definitions into the tools offered
+to the current provider call, preserves namespace and input grammar, and places
+an introduction marker at the same point in the translated conversation. This
+adapts the declaration to the provider's static Chat Completions tool array;
+it does not implement hosted tool search. Replayed identical definitions are
+deduplicated; conflicting aliases/schemas and unsupported tool types still fail.
+Only a developer-role declaration (or the legacy omitted role) is accepted.
+
+Six focused, isolated checks in `tests/test_codex_antigravity_input_tools.py`
+cover declarations, history and forced-tool mapping, duplicate/conflict handling,
+invalid input and HTTP/SSE route acceptance. These checks do not call a model.
+The isolated gateway release and separate live-provider result are recorded in
+`additional-tools-release-20261106.json` and
+`live-additional-tools-20261106-result.json` in the private state directory.
+The live check passed in 26.91 seconds across two Gemini requests: an injected
+namespaced function was requested, the local fixture reader returned its actual
+nonce, and a subsequent request preserving the declaration/history returned that
+exact nonce. This confirms the repaired input path and result replay, not all
+desktop network or UI behavior. The isolated gateway was restarted at an idle
+boundary; the shared Hermes service was not restarted.
+
+The existing process had been launched with the same Python installation's
+`python.exe`, whereas management allowed only `pythonw.exe`. Management now accepts
+both executable names while retaining listening-service, process and source checks.
+
+The source already contained two lint findings in the separate OpenAI forwarding
+exception handler (`S110` and `BLE001`); this change preserves that unrelated
+behavior and introduces no new lint findings.
+
 Observed on 2026-11-03 using the installed Codex 0.166 runtime and the existing
 Hermes `antigravity-oauth` provider. This is a custom Responses bridge, with
 client-side Codex tools. Full equivalence to the OpenAI provider is not established.

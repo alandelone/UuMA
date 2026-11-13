@@ -108,6 +108,10 @@ Agent 可独立改进，各组件不用拥有相同 commit；记录实际内容�
 | OpenSPG shared graph service | 8887 |
 | Scholar FieldKG bridge | 8892 |
 
+Yonc 公网入口现由服务器 Cloudflare Tunnel 直达 loopback8766，不依赖工作站 SSH 转发。
+双节点监控已按 Ubuntu 所有者检查 Graph 健康端点；配置、回执和回退见
+[Yonc 公网路由与监控](yonc-public-route-server-20261105.md)。
+
 这些是既定服务器端口，工作站转发端口可能不同，以当前隧道配置为准。
 Scholar 当前的完整图谱检查需要工作站 loopback8887 和8892 均转发至服务器同号端口；
 只验证8892健康会遗漏 project/schema/底层只读检查。见 scholar-fieldkg-server-20261022.md。

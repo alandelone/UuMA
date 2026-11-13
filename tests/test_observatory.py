@@ -255,6 +255,27 @@ def test_specialized_adapters_and_endpoints(tmp_path: Path):
     )
     token = "secret-specialized-token"
     app = create_observatory_app(settings, auth_token=token)
+    registry = app.state.registry
+    # Keep this fixture independent of the workstation's production owner markers.
+    registry.get_adapter("brainstormer").remote_reader = None
+    yonc = registry.get_adapter("yonc")
+    yonc.remote_reader = None
+    yonc.project_graph_db = data_dir / "test-project-graph.sqlite3"
+    with sqlite3.connect(yonc.project_graph_db) as graph:
+        graph.executescript("""
+            CREATE TABLE graph_nodes (
+                id TEXT, title TEXT, parent_id TEXT, wbs_level INTEGER, status TEXT,
+                deadline TEXT
+            );
+            CREATE TABLE graph_edges (source_id TEXT, target_id TEXT, relation TEXT);
+            INSERT INTO graph_nodes VALUES ('p', 'Test project', NULL, 1, 'TODO', '2026-12-01');
+            INSERT INTO graph_nodes VALUES ('d', 'Deliverable', 'p', 2, 'TODO', NULL);
+            INSERT INTO graph_nodes VALUES ('w', 'Work package', 'd', 3, 'TODO', NULL);
+            INSERT INTO graph_nodes VALUES ('a', 'Action', 'w', 4, 'TODO', NULL);
+            INSERT INTO graph_edges VALUES ('p', 'd', 'contains');
+            INSERT INTO graph_edges VALUES ('d', 'w', 'contains');
+            INSERT INTO graph_edges VALUES ('w', 'a', 'contains');
+        """)
 
     with TestClient(app) as client:
         # Agent overview endpoint
@@ -300,9 +321,13 @@ def test_specialized_adapters_and_endpoints(tmp_path: Path):
         assert "part2_assign_suggestions" in payload
         assert "part3_macro_stats" in payload
         assert "part4_activities" in payload
-        assert len(payload["part1_timeline_projects"]) >= 1
-        assert len(payload["part2_assign_suggestions"]) >= 1
-        assert payload["part3_macro_stats"]["total_projects"] >= 1
+        assert payload["source_available"]
+        assert payload["part3_macro_stats"]["total_projects"] == 1
+        project, = payload["part1_timeline_projects"]
+        assert project["id"] == "p"
+        assert project["due_date"] == "2026-12-01"
+        assert project["l4_decomposition_pct"] == 100
+        assert project["completion_pct"] == 0
 
 
 def test_forge_project_codes_and_documents(tmp_path: Path):

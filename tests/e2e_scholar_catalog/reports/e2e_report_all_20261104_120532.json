@@ -1,0 +1,491 @@
+{
+  "summary": {
+    "timestamp": "2026-11-04T12:05:32.401608+00:00",
+    "target_tier": "all",
+    "overall_status": "PASSED",
+    "exit_code": 0,
+    "total_tests": 50,
+    "passed_tests": 50,
+    "failed_tests": 0,
+    "skipped_tests": 0,
+    "duration_seconds": 22.39,
+    "tier_stats": {
+      "tier1": {
+        "total": 19,
+        "passed": 19,
+        "failed": 0,
+        "skipped": 0
+      },
+      "tier2": {
+        "total": 20,
+        "passed": 20,
+        "failed": 0,
+        "skipped": 0
+      },
+      "tier3": {
+        "total": 7,
+        "passed": 7,
+        "failed": 0,
+        "skipped": 0
+      },
+      "tier4": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "tests": [
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f01_chunking_and_dense_embeddings",
+      "name": "test_f01_chunking_and_dense_embeddings",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.1322,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f02_hybrid_search_rrf_and_source_fencing",
+      "name": "test_f02_hybrid_search_rrf_and_source_fencing",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0719,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f03_honest_retrieval_coverage_reporting",
+      "name": "test_f03_honest_retrieval_coverage_reporting",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.1063,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f04_candidate_semantic_relation_matrix",
+      "name": "test_f04_candidate_semantic_relation_matrix",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0641,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f05_non_mutating_proposal_evidence",
+      "name": "test_f05_non_mutating_proposal_evidence",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0741,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f06_scholar_fastmcp_tools",
+      "name": "test_f06_scholar_fastmcp_tools",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0583,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f07_theme_mapping_and_revision_fencing",
+      "name": "test_f07_theme_mapping_and_revision_fencing",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0251,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f08_v419_retry_decision_boundary",
+      "name": "test_f08_v419_retry_decision_boundary",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.016,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f09_authorized_admission_or_decline_recording",
+      "name": "test_f09_authorized_admission_or_decline_recording",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0265,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f10_genuine_l1_to_l4_source_coverage",
+      "name": "test_f10_genuine_l1_to_l4_source_coverage",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0233,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f11_22_dimension_content_and_structure_views",
+      "name": "test_f11_22_dimension_content_and_structure_views",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0138,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f12_decoupled_purpose_and_value_evaluations",
+      "name": "test_f12_decoupled_purpose_and_value_evaluations",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0357,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f13_freshness_and_version_replay_contracts",
+      "name": "test_f13_freshness_and_version_replay_contracts",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0088,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f14_portable_relocated_source_handling",
+      "name": "test_f14_portable_relocated_source_handling",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0101,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f15_complete_authentic_full_evidence_archive",
+      "name": "test_f15_complete_authentic_full_evidence_archive",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.03,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f16_non_empty_target_history_adoption_and_reversal",
+      "name": "test_f16_non_empty_target_history_adoption_and_reversal",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.4336,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f17_final_full_delivery_user_journey",
+      "name": "test_f17_final_full_delivery_user_journey",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0848,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f18_fieldkg_health_and_connectivity",
+      "name": "test_f18_fieldkg_health_and_connectivity",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0012,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier1_features.py::test_f19_release_closure_and_handover_checklist",
+      "name": "test_f19_release_closure_and_handover_checklist",
+      "tier": "tier1",
+      "tier_name": "Tier 1: Feature Coverage (F01\u2013F19)",
+      "outcome": "passed",
+      "duration": 0.0001,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b01_empty_and_whitespace_search_queries[]",
+      "name": "test_b01_empty_and_whitespace_search_queries[]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0643,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b01_empty_and_whitespace_search_queries[   ]",
+      "name": "test_b01_empty_and_whitespace_search_queries[   ]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0482,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b01_empty_and_whitespace_search_queries[\\t\\t]",
+      "name": "test_b01_empty_and_whitespace_search_queries[\\t\\t]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0761,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b01_empty_and_whitespace_search_queries[\\n\\r\\n]",
+      "name": "test_b01_empty_and_whitespace_search_queries[\\n\\r\\n]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.052,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b01_empty_and_whitespace_search_queries[       ]",
+      "name": "test_b01_empty_and_whitespace_search_queries[       ]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0655,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b02_invalid_and_nonexistent_paper_ids[nonexistent_paper_id_99999]",
+      "name": "test_b02_invalid_and_nonexistent_paper_ids[nonexistent_paper_id_99999]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0152,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b02_invalid_and_nonexistent_paper_ids[../../../../etc/passwd]",
+      "name": "test_b02_invalid_and_nonexistent_paper_ids[../../../../etc/passwd]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0162,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b02_invalid_and_nonexistent_paper_ids[paper-with-sql-injection' OR '1'='1]",
+      "name": "test_b02_invalid_and_nonexistent_paper_ids[paper-with-sql-injection' OR '1'='1]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0162,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b02_invalid_and_nonexistent_paper_ids[]",
+      "name": "test_b02_invalid_and_nonexistent_paper_ids[]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0137,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b03_corrupted_pdf_bytes_and_invalid_magic[invalid_header_same_size]",
+      "name": "test_b03_corrupted_pdf_bytes_and_invalid_magic[invalid_header_same_size]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0086,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b03_corrupted_pdf_bytes_and_invalid_magic[invalid_header_different_size]",
+      "name": "test_b03_corrupted_pdf_bytes_and_invalid_magic[invalid_header_different_size]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0066,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b03_corrupted_pdf_bytes_and_invalid_magic[binary_zeros]",
+      "name": "test_b03_corrupted_pdf_bytes_and_invalid_magic[binary_zeros]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0082,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b03_corrupted_pdf_bytes_and_invalid_magic[altered_body_sha_mismatch]",
+      "name": "test_b03_corrupted_pdf_bytes_and_invalid_magic[altered_body_sha_mismatch]",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0069,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b04_zero_byte_source_file_and_missing_files",
+      "name": "test_b04_zero_byte_source_file_and_missing_files",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.011,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b05_non_empty_target_collision_isolation",
+      "name": "test_b05_non_empty_target_collision_isolation",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.2909,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b06_night_window_boundary_edge_times",
+      "name": "test_b06_night_window_boundary_edge_times",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0033,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b07_max_transport_character_limit_and_pagination",
+      "name": "test_b07_max_transport_character_limit_and_pagination",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0971,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b08_unicode_and_extreme_codepoints_in_chunking",
+      "name": "test_b08_unicode_and_extreme_codepoints_in_chunking",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0007,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b09_stale_revision_conflict_in_theme_corrections",
+      "name": "test_b09_stale_revision_conflict_in_theme_corrections",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.0307,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier2_boundaries.py::test_b10_duplicate_adoption_and_double_reversal_idempotency",
+      "name": "test_b10_duplicate_adoption_and_double_reversal_idempotency",
+      "tier": "tier2",
+      "tier_name": "Tier 2: Boundary Value Analysis (B01\u2013B10)",
+      "outcome": "passed",
+      "duration": 0.233,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw01_semantic_search_and_theme_filtering",
+      "name": "test_pw01_semantic_search_and_theme_filtering",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.0679,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw02_human_theme_corrections_and_candidate_relations",
+      "name": "test_pw02_human_theme_corrections_and_candidate_relations",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.0895,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw03_l1_to_l4_skeleton_views_and_evidence_archive",
+      "name": "test_pw03_l1_to_l4_skeleton_views_and_evidence_archive",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.0374,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw04_relocated_sources_and_target_adoption_rollback",
+      "name": "test_pw04_relocated_sources_and_target_adoption_rollback",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.3193,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw05_source_freshness_invalidation_and_night_window_reindexing",
+      "name": "test_pw05_source_freshness_invalidation_and_night_window_reindexing",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.0782,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw06_fastmcp_tools_and_candidate_relation_streaming",
+      "name": "test_pw06_fastmcp_tools_and_candidate_relation_streaming",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.0601,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier3_combinations.py::test_pw07_decoupled_purpose_judgments_and_target_adoption",
+      "name": "test_pw07_decoupled_purpose_judgments_and_target_adoption",
+      "tier": "tier3",
+      "tier_name": "Tier 3: Cross-Feature Combinations (PW01\u2013PW07)",
+      "outcome": "passed",
+      "duration": 0.3044,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc01_full_delivery_user_journey",
+      "name": "test_sc01_full_delivery_user_journey",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.1636,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc02_human_review_candidate_relations_and_decision_boundary",
+      "name": "test_sc02_human_review_candidate_relations_and_decision_boundary",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.1197,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc03_relocated_source_handling_archive_and_adoption_rollback",
+      "name": "test_sc03_relocated_source_handling_archive_and_adoption_rollback",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.3549,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc04_fieldkg_health_and_release_closure_handover",
+      "name": "test_sc04_fieldkg_health_and_release_closure_handover",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.0006,
+      "error": null
+    }
+  ]
+}

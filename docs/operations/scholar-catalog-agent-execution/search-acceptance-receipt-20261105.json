@@ -1,0 +1,61 @@
+{
+  "receipt_type": "SCHOLAR_CATALOG_SEARCH_ENTRYPOINT_ACCEPTANCE_RECEIPT",
+  "timestamp": "2026-11-05T04:11:17.091102+00:00",
+  "environment": {
+    "database": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\data\\catalog.db",
+    "vector_cache": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\data\\artifacts\\catalog-content-index\\vectors.sqlite",
+    "reading_release": "catalog-48cece41023e",
+    "entrypoint": "rstv4.catalog_content_tools.query_catalog_content / bounded_result"
+  },
+  "query": "reinforcement learning microgrid",
+  "search_mode": "HYBRID",
+  "total_matches": 1746,
+  "matched_papers_count": 189,
+  "bounded_matches_count": 3,
+  "sample_matches": [
+    {
+      "paper_id": "paper_0075702bbd78cbb86485045659cde814",
+      "title": "Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "page_number": 1,
+      "section": "Article Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "rank_score": 0.03278688524590164,
+      "match_basis": [
+        "SEMANTIC",
+        "TEXT"
+      ],
+      "exact_quote_preview": "Article Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization"
+    },
+    {
+      "paper_id": "paper_0075702bbd78cbb86485045659cde814",
+      "title": "Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "page_number": 1,
+      "section": "Article Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "rank_score": 0.03225806451612903,
+      "match_basis": [
+        "SEMANTIC",
+        "TEXT"
+      ],
+      "exact_quote_preview": "Citation: Hussein Farh, H.M. Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization. Mathematics 2024, 12, 280. https://doi.org/10.3390/ math12020280"
+    },
+    {
+      "paper_id": "paper_0075702bbd78cbb86485045659cde814",
+      "title": "Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "page_number": 4,
+      "section": "1. Introduction",
+      "rank_score": 0.028371628371628373,
+      "match_basis": [
+        "SEMANTIC",
+        "TEXT"
+      ],
+      "exact_quote_preview": "■ This study introduces an innovative soft computing/metaheuristic algorithm, the reinforcement learning neural network algorithm (RLNNA), strategically applied to optimize the annualized system cost "
+    }
+  ],
+  "semantic_index_status": {
+    "eligible_passages": 24418,
+    "indexed_passages": 1058,
+    "complete": false,
+    "corpus_complete": false,
+    "pending_sources_total": 2983
+  },
+  "verification_outcome": "PASSED_REAL_ENTRYPOINT_EVIDENCE_PRODUCED"
+}

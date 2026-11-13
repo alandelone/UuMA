@@ -1,0 +1,160 @@
+{
+  "receipt_id": "scholar-catalog-semantic-review-20261106110000",
+  "item_id": "W31",
+  "status": "VERIFIED",
+  "created_at": "2026-11-06T11:00:00.000000+00:00",
+  "paper_context": {
+    "paper_id": "paper_dd83af8026e39dd2a2e9316622a7ca49",
+    "canonical_title": "Blockchain applications in microgrids an overview of current projects and concepts C2017-",
+    "alternative_title": "Blockchain Applications In Microgrids: A Review",
+    "source_pdf_bytes": 110016,
+    "source_pdf_sha256": "cad2c7cd590728783e6112cb8e584419b155683956f8c44fd20508d873c3dd6f",
+    "skeleton_id": "skeleton_e87a79f2f1e6fc99acb67b4568757132",
+    "total_skeleton_units": 85,
+    "total_triplets": 347,
+    "total_checkpoints": 340,
+    "total_quotations_checked": 2895,
+    "quotation_mismatches": 0
+  },
+  "themes_evaluation_summary": {
+    "total_deep_themes_published": 78,
+    "role_distribution": {
+      "CENTRAL": 13,
+      "SUBSTANTIAL": 44,
+      "PASSING_MENTION": 21
+    },
+    "language_conformance": "100% English for all authored entity labels, definitions, and role rationales; verbatim source quotations preserved",
+    "open_vocabulary_policy_observed": true,
+    "multi_theme_overlap_justification": "Faithful aggregation of 28 section-level extractions preserving localized thematic granularity without lossy deduplication"
+  },
+  "stratified_sample_audit": [
+    {
+      "theme_index": 0,
+      "theme_key": "theme_blockchain_technology_in_microgrids",
+      "theme_id": "theme_f0728b92b07bd07ee5437a626a2079adff8e017ddf681bc8f8ccc8f522708e0f",
+      "label": "Blockchain Technology in Microgrids",
+      "definition": "The deployment of decentralized blockchain architectures, smart contracts, and DApps to support operational control and business processes in local microgrids.",
+      "role": "CENTRAL",
+      "role_rationale": "The entire paper is dedicated to surveying and characterizing blockchain technology applications, architectures, and projects operating within microgrids. As stated in the title and introductory scope, the survey focuses explicitly on evaluating how decentralized blockchain structures, smart contracts, and decentralized applications enable control and business processes in microgrids.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "The decentralized structure of the blockchain is particularly suitable for implementing control and business processes in microgrids, using smart contracts and decentralized applications.",
+      "skeleton_unit_id": "unit_f55c29943e8e7c730db40a6ff561a1cf",
+      "conformance_check": "Verbatim quote match against Page 1 Abstract of source.pdf; unit_f55c29943e8e7c730db40a6ff561a1cf confirmed in paper_skeleton.json; central role fully justified by paper-wide survey scope."
+    },
+    {
+      "theme_index": 6,
+      "theme_key": "theme_blockchain_for_microgrid_systems",
+      "theme_id": "theme_a2d47a8811e63df901c6c7d8c3d6050cbc65915a9210385876b0e5e043555fbe",
+      "label": "Blockchain for Microgrid Systems",
+      "definition": "The adoption, suitability, and architecture of blockchain technology for control and multi-agent system implementations in microgrids.",
+      "role": "CENTRAL",
+      "role_rationale": "The theme 'Blockchain for Microgrid Systems' is central to the entire paper. The paper's primary purpose is to provide a technical background on the evolution of microgrids and blockchains, and to present a state-of-the-art survey of blockchain projects and multi-agent system implementations designed to innovate decentralized energy networks and microgrids.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "The decentralized structure of a blockchain is very suitable for implementing processes of energy systems as multi-agent system (MAS).",
+      "skeleton_unit_id": "unit_129df07cc7d56f320d3f794d65c21b41",
+      "conformance_check": "Verbatim quote match against Section I of source.pdf; unit_129df07cc7d56f320d3f794d65c21b41 confirmed in paper_skeleton.json; centrality verified by introductory thesis."
+    },
+    {
+      "theme_index": 68,
+      "theme_key": "theme_peer_to_peer_energy_trading_scenarios",
+      "theme_id": "theme_a30f49709df3670fd89eca499639cedb1bc570ec9398fb449536e77593051f95",
+      "label": "Peer-to-Peer Energy Trading Scenarios",
+      "definition": "The deployment of blockchain technology to enable secure peer-to-peer energy trading across community markets, energy selling houses, and charging networks.",
+      "role": "CENTRAL",
+      "role_rationale": "Peer-to-peer energy trading is highlighted as the most popular and prominent use case for blockchain in microgrids, structuring the paper's discussion around core scenarios like community markets, energy selling houses, and electric vehicle charging networks.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "Probably the most popular use case application is P2P trading, where the blockchain enables energy trading between peers in a secure way.",
+      "skeleton_unit_id": "unit_e0ceb2bb7b6bc02198b33e4c72a78efe",
+      "conformance_check": "Verbatim quote match against Section VI of source.pdf; unit_e0ceb2bb7b6bc02198b33e4c72a78efe confirmed in paper_skeleton.json; central role supported by synthesis in conclusion."
+    },
+    {
+      "theme_index": 1,
+      "theme_key": "theme_peer_to_peer_energy_trading",
+      "theme_id": "theme_2cb676b6061eafc10b4d6e859f2bbcf99b6d2a4e6a5d7e7e3796fcefc00002db",
+      "label": "Peer-to-Peer Energy Trading",
+      "definition": "Direct, local trading and exchange of energy between consumers and prosumers, especially in microgrids with distributed PV generation.",
+      "role": "SUBSTANTIAL",
+      "role_rationale": "Peer-to-peer (P2P) energy trading is characterized in the text as the most promising use case for blockchain technology within microgrids. Although central to the microgrid applications discussed, it represents a primary use case among several technical focus areas explored in the survey, making it a substantial theme.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "The most promising use case from the microgrid perspective is peer-to-peer trading, where energy is exchanged and traded locally between consumers and prosumers.",
+      "skeleton_unit_id": "unit_f55c29943e8e7c730db40a6ff561a1cf",
+      "conformance_check": "Verbatim quote match against Page 1 Abstract of source.pdf; unit_f55c29943e8e7c730db40a6ff561a1cf confirmed in paper_skeleton.json; substantial role correctly captures core use case."
+    },
+    {
+      "theme_index": 9,
+      "theme_key": "theme_microgrid_architecture_and_operating_modes",
+      "theme_id": "theme_93583ea0bbce36e6d00148ad40fb0120c1e72f9132268b5f0949cfa657bf2cdc",
+      "label": "Microgrid Architecture and Operating Modes",
+      "definition": "Structure and operational paradigms of microgrids, including grid-connected and islanded modes, and the integration of distributed energy resources.",
+      "role": "SUBSTANTIAL",
+      "role_rationale": "Microgrid architecture and operating modes provide the necessary physical and operational domain context for evaluating blockchain applications. A dedicated subsection outlines microgrid fundamentals, but the primary focus of the paper remains the deployment of blockchain technology within these systems, rendering this a substantial background theme.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "A microgrid might be connected at the point of common coupling to the distribution grid.",
+      "skeleton_unit_id": "unit_1d5b9a5c4769a31577286b5eed5df76d",
+      "conformance_check": "Verbatim quote match against Section II.A of source.pdf; unit_1d5b9a5c4769a31577286b5eed5df76d confirmed in paper_skeleton.json; substantial foundational electrical context."
+    },
+    {
+      "theme_index": 17,
+      "theme_key": "theme_smart_contracts_and_ethereum_platform",
+      "theme_id": "theme_bfde2cba1a2fb6618e4601e56df4caee5d0527be5766a8ac69e03c44ea4d54b3",
+      "label": "Smart Contracts and Ethereum Platform",
+      "definition": "Protocols that execute contractual terms autonomously on blockchains, highlighted by Ethereum's Turing-complete virtual machine.",
+      "role": "SUBSTANTIAL",
+      "role_rationale": "Smart contracts and the Ethereum platform represent a crucial technological enabler for the blockchain applications evaluated across microgrids, appearing prominently in technical descriptions and multiple surveyed projects (e.g., Brooklyn Microgrid, Share&Charge). However, they serve as enabling infrastructure rather than the complete conceptual subject of the paper, justifying a substantial role.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "An important aspect in the use of blockchain technology are smart contracts and decentralized applications, which can be built on top of blockchains.",
+      "skeleton_unit_id": "unit_385540a6f6a838880396f02404efa556",
+      "conformance_check": "Verbatim quote match against Section II.B of source.pdf; unit_385540a6f6a838880396f02404efa556 confirmed in paper_skeleton.json; substantial role captures enabling platform technology."
+    },
+    {
+      "theme_index": 4,
+      "theme_key": "theme_cryptocurrency_abuse_in_ransomware_and_illicit_activities",
+      "theme_id": "theme_f148bee81368018a094b252f28ac84a01cb88580254e1810175536bd030a2f13",
+      "label": "Cryptocurrency Abuse in Ransomware and Illicit Activities",
+      "definition": "The illicit utilization of address pseudonyms in cryptocurrency networks for extortion, malware ransoms, and untraceable transfers.",
+      "role": "PASSING_MENTION",
+      "role_rationale": "The theme serves as an introductory contextual remark highlighting public perception and early media coverage of cryptocurrency abuse (such as WannaCry ransomware) before the paper shifts to its primary focus on blockchain architectures and projects in microgrid energy trading. It does not play an active role in the core analysis of microgrid systems.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "In May 2017, the ransomware WannaCry, created by the NSA got loose and used an exploit in old Windows versions to infect computers all around the globe.",
+      "skeleton_unit_id": "unit_0b87c61d4ffe211d28394f161b1c5cbc",
+      "conformance_check": "Verbatim quote match against Section I of source.pdf; unit_0b87c61d4ffe211d28394f161b1c5cbc confirmed in paper_skeleton.json; passing mention properly bounds introductory security backdrop."
+    },
+    {
+      "theme_index": 77,
+      "theme_key": "theme_energy_web_foundation_ecosystem_and_governance_partnerships",
+      "theme_id": "theme_d0bb5e0cb00805587a7077ab7be9be847327171b997ff3036151da2ed34b8095",
+      "label": "Energy Web Foundation Ecosystem and Governance Partnerships",
+      "definition": "Collaborative alliances formed by the Energy Web Foundation with industrial entities, regulatory authorities, and standardization bodies across the energy domain.",
+      "role": "PASSING_MENTION",
+      "role_rationale": "The theme concerning the Energy Web Foundation ecosystem and governance partnerships is briefly noted as part of a broader survey listing various industry projects and platforms deploying blockchain in microgrids. Specifically, the text points out that the EWF cooperates with industrial partners, regulators, and standardization bodies, but it does not receive detailed structural or analytical focus.",
+      "audit_verdict": "SUPPORTED",
+      "source_evidence_quote": "The EWF cooperates with a broad range of partners from the energy sector, regulators and standardization bodies.",
+      "skeleton_unit_id": "unit_06042d08519e96f15005a3a526069ee3",
+      "conformance_check": "Verbatim quote match against Section VI of source.pdf; unit_06042d08519e96f15005a3a526069ee3 confirmed in paper_skeleton.json; passing mention accurately limits brief governance partnership reference."
+    }
+  ],
+  "purpose_judgment_evaluation": {
+    "judgment_id": "skeletonviewresult_8f8a2d7829e316f93ddd9947ed7b42f0632cb574434bbd23630cd5468bcb7edf",
+    "goal": "Inspect the review's scientific claims and evidence, review synthesis, technical methods, data, limitations, argumentation and writing architecture through the original four-layer PaperSkeleton; assess its value for reviewing decentralized microgrid energy trading research.",
+    "value_state": "USEFUL",
+    "rationale": "The supplied content view and source evidence provide concrete technical evaluations of blockchain implementations, consensus mechanisms (such as Proof-of-Work and private/public architectures), and real-world microgrid energy projects (including PowerLedger, PWR.Company, and the Energy Web Foundation), offering robust empirical and structural support for reviewing decentralized microgrid energy trading research.",
+    "audit_verdict": "SUPPORTED",
+    "remaining_questions": [
+      "How do different consensus mechanisms quantitatively affect transaction latency and energy overhead in high-frequency P2P microgrid markets?",
+      "What specific regulatory and interoperability challenges arise when integrating private consortia ledgers with public transmission system operators (TSOs)?"
+    ],
+    "remaining_questions_actionability": "Both questions identify concrete, unresolved research boundaries suitable for doctoral or post-doctoral research agendas.",
+    "evidence_bindings_count": 8,
+    "evidence_bindings_valid": true
+  },
+  "certification": {
+    "auditor": "worker_m3_3 (Independent Forensic Reviewer)",
+    "recommendation": "ACCEPT_WITHOUT_RESERVATION",
+    "remediation_status": "CLOSED_VERIFIED",
+    "invalidation_conditions": [
+      "Discovery of unreferenced foreign-language text in authored records",
+      "Discrepancy between quoted text spans and byte offsets in source.pdf",
+      "Mutation of original 78 theme identities or their underlying PaperSkeleton units"
+    ]
+  }
+}

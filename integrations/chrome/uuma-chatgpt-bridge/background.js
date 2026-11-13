@@ -1,6 +1,21 @@
 "use strict";
 const loops = new Map();
 const bridge = "http://127.0.0.1:8787";
+let activityTimer = null;
+
+function updateWorkerActivity() {
+  if (loops.size && activityTimer === null) {
+    // MV3 does not treat fetch loops or JavaScript timers as extension activity.
+    // Use the existing storage permission while paired work is polling or executing,
+    // including long page commands; no foreground dashboard heartbeat is required.
+    activityTimer = setInterval(() => {
+      chrome.storage.local.get("accounts").catch(() => {});
+    }, 20_000);
+  } else if (!loops.size && activityTimer !== null) {
+    clearInterval(activityTimer);
+    activityTimer = null;
+  }
+}
 
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 async function chatTab(create = false) {
@@ -49,6 +64,9 @@ async function execute(command) {
   try {
     reply = await chrome.tabs.sendMessage(tab.id, command);
   } catch (err) {
+    // A lost send acknowledgement may mean the prompt was already submitted.
+    // Leave that request uncertain; reloading and sending again can duplicate it.
+    if (command.action === "send") throw new Error("SUBMISSION_UNCERTAIN");
     console.warn("[UuMA Bridge] tabs.sendMessage failed, reloading ChatGPT tab and retrying...", err);
     await chrome.tabs.reload(tab.id);
     await new Promise(resolve => {
@@ -69,6 +87,7 @@ async function poll(alias, token) {
   if (loops.get(alias) === token) return;
   // A freshly paired token supersedes any in-flight loop using the old token.
   loops.set(alias, token);
+  updateWorkerActivity();
   console.log("[UuMA Bridge] Starting poll loop for", alias);
   try {
     while (loops.get(alias) === token) {
@@ -99,6 +118,7 @@ async function poll(alias, token) {
     }
   } finally {
     if (loops.get(alias) === token) loops.delete(alias);
+    updateWorkerActivity();
     console.warn("[UuMA Bridge] Poll loop ended for", alias);
   }
 }

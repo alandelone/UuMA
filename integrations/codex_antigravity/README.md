@@ -35,10 +35,28 @@ shell, patch and read-only MCP round trips have now been observed. See
 for evidence scopes and remaining limits. Other advertised models have not yet
 passed the same end-to-end audit.
 
-The local gateway requires the current ChatGPT access token already managed by
-Codex and binds only to `127.0.0.1`. No prompt, tool arguments, outputs or tokens
-are written to its event log. The unauthenticated health endpoint exposes only
-service state, selected model identifiers, counts, timing and token totals.
+The local gateway binds only to `127.0.0.1` and requires a bearer credential.
+`manage.py independent-auth` migrates the installed provider to a protected local
+credential and the `local_auth.py` command-backed authentication helper. It removes
+`requires_openai_auth` from this custom provider; Antigravity inference then runs
+without an OpenAI login or ChatGPT plan quota. Fully restart the desktop app once
+after this configuration change. Existing chats already using this provider can
+retain their history. Initial installations should run this migration after
+`manage.py install`; the migration retains a configuration backup.
+
+The credential stays in the ignored state directory with current-user/SYSTEM
+access on Windows. The helper's stdout is consumed privately by Codex; never run
+it directly in a visible terminal or include its output in logs. The gateway
+still accepts existing ChatGPT-authenticated app sessions during the transition.
+GPT selections obtain the normal OpenAI token locally before forwarding, keep
+the original OpenAI quota/error response, and never send the local credential
+outside the loopback service. OpenAI model usage still requires ChatGPT sign-in.
+
+No prompt, tool arguments, outputs or tokens are written to the event log. The
+unauthenticated health endpoint exposes only service state, selected model
+identifiers, counts, timing and token totals. A credential-only native check
+without OpenAI account state passed; actual desktop Enter behavior with an
+exhausted plan must be checked in the desktop after it reloads the configuration.
 
 The desktop may still include its optional hosted `web_search` definition with
 every request. This bridge excludes that unavailable offer and explicitly tells

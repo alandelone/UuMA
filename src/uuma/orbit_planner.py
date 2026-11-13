@@ -157,6 +157,7 @@ class AdaptiveResearchPlanner:
         limit: int = 10,
         pending_request_id: str | None = None,
         pending_provider: str | None = None,
+        pending_query: str | None = None,
         deep_research_allowed: bool = True,
         is_provider_throttled: Any | None = None,
         start_tier: int = 1,
@@ -244,13 +245,16 @@ class AdaptiveResearchPlanner:
             if owner is None:
                 raise PermissionError("The pending research request has no configured provider")
             pending_tier = 1 if owner in self.chatgpt_providers else 4
-            artifacts, pending = invoke(owner, question, pending_tier, pending=pending_request_id)
+            # Older XHS cursors have only a job ID. The status endpoint validates
+            # that ID independently of the research question used to rank results.
+            query = pending_query or ("" if owner.name == "xhs" else question)
+            artifacts, pending = invoke(owner, query, pending_tier, pending=pending_request_id)
             # A poll failure is ambiguous. Preserve the request instead of submitting a duplicate.
             if pending or artifacts:
                 return artifacts, traces, pending
             if traces[-1].outcome in {
                 DiscoveryOutcome.TRANSIENT_FAILURE, DiscoveryOutcome.AUTH_REQUIRED,
-            } and not (traces[-1].error_detail and "PAUSED" in str(traces[-1].error_detail)):
+            }:
                 return [], traces, pending_request_id
             if pending_tier == 4:
                 return [], traces, None
@@ -314,6 +318,7 @@ class AdaptiveResearchPlanner:
 
         attempts = [t.to_discovery_attempt() for t in traces]
         success_cnt = sum(1 for a in attempts if a.outcome == DiscoveryOutcome.SUCCESS)
+        waiting_cnt = sum(1 for a in attempts if a.outcome == DiscoveryOutcome.WAITING)
         no_match_cnt = sum(1 for a in attempts if a.outcome == DiscoveryOutcome.NO_MATCH)
         blocked_cnt = sum(
             1 for a in attempts
@@ -323,12 +328,16 @@ class AdaptiveResearchPlanner:
         summary_parts = [
             f"本轮共执行 {len(attempts)} 次检索尝试（{success_cnt} 次成功，{no_match_cnt} 次无直接匹配，{blocked_cnt} 次受阻）。"
         ]
+        if waiting_cnt:
+            summary_parts.append(f"{waiting_cnt} 次正在等待外部任务，尚未取得新结果。")
         if untried_paths:
             summary_parts.append(f"尚有待探索途径：{', '.join(untried_paths)}。")
         if blocked_providers:
             summary_parts.append(f"受阻途径：{', '.join(blocked_providers)}。")
 
-        if untried_paths:
+        if waiting_cnt:
+            next_step = "保留原任务 ID，等待外部任务；查询状态成功不代表研究完成。"
+        elif untried_paths:
             next_step = f"下阶段将调度待探索途径（{untried_paths[0]} 等）继续深入挖掘。"
         elif blocked_providers and not success_cnt:
             next_step = "待配置必要凭据或配额恢复后解除阻断。"

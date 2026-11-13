@@ -1,0 +1,59 @@
+{
+  "summary": {
+    "timestamp": "2026-11-04T07:22:30.299553+00:00",
+    "target_tier": "tier4",
+    "overall_status": "PASSED",
+    "exit_code": 0,
+    "total_tests": 4,
+    "passed_tests": 4,
+    "failed_tests": 0,
+    "skipped_tests": 0,
+    "duration_seconds": 1.99,
+    "tier_stats": {
+      "tier4": {
+        "total": 4,
+        "passed": 4,
+        "failed": 0,
+        "skipped": 0
+      }
+    }
+  },
+  "tests": [
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc01_full_delivery_user_journey",
+      "name": "test_sc01_full_delivery_user_journey",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.2893,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc02_human_review_candidate_relations_and_decision_boundary",
+      "name": "test_sc02_human_review_candidate_relations_and_decision_boundary",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.1186,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc03_relocated_source_handling_archive_and_adoption_rollback",
+      "name": "test_sc03_relocated_source_handling_archive_and_adoption_rollback",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.2423,
+      "error": null
+    },
+    {
+      "nodeid": "tests/e2e_scholar_catalog/test_tier4_scenarios.py::test_sc04_fieldkg_health_and_release_closure_handover",
+      "name": "test_sc04_fieldkg_health_and_release_closure_handover",
+      "tier": "tier4",
+      "tier_name": "Tier 4: Real-World Application Scenarios (SC01\u2013SC04)",
+      "outcome": "passed",
+      "duration": 0.0016,
+      "error": null
+    }
+  ]
+}

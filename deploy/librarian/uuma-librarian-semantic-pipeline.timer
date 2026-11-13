@@ -1,0 +1,13 @@
+[Unit]
+Description=Nightly Trigger for Librarian Semantic Intelligence Pipeline (LSIP)
+RefuseManualStart=no
+RefuseManualStop=no
+
+[Timer]
+# Run every night at 22:00 MYT (Asia/Kuala_Lumpur, UTC+8)
+OnCalendar=*-*-* 22:00:00
+Persistent=true
+Unit=uuma-librarian-semantic-pipeline.service
+
+[Install]
+WantedBy=timers.target

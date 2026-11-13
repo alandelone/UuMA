@@ -1,0 +1,100 @@
+[
+  {
+    "error": "Dimension must distinguish support, unknown and unassessed content",
+    "task": "quick_read",
+    "count": 10,
+    "sample_job_id": "catalogreadingjob_d2dcecf6430277e2d0400dacbee3644fe7ddb4485221ea10676e6b3d8ee32bf4",
+    "sample_paper_id": "paper_11e1959be229994e26194ef360073172"
+  },
+  {
+    "error": "Reason must bind to a supported PaperSkeleton dimension",
+    "task": "quick_read",
+    "count": 4,
+    "sample_job_id": "catalogreadingjob_06fef8cd9a591a9ab8b83e9ea22b54d857b8977744c891bd44093a75d6623fce",
+    "sample_paper_id": "paper_117d58fa4a93654e1f64f6e3e980a523"
+  },
+  {
+    "error": "The patch model did not establish the original local signal",
+    "task": "initial_preview_patch",
+    "count": 2,
+    "sample_job_id": "catalogreadingjob_7473221ed0a0a774b3d9342d38765049974ad4b5c663e2b76bc7be23989ea585",
+    "sample_paper_id": "paper_0ff4932be8aed225db32b166acc494df"
+  },
+  {
+    "error": "Source evidence refers to an unknown or foreign selector",
+    "task": "quick_read",
+    "count": 2,
+    "sample_job_id": "catalogreadingjob_48764f34728101a675def14f2c73c7cb0916add49f7b4df5a506f99b3ee31f53",
+    "sample_paper_id": "paper_0fc1a49228ebca280c4beed794e56ede"
+  },
+  {
+    "error": "Dimensions must be source-backed observations",
+    "task": "initial_synthesis",
+    "count": 2,
+    "sample_job_id": "catalogreadingjob_fc39e8cd78c33f9e3fdbb6567694715992f66e0802b5f15719796d14e3d91816",
+    "sample_paper_id": "paper_027031e1ff5fc0c3fc5642865d8c7eee"
+  },
+  {
+    "error": "Synthesis evidence must identify supplied original quotations",
+    "task": "initial_theme_role",
+    "count": 2,
+    "sample_job_id": "catalogreadingjob_eae894b77064e0fda1b65f3f2d7dec9dab1ad4f8e798db924e31d011a8fac34e",
+    "sample_paper_id": "paper_0c22ffc2f6ad5049dcee0ab5ae03dbd1"
+  },
+  {
+    "error": "Synthesis must cover every supplied input in order",
+    "task": "initial_digest",
+    "count": 2,
+    "sample_job_id": "catalogreadingjob_ea6fa5b6ee1c2942efd9739e0b4c2e9ffa30800f2a42f1aa89998e26986826a4",
+    "sample_paper_id": "paper_294b0dd73dee372f1909d559e4ead12e"
+  },
+  {
+    "error": "Model output is not a JSON object",
+    "task": "quick_read",
+    "count": 2,
+    "sample_job_id": "catalogreadingjob_25a6899971c0fd25e81362e5532304a939903dc71490a39a20c53002df93b082",
+    "sample_paper_id": "paper_0718c568a68760c509d65f3523a91f40"
+  },
+  {
+    "error": "New dimensions need a definition and PaperSkeleton layer bindings",
+    "task": "quick_read",
+    "count": 1,
+    "sample_job_id": "catalogreadingjob_a13380ffc5237226709ccaed98621b1cb7319f7f2e08a7e2bc057bbaeae9075e",
+    "sample_paper_id": "paper_0f7e934ff739f88bbccf6657dc6988ca"
+  },
+  {
+    "error": "Model output is not a JSON object",
+    "task": "initial_digest",
+    "count": 1,
+    "sample_job_id": "catalogreadingjob_765c7e9958231c782ba453ca2e79a9c28cb8248b000e3e9c79559058b022d821",
+    "sample_paper_id": "paper_08d90a25928a4abc69e4ba823744af00"
+  },
+  {
+    "error": "Expecting property name enclosed in double quotes: line 247 column 3 (char 9216)",
+    "task": "initial_json_recovery",
+    "count": 1,
+    "sample_job_id": "catalogreadingjob_14be75e8d5bef7a2df7446675a7b145acb34f28dd33fa52bd2893d1de7ed4993",
+    "sample_paper_id": "paper_074cc36ee1b03be1f6fe2422eb3d6d9d"
+  },
+  {
+    "error": "Evidence must identify a source block and exact quotation",
+    "task": "quick_read",
+    "count": 1,
+    "sample_job_id": "catalogreadingjob_ff9f50fba4996d0a4b007924880f84ef431bf1d184f1e553163d3c9bf3dd433c",
+    "sample_paper_id": "paper_0736bf052e7a9fe4f6790ea33a044531"
+  },
+  {
+    "error": "Reason must explain evidence, purpose and expected additional value",
+    "task": "quick_read",
+    "count": 1,
+    "sample_job_id": "catalogreadingjob_1b514dd6c59560e4337ce83b79fc436554dc6626736848cacb8b59416503f2f3",
+    "sample_paper_id": "paper_06d092d5b0148b858cb739f03edce133"
+  },
+  {
+    "error": "Model output is not a JSON object",
+    "task": "initial_json_recovery",
+    "count": 1,
+    "sample_job_id": "catalogreadingjob_d378a723d5d99df9ef0c42b03231a3473f1aec443501ce929c2c33c2cf0197e9",
+    "sample_paper_id": "paper_0075702bbd78cbb86485045659cde814"
+  }
+]

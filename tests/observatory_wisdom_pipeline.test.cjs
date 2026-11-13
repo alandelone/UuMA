@@ -4,7 +4,8 @@ const test = require('node:test');
 const vm = require('node:vm');
 const path = require('node:path');
 
-const source = fs.readFileSync(path.join(__dirname, '../src/uuma/observatory/static/app.js'), 'utf8');
+const source = fs.readFileSync(process.env.UUMA_OBSERVATORY_TEST_JS ||
+  path.join(__dirname, '../src/uuma/observatory/static/app.js'), 'utf8');
 const start = source.indexOf('  function getWisdomPipelineView(');
 const end = source.indexOf('  function renderWisdomPreviewHtml(', start);
 const context = vm.createContext({});

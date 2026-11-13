@@ -59,6 +59,11 @@ def test_changed_directory_invalidates_cursor_instead_of_skipping_files(tmp_path
     cursor = discover_page(tmp_path, max_entries=1)["cursor"]
     assert cursor is not None
     (tmp_path / "new").write_text("fixture")
+    # Windows directory timestamp updates can share one filesystem clock tick.
+    import os
+
+    stamp = tmp_path.stat()
+    os.utime(tmp_path, ns=(stamp.st_atime_ns, cursor[0]["mtime_ns"] + 1_000_000))
     with pytest.raises(ValueError, match="changed"):
         discover_page(tmp_path, cursor=cursor, max_entries=1)
 

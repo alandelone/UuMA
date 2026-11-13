@@ -124,9 +124,12 @@ def publish_catalog(
         if set(candidate.records) != set(approved_versions):
             raise PermissionError("Every published version requires explicit retrieval classification")
         current_path = root / "catalog.json"
-        if current_path.is_symlink():
+        primary_path = root / "librarian_semantic_catalog.json"
+        if current_path.is_symlink() or primary_path.is_symlink():
             raise ValueError("Current archive catalog cannot be a symlink")
-        old_raw = current_path.read_bytes() if current_path.exists() else None
+        old_raw = primary_path.read_bytes() if primary_path.exists() else (
+            current_path.read_bytes() if current_path.exists() else None
+        )
         if (hashlib.sha256(old_raw).hexdigest() if old_raw is not None else None) != expected_current_sha256:
             raise ValueError("Current archive catalog changed since the prepared publication")
         if old_raw is not None:
@@ -184,6 +187,16 @@ def publish_catalog(
                 stream.flush()
                 os.fsync(stream.fileno())
             os.replace(name, current_path)
+            # Maintain primary catalog file (librarian_semantic_catalog.json)
+            fd2, name2 = tempfile.mkstemp(prefix=".catalog-", dir=root)
+            try:
+                with os.fdopen(fd2, "wb") as stream2:
+                    stream2.write(raw)
+                    stream2.flush()
+                    os.fsync(stream2.fileno())
+                os.replace(name2, primary_path)
+            finally:
+                Path(name2).unlink(missing_ok=True)
             _fsync_directory(root)
         finally:
             Path(name).unlink(missing_ok=True)

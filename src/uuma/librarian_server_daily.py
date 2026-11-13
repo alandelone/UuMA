@@ -75,8 +75,8 @@ def _tree(path: Path) -> tuple[list[Path], frozenset[Path]]:
         except ValueError as exc:
             if "restart its inventory" in str(exc) or "changed" in str(exc):
                 walked = discover(path, max_files=100000, max_seconds=60)
-                if any(iss.get("error_type") == "SYMLINK_NOT_FOLLOWED" for iss in walked.get("issues", [])):
-                    raise ValueError("Source inventory contains inaccessible or unsupported entries") from exc
+                if walked["issues"]:
+                    raise ValueError("Fallback inventory is incomplete; source was not captured") from exc
                 records = walked["files"]
                 cursor = None
                 break

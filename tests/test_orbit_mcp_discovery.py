@@ -1,3 +1,5 @@
+import pytest
+
 from uuma.orbit_discovery import DiscoveryOutcome
 from uuma.orbit_mcp_discovery import XhsMCPDiscoveryProvider
 
@@ -41,3 +43,15 @@ def test_xhs_rejects_a_different_queries_cached_results():
         ],
     }, limit=2, query="new query")
     assert not result.artifacts and result.outcome == DiscoveryOutcome.TRANSIENT_FAILURE
+
+
+@pytest.mark.parametrize("job_id", [None, "wrong", "original"])
+def test_legacy_xhs_poll_requires_the_returned_job_id(job_id):
+    result = XhsMCPDiscoveryProvider.parse_result({
+        "status": "success", "job_id": job_id, "query": "original search terms",
+        "results": [{"url": "https://www.rednote.com/discovery/item/n1"}],
+    }, limit=2, pending="original")
+    assert result.request_id == "original"
+    assert bool(result.artifacts) == (job_id == "original")
+    assert result.outcome == (DiscoveryOutcome.SUCCESS if job_id == "original"
+                              else DiscoveryOutcome.TRANSIENT_FAILURE)

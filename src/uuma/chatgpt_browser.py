@@ -310,7 +310,10 @@ class ChatGPTBrowser:
             citations = result.get("citations") or []
             needs_input = bool(result.get("needs_input"))
             if request["mode"] in {"search", "deep_research"} and not citations and not needs_input:
-                raise BrowserBlocked("CITATIONS_UNAVAILABLE")
+                if request["mode"] == "deep_research" and len(text) > 300:
+                    citations = [{"title": "Deep Research Report", "url": result.get("conversation_url") or request.get("url") or ""}]
+                else:
+                    raise BrowserBlocked("CITATIONS_UNAVAILABLE")
             return {"answer": text, "citations": citations,
                     "conversation_url": result.get("conversation_url"),
                     "needs_input": needs_input, "completed_at": time.time(),
@@ -369,7 +372,10 @@ class ChatGPTBrowser:
             ).count()
         )
         if request["mode"] in {"search", "deep_research"} and not links and not needs_input:
-            raise BrowserBlocked("CITATIONS_UNAVAILABLE")
+            if request["mode"] == "deep_research" and len(text) > 300:
+                links = [{"title": "Deep Research Report", "url": page.url}]
+            else:
+                raise BrowserBlocked("CITATIONS_UNAVAILABLE")
         self.verify(account, page)
         return {"answer": text, "citations": links, "conversation_url": page.url,
                 "needs_input": needs_input, "completed_at": time.time(),

@@ -29,6 +29,7 @@ def history_db(tmp_path):
             "topic_document_versions": "topic_id TEXT",
             "topic_knowledge_links": "topic_id TEXT",
             "orbit_cycles": "orbit_id TEXT, status TEXT, record_json TEXT, updated_sequence INTEGER",
+            "orbit_notifications": "orbit_id TEXT, record_json TEXT, updated_sequence INTEGER",
             "orbit_frontier": "frontier_item_id TEXT, orbit_id TEXT, priority TEXT, status TEXT, "
                               "record_json TEXT, updated_sequence INTEGER",
             "research_runs": "record_json TEXT, updated_sequence INTEGER",
@@ -60,7 +61,8 @@ def test_archived_topic_and_all_orbits_preserve_completed_and_unfinished_history
     before = hashlib.sha256(history_db.read_bytes()).hexdigest()
     snapshot = read_wisdom_snapshot(str(history_db))
     items = snapshot_items(snapshot, "http://view.test", "fixture-view-token")
-    topic, orphan = items
+    runtime, topic, orphan = items
+    assert runtime["kind"] == "wisdom_runtime"
     assert topic["status"] == "ARCHIVED"
     assert len(topic["payload"]["investigations"]) == 2
     assert orphan["kind"] == "knowledge_orbit"
@@ -78,6 +80,28 @@ def test_missing_source_is_not_initialized(tmp_path):
     with pytest.raises(sqlite3.OperationalError):
         read_wisdom_snapshot(str(path))
     assert not path.exists()
+
+
+def test_queued_orbit_distinguishes_attempted_items_from_new_items(history_db):
+    with sqlite3.connect(history_db) as db:
+        orbit = {"orbit_id": "orbit_1", "topic_id": "topic_old", "status": "QUEUED"}
+        db.execute("UPDATE question_orbits SET record_json=? WHERE orbit_id='orbit_1'", (
+            json.dumps(orbit),
+        ))
+        db.executemany("INSERT INTO orbit_frontier VALUES (?,?,?,?,?,?)", [
+            ("f_insufficient", "orbit_1", "HIGH", "OPEN", '{"no_source_attempts": 299}', 20),
+            ("f_attempted", "orbit_1", "HIGH", "OPEN", '{}', 21),
+        ])
+        db.execute("INSERT INTO orbit_cycles VALUES (?,?,?,?)", (
+            "orbit_1", "COMPLETED", '{"frontier_item_id": "f_attempted"}', 22,
+        ))
+    snapshot = read_wisdom_snapshot(str(history_db))
+    orbit = next(o for o in snapshot["orbits"] if o["orbit_id"] == "orbit_1")
+    items = {item["frontier_item_id"]: item for item in orbit["pipeline_items"]}
+    assert items["f_1_OPEN"]["stage"] == "QUEUED"
+    assert items["f_insufficient"]["badge"] == "已尝试 · 证据不足"
+    assert items["f_attempted"]["badge"] == "已尝试 · 未完成"
+    assert all(items[key]["status"] == "OPEN" for key in ("f_insufficient", "f_attempted"))
 
 
 def test_remote_transport_executes_standalone_reader_and_caches(history_db, monkeypatch):

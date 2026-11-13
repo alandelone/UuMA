@@ -1,0 +1,53 @@
+{
+  "receipt_type": "SCHOLAR_CATALOG_SEARCH_ENTRYPOINT_ACCEPTANCE_RECEIPT",
+  "timestamp": "2026-11-07T05:17:34Z",
+  "environment": {
+    "database": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\data\\catalog.db",
+    "vector_cache": "C:\\Users\\Alandelone\\CodeSpace_Local\\RSTV4\\data\\artifacts\\catalog-content-index\\vectors.sqlite",
+    "reading_release": "catalog-48cece41023e",
+    "entrypoint": "rstv4.catalog_content_tools.bounded_result(CatalogContentRetrieval.search)"
+  },
+  "query": "microgrid blockchain",
+  "search_mode": "HYBRID",
+  "total_matches": 2042,
+  "matched_papers_count": 200,
+  "bounded_matches_count": 2,
+  "sample_matches": [
+    {
+      "paper_id": "paper_0075702bbd78cbb86485045659cde814",
+      "title": "Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "page_number": 5,
+      "section": "2.1.2. The Microgrid/HES Configuration",
+      "rank_score": 0.019662601162658156,
+      "match_basis": [
+        "SEMANTIC",
+        "TEXT"
+      ],
+      "semantic_similarity": 0.5984292646792605,
+      "lexical_score": 5.641654269971542,
+      "quote": "2.1.2. The Microgrid/HES Configuration"
+    },
+    {
+      "paper_id": "paper_0075702bbd78cbb86485045659cde814",
+      "title": "Neural Network Algorithm with Reinforcement Learning for Microgrid Techno-Economic Optimization",
+      "page_number": 8,
+      "section": "2.1.3. The PV/Wind/Diesel/Battery Dispatch Strategy",
+      "rank_score": 0.019369633099141297,
+      "match_basis": [
+        "SEMANTIC",
+        "TEXT"
+      ],
+      "semantic_similarity": 0.6007324961725972,
+      "lexical_score": 5.49193800406704,
+      "quote": "Figure 5. The schematic diagram of the proposed microgrid/HES."
+    }
+  ],
+  "semantic_index_status": {
+    "eligible_passages": 26745,
+    "indexed_passages": 1297,
+    "complete": false,
+    "corpus_complete": false,
+    "pending_sources_total": 2969
+  },
+  "verification_outcome": "PASSED_REAL_DEPLOYED_ENTRYPOINT_RECEIPT_PRODUCED"
+}

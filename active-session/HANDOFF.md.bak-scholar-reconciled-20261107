@@ -1,0 +1,419 @@
+# Session Handoff
+
+## Current position
+
+November7 read-only Wisdom channel diagnosis and concrete remediation proposal, all four user annotations addressed. Existing ChatGPT cgpt_fa7bd6257ad74add81bc633f305ae55f is QUEUED, submitted/result/url null; actual workstation owner verified by live PID environment. Account READY but blocked by older same-account PAUSED EXTENSION_UNAVAILABLE request cgpt_85da342de4794c8f84856ed2ab77c2d5, unsent. Two existing formal XHS jobs return five links EACH despite zero admitted usage counts. Current connector paired/offline. Exact saved submission replay proves local XHS parser misses status=in_progress,stage=queued and loses pending continuation. One historical job actually extension_offline; other results partly irrelevant. No new searches, model requests, login, queue mutation, production fix or deployment. Concrete causes, ordered solution and acceptance in docs/operations/wisdom-channel-root-causes-and-remediation-20261107.md; corrected prior audit. Private sanitized receipts under .uuma-local/wisdom-critic. Preserve every prior task below. Raw prior handoff backup C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\wisdom-critic\handoff-before-channel-diagnosis-a4b1d2cd66eda3867dd5a12bf5fcf0c33a915e9ba0c63f5c4d33f6f7c3a9e579.bin SHA256 a4b1d2cd66eda3867dd5a12bf5fcf0c33a915e9ba0c63f5c4d33f6f7c3a9e579
+
+# Session Handoff
+
+## Current position
+
+Scholar November 6 completion claim follow-up, November 7 UTC+08:00. User supplied dashboard title and asserted F01-F07/W01-W34 complete. Located master signoff, board and external Hermes victory audit. Bounded read-only canonical audit confirms purpose request/result repair, 78 deep observations, six READY admissions with expected fences, and real 11-member packet/hash matches. Canonical QUICK_READ 3 SUCCEEDED/168 READY/36 NEEDS_HUMAN/1 RESOURCE_WAIT; six successful jobs across ALL types cannot be labelled six successful QUICK_READs. Current Reading scheduled task enabled/Ready, superseding Disabled historical snapshot.
+
+Reused original audit_saved_view_contract_v671.py --child against canonical owner and selected catalog-48cece41023e; purpose scope passes, frozen content replay FAILS after18 accepted calls: Transport recovery differs from its effective original model identity. No model calls or DB writes. Original November5 evidence unchanged. Added current JSON observations and English report docs/operations/scholar-catalog-remediation-claim-review-20261107.md with F01-F07 scope, W criteria, solution approach, priorities and completion conditions. Added dated qualifications to old audit, master signoff and board without removing historical declarations.
+
+Important evidence conflicts: test_f01_empirical_catalog_db_replay_defect explicitly expects the production error, so its passing result is not repair acceptance. External worker_m1_3/handoff.md section1.3 records DELETE FROM catalog_reading_events WHERE event_seq>=7838 and DELETE FROM catalog_reading_model_events WHERE event_seq>=3337, contradicting zero-deletion master declaration. Documentary conflict established; actual complete deletion scope/recoverability not determined. Reference-owner209-contract replay is different from canonical selected-runtime replay. W22 exactv419 decision trail not established by duplicate historical grants; bounded canonical v419 text search found no matches, not proof another conversation lacks authorization. W31 eight-theme review/adoption receipts inspected/reused, not rerun. Implementation Goal remains PAUSED; no product edits/deployment/retry/owner mutation or gate approval. No full-suite rerun. Current report records actual remaining acceptance conditions, no new completion percentage.
+
+Preserve unrelated/concurrent work and entire prior handoff. Do not resume implementation from this document-only request. If later authorized, begin with authentic history lineage F01 and no deletion/relaxed validators, reuse all saved inference and verified archive/adoption work.
+
+FRESH PROCESS/JOBS:
+{
+  "observed_at": "2026-11-07T02:24:10.836609+00:00",
+  "note": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-catalog-implementation-20261023\\remediation-review-note-20261107.md",
+  "note_sha256": "343d781c70e3abeaf5d19cad673e77bc84bc9405b38ac33a30afc948dc2fdffb",
+  "observer_metadata": "C:\\Users\\Alandelone\\CodeSpace_Local\\UuMA\\.uuma-local\\scholar-catalog-implementation-20261023\\background-digest-envelope-v396.json",
+  "observer_live": false,
+  "original_deep_jobs": [
+    {
+      "job_id": "skeletonviewjob_1216bde784964dc42990bbd92b55cd7431a23a60a43d94a05fe1bd58c6ec81e6",
+      "job_type": "SKELETON_VIEW",
+      "status": "SUCCEEDED",
+      "last_error": null
+    },
+    {
+      "job_id": "skeletonviewjob_b7a6ba5a81ef5f58911dc951ea0c856a9d99fa5c4367a2021a4fdaaec3a40382",
+      "job_type": "SKELETON_PURPOSE",
+      "status": "SUCCEEDED",
+      "last_error": null
+    }
+  ],
+  "goal_complete": false
+}
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+Yonc Daily formally published November7 2026 at10:19:34 UTC+8 after explicit user yes/annotation approval. Exact approved package SHA256 d8521f19c5092cb0fbd86875f32fa61c294f6d8643b492d76c6d17be82f11b96,54files14changed. Fixed server source /home/alandelone/.local/share/uuma/production/yonc/releases/daily-20261107-d8521f19c509/source; only uuma-yonc-graph.service restarted PID1325to356413. Source manifests/baseline rechecked; independent consistent staging copy migration/API/route verified first. Before actual apply, session handoff check passed. Remote apply uses publication lock, baseline/idleness/DBholder checks, Graph-only stop, consistent SQLite backup, additive migration, full existing-table digest verification, exact unit/env backup+switch, source/runtime/db owner/health verification and non-destructive code/config failure rollback. No rollback was needed.
+Canonical DB unchanged path production/yonc/project_graph.sqlite3, identity43a70a25-bb31-47cf-9810-80566f4b62da,graphversion128,nodes691edges638. All24pre-existing business tables full logical row hashes unchanged both immediately after migration and after public browser check. Added daily_runtime,daily_intervals,daily_changes; revision20261105_0005. Backup release/backup-20261107T021932Z/project_graph.sqlite3 SHA256 f363c1b3f4c1706df752fe0d78045a2c03cf2d7e04f64ab3a80a078f386ea37a; private unit/env originals alongside. Never restore old DB over newer writes. Previous source b6b5d105cd503d930c32907560615f4cc77be051fa66741e41c21060d66d7b37 retained for code rollback, preserve additive tables.
+Public https://yonc.95963210.xyz/daily page200,DailyAPI200,currentJS200 and SHA matches approved asset, browser errors0. Real Daily eligibleTasks0 because L4planneddate rule; do not invent dates or insert demo records. User can double-click L4 in List to set Daily planned day. 390px tasks left/activity right,no page horizontal overflow. Read-only Copycat URL http://192.168.55.1:8876 configured;health0.5.0;workstation recorder verifiedSTOPPED,no capture switch/restart. Copycat range-query source patch remains local/unpublished; bounded read+timestamp filtering remain as documented.
+Server stage/publication/verification receipts saved in release dir; local remote_apply.stdout,remote_verify.stdout,public-verification.json and daily-production desktop/mobile screenshots in .uuma-local/yonc-daily-implementation-20261105. Updated docs/yonc-daily-release-preview-2026-11-07.md and planning record with actual publication/result/backup. Existing production split-model test mismatch remains unchanged and documented; no assertion weakening. No shared Hermes/other specialist restart,production sample writes,commit,push,DBrestore or missiongateapproval. Mission verification/pending_review remains. Publication objective complete; user may use formal Daily. Preserve all concurrent Wisdom/Librarian/adapter/sibling work and complete previous shared handoff below.
+
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+Yonc Daily formally published November7 2026 at10:19:34 UTC+8 after explicit user yes/annotation approval. Exact approved package SHA256 d8521f19c5092cb0fbd86875f32fa61c294f6d8643b492d76c6d17be82f11b96,54files14changed. Fixed server source /home/alandelone/.local/share/uuma/production/yonc/releases/daily-20261107-d8521f19c509/source; only uuma-yonc-graph.service restarted PID1325to356413. Source manifests/baseline rechecked; independent consistent staging copy migration/API/route verified first. Before actual apply, session handoff check passed. Remote apply uses publication lock, baseline/idleness/DBholder checks, Graph-only stop, consistent SQLite backup, additive migration, full existing-table digest verification, exact unit/env backup+switch, source/runtime/db owner/health verification and non-destructive code/config failure rollback. No rollback was needed.
+Canonical DB unchanged path production/yonc/project_graph.sqlite3, identity43a70a25-bb31-47cf-9810-80566f4b62da,graphversion128,nodes691edges638. All24pre-existing business tables full logical row hashes unchanged both immediately after migration and after public browser check. Added daily_runtime,daily_intervals,daily_changes; revision20261105_0005. Backup release/backup-20261107T021932Z/project_graph.sqlite3 SHA256 f363c1b3f4c1706df752fe0d78045a2c03cf2d7e04f64ab3a80a078f386ea37a; private unit/env originals alongside. Never restore old DB over newer writes. Previous source b6b5d105cd503d930c32907560615f4cc77be051fa66741e41c21060d66d7b37 retained for code rollback, preserve additive tables.
+Public https://yonc.95963210.xyz/daily page200,DailyAPI200,currentJS200 and SHA matches approved asset, browser errors0. Real Daily eligibleTasks0 because L4planneddate rule; do not invent dates or insert demo records. User can double-click L4 in List to set Daily planned day. 390px tasks left/activity right,no page horizontal overflow. Read-only Copycat URL http://192.168.55.1:8876 configured;health0.5.0;workstation recorder verifiedSTOPPED,no capture switch/restart. Copycat range-query source patch remains local/unpublished; bounded read+timestamp filtering remain as documented.
+Server stage/publication/verification receipts saved in release dir; local remote_apply.stdout,remote_verify.stdout,public-verification.json and daily-production desktop/mobile screenshots in .uuma-local/yonc-daily-implementation-20261105. Updated docs/yonc-daily-release-preview-2026-11-07.md and planning record with actual publication/result/backup. Existing production split-model test mismatch remains unchanged and documented; no assertion weakening. No shared Hermes/other specialist restart,production sample writes,commit,push,DBrestore or missiongateapproval. Mission verification/pending_review remains. Publication objective complete; user may use formal Daily. Preserve all concurrent Wisdom/Librarian/adapter/sibling work and complete previous shared handoff below.
+
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+Yonc Daily authorized publication, November 7 UTC+8. User explicitly answered yes and annotated publication of formal Yonc /daily. Exact approved archive SHA256 d8521f19c5092cb0fbd86875f32fa61c294f6d8643b492d76c6d17be82f11b96 uploaded to server production/yonc/releases/daily-20261107-d8521f19c509. Source package54files14changed verified against unchanged baseline b6b5d105cd503d930c32907560615f4cc77be051fa66741e41c21060d66d7b37. Stage trial on independent consistent server DB copy upgraded20261020_0004 to20261105_0005, all24old tables logically unchanged, Daily API/route200, copycat configured/health0.5.0. Real Graph DB identity43a70a25-bb31-47cf-9810-80566f4b62da,node691edge638,focus0,assignments0. Real eligible Daily tasks0 because existing L4 dates absent; do not invent dates. No formal service switch yet. Prepared guarded remote_apply.py: lock/recheck/idleness/uniqueDBholders, Graph-only stop, consistent backup+digest, additive migration+alloldtablecheck, preserve unit/env backups, set fixed source/PYTHONPATH and read-only Copycat URL, Graph-only start and health/source/owner checks; code/config rollback on failure leaves new tables and never restores DB. Shared gateway/agents and Copycat capture unchanged. Mission remains verification/pending_review. Next apply authorized package after session check, verify public entry/browser and archive receipt. Latest Librarian/Wisdom and all previous handoff preserved below.
+
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+Yonc Daily authorized publication, November 7 UTC+8. User explicitly answered yes and annotated publication of formal Yonc /daily. Exact approved archive SHA256 d8521f19c5092cb0fbd86875f32fa61c294f6d8643b492d76c6d17be82f11b96 uploaded to server production/yonc/releases/daily-20261107-d8521f19c509. Source package54files14changed verified against unchanged baseline b6b5d105cd503d930c32907560615f4cc77be051fa66741e41c21060d66d7b37. Stage trial on independent consistent server DB copy upgraded20261020_0004 to20261105_0005, all24old tables logically unchanged, Daily API/route200, copycat configured/health0.5.0. Real Graph DB identity43a70a25-bb31-47cf-9810-80566f4b62da,node691edge638,focus0,assignments0. Real eligible Daily tasks0 because existing L4 dates absent; do not invent dates. No formal service switch yet. Prepared guarded remote_apply.py: lock/recheck/idleness/uniqueDBholders, Graph-only stop, consistent backup+digest, additive migration+alloldtablecheck, preserve unit/env backups, set fixed source/PYTHONPATH and read-only Copycat URL, Graph-only start and health/source/owner checks; code/config rollback on failure leaves new tables and never restores DB. Shared gateway/agents and Copycat capture unchanged. Mission remains verification/pending_review. Next apply authorized package after session check, verify public entry/browser and archive receipt. Latest Librarian/Wisdom and all previous handoff preserved below.
+
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+Yonc Daily authorized publication, November 7 UTC+8. User explicitly answered yes and annotated publication of formal Yonc /daily. Exact approved archive SHA256 d8521f19c5092cb0fbd86875f32fa61c294f6d8643b492d76c6d17be82f11b96 uploaded to server production/yonc/releases/daily-20261107-d8521f19c509. Source package54files14changed verified against unchanged baseline b6b5d105cd503d930c32907560615f4cc77be051fa66741e41c21060d66d7b37. Stage trial on independent consistent server DB copy upgraded20261020_0004 to20261105_0005, all24old tables logically unchanged, Daily API/route200, copycat configured/health0.5.0. Real Graph DB identity43a70a25-bb31-47cf-9810-80566f4b62da,node691edge638,focus0,assignments0. Real eligible Daily tasks0 because existing L4 dates absent; do not invent dates. No formal service switch yet. Prepared guarded remote_apply.py: lock/recheck/idleness/uniqueDBholders, Graph-only stop, consistent backup+digest, additive migration+alloldtablecheck, preserve unit/env backups, set fixed source/PYTHONPATH and read-only Copycat URL, Graph-only start and health/source/owner checks; code/config rollback on failure leaves new tables and never restores DB. Shared gateway/agents and Copycat capture unchanged. Mission remains verification/pending_review. Next apply authorized package after session check, verify public entry/browser and archive receipt. Latest Librarian/Wisdom and all previous handoff preserved below.
+
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+User asked why95Codex unavailable, whyAntigravitycore stalledNov5, whyHonc only1event despite diaries/body, whethercontrolrecords exist. Read-only followup: CodexNov7 roaming12093captured95unavailable=77PermissionError18TimeoutError, cache/locks/Cookies/History/webSQLite. Daily task ranNov7midnightexit2, actual status antigravity-coreFAILEDValueError. Selected old fixed workstation-sessions-7ade91d0a0d9474e9c14a809326c99ad paginatedscanner; read-only exactpinned_tree reproduced ValueError Discovery directory changed; restart its inventory. Development_tree laterchange not selected by scheduledtask. No collectorfix/deploy performed because thisturn explanation/audit. Corrected earlier misleading Honccount: execution_events1row olderOct16outcomeimproveagentquality, separate life_objects46=11diary4body22habit8definitions1settings,52revisions74sources37committedops. Latest diary/habitNov5at22:11:35UTC+8,bodyOct28at11:50:30. Controlserveruuma.dbevents601,88runregistered63resultsubmitted5routedecided; Honc27registered19submitted,latestNov5at22:11:49. Literal6of37lifeoperationrefs present incontrolpayloads, notcomplete indexingproof. Diary/bodyfacts in honc.db. Updated docs/operations/librarian-agent-coverage-audit-20261107.md withcorrection/causes. No productionwrites,restarts,captures or inference. Privatefollowup receipts/scripts .uuma-local. Priorfullcontext follows.
+
+# Session Handoff
+
+## Current position
+
+User asked why95Codex unavailable, whyAntigravitycore stalledNov5, whyHonc only1event despite diaries/body, whethercontrolrecords exist. Read-only followup: CodexNov7 roaming12093captured95unavailable=77PermissionError18TimeoutError, cache/locks/Cookies/History/webSQLite. Daily task ranNov7midnightexit2, actual status antigravity-coreFAILEDValueError. Selected old fixed workstation-sessions-7ade91d0a0d9474e9c14a809326c99ad paginatedscanner; read-only exactpinned_tree reproduced ValueError Discovery directory changed; restart its inventory. Development_tree laterchange not selected by scheduledtask. No collectorfix/deploy performed because thisturn explanation/audit. Corrected earlier misleading Honccount: execution_events1row olderOct16outcomeimproveagentquality, separate life_objects46=11diary4body22habit8definitions1settings,52revisions74sources37committedops. Latest diary/habitNov5at22:11:35UTC+8,bodyOct28at11:50:30. Controlserveruuma.dbevents601,88runregistered63resultsubmitted5routedecided; Honc27registered19submitted,latestNov5at22:11:49. Literal6of37lifeoperationrefs present incontrolpayloads, notcomplete indexingproof. Diary/bodyfacts in honc.db. Updated docs/operations/librarian-agent-coverage-audit-20261107.md withcorrection/causes. No productionwrites,restarts,captures or inference. Privatefollowup receipts/scripts .uuma-local. Priorfullcontext follows.
+
+# Session Handoff
+
+## Current position
+
+User asked why95Codex unavailable, whyAntigravitycore stalledNov5, whyHonc only1event despite diaries/body, whethercontrolrecords exist. Read-only followup: CodexNov7 roaming12093captured95unavailable=77PermissionError18TimeoutError, cache/locks/Cookies/History/webSQLite. Daily task ranNov7midnightexit2, actual status antigravity-coreFAILEDValueError. Selected old fixed workstation-sessions-7ade91d0a0d9474e9c14a809326c99ad paginatedscanner; read-only exactpinned_tree reproduced ValueError Discovery directory changed; restart its inventory. Development_tree laterchange not selected by scheduledtask. No collectorfix/deploy performed because thisturn explanation/audit. Corrected earlier misleading Honccount: execution_events1row olderOct16outcomeimproveagentquality, separate life_objects46=11diary4body22habit8definitions1settings,52revisions74sources37committedops. Latest diary/habitNov5at22:11:35UTC+8,bodyOct28at11:50:30. Controlserveruuma.dbevents601,88runregistered63resultsubmitted5routedecided; Honc27registered19submitted,latestNov5at22:11:49. Literal6of37lifeoperationrefs present incontrolpayloads, notcomplete indexingproof. Diary/bodyfacts in honc.db. Updated docs/operations/librarian-agent-coverage-audit-20261107.md withcorrection/causes. No productionwrites,restarts,captures or inference. Privatefollowup receipts/scripts .uuma-local. Priorfullcontext follows.
+
+# Session Handoff
+
+## Current position
+
+Read-only live Wisdom onion investigation audit November 7. Seven FILLED, three OPEN; 13908 cycle records, including 7890 polls of one October29 ChatGPT bridge request. Latest data Nov7 07:00:06 UTC+8 QUEUED/run ACTIVE; systemd worker running. Two OPEN recovery questions each no_source_attempts299; parameter question still waiting with zero new artifacts. Distinguish evidence insufficiency from unproductive repeated retrieval/polling, and tool SUCCESS from research completion. Recorded actual provider usage and critic reasons in docs/operations/wisdom-onion-research-explanation-20261107.md. No production mutation or research execution. Prior complete shared handoff preserved below. Raw backup C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\wisdom-critic\handoff-before-explanation-573cae12937210aa0df13722dc61f0565b773b98ba98a70e4e186b081e1ac0f3.bin SHA256 573cae12937210aa0df13722dc61f0565b773b98ba98a70e4e186b081e1ac0f3
+
+# Session Handoff
+
+## Current position
+
+Read-only live Wisdom onion investigation audit November 7. Seven FILLED, three OPEN; 13908 cycle records, including 7890 polls of one October29 ChatGPT bridge request. Latest data Nov7 07:00:06 UTC+8 QUEUED/run ACTIVE; systemd worker running. Two OPEN recovery questions each no_source_attempts299; parameter question still waiting with zero new artifacts. Distinguish evidence insufficiency from unproductive repeated retrieval/polling, and tool SUCCESS from research completion. Recorded actual provider usage and critic reasons in docs/operations/wisdom-onion-research-explanation-20261107.md. No production mutation or research execution. Prior complete shared handoff preserved below. Raw backup C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\wisdom-critic\handoff-before-explanation-d3f8663140db0bcb2bbaf4ac448978c8efdd091c379701ec5f9c66d7bef45ac5.bin SHA256 d3f8663140db0bcb2bbaf4ac448978c8efdd091c379701ec5f9c66d7bef45ac5
+
+# Session Handoff
+
+## Current position
+
+Read-only live Wisdom onion investigation audit November 7. Seven FILLED, three OPEN; 13908 cycle records, including 7890 polls of one October29 ChatGPT bridge request. Latest data Nov7 07:00:06 UTC+8 QUEUED/run ACTIVE; systemd worker running. Two OPEN recovery questions each no_source_attempts299; parameter question still waiting with zero new artifacts. Distinguish evidence insufficiency from unproductive repeated retrieval/polling, and tool SUCCESS from research completion. Recorded actual provider usage and critic reasons in docs/operations/wisdom-onion-research-explanation-20261107.md. No production mutation or research execution. Prior complete shared handoff preserved below. Raw backup C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\wisdom-critic\handoff-before-explanation-015b29f57252fca986efea454c60d9b78ee6005a3936e15db3bdc258d4e08958.bin SHA256 015b29f57252fca986efea454c60d9b78ee6005a3936e15db3bdc258d4e08958
+
+# Session Handoff
+
+## Current position
+
+Yonc Daily development candidate, 2026-11-07 Asia/Kuala_Lumpur.
+User authorized implementation after design refinement. Implemented in sibling yonc-graph and prepared isolated production-baseline candidate, preserving unrelated dirty work. Tasks left / Activity right at 1440/768/390px, vertical compactness only, stepped L4 notes, single-task focus/pause, Rest/Toilet/LIJ, canonical completion/undo, L4-own planned-day carryover, coupled boundary correction with history, optional configurable context. Copycat uses its own capture switch; live read-only recorder state remains STOPPED. Local range-query Copycat source patch is not deployed. Never start capture from Daily.
+Current preview http://127.0.0.1:18766/daily uses release-candidate source/current built assets and a fresh current-day synthetic DB. Previous fixture retained. Final browser verified actual shared boundary drag +2min, direct correction, configuration save/reload, global Ctrl+Z and toast cleanup, L4 List date change admission 3-to-2-to-3. Fixed Configuration loading/parent-rerender draft reset and direct Daily tab entry. Fixed outline autosizing after narrow-to-wide resize; desktop rows return to26px. Final frontend100pass, TypeScript/build pass, scoped Ruff pass. Backend candidate34pass1skip1fail: unchanged production split adapter default standard versus its own test expectation complex; fetched exact production source/test and reproduced the pre-existing failure with verified unchanged hash. Do not hide it or bundle unrelated model policy. Prior development checkout35pass1skip contains separate split work. Existing bundle-size/deprecation warnings remain.
+Concrete package private .uuma-local/yonc-daily-implementation-20261105/yonc-daily-candidate.tar.gz SHA256 d8521f19c5092cb0fbd86875f32fa61c294f6d8643b492d76c6d17be82f11b96,54files14changed,new current JS/CSS only. Candidate source manifest/package receipt retained. Production baseline b6b5d105cd503d930c32907560615f4cc77be051fa66741e41c21060d66d7b37 reconfirmed SSH Nov7, Graph service activePID1325 loopback8766. No publication or production DB writes/restart, no commit/push. Additive three Daily tables, runtime/interval/change history; existing canonical L4 reversible updates. Do not deploy whole dirty local checkout. Copycat server URL candidate http://192.168.55.1:8876, recheck before publication.
+Updated docs/yonc-daily-closed-loop-plan-2026-11-05.md with latest confirmed corrections; concrete scope, evidence, known failure, backup/rollback/publication steps in docs/yonc-daily-release-preview-2026-11-07.md. Await explicit publication authorization per runbook section5B: development does not automatically authorize publishing. Mission remains verification/pending_review. Preserve all concurrent UuMA/Librarian/adapter and sibling changes; prior full handoff follows.
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+User requested current all-agent durable backup coverage, ProjectGraph association mechanics and decisions including hermes_xgp. Read-only live auditNov7 at10:02:54UTC+8 observed63sources304batches306revisions306matchingNASpublicationreceipts0pending4PARTIAL. All6server specialist native/domain sources currentNov7 COMPLETE, Scholar catalog.db captured but nativeprofile not found. Local AppData/Local/hermes/state.db exists4984sessions64458messages yet no received manifest path contains AppData\Local\hermes, profiles\scholar, profiles\orchestrator or hermes_xgp/hermes-xgp. No same-name hermes_xgp registration found, identity unresolved. Antigravity core latestNov5 PARTIAL49396captured4unavailable (nowold),Codex roamingNov7 PARTIAL12093captured95unavailable; two historicalwatchdogPARTIAL. SeparateAntigravityBackups only initializationmarker, not evidence of substantivebackup contents. SemanticcatalogstillNov3 snapshot59structuralrecords=1Brainstormer58Yonc. Project_ids differ discussion_* and yonc_proj_*; no complete cross-agent project association or universaldecisionindex demonstrated. ActualBrainstormerowner projectstate revision6 updatedOct28 has0decisionobjects; proposals5APPROVED1PROPOSED, keptdistinct. Honc execution_events1row, data in honc.db; native conversations in profile state.db; sharedcontrol events in serveruuma.db. Wrote docs/operations/librarian-agent-coverage-audit-20261107.md withfullscope/evidence. No productionmutations,newcapture,restore,inference or restart. Privateauditlogs in .uuma-local. PowerShell nested dollar quoting failed once, replaced with Python inspections. Prior full handoff follows.
+
+# Session Handoff
+
+## Current position
+
+User requested current all-agent durable backup coverage, ProjectGraph association mechanics and decisions including hermes_xgp. Read-only live auditNov7 at10:02:54UTC+8 observed63sources304batches306revisions306matchingNASpublicationreceipts0pending4PARTIAL. All6server specialist native/domain sources currentNov7 COMPLETE, Scholar catalog.db captured but nativeprofile not found. Local AppData/Local/hermes/state.db exists4984sessions64458messages yet no received manifest path contains AppData\Local\hermes, profiles\scholar, profiles\orchestrator or hermes_xgp/hermes-xgp. No same-name hermes_xgp registration found, identity unresolved. Antigravity core latestNov5 PARTIAL49396captured4unavailable (nowold),Codex roamingNov7 PARTIAL12093captured95unavailable; two historicalwatchdogPARTIAL. SeparateAntigravityBackups only initializationmarker, not evidence of substantivebackup contents. SemanticcatalogstillNov3 snapshot59structuralrecords=1Brainstormer58Yonc. Project_ids differ discussion_* and yonc_proj_*; no complete cross-agent project association or universaldecisionindex demonstrated. ActualBrainstormerowner projectstate revision6 updatedOct28 has0decisionobjects; proposals5APPROVED1PROPOSED, keptdistinct. Honc execution_events1row, data in honc.db; native conversations in profile state.db; sharedcontrol events in serveruuma.db. Wrote docs/operations/librarian-agent-coverage-audit-20261107.md withfullscope/evidence. No productionmutations,newcapture,restore,inference or restart. Privateauditlogs in .uuma-local. PowerShell nested dollar quoting failed once, replaced with Python inspections. Prior full handoff follows.
+
+# Session Handoff
+
+## Current position
+
+Codex Antigravity additional_tools repair, 2026-11-06 (Asia/Kuala_Lumpur).
+User reported reconnecting/waiting and then exact HTTP error Unsupported Antigravity input item: additional_tools. Official OpenAI tool-search documentation confirms this developer-role input item introduces tool schemas in conversation history. Local translate rejected the item before inference. Added supported definition collection into the static provider tool array, preserving namespaced functions/custom grammars and a tool-introduction marker at the original history position. Identical repeated converted definitions deduplicate; conflicting schemas/aliases, unsupported tool types and non-developer explicit roles still reject. Missing role is accepted for legacy declaration shape. Existing unknown-input and tool safeguards remain. No raw payloads or credentials logged.
+
+Updated gateway.py, manage.py, focused tests/test_codex_antigravity_input_tools.py and docs/operations/codex-antigravity-compatibility.md. Six isolated focused tests pass, including actual ASGI/SSE route acceptance with a fake provider and no authentication changes outside the fixture. Python parse and scoped lint pass. Gateway has two PRE-EXISTING lint findings (S110/BLE001) in the user's separate official-forwarding except/pass; compared against exact pre-edit backup and introduced none. Preserve that unrelated forwarding behavior. Ruff formatting condensed the existing DEFAULT_STATE expression only. Initial new TypeError lint issue corrected; initial lint failure retained as observed, no assertion weakening.
+
+The initial idle restart refused to stop a verified python.exe gateway because manage expected pythonw.exe; no process was stopped on that failure. Read-only process evidence verified PID 9888, exact gateway source and the same base interpreter's python.exe. Management now accepts python.exe as well as pythonw.exe, retaining service/active/PID/executable/source checks. Successfully replaced only the isolated local gateway at idle: PID 9888 to 66484. Gateway source hash 1ec557539fcc1023b26f56086683714cd116ea76628c7def6278c1104d7643b8 matches process receipt; final ready/active0. Shared Hermes, remote worker, specialist services and credentials unchanged. Existing source and process receipt backups are retained in private state.
+
+Actual live two-request Gemini low check passed in26.91seconds: injected namespace audit_fixture/read_nonce was called, local disposable fixture reader supplied its actual nonce, and the next request preserving additional_tools and call/output replay returned that exact nonce. Usage7059+7181input/55+33output. No project/external tool writes or real service MCP actions. This verifies this specific error/input path and continuation, not all desktop networking, tool-search hosting, every model, or UI performance. Exact private receipts additional-tools-release-20261106.json and live-additional-tools-20261106-result.json; failed first restart note additional-tools-first-restart-20261106.json. No app restart or new conversation is needed for the loaded adapter fix; user can resend in the original Antigravity-bound chat. Existing limits remain in compatibility matrix. No commit, push, production DB change or mission gate approval. Preserve the latest Librarian November6 work and all prior context below.
+
+ENTIRE PREVIOUS SHARED HANDOFF (logically verbatim):
+# Session Handoff
+
+## Current position
+
+# Librarian Backup Expiration Detection & /library_issues Resolution — 2026-11-06
+
+Date: 2026-11-06, Asia/Kuala_Lumpur.
+Governing Specification: docs/operations/librarian-acceptance-handover-2026-11-04.md
+Commit: `76ae4b2` (feat(librarian): implement backup expiration detection and resolve library_issues sources)
+
+## Completed Actions
+
+1. **Automated Backup Freshness & Expiration Detection**:
+   - Implemented `check_source_freshness` in `src/uuma/librarian_operations.py`:
+     * Evaluates source dates against Malaysia/Singapore wall-clock time (`Asia/Singapore`, UTC+8).
+     * Classifies cadences into `daily` (expected 00:00 daily), `weekly` (expected Sunday 00:00, e.g. printer configs), and `snapshot` (manual project checkpoints).
+     * Distinguishes `FRESH` (current calendar day or within interval), `EXPIRING` (yesterday before 04:00 AM cutoff), `OVERDUE` (yesterday after 04:00 AM cutoff), and `EXPIRED` (>= 2 days ago or missing).
+     * Exposed `is_expired`, `freshness`, `days_since`, `schedule`, and `issues_count` in `backup_overview()`.
+   - Updated Telegram command handler in `integrations/hermes/uuma_librarian_commands/__init__.py`:
+     * Integrated `is_expired` into `/library_issues` filter (`coverage != 'COMPLETE' or not nas_publication_receipt or is_expired`).
+     * Added status indicators (`[已过期]` / `[已超期]`) in `/library_sources` and `/library_issues` list items.
+     * Added `备份时效` field in `/library_source_<hash>` single source inspection.
+     * Updated `/library` overview to reflect `issues_count`.
+
+2. **Resolution of /library_issues Phantom & Missing Sources**:
+   - Deregistered 5 obsolete pre-split draft source names (`codex`, `antigravity`, `chatgpt-localcache`, `workstation-projects`, `orchestrator`) from server `intake-policy.json`.
+   - Initialized and completed capture for `antigravity-backups` (`coverage: COMPLETE`, delivered batch `librarian:workstation:antigravity-backups:2026-11-06`, digest verified, published to NAS).
+   - Fixed `_tree` paginated discovery bug on live modifying directories (`src/uuma/librarian_server_daily.py`), enabling clean capture and delivery of `antigravity-core:2026-11-05` (49,396 files captured).
+   - All 4 remaining sources under `/library_issues` (`antigravity-core`, `codex-app-roaming`, `project-chatgpt-watchdog`, `project-watchdog-inventory-p00001`) have genuine machine captures, valid NAS publication receipts, and 0 pending publications; their PARTIAL status is strictly due to active exclusive runtime locks.
+
+3. **Production Deployment & Live Verification**:
+   - Deployed updated code to `alandelone-server-001` release directory `operations-5c650eedc4744d557ab9a078929675f77819daf27ea6988f15c0d8c5e8777b36`.
+   - Restarted `uuma-hermes-serve.service`.
+   - Live query verified: 63 total sources, 4 issues, 252 published revisions, 0 pending, expiration detection functioning.
+
+4. **Testing, Linting & Version Control**:
+   - 160 passed, 24 skipped across all 34 Librarian test suites.
+   - Ruff 100% clean across all Librarian modules and commands.
+   - Staged only Librarian files and committed cleanly to git (`76ae4b2`). Preserved unrelated user changes.
+
+---
+
+## Preserved Prior Session Handoff Context
+
+Raw backup location: `C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\librarian-implementation-20261029\handoff-before-library-issues-expiration-20261106.bin`
+SHA256: `62834cdd5a10673881bf8389cdd9153dad1666da30050c203dc95b5f1196519f`
+
+# Session Handoff
+
+## Current position
+
+User reported /library_sources Unknown command at18:01 while /library succeeded. Root cause actual gateway plugin dispatch replaces underscores with hyphens before exact registry lookup; plugin registered underscore names. Fixed only Librarian plugin registration to canonical hyphen keys, retained visible underscored links/callback semantics. Added regression normalized dispatch tests and canonical-key assertions.3/3focusedtests+Ruffpassed. Deployed immutable operations-5c650eedc4744d557ab9a078929675f77819daf27ea6988f15c0d8c5e8777b36 using existing source/hash guards, backup, externaldrain idleboundary and sharedrestart. All6Telegram+APIconnectedPID194777. Real server probe imported deployed GatewayInboundMixin._hm_dispatch_quick_and_plugin_commands, registered deployed plugin in controlled exact-key registry, used real ledger data and synthetic event:73underscored inputs succeeded (3base2pages68details). This exercises actual engine method without sending messages, distinct from real owner retry stillpending. Updated docs/operations/librarian-overview-20261105.md preserving prior defect and evidence. No sharedengine modification,credentialchange,capture/restore,commit/push or missiongateapproval. Prior full context follows.
+
+# Session Handoff
+
+## Current position
+
+User requested all-library backup status and one-tap Telegram navigation matching other agents, confirmed server placement. Implemented src/uuma/librarian_operations.py read-only MCP (trusted Librarian identity), existing intake/publication receipt SQL internally, digest-matched publication status, missing-policy-source evidence, separate ACL-visible semantic scope. New uuma_librarian_commands plugin /library /library_sources /library_issues and stable device/source digest details/page commands,8perpage. Explicit guard/plugin/platform allowlists, retained independent identity/read-only scope. Source commands shortened to31chars after catching Telegram32char limit. Final immutable release production/librarian/releases/operations-727b5ac5c17e676c80fc87416dd120bc91ee698a6124f2ff4876625bf95a4ba6, previous config/SOUL/plugin-link and preview/receipt retained. Two idle drained sharedgateway publications, finalPID193237 all6Telegram+APIconnected and menu16registered. Actual MCP verified68source detail handlers,207batches209revisions209matchingNASpublicationreceipts0pending. Catalog2sources59records still partial. Actual modelAPIrun run_ffd4459d82224b31a053f10b3f14bdbb completed and nativeledger confirms operations MCP and submit_result. Local operations+reader22passed1Windows-symlinkskip, focused3passed aftercommandlimitfix,Ruffpassed. Updated SOUL/runtime/tools and docs/operations/librarian-overview-20261105.md. User invited to test /library and source taps; no new user-originated command receipt yet. This is backup-status integration, broader source-content projections remain unfinished. No new capture/decrypt/restore,credentialchange,commit,push,missiongateapproval. Missing policy names include legacy/probe entries, shown as no-received rather than silently claimed covered. Query scope is recorded receipts, no fresh hash/restore validation; schedule text reflects accepted config, no live timer probes. Full preceding shared handoff follows.
+
+# Session Handoff
+
+## Current position
+
+Observer labels updated and verified with nine focused tests and the live Wisdom snapshot. Latest cycle: November 5 at 07:00:37 MYT.
+
+## Known dead ends
+
+Local Observer HTTP unavailable during watchdog restart loop; page verification pending.
+
+## Next action
+
+Verify the page once local Observer startup recovers.
+
+
+## Known dead ends
+
+Concurrent session closed during test once; started fresh. Initial CodeGraph query broad returned unrelated code, targeted file reads followed. First source links exceeded32chars, corrected and redeployed. User Telegram one-tap acceptance pending.
+
+## Next action
+
+Report server deployment and /library /library_sources /library_issues. Inspect actual Telegram command execution when owner sends. Continue content projections only within authorized scope, preserve full partial coverage and all other work.
+
+
+## Known dead ends
+
+Previous direct-handler tests missed gateway normalization. Replaced test boundary with actual server dispatcher method plus controlled registry.
+
+## Next action
+
+User retries /library_sources and detail/page links in Telegram. Inspect actual receipt if further issue. Preserve broader partial content coverage and unrelated concurrent work.
+
+## Known dead ends
+
+1. Do not silently exclude inaccessible sources or bypass runtime lock reporting; PARTIAL status is accurate.
+2. Do not delete legitimate source records from intake policy; only remove obsolete pre-split draft names.
+3. Do not run git push without explicit user instruction.
+
+## Next action
+
+1. Complete semantic catalog indexer rollout for ChatGPT and Phoenix trace projects.
+2. Support operator offline USB key export when physical drive is connected.
+3. Verify live user Telegram one-tap interactions on /library, /library_sources, and /library_issues.
+
+
+## Known dead ends
+
+Initial lint check exposed one new type-exception preference, corrected; two original forwarding lint findings preserved. Initial restart refused same-interpreter python.exe identity and stopped nothing; corrected bounded executable recognition after exact process/source verification. No schema assertions or security checks weakened.
+
+## Next action
+
+User may resend in the same Antigravity chat. If a different error occurs, inspect fresh sanitized route/worker evidence rather than assuming network or full provider parity. Preserve existing unsupported modalities/hosted search/long-context limits and all latest Librarian handoff constraints.
+
+
+## Known dead ends
+
+Do not equate daily manifest COMPLETE with full agent enrollment. Hermes_xgp name unresolved, local Hermes history demonstrably not found in received paths. Do not call proposal approvals structured decisions.
+
+## Next action
+
+Answer all3 annotations with current coverage table, project_id lookup mechanics and actual decision storage/gaps. Further collection changes require implementation scope, audit itself is complete. Preserve prior concurrent work.
+
+
+## Known dead ends
+
+Do not equate daily manifest COMPLETE with full agent enrollment. Hermes_xgp name unresolved, local Hermes history demonstrably not found in received paths. Do not call proposal approvals structured decisions.
+
+## Next action
+
+Answer all3 annotations with current coverage table, project_id lookup mechanics and actual decision storage/gaps. Further collection changes require implementation scope, audit itself is complete. Preserve prior concurrent work.
+
+
+## Known dead ends
+
+Wrong sibling venv path failed before execution; used existing UuMA environment. Existing production split-model test failure reproduced and documented without altering assertion. Bounded browser locator issues corrected using stable selectors/loaded state; short time-block overlays remain compressed at minute scale. No production publish authorization yet.
+
+## Next action
+
+User reviews local Daily preview and concrete Nov7 release preview, then explicitly authorizes publication if desired. Revalidate production baseline, unique DB owner and consistent backup before additive migration and Graph-only service restart. Keep Copycat switch independent; do not approve mission gate.
+
+
+## Known dead ends
+
+Initial local session lacked PYTHONPATH; supplied src and started successfully. First live audit printed excessive historical rows; replaced with provider/question aggregates. Upstream pending bridge request state and exact scientific source support remain unverified.
+
+## Next action
+
+Explain the screenshot and actual tools; if repair is requested, inspect the existing pending request and no-progress recovery before changing controls or creating requests. Preserve every prior shared task and publication boundary.
+
+
+## Known dead ends
+
+Initial local session lacked PYTHONPATH; supplied src and started successfully. First live audit printed excessive historical rows; replaced with provider/question aggregates. Upstream pending bridge request state and exact scientific source support remain unverified.
+
+## Next action
+
+Explain the screenshot and actual tools; if repair is requested, inspect the existing pending request and no-progress recovery before changing controls or creating requests. Preserve every prior shared task and publication boundary.
+
+
+## Known dead ends
+
+Initial local session lacked PYTHONPATH; supplied src and started successfully. First live audit printed excessive historical rows; replaced with provider/question aggregates. Upstream pending bridge request state and exact scientific source support remain unverified.
+
+## Next action
+
+Explain the screenshot and actual tools; if repair is requested, inspect the existing pending request and no-progress recovery before changing controls or creating requests. Preserve every prior shared task and publication boundary.
+
+
+## Known dead ends
+
+Previous one-table Honc count omitted life module. Actual pinned collector differs from development source, so source-only fix does not repair scheduled job.
+
+## Next action
+
+Answer3annotations with exact causes, correcteddiary/bodycounts andactualcontrolrecords. Antigravitycollectorpublication remains needed if authorized repair proceeds. Preserve concurrent Yonc work.
+
+
+## Known dead ends
+
+Previous one-table Honc count omitted life module. Actual pinned collector differs from development source, so source-only fix does not repair scheduled job.
+
+## Next action
+
+Answer3annotations with exact causes, correcteddiary/bodycounts andactualcontrolrecords. Antigravitycollectorpublication remains needed if authorized repair proceeds. Preserve concurrent Yonc work.
+
+
+## Known dead ends
+
+Previous one-table Honc count omitted life module. Actual pinned collector differs from development source, so source-only fix does not repair scheduled job.
+
+## Next action
+
+Answer3annotations with exact causes, correcteddiary/bodycounts andactualcontrolrecords. Antigravitycollectorpublication remains needed if authorized repair proceeds. Preserve concurrent Yonc work.
+
+
+## Known dead ends
+
+Preserve pre-existing production split-model test failure and all concurrent work. No mission gate approval. No database restore over new writes.
+
+## Next action
+
+Continue the authorized Daily publication/verification according to the latest publication status; keep Copycat capture independent and preserve the full shared handoff.
+
+
+## Known dead ends
+
+Preserve pre-existing production split-model test failure and all concurrent work. No mission gate approval. No database restore over new writes.
+
+## Next action
+
+Continue the authorized Daily publication/verification according to the latest publication status; keep Copycat capture independent and preserve the full shared handoff.
+
+
+## Known dead ends
+
+Preserve pre-existing production split-model test failure and all concurrent work. No mission gate approval. No database restore over new writes.
+
+## Next action
+
+Continue the authorized Daily publication/verification according to the latest publication status; keep Copycat capture independent and preserve the full shared handoff.
+
+
+## Known dead ends
+
+Preserve pre-existing production split-model test failure and all concurrent work. No mission gate approval. No database restore over new writes.
+
+## Next action
+
+Continue the authorized Daily publication/verification according to the latest publication status; keep Copycat capture independent and preserve the full shared handoff.
+
+
+## Known dead ends
+
+Preserve pre-existing production split-model test failure and all concurrent work. No mission gate approval. No database restore over new writes.
+
+## Next action
+
+Continue the authorized Daily publication/verification according to the latest publication status; keep Copycat capture independent and preserve the full shared handoff.
+
+Raw backup: C:\Users\Alandelone\CodeSpace_Local\UuMA\.uuma-local\scholar-catalog-implementation-20261023\handoff-before-remediation-claim-review-20261107-9bcd3fa25e1f44d5b3c886400a436882.bin
+SHA256: 40ce2b89005e65f0aa85d96295eb4ecec2d5a5ddc9596af492ec4c028d3fad17
+
+## Known dead ends
+
+See current note for bounded findings. No completed FULL or scientific approval inferred from partial evidence.
+
+## Next action
+
+Keep implementation Goal paused. Report current-owner replay failure and confirmed repairs. If later explicitly resumed, reconcile authentic history without deletion, reuse saved results, and close only matching original acceptance scopes.
+
+
+## Known dead ends
+
+Concurrent tasks repeatedly close/write shared session. Initial old nonowner AppData desktop SQLite read reported malformed; did not repair/create it, used actual process-owned DB. No source-content scientific claims validated, no production changes. CodeGraph auto-sync disabled, confirmed current relevant code with direct reads.
+
+## Next action
+
+Present verified raw values and proposed fix. For implementation, prepare scoped development regression and manual release preview; inspect old unsent blocker via semantic controls, preserve queued request ID, add pending parser and no-progress handling. Preserve concurrent Yonc authorized publication and all prior context; mission stays pending_review.

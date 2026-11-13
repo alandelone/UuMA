@@ -1,0 +1,29 @@
+{
+  "journey": "W32_first_delivery_usable_initial_catalog",
+  "status": "ACCEPTED",
+  "sample_paper_id": "paper_dd83af8026e39dd2a2e9316622a7ca49",
+  "run_id": "understanding_3c325480eadd87c3249d5ddd09615894fca1dcc5b73c323a4fa2b7dc40402b9f",
+  "judgment_id": "readingjudgment_d4aea750de4db1decc612642e04081650bab7bf2cbc419f3bdfb953a5c3e6fa0",
+  "document_blocks_verified": 85,
+  "content_card_keys": [
+    "author_contribution",
+    "dimensions",
+    "evidence_quotes",
+    "limitations",
+    "local_consolidation",
+    "materials",
+    "method",
+    "part_previews",
+    "question",
+    "reading_coverage",
+    "results",
+    "themes"
+  ],
+  "author_contribution_preview": "Synthesizes multi-level integration pathways between decentralized multi-agent systems and blockchai",
+  "themes_count": 14,
+  "central_themes": 5,
+  "substantial_themes": 9,
+  "deep_read_reasons_count": 2,
+  "reading_release_engine": "catalog-48cece41023e",
+  "distinct_counting_verified": true
+}

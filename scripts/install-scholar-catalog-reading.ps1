@@ -27,7 +27,8 @@ $plan = [ordered]@{
     package_sha256 = $runtime.package_sha256; owner_root = $runtime.data_root;
     automatic_window = $checked.automatic_window; manual_priority = $true;
     restart_count = 3; restart_interval = 'PT1M'; execution_time_limit = 'PT0S';
-    multiple_instances = 'IgnoreNew'; logon_delay = 'PT45S'; installed = $false; started = $false
+    multiple_instances = 'IgnoreNew'; logon_delay = 'PT45S'; daily_start = '00:00';
+    installed = $false; started = $false
 }
 if (-not $Apply) { $plan | ConvertTo-Json -Depth 8 -Compress; return }
 $previous = Get-ScheduledTask -TaskName $name -ErrorAction SilentlyContinue
@@ -50,8 +51,11 @@ $settings = New-ScheduledTaskSettingsSet -AllowStartIfOnBatteries -DontStopIfGoi
     -RestartCount 3 -RestartInterval (New-TimeSpan -Minutes 1) -StartWhenAvailable
 $trigger = New-ScheduledTaskTrigger -AtLogOn -User $user
 $trigger.Delay = 'PT45S'
+$nightTrigger = New-ScheduledTaskTrigger -Daily -At '00:00'
 $action = New-ScheduledTaskAction -Execute 'conhost.exe' -WorkingDirectory $ProjectRoot -Argument $arguments
-Register-ScheduledTask -TaskName $name -Action $action -Trigger $trigger -Principal $principal -Settings $settings -Force | Out-Null
+# Daily startup recovers an explicitly stopped supervisor even without another login.
+# The worker still owns the night admission gate and manual-request priority.
+Register-ScheduledTask -TaskName $name -Action $action -Trigger @($trigger, $nightTrigger) -Principal $principal -Settings $settings -Force | Out-Null
 if ($previous -and $previous.State -eq 'Disabled') { Disable-ScheduledTask -TaskName $name | Out-Null }
 Export-ScheduledTask -TaskName $name | Out-File -LiteralPath (Join-Path $receipt 'installed.xml') -Encoding UTF8
 $plan.installed = $true

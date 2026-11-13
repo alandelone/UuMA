@@ -1,0 +1,11 @@
+# Daily Activity zoom center
+
+The Activity zoom controls moved the visible center time. On the deployed round4 preview, an08:00center moved to08:03:38 after zooming out; a subsequent zoom in moved to07:58:11. The old formula used a synthetic half-height without the sticky header/timeline offset and read scrollTop after render, when browser clamping could already have changed it.
+
+The fix captures the center time before changing range, measures the midpoint of the actual viewport below the sticky header, and restores that time at the same midpoint using the new timeline scale. Browser scroll anchoring is disabled for the tracer. Full-day remains a full-day overview and returns to the saved center on exit; normal day-boundary clamping remains.
+
+106frontend tests and TypeScript/Vite build passed. Browser regression verified08:00remained480minutes across repeated10m–12h changes,full-day restore,and20:00late-day shrink/growth. Phone actual before/after error remains below0.5CSSpixel from integer scrollTop rounding. Initial phone ideal-target assertion did not account for the initial rounded scroll position; corrected to measure actual per-operation pixel displacement.
+
+CandidateSHA256e138ce8102666f4963faaef2b6c44ead14a7cd456a5c5230f304db5367244577;target/home/alandelone/.local/share/uuma/production/yonc/releases/daily-zoom-center-20261110-e138ce810266/source,baseline daily-round4-20261110-e0b367539922/source.64manifestfiles,5changed(two source files plus index and two assets),no backend/schema/dependency changes. Preserve canonical database,Copycat independent switch,unrelated local changes and mission verification/pending_review. Publication pending guarded staging and verification.
+
+Published2026-11-10T12:35:24Z(20:35UTC+08).GraphPID497594to511289,NRestarts0;exactsource/package/backupverified,all27business tables unchanged,graph128nodes691edges638,sameDBidentity/revision. Backup backup-20261110T123404Z SHA2562a542ade588b766b68958ceae31d9312423b98ede5d8ef4e5246f6715fab2b25. Production browser over temporary SSH loopback forward verified D3Ir_s5n asset and08:00center preserved through3h–12hzoom/full-dayrestore. Workstation public requests timed out; server public request returned403,so do not claim public browser verification. No routing/security/sharedservicechanges made. Temporary verificationforward removed afterward.

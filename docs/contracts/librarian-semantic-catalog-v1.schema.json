@@ -1,0 +1,349 @@
+{
+  "$defs": {
+    "SemanticEvidence": {
+      "additionalProperties": false,
+      "properties": {
+        "evidence_id": {
+          "title": "Evidence Id",
+          "type": "string"
+        },
+        "object_id": {
+          "title": "Source Object Id / URI",
+          "type": "string"
+        },
+        "locator_type": {
+          "enum": [
+            "jsonl_line",
+            "sqlite_pk",
+            "byte_offset",
+            "file_path",
+            "section_heading"
+          ],
+          "title": "Locator Type",
+          "type": "string"
+        },
+        "locator_value": {
+          "title": "Locator Value",
+          "type": "string"
+        },
+        "exact_quote": {
+          "title": "Exact Quote / Extract",
+          "type": "string"
+        },
+        "quote_hash": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Quote Sha256",
+          "type": "string"
+        },
+        "verified": {
+          "default": true,
+          "title": "Verified",
+          "type": "boolean"
+        }
+      },
+      "required": [
+        "evidence_id",
+        "object_id",
+        "locator_type",
+        "locator_value",
+        "exact_quote",
+        "quote_hash"
+      ],
+      "title": "SemanticEvidence",
+      "type": "object"
+    },
+    "SemanticRecord": {
+      "additionalProperties": false,
+      "properties": {
+        "record_id": {
+          "title": "Record Id",
+          "type": "string"
+        },
+        "version_id": {
+          "title": "Version Id",
+          "type": "string"
+        },
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "readers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Readers",
+          "type": "array"
+        },
+        "project_ids": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Project Ids",
+          "type": "array"
+        },
+        "category": {
+          "enum": [
+            "Knowledge",
+            "Experience",
+            "Decision",
+            "Work & Artifacts",
+            "History"
+          ],
+          "title": "Memory Category",
+          "type": "string"
+        },
+        "kind": {
+          "title": "Kind",
+          "type": "string"
+        },
+        "title": {
+          "title": "Title",
+          "type": "string"
+        },
+        "summary": {
+          "default": "",
+          "title": "Summary",
+          "type": "string"
+        },
+        "assertion_status": {
+          "default": "proposed",
+          "enum": [
+            "proposed",
+            "confirmed",
+            "historical",
+            "superseded",
+            "rejected"
+          ],
+          "title": "Assertion Status",
+          "type": "string"
+        },
+        "superseded_by": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Superseded By"
+        },
+        "original_status": {
+          "title": "Original Status",
+          "type": "string"
+        },
+        "original_ref": {
+          "title": "Original Ref",
+          "type": "string"
+        },
+        "captured_at": {
+          "format": "date-time",
+          "title": "Captured At",
+          "type": "string"
+        },
+        "is_summary": {
+          "default": false,
+          "title": "Is Summary",
+          "type": "boolean"
+        },
+        "derived_from": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Derived From",
+          "type": "array"
+        },
+        "content_sha256": {
+          "pattern": "^[a-f0-9]{64}$",
+          "title": "Content Sha256",
+          "type": "string"
+        },
+        "content_bytes": {
+          "minimum": 0,
+          "title": "Content Bytes",
+          "type": "integer"
+        },
+        "media_type": {
+          "default": "text/plain",
+          "title": "Media Type",
+          "type": "string"
+        },
+        "evidence": {
+          "items": {
+            "$ref": "#/$defs/SemanticEvidence"
+          },
+          "title": "Evidence Links",
+          "type": "array"
+        },
+        "entities": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Linked Entities",
+          "type": "array"
+        }
+      },
+      "required": [
+        "record_id",
+        "version_id",
+        "source_id",
+        "readers",
+        "kind",
+        "title",
+        "original_status",
+        "original_ref",
+        "captured_at",
+        "content_sha256",
+        "content_bytes"
+      ],
+      "title": "SemanticRecord",
+      "type": "object"
+    },
+    "SemanticSource": {
+      "additionalProperties": false,
+      "properties": {
+        "source_id": {
+          "title": "Source Id",
+          "type": "string"
+        },
+        "owner_agent": {
+          "title": "Owner Agent",
+          "type": "string"
+        },
+        "readers": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Readers",
+          "type": "array"
+        },
+        "capture_status": {
+          "enum": [
+            "NOT_COLLECTED",
+            "COMPLETE",
+            "PARTIAL",
+            "UNAVAILABLE"
+          ],
+          "title": "Capture Status",
+          "type": "string"
+        },
+        "device": {
+          "default": "server",
+          "enum": [
+            "server",
+            "workstation"
+          ],
+          "title": "Device",
+          "type": "string"
+        },
+        "category_default": {
+          "default": "Knowledge",
+          "enum": [
+            "Knowledge",
+            "Experience",
+            "Decision",
+            "Work & Artifacts",
+            "History"
+          ],
+          "title": "Default Memory Category",
+          "type": "string"
+        },
+        "privacy_tier": {
+          "default": "internal",
+          "enum": [
+            "public",
+            "internal",
+            "restricted",
+            "honc_private"
+          ],
+          "title": "Privacy Tier",
+          "type": "string"
+        },
+        "captured_at": {
+          "anyOf": [
+            {
+              "format": "date-time",
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Captured At"
+        },
+        "source_as_of": {
+          "default": "",
+          "title": "Source As Of",
+          "type": "string"
+        },
+        "verification": {
+          "default": "UNVERIFIED",
+          "enum": [
+            "UNVERIFIED",
+            "HASH_VERIFIED",
+            "RESTORE_VERIFIED"
+          ],
+          "title": "Verification",
+          "type": "string"
+        },
+        "evidence_refs": {
+          "items": {
+            "type": "string"
+          },
+          "title": "Evidence Refs",
+          "type": "array"
+        }
+      },
+      "required": [
+        "source_id",
+        "owner_agent",
+        "readers",
+        "capture_status"
+      ],
+      "title": "SemanticSource",
+      "type": "object"
+    }
+  },
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1,
+      "title": "Schema Version",
+      "type": "integer"
+    },
+    "snapshot_id": {
+      "title": "Snapshot Id",
+      "type": "string"
+    },
+    "published_at": {
+      "format": "date-time",
+      "title": "Published At",
+      "type": "string"
+    },
+    "sources": {
+      "items": {
+        "$ref": "#/$defs/SemanticSource"
+      },
+      "title": "Sources",
+      "type": "array"
+    },
+    "records": {
+      "items": {
+        "$ref": "#/$defs/SemanticRecord"
+      },
+      "title": "Records",
+      "type": "array"
+    }
+  },
+  "required": [
+    "schema_version",
+    "snapshot_id",
+    "published_at",
+    "sources",
+    "records"
+  ],
+  "title": "SemanticCatalog",
+  "type": "object"
+}
